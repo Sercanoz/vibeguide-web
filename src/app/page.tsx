@@ -7,10 +7,12 @@ export default function Home() {
       <Nav />
       <main className="flex-1">
         <Hero />
+        <Ticker />
         <SocialProof />
         <ProductDuo />
         <HowItWorks />
         <Features />
+        <Testimonials />
         <ForGuides />
         <FinalCta />
       </main>
@@ -37,15 +39,16 @@ function Hero() {
             </span>
           </div>
           <h1 className="mt-5 text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.05]">
-            Tour the world.{" "}
-            <span className="text-vibe-gradient">With a real local.</span>
+            Skip the tour bus.{" "}
+            <span className="text-vibe-gradient">Catch a vibe instead.</span>
           </h1>
           <p className="mt-5 text-lg md:text-xl text-vg-muted leading-relaxed max-w-xl">
-            Skip the script. Skip the queue. Tap{" "}
-            <strong className="text-vg-ink">VibeNow ⚡</strong> for an instant
-            1-on-1 guide, or roll deep with a{" "}
-            <strong className="text-vg-ink">VibeSquad ✨</strong> and split the
-            bill. Real moments, never templated.
+            One tap matches you with a real local in under 60 seconds.{" "}
+            <strong className="text-vg-ink">VibeNow ⚡</strong> for solo
+            adventures right now.{" "}
+            <strong className="text-vg-ink">VibeSquad ✨</strong> for rolling
+            deep with the crew at half the price. No scripts. No queues. No
+            cringe.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
@@ -165,6 +168,38 @@ function Hero() {
   );
 }
 
+/* ════════ TICKER — value-prop band ════════ */
+function Ticker() {
+  const items = [
+    "⚡ 60-second match",
+    "💸 Up to 50% off with a squad",
+    "🌍 23 languages, native speakers",
+    "🛡️ 100% refund if your squad doesn't form",
+    "📍 Live in 12 cities, 4 more next month",
+    "❤️ 4.9★ from 50K+ travelers",
+  ];
+  return (
+    <div className="bg-vibe-gradient overflow-hidden">
+      <div className="py-3 flex gap-10 animate-[scroll_40s_linear_infinite] whitespace-nowrap">
+        {[...items, ...items, ...items].map((t, i) => (
+          <span
+            key={i}
+            className="text-white text-sm md:text-base font-bold tracking-wide"
+          >
+            {t}
+          </span>
+        ))}
+      </div>
+      <style>{`
+        @keyframes scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-33.333%); }
+        }
+      `}</style>
+    </div>
+  );
+}
+
 /* ════════ SOCIAL PROOF STRIP ════════ */
 function SocialProof() {
   const items = [
@@ -200,7 +235,8 @@ function ProductDuo() {
           Two ways to vibe
         </p>
         <h2 className="mt-3 text-4xl md:text-5xl font-black tracking-tight">
-          Solo or squad. <span className="text-vibe-gradient">You pick.</span>
+          Solo? Or squad?{" "}
+          <span className="text-vibe-gradient">Same app. Different vibe.</span>
         </h2>
       </div>
       <div className="grid md:grid-cols-2 gap-6">
@@ -217,9 +253,9 @@ function ProductDuo() {
           </h3>
           <p className="mt-2 text-xl font-bold">Tap. Match. Go.</p>
           <p className="mt-4 text-white/90 leading-relaxed">
-            Just landed? Got 90 minutes? Tap the button. We&apos;ll match you with
-            a real local guide in under 60 seconds. No haggling, no waiting, no
-            tour-bus energy.
+            Just landed. Hotel checked. Nothing planned. Open the app, tap once
+            — a real local is heading your way before you finish your coffee.
+            That&apos;s the move.
           </p>
           <ul className="mt-6 space-y-2.5">
             {[
@@ -260,9 +296,9 @@ function ProductDuo() {
             Roll deep. Pay less. Live the vibe.
           </p>
           <p className="mt-4 text-vg-muted leading-relaxed">
-            Open a squad, drop the link in your group chat. The crew joins, the
-            price drops. Hosts get a 15% perk. No awkward strangers — your
-            people, your pace, half the price.
+            Open a squad. Drop the link in your group chat. The crew rolls in,
+            the price drops, the host pockets a 15% perk. It&apos;s like splitting
+            an Uber, except the Uber is a sunset on the Bosphorus.
           </p>
           <ul className="mt-6 space-y-2.5">
             {[
@@ -320,8 +356,8 @@ function HowItWorks() {
             How it works
           </p>
           <h2 className="mt-3 text-4xl md:text-5xl font-black tracking-tight">
-            From <span className="text-vibe-gradient">tap to tour</span> in
-            three moves.
+            <span className="text-vibe-gradient">Three taps.</span> One real
+            day. Zero tour-bus regret.
           </h2>
         </div>
         <div className="grid md:grid-cols-3 gap-6">
@@ -387,8 +423,7 @@ function Features() {
           Why VibeGuide
         </p>
         <h2 className="mt-3 text-4xl md:text-5xl font-black tracking-tight">
-          Built like the city it{" "}
-          <span className="text-vibe-gradient">runs in.</span>
+          Built different. <span className="text-vibe-gradient">For travelers who know better.</span>
         </h2>
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -402,6 +437,79 @@ function Features() {
             <p className="text-sm text-vg-muted leading-relaxed">{f.d}</p>
           </div>
         ))}
+      </div>
+    </section>
+  );
+}
+
+/* ════════ TESTIMONIALS ════════ */
+function Testimonials() {
+  const quotes = [
+    {
+      q: "Walked into Istanbul knowing nothing. Walked out with a story I keep telling. My guide knew the spots TikTok hasn't ruined yet.",
+      n: "Mia",
+      l: "Brooklyn → Istanbul",
+      e: "🇺🇸",
+      g:
+        "linear-gradient(135deg,#fbbf24,#f59e0b)",
+    },
+    {
+      q: "Opened a squad with two friends, woke up to four strangers in the chat. We didn't know each other before sunrise. We didn't shut up by sunset.",
+      n: "Lukas",
+      l: "Berlin → Lisbon",
+      e: "🇩🇪",
+      g:
+        "linear-gradient(135deg,#6c4cf1,#8b5cf6)",
+    },
+    {
+      q: "I'm Japanese and I always get the worst guides who just speak English. Found one who actually grew up in Kanagawa. Felt like home, in another country.",
+      n: "Yui",
+      l: "Tokyo → Cappadocia",
+      e: "🇯🇵",
+      g:
+        "linear-gradient(135deg,#ef4444,#f97316)",
+    },
+  ];
+  return (
+    <section className="bg-vg-bg-soft py-20 md:py-28">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8">
+        <div className="text-center mb-14">
+          <p className="text-xs font-black uppercase tracking-widest text-vg-primary">
+            Real travelers. Real cities. Real receipts.
+          </p>
+          <h2 className="mt-3 text-4xl md:text-5xl font-black tracking-tight">
+            The kind of trip you{" "}
+            <span className="text-vibe-gradient">brag about.</span>
+          </h2>
+        </div>
+        <div className="grid md:grid-cols-3 gap-6">
+          {quotes.map((c, i) => (
+            <div
+              key={i}
+              className="bg-white rounded-3xl p-7 border border-vg-border shadow-md hover:shadow-xl transition-shadow flex flex-col"
+            >
+              <div className="text-vg-primary text-5xl leading-none">&ldquo;</div>
+              <p className="mt-2 text-[15px] text-vg-ink leading-relaxed font-medium flex-1">
+                {c.q}
+              </p>
+              <div className="mt-6 pt-5 border-t border-vg-border flex items-center gap-3">
+                <div
+                  className="w-11 h-11 rounded-full flex items-center justify-center text-xl"
+                  style={{ background: c.g }}
+                >
+                  {c.e}
+                </div>
+                <div>
+                  <p className="font-black text-sm">{c.n}</p>
+                  <p className="text-xs text-vg-muted font-semibold">{c.l}</p>
+                </div>
+                <div className="ml-auto flex gap-0.5 text-vg-amber text-xs">
+                  ★★★★★
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -440,9 +548,10 @@ function ForGuides() {
             <span className="text-vibe-gradient">Your hours. Your rate.</span>
           </h2>
           <p className="mt-5 text-lg text-white/80 leading-relaxed max-w-xl">
-            Drop a pin. Go online. Get matched. Get paid weekly. No bosses, no
-            quotas, no awkward small talk with people you wouldn&apos;t tour
-            with anyway. Just real travelers who picked you.
+            No agency cut. No middleman ghosting. No 9-to-5 with a clipboard.
+            Just you, your city, your rate. Travelers pick YOU — not a brand,
+            not a desk, not a script. Show up, walk &apos;em around, get paid
+            Friday.
           </p>
           <ul className="mt-8 space-y-3">
             {benefits.map((b, i) => (
@@ -495,7 +604,8 @@ function FinalCta() {
           </span>
         </h2>
         <p className="mt-6 text-lg md:text-xl text-white/85 max-w-2xl mx-auto">
-          Download VibeGuide. Tap. Match. Go. The whole vibe takes 60 seconds.
+          The next 60 seconds decide the next 6 hours. Download. Tap. Live the
+          city like you live somewhere.
         </p>
         <div className="mt-10 flex flex-wrap gap-4 justify-center">
           <a
