@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useT } from "./LanguageProvider";
 
 export default function Footer() {
@@ -10,8 +11,14 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-5 sm:px-8 py-14">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div className="col-span-2">
-            <Link href="/" className="flex items-center gap-2">
-              <span className="text-2xl">✨</span>
+            <Link href="/" className="flex items-center gap-2.5">
+              <Image
+                src="/app-icon.png"
+                alt="VibeGuide"
+                width={36}
+                height={36}
+                className="rounded-xl shadow-md shadow-purple-500/20"
+              />
               <span className="font-black text-xl tracking-tight text-vibe-gradient">
                 VibeGuide
               </span>

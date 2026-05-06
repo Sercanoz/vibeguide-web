@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { useT } from "./LanguageProvider";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -17,8 +18,15 @@ export default function Nav() {
   return (
     <header className="sticky top-0 z-50 backdrop-blur-md bg-white/80 border-b border-vg-border/60">
       <nav className="max-w-7xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 group">
-          <span className="text-2xl">✨</span>
+        <Link href="/" className="flex items-center gap-2.5 group">
+          <Image
+            src="/app-icon.png"
+            alt="VibeGuide"
+            width={36}
+            height={36}
+            priority
+            className="rounded-xl shadow-md shadow-purple-500/20"
+          />
           <span className="font-black text-xl tracking-tight text-vibe-gradient">
             VibeGuide
           </span>
