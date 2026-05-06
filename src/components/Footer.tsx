@@ -1,6 +1,10 @@
+"use client";
+
 import Link from "next/link";
+import { useT } from "./LanguageProvider";
 
 export default function Footer() {
+  const { t } = useT();
   return (
     <footer className="border-t border-vg-border bg-vg-bg-soft">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 py-14">
@@ -13,9 +17,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="mt-3 text-sm text-vg-muted max-w-md leading-relaxed">
-              The world's most chill way to tour a city with a real local.
-              Instant 1-on-1 matches. Group tours that bring the price down.
-              Real moments, never templated.
+              {t.footer.intro}
             </p>
             <div className="mt-5 flex gap-3">
               <a
@@ -34,35 +36,32 @@ export default function Footer() {
           </div>
           <div>
             <h4 className="text-xs font-black uppercase tracking-widest text-vg-ink mb-4">
-              Product
+              {t.footer.product}
             </h4>
             <ul className="space-y-2.5 text-sm">
               <li><a href="#vibenow" className="text-vg-muted hover:text-vg-ink">VibeNow ⚡</a></li>
               <li><a href="#vibesquad" className="text-vg-muted hover:text-vg-ink">VibeSquad ✨</a></li>
-              <li><a href="#how" className="text-vg-muted hover:text-vg-ink">How it works</a></li>
-              <li><a href="#guides" className="text-vg-muted hover:text-vg-ink">For Guides</a></li>
+              <li><a href="#how" className="text-vg-muted hover:text-vg-ink">{t.nav.how}</a></li>
+              <li><a href="#guides" className="text-vg-muted hover:text-vg-ink">{t.nav.guides}</a></li>
             </ul>
           </div>
           <div>
             <h4 className="text-xs font-black uppercase tracking-widest text-vg-ink mb-4">
-              Company
+              {t.footer.company}
             </h4>
             <ul className="space-y-2.5 text-sm">
-              <li><Link href="/about" className="text-vg-muted hover:text-vg-ink">About</Link></li>
-              <li><Link href="/contact" className="text-vg-muted hover:text-vg-ink">Contact</Link></li>
-              <li><Link href="/privacy" className="text-vg-muted hover:text-vg-ink">Privacy</Link></li>
-              <li><Link href="/terms" className="text-vg-muted hover:text-vg-ink">Terms</Link></li>
+              <li><Link href="/about" className="text-vg-muted hover:text-vg-ink">{t.footer.about}</Link></li>
+              <li><Link href="/contact" className="text-vg-muted hover:text-vg-ink">{t.footer.contact}</Link></li>
+              <li><Link href="/privacy" className="text-vg-muted hover:text-vg-ink">{t.footer.privacy}</Link></li>
+              <li><Link href="/terms" className="text-vg-muted hover:text-vg-ink">{t.footer.terms}</Link></li>
             </ul>
           </div>
         </div>
         <div className="mt-12 pt-6 border-t border-vg-border flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-vg-muted">
-            © {new Date().getFullYear()} VibeGuide. Crafted for travelers, by
-            travelers.
+            {t.footer.copyright.replace("{year}", String(new Date().getFullYear()))}
           </p>
-          <p className="text-xs text-vg-muted">
-            Made with <span className="text-vg-flame">♥</span> on the road.
-          </p>
+          <p className="text-xs text-vg-muted">{t.footer.madeWith}</p>
         </div>
       </div>
     </footer>

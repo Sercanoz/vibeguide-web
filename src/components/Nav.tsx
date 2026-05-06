@@ -2,16 +2,18 @@
 
 import Link from "next/link";
 import { useState } from "react";
-
-const links = [
-  { href: "#vibenow", label: "VibeNow ⚡" },
-  { href: "#vibesquad", label: "VibeSquad ✨" },
-  { href: "#how", label: "How it works" },
-  { href: "#guides", label: "For Guides" },
-];
+import { useT } from "./LanguageProvider";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Nav() {
+  const { t } = useT();
   const [open, setOpen] = useState(false);
+  const links = [
+    { href: "#vibenow", label: t.nav.vibenow },
+    { href: "#vibesquad", label: t.nav.vibesquad },
+    { href: "#how", label: t.nav.how },
+    { href: "#guides", label: t.nav.guides },
+  ];
   return (
     <header className="sticky top-0 z-50 backdrop-blur-md bg-white/80 border-b border-vg-border/60">
       <nav className="max-w-7xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
@@ -21,7 +23,7 @@ export default function Nav() {
             VibeGuide
           </span>
         </Link>
-        <div className="hidden md:flex items-center gap-7">
+        <div className="hidden md:flex items-center gap-6">
           {links.map((l) => (
             <a
               key={l.href}
@@ -31,27 +33,31 @@ export default function Nav() {
               {l.label}
             </a>
           ))}
+          <LanguageSwitcher />
           <a
             href="#download"
             className="bg-vibe-gradient text-white px-5 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 transition-shadow"
           >
-            Get the app
+            {t.nav.cta}
           </a>
         </div>
-        <button
-          onClick={() => setOpen((v) => !v)}
-          className="md:hidden p-2 -mr-2"
-          aria-label="Menu"
-        >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path
-              d={open ? "M6 6L18 18M6 18L18 6" : "M4 7h16M4 12h16M4 17h16"}
-              stroke="currentColor"
-              strokeWidth="2.2"
-              strokeLinecap="round"
-            />
-          </svg>
-        </button>
+        <div className="md:hidden flex items-center gap-2">
+          <LanguageSwitcher />
+          <button
+            onClick={() => setOpen((v) => !v)}
+            className="p-2 -mr-2"
+            aria-label="Menu"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path
+                d={open ? "M6 6L18 18M6 18L18 6" : "M4 7h16M4 12h16M4 17h16"}
+                stroke="currentColor"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+              />
+            </svg>
+          </button>
+        </div>
       </nav>
       {open && (
         <div className="md:hidden border-t border-vg-border bg-white">
@@ -71,7 +77,7 @@ export default function Nav() {
               onClick={() => setOpen(false)}
               className="bg-vibe-gradient text-white text-center px-5 py-3 rounded-full text-sm font-bold mt-2"
             >
-              Get the app
+              {t.nav.cta}
             </a>
           </div>
         </div>
