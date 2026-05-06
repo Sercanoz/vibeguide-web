@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { useT } from "@/components/LanguageProvider";
@@ -121,7 +122,13 @@ function Hero() {
                       </p>
                       <p className="font-black text-lg">{t.hero.phoneCity}</p>
                     </div>
-                    <div className="w-10 h-10 rounded-full bg-vibe-gradient" />
+                    <Image
+                      src="/app-icon.png"
+                      alt="VibeGuide"
+                      width={40}
+                      height={40}
+                      className="rounded-xl shadow-md shadow-purple-500/30"
+                    />
                   </div>
                   <div className="bg-flash-gradient rounded-2xl p-3 text-white shadow-lg">
                     <div className="flex items-center gap-2 mb-2">
