@@ -2,25 +2,76 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0b0b14;
+
+  /* VibeGuide brand */
+  --vg-primary: #6c4cf1;
+  --vg-primary-dark: #4f37c9;
+  --vg-violet: #8b5cf6;
+  --vg-lavender: #a78bfa;
+  --vg-amber: #f59e0b;
+  --vg-amber-light: #fbbf24;
+  --vg-flame: #ef4444;
+  --vg-flame-light: #f97316;
+  --vg-mint: #10b981;
+  --vg-ink: #111827;
+  --vg-muted: #6b7280;
+  --vg-border: #eaeaf0;
+  --vg-bg-soft: #f7f7fb;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-vg-primary: var(--vg-primary);
+  --color-vg-primary-dark: var(--vg-primary-dark);
+  --color-vg-violet: var(--vg-violet);
+  --color-vg-lavender: var(--vg-lavender);
+  --color-vg-amber: var(--vg-amber);
+  --color-vg-flame: var(--vg-flame);
+  --color-vg-mint: var(--vg-mint);
+  --color-vg-ink: var(--vg-ink);
+  --color-vg-muted: var(--vg-muted);
+  --color-vg-border: var(--vg-border);
+  --color-vg-bg-soft: var(--vg-bg-soft);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* Reusable utilities */
+.bg-vibe-gradient {
+  background: linear-gradient(135deg, #6c4cf1 0%, #8b5cf6 50%, #a78bfa 100%);
+}
+.bg-flash-gradient {
+  background: linear-gradient(135deg, #ef4444 0%, #f97316 50%, #fbbf24 100%);
+}
+.text-vibe-gradient {
+  background: linear-gradient(135deg, #6c4cf1 0%, #8b5cf6 60%, #ef4444 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+.animate-float { animation: float 6s ease-in-out infinite; }
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(108, 76, 241, 0.4); }
+  50% { box-shadow: 0 0 0 18px rgba(108, 76, 241, 0); }
+}
+.animate-pulse-glow { animation: pulse-glow 2.4s ease-out infinite; }
