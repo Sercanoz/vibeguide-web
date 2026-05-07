@@ -26,7 +26,7 @@ export default function LanguageSwitcher() {
         className="flex items-center gap-1.5 px-3 py-2 rounded-full border border-vg-border bg-white text-sm font-bold hover:border-vg-primary transition-colors"
         aria-label="Change language"
       >
-        <span className="text-base">{localeMeta[locale].flag}</span>
+        <img src={`https://flagcdn.com/w20/${localeMeta[locale].flagCode}.png`} width={20} height={15} alt={localeMeta[locale].label} className="rounded-sm" />
         <span>{localeMeta[locale].label}</span>
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
           <path
@@ -54,7 +54,7 @@ export default function LanguageSwitcher() {
                     : "hover:bg-vg-bg-soft text-vg-ink"
                 }`}
               >
-                <span className="text-xl">{localeMeta[l].flag}</span>
+                <img src={`https://flagcdn.com/w20/${localeMeta[l].flagCode}.png`} width={20} height={15} alt={localeMeta[l].label} className="rounded-sm" />
                 <span className="flex-1">{localeMeta[l].label}</span>
                 {selected && (
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">

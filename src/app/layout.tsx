@@ -62,16 +62,6 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <head>
         <JsonLd />
-        <script
-          src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js"
-          crossOrigin="anonymous"
-          defer
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `document.addEventListener('DOMContentLoaded',function(){twemoji.parse(document.body,{folder:'svg',ext:'.svg'})});`,
-          }}
-        />
       </head>
       <body className="min-h-full flex flex-col bg-white text-vg-ink">
         <LanguageProvider>{children}</LanguageProvider>

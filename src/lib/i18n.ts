@@ -1,14 +1,14 @@
 export const locales = ["en", "tr", "zh", "ru", "es", "ko", "el"] as const;
 export type Locale = (typeof locales)[number];
 
-export const localeMeta: Record<Locale, { flag: string; label: string }> = {
-  en: { flag: "🇬🇧", label: "EN" },
-  tr: { flag: "🇹🇷", label: "TR" },
-  zh: { flag: "🇨🇳", label: "中文" },
-  ru: { flag: "🇷🇺", label: "RU" },
-  es: { flag: "🇪🇸", label: "ES" },
-  ko: { flag: "🇰🇷", label: "한국어" },
-  el: { flag: "🇬🇷", label: "EL" },
+export const localeMeta: Record<Locale, { flagCode: string; label: string }> = {
+  en: { flagCode: "gb", label: "EN" },
+  tr: { flagCode: "tr", label: "TR" },
+  zh: { flagCode: "cn", label: "中文" },
+  ru: { flagCode: "ru", label: "RU" },
+  es: { flagCode: "es", label: "ES" },
+  ko: { flagCode: "kr", label: "한국어" },
+  el: { flagCode: "gr", label: "EL" },
 };
 
 type Dict = {
