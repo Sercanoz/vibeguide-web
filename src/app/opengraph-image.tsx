@@ -80,7 +80,7 @@ export default async function OGImage() {
               flexWrap: "wrap",
             }}
           >
-            Skip the tour bus. Catch a vibe instead.
+            Not a tour. A vibe.
           </div>
           <div
             style={{
