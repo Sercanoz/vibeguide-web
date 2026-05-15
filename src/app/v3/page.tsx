@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "VibeGuide — Real Local Guides, On Demand | Istanbul, Cappadocia, Ephesus",
   description:
-    "Tap Go. Match in minutes. Walk the city with a verified local guide. VibeNow for instant tours, VibeSquad for group experiences, Reservations for private days. Launching in Istanbul.",
+    "Tap Go. Match in minutes. Walk the city with a verified local. VibeNow for instant private tours, VibeSquad for group experiences, Reservations for the days you plan ahead.",
   keywords: [
     "VibeNow",
     "VibeSquad",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "VibeGuide — Real Local Guides, On Demand",
     description:
-      "Tap Go. Match with a verified local guide in minutes. Or join a VibeSquad and split the cost with other travelers.",
+      "Tap Go. Match with a verified local in minutes. Or join a VibeSquad and split the cost.",
     type: "website",
   },
 };
@@ -30,20 +30,47 @@ const destinations = [
   {
     city: "Istanbul",
     tag: "Live now",
-    desc: "From the spice-warm corners of the Grand Bazaar to rooftop sunsets over the Bosphorus — let a local rewrite your itinerary.",
+    line: "Where east meets west, and locals know both.",
+    desc: "From the spice-warm corners of the Grand Bazaar to rooftop sunsets over the Bosphorus, your guide rewrites the itinerary you thought you wanted.",
     gradient: "from-[#FFE08A] to-[#E8923C]",
   },
   {
     city: "Cappadocia",
     tag: "Coming soon",
-    desc: "Sunrise balloons, fairy chimneys, and cave-cut chapels that almost no guidebook will find for you. The valleys speak through locals.",
+    line: "A landscape the camera always undersells.",
+    desc: "Sunrise balloons, fairy chimneys, valley walks at golden hour, cave-cut chapels almost no guidebook will lead you to. Locals know the angles.",
     gradient: "from-[#F4B99E] to-[#C66B4A]",
   },
   {
     city: "Ephesus",
     tag: "Coming soon",
-    desc: "Walk the marble streets of an empire. Hear the stories behind the columns from a licensed guide who treats history like family.",
+    line: "Walk the marble streets of an empire.",
+    desc: "Temples, theaters, libraries that have seen 2,000 winters — told by a licensed guide who treats Roman history like family history.",
     gradient: "from-[#C8D5A8] to-[#7A9A5B]",
+  },
+];
+
+const testimonials = [
+  {
+    quote:
+      "I've been to Istanbul three times. This was the first time I actually saw it. Mehmet skipped every line and walked us through the streets his grandmother grew up on.",
+    name: "Lena R.",
+    from: "Berlin",
+    tour: "VibeNow · Sultanahmet",
+  },
+  {
+    quote:
+      "Booked at the airport while waiting for my luggage. Twenty minutes later I was eating breakfast with a guide who actually wanted to be there. Worth every cent.",
+    name: "David K.",
+    from: "New York",
+    tour: "VibeNow · Karaköy",
+  },
+  {
+    quote:
+      "Joined a VibeSquad on a Saturday. Six strangers, one local, twenty euros each. By the end of the night we had a group chat and dinner plans for the week.",
+    name: "Priya S.",
+    from: "London",
+    tour: "VibeSquad · Beyoğlu",
   },
 ];
 
@@ -69,59 +96,141 @@ export default function HomePage() {
         </nav>
       </header>
 
-      {/* ── HERO ── */}
-      <section className="mx-auto max-w-7xl px-6 pb-24 pt-20 md:pt-32">
-        <div className="mx-auto max-w-4xl text-center">
-          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-black/[0.06] bg-white px-4 py-1.5 text-[0.78rem] font-semibold uppercase tracking-wider text-neutral-700 shadow-sm">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#FFC400]" />
-            Now live in Istanbul
+      {/* ── HERO (asymmetric: left copy / right activity stack) ── */}
+      <section className="mx-auto max-w-7xl px-6 pb-20 pt-16 md:pt-24">
+        <div className="grid items-center gap-14 md:grid-cols-[1.15fr,1fr] md:gap-20">
+          {/* LEFT */}
+          <div>
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-black/[0.06] bg-white px-4 py-1.5 text-[0.78rem] font-semibold uppercase tracking-wider text-neutral-700 shadow-sm">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#FFC400]" />
+              Now live in Istanbul
+            </div>
+
+            <h1 className="text-5xl font-black leading-[0.98] tracking-tight md:text-[5.5rem]">
+              Meet the city
+              <br />
+              through someone
+              <br />
+              who already
+              <span className="relative ml-3 inline-block">
+                <span className="relative z-10">has</span>
+                <span className="absolute inset-x-0 -bottom-1 z-0 h-3 bg-[#FFC400] md:h-4" />
+              </span>
+              <span className="text-neutral-400">.</span>
+            </h1>
+
+            <p className="mt-7 max-w-xl text-lg leading-8 text-neutral-500 md:text-[1.15rem] md:leading-9">
+              VibeGuide is the easiest way to explore a city through a verified
+              local. Tap <b className="text-[#111]">VibeNow</b> for an instant
+              private tour. Join a <b className="text-[#111]">VibeSquad</b> and
+              split the fee with other travelers. Or reserve a private day —
+              your trip, your way.
+            </p>
+
+            <div className="mt-9 flex flex-wrap items-center gap-3">
+              <button className="rounded-full bg-[#111] px-7 py-4 text-[0.95rem] font-semibold text-white hover:bg-neutral-800 transition-colors">
+                Get the app — it&apos;s free
+              </button>
+              <button className="rounded-full border border-neutral-200 bg-white px-7 py-4 text-[0.95rem] font-semibold text-[#111] hover:border-neutral-400 transition-colors">
+                Watch how it works →
+              </button>
+            </div>
+
+            <div className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-2 text-sm text-neutral-500">
+              <span className="flex items-center gap-2"><span className="text-[#FFC400]">★</span> Licensed guides only</span>
+              <span className="flex items-center gap-2"><span className="text-[#FFC400]">★</span> Pay after you meet</span>
+              <span className="flex items-center gap-2"><span className="text-[#FFC400]">★</span> Free cancellation</span>
+            </div>
           </div>
 
-          <h1 className="text-5xl font-black leading-[1.02] tracking-tight md:text-[5.5rem]">
-            Skip the tour bus.
-            <br />
-            <span className="text-neutral-400">Meet the </span>
-            <span className="relative inline-block">
-              <span className="relative z-10">city</span>
-              <span className="absolute inset-x-0 -bottom-1 z-0 h-3 bg-[#FFC400] md:h-4" />
-            </span>
-            <span className="text-neutral-400">.</span>
-          </h1>
+          {/* RIGHT — Live activity stack */}
+          <div className="relative mx-auto w-full max-w-md md:max-w-none">
+            <div className="absolute -inset-6 -z-10 rounded-[2.5rem] bg-gradient-to-br from-[#FFF2B8] via-transparent to-transparent blur-2xl opacity-70" />
 
-          <p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-neutral-500 md:text-xl md:leading-9">
-            VibeGuide is the easiest way to explore a city through a verified
-            local. Tap <b className="text-[#111]">VibeNow</b> for an instant
-            private tour. Join a <b className="text-[#111]">VibeSquad</b> and
-            split the cost with other travelers. Or book ahead — your trip,
-            your way.
-          </p>
+            <div className="space-y-3">
+              {/* Card 1 — Match */}
+              <div className="rounded-2xl bg-white p-5 ring-1 ring-black/[0.06] shadow-sm">
+                <div className="flex items-center justify-between text-[0.7rem] font-bold uppercase tracking-wider text-neutral-400">
+                  <span>VibeNow · matched</span>
+                  <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[0.65rem] font-bold text-emerald-700">● Live</span>
+                </div>
+                <div className="mt-3 flex items-center gap-3">
+                  <div className="h-11 w-11 rounded-full bg-gradient-to-br from-[#FFE08A] to-[#E8923C] ring-2 ring-white" />
+                  <div className="min-w-0 flex-1">
+                    <p className="truncate font-black text-[#111]">Mehmet · Istanbul</p>
+                    <p className="mt-0.5 text-xs text-neutral-500">★ 4.96 · 312 tours · 5 min away</p>
+                  </div>
+                  <button className="rounded-full bg-[#FFC400] px-3 py-1.5 text-xs font-bold text-[#111]">
+                    Go
+                  </button>
+                </div>
+              </div>
 
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-            <button className="rounded-full bg-[#111] px-8 py-4 text-[0.95rem] font-semibold text-white hover:bg-neutral-800 transition-colors">
-              Get the app — it&apos;s free
-            </button>
-            <button className="rounded-full border border-neutral-200 bg-white px-8 py-4 text-[0.95rem] font-semibold text-[#111] hover:border-neutral-400 transition-colors">
-              See how it works →
-            </button>
-          </div>
+              {/* Card 2 — Squad joining */}
+              <div className="ml-6 rounded-2xl bg-white p-5 ring-1 ring-black/[0.06] shadow-sm">
+                <div className="flex items-center justify-between text-[0.7rem] font-bold uppercase tracking-wider text-neutral-400">
+                  <span>VibeSquad · forming</span>
+                  <span className="text-[0.65rem] font-bold text-neutral-500">Sat 14:00</span>
+                </div>
+                <p className="mt-3 text-sm font-bold text-[#111]">Sultanahmet walking tour</p>
+                <div className="mt-3 flex items-center gap-2">
+                  <div className="flex -space-x-2">
+                    {["#FFC400", "#F4B99E", "#C8D5A8", "#FFE08A"].map((c) => (
+                      <div key={c} className="h-7 w-7 rounded-full ring-2 ring-white" style={{ backgroundColor: c }} />
+                    ))}
+                  </div>
+                  <span className="text-xs font-semibold text-neutral-500">4 of 6 joined</span>
+                  <span className="ml-auto text-sm font-black text-[#111]">€22 <span className="text-xs font-medium text-neutral-400">/ person</span></span>
+                </div>
+              </div>
 
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-neutral-500">
-            <span className="flex items-center gap-2"><span className="text-[#FFC400]">★</span> Licensed & identity-verified guides</span>
-            <span className="flex items-center gap-2"><span className="text-[#FFC400]">★</span> Pay only after you meet</span>
-            <span className="flex items-center gap-2"><span className="text-[#FFC400]">★</span> Cancel anytime — zero stress</span>
+              {/* Card 3 — Started */}
+              <div className="ml-2 rounded-2xl bg-[#111] p-5 text-white shadow-sm">
+                <div className="flex items-center justify-between text-[0.7rem] font-bold uppercase tracking-wider text-[#FFC400]">
+                  <span>Tour started</span>
+                  <span className="text-white/40">just now</span>
+                </div>
+                <p className="mt-3 font-bold">
+                  &quot;Welcome to Galata. Follow me — there&apos;s a shortcut.&quot;
+                </p>
+                <p className="mt-3 text-xs text-white/40">Live location sharing on · 1.5h</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ── VIBENOW HERO PRODUCT BLOCK ── */}
-      <section className="mx-auto max-w-7xl px-6 pb-12">
-        <div className="overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#FFF2B8] via-[#FFE998] to-[#FFC400] p-10 md:p-16">
+      {/* ── SOCIAL PROOF STRIP ── */}
+      <section className="border-y border-black/[0.06] bg-white">
+        <div className="mx-auto max-w-7xl px-6 py-10">
+          <p className="mb-6 text-center text-xs font-bold uppercase tracking-[0.25em] text-neutral-400">
+            Built for travelers who&apos;ve been everywhere — and still want more
+          </p>
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+            {[
+              { num: "100%", label: "Licensed guides" },
+              { num: "<5 min", label: "Average match time" },
+              { num: "20+", label: "Languages spoken" },
+              { num: "€0", label: "Hidden fees, ever" },
+            ].map((s) => (
+              <div key={s.label} className="text-center">
+                <p className="text-3xl font-black tracking-tight md:text-4xl">{s.num}</p>
+                <p className="mt-1.5 text-sm font-medium text-neutral-500">{s.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── VIBENOW PRODUCT BLOCK ── */}
+      <section className="mx-auto max-w-7xl px-6 pt-24 pb-12">
+        <div className="overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-[#FFF2B8] via-[#FFE998] to-[#FFC400] p-10 md:p-16">
           <div className="grid items-center gap-12 md:grid-cols-2">
             <div>
               <span className="inline-flex items-center gap-1.5 rounded-full bg-[#111] px-3 py-1 text-[0.7rem] font-black uppercase tracking-wider text-[#FFC400]">
                 ⚡ Instant
               </span>
-              <h2 className="mt-5 text-4xl font-black leading-[1.05] tracking-tight md:text-6xl">
+              <h2 className="mt-5 text-4xl font-black leading-[1.02] tracking-tight md:text-[4.5rem]">
                 VibeNow.
                 <br />
                 <span className="text-[#7A5800]">A local in minutes.</span>
@@ -132,7 +241,7 @@ export default function HomePage() {
                 pre-booking gymnastics. Just the city — and someone who knows
                 it by heart.
               </p>
-              <div className="mt-8 grid grid-cols-3 gap-4 max-w-md">
+              <div className="mt-8 grid max-w-md grid-cols-3 gap-4">
                 {[
                   { num: "1", label: "Pick a place" },
                   { num: "2", label: "Tap Go" },
@@ -148,19 +257,19 @@ export default function HomePage() {
 
             <div className="space-y-3">
               {[
-                { time: "Just now", text: "Mehmet accepted your tour", sub: "5 min away · Hagia Sophia" },
-                { time: "12:04", text: "You: \"Headed to Galata?\"", sub: "Read · live chat enabled" },
-                { time: "12:06", text: "Tour started — meet at the entrance", sub: "Live location sharing on" },
+                { time: "Just now", text: "Mehmet accepted your tour", sub: "5 min away · Hagia Sophia", live: true },
+                { time: "12:04", text: "You: \"Meet at the entrance?\"", sub: "Read · live chat enabled" },
+                { time: "12:06", text: "Tour started — let&apos;s walk", sub: "Live location sharing on" },
               ].map((m, i) => (
                 <div
                   key={i}
-                  className={`rounded-2xl bg-white p-5 ring-1 ring-black/[0.06] shadow-sm ${i === 0 ? "md:ml-0" : i === 1 ? "md:ml-8" : "md:ml-4"}`}
+                  className={`rounded-2xl bg-white p-5 ring-1 ring-black/[0.06] shadow-sm ${i === 0 ? "" : i === 1 ? "md:ml-8" : "md:ml-4"}`}
                 >
                   <div className="flex items-center justify-between text-xs font-semibold text-neutral-400">
                     <span>{m.time}</span>
-                    {i === 0 && <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[0.65rem] font-bold text-emerald-700">● Live</span>}
+                    {m.live && <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[0.65rem] font-bold text-emerald-700">● Live</span>}
                   </div>
-                  <p className="mt-1.5 font-bold text-[#111]">{m.text}</p>
+                  <p className="mt-1.5 font-bold text-[#111]" dangerouslySetInnerHTML={{__html: m.text}} />
                   <p className="mt-1 text-xs text-neutral-500">{m.sub}</p>
                 </div>
               ))}
@@ -171,7 +280,7 @@ export default function HomePage() {
 
       {/* ── VIBESQUAD PRODUCT BLOCK ── */}
       <section className="mx-auto max-w-7xl px-6 pb-24">
-        <div className="overflow-hidden rounded-[2rem] bg-[#111] p-10 text-white md:p-16">
+        <div className="overflow-hidden rounded-[2.5rem] bg-[#111] p-10 text-white md:p-16">
           <div className="grid items-center gap-12 md:grid-cols-2">
             <div className="order-2 md:order-1">
               <div className="grid grid-cols-2 gap-3">
@@ -181,7 +290,7 @@ export default function HomePage() {
                   <p className="mt-1 text-xs text-white/40 line-through">private guide</p>
                 </div>
                 <div className="rounded-2xl bg-[#FFC400] p-5 text-[#111]">
-                  <p className="text-xs font-bold uppercase tracking-wider">VibeSquad of 4</p>
+                  <p className="text-xs font-bold uppercase tracking-wider">Squad of 4</p>
                   <p className="mt-3 text-4xl font-black">€22</p>
                   <p className="mt-1 text-xs font-semibold">per person</p>
                 </div>
@@ -207,14 +316,14 @@ export default function HomePage() {
               <span className="inline-flex items-center gap-1.5 rounded-full bg-[#FFC400] px-3 py-1 text-[0.7rem] font-black uppercase tracking-wider text-[#111]">
                 ✨ Group
               </span>
-              <h2 className="mt-5 text-4xl font-black leading-[1.05] tracking-tight md:text-6xl">
+              <h2 className="mt-5 text-4xl font-black leading-[1.02] tracking-tight md:text-[4.5rem]">
                 VibeSquad.
                 <br />
                 <span className="text-white/50">Travel together.<br />Pay less.</span>
               </h2>
               <p className="mt-6 max-w-md text-lg leading-8 text-white/60">
                 Join other travelers heading the same way, share the same
-                licensed guide, and split the fee. The more the squad grows, the
+                licensed guide, and split the fee. The bigger the squad, the
                 more everyone saves. Same city, half the cost, ten times the
                 stories.
               </p>
@@ -230,8 +339,8 @@ export default function HomePage() {
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-neutral-400">
               Where to next
             </p>
-            <h2 className="mt-3 text-3xl font-black tracking-tight md:text-4xl">
-              Cities aren&apos;t seen. They&apos;re felt.
+            <h2 className="mt-3 max-w-2xl text-3xl font-black tracking-tight md:text-5xl">
+              Cities aren&apos;t seen.<br />They&apos;re felt.
             </h2>
           </div>
           <a className="hidden shrink-0 text-sm font-semibold text-neutral-600 hover:text-[#111] cursor-pointer md:block">
@@ -245,12 +354,14 @@ export default function HomePage() {
               key={d.city}
               className="group cursor-pointer overflow-hidden rounded-3xl bg-white ring-1 ring-black/[0.06] transition hover:-translate-y-1 hover:shadow-xl hover:shadow-black/5"
             >
-              <div className={`relative h-56 bg-gradient-to-br ${d.gradient}`}>
+              <div className={`relative h-60 bg-gradient-to-br ${d.gradient}`}>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
                 <span className="absolute left-5 top-5 rounded-full bg-white/95 px-3 py-1 text-[0.7rem] font-bold uppercase tracking-wider text-neutral-700 backdrop-blur">
                   {d.tag}
                 </span>
                 <div className="absolute inset-x-5 bottom-5">
                   <h3 className="text-3xl font-black text-white drop-shadow-sm">{d.city}</h3>
+                  <p className="mt-1 text-sm font-medium text-white/90 drop-shadow-sm">{d.line}</p>
                 </div>
               </div>
               <div className="p-6">
@@ -264,63 +375,103 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── WHY ── */}
+      {/* ── TESTIMONIALS ── */}
       <section className="border-y border-black/[0.06] bg-white py-24">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="grid items-start gap-16 md:grid-cols-2">
+          <div className="mb-14 flex items-end justify-between gap-6">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-neutral-400">
-                Why VibeGuide
+                From travelers
               </p>
-              <h2 className="mt-3 text-4xl font-black leading-[1.1] tracking-tight md:text-5xl">
-                Tourism finally feels human.
+              <h2 className="mt-3 max-w-2xl text-3xl font-black leading-[1.1] tracking-tight md:text-5xl">
+                The stories you came home with.
               </h2>
-              <p className="mt-6 text-lg leading-8 text-neutral-500">
-                No herding buses. No headsets crackling beside you. No
-                copy-paste scripts. Just one verified local, the city around
-                them, and a few hours that turn into the story you&apos;ll tell
-                back home.
-              </p>
-              <p className="mt-4 text-lg leading-8 text-neutral-500">
-                Every guide is licensed, identity-checked, and rated by real
-                travelers. Every payment is secure. Every price is upfront.
-                Every cancellation is free until you meet.
-              </p>
-              <p className="mt-6 text-xl font-black text-[#111]">
-                Don&apos;t just visit a place. Belong to it.
-              </p>
             </div>
+          </div>
 
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { num: "100%", label: "Licensed & verified guides" },
-                { num: "<5 min", label: "Average match time" },
-                { num: "20+", label: "Languages supported" },
-                { num: "0", label: "Hidden fees, ever" },
-              ].map((s) => (
-                <div
-                  key={s.label}
-                  className="rounded-2xl bg-[#fffdf8] p-6 ring-1 ring-black/[0.06]"
-                >
-                  <p className="text-4xl font-black tracking-tight">{s.num}</p>
-                  <p className="mt-2 text-sm font-medium text-neutral-500">{s.label}</p>
-                </div>
-              ))}
-            </div>
+          <div className="grid gap-5 md:grid-cols-3">
+            {testimonials.map((t) => (
+              <figure
+                key={t.name}
+                className="flex flex-col rounded-3xl bg-[#fffdf8] p-8 ring-1 ring-black/[0.06]"
+              >
+                <div className="mb-4 text-[#FFC400]">★ ★ ★ ★ ★</div>
+                <blockquote className="flex-1 text-[1.05rem] leading-[1.7] text-neutral-700">
+                  &ldquo;{t.quote}&rdquo;
+                </blockquote>
+                <figcaption className="mt-6 flex items-center gap-3 border-t border-black/[0.05] pt-5">
+                  <div className="h-10 w-10 rounded-full bg-gradient-to-br from-[#FFE08A] to-[#E8923C]" />
+                  <div>
+                    <p className="text-sm font-bold text-[#111]">{t.name}</p>
+                    <p className="text-xs text-neutral-500">{t.from} · {t.tour}</p>
+                  </div>
+                </figcaption>
+              </figure>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ── FOR GUIDES STRIP ── */}
+      {/* ── WHY ── */}
       <section className="mx-auto max-w-7xl px-6 py-24">
+        <div className="grid items-start gap-16 md:grid-cols-2">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-neutral-400">
+              Why VibeGuide
+            </p>
+            <h2 className="mt-3 text-4xl font-black leading-[1.05] tracking-tight md:text-[3.5rem]">
+              Tourism, finally,
+              <br />
+              feels human.
+            </h2>
+            <p className="mt-7 text-lg leading-8 text-neutral-500">
+              No herding buses. No headsets crackling beside you. No copy-paste
+              scripts. Just one verified local, the city around them, and a few
+              hours that turn into the story you&apos;ll tell back home.
+            </p>
+            <p className="mt-4 text-lg leading-8 text-neutral-500">
+              Every guide is licensed, identity-checked, and rated by real
+              travelers. Every price is upfront. Every cancellation is free
+              until you meet. Every moment is one you actually paid attention to.
+            </p>
+            <p className="mt-7 text-2xl font-black leading-snug text-[#111]">
+              Don&apos;t just visit a place.
+              <br />
+              Belong to it.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            {[
+              { title: "Verified, every time", desc: "Every guide is licensed where required, identity-checked, and reviewed by travelers." },
+              { title: "Pay only after you meet", desc: "Your card is authorized — never charged until you and your guide actually connect." },
+              { title: "Your language, your pace", desc: "Filter by language, mood, walking speed. The trip should bend around you, not the other way." },
+              { title: "Cancel without the guilt", desc: "Plans change. Weather changes. Moods change. Cancel free until the moment you meet." },
+            ].map((s) => (
+              <div
+                key={s.title}
+                className="rounded-2xl bg-white p-6 ring-1 ring-black/[0.06]"
+              >
+                <p className="font-black text-[#111]">{s.title}</p>
+                <p className="mt-2 text-sm leading-6 text-neutral-500">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FOR GUIDES ── */}
+      <section className="mx-auto max-w-7xl px-6 pb-24">
         <div className="rounded-[2rem] bg-gradient-to-br from-[#FFF2B8] to-[#FFE07A] p-10 md:p-16">
           <div className="grid items-center gap-10 md:grid-cols-[2fr,1fr]">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#7A5800]">
                 For guides
               </p>
-              <h2 className="mt-3 text-3xl font-black leading-tight tracking-tight md:text-4xl">
-                Turn your knowledge into your livelihood.
+              <h2 className="mt-3 text-3xl font-black leading-tight tracking-tight md:text-5xl">
+                Turn what you know
+                <br className="hidden md:block" />
+                {" "}into what you do.
               </h2>
               <p className="mt-5 max-w-xl text-lg leading-8 text-[#5A4400]">
                 Set your own hours. Keep more of what you earn. Tell your own
@@ -329,7 +480,7 @@ export default function HomePage() {
               </p>
             </div>
             <div className="md:text-right">
-              <button className="rounded-full bg-[#111] px-7 py-3.5 text-sm font-semibold text-white hover:bg-neutral-800 transition-colors">
+              <button className="rounded-full bg-[#111] px-7 py-4 text-sm font-semibold text-white hover:bg-neutral-800 transition-colors">
                 Apply as a guide →
               </button>
             </div>
@@ -339,16 +490,17 @@ export default function HomePage() {
 
       {/* ── FINAL CTA ── */}
       <section className="mx-auto max-w-7xl px-6 pb-24">
-        <div className="rounded-[2.5rem] bg-[#111] px-8 py-20 text-center text-white md:px-20 md:py-24">
-          <h2 className="mx-auto max-w-3xl text-4xl font-black leading-[1.05] tracking-tight md:text-6xl">
-            Your next city is calling.
-            <br />
-            <span className="text-white/40">Pick up.</span>
+        <div className="rounded-[2.5rem] bg-[#111] px-8 py-20 text-center text-white md:px-20 md:py-28">
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#FFC400]">
+            Your next city is calling
+          </p>
+          <h2 className="mx-auto mt-5 max-w-3xl text-4xl font-black leading-[1.02] tracking-tight md:text-7xl">
+            Pick up.
           </h2>
-          <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-white/60">
+          <p className="mx-auto mt-7 max-w-xl text-lg leading-8 text-white/60">
             Download VibeGuide and walk the streets with someone who actually
-            knows them. VibeNow, VibeSquad, or a private reservation —
-            it&apos;s your trip, your call.
+            knows them. VibeNow, VibeSquad, or a private reservation — your
+            trip, your call.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
             <button className="rounded-full bg-[#FFC400] px-8 py-4 text-[0.95rem] font-bold text-[#111] hover:bg-[#f5bc00] transition-colors">
@@ -369,8 +521,8 @@ export default function HomePage() {
               <p className="text-xl font-black tracking-tight">VibeGuide</p>
               <p className="mt-4 max-w-xs text-sm leading-6 text-neutral-500">
                 Real local guides, on demand. VibeNow for instant tours.
-                VibeSquad for group experiences. Available in Istanbul today,
-                Cappadocia & Ephesus soon.
+                VibeSquad for group experiences. Live in Istanbul. Cappadocia &
+                Ephesus coming soon.
               </p>
             </div>
 
