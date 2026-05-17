@@ -132,37 +132,74 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="mx-auto w-full max-w-sm rounded-[2.5rem] border-[10px] border-black bg-white p-5 shadow-2xl">
-            <div className="flex justify-between text-xs font-bold">
-              <span>9:41</span>
-              <span>●●●</span>
-            </div>
+          {/* iPhone mockup — gerçek telefon görünümü */}
+          <div className="mx-auto w-full max-w-[340px]">
+            <div className="relative rounded-[3rem] bg-gradient-to-b from-[#1a1a1a] to-[#000] p-[6px] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6),0_0_0_2px_rgba(255,255,255,0.05)_inset]">
+              {/* Side buttons */}
+              <div className="absolute -left-[3px] top-24 h-8 w-[3px] rounded-l-md bg-[#2a2a2a]" />
+              <div className="absolute -left-[3px] top-36 h-14 w-[3px] rounded-l-md bg-[#2a2a2a]" />
+              <div className="absolute -left-[3px] top-56 h-14 w-[3px] rounded-l-md bg-[#2a2a2a]" />
+              <div className="absolute -right-[3px] top-32 h-20 w-[3px] rounded-r-md bg-[#2a2a2a]" />
 
-            <div className="mt-6 flex items-center justify-between">
-              <div>
-                <p className="text-sm font-bold text-neutral-500">
-                  Good evening
-                </p>
-                <h2 className="text-3xl font-black">Istanbul</h2>
-              </div>
-              <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-bold text-green-700">
-                ● Live
-              </span>
-            </div>
-
-            <div className="mt-6 space-y-4">
-              {[
-                ["⚡", "VibeNow", "Instant Guide", "Find a local guide near you and go."],
-                ["👥", "VibeSquad", "Group Experience", "Travel together. Pay less."],
-                ["📅", "Private Tours", "Planned Experience", "Your trip, your pace."],
-              ].map(([icon, name, type, text]) => (
-                <div key={name} className="rounded-3xl bg-[#FAF7F0] p-5">
-                  <div className="text-3xl">{icon}</div>
-                  <h3 className="mt-2 text-xl font-black">{name}</h3>
-                  <p className="text-xs font-bold text-purple-600">{type}</p>
-                  <p className="mt-2 text-sm text-neutral-600">{text}</p>
+              {/* Screen */}
+              <div className="relative overflow-hidden rounded-[2.6rem] bg-white">
+                {/* Status bar */}
+                <div className="relative flex items-center justify-between px-7 pt-3 pb-3">
+                  <span className="text-[14px] font-semibold text-black">9:41</span>
+                  {/* Dynamic Island */}
+                  <div className="absolute left-1/2 top-2.5 h-[30px] w-28 -translate-x-1/2 rounded-full bg-black" />
+                  <div className="flex items-center gap-1.5 text-black">
+                    <svg width="18" height="11" viewBox="0 0 18 11" fill="currentColor">
+                      <rect x="0" y="7" width="3.5" height="4" rx="0.6" />
+                      <rect x="5" y="5" width="3.5" height="6" rx="0.6" />
+                      <rect x="10" y="2.5" width="3.5" height="8.5" rx="0.6" />
+                      <rect x="15" y="0" width="3.5" height="11" rx="0.6" />
+                    </svg>
+                    <svg width="16" height="11" viewBox="0 0 15 11" fill="currentColor">
+                      <path d="M7.5 0C4.6 0 1.9 1.1 0 2.9l1.4 1.5C2.9 2.9 5.1 2 7.5 2s4.6.9 6.1 2.4L15 2.9C13.1 1.1 10.4 0 7.5 0zm0 4c-1.9 0-3.6.7-5 1.9l1.4 1.4C5 6.4 6.2 6 7.5 6c1.3 0 2.5.4 3.5 1.3l1.4-1.4C11.1 4.7 9.4 4 7.5 4zm0 4c-.9 0-1.8.3-2.5.9l1.5 1.6C7 10 7.2 9.9 7.5 9.9c.3 0 .5.1.5.1l1.5-1.6C8.8 8.3 7.9 8 7.5 8z" />
+                    </svg>
+                    <svg width="28" height="12" viewBox="0 0 27 11" fill="none">
+                      <rect x="0.5" y="0.5" width="22" height="10" rx="2.5" stroke="currentColor" />
+                      <rect x="2" y="2" width="19" height="7" rx="1" fill="currentColor" />
+                      <rect x="23.5" y="3.5" width="2" height="4" rx="0.5" fill="currentColor" />
+                    </svg>
+                  </div>
                 </div>
-              ))}
+
+                {/* App content */}
+                <div className="px-5 pt-6 pb-6">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-sm font-bold text-neutral-500">Good evening</p>
+                      <h2 className="text-3xl font-black">Istanbul</h2>
+                    </div>
+                    <span className="flex items-center gap-1.5 rounded-full bg-green-100 px-3 py-1 text-xs font-bold text-green-700">
+                      <span className="h-1.5 w-1.5 rounded-full bg-green-600" />
+                      Live
+                    </span>
+                  </div>
+
+                  <div className="mt-5 space-y-3">
+                    {[
+                      ["⚡", "VibeNow", "Instant Guide", "Find a local guide near you and go."],
+                      ["👥", "VibeSquad", "Group Experience", "Travel together. Pay less."],
+                      ["📅", "Private Tours", "Planned Experience", "Your trip, your pace."],
+                    ].map(([icon, name, type, text]) => (
+                      <div key={name} className="rounded-2xl bg-[#FAF7F0] p-4">
+                        <div className="text-2xl">{icon}</div>
+                        <h3 className="mt-1 text-lg font-black">{name}</h3>
+                        <p className="text-[11px] font-bold text-purple-600">{type}</p>
+                        <p className="mt-1 text-xs leading-snug text-neutral-600">{text}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Home indicator */}
+                  <div className="mt-5 flex justify-center">
+                    <div className="h-1 w-28 rounded-full bg-black" />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
