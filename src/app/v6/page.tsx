@@ -215,76 +215,176 @@ export default function HomePage() {
 
         <div className="mt-12 grid gap-8 md:grid-cols-3">
           {[
-            [
-              "Choose your experience",
-              "Pick VibeNow for instant guide matching, VibeSquad for group travel or Private Tours for planned experiences.",
-            ],
-            [
-              "Meet a local expert",
-              "Connect with guides who know the city, the culture, the history and the routes travelers actually want.",
-            ],
-            [
-              "Explore without stress",
-              "Enjoy Istanbul tours, private walks and Turkey experiences without confusion, pressure or tourist traps.",
-            ],
-          ].map(([title, text]) => (
-            <div key={title} className="rounded-[2rem] bg-white p-8 text-center shadow-sm">
-              <h3 className="text-2xl font-black">{title}</h3>
-              <p className="mt-4 leading-7 text-neutral-600">{text}</p>
+            {
+              icon: (
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="11" cy="11" r="7" />
+                  <path d="m20 20-3.5-3.5" />
+                </svg>
+              ),
+              iconBg: "bg-purple-100 text-purple-700",
+              title: "Choose your experience",
+              text: "Pick VibeNow for instant guide matching, VibeSquad for group travel or Private Tours for planned experiences.",
+            },
+            {
+              icon: (
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="8" r="4" />
+                  <path d="M4 21a8 8 0 0 1 16 0" />
+                </svg>
+              ),
+              iconBg: "bg-yellow-100 text-yellow-700",
+              title: "Meet a local expert",
+              text: "Connect with guides who know the city, the culture, the history and the routes travelers actually want.",
+            },
+            {
+              icon: (
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z" />
+                  <path d="M9 4v16" />
+                  <path d="M15 6v16" />
+                </svg>
+              ),
+              iconBg: "bg-green-100 text-green-700",
+              title: "Explore without stress",
+              text: "Enjoy Istanbul tours, private walks and Turkey experiences without confusion, pressure or tourist traps.",
+            },
+          ].map((item) => (
+            <div key={item.title} className="flex flex-col items-center px-6 text-center">
+              <div className={`flex h-14 w-14 items-center justify-center rounded-full ${item.iconBg}`}>
+                {item.icon}
+              </div>
+              <h3 className="mt-6 text-xl font-black">{item.title}</h3>
+              <p className="mt-3 max-w-xs leading-7 text-neutral-600">{item.text}</p>
             </div>
           ))}
         </div>
       </section>
 
+      {/* MODE CARDS — split with mini phone preview */}
       <section className="mx-auto grid max-w-7xl gap-6 px-6 py-10 md:grid-cols-3">
-        {[
-          {
-            id: "vibenow",
-            label: "VIBENOW",
-            title: "Instant Guide",
-            text: "Find a verified local guide near you for today's plans.",
-            cta: "Find Now →",
-            points: ["Instant matching", "Perfect for today", "Museums, food walks, city routes & more"],
-          },
-          {
-            id: "vibesquad",
-            label: "VIBESQUAD",
-            title: "Group Experience",
-            text: "Join other travelers, share the guide cost and explore Turkey together.",
-            cta: "Create or Join →",
-            points: ["Shared guide cost", "Social travel experience", "Great for solo travelers, couples & friends"],
-          },
-          {
-            id: "private",
-            label: "PRIVATE TOURS",
-            title: "Planned Experience",
-            text: "Reserve a private guide for your perfect day.",
-            cta: "Reserve Now →",
-            points: ["Private walking tours", "Flexible language options", "Clear routes and expectations"],
-          },
-        ].map((card) => (
-          <article
-            id={card.id}
-            key={card.id}
-            className="rounded-[2rem] bg-white p-8 shadow-sm"
-          >
-            <p className="text-sm font-black uppercase tracking-widest text-purple-600">
-              {card.label}
-            </p>
-            <h2 className="mt-3 text-3xl font-black">{card.title}</h2>
-            <p className="mt-4 leading-7 text-neutral-600">{card.text}</p>
+        {/* VibeNow */}
+        <article id="vibenow" className="overflow-hidden rounded-[2rem] bg-[#F3EEFF] shadow-sm">
+          <div className="grid grid-cols-[1fr_auto] gap-4 p-6">
+            <div>
+              <p className="text-xs font-black uppercase tracking-widest text-purple-600">VIBENOW</p>
+              <h2 className="mt-2 text-2xl font-black leading-tight">Instant Guide</h2>
+              <p className="mt-3 text-sm leading-6 text-neutral-600">Find a verified local guide near you for today&apos;s plans.</p>
+              <ul className="mt-5 space-y-2 text-xs font-semibold text-neutral-700">
+                <li className="flex items-start gap-2"><span className="mt-0.5 text-green-500">✓</span> Instant matching</li>
+                <li className="flex items-start gap-2"><span className="mt-0.5 text-green-500">✓</span> Perfect for today</li>
+                <li className="flex items-start gap-2"><span className="mt-0.5 text-green-500">✓</span> Museums, food walks, city routes &amp; more</li>
+              </ul>
+              <button className="mt-5 flex items-center gap-2 rounded-full bg-black px-5 py-2.5 text-xs font-bold text-white">
+                Find Now <span>→</span>
+              </button>
+            </div>
+            {/* Mini phone */}
+            <MiniPhone>
+              <p className="text-[9px] font-bold text-neutral-500">Find a Guide Near You</p>
+              <div className="mt-2 h-32 rounded-md bg-gradient-to-br from-[#E0E7FF] via-[#F5F3FF] to-[#FCE7F3] relative">
+                <div className="absolute left-3 top-3 h-7 w-7 rounded-full bg-purple-300 border-2 border-white" />
+                <div className="absolute right-4 top-6 h-7 w-7 rounded-full bg-pink-300 border-2 border-white" />
+                <div className="absolute left-8 bottom-3 h-7 w-7 rounded-full bg-orange-300 border-2 border-white" />
+              </div>
+              <p className="mt-2 text-[8px] font-bold">Marjorie Kitabis</p>
+              <div className="mt-2 flex items-center gap-1.5">
+                <div className="h-5 w-5 rounded-full bg-purple-200" />
+                <div>
+                  <p className="text-[8px] font-black">Elif A.</p>
+                  <p className="text-[7px] text-neutral-400">⭐ 4.9</p>
+                </div>
+              </div>
+            </MiniPhone>
+          </div>
+        </article>
 
-            <ul className="mt-6 space-y-3 text-sm font-semibold text-neutral-700">
-              {card.points.map((point) => (
-                <li key={point}>✓ {point}</li>
-              ))}
-            </ul>
+        {/* VibeSquad */}
+        <article id="vibesquad" className="overflow-hidden rounded-[2rem] bg-[#FFF5E6] shadow-sm">
+          <div className="grid grid-cols-[1fr_auto] gap-4 p-6">
+            <div>
+              <p className="text-xs font-black uppercase tracking-widest text-orange-500">VIBESQUAD</p>
+              <h2 className="mt-2 text-2xl font-black leading-tight">Group Experience</h2>
+              <p className="mt-3 text-sm leading-6 text-neutral-600">Join other travelers, share the guide cost and explore together.</p>
+              <ul className="mt-5 space-y-2 text-xs font-semibold text-neutral-700">
+                <li className="flex items-start gap-2"><span className="mt-0.5 text-green-500">✓</span> Shared guide cost</li>
+                <li className="flex items-start gap-2"><span className="mt-0.5 text-green-500">✓</span> Social travel experience</li>
+                <li className="flex items-start gap-2"><span className="mt-0.5 text-green-500">✓</span> Great for solo travelers, couples &amp; friends</li>
+              </ul>
+              <button className="mt-5 flex items-center gap-2 rounded-full bg-black px-5 py-2.5 text-xs font-bold text-white">
+                Create or Join <span>→</span>
+              </button>
+            </div>
+            <MiniPhone>
+              <p className="text-[9px] font-black">Your Squad</p>
+              <p className="text-[8px] font-bold">Topkapi Palace Tour</p>
+              <p className="text-[7px] text-neutral-400">4/6 joined</p>
+              <div className="mt-2 space-y-1.5">
+                {[
+                  ["Alex", "Joined"],
+                  ["Maria", "Joined"],
+                  ["You", "Joined"],
+                  ["James", "Invite"],
+                ].map(([name, status]) => (
+                  <div key={name} className="flex items-center justify-between">
+                    <div className="flex items-center gap-1">
+                      <div className="h-3.5 w-3.5 rounded-full bg-neutral-300" />
+                      <span className="text-[8px] font-semibold">{name}</span>
+                    </div>
+                    <span className={`text-[7px] font-bold ${status === "Invite" ? "rounded-full bg-black px-1.5 py-0.5 text-white" : "text-green-600"}`}>{status}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-2 flex justify-between border-t border-neutral-200 pt-1.5">
+                <div>
+                  <p className="text-[6px] text-neutral-500">Price per person</p>
+                  <p className="text-xs font-black">€25</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-[6px] text-neutral-500">Group price</p>
+                  <p className="text-xs font-black">€18</p>
+                </div>
+              </div>
+            </MiniPhone>
+          </div>
+        </article>
 
-            <button className="mt-8 rounded-full bg-black px-6 py-3 text-sm font-bold text-white">
-              {card.cta}
-            </button>
-          </article>
-        ))}
+        {/* Private Tours */}
+        <article id="private" className="overflow-hidden rounded-[2rem] bg-[#F0FDF4] shadow-sm">
+          <div className="grid grid-cols-[1fr_auto] gap-4 p-6">
+            <div>
+              <p className="text-xs font-black uppercase tracking-widest text-green-600">PRIVATE TOURS</p>
+              <h2 className="mt-2 text-2xl font-black leading-tight">Planned Experience</h2>
+              <p className="mt-3 text-sm leading-6 text-neutral-600">Reserve a private guide for your perfect day.</p>
+              <ul className="mt-5 space-y-2 text-xs font-semibold text-neutral-700">
+                <li className="flex items-start gap-2"><span className="mt-0.5 text-green-500">✓</span> Private walking tours</li>
+                <li className="flex items-start gap-2"><span className="mt-0.5 text-green-500">✓</span> Flexible language options</li>
+                <li className="flex items-start gap-2"><span className="mt-0.5 text-green-500">✓</span> Clear routes and expectations</li>
+              </ul>
+              <button className="mt-5 flex items-center gap-2 rounded-full bg-black px-5 py-2.5 text-xs font-bold text-white">
+                Reserve Now <span>→</span>
+              </button>
+            </div>
+            <MiniPhone>
+              <p className="text-[8px] font-bold text-neutral-500">Private Tour</p>
+              <p className="mt-1 text-[11px] font-black leading-tight">Hagia Sophia &amp;<br />Old City Walk</p>
+              <div className="mt-2 h-16 rounded-md bg-gradient-to-br from-amber-200 to-orange-300" />
+              <div className="mt-2 flex justify-between">
+                <div>
+                  <p className="text-[7px] text-neutral-500">4 Hours</p>
+                  <p className="text-[7px] text-neutral-500">From</p>
+                  <p className="text-xs font-black">€120</p>
+                  <p className="text-[6px] text-neutral-400">per group</p>
+                </div>
+              </div>
+              <div className="mt-1.5 border-t border-neutral-200 pt-1.5">
+                <p className="text-[7px] text-neutral-500">Languages</p>
+                <p className="text-[7px] font-semibold">English, Español, 中文</p>
+              </div>
+              <button className="mt-2 w-full rounded-full bg-black py-1 text-[8px] font-bold text-white">Reserve Now</button>
+            </MiniPhone>
+          </div>
+        </article>
       </section>
 
       <section id="destinations" className="mx-auto max-w-7xl px-6 py-20">
@@ -407,5 +507,34 @@ export default function HomePage() {
         </p>
       </footer>
     </main>
+  );
+}
+
+function MiniPhone({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="w-[120px] shrink-0">
+      <div className="relative rounded-[1.5rem] bg-[#0a0a0a] p-[3px] shadow-xl">
+        <div className="relative overflow-hidden rounded-[1.3rem] bg-white">
+          {/* Status bar */}
+          <div className="relative flex items-center justify-between px-3 pt-1.5 pb-1">
+            <span className="text-[7px] font-semibold">9:41</span>
+            <div className="absolute left-1/2 top-1 h-2.5 w-10 -translate-x-1/2 rounded-full bg-black" />
+            <div className="flex items-center gap-0.5">
+              <svg width="8" height="5" viewBox="0 0 18 11" fill="currentColor">
+                <rect x="0" y="7" width="3.5" height="4" rx="0.6" />
+                <rect x="5" y="5" width="3.5" height="6" rx="0.6" />
+                <rect x="10" y="2.5" width="3.5" height="8.5" rx="0.6" />
+                <rect x="15" y="0" width="3.5" height="11" rx="0.6" />
+              </svg>
+              <svg width="10" height="5" viewBox="0 0 27 11" fill="none">
+                <rect x="0.5" y="0.5" width="22" height="10" rx="2.5" stroke="currentColor" />
+                <rect x="2" y="2" width="19" height="7" rx="1" fill="currentColor" />
+              </svg>
+            </div>
+          </div>
+          <div className="px-2.5 pb-3">{children}</div>
+        </div>
+      </div>
+    </div>
   );
 }
