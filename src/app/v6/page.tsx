@@ -113,39 +113,76 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Phone mockup */}
+            {/* Phone mockup — iPhone style */}
             <div className="absolute right-6 top-1/2 hidden -translate-y-1/2 md:block lg:right-16">
-              <div className="w-72 rounded-[3rem] border-4 border-[#1a1a1a] bg-white shadow-2xl overflow-hidden">
-                <div className="bg-[#1a1a1a] px-6 py-2 flex justify-between items-center">
-                  <span className="text-white text-xs font-bold">9:41</span>
-                  <span className="text-white text-xs">●●●</span>
-                </div>
-                <div className="bg-[#F6EFE3] p-4">
-                  <div className="flex items-center justify-between mb-4">
-                    <div>
-                      <p className="text-xs text-neutral-500">Good evening</p>
-                      <p className="text-xl font-black">Istanbul</p>
+              <div className="relative w-[300px] rounded-[3rem] bg-[#0a0a0a] p-3 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.5)]">
+                {/* Inner screen */}
+                <div className="relative overflow-hidden rounded-[2.4rem] bg-white">
+                  {/* Status bar */}
+                  <div className="relative flex items-center justify-between px-7 pt-4 pb-2">
+                    <span className="text-[13px] font-semibold text-black">9:41</span>
+                    {/* Dynamic Island */}
+                    <div className="absolute left-1/2 top-3 h-7 w-24 -translate-x-1/2 rounded-full bg-black" />
+                    <div className="flex items-center gap-1 text-black">
+                      {/* Signal */}
+                      <svg width="17" height="11" viewBox="0 0 17 11" fill="currentColor">
+                        <rect x="0" y="7" width="3" height="4" rx="0.5" />
+                        <rect x="4.5" y="5" width="3" height="6" rx="0.5" />
+                        <rect x="9" y="2.5" width="3" height="8.5" rx="0.5" />
+                        <rect x="13.5" y="0" width="3" height="11" rx="0.5" />
+                      </svg>
+                      {/* Wifi */}
+                      <svg width="15" height="11" viewBox="0 0 15 11" fill="currentColor">
+                        <path d="M7.5 0C4.6 0 1.9 1.1 0 2.9l1.4 1.5C2.9 2.9 5.1 2 7.5 2s4.6.9 6.1 2.4L15 2.9C13.1 1.1 10.4 0 7.5 0zm0 4c-1.9 0-3.6.7-5 1.9l1.4 1.4C5 6.4 6.2 6 7.5 6c1.3 0 2.5.4 3.5 1.3l1.4-1.4C11.1 4.7 9.4 4 7.5 4zm0 4c-.9 0-1.8.3-2.5.9l1.5 1.6C7 10 7.2 9.9 7.5 9.9c.3 0 .5.1.5.1l1.5-1.6C8.8 8.3 7.9 8 7.5 8z" />
+                      </svg>
+                      {/* Battery */}
+                      <svg width="27" height="11" viewBox="0 0 27 11" fill="none">
+                        <rect x="0.5" y="0.5" width="22" height="10" rx="2.5" stroke="currentColor" />
+                        <rect x="2" y="2" width="19" height="7" rx="1" fill="currentColor" />
+                        <rect x="23.5" y="3.5" width="2" height="4" rx="0.5" fill="currentColor" />
+                      </svg>
                     </div>
-                    <span className="rounded-full bg-green-100 px-2 py-1 text-xs font-bold text-green-700">● Live</span>
                   </div>
-                  {[
-                    { color: "bg-purple-500", label: "VibeNow", sub: "Instant Guide", text: "Find a local guide near you and go." },
-                    { color: "bg-orange-400", label: "VibeSquad", sub: "Group Experience", text: "Travel together. Pay less." },
-                    { color: "bg-green-500", label: "Private Tours", sub: "Planned Experience", text: "Your trip, your pace." },
-                  ].map((item) => (
-                    <div key={item.label} className="mb-3 rounded-2xl bg-white p-3 shadow-sm">
-                      <div className="flex items-center gap-3">
-                        <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${item.color} text-white text-lg`}>
-                          {item.label === "VibeNow" ? "⚡" : item.label === "VibeSquad" ? "👥" : "📅"}
-                        </div>
-                        <div>
-                          <p className="text-xs font-black text-[#6366f1]">{item.label}</p>
-                          <p className="text-xs font-black text-neutral-500">{item.sub}</p>
-                          <p className="text-xs font-semibold mt-0.5">{item.text}</p>
-                        </div>
+
+                  {/* App content */}
+                  <div className="px-5 pt-3 pb-6">
+                    <div className="mb-5 flex items-end justify-between">
+                      <div>
+                        <p className="text-xs font-medium text-neutral-400">Good evening</p>
+                        <p className="text-2xl font-black leading-tight">Istanbul</p>
                       </div>
+                      <span className="flex items-center gap-1 rounded-full bg-green-100 px-2.5 py-1 text-[10px] font-bold text-green-700">
+                        <span className="h-1.5 w-1.5 rounded-full bg-green-600" />
+                        Live
+                      </span>
                     </div>
-                  ))}
+
+                    <div className="space-y-3">
+                      {[
+                        { color: "bg-[#7C3AED]", icon: "⚡", label: "VibeNow", sub: "Instant Guide", text: "Find a local guide near you and go." },
+                        { color: "bg-[#F59E0B]", icon: "👥", label: "VibeSquad", sub: "Group Experience", text: "Travel together. Pay less." },
+                        { color: "bg-[#10B981]", icon: "📅", label: "Private Tours", sub: "Planned Experience", text: "Your trip, your pace." },
+                      ].map((item) => (
+                        <div key={item.label} className="rounded-2xl border border-neutral-100 bg-white p-3 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
+                          <div className="flex items-start gap-3">
+                            <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${item.color} text-white text-base`}>
+                              {item.icon}
+                            </div>
+                            <div className="min-w-0 flex-1">
+                              <p className="text-[13px] font-black leading-tight">{item.label}</p>
+                              <p className="text-[10px] font-bold uppercase tracking-wide text-neutral-400">{item.sub}</p>
+                              <p className="mt-1 text-[11px] leading-snug text-neutral-600">{item.text}</p>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Home indicator */}
+                    <div className="mt-5 flex justify-center">
+                      <div className="h-1 w-24 rounded-full bg-black" />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
