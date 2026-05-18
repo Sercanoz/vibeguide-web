@@ -87,33 +87,33 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Phone mockup */}
-          <div className="mx-auto w-full max-w-[420px]">
+          {/* Phone mockup — narrower & taller */}
+          <div className="mx-auto w-full max-w-[320px]">
             <Phone>
-              <div className="px-6 pt-6 pb-8">
+              <div className="px-5 pt-7 pb-10">
                 <div className="flex items-center justify-end">
                   <span className="flex items-center gap-1.5 rounded-full bg-green-100 px-3 py-1.5 text-xs font-bold text-green-700">
                     <span className="h-2 w-2 rounded-full bg-green-600" /> Live
                   </span>
                 </div>
-                <p className="mt-4 text-sm font-semibold text-neutral-500">Good evening</p>
+                <p className="mt-6 text-sm font-semibold text-neutral-500">Good evening</p>
                 <h2 className="text-3xl font-black">Istanbul</h2>
 
-                <div className="mt-6 space-y-4">
+                <div className="mt-8 space-y-5">
                   {[
                     { color: "bg-[#FFD84D]", icon: "⚡", title: "VibeNow", text: "Find a local guide near you and go." },
                     { color: "bg-[#B8F2D0]", icon: "👥", title: "VibeSquad", text: "Travel together. Pay less." },
                     { color: "bg-[#D8C7FF]", icon: "📅", title: "Private Tours", text: "Your trip, your pace." },
                   ].map((c) => (
-                    <div key={c.title} className={`flex items-center gap-4 rounded-2xl ${c.color} p-4 shadow-sm`}>
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/80 text-xl shadow-sm">
+                    <div key={c.title} className={`flex items-center gap-3 rounded-2xl ${c.color} p-4 shadow-sm`}>
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/80 text-lg shadow-sm">
                         {c.icon}
                       </div>
-                      <div className="flex-1">
-                        <p className="text-base font-black">{c.title}</p>
-                        <p className="text-xs leading-snug text-neutral-700">{c.text}</p>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-black">{c.title}</p>
+                        <p className="text-[11px] leading-snug text-neutral-700">{c.text}</p>
                       </div>
-                      <span className="text-neutral-700">→</span>
+                      <span className="text-neutral-700 text-sm">→</span>
                     </div>
                   ))}
                 </div>
