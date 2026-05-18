@@ -34,9 +34,9 @@ const images = {
   istanbul:
     "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80&w=900",
   cappadocia:
-    "https://images.unsplash.com/photo-1527838832700-5059252407fa?q=80&w=900",
+    "https://static.independent.co.uk/2025/07/30/13/15/iStock-1339814820.jpeg?crop=1370.7,1370.7,x342.7,y43.7&width=1200&height=1200",
   ephesus:
-    "https://images.unsplash.com/photo-1589561253898-768105ca91a8?q=80&w=900",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVBHO_La8teZgkRSYhHRRlrKaEczLIqYuJqQ&s",
   bottom:
     "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1400",
 };
