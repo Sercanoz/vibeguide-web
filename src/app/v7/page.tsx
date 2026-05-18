@@ -88,32 +88,32 @@ export default function HomePage() {
           </div>
 
           {/* Phone mockup */}
-          <div className="mx-auto w-full max-w-[320px]">
+          <div className="mx-auto w-full max-w-[420px]">
             <Phone>
-              <div className="px-5 pt-5 pb-6">
+              <div className="px-6 pt-6 pb-8">
                 <div className="flex items-center justify-end">
-                  <span className="flex items-center gap-1 rounded-full bg-green-100 px-2.5 py-1 text-[11px] font-bold text-green-700">
-                    <span className="h-1.5 w-1.5 rounded-full bg-green-600" /> Live
+                  <span className="flex items-center gap-1.5 rounded-full bg-green-100 px-3 py-1.5 text-xs font-bold text-green-700">
+                    <span className="h-2 w-2 rounded-full bg-green-600" /> Live
                   </span>
                 </div>
-                <p className="mt-3 text-xs font-semibold text-neutral-500">Good evening</p>
-                <h2 className="text-2xl font-black">Istanbul</h2>
+                <p className="mt-4 text-sm font-semibold text-neutral-500">Good evening</p>
+                <h2 className="text-3xl font-black">Istanbul</h2>
 
-                <div className="mt-5 space-y-3">
+                <div className="mt-6 space-y-4">
                   {[
                     { color: "bg-[#FFD84D]", icon: "⚡", title: "VibeNow", text: "Find a local guide near you and go." },
                     { color: "bg-[#B8F2D0]", icon: "👥", title: "VibeSquad", text: "Travel together. Pay less." },
                     { color: "bg-[#D8C7FF]", icon: "📅", title: "Private Tours", text: "Your trip, your pace." },
                   ].map((c) => (
-                    <div key={c.title} className="flex items-center gap-3 rounded-2xl bg-white p-3 shadow-sm">
-                      <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${c.color} text-lg`}>
+                    <div key={c.title} className={`flex items-center gap-4 rounded-2xl ${c.color} p-4 shadow-sm`}>
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/80 text-xl shadow-sm">
                         {c.icon}
                       </div>
                       <div className="flex-1">
-                        <p className="text-sm font-black">{c.title}</p>
-                        <p className="text-[11px] leading-snug text-neutral-600">{c.text}</p>
+                        <p className="text-base font-black">{c.title}</p>
+                        <p className="text-xs leading-snug text-neutral-700">{c.text}</p>
                       </div>
-                      <span className="text-neutral-300">→</span>
+                      <span className="text-neutral-700">→</span>
                     </div>
                   ))}
                 </div>
