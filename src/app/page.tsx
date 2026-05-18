@@ -53,9 +53,11 @@ export default function HomePage() {
             </h1>
 
             <p className="mt-6 max-w-xl text-base leading-7 text-neutral-700">
-              Discover Istanbul with verified local guides. Choose an instant guide,
-              join a social group experience, or reserve a private tour in Turkey —
-              without tourist traps, confusion, or boring scripts.
+              Forget the audio guides and crowded buses. VibeGuide drops you next to a
+              <strong> verified local</strong> who actually lives the city — in
+              <strong> 60 seconds with VibeNow</strong>, with travelers like you through
+              <strong> VibeSquad</strong>, or as a polished day out with a
+              <strong> Private Tour</strong>. One app. Three ways. Zero tourist traps.
             </p>
 
             <div className="mt-6 flex flex-wrap items-center gap-6 text-sm font-semibold">
@@ -101,9 +103,9 @@ export default function HomePage() {
 
                 <div className="mt-8 space-y-5">
                   {[
-                    { color: "bg-[#FFD84D]", icon: "⚡", title: "VibeNow", text: "Find a local guide near you and go." },
-                    { color: "bg-[#B8F2D0]", icon: "👥", title: "VibeSquad", text: "Travel together. Pay less." },
-                    { color: "bg-[#D8C7FF]", icon: "📅", title: "Private Tours", text: "Your trip, your pace." },
+                    { color: "bg-[#FFD84D]", icon: "⚡", title: "VibeNow", text: "Tap. Match. Walk out the door in 60 seconds." },
+                    { color: "bg-[#B8F2D0]", icon: "👥", title: "VibeSquad", text: "Join travelers heading the same way. Split the price." },
+                    { color: "bg-[#D8C7FF]", icon: "📅", title: "Private Tours", text: "Hand-pick your guide. Plan the perfect day." },
                   ].map((c) => (
                     <div key={c.title} className={`flex items-center gap-3 rounded-2xl ${c.color} p-4 shadow-sm`}>
                       <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/80 text-lg shadow-sm">
@@ -132,10 +134,14 @@ export default function HomePage() {
                 Live City Energy
               </p>
               <h2 className="mt-3 text-2xl font-black md:text-3xl">
-                Istanbul is moving.
+                Istanbul never stops.
                 <br />
-                Catch the right moment.
+                Catch it while it&apos;s alive.
               </h2>
+              <p className="mt-3 text-sm leading-6 text-white/60">
+                Real-time pulse from the streets. While you read this, travelers and guides
+                are matching, walking and discovering.
+              </p>
             </div>
             <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
               {[
@@ -159,18 +165,35 @@ export default function HomePage() {
 
       {/* MODE CARDS */}
       <section className="mx-auto max-w-7xl px-6 py-10">
+        <div className="mb-10 max-w-2xl">
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-neutral-500">
+            Three ways. One promise.
+          </p>
+          <h2 className="mt-3 text-3xl font-black tracking-tight md:text-4xl">
+            Pick how you want to meet your city.
+          </h2>
+          <p className="mt-3 text-base leading-7 text-neutral-700">
+            Last-minute and curious? Social and budget-aware? Or planning the day of your life?
+            VibeGuide has a mode for every traveler — built around real local guides, not scripts.
+          </p>
+        </div>
+
         <div className="grid gap-6 md:grid-cols-3">
           {/* VibeNow */}
           <article id="vibenow" className="overflow-hidden rounded-[2rem] bg-[#FFD84D] p-6 shadow-sm">
             <div className="grid grid-cols-[1fr_auto] gap-4">
               <div>
-                <p className="text-[10px] font-black uppercase tracking-widest">VIBENOW</p>
-                <h2 className="mt-2 text-2xl font-black leading-tight">Instant Guide</h2>
-                <p className="mt-2 text-xs leading-5 text-neutral-700">Find a verified local guide near you for today&apos;s plans.</p>
+                <p className="text-[10px] font-black uppercase tracking-widest">VIBENOW · INSTANT</p>
+                <h2 className="mt-2 text-2xl font-black leading-tight">Tap. Match. Go.</h2>
+                <p className="mt-2 text-xs leading-5 text-neutral-700">
+                  Open the app and a verified local is on the way in under a minute.
+                  Perfect when you&apos;ve just landed, just woke up, or just decided
+                  &quot;let&apos;s do something today.&quot;
+                </p>
                 <ul className="mt-4 space-y-1.5 text-[11px] font-semibold text-neutral-700">
-                  <li>• Instant matching</li>
-                  <li>• Perfect for today</li>
-                  <li>• Museums, food walks, city routes &amp; more</li>
+                  <li>⚡ 60-second matching</li>
+                  <li>📍 Real guides near you, right now</li>
+                  <li>🏛️ Museums, food walks, hidden streets</li>
                 </ul>
                 <button className="mt-5 flex items-center gap-2 rounded-full bg-black px-4 py-2 text-xs font-bold text-white">
                   Find Now <span>→</span>
@@ -204,13 +227,17 @@ export default function HomePage() {
           <article id="vibesquad" className="overflow-hidden rounded-[2rem] bg-[#B8F2D0] p-6 shadow-sm">
             <div className="grid grid-cols-[1fr_auto] gap-4">
               <div>
-                <p className="text-[10px] font-black uppercase tracking-widest">VIBESQUAD</p>
-                <h2 className="mt-2 text-2xl font-black leading-tight">Group Experience</h2>
-                <p className="mt-2 text-xs leading-5 text-neutral-700">Join other travelers, share the guide cost, and explore together.</p>
+                <p className="text-[10px] font-black uppercase tracking-widest">VIBESQUAD · SOCIAL</p>
+                <h2 className="mt-2 text-2xl font-black leading-tight">Travel together. Pay less.</h2>
+                <p className="mt-2 text-xs leading-5 text-neutral-700">
+                  Start a squad or jump into one. As more travelers join the same route,
+                  the price per person drops. Same guide, same city, half the cost,
+                  ten times the stories.
+                </p>
                 <ul className="mt-4 space-y-1.5 text-[11px] font-semibold text-neutral-700">
-                  <li>• Shared guide cost</li>
-                  <li>• Social travel experience</li>
-                  <li>• Great for solo travelers, couples &amp; friends</li>
+                  <li>💸 Smarter group pricing</li>
+                  <li>🌍 Meet travelers from everywhere</li>
+                  <li>🤝 Solo? Couple? Best with friends</li>
                 </ul>
                 <button className="mt-5 flex items-center gap-2 rounded-full bg-black px-4 py-2 text-xs font-bold text-white">
                   Create or Join <span>→</span>
@@ -245,13 +272,17 @@ export default function HomePage() {
           <article id="private" className="overflow-hidden rounded-[2rem] bg-[#D8C7FF] p-6 shadow-sm">
             <div className="grid grid-cols-[1fr_auto] gap-4">
               <div>
-                <p className="text-[10px] font-black uppercase tracking-widest">PRIVATE TOURS</p>
-                <h2 className="mt-2 text-2xl font-black leading-tight">Planned Experience</h2>
-                <p className="mt-2 text-xs leading-5 text-neutral-700">Reserve a private guide for your perfect day.</p>
+                <p className="text-[10px] font-black uppercase tracking-widest">PRIVATE TOURS · PLANNED</p>
+                <h2 className="mt-2 text-2xl font-black leading-tight">Your day, perfectly tailored.</h2>
+                <p className="mt-2 text-xs leading-5 text-neutral-700">
+                  Pick your guide, your language, your pace. Licensed tourist guides
+                  craft a route just for you — Hagia Sophia at sunrise, Bosphorus by boat,
+                  food crawl by night. You decide, they deliver.
+                </p>
                 <ul className="mt-4 space-y-1.5 text-[11px] font-semibold text-neutral-700">
-                  <li>• Private walking tours</li>
-                  <li>• Flexible language options</li>
-                  <li>• Clear routes and expectations</li>
+                  <li>🎓 Licensed tourist guides</li>
+                  <li>🗣️ 9+ language options</li>
+                  <li>🗺️ Custom routes, zero surprises</li>
                 </ul>
                 <button className="mt-5 flex items-center gap-2 rounded-full bg-black px-4 py-2 text-xs font-bold text-white">
                   Reserve Now <span>→</span>
@@ -278,13 +309,32 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* MANIFESTO */}
+      <section className="mx-auto max-w-5xl px-6 py-20 text-center">
+        <p className="text-xs font-bold uppercase tracking-[0.25em] text-neutral-500">
+          Why VibeGuide Exists
+        </p>
+        <h2 className="mt-4 text-3xl font-black tracking-tight md:text-5xl">
+          Tourism became too robotic.
+          <br />
+          <span className="text-neutral-400">We&apos;re making it human again.</span>
+        </h2>
+        <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-neutral-700 md:text-lg">
+          Bus tours read the same script in every city. QR codes replaced real conversations.
+          Travelers spend more time queuing than discovering. <strong>VibeGuide flips it.</strong>
+          One tap, one local, one real day. Whether you go solo with VibeNow, join a squad
+          with VibeSquad, or plan it all with Private Tours — there&apos;s always a real human
+          on the other side. <strong>No scripts. No traps. Just the city, told by someone who lives it.</strong>
+        </p>
+      </section>
+
       {/* EXPLORE BY VIBE + TRUST & SAFETY (side by side) */}
       <section className="mx-auto max-w-7xl px-6 py-10">
         <div className="grid gap-8 md:grid-cols-[2fr_1fr]">
           {/* Vibe categories */}
           <div>
             <h2 className="text-2xl font-black">Explore by vibe</h2>
-            <p className="mt-1 text-sm text-neutral-600">Choose the feeling, not just the place.</p>
+            <p className="mt-1 text-sm text-neutral-600">Choose the feeling — we&apos;ll match the place and the guide.</p>
 
             <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
               {[
