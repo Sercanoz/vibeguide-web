@@ -12,11 +12,9 @@ export default function JsonLd() {
         name: "VibeGuide",
         url: "https://www.vibeguideapp.com",
         logo: "https://www.vibeguideapp.com/icon.png",
-        sameAs: [
-          "https://github.com/Sercanoz/vibeguide-web",
-        ],
+        sameAs: [],
         description:
-          "VibeGuide matches travelers with real local guides in 60 seconds. Solo with VibeNow ⚡, in groups with VibeSquad ✨.",
+          "VibeGuide connects travelers with verified local guides for instant tours, group experiences and private tours in Istanbul, Cappadocia and Ephesus.",
       },
       {
         "@type": "WebSite",
@@ -37,15 +35,24 @@ export default function JsonLd() {
           price: "0",
           priceCurrency: "USD",
         },
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: "4.9",
-          ratingCount: "50000",
-          bestRating: "5",
-          worstRating: "1",
-        },
         description:
-          "Find a local tour guide in any city. VibeNow for instant 1-on-1 matches, VibeSquad for cheaper group tours.",
+          "Discover Istanbul, Cappadocia and Ephesus with verified local guides. VibeNow for instant matching, VibeSquad for group experiences, Private Tours for planned days.",
+      },
+      {
+        "@type": "TouristTrip",
+        "@id": "https://www.vibeguideapp.com/#istanbul-tours",
+        name: "Istanbul Tours with Local Guides",
+        description:
+          "Hagia Sophia, Blue Mosque, Topkapi Palace, Grand Bazaar, Bosphorus, Balat, Galata and Old Istanbul walking tours with verified local guides.",
+        touristType: ["Solo travelers", "Couples", "Families", "Groups"],
+        itinerary: {
+          "@type": "ItemList",
+          itemListElement: [
+            { "@type": "City", name: "Istanbul" },
+            { "@type": "City", name: "Cappadocia" },
+            { "@type": "City", name: "Ephesus" },
+          ],
+        },
       },
     ],
   };
