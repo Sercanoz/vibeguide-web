@@ -10,6 +10,12 @@ const OPTIONS: { code: Locale; flag: string; label: string }[] = [
   { code: "de", flag: "🇩🇪", label: "Deutsch" },
   { code: "ru", flag: "🇷🇺", label: "Русский" },
   { code: "es", flag: "🇪🇸", label: "Español" },
+  { code: "it", flag: "🇮🇹", label: "Italiano" },
+  { code: "el", flag: "🇬🇷", label: "Ελληνικά" },
+  { code: "bg", flag: "🇧🇬", label: "Български" },
+  { code: "sr", flag: "🇷🇸", label: "Српски" },
+  { code: "hr", flag: "🇭🇷", label: "Hrvatski" },
+  { code: "ko", flag: "🇰🇷", label: "한국어" },
   { code: "ja", flag: "🇯🇵", label: "日本語" },
   { code: "zh", flag: "🇨🇳", label: "中文" },
 ];
@@ -42,7 +48,7 @@ export default function LocaleSwitcher() {
       </button>
 
       {open && (
-        <div className="absolute right-0 top-full z-50 mt-2 w-44 overflow-hidden rounded-2xl border border-neutral-100 bg-white shadow-xl">
+        <div className="absolute right-0 top-full z-50 mt-2 max-h-96 w-44 overflow-y-auto rounded-2xl border border-neutral-100 bg-white shadow-xl">
           {OPTIONS.map((opt) => (
             <button
               key={opt.code}

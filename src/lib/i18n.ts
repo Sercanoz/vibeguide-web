@@ -1,4 +1,4 @@
-export const locales = ["en", "tr", "de", "fr", "hr", "ro", "zh", "ru", "es", "ko", "el", "ja"] as const;
+export const locales = ["en", "tr", "de", "fr", "hr", "ro", "zh", "ru", "es", "ko", "el", "ja", "bg", "sr", "it"] as const;
 export type Locale = (typeof locales)[number];
 
 export const localeMeta: Record<Locale, { flagCode: string; label: string }> = {
@@ -14,6 +14,9 @@ export const localeMeta: Record<Locale, { flagCode: string; label: string }> = {
   ko: { flagCode: "kr", label: "한국어" },
   el: { flagCode: "gr", label: "EL" },
   ja: { flagCode: "jp", label: "日本語" },
+  bg: { flagCode: "bg", label: "BG" },
+  sr: { flagCode: "rs", label: "SR" },
+  it: { flagCode: "it", label: "IT" },
 };
 
 type Dict = {
@@ -1396,5 +1399,8 @@ const i18nBase = {
 
 export const i18n: Record<Locale, Dict> = {
   ...i18nBase,
-  ja: i18nBase.en, // Japonca fallback EN — anasayfa için home-i18n.ts'te tam çeviri var
+  ja: i18nBase.en, // Anasayfa için home-i18n.ts'te tam çeviri var
+  bg: i18nBase.en,
+  sr: i18nBase.en,
+  it: i18nBase.en,
 };
