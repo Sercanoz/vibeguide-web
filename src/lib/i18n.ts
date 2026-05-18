@@ -1,4 +1,4 @@
-export const locales = ["en", "tr", "de", "fr", "hr", "ro", "zh", "ru", "es", "ko", "el"] as const;
+export const locales = ["en", "tr", "de", "fr", "hr", "ro", "zh", "ru", "es", "ko", "el", "ja"] as const;
 export type Locale = (typeof locales)[number];
 
 export const localeMeta: Record<Locale, { flagCode: string; label: string }> = {
@@ -13,6 +13,7 @@ export const localeMeta: Record<Locale, { flagCode: string; label: string }> = {
   es: { flagCode: "es", label: "ES" },
   ko: { flagCode: "kr", label: "한국어" },
   el: { flagCode: "gr", label: "EL" },
+  ja: { flagCode: "jp", label: "日本語" },
 };
 
 type Dict = {
@@ -81,7 +82,7 @@ type Dict = {
   };
 };
 
-export const i18n: Record<Locale, Dict> = {
+const i18nBase = {
   en: {
     nav: { vibenow: "VibeNow ⚡", vibesquad: "VibeSquad ✨", how: "How it works", guides: "For Guides", cta: "Get the app" },
     hero: {
@@ -1391,4 +1392,9 @@ export const i18n: Record<Locale, Dict> = {
       madeWith: "Φτιαγμένο με ♥ στο δρόμο.",
     },
   },
+};
+
+export const i18n: Record<Locale, Dict> = {
+  ...i18nBase,
+  ja: i18nBase.en, // Japonca fallback EN — anasayfa için home-i18n.ts'te tam çeviri var
 };

@@ -9,6 +9,9 @@ const OPTIONS: { code: Locale; flag: string; label: string }[] = [
   { code: "tr", flag: "🇹🇷", label: "Türkçe" },
   { code: "de", flag: "🇩🇪", label: "Deutsch" },
   { code: "ru", flag: "🇷🇺", label: "Русский" },
+  { code: "es", flag: "🇪🇸", label: "Español" },
+  { code: "ja", flag: "🇯🇵", label: "日本語" },
+  { code: "zh", flag: "🇨🇳", label: "中文" },
 ];
 
 export default function LocaleSwitcher() {
