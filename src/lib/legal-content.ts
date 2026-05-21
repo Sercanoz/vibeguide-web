@@ -75,7 +75,8 @@ export const privacy: Record<LegalLocale, PrivacyDict> = {
           "Cloud infrastructure (Google Firebase, Railway, Cloudflare) — hosts the app and back-end. Data may be processed in the EU and the United States under standard contractual clauses.",
           "Anti-fraud and analytics providers (Sentry, Firebase Analytics) — receive anonymised crash and usage data.",
           "Public authorities — only when required by a valid court order or by Turkish or EU law.",
-          "We never sell your personal data.",
+          "Business transfers — if VibeGuide is involved in a merger, acquisition, investment, restructuring, sale of assets, or insolvency, personal data may be transferred as part of that transaction. The acquirer will be bound by privacy commitments at least as protective as those in this Policy. We will notify you in-app or by email at least 14 days before such transfer takes effect.",
+          "We never sell your personal data to advertisers or data brokers.",
         ],
       },
       {
@@ -111,23 +112,36 @@ export const privacy: Record<LegalLocale, PrivacyDict> = {
         ],
       },
       {
-        h: "8. Cookies and analytics",
-        p: "Our marketing website uses essential cookies only (locale preference). The mobile app does not use third-party advertising trackers. Anonymised analytics may be collected to improve the product.",
+        h: "8. Cookies, SDKs and analytics",
+        list: [
+          "Our marketing website uses essential cookies only (locale preference, session). We do not use third-party advertising cookies.",
+          "The mobile app uses SDKs from Firebase (auth, push, storage), Sentry (crash reporting) and iyzico (payments). These do not include behavioural advertising trackers.",
+          "Anonymised analytics may be collected to improve product performance and user experience. You can disable analytics from app Settings.",
+          "Purposes of cookies / SDKs: keep you signed in, route push notifications, detect fraud, analyse aggregated traffic, remember your language preference.",
+        ],
       },
       {
-        h: "9. Children",
-        p: "VibeGuide is not directed at children under 16. We do not knowingly collect data from minors. If you believe a child has registered, contact us and we will delete the account.",
+        h: "9. Marketing communications",
+        p: "We may send marketing emails or push notifications only with your prior consent. You can opt out at any time from app Settings or via the unsubscribe link in any marketing email. Withdrawing marketing consent does NOT stop transactional and service messages — booking confirmations, payment receipts, tour notifications, safety alerts, and security/account messages will continue, as they are necessary to perform the service.",
       },
       {
-        h: "10. Security",
+        h: "10. Third-party links",
+        p: "The VibeGuide app and website may contain links to third-party services (e.g. Google Maps, payment provider pages, tour partner websites). We are not responsible for the privacy practices, content, security or terms of those third-party services. Please review their own privacy policies before sharing information with them.",
+      },
+      {
+        h: "11. Children",
+        p: "VibeGuide is not directed at children under 16. Travellers under 18 must participate only under the supervision and responsibility of a parent or legal guardian, who is responsible for the booking and consents to this Policy on the minor's behalf. We do not knowingly collect data from children without appropriate parental involvement. If you believe a minor has registered without supervision, contact us and we will delete the account.",
+      },
+      {
+        h: "12. Security",
         p: "All traffic is encrypted in transit (HTTPS/TLS 1.2+). Authentication uses Firebase ID tokens; payment data is tokenised by iyzico. Despite these safeguards, no system is 100% secure — please use a strong password and enable two-factor authentication where available.",
       },
       {
-        h: "11. Changes",
+        h: "13. Changes",
         p: "If we make material changes to this Policy, we will notify you in-app and by email at least 14 days before they take effect. Continued use of the service after that date constitutes acceptance.",
       },
       {
-        h: "12. Contact",
+        h: "14. Contact",
         p: `Questions, complaints, or privacy requests: ${SUPPORT_EMAIL} or, for KVKK-specific matters, ${KVKK_EMAIL}.`,
       },
     ],
@@ -184,7 +198,8 @@ export const privacy: Record<LegalLocale, PrivacyDict> = {
           "Bulut altyapısı (Google Firebase, Railway, Cloudflare) — uygulama ve sunucu barındırma. Veriler standart sözleşme hükümleri kapsamında AB ve ABD'de işlenebilir.",
           "Analitik ve hata izleme (Sentry, Firebase Analytics) — anonimleştirilmiş çökme ve kullanım verisi alır.",
           "Yetkili kamu kurumları — yalnızca geçerli mahkeme kararı veya Türk/AB mevzuatı gereği talep edildiğinde.",
-          "Kişisel verilerinizi asla satmıyoruz.",
+          "Şirket değişiklikleri — VibeGuide birleşme, satın alma, yatırım, yeniden yapılanma, varlık satışı veya iflas süreçlerinden birine taraf olursa kişisel veriler bu işlemin parçası olarak aktarılabilir. Devralan en az bu Politika kadar koruyucu yükümlülüklere bağlı kalır. Bu tür bir aktarım yürürlüğe girmeden en az 14 gün önce uygulama içi ve e-posta ile bilgilendirme yaparız.",
+          "Kişisel verilerinizi reklamverenlere veya veri brokerlarına asla satmıyoruz.",
         ],
       },
       {
@@ -220,23 +235,36 @@ export const privacy: Record<LegalLocale, PrivacyDict> = {
         ],
       },
       {
-        h: "8. Çerezler ve analitik",
-        p: "Pazarlama sitemiz yalnızca zorunlu çerez kullanır (dil tercihi). Mobil uygulama üçüncü taraf reklam izleyicisi içermez. Ürün iyileştirmek için anonim analitik toplanabilir.",
+        h: "8. Çerezler, SDK'lar ve analitik",
+        list: [
+          "Pazarlama sitemiz yalnızca zorunlu çerezler kullanır (dil tercihi, oturum). Üçüncü taraf reklam çerezi kullanmıyoruz.",
+          "Mobil uygulama Firebase (kimlik, push, depolama), Sentry (hata raporu) ve iyzico (ödeme) SDK'larını kullanır. Davranışsal reklam takipçisi içermez.",
+          "Ürün performansı ve kullanıcı deneyimini iyileştirmek için anonim analitik toplanabilir. Uygulama Ayarlar'dan kapatabilirsiniz.",
+          "Çerez/SDK amaçları: oturumda tutmak, push bildirimi yönlendirmek, dolandırıcılığı tespit etmek, toplu trafiği analiz etmek, dil tercihinizi hatırlamak.",
+        ],
       },
       {
-        h: "9. Çocuklar",
-        p: "VibeGuide 16 yaş altına yönelik değildir. Reşit olmayanlardan bilerek veri toplamayız. Bir çocuğun kayıtlı olduğundan şüpheleniyorsanız bize bildirin, hesabı sileriz.",
+        h: "9. Pazarlama iletişimi",
+        p: "Pazarlama e-postası veya bildirim yalnızca önceden verdiğiniz açık rıza ile gönderilir. Uygulama Ayarlar'dan veya pazarlama e-postalarındaki abonelikten çıkma linkinden istediğiniz zaman vazgeçebilirsiniz. Pazarlama rızasının geri çekilmesi işlemsel ve hizmet mesajlarını DURDURMAZ — rezervasyon onayı, ödeme dekontu, tur bildirimi, güvenlik uyarısı ve hesap mesajları hizmetin ifası için zorunlu olduğundan gönderilmeye devam eder.",
       },
       {
-        h: "10. Güvenlik",
+        h: "10. Üçüncü taraf linkleri",
+        p: "VibeGuide uygulaması ve sitesi üçüncü taraf hizmetlere (örn. Google Maps, ödeme sağlayıcı sayfaları, tur partner web siteleri) link içerebilir. Bu hizmetlerin gizlilik uygulamaları, içerikleri, güvenliği veya şartlarından sorumlu değiliz. Bilgilerinizi paylaşmadan önce ilgili gizlilik politikalarını inceleyin.",
+      },
+      {
+        h: "11. Çocuklar",
+        p: "VibeGuide 16 yaş altına yönelik değildir. 18 yaş altı katılımcılar yalnızca veli/yasal vasinin gözetim ve sorumluluğunda yer alabilir; rezervasyondan veli sorumludur ve bu Politikayı çocuk adına kabul etmiş sayılır. Uygun veli/vasi katılımı olmaksızın çocuklardan bilerek veri toplamayız. Vasi gözetimi olmadan kayıt yapan bir çocuk fark ederseniz bize bildirin, hesabı sileriz.",
+      },
+      {
+        h: "12. Güvenlik",
         p: "Tüm trafik şifreli iletilir (HTTPS/TLS 1.2+). Kimlik doğrulama Firebase ID token'ı; ödeme verisi iyzico tarafından tokenize edilir. Yine de güçlü bir parola kullanmanızı ve mümkün olduğunda iki adımlı doğrulamayı açmanızı öneririz.",
       },
       {
-        h: "11. Politika değişiklikleri",
+        h: "13. Politika değişiklikleri",
         p: "Esaslı değişiklik olduğunda yürürlük tarihinden en az 14 gün önce uygulama içinden ve e-posta ile bildiririz. O tarihten sonra hizmet kullanımı kabul anlamına gelir.",
       },
       {
-        h: "12. İletişim",
+        h: "14. İletişim",
         p: `Soru, şikayet ve gizlilik talepleri: ${SUPPORT_EMAIL} veya KVKK özelinde ${KVKK_EMAIL}.`,
       },
     ],
