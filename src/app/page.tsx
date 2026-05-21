@@ -344,7 +344,7 @@ export default function HomePage() {
               <h4 className="text-sm font-black">{t.footer.support}</h4>
               <ul className="mt-3 space-y-2 text-xs text-neutral-600">
                 <li><a href="mailto:support@vibeguideapp.com" className="hover:text-black">Help Center</a></li>
-                <li><a href="/terms" className="hover:text-black">Terms</a></li>
+                <li><a href="/terms" className="hover:text-black">Terms of Service</a></li>
                 <li><a href="/privacy" className="hover:text-black">Privacy</a></li>
                 <li><a href="/account-deletion" className="hover:text-black">Account Deletion</a></li>
               </ul>
