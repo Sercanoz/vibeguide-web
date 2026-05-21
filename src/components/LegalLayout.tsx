@@ -1,7 +1,6 @@
 "use client";
 
-import Nav from "./Nav";
-import Footer from "./Footer";
+import LocaleSwitcher from "./LocaleSwitcher";
 
 export default function LegalLayout({
   title,
@@ -17,50 +16,108 @@ export default function LegalLayout({
   children: React.ReactNode;
 }) {
   return (
-    <>
-      <Nav />
-      <main className="flex-1">
-        <section className="relative overflow-hidden">
-          <div className="absolute inset-0 -z-10">
-            <div className="absolute -top-32 -left-32 w-[420px] h-[420px] rounded-full bg-vg-primary/15 blur-3xl" />
-            <div className="absolute top-40 -right-40 w-[420px] h-[420px] rounded-full bg-vg-flame/10 blur-3xl" />
-          </div>
-          <div className="max-w-3xl mx-auto px-5 sm:px-8 pt-12 pb-6 md:pt-20">
-            <h1 className="text-4xl md:text-5xl font-black tracking-tight leading-[1.05]">
-              <span className="text-vibe-gradient">{title}</span>
-            </h1>
-            {lastUpdated && lastUpdatedLabel && (
-              <p className="mt-3 text-xs font-bold uppercase tracking-widest text-vg-muted">
-                {lastUpdatedLabel}: {lastUpdated}
+    <div className="min-h-screen bg-[#FAF7F0] text-[#171717]">
+      {/* NAV — matches homepage v7 */}
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+        <a href="/" className="text-2xl font-bold tracking-tight">VibeGuide</a>
+        <div className="hidden gap-8 text-sm font-medium md:flex">
+          <a href="/#vibenow">VibeNow</a>
+          <a href="/#vibesquad">VibeSquad</a>
+          <a href="/#private">Private Tours</a>
+          <a href="/#destinations">Destinations</a>
+          <a href="/#guides">For Guides</a>
+        </div>
+        <div className="flex items-center gap-3">
+          <LocaleSwitcher />
+          <a href="/#download" className="rounded-full bg-black px-6 py-2.5 text-sm font-semibold text-white">
+            Get the App
+          </a>
+        </div>
+      </nav>
+
+      {/* HERO */}
+      <section className="mx-auto max-w-3xl px-6 pt-10 pb-6 md:pt-16">
+        <h1 className="text-4xl font-black tracking-tight leading-[1.05] md:text-5xl">
+          {title}
+        </h1>
+        {lastUpdated && lastUpdatedLabel && (
+          <p className="mt-4 text-xs font-bold uppercase tracking-widest text-neutral-500">
+            {lastUpdatedLabel}: {lastUpdated}
+          </p>
+        )}
+        {intro && (
+          <p className="mt-6 text-base leading-7 text-neutral-700 md:text-lg">
+            {intro}
+          </p>
+        )}
+      </section>
+
+      {/* CONTENT */}
+      <article className="mx-auto max-w-3xl px-6 pb-20 prose-vg">
+        {children}
+      </article>
+
+      {/* FOOTER — matches homepage v7 */}
+      <footer className="mt-10 border-t border-black/10 px-6 py-12">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-8 md:grid-cols-[2fr_1fr_1fr_1fr_1.5fr]">
+            <div>
+              <h3 className="text-xl font-black">VibeGuide</h3>
+              <p className="mt-3 max-w-xs text-xs leading-5 text-neutral-600">
+                Instant local guides, private tours, walking tours, group tours
+                and authentic city experiences in Turkey.
               </p>
-            )}
-            {intro && (
-              <p className="mt-6 text-lg text-vg-muted leading-relaxed">
-                {intro}
+            </div>
+            <div>
+              <h4 className="text-sm font-black">Product</h4>
+              <ul className="mt-3 space-y-2 text-xs text-neutral-600">
+                <li><a href="/#vibenow">VibeNow</a></li>
+                <li><a href="/#vibesquad">VibeSquad</a></li>
+                <li><a href="/#private">Private Tours</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-sm font-black">Destinations</h4>
+              <ul className="mt-3 space-y-2 text-xs text-neutral-600">
+                <li>Istanbul Tours</li>
+                <li>Cappadocia Tours</li>
+                <li>Ephesus Tours</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-sm font-black">Support</h4>
+              <ul className="mt-3 space-y-2 text-xs text-neutral-600">
+                <li><a href="mailto:support@vibeguideapp.com">Help Center</a></li>
+                <li><a href="/terms">Terms</a></li>
+                <li><a href="/privacy">Privacy</a></li>
+                <li><a href="/account-deletion">Account Deletion</a></li>
+              </ul>
+            </div>
+            <div className="text-right">
+              <p className="text-xs text-neutral-500">© 2026 VibeGuide. All rights reserved.</p>
+              <p className="mt-3 text-[11px] leading-5 text-neutral-500">
+                #istanbultours · #guideinistanbul · #turkeytour
+                <br />#oldistanbultour · #privatetour · #localguide
               </p>
-            )}
+            </div>
           </div>
-        </section>
-        <article className="max-w-3xl mx-auto px-5 sm:px-8 pb-20 prose-vg">
-          {children}
-        </article>
-      </main>
-      <Footer />
+        </div>
+      </footer>
 
       <style jsx global>{`
         .prose-vg h2 {
-          font-size: 1.35rem;
+          font-size: 1.25rem;
           font-weight: 800;
           margin-top: 2.5rem;
           margin-bottom: 0.75rem;
-          color: var(--vg-ink);
+          color: #171717;
           letter-spacing: -0.01em;
         }
         .prose-vg p {
-          color: var(--vg-muted);
+          color: #404040;
           line-height: 1.75;
           margin-bottom: 0.75rem;
-          font-size: 1rem;
+          font-size: 0.95rem;
         }
         .prose-vg ul {
           list-style: disc;
@@ -68,17 +125,17 @@ export default function LegalLayout({
           margin-bottom: 1rem;
         }
         .prose-vg ul li {
-          color: var(--vg-muted);
+          color: #404040;
           line-height: 1.7;
           margin-bottom: 0.45rem;
-          font-size: 1rem;
+          font-size: 0.95rem;
         }
         .prose-vg a {
-          color: var(--vg-primary);
+          color: #6c4cf1;
           font-weight: 600;
           text-decoration: underline;
         }
       `}</style>
-    </>
+    </div>
   );
 }
