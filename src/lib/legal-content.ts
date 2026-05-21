@@ -320,36 +320,80 @@ export const terms: Record<LegalLocale, TermsDict> = {
         ],
       },
       {
-        h: "8. Liability",
+        h: "8. Off-platform transactions",
         list: [
-          "VibeGuide is a marketplace. We are not a party to the tour contract between tourist and guide and are not liable for the content or quality of the tour.",
-          "Our maximum aggregate liability is limited to the amount you paid for the affected booking in the 12 months preceding the claim.",
-          "Nothing in these Terms limits liability for gross negligence, wilful misconduct, or where Turkish consumer law forbids exclusion.",
-          "We are not liable for force majeure events: natural disasters, strikes, government action, or epidemic-related closures.",
+          "Tourists and guides must not bypass VibeGuide. You agree NOT to:",
+          "— Request or accept payments outside the platform.",
+          "— Move a VibeGuide booking off-platform once a match has been made.",
+          "— Exchange phone numbers, social media or contact details for the purpose of avoiding VibeGuide.",
+          "— Re-book the same guide directly to avoid VibeGuide commissions, cancellation rules or refund policies.",
+          "Detected violations may result in suspension, removal of the booking, forfeiture of pending payouts, or permanent termination.",
         ],
       },
       {
-        h: "9. Intellectual property",
+        h: "9. Community standards",
+        p: "VibeGuide is a place to meet humans, not a place to hurt them. We have zero tolerance for: harassment, hate speech, racism, sexism, religious or LGBTQ+ discrimination, threats, violence, sexual misconduct, fraud, unsafe driving or guiding, exploitation of local communities, defacement of cultural/historical sites. Reports are investigated and may result in immediate suspension, regardless of party.",
+      },
+      {
+        h: "10. Independent service providers",
+        p: "Guides operate as independent service providers. Nothing in these Terms creates an employment, agency, partnership, franchise or joint-venture relationship between VibeGuide and any guide. Guides are responsible for their own taxes, professional permits (kokart, sigorta), invoicing and legal compliance.",
+      },
+      {
+        h: "11. Payment authorization (VibeSquad)",
+        p: "For VibeSquad group bookings, a temporary payment authorization may be placed on your card at the time you join the squad. If the squad confirms (minimum size reached, guide assigned), the authorization is captured. If the squad does not confirm, the authorization is released — release time depends on your bank and may take up to 7 business days.",
+      },
+      {
+        h: "12. Disputes between users and guides",
+        p: "VibeGuide may assist in resolving disputes but is not automatically responsible for the acts, omissions, delays or failures of independent guides or tourists. When evaluating a dispute we may review: booking timeline, in-app messages, payment status, location pings during the tour, no-show reports, and any evidence either party submits. Decisions are final once the admin review is communicated.",
+      },
+      {
+        h: "13. Platform availability",
+        p: "We aim for reliable service but do not guarantee uninterrupted access. The platform may be unavailable due to maintenance, updates, technical issues, payment-provider failures, security incidents or events outside our control.",
+      },
+      {
+        h: "14. Force majeure",
+        list: [
+          "VibeGuide is not liable for delays, cancellations or failures caused by events outside reasonable control, including:",
+          "Severe weather and natural disasters (earthquake, flood, storm)",
+          "Political unrest, strikes, transportation disruption",
+          "Pandemics and public-health restrictions",
+          "Government action, site closures by authorities",
+          "Safety threats, terrorism warnings",
+          "Internet outages, payment-provider failures",
+        ],
+      },
+      {
+        h: "15. Liability",
+        list: [
+          "VibeGuide is a marketplace. We are not a party to the tour contract between tourist and guide and are not liable for the content or quality of the tour itself.",
+          "Our maximum aggregate liability is limited to the amount you paid for the affected booking in the 12 months preceding the claim.",
+          "We are not liable for indirect or consequential damages: lost profits, missed flights, lost connections, lost belongings, personal decisions made by users.",
+          "Nothing in these Terms limits liability for gross negligence, wilful misconduct, or where Turkish consumer law forbids exclusion.",
+        ],
+      },
+      {
+        h: "16. Intellectual property",
         p: "The VibeGuide name, logo, app design, and source code are owned by us. You may not copy, decompile, or build a competing service from our materials without written permission.",
       },
       {
-        h: "10. Account suspension and termination",
+        h: "17. Account suspension and termination",
         list: [
           "We may suspend or terminate your account with notice for material breach of these Terms.",
-          "We may suspend immediately and without prior notice for: fraud, harassment, identity falsification, or risk to other users.",
+          "We may suspend immediately and without prior notice for: fraud, harassment, identity falsification, off-platform transactions, or risk to other users.",
           "You may terminate your account at any time via the in-app delete button or by submitting the form at /account-deletion.",
+          "Some data may be retained after account deletion where required for legal, tax, accounting, fraud-prevention, safety, or dispute-resolution purposes — see the Privacy Policy.",
         ],
       },
       {
-        h: "11. Governing law and jurisdiction",
+        h: "18. Governing law and jurisdiction",
         p: "These Terms are governed by Turkish law. Disputes will be resolved in the courts and enforcement offices of Istanbul (Çağlayan), without prejudice to mandatory consumer protection rights you may have in your country of residence.",
       },
       {
-        h: "12. Changes",
+        h: "19. Changes",
         p: "We may update these Terms. Material changes will be notified at least 14 days in advance. Continued use after the effective date constitutes acceptance.",
       },
       {
-        h: "13. Contact",
+        h: "20. Contact",
         p: `Questions about these Terms: ${SUPPORT_EMAIL}.`,
       },
     ],
@@ -421,36 +465,80 @@ export const terms: Record<LegalLocale, TermsDict> = {
         ],
       },
       {
-        h: "8. Sorumluluk",
+        h: "8. Platform dışı işlemler",
+        list: [
+          "Turist ve rehber VibeGuide'ı atlatamaz. Aşağıdakileri yapmamayı kabul edersiniz:",
+          "— Platform dışında ödeme talep etmek veya almak.",
+          "— Eşleşme sağlandıktan sonra rezervasyonu platform dışına taşımak.",
+          "— Platform komisyonundan veya iptal politikalarından kaçınmak amacıyla telefon, sosyal medya veya iletişim bilgisi alışverişi yapmak.",
+          "— Komisyondan kaçınmak için aynı rehberi doğrudan tekrar rezerve etmek.",
+          "Tespit edilen ihlal askıya alma, rezervasyon iptali, bekleyen ödemenin geçersiz kılınması veya hesabın kalıcı kapatılmasına yol açabilir.",
+        ],
+      },
+      {
+        h: "9. Topluluk standartları",
+        p: "VibeGuide insanların buluştuğu bir platformdur, zarar gördüğü bir yer değil. Şunlara sıfır toleransımız var: taciz, nefret söylemi, ırkçılık, cinsiyetçilik, dini veya LGBTQ+ ayrımcılığı, tehdit, şiddet, cinsel taciz, dolandırıcılık, tehlikeli sürüş veya rehberlik, yerel halkın sömürülmesi, kültürel/tarihi alanların tahrip edilmesi. Şikayetler incelenir ve taraf gözetmeksizin derhal askıya alma uygulanabilir.",
+      },
+      {
+        h: "10. Bağımsız hizmet sağlayıcı statüsü",
+        p: "Rehberler bağımsız hizmet sağlayıcı olarak çalışır. Bu Koşullardaki hiçbir hüküm VibeGuide ile rehber arasında işçi-işveren, acentelik, ortaklık, franchise veya joint-venture ilişkisi doğurmaz. Rehberler kendi vergi, kokart, sigorta, faturalama ve hukuki uyum yükümlülüklerinden sorumludur.",
+      },
+      {
+        h: "11. Ödeme ön-otorizasyonu (VibeSquad)",
+        p: "VibeSquad grup rezervasyonlarında, gruba katıldığınız anda kartınıza geçici bir ödeme ön-otorizasyonu uygulanabilir. Grup onaylanırsa (minimum sayıya ulaşılır, rehber atanır) tutar tahsil edilir. Grup onaylanmazsa otorizasyon serbest bırakılır — bırakma süresi bankanıza bağlı olup 7 iş gününe kadar sürebilir.",
+      },
+      {
+        h: "12. Turist-rehber uyuşmazlıkları",
+        p: "VibeGuide uyuşmazlık çözümünde yardımcı olabilir; ancak bağımsız rehberlerin veya turistlerin eylem, ihmal, gecikme veya başarısızlıklarından otomatik olarak sorumlu tutulmaz. Uyuşmazlık değerlendirmesinde şunları inceleyebiliriz: rezervasyon zaman çizgisi, uygulama içi mesajlar, ödeme durumu, tur sırasındaki konum verileri, no-show bildirimleri ve tarafların sunduğu deliller. Admin incelemesi sonucu bildirildiğinde karar kesindir.",
+      },
+      {
+        h: "13. Platform erişilebilirliği",
+        p: "Güvenilir hizmet sunmayı hedefleriz; ancak kesintisiz erişim garanti edilmez. Bakım, güncelleme, teknik sorun, ödeme sağlayıcısı arızası, güvenlik olayı veya kontrolümüz dışındaki olaylar nedeniyle platform erişilemez olabilir.",
+      },
+      {
+        h: "14. Mücbir sebep",
+        list: [
+          "VibeGuide aşağıdaki gibi makul kontrol dışı olaylardan kaynaklanan gecikme, iptal veya başarısızlıktan sorumlu değildir:",
+          "Ağır hava koşulları ve doğal afetler (deprem, sel, fırtına)",
+          "Siyasi kargaşa, grev, ulaşım kesintisi",
+          "Salgın hastalıklar ve halk sağlığı kısıtlamaları",
+          "Kamu otoritesi kararları, alanların yetkililerce kapatılması",
+          "Güvenlik tehditleri, terör uyarıları",
+          "İnternet kesintisi, ödeme sağlayıcısı arızası",
+        ],
+      },
+      {
+        h: "15. Sorumluluk",
         list: [
           "VibeGuide bir pazar yeridir. Turist ile rehber arasındaki tur sözleşmesinin tarafı değildir; turun içeriği ve kalitesinden sorumlu tutulamaz.",
           "Toplam azami sorumluluğumuz, talep tarihinden geriye doğru 12 ay içinde ilgili rezervasyon için ödediğiniz tutarla sınırlıdır.",
+          "Dolaylı veya doğrudan olmayan zararlardan (kâr kaybı, kaçırılan uçuş, kaçırılan aktarma, kayıp eşya, kişisel kararlar) sorumlu değiliz.",
           "Hiçbir madde; ağır ihmal, kasıtlı kötü niyet veya 6502 sayılı Tüketici Kanunu'nun emredici hükümleri kapsamındaki sorumluluğu sınırlamaz.",
-          "Mücbir sebep (doğal afet, grev, kamu otoritesi kararı, salgın kapanışı) hallerinden sorumlu değiliz.",
         ],
       },
       {
-        h: "9. Fikri mülkiyet",
+        h: "16. Fikri mülkiyet",
         p: "VibeGuide ismi, logo, uygulama tasarımı ve kaynak kodu bize aittir. Yazılı izin olmaksızın kopyalanamaz, ters mühendislikle çözülemez veya rakip bir hizmet için kullanılamaz.",
       },
       {
-        h: "10. Hesap askıya alma ve sonlandırma",
+        h: "17. Hesap askıya alma ve sonlandırma",
         list: [
           "Bu Koşulların esaslı ihlali halinde, bildirim ile hesabınızı askıya alabilir veya kapatabiliriz.",
-          "Dolandırıcılık, taciz, kimlik sahteciliği veya başka kullanıcılara risk hallerinde derhal ve önceden bildirim olmaksızın askıya alabiliriz.",
+          "Dolandırıcılık, taciz, kimlik sahteciliği, platform dışı işlem veya başka kullanıcılara risk hallerinde derhal ve önceden bildirim olmaksızın askıya alabiliriz.",
           "Hesabınızı uygulama içindeki silme butonu veya /account-deletion sayfasındaki form ile dilediğiniz an kapatabilirsiniz.",
+          "Hesap silindikten sonra; yasal, vergi, muhasebe, dolandırıcılık önleme, güvenlik veya uyuşmazlık çözümü amaçlarıyla bazı veriler saklanabilir — Gizlilik Politikasına bakınız.",
         ],
       },
       {
-        h: "11. Uygulanacak hukuk ve yetkili mahkeme",
+        h: "18. Uygulanacak hukuk ve yetkili mahkeme",
         p: "Bu Koşullar Türk hukukuna tabidir. Uyuşmazlıklar, ikamet ettiğiniz ülkedeki tüketici koruma hakları saklı kalmak kaydıyla, İstanbul (Çağlayan) Mahkemeleri ve İcra Daireleri'nde çözülecektir.",
       },
       {
-        h: "12. Değişiklikler",
+        h: "19. Değişiklikler",
         p: "Bu Koşulları güncelleyebiliriz. Esaslı değişiklikler en az 14 gün önceden bildirilir. Yürürlük tarihinden sonra kullanım kabul anlamına gelir.",
       },
       {
-        h: "13. İletişim",
+        h: "20. İletişim",
         p: `Bu Koşullar hakkında sorular: ${SUPPORT_EMAIL}.`,
       },
     ],
