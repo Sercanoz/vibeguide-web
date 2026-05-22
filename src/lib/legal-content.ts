@@ -857,6 +857,384 @@ export const terms: Record<LegalLocale, TermsDict> = {
   },
 };
 
+/* ════════ HELP CENTER ════════ */
+type HelpSection = { h: string; p?: string; list?: string[]; steps?: string[]; p2?: string };
+type HelpDict = {
+  pageTitle: string;
+  intro: string;
+  lastUpdatedLabel: string;
+  sections: HelpSection[];
+};
+
+export const help: Record<LegalLocale, HelpDict> = {
+  en: {
+    pageTitle: "Help Center",
+    lastUpdatedLabel: "Last updated",
+    intro:
+      "Welcome to the VibeGuide Help Center. We're here to help travellers discover trusted local experiences and connect with licensed guides in a safe, simple and reliable way.",
+    sections: [
+      {
+        h: "What is VibeGuide?",
+        p: "VibeGuide is a travel experience platform that connects travellers with verified local guides and curated experiences in Türkiye — including instant 1-on-1 matching (VibeNow), shared group experiences (VibeSquad), and planned private tours.",
+      },
+      {
+        h: "What can I book on VibeGuide?",
+        list: [
+          "Instant local experiences (VibeNow)",
+          "Private guided tours (Private Tours)",
+          "Shared group experiences (VibeSquad)",
+          "Cultural and historical city walks",
+          "Food and drink experiences",
+          "Museum and heritage tours",
+          "Bosphorus and neighbourhood walks (Balat, Galata, Old Istanbul)",
+          "Cappadocia and Ephesus tours (coming soon)",
+          "Personalised travel moments",
+        ],
+        p: "Available experiences vary by city, season, guide availability and local conditions.",
+      },
+      {
+        h: "How does VibeNow (Instant Match) work?",
+        steps: [
+          "Open the app and choose an available experience near you.",
+          "Submit your request — the system instantly looks for nearby guides.",
+          "An available verified guide accepts the request within ~60 seconds.",
+          "You receive the guide's name, photo, badges and meeting point.",
+          "You meet your guide and enjoy the experience. Pay through the app — never directly.",
+        ],
+        p: "VibeNow availability depends on guide proximity, demand, weather and operational conditions. If no guide accepts within the window, you can try again at no cost.",
+      },
+      {
+        h: "What is VibeSquad?",
+        list: [
+          "Share the cost of a guide with other travellers",
+          "Meet travellers from around the world heading the same way",
+          "Join an existing squad or create your own",
+          "Per-person price drops as more travellers join",
+          "Squad confirms only when minimum participants, guide availability and payment authorisation conditions are met",
+        ],
+      },
+      {
+        h: "Can I book a private tour?",
+        p: "Yes. Private Tours let you book a verified or licensed guide for a specific date, time, language and group size — subject to availability. Private tours are ideal for:",
+        list: [
+          "Families travelling together",
+          "Couples wanting a personal experience",
+          "Business travellers with limited time",
+          "VIP guests requiring discretion",
+          "Custom routes and bespoke schedules",
+          "Specific language or accessibility needs",
+        ],
+      },
+      {
+        h: "Are your guides licensed?",
+        p: "VibeGuide works with verified local guides and, where Turkish law requires, licensed tourist guides holding an official kokart issued by the Ministry of Culture and Tourism. Guide verification includes:",
+        list: [
+          "Government-issued ID verification",
+          "Kokart (professional license) review",
+          "Selfie + holding-license photo match",
+          "Experience and language ability review",
+          "Admin team approval before going live",
+          "Ongoing reliability scoring based on completion rate, on-time arrivals and traveller reviews",
+        ],
+        p2: "You'll see badges on guide profiles (Licensed, Founding Guide, Multilingual, Top Rated, Editor's Choice, etc.) to help you decide. Reviews are visible after a guide has 3+ completed tours.",
+      },
+      {
+        h: "Can I share tour preferences before the tour?",
+        p: "Yes. When you submit a tour request you can attach optional preferences such as vegetarian, wheelchair access, kid-friendly, photography route or hidden gems. These are sent to the matched guide so they can plan the day around your needs. Preferences related to health, dietary or accessibility are treated as special-category data and processed only with your explicit consent.",
+      },
+      {
+        h: "How do payments work?",
+        p: "All payments are processed in advance through our secure third-party payment provider (iyzico). VibeGuide does not store full credit card numbers directly. Depending on the booking type we may use:",
+        list: [
+          "Immediate payment — for confirmed instant matches",
+          "Payment authorisation — for VibeSquad pools (temporary hold, captured if the squad confirms)",
+          "Later capture — for some scheduled experiences",
+          "Refunds to the original payment method",
+        ],
+      },
+      {
+        h: "When am I charged?",
+        list: [
+          "VibeNow (Instant) — charged after a guide accepts and the booking is confirmed.",
+          "VibeSquad — your card is temporarily authorised when you join the squad. If the squad confirms (minimum size + guide assigned), the amount is captured. If it doesn't confirm, the authorisation is released — usually within 7 business days depending on your bank.",
+          "Private Tours — charged at the time of booking unless the experience description states otherwise.",
+        ],
+      },
+      {
+        h: "Can I cancel a booking?",
+        p: "Yes. Refund eligibility depends on:",
+        list: [
+          "Time remaining before the experience (more than 24h = 100%, less than 24h = 50%, less than 2h = no refund)",
+          "Experience type (Instant / VibeSquad / Private)",
+          "Whether a guide has already been assigned",
+          "Group confirmation status (for VibeSquad)",
+          "Applicable Cancellation Policy and local consumer law",
+        ],
+        p2: "Please review the Cancellation Policy before booking. Repeat cancellations may affect your account standing.",
+      },
+      {
+        h: "What happens if my guide cancels?",
+        list: [
+          "We try to assign a replacement guide automatically",
+          "We may offer alternative experiences or reschedule",
+          "If no solution works for you, a full refund is processed plus a small apology credit",
+          "Guides who repeatedly cancel may be suspended",
+        ],
+      },
+      {
+        h: "What happens if I am late?",
+        p: "Travellers are responsible for arriving on time. If you're running late, message the guide through the app immediately. Depending on the situation and the guide's schedule, the experience may be shortened, modified, or treated as a no-show. Late arrivals beyond 30 minutes without contact are generally treated as a no-show.",
+      },
+      {
+        h: "What happens if I don't show up?",
+        p: "Failure to attend without cancellation is a no-show and is generally non-refundable. If you believe the no-show was due to an emergency or error, you can dispute it from the booking screen — our admin team reviews disputes within 72 hours.",
+      },
+      {
+        h: "I'm a guide. What if a traveller doesn't show up?",
+        p: "Guides can mark a tourist as no-show from the active tour screen after a 30-minute minimum wait. The case is reviewed by our admin team and, if approved, the guide can claim payment for their time. Repeat no-shows by the same tourist may affect their account standing.",
+      },
+      {
+        h: "Can I pay the guide directly?",
+        p: "No. Off-platform payments are strictly not allowed. All bookings and payments must go through VibeGuide. This protects you with refund coverage, dispute resolution, KYC-verified guides, and a clear booking record. Off-platform attempts may lead to suspension of both parties.",
+      },
+      {
+        h: "How do refunds work?",
+        p: "Approved refunds are returned to the original payment method. Processing time depends on your bank or card provider and typically takes 5–14 business days. We don't deduct platform fees from refunds eligible under the Cancellation Policy.",
+      },
+      {
+        h: "Can I share my trip with family or friends?",
+        p: "Yes. While a tour is active, you can tap \"Share my trip\" to generate a private link. Anyone you send the link to can see your guide's first name and live location until the tour ends. The link is revocable at any time and expires automatically when the tour completes. Great for safety and peace of mind for loved ones back home.",
+      },
+      {
+        h: "Is my personal information safe?",
+        p: "VibeGuide takes privacy seriously. We use HTTPS/TLS encryption in transit, Firebase Authentication for login, App Check to verify genuine app installs, and iyzico tokenisation for card data. We comply with KVKK (Türkiye) and GDPR (EU). See our Privacy Policy for full details.",
+      },
+      {
+        h: "Can I delete my account?",
+        p: `Yes. You can delete your account from Profile → Delete account in the app, or via the form at /account-deletion, or by contacting ${SUPPORT_EMAIL}. Some information may be retained where required for legal compliance, tax records (10 years per Turkish VUK), fraud prevention, payment disputes, safety investigations or accounting obligations.`,
+      },
+      {
+        h: "Safety guidelines",
+        list: [
+          "Book only through the VibeGuide app — no off-platform deals",
+          "Don't make off-platform payments under any circumstance",
+          "Respect your guide, fellow travellers and local communities",
+          "Follow local laws, religious-site rules and safety instructions",
+          "Protect your belongings — VibeGuide isn't liable for lost items",
+          "Arrive on time at the agreed meeting point",
+          "Report suspicious or inappropriate behaviour immediately",
+          "Use \"Share my trip\" so a trusted person knows where you are",
+          "Trust your instincts — if something feels off, contact support",
+        ],
+      },
+      {
+        h: "How do I report a problem?",
+        p: "Contact support with the following details so we can help quickly:",
+        list: [
+          "Booking ID (visible on the booking screen)",
+          "Date and time of the experience",
+          "Guide name if available",
+          "Screenshots of any in-app messages or screens",
+          "A clear description of what went wrong",
+        ],
+        p2: `Email ${SUPPORT_EMAIL} — we review reports and respond within 72 hours. Safety-critical issues are escalated immediately.`,
+      },
+      {
+        h: "How can I contact VibeGuide?",
+        list: [
+          `Support: ${SUPPORT_EMAIL}`,
+          `General inquiries: ${SUPPORT_EMAIL}`,
+          `Privacy requests: ${KVKK_EMAIL}`,
+          `Legal inquiries: ${SUPPORT_EMAIL}`,
+        ],
+      },
+    ],
+  },
+  tr: {
+    pageTitle: "Yardım Merkezi",
+    lastUpdatedLabel: "Son güncelleme",
+    intro:
+      "VibeGuide Yardım Merkezine hoş geldiniz. Gezginlerin güvenilir yerel deneyimleri keşfetmesi ve ruhsatlı rehberlerle güvenli, basit ve güvenilir bir şekilde buluşması için buradayız.",
+    sections: [
+      {
+        h: "VibeGuide nedir?",
+        p: "VibeGuide; Türkiye'de gezginleri doğrulanmış yerel rehberler ve özenle seçilmiş deneyimlerle buluşturan bir seyahat platformudur — anlık 1-1 eşleşme (VibeNow), paylaşımlı grup deneyimleri (VibeSquad) ve planlı özel turlar.",
+      },
+      {
+        h: "VibeGuide'da neler rezerve edebilirim?",
+        list: [
+          "Anlık yerel deneyimler (VibeNow)",
+          "Özel rehberli turlar (Private Tours)",
+          "Paylaşımlı grup deneyimleri (VibeSquad)",
+          "Kültürel ve tarihi şehir yürüyüşleri",
+          "Yemek ve içecek deneyimleri",
+          "Müze ve miras turları",
+          "Boğaz ve mahalle turları (Balat, Galata, Eski İstanbul)",
+          "Kapadokya ve Efes turları (yakında)",
+          "Kişiselleştirilmiş seyahat anları",
+        ],
+        p: "Mevcut deneyimler şehir, sezon, rehber müsaitliği ve yerel koşullara göre değişebilir.",
+      },
+      {
+        h: "VibeNow (Anlık Eşleşme) nasıl çalışır?",
+        steps: [
+          "Uygulamayı aç ve yakınındaki mevcut bir deneyim seç.",
+          "Talebini gönder — sistem yakındaki rehberleri anlık olarak arar.",
+          "Müsait bir doğrulanmış rehber ~60 saniye içinde talebi kabul eder.",
+          "Rehberin adı, fotoğrafı, rozetleri ve buluşma noktası sana iletilir.",
+          "Rehberinle buluş ve deneyimi yaşa. Ödemeyi uygulama üzerinden yap — asla doğrudan değil.",
+        ],
+        p: "VibeNow müsaitliği rehber yakınlığı, talep, hava koşulları ve operasyonel duruma bağlıdır. Belirlenen süre içinde rehber kabul etmezse ücretsiz olarak tekrar deneyebilirsin.",
+      },
+      {
+        h: "VibeSquad nedir?",
+        list: [
+          "Rehber masrafını diğer gezginlerle paylaş",
+          "Dünyanın her yerinden gezginlerle tanış",
+          "Mevcut bir squad'a katıl ya da kendi squad'ını oluştur",
+          "Daha fazla gezgin katıldıkça kişi başı fiyat düşer",
+          "Squad ancak minimum katılımcı, rehber müsaitliği ve ödeme otorizasyonu koşulları sağlandığında onaylanır",
+        ],
+      },
+      {
+        h: "Özel tur rezerve edebilir miyim?",
+        p: "Evet. Özel Turlar; müsaitliğe bağlı olarak belirli tarih, saat, dil ve grup büyüklüğü için doğrulanmış veya ruhsatlı bir rehber rezerve etmene olanak tanır. Özel turlar şunlar için idealdir:",
+        list: [
+          "Birlikte seyahat eden aileler",
+          "Kişisel bir deneyim isteyen çiftler",
+          "Zamanı sınırlı iş seyahatleri",
+          "Mahremiyet gerektiren VIP misafirler",
+          "Özel rotalar ve özel programlar",
+          "Belirli dil veya erişebilirlik ihtiyaçları",
+        ],
+      },
+      {
+        h: "Rehberleriniz ruhsatlı mı?",
+        p: "VibeGuide doğrulanmış yerel rehberlerle çalışır; Türk hukukunun gerektirdiği yerlerde ise Kültür ve Turizm Bakanlığı'nın düzenlediği kokart sahibi ruhsatlı turist rehberleriyle çalışır. Rehber doğrulaması şunları içerir:",
+        list: [
+          "Resmi kimlik doğrulaması",
+          "Kokart (mesleki ruhsat) incelemesi",
+          "Selfie + elinde kokart tutma fotoğrafı eşleşmesi",
+          "Deneyim ve dil yeteneği incelemesi",
+          "Aktif olmadan önce admin ekibi onayı",
+          "Tamamlama oranı, zamanında varış ve yorumlara dayalı sürekli güvenilirlik puanlaması",
+        ],
+        p2: "Karar vermene yardımcı olmak için rehber profillerinde rozetler (Lisanslı, Kurucu Rehber, Çok Dilli, Çok İyi Puanlı, Editör'ün Seçimi vb.) görünür. Yorumlar, rehberin 3+ tamamlanmış turu olduktan sonra görünür.",
+      },
+      {
+        h: "Turdan önce tercihlerimi paylaşabilir miyim?",
+        p: "Evet. Tur talebi gönderirken vejetaryen, tekerlekli sandalye erişimi, çocuk dostu, fotoğraf rotası veya gizli yerler gibi opsiyonel tercihler ekleyebilirsin. Bu notlar günü senin ihtiyaçlarına göre planlayabilmesi için eşleşilen rehbere iletilir. Sağlık, beslenme veya erişebilirlik tercih notları özel nitelikli veri olarak ele alınır ve yalnızca açık rızanla işlenir.",
+      },
+      {
+        h: "Ödemeler nasıl çalışır?",
+        p: "Tüm ödemeler peşin olarak güvenli üçüncü taraf ödeme sağlayıcımız iyzico üzerinden işlenir. VibeGuide tam kart numaranı doğrudan saklamaz. Rezervasyon türüne göre şunlar kullanılabilir:",
+        list: [
+          "Anlık ödeme — onaylanmış anlık eşleşmeler için",
+          "Ödeme ön-otorizasyonu — VibeSquad havuzları için (geçici bloke, squad onaylanırsa tahsil edilir)",
+          "Sonradan tahsilat — bazı planlı deneyimler için",
+          "İade işlemi orijinal ödeme yöntemine yapılır",
+        ],
+      },
+      {
+        h: "Ne zaman ücret alınır?",
+        list: [
+          "VibeNow (Anlık) — bir rehber kabul edip rezervasyon onaylandığında ücret alınır.",
+          "VibeSquad — squad'a katıldığında kartına geçici otorizasyon uygulanır. Squad onaylanırsa (minimum sayı + rehber atanır) tutar tahsil edilir. Onaylanmazsa otorizasyon serbest bırakılır — bankana bağlı olarak genellikle 7 iş günü içinde.",
+          "Özel Turlar — deneyim açıklamasında aksi belirtilmedikçe rezervasyon anında ücret alınır.",
+        ],
+      },
+      {
+        h: "Rezervasyonu iptal edebilir miyim?",
+        p: "Evet. İade hakkı şunlara bağlıdır:",
+        list: [
+          "Deneyime kalan süre (24 saatten fazla = %100, 24 saatten az = %50, 2 saatten az = iade yok)",
+          "Deneyim türü (Anlık / VibeSquad / Özel)",
+          "Rehber atanmış olup olmadığı",
+          "Grup onay durumu (VibeSquad için)",
+          "Yürürlükteki İptal Politikası ve yerel tüketici hukuku",
+        ],
+        p2: "Rezervasyondan önce İptal Politikasını incele. Tekrarlanan iptaller hesap durumunu etkileyebilir.",
+      },
+      {
+        h: "Rehberim iptal ederse ne olur?",
+        list: [
+          "Otomatik olarak yedek bir rehber atamaya çalışırız",
+          "Alternatif deneyim veya yeniden tarihlendirme önerebiliriz",
+          "Hiçbir çözüm uymazsa tam iade + küçük bir özür kredisi yapılır",
+          "Sürekli iptal eden rehberler askıya alınabilir",
+        ],
+      },
+      {
+        h: "Geç kalırsam ne olur?",
+        p: "Gezginler zamanında varmaktan sorumludur. Geç kalıyorsan rehberle uygulama üzerinden hemen iletişime geç. Duruma ve rehberin programına bağlı olarak deneyim kısaltılabilir, değiştirilebilir veya no-show olarak işlenebilir. İletişim olmadan 30 dakikadan fazla geç varış genelde no-show sayılır.",
+      },
+      {
+        h: "Gelmezsem ne olur?",
+        p: "İptal etmeden katılmama durumu no-show'dur ve genellikle iade edilmez. No-show durumunun acil bir durum veya hata kaynaklı olduğunu düşünüyorsan rezervasyon ekranından itiraz edebilirsin — admin ekibimiz itirazları 72 saat içinde inceler.",
+      },
+      {
+        h: "Rehberim. Turist gelmezse ne olur?",
+        p: "Rehberler aktif tur ekranından 30 dakikalık minimum bekleme sonrası turistı no-show olarak işaretleyebilir. Vaka admin ekibimiz tarafından incelenir ve onaylanırsa rehber zamanı için ödemeyi talep edebilir. Aynı turist tekrarlanan no-show'larda hesabı etkilenir.",
+      },
+      {
+        h: "Rehbere doğrudan ödeme yapabilir miyim?",
+        p: "Hayır. Platform dışı ödemeler kesinlikle yasaktır. Tüm rezervasyon ve ödemeler VibeGuide üzerinden yapılmalıdır. Bu sayede iade güvencesi, uyuşmazlık çözümü, KYC'li rehberler ve net bir rezervasyon kaydı korumasına sahip olursun. Platform dışı girişimler her iki tarafın da askıya alınmasına yol açabilir.",
+      },
+      {
+        h: "İadeler nasıl çalışır?",
+        p: "Onaylanan iadeler orijinal ödeme yöntemine yapılır. İşlem süresi bankana veya kart sağlayıcına bağlı olup genellikle 5–14 iş günü sürer. İptal Politikası kapsamındaki iadelerde platform ücretini kesmiyoruz.",
+      },
+      {
+        h: "Turumu aile veya arkadaşlarla paylaşabilir miyim?",
+        p: "Evet. Tur aktifken \"Share my trip\" (Turumu paylaş) butonuna dokunarak özel bir link oluşturabilirsin. Linki gönderdiğin kişi tur bitene kadar rehberinin adını ve canlı konumunu görebilir. Link istediğin zaman iptal edilebilir ve tur tamamlanınca otomatik geçersiz olur. Sevdiklerin için güvenlik ve içiniz rahatlığı sağlar.",
+      },
+      {
+        h: "Kişisel bilgilerim güvende mi?",
+        p: "VibeGuide gizliliği ciddiye alır. İletimde HTTPS/TLS şifrelemesi, giriş için Firebase Authentication, gerçek uygulama yüklemelerini doğrulamak için App Check ve kart verisi için iyzico tokenize sistemi kullanırız. KVKK (Türkiye) ve GDPR (AB) ile uyumluyuz. Tam detaylar için Gizlilik Politikasına bak.",
+      },
+      {
+        h: "Hesabımı silebilir miyim?",
+        p: `Evet. Hesabını uygulamada Profil → Hesabımı sil yolundan, /account-deletion sayfasındaki formdan veya ${SUPPORT_EMAIL} adresinden silebilirsin. Bazı bilgiler yasal uyum, vergi kayıtları (VUK gereği 10 yıl), dolandırıcılık önleme, ödeme uyuşmazlıkları, güvenlik soruşturmaları veya muhasebe yükümlülükleri için saklanmaya devam edebilir.`,
+      },
+      {
+        h: "Güvenlik kuralları",
+        list: [
+          "Yalnızca VibeGuide uygulaması üzerinden rezerve et — platform dışı anlaşma yok",
+          "Hiçbir koşulda platform dışı ödeme yapma",
+          "Rehberine, diğer gezginlere ve yerel halka saygı göster",
+          "Yerel yasalara, dini alan kurallarına ve güvenlik talimatlarına uy",
+          "Eşyalarını koru — VibeGuide kayıp eşyadan sorumlu değildir",
+          "Anlaşılan buluşma noktasında zamanında ol",
+          "Şüpheli veya uygunsuz davranışı derhal bildir",
+          "Güvendiğin biri nerede olduğunu bilsin diye \"Share my trip\" kullan",
+          "İçgüdülerine güven — bir şey ters geliyorsa destekle iletişime geç",
+        ],
+      },
+      {
+        h: "Bir sorunu nasıl bildiririm?",
+        p: "Sana hızlıca yardım edebilmemiz için aşağıdaki bilgilerle destekle iletişime geç:",
+        list: [
+          "Rezervasyon ID'si (rezervasyon ekranında görünür)",
+          "Deneyimin tarih ve saati",
+          "Varsa rehberin adı",
+          "Uygulama içi mesaj veya ekran görüntüleri",
+          "Yaşananları net bir şekilde anlat",
+        ],
+        p2: `${SUPPORT_EMAIL} adresine yaz — bildirimleri inceleyip 72 saat içinde yanıt veririz. Güvenlik-kritik konular derhal yükseltilir.`,
+      },
+      {
+        h: "VibeGuide'a nasıl ulaşırım?",
+        list: [
+          `Destek: ${SUPPORT_EMAIL}`,
+          `Genel sorular: ${SUPPORT_EMAIL}`,
+          `Gizlilik talepleri: ${KVKK_EMAIL}`,
+          `Hukuki sorular: ${SUPPORT_EMAIL}`,
+        ],
+      },
+    ],
+  },
+};
+
 /* ════════ ACCOUNT DELETION ════════ */
 type AccountDeletionDict = {
   pageTitle: string;
