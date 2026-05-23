@@ -25,6 +25,14 @@ export default function AccountDeletionPage() {
     ko: "계정 삭제 요청",
     it: "Richiesta di eliminazione account",
     hr: "Zahtjev za brisanje računa",
+    fr: "Demande de suppression de compte",
+    ro: "Solicitare de ștergere a contului",
+    ar: "طلب حذف الحساب",
+    nl: "Verzoek tot accountverwijdering",
+    pl: "Prośba o usunięcie konta",
+    uk: "Запит на видалення акаунту",
+    id: "Permintaan penghapusan akun",
+    pt: "Pedido de eliminação de conta",
   };
   const bodyMap: Record<string, string> = {
     tr: "Merhaba,\n\nVibeGuide hesabımın kalıcı olarak silinmesini talep ediyorum. Lütfen kayıtlı e-posta adresimi onaylayıp 30 gün içinde tamamlayın.\n\nKayıtlı e-posta: \nKayıtlı telefon (varsa): \n\nTeşekkürler.",
@@ -39,6 +47,14 @@ export default function AccountDeletionPage() {
     ko: "안녕하세요,\n\nVibeGuide 계정을 영구적으로 삭제하고 싶습니다. 등록된 이메일을 확인하고 30일 이내에 삭제를 완료해 주세요.\n\n등록된 이메일: \n전화번호 (선택): \n\n감사합니다.",
     it: "Salve,\n\nDesidero eliminare permanentemente il mio account VibeGuide. La prego di verificare la mia email registrata e completare l'eliminazione entro 30 giorni.\n\nEmail registrata: \nTelefono registrato (opzionale): \n\nGrazie.",
     hr: "Pozdrav,\n\nŽelim trajno obrisati svoj VibeGuide račun. Molim vas potvrdite moju registriranu e-mail adresu i dovršite brisanje unutar 30 dana.\n\nRegistrirana e-mail adresa: \nTelefon (neobavezno): \n\nHvala.",
+    fr: "Bonjour,\n\nJe souhaite supprimer définitivement mon compte VibeGuide. Veuillez vérifier mon e-mail enregistré et compléter la suppression dans les 30 jours.\n\nE-mail enregistré : \nTéléphone enregistré (optionnel) : \n\nMerci.",
+    ro: "Bună ziua,\n\nDoresc să șterg permanent contul meu VibeGuide. Vă rog să verificați e-mailul meu înregistrat și să finalizați ștergerea în 30 de zile.\n\nE-mail înregistrat: \nTelefon înregistrat (opțional): \n\nMulțumesc.",
+    ar: "مرحباً،\n\nأرغب في حذف حسابي في VibeGuide بشكل دائم. يُرجى التحقق من بريدي الإلكتروني المسجَّل وإتمام الحذف في غضون 30 يوماً.\n\nالبريد الإلكتروني المسجَّل: \nرقم الهاتف (اختياري): \n\nشكراً.",
+    nl: "Hallo,\n\nIk wil mijn VibeGuide-account permanent verwijderen. Verifieer mijn geregistreerde e-mail en voltooi de verwijdering binnen 30 dagen.\n\nGeregistreerde e-mail: \nGeregistreerde telefoon (optioneel): \n\nBedankt.",
+    pl: "Dzień dobry,\n\nChciałbym(-abym) trwale usunąć moje konto VibeGuide. Proszę zweryfikować mój zarejestrowany e-mail i zakończyć usuwanie w ciągu 30 dni.\n\nZarejestrowany e-mail: \nZarejestrowany telefon (opcjonalnie): \n\nDziękuję.",
+    uk: "Добрий день,\n\nЯ хочу назавжди видалити свій акаунт VibeGuide. Будь ласка, перевірте мою зареєстровану електронну пошту та завершіть видалення протягом 30 днів.\n\nЗареєстрована пошта: \nТелефон (необов'язково): \n\nДякую.",
+    id: "Halo,\n\nSaya ingin menghapus akun VibeGuide saya secara permanen. Mohon verifikasi email terdaftar saya dan selesaikan penghapusan dalam 30 hari.\n\nEmail terdaftar: \nTelepon terdaftar (opsional): \n\nTerima kasih.",
+    pt: "Olá,\n\nGostaria de eliminar permanentemente a minha conta VibeGuide. Por favor, verifique o meu e-mail registado e conclua a eliminação em 30 dias.\n\nE-mail registado: \nTelefone registado (opcional): \n\nObrigado(a).",
   };
   const subject = subjectMap[locale] ?? "Account deletion request";
   const body = bodyMap[locale] ?? "Hello,\n\nI would like to permanently delete my VibeGuide account. Please verify my registered email and complete the deletion within 30 days.\n\nRegistered email: \nRegistered phone (optional): \n\nThank you.";

@@ -1,4 +1,4 @@
-export const locales = ["en", "tr", "de", "fr", "hr", "ro", "zh", "ru", "es", "ko", "el", "ja", "bg", "sr", "it"] as const;
+export const locales = ["en", "tr", "de", "fr", "hr", "ro", "zh", "ru", "es", "ko", "el", "ja", "bg", "sr", "it", "ar", "nl", "pl", "uk", "id", "pt"] as const;
 export type Locale = (typeof locales)[number];
 
 export const localeMeta: Record<Locale, { flagCode: string; label: string }> = {
@@ -17,6 +17,12 @@ export const localeMeta: Record<Locale, { flagCode: string; label: string }> = {
   bg: { flagCode: "bg", label: "BG" },
   sr: { flagCode: "rs", label: "SR" },
   it: { flagCode: "it", label: "IT" },
+  ar: { flagCode: "sa", label: "AR" },
+  nl: { flagCode: "nl", label: "NL" },
+  pl: { flagCode: "pl", label: "PL" },
+  uk: { flagCode: "ua", label: "UK" },
+  id: { flagCode: "id", label: "ID" },
+  pt: { flagCode: "pt", label: "PT" },
 };
 
 type Dict = {
@@ -1399,8 +1405,14 @@ const i18nBase = {
 
 export const i18n: Record<Locale, Dict> = {
   ...i18nBase,
-  ja: i18nBase.en, // Anasayfa için home-i18n.ts'te tam çeviri var
+  ja: i18nBase.en,
   bg: i18nBase.en,
   sr: i18nBase.en,
   it: i18nBase.en,
+  ar: i18nBase.en,
+  nl: i18nBase.en,
+  pl: i18nBase.en,
+  uk: i18nBase.en,
+  id: i18nBase.en,
+  pt: i18nBase.en,
 };

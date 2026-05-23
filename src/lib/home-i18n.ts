@@ -1437,4 +1437,5 @@ const hr: Dict = {
 export const homeTranslations: Record<Locale, Dict> = {
   en, tr, de, ru, es, ja, zh, el, bg, sr, ko, it, hr,
   fr: en, ro: en,
+  ar: en, nl: en, pl: en, uk: en, id: en, pt: en,
 };
