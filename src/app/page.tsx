@@ -210,15 +210,15 @@ export default function HomePage() {
                         </div>
                       </div>
                     ))}
-                    <div className="absolute bottom-2 left-3 text-[9px] font-bold text-white/90">24 guides nearby</div>
+                    <div className="absolute bottom-2 left-3 text-[9px] font-bold text-white/90">{t.phoneMock.guidesNearby}</div>
                   </div>
 
                   {/* Mode cards */}
                   <div className="space-y-2">
                     {[
-                      { grad: "from-[#6C4CF1] to-[#8B5CF6]", icon: "⚡", title: "VibeNow", sub: "Match in 60s" },
-                      { grad: "from-[#059669] to-[#10B981]", icon: "👥", title: "VibeSquad", sub: "Join a group" },
-                      { grad: "from-[#D97706] to-[#F59E0B]", icon: "📅", title: "Private", sub: "Plan your day" },
+                      { grad: "from-[#6C4CF1] to-[#8B5CF6]", icon: "⚡", title: "VibeNow", sub: t.phoneMock.vibenowSub },
+                      { grad: "from-[#059669] to-[#10B981]", icon: "👥", title: "VibeSquad", sub: t.phoneMock.vibesquadSub },
+                      { grad: "from-[#D97706] to-[#F59E0B]", icon: "📅", title: t.nav.private, sub: t.phoneMock.privateSub },
                     ].map((c) => (
                       <div key={c.title} className={`flex items-center gap-3 rounded-xl bg-gradient-to-r ${c.grad} px-3 py-2.5`}>
                         <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/20 text-sm">
@@ -241,8 +241,8 @@ export default function HomePage() {
                       👤
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-[10px] font-black text-white leading-none">Mehmet is on his way</p>
-                      <p className="text-[9px] text-white/40 mt-0.5">Arriving in ~4 min · ⭐ 4.9</p>
+                      <p className="text-[10px] font-black text-white leading-none">{t.phoneMock.guideOnWay}</p>
+                      <p className="text-[9px] text-white/40 mt-0.5">{t.phoneMock.arrivingIn}</p>
                     </div>
                     <div className="h-2 w-2 rounded-full bg-[#10B981] animate-pulse shrink-0" />
                   </div>
@@ -265,13 +265,13 @@ export default function HomePage() {
       <section className="bg-[#0A0A0F] border-t border-white/5">
         <div className="mx-auto max-w-7xl px-6 py-5">
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 text-white/30 text-xs font-semibold uppercase tracking-widest">
-            <span className="text-white/60">★★★★★ <span className="text-white/30">4.9 App Store</span></span>
+            <span className="text-white/60">{t.phoneMock.proofRating}</span>
             <span>|</span>
             <span>{t.energy.eyebrow}</span>
             <span>|</span>
-            <span>Istanbul · Cappadocia · Ephesus</span>
+            <span>{t.phoneMock.proofCities}</span>
             <span>|</span>
-            <span className="text-white/60">Licensed Guides Only</span>
+            <span className="text-white/60">{t.phoneMock.proofGuides}</span>
           </div>
         </div>
       </section>

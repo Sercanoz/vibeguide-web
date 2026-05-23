@@ -10,6 +10,17 @@ type Dict = {
     ctaPrimary: string; ctaSecondary: string;
   };
   phone: { live: string; greet: string };
+  phoneMock: {
+    guidesNearby: string;
+    vibenowSub: string;
+    vibesquadSub: string;
+    privateSub: string;
+    guideOnWay: string;
+    arrivingIn: string;
+    proofRating: string;
+    proofCities: string;
+    proofGuides: string;
+  };
   phoneCards: {
     vibenow: string;
     vibesquad: string;
@@ -58,6 +69,17 @@ const en: Dict = {
     ctaPrimary: "Find a Guide in Istanbul", ctaSecondary: "Explore Turkey Tours",
   },
   phone: { live: "Live", greet: "Good evening" },
+  phoneMock: {
+    guidesNearby: "24 guides nearby",
+    vibenowSub: "Match in 60s",
+    vibesquadSub: "Join a group",
+    privateSub: "Plan your day",
+    guideOnWay: "Mehmet is on his way",
+    arrivingIn: "Arriving in ~4 min · ⭐ 4.9",
+    proofRating: "★★★★★ 4.9 App Store",
+    proofCities: "Istanbul · Cappadocia · Ephesus",
+    proofGuides: "Licensed Guides Only",
+  },
   phoneCards: {
     vibenow: "Tap. Match. Walk out the door in 60 seconds.",
     vibesquad: "Join travelers heading the same way. Split the price.",
@@ -169,6 +191,17 @@ const tr: Dict = {
     ctaPrimary: "İstanbul'da Rehber Bul", ctaSecondary: "Türkiye Turlarını Keşfet",
   },
   phone: { live: "Canlı", greet: "İyi akşamlar" },
+  phoneMock: {
+    guidesNearby: "Yakında 24 rehber",
+    vibenowSub: "60 saniyede eşleş",
+    vibesquadSub: "Gruba katıl",
+    privateSub: "Gününü planla",
+    guideOnWay: "Mehmet yolda",
+    arrivingIn: "~4 dakikada gelir · ⭐ 4.9",
+    proofRating: "★★★★★ 4.9 App Store",
+    proofCities: "İstanbul · Kapadokya · Efes",
+    proofGuides: "Yalnızca Lisanslı Rehberler",
+  },
   phoneCards: {
     vibenow: "Dokun. Eşleş. 60 saniyede kapıdan çık.",
     vibesquad: "Aynı yere giden gezginlere katıl. Ücreti paylaş.",
@@ -280,6 +313,17 @@ const de: Dict = {
     ctaPrimary: "Guide in Istanbul finden", ctaSecondary: "Türkei-Touren entdecken",
   },
   phone: { live: "Live", greet: "Guten Abend" },
+  phoneMock: {
+    guidesNearby: "24 Guides in der Nähe",
+    vibenowSub: "Match in 60s",
+    vibesquadSub: "Gruppe beitreten",
+    privateSub: "Tag planen",
+    guideOnWay: "Mehmet ist unterwegs",
+    arrivingIn: "Ankunft in ~4 Min · ⭐ 4.9",
+    proofRating: "★★★★★ 4,9 App Store",
+    proofCities: "Istanbul · Kappadokien · Ephesus",
+    proofGuides: "Nur lizenzierte Guides",
+  },
   phoneCards: {
     vibenow: "Tippen. Matchen. In 60 Sekunden raus.",
     vibesquad: "Triff Reisende mit demselben Ziel. Teilt euch den Preis.",
@@ -391,6 +435,17 @@ const ru: Dict = {
     ctaPrimary: "Найти гида в Стамбуле", ctaSecondary: "Туры по Турции",
   },
   phone: { live: "В сети", greet: "Добрый вечер" },
+  phoneMock: {
+    guidesNearby: "24 гида рядом",
+    vibenowSub: "Матч за 60 сек",
+    vibesquadSub: "Вступить в группу",
+    privateSub: "Запланировать день",
+    guideOnWay: "Мехмет в пути",
+    arrivingIn: "Прибудет через ~4 мин · ⭐ 4.9",
+    proofRating: "★★★★★ 4.9 App Store",
+    proofCities: "Стамбул · Каппадокия · Эфес",
+    proofGuides: "Только лицензированные гиды",
+  },
   phoneCards: {
     vibenow: "Тап. Матч. Через 60 секунд вы на улице.",
     vibesquad: "Присоединитесь к путешественникам с тем же маршрутом. Поделите цену.",
@@ -502,6 +557,17 @@ const es: Dict = {
     ctaPrimary: "Encuentra un guía en Estambul", ctaSecondary: "Explora Turquía",
   },
   phone: { live: "En vivo", greet: "Buenas tardes" },
+  phoneMock: {
+    guidesNearby: "24 guías cerca",
+    vibenowSub: "Match en 60s",
+    vibesquadSub: "Unirse al grupo",
+    privateSub: "Planifica tu día",
+    guideOnWay: "Mehmet está en camino",
+    arrivingIn: "Llega en ~4 min · ⭐ 4.9",
+    proofRating: "★★★★★ 4.9 App Store",
+    proofCities: "Estambul · Capadocia · Éfeso",
+    proofGuides: "Solo guías licenciados",
+  },
   phoneCards: {
     vibenow: "Toca. Empareja. Sal por la puerta en 60 segundos.",
     vibesquad: "Únete a viajeros con la misma ruta. Comparte el precio.",
@@ -613,6 +679,17 @@ const ja: Dict = {
     ctaPrimary: "イスタンブールでガイドを探す", ctaSecondary: "トルコツアーを見る",
   },
   phone: { live: "ライブ", greet: "こんばんは" },
+  phoneMock: {
+    guidesNearby: "近くに24人のガイド",
+    vibenowSub: "60秒でマッチ",
+    vibesquadSub: "グループに参加",
+    privateSub: "1日を計画",
+    guideOnWay: "メフメットが向かっています",
+    arrivingIn: "約4分で到着 · ⭐ 4.9",
+    proofRating: "★★★★★ 4.9 App Store",
+    proofCities: "イスタンブール · カッパドキア · エフェソス",
+    proofGuides: "認定ガイドのみ",
+  },
   phoneCards: {
     vibenow: "タップ。マッチ。60秒でドアの外へ。",
     vibesquad: "同じルートを行く旅人と合流。費用を分担。",
@@ -724,6 +801,17 @@ const zh: Dict = {
     ctaPrimary: "在伊斯坦布尔找向导", ctaSecondary: "探索土耳其",
   },
   phone: { live: "在线", greet: "晚上好" },
+  phoneMock: {
+    guidesNearby: "附近24位向导",
+    vibenowSub: "60秒匹配",
+    vibesquadSub: "加入团队",
+    privateSub: "规划你的一天",
+    guideOnWay: "Mehmet正在赶来",
+    arrivingIn: "约4分钟到达 · ⭐ 4.9",
+    proofRating: "★★★★★ 4.9 App Store",
+    proofCities: "伊斯坦布尔 · 卡帕多奇亚 · 以弗所",
+    proofGuides: "仅限持证向导",
+  },
   phoneCards: {
     vibenow: "点击。匹配。60秒后出门。",
     vibesquad: "加入同路旅人。分摊费用。",
@@ -835,6 +923,17 @@ const el: Dict = {
     ctaPrimary: "Βρες ξεναγό στην Κωνσταντινούπολη", ctaSecondary: "Εξερεύνησε την Τουρκία",
   },
   phone: { live: "Ζωντανά", greet: "Καλησπέρα" },
+  phoneMock: {
+    guidesNearby: "24 ξεναγοί κοντά",
+    vibenowSub: "Match σε 60 δλ",
+    vibesquadSub: "Γίνε μέλος ομάδας",
+    privateSub: "Σχεδίασε την ημέρα σου",
+    guideOnWay: "Ο Μεχμέτ έρχεται",
+    arrivingIn: "Φτάνει σε ~4 λεπτά · ⭐ 4.9",
+    proofRating: "★★★★★ 4.9 App Store",
+    proofCities: "Κωνσταντινούπολη · Καππαδοκία · Έφεσος",
+    proofGuides: "Μόνο αδειοδοτημένοι ξεναγοί",
+  },
   phoneCards: {
     vibenow: "Πάτα. Σύνδεσε. Βγες από την πόρτα σε 60 δευτερόλεπτα.",
     vibesquad: "Έλα μαζί με ταξιδιώτες στην ίδια διαδρομή. Μοιραστείτε το κόστος.",
@@ -939,6 +1038,17 @@ const bg: Dict = {
     ctaPrimary: "Намери водач в Истанбул", ctaSecondary: "Разгледай Турция",
   },
   phone: { live: "На живо", greet: "Добър вечер" },
+  phoneMock: {
+    guidesNearby: "24 водача наблизо",
+    vibenowSub: "Match за 60 сек",
+    vibesquadSub: "Присъедини се",
+    privateSub: "Планирай деня си",
+    guideOnWay: "Мехмет е на път",
+    arrivingIn: "Пристига след ~4 мин · ⭐ 4.9",
+    proofRating: "★★★★★ 4.9 App Store",
+    proofCities: "Истанбул · Кападокия · Ефес",
+    proofGuides: "Само лицензирани водачи",
+  },
   phoneCards: {
     vibenow: "Докосни. Свържи. Излез през вратата за 60 секунди.",
     vibesquad: "Присъедини се към пътешественици по същия маршрут. Разделете цената.",
@@ -1040,6 +1150,17 @@ const sr: Dict = {
     ctaPrimary: "Pronađi vodiča u Istanbulu", ctaSecondary: "Istraži Tursku",
   },
   phone: { live: "Uživo", greet: "Dobro veče" },
+  phoneMock: {
+    guidesNearby: "24 vodiča u blizini",
+    vibenowSub: "Match za 60 sek",
+    vibesquadSub: "Pridruži se grupi",
+    privateSub: "Planiraj dan",
+    guideOnWay: "Mehmet je na putu",
+    arrivingIn: "Stiže za ~4 min · ⭐ 4.9",
+    proofRating: "★★★★★ 4.9 App Store",
+    proofCities: "Istanbul · Kapadokija · Efes",
+    proofGuides: "Samo licencirani vodiči",
+  },
   phoneCards: {
     vibenow: "Dodirni. Spoji. Izađi na vrata za 60 sekundi.",
     vibesquad: "Pridruži se putnicima istim putem. Podelite cenu.",
@@ -1141,6 +1262,17 @@ const ko: Dict = {
     ctaPrimary: "이스탄불에서 가이드 찾기", ctaSecondary: "터키 투어 둘러보기",
   },
   phone: { live: "라이브", greet: "좋은 저녁입니다" },
+  phoneMock: {
+    guidesNearby: "근처 가이드 24명",
+    vibenowSub: "60초 매칭",
+    vibesquadSub: "그룹 참여",
+    privateSub: "하루를 계획하세요",
+    guideOnWay: "Mehmet이 오고 있어요",
+    arrivingIn: "약 4분 후 도착 · ⭐ 4.9",
+    proofRating: "★★★★★ 4.9 App Store",
+    proofCities: "이스탄불 · 카파도키아 · 에페소스",
+    proofGuides: "공인 가이드 전용",
+  },
   phoneCards: {
     vibenow: "탭. 매칭. 60초 안에 문 밖으로.",
     vibesquad: "같은 길로 가는 여행자들과 합류. 비용 분담.",
@@ -1242,6 +1374,17 @@ const it: Dict = {
     ctaPrimary: "Trova una guida a Istanbul", ctaSecondary: "Esplora la Turchia",
   },
   phone: { live: "Live", greet: "Buonasera" },
+  phoneMock: {
+    guidesNearby: "24 guide nelle vicinanze",
+    vibenowSub: "Match in 60s",
+    vibesquadSub: "Unisciti al gruppo",
+    privateSub: "Pianifica la tua giornata",
+    guideOnWay: "Mehmet è in arrivo",
+    arrivingIn: "Arrivo in ~4 min · ⭐ 4.9",
+    proofRating: "★★★★★ 4.9 App Store",
+    proofCities: "Istanbul · Cappadocia · Efeso",
+    proofGuides: "Solo guide autorizzate",
+  },
   phoneCards: {
     vibenow: "Tocca. Abbina. Esci di casa in 60 secondi.",
     vibesquad: "Unisciti a viaggiatori sulla stessa rotta. Dividete il prezzo.",
@@ -1343,6 +1486,17 @@ const hr: Dict = {
     ctaPrimary: "Pronađi vodiča u Istanbulu", ctaSecondary: "Istraži Tursku",
   },
   phone: { live: "Uživo", greet: "Dobra večer" },
+  phoneMock: {
+    guidesNearby: "24 vodiča u blizini",
+    vibenowSub: "Match za 60 sek",
+    vibesquadSub: "Pridruži se grupi",
+    privateSub: "Planiraj dan",
+    guideOnWay: "Mehmet je na putu",
+    arrivingIn: "Stiže za ~4 min · ⭐ 4.9",
+    proofRating: "★★★★★ 4.9 App Store",
+    proofCities: "Istanbul · Kapadokija · Efez",
+    proofGuides: "Samo licencirani vodiči",
+  },
   phoneCards: {
     vibenow: "Dodirni. Spoji. Izađi na vrata za 60 sekundi.",
     vibesquad: "Pridruži se putnicima istim putem. Podijelite cijenu.",
