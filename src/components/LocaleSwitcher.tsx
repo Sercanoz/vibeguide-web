@@ -8,9 +8,15 @@ const OPTIONS: { code: Locale; fi: string; label: string }[] = [
   { code: "en", fi: "gb", label: "English" },
   { code: "tr", fi: "tr", label: "Türkçe" },
   { code: "de", fi: "de", label: "Deutsch" },
+  { code: "fr", fi: "fr", label: "Français" },
   { code: "ru", fi: "ru", label: "Русский" },
   { code: "es", fi: "es", label: "Español" },
+  { code: "pt", fi: "pt", label: "Português" },
   { code: "it", fi: "it", label: "Italiano" },
+  { code: "nl", fi: "nl", label: "Nederlands" },
+  { code: "pl", fi: "pl", label: "Polski" },
+  { code: "uk", fi: "ua", label: "Українська" },
+  { code: "ro", fi: "ro", label: "Română" },
   { code: "el", fi: "gr", label: "Ελληνικά" },
   { code: "bg", fi: "bg", label: "Български" },
   { code: "sr", fi: "rs", label: "Српски" },
@@ -18,6 +24,8 @@ const OPTIONS: { code: Locale; fi: string; label: string }[] = [
   { code: "ko", fi: "kr", label: "한국어" },
   { code: "ja", fi: "jp", label: "日本語" },
   { code: "zh", fi: "cn", label: "中文" },
+  { code: "ar", fi: "sa", label: "العربية" },
+  { code: "id", fi: "id", label: "Indonesia" },
 ];
 
 export default function LocaleSwitcher() {
