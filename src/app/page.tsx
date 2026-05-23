@@ -15,8 +15,10 @@ export default function HomePage() {
       {/* ── STICKY NAV ── */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-black/[0.06]">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 h-16">
-          <a href="/" className="text-xl font-black tracking-tight">
-            Vibe<span className="text-[#6C4CF1]">Guide</span>
+          <a href="/" className="flex items-center gap-2.5 text-xl font-black tracking-tight">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/vibeguide-icon.png" alt="VibeGuide" width={32} height={32} style={{ mixBlendMode: "multiply" }} />
+            VibeGuide
           </a>
           <div className="hidden gap-8 text-sm font-medium text-neutral-500 md:flex">
             <a href="#how" className="hover:text-black transition-colors">How it works</a>
@@ -493,7 +495,11 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 md:grid-cols-[2.5fr_1fr_1fr_1fr]">
             <div>
-              <h3 className="text-xl font-black">Vibe<span className="text-[#6C4CF1]">Guide</span></h3>
+              <h3 className="flex items-center gap-2.5 text-xl font-black">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/vibeguide-icon.png" alt="VibeGuide" width={28} height={28} style={{ mixBlendMode: "multiply" }} />
+                VibeGuide
+              </h3>
               <p className="mt-3 max-w-xs text-sm leading-6 text-neutral-400">{t.footer.tagline}</p>
               <div className="mt-6 flex gap-2">
                 {["Instagram", "TikTok", "YouTube"].map((s) => (
@@ -538,6 +544,7 @@ export default function HomePage() {
     </main>
   );
 }
+
 
 function Phone({ children }: { children: React.ReactNode }) {
   return (

@@ -118,6 +118,10 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <head>
         <JsonLd />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css"
+        />
       </head>
       <body className="min-h-full flex flex-col bg-white text-vg-ink">
         <LanguageProvider>{children}</LanguageProvider>
