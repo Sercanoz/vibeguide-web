@@ -109,7 +109,7 @@ export default function HomePage() {
         <div className="relative mx-auto max-w-7xl px-6 py-28 grid md:grid-cols-2 gap-16 items-center w-full">
           {/* Copy */}
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-4 py-1.5 text-xs font-semibold text-white/70 backdrop-blur-sm mb-8">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-4 py-1.5 text-xs font-semibold text-white/70 backdrop-blur-sm mb-8 animate-[fadeSlideUp_0.7s_ease_both]">
               <span className="h-1.5 w-1.5 rounded-full bg-[#10B981] animate-pulse" />
               {t.hero.badge}
             </div>
@@ -146,6 +146,19 @@ export default function HomePage() {
                   <span>{b.icon}</span> {b.label}
                 </span>
               ))}
+            </div>
+          </div>
+
+          {/* Mobile mini hero — visible only on small screens */}
+          <div className="md:hidden mt-4 flex items-center gap-4 rounded-2xl bg-white/5 border border-white/10 p-4 backdrop-blur-sm">
+            <div className="h-12 w-12 shrink-0 rounded-2xl bg-gradient-to-br from-[#6C4CF1] to-[#8B5CF6] flex items-center justify-center text-2xl">🧭</div>
+            <div className="flex-1 min-w-0">
+              <p className="text-xs font-bold text-white/40 uppercase tracking-wider mb-1">Live in Istanbul</p>
+              <p className="text-sm font-black text-white leading-tight">24 guides online near you</p>
+            </div>
+            <div className="flex items-center gap-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/20 px-2.5 py-1">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="text-[10px] font-bold text-emerald-400">LIVE</span>
             </div>
           </div>
 
@@ -275,7 +288,7 @@ export default function HomePage() {
               <div key={item.step} className="relative bg-white p-10 group hover:bg-[#F7F7FB] transition-colors">
                 <span className="text-8xl font-black text-black/[0.04] absolute top-6 right-8 select-none leading-none">{item.step}</span>
                 {i < 2 && (
-                  <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 w-8 h-8 rounded-full bg-[#6C4CF1] text-white flex items-center justify-center text-sm font-black shadow-lg">
+                  <div className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 w-8 h-8 rounded-full bg-[#6C4CF1] text-white items-center justify-center text-sm font-black shadow-lg">
                     →
                   </div>
                 )}
@@ -482,13 +495,13 @@ export default function HomePage() {
                 <div className="mt-4 flex items-center gap-3">
                   <div className="flex -space-x-2">
                     {[
-                      "from-[#6C4CF1] to-[#8B5CF6]",
-                      "from-[#059669] to-[#10B981]",
-                      "from-[#D97706] to-[#F59E0B]",
-                      "from-[#EC4899] to-[#F43F5E]",
-                      "from-[#0EA5E9] to-[#6C4CF1]",
-                    ].map((g, i) => (
-                      <div key={i} className={`h-8 w-8 rounded-full bg-gradient-to-br ${g} border-2 border-[#0A0A0F]`} />
+                      { g: "from-[#6C4CF1] to-[#8B5CF6]", i: "S" },
+                      { g: "from-[#059669] to-[#10B981]", i: "M" },
+                      { g: "from-[#D97706] to-[#F59E0B]", i: "A" },
+                      { g: "from-[#EC4899] to-[#F43F5E]", i: "L" },
+                      { g: "from-[#0EA5E9] to-[#6C4CF1]", i: "J" },
+                    ].map((av, idx) => (
+                      <div key={idx} className={`h-8 w-8 rounded-full bg-gradient-to-br ${av.g} border-2 border-[#0A0A0F] flex items-center justify-center text-[10px] font-black text-white`}>{av.i}</div>
                     ))}
                   </div>
                   <p className="text-xs text-white/40">{t.testimonials.sub}</p>
@@ -539,7 +552,62 @@ export default function HomePage() {
             </a>
           </div>
 
-          <p className="mt-8 text-xs text-white/20">Free to download · Istanbul available now</p>
+          <div className="mt-10 flex flex-col items-center gap-3">
+            <div className="p-3 bg-white rounded-2xl shadow-lg inline-block">
+              {/* QR code SVG — links to vibeguideapp.com */}
+              <svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+                {/* Finder top-left */}
+                <rect x="4" y="4" width="28" height="28" rx="3" fill="#0A0A0F"/>
+                <rect x="8" y="8" width="20" height="20" rx="2" fill="white"/>
+                <rect x="12" y="12" width="12" height="12" rx="1" fill="#0A0A0F"/>
+                {/* Finder top-right */}
+                <rect x="64" y="4" width="28" height="28" rx="3" fill="#0A0A0F"/>
+                <rect x="68" y="8" width="20" height="20" rx="2" fill="white"/>
+                <rect x="72" y="12" width="12" height="12" rx="1" fill="#0A0A0F"/>
+                {/* Finder bottom-left */}
+                <rect x="4" y="64" width="28" height="28" rx="3" fill="#0A0A0F"/>
+                <rect x="8" y="68" width="20" height="20" rx="2" fill="white"/>
+                <rect x="12" y="72" width="12" height="12" rx="1" fill="#0A0A0F"/>
+                {/* Data modules — simplified pattern */}
+                <rect x="40" y="4" width="6" height="6" rx="1" fill="#0A0A0F"/>
+                <rect x="50" y="4" width="6" height="6" rx="1" fill="#0A0A0F"/>
+                <rect x="40" y="14" width="6" height="6" rx="1" fill="#0A0A0F"/>
+                <rect x="50" y="14" width="6" height="6" rx="1" fill="#0A0A0F"/>
+                <rect x="4" y="40" width="6" height="6" rx="1" fill="#0A0A0F"/>
+                <rect x="14" y="40" width="6" height="6" rx="1" fill="#0A0A0F"/>
+                <rect x="4" y="50" width="6" height="6" rx="1" fill="#0A0A0F"/>
+                <rect x="14" y="50" width="6" height="6" rx="1" fill="#0A0A0F"/>
+                <rect x="40" y="40" width="6" height="6" rx="1" fill="#6C4CF1"/>
+                <rect x="50" y="40" width="6" height="6" rx="1" fill="#6C4CF1"/>
+                <rect x="60" y="40" width="6" height="6" rx="1" fill="#0A0A0F"/>
+                <rect x="40" y="50" width="6" height="6" rx="1" fill="#0A0A0F"/>
+                <rect x="50" y="50" width="6" height="6" rx="1" fill="#6C4CF1"/>
+                <rect x="60" y="50" width="6" height="6" rx="1" fill="#0A0A0F"/>
+                <rect x="40" y="60" width="6" height="6" rx="1" fill="#0A0A0F"/>
+                <rect x="50" y="60" width="6" height="6" rx="1" fill="#0A0A0F"/>
+                <rect x="60" y="60" width="6" height="6" rx="1" fill="#6C4CF1"/>
+                <rect x="70" y="40" width="6" height="6" rx="1" fill="#0A0A0F"/>
+                <rect x="80" y="40" width="6" height="6" rx="1" fill="#0A0A0F"/>
+                <rect x="70" y="50" width="6" height="6" rx="1" fill="#6C4CF1"/>
+                <rect x="80" y="50" width="6" height="6" rx="1" fill="#0A0A0F"/>
+                <rect x="70" y="60" width="6" height="6" rx="1" fill="#0A0A0F"/>
+                <rect x="80" y="60" width="6" height="6" rx="1" fill="#6C4CF1"/>
+                <rect x="40" y="70" width="6" height="6" rx="1" fill="#6C4CF1"/>
+                <rect x="50" y="70" width="6" height="6" rx="1" fill="#0A0A0F"/>
+                <rect x="60" y="70" width="6" height="6" rx="1" fill="#0A0A0F"/>
+                <rect x="70" y="70" width="6" height="6" rx="1" fill="#0A0A0F"/>
+                <rect x="80" y="70" width="6" height="6" rx="1" fill="#6C4CF1"/>
+                <rect x="40" y="80" width="6" height="6" rx="1" fill="#0A0A0F"/>
+                <rect x="50" y="80" width="6" height="6" rx="1" fill="#6C4CF1"/>
+                <rect x="60" y="80" width="6" height="6" rx="1" fill="#6C4CF1"/>
+                <rect x="70" y="80" width="6" height="6" rx="1" fill="#0A0A0F"/>
+                <rect x="80" y="80" width="6" height="6" rx="1" fill="#0A0A0F"/>
+              </svg>
+            </div>
+            <p className="text-xs text-white/30">Scan to download</p>
+          </div>
+
+          <p className="mt-6 text-xs text-white/20">Free to download · Istanbul available now</p>
         </div>
       </section>
 
