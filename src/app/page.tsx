@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { useT } from "@/components/LanguageProvider";
 import LocaleSwitcher from "@/components/LocaleSwitcher";
 import { homeTranslations } from "@/lib/home-i18n";
+import { useInView } from "@/hooks/useInView";
 
 export default function HomePage() {
   const { locale } = useT();
@@ -19,6 +20,14 @@ export default function HomePage() {
     document.addEventListener("mousedown", onClick);
     return () => document.removeEventListener("mousedown", onClick);
   }, []);
+
+  const secHow = useInView();
+  const secEnergy = useInView();
+  const secModes = useInView();
+  const secManifesto = useInView();
+  const secTurkey = useInView();
+  const secTrust = useInView();
+  const secDownload = useInView();
 
   const navLinks = [
     { href: "#how", label: "How it works" },
@@ -268,7 +277,7 @@ export default function HomePage() {
       </section>
 
       {/* ── HOW IT WORKS ── */}
-      <section id="how" className="py-28 bg-white">
+      <section ref={secHow.ref as React.RefObject<HTMLElement>} id="how" className={`py-28 bg-white reveal ${secHow.inView ? "in-view" : ""}`}>
         <div className="mx-auto max-w-7xl px-6">
           <div className="text-center mb-20">
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1]">Simple as it gets</p>
@@ -302,7 +311,7 @@ export default function HomePage() {
       </section>
 
       {/* ── LIVE CITY ENERGY ── */}
-      <section className="py-8 bg-white">
+      <section ref={secEnergy.ref as React.RefObject<HTMLElement>} className={`py-8 bg-white reveal ${secEnergy.inView ? "in-view" : ""}`}>
         <div className="mx-auto max-w-7xl px-6">
           <div className="rounded-[2.5rem] bg-[#0A0A0F] p-8 md:p-12 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#6C4CF1]/10 rounded-full blur-3xl pointer-events-none" />
@@ -333,7 +342,7 @@ export default function HomePage() {
       </section>
 
       {/* ── 3 MODES ── */}
-      <section id="modes" className="py-28 bg-white">
+      <section ref={secModes.ref as React.RefObject<HTMLElement>} id="modes" className={`py-28 bg-white reveal ${secModes.inView ? "in-view" : ""}`}>
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-16">
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-neutral-400">{t.modesIntro.eyebrow}</p>
@@ -398,7 +407,7 @@ export default function HomePage() {
       </section>
 
       {/* ── MANIFESTO ── */}
-      <section className="py-28 bg-[#0A0A0F] text-white relative overflow-hidden">
+      <section ref={secManifesto.ref as React.RefObject<HTMLElement>} className={`py-28 bg-[#0A0A0F] text-white relative overflow-hidden reveal ${secManifesto.inView ? "in-view" : ""}`}>
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMwLTkuOTQtOC4wNi0xOC0xOC0xOFYwaDQydjQySDE4QzI3Ljk0IDQyIDM2IDMzLjk0IDM2IDI0VjE4eiIgZmlsbD0iI2ZmZiIvPjwvZz48L3N2Zz4=')]" />
         </div>
@@ -417,7 +426,7 @@ export default function HomePage() {
 
 
       {/* ── TURKEY ONLY BANNER ── */}
-      <section className="py-16 bg-[#F7F7FB]">
+      <section ref={secTurkey.ref as React.RefObject<HTMLElement>} className={`py-16 bg-[#F7F7FB] reveal ${secTurkey.inView ? "in-view" : ""}`}>
         <div className="mx-auto max-w-7xl px-6">
           <div className="rounded-3xl bg-white border border-black/5 shadow-sm overflow-hidden">
             <div className="grid md:grid-cols-2">
@@ -465,7 +474,7 @@ export default function HomePage() {
       </section>
 
       {/* ── TRUST + TESTIMONIALS ── */}
-      <section id="guides" className="py-28 bg-white">
+      <section ref={secTrust.ref as React.RefObject<HTMLElement>} id="guides" className={`py-28 bg-white reveal ${secTrust.inView ? "in-view" : ""}`}>
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid md:grid-cols-2 gap-16 items-start">
             {/* Trust */}
@@ -520,7 +529,7 @@ export default function HomePage() {
       </section>
 
       {/* ── DOWNLOAD — full-width dark ── */}
-      <section id="download" className="relative py-32 bg-[#0A0A0F] text-white overflow-hidden">
+      <section ref={secDownload.ref as React.RefObject<HTMLElement>} id="download" className={`relative py-32 bg-[#0A0A0F] text-white overflow-hidden reveal ${secDownload.inView ? "in-view" : ""}`}>
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#6C4CF1]/15 rounded-full blur-[100px]" />
         </div>
