@@ -30,7 +30,7 @@ export default function HomePage() {
   const secDownload = useInView();
 
   const navLinks = [
-    { href: "#how", label: "How it works" },
+    { href: "#how", label: t.nav2.howItWorks },
     { href: "#modes", label: t.nav.vibenow },
     { href: "#destinations", label: t.nav.destinations },
     { href: "#guides", label: t.nav.guides },
@@ -280,28 +280,24 @@ export default function HomePage() {
       <section ref={secHow.ref as React.RefObject<HTMLElement>} id="how" className={`py-28 bg-white reveal ${secHow.inView ? "in-view" : ""}`}>
         <div className="mx-auto max-w-7xl px-6">
           <div className="text-center mb-20">
-            <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1]">Simple as it gets</p>
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1]">{t.howItWorks.eyebrow}</p>
             <h2 className="mt-4 text-4xl md:text-6xl font-black tracking-tight">
-              Guide in your pocket,
+              {t.howItWorks.titleA}
               <br />
-              <span className="text-neutral-200">city in your hands.</span>
+              <span className="text-neutral-200">{t.howItWorks.titleB}</span>
             </h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-px bg-black/5 rounded-3xl overflow-hidden border border-black/5">
-            {[
-              { step: "01", icon: "📱", title: "Open the app", text: "Choose VibeNow for instant, VibeSquad for group, or Private for a full day." },
-              { step: "02", icon: "🤝", title: "Match with a guide", text: "Verified local guides near you. Real people, real expertise, real passion for their city." },
-              { step: "03", icon: "🚶", title: "Walk out the door", text: "In 60 seconds with VibeNow. No planning, no waiting, no tourist traps." },
-            ].map((item, i) => (
-              <div key={item.step} className="relative bg-white p-10 group hover:bg-[#F7F7FB] transition-colors">
-                <span className="text-8xl font-black text-black/[0.04] absolute top-6 right-8 select-none leading-none">{item.step}</span>
+            {t.howItWorks.steps.map((item, i) => (
+              <div key={item.title} className="relative bg-white p-10 group hover:bg-[#F7F7FB] transition-colors">
+                <span className="text-8xl font-black text-black/[0.04] absolute top-6 right-8 select-none leading-none">{String(i + 1).padStart(2, "0")}</span>
                 {i < 2 && (
                   <div className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 w-8 h-8 rounded-full bg-[#6C4CF1] text-white items-center justify-center text-sm font-black shadow-lg">
                     →
                   </div>
                 )}
-                <div className="text-5xl mb-7">{item.icon}</div>
+                <div className="text-5xl mb-7">{["📱","🤝","🚶"][i]}</div>
                 <h3 className="text-2xl font-black">{item.title}</h3>
                 <p className="mt-3 text-sm leading-7 text-neutral-500">{item.text}</p>
               </div>
@@ -432,27 +428,27 @@ export default function HomePage() {
             <div className="grid md:grid-cols-2">
               <div className="p-10 md:p-14 flex flex-col justify-center">
                 <span className="inline-flex items-center gap-2 rounded-full bg-[#FEF3C7] border border-amber-100 px-3 py-1 text-xs font-bold text-amber-700 self-start mb-6">
-                  🇹🇷 Currently available in Turkey
+                  {t.turkey.badge}
                 </span>
                 <h2 className="text-3xl md:text-4xl font-black tracking-tight leading-tight">
-                  Starting in Turkey,<br />
-                  <span className="text-neutral-300">going global soon.</span>
+                  {t.turkey.titleA}<br />
+                  <span className="text-neutral-300">{t.turkey.titleB}</span>
                 </h2>
                 <p className="mt-4 text-sm leading-7 text-neutral-400 max-w-sm">
-                  VibeGuide is live across Turkey — Istanbul, Cappadocia and Ephesus coming next. We're growing fast. Your city is on the map.
+                  {t.turkey.body}
                 </p>
                 <div className="mt-8 flex flex-wrap gap-3">
                   {[
-                    { label: "🏙️ Istanbul", href: "/istanbul-tour-guide" },
-                    { label: "🎈 Cappadocia", href: "/cappadocia-tour-guide" },
-                    { label: "🏛️ Ephesus", href: "/ephesus-tour-guide" },
+                    { label: t.turkey.cities[0], href: "/istanbul-tour-guide" },
+                    { label: t.turkey.cities[1], href: "/cappadocia-tour-guide" },
+                    { label: t.turkey.cities[2], href: "/ephesus-tour-guide" },
                   ].map((city) => (
                     <a key={city.label} href={city.href} className="rounded-full bg-[#F7F7FB] border border-black/8 px-4 py-2 text-xs font-semibold text-neutral-600 hover:border-[#6C4CF1]/40 hover:text-[#6C4CF1] transition-colors">
                       {city.label}
                     </a>
                   ))}
                   <span className="rounded-full bg-[#6C4CF1]/8 border border-[#6C4CF1]/20 px-4 py-2 text-xs font-semibold text-[#6C4CF1]">
-                    + more coming
+                    {t.turkey.more}
                   </span>
                 </div>
               </div>
@@ -469,7 +465,7 @@ export default function HomePage() {
                 <div className="relative text-center p-8">
                   <p className="text-6xl font-black text-white">🇹🇷</p>
                   <p className="mt-3 text-lg font-black text-white">Turkey</p>
-                  <p className="mt-1 text-sm text-white/50">Live now</p>
+                  <p className="mt-1 text-sm text-white/50">{t.turkey.liveNow}</p>
                 </div>
               </div>
             </div>
@@ -662,10 +658,10 @@ export default function HomePage() {
             <div>
               <h4 className="text-sm font-black">{t.footer.support}</h4>
               <ul className="mt-4 space-y-3 text-sm text-neutral-400">
-                <li><a href="/help" className="hover:text-black transition-colors">Help Center</a></li>
-                <li><a href="/terms" className="hover:text-black transition-colors">Terms of Service</a></li>
-                <li><a href="/privacy" className="hover:text-black transition-colors">Privacy</a></li>
-                <li><a href="/account-deletion" className="hover:text-black transition-colors">Account Deletion</a></li>
+                <li><a href="/help" className="hover:text-black transition-colors">{t.footerLinks.helpCenter}</a></li>
+                <li><a href="/terms" className="hover:text-black transition-colors">{t.footerLinks.terms}</a></li>
+                <li><a href="/privacy" className="hover:text-black transition-colors">{t.footerLinks.privacy}</a></li>
+                <li><a href="/account-deletion" className="hover:text-black transition-colors">{t.footerLinks.accountDeletion}</a></li>
               </ul>
             </div>
           </div>
