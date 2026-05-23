@@ -2,7 +2,7 @@ import type { Locale } from "./i18n";
 
 export type LegalLocale = "en" | "tr";
 export type ExtendedLocale = "en" | "tr" | "ru" | "de" | "es" | "ja" | "zh" | "el" | "bg" | "sr" | "ko" | "it" | "hr";
-export type HelpLocale = "en" | "tr" | "ru" | "de" | "es" | "ja" | "zh";
+export type HelpLocale = ExtendedLocale;
 
 export function legalLocale(l: Locale): LegalLocale {
   return l === "tr" ? "tr" : "en";
@@ -14,8 +14,7 @@ export function extendedLocale(l: Locale): ExtendedLocale {
 }
 
 export function helpLocale(l: Locale): HelpLocale {
-  const supported: HelpLocale[] = ["en", "tr", "ru", "de", "es", "ja", "zh"];
-  return (supported.includes(l as HelpLocale) ? l : "en") as HelpLocale;
+  return extendedLocale(l);
 }
 
 export const APP_NAME = "VibeGuide";
@@ -1901,6 +1900,108 @@ export const help: Record<HelpLocale, HelpDict> = {
       { h: "可以取消预订吗？", p: "可以。退款资格取决于：", list: ["体验前24小时以上 = 100%", "不足24小时 = 50%", "不足2小时 = 不退款"] },
       { h: "如果向导取消怎么办？", list: ["我们会尝试自动分配替代向导", "可能提供替代体验或重新安排", "如无解决方案，全额退款加小额致歉积分"] },
       { h: "如何联系VibeGuide？", list: [`客服: ${SUPPORT_EMAIL}`, `隐私: ${KVKK_EMAIL}`] },
+    ],
+  },
+  el: {
+    pageTitle: "Κέντρο Βοήθειας",
+    lastUpdatedLabel: "Τελευταία ενημέρωση",
+    intro: "Καλώς ορίσατε στο Κέντρο Βοήθειας του VibeGuide. Βοηθάμε ταξιδιώτες να ανακαλύψουν αξιόπιστες τοπικές εμπειρίες και να συνδεθούν με αδειοδοτημένους ξεναγούς στην Τουρκία.",
+    sections: [
+      { h: "Τι είναι το VibeGuide;", p: "Το VibeGuide είναι πλατφόρμα ταξιδιωτικών εμπειριών που συνδέει ταξιδιώτες με επαληθευμένους τοπικούς ξεναγούς στην Τουρκία — άμεση αντιστοίχιση 1-1 (VibeNow), κοινές ομαδικές εμπειρίες (VibeSquad) και προγραμματισμένες ιδιωτικές περιηγήσεις." },
+      { h: "Τι μπορώ να κλείσω;", list: ["Άμεσες τοπικές εμπειρίες (VibeNow)", "Ιδιωτικές ξεναγήσεις", "Κοινές ομαδικές εμπειρίες (VibeSquad)", "Πολιτιστικές και ιστορικές βόλτες", "Γαστρονομικές εμπειρίες", "Επισκέψεις σε μουσεία και αρχαιολογικούς χώρους"] },
+      { h: "Πώς λειτουργεί το VibeNow;", steps: ["Ανοίξτε την εφαρμογή και επιλέξτε μια διαθέσιμη εμπειρία κοντά σας.", "Υποβάλετε αίτημα — το σύστημα αναζητά αμέσως κοντινό ξεναγό.", "Ένας διαθέσιμος επαληθευμένος ξεναγός αποδέχεται το αίτημα σε ~60 δευτερόλεπτα.", "Λαμβάνετε το όνομα, τη φωτογραφία, το σήμα και το σημείο συνάντησης.", "Συναντήστε τον ξεναγό και απολαύστε. Πληρωμή μέσω εφαρμογής — ποτέ απευθείας."] },
+      { h: "Τι είναι το VibeSquad;", list: ["Μοιραστείτε τα έξοδα ξενάγησης με άλλους ταξιδιώτες", "Γνωρίστε ταξιδιώτες από όλο τον κόσμο", "Εντάσσεστε σε υπάρχον ή δημιουργείτε δικό σας squad", "Όσοι περισσότεροι, τόσο χαμηλότερη η τιμή ανά άτομο"] },
+      { h: "Μπορώ να κλείσω ιδιωτική ξενάγηση;", p: "Ναι. Οι ιδιωτικές ξεναγήσεις σας επιτρέπουν να κλείσετε επαληθευμένο ξεναγό για συγκεκριμένη ημερομηνία, γλώσσα και μέγεθος ομάδας.", list: ["Οικογενειακά ταξίδια", "Ζευγάρια", "Επαγγελματίες ταξιδιώτες", "VIP επισκέπτες", "Προσαρμοσμένες διαδρομές"] },
+      { h: "Οι ξεναγοί είναι πιστοποιημένοι;", p: "Το VibeGuide συνεργάζεται με επαληθευμένους τοπικούς ξεναγούς που διαθέτουν επίσημο κοκάρτ του Τουρκικού Υπουργείου Πολιτισμού.", list: ["Επαλήθευση ταυτότητας", "Έλεγχος κοκάρτ (επαγγελματική άδεια)", "Φωτογραφική επιβεβαίωση", "Αξιολόγηση εμπειρίας και γλωσσικών δεξιοτήτων", "Έγκριση ομάδας διαχείρισης", "Συνεχής βαθμολόγηση αξιοπιστίας"] },
+      { h: "Πώς λειτουργούν οι πληρωμές;", p: "Το σύνολο επεξεργάζεται εκ των προτέρων μέσω iyzico. Το VibeGuide δεν αποθηκεύει πλήρεις αριθμούς καρτών.", list: ["Άμεση πληρωμή — για επιβεβαιωμένες άμεσες αντιστοιχίσεις", "Εξουσιοδότηση — για pools VibeSquad", "Επιστροφές χρημάτων στην αρχική μέθοδο πληρωμής"] },
+      { h: "Μπορώ να ακυρώσω κράτηση;", p: "Ναι. Η επιλεξιμότητα επιστροφής εξαρτάται από:", list: ["Πάνω από 24 ώρες πριν = 100%", "Κάτω από 24 ώρες = 50%", "Κάτω από 2 ώρες = χωρίς επιστροφή"] },
+      { h: "Τι γίνεται αν ακυρώσει ο ξεναγός;", list: ["Προσπαθούμε να αναθέσουμε αυτόματα εναλλακτικό ξεναγό", "Ενδέχεται να προταθεί εναλλακτική εμπειρία ή επαναπρογραμματισμός", "Αν δεν υπάρχει λύση, πλήρης επιστροφή + μικρή πίστωση απολογισμού"] },
+      { h: "Επικοινωνία με το VibeGuide", list: [`Υποστήριξη: ${SUPPORT_EMAIL}`, `Απόρρητο: ${KVKK_EMAIL}`] },
+    ],
+  },
+  bg: {
+    pageTitle: "Помощен център",
+    lastUpdatedLabel: "Последно обновяване",
+    intro: "Добре дошли в Помощния център на VibeGuide. Помагаме на пътуващи да открият надеждни местни преживявания и да се свържат с лицензирани водачи в Турция.",
+    sections: [
+      { h: "Какво е VibeGuide?", p: "VibeGuide е платформа за туристически преживявания, която свързва пътуващи с верифицирани местни водачи в Турция — незабавно съвпадение 1-1 (VibeNow), споделени групови преживявания (VibeSquad) и планирани частни турове." },
+      { h: "Какво мога да резервирам?", list: ["Незабавни местни преживявания (VibeNow)", "Частни екскурзии с водач", "Споделени групови преживявания (VibeSquad)", "Културни и исторически разходки", "Гастрономически преживявания", "Посещения на музеи и исторически обекти"] },
+      { h: "Как работи VibeNow?", steps: ["Отворете приложението и изберете налично преживяване наблизо.", "Изпратете заявка — системата веднага търси близък водач.", "Наличен верифициран водач приема заявката за ~60 секунди.", "Получавате името, снимката, значката и мястото за среща на водача.", "Срещнете се с водача и се насладете. Плащайте чрез приложението — никога директно."] },
+      { h: "Какво е VibeSquad?", list: ["Споделяйте разходите за водач с други пътуващи", "Запознайте се с пътуващи от целия свят", "Присъединете се към съществуващ или създайте свой squad", "Колкото повече участници, толкова по-ниска цена на човек"] },
+      { h: "Мога ли да резервирам частен тур?", p: "Да. Частните екскурзии ви позволяват да резервирате верифициран водач за конкретна дата, език и размер на групата.", list: ["Семейни пътувания", "Двойки", "Бизнес пътуващи", "VIP гости", "Персонализирани маршрути"] },
+      { h: "Водачите имат ли лицензи?", p: "VibeGuide работи с верифицирани местни водачи, притежаващи официален кокарт от Турското министерство на културата.", list: ["Проверка на самоличността", "Проверка на кокарт (професионален лиценз)", "Фотографско потвърждение", "Оценка на опит и езикови умения", "Одобрение от екипа за управление", "Непрекъснато оценяване на надеждността"] },
+      { h: "Как работят плащанията?", p: "Цялата сума се обработва предварително чрез iyzico. VibeGuide не съхранява пълни номера на карти.", list: ["Незабавно плащане — за потвърдени незабавни съвпадения", "Авторизация — за pools VibeSquad", "Възстановявания към оригиналния начин на плащане"] },
+      { h: "Мога ли да откажа резервация?", p: "Да. Допустимостта за възстановяване зависи от:", list: ["Повече от 24 часа преди = 100%", "По-малко от 24 часа = 50%", "По-малко от 2 часа = без възстановяване"] },
+      { h: "Какво се случва, ако водачът откаже?", list: ["Опитваме се автоматично да назначим алтернативен водач", "Може да се предложи алтернативно преживяване или препланиране", "Ако няма решение, пълно възстановяване + малък кредит за извинение"] },
+      { h: "Свържете се с VibeGuide", list: [`Поддръжка: ${SUPPORT_EMAIL}`, `Поверителност: ${KVKK_EMAIL}`] },
+    ],
+  },
+  sr: {
+    pageTitle: "Centar za pomoć",
+    lastUpdatedLabel: "Poslednje ažuriranje",
+    intro: "Dobrodošli u VibeGuide Centar za pomoć. Pomažemo putnicima da otkriju pouzdana lokalna iskustva i povežu se sa licenciranim vodičima u Turskoj.",
+    sections: [
+      { h: "Šta je VibeGuide?", p: "VibeGuide je platforma za turistička iskustva koja povezuje putnike sa verifikovanim lokalnim vodičima u Turskoj — trenutno spajanje 1-1 (VibeNow), deljena grupna iskustva (VibeSquad) i planirane privatne ture." },
+      { h: "Šta mogu da rezervišem?", list: ["Trenutna lokalna iskustva (VibeNow)", "Privatne vođene ture", "Deljena grupna iskustva (VibeSquad)", "Kulturne i istorijske šetnje", "Gastronomska iskustva", "Posete muzejima i istorijskim lokalitetima"] },
+      { h: "Kako funkcioniše VibeNow?", steps: ["Otvorite aplikaciju i izaberite dostupno iskustvo u blizini.", "Pošaljite zahtev — sistem odmah traži bliskog vodiča.", "Dostupan verifikovan vodič prihvata zahtev za ~60 sekundi.", "Dobijate ime, fotografiju, bedž i mesto susreta vodiča.", "Sretnite se sa vodičem i uživajte. Plaćajte putem aplikacije — nikada direktno."] },
+      { h: "Šta je VibeSquad?", list: ["Podelite troškove vodiča sa drugim putnicima", "Upoznajte putnike iz celog sveta", "Priključite se postojećem ili kreirajte svoj squad", "Što više učesnika, niža cena po osobi"] },
+      { h: "Mogu li da rezervišem privatnu turu?", p: "Da. Privatne ture vam omogućavaju da rezervišete verifikovanog vodiča za određeni datum, jezik i veličinu grupe.", list: ["Porodična putovanja", "Parovi", "Poslovni putnici", "VIP gosti", "Prilagođene rute"] },
+      { h: "Da li vodiči imaju licence?", p: "VibeGuide sarađuje sa verifikovanim lokalnim vodičima koji poseduju zvanični kokart Turskog Ministarstva kulture.", list: ["Provera identiteta", "Provera kokarta (profesionalne licence)", "Fotografska potvrda", "Procena iskustva i jezičkih veština", "Odobrenje od strane tima za upravljanje", "Kontinuirano ocenjivanje pouzdanosti"] },
+      { h: "Kako funkcionišu plaćanja?", p: "Ukupan iznos se obrađuje unapred putem iyzico. VibeGuide ne čuva kompletne brojeve kartica.", list: ["Trenutno plaćanje — za potvrđena trenutna spajanja", "Autorizacija — za VibeSquad pools", "Povraćaji na originalni način plaćanja"] },
+      { h: "Mogu li da otkažem rezervaciju?", p: "Da. Pravo na povraćaj zavisi od:", list: ["Više od 24 sata pre = 100%", "Manje od 24 sata = 50%", "Manje od 2 sata = bez povraćaja"] },
+      { h: "Šta ako vodič otkaže?", list: ["Pokušavamo automatski dodeliti alternativnog vodiča", "Može se ponuditi alternativno iskustvo ili rescheduling", "Ako nema rešenja, puni povraćaj + mali kredit za ispriku"] },
+      { h: "Kontaktirajte VibeGuide", list: [`Podrška: ${SUPPORT_EMAIL}`, `Privatnost: ${KVKK_EMAIL}`] },
+    ],
+  },
+  ko: {
+    pageTitle: "도움말 센터",
+    lastUpdatedLabel: "최종 업데이트",
+    intro: "VibeGuide 도움말 센터에 오신 것을 환영합니다. 터키에서 신뢰할 수 있는 현지 체험을 발견하고 면허 취득 가이드와 안전하고 간편하게 연결할 수 있도록 도와드립니다.",
+    sections: [
+      { h: "VibeGuide란 무엇인가요?", p: "VibeGuide는 터키에서 여행자를 인증된 현지 가이드와 연결하는 여행 체험 플랫폼입니다 — 즉각적인 1:1 매칭(VibeNow), 공유 그룹 체험(VibeSquad), 계획된 프라이빗 투어." },
+      { h: "어떤 것을 예약할 수 있나요?", list: ["즉각적인 현지 체험 (VibeNow)", "프라이빗 가이드 투어", "공유 그룹 체험 (VibeSquad)", "문화 및 역사 도보 투어", "음식 및 음료 체험", "박물관 및 유적지 방문"] },
+      { h: "VibeNow는 어떻게 작동하나요?", steps: ["앱을 열고 근처의 이용 가능한 체험을 선택합니다.", "요청 제출 — 시스템이 즉시 근처 가이드를 검색합니다.", "이용 가능한 인증 가이드가 약 60초 내에 요청을 수락합니다.", "가이드의 이름, 사진, 배지, 만남 장소를 받습니다.", "가이드를 만나 체험을 즐기세요. 앱을 통해 결제 — 직접 결제 절대 금지."] },
+      { h: "VibeSquad란 무엇인가요?", list: ["다른 여행자들과 가이드 비용 분담", "전 세계 여행자와 만남", "기존 스쿼드 참여 또는 직접 생성", "참여자가 많을수록 1인당 비용 절감"] },
+      { h: "프라이빗 투어를 예약할 수 있나요?", p: "네. 프라이빗 투어를 통해 특정 날짜, 언어, 그룹 크기에 맞는 인증 가이드를 예약할 수 있습니다.", list: ["가족 여행", "커플", "비즈니스 여행자", "VIP 게스트", "맞춤 루트"] },
+      { h: "가이드는 면허가 있나요?", p: "VibeGuide는 터키 문화관광부의 공식 코카르트를 보유한 인증된 현지 가이드와 협력합니다.", list: ["신원 확인", "코카르트(전문 면허) 검토", "사진 확인", "경험 및 언어 능력 평가", "관리팀 승인", "지속적인 신뢰도 평가"] },
+      { h: "결제는 어떻게 되나요?", p: "모든 결제는 iyzico를 통해 사전에 처리됩니다. VibeGuide는 전체 카드 번호를 저장하지 않습니다.", list: ["즉시 결제 — 확인된 즉시 매칭용", "승인 — VibeSquad 풀용", "환불은 원래 결제 방법으로"] },
+      { h: "예약을 취소할 수 있나요?", p: "네. 환불 자격은 다음에 따라 다릅니다:", list: ["체험 24시간 이전 = 100%", "24시간 미만 = 50%", "2시간 미만 = 환불 없음"] },
+      { h: "가이드가 취소하면 어떻게 되나요?", list: ["자동으로 대체 가이드 배정을 시도합니다", "대체 체험 또는 일정 변경을 제안할 수 있습니다", "해결책이 없으면 전액 환불 + 소액 사과 크레딧"] },
+      { h: "VibeGuide 문의", list: [`고객지원: ${SUPPORT_EMAIL}`, `개인정보: ${KVKK_EMAIL}`] },
+    ],
+  },
+  it: {
+    pageTitle: "Centro assistenza",
+    lastUpdatedLabel: "Ultimo aggiornamento",
+    intro: "Benvenuto nel Centro assistenza di VibeGuide. Aiutiamo i viaggiatori a scoprire esperienze locali affidabili e a connettersi con guide autorizzate in Turchia.",
+    sections: [
+      { h: "Cos'è VibeGuide?", p: "VibeGuide è una piattaforma di esperienze di viaggio che mette in contatto i viaggiatori con guide locali verificate in Turchia — abbinamento istantaneo 1:1 (VibeNow), esperienze di gruppo condivise (VibeSquad) e tour privati pianificati." },
+      { h: "Cosa posso prenotare?", list: ["Esperienze locali istantanee (VibeNow)", "Tour guidati privati", "Esperienze di gruppo condivise (VibeSquad)", "Passeggiate culturali e storiche", "Esperienze gastronomiche", "Visite a musei e siti storici"] },
+      { h: "Come funziona VibeNow?", steps: ["Apri l'app e seleziona un'esperienza disponibile nelle vicinanze.", "Invia la richiesta — il sistema cerca immediatamente una guida nelle vicinanze.", "Una guida verificata disponibile accetta la richiesta in ~60 secondi.", "Ricevi nome, foto, badge e punto d'incontro della guida.", "Incontra la guida e goditi l'esperienza. Paga tramite app — mai direttamente."] },
+      { h: "Cos'è VibeSquad?", list: ["Condividi i costi della guida con altri viaggiatori", "Incontra viaggiatori da tutto il mondo", "Unisciti a uno squad esistente o creane uno tuo", "Più partecipanti, minore il costo per persona"] },
+      { h: "Posso prenotare un tour privato?", p: "Sì. I tour privati ti permettono di prenotare una guida verificata per una data, lingua e dimensione del gruppo specifiche.", list: ["Viaggi in famiglia", "Coppie", "Viaggiatori d'affari", "Ospiti VIP", "Percorsi personalizzati"] },
+      { h: "Le guide sono certificate?", p: "VibeGuide collabora con guide locali verificate che posiedono il kokart ufficiale del Ministero della Cultura turco.", list: ["Verifica dell'identità", "Controllo del kokart (licenza professionale)", "Conferma fotografica", "Valutazione di esperienza e competenze linguistiche", "Approvazione del team di gestione", "Valutazione continua dell'affidabilità"] },
+      { h: "Come funzionano i pagamenti?", p: "Il totale viene elaborato in anticipo tramite iyzico. VibeGuide non memorizza numeri di carta completi.", list: ["Pagamento immediato — per abbinamenti istantanei confermati", "Autorizzazione — per pool VibeSquad", "Rimborsi al metodo di pagamento originale"] },
+      { h: "Posso cancellare una prenotazione?", p: "Sì. L'idoneità al rimborso dipende da:", list: ["Più di 24 ore prima = 100%", "Meno di 24 ore = 50%", "Meno di 2 ore = nessun rimborso"] },
+      { h: "Cosa succede se la guida cancella?", list: ["Cerchiamo di assegnare automaticamente una guida alternativa", "Potrebbe essere proposta un'esperienza alternativa o un cambio di data", "Se non c'è soluzione, rimborso completo + piccolo credito di scuse"] },
+      { h: "Contatta VibeGuide", list: [`Assistenza: ${SUPPORT_EMAIL}`, `Privacy: ${KVKK_EMAIL}`] },
+    ],
+  },
+  hr: {
+    pageTitle: "Centar za pomoć",
+    lastUpdatedLabel: "Zadnje ažuriranje",
+    intro: "Dobrodošli u VibeGuide Centar za pomoć. Pomažemo putnicima da otkriju pouzdana lokalna iskustva i povežu se s licenciranim vodičima u Turskoj.",
+    sections: [
+      { h: "Što je VibeGuide?", p: "VibeGuide je platforma za turistička iskustva koja povezuje putnike s verificiranim lokalnim vodičima u Turskoj — trenutno sparivanje 1:1 (VibeNow), zajednička grupna iskustva (VibeSquad) i planirane privatne ture." },
+      { h: "Što mogu rezervirati?", list: ["Trenutna lokalna iskustva (VibeNow)", "Privatne vođene ture", "Zajednička grupna iskustva (VibeSquad)", "Kulturne i povijesne šetnje", "Gastronomska iskustva", "Posjeti muzejima i povijesnim lokalitetima"] },
+      { h: "Kako funkcionira VibeNow?", steps: ["Otvorite aplikaciju i odaberite dostupno iskustvo u blizini.", "Pošaljite zahtjev — sustav odmah traži obližnjeg vodiča.", "Dostupan verificirani vodič prihvaća zahtjev za ~60 sekundi.", "Dobivate ime, fotografiju, bedž i mjesto susreta vodiča.", "Sretnite se s vodičem i uživajte. Plaćajte putem aplikacije — nikada izravno."] },
+      { h: "Što je VibeSquad?", list: ["Podijelite troškove vodiča s drugim putnicima", "Upoznajte putnike iz cijelog svijeta", "Pridružite se postojećem ili stvorite vlastiti squad", "Što više sudionika, niža cijena po osobi"] },
+      { h: "Mogu li rezervirati privatnu turu?", p: "Da. Privatne ture vam omogućuju rezervaciju verificiranog vodiča za određeni datum, jezik i veličinu grupe.", list: ["Obiteljska putovanja", "Parovi", "Poslovni putnici", "VIP gosti", "Prilagođene rute"] },
+      { h: "Imaju li vodiči licence?", p: "VibeGuide surađuje s verificiranim lokalnim vodičima koji posjeduju službeni kokart Turskog ministarstva kulture.", list: ["Provjera identiteta", "Provjera kokarta (profesionalne licence)", "Fotografska potvrda", "Procjena iskustva i jezičnih vještina", "Odobrenje od strane tima za upravljanje", "Kontinuirano ocjenjivanje pouzdanosti"] },
+      { h: "Kako funkcioniraju plaćanja?", p: "Ukupni iznos se obrađuje unaprijed putem iyzico. VibeGuide ne pohranjuje potpune brojeve kartica.", list: ["Trenutno plaćanje — za potvrđena trenutna sparivanja", "Autorizacija — za VibeSquad pools", "Povrati na originalnu metodu plaćanja"] },
+      { h: "Mogu li otkazati rezervaciju?", p: "Da. Pravo na povrat ovisi o:", list: ["Više od 24 sata prije = 100%", "Manje od 24 sata = 50%", "Manje od 2 sata = bez povrata"] },
+      { h: "Što ako vodič otkaže?", list: ["Pokušavamo automatski dodijeliti alternativnog vodiča", "Može se ponuditi alternativno iskustvo ili preraspoređivanje", "Ako nema rješenja, puni povrat + mali kredit za ispriku"] },
+      { h: "Kontaktirajte VibeGuide", list: [`Podrška: ${SUPPORT_EMAIL}`, `Privatnost: ${KVKK_EMAIL}`] },
     ],
   },
 };
