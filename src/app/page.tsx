@@ -442,10 +442,14 @@ export default function HomePage() {
                   VibeGuide is live across Turkey — Istanbul, Cappadocia and Ephesus coming next. We're growing fast. Your city is on the map.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-3">
-                  {["🏙️ Istanbul", "🎈 Cappadocia", "🏛️ Ephesus"].map((city) => (
-                    <span key={city} className="rounded-full bg-[#F7F7FB] border border-black/8 px-4 py-2 text-xs font-semibold text-neutral-600">
-                      {city}
-                    </span>
+                  {[
+                    { label: "🏙️ Istanbul", href: "/istanbul-tour-guide" },
+                    { label: "🎈 Cappadocia", href: "/cappadocia-tour-guide" },
+                    { label: "🏛️ Ephesus", href: "/ephesus-tour-guide" },
+                  ].map((city) => (
+                    <a key={city.label} href={city.href} className="rounded-full bg-[#F7F7FB] border border-black/8 px-4 py-2 text-xs font-semibold text-neutral-600 hover:border-[#6C4CF1]/40 hover:text-[#6C4CF1] transition-colors">
+                      {city.label}
+                    </a>
                   ))}
                   <span className="rounded-full bg-[#6C4CF1]/8 border border-[#6C4CF1]/20 px-4 py-2 text-xs font-semibold text-[#6C4CF1]">
                     + more coming
@@ -650,9 +654,9 @@ export default function HomePage() {
             <div>
               <h4 className="text-sm font-black">{t.footer.destinations}</h4>
               <ul className="mt-4 space-y-3 text-sm text-neutral-400">
-                <li>Istanbul</li>
-                <li>Cappadocia</li>
-                <li>Ephesus</li>
+                <li><a href="/istanbul-tour-guide" className="hover:text-black transition-colors">Istanbul Tour Guide</a></li>
+                <li><a href="/cappadocia-tour-guide" className="hover:text-black transition-colors">Cappadocia Tour Guide</a></li>
+                <li><a href="/ephesus-tour-guide" className="hover:text-black transition-colors">Ephesus Tour Guide</a></li>
               </ul>
             </div>
             <div>
