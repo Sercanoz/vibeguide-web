@@ -2,11 +2,11 @@
 
 import LegalLayout from "@/components/LegalLayout";
 import { useT } from "@/components/LanguageProvider";
-import { help, legalLocale, LAST_UPDATED } from "@/lib/legal-content";
+import { help, helpLocale, LAST_UPDATED } from "@/lib/legal-content";
 
 export default function HelpPage() {
   const { locale } = useT();
-  const c = help[legalLocale(locale)];
+  const c = help[helpLocale(locale)];
   return (
     <LegalLayout
       title={c.pageTitle}
