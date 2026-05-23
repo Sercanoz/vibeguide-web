@@ -2,11 +2,11 @@
 
 import LegalLayout from "@/components/LegalLayout";
 import { useT } from "@/components/LanguageProvider";
-import { privacy, legalLocale, LAST_UPDATED } from "@/lib/legal-content";
+import { privacy, extendedLocale, LAST_UPDATED } from "@/lib/legal-content";
 
 export default function PrivacyPage() {
   const { locale } = useT();
-  const c = privacy[legalLocale(locale)];
+  const c = privacy[extendedLocale(locale)];
   return (
     <LegalLayout
       title={c.pageTitle}
