@@ -6,6 +6,7 @@ import {
   accountDeletion,
   extendedLocale,
   SUPPORT_EMAIL,
+  LAST_UPDATED,
 } from "@/lib/legal-content";
 
 export default function AccountDeletionPage() {
@@ -56,7 +57,7 @@ export default function AccountDeletionPage() {
     id: "Halo,\n\nSaya ingin menghapus akun VibeGuide saya secara permanen. Mohon verifikasi email terdaftar saya dan selesaikan penghapusan dalam 30 hari.\n\nEmail terdaftar: \nTelepon terdaftar (opsional): \n\nTerima kasih.",
     pt: "Olá,\n\nGostaria de eliminar permanentemente a minha conta VibeGuide. Por favor, verifique o meu e-mail registado e conclua a eliminação em 30 dias.\n\nE-mail registado: \nTelefone registado (opcional): \n\nObrigado(a).",
   };
-  const subject = subjectMap[locale] ?? "Account deletion request";
+  const subject = subjectMap[locale] ?? "Account Deletion Request";
   const body = bodyMap[locale] ?? "Hello,\n\nI would like to permanently delete my VibeGuide account. Please verify my registered email and complete the deletion within 30 days.\n\nRegistered email: \nRegistered phone (optional): \n\nThank you.";
 
   const mailto = `mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent(
@@ -64,7 +65,9 @@ export default function AccountDeletionPage() {
   )}&body=${encodeURIComponent(body)}`;
 
   return (
-    <LegalLayout title={c.pageTitle} intro={c.intro}>
+    <LegalLayout title={c.pageTitle} lastUpdated={LAST_UPDATED} lastUpdatedLabel="Last updated" intro={c.intro}>
+
+      {/* Option 1 — In-App */}
       <section>
         <h2>{c.inAppHeading}</h2>
         <ol className="space-y-2 list-decimal pl-5 text-vg-muted leading-relaxed">
@@ -73,8 +76,10 @@ export default function AccountDeletionPage() {
           ))}
         </ol>
         <p className="mt-3 text-sm text-vg-muted italic">{c.inAppNote}</p>
+        {c.inAppNote2 && <p className="mt-2 text-sm text-vg-muted italic">{c.inAppNote2}</p>}
       </section>
 
+      {/* Option 2 — Email */}
       <section>
         <h2>{c.webHeading}</h2>
         <p>{c.webBody}</p>
@@ -99,6 +104,7 @@ export default function AccountDeletionPage() {
         </div>
       </section>
 
+      {/* What Happens After Deletion */}
       <section>
         <h2>{c.whatHappensHeading}</h2>
         <ul>
@@ -108,10 +114,86 @@ export default function AccountDeletionPage() {
         </ul>
       </section>
 
+      {/* What Gets Deleted */}
+      {c.whatDeletedHeading && (
+        <section>
+          <h2>{c.whatDeletedHeading}</h2>
+          {c.whatDeletedList && (
+            <ul>
+              {c.whatDeletedList.map((it, i) => <li key={i}>{it}</li>)}
+            </ul>
+          )}
+          {c.whatDeletedNote && <p className="mt-3">{c.whatDeletedNote}</p>}
+        </section>
+      )}
+
+      {/* What We May Retain */}
       <section>
         <h2>{c.retentionHeading}</h2>
         <p>{c.retentionBody}</p>
+        {c.retentionList && (
+          <ul>
+            {c.retentionList.map((it, i) => <li key={i}>{it}</li>)}
+          </ul>
+        )}
+        {c.retentionNote && <p className="mt-3">{c.retentionNote}</p>}
       </section>
+
+      {/* Active Bookings */}
+      {c.activeBookingsHeading && (
+        <section>
+          <h2>{c.activeBookingsHeading}</h2>
+          {c.activeBookingsIntro && <p>{c.activeBookingsIntro}</p>}
+          {c.activeBookingsList && (
+            <ul>
+              {c.activeBookingsList.map((it, i) => <li key={i}>{it}</li>)}
+            </ul>
+          )}
+          {c.activeBookingsNote && <p className="mt-3">{c.activeBookingsNote}</p>}
+        </section>
+      )}
+
+      {/* Third-Party Services */}
+      {c.thirdPartyHeading && (
+        <section>
+          <h2>{c.thirdPartyHeading}</h2>
+          {c.thirdPartyBody && <p>{c.thirdPartyBody}</p>}
+          {c.thirdPartyList && (
+            <ul>
+              {c.thirdPartyList.map((it, i) => <li key={i}>{it}</li>)}
+            </ul>
+          )}
+          {c.thirdPartyNote && <p className="mt-3">{c.thirdPartyNote}</p>}
+        </section>
+      )}
+
+      {/* Privacy Rights */}
+      {c.privacyRightsHeading && (
+        <section>
+          <h2>{c.privacyRightsHeading}</h2>
+          {c.privacyRightsBody && <p>{c.privacyRightsBody}</p>}
+          {c.privacyRightsList && (
+            <ul>
+              {c.privacyRightsList.map((it, i) => <li key={i}>{it}</li>)}
+            </ul>
+          )}
+          {c.privacyRightsContact && <p className="mt-3">{c.privacyRightsContact}</p>}
+        </section>
+      )}
+
+      {/* Important Information */}
+      {c.importantHeading && (
+        <section>
+          <h2>{c.importantHeading}</h2>
+          {c.importantBody && <p>{c.importantBody}</p>}
+          {c.importantList && (
+            <ul>
+              {c.importantList.map((it, i) => <li key={i}>{it}</li>)}
+            </ul>
+          )}
+          {c.importantNote && <p className="mt-3 font-medium">{c.importantNote}</p>}
+        </section>
+      )}
 
       <p className="mt-10 text-sm text-vg-muted">{c.contactBody}</p>
     </LegalLayout>

@@ -2533,6 +2533,7 @@ type AccountDeletionDict = {
   inAppHeading: string;
   inAppSteps: string[];
   inAppNote: string;
+  inAppNote2?: string;
   webHeading: string;
   webBody: string;
   formEmailLabel: string;
@@ -2542,44 +2543,135 @@ type AccountDeletionDict = {
   formSubmit: string;
   whatHappensHeading: string;
   whatHappensList: string[];
+  whatDeletedHeading?: string;
+  whatDeletedList?: string[];
+  whatDeletedNote?: string;
   retentionHeading: string;
   retentionBody: string;
+  retentionList?: string[];
+  retentionNote?: string;
+  activeBookingsHeading?: string;
+  activeBookingsIntro?: string;
+  activeBookingsList?: string[];
+  activeBookingsNote?: string;
+  thirdPartyHeading?: string;
+  thirdPartyBody?: string;
+  thirdPartyList?: string[];
+  thirdPartyNote?: string;
+  privacyRightsHeading?: string;
+  privacyRightsBody?: string;
+  privacyRightsList?: string[];
+  privacyRightsContact?: string;
+  importantHeading?: string;
+  importantBody?: string;
+  importantList?: string[];
+  importantNote?: string;
   contactBody: string;
 };
 
 export const accountDeletion: Record<ExtendedLocale, AccountDeletionDict> = {
   en: {
-    pageTitle: "Delete your VibeGuide account",
+    pageTitle: "Delete Your VibeGuide Account",
     intro:
-      "You can permanently delete your VibeGuide account at any time. We meet the Google Play and Apple App Store account-deletion requirements through both an in-app option and the email request below.",
-    inAppHeading: "Option 1 — Delete from inside the app (recommended)",
+      "At VibeGuide, we respect your privacy and your right to control your personal information. You may permanently delete your VibeGuide account at any time. VibeGuide provides both an in-app account deletion option and a manual email deletion request process, in accordance with Apple App Store and Google Play account deletion requirements.",
+    inAppHeading: "Option 1 — Delete Your Account Inside the App (Recommended)",
     inAppSteps: [
       "Open the VibeGuide app and sign in.",
-      "Tap the Profile tab (bottom right).",
-      "Scroll down and tap Delete my account.",
-      "Confirm the action. Your account is anonymised within seconds.",
+      "Tap the Profile tab.",
+      "Open Settings.",
+      "Tap Delete My Account.",
+      "Follow the confirmation steps.",
     ],
     inAppNote:
-      "If you used Google or Apple sign-in and the app asks you to re-authenticate, follow the prompt. This is a Firebase security requirement.",
-    webHeading: "Option 2 — Request deletion by email",
+      "For security purposes, you may be asked to re-authenticate your account before deletion is completed.",
+    inAppNote2:
+      "If you signed in using Apple Sign-In or Google Sign-In, Firebase Authentication may require identity verification before sensitive account actions can be processed. Once your request is confirmed, your account becomes inaccessible immediately, your public profile is removed from the platform, and your personal information is deleted or anonymised.",
+    webHeading: "Option 2 — Request Account Deletion by Email",
     webBody:
-      "If you no longer have the app installed, send an email from the address registered on your account. We will verify the request and complete the deletion within 30 days.",
+      "If you no longer have access to the app, you may request deletion manually by email. Please send your request from the email address associated with your VibeGuide account.",
     formEmailLabel: "Send from your registered email to:",
     formEmailPh: "",
     formReasonLabel: "Suggested subject:",
     formReasonPh: "",
     formSubmit: "Open mail app",
-    whatHappensHeading: "What gets deleted",
+    whatHappensHeading: "What Happens After Deletion",
     whatHappensList: [
-      "Your name, profile photo, phone number — replaced with anonymised values.",
-      "Your Firebase Authentication account.",
-      "Your push notification tokens.",
-      "Your guide-specific KYC documents (if applicable) — within 90 days.",
+      "Your account becomes permanently inaccessible.",
+      "Your profile is removed from the platform.",
+      "Your personal information is deleted or anonymised.",
+      "Future bookings and guide-matching features become unavailable.",
+      "Push notification tokens are removed.",
+      "Authentication access linked to your VibeGuide account is deleted.",
     ],
-    retentionHeading: "What we are required to keep",
+    whatDeletedHeading: "What Gets Deleted",
+    whatDeletedList: [
+      "Name",
+      "Profile photo",
+      "Phone number",
+      "Email address",
+      "Account profile information",
+      "Firebase Authentication account",
+      "Push notification tokens",
+    ],
+    whatDeletedNote:
+      "If applicable, guide verification and KYC-related documents are securely deleted within 90 days unless longer retention is legally required.",
+    retentionHeading: "What We May Retain",
     retentionBody:
-      "Booking and payment records are retained for 10 years to comply with Turkish tax law (VUK). They are linked to a non-identifying anonymised user record and cannot be used to contact you.",
-    contactBody: `Questions: ${SUPPORT_EMAIL}.`,
+      "Certain information may be retained where required by law, platform security, fraud prevention, dispute resolution, taxation, accounting, payment processing, or legitimate business obligations.",
+    retentionList: [
+      "Booking records",
+      "Payment and invoice history",
+      "Fraud prevention and security logs",
+      "Customer support communications",
+      "Legal compliance records",
+    ],
+    retentionNote:
+      "Booking and payment records may be retained for up to 10 years in accordance with applicable Turkish tax regulations (VUK). Where reasonably possible, retained records are minimised, isolated, or linked only to non-identifying anonymised references. Residual copies of certain information may temporarily remain in secure encrypted backup systems before automatic deletion through routine backup rotation processes.",
+    activeBookingsHeading: "Active Bookings and Ongoing Transactions",
+    activeBookingsIntro: "If you have:",
+    activeBookingsList: [
+      "upcoming bookings",
+      "unresolved disputes",
+      "pending refunds",
+      "chargebacks",
+      "ongoing guide payouts",
+      "or legal/compliance obligations",
+    ],
+    activeBookingsNote:
+      "certain information may be temporarily retained until the matter is resolved. This helps protect travellers, guides, payment providers, and platform integrity.",
+    thirdPartyHeading: "Third-Party Services",
+    thirdPartyBody:
+      "Certain authentication or payment-related data may continue to be processed by trusted third-party providers subject to their own legal obligations and retention requirements.",
+    thirdPartyList: [
+      "Apple Sign-In",
+      "Google Sign-In",
+      "Firebase Authentication",
+      "Payment processing providers",
+    ],
+    thirdPartyNote:
+      "VibeGuide does not control independent retention obligations imposed on regulated third-party providers.",
+    privacyRightsHeading: "Your Privacy Rights",
+    privacyRightsBody:
+      "Depending on your location, you may have rights under applicable privacy laws, including GDPR, KVKK, and similar international privacy regulations. These rights may include:",
+    privacyRightsList: [
+      "requesting access to your personal data",
+      "correcting inaccurate information",
+      "restricting certain processing activities",
+      "objecting to processing",
+      "requesting portability of your data",
+      "and requesting deletion of personal information",
+    ],
+    privacyRightsContact: `To exercise privacy-related rights, please contact: ${SUPPORT_EMAIL}`,
+    importantHeading: "Important Information",
+    importantBody: "Deleting your account is permanent and may not be reversible. After deletion:",
+    importantList: [
+      "you may lose access to booking history",
+      "certain purchased services may no longer be recoverable",
+      "and remaining legal or transactional obligations may still apply",
+    ],
+    importantNote:
+      "We recommend resolving any active reservations or support requests before submitting a deletion request.",
+    contactBody: `Questions about account deletion or privacy matters? Contact VibeGuide Support: ${SUPPORT_EMAIL}`,
   },
   tr: {
     pageTitle: "VibeGuide hesabınızı silin",
