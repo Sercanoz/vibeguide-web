@@ -813,7 +813,8 @@ export const privacy: Record<ExtendedLocale, PrivacyDict> = {
 };
 
 /* ════════ TERMS OF SERVICE ════════ */
-type TermsSection = { h: string; p?: string; list?: string[] };
+type TermsSubSection = { h: string; p?: string; list?: string[] };
+type TermsSection = { h: string; p?: string; list?: string[]; p2?: string; subsections?: TermsSubSection[] };
 type TermsDict = {
   pageTitle: string;
   intro: string;
@@ -826,246 +827,193 @@ export const terms: Record<ExtendedLocale, TermsDict> = {
     pageTitle: "Terms of Service",
     lastUpdatedLabel: "Last updated",
     intro:
-      "These Terms of Service govern your access to and use of VibeGuide, including our website, mobile application, services, booking tools, and related features. By using VibeGuide, you agree to these Terms. If you do not agree, please do not use the platform.",
+      "Welcome to VibeGuide. These Terms of Service govern your access to and use of the VibeGuide mobile application, website, booking system, experiences, services, and related features. By creating an account, accessing, or using VibeGuide, you agree to comply with and be legally bound by these Terms. If you do not agree, please do not use the Platform.",
     sections: [
       {
-        h: "1. Company information",
-        p: `VibeGuide is operated by ${COMPANY_LEGAL}, based in Istanbul, Türkiye. For legal questions: ${SUPPORT_EMAIL}.`,
+        h: "1. Company Information",
+        p: `VibeGuide is operated by ${COMPANY_LEGAL}, based in Istanbul, Türkiye.`,
+        list: [
+          `Email: legal@vibeguideapp.com`,
+          `Support: ${SUPPORT_EMAIL}`,
+          `Website: www.vibeguideapp.com`,
+        ],
       },
       {
-        h: "2. Platform description",
-        p: "VibeGuide is a digital travel platform that connects travellers with licensed local guides, travel experiences and related services in Türkiye. VibeGuide acts as a marketplace, technology provider, booking facilitator and intermediary platform. Unless clearly stated otherwise, VibeGuide does not directly provide guiding services — guides operate as independent service providers and must hold a valid kokart issued by the Ministry of Culture and Tourism where required by Turkish law.",
+        h: "2. About VibeGuide",
+        p: "VibeGuide is a digital travel and experience platform that connects travellers with licensed local guides, curated experiences, and tourism-related services.",
+        list: [
+          "Instant experiences (VibeNow)",
+          "Shared group experiences (VibeSquad)",
+          "Private reservations",
+          "Walking tours",
+          "Historical and cultural experiences",
+          "Museum experiences",
+          "Food and beverage tours",
+          "Local activities",
+          "Custom tourism experiences",
+        ],
+        p2: "VibeGuide acts as a technology provider, booking facilitator, marketplace platform, and intermediary service. Unless explicitly stated otherwise, VibeGuide does not directly provide guiding services. Guides operate as independent service providers. Where required under Turkish law, guides must hold a valid kokart issued by the Ministry of Culture and Tourism.",
       },
       {
         h: "3. Eligibility",
-        list: [
-          "You must be at least 18 years old to create an account, make a booking, or use paid services.",
-          "By using VibeGuide you confirm that: (a) you are legally able to enter into agreements, (b) the information you provide is accurate, (c) you will comply with applicable laws, (d) you will use the platform only for lawful purposes.",
-          "Travellers under 18 may participate only under the supervision and responsibility of a parent or legal guardian, who is responsible for the booking and consents to these Terms on the minor's behalf.",
-          "Guides must additionally complete identity verification, including upload of a valid kokart, before going live.",
+        p: "You must be at least 18 years old to create an account, make bookings, or use paid services. By using VibeGuide, you confirm that you are legally capable of entering agreements, all information you provide is accurate, you will comply with applicable laws, and you will use the Platform lawfully. Travellers under 18 may participate only under the supervision and responsibility of a parent or legal guardian. Guides may be required to complete identity verification and professional verification before becoming active on the Platform.",
+      },
+      {
+        h: "4. User Accounts",
+        p: "Certain Platform features require account registration. Users are responsible for maintaining account security, protecting login credentials, updating account information, and all activity conducted under their accounts. Tourists may be required to verify their email address before booking. VibeGuide may suspend, restrict, or terminate accounts that violate these Terms, create safety risks, engage in fraud, abuse refunds or payments, misuse the Platform, harass others, or damage platform integrity.",
+      },
+      {
+        h: "5. Experience Types",
+        subsections: [
+          {
+            h: "VibeNow (Instant Experiences)",
+            p: "VibeNow allows travellers to request available guides for near-immediate experiences based on operational availability. Confirmation depends on guide availability, operational conditions, location, timing, and safety considerations.",
+          },
+          {
+            h: "VibeSquad (Shared Group Experiences)",
+            p: "VibeSquad allows travellers to join or create shared group experiences. Bookings may depend on minimum participant requirements, payment authorization, guide availability, and final operational confirmation.",
+          },
+          {
+            h: "Private Tours (Planned Reservations)",
+            p: "Private tours allow travellers to reserve experiences for selected dates, times, languages, group sizes, and preferences, subject to guide availability and operational approval.",
+          },
         ],
       },
       {
-        h: "4. User accounts",
+        h: "6. Bookings and Reservations",
+        p: "Bookings submitted through VibeGuide are considered requests until officially confirmed through the Platform. Users agree to provide accurate booking information, arrive on time, follow meeting instructions, behave respectfully, and comply with local laws and safety instructions. VibeGuide reserves the right to refuse, modify, limit, reschedule, or cancel bookings where reasonably necessary for safety, fraud prevention, operational limitations, legal compliance, or force majeure events.",
+      },
+      {
+        h: "7. Prices and Payments",
+        p: "Prices shown on VibeGuide may include guide fees, platform fees, VAT where applicable, operational charges, and booking-related fees. All payments are processed through third-party payment providers. By making a booking, users authorize VibeGuide and its payment providers to process payments related to Platform services. VibeGuide does not directly store full credit card information unless explicitly stated. Currency exchange fees, international transaction fees, or banking fees may apply depending on the user's financial institution.",
+      },
+      {
+        h: "8. Payment Authorization",
+        p: "For certain booking types, especially VibeSquad experiences, VibeGuide or its payment provider may place a temporary authorization hold on a payment method before final booking confirmation. If the booking is confirmed, the authorized amount may be captured. If the booking is not confirmed, the authorization may be released automatically. Release timing depends on banks and payment providers and may take several business days.",
+      },
+      {
+        h: "9. Cancellations and Refunds",
+        p: "Refund eligibility depends on booking type, cancellation timing, experience category, guide assignment status, operational conditions, weather, force majeure events, and applicable law.",
         list: [
-          "Some features require an account. You are responsible for: keeping your login details secure, providing accurate information, updating your account information when necessary, and all activity under your account.",
-          "VibeGuide may suspend or terminate accounts that violate these Terms, create risk, abuse the platform, or engage in fraudulent behaviour.",
-          "Tourists must verify their email address before booking.",
+          "More than 24 hours before start: eligible for full refund",
+          "Less than 24 hours: partial refund may apply",
+          "Less than 2 hours or no-show: refund may not apply",
+        ],
+        p2: "Guide cancellations may result in full refunds, support compensation, booking credits, or guide suspension for repeated violations. VibeGuide reserves the right to investigate suspicious refund activity, abuse, or fraudulent claims.",
+      },
+      {
+        h: "10. No-Show and Late Arrival",
+        p: "If a traveller fails to attend a confirmed booking without proper cancellation, refunds may not be available. Late arrival may result in shortened experiences, modified routes, cancellation, or partial service completion depending on operational feasibility. No-show disputes may be reviewed using booking records, timestamps, location signals, in-app communications, and submitted evidence.",
+      },
+      {
+        h: "11. Travel Activity Risk",
+        p: "Experiences listed on VibeGuide may involve walking, transportation, outdoor environments, crowded locations, food consumption, physical activity, weather exposure, and travel-related risks. By participating, travellers voluntarily accept these inherent travel risks. Travellers are responsible for ensuring experiences are suitable for their physical condition, mobility, dietary needs, health circumstances, and fitness level. VibeGuide is not responsible for injuries, illness, theft, delays, transportation disruptions, weather interruptions, or losses reasonably associated with travel activities, except where liability cannot legally be excluded.",
+      },
+      {
+        h: "12. Emergency Situations",
+        p: "In emergencies, travellers should contact local emergency authorities immediately. VibeGuide is not an emergency-response provider and cannot guarantee immediate intervention, rescue services, or on-site emergency assistance.",
+      },
+      {
+        h: "13. Traveller Responsibilities",
+        list: [
+          "Respecting local laws",
+          "Respecting cultural and religious locations",
+          "Following guide instructions",
+          "Managing personal belongings",
+          "Obtaining visas and travel documents",
+          "Maintaining appropriate travel insurance where desired",
+          "Informing guides about accessibility or dietary requirements in advance",
+          "Paying third-party costs clearly identified within the booking (museum tickets, transportation fees, optional entrance fees)",
         ],
       },
       {
-        h: "5. Bookings",
+        h: "14. Guide Responsibilities",
         list: [
-          "When you make a booking, you agree to: provide accurate participant information, arrive on time, follow the stated meeting instructions, respect the guide and other travellers, and follow all applicable rules, laws and safety instructions.",
-          "A booking is not guaranteed until confirmed through the platform (guide assigned and payment captured).",
-        ],
-      },
-      {
-        h: "6. Experience types",
-        list: [
-          "VibeNow (Instant) — instant experiences let you request available guides for selected experiences within a short timeframe. Confirmation depends on guide availability and operational conditions.",
-          "VibeSquad (Group) — VibeSquad lets you join or create shared group experiences. A VibeSquad booking may depend on minimum participants, payment authorisation, guide availability and final confirmation.",
-          "Private Tours (Planned) — private reservations let you book experiences for specific dates, times, languages and group sizes, subject to availability.",
-        ],
-      },
-      {
-        h: "7. Prices and payments",
-        list: [
-          "Prices shown on VibeGuide may include experience fees, platform fees, VAT where applicable and other charges shown before checkout.",
-          "All payments are processed in advance through our third-party payment provider (iyzico). By making a payment, you agree to the payment provider's applicable terms.",
-          "VibeGuide does not directly store full credit card details.",
-          "VibeGuide charges a 15% commission on each completed tour. The remaining 85% is the guide's earnings, paid out weekly to the IBAN registered in the guide's profile.",
-        ],
-      },
-      {
-        h: "8. Payment authorisation",
-        p: "For some booking types — especially VibeSquad — VibeGuide or its payment provider may place a temporary authorisation on your payment method. If the booking is confirmed, the authorised amount may be captured. If the booking is not confirmed, the authorisation will be released. The release time depends on your bank or payment provider and may take up to 7 business days.",
-      },
-      {
-        h: "9. Cancellations and refunds",
-        list: [
-          "Cancellations and refunds are governed by the Cancellation Policy and any booking-specific terms shown before checkout.",
-          "Tourist cancellation more than 24 hours before tour start: 100% refund. Less than 24 hours: 50%. Less than 2 hours: no refund.",
-          "Guide cancellation: full refund + an apology credit. Repeat cancellations may lead to suspension.",
-          "VibeSquad that fails to reach minimum group size before lock: 100% refund automatically.",
-          "Refund eligibility may also depend on: time before the experience, experience type, guide assignment, group confirmation status, no-show behaviour, weather or force majeure events, and applicable law.",
-        ],
-      },
-      {
-        h: "10. No-show and late arrival",
-        list: [
-          "If you fail to attend a confirmed experience without cancellation, you may not be eligible for a refund.",
-          "If you arrive late, the experience may be shortened, modified or cancelled depending on guide availability and operational conditions.",
-          "No-show reports by either party are reviewed by our admin team within 72 hours.",
-        ],
-      },
-      {
-        h: "11. Off-platform transactions",
-        list: [
-          "Travellers and guides must not bypass VibeGuide. You agree NOT to:",
-          "— Request or accept payments outside the platform.",
-          "— Move a VibeGuide booking outside the platform once a match has been made.",
-          "— Avoid platform fees or commissions.",
-          "— Exchange contact details (phone, social media) for the purpose of bypassing VibeGuide.",
-          "— Re-book the same guide directly to avoid VibeGuide policies.",
-          "Detected violations may result in suspension, removal of the booking, forfeiture of pending payouts, or permanent termination.",
-        ],
-      },
-      {
-        h: "12. User conduct",
-        list: [
-          "Users must behave respectfully and lawfully. You agree NOT to:",
-          "Harass, threaten or abuse others",
-          "Discriminate against others",
-          "Damage cultural, historical or natural sites",
-          "Engage in illegal activity",
-          "Use false identity or payment information",
-          "Interfere with platform operations",
-          "Misuse reviews, messages or booking tools",
-          "Put guides, travellers or local communities at risk",
-        ],
-      },
-      {
-        h: "13. Community standards",
-        list: [
-          "VibeGuide expects all users and guides to treat each other with respect. We do not tolerate:",
-          "Harassment",
-          "Hate speech",
-          "Discrimination (racism, sexism, religious or LGBTQ+ discrimination)",
-          "Violence or threats",
-          "Fraud",
-          "Sexual misconduct",
-          "Unsafe conduct",
-          "Exploitation of local communities",
-          "VibeGuide may investigate reports and take appropriate action regardless of party.",
-        ],
-      },
-      {
-        h: "14. Traveller responsibility",
-        list: [
-          "Travellers are responsible for:",
-          "Arriving on time at the agreed meeting point",
-          "Following local laws and regulations",
-          "Respecting cultural and religious sites",
-          "Managing their own belongings",
-          "Ensuring they are physically able to participate",
-          "Obtaining visas, travel documents and travel insurance where needed",
-          "Informing the guide of relevant accessibility, dietary or medical needs in advance",
-          "Paying any third-party fees (museum tickets, public transport) as stated in the tour description",
-          "VibeGuide is not responsible for losses caused by traveller negligence, failure to follow instructions, or circumstances outside VibeGuide's reasonable control.",
-        ],
-      },
-      {
-        h: "15. Guide responsibility",
-        list: [
-          "Guides and service providers are responsible for:",
-          "Providing accurate profile information",
-          "Holding a valid kokart at the time of every accepted tour and providing it on request",
-          "Delivering confirmed experiences professionally and being physically present at the meeting point on time",
-          "Treating travellers respectfully",
-          "Following local laws and regulations",
-          "Carrying any required professional liability insurance",
+          "Maintaining accurate profile information",
+          "Complying with tourism regulations",
+          "Holding valid licenses where required",
+          "Delivering confirmed services professionally",
+          "Arriving at meeting points on time",
+          "Behaving respectfully toward travellers",
+          "Maintaining applicable insurance obligations",
           "Avoiding off-platform transactions",
-          "Maintaining professional standards",
         ],
       },
       {
-        h: "16. Independent service providers",
-        p: "Guides operate as independent service providers. Nothing in these Terms creates an employment, agency, partnership, franchise or joint-venture relationship between VibeGuide and any guide. Guides are responsible for their own taxes, professional permits, invoicing and legal compliance.",
+        h: "15. Independent Service Providers",
+        p: "Guides operate as independent service providers. Nothing in these Terms creates employment, partnership, agency, franchise, joint venture, or employer-employee relationship between VibeGuide and guides. Guides are solely responsible for taxes, permits, invoices, insurance, professional compliance, and legal obligations.",
       },
       {
-        h: "17. Taxes and invoices",
-        list: [
-          "Prices may include applicable taxes (VAT) where required.",
-          "VibeGuide, guides and service providers are each responsible for complying with applicable tax, invoice and reporting obligations according to their role and local law.",
-          "Guides operating as self-employed (serbest meslek erbabı) or as a limited company must issue a fatura / e-arşiv invoice to VibeGuide on a monthly basis for commission settlement, and to the traveller where required by Turkish tax law.",
-        ],
+        h: "16. Off-Platform Transactions",
+        p: "Travellers and guides may not bypass the Platform for the purpose of avoiding fees, commissions, or policies, moving bookings outside VibeGuide, or exchanging payment information for off-platform transactions. Violations may result in booking cancellation, payout forfeiture, account suspension, or permanent platform removal.",
       },
       {
-        h: "18. Disputes between travellers and guides",
-        p: "VibeGuide may assist in resolving disputes between travellers and guides but is not automatically responsible for the acts, omissions, delays or failures of independent guides or travellers. When evaluating a dispute we may review: booking timeline, in-app messages, payment status, location pings during the tour, no-show reports and any evidence either party submits. Decisions communicated by the admin review are final.",
+        h: "17. User Conduct and Community Standards",
+        p: "Users agree not to harass others, discriminate, threaten users, upload illegal content, engage in fraud, abuse reviews, manipulate bookings, interfere with Platform operations, damage cultural or historical sites, or endanger guides, travellers, or communities. VibeGuide does not tolerate hate speech, racism, sexism, religious discrimination, LGBTQ+ discrimination, violence, sexual misconduct, unsafe behaviour, or exploitation of local communities.",
       },
       {
-        h: "19. Reviews, ratings and content",
-        list: [
-          "Users may submit reviews, photos, comments or other content based on a real tour. Fake or retaliatory reviews are removed.",
-          "By submitting content to VibeGuide, you grant VibeGuide a worldwide, non-exclusive, royalty-free licence to use, display, reproduce, adapt, translate and distribute such content for platform operations, marketing, safety, trust and promotional purposes.",
-          "You must not upload content that is false, illegal, offensive, infringing, misleading or harmful.",
-        ],
+        h: "18. Reporting and Safety Tools",
+        p: "Users may report unsafe conduct, harassment, fraud, illegal activity, misleading listings, or violations of these Terms through official support channels or in-app reporting systems. VibeGuide may investigate reports and take moderation actions including warnings, content removal, booking cancellation, temporary suspension, permanent removal, or platform restrictions.",
       },
       {
-        h: "20. Intellectual property",
-        p: "The VibeGuide name, logo, design, software, platform content, branding and related materials belong to VibeGuide or its licensors. You may not copy, reproduce, modify, decompile, distribute or misuse VibeGuide intellectual property, or build a competing service from our materials, without written permission.",
+        h: "19. Platform Communications and Monitoring",
+        p: "VibeGuide may review, moderate, retain, or investigate in-app communications, booking activity, uploaded content, safety reports, payment disputes, account activity, and platform metadata for purposes including customer support, fraud prevention, trust and safety, dispute resolution, legal compliance, payment investigations, and platform integrity. Such processing is conducted in accordance with the Privacy Policy and applicable data protection laws.",
       },
       {
-        h: "21. Platform availability",
-        list: [
-          "VibeGuide aims to provide reliable service but does not guarantee uninterrupted access. The platform may be unavailable due to:",
-          "Maintenance",
-          "Updates",
-          "Technical issues",
-          "Third-party service failures",
-          "Security reasons",
-          "Events outside our control",
-        ],
+        h: "20. Reviews, Ratings and User Content",
+        p: "Users may submit reviews, comments, photos, and other content related to genuine experiences. Fake, misleading, retaliatory, or abusive reviews may be removed. By submitting content, users grant VibeGuide a worldwide, non-exclusive, royalty-free license to use, display, reproduce, adapt, distribute, and promote such content for Platform operations, trust and safety, and marketing purposes. Users may not upload content that is illegal, defamatory, infringing, misleading, harmful, abusive, sexually explicit, or discriminatory.",
       },
       {
-        h: "22. Force majeure",
-        list: [
-          "VibeGuide is not liable for delays, cancellations, interruptions or failures caused by circumstances beyond reasonable control, including:",
-          "Severe weather and natural disasters (earthquake, flood, storm)",
-          "Political unrest, strikes, transportation disruption",
-          "Pandemics and public-health restrictions",
-          "Government action, site closures by authorities",
-          "Safety threats, terrorism warnings",
-          "Internet outages, payment-provider failures",
-        ],
+        h: "21. Intellectual Property",
+        p: "All VibeGuide branding, software, design, content, logos, graphics, interfaces, and Platform materials belong to VibeGuide or its licensors. Users may not reproduce, copy, scrape, decompile, distribute, commercially exploit, or build competing services from Platform materials without written permission.",
       },
       {
-        h: "23. Limitation of liability",
-        list: [
-          "To the maximum extent permitted by law, VibeGuide is not liable for:",
-          "Indirect or consequential damages",
-          "Lost profits",
-          "Travel delays",
-          "Missed flights or connections",
-          "Lost personal belongings",
-          "Personal decisions made by users",
-          "Acts or omissions of independent guides or third parties",
-          "Events outside VibeGuide's reasonable control",
-          "Our maximum aggregate liability is limited to the amount you paid for the affected booking in the 12 months preceding the claim.",
-          "Nothing in these Terms limits liability where it cannot legally be limited, including for gross negligence, wilful misconduct, or under Turkish Consumer Protection Law No. 6502.",
-        ],
+        h: "22. Privacy and Data Protection",
+        p: "By using VibeGuide, users acknowledge that personal data may be processed in accordance with the Privacy Policy and applicable privacy regulations, including KVKK and, where applicable, GDPR. Users are responsible for ensuring submitted information is accurate and lawful.",
       },
       {
-        h: "24. Suspension and termination",
-        list: [
-          "VibeGuide may suspend or terminate access if a user:",
-          "Violates these Terms",
-          "Creates safety risks",
-          "Engages in fraud",
-          "Attempts off-platform transactions",
-          "Abuses refund systems",
-          "Harasses others",
-          "Violates applicable law",
-          "Material breaches receive notice where reasonably possible; serious breaches (fraud, harassment, identity falsification, off-platform transactions, risk to other users) may lead to immediate suspension without prior notice.",
-        ],
+        h: "23. Electronic Communications",
+        p: "By using VibeGuide, users consent to receive communications related to bookings, support, refunds, cancellations, account activity, legal notices, safety alerts, and service updates through email, SMS, push notifications, and in-app messaging.",
       },
       {
-        h: "25. Account deletion",
-        p: `You may request account deletion through the in-app delete button, by submitting the form at /account-deletion, or by contacting ${SUPPORT_EMAIL}. After deletion, some data may be retained where required for legal, tax, accounting, fraud-prevention, safety or dispute-resolution purposes — see the Privacy Policy for details.`,
+        h: "24. Third-Party Platforms and Services",
+        p: "The VibeGuide application may be distributed through platforms including Apple App Store and Google Play. Apple, Google, and other platform providers are not responsible for bookings, refunds, guide conduct, operational issues, customer support, or claims related to Platform use. VibeGuide may also integrate third-party services including payment providers, maps, analytics systems, communication tools, and authentication providers. VibeGuide is not responsible for interruptions caused by third-party systems outside reasonable control.",
       },
       {
-        h: "26. Changes to these Terms",
-        p: "VibeGuide may update these Terms from time to time. The updated version will be posted with a new \"Last Updated\" date. Material changes will be notified in-app and by email at least 14 days in advance. Continued use of the platform after the effective date constitutes acceptance.",
+        h: "25. Platform Availability",
+        p: "VibeGuide aims to provide reliable services but does not guarantee uninterrupted Platform availability. The Platform may experience maintenance, outages, technical failures, delays, security interruptions, or third-party service failures. Features may be updated, modified, or discontinued without prior notice.",
       },
       {
-        h: "27. Governing law and jurisdiction",
-        p: "These Terms are governed by the laws of the Republic of Türkiye, unless mandatory consumer-protection laws in another jurisdiction apply. Disputes will be resolved in the courts and enforcement offices of Istanbul (Çağlayan), without prejudice to mandatory consumer protection rights you may have in your country of residence.",
+        h: "26. Force Majeure",
+        p: "VibeGuide is not liable for delays, cancellations, or interruptions caused by events beyond reasonable control, including natural disasters, earthquakes, severe weather, transportation disruptions, pandemics, political unrest, government actions, terrorism warnings, internet outages, or payment-provider failures.",
       },
       {
-        h: "28. Contact",
-        p: `For questions about these Terms: ${SUPPORT_EMAIL}.`,
+        h: "27. Limitation of Liability",
+        p: "To the maximum extent permitted by law, VibeGuide shall not be liable for indirect damages, incidental damages, lost profits, missed transportation, personal disputes, third-party actions, guide conduct, travel disruptions, lost belongings, data loss, or force majeure events. Nothing in these Terms excludes liability that cannot legally be excluded under applicable law. Where permitted by law, VibeGuide's total aggregate liability shall not exceed the amount paid for the affected booking.",
+      },
+      {
+        h: "28. Indemnification",
+        p: "Users agree to indemnify and hold harmless VibeGuide, its affiliates, officers, employees, contractors, and partners from claims, damages, liabilities, losses, or expenses arising from misuse of the Platform, unlawful activity, disputes with other users, fraudulent conduct, violation of these Terms, or violation of third-party rights.",
+      },
+      {
+        h: "29. Suspension and Termination",
+        p: "VibeGuide may suspend or terminate access where users violate these Terms, engage in fraud, threaten safety, abuse refunds, attempt off-platform transactions, or create legal or operational risks. Serious violations may result in immediate suspension without prior notice.",
+      },
+      {
+        h: "30. Account Deletion and Data Requests",
+        p: `Users may request account deletion through the in-app delete function, through official support channels, or through designated deletion forms where available. After deletion, certain records may be retained where legally required for fraud prevention, tax obligations, dispute resolution, accounting, or regulatory compliance. Deletion requests are handled in accordance with applicable privacy laws.`,
+      },
+      {
+        h: "31. Changes to These Terms",
+        p: "VibeGuide may update these Terms periodically. Updated versions become effective upon publication on the Platform. Material changes may be communicated through in-app notifications, email, or Platform announcements. Continued use of the Platform after updates constitutes acceptance of revised Terms.",
+      },
+      {
+        h: "32. Governing Law and Jurisdiction",
+        p: "These Terms are governed by the laws of the Republic of Türkiye unless mandatory consumer protection laws require otherwise. Disputes shall be resolved before the competent courts and enforcement offices of Istanbul (Çağlayan), without prejudice to mandatory consumer rights applicable in the user's country of residence.",
+      },
+      {
+        h: "33. Entire Agreement",
+        p: "These Terms, together with the Privacy Policy, Cancellation Policy, and related Platform policies, constitute the complete agreement between users and VibeGuide regarding Platform use.",
       },
     ],
   },
