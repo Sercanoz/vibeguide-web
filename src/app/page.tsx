@@ -418,6 +418,9 @@ export default function HomePage() {
               <p key={i}>{para}</p>
             ))}
           </div>
+          <p className="mt-10 text-lg md:text-xl font-black tracking-tight text-white">
+            Real locals. Real stories. Real discovery.
+          </p>
         </div>
       </section>
 
