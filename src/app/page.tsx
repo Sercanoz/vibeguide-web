@@ -263,20 +263,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── SOCIAL PROOF BAR ── */}
-      <section className="bg-[#0A0A0F] border-t border-white/5">
-        <div className="mx-auto max-w-7xl px-6 py-5">
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 text-white/30 text-xs font-semibold uppercase tracking-widest">
-            <span className="text-white/60">{t.phoneMock.proofRating}</span>
-            <span>|</span>
-            <span>{t.energy.eyebrow}</span>
-            <span>|</span>
-            <span>{t.phoneMock.proofCities}</span>
-            <span>|</span>
-            <span className="text-white/60">{t.phoneMock.proofGuides}</span>
-          </div>
-        </div>
-      </section>
 
       {/* ── HOW IT WORKS ── */}
       <section ref={secHow.ref as React.RefObject<HTMLElement>} id="how" className={`py-28 bg-white reveal ${secHow.inView ? "in-view" : ""}`}>
