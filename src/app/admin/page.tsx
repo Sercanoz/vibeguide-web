@@ -14,6 +14,30 @@ export default function AdminHome() {
 
       <div className="mt-8 grid sm:grid-cols-2 gap-5">
         <Link
+          href="/admin/analytics"
+          className="block rounded-3xl bg-white border border-vg-border p-7 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all"
+        >
+          <div className="text-4xl mb-3">📊</div>
+          <h2 className="text-xl font-black text-vg-ink">Analytics</h2>
+          <p className="mt-1 text-sm text-vg-muted leading-relaxed">
+            Platform KPI'ları, gelir özeti, en popüler turlar ve rehber performansı.
+          </p>
+        </Link>
+
+        <Link
+          href="/admin/disputes"
+          className="block rounded-3xl bg-white border border-vg-border p-7 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all"
+        >
+          <div className="text-4xl mb-3">⚖️</div>
+          <h2 className="text-xl font-black text-vg-ink">Uyuşmazlıklar</h2>
+          <p className="mt-1 text-sm text-vg-muted leading-relaxed">
+            VibeNow rezervasyon ve havuz anlaşmazlıklarını görüntüle, iade et veya onayla.
+          </p>
+        </Link>
+      </div>
+
+      <div className="mt-5 grid sm:grid-cols-2 gap-5">
+        <Link
           href="/admin/tours"
           className="block rounded-3xl bg-white border border-vg-border p-7 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all"
         >

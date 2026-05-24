@@ -161,4 +161,92 @@ export const adminApi = {
       `/api/admin/translations/guides/${userId}/auto-translate`,
       { method: "POST", body: JSON.stringify(body) }
     ),
+
+  // ════════ STATS ════════
+
+  getStats: () =>
+    authedFetch<{
+      users: { tourist: number; guide: number; pendingGuide: number; admin: number };
+      tours: { total: number; active: number };
+      pools: { open: number; locked: number };
+      last30Days: {
+        bookings: number;
+        revenue: number;
+        topTours: { tourId: number; title: string; bookings: number }[];
+      };
+      generatedAt: string;
+    }>("/api/admin/stats"),
+
+  // ════════ GUIDE PERFORMANCE ════════
+
+  listGuidePerformance: () =>
+    authedFetch<{
+      guideUserId: number;
+      fullName: string;
+      city: string | null;
+      rating: number | null;
+      totalReviews: number;
+      totalBookings: number;
+      completedBookings: number;
+      totalEarnings: number;
+    }[]>("/api/admin/stats/guides/performance"),
+
+  // ════════ DISPUTES ════════
+
+  listBookingDisputes: () =>
+    authedFetch<{
+      count: number;
+      disputes: {
+        bookingId: number;
+        tourTitle: string;
+        scheduledAt: string;
+        touristName: string;
+        guideName: string;
+        status: string;
+        price: number;
+        currency: string | null;
+        refundStatus: string | null;
+        guideMarkedNoShowAt: string | null;
+        touristReportedGuideNoShowAt: string | null;
+        noShowOutcome: string | null;
+        cancelReason: string | null;
+      }[];
+    }>("/api/admin/booking-disputes"),
+
+  resolveBookingDispute: (
+    bookingId: number,
+    resolution: "refund_tourist" | "uphold_guide" | "dismiss"
+  ) =>
+    authedFetch<{ ok: true }>(
+      `/api/admin/booking-disputes/${bookingId}/resolve`,
+      { method: "POST", body: JSON.stringify({ decision: resolution }) }
+    ),
+
+  listPoolDisputes: () =>
+    authedFetch<{
+      count: number;
+      disputes: {
+        participantId: number;
+        poolId: number;
+        tourTitle: string;
+        scheduledAt: string;
+        touristName: string;
+        guideName: string;
+        status: string;
+        holdAmount: number;
+        actualAmount: number | null;
+        refundAmount: number | null;
+        guideMarkedNoShowAt: string | null;
+        touristReportedGuideNoShowAt: string | null;
+      }[];
+    }>("/api/admin/pools/disputes"),
+
+  resolvePoolDispute: (
+    participantId: number,
+    resolution: "refund_tourist" | "uphold_guide" | "dismiss"
+  ) =>
+    authedFetch<{ ok: true }>(
+      `/api/admin/pools/disputes/${participantId}/resolve`,
+      { method: "POST", body: JSON.stringify({ decision: resolution }) }
+    ),
 };

@@ -161,13 +161,9 @@ function Editor({ id }: { id: number }) {
             {data.tour.city} · canonical: <strong>{data.tour.canonicalLocale.toUpperCase()}</strong>
           </p>
         </div>
-        <button
-          disabled
-          title="Disabled — Google Translate API key not configured yet"
-          className="bg-gray-200 text-gray-400 font-bold text-sm px-5 py-2.5 rounded-xl cursor-not-allowed"
-        >
-          🤖 Auto-translate (disabled)
-        </button>
+        <span className="text-xs text-vg-muted bg-amber-50 border border-amber-200 px-3 py-1.5 rounded-xl font-semibold">
+          Auto-translate: set GOOGLE_TRANSLATE_API_KEY on Railway
+        </span>
       </div>
 
       {/* Locale tabs */}

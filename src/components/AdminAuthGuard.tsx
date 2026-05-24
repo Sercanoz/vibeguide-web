@@ -6,30 +6,49 @@ import { fbAuth, onIdTokenChanged, signOut, type User } from "@/lib/firebase-cli
 import Link from "next/link";
 import Image from "next/image";
 
+type AuthState = "loading" | "unauthenticated" | "unauthorized" | User;
+
 export default function AdminAuthGuard({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const [user, setUser] = useState<User | null | "loading">("loading");
+  const [authState, setAuthState] = useState<AuthState>("loading");
   const router = useRouter();
   const pathname = usePathname();
 
   useEffect(() => {
-    const unsub = onIdTokenChanged(fbAuth(), (u) => setUser(u));
+    const unsub = onIdTokenChanged(fbAuth(), async (u) => {
+      if (!u) {
+        setAuthState("unauthenticated");
+        return;
+      }
+      // Firebase ID token claims'inden admin rolünü doğrula
+      const tokenResult = await u.getIdTokenResult();
+      const isAdmin =
+        tokenResult.claims["admin"] === true ||
+        tokenResult.claims["role"] === "Admin";
+      setAuthState(isAdmin ? u : "unauthorized");
+    });
     return () => unsub();
   }, []);
 
+  const user = authState instanceof Object && authState !== null && typeof authState !== "string"
+    ? (authState as User)
+    : null;
+
   useEffect(() => {
-    if (user === "loading") return;
-    if (!user && pathname !== "/admin/login") {
+    if (authState === "loading") return;
+    if (authState === "unauthenticated" && pathname !== "/admin/login") {
+      router.replace("/admin/login");
+    } else if (authState === "unauthorized" && pathname !== "/admin/login") {
       router.replace("/admin/login");
     } else if (user && pathname === "/admin/login") {
       router.replace("/admin");
     }
-  }, [user, pathname, router]);
+  }, [authState, pathname, router, user]);
 
-  if (user === "loading") {
+  if (authState === "loading") {
     return (
       <div className="min-h-screen flex items-center justify-center bg-vg-bg-soft">
         <div className="text-vg-muted text-sm">Loading…</div>
@@ -40,7 +59,25 @@ export default function AdminAuthGuard({
   // login route is public
   if (pathname === "/admin/login") return <>{children}</>;
 
-  // every other route requires a signed-in user
+  // unauthorized: signed in but not admin
+  if (authState === "unauthorized") {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-vg-bg-soft">
+        <div className="text-center">
+          <p className="text-vg-ink font-bold text-lg">Access denied</p>
+          <p className="text-vg-muted text-sm mt-1">Your account does not have admin privileges.</p>
+          <button
+            onClick={() => signOut()}
+            className="mt-4 text-sm font-bold text-vg-flame hover:underline"
+          >
+            Sign out
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  // every other route requires a signed-in admin
   if (!user) return null;
 
   return (
@@ -79,6 +116,26 @@ export default function AdminAuthGuard({
               }`}
             >
               Guides
+            </Link>
+            <Link
+              href="/admin/disputes"
+              className={`text-sm font-bold ${
+                pathname?.startsWith("/admin/disputes")
+                  ? "text-vg-primary"
+                  : "text-vg-muted hover:text-vg-ink"
+              }`}
+            >
+              Disputes
+            </Link>
+            <Link
+              href="/admin/analytics"
+              className={`text-sm font-bold ${
+                pathname?.startsWith("/admin/analytics")
+                  ? "text-vg-primary"
+                  : "text-vg-muted hover:text-vg-ink"
+              }`}
+            >
+              Analytics
             </Link>
             <span className="text-xs text-vg-muted hidden md:inline">
               {user.email}
