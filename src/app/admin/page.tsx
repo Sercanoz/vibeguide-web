@@ -61,6 +61,19 @@ export default function AdminHome() {
         </Link>
       </div>
 
+      <div className="mt-5 grid sm:grid-cols-2 gap-5">
+        <Link
+          href="/admin/notifications"
+          className="block rounded-3xl bg-white border border-vg-border p-7 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all"
+        >
+          <div className="text-4xl mb-3">💀</div>
+          <h2 className="text-xl font-black text-vg-ink">Dead-letter Notifications</h2>
+          <p className="mt-1 text-sm text-vg-muted leading-relaxed">
+            FCM gönderimi 3 denemede başarısız olan bildirimleri görüntüle ve temizle.
+          </p>
+        </Link>
+      </div>
+
       <div className="mt-10 rounded-2xl bg-amber-50 border border-amber-200 p-5">
         <p className="text-xs font-black uppercase tracking-widest text-amber-700">
           Setup checklist

@@ -46,6 +46,18 @@ export type AdminStats = {
   generatedAt: string;
 };
 
+export type DeadLetterItem = {
+  id: number;
+  userId: number;
+  title: string;
+  body: string;
+  type: string;
+  retryCount: number;
+  lastError: string | null;
+  createdAtUtc: string;
+  sentAtUtc: string | null;
+};
+
 export type GuidePerf = {
   guideUserId: number;
   fullName: string;
@@ -225,6 +237,19 @@ export const adminApi = {
 
   listGuidePerformance: () =>
     authedFetch<GuidePerf[]>("/api/admin/stats/guides/performance"),
+
+  // ════════ DEAD-LETTER NOTIFICATIONS ════════
+
+  listDeadLetters: (limit = 100) =>
+    authedFetch<{ count: number; items: DeadLetterItem[] }>(
+      `/api/admin/stats/notifications/dead-letters?limit=${limit}`
+    ),
+
+  deleteDeadLetter: (id: number) =>
+    authedFetch<{ ok: true }>(
+      `/api/admin/stats/notifications/dead-letters/${id}`,
+      { method: "DELETE" }
+    ),
 
   // ════════ DISPUTES ════════
 
