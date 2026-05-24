@@ -412,19 +412,31 @@ export default function HomePage() {
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMwLTkuOTQtOC4wNi0xOC0xOC0xOFYwaDQydjQySDE4QzI3Ljk0IDQyIDM2IDMzLjk0IDM2IDI0VjE4eiIgZmlsbD0iI2ZmZiIvPjwvZz48L3N2Zz4=')]" />
         </div>
-        <div className="relative mx-auto max-w-4xl px-6 text-center">
+        <div className="relative mx-auto max-w-3xl px-6 text-center">
           <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1]">{t.manifesto.eyebrow}</p>
           <h2 className="mt-6 text-4xl md:text-6xl font-black tracking-tight leading-tight">
             {t.manifesto.titleA}
             <br />
-            <span className="text-white/20">{t.manifesto.titleB}</span>
+            <span className="text-white/30">{t.manifesto.titleB}</span>
           </h2>
-          <div className="mx-auto mt-8 max-w-2xl text-base leading-8 text-white/40 space-y-4">
-            {t.manifesto.sub.split("\n\n").map((para, i) => (
-              <p key={i}>{para}</p>
-            ))}
+          <div className="mx-auto mt-10 max-w-2xl space-y-5 text-left">
+            {t.manifesto.sub.split("\n\n").map((para, i) => {
+              const isHighlight = para.startsWith("Somewhere") || para.startsWith("VibeGuide brings") || para.startsWith("No forced") || para.startsWith("Just authentic");
+              return (
+                <p
+                  key={i}
+                  className={
+                    isHighlight
+                      ? "text-lg md:text-xl font-bold leading-8 text-white"
+                      : "text-base md:text-lg leading-8 text-white/55"
+                  }
+                >
+                  {para}
+                </p>
+              );
+            })}
           </div>
-          <p className="mt-10 text-lg md:text-xl font-black tracking-tight text-white">
+          <p className="mt-12 text-xl md:text-2xl font-black tracking-tight text-white border-t border-white/10 pt-10">
             Real locals. Real stories. Real discovery.
           </p>
         </div>
@@ -506,34 +518,6 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Testimonials */}
-            <div className="space-y-4">
-              <div className="rounded-3xl bg-[#0A0A0F] p-6 text-white">
-                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#6C4CF1]">{t.testimonials.eyebrow}</p>
-                <h3 className="mt-3 text-xl font-black leading-tight">{t.testimonials.title}</h3>
-                <div className="mt-4 flex items-center gap-3">
-                  <div className="flex -space-x-2">
-                    {[
-                      { g: "from-[#6C4CF1] to-[#8B5CF6]", i: "S" },
-                      { g: "from-[#059669] to-[#10B981]", i: "M" },
-                      { g: "from-[#D97706] to-[#F59E0B]", i: "A" },
-                      { g: "from-[#EC4899] to-[#F43F5E]", i: "L" },
-                      { g: "from-[#0EA5E9] to-[#6C4CF1]", i: "J" },
-                    ].map((av, idx) => (
-                      <div key={idx} className={`h-8 w-8 rounded-full bg-gradient-to-br ${av.g} border-2 border-[#0A0A0F] flex items-center justify-center text-[10px] font-black text-white`}>{av.i}</div>
-                    ))}
-                  </div>
-                  <p className="text-xs text-white/40">{t.testimonials.sub}</p>
-                </div>
-              </div>
-              {t.testimonials.quotes.map((q) => (
-                <div key={q.name} className="rounded-3xl bg-[#F7F7FB] border border-black/5 p-6">
-                  <p className="text-amber-400 text-sm tracking-tight">★★★★★</p>
-                  <p className="mt-3 text-sm leading-6 text-neutral-600">"{q.quote}"</p>
-                  <p className="mt-3 text-xs font-bold text-neutral-400">— {q.name}</p>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
