@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /trip/
+
+Sitemap: https://vibeguide.app/sitemap.xml

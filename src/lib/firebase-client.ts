@@ -13,22 +13,22 @@ import {
 
 /// Web SDK config — keys are public per Firebase docs.
 /// All values can be overridden via NEXT_PUBLIC_* env vars.
+if (
+  !process.env.NEXT_PUBLIC_FIREBASE_API_KEY ||
+  !process.env.NEXT_PUBLIC_FIREBASE_APP_ID
+) {
+  console.warn(
+    "[VibeGuide] NEXT_PUBLIC_FIREBASE_* env vars not set. Set them in Vercel environment variables."
+  );
+}
+
 const firebaseConfig = {
-  apiKey:
-    process.env.NEXT_PUBLIC_FIREBASE_API_KEY ??
-    "AIzaSyA2cace0CczAkLrmbjnHxWXEPUZYbfKg1w",
-  authDomain:
-    process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN ??
-    "vibeguide-2da83.firebaseapp.com",
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID ?? "vibeguide-2da83",
-  storageBucket:
-    process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET ??
-    "vibeguide-2da83.appspot.com",
-  messagingSenderId:
-    process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID ?? "185953014325",
-  appId:
-    process.env.NEXT_PUBLIC_FIREBASE_APP_ID ??
-    "1:185953014325:web:59143b3fcc121d4d39177c",
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY!,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN!,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID!,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET!,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID!,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID!,
 };
 
 let _app: FirebaseApp | null = null;

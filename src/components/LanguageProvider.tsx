@@ -16,8 +16,9 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     // Hydrate from localStorage or browser language
-    const stored = localStorage.getItem("vg_locale") as Locale | null;
-    if (stored && locales.includes(stored)) {
+    const raw = localStorage.getItem("vg_locale");
+    const stored = raw && (locales as readonly string[]).includes(raw) ? (raw as Locale) : null;
+    if (stored) {
       setLocaleState(stored);
       document.documentElement.lang = stored;
       return;

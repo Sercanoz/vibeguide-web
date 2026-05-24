@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { adminApi } from "@/lib/admin-api";
 
 type BookingDispute = Awaited<ReturnType<typeof adminApi.listBookingDisputes>> extends { ok: true; data: infer D } ? D extends { disputes: infer A } ? (A extends readonly (infer I)[] ? I : never) : never : never;
@@ -57,6 +57,14 @@ export default function DisputesPage() {
   const [error, setError] = useState<string | null>(null);
   const [resolving, setResolving] = useState<string | null>(null);
   const [tab, setTab] = useState<"booking" | "pool">("booking");
+  const [flash, setFlash] = useState<string | null>(null);
+  const flashTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  function showFlash(msg: string) {
+    setFlash(msg);
+    if (flashTimer.current) clearTimeout(flashTimer.current);
+    flashTimer.current = setTimeout(() => setFlash(null), 4000);
+  }
 
   useEffect(() => {
     Promise.all([adminApi.listBookingDisputes(), adminApi.listPoolDisputes()])
@@ -79,7 +87,7 @@ export default function DisputesPage() {
     if (res.ok) {
       setBookingDisputes((prev) => prev.filter((d) => d.bookingId !== id));
     } else {
-      alert(res.error ?? "Çözüm uygulanamadı");
+      showFlash(res.error ?? "Çözüm uygulanamadı");
     }
     setResolving(null);
   }
@@ -90,7 +98,7 @@ export default function DisputesPage() {
     if (res.ok) {
       setPoolDisputes((prev) => prev.filter((d) => d.participantId !== id));
     } else {
-      alert(res.error ?? "Çözüm uygulanamadı");
+      showFlash(res.error ?? "Çözüm uygulanamadı");
     }
     setResolving(null);
   }
@@ -102,6 +110,11 @@ export default function DisputesPage() {
     <div className="max-w-5xl mx-auto px-5 sm:px-8 py-10">
       <h1 className="text-2xl font-black tracking-tight text-vg-ink">Uyuşmazlıklar</h1>
       <p className="mt-1 text-sm text-vg-muted">VibeNow rezervasyon ve tur havuzu anlaşmazlıklarını çöz.</p>
+      {flash && (
+        <div className="mt-3 rounded-xl bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-800 font-semibold">
+          {flash}
+        </div>
+      )}
 
       {/* Tabs */}
       <div className="mt-6 flex gap-2">
