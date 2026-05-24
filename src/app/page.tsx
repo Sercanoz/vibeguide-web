@@ -413,9 +413,11 @@ export default function HomePage() {
             <br />
             <span className="text-white/20">{t.manifesto.titleB}</span>
           </h2>
-          <p className="mx-auto mt-8 max-w-2xl text-base leading-8 text-white/40">
-            {t.manifesto.sub}
-          </p>
+          <div className="mx-auto mt-8 max-w-2xl text-base leading-8 text-white/40 space-y-4">
+            {t.manifesto.sub.split("\n\n").map((para, i) => (
+              <p key={i}>{para}</p>
+            ))}
+          </div>
         </div>
       </section>
 

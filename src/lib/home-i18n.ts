@@ -116,7 +116,7 @@ const en: Dict = {
   manifesto: {
     eyebrow: "Why VibeGuide Exists",
     titleA: "Tourism became too robotic.", titleB: "We're making it human again.",
-    sub: "Bus tours read the same script in every city. QR codes replaced real conversations. Travelers spend more time queuing than discovering. VibeGuide flips it. One tap, one local, one real day. Whether you go solo with VibeNow, join a squad with VibeSquad, or plan it all with Private Tours — there's always a real human on the other side. No scripts. No traps. Just the city, told by someone who lives it.",
+    sub: "Modern travel became predictable. The same crowded buses. The same memorized scripts. The same tourist routes repeated in every city.\n\nSomewhere along the way, travel lost its human side.\n\nVibeGuide brings it back.\n\nInstead of following umbrellas through crowded streets or listening to pre-recorded explanations, travelers connect instantly with real locals and experience cities through genuine human connection.\n\nWhether you explore spontaneously with VibeNow, meet fellow travelers through VibeSquad, or design deeper journeys with Private Tours, every experience begins with a real person — not a script.\n\nNo forced routes. No tourist traps. No generic experiences.\n\nJust authentic moments, local insight, and the city as it was meant to be discovered.",
   },
   vibe: {
     title: "Explore by vibe",
