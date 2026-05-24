@@ -62,7 +62,7 @@ type Dict = {
 const en: Dict = {
   nav: { vibenow: "VibeNow", vibesquad: "VibeSquad", private: "Private Tours", destinations: "Destinations", guides: "For Guides", cta: "Get the App" },
   hero: {
-    badge: "◆ Now live in Istanbul + Cappadocia & Ephesus coming soon",
+    badge: "◆ Turkey is just the beginning — we're building the world's first real-time guide network, city by city.",
     titleA: "Don't just visit Istanbul.", titleAccent: "Enter it.",
     sub: "Forget the audio guides and crowded buses. VibeGuide drops you next to a verified local who actually lives the city — in 60 seconds with VibeNow, with travelers like you through VibeSquad, or as a polished day out with a Private Tour. One app. Three ways. Zero tourist traps.",
     b1: "Licensed local guides", b2: "Instant or planned", b3: "Real local connection",
