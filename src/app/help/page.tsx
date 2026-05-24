@@ -33,6 +33,26 @@ export default function HelpPage() {
             </ul>
           )}
           {s.p2 && <p>{s.p2}</p>}
+          {s.subsections && s.subsections.map((sub, k) => (
+            <div key={k}>
+              <h3>{sub.h}</h3>
+              {sub.p && <p>{sub.p}</p>}
+              {sub.steps && (
+                <ol>
+                  {sub.steps.map((it, j) => (
+                    <li key={j}>{it}</li>
+                  ))}
+                </ol>
+              )}
+              {sub.list && (
+                <ul>
+                  {sub.list.map((it, j) => (
+                    <li key={j}>{it}</li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          ))}
         </section>
       ))}
     </LegalLayout>
