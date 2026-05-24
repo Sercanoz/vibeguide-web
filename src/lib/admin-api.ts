@@ -3,6 +3,60 @@
 import { fbAuth, getIdToken } from "./firebase-client";
 import { API_BASE_URL } from "./api";
 
+export type BookingDispute = {
+  bookingId: number;
+  tourTitle: string;
+  scheduledAt: string;
+  touristName: string;
+  guideName: string;
+  status: string;
+  price: number;
+  currency: string | null;
+  refundStatus: string | null;
+  guideMarkedNoShowAt: string | null;
+  touristReportedGuideNoShowAt: string | null;
+  noShowOutcome: string | null;
+  cancelReason: string | null;
+};
+
+export type PoolDispute = {
+  participantId: number;
+  poolId: number;
+  tourTitle: string;
+  scheduledAt: string;
+  touristName: string;
+  guideName: string;
+  status: string;
+  holdAmount: number;
+  actualAmount: number | null;
+  refundAmount: number | null;
+  guideMarkedNoShowAt: string | null;
+  touristReportedGuideNoShowAt: string | null;
+};
+
+export type AdminStats = {
+  users: { tourist: number; guide: number; pendingGuide: number; admin: number };
+  tours: { total: number; active: number };
+  pools: { open: number; locked: number };
+  last30Days: {
+    bookings: number;
+    revenue: number;
+    topTours: { tourId: number; title: string; bookings: number }[];
+  };
+  generatedAt: string;
+};
+
+export type GuidePerf = {
+  guideUserId: number;
+  fullName: string;
+  city: string | null;
+  rating: number | null;
+  totalReviews: number;
+  totalBookings: number;
+  completedBookings: number;
+  totalEarnings: number;
+};
+
 export type ApiResult<T> =
   | { ok: true; data: T }
   | { ok: false; status: number; error?: string };
@@ -165,53 +219,17 @@ export const adminApi = {
   // ════════ STATS ════════
 
   getStats: () =>
-    authedFetch<{
-      users: { tourist: number; guide: number; pendingGuide: number; admin: number };
-      tours: { total: number; active: number };
-      pools: { open: number; locked: number };
-      last30Days: {
-        bookings: number;
-        revenue: number;
-        topTours: { tourId: number; title: string; bookings: number }[];
-      };
-      generatedAt: string;
-    }>("/api/admin/stats"),
+    authedFetch<AdminStats>("/api/admin/stats"),
 
   // ════════ GUIDE PERFORMANCE ════════
 
   listGuidePerformance: () =>
-    authedFetch<{
-      guideUserId: number;
-      fullName: string;
-      city: string | null;
-      rating: number | null;
-      totalReviews: number;
-      totalBookings: number;
-      completedBookings: number;
-      totalEarnings: number;
-    }[]>("/api/admin/stats/guides/performance"),
+    authedFetch<GuidePerf[]>("/api/admin/stats/guides/performance"),
 
   // ════════ DISPUTES ════════
 
   listBookingDisputes: () =>
-    authedFetch<{
-      count: number;
-      disputes: {
-        bookingId: number;
-        tourTitle: string;
-        scheduledAt: string;
-        touristName: string;
-        guideName: string;
-        status: string;
-        price: number;
-        currency: string | null;
-        refundStatus: string | null;
-        guideMarkedNoShowAt: string | null;
-        touristReportedGuideNoShowAt: string | null;
-        noShowOutcome: string | null;
-        cancelReason: string | null;
-      }[];
-    }>("/api/admin/booking-disputes"),
+    authedFetch<{ count: number; disputes: BookingDispute[] }>("/api/admin/booking-disputes"),
 
   resolveBookingDispute: (
     bookingId: number,
@@ -223,23 +241,7 @@ export const adminApi = {
     ),
 
   listPoolDisputes: () =>
-    authedFetch<{
-      count: number;
-      disputes: {
-        participantId: number;
-        poolId: number;
-        tourTitle: string;
-        scheduledAt: string;
-        touristName: string;
-        guideName: string;
-        status: string;
-        holdAmount: number;
-        actualAmount: number | null;
-        refundAmount: number | null;
-        guideMarkedNoShowAt: string | null;
-        touristReportedGuideNoShowAt: string | null;
-      }[];
-    }>("/api/admin/pools/disputes"),
+    authedFetch<{ count: number; disputes: PoolDispute[] }>("/api/admin/pools/disputes"),
 
   resolvePoolDispute: (
     participantId: number,

@@ -1,10 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { adminApi } from "@/lib/admin-api";
-
-type BookingDispute = Awaited<ReturnType<typeof adminApi.listBookingDisputes>> extends { ok: true; data: infer D } ? D extends { disputes: infer A } ? (A extends readonly (infer I)[] ? I : never) : never : never;
-type PoolDispute = Awaited<ReturnType<typeof adminApi.listPoolDisputes>> extends { ok: true; data: infer D } ? D extends { disputes: infer A } ? (A extends readonly (infer I)[] ? I : never) : never : never;
+import { adminApi, type BookingDispute, type PoolDispute } from "@/lib/admin-api";
 
 type Resolution = "refund_tourist" | "uphold_guide" | "dismiss";
 

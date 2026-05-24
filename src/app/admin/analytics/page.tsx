@@ -1,10 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { adminApi } from "@/lib/admin-api";
-
-type Stats = Awaited<ReturnType<typeof adminApi.getStats>> extends { ok: true; data: infer D } ? D : never;
-type GuidePerf = Awaited<ReturnType<typeof adminApi.listGuidePerformance>> extends { ok: true; data: infer D } ? D : never;
+import { adminApi, type AdminStats, type GuidePerf } from "@/lib/admin-api";
 
 function KpiCard({ label, value, sub }: { label: string; value: string | number; sub?: string }) {
   return (
@@ -17,8 +14,8 @@ function KpiCard({ label, value, sub }: { label: string; value: string | number;
 }
 
 export default function AnalyticsPage() {
-  const [stats, setStats] = useState<Stats | null>(null);
-  const [guides, setGuides] = useState<GuidePerf | null>(null);
+  const [stats, setStats] = useState<AdminStats | null>(null);
+  const [guides, setGuides] = useState<GuidePerf[] | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
