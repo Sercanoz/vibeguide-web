@@ -319,9 +319,8 @@ export default function HomePage() {
                 </h2>
                 <p className="mt-3 text-sm leading-6 text-white/40 max-w-md">{t.energy.sub}</p>
               </div>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">
                 {[
-                  { num: "4.9★", label: "App rating" },
                   { num: "8", label: "Cities coming" },
                   { num: "60s", label: "Avg match time" },
                   { num: "100%", label: "Verified guides" },
