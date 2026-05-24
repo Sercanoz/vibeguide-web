@@ -118,8 +118,8 @@ export default function HomePage() {
         <div className="relative mx-auto max-w-7xl px-6 py-28 grid md:grid-cols-2 gap-16 items-center w-full">
           {/* Copy */}
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-4 py-1.5 text-xs font-semibold text-white/70 backdrop-blur-sm mb-8 animate-[fadeSlideUp_0.7s_ease_both]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#10B981] animate-pulse" />
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-4 py-2 text-sm font-semibold text-white/80 backdrop-blur-sm mb-8 animate-[fadeSlideUp_0.7s_ease_both]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#10B981] animate-pulse shrink-0" />
               {t.hero.badge}
             </div>
 
@@ -131,9 +131,11 @@ export default function HomePage() {
               </span>
             </h1>
 
-            <p className="mt-6 text-[15px] leading-7 text-white/50 max-w-md">
-              {t.hero.sub}
-            </p>
+            <div className="mt-6 text-[15px] leading-7 text-white/50 max-w-md space-y-3">
+              {t.hero.sub.split("\n\n").map((para, i) => (
+                <p key={i} style={{ whiteSpace: "pre-line" }}>{para}</p>
+              ))}
+            </div>
 
             <div className="mt-8 flex flex-wrap gap-3">
               <a href="#download" className="group relative rounded-full bg-[#6C4CF1] px-7 py-3.5 text-sm font-bold text-white overflow-hidden transition-all hover:shadow-[0_0_30px_rgba(108,76,241,0.5)]">
@@ -342,7 +344,11 @@ export default function HomePage() {
           <div className="mb-16">
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-neutral-400">{t.modesIntro.eyebrow}</p>
             <h2 className="mt-4 text-4xl md:text-6xl font-black tracking-tight max-w-3xl leading-tight">{t.modesIntro.title}</h2>
-            <p className="mt-4 text-base leading-7 text-neutral-400 max-w-lg">{t.modesIntro.sub}</p>
+            <div className="mt-4 text-base leading-7 text-neutral-400 max-w-lg space-y-3">
+              {t.modesIntro.sub.split("\n\n").map((para, i) => (
+                <p key={i} style={{ whiteSpace: "pre-line" }}>{para}</p>
+              ))}
+            </div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-5">

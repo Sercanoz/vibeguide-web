@@ -64,7 +64,7 @@ const en: Dict = {
   hero: {
     badge: "◆ Turkey is just the beginning — we're building the world's first real-time guide network, city by city.",
     titleA: "Don't just visit Istanbul.", titleAccent: "Enter it.",
-    sub: "Forget the audio guides and crowded buses. VibeGuide drops you next to a verified local who actually lives the city — in 60 seconds with VibeNow, with travelers like you through VibeSquad, or as a polished day out with a Private Tour. One app. Three ways. Zero tourist traps.",
+    sub: "Forget crowded buses and scripted audio guides.\n\nVibeGuide matches you with verified locals who actually live the city — whether instantly through VibeNow, together with fellow travelers in VibeSquad, or through carefully designed Private Tours.\n\nOne app. Three ways to explore.\nNo scripts. No tourist traps. Just the city, experienced properly.",
     b1: "Licensed local guides", b2: "Instant or planned", b3: "Real local connection",
     ctaPrimary: "Find a Guide in Istanbul", ctaSecondary: "Explore Turkey Tours",
   },
@@ -97,7 +97,7 @@ const en: Dict = {
   modesIntro: {
     eyebrow: "Three ways. One promise.",
     title: "Pick how you want to meet your city.",
-    sub: "Last-minute and curious? Social and budget-aware? Or planning the day of your life? VibeGuide has a mode for every traveler — built around real local guides, not scripts.",
+    sub: "Last-minute and curious?\nSocial and budget-aware?\nOr planning something unforgettable?\n\nVibeGuide gives every traveler a different way to explore — instantly with locals, socially with fellow travelers, or privately through curated experiences.\n\nNo scripts. No generic tourism. Just real people and cities experienced properly.",
   },
   modes: {
     vibenow: { tag: "VIBENOW · INSTANT", title: "Tap. Match. Go.",
