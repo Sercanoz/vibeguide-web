@@ -56,7 +56,7 @@ type Dict = {
   };
   nav2: { howItWorks: string };
   footerLinks: { helpCenter: string; terms: string; privacy: string; accountDeletion: string };
-  footer: { tagline: string; product: string; destinations: string; support: string; copyright: string };
+  footer: { tagline: string; product: string; destinations: string; support: string; legal?: string; copyright: string; companyName?: string; taxNo?: string; tradeReg?: string; address?: string; email?: string; hours?: string };
 };
 
 const en: Dict = {
@@ -64,8 +64,8 @@ const en: Dict = {
   hero: {
     badge: "◆ Turkey is just the beginning — we're building the world's first real-time guide network, city by city.",
     titleA: "Don't just visit Istanbul.", titleAccent: "Enter it.",
-    sub: "Forget crowded buses and scripted audio guides.\n\nVibeGuide matches you with verified locals who actually live the city — whether instantly through VibeNow, together with fellow travelers in VibeSquad, or through carefully designed Private Tours.\n\nOne app. Three ways to explore.\nNo scripts. No tourist traps. Just the city, experienced properly.",
-    b1: "Licensed local guides", b2: "Instant or planned", b3: "Real local connection",
+    sub: "Forget crowded buses and scripted audio guides.\n\nVibeGuide connects you with verified, licensed local guides — whether spontaneously through VibeNow, together with fellow travelers in VibeSquad, or through carefully designed Private Tours.\n\nOne app. Three ways to explore.\nVerified guides. Predefined routes. Secure booking.",
+    b1: "Licensed local guides", b2: "Flexible or planned", b3: "Secure reservations",
     ctaPrimary: "Find a Guide in Istanbul", ctaSecondary: "Explore Turkey Tours",
   },
   phone: { live: "Live", greet: "Good evening" },
@@ -81,7 +81,7 @@ const en: Dict = {
     proofGuides: "Licensed Guides Only",
   },
   phoneCards: {
-    vibenow: "Tap. Match. Walk out the door in 60 seconds.",
+    vibenow: "Tap. Match. Meet your verified guide — fast.",
     vibesquad: "Join travelers heading the same way. Split the price.",
     private: "Hand-pick your guide. Plan the perfect day.",
   },
@@ -97,12 +97,12 @@ const en: Dict = {
   modesIntro: {
     eyebrow: "Three ways. One promise.",
     title: "Pick how you want to meet your city.",
-    sub: "Last-minute and curious?\nSocial and budget-aware?\nOr planning something unforgettable?\n\nVibeGuide gives every traveler a different way to explore — instantly with locals, socially with fellow travelers, or privately through curated experiences.\n\nNo scripts. No generic tourism. Just real people and cities experienced properly.",
+    sub: "Last-minute and curious?\nSocial and budget-aware?\nOr planning something unforgettable?\n\nVibeGuide gives every traveler a different way to explore — with verified locals, socially with fellow travelers, or privately through curated experiences.\n\nLicensed guides. Predefined routes. Secure booking. Supported operations.",
   },
   modes: {
-    vibenow: { tag: "VIBENOW · INSTANT", title: "Tap. Match. Go.",
-      text: "Open the app and a verified local is on the way in under a minute. Perfect when you've just landed, just woke up, or just decided \"let's do something today.\"",
-      points: ["⚡ 60-second matching", "📍 Real guides near you, right now", "🏛️ Museums, food walks, hidden streets"],
+    vibenow: { tag: "VIBENOW · ON DEMAND", title: "Tap. Match. Go.",
+      text: "Open the app and a verified local guide is on the way. Perfect when you've just landed, just woke up, or just decided \"let's do something today.\" Guide availability subject to local conditions.",
+      points: ["✅ Verified licensed guides", "📍 Guides near you, ready to meet", "🏛️ Museums, food walks, hidden streets"],
       cta: "Find Now" },
     vibesquad: { tag: "VIBESQUAD · SOCIAL", title: "Travel together. Pay less.",
       text: "Start a squad or jump into one. As more travelers join the same route, the price per person drops. Same guide, same city, half the cost, ten times the stories.",
@@ -160,7 +160,7 @@ const en: Dict = {
     steps: [
       { title: "Open the app", text: "Choose VibeNow for instant, VibeSquad for group, or Private for a full day." },
       { title: "Match with a guide", text: "Verified local guides near you. Real people, real expertise, real passion for their city." },
-      { title: "Walk out the door", text: "In 60 seconds with VibeNow. No planning, no waiting, no tourist traps." },
+      { title: "Meet your guide", text: "Your verified guide confirms the meeting point, time and route details before you set off." },
     ],
   },
   turkey: {
@@ -175,9 +175,15 @@ const en: Dict = {
   nav2: { howItWorks: "How it works" },
   footerLinks: { helpCenter: "Help Center", terms: "Terms of Service", privacy: "Privacy", accountDeletion: "Account Deletion" },
   footer: {
-    tagline: "Instant local guides, private tours, walking tours, group tours and authentic city experiences in Turkey.",
-    product: "Product", destinations: "Destinations", support: "Support",
-    copyright: "© 2026 VibeGuide. All rights reserved.",
+    tagline: "Licensed local guides, private tours, walking tours, group experiences and secure city discovery in Turkey.",
+    product: "Product", destinations: "Destinations", support: "Support", legal: "Legal",
+    copyright: "© 2026 VibeCore Turizm Seyahat Acentası ve Dijital Hizmetler Ticaret Limited Şirketi. All rights reserved.",
+    companyName: "VibeCore Turizm Seyahat Acentası ve Dijital Hizmetler Ticaret Ltd. Şti.",
+    taxNo: "Tax No: 9251328389 (Marmaris V.D.)",
+    tradeReg: "Trade Registry No: 12686",
+    address: "Beldibi Mah. Belmar Sk. No:9/1 İç Kapı No:4 Marmaris/Muğla, Türkiye",
+    email: "support@vibeguideapp.com",
+    hours: "Mon–Fri 09:00–18:00 (UTC+3)",
   },
 };
 

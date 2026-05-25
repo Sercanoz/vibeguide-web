@@ -603,7 +603,7 @@ export default function HomePage() {
       {/* ── FOOTER ── */}
       <footer className="bg-[#F7F7FB] border-t border-black/[0.06] px-6 py-16">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-10 md:grid-cols-[2.5fr_1fr_1fr_1fr]">
+          <div className="grid gap-10 md:grid-cols-[2fr_1fr_1fr_1fr_1fr]">
             <div>
               <h3 className="flex items-center gap-2.5 text-xl font-black">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -625,29 +625,59 @@ export default function HomePage() {
                 <li><a href="#vibenow" className="hover:text-black transition-colors">VibeNow</a></li>
                 <li><a href="#vibesquad" className="hover:text-black transition-colors">VibeSquad</a></li>
                 <li><a href="#private" className="hover:text-black transition-colors">{t.nav.private}</a></li>
+                <li><a href="/how-it-works" className="hover:text-black transition-colors">How It Works</a></li>
+                <li><a href="/guide-verification" className="hover:text-black transition-colors">Guide Verification</a></li>
               </ul>
             </div>
             <div>
               <h4 className="text-sm font-black">{t.footer.destinations}</h4>
               <ul className="mt-4 space-y-3 text-sm text-neutral-400">
-                <li><a href="/istanbul-tour-guide" className="hover:text-black transition-colors">Istanbul Tour Guide</a></li>
-                <li><a href="/cappadocia-tour-guide" className="hover:text-black transition-colors">Cappadocia Tour Guide</a></li>
-                <li><a href="/ephesus-tour-guide" className="hover:text-black transition-colors">Ephesus Tour Guide</a></li>
+                <li><a href="/istanbul-tour-guide" className="hover:text-black transition-colors">Istanbul</a></li>
+                <li><a href="/cappadocia-tour-guide" className="hover:text-black transition-colors">Cappadocia</a></li>
+                <li><a href="/ephesus-tour-guide" className="hover:text-black transition-colors">Ephesus</a></li>
               </ul>
             </div>
             <div>
               <h4 className="text-sm font-black">{t.footer.support}</h4>
               <ul className="mt-4 space-y-3 text-sm text-neutral-400">
+                <li><a href="/about" className="hover:text-black transition-colors">About Us</a></li>
+                <li><a href="/contact" className="hover:text-black transition-colors">Contact</a></li>
                 <li><a href="/help" className="hover:text-black transition-colors">{t.footerLinks.helpCenter}</a></li>
-                <li><a href="/terms" className="hover:text-black transition-colors">{t.footerLinks.terms}</a></li>
-                <li><a href="/privacy" className="hover:text-black transition-colors">{t.footerLinks.privacy}</a></li>
+                <li><a href="/security" className="hover:text-black transition-colors">Security & Payment</a></li>
                 <li><a href="/account-deletion" className="hover:text-black transition-colors">{t.footerLinks.accountDeletion}</a></li>
               </ul>
             </div>
+            <div>
+              <h4 className="text-sm font-black">Legal</h4>
+              <ul className="mt-4 space-y-3 text-sm text-neutral-400">
+                <li><a href="/terms" className="hover:text-black transition-colors">Terms of Service</a></li>
+                <li><a href="/privacy" className="hover:text-black transition-colors">Privacy Policy</a></li>
+                <li><a href="/cancellation-policy" className="hover:text-black transition-colors">Cancellation & Refunds</a></li>
+                <li><a href="/mesafeli-satis" className="hover:text-black transition-colors">Mesafeli Satış Sözleşmesi</a></li>
+                <li><a href="/on-bilgilendirme" className="hover:text-black transition-colors">Ön Bilgilendirme Formu</a></li>
+                <li><a href="/kvkk" className="hover:text-black transition-colors">KVKK Aydınlatma</a></li>
+              </ul>
+            </div>
           </div>
-          <div className="mt-12 pt-8 border-t border-black/[0.06] flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-xs text-neutral-300">{t.footer.copyright}</p>
-            <p className="text-xs text-neutral-200">#istanbultours · #guideinistanbul · #turkeytour · #localguide</p>
+
+          {/* Şirket bilgileri — PayTR / ödeme kuruluşu gerekliliği */}
+          <div className="mt-12 pt-8 border-t border-black/[0.06]">
+            <div className="grid gap-2 md:grid-cols-2 text-xs text-neutral-400 leading-6">
+              <div>
+                <p className="font-semibold text-neutral-500">VibeCore Turizm Seyahat Acentası ve Dijital Hizmetler Ticaret Ltd. Şti.</p>
+                <p>Vergi No: 9251328389 · Vergi Dairesi: Marmaris V.D.</p>
+                <p>Ticaret Sicil No: 12686</p>
+                <p>Beldibi Mah. Belmar Sk. No:9/1 İç Kapı No:4 Marmaris/Muğla, Türkiye</p>
+              </div>
+              <div className="md:text-right">
+                <p>📧 <a href="mailto:support@vibeguideapp.com" className="hover:text-black transition-colors">support@vibeguideapp.com</a></p>
+                <p>Çalışma saatleri: Hafta içi 09:00 – 18:00 (UTC+3)</p>
+              </div>
+            </div>
+            <div className="mt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+              <p className="text-xs text-neutral-300">{t.footer.copyright}</p>
+              <p className="text-xs text-neutral-300">SSL Korumalı · Lisanslı Rehberler · Güvenli Rezervasyon</p>
+            </div>
           </div>
         </div>
       </footer>
