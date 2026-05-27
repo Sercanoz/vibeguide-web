@@ -32,6 +32,7 @@ export default function HomePage() {
   const navLinks = [
     { href: "#how", label: t.nav2.howItWorks },
     { href: "#modes", label: t.nav.vibenow },
+    { href: "/tours", label: "Tours" },
     { href: "#destinations", label: t.nav.destinations },
     { href: "#guides", label: t.nav.guides },
   ];
@@ -625,6 +626,7 @@ export default function HomePage() {
                 <li><a href="#vibenow" className="hover:text-black transition-colors">VibeNow</a></li>
                 <li><a href="#vibesquad" className="hover:text-black transition-colors">VibeSquad</a></li>
                 <li><a href="#private" className="hover:text-black transition-colors">{t.nav.private}</a></li>
+                <li><a href="/tours" className="hover:text-black transition-colors">Tours</a></li>
                 <li><a href="/how-it-works" className="hover:text-black transition-colors">How It Works</a></li>
                 <li><a href="/guide-verification" className="hover:text-black transition-colors">Guide Verification</a></li>
               </ul>
