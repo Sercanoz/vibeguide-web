@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 import { notFound } from "next/navigation";
 import { API_BASE_URL } from "@/lib/api";
 import { useT } from "@/components/LanguageProvider";
+import { getToursT } from "@/lib/i18n";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 interface Place {
@@ -74,6 +75,7 @@ export default function TourDetailPage() {
   const params = useParams();
   const id = params?.id as string;
   const { locale } = useT();
+  const tt = getToursT(locale);
   const [tour, setTour] = useState<TourDetail | null | "loading">("loading");
 
   useEffect(() => {
@@ -135,9 +137,9 @@ export default function TourDetailPage() {
             VibeGuide
           </a>
           <div className="hidden gap-8 text-sm font-medium md:flex">
-            <a href="/#how" className="text-neutral-500 hover:text-black transition-colors">How It Works</a>
-            <a href="/tours" className="text-[#6C4CF1] font-semibold">Tours</a>
-            <a href="/#destinations" className="text-neutral-500 hover:text-black transition-colors">Destinations</a>
+            <a href="/#how" className="text-neutral-500 hover:text-black transition-colors">{tt.navHow}</a>
+            <a href="/tours" className="text-[#6C4CF1] font-semibold">{tt.navTours}</a>
+            <a href="/#destinations" className="text-neutral-500 hover:text-black transition-colors">{tt.navDestinations}</a>
           </div>
           <div className="flex items-center gap-3">
             <LanguageSwitcher />

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { API_BASE_URL } from "@/lib/api";
 import { useT } from "@/components/LanguageProvider";
+import { getToursT } from "@/lib/i18n";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import TourFilters from "./TourFilters";
 
@@ -22,6 +23,7 @@ interface Tour {
 
 export default function ToursPage() {
   const { locale } = useT();
+  const tt = getToursT(locale);
   const [tours, setTours] = useState<Tour[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -44,10 +46,10 @@ export default function ToursPage() {
             VibeGuide
           </a>
           <div className="hidden gap-8 text-sm font-medium md:flex">
-            <a href="/#how" className="text-neutral-500 hover:text-black transition-colors">How It Works</a>
-            <a href="/#modes" className="text-neutral-500 hover:text-black transition-colors">VibeNow</a>
-            <a href="/tours" className="text-[#6C4CF1] font-semibold">Tours</a>
-            <a href="/#destinations" className="text-neutral-500 hover:text-black transition-colors">Destinations</a>
+            <a href="/#how" className="text-neutral-500 hover:text-black transition-colors">{tt.navHow}</a>
+            <a href="/#modes" className="text-neutral-500 hover:text-black transition-colors">{tt.navVibeNow}</a>
+            <a href="/tours" className="text-[#6C4CF1] font-semibold">{tt.navTours}</a>
+            <a href="/#destinations" className="text-neutral-500 hover:text-black transition-colors">{tt.navDestinations}</a>
           </div>
           <div className="flex items-center gap-3">
             <LanguageSwitcher />
@@ -66,25 +68,24 @@ export default function ToursPage() {
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#6C4CF1]/15 rounded-full blur-[120px] pointer-events-none" />
         <div className="relative mx-auto max-w-7xl px-6 py-20 text-center">
           <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1] mb-4">
-            Curated Experiences
+            {tt.heroBadge}
           </p>
           <h1 className="text-5xl md:text-7xl font-black tracking-tight text-white leading-tight">
-            Explore Our
+            {tt.heroTitle1}
             <br />
             <span className="bg-gradient-to-r from-[#6C4CF1] via-[#8B5CF6] to-[#EC4899] bg-clip-text text-transparent">
-              Tours
+              {tt.heroTitle2}
             </span>
           </h1>
           <p className="mt-6 text-base text-white/50 max-w-xl mx-auto leading-7">
-            Handcrafted itineraries led by verified local guides. From ancient ruins to
-            hidden food spots — find the perfect tour for your next adventure in Turkey.
+            {tt.heroSub}
           </p>
           <div className="mt-8 flex items-center justify-center gap-6 text-sm text-white/30">
-            <span className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />Live availability</span>
+            <span className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />{tt.heroLive}</span>
             <span>·</span>
-            <span>100% verified guides</span>
+            <span>{tt.heroVerified}</span>
             <span>·</span>
-            <span>Book via app</span>
+            <span>{tt.heroBook}</span>
           </div>
         </div>
         <div className="h-8 bg-gradient-to-b from-[#0A0A0F] to-white" />

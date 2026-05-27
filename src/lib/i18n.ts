@@ -1403,6 +1403,157 @@ const i18nBase = {
   },
 };
 
+export type ToursPageDict = {
+  navTours: string;
+  navDestinations: string;
+  navHow: string;
+  navVibeNow: string;
+  heroBadge: string;
+  heroTitle1: string;
+  heroTitle2: string;
+  heroSub: string;
+  heroLive: string;
+  heroVerified: string;
+  heroBook: string;
+};
+
+const toursPageBase: Record<string, ToursPageDict> = {
+  en: {
+    navTours: "Tours",
+    navDestinations: "Destinations",
+    navHow: "How It Works",
+    navVibeNow: "VibeNow",
+    heroBadge: "Curated Experiences",
+    heroTitle1: "Explore Our",
+    heroTitle2: "Tours",
+    heroSub: "Handcrafted itineraries led by verified local guides. From ancient ruins to hidden food spots — find the perfect tour for your next adventure in Turkey.",
+    heroLive: "Live availability",
+    heroVerified: "100% verified guides",
+    heroBook: "Book via app",
+  },
+  tr: {
+    navTours: "Turlar",
+    navDestinations: "Destinasyonlar",
+    navHow: "Nasıl Çalışır",
+    navVibeNow: "VibeNow",
+    heroBadge: "Özenle Seçilmiş Deneyimler",
+    heroTitle1: "Turlarımızı",
+    heroTitle2: "Keşfet",
+    heroSub: "Onaylı yerel rehberler eşliğinde hazırlanmış rotalar. Antik harabelerden gizli lezzet noktalarına — Türkiye'deki bir sonraki maceran için mükemmel turu bul.",
+    heroLive: "Anlık müsaitlik",
+    heroVerified: "%100 onaylı rehberler",
+    heroBook: "Uygulama ile rezerve et",
+  },
+  de: {
+    navTours: "Touren",
+    navDestinations: "Reiseziele",
+    navHow: "So funktioniert's",
+    navVibeNow: "VibeNow",
+    heroBadge: "Kuratierte Erlebnisse",
+    heroTitle1: "Entdecke",
+    heroTitle2: "Touren",
+    heroSub: "Handverlesene Routen mit verifizierten lokalen Guides. Von antiken Ruinen bis versteckten Essensplätzen — finde die perfekte Tour für dein nächstes Abenteuer in der Türkei.",
+    heroLive: "Live-Verfügbarkeit",
+    heroVerified: "100% verifizierte Guides",
+    heroBook: "Per App buchen",
+  },
+  fr: {
+    navTours: "Tours",
+    navDestinations: "Destinations",
+    navHow: "Comment ça marche",
+    navVibeNow: "VibeNow",
+    heroBadge: "Expériences Sélectionnées",
+    heroTitle1: "Découvrez Nos",
+    heroTitle2: "Tours",
+    heroSub: "Des itinéraires artisanaux guidés par des locaux vérifiés. Des ruines antiques aux spots gastronomiques cachés — trouvez le tour parfait pour votre prochaine aventure en Turquie.",
+    heroLive: "Disponibilité en direct",
+    heroVerified: "100% guides vérifiés",
+    heroBook: "Réserver via l'app",
+  },
+  ru: {
+    navTours: "Туры",
+    navDestinations: "Направления",
+    navHow: "Как это работает",
+    navVibeNow: "VibeNow",
+    heroBadge: "Отборные впечатления",
+    heroTitle1: "Исследуйте",
+    heroTitle2: "Туры",
+    heroSub: "Маршруты с проверенными местными гидами. От античных руин до скрытых гастро-мест — найди идеальный тур для следующего путешествия по Турции.",
+    heroLive: "Актуальная доступность",
+    heroVerified: "100% проверенные гиды",
+    heroBook: "Забронировать в приложении",
+  },
+  zh: {
+    navTours: "旅游",
+    navDestinations: "目的地",
+    navHow: "玩法流程",
+    navVibeNow: "VibeNow",
+    heroBadge: "精选体验",
+    heroTitle1: "探索我们的",
+    heroTitle2: "旅游",
+    heroSub: "由认证本地向导带领的精心路线。从古代遗址到隐藏美食 — 在土耳其找到你的完美旅程。",
+    heroLive: "实时可用",
+    heroVerified: "100% 认证向导",
+    heroBook: "通过App预订",
+  },
+  es: {
+    navTours: "Tours",
+    navDestinations: "Destinos",
+    navHow: "Cómo funciona",
+    navVibeNow: "VibeNow",
+    heroBadge: "Experiencias Curadas",
+    heroTitle1: "Explora Nuestros",
+    heroTitle2: "Tours",
+    heroSub: "Itinerarios artesanales con guías locales verificados. Desde ruinas antiguas hasta rincones gastronómicos — encuentra el tour perfecto para tu aventura en Turquía.",
+    heroLive: "Disponibilidad en vivo",
+    heroVerified: "100% guías verificados",
+    heroBook: "Reservar vía app",
+  },
+  it: {
+    navTours: "Tour",
+    navDestinations: "Destinazioni",
+    navHow: "Come funziona",
+    navVibeNow: "VibeNow",
+    heroBadge: "Esperienze Selezionate",
+    heroTitle1: "Esplora i Nostri",
+    heroTitle2: "Tour",
+    heroSub: "Itinerari curati con guide locali verificate. Dalle rovine antiche ai posti gastronomici nascosti — trova il tour perfetto per la tua prossima avventura in Turchia.",
+    heroLive: "Disponibilità in tempo reale",
+    heroVerified: "100% guide verificate",
+    heroBook: "Prenota via app",
+  },
+  ko: {
+    navTours: "투어",
+    navDestinations: "여행지",
+    navHow: "이용 방법",
+    navVibeNow: "VibeNow",
+    heroBadge: "엄선된 경험",
+    heroTitle1: "우리의",
+    heroTitle2: "투어 탐색",
+    heroSub: "인증된 현지 가이드가 이끄는 여행 코스. 고대 유적지부터 숨겨진 맛집까지 — 터키에서 완벽한 투어를 찾아보세요.",
+    heroLive: "실시간 예약 가능",
+    heroVerified: "100% 인증 가이드",
+    heroBook: "앱으로 예약",
+  },
+  ja: {
+    navTours: "ツアー",
+    navDestinations: "目的地",
+    navHow: "使い方",
+    navVibeNow: "VibeNow",
+    heroBadge: "厳選体験",
+    heroTitle1: "私たちの",
+    heroTitle2: "ツアーを探す",
+    heroSub: "認定ローカルガイドによる丁寧なルート。古代遺跡から隠れたグルメスポットまで — トルコでの冒険に最適なツアーを見つけよう。",
+    heroLive: "リアルタイム空き確認",
+    heroVerified: "100%認定ガイド",
+    heroBook: "アプリで予約",
+  },
+};
+
+export function getToursT(locale: Locale): ToursPageDict {
+  return toursPageBase[locale] ?? toursPageBase.en;
+}
+
 export const i18n: Record<Locale, Dict> = {
   ...i18nBase,
   ja: i18nBase.en,
