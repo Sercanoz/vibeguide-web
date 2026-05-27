@@ -5,6 +5,7 @@ import {
   getAuth,
   GoogleAuthProvider,
   signInWithRedirect,
+  getRedirectResult,
   signOut as fbSignOut,
   onIdTokenChanged,
   type User,
@@ -59,7 +60,7 @@ export async function signOut(): Promise<void> {
   await fbSignOut(fbAuth());
 }
 
-export { onIdTokenChanged };
+export { onIdTokenChanged, getRedirectResult };
 export type { User };
 
 /// Get current Firebase ID token for backend Authorization header.
