@@ -1,6 +1,11 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
 import { notFound } from "next/navigation";
 import { API_BASE_URL } from "@/lib/api";
+import { useT } from "@/components/LanguageProvider";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 interface Place {
   id: number;
@@ -46,35 +51,6 @@ interface TourDetail {
   languagePrices?: LanguagePrice[];
 }
 
-async function getTour(id: string): Promise<TourDetail | null> {
-  try {
-    const res = await fetch(`${API_BASE_URL}/api/tours/${id}?locale=en`, {
-      cache: "no-store",
-    });
-    if (!res.ok) return null;
-    return (await res.json()) as TourDetail;
-  } catch {
-    return null;
-  }
-}
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}): Promise<Metadata> {
-  const { id } = await params;
-  const tour = await getTour(id);
-  if (!tour) return { title: "Tour Not Found | VibeGuide" };
-  const description = tour.summary
-    ? tour.summary
-    : (tour.description ?? "").slice(0, 160);
-  return {
-    title: `${tour.title} | VibeGuide`,
-    description,
-  };
-}
-
 function formatDuration(minutes: number): string {
   if (minutes < 60) return `${minutes} min`;
   const h = Math.floor(minutes / 60);
@@ -91,16 +67,51 @@ function categoryColor(cat: string): string {
     adventure: "bg-red-100 text-red-700",
     art: "bg-pink-100 text-pink-700",
   };
-  return map[cat.toLowerCase()] ?? "bg-neutral-100 text-neutral-600";
+  return map[cat?.toLowerCase()] ?? "bg-neutral-100 text-neutral-600";
 }
 
-export default async function TourDetailPage({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
-  const { id } = await params;
-  const tour = await getTour(id);
+export default function TourDetailPage() {
+  const params = useParams();
+  const id = params?.id as string;
+  const { locale } = useT();
+  const [tour, setTour] = useState<TourDetail | null | "loading">("loading");
+
+  useEffect(() => {
+    if (!id) return;
+    setTour("loading");
+    fetch(`${API_BASE_URL}/api/tours/${id}?locale=${locale}`, { cache: "no-store" })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data) => setTour(data))
+      .catch(() => setTour(null));
+  }, [id, locale]);
+
+  if (tour === "loading") {
+    return (
+      <main className="min-h-screen bg-white antialiased">
+        <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-black/[0.06] shadow-sm">
+          <div className="mx-auto flex max-w-7xl items-center justify-between px-6 h-16">
+            <a href="/" className="flex items-center gap-2.5 text-xl font-black tracking-tight text-[#0A0A0F]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/vibeguide-icon.png" alt="VibeGuide" width={32} height={32} style={{ mixBlendMode: "multiply" }} />
+              VibeGuide
+            </a>
+            <div className="flex items-center gap-3">
+              <LanguageSwitcher />
+              <a href="/#download" className="rounded-full bg-[#6C4CF1] px-5 py-2 text-sm font-semibold text-white hover:bg-[#5a3dd4] transition-colors shadow-sm">Get the App</a>
+            </div>
+          </div>
+        </nav>
+        <div className="pt-16 animate-pulse">
+          <div className="h-[60vh] bg-neutral-100" />
+          <div className="max-w-7xl mx-auto px-6 py-12 space-y-4">
+            <div className="h-8 w-2/3 bg-neutral-100 rounded-xl" />
+            <div className="h-4 w-1/3 bg-neutral-100 rounded-xl" />
+            <div className="h-32 bg-neutral-100 rounded-xl" />
+          </div>
+        </div>
+      </main>
+    );
+  }
 
   if (!tour) {
     notFound();
@@ -128,12 +139,15 @@ export default async function TourDetailPage({
             <a href="/tours" className="text-[#6C4CF1] font-semibold">Tours</a>
             <a href="/#destinations" className="text-neutral-500 hover:text-black transition-colors">Destinations</a>
           </div>
-          <a
-            href="/#download"
-            className="rounded-full bg-[#6C4CF1] px-5 py-2 text-sm font-semibold text-white hover:bg-[#5a3dd4] transition-colors shadow-sm"
-          >
-            Get the App
-          </a>
+          <div className="flex items-center gap-3">
+            <LanguageSwitcher />
+            <a
+              href="/#download"
+              className="rounded-full bg-[#6C4CF1] px-5 py-2 text-sm font-semibold text-white hover:bg-[#5a3dd4] transition-colors shadow-sm"
+            >
+              Get the App
+            </a>
+          </div>
         </div>
       </nav>
 
@@ -152,7 +166,6 @@ export default async function TourDetailPage({
         <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0F] via-[#0A0A0F]/40 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0F]/60 via-transparent to-transparent" />
 
-        {/* Hero content */}
         <div className="absolute bottom-0 left-0 right-0 px-6 py-10 max-w-7xl mx-auto">
           <span
             className={`inline-block px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wide mb-4 ${categoryColor(tour.category)}`}
@@ -170,11 +183,9 @@ export default async function TourDetailPage({
         </div>
       </div>
 
-      {/* Body: two-column layout on desktop */}
+      {/* Body */}
       <div className="mx-auto max-w-7xl px-6 py-12 grid md:grid-cols-[1fr_340px] gap-10 items-start">
-        {/* Main content */}
         <div className="space-y-10">
-          {/* Machine-translated notice */}
           {tour.isMachineTranslated && (
             <div className="flex items-center gap-2 rounded-xl bg-amber-50 border border-amber-100 px-4 py-3 text-sm text-amber-700">
               <span>⚠️</span>
@@ -182,12 +193,10 @@ export default async function TourDetailPage({
             </div>
           )}
 
-          {/* Summary */}
           {tour.summary && (
             <p className="text-lg leading-8 text-neutral-600 font-medium">{tour.summary}</p>
           )}
 
-          {/* Description */}
           {tour.description && (
             <div>
               <h2 className="text-2xl font-black mb-4">About This Tour</h2>
@@ -195,7 +204,6 @@ export default async function TourDetailPage({
             </div>
           )}
 
-          {/* Highlights */}
           {highlights.length > 0 && (
             <div>
               <h2 className="text-2xl font-black mb-5">Highlights</h2>
@@ -210,7 +218,6 @@ export default async function TourDetailPage({
             </div>
           )}
 
-          {/* What You'll See — places */}
           {tour.places && tour.places.length > 0 && (
             <div>
               <h2 className="text-2xl font-black mb-5">What You&apos;ll See</h2>
@@ -234,7 +241,6 @@ export default async function TourDetailPage({
             </div>
           )}
 
-          {/* Meeting point */}
           {tour.meetingPointText && (
             <div>
               <h2 className="text-2xl font-black mb-3">Meeting Point</h2>
@@ -245,7 +251,6 @@ export default async function TourDetailPage({
             </div>
           )}
 
-          {/* Languages offered */}
           {tour.languagePrices && tour.languagePrices.length > 0 && (
             <div>
               <h2 className="text-2xl font-black mb-4">Languages Available</h2>
@@ -267,7 +272,6 @@ export default async function TourDetailPage({
             </div>
           )}
 
-          {/* Pricing tiers */}
           {tour.pricingTiers && tour.pricingTiers.length > 0 && (
             <div>
               <h2 className="text-2xl font-black mb-4">Pricing</h2>
@@ -302,7 +306,6 @@ export default async function TourDetailPage({
 
         {/* Sticky booking sidebar */}
         <aside className="sticky top-24 rounded-3xl bg-white border border-black/[0.08] shadow-lg p-6 space-y-5">
-          {/* Price */}
           <div>
             <p className="text-xs font-semibold text-neutral-400 uppercase tracking-wide">Starting from</p>
             <div className="flex items-baseline gap-2 mt-1">
@@ -318,7 +321,6 @@ export default async function TourDetailPage({
             <p className="text-xs text-neutral-400 mt-0.5">per guide</p>
           </div>
 
-          {/* Duration */}
           <div className="flex items-center gap-3 rounded-xl bg-[#F7F7FB] px-4 py-3">
             <span className="text-xl">🕐</span>
             <div>
@@ -327,7 +329,6 @@ export default async function TourDetailPage({
             </div>
           </div>
 
-          {/* City */}
           <div className="flex items-center gap-3 rounded-xl bg-[#F7F7FB] px-4 py-3">
             <span className="text-xl">📍</span>
             <div>
@@ -336,7 +337,6 @@ export default async function TourDetailPage({
             </div>
           </div>
 
-          {/* Book via app CTA */}
           <a
             href="/#download"
             className="block w-full text-center rounded-full bg-[#6C4CF1] text-white font-bold py-3.5 hover:bg-[#5a3dd4] transition-colors shadow-sm hover:shadow-[0_0_20px_rgba(108,76,241,0.35)]"
@@ -348,7 +348,6 @@ export default async function TourDetailPage({
             Download the VibeGuide app to book this tour and connect with a verified local guide.
           </p>
 
-          {/* App store badges */}
           <div className="flex gap-2 pt-1">
             <a
               href="/#download"
@@ -388,7 +387,6 @@ export default async function TourDetailPage({
         </a>
       </div>
 
-      {/* Bottom padding for mobile bar */}
       <div className="md:hidden h-20" />
 
       {/* Footer */}

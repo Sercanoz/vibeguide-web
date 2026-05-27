@@ -1,12 +1,10 @@
-import type { Metadata } from "next";
-import { API_BASE_URL } from "@/lib/api";
-import TourFilters from "./TourFilters";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Tours in Turkey | VibeGuide",
-  description:
-    "Explore handcrafted guided tours across Turkey. History, culture, food, and adventure — discover Istanbul, Cappadocia, Ephesus and more with verified local guides.",
-};
+import { useEffect, useState } from "react";
+import { API_BASE_URL } from "@/lib/api";
+import { useT } from "@/components/LanguageProvider";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import TourFilters from "./TourFilters";
 
 interface Tour {
   id: number;
@@ -22,20 +20,18 @@ interface Tour {
   languagesOffered?: string;
 }
 
-async function getTours(): Promise<Tour[]> {
-  try {
-    const res = await fetch(`${API_BASE_URL}/api/tours?locale=en`, {
-      cache: "no-store",
-    });
-    if (!res.ok) return [];
-    return (await res.json()) as Tour[];
-  } catch {
-    return [];
-  }
-}
+export default function ToursPage() {
+  const { locale } = useT();
+  const [tours, setTours] = useState<Tour[]>([]);
+  const [loading, setLoading] = useState(true);
 
-export default async function ToursPage() {
-  const tours = await getTours();
+  useEffect(() => {
+    setLoading(true);
+    fetch(`${API_BASE_URL}/api/tours?locale=${locale}`, { cache: "no-store" })
+      .then((r) => (r.ok ? r.json() : []))
+      .then((data) => { setTours(data); setLoading(false); })
+      .catch(() => setLoading(false));
+  }, [locale]);
 
   return (
     <main className="min-h-screen bg-white text-[#0A0A0F] antialiased">
@@ -53,12 +49,15 @@ export default async function ToursPage() {
             <a href="/tours" className="text-[#6C4CF1] font-semibold">Tours</a>
             <a href="/#destinations" className="text-neutral-500 hover:text-black transition-colors">Destinations</a>
           </div>
-          <a
-            href="/#download"
-            className="rounded-full bg-[#6C4CF1] px-5 py-2 text-sm font-semibold text-white hover:bg-[#5a3dd4] transition-colors shadow-sm"
-          >
-            Get the App
-          </a>
+          <div className="flex items-center gap-3">
+            <LanguageSwitcher />
+            <a
+              href="/#download"
+              className="rounded-full bg-[#6C4CF1] px-5 py-2 text-sm font-semibold text-white hover:bg-[#5a3dd4] transition-colors shadow-sm"
+            >
+              Get the App
+            </a>
+          </div>
         </div>
       </nav>
 
@@ -93,7 +92,13 @@ export default async function ToursPage() {
 
       {/* Tour grid with filters */}
       <section className="mx-auto max-w-7xl px-6 py-12">
-        {tours.length === 0 ? (
+        {loading ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[...Array(6)].map((_, i) => (
+              <div key={i} className="rounded-3xl bg-neutral-100 animate-pulse h-80" />
+            ))}
+          </div>
+        ) : tours.length === 0 ? (
           <div className="text-center py-24 text-neutral-400">
             <p className="text-6xl mb-4">🗺️</p>
             <p className="text-xl font-bold text-[#0A0A0F]">Tours coming soon</p>
