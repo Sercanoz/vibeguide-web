@@ -161,12 +161,15 @@ function TourTranslationEditor({
     else setFlash(`Delete failed: ${r.error ?? r.status}`);
   };
 
-  const onAutoTranslate = async () => {
-    if (!confirm(`Auto-translate from ${data.tour.canonicalLocale.toUpperCase()} to all missing locales?`)) return;
+  const onAutoTranslate = async (overwrite = false) => {
+    const msg = overwrite
+      ? `Re-translate ALL locales from ${data.tour.canonicalLocale.toUpperCase()}? This will overwrite existing translations.`
+      : `Auto-translate from ${data.tour.canonicalLocale.toUpperCase()} to all missing locales?`;
+    if (!confirm(msg)) return;
     setAutoTranslating(true); setFlash(null);
     const r = await adminApi.autoTranslateTour(data.tour.id, {
       sourceLocale: data.tour.canonicalLocale,
-      overwriteHuman: false,
+      overwriteHuman: overwrite,
     });
     setAutoTranslating(false);
     if (r.ok) {
@@ -211,13 +214,22 @@ function TourTranslationEditor({
           })}
         </div>
         {data.isTranslateConfigured ? (
-          <button
-            onClick={onAutoTranslate}
-            disabled={autoTranslating}
-            className="bg-white border border-vg-border text-vg-ink font-bold text-sm px-4 py-2 rounded-xl hover:bg-vg-bg-soft disabled:opacity-50"
-          >
-            {autoTranslating ? "Translating…" : "🌐 Auto-translate all"}
-          </button>
+          <div className="flex gap-2">
+            <button
+              onClick={() => onAutoTranslate(false)}
+              disabled={autoTranslating}
+              className="bg-white border border-vg-border text-vg-ink font-bold text-sm px-4 py-2 rounded-xl hover:bg-vg-bg-soft disabled:opacity-50"
+            >
+              {autoTranslating ? "Translating…" : "🌐 Auto-translate missing"}
+            </button>
+            <button
+              onClick={() => onAutoTranslate(true)}
+              disabled={autoTranslating}
+              className="bg-white border border-amber-300 text-amber-700 font-bold text-sm px-4 py-2 rounded-xl hover:bg-amber-50 disabled:opacity-50"
+            >
+              🔄 Re-translate all
+            </button>
+          </div>
         ) : (
           <span className="text-xs text-vg-muted bg-amber-50 border border-amber-200 px-3 py-1.5 rounded-xl font-semibold">
             Auto-translate: set GOOGLE_TRANSLATE_API_KEY on Railway
