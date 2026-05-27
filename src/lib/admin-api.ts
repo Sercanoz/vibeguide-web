@@ -145,6 +145,7 @@ export type TourDetail = {
   };
   translations: TourTranslationRow[];
   supportedLocales: string[];
+  isTranslateConfigured: boolean;
 };
 
 export const adminApi = {

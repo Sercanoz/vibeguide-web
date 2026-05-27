@@ -161,9 +161,19 @@ function Editor({ id }: { id: number }) {
             {data.tour.city} · canonical: <strong>{data.tour.canonicalLocale.toUpperCase()}</strong>
           </p>
         </div>
-        <span className="text-xs text-vg-muted bg-amber-50 border border-amber-200 px-3 py-1.5 rounded-xl font-semibold">
-          Auto-translate: set GOOGLE_TRANSLATE_API_KEY on Railway
-        </span>
+        {data.isTranslateConfigured ? (
+          <button
+            onClick={onAutoTranslate}
+            disabled={autoTranslating}
+            className="bg-white border border-vg-border text-vg-ink font-bold text-sm px-4 py-2 rounded-xl hover:bg-vg-bg-soft disabled:opacity-50"
+          >
+            {autoTranslating ? "Translating…" : "🌐 Auto-translate all"}
+          </button>
+        ) : (
+          <span className="text-xs text-vg-muted bg-amber-50 border border-amber-200 px-3 py-1.5 rounded-xl font-semibold">
+            Auto-translate: set GOOGLE_TRANSLATE_API_KEY on Railway
+          </span>
+        )}
       </div>
 
       {/* Locale tabs */}
