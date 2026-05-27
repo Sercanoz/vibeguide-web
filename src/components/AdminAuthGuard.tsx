@@ -29,10 +29,8 @@ export default function AdminAuthGuard({
         const res = await fetch(`${API_BASE_URL}/api/auth/me`, {
           headers: { Authorization: `Bearer ${token}` },
         });
-        console.log("[AdminAuth] /me status:", res.status);
         if (!res.ok) { setAuthState("unauthorized"); return; }
         const me = await res.json();
-        console.log("[AdminAuth] me.role:", me.role);
         const isAdmin = me.role === "Admin";
         setAuthState(isAdmin ? u : "unauthorized");
       } catch {
