@@ -309,7 +309,7 @@ export default function TourDetailPage() {
         {/* Sticky booking sidebar */}
         <aside className="sticky top-24 rounded-3xl bg-white border border-black/[0.08] shadow-lg p-6 space-y-5">
           <div>
-            <p className="text-xs font-semibold text-neutral-400 uppercase tracking-wide">Starting from</p>
+            <p className="text-xs font-semibold text-neutral-400 uppercase tracking-wide">{tt.startingFrom}</p>
             <div className="flex items-baseline gap-2 mt-1">
               {hasDiscount && (
                 <span className="text-base text-neutral-400 line-through">
@@ -320,7 +320,7 @@ export default function TourDetailPage() {
                 {tour.basePrice} {tour.currency}
               </span>
             </div>
-            <p className="text-xs text-neutral-400 mt-0.5">per guide</p>
+            <p className="text-xs text-neutral-400 mt-0.5">{tt.perGuide}</p>
           </div>
 
           <div className="flex items-center gap-3 rounded-xl bg-[#F7F7FB] px-4 py-3">
@@ -376,7 +376,7 @@ export default function TourDetailPage() {
       {/* Mobile sticky bottom bar */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-black/[0.08] px-4 py-3 flex items-center gap-3 shadow-lg">
         <div className="flex-1">
-          <p className="text-xs text-neutral-400">Starting from</p>
+          <p className="text-xs text-neutral-400">{tt.startingFrom}</p>
           <p className="font-black text-lg text-[#6C4CF1]">
             {tour.basePrice} {tour.currency}
           </p>

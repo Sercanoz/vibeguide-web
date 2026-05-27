@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useT } from "@/components/LanguageProvider";
+import { getToursT } from "@/lib/i18n";
 
 interface Tour {
   id: number;
@@ -41,6 +43,8 @@ function categoryColor(cat: string): string {
 }
 
 export default function TourFilters({ tours }: Props) {
+  const { locale } = useT();
+  const tt = getToursT(locale);
   const cities = ["All", ...Array.from(new Set(tours.map((t) => t.city))).sort()];
   const [activeCity, setActiveCity] = useState("All");
 
@@ -117,16 +121,19 @@ export default function TourFilters({ tours }: Props) {
                   )}
 
                   {/* Price */}
-                  <div className="mt-4 flex items-center gap-2">
-                    {hasDiscount && (
-                      <span className="text-sm text-neutral-400 line-through">
-                        {tour.compareAtPrice} {tour.currency}
+                  <div className="mt-4">
+                    <p className="text-[10px] font-semibold text-neutral-400 uppercase tracking-wide">{tt.fromPrice}</p>
+                    <div className="flex items-baseline gap-2 mt-0.5">
+                      {hasDiscount && (
+                        <span className="text-sm text-neutral-400 line-through">
+                          {tour.compareAtPrice} {tour.currency}
+                        </span>
+                      )}
+                      <span className="text-lg font-black text-[#6C4CF1]">
+                        {tour.basePrice} {tour.currency}
                       </span>
-                    )}
-                    <span className="text-lg font-black text-[#6C4CF1]">
-                      {tour.basePrice} {tour.currency}
-                    </span>
-                    <span className="text-xs text-neutral-400">/guide</span>
+                    </div>
+                    <p className="text-[10px] text-neutral-400">{tt.perGuide}</p>
                   </div>
 
                   {/* Languages */}

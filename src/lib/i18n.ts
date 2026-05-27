@@ -1415,6 +1415,9 @@ export type ToursPageDict = {
   heroLive: string;
   heroVerified: string;
   heroBook: string;
+  fromPrice: string;
+  perGuide: string;
+  startingFrom: string;
 };
 
 const toursPageBase: Record<string, ToursPageDict> = {
@@ -1430,6 +1433,9 @@ const toursPageBase: Record<string, ToursPageDict> = {
     heroLive: "Live availability",
     heroVerified: "100% verified guides",
     heroBook: "Book via app",
+    fromPrice: "from",
+    perGuide: "per guide",
+    startingFrom: "Starting from",
   },
   tr: {
     navTours: "Turlar",
@@ -1443,6 +1449,9 @@ const toursPageBase: Record<string, ToursPageDict> = {
     heroLive: "Anlık müsaitlik",
     heroVerified: "%100 onaylı rehberler",
     heroBook: "Uygulama ile rezerve et",
+    fromPrice: "başlangıç",
+    perGuide: "rehber başına",
+    startingFrom: "Başlangıç fiyatı",
   },
   de: {
     navTours: "Touren",
@@ -1456,6 +1465,9 @@ const toursPageBase: Record<string, ToursPageDict> = {
     heroLive: "Live-Verfügbarkeit",
     heroVerified: "100% verifizierte Guides",
     heroBook: "Per App buchen",
+    fromPrice: "ab",
+    perGuide: "pro Guide",
+    startingFrom: "Ab",
   },
   fr: {
     navTours: "Tours",
@@ -1469,6 +1481,9 @@ const toursPageBase: Record<string, ToursPageDict> = {
     heroLive: "Disponibilité en direct",
     heroVerified: "100% guides vérifiés",
     heroBook: "Réserver via l'app",
+    fromPrice: "à partir de",
+    perGuide: "par guide",
+    startingFrom: "À partir de",
   },
   ru: {
     navTours: "Туры",
@@ -1482,6 +1497,9 @@ const toursPageBase: Record<string, ToursPageDict> = {
     heroLive: "Актуальная доступность",
     heroVerified: "100% проверенные гиды",
     heroBook: "Забронировать в приложении",
+    fromPrice: "от",
+    perGuide: "за гида",
+    startingFrom: "От",
   },
   zh: {
     navTours: "旅游",
@@ -1495,6 +1513,9 @@ const toursPageBase: Record<string, ToursPageDict> = {
     heroLive: "实时可用",
     heroVerified: "100% 认证向导",
     heroBook: "通过App预订",
+    fromPrice: "起价",
+    perGuide: "每位导游",
+    startingFrom: "起价",
   },
   es: {
     navTours: "Tours",
@@ -1508,6 +1529,9 @@ const toursPageBase: Record<string, ToursPageDict> = {
     heroLive: "Disponibilidad en vivo",
     heroVerified: "100% guías verificados",
     heroBook: "Reservar vía app",
+    fromPrice: "desde",
+    perGuide: "por guía",
+    startingFrom: "Desde",
   },
   it: {
     navTours: "Tour",
@@ -1534,6 +1558,9 @@ const toursPageBase: Record<string, ToursPageDict> = {
     heroLive: "실시간 예약 가능",
     heroVerified: "100% 인증 가이드",
     heroBook: "앱으로 예약",
+    fromPrice: "시작가",
+    perGuide: "가이드당",
+    startingFrom: "시작가",
   },
   ja: {
     navTours: "ツアー",
@@ -1547,6 +1574,9 @@ const toursPageBase: Record<string, ToursPageDict> = {
     heroLive: "リアルタイム空き確認",
     heroVerified: "100%認定ガイド",
     heroBook: "アプリで予約",
+    fromPrice: "から",
+    perGuide: "ガイド1名につき",
+    startingFrom: "から",
   },
 };
 
