@@ -2,7 +2,13 @@
 
 import { use, useEffect, useState } from "react";
 import Link from "next/link";
-import { adminApi, type TourDetail, type TourTranslationRow } from "@/lib/admin-api";
+import {
+  adminApi,
+  type TourDetail,
+  type TourTranslationRow,
+  type TourPlacesDetail,
+  type PlaceRow,
+} from "@/lib/admin-api";
 
 const LOCALE_LABELS: Record<string, string> = {
   en: "🇬🇧 English",
@@ -26,45 +32,20 @@ export default function AdminTourEditor(props: Props) {
   return <Editor id={id} />;
 }
 
+type Tab = "tour" | "places";
+
 function Editor({ id }: { id: number }) {
+  const [tab, setTab] = useState<Tab>("tour");
   const [data, setData] = useState<TourDetail | null>(null);
   const [err, setErr] = useState<string | null>(null);
-  const [activeLocale, setActiveLocale] = useState<string | null>(null);
-  const [draft, setDraft] = useState<Partial<TourTranslationRow>>({});
-  const [saving, setSaving] = useState(false);
-  const [autoTranslating, setAutoTranslating] = useState(false);
-  const [flash, setFlash] = useState<string | null>(null);
 
-  const load = async () => {
+  const loadTour = async () => {
     const r = await adminApi.getTour(id);
     if (r.ok) setData(r.data);
     else setErr(`${r.status}: ${r.error ?? "failed"}`);
   };
 
-  useEffect(() => {
-    load();
-  }, [id]);
-
-  useEffect(() => {
-    if (data && !activeLocale) {
-      setActiveLocale(data.tour.canonicalLocale);
-    }
-  }, [data, activeLocale]);
-
-  useEffect(() => {
-    if (!data || !activeLocale) return;
-    const existing = data.translations.find((t) => t.locale === activeLocale);
-    setDraft(
-      existing ?? {
-        locale: activeLocale,
-        title: "",
-        summary: "",
-        description: "",
-        highlights: "",
-        isMachineTranslated: false,
-      }
-    );
-  }, [activeLocale, data]);
+  useEffect(() => { loadTour(); }, [id]);
 
   if (err) {
     return (
@@ -80,7 +61,7 @@ function Editor({ id }: { id: number }) {
     );
   }
 
-  if (!data || !activeLocale) {
+  if (!data) {
     return (
       <div className="max-w-4xl mx-auto px-5 sm:px-8 py-10 text-vg-muted">
         Loading tour…
@@ -88,55 +69,106 @@ function Editor({ id }: { id: number }) {
     );
   }
 
+  return (
+    <div className="max-w-5xl mx-auto px-5 sm:px-8 py-8">
+      <Link href="/admin/tours" className="text-xs font-black text-vg-muted hover:text-vg-ink">
+        ← All tours
+      </Link>
+
+      <div className="mt-3">
+        <h1 className="text-2xl font-black text-vg-ink">{data.tour.title}</h1>
+        <p className="text-sm text-vg-muted">
+          {data.tour.city} · canonical: <strong>{data.tour.canonicalLocale.toUpperCase()}</strong>
+        </p>
+      </div>
+
+      {/* Tab switcher */}
+      <div className="mt-5 flex gap-1 border-b border-vg-border pb-0">
+        {(["tour", "places"] as Tab[]).map((t) => (
+          <button
+            key={t}
+            onClick={() => setTab(t)}
+            className={`px-5 py-2.5 text-sm font-bold rounded-t-xl border border-b-0 transition-colors ${
+              tab === t
+                ? "bg-white border-vg-border text-vg-ink"
+                : "bg-transparent border-transparent text-vg-muted hover:text-vg-ink"
+            }`}
+          >
+            {t === "tour" ? "Tour content" : "Stops (What you'll see)"}
+          </button>
+        ))}
+      </div>
+
+      {tab === "tour" ? (
+        <TourTranslationEditor data={data} reload={loadTour} />
+      ) : (
+        <PlacesTranslationEditor tourId={id} isTranslateConfigured={data.isTranslateConfigured} canonicalLocale={data.tour.canonicalLocale} />
+      )}
+    </div>
+  );
+}
+
+// ─── Tour content translations ───────────────────────────────────────────────
+
+function TourTranslationEditor({
+  data,
+  reload,
+}: {
+  data: TourDetail;
+  reload: () => Promise<void>;
+}) {
+  const [activeLocale, setActiveLocale] = useState<string>(data.tour.canonicalLocale);
+  const [draft, setDraft] = useState<Partial<TourTranslationRow>>({});
+  const [saving, setSaving] = useState(false);
+  const [autoTranslating, setAutoTranslating] = useState(false);
+  const [flash, setFlash] = useState<string | null>(null);
+
+  useEffect(() => {
+    const existing = data.translations.find((t) => t.locale === activeLocale);
+    setDraft(
+      existing ?? {
+        locale: activeLocale,
+        title: "",
+        summary: "",
+        description: "",
+        highlights: "",
+        isMachineTranslated: false,
+      }
+    );
+  }, [activeLocale, data]);
+
   const onSave = async () => {
-    if (!draft.title || !draft.title.trim()) {
-      setFlash("Title is required.");
-      return;
-    }
-    setSaving(true);
-    setFlash(null);
-    const r = await adminApi.upsertTourTranslation(id, activeLocale, {
+    if (!draft.title?.trim()) { setFlash("Title is required."); return; }
+    setSaving(true); setFlash(null);
+    const r = await adminApi.upsertTourTranslation(data.tour.id, activeLocale, {
       title: draft.title.trim(),
       summary: draft.summary?.toString() || null,
       description: draft.description?.toString() || null,
       highlights: draft.highlights?.toString() || null,
     });
     setSaving(false);
-    if (r.ok) {
-      setFlash("Saved ✓");
-      await load();
-    } else {
-      setFlash(`Save failed: ${r.error ?? r.status}`);
-    }
+    if (r.ok) { setFlash("Saved ✓"); await reload(); }
+    else setFlash(`Save failed: ${r.error ?? r.status}`);
   };
 
   const onDelete = async () => {
     if (!confirm(`Delete the ${activeLocale.toUpperCase()} translation?`)) return;
-    const r = await adminApi.deleteTourTranslation(id, activeLocale);
-    if (r.ok) {
-      setFlash("Deleted.");
-      await load();
-    } else {
-      setFlash(`Delete failed: ${r.error ?? r.status}`);
-    }
+    const r = await adminApi.deleteTourTranslation(data.tour.id, activeLocale);
+    if (r.ok) { setFlash("Deleted."); await reload(); }
+    else setFlash(`Delete failed: ${r.error ?? r.status}`);
   };
 
   const onAutoTranslate = async () => {
-    if (!confirm(
-      `Auto-translate from ${data.tour.canonicalLocale.toUpperCase()} to all missing locales? Existing human translations will be skipped.`
-    )) return;
-    setAutoTranslating(true);
-    setFlash(null);
-    const r = await adminApi.autoTranslateTour(id, {
+    if (!confirm(`Auto-translate from ${data.tour.canonicalLocale.toUpperCase()} to all missing locales?`)) return;
+    setAutoTranslating(true); setFlash(null);
+    const r = await adminApi.autoTranslateTour(data.tour.id, {
       sourceLocale: data.tour.canonicalLocale,
       overwriteHuman: false,
     });
     setAutoTranslating(false);
     if (r.ok) {
-      setFlash(
-        `Wrote ${r.data.written.length}, skipped ${r.data.skipped.length}, failed ${r.data.failed.length}.`
-      );
-      await load();
+      setFlash(`Wrote ${r.data.written.length}, skipped ${r.data.skipped.length}, failed ${r.data.failed.length}.`);
+      await reload();
     } else {
       setFlash(`Auto-translate failed: ${r.error ?? r.status}`);
     }
@@ -149,17 +181,31 @@ function Editor({ id }: { id: number }) {
   };
 
   return (
-    <div className="max-w-5xl mx-auto px-5 sm:px-8 py-8">
-      <Link href="/admin/tours" className="text-xs font-black text-vg-muted hover:text-vg-ink">
-        ← All tours
-      </Link>
-
-      <div className="mt-3 flex items-end justify-between gap-4 flex-wrap">
-        <div>
-          <h1 className="text-2xl font-black text-vg-ink">{data.tour.title}</h1>
-          <p className="text-sm text-vg-muted">
-            {data.tour.city} · canonical: <strong>{data.tour.canonicalLocale.toUpperCase()}</strong>
-          </p>
+    <div className="mt-6">
+      <div className="flex items-center justify-between gap-4 flex-wrap mb-4">
+        <div className="flex flex-wrap gap-1.5">
+          {data.supportedLocales.map((loc) => {
+            const status = localeStatus(loc);
+            const active = loc === activeLocale;
+            return (
+              <button
+                key={loc}
+                onClick={() => setActiveLocale(loc)}
+                className={`text-sm font-bold px-3 py-1.5 rounded-lg border transition-colors ${
+                  active
+                    ? "bg-vg-primary text-white border-vg-primary"
+                    : status === "human"
+                      ? "bg-emerald-50 text-emerald-700 border-emerald-200 hover:bg-emerald-100"
+                      : status === "machine"
+                        ? "bg-amber-50 text-amber-700 border-amber-200 hover:bg-amber-100"
+                        : "bg-white text-vg-muted border-vg-border hover:bg-vg-bg-soft"
+                }`}
+              >
+                {status === "human" ? "✓ " : status === "machine" ? "🤖 " : ""}
+                {LOCALE_LABELS[loc] ?? loc}
+              </button>
+            );
+          })}
         </div>
         {data.isTranslateConfigured ? (
           <button
@@ -176,114 +222,270 @@ function Editor({ id }: { id: number }) {
         )}
       </div>
 
-      {/* Locale tabs */}
-      <div className="mt-6 flex flex-wrap gap-1.5 border-b border-vg-border pb-3">
-        {data.supportedLocales.map((loc) => {
-          const status = localeStatus(loc);
-          const active = loc === activeLocale;
-          return (
-            <button
-              key={loc}
-              onClick={() => setActiveLocale(loc)}
-              className={`text-sm font-bold px-3 py-1.5 rounded-lg border transition-colors ${
-                active
-                  ? "bg-vg-primary text-white border-vg-primary"
-                  : status === "human"
-                    ? "bg-emerald-50 text-emerald-700 border-emerald-200 hover:bg-emerald-100"
-                    : status === "machine"
-                      ? "bg-amber-50 text-amber-700 border-amber-200 hover:bg-amber-100"
-                      : "bg-white text-vg-muted border-vg-border hover:bg-vg-bg-soft"
-              }`}
-            >
-              <span>
-                {status === "human" ? "✓ " : status === "machine" ? "🤖 " : ""}
-                {LOCALE_LABELS[loc] ?? loc}
-              </span>
-            </button>
-          );
-        })}
-      </div>
-
       {flash && (
-        <div className="mt-4 rounded-xl bg-vg-bg-soft border border-vg-border px-4 py-3 text-sm">
-          {flash}
-        </div>
+        <div className="mb-4 rounded-xl bg-vg-bg-soft border border-vg-border px-4 py-3 text-sm">{flash}</div>
       )}
 
-      {/* Editor */}
-      <div className="mt-6 rounded-3xl bg-white border border-vg-border p-6 shadow-sm">
+      <div className="rounded-3xl bg-white border border-vg-border p-6 shadow-sm">
         {draft.isMachineTranslated && (
           <div className="mb-4 rounded-xl bg-amber-50 border border-amber-200 px-4 py-2 text-sm text-amber-900">
-            🤖 This translation was auto-generated. Saving will mark it as
-            human-reviewed (✓).
+            🤖 This translation was auto-generated. Saving will mark it as human-reviewed (✓).
           </div>
         )}
-
-        <Field
-          label="Title"
-          value={draft.title ?? ""}
-          onChange={(v) => setDraft({ ...draft, title: v })}
-          placeholder={`Title in ${LOCALE_LABELS[activeLocale] ?? activeLocale}`}
-          maxLength={200}
-        />
-        <Field
-          label="Summary"
-          value={draft.summary ?? ""}
-          onChange={(v) => setDraft({ ...draft, summary: v })}
-          placeholder="One-line teaser"
-          rows={2}
-        />
-        <Field
-          label="Description"
-          value={draft.description ?? ""}
-          onChange={(v) => setDraft({ ...draft, description: v })}
-          placeholder="Full description"
-          rows={6}
-        />
-        <Field
-          label="Highlights (one per line)"
-          value={draft.highlights ?? ""}
-          onChange={(v) => setDraft({ ...draft, highlights: v })}
-          placeholder="• Visit Hagia Sophia&#10;• Walk through the Grand Bazaar"
-          rows={4}
-        />
+        <Field label="Title" value={draft.title ?? ""} onChange={(v) => setDraft({ ...draft, title: v })}
+          placeholder={`Title in ${LOCALE_LABELS[activeLocale] ?? activeLocale}`} maxLength={200} />
+        <Field label="Summary" value={draft.summary ?? ""} onChange={(v) => setDraft({ ...draft, summary: v })}
+          placeholder="One-line teaser" rows={2} />
+        <Field label="Description" value={draft.description ?? ""} onChange={(v) => setDraft({ ...draft, description: v })}
+          placeholder="Full description" rows={6} />
+        <Field label="Highlights (one per line)" value={draft.highlights ?? ""} onChange={(v) => setDraft({ ...draft, highlights: v })}
+          placeholder="• Visit Hagia Sophia&#10;• Walk through the Grand Bazaar" rows={4} />
 
         <div className="mt-6 flex gap-3">
-          <button
-            onClick={onSave}
-            disabled={saving}
-            className="bg-vibe-gradient text-white font-black px-6 py-3 rounded-xl shadow-lg shadow-purple-500/30 hover:scale-[1.02] transition-transform disabled:opacity-50"
-          >
+          <button onClick={onSave} disabled={saving}
+            className="bg-vibe-gradient text-white font-black px-6 py-3 rounded-xl shadow-lg shadow-purple-500/30 hover:scale-[1.02] transition-transform disabled:opacity-50">
             {saving ? "Saving…" : "💾 Save"}
           </button>
           {data.translations.find((t) => t.locale === activeLocale) && (
-            <button
-              onClick={onDelete}
-              className="bg-white border border-red-200 text-red-700 font-bold px-5 py-3 rounded-xl hover:bg-red-50"
-            >
+            <button onClick={onDelete}
+              className="bg-white border border-red-200 text-red-700 font-bold px-5 py-3 rounded-xl hover:bg-red-50">
               Delete this locale
             </button>
           )}
         </div>
       </div>
 
-      {/* Canonical reference */}
       <details className="mt-6 rounded-2xl bg-white border border-vg-border p-5">
-        <summary className="cursor-pointer font-bold text-vg-ink">
-          Canonical reference (tours_test row)
-        </summary>
+        <summary className="cursor-pointer font-bold text-vg-ink">Canonical reference (tours_test row)</summary>
         <div className="mt-3 space-y-2 text-sm">
-          <p>
-            <strong>Title:</strong> {data.tour.title}
-          </p>
-          <p>
-            <strong>Description:</strong>{" "}
-            <span className="text-vg-muted whitespace-pre-line">
-              {data.tour.description ?? "—"}
-            </span>
+          <p><strong>Title:</strong> {data.tour.title}</p>
+          <p><strong>Description:</strong>{" "}
+            <span className="text-vg-muted whitespace-pre-line">{data.tour.description ?? "—"}</span>
           </p>
         </div>
       </details>
+    </div>
+  );
+}
+
+// ─── Place translations ───────────────────────────────────────────────────────
+
+function PlacesTranslationEditor({
+  tourId,
+  isTranslateConfigured,
+  canonicalLocale,
+}: {
+  tourId: number;
+  isTranslateConfigured: boolean;
+  canonicalLocale: string;
+}) {
+  const [data, setData] = useState<TourPlacesDetail | null>(null);
+  const [err, setErr] = useState<string | null>(null);
+  const [activeLocale, setActiveLocale] = useState<string>("en");
+  const [selectedPlace, setSelectedPlace] = useState<PlaceRow | null>(null);
+  const [draft, setDraft] = useState<{ name: string; description: string }>({ name: "", description: "" });
+  const [saving, setSaving] = useState(false);
+  const [autoTranslating, setAutoTranslating] = useState(false);
+  const [flash, setFlash] = useState<string | null>(null);
+
+  const load = async () => {
+    const r = await adminApi.getTourPlaces(tourId);
+    if (r.ok) {
+      setData(r.data);
+      if (!selectedPlace && r.data.places.length > 0) setSelectedPlace(r.data.places[0]);
+    } else {
+      setErr(`${r.status}: ${r.error ?? "failed"}`);
+    }
+  };
+
+  useEffect(() => { load(); }, [tourId]);
+
+  useEffect(() => {
+    if (!selectedPlace || !activeLocale) return;
+    const tr = selectedPlace.translations.find((t) => t.locale === activeLocale);
+    setDraft({ name: tr?.name ?? "", description: tr?.description ?? "" });
+  }, [selectedPlace, activeLocale]);
+
+  // Sync selectedPlace when data reloads
+  useEffect(() => {
+    if (!data || !selectedPlace) return;
+    const updated = data.places.find((p) => p.id === selectedPlace.id);
+    if (updated) setSelectedPlace(updated);
+  }, [data]);
+
+  const onSave = async () => {
+    if (!draft.name.trim()) { setFlash("Name is required."); return; }
+    if (!selectedPlace) return;
+    setSaving(true); setFlash(null);
+    const r = await adminApi.upsertPlaceTranslation(selectedPlace.id, activeLocale, {
+      name: draft.name.trim(),
+      description: draft.description.trim() || null,
+    });
+    setSaving(false);
+    if (r.ok) { setFlash("Saved ✓"); await load(); }
+    else setFlash(`Save failed: ${r.error ?? r.status}`);
+  };
+
+  const onDelete = async () => {
+    if (!selectedPlace) return;
+    if (!confirm(`Delete the ${activeLocale.toUpperCase()} translation for "${selectedPlace.name}"?`)) return;
+    const r = await adminApi.deletePlaceTranslation(selectedPlace.id, activeLocale);
+    if (r.ok) { setFlash("Deleted."); await load(); }
+    else setFlash(`Delete failed: ${r.error ?? r.status}`);
+  };
+
+  const onAutoTranslate = async () => {
+    if (!confirm(`Auto-translate ALL stops from ${canonicalLocale.toUpperCase()} to all missing locales?`)) return;
+    setAutoTranslating(true); setFlash(null);
+    const r = await adminApi.autoTranslatePlaces(tourId, {
+      sourceLocale: canonicalLocale,
+      overwriteHuman: false,
+    });
+    setAutoTranslating(false);
+    if (r.ok) {
+      setFlash(`Wrote ${r.data.written.length} locales, skipped ${r.data.skipped.length}, failed ${r.data.failed.length}.`);
+      await load();
+    } else {
+      setFlash(`Auto-translate failed: ${r.error ?? r.status}`);
+    }
+  };
+
+  const placeLocaleStatus = (place: PlaceRow, loc: string): "human" | "machine" | "missing" => {
+    const tr = place.translations.find((t) => t.locale === loc);
+    if (!tr) return "missing";
+    return tr.isMachineTranslated ? "machine" : "human";
+  };
+
+  if (err) return <div className="mt-6 text-red-600 text-sm">{err}</div>;
+  if (!data) return <div className="mt-6 text-vg-muted text-sm">Loading stops…</div>;
+  if (data.places.length === 0) return (
+    <div className="mt-6 rounded-2xl bg-white border border-vg-border p-8 text-center text-vg-muted text-sm">
+      No stops added to this tour yet.
+    </div>
+  );
+
+  return (
+    <div className="mt-6 flex gap-5">
+      {/* Place list sidebar */}
+      <div className="w-56 shrink-0 space-y-1">
+        {data.places.map((place) => {
+          const allDone = data.supportedLocales.every(
+            (l) => l === canonicalLocale || placeLocaleStatus(place, l) !== "missing"
+          );
+          const anyMissing = data.supportedLocales.some(
+            (l) => l !== canonicalLocale && placeLocaleStatus(place, l) === "missing"
+          );
+          return (
+            <button
+              key={place.id}
+              onClick={() => setSelectedPlace(place)}
+              className={`w-full text-left px-3 py-2.5 rounded-xl border text-sm transition-colors ${
+                selectedPlace?.id === place.id
+                  ? "bg-vg-primary text-white border-vg-primary"
+                  : "bg-white border-vg-border text-vg-ink hover:bg-vg-bg-soft"
+              }`}
+            >
+              <span className="block font-bold truncate">{place.name}</span>
+              <span className={`text-xs ${selectedPlace?.id === place.id ? "text-white/70" : "text-vg-muted"}`}>
+                {allDone ? "✓ all locales" : anyMissing ? "⚠ missing locales" : "🤖 machine only"}
+              </span>
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Editor panel */}
+      <div className="flex-1 min-w-0">
+        {selectedPlace && (
+          <>
+            <div className="flex items-center justify-between gap-3 flex-wrap mb-3">
+              <h2 className="font-black text-vg-ink">{selectedPlace.name}</h2>
+              {isTranslateConfigured ? (
+                <button
+                  onClick={onAutoTranslate}
+                  disabled={autoTranslating}
+                  className="bg-white border border-vg-border text-vg-ink font-bold text-sm px-3 py-1.5 rounded-xl hover:bg-vg-bg-soft disabled:opacity-50"
+                >
+                  {autoTranslating ? "Translating…" : "🌐 Auto-translate all stops"}
+                </button>
+              ) : (
+                <span className="text-xs text-vg-muted bg-amber-50 border border-amber-200 px-3 py-1.5 rounded-xl font-semibold">
+                  Set GOOGLE_TRANSLATE_API_KEY
+                </span>
+              )}
+            </div>
+
+            {/* Locale tabs */}
+            <div className="flex flex-wrap gap-1.5 mb-4">
+              {data.supportedLocales.map((loc) => {
+                const status = loc === canonicalLocale ? "human" : placeLocaleStatus(selectedPlace, loc);
+                const active = loc === activeLocale;
+                return (
+                  <button
+                    key={loc}
+                    onClick={() => setActiveLocale(loc)}
+                    className={`text-sm font-bold px-3 py-1.5 rounded-lg border transition-colors ${
+                      active
+                        ? "bg-vg-primary text-white border-vg-primary"
+                        : status === "human"
+                          ? "bg-emerald-50 text-emerald-700 border-emerald-200 hover:bg-emerald-100"
+                          : status === "machine"
+                            ? "bg-amber-50 text-amber-700 border-amber-200 hover:bg-amber-100"
+                            : "bg-white text-vg-muted border-vg-border hover:bg-vg-bg-soft"
+                    }`}
+                  >
+                    {status === "human" ? "✓ " : status === "machine" ? "🤖 " : ""}
+                    {LOCALE_LABELS[loc] ?? loc}
+                  </button>
+                );
+              })}
+            </div>
+
+            {flash && (
+              <div className="mb-4 rounded-xl bg-vg-bg-soft border border-vg-border px-4 py-3 text-sm">{flash}</div>
+            )}
+
+            {activeLocale === canonicalLocale ? (
+              <div className="rounded-2xl bg-vg-bg-soft border border-vg-border p-5 text-sm text-vg-muted">
+                <p><strong className="text-vg-ink">Name:</strong> {selectedPlace.name}</p>
+                {selectedPlace.description && (
+                  <p className="mt-2"><strong className="text-vg-ink">Description:</strong> {selectedPlace.description}</p>
+                )}
+                <p className="mt-3 text-xs">This is the canonical ({canonicalLocale.toUpperCase()}) content. Edit in tour admin to change.</p>
+              </div>
+            ) : (
+              <div className="rounded-3xl bg-white border border-vg-border p-6 shadow-sm">
+                <Field
+                  label="Name"
+                  value={draft.name}
+                  onChange={(v) => setDraft({ ...draft, name: v })}
+                  placeholder={`Stop name in ${LOCALE_LABELS[activeLocale] ?? activeLocale}`}
+                  maxLength={200}
+                />
+                <Field
+                  label="Description"
+                  value={draft.description}
+                  onChange={(v) => setDraft({ ...draft, description: v })}
+                  placeholder="Short description of this stop"
+                  rows={4}
+                />
+                <div className="mt-5 flex gap-3">
+                  <button onClick={onSave} disabled={saving}
+                    className="bg-vibe-gradient text-white font-black px-6 py-3 rounded-xl shadow-lg shadow-purple-500/30 hover:scale-[1.02] transition-transform disabled:opacity-50">
+                    {saving ? "Saving…" : "💾 Save"}
+                  </button>
+                  {selectedPlace.translations.find((t) => t.locale === activeLocale) && (
+                    <button onClick={onDelete}
+                      className="bg-white border border-red-200 text-red-700 font-bold px-5 py-3 rounded-xl hover:bg-red-50">
+                      Delete
+                    </button>
+                  )}
+                </div>
+              </div>
+            )}
+          </>
+        )}
+      </div>
     </div>
   );
 }
@@ -303,7 +505,6 @@ function Field({
   rows?: number;
   maxLength?: number;
 }) {
-  const isTextarea = rows > 1;
   return (
     <div className="mb-4">
       <label className="block text-xs font-black uppercase tracking-widest text-vg-muted mb-1">
@@ -314,7 +515,7 @@ function Field({
           </span>
         )}
       </label>
-      {isTextarea ? (
+      {rows > 1 ? (
         <textarea
           value={value}
           onChange={(e) => onChange(e.target.value)}

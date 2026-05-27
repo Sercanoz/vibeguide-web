@@ -114,6 +114,29 @@ async function authedFetch<T>(
 
 // ════════ TOURS ════════
 
+export type PlaceTranslationRow = {
+  placeId: number;
+  locale: string;
+  name: string;
+  description: string | null;
+  isMachineTranslated: boolean;
+  updatedAt: string;
+};
+
+export type PlaceRow = {
+  id: number;
+  name: string;
+  description: string | null;
+  ord: number;
+  translations: PlaceTranslationRow[];
+};
+
+export type TourPlacesDetail = {
+  places: PlaceRow[];
+  supportedLocales: string[];
+  isTranslateConfigured: boolean;
+};
+
 export type TourListRow = {
   id: number;
   title: string;
@@ -177,6 +200,32 @@ export const adminApi = {
   ) =>
     authedFetch<{ written: string[]; skipped: string[]; failed: string[] }>(
       `/api/admin/translations/tours/${id}/auto-translate`,
+      { method: "POST", body: JSON.stringify(body) }
+    ),
+
+  // ════════ TOUR PLACE TRANSLATIONS ════════
+  getTourPlaces: (tourId: number) =>
+    authedFetch<TourPlacesDetail>(`/api/admin/translations/tours/${tourId}/places`),
+  upsertPlaceTranslation: (
+    placeId: number,
+    locale: string,
+    body: { name: string; description?: string | null }
+  ) =>
+    authedFetch<{ ok: true }>(`/api/admin/translations/places/${placeId}`, {
+      method: "PUT",
+      body: JSON.stringify({ locale, ...body }),
+    }),
+  deletePlaceTranslation: (placeId: number, locale: string) =>
+    authedFetch<{ ok: true }>(
+      `/api/admin/translations/places/${placeId}/${locale}`,
+      { method: "DELETE" }
+    ),
+  autoTranslatePlaces: (
+    tourId: number,
+    body: { sourceLocale: string; targetLocales?: string[]; overwriteHuman?: boolean }
+  ) =>
+    authedFetch<{ written: string[]; skipped: string[]; failed: string[] }>(
+      `/api/admin/translations/tours/${tourId}/places/auto-translate`,
       { method: "POST", body: JSON.stringify(body) }
     ),
 
