@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { fbAuth, onIdTokenChanged, signOut, type User } from "@/lib/firebase-client";
+import { API_BASE_URL } from "@/lib/api";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -23,12 +24,18 @@ export default function AdminAuthGuard({
         setAuthState("unauthenticated");
         return;
       }
-      // Firebase ID token claims'inden admin rolünü doğrula
-      const tokenResult = await u.getIdTokenResult();
-      const isAdmin =
-        tokenResult.claims["admin"] === true ||
-        tokenResult.claims["role"] === "Admin";
-      setAuthState(isAdmin ? u : "unauthorized");
+      try {
+        const token = await u.getIdToken();
+        const res = await fetch(`${API_BASE_URL}/api/auth/me`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        if (!res.ok) { setAuthState("unauthorized"); return; }
+        const me = await res.json();
+        const isAdmin = me.role === "Admin";
+        setAuthState(isAdmin ? u : "unauthorized");
+      } catch {
+        setAuthState("unauthorized");
+      }
     });
     return () => unsub();
   }, []);
