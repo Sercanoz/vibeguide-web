@@ -17,11 +17,11 @@ const securityHeaders = [
     value: [
       "default-src 'self'",
       "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://apis.google.com",
-      "style-src 'self' 'unsafe-inline'",
+      "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net",
       "img-src 'self' data: blob: https://images.unsplash.com https://static.independent.co.uk https://encrypted-tbn0.gstatic.com https://flagcdn.com",
       "connect-src 'self' https://*.firebaseio.com https://*.googleapis.com https://haritaapitest-production.up.railway.app wss://haritaapitest-production.up.railway.app",
-      "font-src 'self'",
-      "frame-src 'none'",
+      "font-src 'self' https://cdn.jsdelivr.net",
+      "frame-src https://vibeguide-2da83.firebaseapp.com",
     ].join("; "),
   },
 ];
