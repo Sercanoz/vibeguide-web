@@ -105,6 +105,26 @@ export default function AdminAuthGuard({
           </Link>
           <nav className="flex items-center gap-5">
             <Link
+              href="/admin/applications"
+              className={`text-sm font-bold ${
+                pathname?.startsWith("/admin/applications")
+                  ? "text-vg-primary"
+                  : "text-vg-muted hover:text-vg-ink"
+              }`}
+            >
+              Applications
+            </Link>
+            <Link
+              href="/admin/users"
+              className={`text-sm font-bold ${
+                pathname?.startsWith("/admin/users")
+                  ? "text-vg-primary"
+                  : "text-vg-muted hover:text-vg-ink"
+              }`}
+            >
+              Users
+            </Link>
+            <Link
               href="/admin/tours"
               className={`text-sm font-bold ${
                 pathname?.startsWith("/admin/tours")
@@ -133,6 +153,16 @@ export default function AdminAuthGuard({
               }`}
             >
               Disputes
+            </Link>
+            <Link
+              href="/admin/withdrawals"
+              className={`text-sm font-bold ${
+                pathname?.startsWith("/admin/withdrawals")
+                  ? "text-vg-primary"
+                  : "text-vg-muted hover:text-vg-ink"
+              }`}
+            >
+              Withdrawals
             </Link>
             <Link
               href="/admin/analytics"

@@ -58,6 +58,34 @@ export type DeadLetterItem = {
   sentAtUtc: string | null;
 };
 
+export type ModerationReport = {
+  id: number;
+  reporterId: number;
+  reportedUserId: number;
+  reason: string;
+  details: string | null;
+  status: string;
+  createdAt: string;
+};
+
+export type LanguagePricing = {
+  code: string;
+  displayName: string;
+  multiplier: number;
+  isRare: boolean;
+  isActive: boolean;
+};
+
+export type AdminPool = {
+  id: number;
+  tourTitle: string;
+  scheduledAt: string;
+  participantCount: number;
+  capacity: number;
+  guideName: string | null;
+  status: string;
+};
+
 export type GuidePerf = {
   guideUserId: number;
   fullName: string;
@@ -326,4 +354,132 @@ export const adminApi = {
       `/api/admin/pools/disputes/${participantId}/resolve`,
       { method: "POST", body: JSON.stringify({ decision: resolution }) }
     ),
+
+  // ════════ APPLICATIONS ════════
+
+  listApplications: (status: "Pending" | "Approved" | "Rejected") =>
+    authedFetch<GuideApplication[]>(`/api/admin/applications?status=${status}`),
+
+  approveApplication: (id: number) =>
+    authedFetch<{ ok: true }>(`/api/admin/applications/${id}/approve`, { method: "POST" }),
+
+  rejectApplication: (id: number, reason: string) =>
+    authedFetch<{ ok: true }>(`/api/admin/applications/${id}/reject`, {
+      method: "POST",
+      body: JSON.stringify({ reason }),
+    }),
+
+  // ════════ USERS ════════
+
+  listUsers: (params?: { role?: string; q?: string; limit?: number }) => {
+    const qs = new URLSearchParams();
+    if (params?.role) qs.set("role", params.role);
+    if (params?.q) qs.set("q", params.q);
+    if (params?.limit) qs.set("limit", String(params.limit));
+    const query = qs.toString() ? `?${qs.toString()}` : "";
+    return authedFetch<AdminUser[]>(`/api/admin/users${query}`);
+  },
+
+  changeUserRole: (id: number, role: "Tourist" | "Guide" | "Admin") =>
+    authedFetch<{ ok: true }>(`/api/admin/users/${id}/role`, {
+      method: "PATCH",
+      body: JSON.stringify({ role }),
+    }),
+
+  deleteUser: (id: number) =>
+    authedFetch<{ ok: true }>(`/api/admin/users/${id}`, { method: "DELETE" }),
+
+  // ════════ PAYOUTS ════════
+
+  processWeeklyPayouts: () =>
+    authedFetch<{ processed: number; totalAmount: number } | { ok: true }>(
+      "/api/payouts/admin/process-week",
+      { method: "POST" }
+    ),
+
+  // ════════ MODERATION REPORTS ════════
+
+  listReports: (status?: string) =>
+    authedFetch<ModerationReport[]>(
+      `/api/admin/reports${status ? `?status=${status}` : ""}`
+    ),
+
+  actionReport: (id: number, action: "dismiss" | "warn" | "ban", note?: string) =>
+    authedFetch<{ ok: true }>(`/api/admin/reports/${id}/action`, {
+      method: "POST",
+      body: JSON.stringify({ action, note }),
+    }),
+
+  // ════════ DEAD-LETTER (new endpoint) ════════
+
+  listDeadLettersV2: (limit = 50, offset = 0) =>
+    authedFetch<{ count: number; items: DeadLetterItem[] }>(
+      `/api/admin/notification-dead-letter?limit=${limit}&offset=${offset}`
+    ),
+
+  retryDeadLetter: (id: number) =>
+    authedFetch<{ ok: true }>(`/api/admin/notification-dead-letter/${id}/retry`, {
+      method: "POST",
+    }),
+
+  deleteDeadLetterV2: (id: number) =>
+    authedFetch<{ ok: true }>(`/api/admin/notification-dead-letter/${id}`, {
+      method: "DELETE",
+    }),
+
+  // ════════ LANGUAGE PRICING ════════
+
+  listLanguagePricing: () =>
+    authedFetch<LanguagePricing[]>("/api/language-pricing"),
+
+  updateLanguagePricing: (
+    code: string,
+    body: { displayName: string; multiplier: number; isRare: boolean; isActive: boolean }
+  ) =>
+    authedFetch<{ ok: true }>(`/api/language-pricing/${code}`, {
+      method: "PUT",
+      body: JSON.stringify(body),
+    }),
+
+  deleteLanguagePricing: (code: string) =>
+    authedFetch<{ ok: true }>(`/api/language-pricing/${code}`, {
+      method: "DELETE",
+    }),
+
+  // ════════ POOL MANAGEMENT ════════
+
+  listAdminPools: (status?: string) =>
+    authedFetch<AdminPool[]>(
+      `/api/admin/pools${status ? `?status=${status}` : ""}`
+    ),
+
+  cancelPool: (id: number, reason: string) =>
+    authedFetch<{ ok: true }>(`/api/admin/pools/${id}/cancel`, {
+      method: "POST",
+      body: JSON.stringify({ reason }),
+    }),
+
+  lockPool: (id: number) =>
+    authedFetch<{ ok: true }>(`/api/admin/pools/${id}/lock`, {
+      method: "POST",
+    }),
+};
+
+export type GuideApplication = {
+  id: number;
+  userId: number;
+  fullName: string;
+  email: string;
+  status: "Pending" | "Approved" | "Rejected";
+  appliedAt: string;
+  kycPhotoUrls: string[];
+  rejectionReason?: string | null;
+};
+
+export type AdminUser = {
+  id: number;
+  fullName: string;
+  email: string;
+  role: "Tourist" | "Guide" | "Admin";
+  createdAt: string;
 };
