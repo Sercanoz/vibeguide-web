@@ -199,8 +199,31 @@ export type TourDetail = {
   isTranslateConfigured: boolean;
 };
 
+export type TourSettings = {
+  id: number;
+  title: string;
+  description: string | null;
+  city: string;
+  category: string | null;
+  durationMinutes: number;
+  basePrice: number;
+  compareAtPrice: number | null;
+  currency: string;
+  coverPhotoUrl: string | null;
+  languagesOffered: string | null;
+  meetingPointText: string | null;
+  status: string;
+};
+
 export const adminApi = {
   listTours: () => authedFetch<TourListRow[]>("/api/admin/translations/tours"),
+  getTourSettings: (id: number) =>
+    authedFetch<TourSettings>(`/api/admin/tours/${id}`),
+  updateTourSettings: (id: number, body: Partial<TourSettings>) =>
+    authedFetch<{ id: number }>(`/api/admin/tours/${id}`, {
+      method: "PUT",
+      body: JSON.stringify(body),
+    }),
   getTour: (id: number) =>
     authedFetch<TourDetail>(`/api/admin/translations/tours/${id}`),
   upsertTourTranslation: (

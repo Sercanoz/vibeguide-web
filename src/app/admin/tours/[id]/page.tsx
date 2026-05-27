@@ -8,6 +8,7 @@ import {
   type TourTranslationRow,
   type TourPlacesDetail,
   type PlaceRow,
+  type TourSettings,
 } from "@/lib/admin-api";
 
 const LOCALE_LABELS: Record<string, string> = {
@@ -32,7 +33,7 @@ export default function AdminTourEditor(props: Props) {
   return <Editor id={id} />;
 }
 
-type Tab = "tour" | "places";
+type Tab = "tour" | "places" | "settings";
 
 function Editor({ id }: { id: number }) {
   const [tab, setTab] = useState<Tab>("tour");
@@ -84,7 +85,7 @@ function Editor({ id }: { id: number }) {
 
       {/* Tab switcher */}
       <div className="mt-5 flex gap-1 border-b border-vg-border pb-0">
-        {(["tour", "places"] as Tab[]).map((t) => (
+        {(["tour", "places", "settings"] as Tab[]).map((t) => (
           <button
             key={t}
             onClick={() => setTab(t)}
@@ -94,15 +95,17 @@ function Editor({ id }: { id: number }) {
                 : "bg-transparent border-transparent text-vg-muted hover:text-vg-ink"
             }`}
           >
-            {t === "tour" ? "Tour content" : "Stops (What you'll see)"}
+            {t === "tour" ? "Tour content" : t === "places" ? "Stops (What you'll see)" : "⚙️ Settings"}
           </button>
         ))}
       </div>
 
       {tab === "tour" ? (
         <TourTranslationEditor data={data} reload={loadTour} />
-      ) : (
+      ) : tab === "places" ? (
         <PlacesTranslationEditor tourId={id} isTranslateConfigured={data.isTranslateConfigured} canonicalLocale={data.tour.canonicalLocale} />
+      ) : (
+        <TourSettingsEditor id={id} />
       )}
     </div>
   );
@@ -532,6 +535,140 @@ function Field({
           className="w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-vg-primary"
         />
       )}
+    </div>
+  );
+}
+
+// ─── Tour Settings Editor ─────────────────────────────────────────────────────
+
+function TourSettingsEditor({ id }: { id: number }) {
+  const [settings, setSettings] = useState<TourSettings | null>(null);
+  const [draft, setDraft] = useState<Partial<TourSettings>>({});
+  const [saving, setSaving] = useState(false);
+  const [flash, setFlash] = useState<string | null>(null);
+
+  useEffect(() => {
+    adminApi.getTourSettings(id).then((r) => {
+      if (r.ok) { setSettings(r.data); setDraft(r.data); }
+    });
+  }, [id]);
+
+  const set = (key: keyof TourSettings, value: unknown) =>
+    setDraft((d) => ({ ...d, [key]: value }));
+
+  const onSave = async () => {
+    if (!draft.title?.trim()) { setFlash("Title is required."); return; }
+    if (!draft.city?.trim()) { setFlash("City is required."); return; }
+    setSaving(true); setFlash(null);
+    const r = await adminApi.updateTourSettings(id, draft);
+    setSaving(false);
+    if (r.ok) {
+      setFlash("Saved ✓");
+      const r2 = await adminApi.getTourSettings(id);
+      if (r2.ok) { setSettings(r2.data); setDraft(r2.data); }
+    } else {
+      setFlash(`Save failed: ${r.error ?? r.status}`);
+    }
+  };
+
+  if (!settings) return <div className="mt-6 text-vg-muted text-sm">Loading…</div>;
+
+  return (
+    <div className="mt-6 max-w-2xl">
+      {flash && (
+        <div className={`mb-5 rounded-xl px-4 py-3 text-sm border ${flash.includes("✓") ? "bg-emerald-50 border-emerald-200 text-emerald-800" : "bg-vg-bg-soft border-vg-border"}`}>
+          {flash}
+        </div>
+      )}
+
+      <div className="rounded-3xl bg-white border border-vg-border p-6 shadow-sm space-y-5">
+        <SField label="Title" required>
+          <input value={draft.title ?? ""} onChange={(e) => set("title", e.target.value)}
+            className="w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-vg-primary" placeholder="Tour title" maxLength={200} />
+        </SField>
+
+        <div className="grid grid-cols-2 gap-4">
+          <SField label="City" required>
+            <input value={draft.city ?? ""} onChange={(e) => set("city", e.target.value)}
+              className="w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-vg-primary" placeholder="Istanbul" />
+          </SField>
+          <SField label="Category">
+            <input value={draft.category ?? ""} onChange={(e) => set("category", e.target.value)}
+              className="w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-vg-primary" placeholder="history, food, art…" />
+          </SField>
+        </div>
+
+        <div className="grid grid-cols-3 gap-4">
+          <SField label="Base price">
+            <input type="number" min={0} value={draft.basePrice ?? 0}
+              onChange={(e) => set("basePrice", parseFloat(e.target.value) || 0)}
+              className="w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-vg-primary" />
+          </SField>
+          <SField label="Compare-at price">
+            <input type="number" min={0} value={draft.compareAtPrice ?? ""}
+              onChange={(e) => set("compareAtPrice", e.target.value ? parseFloat(e.target.value) : null)}
+              className="w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-vg-primary" placeholder="(optional)" />
+          </SField>
+          <SField label="Currency">
+            <select value={draft.currency ?? "EUR"} onChange={(e) => set("currency", e.target.value)}
+              className="w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-vg-primary">
+              {["EUR", "USD", "TRY", "GBP"].map((c) => <option key={c}>{c}</option>)}
+            </select>
+          </SField>
+        </div>
+
+        <SField label="Duration (minutes)">
+          <input type="number" min={0} value={draft.durationMinutes ?? 0}
+            onChange={(e) => set("durationMinutes", parseInt(e.target.value) || 0)}
+            className="w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-vg-primary" />
+        </SField>
+
+        <SField label="Languages offered (comma-separated codes)">
+          <input value={draft.languagesOffered ?? ""} onChange={(e) => set("languagesOffered", e.target.value)}
+            className="w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-vg-primary" placeholder="en,tr,de,fr" />
+        </SField>
+
+        <SField label="Cover photo URL">
+          <input value={draft.coverPhotoUrl ?? ""} onChange={(e) => set("coverPhotoUrl", e.target.value)}
+            className="w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-vg-primary" placeholder="https://…" />
+          {draft.coverPhotoUrl && (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={draft.coverPhotoUrl} alt="cover preview" className="mt-2 h-32 w-full object-cover rounded-xl" />
+          )}
+        </SField>
+
+        <SField label="Meeting point">
+          <input value={draft.meetingPointText ?? ""} onChange={(e) => set("meetingPointText", e.target.value)}
+            className="w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-vg-primary" placeholder="In front of Hagia Sophia main entrance" />
+        </SField>
+
+        <SField label="Status">
+          <select value={draft.status ?? "active"} onChange={(e) => set("status", e.target.value)}
+            className="w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-vg-primary">
+            <option value="active">Active</option>
+            <option value="draft">Draft</option>
+            <option value="archived">Archived</option>
+          </select>
+        </SField>
+
+        <div className="pt-2">
+          <button onClick={onSave} disabled={saving}
+            className="bg-vibe-gradient text-white font-black px-8 py-3 rounded-xl shadow-lg shadow-purple-500/30 hover:scale-[1.02] transition-transform disabled:opacity-50">
+            {saving ? "Saving…" : "💾 Save settings"}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function SField({ label, required, children }: { label: string; required?: boolean; children: React.ReactNode }) {
+  return (
+    <div>
+      <label className="block text-xs font-black uppercase tracking-widest text-vg-muted mb-1">
+        {label}{required && <span className="text-vg-flame ml-1">*</span>}
+      </label>
+      {children}
     </div>
   );
 }
