@@ -18,15 +18,15 @@ export default function WithdrawalsPage() {
   }
 
   async function processPayouts() {
-    if (!window.confirm("Bu haftanın ödemelerini işlemek istediğinizden emin misiniz? Bu işlem geri alınamaz.")) return;
+    if (!window.confirm("Are you sure you want to process this week's payouts? This action cannot be undone.")) return;
     setProcessing(true);
     setResult(null);
     const res = await adminApi.processWeeklyPayouts();
     if (res.ok) {
       setResult(res.data as ProcessResult);
-      showFlash("Ödemeler başarıyla işlendi!", "ok");
+      showFlash("Payouts processed successfully!", "ok");
     } else {
-      showFlash(res.error ?? "Ödeme işlemi başarısız", "err");
+      showFlash(res.error ?? "Payout processing failed", "err");
     }
     setProcessing(false);
   }
@@ -41,8 +41,8 @@ export default function WithdrawalsPage() {
 
   return (
     <div className="max-w-5xl mx-auto px-5 sm:px-8 py-10">
-      <h1 className="text-2xl font-black tracking-tight text-vg-ink">Para Çekme Talepleri</h1>
-      <p className="mt-1 text-sm text-vg-muted">Rehberlere ait haftalık ödemeleri işle.</p>
+      <h1 className="text-2xl font-black tracking-tight text-vg-ink">Withdrawal Requests</h1>
+      <p className="mt-1 text-sm text-vg-muted">Process weekly payouts for guides.</p>
 
       {flash && (
         <div className={`mt-3 rounded-xl px-4 py-3 text-sm font-semibold border ${
@@ -63,37 +63,37 @@ export default function WithdrawalsPage() {
             </svg>
           </div>
           <div className="flex-1">
-            <h2 className="text-lg font-black text-vg-ink">Haftalık Ödemeleri İşle</h2>
+            <h2 className="text-lg font-black text-vg-ink">Process Weekly Payouts</h2>
             <p className="mt-1 text-sm text-vg-muted">
-              Bu hafta tamamlanan tüm turlara ait rehber kazançlarını toplu olarak işler.
-              IBAN&apos;ı onaylı rehberlere ödeme başlatılır.
+              Batch-processes guide earnings for all tours completed this week.
+              Payouts are initiated for guides with a verified IBAN.
             </p>
             <button
               onClick={processPayouts}
               disabled={processing}
               className="mt-4 px-6 py-3 rounded-xl font-bold text-white bg-vg-primary hover:bg-vg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm"
             >
-              {processing ? "İşleniyor…" : "Haftalık Ödemeleri Başlat"}
+              {processing ? "Processing…" : "Start Weekly Payouts"}
             </button>
           </div>
         </div>
 
         {result && (
           <div className="mt-6 rounded-xl bg-green-50 border border-green-200 p-4">
-            <p className="text-sm font-bold text-green-800">Ödeme işlemi tamamlandı</p>
+            <p className="text-sm font-bold text-green-800">Payout processing complete</p>
             <div className="mt-2 flex flex-wrap gap-4">
               {result.processed != null && (
                 <div>
-                  <p className="text-xs text-green-600 font-semibold uppercase tracking-wide">İşlenen</p>
+                  <p className="text-xs text-green-600 font-semibold uppercase tracking-wide">Processed</p>
                   <p className="text-2xl font-black text-green-700">{result.processed}</p>
-                  <p className="text-xs text-green-600">ödeme</p>
+                  <p className="text-xs text-green-600">payouts</p>
                 </div>
               )}
               {result.totalAmount != null && (
                 <div>
-                  <p className="text-xs text-green-600 font-semibold uppercase tracking-wide">Toplam</p>
+                  <p className="text-xs text-green-600 font-semibold uppercase tracking-wide">Total</p>
                   <p className="text-2xl font-black text-green-700">{fmt(result.totalAmount)}</p>
-                  <p className="text-xs text-green-600">aktarıldı</p>
+                  <p className="text-xs text-green-600">transferred</p>
                 </div>
               )}
             </div>
@@ -104,10 +104,10 @@ export default function WithdrawalsPage() {
       {/* Coming Soon Card */}
       <div className="mt-6 rounded-2xl bg-white border border-vg-border border-dashed p-8 shadow-sm">
         <div className="text-center">
-          <p className="text-sm font-bold text-vg-muted">Para çekme talep listesi yakında geliyor</p>
+          <p className="text-sm font-bold text-vg-muted">Withdrawal request list coming soon</p>
           <p className="mt-1 text-xs text-vg-muted">
-            Bireysel para çekme taleplerini listeleme endpoint&apos;i backend&apos;de henüz mevcut değil.
-            Eklendiğinde buraya listelenecek.
+            The backend endpoint for listing individual withdrawal requests does not exist yet.
+            Once added, they will be listed here.
           </p>
         </div>
       </div>

@@ -5,7 +5,7 @@ import { adminApi, type DeadLetterItem } from "@/lib/admin-api";
 import Link from "next/link";
 
 function fmt(dateStr: string) {
-  return new Date(dateStr).toLocaleString("tr-TR");
+  return new Date(dateStr).toLocaleString("en-GB");
 }
 
 export default function NotificationsPage() {
@@ -23,7 +23,7 @@ export default function NotificationsPage() {
       setItems(r.data.items);
       setCount(r.data.count);
     } else {
-      setError(r.error ?? "Yüklenemedi");
+      setError(r.error ?? "Failed to load");
     }
   };
 
@@ -46,7 +46,7 @@ export default function NotificationsPage() {
           <Link href="/admin" className="text-sm text-vg-muted hover:text-vg-ink">← Admin</Link>
           <h1 className="mt-2 text-3xl font-black tracking-tight text-vg-ink">Dead-letter Notifications</h1>
           <p className="mt-1 text-vg-muted text-sm">
-            FCM gönderimi 3 denemede başarısız olan bildirimler.
+            Notifications that failed FCM delivery after 3 attempts.
           </p>
         </div>
         {!loading && (
@@ -57,7 +57,7 @@ export default function NotificationsPage() {
       </div>
 
       {loading && (
-        <div className="mt-10 text-center text-vg-muted animate-pulse">Yükleniyor…</div>
+        <div className="mt-10 text-center text-vg-muted animate-pulse">Loading…</div>
       )}
 
       {error && (
@@ -69,7 +69,7 @@ export default function NotificationsPage() {
       {!loading && !error && items.length === 0 && (
         <div className="mt-16 text-center">
           <div className="text-5xl mb-3">✅</div>
-          <p className="text-vg-muted font-medium">Dead-letter kuyruğu temiz.</p>
+          <p className="text-vg-muted font-medium">Dead-letter queue is clean.</p>
         </div>
       )}
 
@@ -112,7 +112,7 @@ export default function NotificationsPage() {
                   disabled={deleting === item.id}
                   className="shrink-0 text-xs font-bold text-red-600 border border-red-200 bg-red-50 hover:bg-red-100 px-3 py-1.5 rounded-xl transition-colors disabled:opacity-50"
                 >
-                  {deleting === item.id ? "…" : "Sil"}
+                  {deleting === item.id ? "…" : "Delete"}
                 </button>
               </div>
             </div>

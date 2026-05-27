@@ -7,9 +7,9 @@ type StatusFilter = "pending" | "resolved";
 type ActionType = "dismiss" | "warn" | "ban";
 
 const ACTION_LABELS: Record<ActionType, string> = {
-  dismiss: "Kapat",
-  warn: "Uyar",
-  ban: "Yasakla",
+  dismiss: "Dismiss",
+  warn: "Warn",
+  ban: "Ban",
 };
 
 const ACTION_STYLES: Record<ActionType, string> = {
@@ -52,7 +52,7 @@ export default function ReportsPage() {
     setLoading(true);
     const res = await adminApi.listReports(status);
     if (!res.ok) {
-      setError(res.error ?? "Raporlar yüklenemedi");
+      setError(res.error ?? "Failed to load reports");
     } else {
       setReports(res.data);
     }
@@ -69,17 +69,17 @@ export default function ReportsPage() {
     const res = await adminApi.actionReport(id, action, note || undefined);
     if (res.ok) {
       setReports((prev) => prev.filter((r) => r.id !== id));
-      showFlash(`Rapor ${ACTION_LABELS[action]} olarak işlendi.`);
+      showFlash(`Report marked as ${ACTION_LABELS[action]}.`);
     } else {
-      showFlash(res.error ?? "İşlem başarısız");
+      showFlash(res.error ?? "Action failed");
     }
     setActioning(null);
   }
 
   return (
     <div className="max-w-5xl mx-auto px-5 sm:px-8 py-10">
-      <h1 className="text-2xl font-black tracking-tight text-vg-ink">Moderasyon Raporları</h1>
-      <p className="mt-1 text-sm text-vg-muted">Kullanıcı şikayetlerini incele ve işlem uygula.</p>
+      <h1 className="text-2xl font-black tracking-tight text-vg-ink">Moderation Reports</h1>
+      <p className="mt-1 text-sm text-vg-muted">Review user complaints and take action.</p>
 
       {flash && (
         <div className="mt-3 rounded-xl bg-amber-50 border border-amber-200 px-4 py-3 text-sm text-amber-800 font-semibold">
@@ -99,18 +99,18 @@ export default function ReportsPage() {
                 : "bg-white text-vg-muted border-vg-border hover:border-vg-primary hover:text-vg-primary"
             }`}
           >
-            {t === "pending" ? "Bekleyen" : "Çözümlenen"}
+            {t === "pending" ? "Pending" : "Resolved"}
           </button>
         ))}
       </div>
 
       {loading ? (
-        <div className="flex justify-center items-center h-48 text-vg-muted text-sm">Yükleniyor…</div>
+        <div className="flex justify-center items-center h-48 text-vg-muted text-sm">Loading…</div>
       ) : error ? (
         <div className="mt-8 text-red-600 font-semibold">{error}</div>
       ) : reports.length === 0 ? (
         <div className="mt-8 rounded-2xl bg-white border border-vg-border p-10 text-center text-vg-muted text-sm shadow-sm">
-          {tab === "pending" ? "Bekleyen rapor yok ✓" : "Çözümlenen rapor yok"}
+          {tab === "pending" ? "No pending reports ✓" : "No resolved reports"}
         </div>
       ) : (
         <div className="mt-5 space-y-4">
@@ -119,13 +119,13 @@ export default function ReportsPage() {
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 flex-wrap">
-                    <span className="font-black text-vg-ink text-sm">Rapor #{r.id}</span>
+                    <span className="font-black text-vg-ink text-sm">Report #{r.id}</span>
                     <StatusBadge status={r.status} />
                   </div>
                   <p className="mt-1 text-xs text-vg-muted">
-                    Şikayet eden: <span className="font-bold text-vg-ink">#{r.reporterId}</span>
-                    {" · "}Şikayet edilen: <span className="font-bold text-vg-ink">#{r.reportedUserId}</span>
-                    {" · "}{new Date(r.createdAt).toLocaleDateString("tr-TR")}
+                    Reported by: <span className="font-bold text-vg-ink">#{r.reporterId}</span>
+                    {" · "}Reported user: <span className="font-bold text-vg-ink">#{r.reportedUserId}</span>
+                    {" · "}{new Date(r.createdAt).toLocaleDateString("en-GB")}
                   </p>
                   <p className="mt-1.5 text-sm font-semibold text-vg-ink">{r.reason}</p>
                   {r.details && (
@@ -134,7 +134,7 @@ export default function ReportsPage() {
                   {tab === "pending" && (
                     <input
                       type="text"
-                      placeholder="Not ekle (opsiyonel)"
+                      placeholder="Add a note (optional)"
                       value={noteMap[r.id] ?? ""}
                       onChange={(e) => setNoteMap((prev) => ({ ...prev, [r.id]: e.target.value }))}
                       className="mt-2 w-full max-w-sm text-xs border border-vg-border rounded-lg px-3 py-1.5 focus:outline-none focus:border-vg-primary"

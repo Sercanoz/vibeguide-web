@@ -20,7 +20,7 @@ export default function AdminHome() {
           <div className="text-4xl mb-3">📊</div>
           <h2 className="text-xl font-black text-vg-ink">Analytics</h2>
           <p className="mt-1 text-sm text-vg-muted leading-relaxed">
-            Platform KPI'ları, gelir özeti, en popüler turlar ve rehber performansı.
+            Platform KPIs, revenue summary, top tours and guide performance.
           </p>
         </Link>
 
@@ -29,9 +29,9 @@ export default function AdminHome() {
           className="block rounded-3xl bg-white border border-vg-border p-7 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all"
         >
           <div className="text-4xl mb-3">⚖️</div>
-          <h2 className="text-xl font-black text-vg-ink">Uyuşmazlıklar</h2>
+          <h2 className="text-xl font-black text-vg-ink">Disputes</h2>
           <p className="mt-1 text-sm text-vg-muted leading-relaxed">
-            VibeNow rezervasyon ve havuz anlaşmazlıklarını görüntüle, iade et veya onayla.
+            View, refund or approve VibeNow booking and pool disputes.
           </p>
         </Link>
       </div>
@@ -69,7 +69,7 @@ export default function AdminHome() {
           <div className="text-4xl mb-3">💀</div>
           <h2 className="text-xl font-black text-vg-ink">Dead-letter Notifications</h2>
           <p className="mt-1 text-sm text-vg-muted leading-relaxed">
-            FCM gönderimi 3 denemede başarısız olan bildirimleri görüntüle ve temizle.
+            View and clear notifications that failed FCM delivery after 3 attempts.
           </p>
         </Link>
       </div>

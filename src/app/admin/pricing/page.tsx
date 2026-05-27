@@ -29,7 +29,7 @@ export default function PricingPage() {
   useEffect(() => {
     adminApi.listLanguagePricing().then((res) => {
       if (!res.ok) {
-        setError(res.error ?? "Yüklenemedi");
+        setError(res.error ?? "Failed to load");
       } else {
         setRows(res.data);
         const initEdits: Record<string, RowEdit> = {};
@@ -56,7 +56,7 @@ export default function PricingPage() {
     if (!edit) return;
     const multiplier = parseFloat(edit.multiplier);
     if (isNaN(multiplier) || multiplier <= 0) {
-      showFlash("Geçersiz çarpan değeri", false);
+      showFlash("Invalid multiplier value", false);
       return;
     }
     setSaving(code);
@@ -74,35 +74,35 @@ export default function PricingPage() {
             : r
         )
       );
-      showFlash(`${code} güncellendi.`);
+      showFlash(`${code} updated.`);
     } else {
-      showFlash(res.error ?? "Kaydetme başarısız", false);
+      showFlash(res.error ?? "Save failed", false);
     }
     setSaving(null);
   }
 
   async function handleDelete(code: string) {
-    if (!confirm(`${code} dilini silmek istediğinizden emin misiniz?`)) return;
+    if (!confirm(`Are you sure you want to delete language "${code}"?`)) return;
     setDeleting(code);
     const res = await adminApi.deleteLanguagePricing(code);
     if (res.ok) {
       setRows((prev) => prev.filter((r) => r.code !== code));
-      showFlash(`${code} silindi.`);
+      showFlash(`${code} deleted.`);
     } else {
-      showFlash(res.error ?? "Silme başarısız", false);
+      showFlash(res.error ?? "Delete failed", false);
     }
     setDeleting(null);
   }
 
   if (loading)
-    return <div className="flex justify-center items-center h-64 text-vg-muted text-sm">Yükleniyor…</div>;
+    return <div className="flex justify-center items-center h-64 text-vg-muted text-sm">Loading…</div>;
   if (error)
     return <div className="max-w-4xl mx-auto px-5 py-12 text-red-600 font-semibold">{error}</div>;
 
   return (
     <div className="max-w-5xl mx-auto px-5 sm:px-8 py-10">
-      <h1 className="text-2xl font-black tracking-tight text-vg-ink">Dil Fiyatlandırma</h1>
-      <p className="mt-1 text-sm text-vg-muted">Dil bazlı fiyat çarpanlarını yönet.</p>
+      <h1 className="text-2xl font-black tracking-tight text-vg-ink">Language Pricing</h1>
+      <p className="mt-1 text-sm text-vg-muted">Manage per-language price multipliers.</p>
 
       {flash && (
         <div
@@ -120,12 +120,12 @@ export default function PricingPage() {
         <table className="w-full text-sm min-w-[700px]">
           <thead className="bg-vg-bg-soft border-b border-vg-border">
             <tr>
-              <th className="text-left px-5 py-3 font-bold text-vg-muted w-20">Kod</th>
-              <th className="text-left px-5 py-3 font-bold text-vg-muted">Görünen Ad</th>
-              <th className="text-left px-5 py-3 font-bold text-vg-muted w-28">Çarpan</th>
-              <th className="text-center px-5 py-3 font-bold text-vg-muted w-24">Nadir</th>
-              <th className="text-center px-5 py-3 font-bold text-vg-muted w-24">Aktif</th>
-              <th className="text-right px-5 py-3 font-bold text-vg-muted w-36">İşlemler</th>
+              <th className="text-left px-5 py-3 font-bold text-vg-muted w-20">Code</th>
+              <th className="text-left px-5 py-3 font-bold text-vg-muted">Display Name</th>
+              <th className="text-left px-5 py-3 font-bold text-vg-muted w-28">Multiplier</th>
+              <th className="text-center px-5 py-3 font-bold text-vg-muted w-24">Rare</th>
+              <th className="text-center px-5 py-3 font-bold text-vg-muted w-24">Active</th>
+              <th className="text-right px-5 py-3 font-bold text-vg-muted w-36">Actions</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-vg-border">
@@ -182,14 +182,14 @@ export default function PricingPage() {
                         onClick={() => handleSave(r.code)}
                         className="px-3 py-1 rounded-lg text-xs font-bold bg-vg-primary text-white hover:opacity-90 transition-opacity disabled:opacity-50"
                       >
-                        {isSaving ? "Kaydediliyor…" : "Kaydet"}
+                        {isSaving ? "Saving…" : "Save"}
                       </button>
                       <button
                         disabled={isSaving || isDeleting}
                         onClick={() => handleDelete(r.code)}
                         className="px-3 py-1 rounded-lg text-xs font-bold border border-red-200 bg-red-50 text-red-700 hover:bg-red-100 transition-colors disabled:opacity-50"
                       >
-                        {isDeleting ? "…" : "Sil"}
+                        {isDeleting ? "…" : "Delete"}
                       </button>
                     </div>
                   </td>

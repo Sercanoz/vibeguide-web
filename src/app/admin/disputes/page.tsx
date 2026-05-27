@@ -6,9 +6,9 @@ import { adminApi, type BookingDispute, type PoolDispute } from "@/lib/admin-api
 type Resolution = "refund_tourist" | "uphold_guide" | "dismiss";
 
 const RESOLUTION_LABELS: Record<Resolution, string> = {
-  refund_tourist: "İade et",
-  uphold_guide: "Rehberi onayla",
-  dismiss: "Reddet",
+  refund_tourist: "Refund tourist",
+  uphold_guide: "Uphold guide",
+  dismiss: "Dismiss",
 };
 
 const RESOLUTION_STYLES: Record<Resolution, string> = {
@@ -35,12 +35,12 @@ function NoShowFlags({ guideAt, touristAt }: { guideAt: string | null; touristAt
     <div className="mt-1.5 flex flex-wrap gap-1.5">
       {guideAt && (
         <span className="text-xs bg-orange-50 border border-orange-200 text-orange-700 rounded-lg px-2 py-0.5 font-semibold">
-          Rehber: turist no-show işaretledi
+          Guide marked tourist as no-show
         </span>
       )}
       {touristAt && (
         <span className="text-xs bg-purple-50 border border-purple-200 text-purple-700 rounded-lg px-2 py-0.5 font-semibold">
-          Turist: rehber no-show bildirdi
+          Tourist reported guide as no-show
         </span>
       )}
     </div>
@@ -66,14 +66,14 @@ export default function DisputesPage() {
   useEffect(() => {
     Promise.all([adminApi.listBookingDisputes(), adminApi.listPoolDisputes()])
       .then(([bRes, pRes]) => {
-        if (!bRes.ok) { setError(bRes.error ?? "Uyuşmazlıklar yüklenemedi"); setLoading(false); return; }
-        if (!pRes.ok) { setError(pRes.error ?? "Havuz uyuşmazlıkları yüklenemedi"); setLoading(false); return; }
+        if (!bRes.ok) { setError(bRes.error ?? "Failed to load disputes"); setLoading(false); return; }
+        if (!pRes.ok) { setError(pRes.error ?? "Failed to load pool disputes"); setLoading(false); return; }
         setBookingDisputes(bRes.data.disputes);
         setPoolDisputes(pRes.data.disputes);
         setLoading(false);
       })
       .catch((e: unknown) => {
-        setError("Veri yüklenemedi: " + (e instanceof Error ? e.message : String(e)));
+        setError("Failed to load data: " + (e instanceof Error ? e.message : String(e)));
         setLoading(false);
       });
   }, []);
@@ -84,7 +84,7 @@ export default function DisputesPage() {
     if (res.ok) {
       setBookingDisputes((prev) => prev.filter((d) => d.bookingId !== id));
     } else {
-      showFlash(res.error ?? "Çözüm uygulanamadı");
+      showFlash(res.error ?? "Failed to apply resolution");
     }
     setResolving(null);
   }
@@ -95,18 +95,18 @@ export default function DisputesPage() {
     if (res.ok) {
       setPoolDisputes((prev) => prev.filter((d) => d.participantId !== id));
     } else {
-      showFlash(res.error ?? "Çözüm uygulanamadı");
+      showFlash(res.error ?? "Failed to apply resolution");
     }
     setResolving(null);
   }
 
-  if (loading) return <div className="flex justify-center items-center h-64 text-vg-muted text-sm">Yükleniyor…</div>;
+  if (loading) return <div className="flex justify-center items-center h-64 text-vg-muted text-sm">Loading…</div>;
   if (error) return <div className="max-w-4xl mx-auto px-5 py-12 text-red-600 font-semibold">{error}</div>;
 
   return (
     <div className="max-w-5xl mx-auto px-5 sm:px-8 py-10">
-      <h1 className="text-2xl font-black tracking-tight text-vg-ink">Uyuşmazlıklar</h1>
-      <p className="mt-1 text-sm text-vg-muted">VibeNow rezervasyon ve tur havuzu anlaşmazlıklarını çöz.</p>
+      <h1 className="text-2xl font-black tracking-tight text-vg-ink">Disputes</h1>
+      <p className="mt-1 text-sm text-vg-muted">Resolve VibeNow booking and tour pool disputes.</p>
       {flash && (
         <div className="mt-3 rounded-xl bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-800 font-semibold">
           {flash}
@@ -125,7 +125,7 @@ export default function DisputesPage() {
                 : "bg-white text-vg-muted border-vg-border hover:border-vg-primary hover:text-vg-primary"
             }`}
           >
-            {t === "booking" ? "VibeNow" : "Havuz"}{" "}
+            {t === "booking" ? "VibeNow" : "Pool"}{" "}
             <span className="ml-1 font-black">
               ({t === "booking" ? bookingDisputes.length : poolDisputes.length})
             </span>
@@ -136,7 +136,7 @@ export default function DisputesPage() {
       {tab === "booking" && (
         bookingDisputes.length === 0 ? (
           <div className="mt-8 rounded-2xl bg-white border border-vg-border p-10 text-center text-vg-muted text-sm shadow-sm">
-            Bekleyen uyuşmazlık yok ✓
+            No pending disputes ✓
           </div>
         ) : (
           <div className="mt-5 space-y-4">
@@ -151,7 +151,7 @@ export default function DisputesPage() {
                     </div>
                     <p className="mt-0.5 text-xs text-vg-muted">
                       {d.touristName} → {d.guideName} · {fmt(d.price, d.currency ?? "TRY")} ·{" "}
-                      {new Date(d.scheduledAt).toLocaleDateString("tr-TR")}
+                      {new Date(d.scheduledAt).toLocaleDateString("en-GB")}
                     </p>
                     <NoShowFlags guideAt={d.guideMarkedNoShowAt} touristAt={d.touristReportedGuideNoShowAt} />
                     {d.cancelReason && (
@@ -180,7 +180,7 @@ export default function DisputesPage() {
       {tab === "pool" && (
         poolDisputes.length === 0 ? (
           <div className="mt-8 rounded-2xl bg-white border border-vg-border p-10 text-center text-vg-muted text-sm shadow-sm">
-            Bekleyen uyuşmazlık yok ✓
+            No pending disputes ✓
           </div>
         ) : (
           <div className="mt-5 space-y-4">
@@ -190,12 +190,12 @@ export default function DisputesPage() {
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 flex-wrap">
                       <span className="font-black text-vg-ink text-sm">{d.tourTitle}</span>
-                      <span className="text-xs text-vg-muted">katılımcı #{d.participantId}</span>
+                      <span className="text-xs text-vg-muted">participant #{d.participantId}</span>
                       <StatusBadge status={String(d.status)} />
                     </div>
                     <p className="mt-0.5 text-xs text-vg-muted">
-                      {d.touristName} · rehber: {d.guideName} ·{" "}
-                      {fmt(d.holdAmount)} tutulan · {new Date(d.scheduledAt).toLocaleDateString("tr-TR")}
+                      {d.touristName} · guide: {d.guideName} ·{" "}
+                      {fmt(d.holdAmount)} held · {new Date(d.scheduledAt).toLocaleDateString("en-GB")}
                     </p>
                     <NoShowFlags guideAt={d.guideMarkedNoShowAt} touristAt={d.touristReportedGuideNoShowAt} />
                   </div>

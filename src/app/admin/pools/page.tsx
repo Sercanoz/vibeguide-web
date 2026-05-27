@@ -40,7 +40,7 @@ export default function PoolsPage() {
     setLoading(true);
     const res = await adminApi.listAdminPools(status);
     if (!res.ok) {
-      setError(res.error ?? "Havuzlar yüklenemedi");
+      setError(res.error ?? "Failed to load pools");
     } else {
       setPools(res.data);
     }
@@ -52,15 +52,15 @@ export default function PoolsPage() {
   }, [tab]);
 
   async function handleCancel(id: number) {
-    const reason = prompt("İptal sebebini girin:");
+    const reason = prompt("Enter cancellation reason:");
     if (!reason || !reason.trim()) return;
     setActioning(`cancel-${id}`);
     const res = await adminApi.cancelPool(id, reason.trim());
     if (res.ok) {
       setPools((prev) => prev.filter((p) => p.id !== id));
-      showFlash("Havuz iptal edildi.");
+      showFlash("Pool cancelled.");
     } else {
-      showFlash(res.error ?? "İptal başarısız", false);
+      showFlash(res.error ?? "Cancellation failed", false);
     }
     setActioning(null);
   }
@@ -72,17 +72,17 @@ export default function PoolsPage() {
       setPools((prev) =>
         prev.map((p) => (p.id === id ? { ...p, status: "locked" } : p))
       );
-      showFlash("Havuz kilitlendi.");
+      showFlash("Pool locked.");
     } else {
-      showFlash(res.error ?? "Kilitleme başarısız", false);
+      showFlash(res.error ?? "Lock failed", false);
     }
     setActioning(null);
   }
 
   return (
     <div className="max-w-5xl mx-auto px-5 sm:px-8 py-10">
-      <h1 className="text-2xl font-black tracking-tight text-vg-ink">Havuz Yönetimi</h1>
-      <p className="mt-1 text-sm text-vg-muted">Tur havuzlarını yönet, kilitle veya iptal et.</p>
+      <h1 className="text-2xl font-black tracking-tight text-vg-ink">Pool Management</h1>
+      <p className="mt-1 text-sm text-vg-muted">Manage tour pools — lock or cancel them.</p>
 
       {flash && (
         <div
@@ -109,23 +109,23 @@ export default function PoolsPage() {
             }`}
           >
             {t === "open"
-              ? "Açık"
+              ? "Open"
               : t === "locked"
-              ? "Kilitli"
+              ? "Locked"
               : t === "completed"
-              ? "Tamamlandı"
-              : "İptal"}
+              ? "Completed"
+              : "Cancelled"}
           </button>
         ))}
       </div>
 
       {loading ? (
-        <div className="flex justify-center items-center h-48 text-vg-muted text-sm">Yükleniyor…</div>
+        <div className="flex justify-center items-center h-48 text-vg-muted text-sm">Loading…</div>
       ) : error ? (
         <div className="mt-8 text-red-600 font-semibold">{error}</div>
       ) : pools.length === 0 ? (
         <div className="mt-8 rounded-2xl bg-white border border-vg-border p-10 text-center text-vg-muted text-sm shadow-sm">
-          Bu durumda havuz yok.
+          No pools in this status.
         </div>
       ) : (
         <div className="mt-5 space-y-4">
@@ -141,15 +141,15 @@ export default function PoolsPage() {
                       <StatusBadge status={p.status} />
                     </div>
                     <p className="mt-1 text-xs text-vg-muted">
-                      {new Date(p.scheduledAt).toLocaleString("tr-TR")}
+                      {new Date(p.scheduledAt).toLocaleString("en-GB")}
                       {" · "}
                       <span className="font-bold text-vg-ink">
                         {p.participantCount} / {p.capacity}
                       </span>{" "}
-                      katılımcı
+                      participants
                       {p.guideName && (
                         <>
-                          {" · "}Rehber: <span className="font-semibold text-vg-ink">{p.guideName}</span>
+                          {" · "}Guide: <span className="font-semibold text-vg-ink">{p.guideName}</span>
                         </>
                       )}
                     </p>
@@ -161,7 +161,7 @@ export default function PoolsPage() {
                         onClick={() => handleLock(p.id)}
                         className="px-3 py-1.5 rounded-xl text-xs font-bold border border-blue-200 bg-blue-50 text-blue-700 hover:bg-blue-100 transition-colors disabled:opacity-50"
                       >
-                        Kilitle
+                        Lock
                       </button>
                     )}
                     {(p.status.toLowerCase() === "open" || p.status.toLowerCase() === "locked") && (
@@ -170,7 +170,7 @@ export default function PoolsPage() {
                         onClick={() => handleCancel(p.id)}
                         className="px-3 py-1.5 rounded-xl text-xs font-bold border border-red-200 bg-red-50 text-red-700 hover:bg-red-100 transition-colors disabled:opacity-50"
                       >
-                        İptal Et
+                        Cancel
                       </button>
                     )}
                   </div>
