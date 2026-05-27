@@ -1545,6 +1545,9 @@ const toursPageBase: Record<string, ToursPageDict> = {
     heroLive: "Disponibilità in tempo reale",
     heroVerified: "100% guide verificate",
     heroBook: "Prenota via app",
+    fromPrice: "da",
+    perGuide: "per guida",
+    startingFrom: "Da",
   },
   ko: {
     navTours: "투어",

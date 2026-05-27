@@ -41,7 +41,7 @@ export default function HomePage() {
     <main className="min-h-screen bg-white text-[#0A0A0F] antialiased overflow-x-hidden">
 
       {/* ── STICKY NAV ── */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-xl border-b border-black/[0.06] shadow-sm shadow-black/5">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-white via-white/95 to-white/80 backdrop-blur-xl border-b border-black/[0.05]" style={{ boxShadow: "0 1px 0 0 rgba(0,0,0,0.04), 0 4px 24px -4px rgba(108,76,241,0.06)" }}>
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 h-16">
           <a href="/" className="flex items-center gap-2.5 text-xl font-black tracking-tight text-[#0A0A0F]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -52,13 +52,13 @@ export default function HomePage() {
           {/* Desktop links */}
           <div className="hidden gap-8 text-sm font-medium md:flex">
             {navLinks.map((l) => (
-              <a key={l.href} href={l.href} className="text-neutral-500 hover:text-black transition-colors">{l.label}</a>
+              <a key={l.href} href={l.href} className="text-neutral-400 hover:text-[#0A0A0F] transition-colors font-medium">{l.label}</a>
             ))}
           </div>
 
           <div className="flex items-center gap-3">
             <LocaleSwitcher />
-            <a href="#download" className="hidden md:block rounded-full bg-[#6C4CF1] px-5 py-2 text-sm font-semibold text-white hover:bg-[#5a3dd4] transition-colors shadow-sm">
+            <a href="#download" className="hidden md:block rounded-full bg-[#6C4CF1] px-5 py-2 text-sm font-semibold text-white hover:bg-[#5a3dd4] transition-colors" style={{ boxShadow: "0 2px 12px rgba(108,76,241,0.25)" }}>
               {t.nav.cta}
             </a>
             {/* Hamburger */}
@@ -76,13 +76,13 @@ export default function HomePage() {
 
         {/* Mobile drawer */}
         <div ref={menuRef} className={`md:hidden overflow-hidden transition-all duration-300 ${menuOpen ? "max-h-96" : "max-h-0"}`}>
-          <div className="px-6 pb-5 pt-2 border-t border-black/5 space-y-1">
+          <div className="px-6 pb-5 pt-2 border-t border-black/5 space-y-1 bg-white">
             {navLinks.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
                 onClick={() => setMenuOpen(false)}
-                className="flex items-center py-3 text-sm font-semibold text-neutral-600 hover:text-black border-b border-black/5 last:border-0 transition-colors"
+                className="flex items-center py-3 text-sm font-semibold text-neutral-500 hover:text-black border-b border-black/5 last:border-0 transition-colors"
               >
                 {l.label}
               </a>
@@ -98,33 +98,24 @@ export default function HomePage() {
         </div>
       </nav>
 
-      {/* ── HERO — full-screen cinematic ── */}
-      <section className="relative min-h-screen flex items-center pt-16 bg-[#0A0A0F] overflow-hidden">
-        {/* BG foto */}
-        <div className="absolute inset-0">
-          <Image
-            src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=90&w=1800"
-            alt="Istanbul"
-            fill
-            className="object-cover opacity-35"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0F] via-[#0A0A0F]/60 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0F] via-transparent to-transparent" />
-        </div>
-
-        {/* Ambient glow */}
-        <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-[#6C4CF1]/20 rounded-full blur-[120px] pointer-events-none" />
+      {/* ── HERO — full-screen light ── */}
+      <section className="relative min-h-screen flex items-center pt-16 bg-white overflow-hidden">
+        {/* Subtle ambient — top right */}
+        <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-gradient-to-bl from-[#6C4CF1]/6 via-[#8B5CF6]/3 to-transparent rounded-full blur-[80px] pointer-events-none" />
+        {/* Bottom left accent */}
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-[#6C4CF1]/4 to-transparent rounded-full blur-[80px] pointer-events-none" />
+        {/* Dot grid */}
+        <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: "radial-gradient(circle, #6C4CF1 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
 
         <div className="relative mx-auto max-w-7xl px-6 py-28 grid md:grid-cols-2 gap-16 items-center w-full">
           {/* Copy */}
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-4 py-2 text-sm font-semibold text-white/80 backdrop-blur-sm mb-8 animate-[fadeSlideUp_0.7s_ease_both]">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#6C4CF1]/15 bg-[#6C4CF1]/5 px-4 py-2 text-sm font-semibold text-[#6C4CF1] mb-8 animate-[fadeSlideUp_0.7s_ease_both]">
               <span className="h-1.5 w-1.5 rounded-full bg-[#10B981] animate-pulse shrink-0" />
               {t.hero.badge}
             </div>
 
-            <h1 className="text-5xl md:text-[72px] font-black leading-[0.98] tracking-tight text-white">
+            <h1 className="text-5xl md:text-[72px] font-black leading-[0.98] tracking-tight text-[#0A0A0F]">
               {t.hero.titleA}
               <br />
               <span className="bg-gradient-to-r from-[#6C4CF1] via-[#8B5CF6] to-[#EC4899] bg-clip-text text-transparent">
@@ -132,45 +123,44 @@ export default function HomePage() {
               </span>
             </h1>
 
-            <div className="mt-6 text-[15px] leading-7 text-white/50 max-w-md space-y-3">
+            <div className="mt-6 text-[15px] leading-7 text-neutral-400 max-w-md space-y-3">
               {t.hero.sub.split("\n\n").map((para, i) => (
                 <p key={i} style={{ whiteSpace: "pre-line" }}>{para}</p>
               ))}
             </div>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#download" className="group relative rounded-full bg-[#6C4CF1] px-7 py-3.5 text-sm font-bold text-white overflow-hidden transition-all hover:shadow-[0_0_30px_rgba(108,76,241,0.5)]">
+              <a href="#download" className="group relative rounded-full bg-[#6C4CF1] px-7 py-3.5 text-sm font-bold text-white overflow-hidden transition-all hover:bg-[#5a3dd4]" style={{ boxShadow: "0 4px 24px rgba(108,76,241,0.3)" }}>
                 <span className="relative z-10">{t.hero.ctaPrimary} →</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-[#6C4CF1] to-[#8B5CF6] opacity-0 group-hover:opacity-100 transition-opacity" />
               </a>
-              <a href="#modes" className="rounded-full border border-white/15 px-7 py-3.5 text-sm font-bold text-white/80 hover:bg-white/10 transition-all backdrop-blur-sm">
+              <a href="#modes" className="rounded-full border border-black/10 px-7 py-3.5 text-sm font-bold text-[#0A0A0F] hover:border-[#6C4CF1]/40 hover:text-[#6C4CF1] transition-all">
                 {t.hero.ctaSecondary}
               </a>
             </div>
 
-            <div className="mt-10 flex flex-wrap gap-6 pt-6 border-t border-white/10">
+            <div className="mt-10 flex flex-wrap gap-6 pt-6 border-t border-black/[0.06]">
               {[
                 { icon: "🛡️", label: t.hero.b1 },
                 { icon: "⚡", label: t.hero.b2 },
                 { icon: "❤️", label: t.hero.b3 },
               ].map((b) => (
-                <span key={b.label} className="flex items-center gap-2 text-sm text-white/50">
+                <span key={b.label} className="flex items-center gap-2 text-sm text-neutral-400">
                   <span>{b.icon}</span> {b.label}
                 </span>
               ))}
             </div>
           </div>
 
-          {/* Mobile mini hero — visible only on small screens */}
-          <div className="md:hidden mt-4 flex items-center gap-4 rounded-2xl bg-white/5 border border-white/10 p-4 backdrop-blur-sm">
+          {/* Mobile mini hero */}
+          <div className="md:hidden mt-4 flex items-center gap-4 rounded-2xl bg-[#F7F7FB] border border-black/[0.06] p-4">
             <div className="h-12 w-12 shrink-0 rounded-2xl bg-gradient-to-br from-[#6C4CF1] to-[#8B5CF6] flex items-center justify-center text-2xl">🧭</div>
             <div className="flex-1 min-w-0">
-              <p className="text-xs font-bold text-white/40 uppercase tracking-wider mb-1">Live in Istanbul</p>
-              <p className="text-sm font-black text-white leading-tight">24 guides online near you</p>
+              <p className="text-xs font-bold text-neutral-400 uppercase tracking-wider mb-1">Live in Istanbul</p>
+              <p className="text-sm font-black text-[#0A0A0F] leading-tight">24 guides online near you</p>
             </div>
-            <div className="flex items-center gap-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/20 px-2.5 py-1">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span className="text-[10px] font-bold text-emerald-400">LIVE</span>
+            <div className="flex items-center gap-1.5 rounded-full bg-emerald-50 border border-emerald-100 px-2.5 py-1">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="text-[10px] font-bold text-emerald-600">LIVE</span>
             </div>
           </div>
 
@@ -256,7 +246,7 @@ export default function HomePage() {
         </div>
 
         {/* Scroll cue */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-white/20 animate-bounce">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-neutral-300 animate-bounce">
           <span className="text-[10px] tracking-widest uppercase font-medium">Scroll</span>
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
             <path d="M7 2v10M7 12L3 8M7 12l4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -270,7 +260,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="text-center mb-20">
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1]">{t.howItWorks.eyebrow}</p>
-            <h2 className="mt-4 text-4xl md:text-6xl font-black tracking-tight">
+            <h2 className="mt-4 text-4xl md:text-6xl font-black tracking-tight text-[#0A0A0F]">
               {t.howItWorks.titleA}
               <br />
               <span className="text-neutral-200">{t.howItWorks.titleB}</span>
@@ -298,15 +288,15 @@ export default function HomePage() {
       {/* ── LIVE CITY ENERGY ── */}
       <section ref={secEnergy.ref as React.RefObject<HTMLElement>} className={`py-8 bg-white reveal ${secEnergy.inView ? "in-view" : ""}`}>
         <div className="mx-auto max-w-7xl px-6">
-          <div className="rounded-[2.5rem] bg-[#0A0A0F] p-8 md:p-12 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#6C4CF1]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="rounded-[2.5rem] bg-white border border-black/[0.06] p-8 md:p-12 relative overflow-hidden" style={{ boxShadow: "0 2px 40px rgba(108,76,241,0.06)" }}>
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#6C4CF1]/5 rounded-full blur-3xl pointer-events-none" />
             <div className="relative grid items-center gap-10 md:grid-cols-[1fr_auto]">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1]">{t.energy.eyebrow}</p>
-                <h2 className="mt-3 text-3xl md:text-4xl font-black text-white leading-tight">
-                  {t.energy.titleA}<br /><span className="text-white/40">{t.energy.titleB}</span>
+                <h2 className="mt-3 text-3xl md:text-4xl font-black text-[#0A0A0F] leading-tight">
+                  {t.energy.titleA}<br /><span className="text-neutral-300">{t.energy.titleB}</span>
                 </h2>
-                <p className="mt-3 text-sm leading-6 text-white/40 max-w-md">{t.energy.sub}</p>
+                <p className="mt-3 text-sm leading-6 text-neutral-400 max-w-md">{t.energy.sub}</p>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">
                 {[
@@ -315,8 +305,8 @@ export default function HomePage() {
                   { num: "100%", label: "Verified guides" },
                 ].map((s) => (
                   <div key={s.label} className="text-center md:text-left">
-                    <p className="text-3xl font-black text-white">{s.num}</p>
-                    <p className="mt-1 text-xs text-white/40 font-medium">{s.label}</p>
+                    <p className="text-3xl font-black text-[#6C4CF1]">{s.num}</p>
+                    <p className="mt-1 text-xs text-neutral-400 font-medium">{s.label}</p>
                   </div>
                 ))}
               </div>
@@ -342,34 +332,34 @@ export default function HomePage() {
             {[
               {
                 id: "vibenow",
-                bg: "bg-[#0A0A0F]",
-                border: "border-[#6C4CF1]/30",
+                bg: "bg-white",
+                border: "border-[#6C4CF1]/20",
                 tagCol: "text-[#6C4CF1]",
-                titleCol: "text-white",
-                textCol: "text-white/40",
-                pointCol: "text-white/50",
+                titleCol: "text-[#0A0A0F]",
+                textCol: "text-neutral-400",
+                pointCol: "text-neutral-400",
                 btnBg: "bg-[#6C4CF1] text-white",
                 data: t.modes.vibenow,
               },
               {
                 id: "vibesquad",
-                bg: "bg-[#ECFDF5]",
+                bg: "bg-white",
                 border: "border-[#10B981]/20",
                 tagCol: "text-[#059669]",
                 titleCol: "text-[#0A0A0F]",
-                textCol: "text-neutral-500",
-                pointCol: "text-neutral-500",
+                textCol: "text-neutral-400",
+                pointCol: "text-neutral-400",
                 btnBg: "bg-[#059669] text-white",
                 data: t.modes.vibesquad,
               },
               {
                 id: "private",
-                bg: "bg-[#F5F3FF]",
+                bg: "bg-white",
                 border: "border-[#6C4CF1]/20",
                 tagCol: "text-[#6C4CF1]",
                 titleCol: "text-[#0A0A0F]",
-                textCol: "text-neutral-500",
-                pointCol: "text-neutral-500",
+                textCol: "text-neutral-400",
+                pointCol: "text-neutral-400",
                 btnBg: "bg-[#6C4CF1] text-white",
                 data: t.modes.private,
               },
@@ -395,16 +385,14 @@ export default function HomePage() {
       </section>
 
       {/* ── MANIFESTO ── */}
-      <section ref={secManifesto.ref as React.RefObject<HTMLElement>} className={`py-28 bg-[#0A0A0F] text-white relative overflow-hidden reveal ${secManifesto.inView ? "in-view" : ""}`}>
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMwLTkuOTQtOC4wNi0xOC0xOC0xOFYwaDQydjQySDE4QzI3Ljk0IDQyIDM2IDMzLjk0IDM2IDI0VjE4eiIgZmlsbD0iI2ZmZiIvPjwvZz48L3N2Zz4=')]" />
-        </div>
+      <section ref={secManifesto.ref as React.RefObject<HTMLElement>} className={`py-28 bg-[#F7F7FB] relative overflow-hidden reveal ${secManifesto.inView ? "in-view" : ""}`}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#6C4CF1]/5 rounded-full blur-[80px] pointer-events-none" />
         <div className="relative mx-auto max-w-3xl px-6 text-center">
           <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1]">{t.manifesto.eyebrow}</p>
-          <h2 className="mt-6 text-4xl md:text-6xl font-black tracking-tight leading-tight">
+          <h2 className="mt-6 text-4xl md:text-6xl font-black tracking-tight leading-tight text-[#0A0A0F]">
             {t.manifesto.titleA}
             <br />
-            <span className="text-white/30">{t.manifesto.titleB}</span>
+            <span className="text-neutral-300">{t.manifesto.titleB}</span>
           </h2>
           <div className="mx-auto mt-10 max-w-2xl space-y-5 text-left">
             {t.manifesto.sub.split("\n\n").map((para, i) => {
@@ -414,8 +402,8 @@ export default function HomePage() {
                   key={i}
                   className={
                     isHighlight
-                      ? "text-lg md:text-xl font-bold leading-8 text-white"
-                      : "text-base md:text-lg leading-8 text-white/55"
+                      ? "text-lg md:text-xl font-bold leading-8 text-[#0A0A0F]"
+                      : "text-base md:text-lg leading-8 text-neutral-400"
                   }
                 >
                   {para}
@@ -423,7 +411,7 @@ export default function HomePage() {
               );
             })}
           </div>
-          <p className="mt-12 text-xl md:text-2xl font-black tracking-tight text-white border-t border-white/10 pt-10">
+          <p className="mt-12 text-xl md:text-2xl font-black tracking-tight text-[#0A0A0F] border-t border-black/[0.06] pt-10">
             Real locals. Real stories. Real discovery.
           </p>
         </div>
@@ -431,7 +419,7 @@ export default function HomePage() {
 
 
       {/* ── TURKEY ONLY BANNER ── */}
-      <section ref={secTurkey.ref as React.RefObject<HTMLElement>} className={`py-16 bg-[#F7F7FB] reveal ${secTurkey.inView ? "in-view" : ""}`}>
+      <section ref={secTurkey.ref as React.RefObject<HTMLElement>} className={`py-16 bg-white reveal ${secTurkey.inView ? "in-view" : ""}`}>
         <div className="mx-auto max-w-7xl px-6">
           <div className="rounded-3xl bg-white border border-black/5 shadow-sm overflow-hidden">
             <div className="grid md:grid-cols-2">
@@ -509,41 +497,41 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── DOWNLOAD — full-width dark ── */}
-      <section ref={secDownload.ref as React.RefObject<HTMLElement>} id="download" className={`relative py-32 bg-[#0A0A0F] text-white overflow-hidden reveal ${secDownload.inView ? "in-view" : ""}`}>
+      {/* ── DOWNLOAD ── */}
+      <section ref={secDownload.ref as React.RefObject<HTMLElement>} id="download" className={`relative py-32 bg-white overflow-hidden reveal ${secDownload.inView ? "in-view" : ""}`}>
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#6C4CF1]/15 rounded-full blur-[100px]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#6C4CF1]/5 rounded-full blur-[100px]" />
         </div>
         <div className="relative mx-auto max-w-3xl px-6 text-center">
           <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1]">Available now</p>
-          <h2 className="mt-5 text-5xl md:text-7xl font-black tracking-tight leading-tight">
+          <h2 className="mt-5 text-5xl md:text-7xl font-black tracking-tight leading-tight text-[#0A0A0F]">
             {t.download.title}
           </h2>
-          <p className="mt-6 text-base text-white/40 max-w-md mx-auto leading-7">{t.download.sub}</p>
+          <p className="mt-6 text-base text-neutral-400 max-w-md mx-auto leading-7">{t.download.sub}</p>
 
           <div className="mt-12 flex flex-wrap justify-center gap-4">
-            <a href="#" className="group flex items-center gap-4 rounded-2xl bg-white px-7 py-4 text-black hover:bg-white/90 transition-all shadow-xl shadow-white/10">
+            <a href="#" className="group flex items-center gap-4 rounded-2xl bg-[#0A0A0F] px-7 py-4 text-white hover:bg-[#1a1a2e] transition-all" style={{ boxShadow: "0 4px 24px rgba(10,10,15,0.15)" }}>
               <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
               </svg>
               <div className="text-left">
-                <p className="text-[11px] leading-none text-black/40 font-medium">Download on the</p>
+                <p className="text-[11px] leading-none text-white/40 font-medium">Download on the</p>
                 <p className="text-base font-black mt-0.5">App Store</p>
               </div>
             </a>
-            <a href="#" className="group flex items-center gap-4 rounded-2xl bg-white px-7 py-4 text-black hover:bg-white/90 transition-all shadow-xl shadow-white/10">
+            <a href="#" className="group flex items-center gap-4 rounded-2xl bg-[#0A0A0F] px-7 py-4 text-white hover:bg-[#1a1a2e] transition-all" style={{ boxShadow: "0 4px 24px rgba(10,10,15,0.15)" }}>
               <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M3.18 23.76c.3.17.64.19.96.08l13.12-7.57-2.8-2.8-11.28 10.29zM20.9 10.42L17.96 8.7 14.84 11.8l3.13 3.12 2.95-1.7c.84-.48.84-2.32-.02-2.8zM2.14.75C2.05 1 2 1.26 2 1.56v20.89c0 .3.04.57.14.81L13.61 11.8 2.14.75zM3.18.24L14.84 11.8l-2.8 2.8L.22.32C.56.21.9.23 1.22.4l1.96 1.13V.24z"/>
               </svg>
               <div className="text-left">
-                <p className="text-[11px] leading-none text-black/40 font-medium">GET IT ON</p>
+                <p className="text-[11px] leading-none text-white/40 font-medium">GET IT ON</p>
                 <p className="text-base font-black mt-0.5">Google Play</p>
               </div>
             </a>
           </div>
 
           <div className="mt-10 flex flex-col items-center gap-3">
-            <div className="p-3 bg-white rounded-2xl shadow-lg inline-block">
+            <div className="p-3 bg-white border border-black/[0.06] rounded-2xl shadow-sm inline-block">
               {/* QR code SVG — links to vibeguideapp.com */}
               <svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
                 {/* Finder top-left */}
@@ -597,12 +585,12 @@ export default function HomePage() {
             <p className="text-xs text-white/30">Scan to download</p>
           </div>
 
-          <p className="mt-6 text-xs text-white/20">Free to download · Istanbul available now</p>
+          <p className="mt-6 text-xs text-neutral-300">Free to download · Istanbul available now</p>
         </div>
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="bg-[#F7F7FB] border-t border-black/[0.06] px-6 py-16">
+      <footer className="bg-white border-t border-black/[0.06] px-6 py-16">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 md:grid-cols-[2fr_1fr_1fr_1fr_1fr]">
             <div>
