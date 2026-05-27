@@ -4,7 +4,7 @@ import { initializeApp, getApps, FirebaseApp } from "firebase/app";
 import {
   getAuth,
   GoogleAuthProvider,
-  signInWithPopup,
+  signInWithRedirect,
   signOut as fbSignOut,
   onIdTokenChanged,
   type User,
@@ -49,11 +49,10 @@ export function fbAuth(): Auth {
   return _auth;
 }
 
-export async function signInWithGoogle(): Promise<User> {
+export async function signInWithGoogle(): Promise<void> {
   const provider = new GoogleAuthProvider();
   provider.setCustomParameters({ prompt: "select_account" });
-  const cred = await signInWithPopup(fbAuth(), provider);
-  return cred.user;
+  await signInWithRedirect(fbAuth(), provider);
 }
 
 export async function signOut(): Promise<void> {
