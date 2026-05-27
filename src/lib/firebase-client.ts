@@ -4,8 +4,7 @@ import { initializeApp, getApps, FirebaseApp } from "firebase/app";
 import {
   getAuth,
   GoogleAuthProvider,
-  signInWithRedirect,
-  getRedirectResult,
+  signInWithPopup,
   signOut as fbSignOut,
   onIdTokenChanged,
   type User,
@@ -50,17 +49,18 @@ export function fbAuth(): Auth {
   return _auth;
 }
 
-export async function signInWithGoogle(): Promise<void> {
+export async function signInWithGoogle(): Promise<User> {
   const provider = new GoogleAuthProvider();
   provider.setCustomParameters({ prompt: "select_account" });
-  await signInWithRedirect(fbAuth(), provider);
+  const cred = await signInWithPopup(fbAuth(), provider);
+  return cred.user;
 }
 
 export async function signOut(): Promise<void> {
   await fbSignOut(fbAuth());
 }
 
-export { onIdTokenChanged, getRedirectResult };
+export { onIdTokenChanged };
 export type { User };
 
 /// Get current Firebase ID token for backend Authorization header.

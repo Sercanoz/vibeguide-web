@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
-import { fbAuth, onIdTokenChanged, getRedirectResult, signOut, type User } from "@/lib/firebase-client";
+import { fbAuth, onIdTokenChanged, signOut, type User } from "@/lib/firebase-client";
 import { API_BASE_URL } from "@/lib/api";
 import Link from "next/link";
 import Image from "next/image";
@@ -19,9 +19,6 @@ export default function AdminAuthGuard({
   const pathname = usePathname();
 
   useEffect(() => {
-    // Redirect'ten döndükten sonra result'ı işle
-    getRedirectResult(fbAuth()).catch(() => {});
-
     const unsub = onIdTokenChanged(fbAuth(), async (u) => {
       if (!u) {
         setAuthState("unauthenticated");
@@ -32,8 +29,10 @@ export default function AdminAuthGuard({
         const res = await fetch(`${API_BASE_URL}/api/auth/me`, {
           headers: { Authorization: `Bearer ${token}` },
         });
+        console.log("[AdminAuth] /me status:", res.status);
         if (!res.ok) { setAuthState("unauthorized"); return; }
         const me = await res.json();
+        console.log("[AdminAuth] me.role:", me.role);
         const isAdmin = me.role === "Admin";
         setAuthState(isAdmin ? u : "unauthorized");
       } catch {
