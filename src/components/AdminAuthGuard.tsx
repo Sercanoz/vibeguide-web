@@ -174,6 +174,46 @@ export default function AdminAuthGuard({
             >
               Analytics
             </Link>
+            <Link
+              href="/admin/reports"
+              className={`text-sm font-bold ${
+                pathname?.startsWith("/admin/reports")
+                  ? "text-vg-primary"
+                  : "text-vg-muted hover:text-vg-ink"
+              }`}
+            >
+              Reports
+            </Link>
+            <Link
+              href="/admin/dead-letters"
+              className={`text-sm font-bold ${
+                pathname?.startsWith("/admin/dead-letters")
+                  ? "text-vg-primary"
+                  : "text-vg-muted hover:text-vg-ink"
+              }`}
+            >
+              Dead Letters
+            </Link>
+            <Link
+              href="/admin/pricing"
+              className={`text-sm font-bold ${
+                pathname?.startsWith("/admin/pricing")
+                  ? "text-vg-primary"
+                  : "text-vg-muted hover:text-vg-ink"
+              }`}
+            >
+              Pricing
+            </Link>
+            <Link
+              href="/admin/pools"
+              className={`text-sm font-bold ${
+                pathname?.startsWith("/admin/pools")
+                  ? "text-vg-primary"
+                  : "text-vg-muted hover:text-vg-ink"
+              }`}
+            >
+              Pools
+            </Link>
             <span className="text-xs text-vg-muted hidden md:inline">
               {user.email}
             </span>
