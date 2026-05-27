@@ -5,6 +5,7 @@ import {
   getAuth,
   GoogleAuthProvider,
   signInWithPopup,
+  signInWithEmailAndPassword,
   signOut as fbSignOut,
   onIdTokenChanged,
   type User,
@@ -53,6 +54,11 @@ export async function signInWithGoogle(): Promise<User> {
   const provider = new GoogleAuthProvider();
   provider.setCustomParameters({ prompt: "select_account" });
   const cred = await signInWithPopup(fbAuth(), provider);
+  return cred.user;
+}
+
+export async function signInWithEmail(email: string, password: string): Promise<User> {
+  const cred = await signInWithEmailAndPassword(fbAuth(), email, password);
   return cred.user;
 }
 
