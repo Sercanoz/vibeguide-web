@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import { useParams } from "next/navigation";
 import { API_BASE_URL } from "@/lib/api";
 import { useT } from "@/components/LanguageProvider";
@@ -101,12 +101,13 @@ export default function TourDetailPage() {
   const { locale } = useT();
   const tt = getToursT(locale);
   const [tour, setTour] = useState<TourDetail | null | "loading" | "error">("loading");
-  const [activePhoto, setActivePhoto] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
-  const prevPhoto = useCallback((total: number) =>
-    setActivePhoto((i) => (i - 1 + total) % total), []);
-  const nextPhoto = useCallback((total: number) =>
-    setActivePhoto((i) => (i + 1) % total), []);
+  const openLightbox = useCallback((i: number) => { setLightboxIndex(i); setLightboxOpen(true); }, []);
+  const closeLightbox = useCallback(() => setLightboxOpen(false), []);
+  const lbPrev = useCallback((total: number) => setLightboxIndex((i) => (i - 1 + total) % total), []);
+  const lbNext = useCallback((total: number) => setLightboxIndex((i) => (i + 1) % total), []);
 
   useEffect(() => {
     if (!id) return;
@@ -218,68 +219,111 @@ export default function TourDetailPage() {
         </div>
       </nav>
 
-      {/* Hero — full-width cover photo */}
+      {/* Photo gallery hero */}
       {(() => {
         const allPhotos = tour.photos && tour.photos.length > 0
           ? tour.photos
           : tour.coverPhotoUrl
             ? [{ id: 0, url: tour.coverPhotoUrl, caption: null, ord: 0 }]
             : [];
-        const current = allPhotos[activePhoto];
+        const main = allPhotos[0];
+        const thumbs = allPhotos.slice(1, 5);
+        const remaining = allPhotos.length - 5;
+
         return (
-          <div className="relative h-[60vh] min-h-[400px] pt-16 bg-[#0A0A0F] overflow-hidden">
-            {current ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                key={current.url}
-                src={current.url}
-                alt={current.caption ?? tour.title}
-                className="absolute inset-0 w-full h-full object-cover opacity-50 transition-opacity duration-300"
-              />
-            ) : (
-              <div className="absolute inset-0 bg-gradient-to-br from-[#6C4CF1]/30 to-[#0A0A0F]" />
-            )}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0F] via-[#0A0A0F]/40 to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0F]/60 via-transparent to-transparent" />
-
-            {/* Prev / Next arrows */}
-            {allPhotos.length > 1 && (
-              <>
-                <button
-                  onClick={() => prevPhoto(allPhotos.length)}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/40 hover:bg-black/70 text-white flex items-center justify-center text-lg transition-colors z-10"
-                >‹</button>
-                <button
-                  onClick={() => nextPhoto(allPhotos.length)}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/40 hover:bg-black/70 text-white flex items-center justify-center text-lg transition-colors z-10"
-                >›</button>
-                {/* Dots */}
-                <div className="absolute bottom-24 right-6 flex gap-1.5 z-10">
-                  {allPhotos.map((_, i) => (
-                    <button
-                      key={i}
-                      onClick={() => setActivePhoto(i)}
-                      className={`w-1.5 h-1.5 rounded-full transition-all ${i === activePhoto ? "bg-white w-4" : "bg-white/50"}`}
-                    />
-                  ))}
-                </div>
-              </>
-            )}
-
-            <div className="absolute bottom-0 left-0 right-0 px-6 py-10 max-w-7xl mx-auto">
-              <span className={`inline-block px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wide mb-4 ${categoryColor(tour.category)}`}>
+          <>
+            {/* Title bar — above gallery */}
+            <div className="pt-20 pb-4 px-6 max-w-7xl mx-auto">
+              <span className={`inline-block px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wide mb-3 ${categoryColor(tour.category)}`}>
                 {tour.category}
               </span>
-              <h1 className="text-3xl md:text-5xl font-black text-white leading-tight max-w-3xl">
+              <h1 className="text-2xl md:text-4xl font-black text-[#0A0A0F] leading-tight">
                 {tour.title}
               </h1>
-              <p className="mt-3 text-white/60 flex items-center gap-3 text-sm">
+              <p className="mt-2 text-neutral-400 flex items-center gap-3 text-sm">
                 <span>📍 {tour.city}</span>
                 <span>·</span>
                 <span>🕐 {formatDuration(tour.durationMinutes)}</span>
               </p>
             </div>
-          </div>
+
+            {/* Gallery grid */}
+            {allPhotos.length > 0 && (
+              <div className="px-6 max-w-7xl mx-auto">
+                {/* Mobile: single photo + "See all X photos" button */}
+                <div className="md:hidden relative rounded-2xl overflow-hidden cursor-pointer" onClick={() => openLightbox(0)}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={main!.url} alt={main!.caption ?? tour.title} className="w-full h-64 object-cover" />
+                  {allPhotos.length > 1 && (
+                    <button className="absolute bottom-3 right-3 bg-white/90 backdrop-blur-sm text-[#0A0A0F] text-xs font-black px-3 py-1.5 rounded-xl shadow-sm">
+                      🖼️ See all {allPhotos.length} photos
+                    </button>
+                  )}
+                </div>
+
+                {/* Desktop: GYG-style big left + grid right */}
+                <div className="hidden md:grid grid-cols-[2fr_1fr] gap-2 rounded-2xl overflow-hidden h-[420px]">
+                  {/* Main large photo */}
+                  <div className="relative cursor-pointer group" onClick={() => openLightbox(0)}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={main!.url} alt={main!.caption ?? tour.title} className="w-full h-full object-cover group-hover:brightness-90 transition-all duration-200" />
+                  </div>
+
+                  {/* Right thumbnails 2x2 */}
+                  {thumbs.length > 0 && (
+                    <div className="grid grid-cols-2 grid-rows-2 gap-2">
+                      {thumbs.map((photo, i) => {
+                        const isLast = i === 3 && remaining > 0;
+                        return (
+                          <div
+                            key={photo.id}
+                            className="relative cursor-pointer group overflow-hidden"
+                            onClick={() => openLightbox(i + 1)}
+                          >
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img src={photo.url} alt={photo.caption ?? ""} className="w-full h-full object-cover group-hover:brightness-90 transition-all duration-200" />
+                            {isLast && (
+                              <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+                                <span className="text-white font-black text-sm">+{remaining + 1} photos</span>
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })}
+                      {/* Fill empty slots if fewer than 4 thumbs */}
+                      {Array.from({ length: Math.max(0, 4 - thumbs.length) }).map((_, i) => (
+                        <div key={`empty-${i}`} className="bg-neutral-100" />
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                {/* "See all photos" button */}
+                {allPhotos.length > 1 && (
+                  <div className="hidden md:flex justify-end mt-2">
+                    <button
+                      onClick={() => openLightbox(0)}
+                      className="flex items-center gap-1.5 text-xs font-black text-[#0A0A0F] border border-black/15 bg-white px-4 py-2 rounded-xl hover:bg-neutral-50 transition-colors shadow-sm"
+                    >
+                      🖼️ See all {allPhotos.length} photos
+                    </button>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Lightbox */}
+            {lightboxOpen && (
+              <Lightbox
+                photos={allPhotos}
+                index={lightboxIndex}
+                onClose={closeLightbox}
+                onPrev={() => lbPrev(allPhotos.length)}
+                onNext={() => lbNext(allPhotos.length)}
+                onSelect={setLightboxIndex}
+              />
+            )}
+          </>
         );
       })()}
 
@@ -555,5 +599,103 @@ export default function TourDetailPage() {
         </div>
       </footer>
     </main>
+  );
+}
+
+// ─── Lightbox ────────────────────────────────────────────────────────────────
+
+function Lightbox({
+  photos,
+  index,
+  onClose,
+  onPrev,
+  onNext,
+  onSelect,
+}: {
+  photos: TourPhoto[];
+  index: number;
+  onClose: () => void;
+  onPrev: () => void;
+  onNext: () => void;
+  onSelect: (i: number) => void;
+}) {
+  const thumbsRef = useRef<HTMLDivElement>(null);
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+      if (e.key === "ArrowLeft") onPrev();
+      if (e.key === "ArrowRight") onNext();
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [onClose, onPrev, onNext]);
+
+  // Scroll active thumb into view
+  useEffect(() => {
+    const el = thumbsRef.current?.children[index] as HTMLElement | undefined;
+    el?.scrollIntoView({ block: "nearest", inline: "center", behavior: "smooth" });
+  }, [index]);
+
+  const current = photos[index];
+
+  return (
+    <div className="fixed inset-0 z-50 bg-black/95 flex flex-col" onClick={onClose}>
+      {/* Top bar */}
+      <div className="flex items-center justify-between px-4 py-3 flex-shrink-0" onClick={(e) => e.stopPropagation()}>
+        <span className="text-white/60 text-sm font-semibold">{index + 1} / {photos.length}</span>
+        <button onClick={onClose} className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-lg transition-colors">✕</button>
+      </div>
+
+      {/* Main image */}
+      <div className="flex-1 flex items-center justify-center relative px-4 min-h-0" onClick={(e) => e.stopPropagation()}>
+        <button
+          onClick={onPrev}
+          className="absolute left-2 md:left-6 w-11 h-11 rounded-full bg-white/10 hover:bg-white/25 text-white flex items-center justify-center text-2xl transition-colors z-10"
+        >‹</button>
+
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          key={current.url}
+          src={current.url}
+          alt={current.caption ?? ""}
+          className="max-h-full max-w-full object-contain rounded-xl select-none"
+          style={{ maxHeight: "calc(100vh - 180px)" }}
+        />
+
+        <button
+          onClick={onNext}
+          className="absolute right-2 md:right-6 w-11 h-11 rounded-full bg-white/10 hover:bg-white/25 text-white flex items-center justify-center text-2xl transition-colors z-10"
+        >›</button>
+      </div>
+
+      {/* Caption */}
+      {current.caption && (
+        <p className="text-center text-white/60 text-sm px-6 py-2 flex-shrink-0" onClick={(e) => e.stopPropagation()}>
+          {current.caption}
+        </p>
+      )}
+
+      {/* Thumbnail strip */}
+      <div
+        ref={thumbsRef}
+        className="flex gap-2 overflow-x-auto px-4 py-3 flex-shrink-0 scrollbar-hide"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {photos.map((photo, i) => (
+          <button
+            key={photo.id}
+            onClick={() => onSelect(i)}
+            className={`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all ${
+              i === index ? "border-white scale-105" : "border-transparent opacity-50 hover:opacity-80"
+            }`}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={photo.url} alt="" className="w-full h-full object-cover" />
+          </button>
+        ))}
+      </div>
+    </div>
   );
 }
