@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { adminApi } from "@/lib/admin-api";
+import { authedFetch } from "@/lib/admin-api";
 
 type Stats = {
   users: { tourist: number; guide: number; pendingGuide: number; admin: number };
@@ -41,7 +41,7 @@ export default function AdminDashboard() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    adminApi.authedFetch<Stats>("/api/admin/stats")
+    authedFetch<Stats>("/api/admin/stats")
       .then((r) => { if (r.ok) setStats(r.data); })
       .finally(() => setLoading(false));
   }, []);
