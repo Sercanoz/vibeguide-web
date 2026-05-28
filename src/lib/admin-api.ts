@@ -222,6 +222,8 @@ export type TourSettings = {
   meetingPointLat: number | null;
   meetingPointLng: number | null;
   badges: string | null;
+  rating: number | null;
+  reviewCount: number;
   status: string;
 };
 

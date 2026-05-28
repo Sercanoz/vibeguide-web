@@ -749,6 +749,33 @@ function TourSettingsEditor({ id }: { id: number }) {
           </div>
         </SField>
 
+        <SField label="Rating & Reviews">
+          <div className="flex gap-3">
+            <div className="flex-1">
+              <label className="text-xs text-vg-muted font-semibold mb-1 block">Rating (0–5)</label>
+              <input
+                type="number"
+                min={0} max={5} step={0.1}
+                value={draft.rating ?? ""}
+                onChange={(e) => set("rating", e.target.value === "" ? null : parseFloat(e.target.value))}
+                className="w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-vg-primary"
+                placeholder="e.g. 4.8"
+              />
+            </div>
+            <div className="flex-1">
+              <label className="text-xs text-vg-muted font-semibold mb-1 block">Review count</label>
+              <input
+                type="number"
+                min={0}
+                value={draft.reviewCount ?? 0}
+                onChange={(e) => set("reviewCount", parseInt(e.target.value) || 0)}
+                className="w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-vg-primary"
+                placeholder="e.g. 124"
+              />
+            </div>
+          </div>
+        </SField>
+
         <SField label="Status">
           <select value={draft.status ?? "active"} onChange={(e) => set("status", e.target.value)}
             className="w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-vg-primary">

@@ -18,6 +18,8 @@ interface Tour {
   coverPhotoUrl?: string;
   languagesOffered?: string;
   badges?: string;
+  rating?: number;
+  reviewCount?: number;
 }
 
 interface Props {
@@ -54,8 +56,8 @@ const BADGE_META: Record<string, { label: string; color: string; dot: string }> 
   pickup_included:      { label: "Pickup included",      color: "bg-indigo-50 text-indigo-700 border-indigo-200", dot: "bg-indigo-500" },
 };
 
-/* Deterministic fake rating so it looks real but is consistent per tour */
-function fakeRating(id: number) {
+/* Fallback rating when DB value is null */
+function fallbackRating(id: number) {
   const ratings = [4.7, 4.8, 4.9, 5.0, 4.6, 4.8, 4.9, 4.7];
   const counts  = [38, 124, 87, 211, 56, 143, 72, 98];
   return { rating: ratings[id % ratings.length], count: counts[id % counts.length] };
@@ -104,7 +106,9 @@ export default function TourFilters({ tours }: Props) {
               : [];
             const topBadge = badges[0] ? BADGE_META[badges[0]] : null;
             const hasDiscount = tour.compareAtPrice != null && tour.compareAtPrice > tour.basePrice;
-            const { rating, count } = fakeRating(tour.id);
+            const fb = fallbackRating(tour.id);
+            const rating = tour.rating ?? fb.rating;
+            const count = tour.reviewCount ?? fb.count;
             const isHovered = hoveredId === tour.id;
 
             return (
