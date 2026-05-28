@@ -140,12 +140,12 @@ export default function HomePage() {
 
             <div className="mt-10 flex flex-wrap gap-6 pt-6 border-t border-black/[0.06]">
               {[
-                { icon: "🛡️", label: t.hero.b1 },
-                { icon: "⚡", label: t.hero.b2 },
-                { icon: "❤️", label: t.hero.b3 },
+                { svg: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>, label: t.hero.b1 },
+                { svg: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>, label: t.hero.b2 },
+                { svg: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>, label: t.hero.b3 },
               ].map((b) => (
                 <span key={b.label} className="flex items-center gap-2 text-sm text-neutral-400">
-                  <span>{b.icon}</span> {b.label}
+                  <span className="text-[#6C4CF1]">{b.svg}</span> {b.label}
                 </span>
               ))}
             </div>
@@ -276,7 +276,30 @@ export default function HomePage() {
                     →
                   </div>
                 )}
-                <div className="text-5xl mb-7">{["📱","🤝","🚶"][i]}</div>
+                <div className="mb-7 h-14 w-14 rounded-2xl bg-[#6C4CF1]/8 border border-[#6C4CF1]/12 flex items-center justify-center text-[#6C4CF1]">
+                  {i === 0 && (
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="5" y="2" width="14" height="20" rx="2"/>
+                      <line x1="12" y1="18" x2="12.01" y2="18"/>
+                    </svg>
+                  )}
+                  {i === 1 && (
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                      <circle cx="9" cy="7" r="4"/>
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                  )}
+                  {i === 2 && (
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="5" r="1"/>
+                      <path d="M9 20l1-5 2 2 1-5"/>
+                      <path d="M6 11l2-4h8l1 4"/>
+                      <path d="M8 7l-2 4h10"/>
+                    </svg>
+                  )}
+                </div>
                 <h3 className="text-2xl font-black">{item.title}</h3>
                 <p className="mt-3 text-sm leading-7 text-neutral-500">{item.text}</p>
               </div>
@@ -318,10 +341,10 @@ export default function HomePage() {
       {/* ── 3 MODES ── */}
       <section ref={secModes.ref as React.RefObject<HTMLElement>} id="modes" className={`py-28 bg-white reveal ${secModes.inView ? "in-view" : ""}`}>
         <div className="mx-auto max-w-7xl px-6">
-          <div className="mb-16">
+          <div className="mb-16 text-center">
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-neutral-400">{t.modesIntro.eyebrow}</p>
-            <h2 className="mt-4 text-4xl md:text-6xl font-black tracking-tight max-w-3xl leading-tight">{t.modesIntro.title}</h2>
-            <div className="mt-4 text-base leading-7 text-neutral-400 max-w-lg space-y-3">
+            <h2 className="mt-4 text-4xl md:text-6xl font-black tracking-tight leading-tight">{t.modesIntro.title}</h2>
+            <div className="mt-4 text-base leading-7 text-neutral-400 max-w-lg mx-auto space-y-3">
               {t.modesIntro.sub.split("\n\n").map((para, i) => (
                 <p key={i} style={{ whiteSpace: "pre-line" }}>{para}</p>
               ))}
@@ -481,8 +504,11 @@ export default function HomePage() {
               <div className="mt-12 space-y-8">
                 {t.trust.items.map((item, i) => (
                   <div key={item.title} className="flex gap-5">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#F7F7FB] text-xl border border-black/5">
-                      {["🪪", "✅", "📋", "🚫"][i]}
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#F7F7FB] border border-black/5 text-[#6C4CF1]">
+                      {i === 0 && <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>}
+                      {i === 1 && <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>}
+                      {i === 2 && <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>}
+                      {i === 3 && <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>}
                     </div>
                     <div>
                       <p className="font-black text-[15px]">{item.title}</p>
