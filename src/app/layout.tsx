@@ -122,6 +122,13 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css"
         />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-SH98TTW4KS" />
+        <script dangerouslySetInnerHTML={{ __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-SH98TTW4KS');
+        `}} />
       </head>
       <body className="min-h-full flex flex-col bg-white text-vg-ink">
         <LanguageProvider>{children}</LanguageProvider>
