@@ -27,7 +27,6 @@ export default function RegisterGuidePage() {
 
   const [fullName, setFullName] = useState("");
   const [city, setCity] = useState("Istanbul");
-  const [languages, setLanguages] = useState("en");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
@@ -62,7 +61,7 @@ export default function RegisterGuidePage() {
         fullName: fullName.trim(),
         phoneNumber: null,
         city: city.trim(),
-        languages,
+        languages: "",
         badgeFrontUrl,
         badgeBackUrl,
         idCardFrontUrl: badgeFrontUrl,
@@ -266,14 +265,6 @@ export default function RegisterGuidePage() {
                   <option key={c} value={c}>{c}</option>
                 ))}
               </select>
-            </div>
-
-            <div>
-              <label className="text-xs font-bold text-neutral-500 mb-1.5 block">Languages you guide in *</label>
-              <input type="text" required value={languages} onChange={(e) => setLanguages(e.target.value)}
-                className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors"
-                placeholder="en, tr, de" />
-              <p className="text-[10px] text-neutral-400 mt-1">Comma-separated language codes</p>
             </div>
 
             {/* Badge photos */}
