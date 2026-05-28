@@ -5,7 +5,7 @@ import { useParams } from "next/navigation";
 import { API_BASE_URL } from "@/lib/api";
 import { useT } from "@/components/LanguageProvider";
 import { getToursT } from "@/lib/i18n";
-import LanguageSwitcher from "@/components/LanguageSwitcher";
+import Navbar from "@/components/Navbar";
 
 interface Place {
   id: number;
@@ -126,19 +126,7 @@ export default function TourDetailPage() {
   if (tour === "loading") {
     return (
       <main className="min-h-screen bg-white antialiased">
-        <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-black/[0.06] shadow-sm">
-          <div className="mx-auto flex max-w-7xl items-center justify-between px-6 h-16">
-            <a href="/" className="flex items-center gap-2.5 text-xl font-black tracking-tight text-[#0A0A0F]">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/vibeguide-icon.png" alt="VibeGuide" width={32} height={32} style={{ mixBlendMode: "multiply" }} />
-              VibeGuide
-            </a>
-            <div className="flex items-center gap-3">
-              <LanguageSwitcher />
-              <a href="/#download" className="rounded-full bg-[#6C4CF1] px-5 py-2 text-sm font-semibold text-white hover:bg-[#5a3dd4] transition-colors shadow-sm">Get the App</a>
-            </div>
-          </div>
-        </nav>
+        <Navbar activePage="tours" />
         <div className="pt-16 animate-pulse">
           <div className="h-[60vh] bg-neutral-100" />
           <div className="max-w-7xl mx-auto px-6 py-12 space-y-4">
@@ -195,30 +183,7 @@ export default function TourDetailPage() {
 
   return (
     <main className="min-h-screen bg-white text-[#0A0A0F] antialiased">
-      {/* Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-xl border-b border-black/[0.06] shadow-sm shadow-black/5">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 h-16">
-          <a href="/" className="flex items-center gap-2.5 text-xl font-black tracking-tight text-[#0A0A0F]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/vibeguide-icon.png" alt="VibeGuide" width={32} height={32} style={{ mixBlendMode: "multiply" }} />
-            VibeGuide
-          </a>
-          <div className="hidden gap-8 text-sm font-medium md:flex">
-            <a href="/#how" className="text-neutral-500 hover:text-black transition-colors">{tt.navHow}</a>
-            <a href="/tours" className="text-[#6C4CF1] font-semibold">{tt.navTours}</a>
-            <a href="/#destinations" className="text-neutral-500 hover:text-black transition-colors">{tt.navDestinations}</a>
-          </div>
-          <div className="flex items-center gap-3">
-            <LanguageSwitcher />
-            <a
-              href="/#download"
-              className="rounded-full bg-[#6C4CF1] px-5 py-2 text-sm font-semibold text-white hover:bg-[#5a3dd4] transition-colors shadow-sm"
-            >
-              Get the App
-            </a>
-          </div>
-        </div>
-      </nav>
+      <Navbar activePage="tours" />
 
       {/* Photo gallery hero */}
       {(() => {
