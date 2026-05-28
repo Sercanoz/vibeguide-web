@@ -1,7 +1,8 @@
 "use client";
 
-import { use, useEffect, useState } from "react";
+import { use, useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { uploadTourPhoto } from "@/lib/firebase-storage";
 import {
   adminApi,
   type TourDetail,
@@ -573,6 +574,8 @@ function TourSettingsEditor({ id }: { id: number }) {
   const [draft, setDraft] = useState<Partial<TourSettings>>({});
   const [saving, setSaving] = useState(false);
   const [flash, setFlash] = useState<string | null>(null);
+  const [uploadProgress, setUploadProgress] = useState<number | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     adminApi.getTourSettings(id).then((r) => {
@@ -655,13 +658,56 @@ function TourSettingsEditor({ id }: { id: number }) {
             className="w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-vg-primary" placeholder="en,tr,de,fr" />
         </SField>
 
-        <SField label="Cover photo URL">
-          <input value={draft.coverPhotoUrl ?? ""} onChange={(e) => set("coverPhotoUrl", e.target.value)}
-            className="w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-vg-primary" placeholder="https://…" />
+        <SField label="Cover photo">
+          {/* Preview */}
           {draft.coverPhotoUrl && (
             // eslint-disable-next-line @next/next/no-img-element
-            <img src={draft.coverPhotoUrl} alt="cover preview" className="mt-2 h-32 w-full object-cover rounded-xl" />
+            <img src={draft.coverPhotoUrl} alt="cover preview" className="mb-2 h-40 w-full object-cover rounded-xl border border-vg-border" />
           )}
+
+          {/* Upload button */}
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept="image/*"
+            className="hidden"
+            onChange={(e) => {
+              const file = e.target.files?.[0];
+              if (!file) return;
+              setUploadProgress(0);
+              uploadTourPhoto(id, file, ({ progress, url, error }) => {
+                if (error) { setUploadProgress(null); setFlash(`Upload failed: ${error}`); return; }
+                setUploadProgress(progress);
+                if (url) { set("coverPhotoUrl", url); setUploadProgress(null); }
+              });
+              e.target.value = "";
+            }}
+          />
+          <div className="flex gap-2">
+            <button
+              type="button"
+              onClick={() => fileInputRef.current?.click()}
+              disabled={uploadProgress !== null}
+              className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-vg-border bg-vg-bg-soft text-sm font-bold text-vg-ink hover:border-vg-primary hover:text-vg-primary transition-colors disabled:opacity-50"
+            >
+              {uploadProgress !== null ? `Uploading ${uploadProgress}%…` : "📁 Upload photo"}
+            </button>
+            {uploadProgress !== null && (
+              <div className="flex-1 flex items-center">
+                <div className="w-full bg-vg-border rounded-full h-1.5">
+                  <div className="bg-vg-primary h-1.5 rounded-full transition-all" style={{ width: `${uploadProgress}%` }} />
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Or paste URL manually */}
+          <input
+            value={draft.coverPhotoUrl ?? ""}
+            onChange={(e) => set("coverPhotoUrl", e.target.value)}
+            className="mt-2 w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-vg-primary text-vg-muted"
+            placeholder="or paste URL directly…"
+          />
         </SField>
 
         <SField label="Status">

@@ -18,7 +18,7 @@ const securityHeaders = [
       "default-src 'self'",
       "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://apis.google.com",
       "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net",
-      "img-src 'self' data: blob: https://images.unsplash.com https://static.independent.co.uk https://encrypted-tbn0.gstatic.com https://flagcdn.com https://haritaapitest-production.up.railway.app",
+      "img-src 'self' data: blob: https://images.unsplash.com https://static.independent.co.uk https://encrypted-tbn0.gstatic.com https://flagcdn.com https://haritaapitest-production.up.railway.app https://firebasestorage.googleapis.com",
       "connect-src 'self' https://*.firebaseio.com https://*.googleapis.com https://haritaapitest-production.up.railway.app wss://haritaapitest-production.up.railway.app",
       "font-src 'self' https://cdn.jsdelivr.net",
       "frame-src https://vibeguide-2da83.firebaseapp.com",
@@ -33,6 +33,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "static.independent.co.uk" },
       { protocol: "https", hostname: "encrypted-tbn0.gstatic.com" },
       { protocol: "https", hostname: "haritaapitest-production.up.railway.app" },
+      { protocol: "https", hostname: "firebasestorage.googleapis.com" },
     ],
   },
   async headers() {
