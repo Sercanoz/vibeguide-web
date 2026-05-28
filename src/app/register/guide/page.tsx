@@ -26,7 +26,6 @@ export default function RegisterGuidePage() {
   const [step, setStep] = useState<"form" | "verify" | "pending">("form");
 
   const [fullName, setFullName] = useState("");
-  const [city, setCity] = useState("Istanbul");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
@@ -60,7 +59,7 @@ export default function RegisterGuidePage() {
       body: JSON.stringify({
         fullName: fullName.trim(),
         phoneNumber: null,
-        city: city.trim(),
+        city: "",
         languages: "",
         badgeFrontUrl,
         badgeBackUrl,
@@ -255,16 +254,6 @@ export default function RegisterGuidePage() {
               <input type="text" required value={fullName} onChange={(e) => setFullName(e.target.value)}
                 className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors"
                 placeholder="John Doe" />
-            </div>
-
-            <div>
-              <label className="text-xs font-bold text-neutral-500 mb-1.5 block">City *</label>
-              <select value={city} onChange={(e) => setCity(e.target.value)}
-                className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors bg-white">
-                {["Istanbul","Cappadocia","Ephesus","Pamukkale","Antalya","Bodrum","Izmir","Ankara","Trabzon","Mardin"].map(c => (
-                  <option key={c} value={c}>{c}</option>
-                ))}
-              </select>
             </div>
 
             {/* Badge photos */}
