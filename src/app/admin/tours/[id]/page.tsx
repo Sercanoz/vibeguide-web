@@ -9,6 +9,7 @@ import {
   type TourPlacesDetail,
   type PlaceRow,
   type TourSettings,
+  type TourInclude,
 } from "@/lib/admin-api";
 
 const LOCALE_LABELS: Record<string, string> = {
@@ -105,7 +106,10 @@ function Editor({ id }: { id: number }) {
       ) : tab === "places" ? (
         <PlacesTranslationEditor tourId={id} isTranslateConfigured={data.isTranslateConfigured} canonicalLocale={data.tour.canonicalLocale} />
       ) : (
-        <TourSettingsEditor id={id} />
+        <>
+          <TourSettingsEditor id={id} />
+          <IncludesEditor tourId={id} />
+        </>
       )}
     </div>
   );
@@ -667,6 +671,110 @@ function TourSettingsEditor({ id }: { id: number }) {
           <button onClick={onSave} disabled={saving}
             className="bg-vibe-gradient text-white font-black px-8 py-3 rounded-xl shadow-lg shadow-purple-500/30 hover:scale-[1.02] transition-transform disabled:opacity-50">
             {saving ? "Saving…" : "💾 Save settings"}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── Tour Includes Editor ─────────────────────────────────────────────────────
+
+function IncludesEditor({ tourId }: { tourId: number }) {
+  const [items, setItems] = useState<TourInclude[]>([]);
+  const [newLabel, setNewLabel] = useState("");
+  const [newIsIncluded, setNewIsIncluded] = useState(true);
+  const [adding, setAdding] = useState(false);
+  const [flash, setFlash] = useState<string | null>(null);
+
+  const load = async () => {
+    const r = await adminApi.listIncludes(tourId);
+    if (r.ok) setItems(r.data);
+  };
+
+  useEffect(() => { load(); }, [tourId]);
+
+  const onAdd = async () => {
+    if (!newLabel.trim()) return;
+    setAdding(true); setFlash(null);
+    const r = await adminApi.addInclude(tourId, { label: newLabel.trim(), isIncluded: newIsIncluded });
+    setAdding(false);
+    if (r.ok) { setNewLabel(""); await load(); }
+    else setFlash(`Failed: ${r.error ?? r.status}`);
+  };
+
+  const onToggle = async (item: TourInclude) => {
+    await adminApi.updateInclude(tourId, item.id, { label: item.label, isIncluded: !item.isIncluded });
+    await load();
+  };
+
+  const onDelete = async (id: number) => {
+    await adminApi.deleteInclude(tourId, id);
+    await load();
+  };
+
+  return (
+    <div className="mt-6 max-w-2xl">
+      <div className="rounded-3xl bg-white border border-vg-border p-6 shadow-sm">
+        <h3 className="text-sm font-black uppercase tracking-widest text-vg-muted mb-4">
+          What&apos;s included / not included
+        </h3>
+
+        {flash && (
+          <div className="mb-4 rounded-xl px-4 py-2 text-sm bg-red-50 border border-red-200 text-red-800">{flash}</div>
+        )}
+
+        {/* Existing items */}
+        <div className="space-y-2 mb-5">
+          {items.length === 0 && <p className="text-sm text-vg-muted">No items yet.</p>}
+          {items.map((item) => (
+            <div key={item.id} className="flex items-center gap-3 rounded-xl bg-vg-bg-soft border border-vg-border px-4 py-3">
+              <button
+                onClick={() => onToggle(item)}
+                className={`text-lg w-7 h-7 flex items-center justify-center rounded-full border font-bold transition-colors ${
+                  item.isIncluded
+                    ? "bg-emerald-50 border-emerald-200 text-emerald-600"
+                    : "bg-red-50 border-red-200 text-red-500"
+                }`}
+              >
+                {item.isIncluded ? "✓" : "✗"}
+              </button>
+              <span className="flex-1 text-sm text-vg-ink">{item.label}</span>
+              <button
+                onClick={() => onDelete(item.id)}
+                className="text-vg-muted hover:text-red-500 text-xs font-bold px-2"
+              >
+                ✕
+              </button>
+            </div>
+          ))}
+        </div>
+
+        {/* Add new item */}
+        <div className="flex gap-2">
+          <button
+            onClick={() => setNewIsIncluded(!newIsIncluded)}
+            className={`text-lg w-10 h-10 flex-none flex items-center justify-center rounded-xl border font-bold transition-colors ${
+              newIsIncluded
+                ? "bg-emerald-50 border-emerald-200 text-emerald-600"
+                : "bg-red-50 border-red-200 text-red-500"
+            }`}
+          >
+            {newIsIncluded ? "✓" : "✗"}
+          </button>
+          <input
+            value={newLabel}
+            onChange={(e) => setNewLabel(e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && onAdd()}
+            placeholder="e.g. Entrance ticket, Lunch, Transport…"
+            className="flex-1 bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-vg-primary"
+          />
+          <button
+            onClick={onAdd}
+            disabled={adding || !newLabel.trim()}
+            className="bg-vibe-gradient text-white font-black px-5 rounded-xl text-sm shadow-lg shadow-purple-500/30 disabled:opacity-40"
+          >
+            {adding ? "…" : "Add"}
           </button>
         </div>
       </div>

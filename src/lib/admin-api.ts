@@ -97,6 +97,13 @@ export type GuidePerf = {
   totalEarnings: number;
 };
 
+export type TourInclude = {
+  id: number;
+  label: string;
+  isIncluded: boolean;
+  ord: number;
+};
+
 export type ApiResult<T> =
   | { ok: true; data: T }
   | { ok: false; status: number; error?: string };
@@ -485,6 +492,28 @@ export const adminApi = {
   lockPool: (id: number) =>
     authedFetch<{ ok: true }>(`/api/admin/pools/${id}/lock`, {
       method: "POST",
+    }),
+
+  // ════════ TOUR INCLUDES ════════
+
+  listIncludes: (tourId: number) =>
+    authedFetch<TourInclude[]>(`/api/admin/tours/${tourId}/includes`),
+
+  addInclude: (tourId: number, body: { label: string; isIncluded: boolean; ord?: number }) =>
+    authedFetch<{ id: number }>(`/api/admin/tours/${tourId}/includes`, {
+      method: "POST",
+      body: JSON.stringify(body),
+    }),
+
+  updateInclude: (tourId: number, includeId: number, body: { label: string; isIncluded: boolean; ord?: number }) =>
+    authedFetch<{ ok: true }>(`/api/admin/tours/${tourId}/includes/${includeId}`, {
+      method: "PUT",
+      body: JSON.stringify(body),
+    }),
+
+  deleteInclude: (tourId: number, includeId: number) =>
+    authedFetch<{ ok: true }>(`/api/admin/tours/${tourId}/includes/${includeId}`, {
+      method: "DELETE",
     }),
 };
 

@@ -31,6 +31,13 @@ interface LanguagePrice {
   price: number;
 }
 
+interface TourInclude {
+  id: number;
+  label: string;
+  isIncluded: boolean;
+  ord: number;
+}
+
 interface TourDetail {
   id: number;
   title: string;
@@ -50,6 +57,7 @@ interface TourDetail {
   places?: Place[];
   pricingTiers?: PricingTier[];
   languagePrices?: LanguagePrice[];
+  includes?: TourInclude[];
 }
 
 function formatDuration(minutes: number): string {
@@ -240,6 +248,33 @@ export default function TourDetailPage() {
                     </li>
                   ))}
               </ol>
+            </div>
+          )}
+
+          {tour.includes && tour.includes.length > 0 && (
+            <div>
+              <h2 className="text-2xl font-black mb-5">What&apos;s Included</h2>
+              <div className="grid sm:grid-cols-2 gap-2">
+                {[...tour.includes]
+                  .sort((a, b) => a.ord - b.ord)
+                  .map((item) => (
+                    <div
+                      key={item.id}
+                      className={`flex items-center gap-3 rounded-xl px-4 py-3 border text-sm font-medium ${
+                        item.isIncluded
+                          ? "bg-emerald-50 border-emerald-100 text-emerald-800"
+                          : "bg-red-50 border-red-100 text-red-700"
+                      }`}
+                    >
+                      <span className={`flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-black ${
+                        item.isIncluded ? "bg-emerald-500 text-white" : "bg-red-400 text-white"
+                      }`}>
+                        {item.isIncluded ? "✓" : "✗"}
+                      </span>
+                      {item.label}
+                    </div>
+                  ))}
+              </div>
             </div>
           )}
 
