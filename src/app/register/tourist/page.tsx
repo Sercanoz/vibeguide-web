@@ -10,9 +10,6 @@ export default function RegisterTouristPage() {
 
   const [step, setStep] = useState<"form" | "verify">("form");
   const [fullName, setFullName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [nationality, setNationality] = useState("");
-  const [language, setLanguage] = useState("en");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
@@ -29,9 +26,6 @@ export default function RegisterTouristPage() {
       headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
       body: JSON.stringify({
         fullName: fullName.trim(),
-        phoneNumber: phone.trim() || null,
-        nationality: nationality.trim() || null,
-        preferredLanguage: language,
       }),
     });
     if (res.status === 409) {
@@ -178,37 +172,6 @@ export default function RegisterTouristPage() {
                 className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors"
                 placeholder="John Doe"
               />
-            </div>
-
-            <div className="grid grid-cols-2 gap-3">
-              <div>
-                <label className="text-xs font-bold text-neutral-500 mb-1.5 block">Phone</label>
-                <input
-                  type="tel" value={phone} onChange={(e) => setPhone(e.target.value)}
-                  className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors"
-                  placeholder="+1 555 000"
-                />
-              </div>
-              <div>
-                <label className="text-xs font-bold text-neutral-500 mb-1.5 block">Nationality</label>
-                <input
-                  type="text" value={nationality} onChange={(e) => setNationality(e.target.value)}
-                  className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors"
-                  placeholder="American"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label className="text-xs font-bold text-neutral-500 mb-1.5 block">Preferred language</label>
-              <select
-                value={language} onChange={(e) => setLanguage(e.target.value)}
-                className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors bg-white"
-              >
-                {[["en","English"],["tr","Türkçe"],["de","Deutsch"],["fr","Français"],["ru","Русский"],["es","Español"],["it","Italiano"],["ar","العربية"],["zh","中文"],["ja","日本語"],["ko","한국어"]].map(([v, l]) => (
-                  <option key={v} value={v}>{l}</option>
-                ))}
-              </select>
             </div>
 
             <div>

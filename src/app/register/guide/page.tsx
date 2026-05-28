@@ -26,7 +26,6 @@ export default function RegisterGuidePage() {
   const [step, setStep] = useState<"form" | "verify" | "pending">("form");
 
   const [fullName, setFullName] = useState("");
-  const [phone, setPhone] = useState("");
   const [city, setCity] = useState("Istanbul");
   const [languages, setLanguages] = useState("en");
   const [email, setEmail] = useState("");
@@ -61,7 +60,7 @@ export default function RegisterGuidePage() {
       headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
       body: JSON.stringify({
         fullName: fullName.trim(),
-        phoneNumber: phone.trim() || null,
+        phoneNumber: null,
         city: city.trim(),
         languages,
         badgeFrontUrl,
@@ -259,22 +258,14 @@ export default function RegisterGuidePage() {
                 placeholder="John Doe" />
             </div>
 
-            <div className="grid grid-cols-2 gap-3">
-              <div>
-                <label className="text-xs font-bold text-neutral-500 mb-1.5 block">Phone</label>
-                <input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)}
-                  className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors"
-                  placeholder="+90 555 000" />
-              </div>
-              <div>
-                <label className="text-xs font-bold text-neutral-500 mb-1.5 block">City *</label>
-                <select value={city} onChange={(e) => setCity(e.target.value)}
-                  className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors bg-white">
-                  {["Istanbul","Cappadocia","Ephesus","Pamukkale","Antalya","Bodrum","Izmir","Ankara","Trabzon","Mardin"].map(c => (
-                    <option key={c} value={c}>{c}</option>
-                  ))}
-                </select>
-              </div>
+            <div>
+              <label className="text-xs font-bold text-neutral-500 mb-1.5 block">City *</label>
+              <select value={city} onChange={(e) => setCity(e.target.value)}
+                className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors bg-white">
+                {["Istanbul","Cappadocia","Ephesus","Pamukkale","Antalya","Bodrum","Izmir","Ankara","Trabzon","Mardin"].map(c => (
+                  <option key={c} value={c}>{c}</option>
+                ))}
+              </select>
             </div>
 
             <div>
