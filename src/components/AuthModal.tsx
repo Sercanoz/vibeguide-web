@@ -187,7 +187,6 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
   return (
     <div ref={overlayRef} className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm" onClick={(e) => { if (e.target === overlayRef.current) onClose(); }}>
       <div className="bg-white rounded-3xl shadow-2xl w-full max-w-sm relative overflow-hidden">
-        <div className="h-1 w-full bg-gradient-to-r from-[#6C4CF1] via-[#8B5CF6] to-[#EC4899]" />
 
         <div className="p-7">
           <button onClick={onClose} className="absolute top-5 right-5 w-8 h-8 rounded-full bg-neutral-100 flex items-center justify-center text-neutral-400 hover:bg-neutral-200 transition-colors text-sm">✕</button>
