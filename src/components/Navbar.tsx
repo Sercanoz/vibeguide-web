@@ -54,12 +54,15 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
 
         <div className="flex items-center gap-3">
           <LanguageSwitcher />
+          <a href="/login" className="hidden md:block text-sm font-semibold text-neutral-500 hover:text-[#0A0A0F] transition-colors">
+            Sign in
+          </a>
           <a
-            href="/#download"
+            href="/register"
             className="hidden md:block rounded-full bg-[#6C4CF1] px-5 py-2 text-sm font-semibold text-white hover:bg-[#5a3dd4] transition-colors"
             style={{ boxShadow: "0 2px 12px rgba(108,76,241,0.25)" }}
           >
-            {t.nav.cta}
+            Register
           </a>
           <button
             className="md:hidden flex flex-col justify-center items-center w-9 h-9 gap-1.5"
@@ -85,12 +88,13 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
               {l.label}
             </a>
           ))}
-          <a
-            href="/#download"
-            onClick={() => setMenuOpen(false)}
-            className="mt-3 flex items-center justify-center rounded-full bg-[#6C4CF1] px-5 py-3 text-sm font-bold text-white"
-          >
-            {t.nav.cta}
+          <a href="/login" onClick={() => setMenuOpen(false)}
+            className="mt-3 flex items-center justify-center rounded-full border border-black/10 px-5 py-3 text-sm font-bold text-[#0A0A0F]">
+            Sign in
+          </a>
+          <a href="/register" onClick={() => setMenuOpen(false)}
+            className="mt-2 flex items-center justify-center rounded-full bg-[#6C4CF1] px-5 py-3 text-sm font-bold text-white">
+            Register
           </a>
         </div>
       </div>

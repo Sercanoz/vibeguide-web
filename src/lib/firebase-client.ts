@@ -6,6 +6,8 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  sendEmailVerification,
   signOut as fbSignOut,
   onIdTokenChanged,
   type User,
@@ -48,6 +50,12 @@ export function fbAuth(): Auth {
   if (_auth) return _auth;
   _auth = getAuth(fbApp());
   return _auth;
+}
+
+export async function registerWithEmail(email: string, password: string): Promise<User> {
+  const cred = await createUserWithEmailAndPassword(fbAuth(), email, password);
+  await sendEmailVerification(cred.user);
+  return cred.user;
 }
 
 export async function signInWithGoogle(): Promise<User> {
