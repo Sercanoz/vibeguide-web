@@ -7,7 +7,7 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import AuthModal from "./AuthModal";
 
 export default function Navbar({ activePage }: { activePage?: "tours" | "home" }) {
-  const { locale, ready } = useT();
+  const { locale } = useT();
   const t = homeTranslations[locale];
   const [menuOpen, setMenuOpen] = useState(false);
   const [authModal, setAuthModal] = useState<"signin" | "register" | null>(null);
@@ -43,7 +43,7 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
             VibeGuide
           </a>
 
-          <div className={`hidden gap-8 text-sm font-medium md:flex transition-opacity duration-150 ${ready ? "opacity-100" : "opacity-0"}`}>
+          <div className="hidden gap-8 text-sm font-medium md:flex">
             {navLinks.map((l) => (
               <a key={l.href} href={l.href}
                 className={`transition-colors font-medium ${activePage === "tours" && l.key === "tours" ? "text-[#6C4CF1] font-semibold" : "text-neutral-400 hover:text-[#0A0A0F]"}`}>

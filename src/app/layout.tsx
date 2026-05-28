@@ -1,9 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+import { headers } from "next/headers";
 import "./globals.css";
 import JsonLd from "@/components/JsonLd";
 import { LanguageProvider } from "@/components/LanguageProvider";
 import CookieBanner from "@/components/CookieBanner";
+import type { Locale } from "@/lib/i18n";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -110,13 +112,16 @@ export const viewport: Viewport = {
   maximumScale: 5,
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const headersList = await headers();
+  const locale = (headersList.get("x-locale") ?? "en") as Locale;
+
   return (
-    <html lang="en" className={`${inter.variable} h-full antialiased`}>
+    <html lang={locale} className={`${inter.variable} h-full antialiased`}>
       <head>
         <JsonLd />
         <link
@@ -135,7 +140,7 @@ export default function RootLayout({
         `}} />
       </head>
       <body className="min-h-full flex flex-col bg-white text-vg-ink">
-        <LanguageProvider>
+        <LanguageProvider initialLocale={locale}>
           {children}
           <CookieBanner />
         </LanguageProvider>
