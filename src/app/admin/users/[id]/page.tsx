@@ -9,7 +9,7 @@ type Props = { params: Promise<{ id: string }> };
 type UserDetail = {
   id: number; fullName: string; email: string; role: string;
   createdAtUtc: string; isActive: boolean; phoneNumber: string | null;
-  guideProfile?: { city: string | null; languages: string | null; rating: number | null; reviewCount: number };
+  guideProfile?: { city: string | null; languages: string | null; rating: number | null };
   touristProfile?: { nationality: string | null; preferredLanguage: string | null };
 };
 
@@ -111,7 +111,7 @@ export default function UserDetailPage(props: Props) {
                   <div className="flex justify-between"><span className="text-xs text-neutral-400">Languages</span><span className="text-xs font-semibold">{user.guideProfile.languages}</span></div>
                 )}
                 {user.guideProfile.rating && (
-                  <div className="flex justify-between"><span className="text-xs text-neutral-400">Rating</span><span className="text-xs font-bold text-amber-600">⭐ {user.guideProfile.rating} ({user.guideProfile.reviewCount})</span></div>
+                  <div className="flex justify-between"><span className="text-xs text-neutral-400">Rating</span><span className="text-xs font-bold text-amber-600">⭐ {user.guideProfile.rating}</span></div>
                 )}
               </div>
             )}
