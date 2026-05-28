@@ -38,38 +38,24 @@ export default function LanguageSwitcher() {
         </svg>
       </button>
       {open && (
-        <div className="absolute right-0 mt-2 w-44 rounded-2xl bg-white border border-vg-border shadow-xl overflow-hidden z-50">
-          {locales.map((l: Locale) => {
-            const selected = l === locale;
-            return (
-              <button
-                key={l}
-                onClick={() => {
-                  setLocale(l);
-                  setOpen(false);
-                }}
-                className={`w-full flex items-center gap-3 px-4 py-3 text-sm font-bold text-left transition-colors ${
-                  selected
-                    ? "bg-vg-primary/10 text-vg-primary"
-                    : "hover:bg-vg-bg-soft text-vg-ink"
-                }`}
-              >
-                <img src={`https://flagcdn.com/w20/${localeMeta[l].flagCode}.png`} width={20} height={15} alt={localeMeta[l].label} className="rounded-sm" />
-                <span className="flex-1">{localeMeta[l].label}</span>
-                {selected && (
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path
-                      d="M3.5 8.5L6.5 11.5L12.5 5.5"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                )}
-              </button>
-            );
-          })}
+        <div className="absolute right-0 mt-2 w-56 rounded-2xl bg-white border border-vg-border shadow-xl overflow-hidden z-50">
+          <div className="grid grid-cols-2">
+            {locales.map((l: Locale) => {
+              const selected = l === locale;
+              return (
+                <button
+                  key={l}
+                  onClick={() => { setLocale(l); setOpen(false); }}
+                  className={`flex items-center gap-2 px-3 py-2.5 text-sm font-bold text-left transition-colors ${
+                    selected ? "bg-vg-primary/10 text-vg-primary" : "hover:bg-vg-bg-soft text-vg-ink"
+                  }`}
+                >
+                  <img src={`https://flagcdn.com/w20/${localeMeta[l].flagCode}.png`} width={18} height={13} alt={localeMeta[l].label} className="rounded-sm shrink-0" />
+                  <span className="truncate text-xs">{localeMeta[l].label}</span>
+                </button>
+              );
+            })}
+          </div>
         </div>
       )}
     </div>
