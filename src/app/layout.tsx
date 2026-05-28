@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import JsonLd from "@/components/JsonLd";
 import { LanguageProvider } from "@/components/LanguageProvider";
+import CookieBanner from "@/components/CookieBanner";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -126,12 +127,18 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: `
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
+          gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied' });
           gtag('js', new Date());
           gtag('config', 'G-SH98TTW4KS');
+          var c = localStorage.getItem('vg_cookie_consent');
+          if (c === 'accepted') gtag('consent', 'update', { analytics_storage: 'granted' });
         `}} />
       </head>
       <body className="min-h-full flex flex-col bg-white text-vg-ink">
-        <LanguageProvider>{children}</LanguageProvider>
+        <LanguageProvider>
+          {children}
+          <CookieBanner />
+        </LanguageProvider>
       </body>
     </html>
   );
