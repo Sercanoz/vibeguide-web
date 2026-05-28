@@ -26,6 +26,8 @@ type GuideDetail = {
     fullName: string;
     canonicalBio: string | null;
     canonicalLocale: string;
+    languages: string | null;
+    city: string | null;
   };
   translations: {
     guideUserId: number;
