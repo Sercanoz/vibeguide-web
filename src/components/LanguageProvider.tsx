@@ -7,6 +7,7 @@ type Ctx = {
   locale: Locale;
   setLocale: (l: Locale) => void;
   t: (typeof i18n)[Locale];
+  ready: boolean;
 };
 
 const LanguageCtx = createContext<Ctx | null>(null);
@@ -56,11 +57,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <LanguageCtx.Provider value={{ locale, setLocale, t: i18n[locale] }}>
-      {/* Hide content until locale is resolved to prevent flash */}
-      <div style={{ visibility: ready ? "visible" : "hidden" }}>
-        {children}
-      </div>
+    <LanguageCtx.Provider value={{ locale, setLocale, t: i18n[locale], ready }}>
+      {children}
     </LanguageCtx.Provider>
   );
 }

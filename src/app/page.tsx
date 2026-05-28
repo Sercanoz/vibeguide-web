@@ -7,7 +7,7 @@ import { useInView } from "@/hooks/useInView";
 import Navbar from "@/components/Navbar";
 
 export default function HomePage() {
-  const { locale } = useT();
+  const { locale, ready } = useT();
   const t = homeTranslations[locale];
 
   const secHow = useInView();
@@ -32,7 +32,7 @@ export default function HomePage() {
         {/* Dot grid */}
         <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: "radial-gradient(circle, #6C4CF1 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
 
-        <div className="relative mx-auto max-w-7xl px-6 py-28 grid md:grid-cols-2 gap-16 items-center w-full">
+        <div className={`relative mx-auto max-w-7xl px-6 py-28 grid md:grid-cols-2 gap-16 items-center w-full transition-opacity duration-200 ${ready ? "opacity-100" : "opacity-0"}`}>
           {/* Copy */}
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-[#6C4CF1]/15 bg-[#6C4CF1]/5 px-4 py-2 text-sm font-semibold text-[#6C4CF1] mb-8 animate-[fadeSlideUp_0.7s_ease_both]">
