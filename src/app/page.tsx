@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { useT } from "@/components/LanguageProvider";
-import LocaleSwitcher from "@/components/LocaleSwitcher";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { homeTranslations } from "@/lib/home-i18n";
 import { useInView } from "@/hooks/useInView";
 
@@ -57,7 +57,7 @@ export default function HomePage() {
           </div>
 
           <div className="flex items-center gap-3">
-            <LocaleSwitcher />
+            <LanguageSwitcher />
             <a href="#download" className="hidden md:block rounded-full bg-[#6C4CF1] px-5 py-2 text-sm font-semibold text-white hover:bg-[#5a3dd4] transition-colors" style={{ boxShadow: "0 2px 12px rgba(108,76,241,0.25)" }}>
               {t.nav.cta}
             </a>

@@ -27,7 +27,7 @@ export default function LanguageSwitcher() {
         aria-label="Change language"
       >
         <img src={`https://flagcdn.com/w20/${localeMeta[locale].flagCode}.png`} width={20} height={15} alt={localeMeta[locale].label} className="rounded-sm" />
-        <span>{localeMeta[locale].label}</span>
+        <span className="uppercase text-xs tracking-wide">{locale}</span>
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
           <path
             d="M3 4.5L6 7.5L9 4.5"
