@@ -10,6 +10,7 @@ import {
   type PlaceRow,
   type TourSettings,
   type TourInclude,
+  type TourImportantInfo,
 } from "@/lib/admin-api";
 
 const LOCALE_LABELS: Record<string, string> = {
@@ -34,7 +35,7 @@ export default function AdminTourEditor(props: Props) {
   return <Editor id={id} />;
 }
 
-type Tab = "tour" | "places" | "settings";
+type Tab = "tour" | "places" | "meeting" | "includes" | "info" | "settings";
 
 function Editor({ id }: { id: number }) {
   const [tab, setTab] = useState<Tab>("tour");
@@ -85,18 +86,25 @@ function Editor({ id }: { id: number }) {
       </div>
 
       {/* Tab switcher */}
-      <div className="mt-5 flex gap-1 border-b border-vg-border pb-0">
-        {(["tour", "places", "settings"] as Tab[]).map((t) => (
+      <div className="mt-5 flex flex-wrap gap-1 border-b border-vg-border pb-0">
+        {([
+          ["tour", "Tour content"],
+          ["places", "📍 Stops"],
+          ["meeting", "🗺️ Meeting point"],
+          ["includes", "✓ Includes"],
+          ["info", "⚠️ Important info"],
+          ["settings", "⚙️ Settings"],
+        ] as [Tab, string][]).map(([t, label]) => (
           <button
             key={t}
             onClick={() => setTab(t)}
-            className={`px-5 py-2.5 text-sm font-bold rounded-t-xl border border-b-0 transition-colors ${
+            className={`px-4 py-2.5 text-sm font-bold rounded-t-xl border border-b-0 transition-colors ${
               tab === t
                 ? "bg-white border-vg-border text-vg-ink"
                 : "bg-transparent border-transparent text-vg-muted hover:text-vg-ink"
             }`}
           >
-            {t === "tour" ? "Tour content" : t === "places" ? "Stops (What you'll see)" : "⚙️ Settings"}
+            {label}
           </button>
         ))}
       </div>
@@ -105,11 +113,14 @@ function Editor({ id }: { id: number }) {
         <TourTranslationEditor data={data} reload={loadTour} />
       ) : tab === "places" ? (
         <PlacesTranslationEditor tourId={id} isTranslateConfigured={data.isTranslateConfigured} canonicalLocale={data.tour.canonicalLocale} />
+      ) : tab === "meeting" ? (
+        <MeetingPointEditor id={id} />
+      ) : tab === "includes" ? (
+        <IncludesEditor tourId={id} />
+      ) : tab === "info" ? (
+        <ImportantInfoEditor tourId={id} />
       ) : (
-        <>
-          <TourSettingsEditor id={id} />
-          <IncludesEditor tourId={id} />
-        </>
+        <TourSettingsEditor id={id} />
       )}
     </div>
   );
@@ -653,11 +664,6 @@ function TourSettingsEditor({ id }: { id: number }) {
           )}
         </SField>
 
-        <SField label="Meeting point">
-          <input value={draft.meetingPointText ?? ""} onChange={(e) => set("meetingPointText", e.target.value)}
-            className="w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-vg-primary" placeholder="In front of Hagia Sophia main entrance" />
-        </SField>
-
         <SField label="Status">
           <select value={draft.status ?? "active"} onChange={(e) => set("status", e.target.value)}
             className="w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-vg-primary">
@@ -671,6 +677,175 @@ function TourSettingsEditor({ id }: { id: number }) {
           <button onClick={onSave} disabled={saving}
             className="bg-vibe-gradient text-white font-black px-8 py-3 rounded-xl shadow-lg shadow-purple-500/30 hover:scale-[1.02] transition-transform disabled:opacity-50">
             {saving ? "Saving…" : "💾 Save settings"}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── Meeting Point Editor ─────────────────────────────────────────────────────
+
+function MeetingPointEditor({ id }: { id: number }) {
+  const [draft, setDraft] = useState<Pick<TourSettings, "meetingPointText" | "meetingPointLat" | "meetingPointLng">>({
+    meetingPointText: null,
+    meetingPointLat: null,
+    meetingPointLng: null,
+  });
+  const [saving, setSaving] = useState(false);
+  const [flash, setFlash] = useState<string | null>(null);
+
+  useEffect(() => {
+    adminApi.getTourSettings(id).then((r) => {
+      if (r.ok) setDraft({
+        meetingPointText: r.data.meetingPointText,
+        meetingPointLat: r.data.meetingPointLat,
+        meetingPointLng: r.data.meetingPointLng,
+      });
+    });
+  }, [id]);
+
+  const onSave = async () => {
+    setSaving(true); setFlash(null);
+    const r = await adminApi.updateTourSettings(id, draft);
+    setSaving(false);
+    if (r.ok) {
+      setFlash("Saved ✓");
+      const r2 = await adminApi.getTourSettings(id);
+      if (r2.ok) setDraft({
+        meetingPointText: r2.data.meetingPointText,
+        meetingPointLat: r2.data.meetingPointLat,
+        meetingPointLng: r2.data.meetingPointLng,
+      });
+    } else {
+      setFlash(`Save failed: ${r.error ?? r.status}`);
+    }
+  };
+
+  const mapsUrl = draft.meetingPointLat && draft.meetingPointLng
+    ? `https://www.google.com/maps?q=${draft.meetingPointLat},${draft.meetingPointLng}`
+    : null;
+
+  return (
+    <div className="mt-6 max-w-2xl">
+      {flash && (
+        <div className={`mb-5 rounded-xl px-4 py-3 text-sm border ${flash.includes("✓") ? "bg-emerald-50 border-emerald-200 text-emerald-800" : "bg-vg-bg-soft border-vg-border"}`}>
+          {flash}
+        </div>
+      )}
+      <div className="rounded-3xl bg-white border border-vg-border p-6 shadow-sm space-y-5">
+        <SField label="Address / description">
+          <input
+            value={draft.meetingPointText ?? ""}
+            onChange={(e) => setDraft((d) => ({ ...d, meetingPointText: e.target.value || null }))}
+            className="w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-vg-primary"
+            placeholder="In front of Hagia Sophia main entrance"
+          />
+        </SField>
+        <div className="grid grid-cols-2 gap-4">
+          <SField label="Latitude">
+            <input
+              type="number"
+              step="any"
+              value={draft.meetingPointLat ?? ""}
+              onChange={(e) => setDraft((d) => ({ ...d, meetingPointLat: e.target.value ? parseFloat(e.target.value) : null }))}
+              className="w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-vg-primary"
+              placeholder="41.008240"
+            />
+          </SField>
+          <SField label="Longitude">
+            <input
+              type="number"
+              step="any"
+              value={draft.meetingPointLng ?? ""}
+              onChange={(e) => setDraft((d) => ({ ...d, meetingPointLng: e.target.value ? parseFloat(e.target.value) : null }))}
+              className="w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-vg-primary"
+              placeholder="28.978359"
+            />
+          </SField>
+        </div>
+        {mapsUrl && (
+          <a href={mapsUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 text-xs font-bold text-vg-primary hover:underline">
+            🗺️ Preview on Google Maps ↗
+          </a>
+        )}
+        <div className="pt-2">
+          <button onClick={onSave} disabled={saving}
+            className="bg-vibe-gradient text-white font-black px-8 py-3 rounded-xl shadow-lg shadow-purple-500/30 hover:scale-[1.02] transition-transform disabled:opacity-50">
+            {saving ? "Saving…" : "💾 Save meeting point"}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── Important Info Editor ────────────────────────────────────────────────────
+
+function ImportantInfoEditor({ tourId }: { tourId: number }) {
+  const [items, setItems] = useState<TourImportantInfo[]>([]);
+  const [newLabel, setNewLabel] = useState("");
+  const [adding, setAdding] = useState(false);
+  const [flash, setFlash] = useState<string | null>(null);
+
+  const load = async () => {
+    const r = await adminApi.listImportantInfo(tourId);
+    if (r.ok) setItems(r.data);
+  };
+
+  useEffect(() => { load(); }, [tourId]);
+
+  const onAdd = async () => {
+    if (!newLabel.trim()) return;
+    setAdding(true); setFlash(null);
+    const r = await adminApi.addImportantInfo(tourId, { label: newLabel.trim() });
+    setAdding(false);
+    if (r.ok) { setNewLabel(""); await load(); }
+    else setFlash(`Failed: ${r.error ?? r.status}`);
+  };
+
+  const onDelete = async (id: number) => {
+    await adminApi.deleteImportantInfo(tourId, id);
+    await load();
+  };
+
+  return (
+    <div className="mt-6 max-w-2xl">
+      <div className="rounded-3xl bg-white border border-vg-border p-6 shadow-sm">
+        <h3 className="text-sm font-black uppercase tracking-widest text-vg-muted mb-1">
+          Important Information
+        </h3>
+        <p className="text-xs text-vg-muted mb-4">Warnings, requirements, dress code, accessibility notes…</p>
+
+        {flash && (
+          <div className="mb-4 rounded-xl px-4 py-2 text-sm bg-red-50 border border-red-200 text-red-800">{flash}</div>
+        )}
+
+        <div className="space-y-2 mb-5">
+          {items.length === 0 && <p className="text-sm text-vg-muted">No items yet.</p>}
+          {items.map((item) => (
+            <div key={item.id} className="flex items-center gap-3 rounded-xl bg-amber-50 border border-amber-100 px-4 py-3">
+              <span className="text-amber-500 text-base">⚠️</span>
+              <span className="flex-1 text-sm text-amber-900">{item.label}</span>
+              <button onClick={() => onDelete(item.id)} className="text-vg-muted hover:text-red-500 text-xs font-bold px-2">✕</button>
+            </div>
+          ))}
+        </div>
+
+        <div className="flex gap-2">
+          <input
+            value={newLabel}
+            onChange={(e) => setNewLabel(e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && onAdd()}
+            placeholder="e.g. Modest dress required, No flash photography…"
+            className="flex-1 bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-vg-primary"
+          />
+          <button
+            onClick={onAdd}
+            disabled={adding || !newLabel.trim()}
+            className="bg-vibe-gradient text-white font-black px-5 rounded-xl text-sm shadow-lg shadow-purple-500/30 disabled:opacity-40"
+          >
+            {adding ? "…" : "Add"}
           </button>
         </div>
       </div>

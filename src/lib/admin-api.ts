@@ -219,7 +219,15 @@ export type TourSettings = {
   coverPhotoUrl: string | null;
   languagesOffered: string | null;
   meetingPointText: string | null;
+  meetingPointLat: number | null;
+  meetingPointLng: number | null;
   status: string;
+};
+
+export type TourImportantInfo = {
+  id: number;
+  label: string;
+  ord: number;
 };
 
 export const adminApi = {
@@ -492,6 +500,28 @@ export const adminApi = {
   lockPool: (id: number) =>
     authedFetch<{ ok: true }>(`/api/admin/pools/${id}/lock`, {
       method: "POST",
+    }),
+
+  // ════════ IMPORTANT INFO ════════
+
+  listImportantInfo: (tourId: number) =>
+    authedFetch<TourImportantInfo[]>(`/api/admin/tours/${tourId}/important-info`),
+
+  addImportantInfo: (tourId: number, body: { label: string; ord?: number }) =>
+    authedFetch<{ id: number }>(`/api/admin/tours/${tourId}/important-info`, {
+      method: "POST",
+      body: JSON.stringify(body),
+    }),
+
+  updateImportantInfo: (tourId: number, infoId: number, body: { label: string; ord?: number }) =>
+    authedFetch<{ ok: true }>(`/api/admin/tours/${tourId}/important-info/${infoId}`, {
+      method: "PUT",
+      body: JSON.stringify(body),
+    }),
+
+  deleteImportantInfo: (tourId: number, infoId: number) =>
+    authedFetch<{ ok: true }>(`/api/admin/tours/${tourId}/important-info/${infoId}`, {
+      method: "DELETE",
     }),
 
   // ════════ TOUR INCLUDES ════════

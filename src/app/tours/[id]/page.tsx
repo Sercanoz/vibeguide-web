@@ -38,6 +38,12 @@ interface TourInclude {
   ord: number;
 }
 
+interface TourImportantInfo {
+  id: number;
+  label: string;
+  ord: number;
+}
+
 interface TourDetail {
   id: number;
   title: string;
@@ -54,10 +60,13 @@ interface TourDetail {
   highlights?: string;
   isMachineTranslated?: boolean;
   meetingPointText?: string;
+  meetingPointLat?: number;
+  meetingPointLng?: number;
   places?: Place[];
   pricingTiers?: PricingTier[];
   languagePrices?: LanguagePrice[];
   includes?: TourInclude[];
+  importantInfo?: TourImportantInfo[];
 }
 
 function formatDuration(minutes: number): string {
@@ -278,12 +287,40 @@ export default function TourDetailPage() {
             </div>
           )}
 
+          {tour.importantInfo && tour.importantInfo.length > 0 && (
+            <div>
+              <h2 className="text-2xl font-black mb-5">Important Information</h2>
+              <div className="space-y-2">
+                {[...tour.importantInfo]
+                  .sort((a, b) => a.ord - b.ord)
+                  .map((item) => (
+                    <div key={item.id} className="flex items-start gap-3 rounded-xl bg-amber-50 border border-amber-100 px-4 py-3 text-sm text-amber-900">
+                      <span className="mt-0.5 flex-shrink-0">⚠️</span>
+                      <span className="leading-6">{item.label}</span>
+                    </div>
+                  ))}
+              </div>
+            </div>
+          )}
+
           {tour.meetingPointText && (
             <div>
               <h2 className="text-2xl font-black mb-3">Meeting Point</h2>
               <div className="flex items-start gap-3 rounded-2xl bg-[#F7F7FB] border border-black/5 px-5 py-4">
-                <span className="text-2xl">📍</span>
-                <p className="text-neutral-700 leading-6">{tour.meetingPointText}</p>
+                <span className="text-2xl flex-shrink-0">📍</span>
+                <div>
+                  <p className="text-neutral-700 leading-6">{tour.meetingPointText}</p>
+                  {tour.meetingPointLat && tour.meetingPointLng && (
+                    <a
+                      href={`https://www.google.com/maps?q=${tour.meetingPointLat},${tour.meetingPointLng}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-2 inline-flex items-center gap-1 text-xs font-bold text-[#6C4CF1] hover:underline"
+                    >
+                      Open in Google Maps ↗
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           )}
