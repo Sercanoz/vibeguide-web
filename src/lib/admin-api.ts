@@ -108,7 +108,7 @@ export type ApiResult<T> =
   | { ok: true; data: T }
   | { ok: false; status: number; error?: string };
 
-async function authedFetch<T>(
+export async function authedFetch<T>(
   path: string,
   init?: RequestInit
 ): Promise<ApiResult<T>> {
@@ -339,6 +339,8 @@ export const adminApi = {
         fullName: string;
         canonicalBio: string | null;
         canonicalLocale: string;
+        languages: string | null;
+        city: string | null;
       };
       translations: {
         guideUserId: number;
@@ -349,6 +351,11 @@ export const adminApi = {
       }[];
       supportedLocales: string[];
     }>(`/api/admin/translations/guides/${userId}`),
+  updateGuideLanguages: (userId: number, languages: string) =>
+    authedFetch<{ ok: true; languages: string }>(`/api/admin/translations/guides/${userId}/languages`, {
+      method: "PATCH",
+      body: JSON.stringify({ languages }),
+    }),
   upsertGuideBio: (userId: number, locale: string, bio: string) =>
     authedFetch<{ ok: true }>(`/api/admin/translations/guides/${userId}`, {
       method: "PUT",

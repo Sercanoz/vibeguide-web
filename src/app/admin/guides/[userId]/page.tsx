@@ -54,6 +54,8 @@ function Editor({ userId }: { userId: number }) {
   const [saving, setSaving] = useState(false);
   const [autoTranslating, setAutoTranslating] = useState(false);
   const [flash, setFlash] = useState<string | null>(null);
+  const [languages, setLanguages] = useState("");
+  const [savingLang, setSavingLang] = useState(false);
 
   const load = async () => {
     const r = await adminApi.getGuide(userId);
@@ -67,6 +69,7 @@ function Editor({ userId }: { userId: number }) {
 
   useEffect(() => {
     if (data && !activeLocale) setActiveLocale(data.guide.canonicalLocale);
+    if (data) setLanguages(data.guide.languages ?? "");
   }, [data, activeLocale]);
 
   useEffect(() => {
@@ -137,6 +140,14 @@ function Editor({ userId }: { userId: number }) {
     }
   };
 
+  const onSaveLanguages = async () => {
+    setSavingLang(true);
+    const r = await adminApi.updateGuideLanguages(userId, languages);
+    setSavingLang(false);
+    if (r.ok) setFlash("Languages saved ✓");
+    else setFlash(`Failed: ${r.error ?? r.status}`);
+  };
+
   const onAutoTranslate = async () => {
     if (!confirm(
       `Auto-translate from ${data.guide.canonicalLocale.toUpperCase()} to all missing locales?`
@@ -171,13 +182,46 @@ function Editor({ userId }: { userId: number }) {
         <div>
           <h1 className="text-2xl font-black text-vg-ink">{data.guide.fullName}</h1>
           <p className="text-sm text-vg-muted">
-            User #{data.guide.userId} · canonical:{" "}
+            User #{data.guide.userId} · {data.guide.city ?? "–"} · canonical:{" "}
             <strong>{data.guide.canonicalLocale.toUpperCase()}</strong>
           </p>
         </div>
         <span className="text-xs text-vg-muted bg-amber-50 border border-amber-200 px-3 py-1.5 rounded-xl font-semibold">
           Auto-translate: set GOOGLE_TRANSLATE_API_KEY on Railway
         </span>
+      </div>
+
+      {/* Languages */}
+      <div className="mt-5 bg-white border border-vg-border rounded-2xl p-5">
+        <p className="text-xs font-black uppercase tracking-widest text-vg-muted mb-3">Guide Languages</p>
+        <div className="flex gap-2 mb-3 flex-wrap">
+          {["en","tr","de","fr","ru","es","it","ar","zh","ja","ko","nl","pl","uk","ro","el","bg","sr","hr","pt"].map((lang) => {
+            const active = languages.split(",").map(s => s.trim()).filter(Boolean).includes(lang);
+            return (
+              <button key={lang} type="button"
+                onClick={() => {
+                  const cur = languages.split(",").map(s => s.trim()).filter(Boolean);
+                  const next = active ? cur.filter(l => l !== lang) : [...cur, lang];
+                  setLanguages(next.join(","));
+                }}
+                className={`px-3 py-1.5 rounded-full text-xs font-bold border transition-all ${
+                  active ? "bg-[#6C4CF1] text-white border-[#6C4CF1]" : "bg-vg-bg-soft text-vg-muted border-vg-border hover:border-vg-primary hover:text-vg-primary"
+                }`}>
+                {lang.toUpperCase()}
+              </button>
+            );
+          })}
+        </div>
+        <div className="flex items-center gap-3">
+          <input value={languages} onChange={(e) => setLanguages(e.target.value)}
+            className="flex-1 bg-vg-bg-soft border border-vg-border rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-vg-primary"
+            placeholder="e.g. en,tr,de" />
+          <button onClick={onSaveLanguages} disabled={savingLang}
+            className="bg-vg-primary text-white font-bold px-5 py-2 rounded-xl text-sm hover:bg-[#5a3dd4] transition-colors disabled:opacity-50">
+            {savingLang ? "Saving…" : "Save"}
+          </button>
+        </div>
+        <p className="text-[10px] text-vg-muted mt-1.5">Comma-separated codes from guide&apos;s official badge</p>
       </div>
 
       <div className="mt-6 flex flex-wrap gap-1.5 border-b border-vg-border pb-3">
