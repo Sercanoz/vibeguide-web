@@ -27,6 +27,7 @@ export default function LoginPage() {
     if (res.ok) {
       const me = await res.json();
       if (me.role === "Admin") router.push("/admin/tours");
+      else if (me.role === "PendingGuide") router.push("/guide/pending");
       else router.push("/");
       return;
     }
