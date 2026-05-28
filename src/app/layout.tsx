@@ -85,12 +85,14 @@ export const metadata: Metadata = {
     siteName: "VibeGuide",
     locale: "en_US",
     type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "VibeGuide — Local tour guides in Turkey" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "VibeGuide — Don't Just Visit Istanbul. Enter It.",
     description:
       "Verified local guides for Istanbul, Cappadocia and Ephesus. Instant, group or private tours in Turkey.",
+    images: ["/opengraph-image"],
   },
   robots: {
     index: true,
