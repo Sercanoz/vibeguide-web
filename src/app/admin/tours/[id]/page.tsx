@@ -12,6 +12,7 @@ import {
   type TourSettings,
   type TourInclude,
   type TourImportantInfo,
+  type TourPhoto,
 } from "@/lib/admin-api";
 
 const LOCALE_LABELS: Record<string, string> = {
@@ -36,7 +37,7 @@ export default function AdminTourEditor(props: Props) {
   return <Editor id={id} />;
 }
 
-type Tab = "tour" | "places" | "meeting" | "includes" | "info" | "settings";
+type Tab = "tour" | "places" | "photos" | "meeting" | "includes" | "info" | "settings";
 
 function Editor({ id }: { id: number }) {
   const [tab, setTab] = useState<Tab>("tour");
@@ -91,6 +92,7 @@ function Editor({ id }: { id: number }) {
         {([
           ["tour", "Tour content"],
           ["places", "📍 Stops"],
+          ["photos", "🖼️ Photos"],
           ["meeting", "🗺️ Meeting point"],
           ["includes", "✓ Includes"],
           ["info", "⚠️ Important info"],
@@ -114,6 +116,8 @@ function Editor({ id }: { id: number }) {
         <TourTranslationEditor data={data} reload={loadTour} />
       ) : tab === "places" ? (
         <PlacesTranslationEditor tourId={id} isTranslateConfigured={data.isTranslateConfigured} canonicalLocale={data.tour.canonicalLocale} />
+      ) : tab === "photos" ? (
+        <PhotosEditor tourId={id} />
       ) : tab === "meeting" ? (
         <MeetingPointEditor id={id} />
       ) : tab === "includes" ? (
@@ -726,6 +730,124 @@ function TourSettingsEditor({ id }: { id: number }) {
           </button>
         </div>
       </div>
+    </div>
+  );
+}
+
+// ─── Photos Editor ───────────────────────────────────────────────────────────
+
+function PhotosEditor({ tourId }: { tourId: number }) {
+  const [photos, setPhotos] = useState<TourPhoto[]>([]);
+  const [uploading, setUploading] = useState(false);
+  const [uploadProgress, setUploadProgress] = useState<number>(0);
+  const [flash, setFlash] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const load = async () => {
+    const r = await adminApi.listPhotos(tourId);
+    if (r.ok) setPhotos(r.data);
+  };
+
+  useEffect(() => { load(); }, [tourId]);
+
+  const onFiles = (files: FileList | null) => {
+    if (!files || files.length === 0) return;
+    const file = files[0];
+    setUploading(true); setUploadProgress(0); setFlash(null);
+    uploadTourPhoto(tourId, file, async ({ progress, url, error }) => {
+      if (error) { setUploading(false); setFlash(`Upload failed: ${error}`); return; }
+      setUploadProgress(progress);
+      if (url) {
+        await adminApi.addPhoto(tourId, { url });
+        await load();
+        setUploading(false);
+        setUploadProgress(0);
+        // if more files queued, process next — for now one at a time
+      }
+    });
+    if (fileInputRef.current) fileInputRef.current.value = "";
+  };
+
+  const onDelete = async (id: number) => {
+    await adminApi.deletePhoto(tourId, id);
+    await load();
+  };
+
+  const onCaptionChange = async (photo: TourPhoto, caption: string) => {
+    await adminApi.updatePhoto(tourId, photo.id, { caption });
+    setPhotos((ps) => ps.map((p) => p.id === photo.id ? { ...p, caption } : p));
+  };
+
+  return (
+    <div className="mt-6 max-w-3xl">
+      {flash && (
+        <div className="mb-4 rounded-xl px-4 py-3 text-sm bg-red-50 border border-red-200 text-red-800">{flash}</div>
+      )}
+
+      {/* Upload zone */}
+      <div
+        className="rounded-3xl border-2 border-dashed border-vg-border bg-vg-bg-soft hover:border-vg-primary transition-colors cursor-pointer p-8 text-center mb-6"
+        onClick={() => !uploading && fileInputRef.current?.click()}
+        onDragOver={(e) => e.preventDefault()}
+        onDrop={(e) => { e.preventDefault(); onFiles(e.dataTransfer.files); }}
+      >
+        <input
+          ref={fileInputRef}
+          type="file"
+          accept="image/*"
+          multiple
+          className="hidden"
+          onChange={(e) => onFiles(e.target.files)}
+        />
+        {uploading ? (
+          <div className="space-y-2">
+            <p className="text-sm font-bold text-vg-ink">Uploading… {uploadProgress}%</p>
+            <div className="w-full max-w-xs mx-auto bg-vg-border rounded-full h-2">
+              <div className="bg-vg-primary h-2 rounded-full transition-all" style={{ width: `${uploadProgress}%` }} />
+            </div>
+          </div>
+        ) : (
+          <>
+            <p className="text-4xl mb-3">🖼️</p>
+            <p className="text-sm font-bold text-vg-ink">Click or drag & drop photos here</p>
+            <p className="text-xs text-vg-muted mt-1">JPG, PNG, WebP · max 10 MB each</p>
+          </>
+        )}
+      </div>
+
+      {/* Photo grid */}
+      {photos.length === 0 ? (
+        <p className="text-sm text-vg-muted">No photos yet.</p>
+      ) : (
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+          {photos.map((photo, i) => (
+            <div key={photo.id} className="group relative rounded-2xl overflow-hidden border border-vg-border bg-white">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={photo.url} alt={photo.caption ?? `photo ${i + 1}`} className="w-full h-36 object-cover" />
+              <div className="p-2">
+                <input
+                  defaultValue={photo.caption ?? ""}
+                  onBlur={(e) => onCaptionChange(photo, e.target.value)}
+                  placeholder="Caption (optional)"
+                  className="w-full text-xs bg-transparent border-b border-vg-border focus:outline-none focus:border-vg-primary text-vg-muted pb-0.5"
+                />
+              </div>
+              <button
+                onClick={() => onDelete(photo.id)}
+                className="absolute top-2 right-2 w-7 h-7 rounded-full bg-black/60 text-white text-xs font-black flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-red-600"
+              >
+                ✕
+              </button>
+              {i === 0 && (
+                <span className="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-[#6C4CF1] text-white text-[10px] font-black">
+                  Cover
+                </span>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+      <p className="text-xs text-vg-muted mt-3">First photo is used as the cover. Drag to reorder coming soon.</p>
     </div>
   );
 }

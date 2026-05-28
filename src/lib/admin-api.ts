@@ -230,6 +230,13 @@ export type TourImportantInfo = {
   ord: number;
 };
 
+export type TourPhoto = {
+  id: number;
+  url: string;
+  caption: string | null;
+  ord: number;
+};
+
 export const adminApi = {
   listTours: () => authedFetch<TourListRow[]>("/api/admin/translations/tours"),
 
@@ -514,6 +521,28 @@ export const adminApi = {
   lockPool: (id: number) =>
     authedFetch<{ ok: true }>(`/api/admin/pools/${id}/lock`, {
       method: "POST",
+    }),
+
+  // ════════ PHOTOS ════════
+
+  listPhotos: (tourId: number) =>
+    authedFetch<TourPhoto[]>(`/api/admin/tours/${tourId}/photos`),
+
+  addPhoto: (tourId: number, body: { url: string; caption?: string; ord?: number }) =>
+    authedFetch<{ id: number }>(`/api/admin/tours/${tourId}/photos`, {
+      method: "POST",
+      body: JSON.stringify(body),
+    }),
+
+  updatePhoto: (tourId: number, photoId: number, body: { url?: string; caption?: string; ord?: number }) =>
+    authedFetch<{ ok: true }>(`/api/admin/tours/${tourId}/photos/${photoId}`, {
+      method: "PUT",
+      body: JSON.stringify(body),
+    }),
+
+  deletePhoto: (tourId: number, photoId: number) =>
+    authedFetch<{ ok: true }>(`/api/admin/tours/${tourId}/photos/${photoId}`, {
+      method: "DELETE",
     }),
 
   // ════════ IMPORTANT INFO ════════

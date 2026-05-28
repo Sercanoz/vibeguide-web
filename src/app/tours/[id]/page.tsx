@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useParams } from "next/navigation";
 import { API_BASE_URL } from "@/lib/api";
 import { useT } from "@/components/LanguageProvider";
@@ -28,6 +28,13 @@ interface LanguagePrice {
   multiplier: number;
   isRare: boolean;
   price: number;
+}
+
+interface TourPhoto {
+  id: number;
+  url: string;
+  caption: string | null;
+  ord: number;
 }
 
 interface TourInclude {
@@ -64,6 +71,7 @@ interface TourDetail {
   places?: Place[];
   pricingTiers?: PricingTier[];
   languagePrices?: LanguagePrice[];
+  photos?: TourPhoto[];
   includes?: TourInclude[];
   importantInfo?: TourImportantInfo[];
 }
@@ -93,6 +101,12 @@ export default function TourDetailPage() {
   const { locale } = useT();
   const tt = getToursT(locale);
   const [tour, setTour] = useState<TourDetail | null | "loading" | "error">("loading");
+  const [activePhoto, setActivePhoto] = useState(0);
+
+  const prevPhoto = useCallback((total: number) =>
+    setActivePhoto((i) => (i - 1 + total) % total), []);
+  const nextPhoto = useCallback((total: number) =>
+    setActivePhoto((i) => (i + 1) % total), []);
 
   useEffect(() => {
     if (!id) return;
@@ -205,36 +219,69 @@ export default function TourDetailPage() {
       </nav>
 
       {/* Hero — full-width cover photo */}
-      <div className="relative h-[60vh] min-h-[400px] pt-16 bg-[#0A0A0F] overflow-hidden">
-        {tour.coverPhotoUrl ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={tour.coverPhotoUrl}
-            alt={tour.title}
-            className="absolute inset-0 w-full h-full object-cover opacity-50"
-          />
-        ) : (
-          <div className="absolute inset-0 bg-gradient-to-br from-[#6C4CF1]/30 to-[#0A0A0F]" />
-        )}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0F] via-[#0A0A0F]/40 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0F]/60 via-transparent to-transparent" />
+      {(() => {
+        const allPhotos = tour.photos && tour.photos.length > 0
+          ? tour.photos
+          : tour.coverPhotoUrl
+            ? [{ id: 0, url: tour.coverPhotoUrl, caption: null, ord: 0 }]
+            : [];
+        const current = allPhotos[activePhoto];
+        return (
+          <div className="relative h-[60vh] min-h-[400px] pt-16 bg-[#0A0A0F] overflow-hidden">
+            {current ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                key={current.url}
+                src={current.url}
+                alt={current.caption ?? tour.title}
+                className="absolute inset-0 w-full h-full object-cover opacity-50 transition-opacity duration-300"
+              />
+            ) : (
+              <div className="absolute inset-0 bg-gradient-to-br from-[#6C4CF1]/30 to-[#0A0A0F]" />
+            )}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0F] via-[#0A0A0F]/40 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0F]/60 via-transparent to-transparent" />
 
-        <div className="absolute bottom-0 left-0 right-0 px-6 py-10 max-w-7xl mx-auto">
-          <span
-            className={`inline-block px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wide mb-4 ${categoryColor(tour.category)}`}
-          >
-            {tour.category}
-          </span>
-          <h1 className="text-3xl md:text-5xl font-black text-white leading-tight max-w-3xl">
-            {tour.title}
-          </h1>
-          <p className="mt-3 text-white/60 flex items-center gap-3 text-sm">
-            <span>📍 {tour.city}</span>
-            <span>·</span>
-            <span>🕐 {formatDuration(tour.durationMinutes)}</span>
-          </p>
-        </div>
-      </div>
+            {/* Prev / Next arrows */}
+            {allPhotos.length > 1 && (
+              <>
+                <button
+                  onClick={() => prevPhoto(allPhotos.length)}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/40 hover:bg-black/70 text-white flex items-center justify-center text-lg transition-colors z-10"
+                >‹</button>
+                <button
+                  onClick={() => nextPhoto(allPhotos.length)}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/40 hover:bg-black/70 text-white flex items-center justify-center text-lg transition-colors z-10"
+                >›</button>
+                {/* Dots */}
+                <div className="absolute bottom-24 right-6 flex gap-1.5 z-10">
+                  {allPhotos.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setActivePhoto(i)}
+                      className={`w-1.5 h-1.5 rounded-full transition-all ${i === activePhoto ? "bg-white w-4" : "bg-white/50"}`}
+                    />
+                  ))}
+                </div>
+              </>
+            )}
+
+            <div className="absolute bottom-0 left-0 right-0 px-6 py-10 max-w-7xl mx-auto">
+              <span className={`inline-block px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wide mb-4 ${categoryColor(tour.category)}`}>
+                {tour.category}
+              </span>
+              <h1 className="text-3xl md:text-5xl font-black text-white leading-tight max-w-3xl">
+                {tour.title}
+              </h1>
+              <p className="mt-3 text-white/60 flex items-center gap-3 text-sm">
+                <span>📍 {tour.city}</span>
+                <span>·</span>
+                <span>🕐 {formatDuration(tour.durationMinutes)}</span>
+              </p>
+            </div>
+          </div>
+        );
+      })()}
 
       {/* Body */}
       <div className="mx-auto max-w-7xl px-6 py-12 grid md:grid-cols-[1fr_340px] gap-10 items-start">
