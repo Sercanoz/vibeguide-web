@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
-import { notFound } from "next/navigation";
 import { API_BASE_URL } from "@/lib/api";
 import { useT } from "@/components/LanguageProvider";
 import { getToursT } from "@/lib/i18n";
@@ -133,7 +132,18 @@ export default function TourDetailPage() {
   }
 
   if (!tour) {
-    notFound();
+    return (
+      <main className="min-h-screen bg-white flex items-center justify-center">
+        <div className="text-center px-6">
+          <p className="text-6xl mb-4">🗺️</p>
+          <h1 className="text-2xl font-black text-[#0A0A0F] mb-2">Tour not found</h1>
+          <p className="text-neutral-400 mb-6">This tour may have been removed or is no longer active.</p>
+          <a href="/tours" className="rounded-full bg-[#6C4CF1] text-white text-sm font-bold px-6 py-2.5 hover:bg-[#5a3dd4] transition-colors">
+            Browse all tours
+          </a>
+        </div>
+      </main>
+    );
   }
 
   const highlights = tour.highlights
