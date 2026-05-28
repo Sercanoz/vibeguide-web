@@ -232,6 +232,20 @@ export type TourImportantInfo = {
 
 export const adminApi = {
   listTours: () => authedFetch<TourListRow[]>("/api/admin/translations/tours"),
+
+  createTour: (body: {
+    title: string;
+    city: string;
+    category?: string;
+    durationMinutes: number;
+    basePrice: number;
+    currency: string;
+    status: string;
+  }) =>
+    authedFetch<{ id: number }>("/api/admin/tours", {
+      method: "POST",
+      body: JSON.stringify(body),
+    }),
   getTourSettings: (id: number) =>
     authedFetch<TourSettings>(`/api/admin/tours/${id}`),
   updateTourSettings: (id: number, body: Partial<TourSettings>) =>
