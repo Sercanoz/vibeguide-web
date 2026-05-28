@@ -100,9 +100,6 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
                       : "text-neutral-400 hover:text-[#0A0A0F] hover:bg-black/[0.04]"
                   }`}
                 >
-                  {isTours && (
-                    <span className={`absolute top-1.5 right-1.5 w-1.5 h-1.5 rounded-full transition-all ${isActive ? "bg-[#6C4CF1]" : "bg-emerald-500"}`} />
-                  )}
                   {l.label}
                 </a>
               );
@@ -203,7 +200,6 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
                       ? "bg-[#6C4CF1]/8 text-[#6C4CF1]"
                       : "text-neutral-600 hover:bg-neutral-50 hover:text-black"
                   }`}>
-                  {l.key === "tours" && <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />}
                   {l.label}
                 </a>
               ))}
