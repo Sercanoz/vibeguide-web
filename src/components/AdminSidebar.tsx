@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { signOut } from "@/lib/firebase-client";
 
 const NAV = [
   {
@@ -92,7 +93,7 @@ export default function AdminSidebar() {
       </nav>
 
       {/* Bottom */}
-      <div className="px-3 py-4 border-t border-black/[0.06]">
+      <div className="px-3 py-4 border-t border-black/[0.06] space-y-0.5">
         <Link href="/" className="flex items-center gap-2.5 px-2.5 py-2 rounded-xl text-sm font-semibold text-neutral-400 hover:bg-neutral-50 hover:text-[#0A0A0F] transition-all">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
@@ -100,6 +101,15 @@ export default function AdminSidebar() {
           </svg>
           View site
         </Link>
+        <button onClick={() => signOut().then(() => window.location.href = "/admin/login")}
+          className="w-full flex items-center gap-2.5 px-2.5 py-2 rounded-xl text-sm font-semibold text-red-400 hover:bg-red-50 hover:text-red-600 transition-all">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+            <polyline points="16 17 21 12 16 7"/>
+            <line x1="21" y1="12" x2="9" y2="12"/>
+          </svg>
+          Sign out
+        </button>
       </div>
     </aside>
   );
