@@ -1416,7 +1416,7 @@ export type ToursPageDict = {
   heroVerified: string;
   heroBook: string;
   fromPrice: string;
-  perGuide: string;
+  perPerson: string;
   startingFrom: string;
 };
 
@@ -1434,7 +1434,7 @@ const toursPageBase: Record<string, ToursPageDict> = {
     heroVerified: "100% verified guides",
     heroBook: "Book via app",
     fromPrice: "from",
-    perGuide: "per guide",
+    perPerson: "per person",
     startingFrom: "Starting from",
   },
   tr: {
@@ -1450,7 +1450,7 @@ const toursPageBase: Record<string, ToursPageDict> = {
     heroVerified: "%100 onaylı rehberler",
     heroBook: "Uygulama ile rezerve et",
     fromPrice: "başlangıç",
-    perGuide: "rehber başına",
+    perPerson: "kişi başına",
     startingFrom: "Başlangıç fiyatı",
   },
   de: {
@@ -1466,7 +1466,7 @@ const toursPageBase: Record<string, ToursPageDict> = {
     heroVerified: "100% verifizierte Guides",
     heroBook: "Per App buchen",
     fromPrice: "ab",
-    perGuide: "pro Guide",
+    perPerson: "pro Person",
     startingFrom: "Ab",
   },
   fr: {
@@ -1482,7 +1482,7 @@ const toursPageBase: Record<string, ToursPageDict> = {
     heroVerified: "100% guides vérifiés",
     heroBook: "Réserver via l'app",
     fromPrice: "à partir de",
-    perGuide: "par guide",
+    perPerson: "par personne",
     startingFrom: "À partir de",
   },
   ru: {
@@ -1498,7 +1498,7 @@ const toursPageBase: Record<string, ToursPageDict> = {
     heroVerified: "100% проверенные гиды",
     heroBook: "Забронировать в приложении",
     fromPrice: "от",
-    perGuide: "за гида",
+    perPerson: "за человека",
     startingFrom: "От",
   },
   zh: {
@@ -1514,7 +1514,7 @@ const toursPageBase: Record<string, ToursPageDict> = {
     heroVerified: "100% 认证向导",
     heroBook: "通过App预订",
     fromPrice: "起价",
-    perGuide: "每位导游",
+    perPerson: "每人",
     startingFrom: "起价",
   },
   es: {
@@ -1530,7 +1530,7 @@ const toursPageBase: Record<string, ToursPageDict> = {
     heroVerified: "100% guías verificados",
     heroBook: "Reservar vía app",
     fromPrice: "desde",
-    perGuide: "por guía",
+    perPerson: "por persona",
     startingFrom: "Desde",
   },
   it: {
@@ -1546,7 +1546,7 @@ const toursPageBase: Record<string, ToursPageDict> = {
     heroVerified: "100% guide verificate",
     heroBook: "Prenota via app",
     fromPrice: "da",
-    perGuide: "per guida",
+    perPerson: "a persona",
     startingFrom: "Da",
   },
   ko: {
@@ -1562,7 +1562,7 @@ const toursPageBase: Record<string, ToursPageDict> = {
     heroVerified: "100% 인증 가이드",
     heroBook: "앱으로 예약",
     fromPrice: "시작가",
-    perGuide: "가이드당",
+    perPerson: "1인당",
     startingFrom: "시작가",
   },
   ja: {
@@ -1578,7 +1578,7 @@ const toursPageBase: Record<string, ToursPageDict> = {
     heroVerified: "100%認定ガイド",
     heroBook: "アプリで予約",
     fromPrice: "から",
-    perGuide: "ガイド1名につき",
+    perPerson: "1人あたり",
     startingFrom: "から",
   },
 };

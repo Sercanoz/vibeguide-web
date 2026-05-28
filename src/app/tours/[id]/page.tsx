@@ -539,7 +539,7 @@ export default function TourDetailPage() {
                 {tour.basePrice} {tour.currency}
               </span>
             </div>
-            <p className="text-xs text-neutral-400 mt-0.5">{tt.perGuide}</p>
+            <p className="text-xs text-neutral-400 mt-0.5">{tt.perPerson}</p>
           </div>
 
           <div className="flex items-center gap-3 rounded-xl bg-[#F7F7FB] px-4 py-3">

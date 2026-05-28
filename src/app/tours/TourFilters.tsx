@@ -168,7 +168,7 @@ export default function TourFilters({ tours }: Props) {
                         {tour.basePrice} {tour.currency}
                       </span>
                     </div>
-                    <p className="text-[9px] text-neutral-400">{tt.perGuide}</p>
+                    <p className="text-[9px] text-neutral-400">{tt.perPerson}</p>
                   </div>
                 </div>
               </Link>
