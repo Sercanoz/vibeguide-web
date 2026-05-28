@@ -92,15 +92,19 @@ export default function TourDetailPage() {
   const id = params?.id as string;
   const { locale } = useT();
   const tt = getToursT(locale);
-  const [tour, setTour] = useState<TourDetail | null | "loading">("loading");
+  const [tour, setTour] = useState<TourDetail | null | "loading" | "error">("loading");
 
   useEffect(() => {
     if (!id) return;
     setTour("loading");
     fetch(`${API_BASE_URL}/api/tours/${id}?locale=${locale}`, { cache: "no-store" })
-      .then((r) => (r.ok ? r.json() : null))
-      .then((data) => setTour(data))
-      .catch(() => setTour(null));
+      .then((r) => {
+        if (r.status === 404) return null;
+        if (!r.ok) return "error" as const;
+        return r.json();
+      })
+      .then((data) => setTour(data as TourDetail | null | "error"))
+      .catch(() => setTour("error"));
   }, [id, locale]);
 
   if (tour === "loading") {
@@ -125,6 +129,26 @@ export default function TourDetailPage() {
             <div className="h-8 w-2/3 bg-neutral-100 rounded-xl" />
             <div className="h-4 w-1/3 bg-neutral-100 rounded-xl" />
             <div className="h-32 bg-neutral-100 rounded-xl" />
+          </div>
+        </div>
+      </main>
+    );
+  }
+
+  if (tour === "error") {
+    return (
+      <main className="min-h-screen bg-white flex items-center justify-center">
+        <div className="text-center px-6">
+          <p className="text-6xl mb-4">⚠️</p>
+          <h1 className="text-2xl font-black text-[#0A0A0F] mb-2">Something went wrong</h1>
+          <p className="text-neutral-400 mb-6">Could not load this tour. Please try again.</p>
+          <div className="flex gap-3 justify-center">
+            <button onClick={() => window.location.reload()} className="rounded-full bg-[#6C4CF1] text-white text-sm font-bold px-6 py-2.5 hover:bg-[#5a3dd4] transition-colors">
+              Try again
+            </button>
+            <a href="/tours" className="rounded-full border border-black/10 text-neutral-600 text-sm font-bold px-6 py-2.5 hover:bg-neutral-50 transition-colors">
+              Browse all tours
+            </a>
           </div>
         </div>
       </main>
@@ -215,12 +239,6 @@ export default function TourDetailPage() {
       {/* Body */}
       <div className="mx-auto max-w-7xl px-6 py-12 grid md:grid-cols-[1fr_340px] gap-10 items-start">
         <div className="space-y-10">
-          {tour.isMachineTranslated && (
-            <div className="flex items-center gap-2 rounded-xl bg-amber-50 border border-amber-100 px-4 py-3 text-sm text-amber-700">
-              <span>⚠️</span>
-              <span>This description was machine-translated and may contain inaccuracies.</span>
-            </div>
-          )}
 
           {tour.summary && (
             <p className="text-lg leading-8 text-neutral-600 font-medium">{tour.summary}</p>
