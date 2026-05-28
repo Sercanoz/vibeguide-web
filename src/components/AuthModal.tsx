@@ -8,6 +8,8 @@ import {
 import { API_BASE_URL } from "@/lib/api";
 
 type Mode = "signin" | "register";
+type Role = "tourist" | "guide";
+type Step = "form" | "role" | "verify";
 
 const GoogleIcon = () => (
   <svg width="18" height="18" viewBox="0 0 18 18">
@@ -26,9 +28,9 @@ interface Props {
 export default function AuthModal({ initialMode = "signin", onClose }: Props) {
   const router = useRouter();
   const [mode, setMode] = useState<Mode>(initialMode);
-  const [step, setStep] = useState<"form" | "verify">("form");
+  const [step, setStep] = useState<Step>(initialMode === "register" ? "role" : "form");
+  const [role, setRole] = useState<Role | null>(null);
 
-  // shared
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
@@ -38,18 +40,23 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
 
   const overlayRef = useRef<HTMLDivElement>(null);
 
-  // close on Escape
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [onClose]);
 
-  // lock body scroll
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => { document.body.style.overflow = ""; };
   }, []);
+
+  function switchMode(m: Mode) {
+    setMode(m);
+    setStep(m === "register" ? "role" : "form");
+    setRole(null);
+    setError(null);
+  }
 
   async function handleAfterLogin() {
     const user = fbAuth().currentUser;
@@ -65,12 +72,10 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
       if (me.role === "Admin") router.push("/admin");
       else if (me.role === "PendingGuide") router.push("/guide/pending");
       else router.refresh();
-    } else {
-      onClose();
-    }
+    } else { onClose(); }
   }
 
-  async function registerOnBackend() {
+  async function registerTouristOnBackend() {
     const user = fbAuth().currentUser;
     if (!user) throw new Error("No user");
     await user.reload();
@@ -90,8 +95,11 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
     setError(null); setLoading(true);
     try {
       await signInWithGoogle();
-      if (mode === "register") {
-        await registerOnBackend();
+      if (mode === "register" && role === "tourist") {
+        await registerTouristOnBackend();
+      } else if (mode === "register" && role === "guide") {
+        onClose();
+        router.push("/register/guide");
       } else {
         await handleAfterLogin();
       }
@@ -118,6 +126,12 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
     e.preventDefault(); setError(null);
     if (password !== password2) { setError("Passwords do not match."); return; }
     if (password.length < 6) { setError("Password must be at least 6 characters."); return; }
+    if (role === "guide") {
+      // Guide kayıt sayfasına yönlendir — KYC foto gerekli
+      onClose();
+      router.push("/register/guide");
+      return;
+    }
     setLoading(true);
     try {
       await registerWithEmail(email, password);
@@ -132,7 +146,7 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
 
   async function onVerifyDone() {
     setError(null); setLoading(true);
-    try { await registerOnBackend(); }
+    try { await registerTouristOnBackend(); }
     catch (err: unknown) {
       const msg = (err as Error).message ?? "";
       if (msg.includes("not_verified") || msg.includes("not verified"))
@@ -143,7 +157,7 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
 
   const inputCls = "w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] focus:ring-2 focus:ring-[#6C4CF1]/10 transition-all placeholder:text-neutral-300";
 
-  /* ── Verify email step ── */
+  /* ── Verify email ── */
   if (step === "verify") {
     return (
       <div ref={overlayRef} className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm" onClick={(e) => { if (e.target === overlayRef.current) onClose(); }}>
@@ -173,86 +187,154 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
   return (
     <div ref={overlayRef} className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm" onClick={(e) => { if (e.target === overlayRef.current) onClose(); }}>
       <div className="bg-white rounded-3xl shadow-2xl w-full max-w-sm relative overflow-hidden">
-        {/* Purple accent top */}
         <div className="h-1 w-full bg-gradient-to-r from-[#6C4CF1] via-[#8B5CF6] to-[#EC4899]" />
 
         <div className="p-7">
-          {/* Close */}
           <button onClick={onClose} className="absolute top-5 right-5 w-8 h-8 rounded-full bg-neutral-100 flex items-center justify-center text-neutral-400 hover:bg-neutral-200 transition-colors text-sm">✕</button>
 
           {/* Logo + title */}
-          <div className="mb-6">
-            <div className="flex items-center gap-2 mb-4">
+          <div className="mb-5">
+            <div className="flex items-center gap-2 mb-3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/vibeguide-icon.png" alt="VibeGuide" width={28} height={28} style={{ mixBlendMode: "multiply" }} />
               <span className="text-sm font-black text-[#0A0A0F]">VibeGuide</span>
             </div>
             <h2 className="text-2xl font-black text-[#0A0A0F]">
-              {mode === "signin" ? "Welcome back" : "Create account"}
+              {mode === "signin" ? "Welcome back" : step === "role" ? "Who are you?" : role === "guide" ? "Apply as guide" : "Create account"}
             </h2>
             <p className="mt-1 text-sm text-neutral-400">
-              {mode === "signin" ? "Sign in to continue your adventure" : "Start exploring with local guides"}
+              {mode === "signin" ? "Sign in to continue your adventure" : step === "role" ? "Tell us how you'll use VibeGuide" : role === "guide" ? "Join our verified guide network" : "Start exploring with local guides"}
             </p>
           </div>
 
           {/* Mode tabs */}
           <div className="flex gap-1 p-1 bg-neutral-100 rounded-2xl mb-5">
             {(["signin", "register"] as Mode[]).map((m) => (
-              <button key={m} onClick={() => { setMode(m); setError(null); }}
+              <button key={m} onClick={() => switchMode(m)}
                 className={`flex-1 py-2 rounded-xl text-sm font-bold transition-all ${mode === m ? "bg-white text-[#0A0A0F] shadow-sm" : "text-neutral-400 hover:text-neutral-600"}`}>
                 {m === "signin" ? "Sign in" : "Register"}
               </button>
             ))}
           </div>
 
-          {/* Google */}
-          <button onClick={onGoogleSignIn} disabled={loading}
-            className="w-full flex items-center justify-center gap-3 border border-black/10 rounded-2xl px-5 py-3 text-sm font-bold text-[#0A0A0F] hover:bg-neutral-50 transition-colors disabled:opacity-50 mb-4">
-            <GoogleIcon />
-            Continue with Google
-          </button>
+          {/* ── ROLE SELECTION ── */}
+          {mode === "register" && step === "role" && (
+            <div className="space-y-3">
+              <button
+                onClick={() => { setRole("tourist"); setStep("form"); }}
+                className="w-full flex items-center gap-4 p-4 rounded-2xl border-2 border-black/[0.06] hover:border-[#6C4CF1]/40 hover:bg-[#6C4CF1]/[0.02] transition-all group"
+              >
+                <div className="w-12 h-12 rounded-2xl bg-[#6C4CF1]/8 flex items-center justify-center shrink-0 text-[#6C4CF1] group-hover:bg-[#6C4CF1]/15 transition-colors">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                  </svg>
+                </div>
+                <div className="flex-1 text-left">
+                  <p className="text-sm font-black text-[#0A0A0F]">I&apos;m a tourist</p>
+                  <p className="text-xs text-neutral-400 mt-0.5">Discover cities with verified local guides</p>
+                </div>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6C4CF1" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
 
-          <div className="flex items-center gap-3 mb-4">
-            <div className="flex-1 h-px bg-black/[0.06]" />
-            <span className="text-xs text-neutral-300 font-medium">or</span>
-            <div className="flex-1 h-px bg-black/[0.06]" />
-          </div>
-
-          {/* Form */}
-          <form onSubmit={mode === "signin" ? onEmailSignIn : onEmailRegister} className="space-y-3">
-            {mode === "register" && (
-              <input type="text" required value={fullName} onChange={(e) => setFullName(e.target.value)}
-                className={inputCls} placeholder="Full name" />
-            )}
-            <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)}
-              className={inputCls} placeholder="Email address" />
-            <input type="password" required value={password} onChange={(e) => setPassword(e.target.value)}
-              className={inputCls} placeholder={mode === "register" ? "Password (min. 6 chars)" : "Password"} />
-            {mode === "register" && (
-              <input type="password" required value={password2} onChange={(e) => setPassword2(e.target.value)}
-                className={inputCls} placeholder="Confirm password" />
-            )}
-
-            {error && <div className="rounded-2xl bg-red-50 border border-red-100 px-4 py-3 text-sm text-red-600">{error}</div>}
-
-            <button type="submit" disabled={loading}
-              className="w-full rounded-2xl bg-[#6C4CF1] text-white font-bold py-3 text-sm hover:bg-[#5a3dd4] transition-colors disabled:opacity-50"
-              style={{ boxShadow: "0 4px 16px rgba(108,76,241,0.25)" }}>
-              {loading ? "Please wait…" : mode === "signin" ? "Sign in →" : "Create account →"}
-            </button>
-          </form>
-
-          {mode === "signin" && (
-            <p className="mt-3 text-center text-xs text-neutral-400">
-              <button className="text-[#6C4CF1] font-semibold hover:underline">Forgot password?</button>
-            </p>
+              <button
+                onClick={() => { setRole("guide"); setStep("form"); }}
+                className="w-full flex items-center gap-4 p-4 rounded-2xl border-2 border-black/[0.06] hover:border-emerald-400/60 hover:bg-emerald-50/30 transition-all group"
+              >
+                <div className="w-12 h-12 rounded-2xl bg-emerald-50 flex items-center justify-center shrink-0 text-emerald-600 group-hover:bg-emerald-100 transition-colors">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="5" r="1"/><path d="M9 20l1-5 2 2 1-5"/><path d="M6 11l2-4h8l1 4"/>
+                  </svg>
+                </div>
+                <div className="flex-1 text-left">
+                  <p className="text-sm font-black text-[#0A0A0F]">I&apos;m a guide</p>
+                  <p className="text-xs text-neutral-400 mt-0.5">Share your city · earn doing what you love</p>
+                </div>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+            </div>
           )}
 
-          {mode === "register" && (
-            <p className="mt-3 text-center text-xs text-neutral-400">
-              Are you a guide?{" "}
-              <a href="/register/guide" onClick={onClose} className="text-[#6C4CF1] font-semibold hover:underline">Apply here →</a>
-            </p>
+          {/* ── REGISTER FORM ── */}
+          {mode === "register" && step === "form" && (
+            <>
+              {/* Role badge + back */}
+              <div className="flex items-center gap-2 mb-4">
+                <button onClick={() => { setStep("role"); setError(null); }} className="text-neutral-400 hover:text-[#0A0A0F] transition-colors">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+                </button>
+                <span className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold ${role === "guide" ? "bg-emerald-50 text-emerald-700" : "bg-[#6C4CF1]/8 text-[#6C4CF1]"}`}>
+                  {role === "guide" ? "🎤 Guide application" : "✈️ Tourist"}
+                </span>
+              </div>
+
+              {role === "guide" ? (
+                /* Guide — KYC gerektiğinden tam sayfaya yönlendir */
+                <div className="text-center py-4">
+                  <p className="text-sm text-neutral-500 leading-6 mb-4">
+                    Guide registration requires uploading your official badge photos for verification. We&apos;ll take you to the full application form.
+                  </p>
+                  <a href="/register/guide"
+                    onClick={onClose}
+                    className="inline-flex items-center gap-2 rounded-2xl bg-emerald-500 text-white font-bold px-6 py-3 text-sm hover:bg-emerald-600 transition-colors">
+                    Continue to guide application →
+                  </a>
+                  <p className="mt-3 text-xs text-neutral-400">Takes about 2 minutes · Admin reviews within 1–2 days</p>
+                </div>
+              ) : (
+                /* Tourist form */
+                <>
+                  <button onClick={onGoogleSignIn} disabled={loading}
+                    className="w-full flex items-center justify-center gap-3 border border-black/10 rounded-2xl px-5 py-3 text-sm font-bold text-[#0A0A0F] hover:bg-neutral-50 transition-colors disabled:opacity-50 mb-4">
+                    <GoogleIcon /> Continue with Google
+                  </button>
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="flex-1 h-px bg-black/[0.06]" />
+                    <span className="text-xs text-neutral-300 font-medium">or</span>
+                    <div className="flex-1 h-px bg-black/[0.06]" />
+                  </div>
+                  <form onSubmit={onEmailRegister} className="space-y-3">
+                    <input type="text" required value={fullName} onChange={(e) => setFullName(e.target.value)} className={inputCls} placeholder="Full name" />
+                    <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} className={inputCls} placeholder="Email address" />
+                    <input type="password" required value={password} onChange={(e) => setPassword(e.target.value)} className={inputCls} placeholder="Password (min. 6 chars)" />
+                    <input type="password" required value={password2} onChange={(e) => setPassword2(e.target.value)} className={inputCls} placeholder="Confirm password" />
+                    {error && <div className="rounded-2xl bg-red-50 border border-red-100 px-4 py-3 text-sm text-red-600">{error}</div>}
+                    <button type="submit" disabled={loading}
+                      className="w-full rounded-2xl bg-[#6C4CF1] text-white font-bold py-3 text-sm hover:bg-[#5a3dd4] transition-colors disabled:opacity-50"
+                      style={{ boxShadow: "0 4px 16px rgba(108,76,241,0.25)" }}>
+                      {loading ? "Please wait…" : "Create account →"}
+                    </button>
+                  </form>
+                </>
+              )}
+            </>
+          )}
+
+          {/* ── SIGN IN FORM ── */}
+          {mode === "signin" && (
+            <>
+              <button onClick={onGoogleSignIn} disabled={loading}
+                className="w-full flex items-center justify-center gap-3 border border-black/10 rounded-2xl px-5 py-3 text-sm font-bold text-[#0A0A0F] hover:bg-neutral-50 transition-colors disabled:opacity-50 mb-4">
+                <GoogleIcon /> Continue with Google
+              </button>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="flex-1 h-px bg-black/[0.06]" />
+                <span className="text-xs text-neutral-300 font-medium">or</span>
+                <div className="flex-1 h-px bg-black/[0.06]" />
+              </div>
+              <form onSubmit={onEmailSignIn} className="space-y-3">
+                <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} className={inputCls} placeholder="Email address" />
+                <input type="password" required value={password} onChange={(e) => setPassword(e.target.value)} className={inputCls} placeholder="Password" />
+                {error && <div className="rounded-2xl bg-red-50 border border-red-100 px-4 py-3 text-sm text-red-600">{error}</div>}
+                <button type="submit" disabled={loading}
+                  className="w-full rounded-2xl bg-[#6C4CF1] text-white font-bold py-3 text-sm hover:bg-[#5a3dd4] transition-colors disabled:opacity-50"
+                  style={{ boxShadow: "0 4px 16px rgba(108,76,241,0.25)" }}>
+                  {loading ? "Signing in…" : "Sign in →"}
+                </button>
+              </form>
+              <p className="mt-3 text-center text-xs text-neutral-400">
+                <button className="text-[#6C4CF1] font-semibold hover:underline">Forgot password?</button>
+              </p>
+            </>
           )}
         </div>
       </div>
