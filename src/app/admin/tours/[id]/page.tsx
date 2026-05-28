@@ -714,6 +714,41 @@ function TourSettingsEditor({ id }: { id: number }) {
           />
         </SField>
 
+        <SField label="Badges">
+          <div className="flex flex-wrap gap-2 mb-2">
+            {[
+              { key: "skip_the_line", label: "⚡ Skip the line" },
+              { key: "bestseller", label: "🏆 Bestseller" },
+              { key: "free_cancellation", label: "✓ Free cancellation" },
+              { key: "small_group", label: "👥 Small group" },
+              { key: "private_tour", label: "🔒 Private tour" },
+              { key: "instant_confirmation", label: "✅ Instant confirmation" },
+              { key: "live_guide", label: "🎤 Live guide" },
+              { key: "pickup_included", label: "🚌 Pickup included" },
+            ].map(({ key, label }) => {
+              const active = (draft.badges ?? "").split(",").map(s => s.trim()).filter(Boolean).includes(key);
+              return (
+                <button
+                  key={key}
+                  type="button"
+                  onClick={() => {
+                    const current = (draft.badges ?? "").split(",").map(s => s.trim()).filter(Boolean);
+                    const next = active ? current.filter(k => k !== key) : [...current, key];
+                    set("badges", next.join(","));
+                  }}
+                  className={`px-3 py-1.5 rounded-full text-xs font-bold border transition-all ${
+                    active
+                      ? "bg-[#6C4CF1] text-white border-[#6C4CF1]"
+                      : "bg-vg-bg-soft text-vg-muted border-vg-border hover:border-vg-primary hover:text-vg-primary"
+                  }`}
+                >
+                  {label}
+                </button>
+              );
+            })}
+          </div>
+        </SField>
+
         <SField label="Status">
           <select value={draft.status ?? "active"} onChange={(e) => set("status", e.target.value)}
             className="w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-vg-primary">

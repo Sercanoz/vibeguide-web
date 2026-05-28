@@ -71,6 +71,7 @@ interface TourDetail {
   places?: Place[];
   pricingTiers?: PricingTier[];
   languagePrices?: LanguagePrice[];
+  badges?: string;
   photos?: TourPhoto[];
   includes?: TourInclude[];
   importantInfo?: TourImportantInfo[];
@@ -330,6 +331,33 @@ export default function TourDetailPage() {
       {/* Body */}
       <div className="mx-auto max-w-7xl px-6 py-12 grid md:grid-cols-[1fr_340px] gap-10 items-start">
         <div className="space-y-10">
+
+          {/* Badges */}
+          {tour.badges && tour.badges.trim() && (() => {
+            const BADGE_META: Record<string, { label: string; color: string }> = {
+              skip_the_line:        { label: "⚡ Skip the line",        color: "bg-yellow-100 text-yellow-800 border-yellow-200" },
+              bestseller:           { label: "🏆 Bestseller",           color: "bg-orange-100 text-orange-700 border-orange-200" },
+              free_cancellation:    { label: "✓ Free cancellation",     color: "bg-emerald-100 text-emerald-700 border-emerald-200" },
+              small_group:          { label: "👥 Small group",          color: "bg-blue-100 text-blue-700 border-blue-200" },
+              private_tour:         { label: "🔒 Private tour",         color: "bg-purple-100 text-purple-700 border-purple-200" },
+              instant_confirmation: { label: "✅ Instant confirmation", color: "bg-teal-100 text-teal-700 border-teal-200" },
+              live_guide:           { label: "🎤 Live guide",           color: "bg-rose-100 text-rose-700 border-rose-200" },
+              pickup_included:      { label: "🚌 Pickup included",      color: "bg-indigo-100 text-indigo-700 border-indigo-200" },
+            };
+            const keys = tour.badges!.split(",").map(s => s.trim()).filter(Boolean);
+            return (
+              <div className="flex flex-wrap gap-2">
+                {keys.map((key) => {
+                  const m = BADGE_META[key];
+                  return m ? (
+                    <span key={key} className={`px-3 py-1.5 rounded-full text-xs font-bold border ${m.color}`}>
+                      {m.label}
+                    </span>
+                  ) : null;
+                })}
+              </div>
+            );
+          })()}
 
           {tour.summary && (
             <p className="text-lg leading-8 text-neutral-600 font-medium">{tour.summary}</p>
