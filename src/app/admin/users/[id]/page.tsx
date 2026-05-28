@@ -2,7 +2,7 @@
 
 import { use, useEffect, useState } from "react";
 import Link from "next/link";
-import { adminApi, authedFetch } from "@/lib/admin-api";
+import { authedFetch } from "@/lib/admin-api";
 
 type Props = { params: Promise<{ id: string }> };
 
@@ -56,7 +56,10 @@ export default function UserDetailPage(props: Props) {
   async function onRoleChange(newRole: string) {
     if (!confirm(`Change role to ${newRole}?`)) return;
     setChangingRole(true);
-    const r = await adminApi.setUserRole(userId, newRole);
+    const r = await authedFetch<{ id: number; role: string }>(`/api/admin/users/${userId}/role`, {
+      method: "PATCH",
+      body: JSON.stringify({ role: newRole }),
+    });
     setChangingRole(false);
     if (r.ok) { setFlash("Role updated ✓"); setUser(u => u ? { ...u, role: newRole } : u); }
     else setFlash("Failed: " + (r.error ?? r.status));
