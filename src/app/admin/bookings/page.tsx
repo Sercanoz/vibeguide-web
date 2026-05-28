@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { authedFetch } from "@/lib/admin-api";
 
 type Booking = {
@@ -8,6 +9,47 @@ type Booking = {
   scheduledAt: string; status: string; price: number; currency: string;
   createdAt: string; tourTitle: string; touristName: string; guideName: string;
 };
+
+function BookingModal({ booking, onClose }: { booking: Booking; onClose: () => void }) {
+  return (
+    <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4" onClick={onClose}>
+      <div className="bg-white rounded-3xl shadow-2xl w-full max-w-md p-6" onClick={(e) => e.stopPropagation()}>
+        <div className="flex items-center justify-between mb-5">
+          <h2 className="text-lg font-black text-[#0A0A0F]">Booking #{booking.id}</h2>
+          <button onClick={onClose} className="w-8 h-8 rounded-full bg-neutral-100 flex items-center justify-center text-neutral-500 hover:bg-neutral-200 transition-colors">✕</button>
+        </div>
+        <div className="space-y-3">
+          {[
+            { label: "Tour", value: booking.tourTitle ?? `#${booking.tourId}`, href: `/admin/tours/${booking.tourId}` },
+            { label: "Tourist", value: booking.touristName ?? `#${booking.touristId}`, href: `/admin/users/${booking.touristId}` },
+            { label: "Guide", value: booking.guideName ?? `#${booking.guideId}`, href: `/admin/users/${booking.guideId}` },
+            { label: "Scheduled", value: new Date(booking.scheduledAt).toLocaleString("en-GB") },
+            { label: "Created", value: new Date(booking.createdAt).toLocaleString("en-GB") },
+            { label: "Price", value: `${booking.price} ${booking.currency}` },
+          ].map(({ label, value, href }) => (
+            <div key={label} className="flex items-center justify-between py-2 border-b border-black/[0.06] last:border-0">
+              <span className="text-xs font-bold text-neutral-400 uppercase tracking-wide">{label}</span>
+              {href ? (
+                <Link href={href} className="text-sm font-semibold text-[#6C4CF1] hover:underline">{value}</Link>
+              ) : (
+                <span className="text-sm font-semibold text-[#0A0A0F]">{value}</span>
+              )}
+            </div>
+          ))}
+          <div className="flex items-center justify-between py-2">
+            <span className="text-xs font-bold text-neutral-400 uppercase tracking-wide">Status</span>
+            <span className={`px-3 py-1 rounded-full text-xs font-bold ${
+              booking.status === "Completed" ? "bg-emerald-100 text-emerald-700" :
+              booking.status === "Paid" ? "bg-blue-100 text-blue-700" :
+              booking.status === "Pending" ? "bg-amber-100 text-amber-700" :
+              "bg-neutral-100 text-neutral-500"
+            }`}>{booking.status}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 const STATUS_TABS = ["all","Pending","Paid","Completed","Cancelled","Rejected"];
 
@@ -25,6 +67,7 @@ export default function AdminBookingsPage() {
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(true);
   const [offset, setOffset] = useState(0);
+  const [selected, setSelected] = useState<Booking | null>(null);
   const LIMIT = 50;
 
   async function load(status: string, off: number) {
@@ -40,6 +83,7 @@ export default function AdminBookingsPage() {
 
   return (
     <div className="p-8">
+      {selected && <BookingModal booking={selected} onClose={() => setSelected(null)} />}
       <h1 className="text-2xl font-black text-[#0A0A0F] mb-6">Bookings</h1>
 
       {/* Tabs */}
@@ -73,7 +117,7 @@ export default function AdminBookingsPage() {
               </thead>
               <tbody>
                 {rows.map((b) => (
-                  <tr key={b.id} className="border-b border-black/[0.04] hover:bg-neutral-50 transition-colors">
+                  <tr key={b.id} className="border-b border-black/[0.04] hover:bg-neutral-50 transition-colors cursor-pointer" onClick={() => setSelected(b)}>
                     <td className="px-4 py-3 font-mono text-xs text-neutral-400">#{b.id}</td>
                     <td className="px-4 py-3 font-semibold text-[#0A0A0F] max-w-[180px] truncate">{b.tourTitle ?? `Tour #${b.tourId}`}</td>
                     <td className="px-4 py-3 text-neutral-600">{b.touristName ?? `#${b.touristId}`}</td>

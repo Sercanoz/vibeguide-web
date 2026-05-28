@@ -1,14 +1,21 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { adminApi } from "@/lib/admin-api";
+import { useEffect, useRef, useState } from "react";
+import { adminApi, authedFetch } from "@/lib/admin-api";
 
-type ProcessResult = { processed?: number; totalAmount?: number; ok?: true };
+type ProcessResult = { processed?: number; totalAmount?: number; ok?: true; guideCount?: number; rows?: PendingRow[] };
+type PendingRow = {
+  guideId: number; guideName: string; amount: number; currency: string;
+  tourCount: number; iban: string | null; ibanAccountName: string | null;
+};
+type PendingData = { totalAmount: number; guideCount: number; rows: PendingRow[] };
 
 export default function WithdrawalsPage() {
   const [processing, setProcessing] = useState(false);
   const [result, setResult] = useState<ProcessResult | null>(null);
   const [flash, setFlash] = useState<{ msg: string; type: "ok" | "err" } | null>(null);
+  const [pending, setPending] = useState<PendingData | null>(null);
+  const [loadingPending, setLoadingPending] = useState(true);
   const flashTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   function showFlash(msg: string, type: "ok" | "err" = "ok") {
@@ -16,6 +23,15 @@ export default function WithdrawalsPage() {
     if (flashTimer.current) clearTimeout(flashTimer.current);
     flashTimer.current = setTimeout(() => setFlash(null), 8000);
   }
+
+  async function loadPending() {
+    setLoadingPending(true);
+    const r = await authedFetch<PendingData>("/api/payouts/admin/pending");
+    if (r.ok) setPending(r.data);
+    setLoadingPending(false);
+  }
+
+  useEffect(() => { loadPending(); }, []);
 
   async function processPayouts() {
     if (!window.confirm("Are you sure you want to process this week's payouts? This action cannot be undone.")) return;
@@ -25,6 +41,7 @@ export default function WithdrawalsPage() {
     if (res.ok) {
       setResult(res.data as ProcessResult);
       showFlash("Payouts processed successfully!", "ok");
+      loadPending();
     } else {
       showFlash(res.error ?? "Payout processing failed", "err");
     }
@@ -32,84 +49,90 @@ export default function WithdrawalsPage() {
   }
 
   function fmt(val: number, currency = "TRY") {
-    return new Intl.NumberFormat("tr-TR", {
-      style: "currency",
-      currency,
-      maximumFractionDigits: 0,
-    }).format(val);
+    return new Intl.NumberFormat("tr-TR", { style: "currency", currency, maximumFractionDigits: 0 }).format(val);
   }
 
   return (
-    <div className="max-w-5xl mx-auto px-5 sm:px-8 py-10">
-      <h1 className="text-2xl font-black tracking-tight text-vg-ink">Withdrawal Requests</h1>
-      <p className="mt-1 text-sm text-vg-muted">Process weekly payouts for guides.</p>
+    <div className="p-8 max-w-5xl">
+      <h1 className="text-2xl font-black text-[#0A0A0F] mb-1">Withdrawals & Payouts</h1>
+      <p className="text-sm text-neutral-400 mb-6">Process weekly guide payouts and view pending amounts.</p>
 
       {flash && (
-        <div className={`mt-3 rounded-xl px-4 py-3 text-sm font-semibold border ${
-          flash.type === "ok"
-            ? "bg-green-50 border-green-200 text-green-800"
-            : "bg-red-50 border-red-200 text-red-800"
-        }`}>
+        <div className={`mb-4 rounded-xl px-4 py-3 text-sm font-semibold border ${flash.type === "ok" ? "bg-emerald-50 border-emerald-200 text-emerald-800" : "bg-red-50 border-red-200 text-red-700"}`}>
           {flash.msg}
         </div>
       )}
 
-      {/* Process Payouts Card */}
-      <div className="mt-8 rounded-2xl bg-white border border-vg-border p-8 shadow-sm">
-        <div className="flex items-start gap-4">
-          <div className="w-12 h-12 rounded-xl bg-vg-primary/10 flex items-center justify-center shrink-0">
-            <svg className="w-6 h-6 text-vg-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <div className="flex-1">
-            <h2 className="text-lg font-black text-vg-ink">Process Weekly Payouts</h2>
-            <p className="mt-1 text-sm text-vg-muted">
-              Batch-processes guide earnings for all tours completed this week.
-              Payouts are initiated for guides with a verified IBAN.
-            </p>
-            <button
-              onClick={processPayouts}
-              disabled={processing}
-              className="mt-4 px-6 py-3 rounded-xl font-bold text-white bg-vg-primary hover:bg-vg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm"
-            >
-              {processing ? "Processing…" : "Start Weekly Payouts"}
-            </button>
-          </div>
+      <div className="grid lg:grid-cols-3 gap-4 mb-6">
+        <div className="bg-white rounded-2xl border border-black/[0.06] p-5 shadow-sm">
+          <p className="text-xs font-bold text-neutral-400 uppercase tracking-wide">Pending amount</p>
+          <p className="mt-2 text-3xl font-black text-[#6C4CF1]">
+            {loadingPending ? "…" : pending ? fmt(pending.totalAmount) : "—"}
+          </p>
+          <p className="text-xs text-neutral-400 mt-1">awaiting payout</p>
         </div>
-
-        {result && (
-          <div className="mt-6 rounded-xl bg-green-50 border border-green-200 p-4">
-            <p className="text-sm font-bold text-green-800">Payout processing complete</p>
-            <div className="mt-2 flex flex-wrap gap-4">
-              {result.processed != null && (
-                <div>
-                  <p className="text-xs text-green-600 font-semibold uppercase tracking-wide">Processed</p>
-                  <p className="text-2xl font-black text-green-700">{result.processed}</p>
-                  <p className="text-xs text-green-600">payouts</p>
-                </div>
-              )}
-              {result.totalAmount != null && (
-                <div>
-                  <p className="text-xs text-green-600 font-semibold uppercase tracking-wide">Total</p>
-                  <p className="text-2xl font-black text-green-700">{fmt(result.totalAmount)}</p>
-                  <p className="text-xs text-green-600">transferred</p>
-                </div>
-              )}
-            </div>
+        <div className="bg-white rounded-2xl border border-black/[0.06] p-5 shadow-sm">
+          <p className="text-xs font-bold text-neutral-400 uppercase tracking-wide">Guides to pay</p>
+          <p className="mt-2 text-3xl font-black text-[#0A0A0F]">
+            {loadingPending ? "…" : pending?.guideCount ?? "—"}
+          </p>
+          <p className="text-xs text-neutral-400 mt-1">with pending earnings</p>
+        </div>
+        <div className="bg-white rounded-2xl border border-black/[0.06] p-5 shadow-sm flex flex-col justify-between">
+          <div>
+            <p className="text-xs font-bold text-neutral-400 uppercase tracking-wide">Action</p>
+            <p className="text-sm text-neutral-500 mt-1 leading-5">Mark all completed tours as paid and generate payout summary.</p>
           </div>
-        )}
+          <button onClick={processPayouts} disabled={processing}
+            className="mt-4 w-full bg-[#6C4CF1] text-white font-bold py-2.5 rounded-xl text-sm hover:bg-[#5a3dd4] transition-colors disabled:opacity-50">
+            {processing ? "Processing…" : "Process payouts →"}
+          </button>
+        </div>
       </div>
 
-      {/* Coming Soon Card */}
-      <div className="mt-6 rounded-2xl bg-white border border-vg-border border-dashed p-8 shadow-sm">
-        <div className="text-center">
-          <p className="text-sm font-bold text-vg-muted">Withdrawal request list coming soon</p>
-          <p className="mt-1 text-xs text-vg-muted">
-            The backend endpoint for listing individual withdrawal requests does not exist yet.
-            Once added, they will be listed here.
-          </p>
+      {result && (
+        <div className="mb-6 rounded-2xl bg-emerald-50 border border-emerald-200 p-5">
+          <p className="font-bold text-emerald-800 mb-3">✓ Payout complete</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {result.guideCount != null && <div><p className="text-xs text-emerald-600">Guides paid</p><p className="text-xl font-black text-emerald-700">{result.guideCount}</p></div>}
+            {result.totalAmount != null && <div><p className="text-xs text-emerald-600">Total amount</p><p className="text-xl font-black text-emerald-700">{fmt(result.totalAmount)}</p></div>}
+          </div>
         </div>
+      )}
+
+      {/* Pending list */}
+      <div>
+        <h2 className="text-sm font-black text-[#0A0A0F] mb-3">Pending payouts by guide</h2>
+        {loadingPending ? (
+          <div className="space-y-2">{[...Array(4)].map((_, i) => <div key={i} className="h-16 bg-neutral-100 rounded-xl animate-pulse" />)}</div>
+        ) : !pending || pending.rows.length === 0 ? (
+          <div className="bg-white rounded-2xl border border-black/[0.06] p-8 text-center text-sm text-neutral-400">No pending payouts</div>
+        ) : (
+          <div className="bg-white rounded-2xl border border-black/[0.06] overflow-hidden shadow-sm">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-black/[0.06] bg-neutral-50">
+                  <th className="text-left px-4 py-3 text-xs font-black text-neutral-400 uppercase tracking-wide">Guide</th>
+                  <th className="text-left px-4 py-3 text-xs font-black text-neutral-400 uppercase tracking-wide">Tours</th>
+                  <th className="text-left px-4 py-3 text-xs font-black text-neutral-400 uppercase tracking-wide">Amount</th>
+                  <th className="text-left px-4 py-3 text-xs font-black text-neutral-400 uppercase tracking-wide hidden md:table-cell">IBAN</th>
+                  <th className="text-left px-4 py-3 text-xs font-black text-neutral-400 uppercase tracking-wide hidden md:table-cell">Account name</th>
+                </tr>
+              </thead>
+              <tbody>
+                {pending.rows.map((r) => (
+                  <tr key={r.guideId} className="border-b border-black/[0.04] hover:bg-neutral-50 transition-colors">
+                    <td className="px-4 py-3 font-semibold text-[#0A0A0F]">{r.guideName}</td>
+                    <td className="px-4 py-3 text-neutral-500">{r.tourCount}</td>
+                    <td className="px-4 py-3 font-black text-[#6C4CF1]">{fmt(r.amount, r.currency)}</td>
+                    <td className="px-4 py-3 font-mono text-xs text-neutral-400 hidden md:table-cell">{r.iban ?? "—"}</td>
+                    <td className="px-4 py-3 text-neutral-500 hidden md:table-cell">{r.ibanAccountName ?? "—"}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
       </div>
     </div>
   );

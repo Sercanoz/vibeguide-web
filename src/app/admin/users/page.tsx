@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { adminApi, type AdminUser } from "@/lib/admin-api";
 
 type RoleFilter = "" | "Guide" | "Tourist" | "Admin";
@@ -153,7 +154,9 @@ export default function UsersPage() {
             <tbody className="divide-y divide-vg-border">
               {users.map((u) => (
                 <tr key={u.id} className="hover:bg-vg-bg-soft transition-colors">
-                  <td className="px-4 py-3 font-semibold text-vg-ink whitespace-nowrap">{u.fullName}</td>
+                  <td className="px-4 py-3 font-semibold text-vg-ink whitespace-nowrap">
+                    <Link href={`/admin/users/${u.id}`} className="hover:text-[#6C4CF1] transition-colors">{u.fullName}</Link>
+                  </td>
                   <td className="px-4 py-3 text-vg-muted hidden sm:table-cell">{u.email}</td>
                   <td className="px-4 py-3">
                     <RoleBadge role={u.role} />

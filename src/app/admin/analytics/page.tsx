@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { adminApi, type AdminStats, type GuidePerf } from "@/lib/admin-api";
 
 function KpiCard({ label, value, sub }: { label: string; value: string | number; sub?: string }) {
@@ -41,9 +42,9 @@ export default function AnalyticsPage() {
   const revenueFormatted = new Intl.NumberFormat("tr-TR", { style: "currency", currency: "TRY", maximumFractionDigits: 0 }).format(stats.last30Days.revenue);
 
   return (
-    <div className="max-w-6xl mx-auto px-5 sm:px-8 py-10">
-      <h1 className="text-2xl font-black tracking-tight text-vg-ink">Analytics</h1>
-      <p className="mt-1 text-sm text-vg-muted">Platform overview and performance statistics.</p>
+    <div className="p-8 max-w-6xl">
+      <h1 className="text-2xl font-black text-[#0A0A0F]">Analytics</h1>
+      <p className="mt-1 text-sm text-neutral-400 mb-6">Platform overview and performance statistics.</p>
 
       {/* User KPIs */}
       <h2 className="mt-8 text-xs font-black uppercase tracking-widest text-vg-muted">Users</h2>
@@ -123,7 +124,9 @@ export default function AnalyticsPage() {
                 .sort((a, b) => (b.completedBookings ?? 0) - (a.completedBookings ?? 0))
                 .map((g) => (
                   <tr key={g.guideUserId} className="hover:bg-vg-bg-soft transition-colors">
-                    <td className="px-5 py-3 font-semibold text-vg-ink">{g.fullName}</td>
+                    <td className="px-5 py-3 font-semibold text-vg-ink">
+                      <Link href={`/admin/users/${g.guideUserId}`} className="hover:text-[#6C4CF1] transition-colors">{g.fullName}</Link>
+                    </td>
                     <td className="px-5 py-3 text-vg-muted">{g.city ?? "—"}</td>
                     <td className="px-5 py-3 text-right">
                       {g.rating != null ? (
