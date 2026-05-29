@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { useT } from "@/components/LanguageProvider";
 import { getToursT } from "@/lib/i18n";
 
@@ -68,6 +69,14 @@ export default function TourFilters({ tours }: Props) {
   const tt = getToursT(locale);
   const cities = ["All", ...Array.from(new Set(tours.map((t) => t.city))).sort()];
   const [activeCity, setActiveCity] = useState("All");
+  const searchParams = useSearchParams();
+
+  // Pre-select city from ?city= query (e.g. coming from homepage destination card)
+  useEffect(() => {
+    const q = searchParams.get("city");
+    if (q && cities.includes(q)) setActiveCity(q);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams, tours]);
   const [hoveredId, setHoveredId] = useState<number | null>(null);
 
   const filtered = activeCity === "All" ? tours : tours.filter((t) => t.city === activeCity);

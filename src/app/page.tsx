@@ -184,6 +184,9 @@ export default function HomePage() {
       {/* ── POPULAR TOURS (GYG-style rail) ── */}
       <PopularTours />
 
+      {/* ── DESTINATIONS ── */}
+      <Destinations />
+
 
       {/* ── HOW IT WORKS ── */}
       <section ref={secHow.ref as React.RefObject<HTMLElement>} id="how" className={`py-28 bg-white reveal ${secHow.inView ? "in-view" : ""}`}>
@@ -788,6 +791,82 @@ function PopularTours() {
             See all tours
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* City → cover photo (Unsplash). Falls back to a gradient for unknown cities. */
+const CITY_PHOTOS: Record<string, string> = {
+  Istanbul: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80&w=900",
+  Cappadocia: "https://images.unsplash.com/photo-1641128324972-af3212f0f6bd?q=80&w=900",
+  Ephesus: "https://images.unsplash.com/photo-1589561253898-768105ca91a8?q=80&w=900",
+  Pamukkale: "https://images.unsplash.com/photo-1591291621164-2c6367723315?q=80&w=900",
+  Antalya: "https://images.unsplash.com/photo-1589561084283-930aa7b1ce50?q=80&w=900",
+  Bodrum: "https://images.unsplash.com/photo-1610116306796-6fea9f4fae38?q=80&w=900",
+  Izmir: "https://images.unsplash.com/photo-1605281317010-fe5ffe798166?q=80&w=900",
+};
+
+function Destinations() {
+  const sec = useInView();
+  const [cities, setCities] = useState<{ city: string; count: number }[]>([]);
+
+  useEffect(() => {
+    fetch(`${API_BASE_URL}/api/tours?locale=en`, { cache: "no-store" })
+      .then((r) => (r.ok ? r.json() : []))
+      .then((data: { city: string }[]) => {
+        const map = new Map<string, number>();
+        for (const t of data) map.set(t.city, (map.get(t.city) ?? 0) + 1);
+        const list = Array.from(map.entries())
+          .map(([city, count]) => ({ city, count }))
+          .sort((a, b) => b.count - a.count)
+          .slice(0, 6);
+        setCities(list);
+      })
+      .catch(() => {});
+  }, []);
+
+  if (cities.length === 0) return null;
+
+  // İlk kart büyük (2 sütun), gerisi normal — Airbnb/GYG mozaik hissi
+  return (
+    <section ref={sec.ref as React.RefObject<HTMLElement>} className={`py-20 bg-[#F7F7FB] reveal ${sec.inView ? "in-view" : ""}`}>
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="text-center mb-10">
+          <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1]">Where to?</p>
+          <h2 className="mt-3 text-3xl md:text-5xl font-black tracking-tight text-[#0A0A0F]">Explore destinations</h2>
+          <p className="mt-2 text-sm text-neutral-400 max-w-md mx-auto">Pick a city and meet the locals who know it best.</p>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          {cities.map((c, i) => {
+            const photo = CITY_PHOTOS[c.city];
+            const big = i === 0;
+            return (
+              <a key={c.city}
+                href={`/tours?city=${encodeURIComponent(c.city)}`}
+                className={`group relative rounded-3xl overflow-hidden ${big ? "col-span-2 row-span-2 min-h-[280px]" : "min-h-[180px]"}`}>
+                {photo ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={photo} alt={c.city}
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                ) : (
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#6C4CF1] to-[#8B5CF6]" />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-5">
+                  <h3 className={`font-black text-white ${big ? "text-3xl" : "text-xl"}`}>{c.city}</h3>
+                  <p className="text-white/70 text-xs font-semibold mt-0.5">
+                    {c.count} {c.count === 1 ? "tour" : "tours"}
+                  </p>
+                </div>
+                <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/15 backdrop-blur border border-white/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </div>
+              </a>
+            );
+          })}
         </div>
       </div>
     </section>
