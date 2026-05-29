@@ -147,6 +147,8 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
       // Persist pending registration so /verified can complete it after email click
       localStorage.setItem("vg_pending_register", JSON.stringify({ fullName: fullName.trim(), role: "tourist" }));
       await sendVerificationEmail();
+      // Sign out — user must verify email before they can log in
+      await signOut();
       setStep("verify");
     } catch (err: unknown) {
       const code = (err as { code?: string }).code ?? "";
@@ -166,17 +168,6 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
     });
   }
 
-  async function onVerifyDone() {
-    setError(null); setLoading(true);
-    try { await registerTouristOnBackend(); }
-    catch (err: unknown) {
-      const msg = (err as Error).message ?? "";
-      if (msg.includes("not_verified") || msg.includes("not verified"))
-        setError("Please verify your email first — check your inbox.");
-      else setError(msg || "Something went wrong.");
-    } finally { setLoading(false); }
-  }
-
   const inputCls = "w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] focus:ring-2 focus:ring-[#6C4CF1]/10 transition-all placeholder:text-neutral-300";
 
   /* ── Verify email ── */
@@ -193,13 +184,13 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
           </div>
           <h2 className="text-xl font-black text-[#0A0A0F]">Check your email</h2>
           <p className="mt-2 text-sm text-neutral-400 leading-6">
-            We sent a verification link to <strong className="text-[#0A0A0F]">{email}</strong>. Click it then come back.
+            We sent a verification link to <strong className="text-[#0A0A0F]">{email}</strong>.
+            Click the link in your inbox to activate your account, then sign in.
           </p>
-          {error && <div className="mt-3 rounded-2xl bg-red-50 border border-red-100 px-4 py-3 text-sm text-red-600">{error}</div>}
-          <button onClick={onVerifyDone} disabled={loading}
-            className="mt-6 w-full rounded-2xl bg-[#6C4CF1] text-white font-bold py-3 text-sm hover:bg-[#5a3dd4] transition-colors disabled:opacity-50"
+          <button onClick={onClose}
+            className="mt-6 w-full rounded-2xl bg-[#6C4CF1] text-white font-bold py-3 text-sm hover:bg-[#5a3dd4] transition-colors"
             style={{ boxShadow: "0 4px 16px rgba(108,76,241,0.25)" }}>
-            {loading ? "Checking…" : "I verified my email →"}
+            Got it
           </button>
         </div>
       </div>
