@@ -71,6 +71,9 @@ export default function ProfilePage() {
   useEffect(() => {
     const unsub = fbAuth().onAuthStateChanged(async (user) => {
       if (!user) { router.push("/"); return; }
+      await user.reload();
+      // Block access until email is verified
+      if (!user.emailVerified) { await signOut(); router.push("/"); return; }
       const token = await user.getIdToken();
       const headers = { Authorization: `Bearer ${token}` };
 

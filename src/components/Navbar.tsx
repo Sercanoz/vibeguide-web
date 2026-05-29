@@ -19,7 +19,10 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
   const userMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const unsub = fbAuth().onAuthStateChanged((u) => setUser(u));
+    const unsub = fbAuth().onAuthStateChanged((u) => {
+      // Treat unverified email as logged-out — show Sign in / Register, not avatar
+      setUser(u && u.emailVerified ? u : null);
+    });
     return () => unsub();
   }, []);
 

@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import {
-  signInWithEmail, signInWithGoogle, registerWithEmail, fbAuth
+  signInWithEmail, signInWithGoogle, registerWithEmail, fbAuth, signOut
 } from "@/lib/firebase-client";
 import { API_BASE_URL } from "@/lib/api";
 
@@ -61,6 +61,15 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
   async function handleAfterLogin() {
     const user = fbAuth().currentUser;
     if (!user) return;
+    await user.reload();
+
+    // Block login until email is verified (Google accounts are pre-verified)
+    if (!user.emailVerified) {
+      await signOut();
+      setError("Please verify your email first. Check your inbox for the confirmation link.");
+      return;
+    }
+
     const token = await user.getIdToken();
     const res = await fetch(`${API_BASE_URL}/api/auth/me`, {
       headers: { Authorization: `Bearer ${token}` },
