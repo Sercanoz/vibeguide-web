@@ -109,7 +109,7 @@ export default function TourReviewPage(props: Props) {
 
             {/* Stars */}
             <div className="mb-5">
-              <label className="text-xs font-bold text-neutral-500 uppercase tracking-wide mb-2 block">Your rating *</label>
+              <label className="text-xs font-bold text-neutral-500 mb-2 block">Your rating *</label>
               <div className="flex gap-1.5">
                 {[1, 2, 3, 4, 5].map((n) => (
                   <button key={n} type="button"
@@ -128,19 +128,19 @@ export default function TourReviewPage(props: Props) {
 
             <div className="space-y-3">
               <div>
-                <label className="text-xs font-bold text-neutral-500 uppercase tracking-wide mb-1.5 block">Full name *</label>
+                <label className="text-xs font-bold text-neutral-500 mb-1.5 block">Full name *</label>
                 <input value={fullName} onChange={(e) => setFullName(e.target.value)} required
                   className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors"
                   placeholder="John Doe" />
               </div>
               <div>
-                <label className="text-xs font-bold text-neutral-500 uppercase tracking-wide mb-1.5 block">Nationality</label>
+                <label className="text-xs font-bold text-neutral-500 mb-1.5 block">Nationality</label>
                 <input value={nationality} onChange={(e) => setNationality(e.target.value)}
                   className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors"
                   placeholder="American" />
               </div>
               <div>
-                <label className="text-xs font-bold text-neutral-500 uppercase tracking-wide mb-1.5 block">Your review</label>
+                <label className="text-xs font-bold text-neutral-500 mb-1.5 block">Your review</label>
                 <textarea value={comment} onChange={(e) => setComment(e.target.value)} rows={4}
                   className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors resize-none"
                   placeholder="Tell us about your experience…" />
