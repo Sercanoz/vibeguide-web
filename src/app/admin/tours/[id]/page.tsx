@@ -391,11 +391,42 @@ function PlacesTranslationEditor({
     return tr.isMachineTranslated ? "machine" : "human";
   };
 
+  const [newName, setNewName] = useState("");
+  const [adding, setAdding] = useState(false);
+
+  const onAddPlace = async () => {
+    if (!newName.trim()) return;
+    setAdding(true);
+    const r = await adminApi.addPlace(tourId, newName.trim());
+    setAdding(false);
+    if (r.ok) { setNewName(""); load(); }
+    else setFlash("Failed to add stop.");
+  };
+
+  const onDeletePlace = async (placeId: number) => {
+    if (!confirm("Delete this stop?")) return;
+    await adminApi.deletePlace(tourId, placeId);
+    if (selectedPlace?.id === placeId) setSelectedPlace(null);
+    load();
+  };
+
   if (err) return <div className="mt-6 text-red-600 text-sm">{err}</div>;
   if (!data) return <div className="mt-6 text-vg-muted text-sm">Loading stops…</div>;
   if (data.places.length === 0) return (
-    <div className="mt-6 rounded-2xl bg-white border border-vg-border p-8 text-center text-vg-muted text-sm">
-      No stops added to this tour yet.
+    <div className="mt-6 space-y-4">
+      <div className="rounded-2xl bg-white border border-vg-border p-8 text-center text-vg-muted text-sm">
+        No stops added yet. Add your first stop below.
+      </div>
+      <div className="flex gap-2">
+        <input value={newName} onChange={(e) => setNewName(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && onAddPlace()}
+          className="flex-1 border border-vg-border rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-vg-primary"
+          placeholder="Stop name (e.g. Hagia Sophia)" />
+        <button onClick={onAddPlace} disabled={adding || !newName.trim()}
+          className="bg-vg-primary text-white font-bold px-5 py-2.5 rounded-xl text-sm hover:bg-[#5a3dd4] transition-colors disabled:opacity-50">
+          {adding ? "Adding…" : "+ Add stop"}
+        </button>
+      </div>
     </div>
   );
 
@@ -411,22 +442,39 @@ function PlacesTranslationEditor({
             (l) => l !== canonicalLocale && placeLocaleStatus(place, l) === "missing"
           );
           return (
-            <button
-              key={place.id}
-              onClick={() => setSelectedPlace(place)}
-              className={`w-full text-left px-3 py-2.5 rounded-xl border text-sm transition-colors ${
-                selectedPlace?.id === place.id
-                  ? "bg-vg-primary text-white border-vg-primary"
-                  : "bg-white border-vg-border text-vg-ink hover:bg-vg-bg-soft"
-              }`}
-            >
-              <span className="block font-bold truncate">{place.name}</span>
-              <span className={`text-xs ${selectedPlace?.id === place.id ? "text-white/70" : "text-vg-muted"}`}>
-                {allDone ? "✓ all locales" : anyMissing ? "⚠ missing locales" : "🤖 machine only"}
-              </span>
-            </button>
+            <div key={place.id} className="flex gap-1">
+              <button
+                onClick={() => setSelectedPlace(place)}
+                className={`flex-1 text-left px-3 py-2.5 rounded-xl border text-sm transition-colors ${
+                  selectedPlace?.id === place.id
+                    ? "bg-vg-primary text-white border-vg-primary"
+                    : "bg-white border-vg-border text-vg-ink hover:bg-vg-bg-soft"
+                }`}
+              >
+                <span className="block font-bold truncate">{place.name}</span>
+                <span className={`text-xs ${selectedPlace?.id === place.id ? "text-white/70" : "text-vg-muted"}`}>
+                  {allDone ? "✓ all locales" : anyMissing ? "⚠ missing locales" : "🤖 machine only"}
+                </span>
+              </button>
+              <button onClick={() => onDeletePlace(place.id)}
+                className="px-2 rounded-xl border border-vg-border text-red-400 hover:bg-red-50 hover:border-red-200 transition-colors">
+                ✕
+              </button>
+            </div>
           );
         })}
+
+        {/* Add stop */}
+        <div className="pt-2 space-y-1">
+          <input value={newName} onChange={(e) => setNewName(e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && onAddPlace()}
+            className="w-full border border-vg-border rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-vg-primary"
+            placeholder="New stop name…" />
+          <button onClick={onAddPlace} disabled={adding || !newName.trim()}
+            className="w-full bg-vg-primary text-white font-bold py-2 rounded-xl text-sm hover:bg-[#5a3dd4] transition-colors disabled:opacity-50">
+            {adding ? "Adding…" : "+ Add stop"}
+          </button>
+        </div>
       </div>
 
       {/* Editor panel */}

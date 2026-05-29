@@ -296,6 +296,13 @@ export const adminApi = {
   // ════════ TOUR PLACE TRANSLATIONS ════════
   getTourPlaces: (tourId: number) =>
     authedFetch<TourPlacesDetail>(`/api/admin/translations/tours/${tourId}/places`),
+  addPlace: (tourId: number, name: string, description?: string) =>
+    authedFetch<{ id: number }>(`/api/admin/tours/${tourId}/places`, {
+      method: "POST",
+      body: JSON.stringify({ name, description: description || null }),
+    }),
+  deletePlace: (tourId: number, placeId: number) =>
+    authedFetch(`/api/admin/tours/${tourId}/places/${placeId}`, { method: "DELETE" }),
   upsertPlaceTranslation: (
     placeId: number,
     locale: string,
