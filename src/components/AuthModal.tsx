@@ -168,6 +168,22 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
     });
   }
 
+  const [resendState, setResendState] = useState<"idle" | "sending" | "sent">("idle");
+
+  async function onResend() {
+    setResendState("sending");
+    try {
+      // Re-auth with the credentials still in state, resend, then sign out again
+      await signInWithEmail(email, password);
+      await sendVerificationEmail();
+      await signOut();
+      setResendState("sent");
+      setTimeout(() => setResendState("idle"), 5000);
+    } catch {
+      setResendState("idle");
+    }
+  }
+
   const inputCls = "w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] focus:ring-2 focus:ring-[#6C4CF1]/10 transition-all placeholder:text-neutral-300";
 
   /* ── Verify email ── */
@@ -192,6 +208,17 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
             style={{ boxShadow: "0 4px 16px rgba(108,76,241,0.25)" }}>
             Got it
           </button>
+          <p className="mt-4 text-xs text-neutral-400">
+            Didn&apos;t receive it?{" "}
+            {resendState === "sent" ? (
+              <span className="text-emerald-600 font-semibold">Email sent ✓</span>
+            ) : (
+              <button onClick={onResend} disabled={resendState === "sending"}
+                className="text-[#6C4CF1] font-semibold hover:underline disabled:opacity-50">
+                {resendState === "sending" ? "Sending…" : "Resend email"}
+              </button>
+            )}
+          </p>
         </div>
       </div>
     );
