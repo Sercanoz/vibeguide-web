@@ -1,10 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import { useT } from "@/components/LanguageProvider";
 import { homeTranslations } from "@/lib/home-i18n";
 import { useInView } from "@/hooks/useInView";
 import Navbar from "@/components/Navbar";
+import { API_BASE_URL } from "@/lib/api";
 
 export default function HomePage() {
   const { locale } = useT();
@@ -178,6 +180,9 @@ export default function HomePage() {
           </svg>
         </div>
       </section>
+
+      {/* ── POPULAR TOURS (GYG-style rail) ── */}
+      <PopularTours />
 
 
       {/* ── HOW IT WORKS ── */}
@@ -656,5 +661,135 @@ function Phone({ children }: { children: React.ReactNode }) {
         </div>
       </div>
     </div>
+  );
+}
+
+interface PopularTour {
+  id: number;
+  title: string;
+  city: string;
+  category: string;
+  durationMinutes: number;
+  basePrice: number;
+  compareAtPrice?: number;
+  currency: string;
+  coverPhotoUrl?: string;
+  rating?: number;
+  reviewCount?: number;
+}
+
+function fmtDuration(m: number): string {
+  if (m < 60) return `${m}m`;
+  const h = Math.floor(m / 60);
+  const mm = m % 60;
+  return mm > 0 ? `${h}h ${mm}m` : `${h}h`;
+}
+
+function PopularTours() {
+  const sec = useInView();
+  const railRef = useRef<HTMLDivElement>(null);
+  const [tours, setTours] = useState<PopularTour[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch(`${API_BASE_URL}/api/tours?locale=en`, { cache: "no-store" })
+      .then((r) => (r.ok ? r.json() : []))
+      .then((data: PopularTour[]) => { setTours(data.slice(0, 10)); setLoading(false); })
+      .catch(() => setLoading(false));
+  }, []);
+
+  function scroll(dir: -1 | 1) {
+    railRef.current?.scrollBy({ left: dir * 340, behavior: "smooth" });
+  }
+
+  // Hiç tur yoksa bölümü gizle
+  if (!loading && tours.length === 0) return null;
+
+  return (
+    <section ref={sec.ref as React.RefObject<HTMLElement>} className={`py-20 bg-white reveal ${sec.inView ? "in-view" : ""}`}>
+      <div className="mx-auto max-w-7xl px-6">
+        {/* Header */}
+        <div className="flex items-end justify-between gap-4 mb-8">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1]">Handpicked</p>
+            <h2 className="mt-3 text-3xl md:text-5xl font-black tracking-tight text-[#0A0A0F]">Popular experiences</h2>
+            <p className="mt-2 text-sm text-neutral-400 max-w-md">Top-rated tours led by verified local guides across Turkey.</p>
+          </div>
+          <div className="hidden md:flex items-center gap-2 shrink-0">
+            <button onClick={() => scroll(-1)} aria-label="Previous"
+              className="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center text-neutral-500 hover:border-[#6C4CF1] hover:text-[#6C4CF1] transition-colors">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button onClick={() => scroll(1)} aria-label="Next"
+              className="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center text-neutral-500 hover:border-[#6C4CF1] hover:text-[#6C4CF1] transition-colors">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        {/* Rail */}
+        <div ref={railRef} className="flex gap-5 overflow-x-auto pb-4 -mx-6 px-6 snap-x scrollbar-hide" style={{ scrollbarWidth: "none" }}>
+          {loading
+            ? [...Array(4)].map((_, i) => (
+                <div key={i} className="shrink-0 w-[300px] snap-start">
+                  <div className="aspect-[4/3] rounded-2xl bg-neutral-100 animate-pulse" />
+                  <div className="mt-3 h-4 w-2/3 bg-neutral-100 rounded animate-pulse" />
+                  <div className="mt-2 h-4 w-1/3 bg-neutral-100 rounded animate-pulse" />
+                </div>
+              ))
+            : tours.map((tour) => {
+                const rating = tour.rating ?? 4.8;
+                const count = tour.reviewCount ?? 0;
+                const hasDiscount = tour.compareAtPrice != null && tour.compareAtPrice > tour.basePrice;
+                return (
+                  <a key={tour.id} href={`/tours/${tour.id}`}
+                    className="group shrink-0 w-[300px] snap-start">
+                    {/* Photo */}
+                    <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-neutral-100">
+                      {tour.coverPhotoUrl ? (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img src={tour.coverPhotoUrl} alt={tour.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                      ) : (
+                        <div className="w-full h-full bg-gradient-to-br from-[#6C4CF1]/15 to-[#8B5CF6]/15 flex items-center justify-center text-4xl">🗺️</div>
+                      )}
+                      <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wide bg-white/90 backdrop-blur text-[#0A0A0F]">
+                        {tour.category}
+                      </span>
+                    </div>
+                    {/* Info */}
+                    <div className="mt-3">
+                      <p className="text-xs text-neutral-400 flex items-center gap-1.5">
+                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        {tour.city}
+                        <span className="text-black/20">·</span>
+                        {fmtDuration(tour.durationMinutes)}
+                      </p>
+                      <h3 className="mt-1 font-black text-[#0A0A0F] text-[15px] leading-snug line-clamp-2 group-hover:text-[#6C4CF1] transition-colors">{tour.title}</h3>
+                      <div className="mt-1.5 flex items-center gap-1 text-xs">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="#F59E0B" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <span className="font-bold text-[#0A0A0F]">{rating.toFixed(1)}</span>
+                        {count > 0 && <span className="text-neutral-400">({count})</span>}
+                      </div>
+                      <div className="mt-2 flex items-baseline gap-1.5">
+                        {hasDiscount && <span className="text-xs text-neutral-400 line-through">{tour.compareAtPrice} {tour.currency}</span>}
+                        <span className="text-base font-black text-[#6C4CF1]">{tour.basePrice} {tour.currency}</span>
+                        <span className="text-xs text-neutral-400">/ person</span>
+                      </div>
+                    </div>
+                  </a>
+                );
+              })}
+        </div>
+
+        {/* See all */}
+        <div className="mt-6 text-center">
+          <a href="/tours" className="inline-flex items-center gap-2 rounded-full border border-black/10 px-7 py-3 text-sm font-bold text-[#0A0A0F] hover:border-[#6C4CF1] hover:text-[#6C4CF1] transition-colors">
+            See all tours
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
   );
 }
