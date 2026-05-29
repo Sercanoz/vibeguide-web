@@ -465,6 +465,17 @@ export const adminApi = {
   deleteUser: (id: number) =>
     authedFetch<{ ok: true }>(`/api/admin/users/${id}`, { method: "DELETE" }),
 
+  // ════════ TOUR REVIEWS (public, QR) ════════
+
+  listTourReviews: (status: string = "pending") =>
+    authedFetch<TourReviewRow[]>(`/api/admin/tour-reviews?status=${status}`),
+  approveTourReview: (id: number) =>
+    authedFetch<{ ok: true }>(`/api/admin/tour-reviews/${id}/approve`, { method: "POST" }),
+  rejectTourReview: (id: number) =>
+    authedFetch<{ ok: true }>(`/api/admin/tour-reviews/${id}/reject`, { method: "POST" }),
+  deleteTourReview: (id: number) =>
+    authedFetch<{ ok: true }>(`/api/admin/tour-reviews/${id}`, { method: "DELETE" }),
+
   // ════════ PAYOUTS ════════
 
   processWeeklyPayouts: () =>
@@ -605,6 +616,18 @@ export const adminApi = {
     authedFetch<{ ok: true }>(`/api/admin/tours/${tourId}/includes/${includeId}`, {
       method: "DELETE",
     }),
+};
+
+export type TourReviewRow = {
+  id: number;
+  tourId: number;
+  tourTitle: string | null;
+  fullName: string;
+  nationality: string | null;
+  rating: number;
+  comment: string | null;
+  status: string;
+  createdAt: string;
 };
 
 export type GuideApplication = {

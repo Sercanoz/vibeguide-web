@@ -2,6 +2,7 @@
 
 import { use, useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { QRCodeCanvas } from "qrcode.react";
 import { uploadTourPhoto } from "@/lib/firebase-storage";
 import {
   adminApi,
@@ -37,7 +38,7 @@ export default function AdminTourEditor(props: Props) {
   return <Editor id={id} />;
 }
 
-type Tab = "tour" | "places" | "photos" | "meeting" | "includes" | "info" | "settings";
+type Tab = "tour" | "places" | "photos" | "meeting" | "includes" | "info" | "qr" | "settings";
 
 function Editor({ id }: { id: number }) {
   const [tab, setTab] = useState<Tab>("tour");
@@ -96,6 +97,7 @@ function Editor({ id }: { id: number }) {
           ["meeting", "🗺️ Meeting point"],
           ["includes", "✓ Includes"],
           ["info", "⚠️ Important info"],
+          ["qr", "📱 QR / Reviews"],
           ["settings", "⚙️ Settings"],
         ] as [Tab, string][]).map(([t, label]) => (
           <button
@@ -124,6 +126,8 @@ function Editor({ id }: { id: number }) {
         <IncludesEditor tourId={id} />
       ) : tab === "info" ? (
         <ImportantInfoEditor tourId={id} />
+      ) : tab === "qr" ? (
+        <QrReviewPanel tourId={id} />
       ) : (
         <TourSettingsEditor id={id} />
       )}
@@ -1237,6 +1241,69 @@ function SField({ label, required, children }: { label: string; required?: boole
         {label}{required && <span className="text-vg-flame ml-1">*</span>}
       </label>
       {children}
+    </div>
+  );
+}
+
+function QrReviewPanel({ tourId }: { tourId: number }) {
+  const reviewUrl = `https://www.vibeguideapp.com/tours/${tourId}/review`;
+  const qrRef = useRef<HTMLDivElement>(null);
+  const [copied, setCopied] = useState(false);
+
+  function downloadPng() {
+    const canvas = qrRef.current?.querySelector("canvas");
+    if (!canvas) return;
+    const url = canvas.toDataURL("image/png");
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `vibeguide-tour-${tourId}-review-qr.png`;
+    a.click();
+  }
+
+  function copyLink() {
+    navigator.clipboard.writeText(reviewUrl);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  }
+
+  return (
+    <div className="mt-6 max-w-md">
+      <div className="bg-white border border-vg-border rounded-2xl p-6 shadow-sm text-center">
+        <p className="text-sm font-black text-vg-ink mb-1">Review QR Code</p>
+        <p className="text-xs text-vg-muted mb-5">
+          Print this and place it at the tour location. Anyone who scans it lands on the review form for this tour.
+        </p>
+
+        <div ref={qrRef} className="inline-block p-4 bg-white rounded-2xl border border-vg-border">
+          <QRCodeCanvas
+            value={reviewUrl}
+            size={220}
+            level="M"
+            marginSize={2}
+            fgColor="#0A0A0F"
+          />
+        </div>
+
+        <div className="mt-5 flex gap-2">
+          <button onClick={downloadPng}
+            className="flex-1 bg-vg-primary text-white font-bold py-2.5 rounded-xl text-sm hover:bg-[#5a3dd4] transition-colors">
+            ⬇ Download PNG
+          </button>
+          <button onClick={copyLink}
+            className="flex-1 border border-vg-border text-vg-ink font-bold py-2.5 rounded-xl text-sm hover:border-vg-primary transition-colors">
+            {copied ? "Copied ✓" : "Copy link"}
+          </button>
+        </div>
+
+        <p className="mt-3 text-[11px] text-vg-muted break-all">{reviewUrl}</p>
+      </div>
+
+      <div className="mt-4 bg-amber-50 border border-amber-100 rounded-2xl p-4 text-xs text-amber-800 leading-5">
+        <strong>How it works:</strong> Reviews submitted via this QR are{" "}
+        <strong>pending</strong> until you approve them in{" "}
+        <Link href="/admin/reviews" className="underline font-bold">Reviews</Link>.
+        Approved reviews appear on the tour page and update its star rating.
+      </div>
     </div>
   );
 }

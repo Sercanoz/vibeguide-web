@@ -488,6 +488,8 @@ export default function TourDetailPage() {
               <p className="text-xs text-neutral-400 mt-2">Prices are per guide, not per person.</p>
             </div>
           )}
+
+          <ReviewsSection tourId={tour.id} />
         </div>
 
         {/* Sticky booking sidebar */}
@@ -689,6 +691,85 @@ function Lightbox({
           </button>
         ))}
       </div>
+    </div>
+  );
+}
+
+interface PublicReview {
+  id: number;
+  fullName: string;
+  nationality: string | null;
+  rating: number;
+  comment: string | null;
+  createdAt: string;
+}
+
+function ReviewStars({ n, size = 14 }: { n: number; size?: number }) {
+  return (
+    <span className="inline-flex gap-0.5">
+      {[1, 2, 3, 4, 5].map((i) => (
+        <svg key={i} width={size} height={size} viewBox="0 0 24 24" fill={i <= Math.round(n) ? "#F59E0B" : "#E5E7EB"} stroke="none">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+        </svg>
+      ))}
+    </span>
+  );
+}
+
+function ReviewsSection({ tourId }: { tourId: number }) {
+  const [data, setData] = useState<{ count: number; avgRating: number; reviews: PublicReview[] } | null>(null);
+
+  useEffect(() => {
+    fetch(`${API_BASE_URL}/api/tours/${tourId}/public-reviews`)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => d && setData(d))
+      .catch(() => {});
+  }, [tourId]);
+
+  return (
+    <div>
+      <div className="flex items-center justify-between flex-wrap gap-3 mb-5">
+        <h2 className="text-2xl font-black">
+          Reviews
+          {data && data.count > 0 && (
+            <span className="ml-3 inline-flex items-center gap-2 text-lg align-middle">
+              <ReviewStars n={data.avgRating} size={18} />
+              <span className="text-[#0A0A0F]">{data.avgRating.toFixed(1)}</span>
+              <span className="text-neutral-400 text-sm font-semibold">({data.count})</span>
+            </span>
+          )}
+        </h2>
+        <a href={`/tours/${tourId}/review`}
+          className="rounded-full border border-[#6C4CF1]/30 text-[#6C4CF1] font-bold text-sm px-5 py-2 hover:bg-[#6C4CF1]/5 transition-colors">
+          ✍️ Write a review
+        </a>
+      </div>
+
+      {!data || data.reviews.length === 0 ? (
+        <div className="rounded-2xl bg-[#F7F7FB] border border-black/5 p-8 text-center">
+          <p className="text-sm font-semibold text-neutral-500">No reviews yet</p>
+          <p className="text-xs text-neutral-400 mt-1">Be the first to share your experience.</p>
+        </div>
+      ) : (
+        <div className="grid sm:grid-cols-2 gap-4">
+          {data.reviews.map((r) => (
+            <div key={r.id} className="rounded-2xl bg-white border border-black/[0.06] p-5 shadow-sm">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#6C4CF1] to-[#8B5CF6] flex items-center justify-center text-sm font-black text-white shrink-0">
+                  {r.fullName[0]?.toUpperCase()}
+                </div>
+                <div className="min-w-0">
+                  <p className="font-bold text-[#0A0A0F] text-sm truncate">{r.fullName}</p>
+                  {r.nationality && <p className="text-xs text-neutral-400">{r.nationality}</p>}
+                </div>
+              </div>
+              <ReviewStars n={r.rating} />
+              {r.comment && <p className="mt-2 text-sm text-neutral-600 leading-6">{r.comment}</p>}
+              <p className="mt-3 text-[11px] text-neutral-400">{new Date(r.createdAt).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}</p>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
