@@ -322,6 +322,8 @@ function PlacesTranslationEditor({
   const [saving, setSaving] = useState(false);
   const [autoTranslating, setAutoTranslating] = useState(false);
   const [flash, setFlash] = useState<string | null>(null);
+  const [newName, setNewName] = useState("");
+  const [adding, setAdding] = useState(false);
 
   const load = async () => {
     const r = await adminApi.getTourPlaces(tourId);
@@ -390,9 +392,6 @@ function PlacesTranslationEditor({
     if (!tr) return "missing";
     return tr.isMachineTranslated ? "machine" : "human";
   };
-
-  const [newName, setNewName] = useState("");
-  const [adding, setAdding] = useState(false);
 
   const onAddPlace = async () => {
     if (!newName.trim()) return;
