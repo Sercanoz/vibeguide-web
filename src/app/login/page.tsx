@@ -4,9 +4,11 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { signInWithEmail, signInWithGoogle, fbAuth } from "@/lib/firebase-client";
 import { API_BASE_URL } from "@/lib/api";
+import { useRedirectIfAuthed } from "@/hooks/useRedirectIfAuthed";
 
 export default function LoginPage() {
   const router = useRouter();
+  const checking = useRedirectIfAuthed();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -65,6 +67,14 @@ export default function LoginPage() {
     } finally {
       setLoading(false);
     }
+  }
+
+  if (checking) {
+    return (
+      <main className="min-h-screen bg-white flex items-center justify-center">
+        <div className="w-8 h-8 rounded-full border-2 border-[#6C4CF1] border-t-transparent animate-spin" />
+      </main>
+    );
   }
 
   return (

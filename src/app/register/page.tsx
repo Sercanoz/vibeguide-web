@@ -1,6 +1,16 @@
 "use client";
 
+import { useRedirectIfAuthed } from "@/hooks/useRedirectIfAuthed";
+
 export default function RegisterChoicePage() {
+  const checking = useRedirectIfAuthed();
+  if (checking) {
+    return (
+      <main className="min-h-screen bg-white flex items-center justify-center">
+        <div className="w-8 h-8 rounded-full border-2 border-[#6C4CF1] border-t-transparent animate-spin" />
+      </main>
+    );
+  }
   return (
     <main className="min-h-screen bg-white flex items-center justify-center px-4">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#6C4CF1]/6 to-transparent rounded-full blur-[80px] pointer-events-none" />

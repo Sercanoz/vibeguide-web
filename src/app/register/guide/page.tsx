@@ -6,6 +6,7 @@ import { registerWithEmail, signInWithGoogle, fbAuth } from "@/lib/firebase-clie
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { fbApp } from "@/lib/firebase-client";
 import { API_BASE_URL } from "@/lib/api";
+import { useRedirectIfAuthed } from "@/hooks/useRedirectIfAuthed";
 
 type PhotoSlot = "badgeFront" | "badgeBack";
 
@@ -23,6 +24,7 @@ async function uploadKyc(file: File, uid: string, slot: PhotoSlot): Promise<stri
 
 export default function RegisterGuidePage() {
   const router = useRouter();
+  const checking = useRedirectIfAuthed();
   const [step, setStep] = useState<"form" | "verify" | "pending">("form");
 
   const [fullName, setFullName] = useState("");
@@ -151,6 +153,14 @@ export default function RegisterGuidePage() {
       setLoading(false);
       setUploadProgress(null);
     }
+  }
+
+  if (checking) {
+    return (
+      <main className="min-h-screen bg-white flex items-center justify-center">
+        <div className="w-8 h-8 rounded-full border-2 border-[#6C4CF1] border-t-transparent animate-spin" />
+      </main>
+    );
   }
 
   /* ── PENDING screen ── */
