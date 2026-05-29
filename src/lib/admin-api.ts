@@ -476,6 +476,24 @@ export const adminApi = {
   listDistricts: (provinceId: number) =>
     authedFetch<{ id: number; name: string }[]>(`/api/locations/districts?provinceId=${provinceId}`),
 
+  // ── admin location management ──
+  locationTree: () =>
+    authedFetch<LocationTreeCountry[]>("/api/admin/locations/tree"),
+  addProvince: (countryId: number, name: string) =>
+    authedFetch<{ id: number; name: string; slug: string }>("/api/admin/locations/provinces", {
+      method: "POST", body: JSON.stringify({ countryId, name }),
+    }),
+  addDistrict: (provinceId: number, name: string) =>
+    authedFetch<{ id: number; name: string; slug: string }>("/api/admin/locations/districts", {
+      method: "POST", body: JSON.stringify({ provinceId, name }),
+    }),
+  deleteProvince: (id: number) =>
+    authedFetch<{ ok: true }>(`/api/admin/locations/provinces/${id}`, { method: "DELETE" }),
+  deleteDistrict: (id: number) =>
+    authedFetch<{ ok: true }>(`/api/admin/locations/districts/${id}`, { method: "DELETE" }),
+  importTurkey: () =>
+    authedFetch<{ ok: true; addedProvinces: number; addedDistricts: number }>("/api/admin/locations/import-turkey", { method: "POST" }),
+
   // ════════ TOUR REVIEWS (public, QR) ════════
 
   listTourReviews: (status: string = "pending") =>
@@ -627,6 +645,19 @@ export const adminApi = {
     authedFetch<{ ok: true }>(`/api/admin/tours/${tourId}/includes/${includeId}`, {
       method: "DELETE",
     }),
+};
+
+export type LocationTreeCountry = {
+  id: number;
+  code: string;
+  name: string;
+  flag: string | null;
+  provinces: {
+    id: number;
+    name: string;
+    slug: string | null;
+    districts: { id: number; name: string; slug: string | null }[];
+  }[];
 };
 
 export type TourReviewRow = {
