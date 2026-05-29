@@ -729,7 +729,6 @@ function fmtDuration(m: number): string {
 }
 
 function PopularTours() {
-  const sec = useInView();
   const railRef = useRef<HTMLDivElement>(null);
   const [tours, setTours] = useState<PopularTour[]>([]);
   const [loading, setLoading] = useState(true);
@@ -749,10 +748,10 @@ function PopularTours() {
   if (!loading && tours.length === 0) return null;
 
   return (
-    <section ref={sec.ref as React.RefObject<HTMLElement>} className={`py-20 bg-white reveal ${sec.inView ? "in-view" : ""}`}>
+    <section className="pt-16 pb-12 bg-white">
       <div className="mx-auto max-w-7xl px-6">
         {/* Header */}
-        <div className="flex items-end justify-between gap-4 mb-8">
+        <div className="flex items-end justify-between gap-4 mb-7">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1]">Handpicked</p>
             <h2 className="mt-3 text-3xl md:text-5xl font-black tracking-tight text-[#0A0A0F]">Popular experiences</h2>
@@ -849,7 +848,6 @@ const CITY_PHOTOS: Record<string, string> = {
 };
 
 function Destinations() {
-  const sec = useInView();
   const [cities, setCities] = useState<{ city: string; count: number }[]>([]);
 
   useEffect(() => {
@@ -871,7 +869,7 @@ function Destinations() {
 
   // İlk kart büyük (2 sütun), gerisi normal — Airbnb/GYG mozaik hissi
   return (
-    <section ref={sec.ref as React.RefObject<HTMLElement>} className={`py-20 bg-[#F7F7FB] reveal ${sec.inView ? "in-view" : ""}`}>
+    <section className="py-16 bg-[#F7F7FB]">
       <div className="mx-auto max-w-7xl px-6">
         <div className="text-center mb-10">
           <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1]">Where to?</p>
@@ -929,9 +927,8 @@ const CATEGORIES: { key: string; label: string; icon: React.ReactNode; color: st
 ];
 
 function Categories() {
-  const sec = useInView();
   return (
-    <section ref={sec.ref as React.RefObject<HTMLElement>} className={`py-16 bg-white reveal ${sec.inView ? "in-view" : ""}`}>
+    <section className="py-16 bg-white">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-7">
           <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1]">Browse by interest</p>
@@ -963,7 +960,6 @@ interface Testimonial {
 }
 
 function Testimonials() {
-  const sec = useInView();
   const [reviews, setReviews] = useState<Testimonial[]>([]);
 
   useEffect(() => {
@@ -976,7 +972,7 @@ function Testimonials() {
   if (reviews.length === 0) return null;
 
   return (
-    <section ref={sec.ref as React.RefObject<HTMLElement>} className={`py-24 bg-[#F7F7FB] reveal ${sec.inView ? "in-view" : ""}`}>
+    <section className="py-24 bg-[#F7F7FB]">
       <div className="mx-auto max-w-7xl px-6">
         <div className="text-center mb-12">
           <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1]">Loved by travellers</p>
