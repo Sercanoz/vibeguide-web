@@ -23,9 +23,13 @@ export default function AdminAuthGuard({
         return;
       }
       try {
-        const token = await u.getIdToken();
+        // Email must be verified, and force-refresh the token so a revoked
+        // session is caught immediately (backend also re-checks with checkRevoked).
+        if (!u.emailVerified) { setAuthState("unauthorized"); return; }
+        const token = await u.getIdToken(true);
         const res = await fetch(`${API_BASE_URL}/api/auth/me`, {
           headers: { Authorization: `Bearer ${token}` },
+          cache: "no-store",
         });
         if (!res.ok) { setAuthState("unauthorized"); return; }
         const me = await res.json();
