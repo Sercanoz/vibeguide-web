@@ -22,6 +22,7 @@ interface Tour {
   rating?: number;
   reviewCount?: number;
   provinceName?: string | null;
+  provinceSlug?: string | null;
   districtName?: string | null;
 }
 
@@ -80,10 +81,22 @@ export default function TourFilters({ tours }: Props) {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const searchParams = useSearchParams();
 
-  // Pre-select city/category from query (e.g. coming from homepage cards)
+  // Pre-select city/category from query (e.g. coming from homepage cards).
+  // `city` may be a slug (izmir) or display name (İzmir) — match against both.
   useEffect(() => {
     const cq = searchParams.get("city");
-    if (cq && cities.includes(cq)) setActiveCity(cq);
+    if (cq) {
+      const key = cq.toLowerCase();
+      if (cities.includes(cq)) {
+        setActiveCity(cq);
+      } else {
+        // slug → find the tour's display city
+        const match = tours.find(
+          (t) => (t.provinceSlug ?? "").toLowerCase() === key || t.city.toLowerCase() === key
+        );
+        if (match) setActiveCity(match.city);
+      }
+    }
     const catq = searchParams.get("category");
     if (catq) setActiveCategory(catq.toLowerCase());
     // eslint-disable-next-line react-hooks/exhaustive-deps

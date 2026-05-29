@@ -836,28 +836,33 @@ function PopularTours() {
   );
 }
 
-/* City → cover photo (Unsplash). Falls back to a gradient for unknown cities. */
+/* Province slug → cover photo (Unsplash). Falls back to a gradient if unknown. */
 const CITY_PHOTOS: Record<string, string> = {
-  Istanbul: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80&w=900",
-  Cappadocia: "https://images.unsplash.com/photo-1641128324972-af3212f0f6bd?q=80&w=900",
-  Ephesus: "https://images.unsplash.com/photo-1589561253898-768105ca91a8?q=80&w=900",
-  Pamukkale: "https://images.unsplash.com/photo-1591291621164-2c6367723315?q=80&w=900",
-  Antalya: "https://images.unsplash.com/photo-1589561084283-930aa7b1ce50?q=80&w=900",
-  Bodrum: "https://images.unsplash.com/photo-1610116306796-6fea9f4fae38?q=80&w=900",
-  Izmir: "https://images.unsplash.com/photo-1605281317010-fe5ffe798166?q=80&w=900",
+  istanbul: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80&w=900",
+  nevsehir: "https://images.unsplash.com/photo-1641128324972-af3212f0f6bd?q=80&w=900",
+  izmir: "https://images.unsplash.com/photo-1605281317010-fe5ffe798166?q=80&w=900",
+  denizli: "https://images.unsplash.com/photo-1591291621164-2c6367723315?q=80&w=900",
+  antalya: "https://images.unsplash.com/photo-1589561084283-930aa7b1ce50?q=80&w=900",
+  mugla: "https://images.unsplash.com/photo-1610116306796-6fea9f4fae38?q=80&w=900",
 };
 
 function Destinations() {
-  const [cities, setCities] = useState<{ city: string; count: number }[]>([]);
+  // city = display name (province if available, else legacy city), slug = ASCII for URL
+  const [cities, setCities] = useState<{ city: string; slug: string; count: number }[]>([]);
 
   useEffect(() => {
     fetch(`${API_BASE_URL}/api/tours?locale=en`, { cache: "no-store" })
       .then((r) => (r.ok ? r.json() : []))
-      .then((data: { city: string }[]) => {
-        const map = new Map<string, number>();
-        for (const t of data) map.set(t.city, (map.get(t.city) ?? 0) + 1);
+      .then((data: { city: string; provinceName?: string | null; provinceSlug?: string | null }[]) => {
+        const map = new Map<string, { count: number; slug: string }>();
+        for (const t of data) {
+          const display = t.provinceName || t.city;
+          const slug = t.provinceSlug || t.city.toLowerCase();
+          const cur = map.get(display);
+          map.set(display, { count: (cur?.count ?? 0) + 1, slug });
+        }
         const list = Array.from(map.entries())
-          .map(([city, count]) => ({ city, count }))
+          .map(([city, v]) => ({ city, slug: v.slug, count: v.count }))
           .sort((a, b) => b.count - a.count)
           .slice(0, 6);
         setCities(list);
@@ -879,11 +884,11 @@ function Destinations() {
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {cities.map((c, i) => {
-            const photo = CITY_PHOTOS[c.city];
+            const photo = CITY_PHOTOS[c.slug];
             const big = i === 0;
             return (
               <a key={c.city}
-                href={`/tours?city=${encodeURIComponent(c.city)}`}
+                href={`/tours?city=${encodeURIComponent(c.slug)}`}
                 className={`group relative rounded-3xl overflow-hidden ${big ? "col-span-2 row-span-2 min-h-[280px]" : "min-h-[180px]"}`}>
                 {photo ? (
                   // eslint-disable-next-line @next/next/no-img-element
