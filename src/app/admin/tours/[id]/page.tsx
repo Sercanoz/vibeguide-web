@@ -340,7 +340,11 @@ function PlacesTranslationEditor({
   useEffect(() => {
     if (!selectedPlace || !activeLocale) return;
     const tr = selectedPlace.translations.find((t) => t.locale === activeLocale);
-    setDraft({ name: tr?.name ?? "", description: tr?.description ?? "" });
+    // Fall back to base place.name/description if no translation yet (canonical content)
+    setDraft({
+      name: tr?.name ?? selectedPlace.name ?? "",
+      description: tr?.description ?? selectedPlace.description ?? "",
+    });
   }, [selectedPlace, activeLocale]);
 
   // Sync selectedPlace when data reloads
@@ -500,7 +504,7 @@ function PlacesTranslationEditor({
             {/* Locale tabs */}
             <div className="flex flex-wrap gap-1.5 mb-4">
               {data.supportedLocales.map((loc) => {
-                const status = loc === canonicalLocale ? "human" : placeLocaleStatus(selectedPlace, loc);
+                const status = placeLocaleStatus(selectedPlace, loc);
                 const active = loc === activeLocale;
                 return (
                   <button
@@ -527,15 +531,7 @@ function PlacesTranslationEditor({
               <div className="mb-4 rounded-xl bg-vg-bg-soft border border-vg-border px-4 py-3 text-sm">{flash}</div>
             )}
 
-            {activeLocale === canonicalLocale ? (
-              <div className="rounded-2xl bg-vg-bg-soft border border-vg-border p-5 text-sm text-vg-muted">
-                <p><strong className="text-vg-ink">Name:</strong> {selectedPlace.name}</p>
-                {selectedPlace.description && (
-                  <p className="mt-2"><strong className="text-vg-ink">Description:</strong> {selectedPlace.description}</p>
-                )}
-                <p className="mt-3 text-xs">This is the canonical ({canonicalLocale.toUpperCase()}) content. Edit in tour admin to change.</p>
-              </div>
-            ) : (
+            {false ? null : (
               <div className="rounded-3xl bg-white border border-vg-border p-6 shadow-sm">
                 <Field
                   label="Name"
