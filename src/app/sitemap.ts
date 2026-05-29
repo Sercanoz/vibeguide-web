@@ -18,6 +18,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE}/help`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${SITE}/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.4 },
     { url: `${SITE}/terms`, lastModified: now, changeFrequency: "yearly", priority: 0.4 },
+    { url: `${SITE}/kvkk`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${SITE}/cerez-politikasi`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${SITE}/mesafeli-satis`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${SITE}/on-bilgilendirme`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${SITE}/cancellation-policy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     { url: `${SITE}/account-deletion`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
   ];
 

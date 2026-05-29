@@ -645,6 +645,7 @@ export default function HomePage() {
                 <li><a href="/mesafeli-satis" className="hover:text-black transition-colors">Mesafeli Satış Sözleşmesi</a></li>
                 <li><a href="/on-bilgilendirme" className="hover:text-black transition-colors">Ön Bilgilendirme Formu</a></li>
                 <li><a href="/kvkk" className="hover:text-black transition-colors">KVKK Aydınlatma</a></li>
+                <li><a href="/cerez-politikasi" className="hover:text-black transition-colors">Çerez Politikası</a></li>
               </ul>
             </div>
           </div>
