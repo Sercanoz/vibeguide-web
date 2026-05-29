@@ -55,6 +55,8 @@ interface TourDetail {
   title: string;
   summary?: string;
   city: string;
+  provinceName?: string | null;
+  districtName?: string | null;
   category: string;
   durationMinutes: number;
   basePrice: number;
@@ -207,7 +209,7 @@ export default function TourDetailPage() {
                 {tour.title}
               </h1>
               <p className="mt-2 text-neutral-400 flex items-center gap-3 text-sm">
-                <span>📍 {tour.city}</span>
+                <span>📍 {tour.districtName && tour.provinceName ? `${tour.districtName}, ${tour.provinceName}` : (tour.provinceName || tour.city)}</span>
                 <span>·</span>
                 <span>🕐 {formatDuration(tour.durationMinutes)}</span>
               </p>
@@ -520,8 +522,8 @@ export default function TourDetailPage() {
           <div className="flex items-center gap-3 rounded-xl bg-[#F7F7FB] px-4 py-3">
             <span className="text-xl">📍</span>
             <div>
-              <p className="text-xs text-neutral-400 font-medium">City</p>
-              <p className="font-black text-sm">{tour.city}</p>
+              <p className="text-xs text-neutral-400 font-medium">Location</p>
+              <p className="font-black text-sm">{tour.districtName && tour.provinceName ? `${tour.districtName}, ${tour.provinceName}` : (tour.provinceName || tour.city)}</p>
             </div>
           </div>
 

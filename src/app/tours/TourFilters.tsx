@@ -21,6 +21,14 @@ interface Tour {
   badges?: string;
   rating?: number;
   reviewCount?: number;
+  provinceName?: string | null;
+  districtName?: string | null;
+}
+
+/** "Selçuk, İzmir" if district present, else province, else legacy city. */
+function locationLabel(t: { city: string; provinceName?: string | null; districtName?: string | null }): string {
+  if (t.districtName && t.provinceName) return `${t.districtName}, ${t.provinceName}`;
+  return t.provinceName || t.city;
 }
 
 interface Props {
@@ -185,7 +193,7 @@ export default function TourFilters({ tours }: Props) {
                   <div className="flex items-center justify-between mb-1.5">
                     <p className="text-[11px] text-neutral-400 flex items-center gap-1">
                       <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                      {tour.city}
+                      {locationLabel(tour)}
                       <span className="mx-0.5 text-black/20">·</span>
                       <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                       {formatDuration(tour.durationMinutes)}

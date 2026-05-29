@@ -224,6 +224,9 @@ export type TourSettings = {
   badges: string | null;
   rating: number | null;
   reviewCount: number;
+  countryId: number | null;
+  provinceId: number | null;
+  districtId: number | null;
   status: string;
 };
 
@@ -464,6 +467,14 @@ export const adminApi = {
 
   deleteUser: (id: number) =>
     authedFetch<{ ok: true }>(`/api/admin/users/${id}`, { method: "DELETE" }),
+
+  // ════════ LOCATIONS (country → province → district) ════════
+  listCountries: () =>
+    authedFetch<{ id: number; code: string; name: string; flag: string | null }[]>("/api/locations/countries"),
+  listProvinces: (countryId: number) =>
+    authedFetch<{ id: number; name: string }[]>(`/api/locations/provinces?countryId=${countryId}`),
+  listDistricts: (provinceId: number) =>
+    authedFetch<{ id: number; name: string }[]>(`/api/locations/districts?provinceId=${provinceId}`),
 
   // ════════ TOUR REVIEWS (public, QR) ════════
 

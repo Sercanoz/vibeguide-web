@@ -639,7 +639,7 @@ function TourSettingsEditor({ id }: { id: number }) {
 
   const onSave = async () => {
     if (!draft.title?.trim()) { setFlash("Title is required."); return; }
-    if (!draft.city?.trim()) { setFlash("City is required."); return; }
+    if (!draft.provinceId && !draft.city?.trim()) { setFlash("Please select a location."); return; }
     setSaving(true); setFlash(null);
     const r = await adminApi.updateTourSettings(id, draft);
     setSaving(false);
@@ -668,11 +668,17 @@ function TourSettingsEditor({ id }: { id: number }) {
             className="w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-vg-primary" placeholder="Tour title" maxLength={200} />
         </SField>
 
+        <SField label="Location" required>
+          <LocationPicker
+            countryId={draft.countryId ?? null}
+            provinceId={draft.provinceId ?? null}
+            districtId={draft.districtId ?? null}
+            onChange={(c, p, d) => { set("countryId", c); set("provinceId", p); set("districtId", d); }}
+          />
+          {draft.city && <p className="mt-1.5 text-xs text-vg-muted">Current: {draft.city}</p>}
+        </SField>
+
         <div className="grid grid-cols-2 gap-4">
-          <SField label="City" required>
-            <input value={draft.city ?? ""} onChange={(e) => set("city", e.target.value)}
-              className="w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-vg-primary" placeholder="Istanbul" />
-          </SField>
           <SField label="Category">
             <input value={draft.category ?? ""} onChange={(e) => set("category", e.target.value)}
               className="w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-vg-primary" placeholder="history, food, art…" />
@@ -1241,6 +1247,49 @@ function SField({ label, required, children }: { label: string; required?: boole
         {label}{required && <span className="text-vg-flame ml-1">*</span>}
       </label>
       {children}
+    </div>
+  );
+}
+
+function LocationPicker({ countryId, provinceId, districtId, onChange }: {
+  countryId: number | null;
+  provinceId: number | null;
+  districtId: number | null;
+  onChange: (countryId: number | null, provinceId: number | null, districtId: number | null) => void;
+}) {
+  const [countries, setCountries] = useState<{ id: number; name: string; flag: string | null }[]>([]);
+  const [provinces, setProvinces] = useState<{ id: number; name: string }[]>([]);
+  const [districts, setDistricts] = useState<{ id: number; name: string }[]>([]);
+
+  useEffect(() => { adminApi.listCountries().then((r) => { if (r.ok) setCountries(r.data); }); }, []);
+  useEffect(() => {
+    if (countryId) adminApi.listProvinces(countryId).then((r) => { if (r.ok) setProvinces(r.data); });
+    else setProvinces([]);
+  }, [countryId]);
+  useEffect(() => {
+    if (provinceId) adminApi.listDistricts(provinceId).then((r) => { if (r.ok) setDistricts(r.data); });
+    else setDistricts([]);
+  }, [provinceId]);
+
+  const selCls = "w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-vg-primary";
+
+  return (
+    <div className="grid grid-cols-3 gap-3">
+      <select value={countryId ?? ""} className={selCls}
+        onChange={(e) => onChange(e.target.value ? Number(e.target.value) : null, null, null)}>
+        <option value="">Country…</option>
+        {countries.map((c) => <option key={c.id} value={c.id}>{c.flag} {c.name}</option>)}
+      </select>
+      <select value={provinceId ?? ""} className={selCls} disabled={!countryId}
+        onChange={(e) => onChange(countryId, e.target.value ? Number(e.target.value) : null, null)}>
+        <option value="">Province…</option>
+        {provinces.map((p) => <option key={p.id} value={p.id}>{p.name}</option>)}
+      </select>
+      <select value={districtId ?? ""} className={selCls} disabled={!provinceId}
+        onChange={(e) => onChange(countryId, provinceId, e.target.value ? Number(e.target.value) : null)}>
+        <option value="">District (optional)…</option>
+        {districts.map((d) => <option key={d.id} value={d.id}>{d.name}</option>)}
+      </select>
     </div>
   );
 }
