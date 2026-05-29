@@ -70,11 +70,15 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
       return;
     }
 
-    const token = await user.getIdToken();
+    const token = await user.getIdToken(true); // force-refresh so emailVerified is current
     const res = await fetch(`${API_BASE_URL}/api/auth/me`, {
       headers: { Authorization: `Bearer ${token}` },
     });
-    if (res.status === 404) { onClose(); router.push("/register"); return; }
+    // Email verified but no DB row yet (verified via email link in another session) → register now
+    if (res.status === 404) {
+      try { await registerTouristOnBackend(); } catch { onClose(); router.push("/register"); }
+      return;
+    }
     if (res.ok) {
       const me = await res.json();
       onClose();
