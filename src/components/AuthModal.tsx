@@ -135,6 +135,8 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
     setLoading(true);
     try {
       await registerWithEmail(email, password);
+      // Persist pending registration so /verified can complete it after email click
+      localStorage.setItem("vg_pending_register", JSON.stringify({ fullName: fullName.trim(), role: "tourist" }));
       await sendVerificationEmail();
       setStep("verify");
     } catch (err: unknown) {
