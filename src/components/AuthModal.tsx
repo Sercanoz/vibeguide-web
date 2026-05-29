@@ -135,6 +135,7 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
     setLoading(true);
     try {
       await registerWithEmail(email, password);
+      await sendVerificationEmail();
       setStep("verify");
     } catch (err: unknown) {
       const code = (err as { code?: string }).code ?? "";
@@ -142,6 +143,16 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
       else if (code === "auth/weak-password") setError("Password is too weak.");
       else setError("Registration failed. Please try again.");
     } finally { setLoading(false); }
+  }
+
+  async function sendVerificationEmail() {
+    const user = fbAuth().currentUser;
+    if (!user) return;
+    const token = await user.getIdToken();
+    await fetch(`${API_BASE_URL}/api/auth/send-verification`, {
+      method: "POST",
+      headers: { Authorization: `Bearer ${token}` },
+    });
   }
 
   async function onVerifyDone() {

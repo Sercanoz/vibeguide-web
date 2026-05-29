@@ -7,7 +7,6 @@ import {
   signInWithPopup,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
-  sendEmailVerification,
   signOut as fbSignOut,
   onIdTokenChanged,
   type User,
@@ -53,8 +52,9 @@ export function fbAuth(): Auth {
 }
 
 export async function registerWithEmail(email: string, password: string): Promise<User> {
+  // Firebase hesabını oluştur. Doğrulama maili Firebase'in kendi (spam'e düşen)
+  // sisteminden değil, backend /api/auth/send-verification → Resend ile gönderilir.
   const cred = await createUserWithEmailAndPassword(fbAuth(), email, password);
-  await sendEmailVerification(cred.user);
   return cred.user;
 }
 

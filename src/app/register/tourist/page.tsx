@@ -51,6 +51,14 @@ export default function RegisterTouristPage() {
     setLoading(true);
     try {
       await registerWithEmail(email, password);
+      const user = fbAuth().currentUser;
+      if (user) {
+        const token = await user.getIdToken();
+        await fetch(`${API_BASE_URL}/api/auth/send-verification`, {
+          method: "POST",
+          headers: { Authorization: `Bearer ${token}` },
+        });
+      }
       setStep("verify");
     } catch (err: unknown) {
       const code = (err as { code?: string }).code ?? "";
