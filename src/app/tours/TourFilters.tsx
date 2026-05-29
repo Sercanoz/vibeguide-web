@@ -69,20 +69,37 @@ export default function TourFilters({ tours }: Props) {
   const tt = getToursT(locale);
   const cities = ["All", ...Array.from(new Set(tours.map((t) => t.city))).sort()];
   const [activeCity, setActiveCity] = useState("All");
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const searchParams = useSearchParams();
 
-  // Pre-select city from ?city= query (e.g. coming from homepage destination card)
+  // Pre-select city/category from query (e.g. coming from homepage cards)
   useEffect(() => {
-    const q = searchParams.get("city");
-    if (q && cities.includes(q)) setActiveCity(q);
+    const cq = searchParams.get("city");
+    if (cq && cities.includes(cq)) setActiveCity(cq);
+    const catq = searchParams.get("category");
+    if (catq) setActiveCategory(catq.toLowerCase());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams, tours]);
   const [hoveredId, setHoveredId] = useState<number | null>(null);
 
-  const filtered = activeCity === "All" ? tours : tours.filter((t) => t.city === activeCity);
+  const filtered = tours.filter((t) =>
+    (activeCity === "All" || t.city === activeCity) &&
+    (!activeCategory || (t.category ?? "").toLowerCase() === activeCategory)
+  );
 
   return (
     <>
+      {/* Active category chip */}
+      {activeCategory && (
+        <div className="mb-4">
+          <button onClick={() => setActiveCategory(null)}
+            className="inline-flex items-center gap-2 rounded-full bg-[#6C4CF1]/10 border border-[#6C4CF1]/20 text-[#6C4CF1] px-3.5 py-1.5 text-sm font-bold capitalize">
+            {activeCategory}
+            <span className="text-xs">✕</span>
+          </button>
+        </div>
+      )}
+
       {/* City filter pills */}
       <div className="flex flex-wrap gap-2 mb-8">
         {cities.map((city) => (
