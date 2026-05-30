@@ -4,6 +4,7 @@ import { use, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { QRCodeCanvas } from "qrcode.react";
 import { uploadTourPhoto } from "@/lib/firebase-storage";
+import { LANGUAGES, parseLanguageCodes, joinLanguageCodes } from "@/lib/languages";
 import {
   adminApi,
   type TourDetail,
@@ -710,9 +711,11 @@ function TourSettingsEditor({ id }: { id: number }) {
             className="w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-vg-primary" />
         </SField>
 
-        <SField label="Languages offered (comma-separated codes)">
-          <input value={draft.languagesOffered ?? ""} onChange={(e) => set("languagesOffered", e.target.value)}
-            className="w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-vg-primary" placeholder="en,tr,de,fr" />
+        <SField label="Languages offered">
+          <LanguageMultiSelect
+            value={draft.languagesOffered ?? ""}
+            onChange={(csv) => set("languagesOffered", csv)}
+          />
         </SField>
 
         <SField label="Cover photo">
@@ -1274,6 +1277,47 @@ function IncludesEditor({ tourId }: { tourId: number }) {
             {adding ? "…" : "Add"}
           </button>
         </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── Languages multi-select ───────────────────────────────────────────────────
+// "en,tr,de" CSV ile çalışır; UI'da seçili dilleri chip, kalanları toggle gösterir.
+
+function LanguageMultiSelect({ value, onChange }: { value: string; onChange: (csv: string) => void }) {
+  const selected = parseLanguageCodes(value);
+  const toggle = (code: string) => {
+    const next = selected.includes(code)
+      ? selected.filter((c) => c !== code)
+      : [...selected, code];
+    onChange(joinLanguageCodes(next));
+  };
+  return (
+    <div className="rounded-xl bg-vg-bg-soft border border-vg-border p-3">
+      {selected.length === 0 && (
+        <p className="text-xs text-vg-muted mb-2">No languages selected. Pick from below.</p>
+      )}
+      <div className="flex flex-wrap gap-2">
+        {LANGUAGES.map((lang) => {
+          const isOn = selected.includes(lang.code);
+          return (
+            <button
+              key={lang.code}
+              type="button"
+              onClick={() => toggle(lang.code)}
+              className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-bold transition-colors ${
+                isOn
+                  ? "bg-vg-primary/10 border-vg-primary text-vg-primary"
+                  : "bg-white border-vg-border text-vg-muted hover:border-vg-primary/50"
+              }`}
+            >
+              <span>{lang.flag}</span>
+              <span>{lang.name}</span>
+              {isOn && <span className="ml-0.5">✓</span>}
+            </button>
+          );
+        })}
       </div>
     </div>
   );
