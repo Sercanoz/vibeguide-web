@@ -838,11 +838,12 @@ function PopularTours() {
   );
 }
 
-/* Province slug → cover photo (Unsplash). Falls back to a gradient if unknown. */
+/* Province slug → cover photo (Unsplash, verified working). Falls back to a gradient. */
 const CITY_PHOTOS: Record<string, string> = {
   istanbul: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80&w=900",
   nevsehir: "https://images.unsplash.com/photo-1641128324972-af3212f0f6bd?q=80&w=900",
-  izmir: "https://images.unsplash.com/photo-1605281317010-fe5ffe798166?q=80&w=900",
+  izmir: "https://images.unsplash.com/photo-1589561253898-768105ca91a8?q=80&w=900",
+  aydin: "https://images.unsplash.com/photo-1589561253898-768105ca91a8?q=80&w=900",
   denizli: "https://images.unsplash.com/photo-1591291621164-2c6367723315?q=80&w=900",
   antalya: "https://images.unsplash.com/photo-1589561084283-930aa7b1ce50?q=80&w=900",
   mugla: "https://images.unsplash.com/photo-1610116306796-6fea9f4fae38?q=80&w=900",
@@ -850,21 +851,26 @@ const CITY_PHOTOS: Record<string, string> = {
 
 function Destinations() {
   // city = display name (province if available, else legacy city), slug = ASCII for URL
-  const [cities, setCities] = useState<{ city: string; slug: string; count: number }[]>([]);
+  // photo = a real tour cover from that city (fallback to fixed CITY_PHOTOS, then gradient)
+  const [cities, setCities] = useState<{ city: string; slug: string; count: number; photo: string | null }[]>([]);
 
   useEffect(() => {
     fetch(`${API_BASE_URL}/api/tours?locale=en`, { cache: "no-store" })
       .then((r) => (r.ok ? r.json() : []))
-      .then((data: { city: string; provinceName?: string | null; provinceSlug?: string | null }[]) => {
-        const map = new Map<string, { count: number; slug: string }>();
+      .then((data: { city: string; provinceName?: string | null; provinceSlug?: string | null; coverPhotoUrl?: string }[]) => {
+        const map = new Map<string, { count: number; slug: string; photo: string | null }>();
         for (const t of data) {
           const display = t.provinceName || t.city;
           const slug = t.provinceSlug || t.city.toLowerCase();
           const cur = map.get(display);
-          map.set(display, { count: (cur?.count ?? 0) + 1, slug });
+          map.set(display, {
+            count: (cur?.count ?? 0) + 1,
+            slug,
+            photo: cur?.photo ?? t.coverPhotoUrl ?? null,
+          });
         }
         const list = Array.from(map.entries())
-          .map(([city, v]) => ({ city, slug: v.slug, count: v.count }))
+          .map(([city, v]) => ({ city, slug: v.slug, count: v.count, photo: v.photo }))
           .sort((a, b) => b.count - a.count)
           .slice(0, 6);
         setCities(list);
@@ -886,7 +892,8 @@ function Destinations() {
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {cities.map((c, i) => {
-            const photo = CITY_PHOTOS[c.slug];
+            // Önce o şehrin gerçek tur fotoğrafı, yoksa sabit şehir görseli
+            const photo = c.photo ?? CITY_PHOTOS[c.slug];
             const big = i === 0;
             return (
               <a key={c.city}
