@@ -15,6 +15,7 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
   const [user, setUser] = useState<User | null | "loading">("loading");
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [openMenu, setOpenMenu] = useState<"tours" | "destinations" | null>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const userMenuRef = useRef<HTMLDivElement>(null);
 
@@ -49,11 +50,13 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
   }, []);
 
   const navLinks = [
-    { href: "/#how", label: t.nav2.howItWorks },
-    { href: "/#modes", label: t.nav.vibenow },
     { href: "/tours", label: "Tours", key: "tours" },
-    { href: "/#destinations", label: t.nav.destinations },
-    { href: "/#guides", label: t.nav.guides },
+    { href: "/guides", label: "Guides" },
+    { href: "/istanbul-tour-guide", label: "Istanbul" },
+    { href: "/cappadocia-tour-guide", label: "Cappadocia" },
+    { href: "/ephesus-tour-guide", label: "Ephesus" },
+    { href: "/#how", label: t.nav2.howItWorks },
+    { href: "/register/guide", label: "Become a guide" },
   ];
 
   const initials = user && user !== "loading" && user.displayName
@@ -88,25 +91,86 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
             <span className="transition-colors duration-200">VibeGuide</span>
           </a>
 
-          {/* Desktop links */}
-          <div className="hidden gap-1 text-sm font-medium md:flex items-center">
-            {navLinks.map((l) => {
-              const isTours = l.key === "tours";
-              const isActive = activePage === "tours" && isTours;
-              return (
-                <a
-                  key={l.href}
-                  href={l.href}
-                  className={`relative px-3.5 py-2 rounded-xl font-medium transition-all duration-150 ${
-                    isActive
-                      ? "text-[#6C4CF1] bg-[#6C4CF1]/8 font-semibold"
-                      : "text-neutral-400 hover:text-[#0A0A0F] hover:bg-black/[0.04]"
-                  }`}
-                >
-                  {l.label}
-                </a>
-              );
-            })}
+          {/* Desktop links + mega menus */}
+          <div className="hidden md:flex items-center gap-1 text-sm font-medium"
+            onMouseLeave={() => setOpenMenu(null)}>
+
+            {/* Tours — mega menu */}
+            <div className="relative" onMouseEnter={() => setOpenMenu("tours")}>
+              <a href="/tours"
+                className={`flex items-center gap-1 px-3.5 py-2 rounded-xl font-medium transition-all ${activePage === "tours" ? "text-[#6C4CF1] bg-[#6C4CF1]/8 font-semibold" : "text-neutral-400 hover:text-[#0A0A0F] hover:bg-black/[0.04]"}`}>
+                Tours
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={`transition-transform ${openMenu === "tours" ? "rotate-180" : ""}`}><path d="M6 9l6 6 6-6"/></svg>
+              </a>
+              {openMenu === "tours" && (
+                <div className="absolute left-0 top-full pt-2">
+                  <div className="w-[420px] bg-white rounded-2xl border border-black/[0.06] shadow-xl p-5 animate-[fadeSlideUp_0.15s_ease_both]">
+                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-neutral-400 mb-2">Browse by interest</p>
+                    <div className="grid grid-cols-2 gap-1">
+                      {[
+                        { key: "history", label: "History", icon: "🏛️" },
+                        { key: "food", label: "Food & Drink", icon: "🍽️" },
+                        { key: "nature", label: "Nature", icon: "🌿" },
+                        { key: "culture", label: "Culture", icon: "🎭" },
+                        { key: "adventure", label: "Adventure", icon: "⛰️" },
+                        { key: "art", label: "Art", icon: "🎨" },
+                      ].map((c) => (
+                        <a key={c.key} href={`/tours?category=${c.key}`}
+                          className="flex items-center gap-2.5 px-3 py-2 rounded-xl hover:bg-[#F7F7FB] transition-colors text-sm font-semibold text-[#0A0A0F]">
+                          <span className="text-base">{c.icon}</span>{c.label}
+                        </a>
+                      ))}
+                    </div>
+                    <a href="/tours" className="mt-3 flex items-center justify-center gap-1.5 rounded-xl bg-[#6C4CF1] text-white text-sm font-bold py-2.5 hover:bg-[#5a3dd4] transition-colors">
+                      See all tours →
+                    </a>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Destinations — dropdown */}
+            <div className="relative" onMouseEnter={() => setOpenMenu("destinations")}>
+              <button
+                className={`flex items-center gap-1 px-3.5 py-2 rounded-xl font-medium transition-all ${openMenu === "destinations" ? "text-[#0A0A0F] bg-black/[0.04]" : "text-neutral-400 hover:text-[#0A0A0F] hover:bg-black/[0.04]"}`}>
+                Destinations
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={`transition-transform ${openMenu === "destinations" ? "rotate-180" : ""}`}><path d="M6 9l6 6 6-6"/></svg>
+              </button>
+              {openMenu === "destinations" && (
+                <div className="absolute left-0 top-full pt-2">
+                  <div className="w-72 bg-white rounded-2xl border border-black/[0.06] shadow-xl p-2 animate-[fadeSlideUp_0.15s_ease_both]">
+                    {[
+                      { href: "/istanbul-tour-guide", icon: "🕌", name: "Istanbul", desc: "Hagia Sophia · Bosphorus" },
+                      { href: "/cappadocia-tour-guide", icon: "🎈", name: "Cappadocia", desc: "Balloons · Fairy chimneys" },
+                      { href: "/ephesus-tour-guide", icon: "🏛️", name: "Ephesus", desc: "Ancient ruins · Selçuk" },
+                    ].map((d) => (
+                      <a key={d.href} href={d.href} className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-[#F7F7FB] transition-colors">
+                        <span className="text-2xl">{d.icon}</span>
+                        <div>
+                          <p className="text-sm font-bold text-[#0A0A0F]">{d.name}</p>
+                          <p className="text-xs text-neutral-400">{d.desc}</p>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Guides */}
+            <a href="/guides" className="px-3.5 py-2 rounded-xl font-medium text-neutral-400 hover:text-[#0A0A0F] hover:bg-black/[0.04] transition-all">
+              Guides
+            </a>
+
+            {/* How it works */}
+            <a href="/#how" className="px-3.5 py-2 rounded-xl font-medium text-neutral-400 hover:text-[#0A0A0F] hover:bg-black/[0.04] transition-all">
+              {t.nav2.howItWorks}
+            </a>
+
+            {/* Become a guide */}
+            <a href="/register/guide" className="px-3.5 py-2 rounded-xl font-medium text-emerald-600 hover:bg-emerald-50 transition-all">
+              Become a guide
+            </a>
           </div>
 
           {/* Right side */}
