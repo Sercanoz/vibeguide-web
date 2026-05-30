@@ -5,6 +5,7 @@ import "./globals.css";
 import JsonLd from "@/components/JsonLd";
 import { LanguageProvider } from "@/components/LanguageProvider";
 import CookieBanner from "@/components/CookieBanner";
+import EmailCaptureGate from "@/components/EmailCaptureGate";
 import type { Locale } from "@/lib/i18n";
 
 const inter = Inter({
@@ -145,6 +146,7 @@ export default async function RootLayout({
         <LanguageProvider initialLocale={locale}>
           {children}
           <CookieBanner />
+          <EmailCaptureGate />
         </LanguageProvider>
       </body>
     </html>

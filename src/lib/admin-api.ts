@@ -494,6 +494,12 @@ export const adminApi = {
   importTurkey: () =>
     authedFetch<{ ok: true; addedProvinces: number; addedDistricts: number }>("/api/admin/locations/import-turkey", { method: "POST" }),
 
+  // ════════ EMAIL SUBSCRIBERS (lead capture) ════════
+  listSubscribers: (limit = 500) =>
+    authedFetch<{ total: number; rows: SubscriberRow[] }>(`/api/admin/subscribers?limit=${limit}`),
+  deleteSubscriber: (id: number) =>
+    authedFetch<{ ok: true }>(`/api/admin/subscribers/${id}`, { method: "DELETE" }),
+
   // ════════ TOUR REVIEWS (public, QR) ════════
 
   listTourReviews: (status: string = "pending") =>
@@ -645,6 +651,15 @@ export const adminApi = {
     authedFetch<{ ok: true }>(`/api/admin/tours/${tourId}/includes/${includeId}`, {
       method: "DELETE",
     }),
+};
+
+export type SubscriberRow = {
+  id: number;
+  email: string;
+  promoCode: string | null;
+  source: string | null;
+  locale: string | null;
+  createdAt: string;
 };
 
 export type LocationTreeCountry = {
