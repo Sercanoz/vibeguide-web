@@ -6,6 +6,7 @@ import { useT } from "@/components/LanguageProvider";
 import { homeTranslations } from "@/lib/home-i18n";
 import { useInView } from "@/hooks/useInView";
 import Navbar from "@/components/Navbar";
+import HeroCitySearch from "@/components/HeroCitySearch";
 import { API_BASE_URL } from "@/lib/api";
 
 export default function HomePage() {
@@ -34,7 +35,11 @@ export default function HomePage() {
         {/* Dot grid */}
         <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: "radial-gradient(circle, #6C4CF1 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
 
-        <div className="relative mx-auto max-w-7xl px-6 py-28 grid md:grid-cols-2 gap-16 items-center w-full">
+        <div className="relative mx-auto max-w-7xl px-6 py-20 w-full">
+          {/* Centered destination search — sits above headline + phone */}
+          <HeroCitySearch />
+
+          <div className="mt-14 grid md:grid-cols-2 gap-16 items-center">
           {/* Copy */}
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-[#6C4CF1]/15 bg-[#6C4CF1]/5 px-4 py-2 text-sm font-semibold text-[#6C4CF1] mb-8 animate-[fadeSlideUp_0.7s_ease_both]">
@@ -169,6 +174,7 @@ export default function HomePage() {
                 </div>
               </Phone>
             </div>
+          </div>
           </div>
         </div>
 
