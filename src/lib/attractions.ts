@@ -77,6 +77,30 @@ const IST: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   },
 };
 
+// Efes (İzmir / Selçuk) ortak metinleri.
+const EPH: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
+  en: { toursHeading: "Ephesus tours with local guides", ctaSub: "Download VibeGuide free and match with a verified local guide for Ephesus in 60 seconds." },
+  de: { toursHeading: "Ephesos-Touren mit lokalen Guides", ctaSub: "Lade VibeGuide kostenlos und finde in 60 Sekunden einen geprüften lokalen Guide für Ephesos." },
+  ru: { toursHeading: "Экскурсии в Эфес с местными гидами", ctaSub: "Скачайте VibeGuide бесплатно и найдите проверенного местного гида в Эфесе за 60 секунд." },
+  ar: { toursHeading: "جولات أفسس مع مرشدين محليين", ctaSub: "حمّل VibeGuide مجانًا واعثر على مرشد محلي موثّق في أفسس خلال 60 ثانية." },
+  es: { toursHeading: "Tours de Éfeso con guías locales", ctaSub: "Descarga VibeGuide gratis y encuentra un guía local verificado para Éfeso en 60 segundos." },
+  fr: { toursHeading: "Visites d'Éphèse avec guides locaux", ctaSub: "Téléchargez VibeGuide gratuitement et trouvez un guide local vérifié pour Éphèse en 60 secondes." },
+  el: { toursHeading: "Ξεναγήσεις στην Έφεσο με ντόπιους ξεναγούς", ctaSub: "Κατέβασε δωρεάν το VibeGuide και βρες πιστοποιημένο ντόπιο ξεναγό στην Έφεσο σε 60 δευτερόλεπτα." },
+  tr: { toursHeading: "Yerel rehberlerle Efes turları", ctaSub: "VibeGuide'ı ücretsiz indir, 60 saniyede Efes için doğrulanmış yerel bir rehberle eşleş." },
+};
+
+// Kapadokya (Nevşehir / Göreme) ortak metinleri.
+const CAP: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
+  en: { toursHeading: "Cappadocia tours with local guides", ctaSub: "Download VibeGuide free and match with a verified Cappadocia guide in 60 seconds." },
+  de: { toursHeading: "Kappadokien-Touren mit lokalen Guides", ctaSub: "Lade VibeGuide kostenlos und finde in 60 Sekunden einen geprüften Kappadokien-Guide." },
+  ru: { toursHeading: "Экскурсии по Каппадокии с местными гидами", ctaSub: "Скачайте VibeGuide бесплатно и найдите проверенного гида в Каппадокии за 60 секунд." },
+  ar: { toursHeading: "جولات كابادوكيا مع مرشدين محليين", ctaSub: "حمّل VibeGuide مجانًا واعثر على مرشد موثّق في كابادوكيا خلال 60 ثانية." },
+  es: { toursHeading: "Tours de Capadocia con guías locales", ctaSub: "Descarga VibeGuide gratis y encuentra un guía verificado en Capadocia en 60 segundos." },
+  fr: { toursHeading: "Visites de Cappadoce avec guides locaux", ctaSub: "Téléchargez VibeGuide gratuitement et trouvez un guide vérifié en Cappadoce en 60 secondes." },
+  el: { toursHeading: "Ξεναγήσεις στην Καππαδοκία με ντόπιους ξεναγούς", ctaSub: "Κατέβασε δωρεάν το VibeGuide και βρες πιστοποιημένο ξεναγό στην Καππαδοκία σε 60 δευτερόλεπτα." },
+  tr: { toursHeading: "Yerel rehberlerle Kapadokya turları", ctaSub: "VibeGuide'ı ücretsiz indir, 60 saniyede doğrulanmış bir Kapadokya rehberiyle eşleş." },
+};
+
 export const ATTRACTIONS: Attraction[] = [
   // ─────────────────────────────── HAGIA SOPHIA ───────────────────────────────
   {
@@ -834,6 +858,386 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: "Sultanahmet Camii'ni bir yerelle gez",
         ...IST.tr,
+      },
+    },
+  },
+
+  // ─────────────────────────────────── EPHESUS ────────────────────────────────
+  {
+    slug: "ephesus",
+    city: "Ephesus",
+    citySlug: "izmir",
+    emoji: "🏛️",
+    image:
+      "https://images.unsplash.com/photo-1589553416260-f586c8f1514f?q=80&w=1600",
+    lat: 37.939872,
+    lng: 27.340995,
+    i18n: {
+      en: {
+        name: "Ephesus",
+        metaTitle: "Ephesus Tours & Local Guides | VibeGuide",
+        metaDescription:
+          "Walk ancient Ephesus near Selçuk, İzmir with a verified local guide. The Library of Celsus, the Great Theatre and marble streets — brought to life.",
+        intro: [
+          "Ephesus was one of the greatest cities of the ancient world — a Roman metropolis of a quarter-million people, where Mark Antony walked and St Paul preached. Its marble streets, the towering Library of Celsus and a theatre for 25,000 still stand near Selçuk.",
+          "A VibeGuide local turns ruins into a living city — who lived here, where they bathed, shopped and worshipped — so the stones tell their story instead of staying silent.",
+        ],
+        highlights: [
+          { title: "Library of Celsus", desc: "A two-storey marble façade, once home to 12,000 scrolls." },
+          { title: "Great Theatre", desc: "Seating for 25,000 — still used for events today." },
+          { title: "Terrace Houses", desc: "Mosaic-floored homes of the Roman elite, under cover." },
+        ],
+        faqs: [
+          { q: "Where is Ephesus?", a: "Near Selçuk in İzmir province, about an hour from İzmir city and close to Kuşadası port." },
+          { q: "How long do I need?", a: "Plan 2–3 hours on site; a guide keeps you in the shade and out of the crowds." },
+          { q: "Is it good for cruise passengers?", a: "Yes — it's a classic shore excursion from Kuşadası. A local guide makes the most of limited time." },
+        ],
+        ctaTitle: "Walk Ephesus with a local",
+        ...EPH.en,
+      },
+      de: {
+        name: "Ephesos",
+        metaTitle: "Ephesos Touren & lokale Guides | VibeGuide",
+        metaDescription:
+          "Erkunde das antike Ephesos bei Selçuk, İzmir mit einem geprüften lokalen Guide. Celsus-Bibliothek, großes Theater und Marmorstraßen — zum Leben erweckt.",
+        intro: [
+          "Ephesos war eine der größten Städte der Antike — eine römische Metropole mit einer Viertelmillion Menschen, wo Mark Anton wandelte und der Apostel Paulus predigte. Seine Marmorstraßen, die hoch aufragende Celsus-Bibliothek und ein Theater für 25.000 stehen noch bei Selçuk.",
+          "Ein VibeGuide-Local verwandelt Ruinen in eine lebendige Stadt — wer hier lebte, wo man badete, einkaufte und betete — damit die Steine ihre Geschichte erzählen, statt zu schweigen.",
+        ],
+        highlights: [
+          { title: "Celsus-Bibliothek", desc: "Eine zweistöckige Marmorfassade, einst Heimat von 12.000 Schriftrollen." },
+          { title: "Großes Theater", desc: "Platz für 25.000 — bis heute für Veranstaltungen genutzt." },
+          { title: "Hanghäuser", desc: "Mosaikböden der römischen Elite, überdacht." },
+        ],
+        faqs: [
+          { q: "Wo liegt Ephesos?", a: "Bei Selçuk in der Provinz İzmir, etwa eine Stunde von der Stadt İzmir und nahe dem Hafen Kuşadası." },
+          { q: "Wie viel Zeit brauche ich?", a: "Plane 2–3 Stunden vor Ort; ein Guide hält dich im Schatten und abseits der Menge." },
+          { q: "Ist es gut für Kreuzfahrtgäste?", a: "Ja — ein klassischer Landausflug von Kuşadası. Ein lokaler Guide nutzt die knappe Zeit optimal." },
+        ],
+        ctaTitle: "Erkunde Ephesos mit einem Local",
+        ...EPH.de,
+      },
+      ru: {
+        name: "Эфес",
+        metaTitle: "Эфес: экскурсии с местными гидами | VibeGuide",
+        metaDescription:
+          "Пройдите по античному Эфесу близ Сельчука (Измир) с проверенным местным гидом. Библиотека Цельса, Большой театр и мраморные улицы — оживают.",
+        intro: [
+          "Эфес был одним из величайших городов древности — римской метрополией на четверть миллиона жителей, где ступал Марк Антоний и проповедовал апостол Павел. Его мраморные улицы, высокая Библиотека Цельса и театр на 25 000 мест по-прежнему стоят близ Сельчука.",
+          "Местный гид VibeGuide превращает руины в живой город — кто здесь жил, где мылись, торговали и молились — чтобы камни рассказали свою историю, а не молчали.",
+        ],
+        highlights: [
+          { title: "Библиотека Цельса", desc: "Двухэтажный мраморный фасад, когда-то хранивший 12 000 свитков." },
+          { title: "Большой театр", desc: "На 25 000 мест — и сегодня используется для мероприятий." },
+          { title: "Террасные дома", desc: "Дома римской знати с мозаичными полами, под навесом." },
+        ],
+        faqs: [
+          { q: "Где находится Эфес?", a: "Близ Сельчука в провинции Измир, около часа от города Измир и рядом с портом Кушадасы." },
+          { q: "Сколько нужно времени?", a: "Закладывайте 2–3 часа; гид проведёт в тени и вдали от толпы." },
+          { q: "Подходит ли для круизных пассажиров?", a: "Да — классическая экскурсия из Кушадасы. Местный гид максимально использует ограниченное время." },
+        ],
+        ctaTitle: "Пройти по Эфесу с местным гидом",
+        ...EPH.ru,
+      },
+      ar: {
+        name: "أفسس",
+        metaTitle: "جولات أفسس مع مرشدين محليين | VibeGuide",
+        metaDescription:
+          "تجوّل في أفسس القديمة قرب سلجوق بإزمير مع مرشد محلي موثّق. مكتبة سيلسوس والمسرح الكبير والشوارع الرخامية تنبض بالحياة.",
+        intro: [
+          "كانت أفسس من أعظم مدن العالم القديم — حاضرة رومانية بربع مليون نسمة، مشى فيها مارك أنطونيو ووعظ فيها القديس بولس. لا تزال شوارعها الرخامية ومكتبة سيلسوس الشاهقة ومسرح يتسع لـ25 ألفًا قائمة قرب سلجوق.",
+          "يحوّل مرشد VibeGuide المحلي الأطلال إلى مدينة حية — من سكنها، وأين استحموا وتسوّقوا وتعبّدوا — لتروي الحجارة قصتها بدل أن تصمت.",
+        ],
+        highlights: [
+          { title: "مكتبة سيلسوس", desc: "واجهة رخامية من طابقين، ضمّت يومًا 12 ألف مخطوطة." },
+          { title: "المسرح الكبير", desc: "يتسع لـ25 ألفًا — ولا يزال يُستخدم للفعاليات." },
+          { title: "بيوت المدرّجات", desc: "منازل النخبة الرومانية بأرضيات فسيفسائية، تحت سقف واقٍ." },
+        ],
+        faqs: [
+          { q: "أين تقع أفسس؟", a: "قرب سلجوق في ولاية إزمير، نحو ساعة من مدينة إزمير وقريبة من ميناء كوش أداسي." },
+          { q: "كم من الوقت أحتاج؟", a: "خصّص 2–3 ساعات في الموقع؛ يبقيك المرشد في الظل وبعيدًا عن الزحام." },
+          { q: "هل تناسب ركاب الرحلات البحرية؟", a: "نعم — رحلة ساحلية كلاسيكية من كوش أداسي. يستثمر المرشد المحلي الوقت المحدود بأفضل شكل." },
+        ],
+        ctaTitle: "تجوّل في أفسس مع مرشد محلي",
+        ...EPH.ar,
+      },
+      es: {
+        name: "Éfeso",
+        metaTitle: "Tours de Éfeso con guías locales | VibeGuide",
+        metaDescription:
+          "Recorre la antigua Éfeso cerca de Selçuk, İzmir con un guía local verificado. La Biblioteca de Celso, el Gran Teatro y calles de mármol cobran vida.",
+        intro: [
+          "Éfeso fue una de las mayores ciudades del mundo antiguo — una metrópoli romana de un cuarto de millón de habitantes, donde caminó Marco Antonio y predicó San Pablo. Sus calles de mármol, la imponente Biblioteca de Celso y un teatro para 25.000 siguen en pie cerca de Selçuk.",
+          "Un local de VibeGuide convierte las ruinas en una ciudad viva — quién vivía aquí, dónde se bañaban, compraban y rezaban — para que las piedras cuenten su historia en vez de callar.",
+        ],
+        highlights: [
+          { title: "Biblioteca de Celso", desc: "Una fachada de mármol de dos pisos, hogar de 12.000 rollos." },
+          { title: "Gran Teatro", desc: "Aforo para 25.000 — aún se usa para eventos." },
+          { title: "Casas Adosadas", desc: "Hogares de la élite romana con suelos de mosaico, cubiertos." },
+        ],
+        faqs: [
+          { q: "¿Dónde está Éfeso?", a: "Cerca de Selçuk, en la provincia de İzmir, a una hora de la ciudad de İzmir y cerca del puerto de Kuşadası." },
+          { q: "¿Cuánto tiempo necesito?", a: "Calcula 2–3 horas en el sitio; un guía te mantiene a la sombra y lejos de las multitudes." },
+          { q: "¿Es bueno para cruceristas?", a: "Sí — una excursión clásica desde Kuşadası. Un guía local aprovecha al máximo el tiempo limitado." },
+        ],
+        ctaTitle: "Recorre Éfeso con un local",
+        ...EPH.es,
+      },
+      fr: {
+        name: "Éphèse",
+        metaTitle: "Visites d'Éphèse avec guides locaux | VibeGuide",
+        metaDescription:
+          "Parcourez l'antique Éphèse près de Selçuk, İzmir avec un guide local vérifié. La Bibliothèque de Celsus, le Grand Théâtre et les rues de marbre prennent vie.",
+        intro: [
+          "Éphèse fut l'une des plus grandes villes du monde antique — une métropole romaine d'un quart de million d'habitants, où marcha Marc Antoine et prêcha saint Paul. Ses rues de marbre, l'imposante Bibliothèque de Celsus et un théâtre de 25 000 places se dressent encore près de Selçuk.",
+          "Un local VibeGuide transforme les ruines en cité vivante — qui y vivait, où l'on se baignait, faisait ses courses et priait — pour que les pierres racontent leur histoire au lieu de se taire.",
+        ],
+        highlights: [
+          { title: "Bibliothèque de Celsus", desc: "Une façade de marbre à deux étages, jadis riche de 12 000 rouleaux." },
+          { title: "Grand Théâtre", desc: "25 000 places — encore utilisé pour des événements." },
+          { title: "Maisons en terrasses", desc: "Demeures de l'élite romaine aux sols de mosaïque, abritées." },
+        ],
+        faqs: [
+          { q: "Où se trouve Éphèse ?", a: "Près de Selçuk, dans la province d'İzmir, à environ une heure de la ville d'İzmir et près du port de Kuşadası." },
+          { q: "Combien de temps faut-il ?", a: "Comptez 2 à 3 heures sur place ; un guide vous garde à l'ombre et hors de la foule." },
+          { q: "Est-ce adapté aux croisiéristes ?", a: "Oui — une excursion classique depuis Kuşadası. Un guide local optimise un temps limité." },
+        ],
+        ctaTitle: "Parcourez Éphèse avec un local",
+        ...EPH.fr,
+      },
+      el: {
+        name: "Έφεσος",
+        metaTitle: "Ξεναγήσεις στην Έφεσο με ντόπιους ξεναγούς | VibeGuide",
+        metaDescription:
+          "Περπάτησε στην αρχαία Έφεσο κοντά στο Σελτσούκ της Σμύρνης με πιστοποιημένο ντόπιο ξεναγό. Η Βιβλιοθήκη του Κέλσου, το Μέγα Θέατρο και οι μαρμάρινοι δρόμοι ζωντανεύουν.",
+        intro: [
+          "Η Έφεσος ήταν μία από τις μεγαλύτερες πόλεις του αρχαίου κόσμου — ρωμαϊκή μητρόπολη ενός τετάρτου του εκατομμυρίου, όπου περπάτησε ο Μάρκος Αντώνιος και κήρυξε ο Απόστολος Παύλος. Οι μαρμάρινοι δρόμοι της, η επιβλητική Βιβλιοθήκη του Κέλσου και ένα θέατρο 25.000 θέσεων στέκουν ακόμη κοντά στο Σελτσούκ.",
+          "Ένας ντόπιος του VibeGuide μετατρέπει τα ερείπια σε ζωντανή πόλη — ποιοι ζούσαν εδώ, πού λούζονταν, ψώνιζαν και λάτρευαν — ώστε οι πέτρες να πουν την ιστορία τους αντί να σωπαίνουν.",
+        ],
+        highlights: [
+          { title: "Βιβλιοθήκη του Κέλσου", desc: "Διώροφη μαρμάρινη πρόσοψη, κάποτε με 12.000 παπύρους." },
+          { title: "Μέγα Θέατρο", desc: "Χωρητικότητα 25.000 — χρησιμοποιείται ακόμη για εκδηλώσεις." },
+          { title: "Σπίτια των Πλαγιών", desc: "Κατοικίες της ρωμαϊκής ελίτ με ψηφιδωτά δάπεδα, στεγασμένες." },
+        ],
+        faqs: [
+          { q: "Πού βρίσκεται η Έφεσος;", a: "Κοντά στο Σελτσούκ, στην επαρχία της Σμύρνης, περίπου μία ώρα από την πόλη και κοντά στο λιμάνι Κουσάντασι." },
+          { q: "Πόσο χρόνο χρειάζομαι;", a: "Υπολόγισε 2–3 ώρες· ο ξεναγός σε κρατά στη σκιά και μακριά από το πλήθος." },
+          { q: "Είναι καλό για επιβάτες κρουαζιέρας;", a: "Ναι — κλασική εκδρομή από το Κουσάντασι. Ο ντόπιος ξεναγός αξιοποιεί στο έπακρο τον περιορισμένο χρόνο." },
+        ],
+        ctaTitle: "Περπάτα στην Έφεσο με έναν ντόπιο",
+        ...EPH.el,
+      },
+      tr: {
+        name: "Efes",
+        metaTitle: "Efes Turları & Yerel Rehberler | VibeGuide",
+        metaDescription:
+          "İzmir Selçuk yakınındaki antik Efes'i doğrulanmış bir yerel rehberle gez. Celsus Kütüphanesi, Büyük Tiyatro ve mermer caddeler canlanıyor.",
+        intro: [
+          "Efes antik dünyanın en büyük şehirlerinden biriydi — çeyrek milyon nüfuslu bir Roma metropolü; Marcus Antonius'un yürüdüğü, Aziz Pavlus'un vaaz verdiği yer. Mermer caddeleri, yükselen Celsus Kütüphanesi ve 25.000 kişilik tiyatrosu hâlâ Selçuk yakınında ayakta.",
+          "VibeGuide yerel rehberi harabeleri yaşayan bir şehre dönüştürür — burada kimler yaşadı, nerede yıkandılar, alışveriş yaptılar ve ibadet ettiler — böylece taşlar susmak yerine hikâyesini anlatır.",
+        ],
+        highlights: [
+          { title: "Celsus Kütüphanesi", desc: "İki katlı mermer cephe; bir zamanlar 12.000 rulo barındırdı." },
+          { title: "Büyük Tiyatro", desc: "25.000 kişilik — bugün hâlâ etkinliklerde kullanılıyor." },
+          { title: "Yamaç Evleri", desc: "Roma seçkinlerinin mozaik döşeli evleri, çatı altında." },
+        ],
+        faqs: [
+          { q: "Efes nerede?", a: "İzmir'in Selçuk ilçesi yakınında; İzmir şehrine yaklaşık bir saat, Kuşadası limanına yakın." },
+          { q: "Ne kadar zaman gerekir?", a: "Sahada 2–3 saat ayır; rehber seni gölgede ve kalabalıktan uzak tutar." },
+          { q: "Kruvaziyer yolcuları için uygun mu?", a: "Evet — Kuşadası'ndan klasik bir liman turu. Yerel rehber kısıtlı zamanı en iyi şekilde değerlendirir." },
+        ],
+        ctaTitle: "Efes'i bir yerelle gez",
+        ...EPH.tr,
+      },
+    },
+  },
+
+  // ────────────────────────────────── CAPPADOCIA ──────────────────────────────
+  {
+    slug: "cappadocia",
+    city: "Cappadocia",
+    citySlug: "nevsehir",
+    emoji: "🎈",
+    image:
+      "https://images.unsplash.com/photo-1641128324972-af3212f0f6bd?q=80&w=1600",
+    lat: 38.643056,
+    lng: 34.828889,
+    i18n: {
+      en: {
+        name: "Cappadocia",
+        metaTitle: "Cappadocia Tours & Local Guides | VibeGuide",
+        metaDescription:
+          "Explore Cappadocia with a verified local guide. Hot-air balloons, fairy chimneys, cave churches and underground cities in Göreme and beyond.",
+        intro: [
+          "Cappadocia is a landscape from a dream — valleys of 'fairy chimneys', rock-cut churches painted a thousand years ago, and whole cities carved underground. At dawn, hundreds of hot-air balloons rise over Göreme in one of the world's great sights.",
+          "A VibeGuide local knows which valley catches the best light, which cave church survived, and where the crowds aren't — turning a famous photo into a real understanding of the place.",
+        ],
+        highlights: [
+          { title: "Hot-Air Balloons", desc: "Dawn flights over the valleys — the image that defines Cappadocia." },
+          { title: "Göreme Open-Air Museum", desc: "Byzantine cave churches with frescoes carved into rock." },
+          { title: "Underground Cities", desc: "Derinkuyu and Kaymaklı — entire towns hidden below ground." },
+        ],
+        faqs: [
+          { q: "Where is Cappadocia?", a: "In central Anatolia, around Göreme and Nevşehir, reachable by flight to Kayseri or Nevşehir." },
+          { q: "Are balloon flights guaranteed?", a: "They depend on weather and are booked separately. A guide helps you plan the rest around them." },
+          { q: "How many days do I need?", a: "Two days covers the highlights comfortably; a local guide makes even one day count." },
+        ],
+        ctaTitle: "Discover Cappadocia with a local",
+        ...CAP.en,
+      },
+      de: {
+        name: "Kappadokien",
+        metaTitle: "Kappadokien Touren & lokale Guides | VibeGuide",
+        metaDescription:
+          "Entdecke Kappadokien mit einem geprüften lokalen Guide. Heißluftballons, Feenkamine, Höhlenkirchen und unterirdische Städte in Göreme und Umgebung.",
+        intro: [
+          "Kappadokien ist eine Landschaft wie aus einem Traum — Täler voller „Feenkamine“, vor tausend Jahren bemalte Felsenkirchen und ganze unterirdisch gegrabene Städte. Im Morgengrauen steigen Hunderte Heißluftballons über Göreme auf — eines der großen Schauspiele der Welt.",
+          "Ein VibeGuide-Local weiß, welches Tal das beste Licht fängt, welche Höhlenkirche erhalten ist und wo die Menge nicht ist — und macht aus einem berühmten Foto echtes Verständnis.",
+        ],
+        highlights: [
+          { title: "Heißluftballons", desc: "Flüge im Morgengrauen über die Täler — das Bild Kappadokiens." },
+          { title: "Freilichtmuseum Göreme", desc: "Byzantinische Höhlenkirchen mit Fresken im Fels." },
+          { title: "Unterirdische Städte", desc: "Derinkuyu und Kaymaklı — ganze Städte unter der Erde." },
+        ],
+        faqs: [
+          { q: "Wo liegt Kappadokien?", a: "In Zentralanatolien, um Göreme und Nevşehir, erreichbar per Flug nach Kayseri oder Nevşehir." },
+          { q: "Sind Ballonflüge garantiert?", a: "Sie hängen vom Wetter ab und werden separat gebucht. Ein Guide hilft, den Rest darum herum zu planen." },
+          { q: "Wie viele Tage brauche ich?", a: "Zwei Tage decken die Höhepunkte bequem ab; ein lokaler Guide macht selbst einen Tag wertvoll." },
+        ],
+        ctaTitle: "Entdecke Kappadokien mit einem Local",
+        ...CAP.de,
+      },
+      ru: {
+        name: "Каппадокия",
+        metaTitle: "Каппадокия: экскурсии с местными гидами | VibeGuide",
+        metaDescription:
+          "Откройте Каппадокию с проверенным местным гидом. Воздушные шары, «дымоходы фей», пещерные церкви и подземные города в Гёреме и окрестностях.",
+        intro: [
+          "Каппадокия — пейзаж из сна: долины «дымоходов фей», вырубленные в скале церкви, расписанные тысячу лет назад, и целые подземные города. На рассвете сотни воздушных шаров поднимаются над Гёреме — одно из величайших зрелищ мира.",
+          "Местный гид VibeGuide знает, какая долина ловит лучший свет, какая пещерная церковь уцелела и где нет толп — превращая знаменитое фото в настоящее понимание места.",
+        ],
+        highlights: [
+          { title: "Воздушные шары", desc: "Полёты на рассвете над долинами — образ Каппадокии." },
+          { title: "Музей под открытым небом Гёреме", desc: "Византийские пещерные церкви с фресками в скале." },
+          { title: "Подземные города", desc: "Деринкую и Каймаклы — целые города под землёй." },
+        ],
+        faqs: [
+          { q: "Где находится Каппадокия?", a: "В центральной Анатолии, вокруг Гёреме и Невшехира; добраться можно рейсом до Кайсери или Невшехира." },
+          { q: "Гарантированы ли полёты на шарах?", a: "Они зависят от погоды и бронируются отдельно. Гид поможет спланировать остальное вокруг них." },
+          { q: "Сколько дней нужно?", a: "Два дня покрывают главное с комфортом; местный гид сделает ценным даже один день." },
+        ],
+        ctaTitle: "Открыть Каппадокию с местным гидом",
+        ...CAP.ru,
+      },
+      ar: {
+        name: "كابادوكيا",
+        metaTitle: "جولات كابادوكيا مع مرشدين محليين | VibeGuide",
+        metaDescription:
+          "استكشف كابادوكيا مع مرشد محلي موثّق. مناطيد الهواء الساخن، والمداخن الجنّية، والكنائس الصخرية، والمدن تحت الأرض في غوريمه وما حولها.",
+        intro: [
+          "كابادوكيا منظر من الأحلام — وديان من «المداخن الجنّية»، وكنائس محفورة في الصخر زُيّنت قبل ألف عام، ومدن كاملة نُحتت تحت الأرض. عند الفجر ترتفع مئات المناطيد فوق غوريمه في أحد أعظم مشاهد العالم.",
+          "يعرف مرشد VibeGuide المحلي أي وادٍ يلتقط أفضل ضوء، وأي كنيسة صخرية صمدت، وأين يقلّ الزحام — فيحوّل صورة شهيرة إلى فهم حقيقي للمكان.",
+        ],
+        highlights: [
+          { title: "مناطيد الهواء الساخن", desc: "رحلات الفجر فوق الوديان — صورة كابادوكيا." },
+          { title: "متحف غوريمه المفتوح", desc: "كنائس صخرية بيزنطية بجداريات منحوتة في الصخر." },
+          { title: "المدن تحت الأرض", desc: "ديرينكويو وكايماكلي — مدن كاملة تحت الأرض." },
+        ],
+        faqs: [
+          { q: "أين تقع كابادوكيا؟", a: "في وسط الأناضول، حول غوريمه ونوشهير، ويمكن الوصول بالطيران إلى قيصري أو نوشهير." },
+          { q: "هل رحلات المناطيد مضمونة؟", a: "تعتمد على الطقس وتُحجز بشكل منفصل. يساعدك المرشد على تنظيم الباقي حولها." },
+          { q: "كم يومًا أحتاج؟", a: "يومان يغطيان الأبرز براحة؛ والمرشد المحلي يجعل حتى يوم واحد ثمينًا." },
+        ],
+        ctaTitle: "اكتشف كابادوكيا مع مرشد محلي",
+        ...CAP.ar,
+      },
+      es: {
+        name: "Capadocia",
+        metaTitle: "Tours de Capadocia con guías locales | VibeGuide",
+        metaDescription:
+          "Explora Capadocia con un guía local verificado. Globos aerostáticos, chimeneas de hadas, iglesias rupestres y ciudades subterráneas en Göreme y alrededores.",
+        intro: [
+          "Capadocia es un paisaje de ensueño — valles de 'chimeneas de hadas', iglesias excavadas en la roca pintadas hace mil años y ciudades enteras talladas bajo tierra. Al amanecer, cientos de globos se elevan sobre Göreme en uno de los grandes espectáculos del mundo.",
+          "Un local de VibeGuide sabe qué valle capta la mejor luz, qué iglesia rupestre se conserva y dónde no hay multitudes — convirtiendo una foto famosa en una comprensión real del lugar.",
+        ],
+        highlights: [
+          { title: "Globos aerostáticos", desc: "Vuelos al amanecer sobre los valles — la imagen de Capadocia." },
+          { title: "Museo al aire libre de Göreme", desc: "Iglesias rupestres bizantinas con frescos tallados en la roca." },
+          { title: "Ciudades subterráneas", desc: "Derinkuyu y Kaymaklı — pueblos enteros bajo tierra." },
+        ],
+        faqs: [
+          { q: "¿Dónde está Capadocia?", a: "En Anatolia central, alrededor de Göreme y Nevşehir; se llega en avión a Kayseri o Nevşehir." },
+          { q: "¿Están garantizados los vuelos en globo?", a: "Dependen del clima y se reservan aparte. Un guía te ayuda a planificar el resto a su alrededor." },
+          { q: "¿Cuántos días necesito?", a: "Dos días cubren lo esencial con calma; un guía local hace que incluso un día valga la pena." },
+        ],
+        ctaTitle: "Descubre Capadocia con un local",
+        ...CAP.es,
+      },
+      fr: {
+        name: "Cappadoce",
+        metaTitle: "Visites de Cappadoce avec guides locaux | VibeGuide",
+        metaDescription:
+          "Explorez la Cappadoce avec un guide local vérifié. Montgolfières, cheminées de fées, églises rupestres et villes souterraines à Göreme et alentour.",
+        intro: [
+          "La Cappadoce est un paysage de rêve — vallées de « cheminées de fées », églises taillées dans la roche peintes il y a mille ans et villes entières creusées sous terre. À l'aube, des centaines de montgolfières s'élèvent au-dessus de Göreme, l'un des grands spectacles du monde.",
+          "Un local VibeGuide sait quelle vallée capte la meilleure lumière, quelle église rupestre a survécu et où la foule n'est pas — transformant une photo célèbre en véritable compréhension du lieu.",
+        ],
+        highlights: [
+          { title: "Montgolfières", desc: "Vols à l'aube au-dessus des vallées — l'image de la Cappadoce." },
+          { title: "Musée en plein air de Göreme", desc: "Églises rupestres byzantines aux fresques taillées dans la roche." },
+          { title: "Villes souterraines", desc: "Derinkuyu et Kaymaklı — des villes entières sous terre." },
+        ],
+        faqs: [
+          { q: "Où se trouve la Cappadoce ?", a: "En Anatolie centrale, autour de Göreme et Nevşehir, accessible en avion vers Kayseri ou Nevşehir." },
+          { q: "Les vols en montgolfière sont-ils garantis ?", a: "Ils dépendent de la météo et se réservent à part. Un guide vous aide à organiser le reste autour." },
+          { q: "Combien de jours faut-il ?", a: "Deux jours couvrent l'essentiel tranquillement ; un guide local rend même une journée précieuse." },
+        ],
+        ctaTitle: "Découvrez la Cappadoce avec un local",
+        ...CAP.fr,
+      },
+      el: {
+        name: "Καππαδοκία",
+        metaTitle: "Ξεναγήσεις στην Καππαδοκία με ντόπιους ξεναγούς | VibeGuide",
+        metaDescription:
+          "Εξερεύνησε την Καππαδοκία με πιστοποιημένο ντόπιο ξεναγό. Αερόστατα, «καμινάδες των ξωτικών», βραχώδεις εκκλησίες και υπόγειες πόλεις στο Γκαϊρεμέ και πέρα.",
+        intro: [
+          "Η Καππαδοκία είναι ένα τοπίο ονείρου — κοιλάδες με «καμινάδες των ξωτικών», εκκλησίες λαξευμένες στον βράχο ζωγραφισμένες πριν χίλια χρόνια και ολόκληρες υπόγειες πόλεις. Την αυγή, εκατοντάδες αερόστατα υψώνονται πάνω από το Γκαϊρεμέ σε ένα από τα μεγάλα θεάματα του κόσμου.",
+          "Ένας ντόπιος του VibeGuide ξέρει ποια κοιλάδα πιάνει το καλύτερο φως, ποια βραχώδης εκκλησία σώθηκε και πού δεν έχει κόσμο — μετατρέποντας μια διάσημη φωτογραφία σε πραγματική κατανόηση του τόπου.",
+        ],
+        highlights: [
+          { title: "Αερόστατα", desc: "Πτήσεις την αυγή πάνω από τις κοιλάδες — η εικόνα της Καππαδοκίας." },
+          { title: "Υπαίθριο Μουσείο Γκαϊρεμέ", desc: "Βυζαντινές βραχώδεις εκκλησίες με τοιχογραφίες στον βράχο." },
+          { title: "Υπόγειες Πόλεις", desc: "Ντερίνκουγιου και Καϊμακλί — ολόκληρες πόλεις κάτω από τη γη." },
+        ],
+        faqs: [
+          { q: "Πού βρίσκεται η Καππαδοκία;", a: "Στην κεντρική Ανατολία, γύρω από το Γκαϊρεμέ και το Νέβσεχιρ· προσβάσιμη με πτήση προς Καισάρεια ή Νέβσεχιρ." },
+          { q: "Είναι εγγυημένες οι πτήσεις αερόστατου;", a: "Εξαρτώνται από τον καιρό και κλείνονται ξεχωριστά. Ο ξεναγός σε βοηθά να οργανώσεις τα υπόλοιπα γύρω τους." },
+          { q: "Πόσες μέρες χρειάζομαι;", a: "Δύο μέρες καλύπτουν άνετα τα κυριότερα· ένας ντόπιος ξεναγός κάνει ακόμη και μία μέρα να μετράει." },
+        ],
+        ctaTitle: "Ανακάλυψε την Καππαδοκία με έναν ντόπιο",
+        ...CAP.el,
+      },
+      tr: {
+        name: "Kapadokya",
+        metaTitle: "Kapadokya Turları & Yerel Rehberler | VibeGuide",
+        metaDescription:
+          "Kapadokya'yı doğrulanmış bir yerel rehberle keşfet. Sıcak hava balonları, peri bacaları, kaya kiliseleri ve Göreme çevresinde yer altı şehirleri.",
+        intro: [
+          "Kapadokya rüyadan bir manzara — 'peri bacası' vadileri, bin yıl önce boyanmış kayaya oyma kiliseler ve yer altına kazılmış koca şehirler. Şafakta yüzlerce sıcak hava balonu Göreme'nin üzerinde yükselir; dünyanın en büyük manzaralarından biri.",
+          "VibeGuide yerel rehberi hangi vadinin en iyi ışığı yakaladığını, hangi kaya kilisesinin ayakta kaldığını ve kalabalığın olmadığı yerleri bilir — ünlü bir fotoğrafı, mekânın gerçek anlamına dönüştürür.",
+        ],
+        highlights: [
+          { title: "Sıcak Hava Balonları", desc: "Vadiler üzerinde şafak uçuşları — Kapadokya'nın simgesi." },
+          { title: "Göreme Açık Hava Müzesi", desc: "Kayaya oyulmuş, freskli Bizans kaya kiliseleri." },
+          { title: "Yer Altı Şehirleri", desc: "Derinkuyu ve Kaymaklı — yer altında koca kasabalar." },
+        ],
+        faqs: [
+          { q: "Kapadokya nerede?", a: "İç Anadolu'da, Göreme ve Nevşehir çevresinde; Kayseri veya Nevşehir'e uçuşla ulaşılır." },
+          { q: "Balon uçuşları garanti mi?", a: "Havaya bağlı ve ayrı rezerve edilir. Rehber, gerisini bunun etrafında planlamana yardım eder." },
+          { q: "Kaç gün gerekir?", a: "İki gün öne çıkanları rahatça kapsar; yerel rehber tek günü bile değerli kılar." },
+        ],
+        ctaTitle: "Kapadokya'yı bir yerelle keşfet",
+        ...CAP.tr,
       },
     },
   },
