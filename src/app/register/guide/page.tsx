@@ -16,9 +16,24 @@ async function uploadKyc(file: File, uid: string, slot: PhotoSlot): Promise<stri
   const storageRef = ref(storage, `kyc/${uid}/${slot}_${Date.now()}.${ext}`);
   return new Promise((resolve, reject) => {
     const task = uploadBytesResumable(storageRef, file);
-    task.on("state_changed", null, reject, async () => {
-      resolve(await getDownloadURL(task.snapshot.ref));
-    });
+    // 60sn içinde bitmezse takılmayı bırak, hata fırlat
+    const timeout = setTimeout(() => {
+      try { task.cancel(); } catch { /* noop */ }
+      reject(new Error("Upload timed out. Please check your connection and try again."));
+    }, 60000);
+    task.on(
+      "state_changed",
+      null,
+      (err) => { clearTimeout(timeout); reject(err); },
+      async () => {
+        clearTimeout(timeout);
+        try {
+          resolve(await getDownloadURL(task.snapshot.ref));
+        } catch (e) {
+          reject(e);
+        }
+      }
+    );
   });
 }
 
