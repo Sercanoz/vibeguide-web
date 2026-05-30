@@ -1,52 +1,38 @@
 // Tur / rehber dilleri — ISO 639-1 kodları. Tek kaynak: hem admin multi-select
-// hem katalog/detay gösteriminde kod → isim çevirisi için kullanılır.
-// DB tablosu yok: diller pratikte değişmez, comma-separated string olarak saklanır.
+// hem katalog/detay gösteriminde kod → isim + bayrak için kullanılır.
+// Bayraklar `flag-icons` kütüphanesiyle gösterilir (emoji DEĞİL — bazı OS'larda çıkmaz):
+//   <span className={`fi fi-${fi}`} />
+// `fi` = flag-icons ülke kodu (ISO 3166-1 alpha-2, küçük harf).
+// Liste sitenin dil çubuğu (LocaleSwitcher) ile aynı dilleri kapsar.
 
 export type LanguageOption = {
-  code: string; // ISO 639-1, küçük harf
-  name: string; // İngilizce ad (admin İngilizce)
-  flag: string; // bayrak emoji (gösterim için)
+  code: string; // ISO 639-1, küçük harf (dil kodu)
+  name: string; // gösterilecek ad (kendi dilinde — dil çubuğuyla aynı)
+  fi: string;   // flag-icons ülke kodu (ISO 3166-1 alpha-2)
 };
 
 export const LANGUAGES: LanguageOption[] = [
-  { code: "en", name: "English", flag: "🇬🇧" },
-  { code: "tr", name: "Turkish", flag: "🇹🇷" },
-  { code: "de", name: "German", flag: "🇩🇪" },
-  { code: "fr", name: "French", flag: "🇫🇷" },
-  { code: "es", name: "Spanish", flag: "🇪🇸" },
-  { code: "it", name: "Italian", flag: "🇮🇹" },
-  { code: "ru", name: "Russian", flag: "🇷🇺" },
-  { code: "ar", name: "Arabic", flag: "🇸🇦" },
-  { code: "zh", name: "Chinese", flag: "🇨🇳" },
-  { code: "ja", name: "Japanese", flag: "🇯🇵" },
-  { code: "ko", name: "Korean", flag: "🇰🇷" },
-  { code: "pt", name: "Portuguese", flag: "🇵🇹" },
-  { code: "nl", name: "Dutch", flag: "🇳🇱" },
-  { code: "pl", name: "Polish", flag: "🇵🇱" },
-  { code: "uk", name: "Ukrainian", flag: "🇺🇦" },
-  { code: "el", name: "Greek", flag: "🇬🇷" },
-  { code: "sv", name: "Swedish", flag: "🇸🇪" },
-  { code: "no", name: "Norwegian", flag: "🇳🇴" },
-  { code: "da", name: "Danish", flag: "🇩🇰" },
-  { code: "fi", name: "Finnish", flag: "🇫🇮" },
-  { code: "cs", name: "Czech", flag: "🇨🇿" },
-  { code: "hu", name: "Hungarian", flag: "🇭🇺" },
-  { code: "ro", name: "Romanian", flag: "🇷🇴" },
-  { code: "bg", name: "Bulgarian", flag: "🇧🇬" },
-  { code: "sr", name: "Serbian", flag: "🇷🇸" },
-  { code: "hr", name: "Croatian", flag: "🇭🇷" },
-  { code: "he", name: "Hebrew", flag: "🇮🇱" },
-  { code: "fa", name: "Persian", flag: "🇮🇷" },
-  { code: "hi", name: "Hindi", flag: "🇮🇳" },
-  { code: "ur", name: "Urdu", flag: "🇵🇰" },
-  { code: "id", name: "Indonesian", flag: "🇮🇩" },
-  { code: "ms", name: "Malay", flag: "🇲🇾" },
-  { code: "th", name: "Thai", flag: "🇹🇭" },
-  { code: "vi", name: "Vietnamese", flag: "🇻🇳" },
-  { code: "az", name: "Azerbaijani", flag: "🇦🇿" },
-  { code: "ka", name: "Georgian", flag: "🇬🇪" },
-  { code: "hy", name: "Armenian", flag: "🇦🇲" },
-  { code: "sq", name: "Albanian", flag: "🇦🇱" },
+  { code: "en", name: "English", fi: "gb" },
+  { code: "tr", name: "Türkçe", fi: "tr" },
+  { code: "de", name: "Deutsch", fi: "de" },
+  { code: "fr", name: "Français", fi: "fr" },
+  { code: "ru", name: "Русский", fi: "ru" },
+  { code: "es", name: "Español", fi: "es" },
+  { code: "pt", name: "Português", fi: "pt" },
+  { code: "it", name: "Italiano", fi: "it" },
+  { code: "nl", name: "Nederlands", fi: "nl" },
+  { code: "pl", name: "Polski", fi: "pl" },
+  { code: "uk", name: "Українська", fi: "ua" },
+  { code: "ro", name: "Română", fi: "ro" },
+  { code: "el", name: "Ελληνικά", fi: "gr" },
+  { code: "bg", name: "Български", fi: "bg" },
+  { code: "sr", name: "Српски", fi: "rs" },
+  { code: "hr", name: "Hrvatski", fi: "hr" },
+  { code: "ko", name: "한국어", fi: "kr" },
+  { code: "ja", name: "日本語", fi: "jp" },
+  { code: "zh", name: "中文", fi: "cn" },
+  { code: "ar", name: "العربية", fi: "sa" },
+  { code: "id", name: "Indonesia", fi: "id" },
 ];
 
 const BY_CODE = new Map(LANGUAGES.map((l) => [l.code, l]));
@@ -65,14 +51,14 @@ export function joinLanguageCodes(codes: string[]): string {
   return codes.join(",");
 }
 
-/** Koda karşılık dil bilgisi; bilinmiyorsa kodu olduğu gibi ada koyar. */
+/** Koda karşılık dil bilgisi; bilinmiyorsa kodu olduğu gibi ada koyar (bayraksız). */
 export function languageByCode(code: string): LanguageOption {
   return (
-    BY_CODE.get(code.toLowerCase()) ?? { code, name: code.toUpperCase(), flag: "🏳️" }
+    BY_CODE.get(code.toLowerCase()) ?? { code, name: code.toUpperCase(), fi: "" }
   );
 }
 
-/** "en,tr" → "English, Turkish" (gösterim için). */
+/** "en,tr" → "English, Türkçe" (gösterim için). */
 export function languageNames(csv: string | null | undefined): string {
   return parseLanguageCodes(csv)
     .map((c) => languageByCode(c).name)

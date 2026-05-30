@@ -1312,7 +1312,12 @@ function LanguageMultiSelect({ value, onChange }: { value: string; onChange: (cs
                   : "bg-white border-vg-border text-vg-muted hover:border-vg-primary/50"
               }`}
             >
-              <span>{lang.flag}</span>
+              {lang.fi && (
+                <span
+                  className={`fi fi-${lang.fi} rounded-sm`}
+                  style={{ width: 18, height: 13, display: "inline-block" }}
+                />
+              )}
               <span>{lang.name}</span>
               {isOn && <span className="ml-0.5">✓</span>}
             </button>

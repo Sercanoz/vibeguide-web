@@ -476,13 +476,18 @@ export default function TourDetailPage() {
                     <span
                       key={lp.code}
                       title={lang.name}
-                      className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-semibold border ${
+                      className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-semibold border ${
                         lp.isRare
                           ? "bg-amber-50 border-amber-200 text-amber-700"
                           : "bg-[#F7F7FB] border-black/10 text-neutral-600"
                       }`}
                     >
-                      <span className="text-base leading-none">{lang.flag}</span>
+                      {lang.fi && (
+                        <span
+                          className={`fi fi-${lang.fi} rounded-sm`}
+                          style={{ width: 20, height: 15, display: "inline-block" }}
+                        />
+                      )}
                       <span>{lp.code.toUpperCase()}</span>
                       {lp.isRare && <span className="text-[10px]">★</span>}
                     </span>
