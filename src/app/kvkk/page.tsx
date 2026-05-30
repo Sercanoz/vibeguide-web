@@ -27,6 +27,7 @@ export default function KvkkPage() {
               <p>Adres: Beldibi Mah. Belmar Sk. No:9/1 İç Kapı No:4 Marmaris/Muğla, Türkiye</p>
               <p>Vergi No: 9251328389 · Vergi Dairesi: Marmaris V.D.</p>
               <p>E-posta: support@vibeguideapp.com</p>
+              <p>Telefon: +90 530 828 76 96</p>
             </div>
           </section>
 

@@ -28,6 +28,7 @@ export default function MesafeliSatisPage() {
               <p>Vergi No: 9251328389 · Vergi Dairesi: Marmaris V.D.</p>
               <p>Ticaret Sicil No: 12686</p>
               <p>E-posta: support@vibeguideapp.com</p>
+              <p>Telefon: +90 530 828 76 96</p>
               <p className="mt-4"><strong>ALICI:</strong> VibeGuide uygulaması veya web sitesi üzerinden rezervasyon yapan kullanıcı.</p>
             </div>
           </section>

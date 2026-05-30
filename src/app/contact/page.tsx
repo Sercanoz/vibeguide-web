@@ -28,6 +28,13 @@ export default function ContactPage() {
             <p className="text-xs text-neutral-400 mt-2">We respond within 24 hours on business days.</p>
           </div>
           <div className="bg-neutral-50 rounded-2xl p-6">
+            <p className="text-sm font-black mb-3">📞 Phone</p>
+            <a href="tel:+905308287696" className="text-[#6C4CF1] font-semibold hover:underline">
+              +90 530 828 76 96
+            </a>
+            <p className="text-xs text-neutral-400 mt-2">Mon–Fri, 09:00–18:00 (UTC+3)</p>
+          </div>
+          <div className="bg-neutral-50 rounded-2xl p-6">
             <p className="text-sm font-black mb-3">🕐 Working hours</p>
             <p className="font-semibold">Mon–Fri, 09:00–18:00</p>
             <p className="text-xs text-neutral-400 mt-2">Turkey time (UTC+3)</p>

@@ -28,6 +28,7 @@ export default function OnBilgilendirmePage() {
               <p><strong>Vergi No:</strong> 9251328389 · <strong>Vergi Dairesi:</strong> Marmaris V.D.</p>
               <p><strong>Ticaret Sicil No:</strong> 12686</p>
               <p><strong>E-posta:</strong> support@vibeguideapp.com</p>
+              <p><strong>Telefon:</strong> +90 530 828 76 96</p>
               <p><strong>Çalışma saatleri:</strong> Hafta içi 09:00 – 18:00 (UTC+3)</p>
             </div>
           </section>

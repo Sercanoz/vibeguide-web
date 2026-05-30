@@ -661,6 +661,7 @@ export default function HomePage() {
               </div>
               <div className="md:text-right">
                 <p>📧 <a href="mailto:support@vibeguideapp.com" className="hover:text-black transition-colors">support@vibeguideapp.com</a></p>
+                <p>📞 <a href="tel:+905308287696" className="hover:text-black transition-colors">+90 530 828 76 96</a></p>
                 <p>Çalışma saatleri: Hafta içi 09:00 – 18:00 (UTC+3)</p>
               </div>
             </div>
