@@ -102,23 +102,19 @@ export default function RegisterGuidePage() {
     if (!badgeFront || !badgeBack) { setError("Please upload both sides of your guide badge."); return; }
     setLoading(true);
     try {
+      // Tek adım: hesap oluştur → fotoğrafları yükle → başvuruyu gönder.
+      // Email doğrulama YOK — admin KYC onayı zaten kapı.
       await registerWithEmail(email, password);
-      const user = fbAuth().currentUser;
-      if (user) {
-        const token = await user.getIdToken();
-        await fetch(`${API_BASE_URL}/api/auth/send-verification`, {
-          method: "POST",
-          headers: { Authorization: `Bearer ${token}` },
-        });
-      }
-      setStep("verify");
+      await doUploadAndRegister();
     } catch (err: unknown) {
       const code = (err as { code?: string }).code ?? "";
-      if (code === "auth/email-already-in-use") setError("This email is already registered.");
+      if (code === "auth/email-already-in-use") setError("This email is already registered. Please sign in.");
       else if (code === "auth/weak-password") setError("Password is too weak.");
-      else setError("Registration failed. Please try again.");
+      else if (code === "storage/unauthorized") setError("Photo upload failed. Please try again.");
+      else setError((err as Error).message || "Registration failed. Please try again.");
     } finally {
       setLoading(false);
+      setUploadProgress(null);
     }
   }
 
