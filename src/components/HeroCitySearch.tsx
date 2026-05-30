@@ -17,9 +17,40 @@ type Destination = {
   count: number; // bu destinasyondaki tur sayısı
 };
 
+const RECENT_KEY = "vg_recent_city";
+
+// Pin ikonu (bar + dropdown'da ortak kullanılıyor).
+function PinIcon({ size = 20, color = "#6C4CF1" }: { size?: number; color?: string }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="shrink-0"
+    >
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+      <circle cx="12" cy="10" r="3" />
+    </svg>
+  );
+}
+
+// Şehir baş harfiyle gradyan avatar — dropdown'da görsel ayrım için.
+function CityAvatar({ label }: { label: string }) {
+  return (
+    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-[#6C4CF1] to-[#EC4899] text-sm font-black text-white shrink-0">
+      {label.charAt(0).toUpperCase()}
+    </span>
+  );
+}
+
 /**
- * Hero üstündeki ortalı şehir arama barı. Sadece GERÇEK turu olan şehirleri
- * gösterir (boş sonuç olmaz). Seçim → /tours?city=<slug>.
+ * Hero üstündeki ortalı destinasyon arama barı. Sadece GERÇEK turu olan şehirleri
+ * gösterir (boş sonuç olmaz). Seçim → /tours?city=<slug>. Boş "Explore" → tüm turlar.
  */
 export default function HeroCitySearch() {
   const router = useRouter();
@@ -28,6 +59,8 @@ export default function HeroCitySearch() {
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(0);
+  const [hintIdx, setHintIdx] = useState(0);
+  const [recent, setRecent] = useState<Destination | null>(null);
   const boxRef = useRef<HTMLDivElement>(null);
 
   // Turları çek → benzersiz destinasyon listesi üret.
@@ -56,6 +89,16 @@ export default function HeroCitySearch() {
     };
   }, [locale]);
 
+  // Son aranan şehri oku.
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem(RECENT_KEY);
+      if (raw) setRecent(JSON.parse(raw) as Destination);
+    } catch {
+      /* noop */
+    }
+  }, []);
+
   // Dışarı tıklayınca kapat.
   useEffect(() => {
     function onClick(e: MouseEvent) {
@@ -67,6 +110,18 @@ export default function HeroCitySearch() {
     return () => document.removeEventListener("mousedown", onClick);
   }, []);
 
+  // Rotating placeholder — sadece kullanıcı yazmıyorken döner.
+  const hints = useMemo(() => {
+    const top = destinations.slice(0, 3).map((d) => `Try ${d.label}…`);
+    return ["Where to?", ...top, "Try a food tour…"].filter(Boolean);
+  }, [destinations]);
+
+  useEffect(() => {
+    if (query) return; // yazarken durdur
+    const id = setInterval(() => setHintIdx((i) => (i + 1) % hints.length), 2600);
+    return () => clearInterval(id);
+  }, [query, hints.length]);
+
   const matches = useMemo(() => {
     const q = query.trim().toLowerCase();
     const list = q
@@ -75,9 +130,25 @@ export default function HeroCitySearch() {
     return list.slice(0, 6);
   }, [query, destinations]);
 
+  // Boşken en üstte "Recent" satırı (hâlâ geçerli bir destinasyonsa).
+  const recentValid =
+    !query && recent && destinations.some((d) => d.slug === recent.slug)
+      ? recent
+      : null;
+
+  const popular = destinations.slice(0, 4);
+
   function go(dest?: Destination) {
     const target = dest ?? matches[active] ?? matches[0];
-    if (!target) return;
+    if (!target) {
+      router.push("/tours"); // boş → tüm turlar
+      return;
+    }
+    try {
+      localStorage.setItem(RECENT_KEY, JSON.stringify(target));
+    } catch {
+      /* noop */
+    }
     router.push(`/tours?city=${encodeURIComponent(target.slug)}`);
   }
 
@@ -113,21 +184,7 @@ export default function HeroCitySearch() {
             : "border-black/[0.08] shadow-[0_4px_24px_rgba(0,0,0,0.06)]"
         }`}
       >
-        {/* Location icon */}
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#6C4CF1"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="shrink-0"
-        >
-          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-          <circle cx="12" cy="10" r="3" />
-        </svg>
+        <PinIcon />
 
         <input
           value={query}
@@ -138,7 +195,7 @@ export default function HeroCitySearch() {
           }}
           onFocus={() => setOpen(true)}
           onKeyDown={onKeyDown}
-          placeholder="Where to? Try Istanbul…"
+          placeholder={hints[hintIdx] ?? "Where to?"}
           className="flex-1 min-w-0 bg-transparent py-3 text-[15px] font-medium text-[#0A0A0F] placeholder:text-neutral-400 focus:outline-none"
           aria-label="Search destination"
         />
@@ -152,9 +209,41 @@ export default function HeroCitySearch() {
         </button>
       </div>
 
+      {/* Popüler şehir çipleri — yazmadan tek dokunuş */}
+      {popular.length > 0 && (
+        <div className="mt-3 flex flex-wrap items-center justify-center gap-2">
+          <span className="text-xs font-semibold text-neutral-400">Popular:</span>
+          {popular.map((d) => (
+            <button
+              key={d.slug}
+              onClick={() => go(d)}
+              className="rounded-full border border-black/[0.08] bg-white/70 px-3.5 py-1.5 text-xs font-bold text-neutral-600 transition-colors hover:border-[#6C4CF1]/40 hover:text-[#6C4CF1]"
+            >
+              {d.label}
+            </button>
+          ))}
+        </div>
+      )}
+
       {/* Suggestions dropdown */}
-      {open && matches.length > 0 && (
+      {open && (matches.length > 0 || recentValid) && (
         <div className="absolute left-0 right-0 top-full mt-2 overflow-hidden rounded-2xl border border-black/[0.06] bg-white shadow-xl">
+          {recentValid && (
+            <button
+              onClick={() => go(recentValid)}
+              className="flex w-full items-center justify-between gap-3 border-b border-black/[0.04] px-5 py-3 text-left transition-colors hover:bg-neutral-50"
+            >
+              <span className="flex items-center gap-3">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-neutral-100 text-neutral-500 shrink-0">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" />
+                  </svg>
+                </span>
+                <span className="text-sm font-bold text-[#0A0A0F]">{recentValid.label}</span>
+              </span>
+              <span className="text-xs font-semibold text-neutral-400">Recent</span>
+            </button>
+          )}
           {matches.map((d, i) => (
             <button
               key={d.slug}
@@ -165,21 +254,7 @@ export default function HeroCitySearch() {
               }`}
             >
               <span className="flex items-center gap-3">
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#6C4CF1]/10 text-[#6C4CF1]">
-                  <svg
-                    width="15"
-                    height="15"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>
-                </span>
+                <CityAvatar label={d.label} />
                 <span className="text-sm font-bold text-[#0A0A0F]">{d.label}</span>
               </span>
               <span className="text-xs font-semibold text-neutral-400">
