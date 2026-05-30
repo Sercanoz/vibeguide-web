@@ -7,6 +7,7 @@ import { useT } from "@/components/LanguageProvider";
 import { getToursT } from "@/lib/i18n";
 import Navbar from "@/components/Navbar";
 import ShareButton from "@/components/ShareButton";
+import { languageByCode } from "@/lib/languages";
 
 interface Place {
   id: number;
@@ -469,19 +470,24 @@ export default function TourDetailPage() {
             <div>
               <h2 className="text-2xl font-black mb-4">Languages Available</h2>
               <div className="flex flex-wrap gap-2">
-                {tour.languagePrices.map((lp) => (
-                  <span
-                    key={lp.code}
-                    className={`px-3 py-1.5 rounded-full text-sm font-semibold border ${
-                      lp.isRare
-                        ? "bg-amber-50 border-amber-200 text-amber-700"
-                        : "bg-[#F7F7FB] border-black/10 text-neutral-600"
-                    }`}
-                  >
-                    {lp.displayName}
-                    {lp.isRare && <span className="ml-1 text-[10px]">★</span>}
-                  </span>
-                ))}
+                {tour.languagePrices.map((lp) => {
+                  const lang = languageByCode(lp.code);
+                  return (
+                    <span
+                      key={lp.code}
+                      title={lang.name}
+                      className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-semibold border ${
+                        lp.isRare
+                          ? "bg-amber-50 border-amber-200 text-amber-700"
+                          : "bg-[#F7F7FB] border-black/10 text-neutral-600"
+                      }`}
+                    >
+                      <span className="text-base leading-none">{lang.flag}</span>
+                      <span>{lp.code.toUpperCase()}</span>
+                      {lp.isRare && <span className="text-[10px]">★</span>}
+                    </span>
+                  );
+                })}
               </div>
             </div>
           )}
