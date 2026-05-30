@@ -2,7 +2,7 @@
 
 import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
-import { registerWithEmail, signInWithGoogle, fbAuth } from "@/lib/firebase-client";
+import { registerWithEmail, signInWithEmail, signInWithGoogle, fbAuth } from "@/lib/firebase-client";
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { fbApp } from "@/lib/firebase-client";
 import { API_BASE_URL } from "@/lib/api";
@@ -104,11 +104,23 @@ export default function RegisterGuidePage() {
     try {
       // Tek adım: hesap oluştur → fotoğrafları yükle → başvuruyu gönder.
       // Email doğrulama YOK — admin KYC onayı zaten kapı.
-      await registerWithEmail(email, password);
+      try {
+        await registerWithEmail(email, password);
+      } catch (e: unknown) {
+        const c = (e as { code?: string }).code ?? "";
+        if (c === "auth/email-already-in-use") {
+          // Firebase'de hesap var ama DB kaydı yarım kalmış olabilir → giriş yapıp tamamla
+          await signInWithEmail(email, password);
+        } else {
+          throw e;
+        }
+      }
       await doUploadAndRegister();
     } catch (err: unknown) {
       const code = (err as { code?: string }).code ?? "";
       if (code === "auth/email-already-in-use") setError("This email is already registered. Please sign in.");
+      else if (code === "auth/wrong-password" || code === "auth/invalid-credential")
+        setError("This email is already registered with a different password. Please sign in.");
       else if (code === "auth/weak-password") setError("Password is too weak.");
       else if (code === "storage/unauthorized") setError("Photo upload failed. Please try again.");
       else setError((err as Error).message || "Registration failed. Please try again.");
