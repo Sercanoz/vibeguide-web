@@ -1138,6 +1138,38 @@ function ImportantInfoEditor({ tourId }: { tourId: number }) {
 
 // ─── Tour Includes Editor ─────────────────────────────────────────────────────
 
+function IncludeRow({
+  item,
+  onToggle,
+  onDelete,
+}: {
+  item: TourInclude;
+  onToggle: (item: TourInclude) => void;
+  onDelete: (id: number) => void;
+}) {
+  return (
+    <div className="flex items-center gap-3 rounded-xl bg-vg-bg-soft border border-vg-border px-4 py-3">
+      <button
+        onClick={() => onToggle(item)}
+        className={`text-lg w-7 h-7 flex items-center justify-center rounded-full border font-bold transition-colors ${
+          item.isIncluded
+            ? "bg-emerald-50 border-emerald-200 text-emerald-600"
+            : "bg-red-50 border-red-200 text-red-500"
+        }`}
+      >
+        {item.isIncluded ? "✓" : "✗"}
+      </button>
+      <span className="flex-1 text-sm text-vg-ink">{item.label}</span>
+      <button
+        onClick={() => onDelete(item.id)}
+        className="text-vg-muted hover:text-red-500 text-xs font-bold px-2"
+      >
+        ✕
+      </button>
+    </div>
+  );
+}
+
 function IncludesEditor({ tourId }: { tourId: number }) {
   const [items, setItems] = useState<TourInclude[]>([]);
   const [newLabel, setNewLabel] = useState("");
@@ -1182,30 +1214,37 @@ function IncludesEditor({ tourId }: { tourId: number }) {
           <div className="mb-4 rounded-xl px-4 py-2 text-sm bg-red-50 border border-red-200 text-red-800">{flash}</div>
         )}
 
-        {/* Existing items */}
-        <div className="space-y-2 mb-5">
+        {/* Existing items — split into two groups */}
+        <div className="space-y-5 mb-5">
           {items.length === 0 && <p className="text-sm text-vg-muted">No items yet.</p>}
-          {items.map((item) => (
-            <div key={item.id} className="flex items-center gap-3 rounded-xl bg-vg-bg-soft border border-vg-border px-4 py-3">
-              <button
-                onClick={() => onToggle(item)}
-                className={`text-lg w-7 h-7 flex items-center justify-center rounded-full border font-bold transition-colors ${
-                  item.isIncluded
-                    ? "bg-emerald-50 border-emerald-200 text-emerald-600"
-                    : "bg-red-50 border-red-200 text-red-500"
-                }`}
-              >
-                {item.isIncluded ? "✓" : "✗"}
-              </button>
-              <span className="flex-1 text-sm text-vg-ink">{item.label}</span>
-              <button
-                onClick={() => onDelete(item.id)}
-                className="text-vg-muted hover:text-red-500 text-xs font-bold px-2"
-              >
-                ✕
-              </button>
+
+          {/* What's included */}
+          {items.some((i) => i.isIncluded) && (
+            <div>
+              <p className="text-xs font-black uppercase tracking-widest text-emerald-600 mb-2">
+                What&apos;s included
+              </p>
+              <div className="space-y-2">
+                {items.filter((i) => i.isIncluded).map((item) => (
+                  <IncludeRow key={item.id} item={item} onToggle={onToggle} onDelete={onDelete} />
+                ))}
+              </div>
             </div>
-          ))}
+          )}
+
+          {/* Not included */}
+          {items.some((i) => !i.isIncluded) && (
+            <div>
+              <p className="text-xs font-black uppercase tracking-widest text-red-500 mb-2">
+                Not included
+              </p>
+              <div className="space-y-2">
+                {items.filter((i) => !i.isIncluded).map((item) => (
+                  <IncludeRow key={item.id} item={item} onToggle={onToggle} onDelete={onDelete} />
+                ))}
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Add new item */}
