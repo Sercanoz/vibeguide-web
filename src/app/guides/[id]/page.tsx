@@ -4,6 +4,7 @@ import { use, useEffect, useState } from "react";
 import { API_BASE_URL } from "@/lib/api";
 import { useT } from "@/components/LanguageProvider";
 import Navbar from "@/components/Navbar";
+import ShareButton from "@/components/ShareButton";
 
 type Props = { params: Promise<{ id: string }> };
 
@@ -134,7 +135,10 @@ export default function GuidePublicProfile(props: Props) {
 
             {/* Name + meta */}
             <div className="flex-1 min-w-0">
-              <h1 className="text-2xl font-black text-[#0A0A0F]">{p.fullName}</h1>
+              <div className="flex items-start justify-between gap-3">
+                <h1 className="text-2xl font-black text-[#0A0A0F]">{p.fullName}</h1>
+                <div className="shrink-0"><ShareButton title={`${p.fullName} — Local guide on VibeGuide`} variant="icon" /></div>
+              </div>
               {p.city && <p className="text-sm text-neutral-400 mt-0.5">📍 {p.city}</p>}
 
               <div className="flex flex-wrap items-center gap-2 mt-3">

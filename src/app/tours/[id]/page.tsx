@@ -6,6 +6,7 @@ import { API_BASE_URL } from "@/lib/api";
 import { useT } from "@/components/LanguageProvider";
 import { getToursT } from "@/lib/i18n";
 import Navbar from "@/components/Navbar";
+import ShareButton from "@/components/ShareButton";
 
 interface Place {
   id: number;
@@ -205,9 +206,14 @@ export default function TourDetailPage() {
               <span className={`inline-block px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wide mb-3 ${categoryColor(tour.category)}`}>
                 {tour.category}
               </span>
-              <h1 className="text-2xl md:text-4xl font-black text-[#0A0A0F] leading-tight">
-                {tour.title}
-              </h1>
+              <div className="flex items-start justify-between gap-4">
+                <h1 className="text-2xl md:text-4xl font-black text-[#0A0A0F] leading-tight">
+                  {tour.title}
+                </h1>
+                <div className="shrink-0 mt-1">
+                  <ShareButton title={tour.title} variant="icon" />
+                </div>
+              </div>
               <p className="mt-2 text-neutral-400 flex items-center gap-3 text-sm">
                 <span>📍 {tour.districtName && tour.provinceName ? `${tour.districtName}, ${tour.provinceName}` : (tour.provinceName || tour.city)}</span>
                 <span>·</span>
