@@ -117,28 +117,38 @@ export default function RegisterGuidePage() {
     if (!badgeFront || !badgeBack) { setError("Please upload both sides of your guide badge."); return; }
     setLoading(true);
     try {
-      // Tek adım: hesap oluştur → fotoğrafları yükle → başvuruyu gönder.
-      // Email doğrulama YOK — admin KYC onayı zaten kapı.
+      // 1) Hesap oluştur. Email zaten varsa → o şifreyle giriş yapıp devam et.
       try {
         await registerWithEmail(email, password);
       } catch (e: unknown) {
         const c = (e as { code?: string }).code ?? "";
         if (c === "auth/email-already-in-use") {
-          // Firebase'de hesap var ama DB kaydı yarım kalmış olabilir → giriş yapıp tamamla
-          await signInWithEmail(email, password);
+          try {
+            await signInWithEmail(email, password);
+          } catch {
+            setError("This email is already registered. Sign in with your password, or use a different email.");
+            setLoading(false);
+            return;
+          }
+        } else if (c === "auth/weak-password") {
+          setError("Password is too weak (min. 6 characters).");
+          setLoading(false); return;
+        } else if (c === "auth/invalid-email") {
+          setError("Please enter a valid email address.");
+          setLoading(false); return;
         } else {
-          throw e;
+          setError((e as Error).message || "Could not create account. Please try again.");
+          setLoading(false); return;
         }
       }
+      // 2) Fotoğrafları yükle + başvuruyu gönder
       await doUploadAndRegister();
     } catch (err: unknown) {
       const code = (err as { code?: string }).code ?? "";
-      if (code === "auth/email-already-in-use") setError("This email is already registered. Please sign in.");
-      else if (code === "auth/wrong-password" || code === "auth/invalid-credential")
-        setError("This email is already registered with a different password. Please sign in.");
-      else if (code === "auth/weak-password") setError("Password is too weak.");
-      else if (code === "storage/unauthorized") setError("Photo upload failed. Please try again.");
-      else setError((err as Error).message || "Registration failed. Please try again.");
+      if (code === "storage/unauthorized")
+        setError("Photo upload was blocked. Please try again in a moment.");
+      else
+        setError((err as Error).message || "Something went wrong. Please try again.");
     } finally {
       setLoading(false);
       setUploadProgress(null);
