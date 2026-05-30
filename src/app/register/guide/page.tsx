@@ -3,20 +3,23 @@
 import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { registerWithEmail, signInWithEmail, signInWithGoogle, fbAuth } from "@/lib/firebase-client";
-import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { getStorage, ref, uploadBytesResumable } from "firebase/storage";
 import { fbApp } from "@/lib/firebase-client";
 import { API_BASE_URL } from "@/lib/api";
 import { useRedirectIfAuthed } from "@/hooks/useRedirectIfAuthed";
 
 type PhotoSlot = "badgeFront" | "badgeBack";
 
+// Yüklemeyi yapar ve STORAGE PATH'ini döndürür (download URL DEĞİL).
+// getDownloadURL read izni ister ve KYC gizli olduğu için 403 verir.
+// Path'i backend admin SDK ile okur. Frontend'in read iznine ihtiyacı yok.
 async function uploadKyc(file: File, uid: string, slot: PhotoSlot): Promise<string> {
   const storage = getStorage(fbApp());
   const ext = file.name.split(".").pop() ?? "jpg";
-  const storageRef = ref(storage, `kyc/${uid}/${slot}_${Date.now()}.${ext}`);
+  const path = `kyc/${uid}/${slot}_${Date.now()}.${ext}`;
+  const storageRef = ref(storage, path);
   return new Promise((resolve, reject) => {
     const task = uploadBytesResumable(storageRef, file);
-    // 60sn içinde bitmezse takılmayı bırak, hata fırlat
     const timeout = setTimeout(() => {
       try { task.cancel(); } catch { /* noop */ }
       reject(new Error("Upload timed out. Please check your connection and try again."));
@@ -25,14 +28,7 @@ async function uploadKyc(file: File, uid: string, slot: PhotoSlot): Promise<stri
       "state_changed",
       null,
       (err) => { clearTimeout(timeout); reject(err); },
-      async () => {
-        clearTimeout(timeout);
-        try {
-          resolve(await getDownloadURL(task.snapshot.ref));
-        } catch (e) {
-          reject(e);
-        }
-      }
+      () => { clearTimeout(timeout); resolve(path); } // path döndür, URL alma
     );
   });
 }
