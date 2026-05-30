@@ -5,6 +5,7 @@ import Link from "next/link";
 import CityTours from "@/components/CityTours";
 import {
   ATTRACTION_LANGS,
+  ATTRACTIONS,
   RTL_LANGS,
   getAttraction,
   isAttractionLang,
@@ -219,6 +220,35 @@ export default async function AttractionPage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* Other landmarks — internal linking (same language) */}
+      {(() => {
+        const others = ATTRACTIONS.filter((a) => a.slug !== slug);
+        if (others.length === 0) return null;
+        return (
+          <section className="pb-4">
+            <div className="mx-auto max-w-5xl px-6">
+              <h2 className="text-2xl font-black mb-6 tracking-tight">
+                {c.toursHeading}
+              </h2>
+              <div className="grid sm:grid-cols-3 gap-4">
+                {others.map((o) => (
+                  <Link
+                    key={o.slug}
+                    href={`/attractions/${lang}/${o.slug}`}
+                    className="group flex items-center gap-4 rounded-2xl bg-white border border-black/[0.06] p-5 hover:border-[#6C4CF1]/30 transition-colors"
+                  >
+                    <span className="text-3xl">{o.emoji}</span>
+                    <span className="font-black text-[#0A0A0F] group-hover:text-[#6C4CF1] transition-colors">
+                      {o.i18n[lang].name}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      })()}
 
       {/* CTA */}
       <section id="download" className="py-20 bg-[#F7F7FB]">
