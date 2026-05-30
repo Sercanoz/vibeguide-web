@@ -436,8 +436,32 @@ export const adminApi = {
 
   // ════════ APPLICATIONS ════════
 
-  listApplications: (status: "Pending" | "Approved" | "Rejected") =>
-    authedFetch<GuideApplication[]>(`/api/admin/applications?status=${status}`),
+  listApplications: async (
+    status: "Pending" | "Approved" | "Rejected"
+  ): Promise<ApiResult<GuideApplication[]>> => {
+    const res = await authedFetch<AdminApplicationListItemRaw[]>(
+      `/api/admin/applications?status=${status}`
+    );
+    if (!res.ok) return res;
+    return {
+      ok: true,
+      data: res.data.map((a) => ({
+        id: a.applicationId,
+        userId: a.userId,
+        fullName: a.fullName,
+        email: a.email,
+        status: a.status as GuideApplication["status"],
+        appliedAt: a.createdAtUtc,
+        kycPhotoUrls: [
+          a.badgeFrontUrl,
+          a.badgeBackUrl,
+          a.idCardFrontUrl,
+          a.idCardBackUrl,
+        ].filter((u): u is string => !!u),
+        rejectionReason: null,
+      })),
+    };
+  },
 
   approveApplication: (id: number) =>
     authedFetch<{ ok: true }>(`/api/admin/applications/${id}/approve`, { method: "POST" }),
@@ -696,6 +720,22 @@ export type GuideApplication = {
   appliedAt: string;
   kycPhotoUrls: string[];
   rejectionReason?: string | null;
+};
+
+// Backend'in /api/admin/applications için döndürdüğü ham şekil (camelCase).
+type AdminApplicationListItemRaw = {
+  applicationId: number;
+  userId: number;
+  firebaseUid: string;
+  email: string;
+  fullName: string;
+  phoneNumber: string | null;
+  idCardFrontUrl: string;
+  idCardBackUrl: string;
+  badgeFrontUrl: string;
+  badgeBackUrl: string;
+  status: string;
+  createdAtUtc: string;
 };
 
 export type AdminUser = {

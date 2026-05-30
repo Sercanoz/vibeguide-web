@@ -3,16 +3,16 @@
 import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { registerWithEmail, signInWithEmail, signInWithGoogle, fbAuth } from "@/lib/firebase-client";
-import { getStorage, ref, uploadBytesResumable } from "firebase/storage";
+import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { fbApp } from "@/lib/firebase-client";
 import { API_BASE_URL } from "@/lib/api";
 import { useRedirectIfAuthed } from "@/hooks/useRedirectIfAuthed";
 
 type PhotoSlot = "badgeFront" | "badgeBack";
 
-// Yüklemeyi yapar ve STORAGE PATH'ini döndürür (download URL DEĞİL).
-// getDownloadURL read izni ister ve KYC gizli olduğu için 403 verir.
-// Path'i backend admin SDK ile okur. Frontend'in read iznine ihtiyacı yok.
+// Yükler ve download URL döndürür. URL'de Firebase access token vardır → admin de
+// bu URL ile fotoğrafı görür. (KYC read kuralı sahibine açık olmalı.) URL alınamazsa
+// path'e düşer; kayıt yine tamamlanır.
 async function uploadKyc(file: File, uid: string, slot: PhotoSlot): Promise<string> {
   const storage = getStorage(fbApp());
   const ext = file.name.split(".").pop() ?? "jpg";
@@ -28,7 +28,14 @@ async function uploadKyc(file: File, uid: string, slot: PhotoSlot): Promise<stri
       "state_changed",
       null,
       (err) => { clearTimeout(timeout); reject(err); },
-      () => { clearTimeout(timeout); resolve(path); } // path döndür, URL alma
+      async () => {
+        clearTimeout(timeout);
+        try {
+          resolve(await getDownloadURL(task.snapshot.ref));
+        } catch {
+          resolve(path);
+        }
+      }
     );
   });
 }
