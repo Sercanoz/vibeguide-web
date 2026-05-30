@@ -374,9 +374,9 @@ export default function HomePage() {
                     </li>
                   ))}
                 </ul>
-                <button className={`mt-7 self-start rounded-full ${card.btnBg} px-5 py-2.5 text-xs font-bold flex items-center gap-2`}>
+                <a href={`/${card.id}`} className={`mt-7 self-start rounded-full ${card.btnBg} px-5 py-2.5 text-xs font-bold flex items-center gap-2`}>
                   {card.data.cta} →
-                </button>
+                </a>
               </article>
             ))}
           </div>
