@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import CityTours from "@/components/CityTours";
+import CityFaqSchema, { type Faq } from "@/components/CityFaqSchema";
 
 export const metadata: Metadata = {
   title: "Istanbul Tour Guide — Book a Local Expert | VibeGuide",
@@ -36,6 +38,33 @@ const HIGHLIGHTS = [
   { icon: "🎨", name: "Balat & Fener", desc: "Colourful streets, Greek Orthodox history, and hidden cafes." },
   { icon: "⛵", name: "Bosphorus", desc: "Where Europe meets Asia — a strait that has shaped civilisations." },
   { icon: "🕌", name: "Blue Mosque", desc: "Six minarets, 20,000 Iznik tiles, and one of Istanbul's most iconic skylines." },
+];
+
+const FAQS: Faq[] = [
+  {
+    q: "How much does a tour guide in Istanbul cost?",
+    a: "Prices vary by tour type and duration. With VibeGuide you can see the exact price before you book — most half-day private tours in Istanbul start from a fixed per-person rate, with no hidden fees. Group tours (VibeSquad) are the most affordable option.",
+  },
+  {
+    q: "Are VibeGuide's Istanbul guides licensed?",
+    a: "Yes. Every guide on VibeGuide holds an official licence from the Turkish Ministry of Culture and Tourism, passes identity verification, and is reviewed after every tour. We have a zero-tolerance policy for unlicensed guiding.",
+  },
+  {
+    q: "What's the best area to start an Istanbul tour?",
+    a: "Most first-time visitors start in Sultanahmet (the historic peninsula), home to Hagia Sophia, the Blue Mosque, Topkapi Palace and the Grand Bazaar — all within walking distance. Your guide can also build a route around Balat, Galata, Karaköy or the Bosphorus depending on your interests.",
+  },
+  {
+    q: "Can I book a guide for the same day?",
+    a: "Yes. With VibeNow you can match with an available local guide in about 60 seconds and meet them at your location within minutes — no advance booking required. You can also schedule a private tour in advance.",
+  },
+  {
+    q: "Do guides speak English?",
+    a: "Yes. Most Istanbul guides on VibeGuide speak English, and many also offer tours in German, Russian, French, Spanish, Arabic and other languages. You can filter by language when choosing a tour.",
+  },
+  {
+    q: "Is it better to explore Istanbul with a guide or alone?",
+    a: "Istanbul rewards local knowledge. A licensed guide helps you skip queues, avoid tourist-trap restaurants, understand the real history behind each site, and discover neighbourhoods most visitors never reach — turning a checklist into a genuine experience.",
+  },
 ];
 
 const MODES = [
@@ -129,6 +158,30 @@ export default function IstanbulTourGuidePage() {
         </div>
       </section>
 
+      {/* Real tours */}
+      <CityTours citySlug="istanbul" cityName="Istanbul" />
+
+      {/* Rich SEO content */}
+      <section className="py-20 bg-white">
+        <div className="mx-auto max-w-3xl px-6">
+          <h2 className="text-3xl md:text-4xl font-black mb-6 tracking-tight">Why explore Istanbul with a local guide?</h2>
+          <div className="space-y-5 text-[15px] text-neutral-600 leading-8">
+            <p>
+              Istanbul is a city of layers — Roman, Byzantine and Ottoman empires all left their mark on the same streets. Two continents, three names (Byzantium, Constantinople, Istanbul), and more than 2,500 years of history are packed into one extraordinary skyline. For a first-time visitor, the sheer scale can be overwhelming, and the most rewarding corners are rarely the ones in the guidebooks.
+            </p>
+            <p>
+              That&apos;s where a <strong>licensed Istanbul tour guide</strong> changes everything. Instead of queuing blindly at <strong>Hagia Sophia</strong> or getting lost in the 4,000 shops of the <strong>Grand Bazaar</strong>, you walk with someone who knows which entrance is fastest, which carpet seller is honest, and which tiny lokanta serves the best İskender kebab. A good guide doesn&apos;t just show you the <strong>Blue Mosque</strong> and <strong>Topkapi Palace</strong> — they tell you the stories that make them come alive.
+            </p>
+            <p>
+              VibeGuide connects you with verified local guides across Istanbul&apos;s most iconic districts. Explore the historic peninsula of <strong>Sultanahmet</strong>, wander the colourful streets of <strong>Balat and Fener</strong>, climb to <strong>Galata Tower</strong> for the best view of the Golden Horn, or cruise the <strong>Bosphorus</strong> where Europe meets Asia. Whether you have two hours or two days, your guide builds the route around you.
+            </p>
+            <p>
+              Every guide on our platform is licensed by the Turkish Ministry of Culture and Tourism, identity-verified, and reviewed after each tour — so you can explore with total confidence. No tourist traps, no scripted speeches, no pressure. Just a real local showing you their city.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* 3 modes */}
       <section className="py-20 bg-[#F7F7FB]">
         <div className="mx-auto max-w-5xl px-6">
@@ -163,8 +216,34 @@ export default function IstanbulTourGuidePage() {
         </div>
       </section>
 
+      {/* FAQ + schema */}
+      <CityFaqSchema city="Istanbul" faqs={FAQS} />
+
+      {/* Other destinations — internal linking */}
+      <section className="py-16 bg-[#F7F7FB]">
+        <div className="mx-auto max-w-5xl px-6">
+          <h2 className="text-2xl font-black mb-6 tracking-tight">Explore more of Turkey</h2>
+          <div className="grid sm:grid-cols-2 gap-4">
+            <Link href="/cappadocia-tour-guide" className="group flex items-center gap-4 rounded-2xl bg-white border border-black/[0.06] p-5 hover:border-[#6C4CF1]/30 transition-colors">
+              <span className="text-3xl">🎈</span>
+              <div>
+                <p className="font-black text-[#0A0A0F] group-hover:text-[#6C4CF1] transition-colors">Cappadocia Tour Guide</p>
+                <p className="text-sm text-neutral-400">Hot air balloons, fairy chimneys & cave churches</p>
+              </div>
+            </Link>
+            <Link href="/ephesus-tour-guide" className="group flex items-center gap-4 rounded-2xl bg-white border border-black/[0.06] p-5 hover:border-[#6C4CF1]/30 transition-colors">
+              <span className="text-3xl">🏛️</span>
+              <div>
+                <p className="font-black text-[#0A0A0F] group-hover:text-[#6C4CF1] transition-colors">Ephesus Tour Guide</p>
+                <p className="text-sm text-neutral-400">Ancient Roman ruins near Selçuk, İzmir</p>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Download CTA */}
-      <section id="download" className="py-20 bg-[#F7F7FB]">
+      <section id="download" className="py-20 bg-white">
         <div className="mx-auto max-w-2xl px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-black mb-4">Ready to explore Istanbul?</h2>
           <p className="text-neutral-500 mb-8 leading-7">Download VibeGuide free. Find a local guide in 60 seconds.</p>

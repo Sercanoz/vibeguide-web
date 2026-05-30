@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import CityTours from "@/components/CityTours";
+import CityFaqSchema, { type Faq } from "@/components/CityFaqSchema";
 
 export const metadata: Metadata = {
   title: "Ephesus Tour Guide — Private & Group Tours | VibeGuide",
@@ -36,6 +38,33 @@ const HIGHLIGHTS = [
   { icon: "🛕", name: "House of the Virgin Mary", desc: "Sacred to Christians and Muslims alike — a pilgrimage site high in the hills above Ephesus." },
   { icon: "🏺", name: "Terrace Houses", desc: "Mosaic-floored Roman villas preserved under climate-controlled shelters — astonishing detail." },
   { icon: "⛩️", name: "Temple of Hadrian", desc: "Intricate Corinthian facade carved in the 2nd century, dedicated to the emperor who visited Ephesus." },
+];
+
+const FAQS: Faq[] = [
+  {
+    q: "How much does a tour guide at Ephesus cost?",
+    a: "Prices depend on the tour type and duration. With VibeGuide you see the exact price before you book — most half-day private tours of Ephesus start from a fixed per-person rate, with no hidden fees. Group tours (VibeSquad) are the most affordable way to explore the ancient city.",
+  },
+  {
+    q: "Are VibeGuide's Ephesus guides licensed?",
+    a: "Yes. Every guide on VibeGuide holds an official licence from the Turkish Ministry of Culture and Tourism, passes identity verification, and is reviewed after every tour. Many Ephesus guides are also trained in archaeology and ancient history. We have a zero-tolerance policy for unlicensed guiding.",
+  },
+  {
+    q: "Will I see the Library of Celsus on the tour?",
+    a: "Yes. The Library of Celsus is the iconic centrepiece of Ephesus, and every guided route includes it. Your guide explains its 2nd-century Roman architecture, the statues representing wisdom and virtue, and how it once held thousands of scrolls.",
+  },
+  {
+    q: "Can I visit the Temple of Artemis with a guide?",
+    a: "Yes. The Temple of Artemis — one of the Seven Wonders of the Ancient World — sits just minutes from the main site near Selçuk. Only a single column remains standing today, and a guide brings its scale and history to life in a way the ruins alone cannot.",
+  },
+  {
+    q: "Is the House of the Virgin Mary included?",
+    a: "It can be. The House of the Virgin Mary, in the hills above Ephesus, is a pilgrimage site sacred to both Christians and Muslims. Many private and full-day tours combine it with Ephesus and the Temple of Artemis — just let your guide know you'd like to include it.",
+  },
+  {
+    q: "Where is Ephesus and can I combine it with Şirince village?",
+    a: "Ephesus is near the town of Selçuk in İzmir province, on Turkey's Aegean coast, close to Kuşadası. The charming hillside village of Şirince, famous for its fruit wines and Ottoman houses, is just a short drive away — guides often combine the two into one relaxed day.",
+  },
 ];
 
 const MODES = [
@@ -124,6 +153,30 @@ export default function EphesusTourGuidePage() {
         </div>
       </section>
 
+      {/* Real tours */}
+      <CityTours citySlug="izmir" cityName="Ephesus" />
+
+      {/* Rich SEO content */}
+      <section className="py-20 bg-white">
+        <div className="mx-auto max-w-3xl px-6">
+          <h2 className="text-3xl md:text-4xl font-black mb-6 tracking-tight">Why explore Ephesus with a local guide?</h2>
+          <div className="space-y-5 text-[15px] text-neutral-600 leading-8">
+            <p>
+              <strong>Ephesus</strong> is one of the best-preserved ancient cities in the world — a Greek and later Roman metropolis that was once home to a quarter of a million people. Walking its marble streets, you pass temples, baths, fountains and grand civic buildings exactly where they stood two thousand years ago. But ruins are silent on their own. Without context, a column is just a column; with a knowledgeable <strong>Ephesus tour guide</strong>, the same stones become the story of emperors, merchants, philosophers and saints who shaped the ancient Mediterranean.
+            </p>
+            <p>
+              The undisputed icon of the site is the <strong>Library of Celsus</strong>, a soaring 2nd-century Roman façade that once held thousands of scrolls. A few steps away, the vast <strong>Great Theatre</strong> seated some 25,000 spectators and is where, according to tradition, St Paul preached to the Ephesians. A guide explains the engineering, the acoustics, and the daily life that filled these spaces — turning a quick photo stop into a genuine understanding of how the city worked.
+            </p>
+            <p>
+              Just minutes from the main entrance, near Selçuk, stands what remains of the <strong>Temple of Artemis</strong> — once one of the <strong>Seven Wonders of the Ancient World</strong>, now reduced to a single reconstructed column, yet still powerful when its history is told well. Many tours also climb into the hills to the <strong>House of the Virgin Mary</strong>, a pilgrimage site revered by Christians and Muslims alike, and pause at the extraordinary <strong>Terrace Houses</strong>, where mosaic floors and painted walls of wealthy Roman villas survive under climate-controlled shelters.
+            </p>
+            <p>
+              Ephesus sits near the town of <strong>Selçuk</strong> in <strong>İzmir</strong> province, on Turkey&apos;s Aegean coast and close to Kuşadası, making it easy to combine with the wine village of Şirince. Because so much of Ephesus is interpretation — reading inscriptions, picturing vanished roofs, understanding Roman politics — a licensed, archaeology-savvy guide makes all the difference. Every guide on VibeGuide is licensed by the Turkish Ministry of Culture and Tourism, identity-verified, and reviewed after each tour, so you can walk through history with someone who truly knows it.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 bg-[#F7F7FB]">
         <div className="mx-auto max-w-5xl px-6">
           <p className="text-xs font-bold uppercase tracking-[0.3em] text-neutral-400 mb-4">How it works</p>
@@ -152,6 +205,32 @@ export default function EphesusTourGuidePage() {
                 <span key={t}>{t}</span>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ + schema */}
+      <CityFaqSchema city="Ephesus" faqs={FAQS} />
+
+      {/* Other destinations — internal linking */}
+      <section className="py-16 bg-[#F7F7FB]">
+        <div className="mx-auto max-w-5xl px-6">
+          <h2 className="text-2xl font-black mb-6 tracking-tight">Explore more of Turkey</h2>
+          <div className="grid sm:grid-cols-2 gap-4">
+            <Link href="/istanbul-tour-guide" className="group flex items-center gap-4 rounded-2xl bg-white border border-black/[0.06] p-5 hover:border-[#6C4CF1]/30 transition-colors">
+              <span className="text-3xl">🕌</span>
+              <div>
+                <p className="font-black text-[#0A0A0F] group-hover:text-[#6C4CF1] transition-colors">Istanbul Tour Guide</p>
+                <p className="text-sm text-neutral-400">Hagia Sophia, Grand Bazaar & the Bosphorus</p>
+              </div>
+            </Link>
+            <Link href="/cappadocia-tour-guide" className="group flex items-center gap-4 rounded-2xl bg-white border border-black/[0.06] p-5 hover:border-[#6C4CF1]/30 transition-colors">
+              <span className="text-3xl">🎈</span>
+              <div>
+                <p className="font-black text-[#0A0A0F] group-hover:text-[#6C4CF1] transition-colors">Cappadocia Tour Guide</p>
+                <p className="text-sm text-neutral-400">Hot air balloons, fairy chimneys & cave churches</p>
+              </div>
+            </Link>
           </div>
         </div>
       </section>
