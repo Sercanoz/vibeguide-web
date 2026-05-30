@@ -83,8 +83,6 @@ export default function RegisterGuidePage() {
         languages: "",
         badgeFrontUrl,
         badgeBackUrl,
-        idCardFrontUrl: badgeFrontUrl,
-        idCardBackUrl: badgeBackUrl,
       }),
     });
     if (res.status === 409) {
