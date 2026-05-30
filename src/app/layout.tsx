@@ -127,10 +127,6 @@ export default async function RootLayout({
     <html lang={locale} className={`${inter.variable} h-full antialiased`}>
       <head>
         <JsonLd />
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css"
-        />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-SH98TTW4KS" />
         <script dangerouslySetInnerHTML={{ __html: `
           window.dataLayer = window.dataLayer || [];

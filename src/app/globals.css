@@ -1,4 +1,6 @@
 @import "tailwindcss";
+/* Bayrak görselleri — CDN'e bağımlı kalmasın diye bundle'a dahil. */
+@import "flag-icons/css/flag-icons.min.css";
 
 :root {
   --background: #ffffff;
