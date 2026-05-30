@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { API_BASE_URL } from "@/lib/api";
+import { ATTRACTIONS, ATTRACTION_LANGS } from "@/lib/attractions";
 
 const SITE = "https://www.vibeguideapp.com";
 
@@ -41,5 +42,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   } catch { /* fallback to static only */ }
 
-  return [...staticRoutes, ...tourRoutes];
+  // Atraksiyon sayfaları — her landmark × her dil ayrı URL + hreflang alternates.
+  const attractionRoutes: MetadataRoute.Sitemap = ATTRACTIONS.flatMap((a) => {
+    const languages: Record<string, string> = {};
+    for (const l of ATTRACTION_LANGS) {
+      languages[l] = `${SITE}/attractions/${l}/${a.slug}`;
+    }
+    languages["x-default"] = `${SITE}/attractions/en/${a.slug}`;
+    return ATTRACTION_LANGS.map((l) => ({
+      url: `${SITE}/attractions/${l}/${a.slug}`,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: 0.85,
+      alternates: { languages },
+    }));
+  });
+
+  return [...staticRoutes, ...tourRoutes, ...attractionRoutes];
 }

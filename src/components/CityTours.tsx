@@ -16,17 +16,28 @@ interface Tour {
   reviewCount?: number;
 }
 
-/** Shows real tours for a city (by slug or name) — internal links + conversion + content. */
-export default function CityTours({ citySlug, cityName }: { citySlug: string; cityName: string }) {
+/** Shows real tours for a city (by slug or name) — internal links + conversion + content.
+ *  `heading` ve `locale` opsiyonel: dilli landing sayfalarında yerel başlık + çeviri için. */
+export default function CityTours({
+  citySlug,
+  cityName,
+  heading,
+  locale = "en",
+}: {
+  citySlug: string;
+  cityName: string;
+  heading?: string;
+  locale?: string;
+}) {
   const [tours, setTours] = useState<Tour[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${API_BASE_URL}/api/tours?city=${encodeURIComponent(citySlug)}&locale=en`, { cache: "no-store" })
+    fetch(`${API_BASE_URL}/api/tours?city=${encodeURIComponent(citySlug)}&locale=${locale}`, { cache: "no-store" })
       .then((r) => (r.ok ? r.json() : []))
       .then((d: Tour[]) => { setTours(d.slice(0, 6)); setLoading(false); })
       .catch(() => setLoading(false));
-  }, [citySlug]);
+  }, [citySlug, locale]);
 
   if (!loading && tours.length === 0) return null;
 
@@ -34,7 +45,7 @@ export default function CityTours({ citySlug, cityName }: { citySlug: string; ci
     <section className="py-20 bg-[#F7F7FB]">
       <div className="mx-auto max-w-5xl px-6">
         <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1] mb-4">Available now</p>
-        <h2 className="text-3xl md:text-4xl font-black mb-10 tracking-tight">Popular {cityName} tours</h2>
+        <h2 className="text-3xl md:text-4xl font-black mb-10 tracking-tight">{heading ?? `Popular ${cityName} tours`}</h2>
 
         {loading ? (
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
