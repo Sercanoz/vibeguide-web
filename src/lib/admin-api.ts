@@ -452,12 +452,18 @@ export const adminApi = {
         email: a.email,
         status: a.status as GuideApplication["status"],
         appliedAt: a.createdAtUtc,
-        kycPhotoUrls: [
-          a.badgeFrontUrl,
-          a.badgeBackUrl,
-          a.idCardFrontUrl,
-          a.idCardBackUrl,
-        ].filter((u): u is string => !!u),
+        // idCard* alanları tek-adım kayıtta badge URL'leriyle aynı doldruluyor;
+        // tekrarları ele, sadece benzersiz fotoğrafları göster.
+        kycPhotoUrls: Array.from(
+          new Set(
+            [
+              a.badgeFrontUrl,
+              a.badgeBackUrl,
+              a.idCardFrontUrl,
+              a.idCardBackUrl,
+            ].filter((u): u is string => !!u)
+          )
+        ),
         rejectionReason: null,
       })),
     };
