@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import SiteFooter from "@/components/SiteFooter";
 import PhoneFrame from "@/components/PhoneFrame";
 import { MODES, MODE_CTA_SUB, type Mode } from "@/lib/modes";
 
@@ -87,22 +89,10 @@ export default function ModePageView({ mode }: { mode: Mode }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Header */}
-      <header className="border-b border-black/[0.06]">
-        <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
-          <Link href="/" className="font-black text-lg tracking-tight">
-            Vibe<span className="text-[#6C4CF1]">Guide</span>
-          </Link>
-          <nav className="flex items-center gap-5 text-sm font-bold text-neutral-500">
-            <Link href="/vibenow" className="hover:text-[#6C4CF1] transition-colors">VibeNow</Link>
-            <Link href="/vibesquad" className="hover:text-[#6C4CF1] transition-colors">VibeSquad</Link>
-            <Link href="/private" className="hover:text-[#6C4CF1] transition-colors">Private</Link>
-          </nav>
-        </div>
-      </header>
+      <Navbar />
 
       {/* Hero */}
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden pt-16">
         <div
           className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full blur-[90px] pointer-events-none opacity-20"
           style={{ background: `radial-gradient(circle, ${mode.color}, transparent)` }}
@@ -253,9 +243,7 @@ export default function ModePageView({ mode }: { mode: Mode }) {
         </div>
       </section>
 
-      <footer className="border-t border-black/[0.06] py-8 px-6 text-center text-xs text-neutral-300">
-        © {new Date().getFullYear()} VibeGuide
-      </footer>
+      <SiteFooter />
     </main>
   );
 }
