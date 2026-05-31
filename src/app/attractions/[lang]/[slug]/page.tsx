@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
-import SiteFooter from "@/components/SiteFooter";
+import MainFooter from "@/components/MainFooter";
 import CityTours from "@/components/CityTours";
 import {
   ATTRACTION_LANGS,
@@ -254,7 +254,7 @@ export default async function AttractionPage({ params }: Props) {
         </div>
       </section>
 
-      <SiteFooter />
+      <MainFooter />
     </main>
   );
 }

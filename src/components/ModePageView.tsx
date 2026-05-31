@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
-import SiteFooter from "@/components/SiteFooter";
+import MainFooter from "@/components/MainFooter";
 import PhoneFrame from "@/components/PhoneFrame";
 import { MODES, MODE_CTA_SUB, type Mode } from "@/lib/modes";
 
@@ -243,7 +243,7 @@ export default function ModePageView({ mode }: { mode: Mode }) {
         </div>
       </section>
 
-      <SiteFooter />
+      <MainFooter />
     </main>
   );
 }

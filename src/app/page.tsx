@@ -11,6 +11,7 @@ import { useInView } from "@/hooks/useInView";
 import Navbar from "@/components/Navbar";
 import HeroCitySearch from "@/components/HeroCitySearch";
 import PhoneShowcase from "@/components/PhoneShowcase";
+import MainFooter from "@/components/MainFooter";
 import Price from "@/components/Price";
 
 // Hero telefonunda otomatik dönecek GERÇEK uygulama ekran görüntüleri.
@@ -607,90 +608,7 @@ export default function HomePage() {
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="bg-white border-t border-black/[0.06] px-6 py-16">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-10 md:grid-cols-[2fr_1fr_1fr_1fr_1fr]">
-            <div>
-              <h3 className="flex items-center gap-2.5 text-xl font-black">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/vibeguide-icon.png" alt="VibeGuide" width={28} height={28} style={{ mixBlendMode: "multiply" }} />
-                VibeGuide
-              </h3>
-              <p className="mt-3 max-w-xs text-sm leading-6 text-neutral-400">{t.footer.tagline}</p>
-              <div className="mt-6 flex gap-2">
-                {["Instagram", "TikTok", "YouTube"].map((s) => (
-                  <a key={s} href="#" className="h-9 w-9 flex items-center justify-center rounded-xl bg-white border border-black/8 text-xs font-bold text-neutral-400 hover:text-black hover:border-black/20 transition-colors">
-                    {s[0]}
-                  </a>
-                ))}
-              </div>
-            </div>
-            <div>
-              <h4 className="text-sm font-black">{t.footer.product}</h4>
-              <ul className="mt-4 space-y-3 text-sm text-neutral-400">
-                <li><a href="/vibenow" className="hover:text-black transition-colors">VibeNow</a></li>
-                <li><a href="/vibesquad" className="hover:text-black transition-colors">VibeSquad</a></li>
-                <li><a href="/private" className="hover:text-black transition-colors">{t.nav.private}</a></li>
-                <li><a href="/tours" className="hover:text-black transition-colors">Tours</a></li>
-                <li><a href="/how-it-works" className="hover:text-black transition-colors">How It Works</a></li>
-                <li><a href="/guide-verification" className="hover:text-black transition-colors">Guide Verification</a></li>
-                <li><a href="/register/guide" className="hover:text-black transition-colors font-semibold text-emerald-600">{nb.becomeGuide}</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-sm font-black">{t.footer.destinations}</h4>
-              <ul className="mt-4 space-y-3 text-sm text-neutral-400">
-                <li><a href="/istanbul-tour-guide" className="hover:text-black transition-colors">Istanbul</a></li>
-                <li><a href="/cappadocia-tour-guide" className="hover:text-black transition-colors">Cappadocia</a></li>
-                <li><a href="/ephesus-tour-guide" className="hover:text-black transition-colors">Ephesus</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-sm font-black">{t.footer.support}</h4>
-              <ul className="mt-4 space-y-3 text-sm text-neutral-400">
-                <li><a href="/about" className="hover:text-black transition-colors">About Us</a></li>
-                <li><a href="/contact" className="hover:text-black transition-colors">Contact</a></li>
-                <li><a href="/help" className="hover:text-black transition-colors">{t.footerLinks.helpCenter}</a></li>
-                <li><a href="/security" className="hover:text-black transition-colors">{ux.securityPayment}</a></li>
-                <li><a href="/account-deletion" className="hover:text-black transition-colors">{t.footerLinks.accountDeletion}</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-sm font-black">{ux.legal}</h4>
-              <ul className="mt-4 space-y-3 text-sm text-neutral-400">
-                <li><a href="/terms" className="hover:text-black transition-colors">{ux.terms}</a></li>
-                <li><a href="/privacy" className="hover:text-black transition-colors">{ux.privacy}</a></li>
-                <li><a href="/cancellation-policy" className="hover:text-black transition-colors">{ux.cancellation}</a></li>
-                <li><a href="/mesafeli-satis" className="hover:text-black transition-colors">{ux.distanceSales}</a></li>
-                <li><a href="/on-bilgilendirme" className="hover:text-black transition-colors">{ux.preInfo}</a></li>
-                <li><a href="/kvkk" className="hover:text-black transition-colors">{ux.kvkk}</a></li>
-                <li><a href="/cerez-politikasi" className="hover:text-black transition-colors">{ux.cookies}</a></li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Şirket bilgileri — PayTR / ödeme kuruluşu gerekliliği */}
-          <div className="mt-12 pt-8 border-t border-black/[0.06]">
-            <div className="grid gap-2 md:grid-cols-2 text-xs text-neutral-400 leading-6">
-              <div>
-                <p className="font-semibold text-neutral-500">VibeCore Turizm Seyahat Acentası ve Dijital Hizmetler Ticaret Ltd. Şti.</p>
-                <p>Vergi No: 9251328389 · Vergi Dairesi: Marmaris V.D.</p>
-                <p>Ticaret Sicil No: 12686</p>
-                <p>Beldibi Mah. Belmar Sk. No:9/1 İç Kapı No:4 Marmaris/Muğla, Türkiye</p>
-              </div>
-              <div className="md:text-right">
-                <p>📧 <a href="mailto:support@vibeguideapp.com" className="hover:text-black transition-colors">support@vibeguideapp.com</a></p>
-                <p>📞 <a href="tel:+905308287696" className="hover:text-black transition-colors">+90 530 828 76 96</a></p>
-                <p>{ux.workingHours}</p>
-              </div>
-            </div>
-            <div className="mt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-              <p className="text-xs text-neutral-300">{t.footer.copyright}</p>
-              <p className="text-xs text-neutral-300">{ux.trustLine}</p>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <MainFooter />
     </main>
   );
 }

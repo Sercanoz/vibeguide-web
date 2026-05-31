@@ -1,7 +1,7 @@
 "use client";
 
 import Navbar from "./Navbar";
-import SiteFooter from "./SiteFooter";
+import MainFooter from "./MainFooter";
 
 export default function LegalLayout({
   title,
@@ -42,7 +42,7 @@ export default function LegalLayout({
         {children}
       </article>
 
-      <SiteFooter />
+      <MainFooter />
 
       <style jsx global>{`
         .prose-vg h2 {
