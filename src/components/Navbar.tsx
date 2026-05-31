@@ -2,14 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useT } from "./LanguageProvider";
-import { homeTranslations } from "@/lib/home-i18n";
+import { navbarI18n } from "@/lib/navbar-i18n";
 import LanguageSwitcher from "./LanguageSwitcher";
 import AuthModal from "./AuthModal";
 import { fbAuth, signOut, type User } from "@/lib/firebase-client";
 
 export default function Navbar({ activePage }: { activePage?: "tours" | "home" }) {
   const { locale } = useT();
-  const t = homeTranslations[locale];
+  const nb = navbarI18n[locale] ?? navbarI18n.en;
   const [menuOpen, setMenuOpen] = useState(false);
   const [authModal, setAuthModal] = useState<"signin" | "register" | null>(null);
   const [user, setUser] = useState<User | null | "loading">("loading");
@@ -50,13 +50,13 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
   }, []);
 
   const navLinks = [
-    { href: "/tours", label: "Tours", key: "tours" },
-    { href: "/guides", label: "Guides" },
+    { href: "/tours", label: nb.tours, key: "tours" },
+    { href: "/guides", label: nb.guides },
     { href: "/istanbul-tour-guide", label: "Istanbul" },
     { href: "/cappadocia-tour-guide", label: "Cappadocia" },
     { href: "/ephesus-tour-guide", label: "Ephesus" },
-    { href: "/#how", label: t.nav2.howItWorks },
-    { href: "/register/guide", label: "Become a guide" },
+    { href: "/#how", label: nb.howItWorks },
+    { href: "/register/guide", label: nb.becomeGuide },
   ];
 
   const initials = user && user !== "loading" && user.displayName
@@ -99,21 +99,21 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
             <div className="relative" onMouseEnter={() => setOpenMenu("tours")}>
               <a href="/tours"
                 className={`flex items-center gap-1 px-3.5 py-2 rounded-xl font-medium transition-all ${activePage === "tours" ? "text-[#6C4CF1] bg-[#6C4CF1]/8 font-semibold" : "text-neutral-400 hover:text-[#0A0A0F] hover:bg-black/[0.04]"}`}>
-                Tours
+                {nb.tours}
                 <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={`transition-transform ${openMenu === "tours" ? "rotate-180" : ""}`}><path d="M6 9l6 6 6-6"/></svg>
               </a>
               {openMenu === "tours" && (
                 <div className="absolute left-0 top-full pt-2">
                   <div className="w-[420px] bg-white rounded-2xl border border-black/[0.06] shadow-xl p-5 animate-[fadeSlideUp_0.15s_ease_both]">
-                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-neutral-400 mb-2">Browse by interest</p>
+                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-neutral-400 mb-2">{nb.browseByInterest}</p>
                     <div className="grid grid-cols-2 gap-1">
                       {[
-                        { key: "history", label: "History", icon: "🏛️" },
-                        { key: "food", label: "Food & Drink", icon: "🍽️" },
-                        { key: "nature", label: "Nature", icon: "🌿" },
-                        { key: "culture", label: "Culture", icon: "🎭" },
-                        { key: "adventure", label: "Adventure", icon: "⛰️" },
-                        { key: "art", label: "Art", icon: "🎨" },
+                        { key: "history", label: nb.catHistory, icon: "🏛️" },
+                        { key: "food", label: nb.catFood, icon: "🍽️" },
+                        { key: "nature", label: nb.catNature, icon: "🌿" },
+                        { key: "culture", label: nb.catCulture, icon: "🎭" },
+                        { key: "adventure", label: nb.catAdventure, icon: "⛰️" },
+                        { key: "art", label: nb.catArt, icon: "🎨" },
                       ].map((c) => (
                         <a key={c.key} href={`/tours?category=${c.key}`}
                           className="flex items-center gap-2.5 px-3 py-2 rounded-xl hover:bg-[#F7F7FB] transition-colors text-sm font-semibold text-[#0A0A0F]">
@@ -122,7 +122,7 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
                       ))}
                     </div>
                     <a href="/tours" className="mt-3 flex items-center justify-center gap-1.5 rounded-xl bg-[#6C4CF1] text-white text-sm font-bold py-2.5 hover:bg-[#5a3dd4] transition-colors">
-                      See all tours →
+                      {nb.seeAllTours} →
                     </a>
                   </div>
                 </div>
@@ -133,7 +133,7 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
             <div className="relative" onMouseEnter={() => setOpenMenu("destinations")}>
               <button
                 className={`flex items-center gap-1 px-3.5 py-2 rounded-xl font-medium transition-all ${openMenu === "destinations" ? "text-[#0A0A0F] bg-black/[0.04]" : "text-neutral-400 hover:text-[#0A0A0F] hover:bg-black/[0.04]"}`}>
-                Destinations
+                {nb.destinations}
                 <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={`transition-transform ${openMenu === "destinations" ? "rotate-180" : ""}`}><path d="M6 9l6 6 6-6"/></svg>
               </button>
               {openMenu === "destinations" && (
@@ -159,17 +159,17 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
 
             {/* Guides */}
             <a href="/guides" className="px-3.5 py-2 rounded-xl font-medium text-neutral-400 hover:text-[#0A0A0F] hover:bg-black/[0.04] transition-all">
-              Guides
+              {nb.guides}
             </a>
 
             {/* How it works */}
             <a href="/#how" className="px-3.5 py-2 rounded-xl font-medium text-neutral-400 hover:text-[#0A0A0F] hover:bg-black/[0.04] transition-all">
-              {t.nav2.howItWorks}
+              {nb.howItWorks}
             </a>
 
             {/* Become a guide */}
             <a href="/register/guide" className="px-3.5 py-2 rounded-xl font-medium text-emerald-600 hover:bg-emerald-50 transition-all">
-              Become a guide
+              {nb.becomeGuide}
             </a>
           </div>
 
@@ -202,8 +202,8 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
                       <p className="text-[10px] text-neutral-400 truncate mt-0.5">{(user as User).email}</p>
                     </div>
                     {[
-                      { href: "/profile", label: "My profile", icon: <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>, icon2: <circle cx="12" cy="7" r="4"/> },
-                      { href: "/tours", label: "Browse tours", icon: <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>, icon2: <circle cx="12" cy="10" r="3"/> },
+                      { href: "/profile", label: nb.myProfile, icon: <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>, icon2: <circle cx="12" cy="7" r="4"/> },
+                      { href: "/tours", label: nb.browseTours, icon: <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>, icon2: <circle cx="12" cy="10" r="3"/> },
                     ].map(({ href, label, icon, icon2 }) => (
                       <a key={href} href={href} onClick={() => setUserMenuOpen(false)}
                         className="flex items-center gap-3 px-4 py-2.5 text-sm font-semibold text-[#0A0A0F] hover:bg-neutral-50 transition-colors">
@@ -221,7 +221,7 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
                           <polyline points="16 17 21 12 16 7"/>
                           <line x1="21" y1="12" x2="9" y2="12"/>
                         </svg>
-                        Sign out
+                        {nb.signOut}
                       </button>
                     </div>
                   </div>
@@ -231,12 +231,12 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
               <>
                 <button onClick={() => setAuthModal("signin")}
                   className="hidden md:block text-sm font-semibold text-neutral-500 hover:text-[#0A0A0F] px-3 py-2 rounded-xl hover:bg-black/[0.04] transition-all duration-150">
-                  Sign in
+                  {nb.signIn}
                 </button>
                 <button onClick={() => setAuthModal("register")}
                   className="hidden md:flex items-center gap-1.5 rounded-full bg-[#6C4CF1] px-5 py-2 text-sm font-semibold text-white hover:bg-[#5a3dd4] transition-all duration-150 hover:scale-[1.03]"
                   style={{ boxShadow: "0 2px 12px rgba(108,76,241,0.3)" }}>
-                  Start exploring
+                  {nb.startExploring}
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M5 12h14M12 5l7 7-7 7"/>
                   </svg>
@@ -276,23 +276,23 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
                 <>
                   <a href="/profile" onClick={() => setMenuOpen(false)}
                     className="flex items-center justify-center gap-2 rounded-2xl bg-neutral-50 border border-black/10 px-5 py-3 text-sm font-bold text-[#0A0A0F]">
-                    My profile
+                    {nb.myProfile}
                   </a>
                   <button onClick={() => { signOut(); setMenuOpen(false); }}
                     className="w-full flex items-center justify-center rounded-2xl border border-red-100 bg-red-50 text-red-500 px-5 py-3 text-sm font-bold">
-                    Sign out
+                    {nb.signOut}
                   </button>
                 </>
               ) : (
                 <>
                   <button onClick={() => { setMenuOpen(false); setAuthModal("signin"); }}
                     className="w-full flex items-center justify-center rounded-2xl border border-black/10 px-5 py-3 text-sm font-bold text-[#0A0A0F] hover:bg-neutral-50 transition-colors">
-                    Sign in
+                    {nb.signIn}
                   </button>
                   <button onClick={() => { setMenuOpen(false); setAuthModal("register"); }}
                     className="w-full flex items-center justify-center gap-2 rounded-2xl bg-[#6C4CF1] px-5 py-3 text-sm font-bold text-white"
                     style={{ boxShadow: "0 4px 12px rgba(108,76,241,0.3)" }}>
-                    Start exploring
+                    {nb.startExploring}
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M5 12h14M12 5l7 7-7 7"/>
                     </svg>
