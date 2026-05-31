@@ -35,7 +35,7 @@ export default function PhoneShowcase({
 
       {/* ── Outer metallic rail (gri/gümüş) ── */}
       <div
-        className="relative w-[330px] aspect-[9/19.8] rounded-[3.6rem] p-[3px]"
+        className="relative w-[330px] aspect-[9/19] rounded-[3.6rem] p-[3px]"
         style={{
           background:
             "linear-gradient(155deg, #e6e6ea 0%, #9b9ba1 16%, #c8c8cd 40%, #7d7d83 64%, #d2d2d7 84%, #8a8a90 100%)",
