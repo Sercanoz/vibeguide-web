@@ -10,7 +10,14 @@ import { homeSections } from "@/lib/home-sections-i18n";
 import { useInView } from "@/hooks/useInView";
 import Navbar from "@/components/Navbar";
 import HeroCitySearch from "@/components/HeroCitySearch";
+import PhoneShowcase from "@/components/PhoneShowcase";
 import Price from "@/components/Price";
+
+// Hero telefonunda otomatik dönecek GERÇEK uygulama ekran görüntüleri.
+// Dosyaları /public/screens/ altına koy, adlarını buraya ekle (örn:
+// ["/screens/vibenow-1.png", "/screens/vibenow-2.png", ...]).
+// Boşken mevcut HTML mockup gösterilir (hiçbir şey bozulmaz).
+const HERO_SHOTS: string[] = [];
 import { API_BASE_URL } from "@/lib/api";
 
 export default function HomePage() {
@@ -104,6 +111,9 @@ export default function HomePage() {
 
           {/* Phone */}
           <div className="hidden md:flex justify-center items-center">
+            {HERO_SHOTS.length > 0 ? (
+              <PhoneShowcase shots={HERO_SHOTS} />
+            ) : (
             <div className="relative">
               <div className="absolute -inset-8 bg-[#6C4CF1]/20 blur-3xl rounded-full" />
               <Phone>
@@ -180,6 +190,7 @@ export default function HomePage() {
                 </div>
               </Phone>
             </div>
+            )}
           </div>
           </div>
         </div>
