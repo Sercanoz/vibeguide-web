@@ -31,6 +31,7 @@ export default function HomePage() {
   const t = homeTranslations[locale];
   const ux = uiExtra[locale] ?? uiExtra.en;
   const hs = homeSections[locale] ?? homeSections.en;
+  const nb = navbarI18n[locale] ?? navbarI18n.en;
 
   const secHow = useInView();
   const secEnergy = useInView();
@@ -627,12 +628,13 @@ export default function HomePage() {
             <div>
               <h4 className="text-sm font-black">{t.footer.product}</h4>
               <ul className="mt-4 space-y-3 text-sm text-neutral-400">
-                <li><a href="#vibenow" className="hover:text-black transition-colors">VibeNow</a></li>
-                <li><a href="#vibesquad" className="hover:text-black transition-colors">VibeSquad</a></li>
-                <li><a href="#private" className="hover:text-black transition-colors">{t.nav.private}</a></li>
+                <li><a href="/vibenow" className="hover:text-black transition-colors">VibeNow</a></li>
+                <li><a href="/vibesquad" className="hover:text-black transition-colors">VibeSquad</a></li>
+                <li><a href="/private" className="hover:text-black transition-colors">{t.nav.private}</a></li>
                 <li><a href="/tours" className="hover:text-black transition-colors">Tours</a></li>
                 <li><a href="/how-it-works" className="hover:text-black transition-colors">How It Works</a></li>
                 <li><a href="/guide-verification" className="hover:text-black transition-colors">Guide Verification</a></li>
+                <li><a href="/register/guide" className="hover:text-black transition-colors font-semibold text-emerald-600">{nb.becomeGuide}</a></li>
               </ul>
             </div>
             <div>

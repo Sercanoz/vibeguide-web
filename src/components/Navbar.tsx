@@ -52,12 +52,12 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
 
   const navLinks = [
     { href: "/tours", label: nb.tours, key: "tours" },
-    { href: "/guides", label: nb.guides },
+    { href: "/vibenow", label: "VibeNow" },
+    { href: "/vibesquad", label: "VibeSquad" },
     { href: "/istanbul-tour-guide", label: "Istanbul" },
     { href: "/cappadocia-tour-guide", label: "Cappadocia" },
     { href: "/ephesus-tour-guide", label: "Ephesus" },
     { href: "/#how", label: nb.howItWorks },
-    { href: "/register/guide", label: nb.becomeGuide },
   ];
 
   const initials = user && user !== "loading" && user.displayName
@@ -158,19 +158,19 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
               )}
             </div>
 
-            {/* Guides */}
-            <a href="/guides" className="px-3.5 py-2 rounded-xl font-medium text-neutral-400 hover:text-[#0A0A0F] hover:bg-black/[0.04] transition-all">
-              {nb.guides}
+            {/* VibeNow */}
+            <a href="/vibenow" className="px-3.5 py-2 rounded-xl font-medium text-neutral-400 hover:text-[#0A0A0F] hover:bg-black/[0.04] transition-all">
+              VibeNow
+            </a>
+
+            {/* VibeSquad */}
+            <a href="/vibesquad" className="px-3.5 py-2 rounded-xl font-medium text-neutral-400 hover:text-[#0A0A0F] hover:bg-black/[0.04] transition-all">
+              VibeSquad
             </a>
 
             {/* How it works */}
             <a href="/#how" className="px-3.5 py-2 rounded-xl font-medium text-neutral-400 hover:text-[#0A0A0F] hover:bg-black/[0.04] transition-all">
               {nb.howItWorks}
-            </a>
-
-            {/* Become a guide */}
-            <a href="/register/guide" className="px-3.5 py-2 rounded-xl font-medium text-emerald-600 hover:bg-emerald-50 transition-all">
-              {nb.becomeGuide}
             </a>
           </div>
 
