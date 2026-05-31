@@ -20,6 +20,9 @@ import Price from "@/components/Price";
 const HERO_SHOTS: string[] = [
   "/screens/vibenow-1.jpeg",
   "/screens/vibenow-2.jpeg",
+  "/screens/vibenow-3.jpeg",
+  "/screens/vibenow-4.jpeg",
+  "/screens/vibenow-5.jpeg",
 ];
 import { API_BASE_URL } from "@/lib/api";
 
@@ -115,7 +118,7 @@ export default function HomePage() {
           {/* Phone */}
           <div className="hidden md:flex justify-center items-center">
             {HERO_SHOTS.length > 0 ? (
-              <PhoneShowcase shots={HERO_SHOTS} />
+              <PhoneShowcase shots={HERO_SHOTS} interval={4500} />
             ) : (
             <div className="relative">
               <div className="absolute -inset-8 bg-[#6C4CF1]/20 blur-3xl rounded-full" />
