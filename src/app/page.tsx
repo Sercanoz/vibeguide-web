@@ -17,7 +17,10 @@ import Price from "@/components/Price";
 // Dosyaları /public/screens/ altına koy, adlarını buraya ekle (örn:
 // ["/screens/vibenow-1.png", "/screens/vibenow-2.png", ...]).
 // Boşken mevcut HTML mockup gösterilir (hiçbir şey bozulmaz).
-const HERO_SHOTS: string[] = [];
+const HERO_SHOTS: string[] = [
+  "/screens/vibenow-1.jpeg",
+  "/screens/vibenow-2.jpeg",
+];
 import { API_BASE_URL } from "@/lib/api";
 
 export default function HomePage() {
