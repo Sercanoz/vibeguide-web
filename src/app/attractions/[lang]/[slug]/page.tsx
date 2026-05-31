@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import SiteFooter from "@/components/SiteFooter";
 import CityTours from "@/components/CityTours";
 import {
   ATTRACTION_LANGS,
@@ -125,23 +127,10 @@ export default async function AttractionPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Minimal header */}
-      <header className="border-b border-black/[0.06]">
-        <div className="mx-auto max-w-5xl px-6 py-4 flex items-center justify-between">
-          <Link href="/" className="font-black text-lg tracking-tight">
-            Vibe<span className="text-[#6C4CF1]">Guide</span>
-          </Link>
-          <Link
-            href="/tours"
-            className="text-sm font-bold text-neutral-500 hover:text-[#6C4CF1] transition-colors"
-          >
-            Tours
-          </Link>
-        </div>
-      </header>
+      <Navbar />
 
       {/* Hero */}
-      <section className="relative">
+      <section className="relative pt-16">
         <div className="relative h-[42vh] min-h-[320px] w-full overflow-hidden">
           <Image
             src={attraction.image}
@@ -265,9 +254,7 @@ export default async function AttractionPage({ params }: Props) {
         </div>
       </section>
 
-      <footer className="border-t border-black/[0.06] py-8 px-6 text-center text-xs text-neutral-300">
-        © {new Date().getFullYear()} VibeGuide
-      </footer>
+      <SiteFooter />
     </main>
   );
 }
