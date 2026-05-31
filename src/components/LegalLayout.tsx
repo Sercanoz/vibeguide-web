@@ -1,6 +1,6 @@
 "use client";
 
-import SiteNav from "./SiteNav";
+import Navbar from "./Navbar";
 import SiteFooter from "./SiteFooter";
 
 export default function LegalLayout({
@@ -18,10 +18,10 @@ export default function LegalLayout({
 }) {
   return (
     <div className="min-h-screen bg-white text-[#0A0A0F] antialiased">
-      <SiteNav />
+      <Navbar />
 
       {/* HERO */}
-      <section className="mx-auto max-w-3xl px-6 pt-14 pb-6 md:pt-20">
+      <section className="mx-auto max-w-3xl px-6 pt-28 pb-6 md:pt-32">
         <h1 className="text-4xl font-black tracking-tight leading-[1.05] md:text-5xl text-[#0A0A0F]">
           {title}
         </h1>
