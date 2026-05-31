@@ -33,35 +33,35 @@ export default function PhoneShowcase({
       {/* ambient glow */}
       <div className="absolute -inset-10 bg-[#6C4CF1]/25 blur-[70px] rounded-[50%] pointer-events-none" />
 
-      {/* ── Outer metallic rail ── */}
+      {/* ── Outer metallic rail (gri/gümüş) ── */}
       <div
-        className="relative w-[290px] aspect-[9/19.5] rounded-[3.4rem] p-[3px]"
+        className="relative w-[330px] aspect-[9/19.8] rounded-[3.6rem] p-[3px]"
         style={{
           background:
-            "linear-gradient(155deg, #6e6e73 0%, #2a2a2c 18%, #4a4a4d 50%, #1c1c1e 82%, #5a5a5e 100%)",
+            "linear-gradient(155deg, #e6e6ea 0%, #9b9ba1 16%, #c8c8cd 40%, #7d7d83 64%, #d2d2d7 84%, #8a8a90 100%)",
           boxShadow:
-            "0 50px 90px -20px rgba(76,29,149,0.45), 0 18px 40px -12px rgba(0,0,0,0.55)",
+            "0 55px 100px -20px rgba(76,29,149,0.40), 0 20px 44px -12px rgba(0,0,0,0.50)",
         }}
       >
-        {/* ── Side buttons ── */}
+        {/* ── Side buttons (gri) ── */}
         {/* left: action + volume up/down */}
-        <div className="absolute -left-[2px] top-[92px] h-7 w-[3px] rounded-l-md bg-gradient-to-r from-[#16161a] to-[#3a3a3e]" />
-        <div className="absolute -left-[2px] top-[136px] h-12 w-[3px] rounded-l-md bg-gradient-to-r from-[#16161a] to-[#3a3a3e]" />
-        <div className="absolute -left-[2px] top-[196px] h-12 w-[3px] rounded-l-md bg-gradient-to-r from-[#16161a] to-[#3a3a3e]" />
+        <div className="absolute -left-[2px] top-[104px] h-8 w-[3px] rounded-l-md bg-gradient-to-r from-[#74747a] to-[#b8b8bd]" />
+        <div className="absolute -left-[2px] top-[152px] h-14 w-[3px] rounded-l-md bg-gradient-to-r from-[#74747a] to-[#b8b8bd]" />
+        <div className="absolute -left-[2px] top-[220px] h-14 w-[3px] rounded-l-md bg-gradient-to-r from-[#74747a] to-[#b8b8bd]" />
         {/* right: power */}
-        <div className="absolute -right-[2px] top-[150px] h-20 w-[3px] rounded-r-md bg-gradient-to-l from-[#16161a] to-[#3a3a3e]" />
+        <div className="absolute -right-[2px] top-[168px] h-24 w-[3px] rounded-r-md bg-gradient-to-l from-[#74747a] to-[#b8b8bd]" />
 
         {/* ── Black bezel ── */}
-        <div className="relative h-full w-full rounded-[3.15rem] bg-black p-[10px]">
+        <div className="relative h-full w-full rounded-[3.35rem] bg-black p-[11px]">
           {/* ── Screen ── */}
-          <div className="relative h-full w-full overflow-hidden rounded-[2.5rem] bg-black">
+          <div className="relative h-full w-full overflow-hidden rounded-[2.7rem] bg-black">
             {shots.map((src, i) => (
               <Image
                 key={src}
                 src={src}
                 alt="VibeGuide app"
                 fill
-                sizes="290px"
+                sizes="330px"
                 priority={i === 0}
                 className={`object-cover transition-all duration-[1000ms] ease-in-out ${
                   i === active ? "opacity-100 scale-100" : "opacity-0 scale-[1.06]"
