@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useT } from "./LanguageProvider";
 import { navbarI18n } from "@/lib/navbar-i18n";
 import LanguageSwitcher from "./LanguageSwitcher";
+import CurrencySwitcher from "./CurrencySwitcher";
 import AuthModal from "./AuthModal";
 import { fbAuth, signOut, type User } from "@/lib/firebase-client";
 
@@ -176,6 +177,7 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
           {/* Right side */}
           <div className="flex items-center gap-2">
             <LanguageSwitcher />
+            <div className="hidden sm:block"><CurrencySwitcher /></div>
 
             {user === "loading" ? (
               <div className="w-9 h-9 rounded-full bg-neutral-100 animate-pulse" />
@@ -270,6 +272,10 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
                   {l.label}
                 </a>
               ))}
+            </div>
+            <div className="border-t border-black/[0.06] px-4 py-3 sm:hidden flex items-center justify-between">
+              <span className="text-xs font-bold text-neutral-400 uppercase tracking-wider">Currency</span>
+              <CurrencySwitcher />
             </div>
             <div className="border-t border-black/[0.06] px-3 py-3 space-y-2">
               {isLoggedIn ? (

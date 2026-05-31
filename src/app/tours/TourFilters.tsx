@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Price from "@/components/Price";
 import { useSearchParams } from "next/navigation";
 import { useT } from "@/components/LanguageProvider";
 import { getToursT } from "@/lib/i18n";
@@ -244,11 +245,11 @@ export default function TourFilters({ tours }: Props) {
                       <div className="flex items-baseline gap-1">
                         {hasDiscount && (
                           <span className="text-[11px] text-neutral-400 line-through">
-                            {tour.compareAtPrice} {tour.currency}
+                            <Price amount={tour.compareAtPrice!} currency={tour.currency} />
                           </span>
                         )}
                         <span className="text-base font-black text-[#6C4CF1]">
-                          {tour.basePrice} {tour.currency}
+                          <Price amount={tour.basePrice} currency={tour.currency} />
                         </span>
                       </div>
                       <p className="text-[9px] text-neutral-400">{tt.perPerson}</p>

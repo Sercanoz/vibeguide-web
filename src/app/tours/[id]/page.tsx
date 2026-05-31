@@ -7,6 +7,7 @@ import { useT } from "@/components/LanguageProvider";
 import { getToursT } from "@/lib/i18n";
 import Navbar from "@/components/Navbar";
 import ShareButton from "@/components/ShareButton";
+import Price from "@/components/Price";
 import { languageByCode } from "@/lib/languages";
 
 interface Place {
@@ -517,7 +518,7 @@ export default function TourDetailPage() {
                             : `${tier.participantCount}+ people`}
                         </td>
                         <td className="px-5 py-3.5 text-right font-black text-[#6C4CF1]">
-                          {tier.guideAmount} {tour.currency}
+                          <Price amount={tier.guideAmount} currency={tour.currency} />
                         </td>
                       </tr>
                     ))}
@@ -538,11 +539,11 @@ export default function TourDetailPage() {
             <div className="flex items-baseline gap-2 mt-1">
               {hasDiscount && (
                 <span className="text-base text-neutral-400 line-through">
-                  {tour.compareAtPrice} {tour.currency}
+                  <Price amount={tour.compareAtPrice!} currency={tour.currency} />
                 </span>
               )}
               <span className="text-3xl font-black text-[#6C4CF1]">
-                {tour.basePrice} {tour.currency}
+                <Price amount={tour.basePrice} currency={tour.currency} />
               </span>
             </div>
             <p className="text-xs text-neutral-400 mt-0.5">{tt.perPerson}</p>
@@ -603,7 +604,7 @@ export default function TourDetailPage() {
         <div className="flex-1">
           <p className="text-xs text-neutral-400">{tt.startingFrom}</p>
           <p className="font-black text-lg text-[#6C4CF1]">
-            {tour.basePrice} {tour.currency}
+            <Price amount={tour.basePrice} currency={tour.currency} />
           </p>
         </div>
         <a

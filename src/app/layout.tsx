@@ -4,6 +4,7 @@ import { headers } from "next/headers";
 import "./globals.css";
 import JsonLd from "@/components/JsonLd";
 import { LanguageProvider } from "@/components/LanguageProvider";
+import { CurrencyProvider } from "@/components/CurrencyProvider";
 import CookieBanner from "@/components/CookieBanner";
 import EmailCaptureGate from "@/components/EmailCaptureGate";
 import type { Locale } from "@/lib/i18n";
@@ -140,9 +141,11 @@ export default async function RootLayout({
       </head>
       <body className="min-h-full flex flex-col bg-white text-vg-ink">
         <LanguageProvider initialLocale={locale}>
-          {children}
-          <CookieBanner />
-          <EmailCaptureGate />
+          <CurrencyProvider>
+            {children}
+            <CookieBanner />
+            <EmailCaptureGate />
+          </CurrencyProvider>
         </LanguageProvider>
       </body>
     </html>

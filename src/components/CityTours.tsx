@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { API_BASE_URL } from "@/lib/api";
 import { homeSections } from "@/lib/home-sections-i18n";
+import Price from "@/components/Price";
 import type { Locale } from "@/lib/i18n";
 
 interface Tour {
@@ -71,7 +72,7 @@ export default function CityTours({
                   <h3 className="font-black text-[#0A0A0F] text-[15px] leading-snug line-clamp-2 group-hover:text-[#6C4CF1] transition-colors">{t.title}</h3>
                   <div className="mt-2 flex items-center justify-between">
                     <span className="text-xs text-neutral-400 capitalize">{t.category}</span>
-                    <span className="text-base font-black text-[#6C4CF1]">{t.basePrice} {t.currency}</span>
+                    <span className="text-base font-black text-[#6C4CF1]"><Price amount={t.basePrice} currency={t.currency} /></span>
                   </div>
                 </div>
               </a>

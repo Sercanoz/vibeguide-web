@@ -10,6 +10,7 @@ import { homeSections } from "@/lib/home-sections-i18n";
 import { useInView } from "@/hooks/useInView";
 import Navbar from "@/components/Navbar";
 import HeroCitySearch from "@/components/HeroCitySearch";
+import Price from "@/components/Price";
 import { API_BASE_URL } from "@/lib/api";
 
 export default function HomePage() {
@@ -818,8 +819,8 @@ function PopularTours() {
                         {count > 0 && <span className="text-neutral-400">({count})</span>}
                       </div>
                       <div className="mt-2 flex items-baseline gap-1.5">
-                        {hasDiscount && <span className="text-xs text-neutral-400 line-through">{tour.compareAtPrice} {tour.currency}</span>}
-                        <span className="text-base font-black text-[#6C4CF1]">{tour.basePrice} {tour.currency}</span>
+                        {hasDiscount && <span className="text-xs text-neutral-400 line-through"><Price amount={tour.compareAtPrice!} currency={tour.currency} /></span>}
+                        <span className="text-base font-black text-[#6C4CF1]"><Price amount={tour.basePrice} currency={tour.currency} /></span>
                         <span className="text-xs text-neutral-400">/ person</span>
                       </div>
                     </div>

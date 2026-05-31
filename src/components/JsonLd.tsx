@@ -33,7 +33,7 @@ export default function JsonLd() {
         offers: {
           "@type": "Offer",
           price: "0",
-          priceCurrency: "USD",
+          priceCurrency: "TRY",
         },
         description:
           "Discover Istanbul, Cappadocia and Ephesus with verified local guides. VibeNow for instant matching, VibeSquad for group experiences, Private Tours for planned days.",
