@@ -36,7 +36,7 @@ export function currencyInfo(code: string): CurrencyInfo | undefined {
 
 export type Rates = Record<string, number>; // 1 TRY = rates[code] birim
 
-const CACHE_KEY = "vg_fx_rates_v1";
+const CACHE_KEY = "vg_fx_rates_v2";
 const TTL_MS = 12 * 60 * 60 * 1000; // 12 saat
 
 type Cached = { ts: number; rates: Rates };
@@ -56,17 +56,19 @@ export async function loadRates(): Promise<Rates | null> {
     /* noop */
   }
 
-  // 2) Ağdan çek
+  // 2) Ağdan çek — open.er-api.com (TRY destekli, CORS'lu, ücretsiz, anahtarsız).
+  //    Yanıt: { result:"success", rates: { TRY:1, USD:x, EUR:y, ... } } (1 TRY = X)
   try {
-    const to = CURRENCIES.map((c) => c.code).filter((c) => c !== "TRY").join(",");
-    const res = await fetch(
-      `https://api.frankfurter.app/latest?from=TRY&to=${to}`,
-      { cache: "no-store" }
-    );
+    const res = await fetch("https://open.er-api.com/v6/latest/TRY", {
+      cache: "no-store",
+    });
     if (!res.ok) return null;
-    const data = (await res.json()) as { rates?: Record<string, number> };
-    if (!data.rates) return null;
-    const rates: Rates = { TRY: 1, ...data.rates };
+    const data = (await res.json()) as {
+      result?: string;
+      rates?: Record<string, number>;
+    };
+    if (data.result !== "success" || !data.rates) return null;
+    const rates: Rates = { ...data.rates, TRY: 1 };
     try {
       localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), rates }));
     } catch {
