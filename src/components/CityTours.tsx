@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { API_BASE_URL } from "@/lib/api";
+import { homeSections } from "@/lib/home-sections-i18n";
+import type { Locale } from "@/lib/i18n";
 
 interface Tour {
   id: number;
@@ -41,10 +43,11 @@ export default function CityTours({
 
   if (!loading && tours.length === 0) return null;
 
+  const hs = homeSections[locale as Locale] ?? homeSections.en;
   return (
     <section className="py-20 bg-[#F7F7FB]">
       <div className="mx-auto max-w-5xl px-6">
-        <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1] mb-4">Available now</p>
+        <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1] mb-4">{hs.availableNow}</p>
         <h2 className="text-3xl md:text-4xl font-black mb-10 tracking-tight">{heading ?? `Popular ${cityName} tours`}</h2>
 
         {loading ? (

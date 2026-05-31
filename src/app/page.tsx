@@ -6,6 +6,7 @@ import { useT } from "@/components/LanguageProvider";
 import { homeTranslations } from "@/lib/home-i18n";
 import { uiExtra } from "@/lib/ui-extra-i18n";
 import { navbarI18n } from "@/lib/navbar-i18n";
+import { homeSections } from "@/lib/home-sections-i18n";
 import { useInView } from "@/hooks/useInView";
 import Navbar from "@/components/Navbar";
 import HeroCitySearch from "@/components/HeroCitySearch";
@@ -15,6 +16,7 @@ export default function HomePage() {
   const { locale } = useT();
   const t = homeTranslations[locale];
   const ux = uiExtra[locale] ?? uiExtra.en;
+  const hs = homeSections[locale] ?? homeSections.en;
 
   const secHow = useInView();
   const secEnergy = useInView();
@@ -300,18 +302,6 @@ export default function HomePage() {
                 </h2>
                 <p className="mt-3 text-sm leading-6 text-neutral-400 max-w-md">{t.energy.sub}</p>
               </div>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">
-                {[
-                  { num: "8", label: "Cities coming" },
-                  { num: "60s", label: "Avg match time" },
-                  { num: "100%", label: "Verified guides" },
-                ].map((s) => (
-                  <div key={s.label} className="text-center md:text-left">
-                    <p className="text-3xl font-black text-[#6C4CF1]">{s.num}</p>
-                    <p className="mt-1 text-xs text-neutral-400 font-medium">{s.label}</p>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </div>
@@ -481,7 +471,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-16 items-start">
             {/* Trust */}
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.3em] text-neutral-400">Every guide is verified</p>
+              <p className="text-xs font-bold uppercase tracking-[0.3em] text-neutral-400">{hs.everyGuideVerified}</p>
               <h2 className="mt-4 text-4xl md:text-5xl font-black tracking-tight leading-tight">{t.trust.title}</h2>
               <div className="mt-12 space-y-8">
                 {t.trust.items.map((item, i) => (
@@ -740,6 +730,9 @@ function fmtDuration(m: number): string {
 }
 
 function PopularTours() {
+  const { locale } = useT();
+  const hs = homeSections[locale] ?? homeSections.en;
+  const nb = navbarI18n[locale] ?? navbarI18n.en;
   const railRef = useRef<HTMLDivElement>(null);
   const [tours, setTours] = useState<PopularTour[]>([]);
   const [loading, setLoading] = useState(true);
@@ -764,9 +757,9 @@ function PopularTours() {
         {/* Header */}
         <div className="flex items-end justify-between gap-4 mb-7">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1]">Handpicked</p>
-            <h2 className="mt-3 text-3xl md:text-5xl font-black tracking-tight text-[#0A0A0F]">Popular experiences</h2>
-            <p className="mt-2 text-sm text-neutral-400 max-w-md">Top-rated tours led by verified local guides across Turkey.</p>
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1]">{hs.handpicked}</p>
+            <h2 className="mt-3 text-3xl md:text-5xl font-black tracking-tight text-[#0A0A0F]">{hs.popularExperiences}</h2>
+            <p className="mt-2 text-sm text-neutral-400 max-w-md">{hs.popularExpSub}</p>
           </div>
           <div className="hidden md:flex items-center gap-2 shrink-0">
             <button onClick={() => scroll(-1)} aria-label="Previous"
@@ -838,7 +831,7 @@ function PopularTours() {
         {/* See all */}
         <div className="mt-6 text-center">
           <a href="/tours" className="inline-flex items-center gap-2 rounded-full border border-black/10 px-7 py-3 text-sm font-bold text-[#0A0A0F] hover:border-[#6C4CF1] hover:text-[#6C4CF1] transition-colors">
-            See all tours
+            {nb.seeAllTours}
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
@@ -859,6 +852,9 @@ const CITY_PHOTOS: Record<string, string> = {
 };
 
 function Destinations() {
+  const { locale } = useT();
+  const hs = homeSections[locale] ?? homeSections.en;
+  const ux = uiExtra[locale] ?? uiExtra.en;
   // city = display name (province if available, else legacy city), slug = ASCII for URL
   // photo = a real tour cover from that city (fallback to fixed CITY_PHOTOS, then gradient)
   const [cities, setCities] = useState<{ city: string; slug: string; count: number; photo: string | null }[]>([]);
@@ -894,9 +890,9 @@ function Destinations() {
     <section className="py-16 bg-[#F7F7FB]">
       <div className="mx-auto max-w-7xl px-6">
         <div className="text-center mb-10">
-          <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1]">Where to?</p>
-          <h2 className="mt-3 text-3xl md:text-5xl font-black tracking-tight text-[#0A0A0F]">Explore destinations</h2>
-          <p className="mt-2 text-sm text-neutral-400 max-w-md mx-auto">Pick a city and meet the locals who know it best.</p>
+          <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1]">{ux.searchWhereTo}</p>
+          <h2 className="mt-3 text-3xl md:text-5xl font-black tracking-tight text-[#0A0A0F]">{hs.exploreDestinations}</h2>
+          <p className="mt-2 text-sm text-neutral-400 max-w-md mx-auto">{hs.exploreDestSub}</p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
