@@ -4,6 +4,8 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { useT } from "@/components/LanguageProvider";
 import { homeTranslations } from "@/lib/home-i18n";
+import { uiExtra } from "@/lib/ui-extra-i18n";
+import { navbarI18n } from "@/lib/navbar-i18n";
 import { useInView } from "@/hooks/useInView";
 import Navbar from "@/components/Navbar";
 import HeroCitySearch from "@/components/HeroCitySearch";
@@ -12,6 +14,7 @@ import { API_BASE_URL } from "@/lib/api";
 export default function HomePage() {
   const { locale } = useT();
   const t = homeTranslations[locale];
+  const ux = uiExtra[locale] ?? uiExtra.en;
 
   const secHow = useInView();
   const secEnergy = useInView();
@@ -193,19 +196,19 @@ export default function HomePage() {
           {[
             {
               icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="#F59E0B" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>,
-              title: "4.9 average rating", sub: "From real travellers",
+              title: ux.trustRatingTitle, sub: ux.trustRatingSub,
             },
             {
               icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>,
-              title: "100% verified guides", sub: "ID & licence checked",
+              title: ux.trustVerifiedTitle, sub: ux.trustVerifiedSub,
             },
             {
               icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6C4CF1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"/><polyline points="22 4 12 14.01 9 11.01"/></svg>,
-              title: "Free cancellation", sub: "On most experiences",
+              title: ux.trustCancelTitle, sub: ux.trustCancelSub,
             },
             {
               icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EC4899" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>,
-              title: "Instant booking", sub: "Confirm in seconds",
+              title: ux.trustInstantTitle, sub: ux.trustInstantSub,
             },
           ].map((item) => (
             <div key={item.title} className="flex items-center gap-3">
@@ -411,7 +414,7 @@ export default function HomePage() {
             })}
           </div>
           <p className="mt-12 text-xl md:text-2xl font-black tracking-tight text-[#0A0A0F] border-t border-black/[0.06] pt-10">
-            Real locals. Real stories. Real discovery.
+            {ux.realLocals}
           </p>
         </div>
       </section>
@@ -638,20 +641,20 @@ export default function HomePage() {
                 <li><a href="/about" className="hover:text-black transition-colors">About Us</a></li>
                 <li><a href="/contact" className="hover:text-black transition-colors">Contact</a></li>
                 <li><a href="/help" className="hover:text-black transition-colors">{t.footerLinks.helpCenter}</a></li>
-                <li><a href="/security" className="hover:text-black transition-colors">Security & Payment</a></li>
+                <li><a href="/security" className="hover:text-black transition-colors">{ux.securityPayment}</a></li>
                 <li><a href="/account-deletion" className="hover:text-black transition-colors">{t.footerLinks.accountDeletion}</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="text-sm font-black">Legal</h4>
+              <h4 className="text-sm font-black">{ux.legal}</h4>
               <ul className="mt-4 space-y-3 text-sm text-neutral-400">
-                <li><a href="/terms" className="hover:text-black transition-colors">Terms of Service</a></li>
-                <li><a href="/privacy" className="hover:text-black transition-colors">Privacy Policy</a></li>
-                <li><a href="/cancellation-policy" className="hover:text-black transition-colors">Cancellation & Refunds</a></li>
-                <li><a href="/mesafeli-satis" className="hover:text-black transition-colors">Mesafeli Satış Sözleşmesi</a></li>
-                <li><a href="/on-bilgilendirme" className="hover:text-black transition-colors">Ön Bilgilendirme Formu</a></li>
-                <li><a href="/kvkk" className="hover:text-black transition-colors">KVKK Aydınlatma</a></li>
-                <li><a href="/cerez-politikasi" className="hover:text-black transition-colors">Çerez Politikası</a></li>
+                <li><a href="/terms" className="hover:text-black transition-colors">{ux.terms}</a></li>
+                <li><a href="/privacy" className="hover:text-black transition-colors">{ux.privacy}</a></li>
+                <li><a href="/cancellation-policy" className="hover:text-black transition-colors">{ux.cancellation}</a></li>
+                <li><a href="/mesafeli-satis" className="hover:text-black transition-colors">{ux.distanceSales}</a></li>
+                <li><a href="/on-bilgilendirme" className="hover:text-black transition-colors">{ux.preInfo}</a></li>
+                <li><a href="/kvkk" className="hover:text-black transition-colors">{ux.kvkk}</a></li>
+                <li><a href="/cerez-politikasi" className="hover:text-black transition-colors">{ux.cookies}</a></li>
               </ul>
             </div>
           </div>
@@ -668,12 +671,12 @@ export default function HomePage() {
               <div className="md:text-right">
                 <p>📧 <a href="mailto:support@vibeguideapp.com" className="hover:text-black transition-colors">support@vibeguideapp.com</a></p>
                 <p>📞 <a href="tel:+905308287696" className="hover:text-black transition-colors">+90 530 828 76 96</a></p>
-                <p>Çalışma saatleri: Hafta içi 09:00 – 18:00 (UTC+3)</p>
+                <p>{ux.workingHours}</p>
               </div>
             </div>
             <div className="mt-6 flex flex-col md:flex-row items-center justify-between gap-4">
               <p className="text-xs text-neutral-300">{t.footer.copyright}</p>
-              <p className="text-xs text-neutral-300">SSL Korumalı · Lisanslı Rehberler · Güvenli Rezervasyon</p>
+              <p className="text-xs text-neutral-300">{ux.trustLine}</p>
             </div>
           </div>
         </div>
@@ -947,12 +950,19 @@ const CATEGORIES: { key: string; label: string; icon: React.ReactNode; color: st
 ];
 
 function Categories() {
+  const { locale } = useT();
+  const ux = uiExtra[locale] ?? uiExtra.en;
+  const nb = navbarI18n[locale] ?? navbarI18n.en;
+  const catLabel: Record<string, string> = {
+    history: nb.catHistory, food: nb.catFood, nature: nb.catNature,
+    culture: nb.catCulture, adventure: nb.catAdventure, art: nb.catArt,
+  };
   return (
     <section className="py-16 bg-white">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-7">
-          <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1]">Browse by interest</p>
-          <h2 className="mt-3 text-2xl md:text-4xl font-black tracking-tight text-[#0A0A0F]">What are you into?</h2>
+          <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1]">{nb.browseByInterest}</p>
+          <h2 className="mt-3 text-2xl md:text-4xl font-black tracking-tight text-[#0A0A0F]">{ux.whatAreYouInto}</h2>
         </div>
         <div className="grid grid-cols-3 sm:grid-cols-6 gap-3">
           {CATEGORIES.map((c) => (
@@ -961,7 +971,7 @@ function Categories() {
               <div className={`w-12 h-12 rounded-2xl border flex items-center justify-center ${c.color} group-hover:scale-110 transition-transform`}>
                 {c.icon}
               </div>
-              <span className="text-xs font-bold text-[#0A0A0F]">{c.label}</span>
+              <span className="text-xs font-bold text-[#0A0A0F]">{catLabel[c.key] ?? c.label}</span>
             </a>
           ))}
         </div>

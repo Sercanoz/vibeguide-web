@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { API_BASE_URL } from "@/lib/api";
 import { useT } from "@/components/LanguageProvider";
+import { uiExtra } from "@/lib/ui-extra-i18n";
 
 type TourLite = {
   city: string;
@@ -55,6 +56,7 @@ function CityAvatar({ label }: { label: string }) {
 export default function HeroCitySearch() {
   const router = useRouter();
   const { locale } = useT();
+  const ux = uiExtra[locale] ?? uiExtra.en;
   const [destinations, setDestinations] = useState<Destination[]>([]);
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
@@ -112,9 +114,9 @@ export default function HeroCitySearch() {
 
   // Rotating placeholder — sadece kullanıcı yazmıyorken döner.
   const hints = useMemo(() => {
-    const top = destinations.slice(0, 3).map((d) => `Try ${d.label}…`);
-    return ["Where to?", ...top, "Try a food tour…"].filter(Boolean);
-  }, [destinations]);
+    const top = destinations.slice(0, 3).map((d) => `${ux.searchTryPrefix} ${d.label}…`);
+    return [ux.searchWhereTo, ...top, ux.searchTryFood].filter(Boolean);
+  }, [destinations, ux]);
 
   useEffect(() => {
     if (query) return; // yazarken durdur
@@ -174,7 +176,7 @@ export default function HeroCitySearch() {
   return (
     <div className="relative z-20 mx-auto w-full max-w-2xl" ref={boxRef}>
       <p className="text-center text-sm font-semibold text-neutral-400 mb-3">
-        Discover guides &amp; tours near you
+        {ux.searchSubtitle}
       </p>
 
       <div
@@ -195,7 +197,7 @@ export default function HeroCitySearch() {
           }}
           onFocus={() => setOpen(true)}
           onKeyDown={onKeyDown}
-          placeholder={hints[hintIdx] ?? "Where to?"}
+          placeholder={hints[hintIdx] ?? ux.searchWhereTo}
           className="flex-1 min-w-0 bg-transparent py-3 text-[15px] font-medium text-[#0A0A0F] placeholder:text-neutral-400 focus:outline-none"
           aria-label="Search destination"
         />
@@ -205,14 +207,14 @@ export default function HeroCitySearch() {
           className="shrink-0 rounded-full bg-gradient-to-r from-[#6C4CF1] via-[#8B5CF6] to-[#EC4899] px-6 py-3 text-sm font-bold text-white transition-transform hover:scale-[1.03] active:scale-95"
           style={{ boxShadow: "0 4px 20px rgba(108,76,241,0.35)" }}
         >
-          Explore
+          {ux.explore}
         </button>
       </div>
 
       {/* Popüler şehir çipleri — yazmadan tek dokunuş */}
       {popular.length > 0 && (
         <div className="mt-3 flex flex-wrap items-center justify-center gap-2">
-          <span className="text-xs font-semibold text-neutral-400">Popular:</span>
+          <span className="text-xs font-semibold text-neutral-400">{ux.popular}:</span>
           {popular.map((d) => (
             <button
               key={d.slug}
