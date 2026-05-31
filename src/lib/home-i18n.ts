@@ -190,7 +190,7 @@ const en: Dict = {
 const tr: Dict = {
   nav: { vibenow: "VibeNow", vibesquad: "VibeSquad", private: "Özel Turlar", destinations: "Destinasyonlar", guides: "Rehberler için", cta: "Uygulamayı İndir" },
   hero: {
-    badge: "◆ İstanbul'da canlı + Kapadokya & Efes yakında",
+    badge: "◆ Türkiye sadece başlangıç — dünyanın ilk gerçek zamanlı rehber ağını şehir şehir kuruyoruz.",
     titleA: "Sadece gezme.", titleAccent: "Yaşa.",
     sub: "Sesli rehberleri ve kalabalık otobüsleri unut. VibeGuide seni şehri gerçekten yaşayan doğrulanmış bir yerelin yanına bırakır — VibeNow ile 60 saniyede, VibeSquad ile senin gibi gezginlerle birlikte ya da Özel Tur olarak özenle planlanmış bir günle. Tek uygulama. Üç yol. Sıfır turist tuzağı.",
     b1: "Ruhsatlı yerel rehberler", b2: "Anlık ya da planlı", b3: "Gerçek yerel bağ",
@@ -312,7 +312,7 @@ const tr: Dict = {
 const de: Dict = {
   nav: { vibenow: "VibeNow", vibesquad: "VibeSquad", private: "Private Touren", destinations: "Reiseziele", guides: "Für Guides", cta: "App holen" },
   hero: {
-    badge: "◆ Jetzt live in Istanbul + Kappadokien & Ephesus bald",
+    badge: "◆ Die Türkei ist erst der Anfang — wir bauen das weltweit erste Echtzeit-Guide-Netzwerk, Stadt für Stadt.",
     titleA: "Nicht nur besuchen.", titleAccent: "Erlebe es.",
     sub: "Vergiss Audioguides und überfüllte Busse. VibeGuide bringt dich an die Seite eines verifizierten Einheimischen, der die Stadt wirklich lebt — in 60 Sekunden mit VibeNow, mit gleichgesinnten Reisenden über VibeSquad oder als perfekt geplanter Tag mit einer Privattour. Eine App. Drei Wege. Null Touristenfallen.",
     b1: "Lizenzierte lokale Guides", b2: "Sofort oder geplant", b3: "Echte lokale Verbindung",
@@ -434,7 +434,7 @@ const de: Dict = {
 const ru: Dict = {
   nav: { vibenow: "VibeNow", vibesquad: "VibeSquad", private: "Частные туры", destinations: "Направления", guides: "Для гидов", cta: "Скачать приложение" },
   hero: {
-    badge: "◆ Уже в Стамбуле + Каппадокия и Эфес скоро",
+    badge: "◆ Турция — это только начало. Мы строим первую в мире сеть гидов в реальном времени, город за городом.",
     titleA: "Не просто посети.", titleAccent: "Живи этим.",
     sub: "Забудьте про аудиогиды и переполненные автобусы. VibeGuide ставит вас рядом с проверенным местным, который действительно живёт городом — за 60 секунд через VibeNow, с такими же путешественниками через VibeSquad или как идеально спланированный день с Частным туром. Одно приложение. Три пути. Ноль туристических ловушек.",
     b1: "Лицензированные местные гиды", b2: "Мгновенно или по плану", b3: "Настоящая местная связь",
@@ -556,7 +556,7 @@ const ru: Dict = {
 const es: Dict = {
   nav: { vibenow: "VibeNow", vibesquad: "VibeSquad", private: "Tours Privados", destinations: "Destinos", guides: "Para Guías", cta: "Descargar app" },
   hero: {
-    badge: "◆ Ya en Estambul + Capadocia y Éfeso pronto",
+    badge: "◆ Turquía es solo el comienzo — estamos construyendo la primera red mundial de guías en tiempo real, ciudad a ciudad.",
     titleA: "No solo visites.", titleAccent: "Vívelo.",
     sub: "Olvida las audioguías y los autobuses llenos. VibeGuide te coloca junto a un local verificado que realmente vive la ciudad — en 60 segundos con VibeNow, con viajeros como tú vía VibeSquad o como un día perfecto con un Tour Privado. Una app. Tres formas. Cero trampas turísticas.",
     b1: "Guías locales licenciados", b2: "Instantáneo o planeado", b3: "Conexión local real",
@@ -678,7 +678,7 @@ const es: Dict = {
 const ja: Dict = {
   nav: { vibenow: "VibeNow", vibesquad: "VibeSquad", private: "プライベートツアー", destinations: "目的地", guides: "ガイドの方へ", cta: "アプリを入手" },
   hero: {
-    badge: "◆ イスタンブールで提供中 + カッパドキア・エフェソス近日対応",
+    badge: "◆ トルコは始まりにすぎない — 世界初のリアルタイムガイドネットワークを、都市ごとに構築中。",
     titleA: "ただ訪れるだけじゃない。", titleAccent: "生きろ。",
     sub: "音声ガイドや混雑したバスは忘れてください。VibeGuideは、街を本当に生きる認証済みの地元ガイドの隣にあなたを連れて行きます — VibeNowなら60秒、VibeSquadなら同じ旅人と一緒に、プライベートツアーなら計画された一日として。1つのアプリ、3つの方法、観光客向けの罠はゼロ。",
     b1: "公認地元ガイド", b2: "即時または計画", b3: "本物の地元との繋がり",
@@ -800,7 +800,7 @@ const ja: Dict = {
 const zh: Dict = {
   nav: { vibenow: "VibeNow", vibesquad: "VibeSquad", private: "私人导览", destinations: "目的地", guides: "向导申请", cta: "下载应用" },
   hero: {
-    badge: "◆ 已在伊斯坦布尔上线 + 卡帕多奇亚和以弗所即将推出",
+    badge: "◆ 土耳其只是开始——我们正在逐城打造全球首个实时向导网络。",
     titleA: "不要只是参观。", titleAccent: "去体验。",
     sub: "忘掉那些语音导览和拥挤的大巴。VibeGuide让你与真正生活在这座城市的认证当地向导并肩 — 通过VibeNow 60秒匹配,通过VibeSquad与同路旅人,或作为一次完美策划的私人导览。一个应用。三种方式。零旅游陷阱。",
     b1: "持牌当地向导", b2: "即时或计划", b3: "真实的本地连接",
@@ -922,7 +922,7 @@ const zh: Dict = {
 const el: Dict = {
   nav: { vibenow: "VibeNow", vibesquad: "VibeSquad", private: "Ιδιωτικές Ξεναγήσεις", destinations: "Προορισμοί", guides: "Για Ξεναγούς", cta: "Κατέβασε την εφαρμογή" },
   hero: {
-    badge: "◆ Διαθέσιμο στην Κωνσταντινούπολη + Καππαδοκία & Έφεσος σύντομα",
+    badge: "◆ Η Τουρκία είναι μόνο η αρχή — χτίζουμε το πρώτο παγκόσμιο δίκτυο ξεναγών σε πραγματικό χρόνο, πόλη με πόλη.",
     titleA: "Μην απλώς επισκεφτείς.", titleAccent: "Ζήσε το.",
     sub: "Ξέχνα τους ηχητικούς οδηγούς και τα γεμάτα λεωφορεία. Το VibeGuide σε φέρνει δίπλα σε έναν επιβεβαιωμένο ντόπιο που ζει πραγματικά την πόλη — σε 60 δευτερόλεπτα με VibeNow, με ταξιδιώτες σαν εσένα μέσω VibeSquad ή ως μια καλά σχεδιασμένη μέρα με Ιδιωτική Ξενάγηση. Μία εφαρμογή. Τρεις τρόποι. Καμία τουριστική παγίδα.",
     b1: "Αδειούχοι ντόπιοι ξεναγοί", b2: "Άμεσα ή προγραμματισμένα", b3: "Αληθινή τοπική σύνδεση",
@@ -1037,7 +1037,7 @@ const el: Dict = {
 const bg: Dict = {
   nav: { vibenow: "VibeNow", vibesquad: "VibeSquad", private: "Частни турове", destinations: "Дестинации", guides: "За екскурзоводи", cta: "Изтегли приложението" },
   hero: {
-    badge: "◆ Вече в Истанбул + Кападокия и Ефес скоро",
+    badge: "◆ Турция е само началото — изграждаме първата в света мрежа от водачи в реално време, град по град.",
     titleA: "Не просто посети.", titleAccent: "Изживей го.",
     sub: "Забрави аудио водачите и пълните автобуси. VibeGuide те поставя до проверен местен жител, който наистина живее в града — за 60 секунди с VibeNow, със същите пътешественици чрез VibeSquad или като перфектно планиран ден с Частен тур. Едно приложение. Три начина. Нула туристически капани.",
     b1: "Лицензирани местни водачи", b2: "Незабавно или планирано", b3: "Истинска местна връзка",
@@ -1149,7 +1149,7 @@ const bg: Dict = {
 const sr: Dict = {
   nav: { vibenow: "VibeNow", vibesquad: "VibeSquad", private: "Privatne ture", destinations: "Destinacije", guides: "Za vodiče", cta: "Preuzmi aplikaciju" },
   hero: {
-    badge: "◆ Već u Istanbulu + Kapadokija i Efes uskoro",
+    badge: "◆ Turska je tek početak — gradimo prvu svjetsku mrežu vodiča u stvarnom vremenu, grad po grad.",
     titleA: "Nemoj samo da posetiš.", titleAccent: "Proživi.",
     sub: "Zaboravi audio vodiče i krcate autobuse. VibeGuide te postavlja pored proveravanog lokalca koji zapravo živi grad — za 60 sekundi sa VibeNow, sa putnicima poput tebe preko VibeSquad ili kao savršeno isplaniran dan sa Privatnom turom. Jedna aplikacija. Tri načina. Nula turističkih zamki.",
     b1: "Licencirani lokalni vodiči", b2: "Trenutno ili planirano", b3: "Prava lokalna veza",
@@ -1261,7 +1261,7 @@ const sr: Dict = {
 const ko: Dict = {
   nav: { vibenow: "VibeNow", vibesquad: "VibeSquad", private: "프라이빗 투어", destinations: "여행지", guides: "가이드 신청", cta: "앱 다운로드" },
   hero: {
-    badge: "◆ 이스탄불에서 이용 가능 + 카파도키아 및 에페소스 출시 예정",
+    badge: "◆ 튀르키예는 시작일 뿐 — 세계 최초의 실시간 가이드 네트워크를 도시별로 구축하고 있습니다.",
     titleA: "그냥 방문하지 마세요.", titleAccent: "살아보세요.",
     sub: "오디오 가이드와 붐비는 버스는 잊으세요. VibeGuide는 도시를 진짜로 살고 있는 인증된 현지인 옆에 당신을 데려다 놓습니다 — VibeNow로 60초 만에, VibeSquad로 비슷한 여행자들과 함께, 또는 잘 짜인 하루를 위한 프라이빗 투어로. 하나의 앱. 세 가지 방법. 관광객 함정은 제로.",
     b1: "공인 현지 가이드", b2: "즉시 또는 계획", b3: "진짜 현지인과의 연결",
@@ -1373,7 +1373,7 @@ const ko: Dict = {
 const it: Dict = {
   nav: { vibenow: "VibeNow", vibesquad: "VibeSquad", private: "Tour Privati", destinations: "Destinazioni", guides: "Per Guide", cta: "Scarica l'app" },
   hero: {
-    badge: "◆ Già attivo a Istanbul + Cappadocia ed Efeso in arrivo",
+    badge: "◆ La Turchia è solo l'inizio — stiamo costruendo la prima rete di guide in tempo reale al mondo, città per città.",
     titleA: "Non limitarti a visitare.", titleAccent: "Vivila.",
     sub: "Dimentica le audio guide e i bus affollati. VibeGuide ti porta accanto a un locale verificato che vive davvero la città — in 60 secondi con VibeNow, con viaggiatori come te tramite VibeSquad, o come una giornata perfettamente pianificata con un Tour Privato. Una app. Tre modi. Zero trappole per turisti.",
     b1: "Guide locali abilitate", b2: "Istantaneo o pianificato", b3: "Connessione locale vera",
@@ -1485,7 +1485,7 @@ const it: Dict = {
 const hr: Dict = {
   nav: { vibenow: "VibeNow", vibesquad: "VibeSquad", private: "Privatne ture", destinations: "Destinacije", guides: "Za vodiče", cta: "Preuzmi aplikaciju" },
   hero: {
-    badge: "◆ Već u Istanbulu + Kapadokija i Efez uskoro",
+    badge: "◆ Turska je tek početak — gradimo prvu svetsku mrežu vodiča u realnom vremenu, grad po grad.",
     titleA: "Nemoj samo posjetiti.", titleAccent: "Proživi.",
     sub: "Zaboravi audio vodiče i pretrpane autobuse. VibeGuide te postavlja uz provjerenog lokalca koji zaista živi grad — za 60 sekundi s VibeNow, s putnicima poput tebe putem VibeSquad ili kao savršeno isplaniran dan s Privatnom turom. Jedna aplikacija. Tri načina. Nula turističkih zamki.",
     b1: "Licencirani lokalni vodiči", b2: "Odmah ili planirano", b3: "Prava lokalna veza",
@@ -1597,7 +1597,7 @@ const hr: Dict = {
 const fr: Dict = {
   nav: { vibenow: "VibeNow", vibesquad: "VibeSquad", private: "Tours Privés", destinations: "Destinations", guides: "Pour les guides", cta: "Obtenir l'app" },
   hero: {
-    badge: "◆ Maintenant à Istanbul + Cappadoce & Éphèse bientôt",
+    badge: "◆ La Turquie n'est que le début — nous bâtissons le premier réseau de guides en temps réel au monde, ville par ville.",
     titleA: "Ne fais pas que visiter.", titleAccent: "Vis-le.",
     sub: "Oubliez les audioguides et les bus bondés. VibeGuide vous place à côté d'un local vérifié — en 60 secondes avec VibeNow, avec des voyageurs via VibeSquad, ou en tour privé planifié.",
     b1: "Guides locaux agréés", b2: "Instantané ou planifié", b3: "Vraie connexion locale",
@@ -1653,7 +1653,7 @@ const fr: Dict = {
 const ro: Dict = {
   nav: { vibenow: "VibeNow", vibesquad: "VibeSquad", private: "Tururi Private", destinations: "Destinații", guides: "Pentru ghizi", cta: "Descarcă app" },
   hero: {
-    badge: "◆ Acum activ în Istanbul + Capadocia & Efes în curând",
+    badge: "◆ Turcia este doar începutul — construim prima rețea de ghizi în timp real din lume, oraș cu oraș.",
     titleA: "Nu doar vizita.", titleAccent: "Trăiește.",
     sub: "Uită de audioghiduri și autocare aglomerate. VibeGuide te plasează lângă un local verificat — în 60 secunde cu VibeNow, cu călători prin VibeSquad, sau ca tur privat planificat.",
     b1: "Ghizi locali autorizați", b2: "Instant sau planificat", b3: "Conexiune locală reală",
@@ -1699,7 +1699,7 @@ const ro: Dict = {
 const ar: Dict = {
   nav: { vibenow: "VibeNow", vibesquad: "VibeSquad", private: "جولات خاصة", destinations: "الوجهات", guides: "للمرشدين", cta: "تحميل التطبيق" },
   hero: {
-    badge: "◆ متاح الآن في إسطنبول + كابادوكيا وأفسس قريباً",
+    badge: "◆ تركيا مجرد البداية — نبني أول شبكة مرشدين فورية في العالم، مدينةً تلو الأخرى.",
     titleA: "لا تكتفِ بالزيارة.", titleAccent: "عِشها.",
     sub: "انسَ المرشدين الصوتيين والحافلات المزدحمة. VibeGuide يضعك بجانب مرشد محلي موثّق — في 60 ثانية مع VibeNow، أو مع مسافرين عبر VibeSquad، أو جولة خاصة مخططة.",
     b1: "مرشدون محليون مرخّصون", b2: "فوري أو مخطط", b3: "تواصل محلي حقيقي",
@@ -1745,7 +1745,7 @@ const ar: Dict = {
 const nl: Dict = {
   nav: { vibenow: "VibeNow", vibesquad: "VibeSquad", private: "Privétours", destinations: "Bestemmingen", guides: "Voor gidsen", cta: "App downloaden" },
   hero: {
-    badge: "◆ Nu live in Istanbul + Cappadocië & Efeze binnenkort",
+    badge: "◆ Turkije is nog maar het begin — we bouwen 's werelds eerste realtime gidsennetwerk, stad voor stad.",
     titleA: "Niet alleen bezoeken.", titleAccent: "Beleef het.",
     sub: "Vergeet de audiogidsen en volle bussen. VibeGuide plaatst je naast een geverifieerde local — in 60 seconden met VibeNow, met reizigers via VibeSquad, of als geplande privétour.",
     b1: "Gecertificeerde lokale gidsen", b2: "Direct of gepland", b3: "Echte lokale verbinding",
@@ -1787,7 +1787,7 @@ const nl: Dict = {
 const pl: Dict = {
   nav: { vibenow: "VibeNow", vibesquad: "VibeSquad", private: "Prywatne wycieczki", destinations: "Miejsca", guides: "Dla przewodników", cta: "Pobierz app" },
   hero: {
-    badge: "◆ Teraz w Stambule + Kapadocja & Efez wkrótce",
+    badge: "◆ Turcja to dopiero początek — budujemy pierwszą na świecie sieć przewodników w czasie rzeczywistym, miasto po mieście.",
     titleA: "Nie tylko zwiedzaj.", titleAccent: "Przeżyj to.",
     sub: "Zapomnij o audioprewodnikach i zatłoczonych autobusach. VibeGuide stawia cię obok zweryfikowanego miejscowego — w 60 sekund z VibeNow, z podróżnikami przez VibeSquad lub zaplanowana prywatna wycieczka.",
     b1: "Certyfikowani lokalni przewodnicy", b2: "Natychmiastowy lub zaplanowany", b3: "Prawdziwy lokalny kontakt",
@@ -1829,7 +1829,7 @@ const pl: Dict = {
 const uk: Dict = {
   nav: { vibenow: "VibeNow", vibesquad: "VibeSquad", private: "Приватні тури", destinations: "Напрямки", guides: "Для гідів", cta: "Завантажити додаток" },
   hero: {
-    badge: "◆ Вже в Стамбулі + Каппадокія та Ефес незабаром",
+    badge: "◆ Туреччина — це лише початок. Ми будуємо першу у світі мережу гідів у реальному часі, місто за містом.",
     titleA: "Не просто відвідай.", titleAccent: "Живи цим.",
     sub: "Забудь про аудіогіди та переповнені автобуси. VibeGuide ставить тебе поруч із перевіреним місцевим — за 60 секунд з VibeNow, з мандрівниками через VibeSquad або запланований приватний тур.",
     b1: "Ліцензовані місцеві гіди", b2: "Миттєво або заплановано", b3: "Справжній місцевий зв'язок",
@@ -1871,7 +1871,7 @@ const uk: Dict = {
 const id: Dict = {
   nav: { vibenow: "VibeNow", vibesquad: "VibeSquad", private: "Tur Privat", destinations: "Destinasi", guides: "Untuk pemandu", cta: "Unduh app" },
   hero: {
-    badge: "◆ Kini hadir di Istanbul + Cappadocia & Ephesus segera",
+    badge: "◆ Turki hanyalah awal — kami membangun jaringan pemandu real-time pertama di dunia, kota demi kota.",
     titleA: "Jangan hanya berkunjung.", titleAccent: "Rasakan.",
     sub: "Lupakan panduan audio dan bus yang penuh. VibeGuide menempatkan Anda di sebelah pemandu lokal terverifikasi — dalam 60 detik dengan VibeNow, bersama wisatawan via VibeSquad, atau tur privat terencana.",
     b1: "Pemandu lokal berlisensi", b2: "Instan atau terencana", b3: "Koneksi lokal nyata",
@@ -1913,7 +1913,7 @@ const id: Dict = {
 const pt: Dict = {
   nav: { vibenow: "VibeNow", vibesquad: "VibeSquad", private: "Tours Privados", destinations: "Destinos", guides: "Para guias", cta: "Obter a app" },
   hero: {
-    badge: "◆ Agora em Istambul + Capadócia & Éfeso em breve",
+    badge: "◆ A Turquia é apenas o começo — estamos a construir a primeira rede mundial de guias em tempo real, cidade a cidade.",
     titleA: "Não apenas visites.", titleAccent: "Vive-a.",
     sub: "Esquece os audioguias e os autocarros cheios. A VibeGuide coloca-te ao lado de um local verificado — em 60 segundos com o VibeNow, com viajantes via VibeSquad, ou um tour privado planeado.",
     b1: "Guias locais licenciados", b2: "Imediato ou planeado", b3: "Ligação local genuína",
