@@ -35,10 +35,8 @@ export default function HomePage() {
   const nb = navbarI18n[locale] ?? navbarI18n.en;
 
   const secHow = useInView();
-  const secEnergy = useInView();
   const secModes = useInView();
   const secManifesto = useInView();
-  const secTurkey = useInView();
   const secTrust = useInView();
   const secDownload = useInView();
 
@@ -80,15 +78,6 @@ export default function HomePage() {
               {t.hero.sub.split("\n\n").map((para, i) => (
                 <p key={i} style={{ whiteSpace: "pre-line" }}>{para}</p>
               ))}
-            </div>
-
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#download" className="group relative rounded-full bg-[#6C4CF1] px-7 py-3.5 text-sm font-bold text-white overflow-hidden transition-all hover:bg-[#5a3dd4]" style={{ boxShadow: "0 4px 24px rgba(108,76,241,0.3)" }}>
-                <span className="relative z-10">{t.hero.ctaPrimary} →</span>
-              </a>
-              <a href="#modes" className="rounded-full border border-black/10 px-7 py-3.5 text-sm font-bold text-[#0A0A0F] hover:border-[#6C4CF1]/40 hover:text-[#6C4CF1] transition-all">
-                {t.hero.ctaSecondary}
-              </a>
             </div>
 
             <div className="mt-10 flex flex-wrap gap-6 pt-6 border-t border-black/[0.06]">
@@ -214,12 +203,8 @@ export default function HomePage() {
 
       {/* ── TRUST BAR ── */}
       <section className="border-y border-black/[0.06] bg-white">
-        <div className="mx-auto max-w-7xl px-6 py-5 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="mx-auto max-w-7xl px-6 py-5 grid grid-cols-1 sm:grid-cols-3 gap-4">
           {[
-            {
-              icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="#F59E0B" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>,
-              title: ux.trustRatingTitle, sub: ux.trustRatingSub,
-            },
             {
               icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>,
               title: ux.trustVerifiedTitle, sub: ux.trustVerifiedSub,
@@ -305,24 +290,6 @@ export default function HomePage() {
                 <p className="mt-3 text-sm leading-7 text-neutral-500">{item.text}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── LIVE CITY ENERGY ── */}
-      <section ref={secEnergy.ref as React.RefObject<HTMLElement>} className={`py-8 bg-white reveal ${secEnergy.inView ? "in-view" : ""}`}>
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="rounded-[2.5rem] bg-white border border-black/[0.06] p-8 md:p-12 relative overflow-hidden" style={{ boxShadow: "0 2px 40px rgba(108,76,241,0.06)" }}>
-            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#6C4CF1]/5 rounded-full blur-3xl pointer-events-none" />
-            <div className="relative grid items-center gap-10 md:grid-cols-[1fr_auto]">
-              <div>
-                <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1]">{t.energy.eyebrow}</p>
-                <h2 className="mt-3 text-3xl md:text-4xl font-black text-[#0A0A0F] leading-tight">
-                  {t.energy.titleA}<br /><span className="text-neutral-300">{t.energy.titleB}</span>
-                </h2>
-                <p className="mt-3 text-sm leading-6 text-neutral-400 max-w-md">{t.energy.sub}</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -432,58 +399,6 @@ export default function HomePage() {
 
       {/* ── TESTIMONIALS (real reviews) ── */}
       <Testimonials />
-
-      {/* ── TURKEY ONLY BANNER ── */}
-      <section ref={secTurkey.ref as React.RefObject<HTMLElement>} className={`py-16 bg-white reveal ${secTurkey.inView ? "in-view" : ""}`}>
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="rounded-3xl bg-white border border-black/5 shadow-sm overflow-hidden">
-            <div className="grid md:grid-cols-2">
-              <div className="p-10 md:p-14 flex flex-col justify-center">
-                <span className="inline-flex items-center gap-2 rounded-full bg-[#FEF3C7] border border-amber-100 px-3 py-1 text-xs font-bold text-amber-700 self-start mb-6">
-                  {t.turkey.badge}
-                </span>
-                <h2 className="text-3xl md:text-4xl font-black tracking-tight leading-tight">
-                  {t.turkey.titleA}<br />
-                  <span className="text-neutral-300">{t.turkey.titleB}</span>
-                </h2>
-                <p className="mt-4 text-sm leading-7 text-neutral-400 max-w-sm">
-                  {t.turkey.body}
-                </p>
-                <div className="mt-8 flex flex-wrap gap-3">
-                  {[
-                    { label: t.turkey.cities[0], href: "/istanbul-tour-guide" },
-                    { label: t.turkey.cities[1], href: "/cappadocia-tour-guide" },
-                    { label: t.turkey.cities[2], href: "/ephesus-tour-guide" },
-                  ].map((city) => (
-                    <a key={city.label} href={city.href} className="rounded-full bg-[#F7F7FB] border border-black/8 px-4 py-2 text-xs font-semibold text-neutral-600 hover:border-[#6C4CF1]/40 hover:text-[#6C4CF1] transition-colors">
-                      {city.label}
-                    </a>
-                  ))}
-                  <span className="rounded-full bg-[#6C4CF1]/8 border border-[#6C4CF1]/20 px-4 py-2 text-xs font-semibold text-[#6C4CF1]">
-                    {t.turkey.more}
-                  </span>
-                </div>
-              </div>
-              <div className="relative min-h-[280px] md:min-h-0 bg-[#0A0A0F] flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 opacity-40">
-                  <Image
-                    src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80&w=900"
-                    alt="Turkey"
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#0A0A0F]/60" />
-                </div>
-                <div className="relative text-center p-8">
-                  <p className="text-6xl font-black text-white">🇹🇷</p>
-                  <p className="mt-3 text-lg font-black text-white">Turkey</p>
-                  <p className="mt-1 text-sm text-white/50">{t.turkey.liveNow}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ── TRUST + TESTIMONIALS ── */}
       <section ref={secTrust.ref as React.RefObject<HTMLElement>} id="guides" className={`py-28 bg-white reveal ${secTrust.inView ? "in-view" : ""}`}>

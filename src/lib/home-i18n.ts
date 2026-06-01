@@ -63,7 +63,7 @@ const en: Dict = {
   nav: { vibenow: "VibeNow", vibesquad: "VibeSquad", private: "Private Tours", destinations: "Destinations", guides: "For Guides", cta: "Get the App" },
   hero: {
     badge: "◆ Turkey is just the beginning — we're building the world's first real-time guide network, city by city.",
-    titleA: "Don't just visit.", titleAccent: "Live it.",
+    titleA: "Find your vibe.", titleAccent: "Live the city.",
     sub: "Forget crowded buses and scripted audio guides.\n\nVibeGuide connects you with verified, licensed local guides — whether spontaneously through VibeNow, together with fellow travelers in VibeSquad, or through carefully designed Private Tours.\n\nOne app. Three ways to explore.\nVerified guides. Predefined routes. Secure booking.",
     b1: "Licensed local guides", b2: "Flexible or planned", b3: "Secure reservations",
     ctaPrimary: "Find a Guide in Istanbul", ctaSecondary: "Explore Turkey Tours",

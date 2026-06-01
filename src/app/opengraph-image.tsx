@@ -15,8 +15,8 @@ export default function OgImage() {
           <span style={{ color: "#A78BFA", fontSize: 16, fontWeight: 700 }}>Istanbul · Cappadocia · Ephesus</span>
         </div>
         <div style={{ fontSize: 64, fontWeight: 900, color: "white", lineHeight: 1.1, marginBottom: 20, display: "flex", flexDirection: "column" }}>
-          <span>Don&apos;t Just Visit Istanbul.</span>
-          <span style={{ color: "#A78BFA" }}>Enter It.</span>
+          <span>Find your vibe.</span>
+          <span style={{ color: "#A78BFA" }}>Live the city.</span>
         </div>
         <p style={{ fontSize: 22, color: "rgba(255,255,255,0.5)", margin: 0, maxWidth: 700, lineHeight: 1.5 }}>Verified local guides · Instant matching · Real local experiences</p>
         <div style={{ position: "absolute", bottom: 48, right: 64, display: "flex", alignItems: "center", gap: 12 }}>

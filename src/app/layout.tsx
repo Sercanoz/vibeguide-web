@@ -18,7 +18,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.vibeguideapp.com"),
   title: {
-    default: "VibeGuide — Don't Just Visit Istanbul. Enter It.",
+    default: "VibeGuide — Find your vibe. Live the city.",
     template: "%s · VibeGuide",
   },
   description:
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "VibeGuide — Don't Just Visit Istanbul. Enter It.",
+    title: "VibeGuide — Find your vibe. Live the city.",
     description:
       "Verified local guides, instant matching, group experiences and private tours in Istanbul, Cappadocia and Ephesus. Real local connection, no tourist traps.",
     url: "https://www.vibeguideapp.com",
@@ -95,7 +95,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "VibeGuide — Don't Just Visit Istanbul. Enter It.",
+    title: "VibeGuide — Find your vibe. Live the city.",
     description:
       "Verified local guides for Istanbul, Cappadocia and Ephesus. Instant, group or private tours in Turkey.",
     images: ["/opengraph-image"],
