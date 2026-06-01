@@ -33,23 +33,23 @@ export default function PhoneShowcase({
       {/* ambient glow */}
       <div className="absolute -inset-10 bg-[#6C4CF1]/25 blur-[70px] rounded-[50%] pointer-events-none" />
 
-      {/* ── Outer metallic rail (gri/gümüş) ── */}
+      {/* ── Outer metallic rail (siyah titanyum) ── */}
       <div
         className="relative w-[260px] aspect-[9/19] rounded-[3rem] p-[3px]"
         style={{
           background:
-            "linear-gradient(155deg, #e6e6ea 0%, #9b9ba1 16%, #c8c8cd 40%, #7d7d83 64%, #d2d2d7 84%, #8a8a90 100%)",
+            "linear-gradient(145deg, #4a4a4f 0%, #18181b 14%, #2b2b2f 48%, #0a0a0c 86%, #3a3a3f 100%)",
           boxShadow:
-            "0 55px 100px -20px rgba(76,29,149,0.40), 0 20px 44px -12px rgba(0,0,0,0.50)",
+            "0 55px 100px -20px rgba(76,29,149,0.40), 0 20px 44px -12px rgba(0,0,0,0.55)",
         }}
       >
-        {/* ── Side buttons (gri) ── */}
+        {/* ── Side buttons (siyah) ── */}
         {/* left: action + volume up/down */}
-        <div className="absolute -left-[2px] top-[104px] h-8 w-[3px] rounded-l-md bg-gradient-to-r from-[#74747a] to-[#b8b8bd]" />
-        <div className="absolute -left-[2px] top-[152px] h-14 w-[3px] rounded-l-md bg-gradient-to-r from-[#74747a] to-[#b8b8bd]" />
-        <div className="absolute -left-[2px] top-[220px] h-14 w-[3px] rounded-l-md bg-gradient-to-r from-[#74747a] to-[#b8b8bd]" />
+        <div className="absolute -left-[2px] top-[100px] h-8 w-[3px] rounded-l-md bg-gradient-to-r from-[#0c0c0e] to-[#3a3a3f]" />
+        <div className="absolute -left-[2px] top-[148px] h-14 w-[3px] rounded-l-md bg-gradient-to-r from-[#0c0c0e] to-[#3a3a3f]" />
+        <div className="absolute -left-[2px] top-[214px] h-14 w-[3px] rounded-l-md bg-gradient-to-r from-[#0c0c0e] to-[#3a3a3f]" />
         {/* right: power */}
-        <div className="absolute -right-[2px] top-[168px] h-24 w-[3px] rounded-r-md bg-gradient-to-l from-[#74747a] to-[#b8b8bd]" />
+        <div className="absolute -right-[2px] top-[164px] h-24 w-[3px] rounded-r-md bg-gradient-to-l from-[#0c0c0e] to-[#3a3a3f]" />
 
         {/* ── Black bezel ── */}
         <div className="relative h-full w-full rounded-[3.35rem] bg-black p-[11px]">
@@ -77,11 +77,6 @@ export default function PhoneShowcase({
                   "linear-gradient(135deg, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0.04) 22%, transparent 42%, transparent 100%)",
               }}
             />
-
-            {/* Dynamic Island */}
-            <div className="absolute left-1/2 top-[11px] z-20 flex h-[26px] w-[92px] -translate-x-1/2 items-center justify-end rounded-full bg-black px-2.5">
-              <span className="h-2 w-2 rounded-full bg-[#1b1b2e] ring-1 ring-white/10" />
-            </div>
 
             {/* progress dots */}
             {shots.length > 1 && (
