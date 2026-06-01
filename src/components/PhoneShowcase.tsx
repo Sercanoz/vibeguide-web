@@ -51,10 +51,13 @@ export default function PhoneShowcase({
         {/* right: power */}
         <div className="absolute -right-[2px] top-[164px] h-24 w-[3px] rounded-r-md bg-gradient-to-l from-[#0c0c0e] to-[#3a3a3f]" />
 
+        {/* ── İnce metal highlight (rail ile bezel arası) ── */}
+        <div className="absolute inset-[2px] rounded-[3.45rem] ring-1 ring-white/15 pointer-events-none z-20" />
+
         {/* ── Black bezel ── */}
-        <div className="relative h-full w-full rounded-[3.35rem] bg-black p-[11px]">
+        <div className="relative h-full w-full rounded-[3.35rem] bg-black p-[10px]">
           {/* ── Screen ── */}
-          <div className="relative h-full w-full overflow-hidden rounded-[2.7rem] bg-black">
+          <div className="relative h-full w-full overflow-hidden rounded-[2.7rem] bg-black ring-1 ring-inset ring-white/8">
             {shots.map((src, i) => (
               <Image
                 key={src}
@@ -69,12 +72,12 @@ export default function PhoneShowcase({
               />
             ))}
 
-            {/* glass gloss — diagonal highlight */}
+            {/* glass gloss — diagonal highlight (daha ince, premium) */}
             <div
               className="absolute inset-0 z-10 pointer-events-none"
               style={{
                 background:
-                  "linear-gradient(135deg, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0.04) 22%, transparent 42%, transparent 100%)",
+                  "linear-gradient(125deg, rgba(255,255,255,0.20) 0%, rgba(255,255,255,0.05) 16%, transparent 34%, transparent 78%, rgba(255,255,255,0.05) 100%)",
               }}
             />
 
