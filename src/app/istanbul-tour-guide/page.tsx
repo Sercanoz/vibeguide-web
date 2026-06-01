@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import CityTours from "@/components/CityTours";
 import CityFaqSchema, { type Faq } from "@/components/CityFaqSchema";
+import Navbar from "@/components/Navbar";
+import MainFooter from "@/components/MainFooter";
 
 export const metadata: Metadata = {
   title: "Istanbul Tour Guide — Book a Local Expert | VibeGuide",
@@ -65,6 +67,26 @@ const FAQS: Faq[] = [
     q: "Is it better to explore Istanbul with a guide or alone?",
     a: "Istanbul rewards local knowledge. A licensed guide helps you skip queues, avoid tourist-trap restaurants, understand the real history behind each site, and discover neighbourhoods most visitors never reach — turning a checklist into a genuine experience.",
   },
+  {
+    q: "How many days do you need in Istanbul?",
+    a: "Two to three days covers the highlights — Sultanahmet (Hagia Sophia, Blue Mosque, Topkapi), the Grand Bazaar and a Bosphorus cruise. With four or more days you can add Balat, the Asian side (Kadıköy), and day trips. A local guide helps you make the most of however long you have.",
+  },
+  {
+    q: "What is the best time to visit Istanbul?",
+    a: "April–May and September–October offer mild weather and thinner crowds. Summer is hot and busy; winter is cooler but atmospheric and cheaper. Whatever the season, a local guide knows the quietest hours to visit major sites.",
+  },
+  {
+    q: "How do I get a private tour guide in Istanbul?",
+    a: "Open the VibeGuide app, choose Private Tour, pick a verified local guide and your date, and you're set. You'll see the price up front and can message your guide before the day. For something spontaneous, VibeNow matches you with an available guide in about 60 seconds.",
+  },
+  {
+    q: "Are Istanbul tours suitable for families and kids?",
+    a: "Yes. Private guides tailor the pace and content for children, seniors and mixed groups — shorter routes, snack stops, and stories kids actually enjoy. Just tell your guide who's coming.",
+  },
+  {
+    q: "Do I need to tip my Istanbul guide?",
+    a: "Tipping isn't required — the price you see covers the tour. If you had a great time, a tip is appreciated but always optional, and never expected.",
+  },
 ];
 
 const MODES = [
@@ -91,22 +113,10 @@ const MODES = [
 export default function IstanbulTourGuidePage() {
   return (
     <main className="min-h-screen bg-white text-[#0A0A0F] antialiased">
-      {/* Nav */}
-      <nav className="sticky top-0 z-50 bg-white border-b border-black/[0.06] shadow-sm">
-        <div className="mx-auto max-w-5xl px-6 h-14 flex items-center justify-between">
-          <Link href="/" className="font-black text-lg tracking-tight flex items-center gap-2">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/vibeguide-icon.png" alt="VibeGuide" width={28} height={28} style={{ mixBlendMode: "multiply" }} />
-            VibeGuide
-          </Link>
-          <Link href="#download" className="rounded-full bg-[#6C4CF1] px-5 py-2 text-sm font-bold text-white hover:bg-[#5a3dd4] transition-colors">
-            Download Free
-          </Link>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Hero */}
-      <section className="relative bg-[#0A0A0F] text-white py-24 overflow-hidden">
+      <section className="relative bg-[#0A0A0F] text-white pt-32 pb-24 overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80&w=1600"
@@ -219,6 +229,30 @@ export default function IstanbulTourGuidePage() {
       {/* FAQ + schema */}
       <CityFaqSchema city="Istanbul" faqs={FAQS} />
 
+      {/* Top Istanbul landmarks — internal link hub (SEO) */}
+      <section className="py-16 bg-white">
+        <div className="mx-auto max-w-5xl px-6">
+          <h2 className="text-3xl font-black mb-2 tracking-tight">Top Istanbul landmarks</h2>
+          <p className="text-sm text-neutral-400 mb-8">Explore each with a verified local guide.</p>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {[
+              { href: "/attractions/en/hagia-sophia", icon: "🕌", name: "Hagia Sophia", desc: "Byzantine cathedral turned Ottoman mosque" },
+              { href: "/attractions/en/blue-mosque", icon: "🕌", name: "Blue Mosque", desc: "Six minarets & 20,000 İznik tiles" },
+              { href: "/attractions/en/topkapi-palace", icon: "🏰", name: "Topkapi Palace", desc: "Heart of the Ottoman Empire" },
+              { href: "/attractions/en/basilica-cistern", icon: "🏛️", name: "Basilica Cistern", desc: "Underground palace of water" },
+            ].map((l) => (
+              <Link key={l.href} href={l.href} className="group flex items-center gap-4 rounded-2xl bg-white border border-black/[0.06] p-5 hover:border-[#6C4CF1]/30 transition-colors">
+                <span className="text-3xl">{l.icon}</span>
+                <div>
+                  <p className="font-black text-[#0A0A0F] group-hover:text-[#6C4CF1] transition-colors">{l.name}</p>
+                  <p className="text-sm text-neutral-400">{l.desc}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Other destinations — internal linking */}
       <section className="py-16 bg-[#F7F7FB]">
         <div className="mx-auto max-w-5xl px-6">
@@ -259,13 +293,22 @@ export default function IstanbulTourGuidePage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-black/[0.06] py-8 px-6 text-center text-xs text-neutral-300">
-        <Link href="/" className="hover:text-black transition-colors font-semibold">VibeGuide</Link> ·
-        <Link href="/privacy" className="ml-2 hover:text-black transition-colors">Privacy</Link> ·
-        <Link href="/terms" className="ml-2 hover:text-black transition-colors">Terms</Link>
-        <p className="mt-2">© {new Date().getFullYear()} VibeGuide. All rights reserved.</p>
-      </footer>
+      {/* BreadcrumbList schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "VibeGuide", item: "https://www.vibeguideapp.com" },
+              { "@type": "ListItem", position: 2, name: "Istanbul Tour Guide", item: "https://www.vibeguideapp.com/istanbul-tour-guide" },
+            ],
+          }),
+        }}
+      />
+
+      <MainFooter />
     </main>
   );
 }

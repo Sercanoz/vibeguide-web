@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import CityTours from "@/components/CityTours";
 import CityFaqSchema, { type Faq } from "@/components/CityFaqSchema";
+import Navbar from "@/components/Navbar";
+import MainFooter from "@/components/MainFooter";
 
 export const metadata: Metadata = {
   title: "Ephesus Tour Guide — Private & Group Tours | VibeGuide",
@@ -91,20 +93,9 @@ const MODES = [
 export default function EphesusTourGuidePage() {
   return (
     <main className="min-h-screen bg-white text-[#0A0A0F] antialiased">
-      <nav className="sticky top-0 z-50 bg-white border-b border-black/[0.06] shadow-sm">
-        <div className="mx-auto max-w-5xl px-6 h-14 flex items-center justify-between">
-          <Link href="/" className="font-black text-lg tracking-tight flex items-center gap-2">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/vibeguide-icon.png" alt="VibeGuide" width={28} height={28} style={{ mixBlendMode: "multiply" }} />
-            VibeGuide
-          </Link>
-          <Link href="#download" className="rounded-full bg-[#6C4CF1] px-5 py-2 text-sm font-bold text-white hover:bg-[#5a3dd4] transition-colors">
-            Download Free
-          </Link>
-        </div>
-      </nav>
+      <Navbar />
 
-      <section className="relative bg-[#0A0A0F] text-white py-24 overflow-hidden">
+      <section className="relative bg-[#0A0A0F] text-white pt-32 pb-24 overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1600"
@@ -251,12 +242,7 @@ export default function EphesusTourGuidePage() {
         </div>
       </section>
 
-      <footer className="border-t border-black/[0.06] py-8 px-6 text-center text-xs text-neutral-300">
-        <Link href="/" className="hover:text-black transition-colors font-semibold">VibeGuide</Link> ·
-        <Link href="/privacy" className="ml-2 hover:text-black transition-colors">Privacy</Link> ·
-        <Link href="/terms" className="ml-2 hover:text-black transition-colors">Terms</Link>
-        <p className="mt-2">© {new Date().getFullYear()} VibeGuide. All rights reserved.</p>
-      </footer>
+      <MainFooter />
     </main>
   );
 }
