@@ -208,6 +208,13 @@ export default function EphesusTourGuidePage() {
         <div className="mx-auto max-w-5xl px-6">
           <h2 className="text-2xl font-black mb-6 tracking-tight">Explore more of Turkey</h2>
           <div className="grid sm:grid-cols-2 gap-4">
+            <Link href="/attractions/en/ephesus" className="group flex items-center gap-4 rounded-2xl bg-white border border-black/[0.06] p-5 hover:border-[#6C4CF1]/30 transition-colors">
+              <span className="text-3xl">🏛️</span>
+              <div>
+                <p className="font-black text-[#0A0A0F] group-hover:text-[#6C4CF1] transition-colors">Ephesus Travel Guide</p>
+                <p className="text-sm text-neutral-400">Library of Celsus, Great Theatre & more</p>
+              </div>
+            </Link>
             <Link href="/istanbul-tour-guide" className="group flex items-center gap-4 rounded-2xl bg-white border border-black/[0.06] p-5 hover:border-[#6C4CF1]/30 transition-colors">
               <span className="text-3xl">🕌</span>
               <div>
@@ -220,6 +227,13 @@ export default function EphesusTourGuidePage() {
               <div>
                 <p className="font-black text-[#0A0A0F] group-hover:text-[#6C4CF1] transition-colors">Cappadocia Tour Guide</p>
                 <p className="text-sm text-neutral-400">Hot air balloons, fairy chimneys & cave churches</p>
+              </div>
+            </Link>
+            <Link href="/tours" className="group flex items-center gap-4 rounded-2xl bg-white border border-black/[0.06] p-5 hover:border-[#6C4CF1]/30 transition-colors">
+              <span className="text-3xl">🗺️</span>
+              <div>
+                <p className="font-black text-[#0A0A0F] group-hover:text-[#6C4CF1] transition-colors">All Tours</p>
+                <p className="text-sm text-neutral-400">Browse every VibeGuide experience</p>
               </div>
             </Link>
           </div>
@@ -241,6 +255,21 @@ export default function EphesusTourGuidePage() {
           <p className="mt-6 text-xs text-neutral-300">Free · No subscription · Ephesus available now</p>
         </div>
       </section>
+
+      {/* BreadcrumbList schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "VibeGuide", item: "https://www.vibeguideapp.com" },
+              { "@type": "ListItem", position: 2, name: "Ephesus Tour Guide", item: "https://www.vibeguideapp.com/ephesus-tour-guide" },
+            ],
+          }),
+        }}
+      />
 
       <MainFooter />
     </main>
