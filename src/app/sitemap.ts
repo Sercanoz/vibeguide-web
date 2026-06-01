@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { API_BASE_URL } from "@/lib/api";
 import { ATTRACTIONS, ATTRACTION_LANGS } from "@/lib/attractions";
+import { CITY_GUIDES, CITY_GUIDE_LANGS } from "@/lib/cityGuides";
 
 const SITE = "https://www.vibeguideapp.com";
 
@@ -15,9 +16,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE}/vibenow`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     { url: `${SITE}/vibesquad`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     { url: `${SITE}/private`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
-    { url: `${SITE}/istanbul-tour-guide`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
-    { url: `${SITE}/cappadocia-tour-guide`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
-    { url: `${SITE}/ephesus-tour-guide`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${SITE}/how-it-works`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${SITE}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${SITE}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
@@ -65,5 +63,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }));
   });
 
-  return [...staticRoutes, ...tourRoutes, ...attractionRoutes];
+  // City tour-guide pages — every city × every language, with hreflang alternates.
+  // EN lives at the root URL; other languages under /<lang>.
+  const cityUrl = (slug: string, l: string) =>
+    l === "en" ? `${SITE}/${slug}` : `${SITE}/${l}/${slug}`;
+  const cityGuideRoutes: MetadataRoute.Sitemap = CITY_GUIDES.flatMap((g) => {
+    const languages: Record<string, string> = {};
+    for (const l of CITY_GUIDE_LANGS) languages[l] = cityUrl(g.slug, l);
+    languages["x-default"] = cityUrl(g.slug, "en");
+    return CITY_GUIDE_LANGS.map((l) => ({
+      url: cityUrl(g.slug, l),
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: l === "en" ? 0.9 : 0.8,
+      alternates: { languages },
+    }));
+  });
+
+  return [...staticRoutes, ...cityGuideRoutes, ...tourRoutes, ...attractionRoutes];
 }
