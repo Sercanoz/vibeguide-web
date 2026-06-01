@@ -78,6 +78,10 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "https://www.vibeguideapp.com",
+    languages: {
+      en: "https://www.vibeguideapp.com",
+      "x-default": "https://www.vibeguideapp.com",
+    },
   },
   openGraph: {
     title: "VibeGuide — Don't Just Visit Istanbul. Enter It.",

@@ -23,6 +23,15 @@ export default function JsonLd() {
         name: "VibeGuide",
         publisher: { "@id": "https://www.vibeguideapp.com/#org" },
         inLanguage: "en-US",
+        potentialAction: {
+          "@type": "SearchAction",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate:
+              "https://www.vibeguideapp.com/tours?city={search_term_string}",
+          },
+          "query-input": "required name=search_term_string",
+        },
       },
       {
         "@type": "MobileApplication",
