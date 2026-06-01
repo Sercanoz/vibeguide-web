@@ -35,7 +35,7 @@ export default function PhoneShowcase({
 
       {/* ── Outer metallic rail (gri/gümüş) ── */}
       <div
-        className="relative w-[330px] aspect-[9/19] rounded-[3.6rem] p-[3px]"
+        className="relative w-[260px] aspect-[9/19] rounded-[3rem] p-[3px]"
         style={{
           background:
             "linear-gradient(155deg, #e6e6ea 0%, #9b9ba1 16%, #c8c8cd 40%, #7d7d83 64%, #d2d2d7 84%, #8a8a90 100%)",
@@ -61,7 +61,7 @@ export default function PhoneShowcase({
                 src={src}
                 alt="VibeGuide app"
                 fill
-                sizes="330px"
+                sizes="260px"
                 priority={i === 0}
                 className={`object-cover transition-all duration-[1000ms] ease-in-out ${
                   i === active ? "opacity-100 scale-100" : "opacity-0 scale-[1.06]"
