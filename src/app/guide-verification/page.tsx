@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import MainFooter from "@/components/MainFooter";
 
 export const metadata: Metadata = {
   title: "Guide Verification | VibeGuide",
@@ -18,11 +19,9 @@ const checks = [
 export default function GuideVerificationPage() {
   return (
     <main className="min-h-screen bg-white text-[#0A0A0F]">
-      <nav className="border-b border-black/[0.06] px-6 h-16 flex items-center">
-        <Link href="/" className="text-xl font-black tracking-tight">VibeGuide</Link>
-      </nav>
+      <Navbar />
 
-      <div className="mx-auto max-w-3xl px-6 py-16">
+      <div className="mx-auto max-w-3xl px-6 pt-28 pb-16">
         <p className="text-sm font-black text-[#6C4CF1] mb-3 tracking-widest">GUIDE VERIFICATION</p>
         <h1 className="text-4xl font-black mb-4">Every guide is reviewed before joining the platform</h1>
         <p className="text-lg text-neutral-500 mb-12">
@@ -46,6 +45,8 @@ export default function GuideVerificationPage() {
           </p>
         </div>
       </div>
+
+      <MainFooter />
     </main>
   );
 }

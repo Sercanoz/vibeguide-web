@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import MainFooter from "@/components/MainFooter";
 
 export const metadata: Metadata = {
   title: "About Us | VibeGuide",
@@ -9,11 +10,9 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-white text-[#0A0A0F]">
-      <nav className="border-b border-black/[0.06] px-6 h-16 flex items-center">
-        <Link href="/" className="text-xl font-black tracking-tight">VibeGuide</Link>
-      </nav>
+      <Navbar />
 
-      <div className="mx-auto max-w-3xl px-6 py-16">
+      <div className="mx-auto max-w-3xl px-6 pt-28 pb-16">
         <h1 className="text-4xl font-black mb-6">About VibeGuide</h1>
 
         <p className="text-lg text-neutral-600 leading-8 mb-8">
@@ -43,6 +42,8 @@ export default function AboutPage() {
           <p>Çalışma saatleri: Hafta içi 09:00 – 18:00 (UTC+3)</p>
         </div>
       </div>
+
+      <MainFooter />
     </main>
   );
 }

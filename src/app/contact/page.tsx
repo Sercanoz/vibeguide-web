@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import MainFooter from "@/components/MainFooter";
 
 export const metadata: Metadata = {
   title: "Contact | VibeGuide",
@@ -9,11 +10,9 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <main className="min-h-screen bg-white text-[#0A0A0F]">
-      <nav className="border-b border-black/[0.06] px-6 h-16 flex items-center">
-        <Link href="/" className="text-xl font-black tracking-tight">VibeGuide</Link>
-      </nav>
+      <Navbar />
 
-      <div className="mx-auto max-w-3xl px-6 py-16">
+      <div className="mx-auto max-w-3xl px-6 pt-28 pb-16">
         <h1 className="text-4xl font-black mb-4">Contact Us</h1>
         <p className="text-lg text-neutral-500 mb-12">
           For reservations, support, cancellations, refunds, partnership or guide applications — reach out any time.
@@ -49,6 +48,8 @@ export default function ContactPage() {
           <p>Beldibi Mah. Belmar Sk. No:9/1 İç Kapı No:4 Marmaris/Muğla, Türkiye</p>
         </div>
       </div>
+
+      <MainFooter />
     </main>
   );
 }
