@@ -7,6 +7,7 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import CurrencySwitcher from "./CurrencySwitcher";
 import AuthModal from "./AuthModal";
 import { fbAuth, signOut, type User } from "@/lib/firebase-client";
+import { API_BASE_URL } from "@/lib/api";
 
 export default function Navbar({ activePage }: { activePage?: "tours" | "home" }) {
   const { locale } = useT();
@@ -21,9 +22,20 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
   const userMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const unsub = fbAuth().onAuthStateChanged((u) => {
-      // Treat unverified email as logged-out — show Sign in / Register, not avatar
-      setUser(u && u.emailVerified ? u : null);
+    const unsub = fbAuth().onAuthStateChanged(async (u) => {
+      if (!u) { setUser(null); return; }
+      // Email doğrulama kuralını backend uygular (rehber admin KYC onaylı, muaf).
+      // Oturumu backend /me ile teyit et — kayıtlı kullanıcıysa (turist/rehber/admin)
+      // navbar'da giriş yapmış göster. emailVerified'a bakmıyoruz (rehberi düşürüyordu).
+      try {
+        const token = await u.getIdToken();
+        const res = await fetch(`${API_BASE_URL}/api/auth/me`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        setUser(res.ok ? u : null);
+      } catch {
+        setUser(u); // ağ hatası → oturumu düşürme
+      }
     });
     return () => unsub();
   }, []);
