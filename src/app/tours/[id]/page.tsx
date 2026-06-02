@@ -498,6 +498,58 @@ export default function TourDetailPage() {
             </div>
           )}
 
+          {/* VibeSquad — grup büyüdükçe kişi başı ucuzlar (guideAmount ÷ kişi) */}
+          {tour.pricingTiers && tour.pricingTiers.length > 0 && (() => {
+            const tiers = [...tour.pricingTiers]
+              .filter((t) => t.participantCount > 0 && t.guideAmount > 0)
+              .sort((a, b) => a.participantCount - b.participantCount);
+            if (tiers.length === 0) return null;
+            const perPerson = (t: PricingTier) => t.guideAmount / t.participantCount;
+            const cheapest = Math.min(...tiers.map(perPerson));
+            return (
+              <div>
+                <h2 className="text-2xl font-black mb-1">VibeSquad — share &amp; save</h2>
+                <p className="text-sm text-neutral-500 mb-4">
+                  Join with other travelers — the bigger the group, the less each person pays.
+                </p>
+                <div className="rounded-2xl border border-black/[0.06] overflow-hidden">
+                  <table className="w-full text-sm">
+                    <thead className="bg-[#F7F7FB] border-b border-black/5">
+                      <tr>
+                        <th className="text-left px-5 py-3 font-black text-[#0A0A0F]">Group size</th>
+                        <th className="text-right px-5 py-3 font-black text-[#0A0A0F]">Price per person</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {tiers.map((t, i) => {
+                        const pp = perPerson(t);
+                        const isBest = pp === cheapest;
+                        return (
+                          <tr key={i} className="border-b border-black/5 last:border-0 hover:bg-[#F7F7FB]/60 transition-colors">
+                            <td className="px-5 py-3.5 text-neutral-600">
+                              {t.participantCount} {t.participantCount === 1 ? "person" : "people"}
+                              {isBest && (
+                                <span className="ml-2 inline-block rounded-full bg-[#6C4CF1]/10 px-2 py-0.5 text-[10px] font-black text-[#6C4CF1] align-middle">
+                                  BEST PRICE
+                                </span>
+                              )}
+                            </td>
+                            <td className="px-5 py-3.5 text-right font-black text-[#6C4CF1]">
+                              <Price amount={pp} currency={tour.currency} />
+                            </td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-xs text-neutral-400 mt-2">
+                  Per-person price shown for a full group. Final price is locked when the group is confirmed.
+                </p>
+              </div>
+            );
+          })()}
+
           <ReviewsSection tourId={tour.id} />
         </div>
 
