@@ -693,7 +693,7 @@ function PricingEditor({ id }: { id: number }) {
             Base: {cur} {base}.
           </p>
           <div className="space-y-2">
-            {[2, 3, 4].map((count) => {
+            {[2, 3, 4, 5, 6, 7, 8].map((count) => {
               const tiers = draft.pricingTiers ?? [];
               const tier = tiers.find((t) => t.participantCount === count);
               const perPersonStored = tier && tier.guideAmount > 0 ? tier.guideAmount / count : null;
