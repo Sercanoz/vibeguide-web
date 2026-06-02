@@ -504,7 +504,8 @@ export default function TourDetailPage() {
               .filter((t) => t.participantCount > 0 && t.guideAmount > 0)
               .sort((a, b) => a.participantCount - b.participantCount);
             if (tiers.length === 0) return null;
-            const perPerson = (t: PricingTier) => t.guideAmount / t.participantCount;
+            const perPerson = (t: PricingTier) =>
+              Math.round((t.guideAmount / t.participantCount) * 100) / 100;
             const cheapest = Math.min(...tiers.map(perPerson));
             return (
               <div>
