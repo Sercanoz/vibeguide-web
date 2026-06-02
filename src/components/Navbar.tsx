@@ -181,6 +181,11 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
               VibeSquad
             </a>
 
+            {/* VibeAsk */}
+            <a href="/vibeask" className="px-3.5 py-2 rounded-xl font-medium text-neutral-400 hover:text-[#0A0A0F] hover:bg-black/[0.04] transition-all">
+              VibeAsk
+            </a>
+
             {/* How it works */}
             <a href="/#how" className="px-3.5 py-2 rounded-xl font-medium text-neutral-400 hover:text-[#0A0A0F] hover:bg-black/[0.04] transition-all">
               {nb.howItWorks}
