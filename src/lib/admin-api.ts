@@ -228,6 +228,7 @@ export type TourSettings = {
   provinceId: number | null;
   districtId: number | null;
   status: string;
+  pricingTiers?: { participantCount: number; guideAmount: number }[];
 };
 
 export type TourImportantInfo = {

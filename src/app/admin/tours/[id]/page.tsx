@@ -711,6 +711,47 @@ function TourSettingsEditor({ id }: { id: number }) {
             className="w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-vg-primary" />
         </SField>
 
+        {/* VibeSquad pricing — rehbere ödenecek TOPLAM ücret (kişi sayısına göre).
+            Turist sayfasında kişi başı = guideAmount ÷ kişi olarak gösterilir. */}
+        <div>
+          <label className="block text-sm font-semibold text-vg-ink mb-1">VibeSquad pricing (guide total per group size)</label>
+          <p className="text-xs text-vg-muted mb-3">
+            Total amount paid to the guide for the whole group. Tourists see per-person = total ÷ group size, so bigger groups pay less each.
+          </p>
+          <div className="space-y-2">
+            {[2, 3, 4].map((count) => {
+              const tiers = draft.pricingTiers ?? [];
+              const tier = tiers.find((t) => t.participantCount === count);
+              const perPerson = tier && tier.guideAmount > 0
+                ? (tier.guideAmount / count).toFixed(2)
+                : null;
+              return (
+                <div key={count} className="flex items-center gap-3">
+                  <span className="text-sm text-vg-muted w-20">{count} people</span>
+                  <input
+                    type="number" min={0}
+                    value={tier?.guideAmount ?? ""}
+                    placeholder="guide total"
+                    onChange={(e) => {
+                      const val = e.target.value ? parseFloat(e.target.value) : 0;
+                      const others = (draft.pricingTiers ?? []).filter((t) => t.participantCount !== count);
+                      const next = val > 0
+                        ? [...others, { participantCount: count, guideAmount: val }]
+                        : others;
+                      next.sort((a, b) => a.participantCount - b.participantCount);
+                      set("pricingTiers", next);
+                    }}
+                    className="flex-1 bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-vg-primary"
+                  />
+                  <span className="text-xs text-vg-muted w-28 text-right">
+                    {perPerson ? `≈ ${perPerson} ${draft.currency ?? "EUR"}/person` : "—"}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
         <SField label="Languages offered">
           <LanguageMultiSelect
             value={draft.languagesOffered ?? ""}
