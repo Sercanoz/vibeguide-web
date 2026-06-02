@@ -9,7 +9,7 @@ export type ModeBenefit = { title: string; desc: string };
 export type ModeFaq = { q: string; a: string };
 
 export type Mode = {
-  slug: "vibenow" | "vibesquad" | "private";
+  slug: "vibenow" | "vibesquad" | "private" | "vibeask";
   name: string;
   emoji: string;
   color: string; // marka aksanı (hex)
@@ -115,6 +115,37 @@ export const MODES: Mode[] = [
       { q: "How far ahead should I book?", a: "Private tours are planned, so book ahead to secure your preferred guide and day." },
     ],
     ctaTitle: "Plan your private day",
+    screenshots: [],
+  },
+  {
+    slug: "vibeask",
+    name: "VibeAsk",
+    emoji: "💡",
+    color: "#6C4CF1",
+    tagline: "A local in your pocket. Free.",
+    metaTitle: "VibeAsk — Ask a Real Local Anything, Free | VibeGuide",
+    metaDescription:
+      "Lost? Curious? Wondering if a price is fair? Message a real, licensed local guide for free — instant answers, no tour required. Only on VibeGuide.",
+    heroSub:
+      "You don't always need a tour — sometimes you just need a local who actually knows. Ask anything, get a real answer in minutes. Completely free.",
+    steps: [
+      { title: "Tap VibeAsk", desc: "Right from the home screen — no booking, no commitment." },
+      { title: "Ask anything", desc: "“Is this carpet price normal?” “Best köfte nearby?” “How do I get to Topkapı?” Type it, send a photo, or voice note." },
+      { title: "A real local replies", desc: "A verified local guide answers you personally — usually within minutes." },
+      { title: "Explore with confidence", desc: "No tourist traps, no guessing. And if you want more, your local can show you in person." },
+    ],
+    benefits: [
+      { title: "Actually free", desc: "No fee, no catch. Ask before you ever book anything. This is how you meet your city." },
+      { title: "A real human, not AI", desc: "Not a chatbot. A licensed local who lives there and knows what tourists never find." },
+      { title: "Beat the tourist traps", desc: "Check a price, dodge a scam, find the real spot — a local in your corner, instantly." },
+    ],
+    faqs: [
+      { q: "Is VibeAsk really free?", a: "Yes. Ask a local guide anything at no cost — it's our way of welcoming you to the city." },
+      { q: "Who answers my questions?", a: "A real, verified local guide — not a bot. Someone who actually lives there and knows it inside out." },
+      { q: "What can I ask?", a: "Anything travel-related: food spots, fair prices, directions, what's worth it, what's open, hidden gems — whatever's on your mind." },
+      { q: "Do I have to book a tour?", a: "Never. VibeAsk is free help with no strings attached. If you love it, you can always book a tour later — but you don't have to." },
+    ],
+    ctaTitle: "Ask a local. Free, right now.",
     screenshots: [],
   },
 ];

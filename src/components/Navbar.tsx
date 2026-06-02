@@ -66,6 +66,7 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
     { href: "/tours", label: nb.tours, key: "tours" },
     { href: "/vibenow", label: "VibeNow" },
     { href: "/vibesquad", label: "VibeSquad" },
+    { href: "/vibeask", label: "VibeAsk" },
     { href: "/istanbul-tour-guide", label: "Istanbul" },
     { href: "/cappadocia-tour-guide", label: "Cappadocia" },
     { href: "/ephesus-tour-guide", label: "Ephesus" },
