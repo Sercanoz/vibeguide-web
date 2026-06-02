@@ -2089,7 +2089,7 @@ export const help: Record<HelpLocale, HelpDict> = {
       },
       {
         h: "Ödemeler nasıl çalışır?",
-        p: "Tüm ödemeler peşin olarak güvenli üçüncü taraf ödeme sağlayıcımız iyzico üzerinden işlenir. VibeGuide tam kart numaranı doğrudan saklamaz. Rezervasyon türüne göre şunlar kullanılabilir:",
+        p: "Tüm ödemeler güvenli ve lisanslı ödeme hizmet sağlayıcıları ile yetkili ödeme kuruluşları aracılığıyla işlenir. VibeGuide tam kart numarası veya CVV bilgilerini saklamaz. Rezervasyon türüne göre şunlar kullanılabilir:",
         list: [
           "Anlık ödeme — onaylanmış anlık eşleşmeler için",
           "Ödeme ön-otorizasyonu — VibeSquad havuzları için (geçici bloke, squad onaylanırsa tahsil edilir)",
@@ -2107,15 +2107,14 @@ export const help: Record<HelpLocale, HelpDict> = {
       },
       {
         h: "Rezervasyonu iptal edebilir miyim?",
-        p: "Evet. İade hakkı şunlara bağlıdır:",
+        p: "Evet. İade uygunluğu deneyim türüne, deneyime kalan süreye, rehber atanıp atanmadığına ve yürürlükteki İptal ve İade Politikası hükümlerine bağlıdır. Güncel koşullar için İptal ve İade Politikası'nı inceleyiniz.",
         list: [
-          "Deneyime kalan süre (24 saatten fazla = %100, 24 saatten az = %50, 2 saatten az = iade yok)",
           "Deneyim türü (Anlık / VibeSquad / Özel)",
           "Rehber atanmış olup olmadığı",
           "Grup onay durumu (VibeSquad için)",
-          "Yürürlükteki İptal Politikası ve yerel tüketici hukuku",
+          "Yürürlükteki İptal ve İade Politikası ve yerel tüketici hukuku",
         ],
-        p2: "Rezervasyondan önce İptal Politikasını incele. Tekrarlanan iptaller hesap durumunu etkileyebilir.",
+        p2: "Rezervasyondan önce İptal ve İade Politikasını incele. Tekrarlanan iptaller hesap durumunu etkileyebilir.",
       },
       {
         h: "Rehberim iptal ederse ne olur?",
@@ -2152,7 +2151,7 @@ export const help: Record<HelpLocale, HelpDict> = {
       },
       {
         h: "Kişisel bilgilerim güvende mi?",
-        p: "VibeGuide gizliliği ciddiye alır. İletimde HTTPS/TLS şifrelemesi, giriş için Firebase Authentication, gerçek uygulama yüklemelerini doğrulamak için App Check ve kart verisi için iyzico tokenize sistemi kullanırız. KVKK (Türkiye) ve GDPR (AB) ile uyumluyuz. Tam detaylar için Gizlilik Politikasına bak.",
+        p: "VibeGuide gizliliği ciddiye alır. İletimde HTTPS/TLS şifrelemesi, giriş için Firebase Authentication ve gerçek uygulama yüklemelerini doğrulamak için App Check kullanırız. Ödeme verileri, kullanılan lisanslı ödeme hizmet sağlayıcıları tarafından güvenli şekilde işlenir ve korunur; VibeGuide tam kart bilgilerini saklamaz. VibeGuide, KVKK ve uygulanabildiği durumlarda GDPR dahil olmak üzere yürürlükteki veri koruma mevzuatına uygun hareket etmeyi amaçlamaktadır. Tam detaylar için Gizlilik Politikasına bak.",
       },
       {
         h: "Hesabımı silebilir miyim?",
@@ -2189,8 +2188,18 @@ export const help: Record<HelpLocale, HelpDict> = {
         list: [
           `Destek: ${SUPPORT_EMAIL}`,
           `Genel sorular: ${SUPPORT_EMAIL}`,
-          `Gizlilik talepleri: ${KVKK_EMAIL}`,
+          `Gizlilik ve kişisel veri talepleri: ${SUPPORT_EMAIL}`,
           `Hukuki sorular: ${SUPPORT_EMAIL}`,
+        ],
+      },
+      {
+        h: "Şirket Bilgileri",
+        list: [
+          "VİBECORE TURİZM SEYAHAT ACENTASI VE DİJİTAL HİZMETLER TİCARET LİMİTED ŞİRKETİ",
+          "Vergi No: 9251328389",
+          "Ticaret Sicil No: 12686",
+          "Beldibi Mah. Belmar Sk. No:9/1 İç Kapı No:4, Marmaris / Muğla / Türkiye",
+          `${SUPPORT_EMAIL}`,
         ],
       },
     ],
