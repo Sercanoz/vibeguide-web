@@ -222,7 +222,7 @@ export const privacy: Record<ExtendedLocale, PrivacyDict> = {
     sections: [
       {
         h: "1. Şirket bilgileri",
-        p: `VibeGuide; İstanbul, Türkiye merkezli ${COMPANY_LEGAL} tarafından işletilmektedir. Aşağıda açıklanan kişisel veriler için veri sorumlusu, mobil uygulama ve ${APP_DOMAIN} adresi üzerinden işleten yukarıdaki şirkettir. Gizlilik soruları için: ${SUPPORT_EMAIL}. KVKK özelinde: ${KVKK_EMAIL}.`,
+        p: `VibeGuide, VİBECORE TURİZM SEYAHAT ACENTASI VE DİJİTAL HİZMETLER TİCARET LİMİTED ŞİRKETİ tarafından işletilmektedir. Bu Gizlilik Politikası kapsamında veri sorumlusu, mobil uygulama ve ${APP_DOMAIN} adresi üzerinden sunulan hizmetleri işleten VİBECORE TURİZM SEYAHAT ACENTASI VE DİJİTAL HİZMETLER TİCARET LİMİTED ŞİRKETİ'dir. Gizlilik, veri koruma ve kişisel veri talepleri için: ${SUPPORT_EMAIL}.`,
       },
       {
         h: "2. Toplanan bilgiler",
@@ -235,8 +235,8 @@ export const privacy: Record<ExtendedLocale, PrivacyDict> = {
           "Rehber ödeme/IBAN verisi: yalnızca rehberlerden, haftalık tur gelirlerinin transferi amacıyla alınan hesap sahibi adı, IBAN ve banka ülkesi. Finansal veri olarak ele alınır ve yalnızca ödeme/finans ekibi erişebilir.",
           "Grup deneyimi (VibeSquad) verisi: bir VibeSquad havuzu oluşturduğunuzda veya katıldığınızda; adınız ve profil fotoğrafınız o havuzdaki diğer katılımcılara görünür hale gelir. Maliyet paylaşımı hesaplamaları katılımcı düzeyinde kaydedilir.",
           "Paylaşılan tur linkleri: \"Tripini paylaş\" özelliğini kullanırsanız, alıcının tur devam ederken rehberinizin adını ve canlı konumunu görmesini sağlayan bir token üretilir. Link, tur biter bitmez otomatik geçersiz hale gelir. Paylaşımı istediğiniz zaman iptal edebilirsiniz.",
-          "Ödeme bilgileri: sınırlı ödeme meta-verisi (ödeme durumu, işlem ID'si, kullanılabildiği yerde kart son hanesi, iade durumu, gerektiğinde fatura bilgisi, komisyon kırılımı). Tam kart numaranızı doğrudan saklamayız — kart bilgileri ödeme sağlayıcımız iyzico tarafından işlenir.",
-          "Konum bilgisi: izninizle, tur sırasında hassas cihaz konumu toplanır ve eşleşilen karşı tarafa anlık olarak gönderilir. Arka plan konumu yalnızca \"online\" durumdaki rehberler için toplanır. Yakındaki rehberleri göstermek, anlık deneyimleri etkinleştirmek, eşleşmeyi iyileştirmek ve güvenlik operasyonlarını desteklemek için kullanılır. Konum izinlerini cihaz ayarlarınızdan kapatabilirsiniz.",
+          "Ödeme bilgileri: sınırlı ödeme meta-verisi (ödeme durumu, işlem ID'si, kullanılabildiği yerde kart son hanesi, iade durumu, gerektiğinde fatura bilgisi, komisyon kırılımı). Tam kart numaranızı, CVV kodunuzu veya ödeme kartı güvenlik bilgilerinizi doğrudan saklamayız. Ödeme işlemleri lisanslı ödeme hizmet sağlayıcıları ve yetkili ödeme kuruluşları tarafından gerçekleştirilir.",
+          "Konum bilgisi: izninizle, tur sırasında hassas cihaz konumu toplanır ve eşleşilen karşı tarafa anlık olarak gönderilir. Arka plan konumu yalnızca \"online\" durumdaki rehberler için toplanır. Yakındaki rehberleri göstermek, anlık deneyimleri etkinleştirmek, eşleşmeyi iyileştirmek ve güvenlik operasyonlarını desteklemek için kullanılır. Konum izinlerini cihaz ayarlarınızdan kapatabilirsiniz. Canlı konum paylaşımı, deneyimin sona ermesiyle veya kullanıcının ilgili izni geri çekmesiyle otomatik olarak sonlandırılır.",
           "Cihaz ve teknik bilgiler: cihaz türü, işletim sistemi, IP adresi, uygulama sürümü, tarayıcı türü, dil ayarları, çökme kayıtları, kullanım verisi, FCM bildirim token'ı, çerezler veya benzeri tanımlayıcılar.",
           "İletişim bilgileri: rehberlerle uygulama içi mesajlar, destek talepleri, e-postalar, şikayetler, yorumlar ve platform üzerinden gönderilen diğer iletişimler.",
           "Kullanım verisi: tur talepleri, puanlar, mesajlar, iptal geçmişi ve eşleştirme algoritmamızın kullandığı davranışsal metrikler (zamanında olma oranı, tamamlama oranı, penalty sayaçları).",
@@ -278,7 +278,7 @@ export const privacy: Record<ExtendedLocale, PrivacyDict> = {
           "Rehberler ve hizmet sağlayıcılar — rezerve edilen deneyimleri sunmak için gerekli rezervasyon bilgilerini (adınız, profil fotoğrafı, tur sırasında konum, mesajlar, tur tercihleri) atanmış rehberle yalnızca aktif rezervasyon için paylaşırız.",
           "Diğer VibeSquad katılımcıları — aynı havuz içinde, adınız ve profil fotoğrafınız o havuza katılan diğer gezginlere görünür. Havuz dışında kimliğiniz açığa çıkarılmaz.",
           "Paylaştığınız linki alanlar — \"Share my trip\" linkini gönderdiğiniz kişi, tur devam ettiği sürece (link iptal edilene veya geçersiz hale gelene kadar) rehberinizin adını ve canlı konumunu görür.",
-          "Ödeme sağlayıcıları (iyzico) — ödemeleri, otorizasyonları, iadeleri ve dolandırıcılık kontrollerini işlemek için. Kendi KVKK/GDPR şartlarına tabidir.",
+          "Lisanslı ödeme hizmet sağlayıcıları ve yetkili ödeme kuruluşları — ödemeleri, otorizasyonları, iadeleri ve dolandırıcılık kontrollerini işlemek için gerekli verileri işler. Bu kuruluşlar kendi gizlilik politikaları ve yasal yükümlülükleri kapsamında faaliyet göstermektedir.",
           "Bankalar ve ödeme aracıları — yalnızca rehberler için, haftalık ödemenin gerçekleşmesi amacıyla IBAN ve hesap sahibi adı rehberin bankasına iletilir.",
           "Teknoloji sağlayıcıları — barındırma (Firebase, Railway, Cloudflare), analitik (Firebase Analytics — anonimleştirilmiş), hata raporu (Sentry — anonimleştirilmiş), bildirim, müşteri desteği, güvenlik, platform operasyonları.",
           "Yetkili kamu kurumları — yasa, mahkeme kararı, düzenleyici talep veya hakları, güvenliği ve emniyeti korumak için gerektiğinde.",
@@ -297,7 +297,7 @@ export const privacy: Record<ExtendedLocale, PrivacyDict> = {
           "Rıza verildiği yerde pazarlamayı iyileştirmek",
           "Dolandırıcılığı tespit etmek",
           "Tercihleri (dil, tema) hatırlamak",
-          "Mobil uygulama Firebase (kimlik, push, depolama), Sentry (hata raporu) ve iyzico (ödeme) SDK'larını kullanır. Davranışsal reklam takipçisi içermez.",
+          "Mobil uygulama Firebase (kimlik doğrulama, bildirim ve depolama), Sentry (hata raporlama) ve gerekli durumlarda lisanslı ödeme hizmet sağlayıcılarına ait entegrasyonları kullanabilir. Davranışsal reklam takipçisi içermez.",
           "Çerezleri tarayıcı ayarlarınızdan kontrol edebilirsiniz. Bazı çerezler olmadan bazı özellikler düzgün çalışmayabilir.",
         ],
       },
@@ -344,7 +344,7 @@ export const privacy: Record<ExtendedLocale, PrivacyDict> = {
           "İtiraz — meşru menfaate dayalı işlemeye, doğrudan pazarlama ve rehber-güvenilirlik puanlaması dahil.",
           "Taşınabilirlik — verilerinizi makine-okur formatta almak.",
           "Rızayı geri çekme — daha önceki işlemelerin geçerliliğini etkilemeden.",
-          `Şikâyet — Kişisel Verileri Koruma Kurulu'na (kvkk.gov.tr). Bu hakları kullanmak için kayıtlı adresinizden ${KVKK_EMAIL} adresine yazın — 30 gün içinde yanıt veririz.`,
+          `Şikâyet — Kişisel Verileri Koruma Kurulu'na (kvkk.gov.tr). Bu hakları kullanmak için ${SUPPORT_EMAIL} adresi üzerinden bizimle iletişime geçebilirsiniz. Talepleriniz yürürlükteki mevzuata uygun olarak değerlendirilir ve en geç 30 gün içerisinde yanıtlanır.`,
         ],
       },
       {
@@ -353,11 +353,11 @@ export const privacy: Record<ExtendedLocale, PrivacyDict> = {
       },
       {
         h: "12. Uluslararası veri aktarımları",
-        p: "Bilgileriniz ikamet ettiğiniz ülke dışındaki ülkelerde işlenebilir veya saklanabilir. Bazı işleyiciler (Google Firebase, Sentry, Cloudflare) ABD ve AB'de faaliyet gösterir. Aktarımlar AB Standart Sözleşme Hükümleri ve uygun olduğunda KVKB onaylı taahhütler ile korunur. VibeGuide uluslararası aktarımlar sırasında kişisel bilgileri korumak için makul önlemleri alır.",
+        p: "Bilgileriniz ikamet ettiğiniz ülke dışındaki ülkelerde işlenebilir veya saklanabilir. Bazı işleyiciler (Google Firebase, Sentry, Cloudflare) ABD ve AB'de faaliyet gösterir. Bu tür aktarımlar yürürlükteki veri koruma mevzuatında öngörülen uygun güvenlik tedbirleri ve gerekli hukuki mekanizmalar çerçevesinde gerçekleştirilir. VibeGuide uluslararası aktarımlar sırasında kişisel bilgileri korumak için makul önlemleri alır.",
       },
       {
         h: "13. Veri güvenliği",
-        p: "Kişisel bilgileri korumak için makul teknik ve idari önlemler alırız. Tüm trafik şifreli iletilir (HTTPS/TLS 1.2+). Kimlik doğrulama Firebase ID token'larıyla yapılır; ödeme verisi iyzico tarafından tokenize edilir ve sunucularımızda saklanmaz. Yalnızca gerçek bir uygulama yüklemesinden gelen isteklerin kabul edilmesi için App Check kullanırız. Bu önlemlere rağmen hiçbir dijital sistem %100 güvenli değildir — hesap bilgilerinizin gizliliğinden siz sorumlusunuz ve güçlü parola ile mümkün olduğunda iki adımlı doğrulamayı öneririz.",
+        p: "Kişisel bilgileri korumak için makul teknik ve idari önlemler alırız. Tüm trafik şifreli iletilir (HTTPS/TLS 1.2+). Kimlik doğrulama Firebase ID token'larıyla yapılır; ödeme verileri, kullanılan lisanslı ödeme hizmet sağlayıcıları tarafından güvenli şekilde işlenir ve korunur; tam kart bilgileri VibeGuide sistemlerinde saklanmaz. Yalnızca gerçek bir uygulama yüklemesinden gelen isteklerin kabul edilmesi için App Check kullanırız. Bu önlemlere rağmen hiçbir dijital sistem %100 güvenli değildir — hesap bilgilerinizin gizliliğinden siz sorumlusunuz ve güçlü parola ile mümkün olduğunda iki adımlı doğrulamayı öneririz.",
       },
       {
         h: "14. Çocukların gizliliği",
@@ -371,7 +371,7 @@ export const privacy: Record<ExtendedLocale, PrivacyDict> = {
         h: "16. Bu Gizlilik Politikasındaki değişiklikler",
         p: "Bu Gizlilik Politikasını zaman zaman güncelleyebiliriz. Güncellenmiş versiyon yeni \"Son güncelleme\" tarihi ile yayınlanır. Esaslı değişiklikler en az 14 gün önceden uygulama içi ve e-posta ile bildirilir. Yürürlük tarihinden sonra VibeGuide kullanımı güncellenmiş Politikanın kabulü anlamına gelir.",
       },
-      { h: "17. İletişim", p: `Gizlilik soruları veya veri talepleri için: ${SUPPORT_EMAIL}. KVKK özelinde: ${KVKK_EMAIL}.` },
+      { h: "17. İletişim", p: `Gizlilik, veri koruma ve kişisel veri talepleri için: ${SUPPORT_EMAIL}`, p2: "VibeGuide uygulamasını, web sitesini veya ilgili hizmetleri kullanarak işbu Gizlilik Politikası'nı okuduğunuzu, anladığınızı ve kabul ettiğinizi beyan etmiş olursunuz." },
     ],
   },
   ru: {
