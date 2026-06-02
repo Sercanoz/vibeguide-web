@@ -130,7 +130,7 @@ export const MODES: Mode[] = [
       "You don't always need a tour — sometimes you just need a local who actually knows. Ask anything, get a real answer in minutes. Completely free.",
     steps: [
       { title: "Tap VibeAsk", desc: "Right from the home screen — no booking, no commitment." },
-      { title: "Ask anything", desc: "“Is this carpet price normal?” “Best köfte nearby?” “How do I get to Topkapı?” Type it, send a photo, or voice note." },
+      { title: "Ask anything", desc: "“What can I eat nearby?” “How do I get to Topkapı?” “Is this place worth it?” Type it, send a photo, or voice note." },
       { title: "A real local replies", desc: "A verified local guide answers you personally — usually within minutes." },
       { title: "Explore with confidence", desc: "No tourist traps, no guessing. And if you want more, your local can show you in person." },
     ],
