@@ -1,111 +1,168 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import LegalMarkdown from "@/components/LegalMarkdown";
 
 export const metadata: Metadata = {
   title: "KVKK Aydınlatma Metni | VibeGuide",
   description: "VibeGuide kişisel verilerin korunması (KVKK 6698) aydınlatma metni.",
 };
 
+const BODY = `
+## 1. Veri Sorumlusu
+
+6698 Sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") uyarınca, kişisel verileriniz veri sorumlusu sıfatıyla aşağıda bilgileri yer alan şirketimiz tarafından işlenmektedir.
+
+**Unvan:** VİBECORE TURİZM SEYAHAT ACENTASI VE DİJİTAL HİZMETLER TİCARET LİMİTED ŞİRKETİ
+
+**Adres:** Beldibi Mah. Belmar Sk. No:9/1 İç Kapı No:4, Marmaris / Muğla / Türkiye
+
+**Vergi Dairesi:** Marmaris Vergi Dairesi
+**Vergi Numarası:** 9251328389
+
+**E-posta:** [support@vibeguideapp.com](mailto:support@vibeguideapp.com)
+**Telefon:** +90 530 828 76 96
+
+## 2. İşlenen Kişisel Veriler
+
+Platformumuzu kullanım şeklinize bağlı olarak aşağıdaki kişisel verileriniz işlenebilir:
+
+### Kimlik Bilgileri
+* Ad
+* Soyad
+
+### İletişim Bilgileri
+* E-posta adresi
+* Telefon numarası (varsa)
+
+### Hesap ve Profil Bilgileri
+* Kullanıcı kimliği
+* Profil tercihleri
+* Dil seçimi
+* Profil fotoğrafı (varsa)
+
+### Rehber Doğrulama Bilgileri
+Rehber olarak başvuru yapılması halinde; turist rehberi kokartı, rehber lisansı, mesleki doğrulama belgeleri ve başvuru/doğrulama bilgileri yalnızca rehber doğrulama süreçlerinin yürütülmesi, mevzuata uyumun sağlanması ve platform güvenliğinin korunması amaçlarıyla işlenebilir.
+
+### İşlem ve Rezervasyon Bilgileri
+* Rezervasyon kayıtları
+* Tur geçmişi
+* Katılım bilgileri
+* Tur tercihleri
+* Değerlendirme ve yorumlar
+* İptal ve iade kayıtları
+* Hizmet kullanım kayıtları
+
+### Konum Bilgileri
+Konum verileri yalnızca açık rızanız bulunması halinde ve hizmetin sunulabilmesi amacıyla rehber-turist eşleşmesi veya ilgili hizmet süreçlerinde işlenebilir.
+
+### Teknik ve Kullanım Verileri
+* IP adresi
+* Cihaz bilgileri
+* İşletim sistemi bilgileri
+* Çerez verileri
+* Uygulama kullanım kayıtları
+* Hata ve performans kayıtları
+
+**Önemli Not:** Ödeme kartı bilgileriniz VibeGuide tarafından saklanmaz. Tüm ödeme işlemleri ilgili mevzuata uygun şekilde lisanslı ödeme kuruluşları tarafından yürütülmektedir.
+
+## 3. Kişisel Verilerin Toplanma Yöntemi
+
+Kişisel verileriniz aşağıdaki yöntemlerle elektronik veya fiziksel ortamda toplanabilmektedir:
+
+* Mobil uygulama
+* Web sitesi
+* Kullanıcı kayıt formları
+* Rehber başvuru formları
+* Rezervasyon işlemleri
+* Çerezler ve benzeri teknolojiler
+* Müşteri destek talepleri
+* E-posta ve diğer iletişim kanalları
+* Yasal yükümlülükler kapsamında oluşturulan kayıtlar
+
+## 4. Kişisel Verilerin İşlenme Amaçları
+
+* Üyelik ve hesap oluşturma süreçlerinin yürütülmesi
+* Kimlik doğrulama işlemlerinin gerçekleştirilmesi
+* Turizm, rehberlik ve rezervasyon hizmetlerinin sunulması
+* Rehber ve turist eşleşmesinin sağlanması
+* Tur ve rezervasyon süreçlerinin yönetilmesi
+* Ödeme ve muhasebe işlemlerinin yürütülmesi
+* Faturalandırma süreçlerinin gerçekleştirilmesi
+* Müşteri destek hizmetlerinin sunulması
+* Hizmet kalitesinin ölçülmesi ve geliştirilmesi
+* Platform güvenliğinin sağlanması
+* Dolandırıcılık, kötüye kullanım ve yetkisiz işlemlerin önlenmesi
+* Yasal yükümlülüklerin yerine getirilmesi
+* İstatistiksel analizlerin yapılması
+* Açık rızanız bulunması halinde kampanya, duyuru ve bilgilendirme içeriklerinin gönderilmesi
+
+## 5. Kişisel Verilerin İşlenmesinin Hukuki Sebepleri
+
+Kişisel verileriniz KVKK'nın 5. maddesi kapsamında aşağıdaki hukuki sebeplere dayanılarak işlenmektedir:
+
+* Bir sözleşmenin kurulması veya ifasıyla doğrudan ilgili olması
+* Veri sorumlusunun hukuki yükümlülüğünü yerine getirmesi
+* Bir hakkın tesisi, kullanılması veya korunması
+* Veri sorumlusunun meşru menfaatlerinin bulunması
+* Kanunlarda açıkça öngörülmesi
+* Gerekli durumlarda açık rızanızın bulunması
+
+## 6. Kişisel Verilerin Aktarılması
+
+Kişisel verileriniz yalnızca hizmetin sunulabilmesi için gerekli olduğu ölçüde aşağıdaki taraflarla paylaşılabilir:
+
+* Eşleştiğiniz rehber veya turist
+* Lisanslı ödeme kuruluşları
+* Muhasebe ve finans hizmet sağlayıcıları
+* Teknik altyapı ve bulut hizmet sağlayıcıları
+* Yetkili kamu kurum ve kuruluşları
+* Mahkemeler ve yasal merciler
+
+Kişisel verileriniz, aktarım amacıyla sınırlı ve gerekli olduğu ölçüde paylaşılmaktadır.
+
+## 7. Yurt Dışına Veri Aktarımı
+
+Platformumuzun çalışabilmesi amacıyla kullanılan bulut altyapıları, kimlik doğrulama sistemleri, veri depolama hizmetleri ve teknik hizmet sağlayıcılarının sunucuları yurt dışında bulunabilmektedir. Bu kapsamda kişisel verileriniz, KVKK'nın 9. maddesi ve ilgili mevzuat hükümlerine uygun şekilde yurt dışında bulunan hizmet sağlayıcılarının sistemlerinde işlenebilir veya saklanabilir.
+
+## 8. KVKK Kapsamındaki Haklarınız
+
+KVKK'nın 11. maddesi uyarınca aşağıdaki haklara sahipsiniz:
+
+* Kişisel verilerinizin işlenip işlenmediğini öğrenme
+* İşlenmişse buna ilişkin bilgi talep etme
+* İşlenme amacını öğrenme
+* Verilerin amacına uygun kullanılıp kullanılmadığını öğrenme
+* Verilerin aktarıldığı üçüncü kişileri öğrenme
+* Eksik veya yanlış işlenmiş verilerin düzeltilmesini isteme
+* Verilerin silinmesini veya yok edilmesini isteme
+* Düzeltme veya silme işlemlerinin üçüncü kişilere bildirilmesini isteme
+* Otomatik sistemler aracılığıyla analiz edilmesi sonucu ortaya çıkan sonuçlara itiraz etme
+* Kanuna aykırı işleme nedeniyle zarara uğranması halinde tazminat talep etme
+
+## 9. Başvuru Hakkı
+
+KVKK kapsamındaki haklarınıza ilişkin taleplerinizi ilgili mevzuatta belirtilen usul ve esaslara uygun olarak aşağıdaki iletişim adresi üzerinden tarafımıza iletebilirsiniz:
+
+**E-posta:** [support@vibeguideapp.com](mailto:support@vibeguideapp.com)
+
+Başvurularınız, KVKK ve ilgili mevzuat hükümleri doğrultusunda en geç 30 gün içerisinde değerlendirilerek sonuçlandırılacaktır.
+
+## 10. Veri Güvenliği ve Saklama Süreleri
+
+Şirketimiz, kişisel verilerinizi yetkisiz erişim, kayıp, kötüye kullanım, değiştirme veya hukuka aykırı ifşaya karşı korumak amacıyla uygun teknik ve idari güvenlik tedbirlerini uygulamaktadır. Bu kapsamda SSL/TLS şifreleme teknolojileri, erişim kontrol sistemleri, yetkilendirme mekanizmaları, güvenlik izleme süreçleri ve düzenli sistem güncellemeleri gibi koruyucu önlemler kullanılmaktadır.
+
+Kişisel verileriniz, işlenme amaçlarının gerektirdiği süre boyunca ve ilgili mevzuatta öngörülen yasal saklama süreleri kadar muhafaza edilir. Sürelerin sona ermesi halinde veriler silinir, yok edilir veya anonim hale getirilir.
+
+---
+
+İlgili Belgeler: [Gizlilik Politikası](/privacy) · [Çerez Politikası](/cerez-politikasi) · [Kullanım Koşulları](/terms)
+`;
+
 export default function KvkkPage() {
   return (
-    <main className="min-h-screen bg-white text-[#0A0A0F]">
-      <nav className="border-b border-black/[0.06] px-6 h-16 flex items-center">
-        <Link href="/" className="text-xl font-black tracking-tight">VibeGuide</Link>
-      </nav>
-
-      <div className="mx-auto max-w-3xl px-6 py-16">
-        <h1 className="text-3xl font-black mb-2">KVKK Aydınlatma Metni</h1>
-        <p className="text-sm text-neutral-400 mb-10">6698 sayılı Kişisel Verilerin Korunması Kanunu · Son güncelleme: Ocak 2026</p>
-
-        <div className="space-y-8 text-sm text-neutral-700 leading-7">
-
-          <section>
-            <h2 className="font-black text-base mb-3">1 — VERİ SORUMLUSU</h2>
-            <p>6698 sayılı Kişisel Verilerin Korunması Kanunu (&ldquo;KVKK&rdquo;) uyarınca, kişisel verileriniz; veri sorumlusu sıfatıyla aşağıda bilgileri yer alan şirketimiz tarafından işlenmektedir.</p>
-            <div className="mt-3 space-y-1">
-              <p>Unvan: VİBECORE TURİZM SEYAHAT ACENTASI VE DİJİTAL HİZMETLER TİCARET LİMİTED ŞİRKETİ</p>
-              <p>Adres: Beldibi Mah. Belmar Sk. No:9/1 İç Kapı No:4 Marmaris/Muğla, Türkiye</p>
-              <p>Vergi No: 9251328389 · Vergi Dairesi: Marmaris V.D.</p>
-              <p>E-posta: support@vibeguideapp.com</p>
-              <p>Telefon: +90 530 828 76 96</p>
-            </div>
-          </section>
-
-          <section>
-            <h2 className="font-black text-base mb-3">2 — İŞLENEN KİŞİSEL VERİLER</h2>
-            <p>Platformumuzu kullanımınıza bağlı olarak aşağıdaki kişisel verileriniz işlenebilir:</p>
-            <ul className="list-disc pl-5 mt-2 space-y-1">
-              <li><strong>Kimlik bilgileri:</strong> ad, soyad</li>
-              <li><strong>İletişim bilgileri:</strong> e-posta adresi, (varsa) telefon numarası</li>
-              <li><strong>Hesap bilgileri:</strong> kullanıcı kimliği, profil tercihleri, dil seçimi</li>
-              <li><strong>Rehber başvurusu kapsamında:</strong> meslek kokart/lisans görselleri (yalnızca doğrulama amacıyla)</li>
-              <li><strong>İşlem bilgileri:</strong> rezervasyon geçmişi, değerlendirmeler</li>
-              <li><strong>Konum bilgileri:</strong> hizmet sırasında, yalnızca açık rızanızla, rehber-turist eşleşmesi için</li>
-              <li><strong>Teknik veriler:</strong> IP adresi, cihaz bilgisi, çerez verileri, kullanım istatistikleri</li>
-            </ul>
-            <p className="mt-2">Ödeme kartı bilgileriniz VibeGuide sunucularında saklanmaz; ödemeler lisanslı ödeme kuruluşu altyapısı üzerinden işlenir.</p>
-          </section>
-
-          <section>
-            <h2 className="font-black text-base mb-3">3 — KİŞİSEL VERİLERİN İŞLENME AMAÇLARI</h2>
-            <ul className="list-disc pl-5 mt-2 space-y-1">
-              <li>Üyelik ve hesap oluşturma, kimlik doğrulama</li>
-              <li>Turizm ve rehberlik hizmetlerinin sunulması, rezervasyonların yönetimi</li>
-              <li>Rehber-turist eşleşmesinin sağlanması</li>
-              <li>Müşteri destek taleplerinin karşılanması</li>
-              <li>Yasal yükümlülüklerin yerine getirilmesi (fatura, vergi, mevzuat)</li>
-              <li>Hizmet kalitesinin ölçülmesi ve geliştirilmesi</li>
-              <li>Güvenliğin sağlanması, dolandırıcılığın önlenmesi</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="font-black text-base mb-3">4 — İŞLEMENİN HUKUKİ SEBEPLERİ</h2>
-            <p>Kişisel verileriniz KVKK&rsquo;nın 5. maddesi uyarınca; sözleşmenin kurulması veya ifası, hukuki yükümlülüğün yerine getirilmesi, meşru menfaat ve gerektiğinde açık rızanız hukuki sebeplerine dayanılarak işlenir.</p>
-          </section>
-
-          <section>
-            <h2 className="font-black text-base mb-3">5 — KİŞİSEL VERİLERİN AKTARILMASI</h2>
-            <p>Kişisel verileriniz; hizmetin sunulması için gerekli olduğu ölçüde, yalnızca aşağıdaki taraflara aktarılabilir:</p>
-            <ul className="list-disc pl-5 mt-2 space-y-1">
-              <li>Eşleştiğiniz rehber/turist (yalnızca hizmet için gerekli asgari bilgi)</li>
-              <li>Lisanslı ödeme kuruluşu (ödeme işlemleri için)</li>
-              <li>Barındırma ve altyapı hizmet sağlayıcıları (Firebase, bulut sunucu)</li>
-              <li>Yasal mercilerin talebi halinde yetkili kamu kurum ve kuruluşları</li>
-            </ul>
-            <p className="mt-2">Bazı altyapı sağlayıcılarımız yurt dışında bulunabilir; bu durumda aktarım KVKK&rsquo;nın 9. maddesine uygun olarak yapılır.</p>
-          </section>
-
-          <section>
-            <h2 className="font-black text-base mb-3">6 — KVKK MADDE 11 KAPSAMINDAKİ HAKLARINIZ</h2>
-            <p>KVKK&rsquo;nın 11. maddesi uyarınca veri sahibi olarak aşağıdaki haklara sahipsiniz:</p>
-            <ul className="list-disc pl-5 mt-2 space-y-1">
-              <li>Kişisel verilerinizin işlenip işlenmediğini öğrenme</li>
-              <li>İşlenmişse buna ilişkin bilgi talep etme</li>
-              <li>İşlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme</li>
-              <li>Eksik veya yanlış işlenmiş verilerin düzeltilmesini isteme</li>
-              <li>Verilerin silinmesini veya yok edilmesini isteme</li>
-              <li>Düzeltme/silme işlemlerinin aktarıldığı üçüncü kişilere bildirilmesini isteme</li>
-              <li>Otomatik sistemlerle analiz sonucu aleyhinize bir sonuç çıkmasına itiraz etme</li>
-              <li>Kanuna aykırı işleme nedeniyle zarara uğramanız halinde zararın giderilmesini talep etme</li>
-            </ul>
-            <p className="mt-2">Bu haklarınızı kullanmak için <a href="mailto:support@vibeguideapp.com" className="text-[#6C4CF1] font-semibold">support@vibeguideapp.com</a> adresine başvurabilirsiniz. Talepleriniz en geç 30 gün içinde sonuçlandırılır.</p>
-          </section>
-
-          <section>
-            <h2 className="font-black text-base mb-3">7 — VERİ GÜVENLİĞİ VE SAKLAMA</h2>
-            <p>Kişisel verileriniz, işlenme amacının gerektirdiği süre boyunca ve ilgili mevzuatta öngörülen süreler kadar saklanır; süre sonunda silinir, yok edilir veya anonim hale getirilir. Verilerinizin güvenliği için SSL şifreleme, erişim kontrolü ve uygun teknik/idari tedbirler uygulanmaktadır.</p>
-          </section>
-
-          <div className="pt-6 border-t border-black/[0.06] text-xs text-neutral-400">
-            <p>İlgili belgeler:
-              {" "}<Link href="/privacy" className="text-[#6C4CF1]">Gizlilik Politikası</Link> ·
-              {" "}<Link href="/cerez-politikasi" className="text-[#6C4CF1]">Çerez Politikası</Link> ·
-              {" "}<Link href="/terms" className="text-[#6C4CF1]">Kullanım Koşulları</Link>
-            </p>
-          </div>
-        </div>
-      </div>
-    </main>
+    <LegalMarkdown
+      title="KVKK Aydınlatma Metni"
+      subtitle="6698 Sayılı Kişisel Verilerin Korunması Kanunu (KVKK) · Son Güncelleme: 2 Ocak 2026"
+      body={BODY}
+    />
   );
 }
