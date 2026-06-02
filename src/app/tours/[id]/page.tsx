@@ -498,37 +498,6 @@ export default function TourDetailPage() {
             </div>
           )}
 
-          {tour.pricingTiers && tour.pricingTiers.length > 0 && (
-            <div>
-              <h2 className="text-2xl font-black mb-4">Pricing</h2>
-              <div className="rounded-2xl border border-black/[0.06] overflow-hidden">
-                <table className="w-full text-sm">
-                  <thead className="bg-[#F7F7FB] border-b border-black/5">
-                    <tr>
-                      <th className="text-left px-5 py-3 font-black text-[#0A0A0F]">Group Size</th>
-                      <th className="text-right px-5 py-3 font-black text-[#0A0A0F]">Guide Price</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {tour.pricingTiers.map((tier, i) => (
-                      <tr key={i} className="border-b border-black/5 last:border-0 hover:bg-[#F7F7FB]/60 transition-colors">
-                        <td className="px-5 py-3.5 text-neutral-600">
-                          {tier.participantCount === 1
-                            ? "1 person"
-                            : `${tier.participantCount}+ people`}
-                        </td>
-                        <td className="px-5 py-3.5 text-right font-black text-[#6C4CF1]">
-                          <Price amount={tier.guideAmount} currency={tour.currency} />
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              <p className="text-xs text-neutral-400 mt-2">Prices are per guide, not per person.</p>
-            </div>
-          )}
-
           <ReviewsSection tourId={tour.id} />
         </div>
 
