@@ -39,7 +39,7 @@ export default function AdminTourEditor(props: Props) {
   return <Editor id={id} />;
 }
 
-type Tab = "tour" | "places" | "photos" | "meeting" | "includes" | "info" | "qr" | "settings";
+type Tab = "tour" | "places" | "photos" | "meeting" | "includes" | "info" | "pricing" | "qr" | "settings";
 
 function Editor({ id }: { id: number }) {
   const [tab, setTab] = useState<Tab>("tour");
@@ -98,6 +98,7 @@ function Editor({ id }: { id: number }) {
           ["meeting", "🗺️ Meeting point"],
           ["includes", "✓ Includes"],
           ["info", "⚠️ Important info"],
+          ["pricing", "💶 Pricing"],
           ["qr", "📱 QR / Reviews"],
           ["settings", "⚙️ Settings"],
         ] as [Tab, string][]).map(([t, label]) => (
@@ -127,6 +128,8 @@ function Editor({ id }: { id: number }) {
         <IncludesEditor tourId={id} />
       ) : tab === "info" ? (
         <ImportantInfoEditor tourId={id} />
+      ) : tab === "pricing" ? (
+        <PricingEditor id={id} />
       ) : tab === "qr" ? (
         <QrReviewPanel tourId={id} />
       ) : (
@@ -619,6 +622,127 @@ function Field({
   );
 }
 
+// ─── Pricing Editor (base + VibeSquad per-person %) ───────────────────────────
+
+function PricingEditor({ id }: { id: number }) {
+  const [draft, setDraft] = useState<Partial<TourSettings>>({});
+  const [loaded, setLoaded] = useState(false);
+  const [saving, setSaving] = useState(false);
+  const [flash, setFlash] = useState<string | null>(null);
+
+  useEffect(() => {
+    adminApi.getTourSettings(id).then((r) => {
+      if (r.ok) setDraft(r.data);
+      setLoaded(true);
+    });
+  }, [id]);
+
+  const set = (key: keyof TourSettings, value: unknown) =>
+    setDraft((d) => ({ ...d, [key]: value }));
+
+  const onSave = async () => {
+    setSaving(true); setFlash(null);
+    const r = await adminApi.updateTourSettings(id, draft);
+    setSaving(false);
+    if (r.ok) {
+      setFlash("Saved ✓");
+      const r2 = await adminApi.getTourSettings(id);
+      if (r2.ok) setDraft(r2.data);
+    } else {
+      setFlash(`Save failed: ${r.error ?? r.status}`);
+    }
+  };
+
+  if (!loaded) return <div className="mt-6 text-vg-muted text-sm">Loading…</div>;
+
+  const base = draft.basePrice ?? 0;
+  const cur = draft.currency ?? "EUR";
+
+  return (
+    <div className="mt-6 max-w-2xl">
+      {flash && (
+        <div className={`mb-5 rounded-xl px-4 py-3 text-sm border ${flash.includes("✓") ? "bg-emerald-50 border-emerald-200 text-emerald-800" : "bg-vg-bg-soft border-vg-border"}`}>
+          {flash}
+        </div>
+      )}
+
+      <div className="rounded-3xl bg-white border border-vg-border p-6 shadow-sm space-y-6">
+        <div className="grid grid-cols-3 gap-4">
+          <SField label="Base price">
+            <input type="number" min={0} value={draft.basePrice ?? 0}
+              onChange={(e) => set("basePrice", parseFloat(e.target.value) || 0)}
+              className="w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-vg-primary" />
+          </SField>
+          <SField label="Compare-at price">
+            <input type="number" min={0} value={draft.compareAtPrice ?? ""}
+              onChange={(e) => set("compareAtPrice", e.target.value ? parseFloat(e.target.value) : null)}
+              className="w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-vg-primary" placeholder="(optional)" />
+          </SField>
+          <SField label="Currency">
+            <select value={draft.currency ?? "EUR"} onChange={(e) => set("currency", e.target.value)}
+              className="w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-vg-primary">
+              {["EUR", "USD", "TRY", "GBP"].map((c) => <option key={c}>{c}</option>)}
+            </select>
+          </SField>
+        </div>
+
+        <div>
+          <label className="block text-sm font-semibold text-vg-ink mb-1">VibeSquad pricing (per-person % of base)</label>
+          <p className="text-xs text-vg-muted mb-3">
+            Set what each person pays as a % of the base price, by group size. Bigger groups should pay a smaller %.
+            Base: {cur} {base}.
+          </p>
+          <div className="space-y-2">
+            {[2, 3, 4].map((count) => {
+              const tiers = draft.pricingTiers ?? [];
+              const tier = tiers.find((t) => t.participantCount === count);
+              const perPersonStored = tier && tier.guideAmount > 0 ? tier.guideAmount / count : null;
+              const pctValue = perPersonStored != null && base > 0
+                ? Math.round((perPersonStored / base) * 100)
+                : "";
+              return (
+                <div key={count} className="flex items-center gap-3">
+                  <span className="text-sm text-vg-muted w-20">{count} people</span>
+                  <div className="flex-1 flex items-center gap-2">
+                    <input
+                      type="number" min={0} max={100}
+                      value={pctValue}
+                      placeholder="%"
+                      onChange={(e) => {
+                        const pct = e.target.value ? parseFloat(e.target.value) : 0;
+                        const perPerson = (base * pct) / 100;
+                        const total = Math.round(perPerson * count * 100) / 100;
+                        const others = (draft.pricingTiers ?? []).filter((t) => t.participantCount !== count);
+                        const next = pct > 0
+                          ? [...others, { participantCount: count, guideAmount: total }]
+                          : others;
+                        next.sort((a, b) => a.participantCount - b.participantCount);
+                        set("pricingTiers", next);
+                      }}
+                      className="w-24 bg-vg-bg-soft border border-vg-border rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-vg-primary"
+                    />
+                    <span className="text-sm text-vg-muted">%</span>
+                  </div>
+                  <span className="text-xs text-vg-muted w-32 text-right">
+                    {pctValue !== "" && base > 0
+                      ? `≈ ${((base * (pctValue as number)) / 100).toFixed(2)} ${cur}/person`
+                      : "—"}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        <button onClick={onSave} disabled={saving}
+          className="rounded-xl bg-vg-primary text-white font-bold px-6 py-3 text-sm disabled:opacity-50">
+          {saving ? "Saving…" : "Save pricing"}
+        </button>
+      </div>
+    </div>
+  );
+}
+
 // ─── Tour Settings Editor ─────────────────────────────────────────────────────
 
 function TourSettingsEditor({ id }: { id: number }) {
@@ -686,24 +810,7 @@ function TourSettingsEditor({ id }: { id: number }) {
           </SField>
         </div>
 
-        <div className="grid grid-cols-3 gap-4">
-          <SField label="Base price">
-            <input type="number" min={0} value={draft.basePrice ?? 0}
-              onChange={(e) => set("basePrice", parseFloat(e.target.value) || 0)}
-              className="w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-vg-primary" />
-          </SField>
-          <SField label="Compare-at price">
-            <input type="number" min={0} value={draft.compareAtPrice ?? ""}
-              onChange={(e) => set("compareAtPrice", e.target.value ? parseFloat(e.target.value) : null)}
-              className="w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-vg-primary" placeholder="(optional)" />
-          </SField>
-          <SField label="Currency">
-            <select value={draft.currency ?? "EUR"} onChange={(e) => set("currency", e.target.value)}
-              className="w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-vg-primary">
-              {["EUR", "USD", "TRY", "GBP"].map((c) => <option key={c}>{c}</option>)}
-            </select>
-          </SField>
-        </div>
+        <p className="text-xs text-vg-muted">💶 Price &amp; VibeSquad pricing are now in the <strong>Pricing</strong> tab.</p>
 
         <SField label="Duration (minutes)">
           <input type="number" min={0} value={draft.durationMinutes ?? 0}
@@ -711,58 +818,6 @@ function TourSettingsEditor({ id }: { id: number }) {
             className="w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-vg-primary" />
         </SField>
 
-        {/* VibeSquad pricing: her grup boyutu için Base price'ın yüzdesi = kişi başı.
-            guideAmount (toplam) = kişiBaşı × kişi olarak saklanır; backend / kişi
-            yapıp kişi başını geri bulur. Yani backend hesabı bozulmaz. */}
-        <div>
-          <label className="block text-sm font-semibold text-vg-ink mb-1">VibeSquad pricing (per-person % of base)</label>
-          <p className="text-xs text-vg-muted mb-3">
-            Set what each person pays as a % of the base price, by group size. Bigger groups should pay a smaller %.
-            Base: {draft.currency ?? "EUR"} {draft.basePrice ?? 0}.
-          </p>
-          <div className="space-y-2">
-            {[2, 3, 4].map((count) => {
-              const base = draft.basePrice ?? 0;
-              const tiers = draft.pricingTiers ?? [];
-              const tier = tiers.find((t) => t.participantCount === count);
-              // saklı guideAmount (toplam) → kişi başı → %
-              const perPersonStored = tier && tier.guideAmount > 0 ? tier.guideAmount / count : null;
-              const pctValue = perPersonStored != null && base > 0
-                ? Math.round((perPersonStored / base) * 100)
-                : "";
-              return (
-                <div key={count} className="flex items-center gap-3">
-                  <span className="text-sm text-vg-muted w-20">{count} people</span>
-                  <div className="flex-1 flex items-center gap-2">
-                    <input
-                      type="number" min={0} max={100}
-                      value={pctValue}
-                      placeholder="%"
-                      onChange={(e) => {
-                        const pct = e.target.value ? parseFloat(e.target.value) : 0;
-                        const perPerson = (base * pct) / 100;
-                        const total = Math.round(perPerson * count * 100) / 100; // guideAmount = toplam
-                        const others = (draft.pricingTiers ?? []).filter((t) => t.participantCount !== count);
-                        const next = pct > 0
-                          ? [...others, { participantCount: count, guideAmount: total }]
-                          : others;
-                        next.sort((a, b) => a.participantCount - b.participantCount);
-                        set("pricingTiers", next);
-                      }}
-                      className="w-24 bg-vg-bg-soft border border-vg-border rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-vg-primary"
-                    />
-                    <span className="text-sm text-vg-muted">%</span>
-                  </div>
-                  <span className="text-xs text-vg-muted w-32 text-right">
-                    {pctValue !== "" && base > 0
-                      ? `≈ ${((base * (pctValue as number)) / 100).toFixed(2)} ${draft.currency ?? "EUR"}/person`
-                      : "—"}
-                  </span>
-                </div>
-              );
-            })}
-          </div>
-        </div>
 
         <SField label="Languages offered">
           <LanguageMultiSelect
