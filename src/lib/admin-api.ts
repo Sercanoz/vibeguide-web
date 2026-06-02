@@ -213,6 +213,7 @@ export type TourSettings = {
   city: string;
   category: string | null;
   durationMinutes: number;
+  minPoolParticipants?: number;
   basePrice: number;
   compareAtPrice: number | null;
   currency: string;

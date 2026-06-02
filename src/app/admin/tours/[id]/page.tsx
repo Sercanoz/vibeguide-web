@@ -686,6 +686,15 @@ function PricingEditor({ id }: { id: number }) {
           </SField>
         </div>
 
+        <SField label="Pool completes at (min participants)">
+          <input type="number" min={1} max={8} value={draft.minPoolParticipants ?? 3}
+            onChange={(e) => set("minPoolParticipants", parseInt(e.target.value) || 3)}
+            className="w-40 bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-vg-primary" />
+          <p className="text-xs text-vg-muted mt-1">
+            A VibeSquad pool for this tour confirms once it reaches this many travelers. Tourists pick the max group size when opening a pool.
+          </p>
+        </SField>
+
         <div>
           <label className="block text-sm font-semibold text-vg-ink mb-1">VibeSquad pricing (per-person % of base)</label>
           <p className="text-xs text-vg-muted mb-3">
