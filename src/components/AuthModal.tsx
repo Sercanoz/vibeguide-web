@@ -63,19 +63,21 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
     if (!user) return;
     await user.reload();
 
-    // Block login until email is verified (Google accounts are pre-verified)
-    if (!user.emailVerified) {
-      await signOut();
-      setError("Please verify your email first. Check your inbox for the confirmation link.");
-      return;
-    }
-
-    const token = await user.getIdToken(true); // force-refresh so emailVerified is current
+    const token = await user.getIdToken(true);
     const res = await fetch(`${API_BASE_URL}/api/auth/me`, {
       headers: { Authorization: `Bearer ${token}` },
     });
-    // Email verified but no DB row yet (verified via email link in another session) → register now
+    // Kayıtlı kullanıcı (turist/rehber/admin) → içeri al. Email doğrulama kuralını
+    // backend uygular (turist için zorunlu, rehber admin KYC onaylı olduğu için muaf).
+    // Web'de erken Firebase emailVerified bloğu KALDIRILDI — rehberi içeri sokmuyordu.
+
+    // me 404 = henüz DB kaydı yok. Yeni turist kaydı için email doğrulanmış olmalı.
     if (res.status === 404) {
+      if (!user.emailVerified) {
+        await signOut();
+        setError("Please verify your email first. Check your inbox for the confirmation link.");
+        return;
+      }
       try { await registerTouristOnBackend(); } catch { onClose(); router.push("/register"); }
       return;
     }

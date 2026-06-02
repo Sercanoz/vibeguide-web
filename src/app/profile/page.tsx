@@ -72,8 +72,8 @@ export default function ProfilePage() {
     const unsub = fbAuth().onAuthStateChanged(async (user) => {
       if (!user) { router.push("/"); return; }
       await user.reload();
-      // Block access until email is verified
-      if (!user.emailVerified) { await signOut(); router.push("/"); return; }
+      // Email doğrulama kuralını backend uygular (rehber admin KYC onaylı, muaf).
+      // me.ok değilse zaten aşağıda yönlendiriliyor — erken emailVerified bloğu yok.
       const token = await user.getIdToken();
       const headers = { Authorization: `Bearer ${token}` };
 
