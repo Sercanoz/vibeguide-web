@@ -851,10 +851,9 @@ export const terms: Record<ExtendedLocale, TermsDict> = {
     sections: [
       {
         h: "1. Company Information",
-        p: `VibeGuide is operated by ${COMPANY_LEGAL}, based in Istanbul, Türkiye.`,
+        p: `VibeGuide is operated by VİBECORE TURİZM SEYAHAT ACENTASI VE DİJİTAL HİZMETLER TİCARET LİMİTED ŞİRKETİ.`,
         list: [
-          `Email: legal@vibeguideapp.com`,
-          `Support: ${SUPPORT_EMAIL}`,
+          `Support & legal: ${SUPPORT_EMAIL}`,
           `Website: www.vibeguideapp.com`,
         ],
       },
@@ -891,7 +890,7 @@ export const terms: Record<ExtendedLocale, TermsDict> = {
           },
           {
             h: "VibeSquad (Shared Group Experiences)",
-            p: "VibeSquad allows travellers to join or create shared group experiences. Bookings may depend on minimum participant requirements, payment authorization, guide availability, and final operational confirmation.",
+            p: "VibeSquad allows travellers to join or create shared group experiences. Bookings may depend on minimum participant requirements, payment authorization, guide availability, and final operational confirmation. In VibeSquad experiences, participants may see each other's first name and profile photo.",
           },
           {
             h: "Private Tours (Planned Reservations)",
@@ -913,12 +912,7 @@ export const terms: Record<ExtendedLocale, TermsDict> = {
       },
       {
         h: "9. Cancellations and Refunds",
-        p: "Refund eligibility depends on booking type, cancellation timing, experience category, guide assignment status, operational conditions, weather, force majeure events, and applicable law.",
-        list: [
-          "More than 24 hours before start: eligible for full refund",
-          "Less than 24 hours: partial refund may apply",
-          "Less than 2 hours or no-show: refund may not apply",
-        ],
+        p: "Cancellations and refunds are governed by the Cancellation & Refund Policy shown during booking and the booking-specific conditions presented before checkout. Refund eligibility depends on booking type, cancellation timing, experience category, guide assignment status, operational conditions, weather, force majeure events, and applicable law.",
         p2: "Guide cancellations may result in full refunds, support compensation, booking credits, or guide suspension for repeated violations. VibeGuide reserves the right to investigate suspicious refund activity, abuse, or fraudulent claims.",
       },
       {
@@ -1029,7 +1023,7 @@ export const terms: Record<ExtendedLocale, TermsDict> = {
       },
       {
         h: "32. Governing Law and Jurisdiction",
-        p: "These Terms are governed by the laws of the Republic of Türkiye unless mandatory consumer protection laws require otherwise. Disputes shall be resolved before the competent courts and enforcement offices of Istanbul (Çağlayan), without prejudice to mandatory consumer rights applicable in the user's country of residence.",
+        p: "These Terms are governed by the laws of the Republic of Türkiye unless mandatory consumer protection laws require otherwise. Disputes shall be resolved before the competent courts and enforcement offices of Muğla, without prejudice to mandatory consumer rights applicable in the user's country of residence.",
       },
       {
         h: "33. Entire Agreement",
@@ -1321,15 +1315,15 @@ export const terms: Record<ExtendedLocale, TermsDict> = {
     lastUpdatedLabel: "Zuletzt aktualisiert",
     intro: "Diese Nutzungsbedingungen regeln Ihren Zugang zu und Ihre Nutzung von VibeGuide, einschließlich Website, App, Dienste und zugehörige Funktionen. Durch die Nutzung von VibeGuide stimmen Sie diesen Bedingungen zu.",
     sections: [
-      { h: "1. Unternehmensangaben", p: `VibeGuide wird von ${COMPANY_LEGAL}, Istanbul, Türkei, betrieben. Rechtliche Fragen: ${SUPPORT_EMAIL}.` },
+      { h: "1. Unternehmensangaben", p: `VibeGuide wird von der VİBECORE TURİZM SEYAHAT ACENTASI VE DİJİTAL HİZMETLER TİCARET LİMİTED ŞİRKETİ betrieben. Rechtliche Fragen: ${SUPPORT_EMAIL}.` },
       { h: "2. Plattformbeschreibung", p: "VibeGuide ist eine digitale Reiseplattform, die Reisende mit lizenzierten lokalen Guides in der Türkei verbindet. VibeGuide fungiert als Marktplatz und Vermittler. Guides arbeiten als unabhängige Dienstleister." },
       { h: "3. Voraussetzungen", list: ["Zur Kontoerstellung und Buchung müssen Sie mindestens 18 Jahre alt sein.", "Minderjährige dürfen nur unter Aufsicht eines Elternteils oder gesetzlichen Vormunds teilnehmen.", "Guides müssen sich vor der Aktivierung verifizieren lassen und einen gültigen Kokart hochladen."] },
       { h: "4. Benutzerkonten", list: ["Sie sind für die Sicherheit Ihrer Anmeldedaten und alle Aktivitäten in Ihrem Konto verantwortlich.", "VibeGuide kann Konten bei Verstößen gegen diese Bedingungen sperren oder beenden.", "Touristen müssen vor der Buchung ihre E-Mail-Adresse bestätigen."] },
       { h: "5. Buchungen", list: ["Bei einer Buchung verpflichten Sie sich, korrekte Angaben zu machen, pünktlich am Treffpunkt zu erscheinen und die Anweisungen des Guides zu befolgen.", "Eine Buchung gilt erst als bestätigt, wenn ein Guide zugewiesen und die Zahlung eingezogen wurde."] },
-      { h: "6. Erlebnisarten", list: ["VibeNow (Sofort) — sofortige Erlebnisse mit verfügbaren Guides.", "VibeSquad (Gruppe) — gemeinsame Gruppenerlebnisse.", "Private Touren — geplante Touren zu einem bestimmten Datum."] },
-      { h: "7. Preise und Zahlung", list: ["Alle Zahlungen werden vorab über iyzico verarbeitet.", "VibeGuide erhebt eine Provision von 15 % pro abgeschlossener Tour. Die verbleibenden 85 % sind der Verdienst des Guides, der wöchentlich ausgezahlt wird."] },
+      { h: "6. Erlebnisarten", list: ["VibeNow (Sofort) — sofortige Erlebnisse mit verfügbaren Guides.", "VibeSquad (Gruppe) — gemeinsame Gruppenerlebnisse. Bei VibeSquad-Erlebnissen können Teilnehmer den Vornamen und das Profilfoto der anderen Teilnehmer sehen.", "Private Touren — geplante Touren zu einem bestimmten Datum."] },
+      { h: "7. Preise und Zahlung", list: ["Alle Zahlungen werden über lizenzierte Zahlungsdienstleister und autorisierte Zahlungsinstitute verarbeitet.", "Plattformprovisionen und die Verteilung der Guide-Einnahmen werden im Rahmen der jeweiligen Geschäftsvereinbarungen und Plattformregeln festgelegt. Die Guide-Einnahmen werden wöchentlich auf das im Guide-Profil hinterlegte IBAN überwiesen."] },
       { h: "8. Zahlungsautorisierung", p: "Für bestimmte Buchungsarten (insbesondere VibeSquad) kann eine vorübergehende Autorisierung Ihres Zahlungsmittels vorgenommen werden. Bei Bestätigung wird der Betrag eingezogen; andernfalls wird die Autorisierung innerhalb von 7 Werktagen freigegeben." },
-      { h: "9. Stornierungen und Erstattungen", list: ["Stornierung durch Touristen mehr als 24 Stunden vor Beginn: 100 % Erstattung. Weniger als 24 Stunden: 50 %. Weniger als 2 Stunden: keine Erstattung.", "Stornierung durch Guide: volle Erstattung + Entschuldigungsguthaben.", "VibeSquad bei Nichterreichen der Mindestteilnehmerzahl: automatische 100 %-Erstattung."] },
+      { h: "9. Stornierungen und Erstattungen", list: ["Stornierungs- und Erstattungsbedingungen richten sich nach der bei der Buchung angezeigten Stornierungs- und Erstattungsrichtlinie sowie den vor dem Checkout angezeigten buchungsspezifischen Bedingungen.", "Stornierung durch Guide: volle Erstattung + Entschuldigungsguthaben.", "VibeSquad bei Nichterreichen der Mindestteilnehmerzahl: automatische 100 %-Erstattung."] },
       { h: "10. Nichterscheinen und Verspätung", list: ["Nichterscheinen ohne Stornierung kann zum Verlust des Erstattungsanspruchs führen.", "Nichterscheinen-Meldungen werden innerhalb von 72 Stunden vom Admin-Team geprüft."] },
       { h: "11. Transaktionen außerhalb der Plattform", list: ["Es ist verboten, Zahlungen außerhalb der Plattform zu fordern oder anzunehmen oder Kontaktdaten zur Umgehung von VibeGuide auszutauschen.", "Verstöße können zur Sperrung des Kontos führen."] },
       { h: "12. Benutzerverhalten", list: ["Verboten sind: Belästigung, Diskriminierung, Beschädigung von Kulturstätten, illegale Aktivitäten, falsche Identitätsangaben."] },
@@ -1343,11 +1337,11 @@ export const terms: Record<ExtendedLocale, TermsDict> = {
       { h: "20. Geistiges Eigentum", p: "Name, Logo und Materialien von VibeGuide gehören VibeGuide oder seinen Lizenzgebern. Jede unbefugte Nutzung ist untersagt." },
       { h: "21. Plattformverfügbarkeit", list: ["VibeGuide garantiert keinen ununterbrochenen Zugang. Wartung, Updates oder höhere Gewalt können die Verfügbarkeit beeinträchtigen."] },
       { h: "22. Höhere Gewalt", list: ["VibeGuide haftet nicht für Verzögerungen oder Ausfälle durch Naturkatastrophen, Streiks, Pandemien, behördliche Anordnungen oder andere unkontrollierbare Ereignisse."] },
-      { h: "23. Haftungsbeschränkung", list: ["VibeGuide haftet nicht für mittelbare Schäden, entgangenen Gewinn, Reiseverzögerungen oder Handlungen Dritter.", "Die maximale Haftung ist auf den Betrag begrenzt, den Sie in den letzten 12 Monaten für die betroffene Buchung gezahlt haben."] },
+      { h: "23. Haftungsbeschränkung", list: ["VibeGuide haftet nicht für mittelbare Schäden, entgangenen Gewinn, Reiseverzögerungen oder Handlungen Dritter.", "Die maximale Haftung ist auf den Betrag begrenzt, den Sie in den letzten 12 Monaten für die betroffene Buchung gezahlt haben.", "Die Nutzer sind dafür verantwortlich, vor der Teilnahme an einem Erlebnis ihre körperliche Eignung und ihren Gesundheitszustand zu beurteilen."] },
       { h: "24. Sperrung und Kündigung", list: ["VibeGuide kann Konten bei Verstößen gegen diese Bedingungen, Betrug, Belästigung oder anderen schwerwiegenden Verstößen sperren oder kündigen."] },
       { h: "25. Kontolöschung", p: `Löschantrag über die App-Schaltfläche, das Formular unter /account-deletion oder ${SUPPORT_EMAIL}. Nach der Löschung können bestimmte Daten aus rechtlichen Gründen aufbewahrt werden.` },
       { h: "26. Änderungen der Bedingungen", p: "Wesentliche Änderungen werden mindestens 14 Tage im Voraus per App und E-Mail mitgeteilt." },
-      { h: "27. Anwendbares Recht", p: "Diese Bedingungen unterliegen dem Recht der Republik Türkei. Streitigkeiten werden vor den Gerichten in Istanbul (Çağlayan) beigelegt." },
+      { h: "27. Anwendbares Recht", p: "Diese Bedingungen unterliegen dem Recht der Republik Türkei. Streitigkeiten werden vor den Gerichten und Vollstreckungsbehörden in Muğla beigelegt." },
       { h: "28. Kontakt", p: `Fragen zu diesen Bedingungen: ${SUPPORT_EMAIL}.` },
     ],
   },
