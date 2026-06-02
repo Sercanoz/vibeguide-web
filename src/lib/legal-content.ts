@@ -1045,7 +1045,7 @@ export const terms: Record<ExtendedLocale, TermsDict> = {
     sections: [
       {
         h: "1. Şirket bilgileri",
-        p: `VibeGuide; İstanbul, Türkiye merkezli ${COMPANY_LEGAL} tarafından işletilmektedir. Hukuki sorular için: ${SUPPORT_EMAIL}.`,
+        p: `VibeGuide, VİBECORE TURİZM SEYAHAT ACENTASI VE DİJİTAL HİZMETLER TİCARET LİMİTED ŞİRKETİ tarafından işletilmektedir. Hukuki sorular için: ${SUPPORT_EMAIL}.`,
       },
       {
         h: "2. Platform tanımı",
@@ -1079,7 +1079,7 @@ export const terms: Record<ExtendedLocale, TermsDict> = {
         h: "6. Deneyim türleri",
         list: [
           "VibeNow (Anlık) — Anlık deneyimler, seçili deneyimler için müsait rehberleri kısa süre içinde talep etmenizi sağlar. Onay rehber müsaitliğine ve operasyonel koşullara bağlıdır.",
-          "VibeSquad (Grup) — VibeSquad, paylaşımlı grup deneyimlerine katılmanızı veya bunları başlatmanızı sağlar. Bir VibeSquad rezervasyonu; minimum katılımcı sayısı, ödeme otorizasyonu, rehber müsaitliği ve nihai onaya bağlı olabilir.",
+          "VibeSquad (Grup) — VibeSquad, paylaşımlı grup deneyimlerine katılmanızı veya bunları başlatmanızı sağlar. Bir VibeSquad rezervasyonu; minimum katılımcı sayısı, ödeme otorizasyonu, rehber müsaitliği ve nihai onaya bağlı olabilir. VibeSquad deneyimlerinde katılımcılar birbirlerinin adını ve profil fotoğrafını görebilir.",
           "Özel Turlar (Planlı) — Özel rezervasyonlar, müsaitliğe bağlı olarak belirli tarih, saat, dil ve grup büyüklüğü için deneyim rezerve etmenize olanak tanır.",
         ],
       },
@@ -1087,9 +1087,9 @@ export const terms: Record<ExtendedLocale, TermsDict> = {
         h: "7. Fiyatlar ve ödemeler",
         list: [
           "VibeGuide'da gösterilen fiyatlar; deneyim ücreti, platform ücreti, uygulanan KDV ve checkout öncesi gösterilen diğer ücretleri içerebilir.",
-          "Tüm ödemeler peşin olarak üçüncü taraf ödeme sağlayıcımız (iyzico) üzerinden işlenir. Ödeme yaparak sağlayıcının geçerli koşullarını kabul etmiş olursunuz.",
+          "Tüm ödemeler lisanslı ödeme hizmet sağlayıcıları ve yetkili ödeme kuruluşları aracılığıyla işlenir. Ödeme yaparak ilgili ödeme kuruluşunun geçerli koşullarını kabul etmiş olursunuz.",
           "VibeGuide tam kart numaranızı doğrudan saklamaz.",
-          "VibeGuide tamamlanan her turdan %15 komisyon alır. Kalan %85 rehberin kazancıdır ve rehber profilinde kayıtlı IBAN'a haftalık olarak aktarılır.",
+          "Platform komisyonları ve rehber kazanç dağılımları ilgili ticari sözleşmeler ve platform kuralları kapsamında belirlenir. Rehber kazançları, rehber profilinde kayıtlı IBAN'a haftalık olarak aktarılır.",
         ],
       },
       {
@@ -1099,8 +1099,7 @@ export const terms: Record<ExtendedLocale, TermsDict> = {
       {
         h: "9. İptal ve iade",
         list: [
-          "İptal ve iadeler İptal Politikası ve checkout öncesi gösterilen rezervasyon-spesifik koşullarla düzenlenir.",
-          "Tur başlangıcına 24 saatten fazla varken turist iptali: %100 iade. 24 saatten az: %50. 2 saatten az: iade yok.",
+          "İptal ve iade koşulları, rezervasyon sırasında gösterilen İptal ve İade Politikası hükümlerine ve checkout öncesi gösterilen rezervasyon-spesifik koşullara tabidir.",
           "Rehber iptali: tam iade + özür kredisi. Tekrarlanan iptaller askıya alma sebebidir.",
           "Minimum grup büyüklüğüne ulaşamayan VibeSquad otomatik %100 iade alır.",
           "İade uygunluğu ayrıca şunlara bağlı olabilir: deneyim öncesi süre, deneyim türü, rehber atama durumu, grup onay durumu, no-show davranışı, hava koşulları veya mücbir sebep, yürürlükteki mevzuat.",
@@ -1249,6 +1248,7 @@ export const terms: Record<ExtendedLocale, TermsDict> = {
           "Bağımsız rehberler veya üçüncü tarafların eylem veya ihmalleri",
           "VibeGuide'ın makul kontrolü dışındaki olaylar",
           "Toplam azami sorumluluğumuz, talep tarihinden geriye doğru 12 ay içinde ilgili rezervasyon için ödediğiniz tutarla sınırlıdır.",
+          "Kullanıcılar, deneyime katılmadan önce fiziksel uygunluklarını ve sağlık durumlarını değerlendirmekten sorumludur.",
           "Hiçbir madde; ağır ihmal, kasıtlı kötü niyet veya 6502 sayılı Tüketici Kanunu'nun emredici hükümleri kapsamındaki yasal olarak sınırlanamayan sorumluluğu sınırlamaz.",
         ],
       },
@@ -1276,7 +1276,7 @@ export const terms: Record<ExtendedLocale, TermsDict> = {
       },
       {
         h: "27. Uygulanacak hukuk ve yetkili mahkeme",
-        p: "Bu Koşullar; ikamet ettiğiniz başka bir ülkedeki emredici tüketici koruma yasaları saklı kalmak kaydıyla, Türkiye Cumhuriyeti yasalarına tabidir. Uyuşmazlıklar, ikamet ettiğiniz ülkedeki tüketici koruma hakları saklı kalmak kaydıyla İstanbul (Çağlayan) Mahkemeleri ve İcra Daireleri'nde çözülecektir.",
+        p: "Bu Koşullar; ikamet ettiğiniz başka bir ülkedeki emredici tüketici koruma yasaları saklı kalmak kaydıyla, Türkiye Cumhuriyeti yasalarına tabidir. Uyuşmazlıklar, ikamet ettiğiniz ülkedeki tüketici koruma hakları saklı kalmak kaydıyla Muğla Mahkemeleri ve İcra Daireleri'nde çözülecektir.",
       },
       { h: "28. İletişim", p: `Bu Koşullar hakkında hukuki sorular için: ${SUPPORT_EMAIL}.` },
     ],
