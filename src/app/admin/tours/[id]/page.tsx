@@ -711,40 +711,52 @@ function TourSettingsEditor({ id }: { id: number }) {
             className="w-full bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-vg-primary" />
         </SField>
 
-        {/* VibeSquad pricing — rehbere ödenecek TOPLAM ücret (kişi sayısına göre).
-            Turist sayfasında kişi başı = guideAmount ÷ kişi olarak gösterilir. */}
+        {/* VibeSquad pricing: her grup boyutu için Base price'ın yüzdesi = kişi başı.
+            guideAmount (toplam) = kişiBaşı × kişi olarak saklanır; backend / kişi
+            yapıp kişi başını geri bulur. Yani backend hesabı bozulmaz. */}
         <div>
-          <label className="block text-sm font-semibold text-vg-ink mb-1">VibeSquad pricing (guide total per group size)</label>
+          <label className="block text-sm font-semibold text-vg-ink mb-1">VibeSquad pricing (per-person % of base)</label>
           <p className="text-xs text-vg-muted mb-3">
-            Total amount paid to the guide for the whole group. Tourists see per-person = total ÷ group size, so bigger groups pay less each.
+            Set what each person pays as a % of the base price, by group size. Bigger groups should pay a smaller %.
+            Base: {draft.currency ?? "EUR"} {draft.basePrice ?? 0}.
           </p>
           <div className="space-y-2">
             {[2, 3, 4].map((count) => {
+              const base = draft.basePrice ?? 0;
               const tiers = draft.pricingTiers ?? [];
               const tier = tiers.find((t) => t.participantCount === count);
-              const perPerson = tier && tier.guideAmount > 0
-                ? (tier.guideAmount / count).toFixed(2)
-                : null;
+              // saklı guideAmount (toplam) → kişi başı → %
+              const perPersonStored = tier && tier.guideAmount > 0 ? tier.guideAmount / count : null;
+              const pctValue = perPersonStored != null && base > 0
+                ? Math.round((perPersonStored / base) * 100)
+                : "";
               return (
                 <div key={count} className="flex items-center gap-3">
                   <span className="text-sm text-vg-muted w-20">{count} people</span>
-                  <input
-                    type="number" min={0}
-                    value={tier?.guideAmount ?? ""}
-                    placeholder="guide total"
-                    onChange={(e) => {
-                      const val = e.target.value ? parseFloat(e.target.value) : 0;
-                      const others = (draft.pricingTiers ?? []).filter((t) => t.participantCount !== count);
-                      const next = val > 0
-                        ? [...others, { participantCount: count, guideAmount: val }]
-                        : others;
-                      next.sort((a, b) => a.participantCount - b.participantCount);
-                      set("pricingTiers", next);
-                    }}
-                    className="flex-1 bg-vg-bg-soft border border-vg-border rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-vg-primary"
-                  />
-                  <span className="text-xs text-vg-muted w-28 text-right">
-                    {perPerson ? `≈ ${perPerson} ${draft.currency ?? "EUR"}/person` : "—"}
+                  <div className="flex-1 flex items-center gap-2">
+                    <input
+                      type="number" min={0} max={100}
+                      value={pctValue}
+                      placeholder="%"
+                      onChange={(e) => {
+                        const pct = e.target.value ? parseFloat(e.target.value) : 0;
+                        const perPerson = (base * pct) / 100;
+                        const total = Math.round(perPerson * count * 100) / 100; // guideAmount = toplam
+                        const others = (draft.pricingTiers ?? []).filter((t) => t.participantCount !== count);
+                        const next = pct > 0
+                          ? [...others, { participantCount: count, guideAmount: total }]
+                          : others;
+                        next.sort((a, b) => a.participantCount - b.participantCount);
+                        set("pricingTiers", next);
+                      }}
+                      className="w-24 bg-vg-bg-soft border border-vg-border rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-vg-primary"
+                    />
+                    <span className="text-sm text-vg-muted">%</span>
+                  </div>
+                  <span className="text-xs text-vg-muted w-32 text-right">
+                    {pctValue !== "" && base > 0
+                      ? `≈ ${((base * (pctValue as number)) / 100).toFixed(2)} ${draft.currency ?? "EUR"}/person`
+                      : "—"}
                   </span>
                 </div>
               );

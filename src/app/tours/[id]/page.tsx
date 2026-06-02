@@ -469,7 +469,7 @@ export default function TourDetailPage() {
 
           {tour.languagePrices && tour.languagePrices.length > 0 && (
             <div>
-              <h2 className="text-2xl font-black mb-4">Languages Available</h2>
+              <h2 className="text-2xl font-black mb-4">Available in</h2>
               <div className="flex flex-wrap gap-2">
                 {tour.languagePrices.map((lp) => {
                   const lang = languageByCode(lp.code);
@@ -477,11 +477,7 @@ export default function TourDetailPage() {
                     <span
                       key={lp.code}
                       title={lang.name}
-                      className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-semibold border ${
-                        lp.isRare
-                          ? "bg-amber-50 border-amber-200 text-amber-700"
-                          : "bg-[#F7F7FB] border-black/10 text-neutral-600"
-                      }`}
+                      className="flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium bg-[#F7F7FB] border border-black/[0.06] text-neutral-700"
                     >
                       {lang.fi && (
                         <span
@@ -489,8 +485,7 @@ export default function TourDetailPage() {
                           style={{ width: 20, height: 15, display: "inline-block" }}
                         />
                       )}
-                      <span>{lp.code.toUpperCase()}</span>
-                      {lp.isRare && <span className="text-[10px]">★</span>}
+                      <span>{lang.name}</span>
                     </span>
                   );
                 })}
@@ -498,7 +493,8 @@ export default function TourDetailPage() {
             </div>
           )}
 
-          {/* VibeSquad — grup büyüdükçe kişi başı ucuzlar (guideAmount ÷ kişi) */}
+          {/* VibeSquad — kişi başı fiyat = guideAmount(toplam) ÷ kişi.
+              Admin yüzdeyi belirler, grup büyüdükçe kişi başı düşer. */}
           {tour.pricingTiers && tour.pricingTiers.length > 0 && (() => {
             const tiers = [...tour.pricingTiers]
               .filter((t) => t.participantCount > 0 && t.guideAmount > 0)
@@ -528,7 +524,7 @@ export default function TourDetailPage() {
                         return (
                           <tr key={i} className="border-b border-black/5 last:border-0 hover:bg-[#F7F7FB]/60 transition-colors">
                             <td className="px-5 py-3.5 text-neutral-600">
-                              {t.participantCount} {t.participantCount === 1 ? "person" : "people"}
+                              {t.participantCount} people
                               {isBest && (
                                 <span className="ml-2 inline-block rounded-full bg-[#6C4CF1]/10 px-2 py-0.5 text-[10px] font-black text-[#6C4CF1] align-middle">
                                   BEST PRICE
@@ -545,7 +541,7 @@ export default function TourDetailPage() {
                   </table>
                 </div>
                 <p className="text-xs text-neutral-400 mt-2">
-                  Per-person price shown for a full group. Final price is locked when the group is confirmed.
+                  Per-person price for a full group. Final price is locked when the group is confirmed.
                 </p>
               </div>
             );
