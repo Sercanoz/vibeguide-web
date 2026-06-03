@@ -8,99 +8,228 @@ export const metadata: Metadata = {
 };
 
 const BODY = `
+**6502 Sayılı Tüketicinin Korunması Hakkında Kanun ve Mesafeli Sözleşmeler Yönetmeliği Kapsamında**
+
 ## MADDE 1 – TARAFLAR
 
-İşbu Mesafeli Satış Sözleşmesi ("Sözleşme"), aşağıda bilgileri yer alan SATICI ile ALICI arasında, ALICI'nın VibeGuide platformu üzerinden elektronik ortamda verdiği sipariş ile kurulmuştur.
+### SATICI
 
-**SATICI**
-**Unvan:** VİBECORE TURİZM SEYAHAT ACENTASI VE DİJİTAL HİZMETLER TİCARET LİMİTED ŞİRKETİ
-**Adres:** Beldibi Mah. Belmar Sk. No:9/1 İç Kapı No:4, Marmaris / Muğla / Türkiye
-**Vergi Dairesi / No:** Marmaris Vergi Dairesi – 9251328389
-**Ticaret Sicil No:** 12686
-**E-posta:** [support@vibeguideapp.com](mailto:support@vibeguideapp.com)
-**Telefon:** +90 530 828 76 96
+Unvan: **VİBECORE TURİZM SEYAHAT ACENTASI VE DİJİTAL HİZMETLER TİCARET LİMİTED ŞİRKETİ**
 
-**ALICI**
-VibeGuide platformuna üye olan ve rezervasyon işlemini gerçekleştiren kullanıcı. ALICI'nın ad, soyad, e-posta ve iletişim bilgileri sipariş sırasında sistem üzerinden alınır ve kayıt altına alınır.
+Adres: Beldibi Mah. Belmar Sk. No:9/1 İç Kapı No:4, Marmaris / Muğla / Türkiye
 
-## MADDE 2 – KONU
+Vergi Dairesi: Marmaris Vergi Dairesi
 
-İşbu Sözleşme'nin konusu, ALICI'nın SATICI'ya ait VibeGuide platformu üzerinden elektronik ortamda siparişini verdiği ve aşağıda nitelikleri ile satış bedeli belirtilen turizm, rehberlik ve deneyim hizmetlerinin satışı ve ifası ile ilgili olarak 6502 sayılı Tüketicinin Korunması Hakkında Kanun ve Mesafeli Sözleşmeler Yönetmeliği hükümleri gereğince tarafların hak ve yükümlülüklerinin belirlenmesidir.
+Vergi No: 9251328389
 
-## MADDE 3 – HİZMETİN NİTELİKLERİ
+Ticaret Sicil No: 12686
 
-Hizmetin türü, kapsamı, tarihi, saati, süresi, buluşma noktası, rehber dili, dahil olan ve dahil olmayan hizmetler ile toplam bedeli, rezervasyon tamamlanmadan önce ALICI'ya platform üzerinde açıkça gösterilir. Sipariş özeti ve hizmet detayları işbu Sözleşme'nin ayrılmaz bir parçasını oluşturur.
+E-posta: [support@vibeguideapp.com](mailto:support@vibeguideapp.com)
 
-## MADDE 4 – TOPLAM BEDEL VE ÖDEME
+Telefon: +90 530 828 76 96
 
-Hizmetin tüm vergiler dahil toplam bedeli, ödeme tamamlanmadan önce ALICI'ya gösterilir. Aksi belirtilmedikçe müze ve ören yeri giriş ücretleri, ulaşım, yeme-içme ve kişisel harcamalar bedele dahil değildir. Ödeme, lisanslı ödeme kuruluşları aracılığıyla güvenli şekilde tahsil edilir. ALICI'nın ödeme kartı bilgileri SATICI tarafından saklanmaz.
+Bundan sonra "SATICI" veya "VibeGuide" olarak anılacaktır.
 
-## MADDE 5 – SÖZLEŞMENİN KURULMASI
+### ALICI
 
-İşbu Sözleşme, ALICI'nın platform üzerinde Ön Bilgilendirme Formu'nu ve işbu Sözleşme'yi onaylayarak ödemesini tamamlaması anında elektronik ortamda kurulmuş sayılır.
+VibeGuide mobil uygulaması, internet sitesi veya diğer dijital kanalları üzerinden rezervasyon gerçekleştiren gerçek veya tüzel kişi kullanıcıdır.
 
-## MADDE 6 – HİZMETİN İFASI
+ALICI'nın rezervasyon sırasında beyan ettiği ad, soyad, iletişim ve ödeme bilgileri sözleşmenin ayrılmaz parçasıdır.
 
-Hizmet, rezervasyonda belirtilen tarih, saat ve buluşma noktasında ifa edilir. ALICI, belirtilen zaman ve yerde hazır bulunmakla yükümlüdür.
+## MADDE 2 – SÖZLEŞMENİN KONUSU
 
-## MADDE 7 – ALICININ YÜKÜMLÜLÜKLERİ
+İşbu sözleşmenin konusu, ALICI'nın VibeGuide platformu üzerinden elektronik ortamda satın aldığı turizm, rehberlik, kültürel deneyim, gezi ve benzeri hizmetlerin satışı ve ifası ile ilgili olarak tarafların hak ve yükümlülüklerinin belirlenmesidir.
 
-ALICI; doğru ve güncel bilgi vermekle, rezervasyon saatinde buluşma noktasında hazır bulunmakla, deneyimin fiziksel koşullarına ve kişisel sağlık durumuna uygun şekilde katılım sağlamakla yükümlüdür.
+İşbu sözleşme 6502 Sayılı Tüketicinin Korunması Hakkında Kanun ve Mesafeli Sözleşmeler Yönetmeliği hükümlerine uygun olarak düzenlenmiştir.
 
-## MADDE 8 – SATICININ YÜKÜMLÜLÜKLERİ
+## MADDE 3 – PLATFORMUN ROLÜ
 
-SATICI, hizmeti Sözleşme'de belirtilen şekilde, özenle ve mevzuata uygun olarak ifa etmekle yükümlüdür. Hizmetin ifa edilememesi halinde SATICI, ALICI'yı bilgilendirir ve uygun çözüm veya iade seçeneği sunar.
+VibeGuide, kullanıcılar ile doğrulanmış hizmet sağlayıcılar arasında rezervasyon yapılmasını sağlayan dijital bir platformdur.
 
-## MADDE 9 – KATILIM SAĞLANMAMASI
+Platform üzerinden sunulan hizmetler;
 
-ALICI'nın rezervasyon saatinde buluşma noktasında hazır bulunmaması veya makul bekleme süresi içinde ulaşılamaması halinde hizmet ifa edilmiş sayılır ve iade hakkı doğmaz.
+* doğrudan VibeGuide tarafından,
+* lisanslı turist rehberleri tarafından,
+* TÜRSAB üyesi seyahat acenteleri tarafından,
+* veya VibeGuide'ın iş ortakları tarafından
 
-## MADDE 10 – REHBER VEYA HİZMET SAĞLAYICININ KATILAMAMASI
+sunulabilir.
 
-Rehberin veya hizmet sağlayıcının hizmeti ifa edememesi halinde SATICI; alternatif rehber, alternatif tarih, eşdeğer deneyim veya tam iade seçeneklerinden birini ALICI'ya sunar.
+Hizmeti fiilen sağlayan taraf rezervasyon ekranında açıkça belirtilir.
 
-## MADDE 11 – MÜCBİR SEBEPLER
+## MADDE 4 – HİZMETİN TEMEL NİTELİKLERİ
 
-Olumsuz hava koşulları, resmi makam kararları, güvenlik riskleri, doğal afetler, ulaşım kesintileri veya diğer mücbir sebepler nedeniyle hizmetin ifa edilememesi halinde program değiştirilebilir, ertelenebilir veya iptal edilebilir. Bu durumda ALICI'ya uygun ölçüde alternatif çözüm veya iade sunulur.
+Satın alınan hizmete ilişkin;
 
-## MADDE 12 – ÜÇÜNCÜ TARAF HİZMETLERİ
+* hizmet türü,
+* tarih,
+* saat,
+* süre,
+* buluşma noktası,
+* rehber dili,
+* katılımcı sayısı,
+* fiyat,
+* dahil olan hizmetler,
+* dahil olmayan hizmetler,
+* özel koşullar
 
-Müze, ören yeri, ulaşım ve diğer üçüncü taraf hizmet sağlayıcılarının çalışma saatleri, kuralları ve koşulları SATICI'nın kontrolü dışında değişebilir. Bu değişiklikler gerektiğinde ALICI'ya bildirilir.
+rezervasyon tamamlanmadan önce ALICI'ya sunulur.
 
-## MADDE 13 – CAYMA HAKKI
+ALICI rezervasyonu tamamlayarak bu bilgileri inceleyip kabul ettiğini beyan eder.
 
-6502 sayılı Kanun ve Mesafeli Sözleşmeler Yönetmeliği'nin 15. maddesi uyarınca, belirli bir tarihte veya dönemde yerine getirilmesi gereken turizm ve boş zaman değerlendirme hizmetlerinde cayma hakkı bulunmamaktadır. ALICI bu durumu kabul eder.
+Sipariş özeti ve rezervasyon detayları işbu sözleşmenin ayrılmaz parçasıdır.
 
-## MADDE 14 – İPTAL VE İADE
+## MADDE 5 – TOPLAM BEDEL VE ÖDEME
 
-SATICI, müşteri memnuniyeti kapsamında aşağıdaki iptal politikasını uygulayabilir:
+Hizmet bedeli tüm vergiler dahil olarak rezervasyon ekranında gösterilir.
 
-* Deneyim başlangıcından 24 saat veya daha önce yapılan iptallerde tam iade
-* 24 saatten kısa süre kala yapılan iptallerde iade yapılmaması
-* SATICI veya rehber kaynaklı iptallerde tam iade
-* Mücbir sebep hallerinde olay bazında değerlendirme
+Aksi belirtilmedikçe;
 
-Güncel koşullar için İptal ve İade Politikası geçerlidir.
+* müze giriş ücretleri,
+* ören yeri giriş ücretleri,
+* ulaşım giderleri,
+* yemek ve içecekler,
+* kişisel harcamalar
 
-## MADDE 15 – SORUMLULUĞUN SINIRLANDIRILMASI
+fiyata dahil değildir.
 
-SATICI, ilgili mevzuatın izin verdiği ölçüde; ALICI'nın kişisel eşyalarının kaybı, ALICI kaynaklı kazalar, üçüncü taraf hizmet sağlayıcılarından kaynaklanan aksaklıklar ile ALICI'nın kendi kusur veya ihmalinden doğan zararlardan sorumlu tutulamaz.
+Ödemeler lisanslı ödeme kuruluşları aracılığıyla güvenli şekilde gerçekleştirilir.
 
-## MADDE 16 – KİŞİSEL VERİLER
+Ödeme kartı bilgileri VibeGuide sistemlerinde saklanmaz.
 
-ALICI'nın kişisel verileri, 6698 sayılı KVKK ve ilgili mevzuat kapsamında, KVKK Aydınlatma Metni'nde belirtilen amaç ve koşullarla işlenir.
+## MADDE 6 – SÖZLEŞMENİN KURULMASI
 
-## MADDE 17 – UYUŞMAZLIKLARIN ÇÖZÜMÜ
+ALICI'nın Ön Bilgilendirme Formu'nu ve işbu Mesafeli Satış Sözleşmesi'ni elektronik ortamda onaylayarak ödemeyi tamamlaması ile sözleşme kurulmuş sayılır.
 
-İşbu Sözleşme'den doğabilecek uyuşmazlıklarda, Ticaret Bakanlığı tarafından her yıl belirlenen parasal sınırlar dahilinde Tüketici Hakem Heyetleri ile Tüketici Mahkemeleri yetkilidir. Başvurular e-Devlet üzerinden TÜBİS sistemi aracılığıyla da yapılabilir.
+Rezervasyon onayı elektronik ortamda ALICI'ya gönderilir.
 
-## MADDE 18 – YÜRÜRLÜK
+## MADDE 7 – HİZMETİN SUNULMASI
 
-İşbu Sözleşme, ALICI tarafından elektronik ortamda onaylandığı tarihte yürürlüğe girer. ALICI, siparişi tamamlayarak işbu Sözleşme'nin tüm maddelerini okuduğunu, anladığını ve kabul ettiğini beyan eder.
+Hizmet, rezervasyon sırasında belirtilen tarih, saat ve buluşma noktasında sunulur.
+
+ALICI belirtilen tarih ve saatte hazır bulunmakla yükümlüdür.
+
+## MADDE 8 – ALICININ YÜKÜMLÜLÜKLERİ
+
+ALICI;
+
+* doğru ve güncel bilgi vermeyi,
+* rezervasyon saatinde hazır bulunmayı,
+* deneyim kurallarına uymayı,
+* diğer katılımcılara saygılı davranmayı,
+* fiziksel koşullarını ve sağlık durumunu göz önünde bulundurarak katılım sağlamayı
+
+kabul eder.
+
+## MADDE 9 – DAVRANIŞ VE GÜVENLİK KURALLARI
+
+Hizmet sağlayıcı veya VibeGuide;
+
+* diğer katılımcıların güvenliğini tehlikeye atan,
+* saldırgan davranışlarda bulunan,
+* yasa dışı faaliyetlerde bulunan,
+* deneyimin yürütülmesini ciddi şekilde engelleyen
+
+kişileri deneyimden çıkarma hakkını saklı tutar.
+
+Bu durumda ücret iadesi yapılmayabilir.
+
+## MADDE 10 – KATILIM SAĞLANMAMASI (NO-SHOW)
+
+ALICI'nın belirtilen tarih ve saatte buluşma noktasında bulunmaması veya makul bekleme süresi içerisinde ulaşılamaması halinde rezervasyon kullanılmamış sayılır.
+
+Bu durumda ücret iadesi yapılmayabilir.
+
+## MADDE 11 – REHBERİN VEYA HİZMET SAĞLAYICININ KATILAMAMASI
+
+Hizmet sağlayıcının rezervasyonu gerçekleştirememesi halinde VibeGuide;
+
+* alternatif rehber,
+* alternatif tarih,
+* eşdeğer deneyim,
+* veya tam iade
+
+seçeneklerinden birini sunabilir.
+
+## MADDE 12 – GRUP DENEYİMLERİ VE MİNİMUM KATILIM
+
+Bazı grup deneyimleri belirli bir minimum katılımcı sayısına ulaşılması şartına bağlı olabilir.
+
+Minimum katılım sayısına ulaşılamaması halinde VibeGuide;
+
+* alternatif tarih,
+* alternatif deneyim,
+* veya tam iade
+
+sunabilir.
+
+## MADDE 13 – MÜCBİR SEBEPLER
+
+Doğal afetler, savaş, terör olayları, salgın hastalıklar, resmi makam kararları, ulaşım kesintileri, güvenlik riskleri veya benzeri mücbir sebepler nedeniyle hizmetin gerçekleştirilememesi halinde taraflar sorumlu tutulamaz.
+
+Bu durumda program değiştirilebilir, ertelenebilir veya iptal edilebilir.
+
+## MADDE 14 – ÜÇÜNCÜ TARAF HİZMETLER
+
+Müzeler, ören yerleri, ulaşım şirketleri, restoranlar ve diğer üçüncü taraf hizmet sağlayıcıların faaliyetlerinden kaynaklanan değişiklikler veya aksaklıklar VibeGuide'ın doğrudan kontrolü dışında olabilir.
+
+## MADDE 15 – CAYMA HAKKI
+
+6502 Sayılı Kanun ve Mesafeli Sözleşmeler Yönetmeliği'nin 15. maddesi uyarınca belirli bir tarihte veya dönemde yerine getirilecek turizm ve boş zaman değerlendirme hizmetlerinde cayma hakkı bulunmamaktadır.
+
+ALICI bu durumu kabul eder.
+
+## MADDE 16 – İPTAL VE İADE
+
+İptal ve iade koşulları rezervasyon sırasında belirtilen İptal ve İade Politikası'na tabidir.
+
+Aksi belirtilmedikçe;
+
+* deneyim başlangıcından en az 24 saat önce yapılan iptallerde tam iade,
+* 24 saatten daha kısa süre kala yapılan iptallerde iade yapılmaması,
+* hizmet sağlayıcı kaynaklı iptallerde tam iade,
+* mücbir sebep durumlarında olay bazında değerlendirme
+
+esas alınır.
+
+## MADDE 17 – SORUMLULUĞUN SINIRLANDIRILMASI
+
+VibeGuide, yürürlükteki mevzuatın izin verdiği ölçüde;
+
+* kullanıcıların kişisel eşyalarının kaybından,
+* kullanıcı kaynaklı kazalardan,
+* kullanıcıların kendi kusur veya ihmallerinden doğan zararlardan,
+* üçüncü taraf hizmet sağlayıcılardan kaynaklanan aksaklıklardan
+
+sorumlu değildir.
+
+Bu madde tüketici mevzuatından kaynaklanan zorunlu hakları ortadan kaldırmaz.
+
+## MADDE 18 – KİŞİSEL VERİLER
+
+ALICI'nın kişisel verileri, 6698 Sayılı Kişisel Verilerin Korunması Kanunu (KVKK), ilgili mevzuat ve VibeGuide Gizlilik Politikası hükümlerine uygun olarak işlenir.
+
+## MADDE 19 – UYUŞMAZLIKLARIN ÇÖZÜMÜ
+
+İşbu sözleşmeden doğan uyuşmazlıklarda Türk Hukuku uygulanır.
+
+Ticaret Bakanlığı tarafından her yıl ilan edilen parasal sınırlar dahilinde Tüketici Hakem Heyetleri ve Tüketici Mahkemeleri yetkilidir.
+
+Başvurular e-Devlet üzerinden TÜBİS sistemi aracılığıyla da yapılabilir.
+
+## MADDE 20 – KISMİ GEÇERSİZLİK
+
+İşbu sözleşmenin herhangi bir hükmünün geçersiz veya uygulanamaz hale gelmesi, diğer hükümlerin geçerliliğini etkilemez.
+
+## MADDE 21 – YÜRÜRLÜK
+
+ALICI, rezervasyonu tamamlayarak işbu Mesafeli Satış Sözleşmesi'ni, Ön Bilgilendirme Formu'nu ve ilgili politikaları elektronik ortamda okuduğunu, anladığını ve kabul ettiğini beyan eder.
+
+İşbu sözleşme rezervasyonun tamamlandığı tarihte yürürlüğe girer.
 
 ---
 
-İlgili Belgeler: [Ön Bilgilendirme Formu](/on-bilgilendirme) · [İptal ve İade Politikası](/cancellation-policy) · [KVKK Aydınlatma Metni](/kvkk)
+İlgili Belgeler: [Ön Bilgilendirme Formu](/on-bilgilendirme) · [İptal ve İade Politikası](/cancellation-policy) · [Gizlilik Politikası](/privacy) · [KVKK Aydınlatma Metni](/kvkk)
 `;
 
 export default function MesafeliSatisPage() {
