@@ -109,6 +109,8 @@ export default function TourDetailPage() {
   const [tour, setTour] = useState<TourDetail | null | "loading" | "error">("loading");
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
+  // Tur detay sekmeleri — uzun sayfayı bölümlere ayırır (GetYourGuide tarzı).
+  const [activeTab, setActiveTab] = useState<"overview" | "itinerary" | "included" | "info">("overview");
 
   const openLightbox = useCallback((i: number) => { setLightboxIndex(i); setLightboxOpen(true); }, []);
   const closeLightbox = useCallback(() => setLightboxOpen(false), []);
@@ -338,14 +340,37 @@ export default function TourDetailPage() {
             <p className="text-lg leading-8 text-neutral-800 font-medium">{tour.summary}</p>
           )}
 
-          {tour.description && (
+          {/* Sekme bar — uzun içeriği 4 bölüme ayırır. İçerik DOM'da kalır (SEO). */}
+          <div className="sticky top-16 z-10 -mx-1 flex gap-1 overflow-x-auto border-b border-black/[0.08] bg-white/95 backdrop-blur-sm py-1">
+            {([
+              { key: "overview", label: "Overview" },
+              { key: "itinerary", label: "Itinerary" },
+              { key: "included", label: "Included" },
+              { key: "info", label: "Info" },
+            ] as const).map((tb) => (
+              <button
+                key={tb.key}
+                onClick={() => setActiveTab(tb.key)}
+                className={`shrink-0 cursor-pointer rounded-xl px-4 py-2 text-sm font-bold transition-all ${
+                  activeTab === tb.key
+                    ? "bg-[#6C4CF1] text-white"
+                    : "text-neutral-700 hover:text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.06]"
+                }`}
+              >
+                {tb.label}
+              </button>
+            ))}
+          </div>
+
+          {/* ── OVERVIEW: About + Highlights ── */}
+          {activeTab === "overview" && tour.description && (
             <div>
               <h2 className="text-2xl font-black mb-4">About This Tour</h2>
               <p className="text-neutral-800 leading-8 whitespace-pre-line">{tour.description}</p>
             </div>
           )}
 
-          {highlights.length > 0 && (
+          {activeTab === "overview" && highlights.length > 0 && (
             <div>
               <h2 className="text-2xl font-black mb-5">Highlights</h2>
               <ul className="space-y-3">
@@ -359,7 +384,8 @@ export default function TourDetailPage() {
             </div>
           )}
 
-          {tour.places && tour.places.length > 0 && (
+          {/* ── ITINERARY: What You'll See ── */}
+          {activeTab === "itinerary" && tour.places && tour.places.length > 0 && (
             <div>
               <h2 className="text-2xl font-black mb-5">What You&apos;ll See</h2>
               <ol className="space-y-4">
@@ -382,7 +408,7 @@ export default function TourDetailPage() {
             </div>
           )}
 
-          {tour.includes && tour.includes.length > 0 && (() => {
+          {activeTab === "included" && tour.includes && tour.includes.length > 0 && (() => {
             const sorted = [...tour.includes].sort((a, b) => a.ord - b.ord);
             const included = sorted.filter((i) => i.isIncluded);
             const notIncluded = sorted.filter((i) => !i.isIncluded);
@@ -429,7 +455,7 @@ export default function TourDetailPage() {
             );
           })()}
 
-          {tour.importantInfo && tour.importantInfo.length > 0 && (
+          {activeTab === "info" && tour.importantInfo && tour.importantInfo.length > 0 && (
             <div>
               <h2 className="text-2xl font-black mb-5">Important Information</h2>
               <div className="space-y-2">
@@ -445,7 +471,7 @@ export default function TourDetailPage() {
             </div>
           )}
 
-          {tour.meetingPointText && (
+          {activeTab === "info" && tour.meetingPointText && (
             <div>
               <h2 className="text-2xl font-black mb-3">Meeting Point</h2>
               <div className="flex items-start gap-3 rounded-2xl bg-[#F7F7FB] border border-black/5 px-5 py-4">
@@ -467,7 +493,7 @@ export default function TourDetailPage() {
             </div>
           )}
 
-          {tour.languagePrices && tour.languagePrices.length > 0 && (
+          {activeTab === "info" && tour.languagePrices && tour.languagePrices.length > 0 && (
             <div>
               <h2 className="text-2xl font-black mb-4">Available in</h2>
               <div className="flex flex-wrap gap-2">
@@ -495,7 +521,7 @@ export default function TourDetailPage() {
 
           {/* VibeSquad — kişi başı fiyat = guideAmount(toplam) ÷ kişi.
               Admin yüzdeyi belirler, grup büyüdükçe kişi başı düşer. */}
-          {tour.pricingTiers && tour.pricingTiers.length > 0 && (() => {
+          {activeTab === "overview" && tour.pricingTiers && tour.pricingTiers.length > 0 && (() => {
             const tiers = [...tour.pricingTiers]
               .filter((t) => t.participantCount > 0 && t.guideAmount > 0)
               .sort((a, b) => a.participantCount - b.participantCount);
