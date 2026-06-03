@@ -465,6 +465,7 @@ interface Testimonial {
 }
 
 function Testimonials() {
+  const { locale } = useT();
   const [reviews, setReviews] = useState<Testimonial[]>([]);
 
   useEffect(() => {
@@ -480,8 +481,8 @@ function Testimonials() {
     <section className="py-24 bg-[#F7F7FB]">
       <div className="mx-auto max-w-7xl px-6">
         <div className="text-center mb-12">
-          <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1]">Loved by travellers</p>
-          <h2 className="mt-3 text-3xl md:text-5xl font-black tracking-tight text-[#0A0A0F]">What people say</h2>
+          <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1]">{locale === "tr" ? "Gezginler bayıldı" : "Loved by travellers"}</p>
+          <h2 className="mt-3 text-3xl md:text-5xl font-black tracking-tight text-[#0A0A0F]">{locale === "tr" ? "Ne diyorlar" : "What people say"}</h2>
         </div>
 
         <div className="columns-1 md:columns-3 gap-5 [&>*]:mb-5">

@@ -225,7 +225,7 @@ export default function HeroCitySearch() {
                 </span>
                 <span className="text-sm font-bold text-[#0A0A0F]">{recentValid.label}</span>
               </span>
-              <span className="text-xs font-semibold text-neutral-800">Recent</span>
+              <span className="text-xs font-semibold text-neutral-800">{locale === "tr" ? "Son" : "Recent"}</span>
             </button>
           )}
           {matches.map((d, i) => (
@@ -242,7 +242,7 @@ export default function HeroCitySearch() {
                 <span className="text-sm font-bold text-[#0A0A0F]">{d.label}</span>
               </span>
               <span className="text-xs font-semibold text-neutral-800">
-                {d.count} {d.count === 1 ? "tour" : "tours"}
+                {d.count} {locale === "tr" ? "tur" : (d.count === 1 ? "tour" : "tours")}
               </span>
             </button>
           ))}

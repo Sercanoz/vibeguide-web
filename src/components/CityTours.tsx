@@ -49,7 +49,7 @@ export default function CityTours({
     <section className="py-20 bg-[#F7F7FB]">
       <div className="mx-auto max-w-5xl px-6">
         <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1] mb-4">{hs.availableNow}</p>
-        <h2 className="text-3xl md:text-4xl font-black mb-10 tracking-tight">{heading ?? `Popular ${cityName} tours`}</h2>
+        <h2 className="text-3xl md:text-4xl font-black mb-10 tracking-tight">{heading ?? (locale === "tr" ? `Popüler ${cityName} turları` : `Popular ${cityName} tours`)}</h2>
 
         {loading ? (
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -83,7 +83,7 @@ export default function CityTours({
         <div className="mt-8 text-center">
           <a href={`/tours?city=${encodeURIComponent(citySlug)}`}
             className="inline-flex items-center gap-2 rounded-full bg-[#6C4CF1] text-white font-bold px-7 py-3 text-sm hover:bg-[#5a3dd4] transition-colors">
-            See all {cityName} tours →
+            {locale === "tr" ? `Tüm ${cityName} turlarını gör →` : `See all ${cityName} tours →`}
           </a>
         </div>
       </div>

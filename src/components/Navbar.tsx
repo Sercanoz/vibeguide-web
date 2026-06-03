@@ -258,7 +258,7 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
               ))}
             </div>
             <div className="border-t border-black/[0.06] px-4 py-3 sm:hidden flex items-center justify-between">
-              <span className="text-xs font-bold text-neutral-800 uppercase tracking-wider">Currency</span>
+              <span className="text-xs font-bold text-neutral-800 uppercase tracking-wider">{locale === "tr" ? "Para Birimi" : "Currency"}</span>
               <CurrencySwitcher />
             </div>
             <div className="border-t border-black/[0.06] px-3 py-3 space-y-2">
