@@ -105,6 +105,24 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
             <span className="transition-colors duration-200">VibeGuide</span>
           </a>
 
+          {/* Kompakt arama — sadece sayfa kaydırılınca belirir (hero arama kaybolduğunda
+             erişim sağlar, Airbnb/GetYourGuide tarzı). Linkler kaybolmaz; arama yanlarında
+             açılır. /tours'a götürür. */}
+          {scrolled && (
+            <a
+              href="/tours"
+              aria-label="Search destinations"
+              className="hidden md:flex items-center gap-2 rounded-full border border-black/[0.08] bg-white pl-4 pr-2 py-1.5 text-sm font-medium text-neutral-500 shadow-sm transition-all hover:border-[#6C4CF1]/40 hover:shadow-md animate-[fadeSlideUp_0.2s_ease_both]"
+            >
+              <span>Where to?</span>
+              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#6C4CF1] text-white">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+                </svg>
+              </span>
+            </a>
+          )}
+
           {/* Desktop links + mega menus */}
           <div className="hidden md:flex items-center gap-1 text-sm font-medium"
             onMouseLeave={() => setOpenMenu(null)}>
@@ -112,7 +130,7 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
             {/* Tours — mega menu */}
             <div className="relative" onMouseEnter={() => setOpenMenu("tours")}>
               <a href="/tours"
-                className={`flex items-center gap-1 px-3.5 py-2 rounded-xl font-medium transition-all ${activePage === "tours" ? "text-[#6C4CF1] bg-[#6C4CF1]/8 font-semibold" : "text-neutral-400 hover:text-[#0A0A0F] hover:bg-black/[0.04]"}`}>
+                className={`flex items-center gap-1 px-3.5 py-2 rounded-xl font-medium transition-all ${activePage === "tours" ? "text-[#6C4CF1] bg-[#6C4CF1]/8 font-semibold" : "text-neutral-400 hover:text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.06]"}`}>
                 {nb.tours}
                 <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={`transition-transform ${openMenu === "tours" ? "rotate-180" : ""}`}><path d="M6 9l6 6 6-6"/></svg>
               </a>
@@ -146,7 +164,7 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
             {/* Destinations — dropdown */}
             <div className="relative" onMouseEnter={() => setOpenMenu("destinations")}>
               <button
-                className={`flex items-center gap-1 px-3.5 py-2 rounded-xl font-medium transition-all ${openMenu === "destinations" ? "text-[#0A0A0F] bg-black/[0.04]" : "text-neutral-400 hover:text-[#0A0A0F] hover:bg-black/[0.04]"}`}>
+                className={`flex items-center gap-1 px-3.5 py-2 rounded-xl font-medium transition-all ${openMenu === "destinations" ? "text-[#0A0A0F] bg-black/[0.04]" : "text-neutral-400 hover:text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.06]"}`}>
                 {nb.destinations}
                 <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={`transition-transform ${openMenu === "destinations" ? "rotate-180" : ""}`}><path d="M6 9l6 6 6-6"/></svg>
               </button>
@@ -172,22 +190,22 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
             </div>
 
             {/* VibeNow */}
-            <a href="/vibenow" className="px-3.5 py-2 rounded-xl font-medium text-neutral-400 hover:text-[#0A0A0F] hover:bg-black/[0.04] transition-all">
+            <a href="/vibenow" className="px-3.5 py-2 rounded-xl font-medium text-neutral-400 hover:text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.06] transition-all">
               VibeNow
             </a>
 
             {/* VibeSquad */}
-            <a href="/vibesquad" className="px-3.5 py-2 rounded-xl font-medium text-neutral-400 hover:text-[#0A0A0F] hover:bg-black/[0.04] transition-all">
+            <a href="/vibesquad" className="px-3.5 py-2 rounded-xl font-medium text-neutral-400 hover:text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.06] transition-all">
               VibeSquad
             </a>
 
             {/* VibeAsk */}
-            <a href="/vibeask" className="px-3.5 py-2 rounded-xl font-medium text-neutral-400 hover:text-[#0A0A0F] hover:bg-black/[0.04] transition-all">
+            <a href="/vibeask" className="px-3.5 py-2 rounded-xl font-medium text-neutral-400 hover:text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.06] transition-all">
               VibeAsk
             </a>
 
             {/* How it works */}
-            <a href="/#how" className="px-3.5 py-2 rounded-xl font-medium text-neutral-400 hover:text-[#0A0A0F] hover:bg-black/[0.04] transition-all">
+            <a href="/#how" className="px-3.5 py-2 rounded-xl font-medium text-neutral-400 hover:text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.06] transition-all">
               {nb.howItWorks}
             </a>
           </div>
@@ -253,7 +271,7 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
             ) : (
               <>
                 <button onClick={() => setAuthModal("signin")}
-                  className="hidden md:block text-sm font-semibold text-neutral-500 hover:text-[#0A0A0F] px-3 py-2 rounded-xl hover:bg-black/[0.04] transition-all duration-150">
+                  className="hidden md:block text-sm font-semibold text-neutral-500 hover:text-[#6C4CF1] px-3 py-2 rounded-xl hover:bg-[#6C4CF1]/[0.06] transition-all duration-150">
                   {nb.signIn}
                 </button>
                 <button onClick={() => setAuthModal("register")}

@@ -138,8 +138,6 @@ export default function HeroCitySearch() {
       ? recent
       : null;
 
-  const popular = destinations.slice(0, 4);
-
   function go(dest?: Destination) {
     const target = dest ?? matches[active] ?? matches[0];
     if (!target) {
@@ -210,22 +208,6 @@ export default function HeroCitySearch() {
           {ux.explore}
         </button>
       </div>
-
-      {/* Popüler şehir çipleri — yazmadan tek dokunuş */}
-      {popular.length > 0 && (
-        <div className="mt-3 flex flex-wrap items-center justify-center gap-2">
-          <span className="text-xs font-semibold text-neutral-400">{ux.popular}:</span>
-          {popular.map((d) => (
-            <button
-              key={d.slug}
-              onClick={() => go(d)}
-              className="rounded-full border border-black/[0.08] bg-white/70 px-3.5 py-1.5 text-xs font-bold text-neutral-600 transition-colors hover:border-[#6C4CF1]/40 hover:text-[#6C4CF1]"
-            >
-              {d.label}
-            </button>
-          ))}
-        </div>
-      )}
 
       {/* Suggestions dropdown */}
       {open && (matches.length > 0 || recentValid) && (
