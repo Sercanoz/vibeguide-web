@@ -1,69 +1,96 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import LegalMarkdown from "@/components/LegalMarkdown";
 
 export const metadata: Metadata = {
   title: "Çerez Politikası | VibeGuide",
   description: "VibeGuide web sitesinde kullanılan çerezler ve çerez tercihleri hakkında bilgilendirme.",
 };
 
+const BODY = `
+Bu Çerez Politikası, VibeGuide web sitesi ve ilgili dijital hizmetlerde kullanılan çerezler hakkında bilgi vermek amacıyla hazırlanmıştır.
+
+## 1. Çerez Nedir?
+
+Çerezler (cookies), bir web sitesini ziyaret ettiğinizde cihazınıza veya tarayıcınıza kaydedilen küçük metin dosyalarıdır. Çerezler sayesinde web sitesi daha verimli çalışabilir, kullanıcı tercihleri hatırlanabilir ve hizmetler geliştirilebilir.
+
+## 2. Kullandığımız Çerez Türleri
+
+### A. Zorunlu Çerezler (Her Zaman Aktif)
+
+Bu çerezler web sitesinin güvenli ve düzgün şekilde çalışabilmesi için gereklidir.
+
+Örnek kullanım alanları:
+
+* Dil tercihlerinin saklanması (vg_locale)
+* Çerez tercihinin hatırlanması (vg_cookie_consent)
+* Oturum ve güvenlik işlemleri
+* Form ve sistem işlevlerinin çalıştırılması
+
+Bu çerezler devre dışı bırakılamaz.
+
+### B. Analitik Çerezler (İsteğe Bağlı)
+
+Bu çerezler ziyaretçilerin web sitesini nasıl kullandığını anlamamıza yardımcı olur.
+
+Örnek olarak:
+
+* Hangi sayfaların ziyaret edildiği
+* Ziyaret süresi
+* Kullanıcıların hangi ülkelerden erişim sağladığı
+* Site performansının ölçülmesi
+
+Analitik çerezler yalnızca açık kullanıcı onayı alınması halinde etkinleştirilir.
+
+## 3. Çerez Tercihleriniz
+
+Web sitemizi ilk ziyaret ettiğinizde görüntülenen çerez bildirimi üzerinden analitik çerezleri kabul edebilir veya reddedebilirsiniz.
+
+Onay vermemeniz durumunda yalnızca zorunlu çerezler kullanılacaktır.
+
+Tercihlerinizi daha sonra tarayıcı ayarlarınızdan veya web sitemizde sunulan çerez yönetim araçlarından değiştirebilirsiniz.
+
+## 4. Üçüncü Taraf Hizmetler
+
+Web sitemizde aşağıdaki üçüncü taraf hizmet sağlayıcıları kullanılabilir:
+
+* Google Analytics (analitik ölçümleme)
+* Google Tag Manager (etiket yönetimi)
+* Lisanslı ödeme kuruluşları (ödeme işlemlerinin gerçekleştirilmesi sırasında)
+
+Bu hizmet sağlayıcılar kendi çerezlerini kullanabilir ve kendi gizlilik politikalarına tabi olabilirler.
+
+Google'ın veri işleme uygulamaları hakkında daha fazla bilgi için Google Gizlilik Politikası incelenebilir.
+
+## 5. Çerezlerin Saklanma Süresi
+
+Kullandığımız çerezler kullanım amaçlarına göre farklı sürelerle saklanabilir.
+
+* **Oturum çerezleri:** Tarayıcı kapatıldığında silinir.
+* **Kalıcı çerezler:** Belirlenen süre boyunca cihazınızda saklanır veya siz tarafından silinene kadar kalabilir.
+
+## 6. Kişisel Verilerin Korunması
+
+Çerezler aracılığıyla elde edilen veriler, yürürlükteki KVKK (6698 Sayılı Kişisel Verilerin Korunması Kanunu) ve ilgili mevzuata uygun şekilde işlenir.
+
+Detaylı bilgi için Gizlilik Politikamızı ve KVKK Aydınlatma Metnimizi inceleyebilirsiniz.
+
+## 7. İletişim
+
+Çerez Politikamız hakkında sorularınız için:
+
+E-posta: [support@vibeguideapp.com](mailto:support@vibeguideapp.com)
+
+---
+
+İlgili Belgeler: [Gizlilik Politikası](/privacy) · [KVKK Aydınlatma Metni](/kvkk) · [Kullanım Şartları](/terms)
+`;
+
 export default function CookiePolicyPage() {
   return (
-    <main className="min-h-screen bg-white text-[#0A0A0F]">
-      <nav className="border-b border-black/[0.06] px-6 h-16 flex items-center">
-        <Link href="/" className="text-xl font-black tracking-tight">VibeGuide</Link>
-      </nav>
-
-      <div className="mx-auto max-w-3xl px-6 py-16">
-        <h1 className="text-3xl font-black mb-2">Çerez Politikası</h1>
-        <p className="text-sm text-neutral-400 mb-10">Son güncelleme: Ocak 2026</p>
-
-        <div className="space-y-8 text-sm text-neutral-700 leading-7">
-
-          <section>
-            <h2 className="font-black text-base mb-3">1 — ÇEREZ NEDİR?</h2>
-            <p>Çerezler (cookies), web sitelerini ziyaret ettiğinizde tarayıcınıza kaydedilen küçük metin dosyalarıdır. Bu dosyalar, sitenin düzgün çalışması, tercihlerinizin hatırlanması ve kullanım istatistiklerinin toplanması için kullanılır.</p>
-          </section>
-
-          <section>
-            <h2 className="font-black text-base mb-3">2 — KULLANDIĞIMIZ ÇEREZ TÜRLERİ</h2>
-
-            <div className="mt-3 space-y-4">
-              <div className="rounded-2xl border border-black/[0.06] p-4">
-                <p className="font-bold text-[#0A0A0F]">Zorunlu Çerezler <span className="ml-2 text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700">Her zaman aktif</span></p>
-                <p className="mt-1 text-xs text-neutral-500">Sitenin temel işlevleri için gereklidir. Dil tercihiniz (vg_locale), oturum yönetimi ve çerez onayınız (vg_cookie_consent) bu kapsamdadır. Devre dışı bırakılamaz.</p>
-              </div>
-
-              <div className="rounded-2xl border border-black/[0.06] p-4">
-                <p className="font-bold text-[#0A0A0F]">Analitik Çerezler <span className="ml-2 text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#6C4CF1]/10 text-[#6C4CF1]">Opsiyonel</span></p>
-                <p className="mt-1 text-xs text-neutral-500">Google Analytics aracılığıyla, ziyaretçilerin siteyi nasıl kullandığını anonim olarak ölçeriz (hangi sayfalar görüntülendi, hangi ülkeden gelindi vb.). Bu çerezler yalnızca açık onayınızla etkinleşir.</p>
-              </div>
-            </div>
-          </section>
-
-          <section>
-            <h2 className="font-black text-base mb-3">3 — ÇEREZ TERCİHLERİNİZ</h2>
-            <p>Siteye ilk girişinizde gösterilen çerez bildirimi üzerinden analitik çerezleri kabul edebilir veya reddedebilirsiniz. Onay vermemeniz halinde yalnızca zorunlu çerezler kullanılır ve analitik veri toplanmaz.</p>
-            <p className="mt-2">Tarayıcınızın ayarlarından da çerezleri istediğiniz zaman silebilir veya engelleyebilirsiniz. Ancak zorunlu çerezlerin engellenmesi sitenin bazı bölümlerinin düzgün çalışmamasına yol açabilir.</p>
-          </section>
-
-          <section>
-            <h2 className="font-black text-base mb-3">4 — ÜÇÜNCÜ TARAF ÇEREZLERİ</h2>
-            <p>Analitik amaçla Google Analytics kullanmaktayız. Google&rsquo;ın veri işleme uygulamaları hakkında bilgi için Google Gizlilik Politikası&rsquo;na başvurabilirsiniz. Ödeme işlemleri sırasında, lisanslı ödeme kuruluşu kendi çerezlerini kullanabilir.</p>
-          </section>
-
-          <section>
-            <h2 className="font-black text-base mb-3">5 — İLETİŞİM</h2>
-            <p>Çerez politikamız hakkında sorularınız için: <a href="mailto:support@vibeguideapp.com" className="text-[#6C4CF1] font-semibold">support@vibeguideapp.com</a></p>
-          </section>
-
-          <div className="pt-6 border-t border-black/[0.06] text-xs text-neutral-400">
-            <p>İlgili belgeler:
-              {" "}<Link href="/privacy" className="text-[#6C4CF1]">Gizlilik Politikası</Link> ·
-              {" "}<Link href="/kvkk" className="text-[#6C4CF1]">KVKK Aydınlatma Metni</Link>
-            </p>
-          </div>
-        </div>
-      </div>
-    </main>
+    <LegalMarkdown
+      title="Çerez Politikası"
+      subtitle="Son Güncelleme: Ocak 2026"
+      body={BODY}
+    />
   );
 }

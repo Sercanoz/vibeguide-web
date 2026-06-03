@@ -1,13 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
-import { headers } from "next/headers";
 import "./globals.css";
 import JsonLd from "@/components/JsonLd";
 import { LanguageProvider } from "@/components/LanguageProvider";
 import { CurrencyProvider } from "@/components/CurrencyProvider";
 import CookieBanner from "@/components/CookieBanner";
 import EmailCaptureGate from "@/components/EmailCaptureGate";
-import type { Locale } from "@/lib/i18n";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -120,16 +118,16 @@ export const viewport: Viewport = {
   maximumScale: 5,
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const headersList = await headers();
-  const locale = (headersList.get("x-locale") ?? "en") as Locale;
-
+  // lang sabit "en": middleware'e (headers) bağımlılık kalkınca tüm statik sayfalar
+  // tekrar statik + cache'lenebilir olur → Google rahat tarar, site hızlanır.
+  // Çok dilli /[lang]/ sayfaları içeriği + hreflang ile dil sinyalini zaten veriyor.
   return (
-    <html lang={locale} className={`${inter.variable} h-full antialiased`}>
+    <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <head>
         <JsonLd />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-SH98TTW4KS" />
@@ -144,7 +142,7 @@ export default async function RootLayout({
         `}} />
       </head>
       <body className="min-h-full flex flex-col bg-white text-vg-ink">
-        <LanguageProvider initialLocale={locale}>
+        <LanguageProvider>
           <CurrencyProvider>
             {children}
             <CookieBanner />
