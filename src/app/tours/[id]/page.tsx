@@ -340,27 +340,45 @@ export default function TourDetailPage() {
             <p className="text-lg leading-8 text-neutral-800 font-medium">{tour.summary}</p>
           )}
 
-          {/* Sekme bar — uzun içeriği 4 bölüme ayırır. İçerik DOM'da kalır (SEO). */}
-          <div className="sticky top-16 z-10 -mx-1 flex gap-1 overflow-x-auto border-b border-black/[0.08] bg-white/95 backdrop-blur-sm py-1">
-            {([
-              { key: "overview", label: "Overview" },
-              { key: "itinerary", label: "Itinerary" },
-              { key: "included", label: "Included" },
-              { key: "info", label: "Info" },
-            ] as const).map((tb) => (
-              <button
-                key={tb.key}
-                onClick={() => setActiveTab(tb.key)}
-                className={`shrink-0 cursor-pointer rounded-xl px-4 py-2 text-sm font-bold transition-all ${
-                  activeTab === tb.key
-                    ? "bg-[#6C4CF1] text-white"
-                    : "text-neutral-700 hover:text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.06]"
-                }`}
-              >
-                {tb.label}
-              </button>
-            ))}
-          </div>
+          {/* Hangi sekmelerin içeriği var? Boş olanları gizle. (VibeSquad sekme dışı.) */}
+          {(() => {
+            const hasOverview = !!tour.description || highlights.length > 0;
+            const hasItinerary = !!(tour.places && tour.places.length > 0);
+            const hasIncluded = !!(tour.includes && tour.includes.length > 0);
+            const hasInfo = !!(
+              (tour.importantInfo && tour.importantInfo.length > 0) ||
+              tour.meetingPointText ||
+              (tour.languagePrices && tour.languagePrices.length > 0)
+            );
+            const tabs = [
+              hasOverview && { key: "overview" as const, label: "Overview" },
+              hasItinerary && { key: "itinerary" as const, label: "Itinerary" },
+              hasIncluded && { key: "included" as const, label: "Included" },
+              hasInfo && { key: "info" as const, label: "Info" },
+            ].filter(Boolean) as { key: typeof activeTab; label: string }[];
+            // Aktif sekme boşsa ilk dolu sekmeye geç.
+            if (tabs.length > 0 && !tabs.some((t) => t.key === activeTab)) {
+              setTimeout(() => setActiveTab(tabs[0].key), 0);
+            }
+            if (tabs.length <= 1) return null; // tek/boş sekme → bar gösterme
+            return (
+              <div className="sticky top-16 z-10 -mx-1 flex gap-1 overflow-x-auto border-b border-black/[0.08] bg-white/95 backdrop-blur-sm py-1">
+                {tabs.map((tb) => (
+                  <button
+                    key={tb.key}
+                    onClick={() => setActiveTab(tb.key)}
+                    className={`shrink-0 cursor-pointer rounded-xl px-4 py-2 text-sm font-bold transition-all ${
+                      activeTab === tb.key
+                        ? "bg-[#6C4CF1] text-white"
+                        : "text-neutral-700 hover:text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.06]"
+                    }`}
+                  >
+                    {tb.label}
+                  </button>
+                ))}
+              </div>
+            );
+          })()}
 
           {/* ── OVERVIEW: About + Highlights ── */}
           {activeTab === "overview" && tour.description && (
@@ -519,9 +537,9 @@ export default function TourDetailPage() {
             </div>
           )}
 
-          {/* VibeSquad — kişi başı fiyat = guideAmount(toplam) ÷ kişi.
-              Admin yüzdeyi belirler, grup büyüdükçe kişi başı düşer. */}
-          {activeTab === "overview" && tour.pricingTiers && tour.pricingTiers.length > 0 && (() => {
+          {/* VibeSquad — sekme dışı, her zaman görünür ayrı bölüm.
+              Kişi başı fiyat = guideAmount(toplam) ÷ kişi; grup büyüdükçe düşer. */}
+          {tour.pricingTiers && tour.pricingTiers.length > 0 && (() => {
             const tiers = [...tour.pricingTiers]
               .filter((t) => t.participantCount > 0 && t.guideAmount > 0)
               .sort((a, b) => a.participantCount - b.participantCount);
@@ -530,7 +548,7 @@ export default function TourDetailPage() {
               Math.round((t.guideAmount / t.participantCount) * 100) / 100;
             const cheapest = Math.min(...tiers.map(perPerson));
             return (
-              <div>
+              <div className="pt-8 border-t border-black/[0.08]">
                 <h2 className="text-2xl font-black mb-1">VibeSquad — share &amp; save</h2>
                 <p className="text-sm text-neutral-700 mb-4">
                   Join with other travelers — the bigger the group, the less each person pays.
