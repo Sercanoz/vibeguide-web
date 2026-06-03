@@ -1,19 +1,24 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import MainFooter from "@/components/MainFooter";
 import PhoneFrame from "@/components/PhoneFrame";
-import { MODES, MODE_CTA_SUB, type Mode } from "@/lib/modes";
+import { useT } from "@/components/LanguageProvider";
+import { MODES, localizeMode, ctaSub, type Mode } from "@/lib/modes";
 
 const SITE = "https://www.vibeguideapp.com";
 
 /** Telefon mockup içeriği — moda göre renklenen mini uygulama ekranı. */
-function ModeMock({ mode }: { mode: Mode }) {
+function ModeMock({ mode, locale }: { mode: Mode; locale: string }) {
+  const nowLabel = locale === "tr" ? "İstanbul · şimdi" : "Istanbul · now";
+  const liveLabel = locale === "tr" ? "CANLI" : "LIVE";
   return (
     <div className="px-4 pb-5">
       <div className="flex items-center justify-between mb-3">
         <div>
-          <p className="text-[10px] text-neutral-800 font-medium">Istanbul · now</p>
+          <p className="text-[10px] text-neutral-800 font-medium">{nowLabel}</p>
           <h3 className="text-base font-black leading-tight flex items-center gap-1">
             <span>{mode.emoji}</span> {mode.name}
           </h3>
@@ -22,7 +27,7 @@ function ModeMock({ mode }: { mode: Mode }) {
           className="flex items-center gap-1 rounded-full px-2 py-0.5 text-[9px] font-bold text-white"
           style={{ backgroundColor: mode.color }}
         >
-          LIVE
+          {liveLabel}
         </span>
       </div>
 
@@ -56,8 +61,17 @@ function ModeMock({ mode }: { mode: Mode }) {
   );
 }
 
-export default function ModePageView({ mode }: { mode: Mode }) {
-  const others = MODES.filter((m) => m.slug !== mode.slug);
+export default function ModePageView({ mode: rawMode }: { mode: Mode }) {
+  const { locale } = useT();
+  const mode = localizeMode(rawMode, locale);
+  const others = MODES.filter((m) => m.slug !== rawMode.slug).map((m) => localizeMode(m, locale));
+  const tr = locale === "tr";
+  const ui = {
+    exploreTours: tr ? "Turları keşfet →" : "Explore tours →",
+    howItWorks: tr ? "Nasıl çalışır" : "How it works",
+    questions: tr ? "Sorular" : "Questions",
+    otherWays: tr ? "Keşfetmenin diğer yolları" : "The other ways to explore",
+  };
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -117,20 +131,20 @@ export default function ModePageView({ mode }: { mode: Mode }) {
                 className="rounded-full px-7 py-3.5 text-sm font-bold text-white transition-transform hover:scale-[1.03]"
                 style={{ backgroundColor: mode.color, boxShadow: `0 4px 20px ${mode.color}55` }}
               >
-                Explore tours →
+                {ui.exploreTours}
               </Link>
               <a
                 href="#how"
                 className="rounded-full border border-black/10 px-7 py-3.5 text-sm font-bold text-[#0A0A0F] hover:border-black/30 transition-colors"
               >
-                How it works
+                {ui.howItWorks}
               </a>
             </div>
           </div>
 
           <div className="flex justify-center">
             <PhoneFrame>
-              <ModeMock mode={mode} />
+              <ModeMock mode={mode} locale={locale} />
             </PhoneFrame>
           </div>
         </div>
@@ -139,7 +153,7 @@ export default function ModePageView({ mode }: { mode: Mode }) {
       {/* How it works */}
       <section id="how" className="py-16 bg-[#F7F7FB]">
         <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-10">How it works</h2>
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-10">{ui.howItWorks}</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {mode.steps.map((s, i) => (
               <div key={s.title} className="rounded-2xl bg-white border border-black/[0.06] p-6">
@@ -191,7 +205,7 @@ export default function ModePageView({ mode }: { mode: Mode }) {
       {/* FAQ */}
       <section className="py-16">
         <div className="mx-auto max-w-3xl px-6">
-          <h2 className="text-3xl font-black tracking-tight mb-8">Questions</h2>
+          <h2 className="text-3xl font-black tracking-tight mb-8">{ui.questions}</h2>
           <div className="space-y-3">
             {mode.faqs.map((f) => (
               <details key={f.q} className="group rounded-2xl border border-black/[0.06] px-5 py-4">
@@ -209,7 +223,7 @@ export default function ModePageView({ mode }: { mode: Mode }) {
       {/* Other modes */}
       <section className="pb-4">
         <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-2xl font-black tracking-tight mb-6">The other ways to explore</h2>
+          <h2 className="text-2xl font-black tracking-tight mb-6">{ui.otherWays}</h2>
           <div className="grid sm:grid-cols-2 gap-4">
             {others.map((o) => (
               <Link
@@ -232,13 +246,13 @@ export default function ModePageView({ mode }: { mode: Mode }) {
       <section className="py-20 bg-[#F7F7FB]">
         <div className="mx-auto max-w-2xl px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-black mb-4">{mode.ctaTitle}</h2>
-          <p className="text-neutral-700 mb-8 leading-7">{MODE_CTA_SUB}</p>
+          <p className="text-neutral-700 mb-8 leading-7">{ctaSub(locale)}</p>
           <Link
             href="/tours"
             className="inline-block rounded-full px-8 py-3.5 text-sm font-bold text-white"
             style={{ backgroundColor: mode.color, boxShadow: `0 4px 20px ${mode.color}55` }}
           >
-            Explore tours →
+            {ui.exploreTours}
           </Link>
         </div>
       </section>
