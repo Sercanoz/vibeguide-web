@@ -6,6 +6,7 @@ import { homeTranslations } from "@/lib/home-i18n";
 import { uiExtra } from "@/lib/ui-extra-i18n";
 import { navbarI18n } from "@/lib/navbar-i18n";
 import { homeSections } from "@/lib/home-sections-i18n";
+import { getWhyExists } from "@/lib/why-exists-i18n";
 import { useInView } from "@/hooks/useInView";
 import Navbar from "@/components/Navbar";
 import HeroCitySearch from "@/components/HeroCitySearch";
@@ -20,22 +21,8 @@ export default function HomePage() {
   const hs = homeSections[locale] ?? homeSections.en;
   const nb = navbarI18n[locale] ?? navbarI18n.en;
 
-  // "VibeGuide Neden Var" manifestosu — şimdilik TR + EN, diğerleri EN fallback.
-  const whyExistsTr = {
-    eyebrow: "VibeGuide Neden Var",
-    titleA: "Turizm fazla robotlaştı.",
-    titleB: "Biz tekrar insanlaştırıyoruz.",
-    body: "Otobüs turları her şehirde aynı senaryoyu okuyor. QR kodlar gerçek sohbetin yerini aldı. Gezginler keşfetmekten çok sıra bekliyor. VibeGuide bunu tersine çevirir. Bir dokunuş, bir yerel, bir gerçek gün. VibeNow ile yalnız, VibeSquad ile grupla ya da Özel Turlar ile planlı — diğer tarafta hep gerçek bir insan var.",
-    closing: "Senaryo yok. Tuzak yok. Sadece şehir, onu yaşayan birinin ağzından.",
-  };
-  const whyExistsEn = {
-    eyebrow: "Why VibeGuide Exists",
-    titleA: "Tourism got too robotic.",
-    titleB: "We're making it human again.",
-    body: "Bus tours read the same script in every city. QR codes replaced real conversation. Travellers spend more time queuing than discovering. VibeGuide flips that. One tap, one local, one real day. Solo with VibeNow, in a group with VibeSquad, or planned with Private Tours — there's always a real human on the other side.",
-    closing: "No script. No trap. Just the city, in the words of someone who lives it.",
-  };
-  const whyExists = locale === "tr" ? whyExistsTr : whyExistsEn;
+  // "Why VibeGuide Exists" manifestosu — tüm dillere çevrildi.
+  const whyExists = getWhyExists(locale);
 
   const secHow = useInView();
   const secModes = useInView();
