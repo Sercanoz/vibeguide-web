@@ -9,6 +9,22 @@ const STORAGE_KEY = "vg_email_capture"; // "dismissed" | "subscribed"
 
 export default function EmailCaptureModal() {
   const { locale } = useT();
+  const tr = locale === "tr";
+  const ec = {
+    youreIn: tr ? "Tamamdır! 🎉" : "You're in! 🎉",
+    yourCode: tr ? "Kodun" : "Your code",
+    copied: tr ? "Kopyalandı ✓" : "Copied ✓",
+    copyCode: tr ? "Kodu kopyala" : "Copy code",
+    browseTours: tr ? "Turlara göz at →" : "Browse tours →",
+    title: tr ? "İlk turunda %10 indirim kazan" : "Get 10% off your first tour",
+    sub: tr ? "Türkiye'yi doğrulanmış yerel rehberlerle keşfeden gezginlere katıl. E-postanı bırak — indirim kodunu anında gönderelim." : "Join travelers exploring Turkey with verified local guides. Drop your email — we'll send a discount code instantly.",
+    submitLoading: tr ? "Kodun hazırlanıyor…" : "Getting your code…",
+    submit: tr ? "%10 indirimimi al →" : "Get my 10% off →",
+    noThanks: tr ? "Hayır, belki sonra" : "No thanks, maybe later",
+    privacy: tr ? "Gizliliğine saygı duyuyoruz. İstediğin zaman çıkabilirsin." : "We respect your privacy. Unsubscribe anytime.",
+    invalidEmail: tr ? "Lütfen geçerli bir e-posta gir." : "Please enter a valid email.",
+    genericErr: tr ? "Bir şeyler ters gitti. Tekrar dene." : "Something went wrong. Try again.",
+  };
   const [visible, setVisible] = useState(false);
   const [email, setEmail] = useState("");
   const [state, setState] = useState<"form" | "loading" | "done">("form");
@@ -41,7 +57,7 @@ export default function EmailCaptureModal() {
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError(null);
-    if (!email.trim() || !email.includes("@")) { setError("Please enter a valid email."); return; }
+    if (!email.trim() || !email.includes("@")) { setError(ec.invalidEmail); return; }
     setState("loading");
     try {
       const res = await fetch(`${API_BASE_URL}/api/subscribe`, {
@@ -49,13 +65,13 @@ export default function EmailCaptureModal() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: email.trim(), source: "homepage_popup", locale }),
       });
-      if (!res.ok) { setError("Something went wrong. Try again."); setState("form"); return; }
+      if (!res.ok) { setError(ec.genericErr); setState("form"); return; }
       const data = await res.json();
       setCode(data.promoCode ?? null);
       setState("done");
       localStorage.setItem(STORAGE_KEY, "subscribed");
     } catch {
-      setError("Network error. Try again.");
+      setError(tr ? "Ağ hatası. Tekrar dene." : "Network error. Try again.");
       setState("form");
     }
   }
@@ -89,30 +105,30 @@ export default function EmailCaptureModal() {
         <div className="p-7">
           {state === "done" ? (
             <div className="text-center">
-              <h2 className="text-2xl font-black text-[#0A0A0F]">You&apos;re in! 🎉</h2>
+              <h2 className="text-2xl font-black text-[#0A0A0F]">{ec.youreIn}</h2>
               <p className="mt-2 text-sm text-neutral-700 leading-6">
-                Here&apos;s your <strong>10% off</strong> code. We also emailed it to you.
+                {tr ? <>İşte <strong>%10 indirim</strong> kodun. Ayrıca e-postayla da gönderdik.</> : <>Here&apos;s your <strong>10% off</strong> code. We also emailed it to you.</>}
               </p>
               <div className="mt-5 bg-[#F7F7FB] border-2 border-dashed border-[#6C4CF1] rounded-2xl py-4">
-                <p className="text-[10px] font-bold text-neutral-800 uppercase tracking-widest">Your code</p>
+                <p className="text-[10px] font-bold text-neutral-800 uppercase tracking-widest">{ec.yourCode}</p>
                 <p className="text-2xl font-black text-[#6C4CF1] font-mono mt-1">{code}</p>
               </div>
               <div className="mt-4 flex gap-2">
                 <button onClick={copyCode}
                   className="flex-1 rounded-2xl border border-black/10 py-2.5 text-sm font-bold text-[#0A0A0F] hover:bg-neutral-50 transition-colors">
-                  {copied ? "Copied ✓" : "Copy code"}
+                  {copied ? ec.copied : ec.copyCode}
                 </button>
                 <a href="/tours" onClick={dismiss}
                   className="flex-1 rounded-2xl bg-[#6C4CF1] text-white py-2.5 text-sm font-bold hover:bg-[#5a3dd4] transition-colors text-center">
-                  Browse tours →
+                  {ec.browseTours}
                 </a>
               </div>
             </div>
           ) : (
             <>
-              <h2 className="text-2xl font-black text-[#0A0A0F] text-center">Get 10% off your first tour</h2>
+              <h2 className="text-2xl font-black text-[#0A0A0F] text-center">{ec.title}</h2>
               <p className="mt-2 text-sm text-neutral-700 text-center leading-6">
-                Join travelers exploring Turkey with verified local guides. Drop your email — we&apos;ll send a discount code instantly.
+                {ec.sub}
               </p>
               <form onSubmit={onSubmit} className="mt-5 space-y-3">
                 <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)}
@@ -122,14 +138,14 @@ export default function EmailCaptureModal() {
                 <button type="submit" disabled={state === "loading"}
                   className="w-full rounded-2xl bg-[#6C4CF1] text-white font-bold py-3.5 text-sm hover:bg-[#5a3dd4] transition-colors disabled:opacity-50"
                   style={{ boxShadow: "0 4px 16px rgba(108,76,241,0.25)" }}>
-                  {state === "loading" ? "Getting your code…" : "Get my 10% off →"}
+                  {state === "loading" ? ec.submitLoading : ec.submit}
                 </button>
               </form>
               <button onClick={dismiss} className="mt-3 w-full text-center text-xs text-neutral-800 hover:text-neutral-800 transition-colors">
-                No thanks, maybe later
+                {ec.noThanks}
               </button>
               <p className="mt-3 text-[10px] text-neutral-700 text-center">
-                We respect your privacy. Unsubscribe anytime.
+                {ec.privacy}
               </p>
             </>
           )}

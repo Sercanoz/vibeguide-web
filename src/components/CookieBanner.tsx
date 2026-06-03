@@ -2,10 +2,29 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useT } from "@/components/LanguageProvider";
 
 type Consent = "accepted" | "declined" | null;
 
 export default function CookieBanner() {
+  const { locale } = useT();
+  const tr = locale === "tr";
+  const cc = {
+    title: tr ? "Çerez kullanıyoruz 🍪" : "We use cookies 🍪",
+    body: tr
+      ? "Dil tercihini hatırlamak ve deneyimini geliştirmek için çerezler kullanıyoruz. Analitik çerezler ziyaretçilerin sitemizi nasıl kullandığını anlamamıza yardımcı olur."
+      : "We use cookies to remember your language preference and improve your experience. Analytics cookies help us understand how visitors use our site.",
+    essential: tr ? "Zorunlu" : "Essential",
+    essentialDesc: tr ? "Dil tercihi, oturum. Her zaman aktif." : "Language preference, session. Always active.",
+    analytics: tr ? "Analitik" : "Analytics",
+    analyticsDesc: tr ? "Google Analytics — anonim sayfa görüntüleme istatistikleri." : "Google Analytics — anonymous page view statistics.",
+    alwaysOn: tr ? "Her zaman açık" : "Always on",
+    optional: tr ? "İsteğe bağlı" : "Optional",
+    hideDetails: tr ? "Detayları gizle ▲" : "Hide details ▲",
+    showDetails: tr ? "Çerez detayları ▼" : "Cookie details ▼",
+    decline: tr ? "Reddet" : "Decline",
+    acceptAll: tr ? "Tümünü kabul et" : "Accept all",
+  };
   const [consent, setConsent] = useState<Consent>(null);
   const [visible, setVisible] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
@@ -67,9 +86,9 @@ export default function CookieBanner() {
             </div>
 
             <div className="flex-1 min-w-0">
-              <p className="text-sm font-black text-[#0A0A0F]">We use cookies 🍪</p>
+              <p className="text-sm font-black text-[#0A0A0F]">{cc.title}</p>
               <p className="mt-1 text-xs text-neutral-800 leading-5">
-                We use cookies to remember your language preference and improve your experience. Analytics cookies help us understand how visitors use our site.
+                {cc.body}
                 {" "}
                 <Link href="/privacy" className="text-[#6C4CF1] font-semibold hover:underline">Privacy Policy</Link>
                 {" · "}
@@ -80,8 +99,8 @@ export default function CookieBanner() {
               {showDetails && (
                 <div className="mt-3 space-y-2">
                   {[
-                    { name: "Essential", desc: "Language preference, session. Always active.", always: true },
-                    { name: "Analytics", desc: "Google Analytics — anonymous page view statistics.", always: false },
+                    { name: cc.essential, desc: cc.essentialDesc, always: true },
+                    { name: cc.analytics, desc: cc.analyticsDesc, always: false },
                   ].map((c) => (
                     <div key={c.name} className="flex items-center justify-between bg-neutral-50 rounded-xl px-3 py-2">
                       <div>
@@ -89,7 +108,7 @@ export default function CookieBanner() {
                         <p className="text-[10px] text-neutral-800">{c.desc}</p>
                       </div>
                       <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${c.always ? "bg-emerald-100 text-emerald-700" : "bg-[#6C4CF1]/10 text-[#6C4CF1]"}`}>
-                        {c.always ? "Always on" : "Optional"}
+                        {c.always ? cc.alwaysOn : cc.optional}
                       </span>
                     </div>
                   ))}
@@ -100,7 +119,7 @@ export default function CookieBanner() {
                 onClick={() => setShowDetails(v => !v)}
                 className="mt-2 text-[10px] font-semibold text-neutral-800 hover:text-[#0A0A0F] transition-colors"
               >
-                {showDetails ? "Hide details ▲" : "Cookie details ▼"}
+                {showDetails ? cc.hideDetails : cc.showDetails}
               </button>
             </div>
           </div>
@@ -111,14 +130,14 @@ export default function CookieBanner() {
               onClick={decline}
               className="flex-1 py-2.5 rounded-2xl border border-black/10 text-sm font-bold text-neutral-700 hover:bg-neutral-50 hover:border-black/20 transition-all"
             >
-              Decline
+              {cc.decline}
             </button>
             <button
               onClick={accept}
               className="flex-1 py-2.5 rounded-2xl bg-[#6C4CF1] text-white text-sm font-bold hover:bg-[#5a3dd4] transition-colors"
               style={{ boxShadow: "0 2px 12px rgba(108,76,241,0.25)" }}
             >
-              Accept all
+              {cc.acceptAll}
             </button>
           </div>
         </div>
