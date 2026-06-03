@@ -33,18 +33,16 @@ export default function MainFooter() {
                 </a>
               ))}
             </div>
-            {/* App mağaza rozetleri — altlı üstlü, görünür boyutları eşitlenmiş.
-               Apple SVG kenardan kenara dolu; Google PNG ~%9 şeffaf padding içerir →
-               aynı görünür yüksekliğe gelmesi için Google'ı orantılı büyütüp negatif
-               margin ile padding'i telafi ediyoruz. İkisi de ~52px görünür yükseklik. */}
+            {/* App mağaza rozetleri — ikisi de kenardan kenara dolu SVG, aynı yükseklik
+               (eşit görünür boyut). Google PNG yerine padding'siz Wikimedia SVG kullanıldı. */}
             <div className="mt-6 flex flex-col items-start gap-3">
               <a href="#" aria-label="Download on the App Store" className="block transition-opacity hover:opacity-80">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/app-store-badge.svg" alt="Download on the App Store" className="h-[52px] w-auto" />
               </a>
-              <a href="#" aria-label="Get it on Google Play" className="block transition-opacity hover:opacity-80 -ml-[7px]">
+              <a href="#" aria-label="Get it on Google Play" className="block transition-opacity hover:opacity-80">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/google-play-badge.png" alt="Get it on Google Play" className="h-[62px] w-auto" />
+                <img src="/google-play-badge.svg" alt="Get it on Google Play" className="h-[52px] w-auto" />
               </a>
             </div>
           </div>
