@@ -18,7 +18,7 @@ export default function MainFooter() {
   return (
     <footer className="bg-white border-t border-black/[0.06] px-6 py-16">
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-10 md:grid-cols-[2fr_1fr_1fr_1fr_1fr]">
+        <div className="grid gap-10 md:grid-cols-[2fr_auto_auto_auto] md:justify-between">
           <div>
             <h3 className="flex items-center gap-2.5 text-xl font-black">
               {/* eslint-disable-next-line @next/next/no-img-element */}
