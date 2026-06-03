@@ -236,9 +236,6 @@ export default function HomePage() {
       {/* ── DESTINATIONS ── */}
       <Destinations />
 
-      {/* ── CATEGORIES ── */}
-      <Categories />
-
 
       {/* ── HOW IT WORKS ── */}
       <section ref={secHow.ref as React.RefObject<HTMLElement>} id="how" className={`py-28 bg-white reveal ${secHow.inView ? "in-view" : ""}`}>
@@ -680,52 +677,6 @@ function Destinations() {
               </a>
             );
           })}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-const CATEGORIES: { key: string; label: string; icon: React.ReactNode; color: string }[] = [
-  { key: "history", label: "History", color: "bg-amber-50 text-amber-700 border-amber-100",
-    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg> },
-  { key: "food", label: "Food", color: "bg-orange-50 text-orange-700 border-orange-100",
-    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg> },
-  { key: "nature", label: "Nature", color: "bg-emerald-50 text-emerald-700 border-emerald-100",
-    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22V12"/><path d="M12 12 8 8"/><path d="m12 14 4-4"/><path d="M12 2a4 4 0 0 0-4 4c0 1.5 1 3 4 5 3-2 4-3.5 4-5a4 4 0 0 0-4-4z"/></svg> },
-  { key: "culture", label: "Culture", color: "bg-purple-50 text-purple-700 border-purple-100",
-    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M2 20h20"/><path d="M4 20V9l8-5 8 5v11"/><path d="M9 20v-6h6v6"/></svg> },
-  { key: "adventure", label: "Adventure", color: "bg-red-50 text-red-700 border-red-100",
-    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg> },
-  { key: "art", label: "Art", color: "bg-pink-50 text-pink-700 border-pink-100",
-    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.555C21.965 6.012 17.461 2 12 2z"/></svg> },
-];
-
-function Categories() {
-  const { locale } = useT();
-  const ux = uiExtra[locale] ?? uiExtra.en;
-  const nb = navbarI18n[locale] ?? navbarI18n.en;
-  const catLabel: Record<string, string> = {
-    history: nb.catHistory, food: nb.catFood, nature: nb.catNature,
-    culture: nb.catCulture, adventure: nb.catAdventure, art: nb.catArt,
-  };
-  return (
-    <section className="py-16 bg-white">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-7">
-          <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1]">{nb.browseByInterest}</p>
-          <h2 className="mt-3 text-2xl md:text-4xl font-black tracking-tight text-[#0A0A0F]">{ux.whatAreYouInto}</h2>
-        </div>
-        <div className="grid grid-cols-3 sm:grid-cols-6 gap-3">
-          {CATEGORIES.map((c) => (
-            <a key={c.key} href={`/tours?category=${c.key}`}
-              className="group flex flex-col items-center gap-2.5 rounded-2xl border border-black/[0.06] bg-white p-5 hover:shadow-md hover:-translate-y-0.5 transition-all">
-              <div className={`w-12 h-12 rounded-2xl border flex items-center justify-center ${c.color} group-hover:scale-110 transition-transform`}>
-                {c.icon}
-              </div>
-              <span className="text-xs font-bold text-[#0A0A0F]">{catLabel[c.key] ?? c.label}</span>
-            </a>
-          ))}
         </div>
       </div>
     </section>

@@ -164,7 +164,7 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
             {/* Destinations — dropdown */}
             <div className="relative" onMouseEnter={() => setOpenMenu("destinations")}>
               <button
-                className={`flex items-center gap-1 px-3.5 py-2 rounded-xl font-medium transition-all ${openMenu === "destinations" ? "text-[#0A0A0F] bg-black/[0.04]" : "text-neutral-400 hover:text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.06]"}`}>
+                className={`flex items-center gap-1 px-3.5 py-2 rounded-xl font-medium transition-all ${openMenu === "destinations" ? "text-[#6C4CF1] bg-[#6C4CF1]/[0.06]" : "text-neutral-400 hover:text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.06]"}`}>
                 {nb.destinations}
                 <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={`transition-transform ${openMenu === "destinations" ? "rotate-180" : ""}`}><path d="M6 9l6 6 6-6"/></svg>
               </button>
