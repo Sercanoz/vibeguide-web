@@ -173,7 +173,7 @@ export default function HeroCitySearch() {
 
   return (
     <div className="relative z-20 mx-auto w-full max-w-2xl" ref={boxRef}>
-      <p className="text-center text-sm font-semibold text-neutral-700 mb-3">
+      <p className="text-center text-sm font-semibold text-neutral-800 mb-3">
         {ux.searchSubtitle}
       </p>
 
@@ -196,7 +196,7 @@ export default function HeroCitySearch() {
           onFocus={() => setOpen(true)}
           onKeyDown={onKeyDown}
           placeholder={hints[hintIdx] ?? ux.searchWhereTo}
-          className="flex-1 min-w-0 bg-transparent py-3 text-[15px] font-medium text-[#0A0A0F] placeholder:text-neutral-700 focus:outline-none"
+          className="flex-1 min-w-0 bg-transparent py-3 text-[15px] font-medium text-[#0A0A0F] placeholder:text-neutral-800 focus:outline-none"
           aria-label="Search destination"
         />
 
@@ -218,14 +218,14 @@ export default function HeroCitySearch() {
               className="flex w-full items-center justify-between gap-3 border-b border-black/[0.04] px-5 py-3 text-left transition-colors hover:bg-neutral-50"
             >
               <span className="flex items-center gap-3">
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-neutral-100 text-neutral-600 shrink-0">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-neutral-100 text-neutral-700 shrink-0">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" />
                   </svg>
                 </span>
                 <span className="text-sm font-bold text-[#0A0A0F]">{recentValid.label}</span>
               </span>
-              <span className="text-xs font-semibold text-neutral-700">Recent</span>
+              <span className="text-xs font-semibold text-neutral-800">Recent</span>
             </button>
           )}
           {matches.map((d, i) => (
@@ -241,7 +241,7 @@ export default function HeroCitySearch() {
                 <CityAvatar label={d.label} />
                 <span className="text-sm font-bold text-[#0A0A0F]">{d.label}</span>
               </span>
-              <span className="text-xs font-semibold text-neutral-700">
+              <span className="text-xs font-semibold text-neutral-800">
                 {d.count} {d.count === 1 ? "tour" : "tours"}
               </span>
             </button>

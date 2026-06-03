@@ -63,7 +63,7 @@ export default function ShareButton({ url, title, variant = "button" }: Props) {
 
   const trigger = variant === "icon" ? (
     <button onClick={nativeOrToggle} aria-label="Share"
-      className="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center text-neutral-600 hover:border-[#6C4CF1] hover:text-[#6C4CF1] transition-colors">
+      className="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center text-neutral-700 hover:border-[#6C4CF1] hover:text-[#6C4CF1] transition-colors">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
         <line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/>
@@ -71,7 +71,7 @@ export default function ShareButton({ url, title, variant = "button" }: Props) {
     </button>
   ) : (
     <button onClick={nativeOrToggle}
-      className="inline-flex items-center gap-2 rounded-full border border-black/10 px-4 py-2 text-sm font-bold text-neutral-700 hover:border-[#6C4CF1] hover:text-[#6C4CF1] transition-colors">
+      className="inline-flex items-center gap-2 rounded-full border border-black/10 px-4 py-2 text-sm font-bold text-neutral-800 hover:border-[#6C4CF1] hover:text-[#6C4CF1] transition-colors">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
         <line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/>

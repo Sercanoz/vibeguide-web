@@ -39,7 +39,7 @@ const STATUS_COLOR: Record<string, string> = {
   Pending: "bg-amber-100 text-amber-700",
   Paid: "bg-blue-100 text-blue-700",
   Completed: "bg-emerald-100 text-emerald-700",
-  Cancelled: "bg-neutral-100 text-neutral-600",
+  Cancelled: "bg-neutral-100 text-neutral-700",
   Rejected: "bg-red-100 text-red-600",
 };
 
@@ -138,7 +138,7 @@ export default function ProfilePage() {
                   {initials}
                 </div>
                 <button onClick={onSignOut}
-                  className="flex items-center gap-2 px-4 py-2 rounded-2xl border border-black/10 text-sm font-semibold text-neutral-600 hover:border-red-200 hover:text-red-500 transition-all">
+                  className="flex items-center gap-2 px-4 py-2 rounded-2xl border border-black/10 text-sm font-semibold text-neutral-700 hover:border-red-200 hover:text-red-500 transition-all">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
                     <polyline points="16 17 21 12 16 7"/>
@@ -148,18 +148,18 @@ export default function ProfilePage() {
                 </button>
               </div>
               <h1 className="text-xl font-black text-[#0A0A0F]">{me.fullName}</h1>
-              <p className="text-sm text-neutral-700">{me.email}</p>
+              <p className="text-sm text-neutral-800">{me.email}</p>
               <div className="flex items-center gap-2 mt-3">
                 <span className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold ${roleMeta.color}`}>
                   {roleMeta.icon} {roleMeta.label}
                 </span>
-                <span className="text-xs text-neutral-700">
+                <span className="text-xs text-neutral-800">
                   Member since {new Date(me.createdAtUtc).toLocaleDateString("en-GB", { month: "long", year: "numeric" })}
                 </span>
               </div>
               {me.guideProfile?.languages && (
-                <p className="mt-2 text-xs text-neutral-700">
-                  🌐 Guides in: <span className="font-semibold text-neutral-700">{me.guideProfile.languages.toUpperCase().split(",").join(" · ")}</span>
+                <p className="mt-2 text-xs text-neutral-800">
+                  🌐 Guides in: <span className="font-semibold text-neutral-800">{me.guideProfile.languages.toUpperCase().split(",").join(" · ")}</span>
                 </p>
               )}
             </div>
@@ -183,23 +183,23 @@ export default function ProfilePage() {
           {/* Guide earnings */}
           {me.role === "Guide" && payout && (
             <div className="bg-white rounded-3xl border border-black/[0.06] shadow-sm p-6">
-              <p className="text-xs font-black uppercase tracking-wide text-neutral-700 mb-4">Earnings</p>
+              <p className="text-xs font-black uppercase tracking-wide text-neutral-800 mb-4">Earnings</p>
               <div className="grid grid-cols-3 gap-4">
                 <div>
                   <p className="text-2xl font-black text-[#6C4CF1]">{payout.pendingThisWeek.toLocaleString()} <span className="text-sm font-bold">{payout.currency}</span></p>
-                  <p className="text-xs text-neutral-700 mt-0.5">This week</p>
+                  <p className="text-xs text-neutral-800 mt-0.5">This week</p>
                 </div>
                 <div>
                   <p className="text-2xl font-black text-[#0A0A0F]">{payout.pendingTotal.toLocaleString()} <span className="text-sm font-bold">{payout.currency}</span></p>
-                  <p className="text-xs text-neutral-700 mt-0.5">Pending total</p>
+                  <p className="text-xs text-neutral-800 mt-0.5">Pending total</p>
                 </div>
                 <div>
                   <p className="text-2xl font-black text-[#0A0A0F]">{payout.lifetime.toLocaleString()} <span className="text-sm font-bold">{payout.currency}</span></p>
-                  <p className="text-xs text-neutral-700 mt-0.5">Lifetime</p>
+                  <p className="text-xs text-neutral-800 mt-0.5">Lifetime</p>
                 </div>
               </div>
-              <p className="text-xs text-neutral-700 mt-4 pt-4 border-t border-black/[0.06]">
-                Next payout: <span className="font-semibold text-neutral-700">{new Date(payout.nextPayoutAt).toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" })}</span>
+              <p className="text-xs text-neutral-800 mt-4 pt-4 border-t border-black/[0.06]">
+                Next payout: <span className="font-semibold text-neutral-800">{new Date(payout.nextPayoutAt).toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" })}</span>
               </p>
             </div>
           )}
@@ -219,11 +219,11 @@ export default function ProfilePage() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-bold text-[#0A0A0F] truncate">{b.tourTitle ?? `Booking #${b.id}`}</p>
-                    <p className="text-xs text-neutral-700">{new Date(b.scheduledAt).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}</p>
+                    <p className="text-xs text-neutral-800">{new Date(b.scheduledAt).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}</p>
                   </div>
                   <div className="flex items-center gap-2 shrink-0">
                     <span className="text-sm font-bold text-[#6C4CF1]">{b.price} {b.currency}</span>
-                    <span className={`px-2 py-0.5 rounded-full text-xs font-bold ${STATUS_COLOR[b.status] ?? "bg-neutral-100 text-neutral-600"}`}>{b.status}</span>
+                    <span className={`px-2 py-0.5 rounded-full text-xs font-bold ${STATUS_COLOR[b.status] ?? "bg-neutral-100 text-neutral-700"}`}>{b.status}</span>
                   </div>
                 </div>
               ))}
@@ -235,17 +235,17 @@ export default function ProfilePage() {
             <div className="bg-white rounded-3xl border border-black/[0.06] shadow-sm overflow-hidden">
               <div className="px-6 py-4 border-b border-black/[0.06] flex items-center justify-between">
                 <p className="text-sm font-black text-[#0A0A0F]">Past tours</p>
-                <span className="text-xs text-neutral-700">{pastBookings.length} total</span>
+                <span className="text-xs text-neutral-800">{pastBookings.length} total</span>
               </div>
               {pastBookings.slice(0, 5).map((b) => (
                 <div key={b.id} className="flex items-center gap-4 px-6 py-4 border-b border-black/[0.04] last:border-0">
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-semibold text-[#0A0A0F] truncate">{b.tourTitle ?? `Booking #${b.id}`}</p>
-                    <p className="text-xs text-neutral-700">{new Date(b.scheduledAt).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}</p>
+                    <p className="text-xs text-neutral-800">{new Date(b.scheduledAt).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}</p>
                   </div>
                   <div className="flex items-center gap-2 shrink-0">
-                    <span className="text-sm font-semibold text-neutral-600">{b.price} {b.currency}</span>
-                    <span className={`px-2 py-0.5 rounded-full text-xs font-bold ${STATUS_COLOR[b.status] ?? "bg-neutral-100 text-neutral-600"}`}>{b.status}</span>
+                    <span className="text-sm font-semibold text-neutral-700">{b.price} {b.currency}</span>
+                    <span className={`px-2 py-0.5 rounded-full text-xs font-bold ${STATUS_COLOR[b.status] ?? "bg-neutral-100 text-neutral-700"}`}>{b.status}</span>
                   </div>
                 </div>
               ))}
@@ -261,7 +261,7 @@ export default function ProfilePage() {
                 </svg>
               </div>
               <p className="text-base font-black text-[#0A0A0F]">No tours yet</p>
-              <p className="text-sm text-neutral-700 mt-1">Download the app to book your first tour</p>
+              <p className="text-sm text-neutral-800 mt-1">Download the app to book your first tour</p>
               <Link href="/#download"
                 className="mt-5 inline-flex items-center gap-2 rounded-2xl bg-[#6C4CF1] text-white font-bold px-6 py-3 text-sm hover:bg-[#5a3dd4] transition-colors"
                 style={{ boxShadow: "0 4px 16px rgba(108,76,241,0.25)" }}>

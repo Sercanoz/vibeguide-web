@@ -98,7 +98,7 @@ function categoryColor(cat: string): string {
     adventure: "bg-red-100 text-red-700",
     art: "bg-pink-100 text-pink-700",
   };
-  return map[cat?.toLowerCase()] ?? "bg-neutral-100 text-neutral-700";
+  return map[cat?.toLowerCase()] ?? "bg-neutral-100 text-neutral-800";
 }
 
 export default function TourDetailPage() {
@@ -150,12 +150,12 @@ export default function TourDetailPage() {
         <div className="text-center px-6">
           <p className="text-6xl mb-4">⚠️</p>
           <h1 className="text-2xl font-black text-[#0A0A0F] mb-2">Something went wrong</h1>
-          <p className="text-neutral-700 mb-6">Could not load this tour. Please try again.</p>
+          <p className="text-neutral-800 mb-6">Could not load this tour. Please try again.</p>
           <div className="flex gap-3 justify-center">
             <button onClick={() => window.location.reload()} className="rounded-full bg-[#6C4CF1] text-white text-sm font-bold px-6 py-2.5 hover:bg-[#5a3dd4] transition-colors">
               Try again
             </button>
-            <a href="/tours" className="rounded-full border border-black/10 text-neutral-700 text-sm font-bold px-6 py-2.5 hover:bg-neutral-50 transition-colors">
+            <a href="/tours" className="rounded-full border border-black/10 text-neutral-800 text-sm font-bold px-6 py-2.5 hover:bg-neutral-50 transition-colors">
               Browse all tours
             </a>
           </div>
@@ -170,7 +170,7 @@ export default function TourDetailPage() {
         <div className="text-center px-6">
           <p className="text-6xl mb-4">🗺️</p>
           <h1 className="text-2xl font-black text-[#0A0A0F] mb-2">Tour not found</h1>
-          <p className="text-neutral-700 mb-6">This tour may have been removed or is no longer active.</p>
+          <p className="text-neutral-800 mb-6">This tour may have been removed or is no longer active.</p>
           <a href="/tours" className="rounded-full bg-[#6C4CF1] text-white text-sm font-bold px-6 py-2.5 hover:bg-[#5a3dd4] transition-colors">
             Browse all tours
           </a>
@@ -216,7 +216,7 @@ export default function TourDetailPage() {
                   <ShareButton title={tour.title} variant="icon" />
                 </div>
               </div>
-              <p className="mt-2 text-neutral-700 flex items-center gap-3 text-sm">
+              <p className="mt-2 text-neutral-800 flex items-center gap-3 text-sm">
                 <span>📍 {tour.districtName && tour.provinceName ? `${tour.districtName}, ${tour.provinceName}` : (tour.provinceName || tour.city)}</span>
                 <span>·</span>
                 <span>🕐 {formatDuration(tour.durationMinutes)}</span>
@@ -335,13 +335,13 @@ export default function TourDetailPage() {
           })()}
 
           {tour.summary && (
-            <p className="text-lg leading-8 text-neutral-700 font-medium">{tour.summary}</p>
+            <p className="text-lg leading-8 text-neutral-800 font-medium">{tour.summary}</p>
           )}
 
           {tour.description && (
             <div>
               <h2 className="text-2xl font-black mb-4">About This Tour</h2>
-              <p className="text-neutral-700 leading-8 whitespace-pre-line">{tour.description}</p>
+              <p className="text-neutral-800 leading-8 whitespace-pre-line">{tour.description}</p>
             </div>
           )}
 
@@ -350,7 +350,7 @@ export default function TourDetailPage() {
               <h2 className="text-2xl font-black mb-5">Highlights</h2>
               <ul className="space-y-3">
                 {highlights.map((hl, i) => (
-                  <li key={i} className="flex items-start gap-3 text-neutral-700">
+                  <li key={i} className="flex items-start gap-3 text-neutral-800">
                     <span className="mt-1 flex-shrink-0 h-5 w-5 rounded-full bg-[#6C4CF1]/10 text-[#6C4CF1] flex items-center justify-center text-xs font-black">✓</span>
                     <span className="leading-6">{hl}</span>
                   </li>
@@ -373,7 +373,7 @@ export default function TourDetailPage() {
                       <div className="flex-1 min-w-0 pb-4 border-b border-black/5 last:border-0">
                         <p className="font-black text-[#0A0A0F]">{place.name}</p>
                         {place.description && (
-                          <p className="text-sm text-neutral-600 mt-1 leading-6">{place.description}</p>
+                          <p className="text-sm text-neutral-700 mt-1 leading-6">{place.description}</p>
                         )}
                       </div>
                     </li>
@@ -451,7 +451,7 @@ export default function TourDetailPage() {
               <div className="flex items-start gap-3 rounded-2xl bg-[#F7F7FB] border border-black/5 px-5 py-4">
                 <span className="text-2xl flex-shrink-0">📍</span>
                 <div>
-                  <p className="text-neutral-700 leading-6">{tour.meetingPointText}</p>
+                  <p className="text-neutral-800 leading-6">{tour.meetingPointText}</p>
                   {tour.meetingPointLat && tour.meetingPointLng && (
                     <a
                       href={`https://www.google.com/maps?q=${tour.meetingPointLat},${tour.meetingPointLng}`}
@@ -477,7 +477,7 @@ export default function TourDetailPage() {
                     <span
                       key={lp.code}
                       title={lang.name}
-                      className="flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium bg-[#F7F7FB] border border-black/[0.06] text-neutral-700"
+                      className="flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium bg-[#F7F7FB] border border-black/[0.06] text-neutral-800"
                     >
                       {lang.fi && (
                         <span
@@ -506,7 +506,7 @@ export default function TourDetailPage() {
             return (
               <div>
                 <h2 className="text-2xl font-black mb-1">VibeSquad — share &amp; save</h2>
-                <p className="text-sm text-neutral-600 mb-4">
+                <p className="text-sm text-neutral-700 mb-4">
                   Join with other travelers — the bigger the group, the less each person pays.
                 </p>
                 <div className="rounded-2xl border border-black/[0.06] overflow-hidden">
@@ -523,7 +523,7 @@ export default function TourDetailPage() {
                         const isBest = pp === cheapest;
                         return (
                           <tr key={i} className="border-b border-black/5 last:border-0 hover:bg-[#F7F7FB]/60 transition-colors">
-                            <td className="px-5 py-3.5 text-neutral-700">
+                            <td className="px-5 py-3.5 text-neutral-800">
                               {t.participantCount} people
                               {isBest && (
                                 <span className="ml-2 inline-block rounded-full bg-[#6C4CF1]/10 px-2 py-0.5 text-[10px] font-black text-[#6C4CF1] align-middle">
@@ -540,7 +540,7 @@ export default function TourDetailPage() {
                     </tbody>
                   </table>
                 </div>
-                <p className="text-xs text-neutral-700 mt-2">
+                <p className="text-xs text-neutral-800 mt-2">
                   Per-person price for a full group. Final price is locked when the group is confirmed.
                 </p>
               </div>
@@ -553,10 +553,10 @@ export default function TourDetailPage() {
         {/* Sticky booking sidebar */}
         <aside className="sticky top-24 rounded-3xl bg-white border border-black/[0.08] shadow-lg p-6 space-y-5">
           <div>
-            <p className="text-xs font-semibold text-neutral-700 uppercase tracking-wide">{tt.startingFrom}</p>
+            <p className="text-xs font-semibold text-neutral-800 uppercase tracking-wide">{tt.startingFrom}</p>
             <div className="flex items-baseline gap-2 mt-1">
               {hasDiscount && (
-                <span className="text-base text-neutral-700 line-through">
+                <span className="text-base text-neutral-800 line-through">
                   <Price amount={tour.compareAtPrice!} currency={tour.currency} />
                 </span>
               )}
@@ -564,13 +564,13 @@ export default function TourDetailPage() {
                 <Price amount={tour.basePrice} currency={tour.currency} />
               </span>
             </div>
-            <p className="text-xs text-neutral-700 mt-0.5">{tt.perPerson}</p>
+            <p className="text-xs text-neutral-800 mt-0.5">{tt.perPerson}</p>
           </div>
 
           <div className="flex items-center gap-3 rounded-xl bg-[#F7F7FB] px-4 py-3">
             <span className="text-xl">🕐</span>
             <div>
-              <p className="text-xs text-neutral-700 font-medium">Duration</p>
+              <p className="text-xs text-neutral-800 font-medium">Duration</p>
               <p className="font-black text-sm">{formatDuration(tour.durationMinutes)}</p>
             </div>
           </div>
@@ -578,7 +578,7 @@ export default function TourDetailPage() {
           <div className="flex items-center gap-3 rounded-xl bg-[#F7F7FB] px-4 py-3">
             <span className="text-xl">📍</span>
             <div>
-              <p className="text-xs text-neutral-700 font-medium">Location</p>
+              <p className="text-xs text-neutral-800 font-medium">Location</p>
               <p className="font-black text-sm">{tour.districtName && tour.provinceName ? `${tour.districtName}, ${tour.provinceName}` : (tour.provinceName || tour.city)}</p>
             </div>
           </div>
@@ -602,14 +602,14 @@ export default function TourDetailPage() {
             Book via Web
           </a>
 
-          <p className="text-xs text-neutral-700 text-center leading-5">
+          <p className="text-xs text-neutral-800 text-center leading-5">
             Book via the app, or chat with us on WhatsApp to book on the web.
           </p>
 
           <div className="flex gap-2 pt-1">
             <a
               href="/#download"
-              className="flex-1 flex items-center justify-center gap-1.5 rounded-xl border border-black/10 py-2 text-xs font-semibold text-neutral-700 hover:border-[#6C4CF1]/40 hover:text-[#6C4CF1] transition-colors"
+              className="flex-1 flex items-center justify-center gap-1.5 rounded-xl border border-black/10 py-2 text-xs font-semibold text-neutral-800 hover:border-[#6C4CF1]/40 hover:text-[#6C4CF1] transition-colors"
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
@@ -618,7 +618,7 @@ export default function TourDetailPage() {
             </a>
             <a
               href="/#download"
-              className="flex-1 flex items-center justify-center gap-1.5 rounded-xl border border-black/10 py-2 text-xs font-semibold text-neutral-700 hover:border-[#6C4CF1]/40 hover:text-[#6C4CF1] transition-colors"
+              className="flex-1 flex items-center justify-center gap-1.5 rounded-xl border border-black/10 py-2 text-xs font-semibold text-neutral-800 hover:border-[#6C4CF1]/40 hover:text-[#6C4CF1] transition-colors"
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M3.18 23.76c.3.17.64.19.96.08l13.12-7.57-2.8-2.8-11.28 10.29zM20.9 10.42L17.96 8.7 14.84 11.8l3.13 3.12 2.95-1.7c.84-.48.84-2.32-.02-2.8zM2.14.75C2.05 1 2 1.26 2 1.56v20.89c0 .3.04.57.14.81L13.61 11.8 2.14.75zM3.18.24L14.84 11.8l-2.8 2.8L.22.32C.56.21.9.23 1.22.4l1.96 1.13V.24z"/>
@@ -632,7 +632,7 @@ export default function TourDetailPage() {
       {/* Mobile sticky bottom bar */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-black/[0.08] px-4 py-3 flex items-center gap-3 shadow-lg">
         <div className="flex-1">
-          <p className="text-xs text-neutral-700">{tt.startingFrom}</p>
+          <p className="text-xs text-neutral-800">{tt.startingFrom}</p>
           <p className="font-black text-lg text-[#6C4CF1]">
             <Price amount={tour.basePrice} currency={tour.currency} />
           </p>
@@ -649,7 +649,7 @@ export default function TourDetailPage() {
 
       {/* Footer */}
       <footer className="bg-[#F7F7FB] border-t border-black/[0.06] px-6 py-12 mt-8">
-        <div className="mx-auto max-w-7xl flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-neutral-700">
+        <div className="mx-auto max-w-7xl flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-neutral-800">
           <a href="/" className="flex items-center gap-2 font-black text-[#0A0A0F]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/vibeguide-icon.png" alt="VibeGuide" width={24} height={24} style={{ mixBlendMode: "multiply" }} />
@@ -805,7 +805,7 @@ function ReviewsSection({ tourId }: { tourId: number }) {
             <span className="ml-3 inline-flex items-center gap-2 text-lg align-middle">
               <ReviewStars n={data.avgRating} size={18} />
               <span className="text-[#0A0A0F]">{data.avgRating.toFixed(1)}</span>
-              <span className="text-neutral-700 text-sm font-semibold">({data.count})</span>
+              <span className="text-neutral-800 text-sm font-semibold">({data.count})</span>
             </span>
           )}
         </h2>
@@ -817,8 +817,8 @@ function ReviewsSection({ tourId }: { tourId: number }) {
 
       {!data || data.reviews.length === 0 ? (
         <div className="rounded-2xl bg-[#F7F7FB] border border-black/5 p-8 text-center">
-          <p className="text-sm font-semibold text-neutral-600">No reviews yet</p>
-          <p className="text-xs text-neutral-700 mt-1">Be the first to share your experience.</p>
+          <p className="text-sm font-semibold text-neutral-700">No reviews yet</p>
+          <p className="text-xs text-neutral-800 mt-1">Be the first to share your experience.</p>
         </div>
       ) : (
         <div className="grid sm:grid-cols-2 gap-4">
@@ -830,12 +830,12 @@ function ReviewsSection({ tourId }: { tourId: number }) {
                 </div>
                 <div className="min-w-0">
                   <p className="font-bold text-[#0A0A0F] text-sm truncate">{r.fullName}</p>
-                  {r.nationality && <p className="text-xs text-neutral-700">{r.nationality}</p>}
+                  {r.nationality && <p className="text-xs text-neutral-800">{r.nationality}</p>}
                 </div>
               </div>
               <ReviewStars n={r.rating} />
-              {r.comment && <p className="mt-2 text-sm text-neutral-700 leading-6">{r.comment}</p>}
-              <p className="mt-3 text-[11px] text-neutral-700">{new Date(r.createdAt).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}</p>
+              {r.comment && <p className="mt-2 text-sm text-neutral-800 leading-6">{r.comment}</p>}
+              <p className="mt-3 text-[11px] text-neutral-800">{new Date(r.createdAt).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}</p>
             </div>
           ))}
         </div>

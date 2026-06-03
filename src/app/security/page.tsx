@@ -16,7 +16,7 @@ export default function SecurityPage() {
       <div className="mx-auto max-w-3xl px-6 py-16">
         <p className="text-sm font-black text-[#6C4CF1] mb-3 tracking-widest">SECURITY & PAYMENT</p>
         <h1 className="text-4xl font-black mb-4">Secure booking. Clear process. Supported operations.</h1>
-        <p className="text-lg text-neutral-600 mb-12">
+        <p className="text-lg text-neutral-700 mb-12">
           VibeGuide payments are processed through our registered company. Guide verification, reservation management, cancellation terms and dispute resolution are all managed by VibeGuide.
         </p>
 
@@ -34,13 +34,13 @@ export default function SecurityPage() {
               <span className="text-2xl flex-shrink-0">{item.icon}</span>
               <div>
                 <p className="font-black mb-1">{item.title}</p>
-                <p className="text-sm text-neutral-700 leading-6">{item.text}</p>
+                <p className="text-sm text-neutral-800 leading-6">{item.text}</p>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="p-6 bg-neutral-50 rounded-2xl text-sm text-neutral-700 space-y-1">
+        <div className="p-6 bg-neutral-50 rounded-2xl text-sm text-neutral-800 space-y-1">
           <p className="font-black text-neutral-900 mb-2">Company details</p>
           <p>VİBECORE TURİZM SEYAHAT ACENTASI VE DİJİTAL HİZMETLER TİCARET LİMİTED ŞİRKETİ</p>
           <p>Vergi No: 9251328389 · Vergi Dairesi: Marmaris V.D.</p>

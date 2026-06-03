@@ -25,7 +25,7 @@ export default function GuideVerificationPage() {
       <div className="mx-auto max-w-3xl px-6 pt-28 pb-16">
         <p className="text-sm font-black text-[#6C4CF1] mb-3 tracking-widest">GUIDE VERIFICATION</p>
         <h1 className="text-4xl font-black mb-4">Every guide is reviewed before joining the platform</h1>
-        <p className="text-lg text-neutral-600 mb-12">
+        <p className="text-lg text-neutral-700 mb-12">
           VibeGuide does not allow unverified guides. Every local guide on our platform has passed a structured review process covering identity, expertise and platform conduct standards.
         </p>
 
@@ -34,14 +34,14 @@ export default function GuideVerificationPage() {
             <div key={c.title} className="p-6 bg-neutral-50 rounded-2xl">
               <p className="text-2xl mb-3">{c.icon}</p>
               <h2 className="font-black mb-2">{c.title}</h2>
-              <p className="text-sm text-neutral-700 leading-7">{c.text}</p>
+              <p className="text-sm text-neutral-800 leading-7">{c.text}</p>
             </div>
           ))}
         </div>
 
         <div className="mt-10 p-6 bg-[#F5F3FF] rounded-2xl border border-[#DDD6FE]">
           <p className="font-black mb-2">Traveler confidence, built in</p>
-          <p className="text-sm text-neutral-700 leading-7">
+          <p className="text-sm text-neutral-800 leading-7">
             Our verification process is designed to give travelers confidence before they ever meet their guide. If a guide does not meet our standards at any point, they are removed from the platform.
           </p>
         </div>

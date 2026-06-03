@@ -61,11 +61,11 @@ export default function GuidePendingPage() {
 
           <p className="text-[10px] font-black uppercase tracking-[0.2em] text-amber-600 mb-3">Under Review</p>
           <h1 className="text-2xl font-black text-[#0A0A0F] leading-tight">Your application is being reviewed</h1>
-          <p className="mt-3 text-sm text-neutral-700 leading-7">
+          <p className="mt-3 text-sm text-neutral-800 leading-7">
             Our team is verifying your guide badge. This usually takes <strong className="text-[#0A0A0F]">1–2 business days</strong>.
           </p>
           {email && (
-            <p className="mt-2 text-sm text-neutral-700">
+            <p className="mt-2 text-sm text-neutral-800">
               We&apos;ll notify you at <strong className="text-[#0A0A0F]">{email}</strong> once approved.
             </p>
           )}
@@ -88,7 +88,7 @@ export default function GuidePendingPage() {
                   )}
                   {s.active && <div className="w-2 h-2 rounded-full bg-white animate-pulse" />}
                 </div>
-                <span className={`text-sm font-semibold ${s.done ? "text-emerald-600" : s.active ? "text-amber-700" : "text-neutral-700"}`}>
+                <span className={`text-sm font-semibold ${s.done ? "text-emerald-600" : s.active ? "text-amber-700" : "text-neutral-800"}`}>
                   {s.label}
                 </span>
               </div>
@@ -98,7 +98,7 @@ export default function GuidePendingPage() {
           <div className="mt-8 pt-6 border-t border-black/[0.06] flex flex-col gap-3">
             <a
               href="mailto:support@vibeguideapp.com"
-              className="w-full flex items-center justify-center gap-2 rounded-2xl border border-black/10 py-2.5 text-sm font-bold text-neutral-700 hover:border-[#6C4CF1]/30 hover:text-[#6C4CF1] transition-colors"
+              className="w-full flex items-center justify-center gap-2 rounded-2xl border border-black/10 py-2.5 text-sm font-bold text-neutral-800 hover:border-[#6C4CF1]/30 hover:text-[#6C4CF1] transition-colors"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
@@ -106,7 +106,7 @@ export default function GuidePendingPage() {
               </svg>
               Contact support
             </a>
-            <a href="/" className="text-xs text-neutral-700 hover:text-black transition-colors">
+            <a href="/" className="text-xs text-neutral-800 hover:text-black transition-colors">
               ← Back to homepage
             </a>
           </div>

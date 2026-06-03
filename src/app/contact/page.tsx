@@ -15,7 +15,7 @@ export default function ContactPage() {
 
       <div className="mx-auto max-w-3xl px-6 pt-28 pb-16">
         <h1 className="text-4xl font-black mb-4">Contact Us</h1>
-        <p className="text-lg text-neutral-600 mb-12">
+        <p className="text-lg text-neutral-700 mb-12">
           For reservations, customer support, cancellations, refunds, partnership opportunities, media inquiries, or guide applications, we&apos;re here to help.
         </p>
 
@@ -25,23 +25,23 @@ export default function ContactPage() {
             <a href="mailto:support@vibeguideapp.com" className="text-[#6C4CF1] font-semibold hover:underline">
               support@vibeguideapp.com
             </a>
-            <p className="text-xs text-neutral-700 mt-2">Most inquiries are reviewed and answered within 1 business day.</p>
+            <p className="text-xs text-neutral-800 mt-2">Most inquiries are reviewed and answered within 1 business day.</p>
           </div>
           <div className="bg-neutral-50 rounded-2xl p-6">
             <p className="text-sm font-black mb-3">📞 Phone</p>
             <a href="tel:+905308287696" className="text-[#6C4CF1] font-semibold hover:underline">
               +90 530 828 76 96
             </a>
-            <p className="text-xs text-neutral-700 mt-2">Monday–Friday, 09:00–18:00 (UTC+3)</p>
+            <p className="text-xs text-neutral-800 mt-2">Monday–Friday, 09:00–18:00 (UTC+3)</p>
           </div>
           <div className="bg-neutral-50 rounded-2xl p-6">
             <p className="text-sm font-black mb-3">🕐 Business Hours</p>
             <p className="font-semibold">Monday–Friday, 09:00–18:00</p>
-            <p className="text-xs text-neutral-700 mt-2">Türkiye Time (UTC+3)</p>
+            <p className="text-xs text-neutral-800 mt-2">Türkiye Time (UTC+3)</p>
           </div>
         </div>
 
-        <div className="bg-neutral-50 rounded-2xl p-6 text-sm text-neutral-700 space-y-2">
+        <div className="bg-neutral-50 rounded-2xl p-6 text-sm text-neutral-800 space-y-2">
           <p className="font-black text-neutral-900 mb-3">Company Information</p>
           <p className="font-semibold text-neutral-800">VİBECORE TURİZM SEYAHAT ACENTASI VE DİJİTAL HİZMETLER TİCARET LİMİTED ŞİRKETİ</p>
           <p>Tax Office: Marmaris Tax Office</p>
@@ -55,7 +55,7 @@ export default function ContactPage() {
           </p>
         </div>
 
-        <p className="text-sm text-neutral-600 mt-8 leading-7">
+        <p className="text-sm text-neutral-700 mt-8 leading-7">
           VibeGuide is committed to providing transparent communication, reliable support, and timely assistance for travelers and guides using our platform.
         </p>
       </div>

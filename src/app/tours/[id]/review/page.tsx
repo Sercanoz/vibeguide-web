@@ -60,7 +60,7 @@ export default function TourReviewPage(props: Props) {
             </svg>
           </div>
           <h1 className="text-2xl font-black text-[#0A0A0F]">Thank you! 🙏</h1>
-          <p className="mt-2 text-sm text-neutral-700 leading-6">
+          <p className="mt-2 text-sm text-neutral-800 leading-6">
             Your review has been submitted and will appear once approved. We appreciate you sharing your experience!
           </p>
           <a href={`/tours/${tourId}`} className="mt-8 inline-flex items-center gap-2 rounded-2xl bg-[#6C4CF1] text-white font-bold px-7 py-3 text-sm hover:bg-[#5a3dd4] transition-colors"
@@ -105,11 +105,11 @@ export default function TourReviewPage(props: Props) {
 
           <form onSubmit={onSubmit} className="p-6">
             <h2 className="text-xl font-black text-[#0A0A0F]">Leave a review</h2>
-            <p className="text-sm text-neutral-700 mt-1 mb-5">Share your experience with this tour</p>
+            <p className="text-sm text-neutral-800 mt-1 mb-5">Share your experience with this tour</p>
 
             {/* Stars */}
             <div className="mb-5">
-              <label className="text-xs font-bold text-neutral-600 mb-2 block">Your rating *</label>
+              <label className="text-xs font-bold text-neutral-700 mb-2 block">Your rating *</label>
               <div className="flex gap-1.5">
                 {[1, 2, 3, 4, 5].map((n) => (
                   <button key={n} type="button"
@@ -128,19 +128,19 @@ export default function TourReviewPage(props: Props) {
 
             <div className="space-y-3">
               <div>
-                <label className="text-xs font-bold text-neutral-600 mb-1.5 block">Full name *</label>
+                <label className="text-xs font-bold text-neutral-700 mb-1.5 block">Full name *</label>
                 <input value={fullName} onChange={(e) => setFullName(e.target.value)} required
                   className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors"
                   placeholder="John Doe" />
               </div>
               <div>
-                <label className="text-xs font-bold text-neutral-600 mb-1.5 block">Nationality</label>
+                <label className="text-xs font-bold text-neutral-700 mb-1.5 block">Nationality</label>
                 <input value={nationality} onChange={(e) => setNationality(e.target.value)}
                   className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors"
                   placeholder="American" />
               </div>
               <div>
-                <label className="text-xs font-bold text-neutral-600 mb-1.5 block">Your review</label>
+                <label className="text-xs font-bold text-neutral-700 mb-1.5 block">Your review</label>
                 <textarea value={comment} onChange={(e) => setComment(e.target.value)} rows={4}
                   className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors resize-none"
                   placeholder="Tell us about your experience…" />
@@ -157,7 +157,7 @@ export default function TourReviewPage(props: Props) {
           </form>
         </div>
 
-        <p className="text-center text-xs text-neutral-700 mt-4">Powered by VibeGuide</p>
+        <p className="text-center text-xs text-neutral-800 mt-4">Powered by VibeGuide</p>
       </div>
     </main>
   );
