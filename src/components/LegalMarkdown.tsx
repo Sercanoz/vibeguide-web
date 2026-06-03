@@ -104,7 +104,7 @@ export default function LegalMarkdown({
       <Navbar />
       <div className="mx-auto max-w-3xl px-6 pt-28 pb-16">
         <h1 className="text-3xl font-black mb-2">{title}</h1>
-        {subtitle && <p className="text-sm text-neutral-600 mb-10">{subtitle}</p>}
+        {subtitle && <p className="text-sm text-neutral-700 mb-10">{subtitle}</p>}
         <div className="text-sm text-neutral-700 leading-7">{blocks}</div>
       </div>
       <MainFooter />

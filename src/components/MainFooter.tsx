@@ -25,29 +25,32 @@ export default function MainFooter() {
               <img src="/vibeguide-icon.png" alt="VibeGuide" width={28} height={28} style={{ mixBlendMode: "multiply" }} />
               VibeGuide
             </h3>
-            <p className="mt-3 max-w-xs text-sm leading-6 text-neutral-600">{t.footer.tagline}</p>
+            <p className="mt-3 max-w-xs text-sm leading-6 text-neutral-700">{t.footer.tagline}</p>
             <div className="mt-6 flex gap-2">
               {["Instagram", "TikTok", "YouTube"].map((s) => (
-                <a key={s} href="#" className="h-9 w-9 flex items-center justify-center rounded-xl bg-white border border-black/8 text-xs font-bold text-neutral-600 hover:text-black hover:border-black/20 transition-colors">
+                <a key={s} href="#" className="h-9 w-9 flex items-center justify-center rounded-xl bg-white border border-black/8 text-xs font-bold text-neutral-700 hover:text-black hover:border-black/20 transition-colors">
                   {s[0]}
                 </a>
               ))}
             </div>
-            {/* App mağaza rozetleri — altlı üstlü, eşit genişlik */}
+            {/* App mağaza rozetleri — altlı üstlü, görünür boyutları eşitlenmiş.
+               Apple SVG kenardan kenara dolu; Google PNG ~%9 şeffaf padding içerir →
+               aynı görünür yüksekliğe gelmesi için Google'ı orantılı büyütüp negatif
+               margin ile padding'i telafi ediyoruz. İkisi de ~52px görünür yükseklik. */}
             <div className="mt-6 flex flex-col items-start gap-3">
-              <a href="#" aria-label="Download on the App Store" className="block w-[180px] transition-opacity hover:opacity-80">
+              <a href="#" aria-label="Download on the App Store" className="block transition-opacity hover:opacity-80">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/app-store-badge.svg" alt="Download on the App Store" className="w-full h-auto" />
+                <img src="/app-store-badge.svg" alt="Download on the App Store" className="h-[52px] w-auto" />
               </a>
-              <a href="#" aria-label="Get it on Google Play" className="block w-[180px] transition-opacity hover:opacity-80">
+              <a href="#" aria-label="Get it on Google Play" className="block transition-opacity hover:opacity-80 -ml-[7px]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/google-play-badge.png" alt="Get it on Google Play" className="w-full h-auto" />
+                <img src="/google-play-badge.png" alt="Get it on Google Play" className="h-[62px] w-auto" />
               </a>
             </div>
           </div>
           <div>
             <h4 className="text-sm font-black">{t.footer.product}</h4>
-            <ul className="mt-4 space-y-3 text-sm text-neutral-600">
+            <ul className="mt-4 space-y-3 text-sm text-neutral-700">
               <li><a href="/vibenow" className="hover:text-black transition-colors">VibeNow</a></li>
               <li><a href="/vibesquad" className="hover:text-black transition-colors">VibeSquad</a></li>
               <li><a href="/private" className="hover:text-black transition-colors">{t.nav.private}</a></li>
@@ -59,7 +62,7 @@ export default function MainFooter() {
           </div>
           <div>
             <h4 className="text-sm font-black">{t.footer.destinations}</h4>
-            <ul className="mt-4 space-y-3 text-sm text-neutral-600">
+            <ul className="mt-4 space-y-3 text-sm text-neutral-700">
               <li><a href="/istanbul-tour-guide" className="hover:text-black transition-colors">Istanbul</a></li>
               <li><a href="/cappadocia-tour-guide" className="hover:text-black transition-colors">Cappadocia</a></li>
               <li><a href="/ephesus-tour-guide" className="hover:text-black transition-colors">Ephesus</a></li>
@@ -67,7 +70,7 @@ export default function MainFooter() {
           </div>
           <div>
             <h4 className="text-sm font-black">{t.footer.support}</h4>
-            <ul className="mt-4 space-y-3 text-sm text-neutral-600">
+            <ul className="mt-4 space-y-3 text-sm text-neutral-700">
               <li><a href="/about" className="hover:text-black transition-colors">About Us</a></li>
               <li><a href="/contact" className="hover:text-black transition-colors">Contact</a></li>
               <li><a href="/help" className="hover:text-black transition-colors">{t.footerLinks.helpCenter}</a></li>
@@ -77,7 +80,7 @@ export default function MainFooter() {
           </div>
           <div>
             <h4 className="text-sm font-black">{ux.legal}</h4>
-            <ul className="mt-4 space-y-3 text-sm text-neutral-600">
+            <ul className="mt-4 space-y-3 text-sm text-neutral-700">
               <li><a href="/terms" className="hover:text-black transition-colors">{ux.terms}</a></li>
               <li><a href="/privacy" className="hover:text-black transition-colors">{ux.privacy}</a></li>
               <li><a href="/cancellation-policy" className="hover:text-black transition-colors">{ux.cancellation}</a></li>
@@ -91,9 +94,9 @@ export default function MainFooter() {
 
         {/* Şirket bilgileri — PayTR / ödeme kuruluşu gerekliliği */}
         <div className="mt-12 pt-8 border-t border-black/[0.06]">
-          <div className="grid gap-2 md:grid-cols-2 text-xs text-neutral-600 leading-6">
+          <div className="grid gap-2 md:grid-cols-2 text-xs text-neutral-700 leading-6">
             <div>
-              <p className="font-semibold text-neutral-500">VibeCore Turizm Seyahat Acentası ve Dijital Hizmetler Ticaret Ltd. Şti.</p>
+              <p className="font-semibold text-neutral-600">VibeCore Turizm Seyahat Acentası ve Dijital Hizmetler Ticaret Ltd. Şti.</p>
               <p>Vergi No: 9251328389 · Vergi Dairesi: Marmaris V.D.</p>
               <p>Ticaret Sicil No: 12686</p>
               <p>Beldibi Mah. Belmar Sk. No:9/1 İç Kapı No:4 Marmaris/Muğla, Türkiye</p>
@@ -105,8 +108,8 @@ export default function MainFooter() {
             </div>
           </div>
           <div className="mt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-xs text-neutral-500">{t.footer.copyright}</p>
-            <p className="text-xs text-neutral-500">{ux.trustLine}</p>
+            <p className="text-xs text-neutral-600">{t.footer.copyright}</p>
+            <p className="text-xs text-neutral-600">{ux.trustLine}</p>
           </div>
         </div>
       </div>

@@ -112,14 +112,14 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
             {/* Tours — mega menu */}
             <div className="relative" onMouseEnter={() => setOpenMenu("tours")}>
               <a href="/tours"
-                className={`flex items-center gap-1 px-3.5 py-2 rounded-xl font-medium transition-all ${activePage === "tours" ? "text-[#6C4CF1] bg-[#6C4CF1]/8 font-semibold" : "text-neutral-600 hover:text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.06]"}`}>
+                className={`flex items-center gap-1 px-3.5 py-2 rounded-xl font-medium transition-all ${activePage === "tours" ? "text-[#6C4CF1] bg-[#6C4CF1]/8 font-semibold" : "text-neutral-700 hover:text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.06]"}`}>
                 {nb.tours}
                 <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={`transition-transform ${openMenu === "tours" ? "rotate-180" : ""}`}><path d="M6 9l6 6 6-6"/></svg>
               </a>
               {openMenu === "tours" && (
                 <div className="absolute left-0 top-full pt-2">
                   <div className="w-[420px] bg-white rounded-2xl border border-black/[0.06] shadow-xl p-5 animate-[fadeSlideUp_0.15s_ease_both]">
-                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-neutral-600 mb-2">{nb.browseByInterest}</p>
+                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-neutral-700 mb-2">{nb.browseByInterest}</p>
                     <div className="grid grid-cols-2 gap-1">
                       {[
                         { key: "history", label: nb.catHistory, icon: "🏛️" },
@@ -146,7 +146,7 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
             {/* Destinations — dropdown */}
             <div className="relative" onMouseEnter={() => setOpenMenu("destinations")}>
               <button
-                className={`flex items-center gap-1 px-3.5 py-2 rounded-xl font-medium cursor-pointer transition-all ${openMenu === "destinations" ? "text-[#6C4CF1] bg-[#6C4CF1]/[0.06]" : "text-neutral-600 hover:text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.06]"}`}>
+                className={`flex items-center gap-1 px-3.5 py-2 rounded-xl font-medium cursor-pointer transition-all ${openMenu === "destinations" ? "text-[#6C4CF1] bg-[#6C4CF1]/[0.06]" : "text-neutral-700 hover:text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.06]"}`}>
                 {nb.destinations}
                 <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={`transition-transform ${openMenu === "destinations" ? "rotate-180" : ""}`}><path d="M6 9l6 6 6-6"/></svg>
               </button>
@@ -162,7 +162,7 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
                         <span className="text-2xl">{d.icon}</span>
                         <div>
                           <p className="text-sm font-bold text-[#0A0A0F]">{d.name}</p>
-                          <p className="text-xs text-neutral-600">{d.desc}</p>
+                          <p className="text-xs text-neutral-700">{d.desc}</p>
                         </div>
                       </a>
                     ))}
@@ -172,22 +172,22 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
             </div>
 
             {/* VibeNow */}
-            <a href="/vibenow" className="px-3.5 py-2 rounded-xl font-medium text-neutral-600 hover:text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.06] transition-all">
+            <a href="/vibenow" className="px-3.5 py-2 rounded-xl font-medium text-neutral-700 hover:text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.06] transition-all">
               VibeNow
             </a>
 
             {/* VibeSquad */}
-            <a href="/vibesquad" className="px-3.5 py-2 rounded-xl font-medium text-neutral-600 hover:text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.06] transition-all">
+            <a href="/vibesquad" className="px-3.5 py-2 rounded-xl font-medium text-neutral-700 hover:text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.06] transition-all">
               VibeSquad
             </a>
 
             {/* VibeAsk */}
-            <a href="/vibeask" className="px-3.5 py-2 rounded-xl font-medium text-neutral-600 hover:text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.06] transition-all">
+            <a href="/vibeask" className="px-3.5 py-2 rounded-xl font-medium text-neutral-700 hover:text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.06] transition-all">
               VibeAsk
             </a>
 
             {/* How it works */}
-            <a href="/#how" className="px-3.5 py-2 rounded-xl font-medium text-neutral-600 hover:text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.06] transition-all">
+            <a href="/#how" className="px-3.5 py-2 rounded-xl font-medium text-neutral-700 hover:text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.06] transition-all">
               {nb.howItWorks}
             </a>
           </div>
@@ -213,7 +213,7 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
                     {initials}
                   </div>
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
-                    className={`text-neutral-600 transition-transform duration-200 ${userMenuOpen ? "rotate-180" : ""}`}>
+                    className={`text-neutral-700 transition-transform duration-200 ${userMenuOpen ? "rotate-180" : ""}`}>
                     <path d="M6 9l6 6 6-6"/>
                   </svg>
                 </button>
@@ -222,7 +222,7 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
                   <div className="absolute right-0 top-full mt-2 w-52 bg-white rounded-2xl border border-black/[0.06] shadow-xl overflow-hidden z-50 animate-[fadeSlideUp_0.15s_ease_both]">
                     <div className="px-4 py-3 border-b border-black/[0.06] bg-neutral-50/50">
                       <p className="text-xs font-black text-[#0A0A0F] truncate">{(user as User).displayName ?? (user as User).email}</p>
-                      <p className="text-[10px] text-neutral-600 truncate mt-0.5">{(user as User).email}</p>
+                      <p className="text-[10px] text-neutral-700 truncate mt-0.5">{(user as User).email}</p>
                     </div>
                     {[
                       { href: "/profile", label: nb.myProfile, icon: <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>, icon2: <circle cx="12" cy="7" r="4"/> },
@@ -230,7 +230,7 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
                     ].map(({ href, label, icon, icon2 }) => (
                       <a key={href} href={href} onClick={() => setUserMenuOpen(false)}
                         className="flex items-center gap-3 px-4 py-2.5 text-sm font-semibold text-[#0A0A0F] hover:bg-neutral-50 transition-colors">
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" className="text-neutral-600">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" className="text-neutral-700">
                           {icon}{icon2 && icon2}
                         </svg>
                         {label}
@@ -253,7 +253,7 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
             ) : (
               <>
                 <button onClick={() => setAuthModal("signin")}
-                  className="hidden md:block text-sm font-semibold text-neutral-500 hover:text-[#6C4CF1] px-3 py-2 rounded-xl hover:bg-[#6C4CF1]/[0.06] transition-all duration-150">
+                  className="hidden md:block text-sm font-semibold text-neutral-600 hover:text-[#6C4CF1] px-3 py-2 rounded-xl hover:bg-[#6C4CF1]/[0.06] transition-all duration-150">
                   {nb.signIn}
                 </button>
                 <button onClick={() => setAuthModal("register")}
@@ -288,14 +288,14 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
                   className={`flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-semibold transition-colors ${
                     activePage === "tours" && l.key === "tours"
                       ? "bg-[#6C4CF1]/8 text-[#6C4CF1]"
-                      : "text-neutral-600 hover:bg-neutral-50 hover:text-black"
+                      : "text-neutral-700 hover:bg-neutral-50 hover:text-black"
                   }`}>
                   {l.label}
                 </a>
               ))}
             </div>
             <div className="border-t border-black/[0.06] px-4 py-3 sm:hidden flex items-center justify-between">
-              <span className="text-xs font-bold text-neutral-600 uppercase tracking-wider">Currency</span>
+              <span className="text-xs font-bold text-neutral-700 uppercase tracking-wider">Currency</span>
               <CurrencySwitcher />
             </div>
             <div className="border-t border-black/[0.06] px-3 py-3 space-y-2">

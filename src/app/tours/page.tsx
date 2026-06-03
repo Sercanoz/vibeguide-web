@@ -56,10 +56,10 @@ export default function ToursPage() {
               {tt.heroTitle2}
             </span>
           </h1>
-          <p className="mt-6 text-base text-neutral-600 max-w-xl mx-auto leading-7">
+          <p className="mt-6 text-base text-neutral-700 max-w-xl mx-auto leading-7">
             {tt.heroSub}
           </p>
-          <div className="mt-8 flex items-center justify-center gap-6 text-sm text-neutral-600">
+          <div className="mt-8 flex items-center justify-center gap-6 text-sm text-neutral-700">
             <span className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />{tt.heroLive}</span>
             <span className="text-black/20">·</span>
             <span>{tt.heroVerified}</span>
@@ -79,7 +79,7 @@ export default function ToursPage() {
             ))}
           </div>
         ) : tours.length === 0 ? (
-          <div className="text-center py-24 text-neutral-600">
+          <div className="text-center py-24 text-neutral-700">
             <p className="text-6xl mb-4">🗺️</p>
             <p className="text-xl font-bold text-[#0A0A0F]">Tours coming soon</p>
             <p className="text-sm mt-2">

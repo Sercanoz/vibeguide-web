@@ -209,10 +209,10 @@ export default function RegisterGuidePage() {
             </svg>
           </div>
           <h1 className="text-2xl font-black text-[#0A0A0F]">Application submitted!</h1>
-          <p className="mt-3 text-sm text-neutral-600 leading-7 max-w-xs mx-auto">
+          <p className="mt-3 text-sm text-neutral-700 leading-7 max-w-xs mx-auto">
             Your guide application is under review. Our team will verify your badge and approve your account within <strong className="text-[#0A0A0F]">1–2 business days</strong>.
           </p>
-          <p className="mt-2 text-sm text-neutral-600">We&apos;ll email you at <strong className="text-[#0A0A0F]">{email}</strong> once approved.</p>
+          <p className="mt-2 text-sm text-neutral-700">We&apos;ll email you at <strong className="text-[#0A0A0F]">{email}</strong> once approved.</p>
           <a
             href="/"
             className="mt-8 inline-block rounded-2xl bg-[#6C4CF1] text-white font-bold py-3 px-8 text-sm hover:bg-[#5a3dd4] transition-colors"
@@ -238,7 +238,7 @@ export default function RegisterGuidePage() {
             </svg>
           </div>
           <h1 className="text-2xl font-black text-[#0A0A0F]">Verify your email</h1>
-          <p className="mt-2 text-sm text-neutral-600 max-w-xs mx-auto leading-6">
+          <p className="mt-2 text-sm text-neutral-700 max-w-xs mx-auto leading-6">
             We sent a link to <strong className="text-[#0A0A0F]">{email}</strong>. Click it, then come back here to submit your application.
           </p>
           {uploadProgress && (
@@ -275,7 +275,7 @@ export default function RegisterGuidePage() {
             VibeGuide
           </a>
           <p className="mt-6 text-3xl font-black text-[#0A0A0F]">Apply as a guide</p>
-          <p className="mt-1 text-sm text-neutral-600">Your application will be reviewed within 1–2 days</p>
+          <p className="mt-1 text-sm text-neutral-700">Your application will be reviewed within 1–2 days</p>
         </div>
 
         <div className="bg-white border border-black/[0.06] rounded-3xl p-8 shadow-sm">
@@ -296,13 +296,13 @@ export default function RegisterGuidePage() {
 
           <div className="flex items-center gap-3 my-5">
             <div className="flex-1 h-px bg-black/[0.06]" />
-            <span className="text-xs text-neutral-600 font-medium">or sign up with email</span>
+            <span className="text-xs text-neutral-700 font-medium">or sign up with email</span>
             <div className="flex-1 h-px bg-black/[0.06]" />
           </div>
 
           <form onSubmit={onSubmit} className="space-y-4">
             <div>
-              <label className="text-xs font-bold text-neutral-500 mb-1.5 block">Full name *</label>
+              <label className="text-xs font-bold text-neutral-600 mb-1.5 block">Full name *</label>
               <input type="text" required value={fullName} onChange={(e) => setFullName(e.target.value)}
                 className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors"
                 placeholder="John Doe" />
@@ -310,7 +310,7 @@ export default function RegisterGuidePage() {
 
             {/* Badge photos */}
             <div>
-              <label className="text-xs font-bold text-neutral-500 mb-2 block">Guide badge photos *</label>
+              <label className="text-xs font-bold text-neutral-600 mb-2 block">Guide badge photos *</label>
               <div className="grid grid-cols-2 gap-3">
                 {(["badgeFront", "badgeBack"] as PhotoSlot[]).map((slot) => {
                   const preview = slot === "badgeFront" ? badgeFrontPreview : badgeBackPreview;
@@ -332,7 +332,7 @@ export default function RegisterGuidePage() {
                               <polyline points="17 8 12 3 7 8"/>
                               <line x1="12" y1="3" x2="12" y2="15"/>
                             </svg>
-                            <span className="text-[10px] font-bold text-neutral-600">{label}</span>
+                            <span className="text-[10px] font-bold text-neutral-700">{label}</span>
                           </>
                         )}
                       </button>
@@ -340,25 +340,25 @@ export default function RegisterGuidePage() {
                   );
                 })}
               </div>
-              <p className="text-[10px] text-neutral-600 mt-1.5">Upload clear photos of your official guide badge</p>
+              <p className="text-[10px] text-neutral-700 mt-1.5">Upload clear photos of your official guide badge</p>
             </div>
 
             <div>
-              <label className="text-xs font-bold text-neutral-500 mb-1.5 block">Email *</label>
+              <label className="text-xs font-bold text-neutral-600 mb-1.5 block">Email *</label>
               <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)}
                 className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors"
                 placeholder="guide@example.com" />
             </div>
 
             <div>
-              <label className="text-xs font-bold text-neutral-500 mb-1.5 block">Password *</label>
+              <label className="text-xs font-bold text-neutral-600 mb-1.5 block">Password *</label>
               <input type="password" required value={password} onChange={(e) => setPassword(e.target.value)}
                 className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors"
                 placeholder="Min. 6 characters" />
             </div>
 
             <div>
-              <label className="text-xs font-bold text-neutral-500 mb-1.5 block">Confirm password *</label>
+              <label className="text-xs font-bold text-neutral-600 mb-1.5 block">Confirm password *</label>
               <input type="password" required value={password2} onChange={(e) => setPassword2(e.target.value)}
                 className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors"
                 placeholder="Repeat password" />
@@ -378,7 +378,7 @@ export default function RegisterGuidePage() {
           </form>
         </div>
 
-        <p className="mt-5 text-center text-sm text-neutral-600">
+        <p className="mt-5 text-center text-sm text-neutral-700">
           Already have an account?{" "}
           <a href="/login" className="text-[#6C4CF1] font-bold hover:underline">Sign in</a>
         </p>

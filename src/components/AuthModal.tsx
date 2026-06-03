@@ -190,14 +190,14 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
     }
   }
 
-  const inputCls = "w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] focus:ring-2 focus:ring-[#6C4CF1]/10 transition-all placeholder:text-neutral-500";
+  const inputCls = "w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] focus:ring-2 focus:ring-[#6C4CF1]/10 transition-all placeholder:text-neutral-600";
 
   /* ── Verify email ── */
   if (step === "verify") {
     return (
       <div ref={overlayRef} className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm" onClick={(e) => { if (e.target === overlayRef.current) onClose(); }}>
         <div className="bg-white rounded-3xl shadow-2xl w-full max-w-sm p-8 text-center relative">
-          <button onClick={onClose} className="absolute top-4 right-4 w-8 h-8 rounded-full bg-neutral-100 flex items-center justify-center text-neutral-600 hover:bg-neutral-200 transition-colors text-sm">✕</button>
+          <button onClick={onClose} className="absolute top-4 right-4 w-8 h-8 rounded-full bg-neutral-100 flex items-center justify-center text-neutral-700 hover:bg-neutral-200 transition-colors text-sm">✕</button>
           <div className="w-14 h-14 rounded-full bg-[#6C4CF1]/10 flex items-center justify-center mx-auto mb-5">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6C4CF1" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
@@ -205,7 +205,7 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
             </svg>
           </div>
           <h2 className="text-xl font-black text-[#0A0A0F]">Check your email</h2>
-          <p className="mt-2 text-sm text-neutral-600 leading-6">
+          <p className="mt-2 text-sm text-neutral-700 leading-6">
             We sent a verification link to <strong className="text-[#0A0A0F]">{email}</strong>.
             Click the link in your inbox to activate your account, then sign in.
           </p>
@@ -214,7 +214,7 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
             style={{ boxShadow: "0 4px 16px rgba(108,76,241,0.25)" }}>
             Got it
           </button>
-          <p className="mt-4 text-xs text-neutral-600">
+          <p className="mt-4 text-xs text-neutral-700">
             Didn&apos;t receive it?{" "}
             {resendState === "sent" ? (
               <span className="text-emerald-600 font-semibold">Email sent ✓</span>
@@ -235,7 +235,7 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
       <div className="bg-white rounded-3xl shadow-2xl w-full max-w-sm relative overflow-hidden">
 
         <div className="p-7">
-          <button onClick={onClose} className="absolute top-5 right-5 w-8 h-8 rounded-full bg-neutral-100 flex items-center justify-center text-neutral-600 hover:bg-neutral-200 transition-colors text-sm">✕</button>
+          <button onClick={onClose} className="absolute top-5 right-5 w-8 h-8 rounded-full bg-neutral-100 flex items-center justify-center text-neutral-700 hover:bg-neutral-200 transition-colors text-sm">✕</button>
 
           {/* Logo + title */}
           <div className="mb-5">
@@ -247,7 +247,7 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
             <h2 className="text-2xl font-black text-[#0A0A0F]">
               {mode === "signin" ? "Welcome back" : step === "role" ? "Who are you?" : role === "guide" ? "Apply as guide" : "Create account"}
             </h2>
-            <p className="mt-1 text-sm text-neutral-600">
+            <p className="mt-1 text-sm text-neutral-700">
               {mode === "signin" ? "Sign in to continue your adventure" : step === "role" ? "Tell us how you'll use VibeGuide" : role === "guide" ? "Join our verified guide network" : "Start exploring with local guides"}
             </p>
           </div>
@@ -256,7 +256,7 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
           <div className="flex gap-1 p-1 bg-neutral-100 rounded-2xl mb-5">
             {(["signin", "register"] as Mode[]).map((m) => (
               <button key={m} onClick={() => switchMode(m)}
-                className={`flex-1 py-2 rounded-xl text-sm font-bold transition-all ${mode === m ? "bg-white text-[#0A0A0F] shadow-sm" : "text-neutral-600 hover:text-neutral-600"}`}>
+                className={`flex-1 py-2 rounded-xl text-sm font-bold transition-all ${mode === m ? "bg-white text-[#0A0A0F] shadow-sm" : "text-neutral-700 hover:text-neutral-700"}`}>
                 {m === "signin" ? "Sign in" : "Register"}
               </button>
             ))}
@@ -276,7 +276,7 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
                 </div>
                 <div className="flex-1 text-left">
                   <p className="text-sm font-black text-[#0A0A0F]">I&apos;m a tourist</p>
-                  <p className="text-xs text-neutral-600 mt-0.5">Discover cities with verified local guides</p>
+                  <p className="text-xs text-neutral-700 mt-0.5">Discover cities with verified local guides</p>
                 </div>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6C4CF1" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"><path d="M9 18l6-6-6-6"/></svg>
               </button>
@@ -292,7 +292,7 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
                 </div>
                 <div className="flex-1 text-left">
                   <p className="text-sm font-black text-[#0A0A0F]">I&apos;m a guide</p>
-                  <p className="text-xs text-neutral-600 mt-0.5">Share your city · earn doing what you love</p>
+                  <p className="text-xs text-neutral-700 mt-0.5">Share your city · earn doing what you love</p>
                 </div>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"><path d="M9 18l6-6-6-6"/></svg>
               </button>
@@ -304,7 +304,7 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
             <>
               {/* Role badge + back */}
               <div className="flex items-center gap-2 mb-4">
-                <button onClick={() => { setStep("role"); setError(null); }} className="text-neutral-600 hover:text-[#0A0A0F] transition-colors">
+                <button onClick={() => { setStep("role"); setError(null); }} className="text-neutral-700 hover:text-[#0A0A0F] transition-colors">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
                 </button>
                 <span className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold ${role === "guide" ? "bg-emerald-50 text-emerald-700" : "bg-[#6C4CF1]/8 text-[#6C4CF1]"}`}>
@@ -315,7 +315,7 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
               {role === "guide" ? (
                 /* Guide — KYC gerektiğinden tam sayfaya yönlendir */
                 <div className="text-center py-4">
-                  <p className="text-sm text-neutral-500 leading-6 mb-4">
+                  <p className="text-sm text-neutral-600 leading-6 mb-4">
                     Guide registration requires uploading your official badge photos for verification. We&apos;ll take you to the full application form.
                   </p>
                   <a href="/register/guide"
@@ -323,7 +323,7 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
                     className="inline-flex items-center gap-2 rounded-2xl bg-emerald-500 text-white font-bold px-6 py-3 text-sm hover:bg-emerald-600 transition-colors">
                     Continue to guide application →
                   </a>
-                  <p className="mt-3 text-xs text-neutral-600">Takes about 2 minutes · Admin reviews within 1–2 days</p>
+                  <p className="mt-3 text-xs text-neutral-700">Takes about 2 minutes · Admin reviews within 1–2 days</p>
                 </div>
               ) : (
                 /* Tourist form */
@@ -334,7 +334,7 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
                   </button>
                   <div className="flex items-center gap-3 mb-4">
                     <div className="flex-1 h-px bg-black/[0.06]" />
-                    <span className="text-xs text-neutral-500 font-medium">or</span>
+                    <span className="text-xs text-neutral-600 font-medium">or</span>
                     <div className="flex-1 h-px bg-black/[0.06]" />
                   </div>
                   <form onSubmit={onEmailRegister} className="space-y-3">
@@ -363,7 +363,7 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
               </button>
               <div className="flex items-center gap-3 mb-4">
                 <div className="flex-1 h-px bg-black/[0.06]" />
-                <span className="text-xs text-neutral-500 font-medium">or</span>
+                <span className="text-xs text-neutral-600 font-medium">or</span>
                 <div className="flex-1 h-px bg-black/[0.06]" />
               </div>
               <form onSubmit={onEmailSignIn} className="space-y-3">
@@ -376,7 +376,7 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
                   {loading ? "Signing in…" : "Sign in →"}
                 </button>
               </form>
-              <p className="mt-3 text-center text-xs text-neutral-600">
+              <p className="mt-3 text-center text-xs text-neutral-700">
                 <button className="text-[#6C4CF1] font-semibold hover:underline">Forgot password?</button>
               </p>
             </>

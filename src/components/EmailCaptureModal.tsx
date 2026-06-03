@@ -75,7 +75,7 @@ export default function EmailCaptureModal() {
       onClick={(e) => { if (e.target === overlayRef.current) dismiss(); }}>
       <div className="bg-white rounded-3xl shadow-2xl w-full max-w-md overflow-hidden relative">
         <button onClick={dismiss}
-          className="absolute top-4 right-4 z-10 w-8 h-8 rounded-full bg-white/80 backdrop-blur flex items-center justify-center text-neutral-600 hover:text-neutral-700 transition-colors text-sm">
+          className="absolute top-4 right-4 z-10 w-8 h-8 rounded-full bg-white/80 backdrop-blur flex items-center justify-center text-neutral-700 hover:text-neutral-700 transition-colors text-sm">
           ✕
         </button>
 
@@ -90,11 +90,11 @@ export default function EmailCaptureModal() {
           {state === "done" ? (
             <div className="text-center">
               <h2 className="text-2xl font-black text-[#0A0A0F]">You&apos;re in! 🎉</h2>
-              <p className="mt-2 text-sm text-neutral-500 leading-6">
+              <p className="mt-2 text-sm text-neutral-600 leading-6">
                 Here&apos;s your <strong>10% off</strong> code. We also emailed it to you.
               </p>
               <div className="mt-5 bg-[#F7F7FB] border-2 border-dashed border-[#6C4CF1] rounded-2xl py-4">
-                <p className="text-[10px] font-bold text-neutral-600 uppercase tracking-widest">Your code</p>
+                <p className="text-[10px] font-bold text-neutral-700 uppercase tracking-widest">Your code</p>
                 <p className="text-2xl font-black text-[#6C4CF1] font-mono mt-1">{code}</p>
               </div>
               <div className="mt-4 flex gap-2">
@@ -111,7 +111,7 @@ export default function EmailCaptureModal() {
           ) : (
             <>
               <h2 className="text-2xl font-black text-[#0A0A0F] text-center">Get 10% off your first tour</h2>
-              <p className="mt-2 text-sm text-neutral-500 text-center leading-6">
+              <p className="mt-2 text-sm text-neutral-600 text-center leading-6">
                 Join travelers exploring Turkey with verified local guides. Drop your email — we&apos;ll send a discount code instantly.
               </p>
               <form onSubmit={onSubmit} className="mt-5 space-y-3">
@@ -125,10 +125,10 @@ export default function EmailCaptureModal() {
                   {state === "loading" ? "Getting your code…" : "Get my 10% off →"}
                 </button>
               </form>
-              <button onClick={dismiss} className="mt-3 w-full text-center text-xs text-neutral-600 hover:text-neutral-600 transition-colors">
+              <button onClick={dismiss} className="mt-3 w-full text-center text-xs text-neutral-700 hover:text-neutral-700 transition-colors">
                 No thanks, maybe later
               </button>
-              <p className="mt-3 text-[10px] text-neutral-500 text-center">
+              <p className="mt-3 text-[10px] text-neutral-600 text-center">
                 We respect your privacy. Unsubscribe anytime.
               </p>
             </>

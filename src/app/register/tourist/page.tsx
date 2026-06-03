@@ -123,7 +123,7 @@ export default function RegisterTouristPage() {
             </svg>
           </div>
           <h1 className="text-2xl font-black text-[#0A0A0F]">Check your email</h1>
-          <p className="mt-2 text-sm text-neutral-600 max-w-xs mx-auto leading-6">
+          <p className="mt-2 text-sm text-neutral-700 max-w-xs mx-auto leading-6">
             We sent a verification link to <strong className="text-[#0A0A0F]">{email}</strong>. Click the link then come back here.
           </p>
           {error && (
@@ -139,7 +139,7 @@ export default function RegisterTouristPage() {
           >
             {loading ? "Checking…" : "I verified my email →"}
           </button>
-          <p className="mt-3 text-xs text-neutral-600">Didn&apos;t receive it? Check spam or <button className="text-[#6C4CF1] font-semibold hover:underline" onClick={() => fbAuth().currentUser?.reload()}>resend</button></p>
+          <p className="mt-3 text-xs text-neutral-700">Didn&apos;t receive it? Check spam or <button className="text-[#6C4CF1] font-semibold hover:underline" onClick={() => fbAuth().currentUser?.reload()}>resend</button></p>
         </div>
       </main>
     );
@@ -157,7 +157,7 @@ export default function RegisterTouristPage() {
             VibeGuide
           </a>
           <p className="mt-6 text-3xl font-black text-[#0A0A0F]">Join as a tourist</p>
-          <p className="mt-1 text-sm text-neutral-600">Start exploring with local guides</p>
+          <p className="mt-1 text-sm text-neutral-700">Start exploring with local guides</p>
         </div>
 
         <div className="bg-white border border-black/[0.06] rounded-3xl p-8 shadow-sm">
@@ -178,13 +178,13 @@ export default function RegisterTouristPage() {
 
           <div className="flex items-center gap-3 my-5">
             <div className="flex-1 h-px bg-black/[0.06]" />
-            <span className="text-xs text-neutral-600 font-medium">or sign up with email</span>
+            <span className="text-xs text-neutral-700 font-medium">or sign up with email</span>
             <div className="flex-1 h-px bg-black/[0.06]" />
           </div>
 
           <form onSubmit={onSubmit} className="space-y-4">
             <div>
-              <label className="text-xs font-bold text-neutral-500 mb-1.5 block">Full name *</label>
+              <label className="text-xs font-bold text-neutral-600 mb-1.5 block">Full name *</label>
               <input
                 type="text" required value={fullName} onChange={(e) => setFullName(e.target.value)}
                 className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors"
@@ -193,7 +193,7 @@ export default function RegisterTouristPage() {
             </div>
 
             <div>
-              <label className="text-xs font-bold text-neutral-500 mb-1.5 block">Email *</label>
+              <label className="text-xs font-bold text-neutral-600 mb-1.5 block">Email *</label>
               <input
                 type="email" required value={email} onChange={(e) => setEmail(e.target.value)}
                 className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors"
@@ -202,7 +202,7 @@ export default function RegisterTouristPage() {
             </div>
 
             <div>
-              <label className="text-xs font-bold text-neutral-500 mb-1.5 block">Password *</label>
+              <label className="text-xs font-bold text-neutral-600 mb-1.5 block">Password *</label>
               <input
                 type="password" required value={password} onChange={(e) => setPassword(e.target.value)}
                 className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors"
@@ -211,7 +211,7 @@ export default function RegisterTouristPage() {
             </div>
 
             <div>
-              <label className="text-xs font-bold text-neutral-500 mb-1.5 block">Confirm password *</label>
+              <label className="text-xs font-bold text-neutral-600 mb-1.5 block">Confirm password *</label>
               <input
                 type="password" required value={password2} onChange={(e) => setPassword2(e.target.value)}
                 className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors"
@@ -235,7 +235,7 @@ export default function RegisterTouristPage() {
           </form>
         </div>
 
-        <p className="mt-5 text-center text-sm text-neutral-600">
+        <p className="mt-5 text-center text-sm text-neutral-700">
           Already have an account?{" "}
           <a href="/login" className="text-[#6C4CF1] font-bold hover:underline">Sign in</a>
         </p>

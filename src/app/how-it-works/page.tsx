@@ -49,7 +49,7 @@ export default function HowItWorksPage() {
       <div className="mx-auto max-w-3xl px-6 pt-28 pb-16">
         <p className="text-sm font-black text-[#6C4CF1] mb-3 tracking-widest">HOW IT WORKS</p>
         <h1 className="text-4xl font-black mb-4">The booking process, step by step</h1>
-        <p className="text-lg text-neutral-500 mb-12">
+        <p className="text-lg text-neutral-600 mb-12">
           VibeGuide is a controlled digital tourism reservation platform — verified guides, predefined routes, secure payments and supported operations.
         </p>
 
@@ -61,7 +61,7 @@ export default function HowItWorksPage() {
               </div>
               <div>
                 <h2 className="font-black text-lg mb-1">{s.title}</h2>
-                <p className="text-neutral-600 text-sm leading-7">{s.text}</p>
+                <p className="text-neutral-700 text-sm leading-7">{s.text}</p>
               </div>
             </div>
           ))}
@@ -69,7 +69,7 @@ export default function HowItWorksPage() {
 
         <div className="mt-12 p-6 bg-[#F5F3FF] rounded-2xl border border-[#DDD6FE]">
           <p className="font-black mb-2">🔒 Secure & supported</p>
-          <p className="text-sm text-neutral-600 leading-7">
+          <p className="text-sm text-neutral-700 leading-7">
             All payments are processed through VibeCore Turizm Seyahat Acentası ve Dijital Hizmetler Ticaret Ltd. Şti., our registered Turkish company. Guide verification, cancellation terms and dispute resolution are managed by VibeGuide.
           </p>
         </div>

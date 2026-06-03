@@ -68,7 +68,7 @@ export default function CookieBanner() {
 
             <div className="flex-1 min-w-0">
               <p className="text-sm font-black text-[#0A0A0F]">We use cookies 🍪</p>
-              <p className="mt-1 text-xs text-neutral-600 leading-5">
+              <p className="mt-1 text-xs text-neutral-700 leading-5">
                 We use cookies to remember your language preference and improve your experience. Analytics cookies help us understand how visitors use our site.
                 {" "}
                 <Link href="/privacy" className="text-[#6C4CF1] font-semibold hover:underline">Privacy Policy</Link>
@@ -86,7 +86,7 @@ export default function CookieBanner() {
                     <div key={c.name} className="flex items-center justify-between bg-neutral-50 rounded-xl px-3 py-2">
                       <div>
                         <p className="text-xs font-bold text-[#0A0A0F]">{c.name}</p>
-                        <p className="text-[10px] text-neutral-600">{c.desc}</p>
+                        <p className="text-[10px] text-neutral-700">{c.desc}</p>
                       </div>
                       <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${c.always ? "bg-emerald-100 text-emerald-700" : "bg-[#6C4CF1]/10 text-[#6C4CF1]"}`}>
                         {c.always ? "Always on" : "Optional"}
@@ -98,7 +98,7 @@ export default function CookieBanner() {
 
               <button
                 onClick={() => setShowDetails(v => !v)}
-                className="mt-2 text-[10px] font-semibold text-neutral-600 hover:text-[#0A0A0F] transition-colors"
+                className="mt-2 text-[10px] font-semibold text-neutral-700 hover:text-[#0A0A0F] transition-colors"
               >
                 {showDetails ? "Hide details ▲" : "Cookie details ▼"}
               </button>
@@ -109,7 +109,7 @@ export default function CookieBanner() {
           <div className="flex gap-2 mt-4">
             <button
               onClick={decline}
-              className="flex-1 py-2.5 rounded-2xl border border-black/10 text-sm font-bold text-neutral-500 hover:bg-neutral-50 hover:border-black/20 transition-all"
+              className="flex-1 py-2.5 rounded-2xl border border-black/10 text-sm font-bold text-neutral-600 hover:bg-neutral-50 hover:border-black/20 transition-all"
             >
               Decline
             </button>

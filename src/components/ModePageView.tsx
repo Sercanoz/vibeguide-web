@@ -13,7 +13,7 @@ function ModeMock({ mode }: { mode: Mode }) {
     <div className="px-4 pb-5">
       <div className="flex items-center justify-between mb-3">
         <div>
-          <p className="text-[10px] text-neutral-600 font-medium">Istanbul · now</p>
+          <p className="text-[10px] text-neutral-700 font-medium">Istanbul · now</p>
           <h3 className="text-base font-black leading-tight flex items-center gap-1">
             <span>{mode.emoji}</span> {mode.name}
           </h3>
@@ -108,7 +108,7 @@ export default function ModePageView({ mode }: { mode: Mode }) {
             <h1 className="mt-5 text-5xl md:text-6xl font-black tracking-tight leading-[1.02]">
               {mode.name}
             </h1>
-            <p className="mt-5 text-lg leading-8 text-neutral-500 max-w-md">
+            <p className="mt-5 text-lg leading-8 text-neutral-600 max-w-md">
               {mode.heroSub}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -150,7 +150,7 @@ export default function ModePageView({ mode }: { mode: Mode }) {
                   {i + 1}
                 </span>
                 <h3 className="mt-4 font-black text-[#0A0A0F]">{s.title}</h3>
-                <p className="mt-1.5 text-sm leading-6 text-neutral-500">{s.desc}</p>
+                <p className="mt-1.5 text-sm leading-6 text-neutral-600">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -163,7 +163,7 @@ export default function ModePageView({ mode }: { mode: Mode }) {
           {mode.benefits.map((b) => (
             <div key={b.title} className="rounded-2xl border border-black/[0.06] p-6">
               <h3 className="font-black text-[#0A0A0F] mb-1.5">{b.title}</h3>
-              <p className="text-sm leading-6 text-neutral-500">{b.desc}</p>
+              <p className="text-sm leading-6 text-neutral-600">{b.desc}</p>
             </div>
           ))}
         </div>
@@ -199,7 +199,7 @@ export default function ModePageView({ mode }: { mode: Mode }) {
                   {f.q}
                   <span style={{ color: mode.color }} className="transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="mt-3 text-[15px] leading-7 text-neutral-600">{f.a}</p>
+                <p className="mt-3 text-[15px] leading-7 text-neutral-700">{f.a}</p>
               </details>
             ))}
           </div>
@@ -220,7 +220,7 @@ export default function ModePageView({ mode }: { mode: Mode }) {
                 <span className="text-3xl">{o.emoji}</span>
                 <span>
                   <span className="block font-black text-[#0A0A0F] group-hover:text-[#6C4CF1] transition-colors">{o.name}</span>
-                  <span className="block text-sm text-neutral-600">{o.tagline}</span>
+                  <span className="block text-sm text-neutral-700">{o.tagline}</span>
                 </span>
               </Link>
             ))}
@@ -232,7 +232,7 @@ export default function ModePageView({ mode }: { mode: Mode }) {
       <section className="py-20 bg-[#F7F7FB]">
         <div className="mx-auto max-w-2xl px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-black mb-4">{mode.ctaTitle}</h2>
-          <p className="text-neutral-500 mb-8 leading-7">{MODE_CTA_SUB}</p>
+          <p className="text-neutral-600 mb-8 leading-7">{MODE_CTA_SUB}</p>
           <Link
             href="/tours"
             className="inline-block rounded-full px-8 py-3.5 text-sm font-bold text-white"

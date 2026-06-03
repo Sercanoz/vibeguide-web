@@ -172,7 +172,7 @@ export default async function AttractionPage({ params }: Props) {
               className="rounded-2xl border border-black/[0.06] bg-[#F7F7FB] p-6"
             >
               <h3 className="font-black text-[#0A0A0F] mb-1.5">{h.title}</h3>
-              <p className="text-sm leading-6 text-neutral-500">{h.desc}</p>
+              <p className="text-sm leading-6 text-neutral-600">{h.desc}</p>
             </div>
           ))}
         </div>
@@ -201,7 +201,7 @@ export default async function AttractionPage({ params }: Props) {
                     +
                   </span>
                 </summary>
-                <p className="mt-3 text-[15px] leading-7 text-neutral-600">
+                <p className="mt-3 text-[15px] leading-7 text-neutral-700">
                   {f.a}
                 </p>
               </details>
@@ -243,7 +243,7 @@ export default async function AttractionPage({ params }: Props) {
       <section id="download" className="py-20 bg-[#F7F7FB]">
         <div className="mx-auto max-w-2xl px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-black mb-4">{c.ctaTitle}</h2>
-          <p className="text-neutral-500 mb-8 leading-7">{c.ctaSub}</p>
+          <p className="text-neutral-600 mb-8 leading-7">{c.ctaSub}</p>
           <Link
             href="/tours"
             className="inline-block rounded-full bg-gradient-to-r from-[#6C4CF1] via-[#8B5CF6] to-[#EC4899] px-8 py-3.5 text-sm font-bold text-white"

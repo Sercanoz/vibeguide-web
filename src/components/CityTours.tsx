@@ -71,7 +71,7 @@ export default function CityTours({
                 <div className="p-4">
                   <h3 className="font-black text-[#0A0A0F] text-[15px] leading-snug line-clamp-2 group-hover:text-[#6C4CF1] transition-colors">{t.title}</h3>
                   <div className="mt-2 flex items-center justify-between">
-                    <span className="text-xs text-neutral-600 capitalize">{t.category}</span>
+                    <span className="text-xs text-neutral-700 capitalize">{t.category}</span>
                     <span className="text-base font-black text-[#6C4CF1]"><Price amount={t.basePrice} currency={t.currency} /></span>
                   </div>
                 </div>

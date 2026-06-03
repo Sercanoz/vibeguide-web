@@ -115,7 +115,7 @@ export default function CityGuideView({
               >
                 <span className="text-3xl">{h.icon}</span>
                 <h3 className="mt-3 text-base font-black">{h.name}</h3>
-                <p className="mt-1.5 text-sm text-neutral-500 leading-6">{h.desc}</p>
+                <p className="mt-1.5 text-sm text-neutral-600 leading-6">{h.desc}</p>
               </div>
             ))}
           </div>
@@ -131,7 +131,7 @@ export default function CityGuideView({
           <h2 className="text-3xl md:text-4xl font-black mb-6 tracking-tight">
             {c.seoHeading}
           </h2>
-          <div className="space-y-5 text-[15px] text-neutral-600 leading-8">
+          <div className="space-y-5 text-[15px] text-neutral-700 leading-8">
             {c.seoParagraphs.map((p, i) => (
               <p key={i} dangerouslySetInnerHTML={{ __html: p }} />
             ))}
@@ -142,7 +142,7 @@ export default function CityGuideView({
       {/* 3 modes */}
       <section className="py-20 bg-[#F7F7FB]">
         <div className="mx-auto max-w-5xl px-6">
-          <p className="text-xs font-bold uppercase tracking-[0.3em] text-neutral-600 mb-4">
+          <p className="text-xs font-bold uppercase tracking-[0.3em] text-neutral-700 mb-4">
             {c.modesKicker}
           </p>
           <h2 className="text-3xl md:text-4xl font-black mb-12 tracking-tight">
@@ -160,7 +160,7 @@ export default function CityGuideView({
                   {m.tag}
                 </span>
                 <h3 className="text-xl font-black mb-2">{m.title}</h3>
-                <p className="text-sm text-neutral-500 leading-6">{m.text}</p>
+                <p className="text-sm text-neutral-600 leading-6">{m.text}</p>
               </div>
             ))}
           </div>
@@ -203,7 +203,7 @@ export default function CityGuideView({
                       +
                     </span>
                   </summary>
-                  <p className="mt-3 text-[15px] leading-7 text-neutral-600">{f.a}</p>
+                  <p className="mt-3 text-[15px] leading-7 text-neutral-700">{f.a}</p>
                 </details>
               ))}
             </div>
@@ -217,7 +217,7 @@ export default function CityGuideView({
           <div className="mx-auto max-w-5xl px-6">
             <h2 className="text-3xl font-black mb-2 tracking-tight">{c.landmarksHeading}</h2>
             {c.landmarksSub && (
-              <p className="text-sm text-neutral-600 mb-8">{c.landmarksSub}</p>
+              <p className="text-sm text-neutral-700 mb-8">{c.landmarksSub}</p>
             )}
             <div className="grid sm:grid-cols-2 gap-4">
               {c.landmarks.map((l) => (
@@ -231,7 +231,7 @@ export default function CityGuideView({
                     <p className="font-black text-[#0A0A0F] group-hover:text-[#6C4CF1] transition-colors">
                       {l.name}
                     </p>
-                    <p className="text-sm text-neutral-600">{l.desc}</p>
+                    <p className="text-sm text-neutral-700">{l.desc}</p>
                   </div>
                 </Link>
               ))}
@@ -256,7 +256,7 @@ export default function CityGuideView({
                   <p className="font-black text-[#0A0A0F] group-hover:text-[#6C4CF1] transition-colors">
                     {l.name}
                   </p>
-                  <p className="text-sm text-neutral-600">{l.desc}</p>
+                  <p className="text-sm text-neutral-700">{l.desc}</p>
                 </div>
               </Link>
             ))}
@@ -268,7 +268,7 @@ export default function CityGuideView({
       <section id="download" className="py-20 bg-white">
         <div className="mx-auto max-w-2xl px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-black mb-4">{c.ctaTitle}</h2>
-          <p className="text-neutral-500 mb-8 leading-7">{c.ctaSub}</p>
+          <p className="text-neutral-600 mb-8 leading-7">{c.ctaSub}</p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
               href="#"
@@ -283,7 +283,7 @@ export default function CityGuideView({
               <span>📱</span> App Store
             </a>
           </div>
-          <p className="mt-6 text-xs text-neutral-500">{c.ctaAvailability}</p>
+          <p className="mt-6 text-xs text-neutral-600">{c.ctaAvailability}</p>
         </div>
       </section>
 

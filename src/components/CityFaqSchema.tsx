@@ -27,7 +27,7 @@ export default function CityFaqSchema({ city, faqs }: { city: string; faqs: Faq[
                 {f.q}
                 <span className="text-[#6C4CF1] transition-transform group-open:rotate-45 text-xl shrink-0 ml-3">+</span>
               </summary>
-              <div className="px-5 pb-5 text-sm text-neutral-600 leading-7">{f.a}</div>
+              <div className="px-5 pb-5 text-sm text-neutral-700 leading-7">{f.a}</div>
             </details>
           ))}
         </div>

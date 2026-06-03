@@ -37,7 +37,7 @@ export default function SiteNav() {
 
         <div className="hidden gap-8 text-sm font-medium md:flex">
           {navLinks.map((l) => (
-            <a key={l.href} href={l.href} className="text-neutral-500 hover:text-black transition-colors">{l.label}</a>
+            <a key={l.href} href={l.href} className="text-neutral-600 hover:text-black transition-colors">{l.label}</a>
           ))}
         </div>
 
@@ -65,7 +65,7 @@ export default function SiteNav() {
               key={l.href}
               href={l.href}
               onClick={() => setMenuOpen(false)}
-              className="flex items-center py-3 text-sm font-semibold text-neutral-600 hover:text-black border-b border-black/5 last:border-0 transition-colors"
+              className="flex items-center py-3 text-sm font-semibold text-neutral-700 hover:text-black border-b border-black/5 last:border-0 transition-colors"
             >
               {l.label}
             </a>
