@@ -143,8 +143,8 @@ export default function TourFilters({ tours }: Props) {
       {filtered.length === 0 ? (
         <div className="text-center py-20 text-neutral-800">
           <p className="text-5xl mb-4">🗺️</p>
-          <p className="text-base font-semibold">No tours available yet</p>
-          <p className="text-sm mt-1">Check back soon — new tours are added regularly.</p>
+          <p className="text-base font-semibold">{tt.noToursYet}</p>
+          <p className="text-sm mt-1">{tt.noToursYetSub}</p>
         </div>
       ) : (
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">

@@ -71,6 +71,7 @@ export default function ModePageView({ mode: rawMode }: { mode: Mode }) {
     howItWorks: tr ? "Nasıl çalışır" : "How it works",
     questions: tr ? "Sorular" : "Questions",
     otherWays: tr ? "Keşfetmenin diğer yolları" : "The other ways to explore",
+    seeInApp: tr ? "Uygulamada gör" : "See it in the app",
   };
 
   const jsonLd = {
@@ -187,7 +188,7 @@ export default function ModePageView({ mode: rawMode }: { mode: Mode }) {
       {mode.screenshots.length > 0 && (
         <section className="py-12 bg-[#F7F7FB]">
           <div className="mx-auto max-w-6xl px-6">
-            <h2 className="text-3xl font-black tracking-tight mb-8">See it in the app</h2>
+            <h2 className="text-3xl font-black tracking-tight mb-8">{ui.seeInApp}</h2>
             <div className="flex flex-wrap justify-center gap-6">
               {mode.screenshots.map((src) => (
                 <div

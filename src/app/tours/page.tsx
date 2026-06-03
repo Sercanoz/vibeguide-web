@@ -81,15 +81,15 @@ export default function ToursPage() {
         ) : tours.length === 0 ? (
           <div className="text-center py-24 text-neutral-800">
             <p className="text-6xl mb-4">🗺️</p>
-            <p className="text-xl font-bold text-[#0A0A0F]">Tours coming soon</p>
+            <p className="text-xl font-bold text-[#0A0A0F]">{tt.toursComingSoon}</p>
             <p className="text-sm mt-2">
-              We&apos;re adding new tours regularly. Download the app to get notified.
+              {tt.toursComingSoonSub}
             </p>
             <a
               href="/#download"
               className="mt-8 inline-block rounded-full bg-[#6C4CF1] text-white px-7 py-3 text-sm font-bold hover:bg-[#5a3dd4] transition-colors"
             >
-              Download App →
+              {tt.downloadApp}
             </a>
           </div>
         ) : (

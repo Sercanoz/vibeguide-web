@@ -152,14 +152,14 @@ export default function TourDetailPage() {
       <main className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center px-6">
           <p className="text-6xl mb-4">⚠️</p>
-          <h1 className="text-2xl font-black text-[#0A0A0F] mb-2">Something went wrong</h1>
-          <p className="text-neutral-800 mb-6">Could not load this tour. Please try again.</p>
+          <h1 className="text-2xl font-black text-[#0A0A0F] mb-2">{tt.errTitle}</h1>
+          <p className="text-neutral-800 mb-6">{tt.errMsg}</p>
           <div className="flex gap-3 justify-center">
             <button onClick={() => window.location.reload()} className="rounded-full bg-[#6C4CF1] text-white text-sm font-bold px-6 py-2.5 hover:bg-[#5a3dd4] transition-colors">
-              Try again
+              {tt.tryAgain}
             </button>
             <a href="/tours" className="rounded-full border border-black/10 text-neutral-800 text-sm font-bold px-6 py-2.5 hover:bg-neutral-50 transition-colors">
-              Browse all tours
+              {tt.browseAllTours}
             </a>
           </div>
         </div>
@@ -172,10 +172,10 @@ export default function TourDetailPage() {
       <main className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center px-6">
           <p className="text-6xl mb-4">🗺️</p>
-          <h1 className="text-2xl font-black text-[#0A0A0F] mb-2">Tour not found</h1>
-          <p className="text-neutral-800 mb-6">This tour may have been removed or is no longer active.</p>
+          <h1 className="text-2xl font-black text-[#0A0A0F] mb-2">{tt.notFoundTitle}</h1>
+          <p className="text-neutral-800 mb-6">{tt.notFoundMsg}</p>
           <a href="/tours" className="rounded-full bg-[#6C4CF1] text-white text-sm font-bold px-6 py-2.5 hover:bg-[#5a3dd4] transition-colors">
-            Browse all tours
+            {tt.browseAllTours}
           </a>
         </div>
       </main>
@@ -235,7 +235,7 @@ export default function TourDetailPage() {
                   <img src={main!.url} alt={main!.caption ?? tour.title} className="w-full h-64 object-cover" />
                   {allPhotos.length > 1 && (
                     <button className="absolute bottom-3 right-3 bg-white/90 backdrop-blur-sm text-[#0A0A0F] text-xs font-black px-3 py-1.5 rounded-xl shadow-sm">
-                      🖼️ See all {allPhotos.length} photos
+                      🖼️ {tt.seeAllPhotos.replace("{n}", String(allPhotos.length))}
                     </button>
                   )}
                 </div>
@@ -284,7 +284,7 @@ export default function TourDetailPage() {
                       onClick={() => openLightbox(0)}
                       className="flex items-center gap-1.5 text-xs font-black text-[#0A0A0F] border border-black/15 bg-white px-4 py-2 rounded-xl hover:bg-neutral-50 transition-colors shadow-sm"
                     >
-                      🖼️ See all {allPhotos.length} photos
+                      🖼️ {tt.seeAllPhotos.replace("{n}", String(allPhotos.length))}
                     </button>
                   </div>
                 )}
@@ -352,10 +352,10 @@ export default function TourDetailPage() {
               (tour.languagePrices && tour.languagePrices.length > 0)
             );
             const tabs = [
-              hasOverview && { key: "overview" as const, label: "Overview" },
-              hasItinerary && { key: "itinerary" as const, label: "Itinerary" },
-              hasIncluded && { key: "included" as const, label: "Included" },
-              hasInfo && { key: "info" as const, label: "Info" },
+              hasOverview && { key: "overview" as const, label: tt.tabOverview },
+              hasItinerary && { key: "itinerary" as const, label: tt.tabItinerary },
+              hasIncluded && { key: "included" as const, label: tt.tabIncluded },
+              hasInfo && { key: "info" as const, label: tt.tabInfo },
             ].filter(Boolean) as { key: typeof activeTab; label: string }[];
             // Aktif sekme boşsa ilk dolu sekmeye geç.
             if (tabs.length > 0 && !tabs.some((t) => t.key === activeTab)) {
@@ -384,14 +384,14 @@ export default function TourDetailPage() {
           {/* ── OVERVIEW: About + Highlights ── */}
           {activeTab === "overview" && tour.description && (
             <div>
-              <h2 className="text-2xl font-black mb-4">About This Tour</h2>
+              <h2 className="text-2xl font-black mb-4">{tt.aboutTour}</h2>
               <p className="text-neutral-800 leading-8 whitespace-pre-line">{tour.description}</p>
             </div>
           )}
 
           {activeTab === "overview" && highlights.length > 0 && (
             <div>
-              <h2 className="text-2xl font-black mb-5">Highlights</h2>
+              <h2 className="text-2xl font-black mb-5">{tt.highlights}</h2>
               <ul className="space-y-3">
                 {highlights.map((hl, i) => (
                   <li key={i} className="flex items-start gap-3 text-neutral-800">
@@ -406,7 +406,7 @@ export default function TourDetailPage() {
           {/* ── ITINERARY: What You'll See ── */}
           {activeTab === "itinerary" && tour.places && tour.places.length > 0 && (
             <div>
-              <h2 className="text-2xl font-black mb-5">What You&apos;ll See</h2>
+              <h2 className="text-2xl font-black mb-5">{tt.whatYoullSee}</h2>
               <ol className="space-y-4">
                 {[...tour.places]
                   .sort((a, b) => a.ord - b.ord)
@@ -435,7 +435,7 @@ export default function TourDetailPage() {
               <div className="space-y-8">
                 {included.length > 0 && (
                   <div>
-                    <h2 className="text-2xl font-black mb-5">What&apos;s Included</h2>
+                    <h2 className="text-2xl font-black mb-5">{tt.whatsIncluded}</h2>
                     <div className="grid sm:grid-cols-2 gap-2">
                       {included.map((item) => (
                         <div
@@ -454,7 +454,7 @@ export default function TourDetailPage() {
 
                 {notIncluded.length > 0 && (
                   <div>
-                    <h2 className="text-2xl font-black mb-5">Not Included</h2>
+                    <h2 className="text-2xl font-black mb-5">{tt.notIncluded}</h2>
                     <div className="grid sm:grid-cols-2 gap-2">
                       {notIncluded.map((item) => (
                         <div
@@ -476,7 +476,7 @@ export default function TourDetailPage() {
 
           {activeTab === "info" && tour.importantInfo && tour.importantInfo.length > 0 && (
             <div>
-              <h2 className="text-2xl font-black mb-5">Important Information</h2>
+              <h2 className="text-2xl font-black mb-5">{tt.importantInfo}</h2>
               <div className="space-y-2">
                 {[...tour.importantInfo]
                   .sort((a, b) => a.ord - b.ord)
@@ -492,7 +492,7 @@ export default function TourDetailPage() {
 
           {activeTab === "info" && tour.meetingPointText && (
             <div>
-              <h2 className="text-2xl font-black mb-3">Meeting Point</h2>
+              <h2 className="text-2xl font-black mb-3">{tt.meetingPoint}</h2>
               <div className="flex items-start gap-3 rounded-2xl bg-[#F7F7FB] border border-black/5 px-5 py-4">
                 <span className="text-2xl flex-shrink-0">📍</span>
                 <div>
@@ -514,7 +514,7 @@ export default function TourDetailPage() {
 
           {activeTab === "info" && tour.languagePrices && tour.languagePrices.length > 0 && (
             <div>
-              <h2 className="text-2xl font-black mb-4">Available in</h2>
+              <h2 className="text-2xl font-black mb-4">{tt.availableIn}</h2>
               <div className="flex flex-wrap gap-2">
                 {tour.languagePrices.map((lp) => {
                   const lang = languageByCode(lp.code);
