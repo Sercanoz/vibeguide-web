@@ -6,6 +6,7 @@ import { API_BASE_URL } from "@/lib/api";
 import { useT } from "@/components/LanguageProvider";
 import { getToursT } from "@/lib/i18n";
 import Navbar from "@/components/Navbar";
+import MainFooter from "@/components/MainFooter";
 import ShareButton from "@/components/ShareButton";
 import Price from "@/components/Price";
 import { languageByCode } from "@/lib/languages";
@@ -691,22 +692,7 @@ export default function TourDetailPage() {
 
       <div className="md:hidden h-20" />
 
-      {/* Footer */}
-      <footer className="bg-[#F7F7FB] border-t border-black/[0.06] px-6 py-12 mt-8">
-        <div className="mx-auto max-w-7xl flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-neutral-800">
-          <a href="/" className="flex items-center gap-2 font-black text-[#0A0A0F]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/vibeguide-icon.png" alt="VibeGuide" width={24} height={24} style={{ mixBlendMode: "multiply" }} />
-            VibeGuide
-          </a>
-          <p>© {new Date().getFullYear()} VibeCore Turizm Ltd. Şti. All rights reserved.</p>
-          <div className="flex gap-4">
-            <a href="/tours" className="hover:text-black transition-colors">All Tours</a>
-            <a href="/privacy" className="hover:text-black transition-colors">Privacy</a>
-            <a href="/terms" className="hover:text-black transition-colors">Terms</a>
-          </div>
-        </div>
-      </footer>
+      <MainFooter />
     </main>
   );
 }
