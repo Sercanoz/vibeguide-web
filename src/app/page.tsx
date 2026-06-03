@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { useT } from "@/components/LanguageProvider";
 import { homeTranslations } from "@/lib/home-i18n";
@@ -10,21 +9,8 @@ import { homeSections } from "@/lib/home-sections-i18n";
 import { useInView } from "@/hooks/useInView";
 import Navbar from "@/components/Navbar";
 import HeroCitySearch from "@/components/HeroCitySearch";
-import PhoneShowcase from "@/components/PhoneShowcase";
 import MainFooter from "@/components/MainFooter";
 import Price from "@/components/Price";
-
-// Hero telefonunda otomatik dönecek GERÇEK uygulama ekran görüntüleri.
-// Dosyaları /public/screens/ altına koy, adlarını buraya ekle (örn:
-// ["/screens/vibenow-1.png", "/screens/vibenow-2.png", ...]).
-// Boşken mevcut HTML mockup gösterilir (hiçbir şey bozulmaz).
-const HERO_SHOTS: string[] = [
-  "/screens/vibenow-1.jpeg",
-  "/screens/vibenow-2.jpeg",
-  "/screens/vibenow-3.jpeg",
-  "/screens/vibenow-4.jpeg",
-  "/screens/vibenow-5.jpeg",
-];
 import { API_BASE_URL } from "@/lib/api";
 
 export default function HomePage() {
@@ -57,7 +43,7 @@ export default function HomePage() {
           {/* Centered destination search — sits above headline + phone */}
           <HeroCitySearch />
 
-          <div className="mt-14 grid md:grid-cols-2 gap-16 items-center">
+          <div className="mt-14 max-w-2xl">
           {/* Copy */}
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-[#6C4CF1]/15 bg-[#6C4CF1]/5 px-4 py-2 text-sm font-semibold text-[#6C4CF1] mb-8 animate-[fadeSlideUp_0.7s_ease_both]">
@@ -92,102 +78,6 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Mobile mini hero */}
-          <div className="md:hidden mt-4 flex items-center gap-4 rounded-2xl bg-[#F7F7FB] border border-black/[0.06] p-4">
-            <div className="h-12 w-12 shrink-0 rounded-2xl bg-gradient-to-br from-[#6C4CF1] to-[#8B5CF6] flex items-center justify-center text-2xl">🧭</div>
-            <div className="flex-1 min-w-0">
-              <p className="text-xs font-bold text-neutral-800 uppercase tracking-wider mb-1">Live in Istanbul</p>
-              <p className="text-sm font-black text-[#0A0A0F] leading-tight">24 guides online near you</p>
-            </div>
-            <div className="flex items-center gap-1.5 rounded-full bg-emerald-50 border border-emerald-100 px-2.5 py-1">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="text-[10px] font-bold text-emerald-600">LIVE</span>
-            </div>
-          </div>
-
-          {/* Phone */}
-          <div className="hidden md:flex justify-center items-center">
-            {HERO_SHOTS.length > 0 ? (
-              <PhoneShowcase shots={HERO_SHOTS} interval={4500} />
-            ) : (
-            <div className="relative">
-              <div className="absolute -inset-8 bg-[#6C4CF1]/20 blur-3xl rounded-full" />
-              <Phone>
-                <div className="px-4 pt-4 pb-6">
-                  {/* Header */}
-                  <div className="flex items-center justify-between mb-4">
-                    <div>
-                      <p className="text-[10px] text-neutral-800 font-medium">{t.phone.greet}</p>
-                      <h2 className="text-lg font-black leading-tight">Istanbul 🇹🇷</h2>
-                    </div>
-                    <span className="flex items-center gap-1.5 rounded-full bg-emerald-50 border border-emerald-100 px-2.5 py-1 text-[9px] font-bold text-emerald-600">
-                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                      {t.phone.live}
-                    </span>
-                  </div>
-
-                  {/* Map placeholder */}
-                  <div className="relative h-28 rounded-2xl overflow-hidden mb-3">
-                    <Image
-                      src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=60&w=600"
-                      alt="map"
-                      fill
-                      className="object-cover opacity-70"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                    {/* Guide pins */}
-                    {[
-                      { top: "30%", left: "25%", color: "bg-[#6C4CF1]" },
-                      { top: "55%", left: "60%", color: "bg-[#10B981]" },
-                      { top: "20%", left: "65%", color: "bg-[#F59E0B]" },
-                    ].map((pin, i) => (
-                      <div key={i} className="absolute" style={{ top: pin.top, left: pin.left }}>
-                        <div className={`h-5 w-5 rounded-full ${pin.color} border-2 border-white shadow-lg flex items-center justify-center`}>
-                          <span className="text-[8px]">👤</span>
-                        </div>
-                      </div>
-                    ))}
-                    <div className="absolute bottom-2 left-3 text-[9px] font-bold text-white/90">{t.phoneMock.guidesNearby}</div>
-                  </div>
-
-                  {/* Mode cards */}
-                  <div className="space-y-2">
-                    {[
-                      { grad: "from-[#6C4CF1] to-[#8B5CF6]", icon: "⚡", title: "VibeNow", sub: t.phoneMock.vibenowSub },
-                      { grad: "from-[#059669] to-[#10B981]", icon: "👥", title: "VibeSquad", sub: t.phoneMock.vibesquadSub },
-                      { grad: "from-[#D97706] to-[#F59E0B]", icon: "📅", title: t.nav.private, sub: t.phoneMock.privateSub },
-                    ].map((c) => (
-                      <div key={c.title} className={`flex items-center gap-3 rounded-xl bg-gradient-to-r ${c.grad} px-3 py-2.5`}>
-                        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/20 text-sm">
-                          {c.icon}
-                        </div>
-                        <div className="flex-1">
-                          <p className="text-[11px] font-black text-white leading-none">{c.title}</p>
-                          <p className="text-[9px] text-white/60 mt-0.5">{c.sub}</p>
-                        </div>
-                        <div className="h-6 w-6 rounded-full bg-white/15 flex items-center justify-center">
-                          <span className="text-white text-[10px]">›</span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Notification pill */}
-                  <div className="mt-3 flex items-center gap-2.5 rounded-2xl bg-[#0A0A0F] px-3 py-2.5">
-                    <div className="h-8 w-8 rounded-full bg-gradient-to-br from-[#6C4CF1] to-[#10B981] flex items-center justify-center text-sm shrink-0">
-                      👤
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-[10px] font-black text-white leading-none">{t.phoneMock.guideOnWay}</p>
-                      <p className="text-[9px] text-white/40 mt-0.5">{t.phoneMock.arrivingIn}</p>
-                    </div>
-                    <div className="h-2 w-2 rounded-full bg-[#10B981] animate-pulse shrink-0" />
-                  </div>
-                </div>
-              </Phone>
-            </div>
-            )}
-          </div>
           </div>
         </div>
 
@@ -428,38 +318,6 @@ export default function HomePage() {
   );
 }
 
-
-function Phone({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="relative w-[280px] rounded-[3rem] bg-gradient-to-b from-[#2a2a2a] to-[#000] p-[5px] shadow-[0_40px_80px_-10px_rgba(108,76,241,0.5)]">
-      <div className="absolute -left-[3px] top-24 h-8 w-[3px] rounded-l-md bg-[#2a2a2a]" />
-      <div className="absolute -left-[3px] top-36 h-14 w-[3px] rounded-l-md bg-[#2a2a2a]" />
-      <div className="absolute -right-[3px] top-32 h-20 w-[3px] rounded-r-md bg-[#2a2a2a]" />
-      <div className="relative overflow-hidden rounded-[2.6rem] bg-white">
-        <div className="relative flex items-center justify-between px-7 pt-3 pb-2">
-          <span className="text-[13px] font-semibold text-black">9:41</span>
-          <div className="absolute left-1/2 top-2.5 h-7 w-24 -translate-x-1/2 rounded-full bg-black" />
-          <div className="flex items-center gap-1.5 text-black">
-            <svg width="16" height="10" viewBox="0 0 18 11" fill="currentColor">
-              <rect x="0" y="7" width="3.5" height="4" rx="0.6" />
-              <rect x="5" y="5" width="3.5" height="6" rx="0.6" />
-              <rect x="10" y="2.5" width="3.5" height="8.5" rx="0.6" />
-              <rect x="15" y="0" width="3.5" height="11" rx="0.6" />
-            </svg>
-            <svg width="24" height="10" viewBox="0 0 27 11" fill="none">
-              <rect x="0.5" y="0.5" width="22" height="10" rx="2.5" stroke="currentColor" />
-              <rect x="2" y="2" width="19" height="7" rx="1" fill="currentColor" />
-            </svg>
-          </div>
-        </div>
-        {children}
-        <div className="flex justify-center pb-2">
-          <div className="h-1 w-24 rounded-full bg-black" />
-        </div>
-      </div>
-    </div>
-  );
-}
 
 interface PopularTour {
   id: number;
