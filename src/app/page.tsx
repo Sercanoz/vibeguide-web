@@ -43,7 +43,7 @@ export default function HomePage() {
           {/* Centered destination search — sits above headline + phone */}
           <HeroCitySearch />
 
-          <div className="mt-14 max-w-2xl">
+          <div className="mt-14 max-w-3xl mx-auto text-center">
           {/* Copy */}
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-[#6C4CF1]/15 bg-[#6C4CF1]/5 px-4 py-2 text-sm font-semibold text-[#6C4CF1] mb-8 animate-[fadeSlideUp_0.7s_ease_both]">
@@ -59,13 +59,13 @@ export default function HomePage() {
               </span>
             </h1>
 
-            <div className="mt-6 text-[15px] leading-7 text-neutral-800 max-w-md space-y-3">
+            <div className="mt-6 text-[15px] leading-7 text-neutral-800 max-w-xl mx-auto space-y-3">
               {t.hero.sub.split("\n\n").map((para, i) => (
                 <p key={i} style={{ whiteSpace: "pre-line" }}>{para}</p>
               ))}
             </div>
 
-            <div className="mt-10 flex flex-wrap gap-6 pt-6 border-t border-black/[0.06]">
+            <div className="mt-10 flex flex-wrap justify-center gap-6 pt-6 border-t border-black/[0.06]">
               {[
                 { svg: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>, label: t.hero.b1 },
                 { svg: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>, label: t.hero.b2 },
