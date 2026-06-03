@@ -17,7 +17,7 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
   const [user, setUser] = useState<User | null | "loading">("loading");
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [openMenu, setOpenMenu] = useState<"tours" | "destinations" | null>(null);
+  const [openMenu, setOpenMenu] = useState<"tours" | null>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const userMenuRef = useRef<HTMLDivElement>(null);
 
@@ -67,9 +67,6 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
     { href: "/vibenow", label: "VibeNow" },
     { href: "/vibesquad", label: "VibeSquad" },
     { href: "/vibeask", label: "VibeAsk" },
-    { href: "/istanbul-tour-guide", label: "Istanbul" },
-    { href: "/cappadocia-tour-guide", label: "Cappadocia" },
-    { href: "/ephesus-tour-guide", label: "Ephesus" },
     { href: "/#how", label: nb.howItWorks },
   ];
 
@@ -138,34 +135,6 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
                     <a href="/tours" className="mt-3 flex items-center justify-center gap-1.5 rounded-xl bg-[#6C4CF1] text-white text-sm font-bold py-2.5 hover:bg-[#5a3dd4] transition-colors">
                       {nb.seeAllTours} →
                     </a>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Destinations — dropdown */}
-            <div className="relative" onMouseEnter={() => setOpenMenu("destinations")}>
-              <button
-                className={`flex items-center gap-1 px-3.5 py-2 rounded-xl font-medium cursor-pointer transition-all ${openMenu === "destinations" ? "text-[#6C4CF1] bg-[#6C4CF1]/[0.06]" : "text-neutral-700 hover:text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.06]"}`}>
-                {nb.destinations}
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={`transition-transform ${openMenu === "destinations" ? "rotate-180" : ""}`}><path d="M6 9l6 6 6-6"/></svg>
-              </button>
-              {openMenu === "destinations" && (
-                <div className="absolute left-0 top-full pt-2">
-                  <div className="w-72 bg-white rounded-2xl border border-black/[0.06] shadow-xl p-2 animate-[fadeSlideUp_0.15s_ease_both]">
-                    {[
-                      { href: "/istanbul-tour-guide", icon: "🕌", name: "Istanbul", desc: "Hagia Sophia · Bosphorus" },
-                      { href: "/cappadocia-tour-guide", icon: "🎈", name: "Cappadocia", desc: "Balloons · Fairy chimneys" },
-                      { href: "/ephesus-tour-guide", icon: "🏛️", name: "Ephesus", desc: "Ancient ruins · Selçuk" },
-                    ].map((d) => (
-                      <a key={d.href} href={d.href} className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-[#F7F7FB] transition-colors">
-                        <span className="text-2xl">{d.icon}</span>
-                        <div>
-                          <p className="text-sm font-bold text-[#0A0A0F]">{d.name}</p>
-                          <p className="text-xs text-neutral-700">{d.desc}</p>
-                        </div>
-                      </a>
-                    ))}
                   </div>
                 </div>
               )}
