@@ -52,25 +52,17 @@ export default function MainFooter() {
               <li><a href="/vibenow" className="hover:text-black transition-colors">VibeNow</a></li>
               <li><a href="/vibesquad" className="hover:text-black transition-colors">VibeSquad</a></li>
               <li><a href="/private" className="hover:text-black transition-colors">{t.nav.private}</a></li>
-              <li><a href="/tours" className="hover:text-black transition-colors">Tours</a></li>
-              <li><a href="/how-it-works" className="hover:text-black transition-colors">How It Works</a></li>
-              <li><a href="/guide-verification" className="hover:text-black transition-colors">Guide Verification</a></li>
+              <li><a href="/tours" className="hover:text-black transition-colors">{nb.tours}</a></li>
+              <li><a href="/how-it-works" className="hover:text-black transition-colors">{nb.howItWorks}</a></li>
+              <li><a href="/guide-verification" className="hover:text-black transition-colors">{t.footerLinks.guideVerification}</a></li>
               <li><a href="/register/guide" className="hover:text-black transition-colors font-semibold text-emerald-600">{nb.becomeGuide}</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-sm font-black">{t.footer.destinations}</h4>
-            <ul className="mt-4 space-y-3 text-sm text-neutral-800">
-              <li><a href="/istanbul-tour-guide" className="hover:text-black transition-colors">Istanbul</a></li>
-              <li><a href="/cappadocia-tour-guide" className="hover:text-black transition-colors">Cappadocia</a></li>
-              <li><a href="/ephesus-tour-guide" className="hover:text-black transition-colors">Ephesus</a></li>
             </ul>
           </div>
           <div>
             <h4 className="text-sm font-black">{t.footer.support}</h4>
             <ul className="mt-4 space-y-3 text-sm text-neutral-800">
-              <li><a href="/about" className="hover:text-black transition-colors">About Us</a></li>
-              <li><a href="/contact" className="hover:text-black transition-colors">Contact</a></li>
+              <li><a href="/about" className="hover:text-black transition-colors">{t.footerLinks.aboutUs}</a></li>
+              <li><a href="/contact" className="hover:text-black transition-colors">{t.footerLinks.contact}</a></li>
               <li><a href="/help" className="hover:text-black transition-colors">{t.footerLinks.helpCenter}</a></li>
               <li><a href="/security" className="hover:text-black transition-colors">{ux.securityPayment}</a></li>
               <li><a href="/account-deletion" className="hover:text-black transition-colors">{t.footerLinks.accountDeletion}</a></li>

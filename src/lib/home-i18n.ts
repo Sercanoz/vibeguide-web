@@ -55,7 +55,7 @@ type Dict = {
     cities: string[]; more: string; liveNow: string;
   };
   nav2: { howItWorks: string };
-  footerLinks: { helpCenter: string; terms: string; privacy: string; accountDeletion: string };
+  footerLinks: { helpCenter: string; terms: string; privacy: string; accountDeletion: string; guideVerification: string; aboutUs: string; contact: string };
   footer: { tagline: string; product: string; destinations: string; support: string; legal?: string; copyright: string; companyName?: string; taxNo?: string; tradeReg?: string; address?: string; email?: string; hours?: string };
 };
 
@@ -173,7 +173,7 @@ const en: Dict = {
     liveNow: "Live now",
   },
   nav2: { howItWorks: "How it works" },
-  footerLinks: { helpCenter: "Help Center", terms: "Terms of Service", privacy: "Privacy", accountDeletion: "Account Deletion" },
+  footerLinks: { helpCenter: "Help Center", terms: "Terms of Service", privacy: "Privacy", accountDeletion: "Account Deletion", guideVerification: "Guide Verification", aboutUs: "About Us", contact: "Contact" },
   footer: {
     tagline: "Licensed local guides, private tours, walking tours, group experiences and secure city discovery in Turkey.",
     product: "Product", destinations: "Destinations", support: "Support", legal: "Legal",
@@ -301,7 +301,7 @@ const tr: Dict = {
     liveNow: "Şu an canlı",
   },
   nav2: { howItWorks: "Nasıl çalışır" },
-  footerLinks: { helpCenter: "Yardım Merkezi", terms: "Kullanım Şartları", privacy: "Gizlilik", accountDeletion: "Hesap Silme" },
+  footerLinks: { helpCenter: "Yardım Merkezi", terms: "Kullanım Şartları", privacy: "Gizlilik", accountDeletion: "Hesap Silme", guideVerification: "Rehber Doğrulama", aboutUs: "Hakkımızda", contact: "İletişim" },
   footer: {
     tagline: "Türkiye'de anlık yerel rehberler, özel turlar, yürüyüş turları, grup turları ve otantik şehir deneyimleri.",
     product: "Ürün", destinations: "Destinasyonlar", support: "Destek",
@@ -423,7 +423,7 @@ const de: Dict = {
     liveNow: "Jetzt live",
   },
   nav2: { howItWorks: "So funktioniert's" },
-  footerLinks: { helpCenter: "Hilfe-Center", terms: "Nutzungsbedingungen", privacy: "Datenschutz", accountDeletion: "Konto löschen" },
+  footerLinks: { helpCenter: "Hilfe-Center", terms: "Nutzungsbedingungen", privacy: "Datenschutz", accountDeletion: "Konto löschen", guideVerification: "Guide-Verifizierung", aboutUs: "Über uns", contact: "Kontakt" },
   footer: {
     tagline: "Sofortige lokale Guides, private Touren, Wandertouren, Gruppentouren und authentische Stadterlebnisse in der Türkei.",
     product: "Produkt", destinations: "Reiseziele", support: "Support",
@@ -545,7 +545,7 @@ const ru: Dict = {
     liveNow: "Уже доступно",
   },
   nav2: { howItWorks: "Как это работает" },
-  footerLinks: { helpCenter: "Центр помощи", terms: "Условия использования", privacy: "Конфиденциальность", accountDeletion: "Удаление аккаунта" },
+  footerLinks: { helpCenter: "Центр помощи", terms: "Условия использования", privacy: "Конфиденциальность", accountDeletion: "Удаление аккаунта", guideVerification: "Проверка гидов", aboutUs: "О нас", contact: "Контакты" },
   footer: {
     tagline: "Мгновенные местные гиды, частные туры, пешие туры, групповые туры и аутентичный городской опыт в Турции.",
     product: "Продукт", destinations: "Направления", support: "Поддержка",
@@ -667,7 +667,7 @@ const es: Dict = {
     liveNow: "Disponible ahora",
   },
   nav2: { howItWorks: "Cómo funciona" },
-  footerLinks: { helpCenter: "Centro de ayuda", terms: "Términos de servicio", privacy: "Privacidad", accountDeletion: "Eliminar cuenta" },
+  footerLinks: { helpCenter: "Centro de ayuda", terms: "Términos de servicio", privacy: "Privacidad", accountDeletion: "Eliminar cuenta", guideVerification: "Verificación de guías", aboutUs: "Sobre nosotros", contact: "Contacto" },
   footer: {
     tagline: "Guías locales instantáneos, tours privados, recorridos a pie, tours grupales y experiencias urbanas auténticas en Turquía.",
     product: "Producto", destinations: "Destinos", support: "Soporte",
@@ -789,7 +789,7 @@ const ja: Dict = {
     liveNow: "現在利用可能",
   },
   nav2: { howItWorks: "使い方" },
-  footerLinks: { helpCenter: "ヘルプセンター", terms: "利用規約", privacy: "プライバシー", accountDeletion: "アカウント削除" },
+  footerLinks: { helpCenter: "ヘルプセンター", terms: "利用規約", privacy: "プライバシー", accountDeletion: "アカウント削除", guideVerification: "ガイド認証", aboutUs: "会社概要", contact: "お問い合わせ" },
   footer: {
     tagline: "トルコでの即時ローカルガイド、プライベートツアー、ウォーキングツアー、グループツアー、本物の街体験。",
     product: "プロダクト", destinations: "目的地", support: "サポート",
@@ -911,7 +911,7 @@ const zh: Dict = {
     liveNow: "现已上线",
   },
   nav2: { howItWorks: "使用方法" },
-  footerLinks: { helpCenter: "帮助中心", terms: "服务条款", privacy: "隐私政策", accountDeletion: "注销账号" },
+  footerLinks: { helpCenter: "帮助中心", terms: "服务条款", privacy: "隐私政策", accountDeletion: "注销账号", guideVerification: "向导认证", aboutUs: "关于我们", contact: "联系我们" },
   footer: {
     tagline: "在土耳其即时找到本地向导、私人导览、徒步导览、群体导览和真实的城市体验。",
     product: "产品", destinations: "目的地", support: "支持",
@@ -1030,7 +1030,7 @@ const el: Dict = {
     liveNow: "Διαθέσιμο τώρα",
   },
   nav2: { howItWorks: "Πώς λειτουργεί" },
-  footerLinks: { helpCenter: "Κέντρο βοήθειας", terms: "Όροι χρήσης", privacy: "Απόρρητο", accountDeletion: "Διαγραφή λογαριασμού" },
+  footerLinks: { helpCenter: "Κέντρο βοήθειας", terms: "Όροι χρήσης", privacy: "Απόρρητο", accountDeletion: "Διαγραφή λογαριασμού", guideVerification: "Επαλήθευση ξεναγών", aboutUs: "Σχετικά με εμάς", contact: "Επικοινωνία" },
   footer: { tagline: "Άμεσοι ντόπιοι ξεναγοί, ιδιωτικές ξεναγήσεις, ομαδικές ξεναγήσεις και αυθεντικές εμπειρίες πόλης στην Τουρκία.", product: "Προϊόν", destinations: "Προορισμοί", support: "Υποστήριξη", copyright: "© 2026 VibeGuide. Όλα τα δικαιώματα διατηρούνται." },
 };
 
@@ -1142,7 +1142,7 @@ const bg: Dict = {
     liveNow: "Активно сега",
   },
   nav2: { howItWorks: "Как работи" },
-  footerLinks: { helpCenter: "Помощен център", terms: "Условия за ползване", privacy: "Поверителност", accountDeletion: "Изтриване на акаунт" },
+  footerLinks: { helpCenter: "Помощен център", terms: "Условия за ползване", privacy: "Поверителност", accountDeletion: "Изтриване на акаунт", guideVerification: "Проверка на гидове", aboutUs: "За нас", contact: "Контакт" },
   footer: { tagline: "Незабавни местни водачи, частни турове, пешеходни турове, групови турове и автентични градски преживявания в Турция.", product: "Продукт", destinations: "Дестинации", support: "Поддръжка", copyright: "© 2026 VibeGuide. Всички права запазени." },
 };
 
@@ -1254,7 +1254,7 @@ const sr: Dict = {
     liveNow: "Aktivno sada",
   },
   nav2: { howItWorks: "Kako funkcioniše" },
-  footerLinks: { helpCenter: "Centar za pomoć", terms: "Uslovi korišćenja", privacy: "Privatnost", accountDeletion: "Brisanje naloga" },
+  footerLinks: { helpCenter: "Centar za pomoć", terms: "Uslovi korišćenja", privacy: "Privatnost", accountDeletion: "Brisanje naloga", guideVerification: "Verifikacija vodiča", aboutUs: "O nama", contact: "Kontakt" },
   footer: { tagline: "Trenutni lokalni vodiči, privatne ture, pešačke ture, grupne ture i autentična gradska iskustva u Turskoj.", product: "Proizvod", destinations: "Destinacije", support: "Podrška", copyright: "© 2026 VibeGuide. Sva prava zadržana." },
 };
 
@@ -1366,7 +1366,7 @@ const ko: Dict = {
     liveNow: "지금 이용 가능",
   },
   nav2: { howItWorks: "이용 방법" },
-  footerLinks: { helpCenter: "고객센터", terms: "이용약관", privacy: "개인정보처리방침", accountDeletion: "계정 삭제" },
+  footerLinks: { helpCenter: "고객센터", terms: "이용약관", privacy: "개인정보처리방침", accountDeletion: "계정 삭제", guideVerification: "가이드 인증", aboutUs: "회사 소개", contact: "문의하기" },
   footer: { tagline: "터키에서 즉시 현지 가이드, 프라이빗 투어, 워킹 투어, 그룹 투어 및 진정한 도시 경험.", product: "제품", destinations: "여행지", support: "지원", copyright: "© 2026 VibeGuide. 모든 권리 보유." },
 };
 
@@ -1478,7 +1478,7 @@ const it: Dict = {
     liveNow: "Disponibile ora",
   },
   nav2: { howItWorks: "Come funziona" },
-  footerLinks: { helpCenter: "Centro assistenza", terms: "Termini di servizio", privacy: "Privacy", accountDeletion: "Elimina account" },
+  footerLinks: { helpCenter: "Centro assistenza", terms: "Termini di servizio", privacy: "Privacy", accountDeletion: "Elimina account", guideVerification: "Verifica delle guide", aboutUs: "Chi siamo", contact: "Contatti" },
   footer: { tagline: "Guide locali istantanee, tour privati, tour a piedi, tour di gruppo ed esperienze urbane autentiche in Turchia.", product: "Prodotto", destinations: "Destinazioni", support: "Supporto", copyright: "© 2026 VibeGuide. Tutti i diritti riservati." },
 };
 
@@ -1590,7 +1590,7 @@ const hr: Dict = {
     liveNow: "Aktivno sada",
   },
   nav2: { howItWorks: "Kako funkcionira" },
-  footerLinks: { helpCenter: "Centar za pomoć", terms: "Uvjeti korištenja", privacy: "Privatnost", accountDeletion: "Brisanje računa" },
+  footerLinks: { helpCenter: "Centar za pomoć", terms: "Uvjeti korištenja", privacy: "Privatnost", accountDeletion: "Brisanje računa", guideVerification: "Provjera vodiča", aboutUs: "O nama", contact: "Kontakt" },
   footer: { tagline: "Trenutni lokalni vodiči, privatne ture, pješačke ture, grupne ture i autentična gradska iskustva u Turskoj.", product: "Proizvod", destinations: "Destinacije", support: "Podrška", copyright: "© 2026 VibeGuide. Sva prava pridržana." },
 };
 
@@ -1646,7 +1646,7 @@ const fr: Dict = {
   howItWorks: { eyebrow: "Aussi simple que possible", titleA: "Un guide en poche,", titleB: "la ville dans ta main.", steps: [{ title: "Ouvre l'app", text: "Choisis VibeNow pour l'instant, VibeSquad pour groupe ou Privé pour toute la journée." }, { title: "Connecte-toi à un guide", text: "Guides locaux vérifiés près de toi. De vraies personnes, vrai expertise." }, { title: "Sors par la porte", text: "En 60 secondes avec VibeNow. Sans planification, sans attente, sans pièges." }] },
   turkey: { badge: "🇹🇷 Actuellement disponible en Turquie uniquement", titleA: "On commence en Turquie,", titleB: "bientôt mondial.", body: "VibeGuide est actif partout en Turquie — Istanbul, Cappadoce et Éphèse en premier. On grandit vite.", cities: ["🏙️ Istanbul", "🎈 Cappadoce", "🏛️ Éphèse"], more: "+ plus bientôt", liveNow: "Actif maintenant" },
   nav2: { howItWorks: "Comment ça marche" },
-  footerLinks: { helpCenter: "Centre d'aide", terms: "CGU", privacy: "Confidentialité", accountDeletion: "Suppression de compte" },
+  footerLinks: { helpCenter: "Centre d'aide", terms: "CGU", privacy: "Confidentialité", accountDeletion: "Suppression de compte", guideVerification: "Vérification des guides", aboutUs: "À propos", contact: "Contact" },
   footer: { tagline: "Guides locaux instantanés, tours privés, tours à pied, tours de groupe et expériences urbaines authentiques en Turquie.", product: "Produit", destinations: "Destinations", support: "Support", copyright: "© 2026 VibeGuide. Tous droits réservés." },
 };
 
@@ -1692,7 +1692,7 @@ const ro: Dict = {
   howItWorks: { eyebrow: "Cât de simplu poate fi", titleA: "Un ghid în buzunar,", titleB: "orașul în mâinile tale.", steps: [{ title: "Deschide app-ul", text: "Alege VibeNow pentru instant, VibeSquad pentru grup sau Privat pentru toată ziua." }, { title: "Conectează-te cu un ghid", text: "Ghizi locali verificați lângă tine. Oameni reali, expertiză reală." }, { title: "Ieși pe ușă", text: "În 60 secunde cu VibeNow. Fără planificare, fără așteptare, fără capcane." }] },
   turkey: { badge: "🇹🇷 Disponibil momentan doar în Turcia", titleA: "Începem în Turcia,", titleB: "curând global.", body: "VibeGuide este activ în toată Turcia — Istanbul, Capadocia și Efes. Creștem rapid.", cities: ["🏙️ Istanbul", "🎈 Capadocia", "🏛️ Efes"], more: "+ mai multe în curând", liveNow: "Activ acum" },
   nav2: { howItWorks: "Cum funcționează" },
-  footerLinks: { helpCenter: "Centru de ajutor", terms: "Termeni", privacy: "Confidențialitate", accountDeletion: "Ștergere cont" },
+  footerLinks: { helpCenter: "Centru de ajutor", terms: "Termeni", privacy: "Confidențialitate", accountDeletion: "Ștergere cont", guideVerification: "Verificarea ghizilor", aboutUs: "Despre noi", contact: "Contact" },
   footer: { tagline: "Ghizi locali instantanei, tururi private, tururi pietonale, tururi de grup și experiențe urbane autentice în Turcia.", product: "Produs", destinations: "Destinații", support: "Suport", copyright: "© 2026 VibeGuide. Toate drepturile rezervate." },
 };
 
@@ -1738,7 +1738,7 @@ const ar: Dict = {
   howItWorks: { eyebrow: "بسيط كما يمكن أن يكون", titleA: "مرشد في جيبك،", titleB: "المدينة في يدك.", steps: [{ title: "افتح التطبيق", text: "اختر VibeNow للحظي، VibeSquad للمجموعة أو الخاص ليوم كامل." }, { title: "تواصل مع مرشد", text: "مرشدون محليون موثّقون بالقرب منك. أشخاص حقيقيون، خبرة حقيقية." }, { title: "اخرج من الباب", text: "في 60 ثانية مع VibeNow. بدون تخطيط، بدون انتظار، بدون فخاخ." }] },
   turkey: { badge: "🇹🇷 متاح حالياً في تركيا فقط", titleA: "نبدأ في تركيا،", titleB: "قريباً عالمياً.", body: "VibeGuide نشط في تركيا — إسطنبول وكابادوكيا وأفسس أولاً. ننمو بسرعة.", cities: ["🏙️ إسطنبول", "🎈 كابادوكيا", "🏛️ أفسس"], more: "+ المزيد قريباً", liveNow: "نشط الآن" },
   nav2: { howItWorks: "كيف يعمل" },
-  footerLinks: { helpCenter: "مركز المساعدة", terms: "شروط الخدمة", privacy: "الخصوصية", accountDeletion: "حذف الحساب" },
+  footerLinks: { helpCenter: "مركز المساعدة", terms: "شروط الخدمة", privacy: "الخصوصية", accountDeletion: "حذف الحساب", guideVerification: "التحقق من المرشدين", aboutUs: "من نحن", contact: "اتصل بنا" },
   footer: { tagline: "مرشدون محليون فوريون، جولات خاصة، جولات مشي، جولات جماعية وتجارب مدينية أصيلة في تركيا.", product: "المنتج", destinations: "الوجهات", support: "الدعم", copyright: "© 2026 VibeGuide. جميع الحقوق محفوظة." },
 };
 
@@ -1780,7 +1780,7 @@ const nl: Dict = {
   howItWorks: { eyebrow: "Zo eenvoudig als het kan", titleA: "Een gids op zak,", titleB: "de stad in je handen.", steps: [{ title: "Open de app", text: "Kies VibeNow voor direct, VibeSquad voor groep of Privé voor een hele dag." }, { title: "Verbind met een gids", text: "Geverifieerde lokale gidsen bij jou in de buurt. Echte mensen, echte expertise." }, { title: "Loop naar buiten", text: "In 60 seconden met VibeNow. Geen planning, geen wachten, geen valkuilen." }] },
   turkey: { badge: "🇹🇷 Momenteel alleen beschikbaar in Turkije", titleA: "We beginnen in Turkije,", titleB: "binnenkort wereldwijd.", body: "VibeGuide is actief in heel Turkije — Istanbul, Cappadocië en Efeze eerst. We groeien snel.", cities: ["🏙️ Istanbul", "🎈 Cappadocië", "🏛️ Efeze"], more: "+ meer binnenkort", liveNow: "Nu actief" },
   nav2: { howItWorks: "Hoe het werkt" },
-  footerLinks: { helpCenter: "Helpcentrum", terms: "Gebruiksvoorwaarden", privacy: "Privacy", accountDeletion: "Account verwijderen" },
+  footerLinks: { helpCenter: "Helpcentrum", terms: "Gebruiksvoorwaarden", privacy: "Privacy", accountDeletion: "Account verwijderen", guideVerification: "Gidsverificatie", aboutUs: "Over ons", contact: "Contact" },
   footer: { tagline: "Directe lokale gidsen, privétours, wandeltours, groepstours en authentieke stadservaringen in Turkije.", product: "Product", destinations: "Bestemmingen", support: "Support", copyright: "© 2026 VibeGuide. Alle rechten voorbehouden." },
 };
 
@@ -1822,7 +1822,7 @@ const pl: Dict = {
   howItWorks: { eyebrow: "Tak proste jak to możliwe", titleA: "Przewodnik w kieszeni,", titleB: "miasto w twoich rękach.", steps: [{ title: "Otwórz aplikację", text: "Wybierz VibeNow dla natychmiastowego, VibeSquad dla grupy lub Prywatny na cały dzień." }, { title: "Połącz się z przewodnikiem", text: "Zweryfikowani lokalni przewodnicy blisko ciebie. Prawdziwi ludzie, prawdziwa wiedza." }, { title: "Wyjdź za drzwi", text: "W 60 sekund z VibeNow. Bez planowania, bez czekania, bez pułapek." }] },
   turkey: { badge: "🇹🇷 Obecnie dostępny tylko w Turcji", titleA: "Zaczynamy w Turcji,", titleB: "wkrótce globalnie.", body: "VibeGuide działa w całej Turcji — najpierw Stambuł, Kapadocja i Efez. Szybko rośniemy.", cities: ["🏙️ Stambuł", "🎈 Kapadocja", "🏛️ Efez"], more: "+ więcej wkrótce", liveNow: "Aktywny teraz" },
   nav2: { howItWorks: "Jak to działa" },
-  footerLinks: { helpCenter: "Centrum pomocy", terms: "Warunki usługi", privacy: "Prywatność", accountDeletion: "Usunięcie konta" },
+  footerLinks: { helpCenter: "Centrum pomocy", terms: "Warunki usługi", privacy: "Prywatność", accountDeletion: "Usunięcie konta", guideVerification: "Weryfikacja przewodników", aboutUs: "O nas", contact: "Kontakt" },
   footer: { tagline: "Natychmiastowi lokalni przewodnicy, prywatne wycieczki, piesze wycieczki, wycieczki grupowe i autentyczne doświadczenia miejskie w Turcji.", product: "Produkt", destinations: "Miejsca", support: "Wsparcie", copyright: "© 2026 VibeGuide. Wszelkie prawa zastrzeżone." },
 };
 
@@ -1864,7 +1864,7 @@ const uk: Dict = {
   howItWorks: { eyebrow: "Так просто, як може бути", titleA: "Гід у кишені,", titleB: "місто у твоїх руках.", steps: [{ title: "Відкрий додаток", text: "Обери VibeNow для миттєвого, VibeSquad для групи або Приватний на цілий день." }, { title: "З'єднайся з гідом", text: "Перевірені місцеві гіди поруч. Справжні люди, справжня експертиза." }, { title: "Виходь на вулицю", text: "За 60 секунд з VibeNow. Без планування, без очікування, без пасток." }] },
   turkey: { badge: "🇹🇷 Наразі доступно тільки в Туреччині", titleA: "Починаємо в Туреччині,", titleB: "скоро глобально.", body: "VibeGuide активний по всій Туреччині — спочатку Стамбул, Каппадокія й Ефес. Ми швидко ростемо.", cities: ["🏙️ Стамбул", "🎈 Каппадокія", "🏛️ Ефес"], more: "+ більше незабаром", liveNow: "Активно зараз" },
   nav2: { howItWorks: "Як це працює" },
-  footerLinks: { helpCenter: "Центр допомоги", terms: "Умови використання", privacy: "Конфіденційність", accountDeletion: "Видалення акаунту" },
+  footerLinks: { helpCenter: "Центр допомоги", terms: "Умови використання", privacy: "Конфіденційність", accountDeletion: "Видалення акаунту", guideVerification: "Перевірка гідів", aboutUs: "Про нас", contact: "Контакти" },
   footer: { tagline: "Миттєві місцеві гіди, приватні тури, пішохідні тури, групові тури та автентичні міські враження в Туреччині.", product: "Продукт", destinations: "Напрямки", support: "Підтримка", copyright: "© 2026 VibeGuide. Всі права захищені." },
 };
 
@@ -1906,7 +1906,7 @@ const id: Dict = {
   howItWorks: { eyebrow: "Sesederhana mungkin", titleA: "Pemandu di saku,", titleB: "kota di tanganmu.", steps: [{ title: "Buka aplikasi", text: "Pilih VibeNow untuk instan, VibeSquad untuk grup, atau Privat untuk seharian penuh." }, { title: "Terhubung dengan pemandu", text: "Pemandu lokal terverifikasi di dekat Anda. Orang nyata, keahlian nyata." }, { title: "Melangkah keluar", text: "Dalam 60 detik dengan VibeNow. Tanpa perencanaan, tanpa menunggu, tanpa jebakan." }] },
   turkey: { badge: "🇹🇷 Saat ini hanya tersedia di Turki", titleA: "Kami mulai di Turki,", titleB: "segera global.", body: "VibeGuide aktif di seluruh Turki — Istanbul, Cappadocia, dan Ephesus lebih dulu. Kami berkembang pesat.", cities: ["🏙️ Istanbul", "🎈 Cappadocia", "🏛️ Ephesus"], more: "+ lebih banyak segera", liveNow: "Aktif sekarang" },
   nav2: { howItWorks: "Cara kerja" },
-  footerLinks: { helpCenter: "Pusat bantuan", terms: "Syarat layanan", privacy: "Privasi", accountDeletion: "Hapus akun" },
+  footerLinks: { helpCenter: "Pusat bantuan", terms: "Syarat layanan", privacy: "Privasi", accountDeletion: "Hapus akun", guideVerification: "Verifikasi Pemandu", aboutUs: "Tentang Kami", contact: "Kontak" },
   footer: { tagline: "Pemandu lokal instan, tur privat, tur jalan kaki, tur grup, dan pengalaman kota autentik di Turki.", product: "Produk", destinations: "Destinasi", support: "Dukungan", copyright: "© 2026 VibeGuide. Semua hak dilindungi." },
 };
 
@@ -1948,7 +1948,7 @@ const pt: Dict = {
   howItWorks: { eyebrow: "Tão simples quanto pode ser", titleA: "Um guia no bolso,", titleB: "a cidade nas tuas mãos.", steps: [{ title: "Abre a app", text: "Escolhe VibeNow para imediato, VibeSquad para grupo ou Privado para o dia todo." }, { title: "Liga-te a um guia", text: "Guias locais verificados perto de ti. Pessoas reais, experiência real." }, { title: "Sai pela porta", text: "Em 60 segundos com o VibeNow. Sem planeamento, sem espera, sem armadilhas." }] },
   turkey: { badge: "🇹🇷 Disponível atualmente apenas na Turquia", titleA: "Começamos na Turquia,", titleB: "em breve global.", body: "A VibeGuide está ativa em toda a Turquia — Istambul, Capadócia e Éfeso primeiro. Crescemos rapidamente.", cities: ["🏙️ Istambul", "🎈 Capadócia", "🏛️ Éfeso"], more: "+ mais em breve", liveNow: "Ativo agora" },
   nav2: { howItWorks: "Como funciona" },
-  footerLinks: { helpCenter: "Centro de ajuda", terms: "Termos de serviço", privacy: "Privacidade", accountDeletion: "Eliminar conta" },
+  footerLinks: { helpCenter: "Centro de ajuda", terms: "Termos de serviço", privacy: "Privacidade", accountDeletion: "Eliminar conta", guideVerification: "Verificação de guias", aboutUs: "Sobre nós", contact: "Contacto" },
   footer: { tagline: "Guias locais imediatos, tours privados, tours a pé, tours de grupo e experiências urbanas autênticas na Turquia.", product: "Produto", destinations: "Destinos", support: "Suporte", copyright: "© 2026 VibeGuide. Todos os direitos reservados." },
 };
 
