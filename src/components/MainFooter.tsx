@@ -33,6 +33,17 @@ export default function MainFooter() {
                 </a>
               ))}
             </div>
+            {/* App mağaza rozetleri */}
+            <div className="mt-6 flex flex-wrap items-center gap-3">
+              <a href="#" aria-label="Download on the App Store" className="transition-opacity hover:opacity-80">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/app-store-badge.svg" alt="Download on the App Store" height={40} className="h-10 w-auto" />
+              </a>
+              <a href="#" aria-label="Get it on Google Play" className="transition-opacity hover:opacity-80">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/google-play-badge.png" alt="Get it on Google Play" height={40} className="h-10 w-auto" />
+              </a>
+            </div>
           </div>
           <div>
             <h4 className="text-sm font-black">{t.footer.product}</h4>

@@ -38,7 +38,6 @@ export default function HomePage() {
   const secModes = useInView();
   const secManifesto = useInView();
   const secTrust = useInView();
-  const secDownload = useInView();
 
   return (
     <main className="min-h-screen bg-white text-[#0A0A0F] antialiased overflow-x-hidden">
@@ -423,98 +422,6 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ── DOWNLOAD ── */}
-      <section ref={secDownload.ref as React.RefObject<HTMLElement>} id="download" className={`relative py-32 bg-white overflow-hidden reveal ${secDownload.inView ? "in-view" : ""}`}>
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#6C4CF1]/5 rounded-full blur-[100px]" />
-        </div>
-        <div className="relative mx-auto max-w-3xl px-6 text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1]">Available now</p>
-          <h2 className="mt-5 text-5xl md:text-7xl font-black tracking-tight leading-tight text-[#0A0A0F]">
-            {t.download.title}
-          </h2>
-          <p className="mt-6 text-base text-neutral-400 max-w-md mx-auto leading-7">{t.download.sub}</p>
-
-          <div className="mt-12 flex flex-wrap justify-center gap-4">
-            <a href="#" className="group flex items-center gap-4 rounded-2xl bg-[#0A0A0F] px-7 py-4 text-white hover:bg-[#1a1a2e] transition-all" style={{ boxShadow: "0 4px 24px rgba(10,10,15,0.15)" }}>
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-              </svg>
-              <div className="text-left">
-                <p className="text-[11px] leading-none text-white/40 font-medium">Download on the</p>
-                <p className="text-base font-black mt-0.5">App Store</p>
-              </div>
-            </a>
-            <a href="#" className="group flex items-center gap-4 rounded-2xl bg-[#0A0A0F] px-7 py-4 text-white hover:bg-[#1a1a2e] transition-all" style={{ boxShadow: "0 4px 24px rgba(10,10,15,0.15)" }}>
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M3.18 23.76c.3.17.64.19.96.08l13.12-7.57-2.8-2.8-11.28 10.29zM20.9 10.42L17.96 8.7 14.84 11.8l3.13 3.12 2.95-1.7c.84-.48.84-2.32-.02-2.8zM2.14.75C2.05 1 2 1.26 2 1.56v20.89c0 .3.04.57.14.81L13.61 11.8 2.14.75zM3.18.24L14.84 11.8l-2.8 2.8L.22.32C.56.21.9.23 1.22.4l1.96 1.13V.24z"/>
-              </svg>
-              <div className="text-left">
-                <p className="text-[11px] leading-none text-white/40 font-medium">GET IT ON</p>
-                <p className="text-base font-black mt-0.5">Google Play</p>
-              </div>
-            </a>
-          </div>
-
-          <div className="mt-10 flex flex-col items-center gap-3">
-            <div className="p-3 bg-white border border-black/[0.06] rounded-2xl shadow-sm inline-block">
-              {/* QR code SVG — links to vibeguideapp.com */}
-              <svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* Finder top-left */}
-                <rect x="4" y="4" width="28" height="28" rx="3" fill="#0A0A0F"/>
-                <rect x="8" y="8" width="20" height="20" rx="2" fill="white"/>
-                <rect x="12" y="12" width="12" height="12" rx="1" fill="#0A0A0F"/>
-                {/* Finder top-right */}
-                <rect x="64" y="4" width="28" height="28" rx="3" fill="#0A0A0F"/>
-                <rect x="68" y="8" width="20" height="20" rx="2" fill="white"/>
-                <rect x="72" y="12" width="12" height="12" rx="1" fill="#0A0A0F"/>
-                {/* Finder bottom-left */}
-                <rect x="4" y="64" width="28" height="28" rx="3" fill="#0A0A0F"/>
-                <rect x="8" y="68" width="20" height="20" rx="2" fill="white"/>
-                <rect x="12" y="72" width="12" height="12" rx="1" fill="#0A0A0F"/>
-                {/* Data modules — simplified pattern */}
-                <rect x="40" y="4" width="6" height="6" rx="1" fill="#0A0A0F"/>
-                <rect x="50" y="4" width="6" height="6" rx="1" fill="#0A0A0F"/>
-                <rect x="40" y="14" width="6" height="6" rx="1" fill="#0A0A0F"/>
-                <rect x="50" y="14" width="6" height="6" rx="1" fill="#0A0A0F"/>
-                <rect x="4" y="40" width="6" height="6" rx="1" fill="#0A0A0F"/>
-                <rect x="14" y="40" width="6" height="6" rx="1" fill="#0A0A0F"/>
-                <rect x="4" y="50" width="6" height="6" rx="1" fill="#0A0A0F"/>
-                <rect x="14" y="50" width="6" height="6" rx="1" fill="#0A0A0F"/>
-                <rect x="40" y="40" width="6" height="6" rx="1" fill="#6C4CF1"/>
-                <rect x="50" y="40" width="6" height="6" rx="1" fill="#6C4CF1"/>
-                <rect x="60" y="40" width="6" height="6" rx="1" fill="#0A0A0F"/>
-                <rect x="40" y="50" width="6" height="6" rx="1" fill="#0A0A0F"/>
-                <rect x="50" y="50" width="6" height="6" rx="1" fill="#6C4CF1"/>
-                <rect x="60" y="50" width="6" height="6" rx="1" fill="#0A0A0F"/>
-                <rect x="40" y="60" width="6" height="6" rx="1" fill="#0A0A0F"/>
-                <rect x="50" y="60" width="6" height="6" rx="1" fill="#0A0A0F"/>
-                <rect x="60" y="60" width="6" height="6" rx="1" fill="#6C4CF1"/>
-                <rect x="70" y="40" width="6" height="6" rx="1" fill="#0A0A0F"/>
-                <rect x="80" y="40" width="6" height="6" rx="1" fill="#0A0A0F"/>
-                <rect x="70" y="50" width="6" height="6" rx="1" fill="#6C4CF1"/>
-                <rect x="80" y="50" width="6" height="6" rx="1" fill="#0A0A0F"/>
-                <rect x="70" y="60" width="6" height="6" rx="1" fill="#0A0A0F"/>
-                <rect x="80" y="60" width="6" height="6" rx="1" fill="#6C4CF1"/>
-                <rect x="40" y="70" width="6" height="6" rx="1" fill="#6C4CF1"/>
-                <rect x="50" y="70" width="6" height="6" rx="1" fill="#0A0A0F"/>
-                <rect x="60" y="70" width="6" height="6" rx="1" fill="#0A0A0F"/>
-                <rect x="70" y="70" width="6" height="6" rx="1" fill="#0A0A0F"/>
-                <rect x="80" y="70" width="6" height="6" rx="1" fill="#6C4CF1"/>
-                <rect x="40" y="80" width="6" height="6" rx="1" fill="#0A0A0F"/>
-                <rect x="50" y="80" width="6" height="6" rx="1" fill="#6C4CF1"/>
-                <rect x="60" y="80" width="6" height="6" rx="1" fill="#6C4CF1"/>
-                <rect x="70" y="80" width="6" height="6" rx="1" fill="#0A0A0F"/>
-                <rect x="80" y="80" width="6" height="6" rx="1" fill="#0A0A0F"/>
-              </svg>
-            </div>
-            <p className="text-xs text-white/30">Scan to download</p>
-          </div>
-
-          <p className="mt-6 text-xs text-neutral-300">Free to download · Istanbul available now</p>
         </div>
       </section>
 
