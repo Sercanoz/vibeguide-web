@@ -61,11 +61,11 @@ export default function GuidePendingPage() {
 
           <p className="text-[10px] font-black uppercase tracking-[0.2em] text-amber-600 mb-3">Under Review</p>
           <h1 className="text-2xl font-black text-[#0A0A0F] leading-tight">Your application is being reviewed</h1>
-          <p className="mt-3 text-sm text-neutral-400 leading-7">
+          <p className="mt-3 text-sm text-neutral-600 leading-7">
             Our team is verifying your guide badge. This usually takes <strong className="text-[#0A0A0F]">1–2 business days</strong>.
           </p>
           {email && (
-            <p className="mt-2 text-sm text-neutral-400">
+            <p className="mt-2 text-sm text-neutral-600">
               We&apos;ll notify you at <strong className="text-[#0A0A0F]">{email}</strong> once approved.
             </p>
           )}
@@ -88,7 +88,7 @@ export default function GuidePendingPage() {
                   )}
                   {s.active && <div className="w-2 h-2 rounded-full bg-white animate-pulse" />}
                 </div>
-                <span className={`text-sm font-semibold ${s.done ? "text-emerald-600" : s.active ? "text-amber-700" : "text-neutral-400"}`}>
+                <span className={`text-sm font-semibold ${s.done ? "text-emerald-600" : s.active ? "text-amber-700" : "text-neutral-600"}`}>
                   {s.label}
                 </span>
               </div>
@@ -106,7 +106,7 @@ export default function GuidePendingPage() {
               </svg>
               Contact support
             </a>
-            <a href="/" className="text-xs text-neutral-400 hover:text-black transition-colors">
+            <a href="/" className="text-xs text-neutral-600 hover:text-black transition-colors">
               ← Back to homepage
             </a>
           </div>

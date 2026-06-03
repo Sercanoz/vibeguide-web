@@ -141,7 +141,7 @@ export default function TourFilters({ tours }: Props) {
 
       {/* Tour grid */}
       {filtered.length === 0 ? (
-        <div className="text-center py-20 text-neutral-400">
+        <div className="text-center py-20 text-neutral-600">
           <p className="text-5xl mb-4">🗺️</p>
           <p className="text-base font-semibold">No tours available yet</p>
           <p className="text-sm mt-1">Check back soon — new tours are added regularly.</p>
@@ -205,7 +205,7 @@ export default function TourFilters({ tours }: Props) {
                 <div className="p-3 flex flex-col flex-1">
                   {/* City + duration */}
                   <div className="flex items-center justify-between mb-1.5">
-                    <p className="text-[11px] text-neutral-400 flex items-center gap-1">
+                    <p className="text-[11px] text-neutral-600 flex items-center gap-1">
                       <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                       {locationLabel(tour)}
                       <span className="mx-0.5 text-black/20">·</span>
@@ -216,7 +216,7 @@ export default function TourFilters({ tours }: Props) {
                     <p className="text-[10px] font-bold text-neutral-700 flex items-center gap-0.5">
                       <svg width="9" height="9" viewBox="0 0 24 24" fill="#F59E0B" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                       {rating}
-                      <span className="text-neutral-400 font-normal">({count})</span>
+                      <span className="text-neutral-600 font-normal">({count})</span>
                     </p>
                   </div>
 
@@ -241,10 +241,10 @@ export default function TourFilters({ tours }: Props) {
                   {/* Price */}
                   <div className="mt-2 pt-2 border-t border-black/[0.06] flex items-end justify-between">
                     <div>
-                      <p className="text-[9px] font-semibold text-neutral-400 uppercase tracking-wide">{tt.fromPrice}</p>
+                      <p className="text-[9px] font-semibold text-neutral-600 uppercase tracking-wide">{tt.fromPrice}</p>
                       <div className="flex items-baseline gap-1">
                         {hasDiscount && (
-                          <span className="text-[11px] text-neutral-400 line-through">
+                          <span className="text-[11px] text-neutral-600 line-through">
                             <Price amount={tour.compareAtPrice!} currency={tour.currency} />
                           </span>
                         )}
@@ -252,7 +252,7 @@ export default function TourFilters({ tours }: Props) {
                           <Price amount={tour.basePrice} currency={tour.currency} />
                         </span>
                       </div>
-                      <p className="text-[9px] text-neutral-400">{tt.perPerson}</p>
+                      <p className="text-[9px] text-neutral-600">{tt.perPerson}</p>
                     </div>
                     {hasDiscount && (
                       <span className="text-[10px] font-black text-emerald-600 bg-emerald-50 border border-emerald-100 px-1.5 py-0.5 rounded-lg">

@@ -209,10 +209,10 @@ export default function RegisterGuidePage() {
             </svg>
           </div>
           <h1 className="text-2xl font-black text-[#0A0A0F]">Application submitted!</h1>
-          <p className="mt-3 text-sm text-neutral-400 leading-7 max-w-xs mx-auto">
+          <p className="mt-3 text-sm text-neutral-600 leading-7 max-w-xs mx-auto">
             Your guide application is under review. Our team will verify your badge and approve your account within <strong className="text-[#0A0A0F]">1–2 business days</strong>.
           </p>
-          <p className="mt-2 text-sm text-neutral-400">We&apos;ll email you at <strong className="text-[#0A0A0F]">{email}</strong> once approved.</p>
+          <p className="mt-2 text-sm text-neutral-600">We&apos;ll email you at <strong className="text-[#0A0A0F]">{email}</strong> once approved.</p>
           <a
             href="/"
             className="mt-8 inline-block rounded-2xl bg-[#6C4CF1] text-white font-bold py-3 px-8 text-sm hover:bg-[#5a3dd4] transition-colors"
@@ -238,7 +238,7 @@ export default function RegisterGuidePage() {
             </svg>
           </div>
           <h1 className="text-2xl font-black text-[#0A0A0F]">Verify your email</h1>
-          <p className="mt-2 text-sm text-neutral-400 max-w-xs mx-auto leading-6">
+          <p className="mt-2 text-sm text-neutral-600 max-w-xs mx-auto leading-6">
             We sent a link to <strong className="text-[#0A0A0F]">{email}</strong>. Click it, then come back here to submit your application.
           </p>
           {uploadProgress && (
@@ -275,7 +275,7 @@ export default function RegisterGuidePage() {
             VibeGuide
           </a>
           <p className="mt-6 text-3xl font-black text-[#0A0A0F]">Apply as a guide</p>
-          <p className="mt-1 text-sm text-neutral-400">Your application will be reviewed within 1–2 days</p>
+          <p className="mt-1 text-sm text-neutral-600">Your application will be reviewed within 1–2 days</p>
         </div>
 
         <div className="bg-white border border-black/[0.06] rounded-3xl p-8 shadow-sm">
@@ -296,7 +296,7 @@ export default function RegisterGuidePage() {
 
           <div className="flex items-center gap-3 my-5">
             <div className="flex-1 h-px bg-black/[0.06]" />
-            <span className="text-xs text-neutral-400 font-medium">or sign up with email</span>
+            <span className="text-xs text-neutral-600 font-medium">or sign up with email</span>
             <div className="flex-1 h-px bg-black/[0.06]" />
           </div>
 
@@ -332,7 +332,7 @@ export default function RegisterGuidePage() {
                               <polyline points="17 8 12 3 7 8"/>
                               <line x1="12" y1="3" x2="12" y2="15"/>
                             </svg>
-                            <span className="text-[10px] font-bold text-neutral-400">{label}</span>
+                            <span className="text-[10px] font-bold text-neutral-600">{label}</span>
                           </>
                         )}
                       </button>
@@ -340,7 +340,7 @@ export default function RegisterGuidePage() {
                   );
                 })}
               </div>
-              <p className="text-[10px] text-neutral-400 mt-1.5">Upload clear photos of your official guide badge</p>
+              <p className="text-[10px] text-neutral-600 mt-1.5">Upload clear photos of your official guide badge</p>
             </div>
 
             <div>
@@ -378,7 +378,7 @@ export default function RegisterGuidePage() {
           </form>
         </div>
 
-        <p className="mt-5 text-center text-sm text-neutral-400">
+        <p className="mt-5 text-center text-sm text-neutral-600">
           Already have an account?{" "}
           <a href="/login" className="text-[#6C4CF1] font-bold hover:underline">Sign in</a>
         </p>

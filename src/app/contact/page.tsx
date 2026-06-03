@@ -25,19 +25,19 @@ export default function ContactPage() {
             <a href="mailto:support@vibeguideapp.com" className="text-[#6C4CF1] font-semibold hover:underline">
               support@vibeguideapp.com
             </a>
-            <p className="text-xs text-neutral-400 mt-2">Most inquiries are reviewed and answered within 1 business day.</p>
+            <p className="text-xs text-neutral-600 mt-2">Most inquiries are reviewed and answered within 1 business day.</p>
           </div>
           <div className="bg-neutral-50 rounded-2xl p-6">
             <p className="text-sm font-black mb-3">📞 Phone</p>
             <a href="tel:+905308287696" className="text-[#6C4CF1] font-semibold hover:underline">
               +90 530 828 76 96
             </a>
-            <p className="text-xs text-neutral-400 mt-2">Monday–Friday, 09:00–18:00 (UTC+3)</p>
+            <p className="text-xs text-neutral-600 mt-2">Monday–Friday, 09:00–18:00 (UTC+3)</p>
           </div>
           <div className="bg-neutral-50 rounded-2xl p-6">
             <p className="text-sm font-black mb-3">🕐 Business Hours</p>
             <p className="font-semibold">Monday–Friday, 09:00–18:00</p>
-            <p className="text-xs text-neutral-400 mt-2">Türkiye Time (UTC+3)</p>
+            <p className="text-xs text-neutral-600 mt-2">Türkiye Time (UTC+3)</p>
           </div>
         </div>
 

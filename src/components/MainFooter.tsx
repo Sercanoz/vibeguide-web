@@ -25,10 +25,10 @@ export default function MainFooter() {
               <img src="/vibeguide-icon.png" alt="VibeGuide" width={28} height={28} style={{ mixBlendMode: "multiply" }} />
               VibeGuide
             </h3>
-            <p className="mt-3 max-w-xs text-sm leading-6 text-neutral-400">{t.footer.tagline}</p>
+            <p className="mt-3 max-w-xs text-sm leading-6 text-neutral-600">{t.footer.tagline}</p>
             <div className="mt-6 flex gap-2">
               {["Instagram", "TikTok", "YouTube"].map((s) => (
-                <a key={s} href="#" className="h-9 w-9 flex items-center justify-center rounded-xl bg-white border border-black/8 text-xs font-bold text-neutral-400 hover:text-black hover:border-black/20 transition-colors">
+                <a key={s} href="#" className="h-9 w-9 flex items-center justify-center rounded-xl bg-white border border-black/8 text-xs font-bold text-neutral-600 hover:text-black hover:border-black/20 transition-colors">
                   {s[0]}
                 </a>
               ))}
@@ -47,7 +47,7 @@ export default function MainFooter() {
           </div>
           <div>
             <h4 className="text-sm font-black">{t.footer.product}</h4>
-            <ul className="mt-4 space-y-3 text-sm text-neutral-400">
+            <ul className="mt-4 space-y-3 text-sm text-neutral-600">
               <li><a href="/vibenow" className="hover:text-black transition-colors">VibeNow</a></li>
               <li><a href="/vibesquad" className="hover:text-black transition-colors">VibeSquad</a></li>
               <li><a href="/private" className="hover:text-black transition-colors">{t.nav.private}</a></li>
@@ -59,7 +59,7 @@ export default function MainFooter() {
           </div>
           <div>
             <h4 className="text-sm font-black">{t.footer.destinations}</h4>
-            <ul className="mt-4 space-y-3 text-sm text-neutral-400">
+            <ul className="mt-4 space-y-3 text-sm text-neutral-600">
               <li><a href="/istanbul-tour-guide" className="hover:text-black transition-colors">Istanbul</a></li>
               <li><a href="/cappadocia-tour-guide" className="hover:text-black transition-colors">Cappadocia</a></li>
               <li><a href="/ephesus-tour-guide" className="hover:text-black transition-colors">Ephesus</a></li>
@@ -67,7 +67,7 @@ export default function MainFooter() {
           </div>
           <div>
             <h4 className="text-sm font-black">{t.footer.support}</h4>
-            <ul className="mt-4 space-y-3 text-sm text-neutral-400">
+            <ul className="mt-4 space-y-3 text-sm text-neutral-600">
               <li><a href="/about" className="hover:text-black transition-colors">About Us</a></li>
               <li><a href="/contact" className="hover:text-black transition-colors">Contact</a></li>
               <li><a href="/help" className="hover:text-black transition-colors">{t.footerLinks.helpCenter}</a></li>
@@ -77,7 +77,7 @@ export default function MainFooter() {
           </div>
           <div>
             <h4 className="text-sm font-black">{ux.legal}</h4>
-            <ul className="mt-4 space-y-3 text-sm text-neutral-400">
+            <ul className="mt-4 space-y-3 text-sm text-neutral-600">
               <li><a href="/terms" className="hover:text-black transition-colors">{ux.terms}</a></li>
               <li><a href="/privacy" className="hover:text-black transition-colors">{ux.privacy}</a></li>
               <li><a href="/cancellation-policy" className="hover:text-black transition-colors">{ux.cancellation}</a></li>
@@ -91,7 +91,7 @@ export default function MainFooter() {
 
         {/* Şirket bilgileri — PayTR / ödeme kuruluşu gerekliliği */}
         <div className="mt-12 pt-8 border-t border-black/[0.06]">
-          <div className="grid gap-2 md:grid-cols-2 text-xs text-neutral-400 leading-6">
+          <div className="grid gap-2 md:grid-cols-2 text-xs text-neutral-600 leading-6">
             <div>
               <p className="font-semibold text-neutral-500">VibeCore Turizm Seyahat Acentası ve Dijital Hizmetler Ticaret Ltd. Şti.</p>
               <p>Vergi No: 9251328389 · Vergi Dairesi: Marmaris V.D.</p>
@@ -105,8 +105,8 @@ export default function MainFooter() {
             </div>
           </div>
           <div className="mt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-xs text-neutral-300">{t.footer.copyright}</p>
-            <p className="text-xs text-neutral-300">{ux.trustLine}</p>
+            <p className="text-xs text-neutral-500">{t.footer.copyright}</p>
+            <p className="text-xs text-neutral-500">{ux.trustLine}</p>
           </div>
         </div>
       </div>

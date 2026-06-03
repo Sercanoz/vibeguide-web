@@ -13,7 +13,7 @@ function ModeMock({ mode }: { mode: Mode }) {
     <div className="px-4 pb-5">
       <div className="flex items-center justify-between mb-3">
         <div>
-          <p className="text-[10px] text-neutral-400 font-medium">Istanbul · now</p>
+          <p className="text-[10px] text-neutral-600 font-medium">Istanbul · now</p>
           <h3 className="text-base font-black leading-tight flex items-center gap-1">
             <span>{mode.emoji}</span> {mode.name}
           </h3>
@@ -220,7 +220,7 @@ export default function ModePageView({ mode }: { mode: Mode }) {
                 <span className="text-3xl">{o.emoji}</span>
                 <span>
                   <span className="block font-black text-[#0A0A0F] group-hover:text-[#6C4CF1] transition-colors">{o.name}</span>
-                  <span className="block text-sm text-neutral-400">{o.tagline}</span>
+                  <span className="block text-sm text-neutral-600">{o.tagline}</span>
                 </span>
               </Link>
             ))}

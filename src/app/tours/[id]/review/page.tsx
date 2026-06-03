@@ -60,7 +60,7 @@ export default function TourReviewPage(props: Props) {
             </svg>
           </div>
           <h1 className="text-2xl font-black text-[#0A0A0F]">Thank you! 🙏</h1>
-          <p className="mt-2 text-sm text-neutral-400 leading-6">
+          <p className="mt-2 text-sm text-neutral-600 leading-6">
             Your review has been submitted and will appear once approved. We appreciate you sharing your experience!
           </p>
           <a href={`/tours/${tourId}`} className="mt-8 inline-flex items-center gap-2 rounded-2xl bg-[#6C4CF1] text-white font-bold px-7 py-3 text-sm hover:bg-[#5a3dd4] transition-colors"
@@ -105,7 +105,7 @@ export default function TourReviewPage(props: Props) {
 
           <form onSubmit={onSubmit} className="p-6">
             <h2 className="text-xl font-black text-[#0A0A0F]">Leave a review</h2>
-            <p className="text-sm text-neutral-400 mt-1 mb-5">Share your experience with this tour</p>
+            <p className="text-sm text-neutral-600 mt-1 mb-5">Share your experience with this tour</p>
 
             {/* Stars */}
             <div className="mb-5">
@@ -157,7 +157,7 @@ export default function TourReviewPage(props: Props) {
           </form>
         </div>
 
-        <p className="text-center text-xs text-neutral-400 mt-4">Powered by VibeGuide</p>
+        <p className="text-center text-xs text-neutral-600 mt-4">Powered by VibeGuide</p>
       </div>
     </main>
   );

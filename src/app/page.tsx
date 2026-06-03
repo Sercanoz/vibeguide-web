@@ -73,7 +73,7 @@ export default function HomePage() {
               </span>
             </h1>
 
-            <div className="mt-6 text-[15px] leading-7 text-neutral-400 max-w-md space-y-3">
+            <div className="mt-6 text-[15px] leading-7 text-neutral-600 max-w-md space-y-3">
               {t.hero.sub.split("\n\n").map((para, i) => (
                 <p key={i} style={{ whiteSpace: "pre-line" }}>{para}</p>
               ))}
@@ -85,7 +85,7 @@ export default function HomePage() {
                 { svg: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>, label: t.hero.b2 },
                 { svg: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>, label: t.hero.b3 },
               ].map((b) => (
-                <span key={b.label} className="flex items-center gap-2 text-sm text-neutral-400">
+                <span key={b.label} className="flex items-center gap-2 text-sm text-neutral-600">
                   <span className="text-[#6C4CF1]">{b.svg}</span> {b.label}
                 </span>
               ))}
@@ -96,7 +96,7 @@ export default function HomePage() {
           <div className="md:hidden mt-4 flex items-center gap-4 rounded-2xl bg-[#F7F7FB] border border-black/[0.06] p-4">
             <div className="h-12 w-12 shrink-0 rounded-2xl bg-gradient-to-br from-[#6C4CF1] to-[#8B5CF6] flex items-center justify-center text-2xl">🧭</div>
             <div className="flex-1 min-w-0">
-              <p className="text-xs font-bold text-neutral-400 uppercase tracking-wider mb-1">Live in Istanbul</p>
+              <p className="text-xs font-bold text-neutral-600 uppercase tracking-wider mb-1">Live in Istanbul</p>
               <p className="text-sm font-black text-[#0A0A0F] leading-tight">24 guides online near you</p>
             </div>
             <div className="flex items-center gap-1.5 rounded-full bg-emerald-50 border border-emerald-100 px-2.5 py-1">
@@ -117,7 +117,7 @@ export default function HomePage() {
                   {/* Header */}
                   <div className="flex items-center justify-between mb-4">
                     <div>
-                      <p className="text-[10px] text-neutral-400 font-medium">{t.phone.greet}</p>
+                      <p className="text-[10px] text-neutral-600 font-medium">{t.phone.greet}</p>
                       <h2 className="text-lg font-black leading-tight">Istanbul 🇹🇷</h2>
                     </div>
                     <span className="flex items-center gap-1.5 rounded-full bg-emerald-50 border border-emerald-100 px-2.5 py-1 text-[9px] font-bold text-emerald-600">
@@ -192,7 +192,7 @@ export default function HomePage() {
         </div>
 
         {/* Scroll cue */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-neutral-300 animate-bounce">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-neutral-500 animate-bounce">
           <span className="text-[10px] tracking-widest uppercase font-medium">Scroll</span>
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
             <path d="M7 2v10M7 12L3 8M7 12l4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -223,7 +223,7 @@ export default function HomePage() {
               </div>
               <div className="min-w-0">
                 <p className="text-sm font-black text-[#0A0A0F] leading-tight">{item.title}</p>
-                <p className="text-xs text-neutral-400 truncate">{item.sub}</p>
+                <p className="text-xs text-neutral-600 truncate">{item.sub}</p>
               </div>
             </div>
           ))}
@@ -294,9 +294,9 @@ export default function HomePage() {
       <section ref={secModes.ref as React.RefObject<HTMLElement>} id="modes" className={`py-28 bg-white reveal ${secModes.inView ? "in-view" : ""}`}>
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-16 text-center">
-            <p className="text-xs font-bold uppercase tracking-[0.3em] text-neutral-400">{t.modesIntro.eyebrow}</p>
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-neutral-600">{t.modesIntro.eyebrow}</p>
             <h2 className="mt-4 text-4xl md:text-6xl font-black tracking-tight leading-tight">{t.modesIntro.title}</h2>
-            <div className="mt-4 text-base leading-7 text-neutral-400 max-w-lg mx-auto space-y-3">
+            <div className="mt-4 text-base leading-7 text-neutral-600 max-w-lg mx-auto space-y-3">
               {t.modesIntro.sub.split("\n\n").map((para, i) => (
                 <p key={i} style={{ whiteSpace: "pre-line" }}>{para}</p>
               ))}
@@ -311,8 +311,8 @@ export default function HomePage() {
                 border: "border-[#6C4CF1]/20",
                 tagCol: "text-[#6C4CF1]",
                 titleCol: "text-[#0A0A0F]",
-                textCol: "text-neutral-400",
-                pointCol: "text-neutral-400",
+                textCol: "text-neutral-600",
+                pointCol: "text-neutral-600",
                 btnBg: "bg-[#6C4CF1] text-white",
                 data: t.modes.vibenow,
               },
@@ -322,8 +322,8 @@ export default function HomePage() {
                 border: "border-[#10B981]/20",
                 tagCol: "text-[#059669]",
                 titleCol: "text-[#0A0A0F]",
-                textCol: "text-neutral-400",
-                pointCol: "text-neutral-400",
+                textCol: "text-neutral-600",
+                pointCol: "text-neutral-600",
                 btnBg: "bg-[#059669] text-white",
                 data: t.modes.vibesquad,
               },
@@ -333,8 +333,8 @@ export default function HomePage() {
                 border: "border-[#6C4CF1]/20",
                 tagCol: "text-[#6C4CF1]",
                 titleCol: "text-[#0A0A0F]",
-                textCol: "text-neutral-400",
-                pointCol: "text-neutral-400",
+                textCol: "text-neutral-600",
+                pointCol: "text-neutral-600",
                 btnBg: "bg-[#6C4CF1] text-white",
                 data: t.modes.private,
               },
@@ -367,7 +367,7 @@ export default function HomePage() {
           <h2 className="mt-6 text-4xl md:text-6xl font-black tracking-tight leading-tight text-[#0A0A0F]">
             {t.manifesto.titleA}
             <br />
-            <span className="text-neutral-300">{t.manifesto.titleB}</span>
+            <span className="text-neutral-500">{t.manifesto.titleB}</span>
           </h2>
           <div className="mx-auto mt-10 max-w-2xl space-y-5 text-left">
             {t.manifesto.sub.split("\n\n").map((para, i) => {
@@ -378,7 +378,7 @@ export default function HomePage() {
                   className={
                     isHighlight
                       ? "text-lg md:text-xl font-bold leading-8 text-[#0A0A0F]"
-                      : "text-base md:text-lg leading-8 text-neutral-400"
+                      : "text-base md:text-lg leading-8 text-neutral-600"
                   }
                 >
                   {para}
@@ -400,7 +400,7 @@ export default function HomePage() {
       <section ref={secTrust.ref as React.RefObject<HTMLElement>} id="guides" className={`py-28 bg-white reveal ${secTrust.inView ? "in-view" : ""}`}>
         <div className="mx-auto max-w-5xl px-6">
           <div className="text-center">
-            <p className="text-xs font-bold uppercase tracking-[0.3em] text-neutral-400">{hs.everyGuideVerified}</p>
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-neutral-600">{hs.everyGuideVerified}</p>
             <h2 className="mt-4 text-4xl md:text-5xl font-black tracking-tight leading-tight">{t.trust.title}</h2>
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2">
@@ -414,7 +414,7 @@ export default function HomePage() {
                 </div>
                 <div>
                   <p className="font-black text-[15px]">{item.title}</p>
-                  <p className="mt-1.5 text-sm leading-6 text-neutral-400">{item.text}</p>
+                  <p className="mt-1.5 text-sm leading-6 text-neutral-600">{item.text}</p>
                 </div>
               </div>
             ))}
@@ -512,7 +512,7 @@ function PopularTours() {
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1]">{hs.handpicked}</p>
             <h2 className="mt-3 text-3xl md:text-5xl font-black tracking-tight text-[#0A0A0F]">{hs.popularExperiences}</h2>
-            <p className="mt-2 text-sm text-neutral-400 max-w-md">{hs.popularExpSub}</p>
+            <p className="mt-2 text-sm text-neutral-600 max-w-md">{hs.popularExpSub}</p>
           </div>
           <div className="hidden md:flex items-center gap-2 shrink-0">
             <button onClick={() => scroll(-1)} aria-label="Previous"
@@ -558,7 +558,7 @@ function PopularTours() {
                     </div>
                     {/* Info */}
                     <div className="mt-3">
-                      <p className="text-xs text-neutral-400 flex items-center gap-1.5">
+                      <p className="text-xs text-neutral-600 flex items-center gap-1.5">
                         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                         {tour.city}
                         <span className="text-black/20">·</span>
@@ -568,12 +568,12 @@ function PopularTours() {
                       <div className="mt-1.5 flex items-center gap-1 text-xs">
                         <svg width="13" height="13" viewBox="0 0 24 24" fill="#F59E0B" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                         <span className="font-bold text-[#0A0A0F]">{rating.toFixed(1)}</span>
-                        {count > 0 && <span className="text-neutral-400">({count})</span>}
+                        {count > 0 && <span className="text-neutral-600">({count})</span>}
                       </div>
                       <div className="mt-2 flex items-baseline gap-1.5">
-                        {hasDiscount && <span className="text-xs text-neutral-400 line-through"><Price amount={tour.compareAtPrice!} currency={tour.currency} /></span>}
+                        {hasDiscount && <span className="text-xs text-neutral-600 line-through"><Price amount={tour.compareAtPrice!} currency={tour.currency} /></span>}
                         <span className="text-base font-black text-[#6C4CF1]"><Price amount={tour.basePrice} currency={tour.currency} /></span>
-                        <span className="text-xs text-neutral-400">/ person</span>
+                        <span className="text-xs text-neutral-600">/ person</span>
                       </div>
                     </div>
                   </a>
@@ -645,7 +645,7 @@ function Destinations() {
         <div className="text-center mb-10">
           <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1]">{ux.searchWhereTo}</p>
           <h2 className="mt-3 text-3xl md:text-5xl font-black tracking-tight text-[#0A0A0F]">{hs.exploreDestinations}</h2>
-          <p className="mt-2 text-sm text-neutral-400 max-w-md mx-auto">{hs.exploreDestSub}</p>
+          <p className="mt-2 text-sm text-neutral-600 max-w-md mx-auto">{hs.exploreDestSub}</p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -727,7 +727,7 @@ function Testimonials() {
                 </div>
                 <div className="min-w-0">
                   <p className="text-sm font-bold text-[#0A0A0F] truncate">{r.fullName}{r.nationality ? `, ${r.nationality}` : ""}</p>
-                  {r.tourTitle && <p className="text-xs text-neutral-400 truncate">{r.tourTitle}</p>}
+                  {r.tourTitle && <p className="text-xs text-neutral-600 truncate">{r.tourTitle}</p>}
                 </div>
               </div>
             </div>

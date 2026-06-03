@@ -52,7 +52,7 @@ export default function LocaleSwitcher() {
       >
         <span className={`fi fi-${current.fi} rounded-sm`} style={{ width: 20, height: 15, display: "inline-block" }} />
         <span>{current.label}</span>
-        <span className="text-xs text-neutral-400">▾</span>
+        <span className="text-xs text-neutral-600">▾</span>
       </button>
 
       {open && (

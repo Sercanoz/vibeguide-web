@@ -91,7 +91,7 @@ export default function LoginPage() {
             VibeGuide
           </a>
           <p className="mt-6 text-3xl font-black text-[#0A0A0F]">Welcome back</p>
-          <p className="mt-1 text-sm text-neutral-400">Sign in to continue your adventure</p>
+          <p className="mt-1 text-sm text-neutral-600">Sign in to continue your adventure</p>
         </div>
 
         <div className="bg-white border border-black/[0.06] rounded-3xl p-8 shadow-sm">
@@ -112,7 +112,7 @@ export default function LoginPage() {
 
           <div className="flex items-center gap-3 my-5">
             <div className="flex-1 h-px bg-black/[0.06]" />
-            <span className="text-xs text-neutral-400 font-medium">or</span>
+            <span className="text-xs text-neutral-600 font-medium">or</span>
             <div className="flex-1 h-px bg-black/[0.06]" />
           </div>
 
@@ -157,12 +157,12 @@ export default function LoginPage() {
             </button>
           </form>
 
-          <p className="mt-4 text-center text-xs text-neutral-400">
+          <p className="mt-4 text-center text-xs text-neutral-600">
             <a href="#" className="text-[#6C4CF1] font-semibold hover:underline">Forgot password?</a>
           </p>
         </div>
 
-        <p className="mt-5 text-center text-sm text-neutral-400">
+        <p className="mt-5 text-center text-sm text-neutral-600">
           Don&apos;t have an account?{" "}
           <a href="/register" className="text-[#6C4CF1] font-bold hover:underline">Create account</a>
         </p>

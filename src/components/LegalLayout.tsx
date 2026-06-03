@@ -26,7 +26,7 @@ export default function LegalLayout({
           {title}
         </h1>
         {lastUpdated && lastUpdatedLabel && (
-          <p className="mt-4 text-xs font-bold uppercase tracking-widest text-neutral-400">
+          <p className="mt-4 text-xs font-bold uppercase tracking-widest text-neutral-600">
             {lastUpdatedLabel}: {lastUpdated}
           </p>
         )}

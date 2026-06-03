@@ -150,7 +150,7 @@ export default function TourDetailPage() {
         <div className="text-center px-6">
           <p className="text-6xl mb-4">⚠️</p>
           <h1 className="text-2xl font-black text-[#0A0A0F] mb-2">Something went wrong</h1>
-          <p className="text-neutral-400 mb-6">Could not load this tour. Please try again.</p>
+          <p className="text-neutral-600 mb-6">Could not load this tour. Please try again.</p>
           <div className="flex gap-3 justify-center">
             <button onClick={() => window.location.reload()} className="rounded-full bg-[#6C4CF1] text-white text-sm font-bold px-6 py-2.5 hover:bg-[#5a3dd4] transition-colors">
               Try again
@@ -170,7 +170,7 @@ export default function TourDetailPage() {
         <div className="text-center px-6">
           <p className="text-6xl mb-4">🗺️</p>
           <h1 className="text-2xl font-black text-[#0A0A0F] mb-2">Tour not found</h1>
-          <p className="text-neutral-400 mb-6">This tour may have been removed or is no longer active.</p>
+          <p className="text-neutral-600 mb-6">This tour may have been removed or is no longer active.</p>
           <a href="/tours" className="rounded-full bg-[#6C4CF1] text-white text-sm font-bold px-6 py-2.5 hover:bg-[#5a3dd4] transition-colors">
             Browse all tours
           </a>
@@ -216,7 +216,7 @@ export default function TourDetailPage() {
                   <ShareButton title={tour.title} variant="icon" />
                 </div>
               </div>
-              <p className="mt-2 text-neutral-400 flex items-center gap-3 text-sm">
+              <p className="mt-2 text-neutral-600 flex items-center gap-3 text-sm">
                 <span>📍 {tour.districtName && tour.provinceName ? `${tour.districtName}, ${tour.provinceName}` : (tour.provinceName || tour.city)}</span>
                 <span>·</span>
                 <span>🕐 {formatDuration(tour.durationMinutes)}</span>
@@ -540,7 +540,7 @@ export default function TourDetailPage() {
                     </tbody>
                   </table>
                 </div>
-                <p className="text-xs text-neutral-400 mt-2">
+                <p className="text-xs text-neutral-600 mt-2">
                   Per-person price for a full group. Final price is locked when the group is confirmed.
                 </p>
               </div>
@@ -553,10 +553,10 @@ export default function TourDetailPage() {
         {/* Sticky booking sidebar */}
         <aside className="sticky top-24 rounded-3xl bg-white border border-black/[0.08] shadow-lg p-6 space-y-5">
           <div>
-            <p className="text-xs font-semibold text-neutral-400 uppercase tracking-wide">{tt.startingFrom}</p>
+            <p className="text-xs font-semibold text-neutral-600 uppercase tracking-wide">{tt.startingFrom}</p>
             <div className="flex items-baseline gap-2 mt-1">
               {hasDiscount && (
-                <span className="text-base text-neutral-400 line-through">
+                <span className="text-base text-neutral-600 line-through">
                   <Price amount={tour.compareAtPrice!} currency={tour.currency} />
                 </span>
               )}
@@ -564,13 +564,13 @@ export default function TourDetailPage() {
                 <Price amount={tour.basePrice} currency={tour.currency} />
               </span>
             </div>
-            <p className="text-xs text-neutral-400 mt-0.5">{tt.perPerson}</p>
+            <p className="text-xs text-neutral-600 mt-0.5">{tt.perPerson}</p>
           </div>
 
           <div className="flex items-center gap-3 rounded-xl bg-[#F7F7FB] px-4 py-3">
             <span className="text-xl">🕐</span>
             <div>
-              <p className="text-xs text-neutral-400 font-medium">Duration</p>
+              <p className="text-xs text-neutral-600 font-medium">Duration</p>
               <p className="font-black text-sm">{formatDuration(tour.durationMinutes)}</p>
             </div>
           </div>
@@ -578,7 +578,7 @@ export default function TourDetailPage() {
           <div className="flex items-center gap-3 rounded-xl bg-[#F7F7FB] px-4 py-3">
             <span className="text-xl">📍</span>
             <div>
-              <p className="text-xs text-neutral-400 font-medium">Location</p>
+              <p className="text-xs text-neutral-600 font-medium">Location</p>
               <p className="font-black text-sm">{tour.districtName && tour.provinceName ? `${tour.districtName}, ${tour.provinceName}` : (tour.provinceName || tour.city)}</p>
             </div>
           </div>
@@ -602,7 +602,7 @@ export default function TourDetailPage() {
             Book via Web
           </a>
 
-          <p className="text-xs text-neutral-400 text-center leading-5">
+          <p className="text-xs text-neutral-600 text-center leading-5">
             Book via the app, or chat with us on WhatsApp to book on the web.
           </p>
 
@@ -632,7 +632,7 @@ export default function TourDetailPage() {
       {/* Mobile sticky bottom bar */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-black/[0.08] px-4 py-3 flex items-center gap-3 shadow-lg">
         <div className="flex-1">
-          <p className="text-xs text-neutral-400">{tt.startingFrom}</p>
+          <p className="text-xs text-neutral-600">{tt.startingFrom}</p>
           <p className="font-black text-lg text-[#6C4CF1]">
             <Price amount={tour.basePrice} currency={tour.currency} />
           </p>
@@ -649,7 +649,7 @@ export default function TourDetailPage() {
 
       {/* Footer */}
       <footer className="bg-[#F7F7FB] border-t border-black/[0.06] px-6 py-12 mt-8">
-        <div className="mx-auto max-w-7xl flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-neutral-400">
+        <div className="mx-auto max-w-7xl flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-neutral-600">
           <a href="/" className="flex items-center gap-2 font-black text-[#0A0A0F]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/vibeguide-icon.png" alt="VibeGuide" width={24} height={24} style={{ mixBlendMode: "multiply" }} />
@@ -805,7 +805,7 @@ function ReviewsSection({ tourId }: { tourId: number }) {
             <span className="ml-3 inline-flex items-center gap-2 text-lg align-middle">
               <ReviewStars n={data.avgRating} size={18} />
               <span className="text-[#0A0A0F]">{data.avgRating.toFixed(1)}</span>
-              <span className="text-neutral-400 text-sm font-semibold">({data.count})</span>
+              <span className="text-neutral-600 text-sm font-semibold">({data.count})</span>
             </span>
           )}
         </h2>
@@ -818,7 +818,7 @@ function ReviewsSection({ tourId }: { tourId: number }) {
       {!data || data.reviews.length === 0 ? (
         <div className="rounded-2xl bg-[#F7F7FB] border border-black/5 p-8 text-center">
           <p className="text-sm font-semibold text-neutral-500">No reviews yet</p>
-          <p className="text-xs text-neutral-400 mt-1">Be the first to share your experience.</p>
+          <p className="text-xs text-neutral-600 mt-1">Be the first to share your experience.</p>
         </div>
       ) : (
         <div className="grid sm:grid-cols-2 gap-4">
@@ -830,12 +830,12 @@ function ReviewsSection({ tourId }: { tourId: number }) {
                 </div>
                 <div className="min-w-0">
                   <p className="font-bold text-[#0A0A0F] text-sm truncate">{r.fullName}</p>
-                  {r.nationality && <p className="text-xs text-neutral-400">{r.nationality}</p>}
+                  {r.nationality && <p className="text-xs text-neutral-600">{r.nationality}</p>}
                 </div>
               </div>
               <ReviewStars n={r.rating} />
               {r.comment && <p className="mt-2 text-sm text-neutral-600 leading-6">{r.comment}</p>}
-              <p className="mt-3 text-[11px] text-neutral-400">{new Date(r.createdAt).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}</p>
+              <p className="mt-3 text-[11px] text-neutral-600">{new Date(r.createdAt).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}</p>
             </div>
           ))}
         </div>

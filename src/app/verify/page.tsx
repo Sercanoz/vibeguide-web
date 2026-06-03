@@ -66,7 +66,7 @@ function VerifyInner() {
             <>
               <div className="w-10 h-10 rounded-full border-2 border-[#6C4CF1] border-t-transparent animate-spin mx-auto mb-6" />
               <h1 className="text-xl font-black text-[#0A0A0F]">Verifying your email…</h1>
-              <p className="mt-2 text-sm text-neutral-400">Just a moment.</p>
+              <p className="mt-2 text-sm text-neutral-600">Just a moment.</p>
             </>
           ) : state === "error" ? (
             <>
@@ -76,7 +76,7 @@ function VerifyInner() {
                 </svg>
               </div>
               <h1 className="text-2xl font-black text-[#0A0A0F]">Link expired or invalid</h1>
-              <p className="mt-2 text-sm text-neutral-400 leading-6">
+              <p className="mt-2 text-sm text-neutral-600 leading-6">
                 This verification link is no longer valid. Please sign in and request a new one.
               </p>
               <a href="/" className="mt-8 inline-flex items-center gap-2 rounded-2xl bg-[#6C4CF1] text-white font-bold px-7 py-3 text-sm hover:bg-[#5a3dd4] transition-colors">
@@ -92,7 +92,7 @@ function VerifyInner() {
                 </svg>
               </div>
               <h1 className="text-2xl font-black text-[#0A0A0F]">You&apos;re all set! 🎉</h1>
-              <p className="mt-2 text-sm text-neutral-400 leading-6">
+              <p className="mt-2 text-sm text-neutral-600 leading-6">
                 Your email is confirmed and your account is ready. Sign in to start exploring with local guides.
               </p>
               <a href="/" className="mt-8 inline-flex items-center gap-2 rounded-2xl bg-[#6C4CF1] text-white font-bold px-7 py-3 text-sm hover:bg-[#5a3dd4] transition-colors"

@@ -64,7 +64,7 @@ export default function VerifiedPage() {
             <>
               <div className="w-10 h-10 rounded-full border-2 border-[#6C4CF1] border-t-transparent animate-spin mx-auto mb-6" />
               <h1 className="text-xl font-black text-[#0A0A0F]">Setting up your account…</h1>
-              <p className="mt-2 text-sm text-neutral-400">Just a moment.</p>
+              <p className="mt-2 text-sm text-neutral-600">Just a moment.</p>
             </>
           ) : state === "error" ? (
             <>
@@ -74,7 +74,7 @@ export default function VerifiedPage() {
                 </svg>
               </div>
               <h1 className="text-2xl font-black text-[#0A0A0F]">Email verified ✓</h1>
-              <p className="mt-2 text-sm text-neutral-400 leading-6">
+              <p className="mt-2 text-sm text-neutral-600 leading-6">
                 Your email is confirmed, but we couldn&apos;t finish account setup automatically. Please sign in to continue.
               </p>
               <a href="/" className="mt-8 inline-flex items-center gap-2 rounded-2xl bg-[#6C4CF1] text-white font-bold px-7 py-3 text-sm hover:bg-[#5a3dd4] transition-colors">
@@ -90,7 +90,7 @@ export default function VerifiedPage() {
                 </svg>
               </div>
               <h1 className="text-2xl font-black text-[#0A0A0F]">You&apos;re all set! 🎉</h1>
-              <p className="mt-2 text-sm text-neutral-400 leading-6">
+              <p className="mt-2 text-sm text-neutral-600 leading-6">
                 Your email is confirmed and your account is ready. Start exploring with local guides.
               </p>
               <a href="/" className="mt-8 inline-flex items-center gap-2 rounded-2xl bg-[#6C4CF1] text-white font-bold px-7 py-3 text-sm hover:bg-[#5a3dd4] transition-colors"

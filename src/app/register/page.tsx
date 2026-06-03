@@ -24,7 +24,7 @@ export default function RegisterChoicePage() {
             VibeGuide
           </a>
           <p className="mt-6 text-3xl font-black text-[#0A0A0F]">Create your account</p>
-          <p className="mt-1 text-sm text-neutral-400">How would you like to use VibeGuide?</p>
+          <p className="mt-1 text-sm text-neutral-600">How would you like to use VibeGuide?</p>
         </div>
 
         <div className="grid sm:grid-cols-2 gap-4">
@@ -42,7 +42,7 @@ export default function RegisterChoicePage() {
             <div>
               <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#6C4CF1] mb-1">Traveller</p>
               <h2 className="text-lg font-black text-[#0A0A0F] leading-tight">I&apos;m a tourist</h2>
-              <p className="mt-2 text-sm text-neutral-400 leading-6">Discover cities with verified local guides. Book instant tours or plan ahead.</p>
+              <p className="mt-2 text-sm text-neutral-600 leading-6">Discover cities with verified local guides. Book instant tours or plan ahead.</p>
             </div>
             <span className="mt-auto flex items-center gap-1.5 text-sm font-bold text-[#6C4CF1] group-hover:gap-2.5 transition-all">
               Get started
@@ -65,7 +65,7 @@ export default function RegisterChoicePage() {
             <div>
               <p className="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-600 mb-1">Professional</p>
               <h2 className="text-lg font-black text-[#0A0A0F] leading-tight">I&apos;m a guide</h2>
-              <p className="mt-2 text-sm text-neutral-400 leading-6">Share your city&apos;s stories. Earn income doing what you love with verified tourists.</p>
+              <p className="mt-2 text-sm text-neutral-600 leading-6">Share your city&apos;s stories. Earn income doing what you love with verified tourists.</p>
             </div>
             <span className="mt-auto flex items-center gap-1.5 text-sm font-bold text-emerald-600 group-hover:gap-2.5 transition-all">
               Apply now
@@ -74,7 +74,7 @@ export default function RegisterChoicePage() {
           </a>
         </div>
 
-        <p className="mt-6 text-center text-sm text-neutral-400">
+        <p className="mt-6 text-center text-sm text-neutral-600">
           Already have an account?{" "}
           <a href="/login" className="text-[#6C4CF1] font-bold hover:underline">Sign in</a>
         </p>

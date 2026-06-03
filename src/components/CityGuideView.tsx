@@ -142,7 +142,7 @@ export default function CityGuideView({
       {/* 3 modes */}
       <section className="py-20 bg-[#F7F7FB]">
         <div className="mx-auto max-w-5xl px-6">
-          <p className="text-xs font-bold uppercase tracking-[0.3em] text-neutral-400 mb-4">
+          <p className="text-xs font-bold uppercase tracking-[0.3em] text-neutral-600 mb-4">
             {c.modesKicker}
           </p>
           <h2 className="text-3xl md:text-4xl font-black mb-12 tracking-tight">
@@ -217,7 +217,7 @@ export default function CityGuideView({
           <div className="mx-auto max-w-5xl px-6">
             <h2 className="text-3xl font-black mb-2 tracking-tight">{c.landmarksHeading}</h2>
             {c.landmarksSub && (
-              <p className="text-sm text-neutral-400 mb-8">{c.landmarksSub}</p>
+              <p className="text-sm text-neutral-600 mb-8">{c.landmarksSub}</p>
             )}
             <div className="grid sm:grid-cols-2 gap-4">
               {c.landmarks.map((l) => (
@@ -231,7 +231,7 @@ export default function CityGuideView({
                     <p className="font-black text-[#0A0A0F] group-hover:text-[#6C4CF1] transition-colors">
                       {l.name}
                     </p>
-                    <p className="text-sm text-neutral-400">{l.desc}</p>
+                    <p className="text-sm text-neutral-600">{l.desc}</p>
                   </div>
                 </Link>
               ))}
@@ -256,7 +256,7 @@ export default function CityGuideView({
                   <p className="font-black text-[#0A0A0F] group-hover:text-[#6C4CF1] transition-colors">
                     {l.name}
                   </p>
-                  <p className="text-sm text-neutral-400">{l.desc}</p>
+                  <p className="text-sm text-neutral-600">{l.desc}</p>
                 </div>
               </Link>
             ))}
@@ -283,7 +283,7 @@ export default function CityGuideView({
               <span>📱</span> App Store
             </a>
           </div>
-          <p className="mt-6 text-xs text-neutral-300">{c.ctaAvailability}</p>
+          <p className="mt-6 text-xs text-neutral-500">{c.ctaAvailability}</p>
         </div>
       </section>
 

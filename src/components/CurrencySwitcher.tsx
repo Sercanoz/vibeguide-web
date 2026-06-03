@@ -28,7 +28,7 @@ export default function CurrencySwitcher() {
       >
         <span className="font-black">{cur.symbol}</span>
         <span>{cur.code}</span>
-        <span className="text-xs text-neutral-400">▾</span>
+        <span className="text-xs text-neutral-600">▾</span>
       </button>
 
       {open && (
@@ -55,7 +55,7 @@ export default function CurrencySwitcher() {
               )}
             </button>
           ))}
-          <p className="border-t border-neutral-100 px-4 py-2 text-[10px] leading-4 text-neutral-400">
+          <p className="border-t border-neutral-100 px-4 py-2 text-[10px] leading-4 text-neutral-600">
             Prices are approximate. Charged in TRY.
           </p>
         </div>

@@ -148,17 +148,17 @@ export default function ProfilePage() {
                 </button>
               </div>
               <h1 className="text-xl font-black text-[#0A0A0F]">{me.fullName}</h1>
-              <p className="text-sm text-neutral-400">{me.email}</p>
+              <p className="text-sm text-neutral-600">{me.email}</p>
               <div className="flex items-center gap-2 mt-3">
                 <span className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold ${roleMeta.color}`}>
                   {roleMeta.icon} {roleMeta.label}
                 </span>
-                <span className="text-xs text-neutral-400">
+                <span className="text-xs text-neutral-600">
                   Member since {new Date(me.createdAtUtc).toLocaleDateString("en-GB", { month: "long", year: "numeric" })}
                 </span>
               </div>
               {me.guideProfile?.languages && (
-                <p className="mt-2 text-xs text-neutral-400">
+                <p className="mt-2 text-xs text-neutral-600">
                   🌐 Guides in: <span className="font-semibold text-neutral-600">{me.guideProfile.languages.toUpperCase().split(",").join(" · ")}</span>
                 </p>
               )}
@@ -183,22 +183,22 @@ export default function ProfilePage() {
           {/* Guide earnings */}
           {me.role === "Guide" && payout && (
             <div className="bg-white rounded-3xl border border-black/[0.06] shadow-sm p-6">
-              <p className="text-xs font-black uppercase tracking-wide text-neutral-400 mb-4">Earnings</p>
+              <p className="text-xs font-black uppercase tracking-wide text-neutral-600 mb-4">Earnings</p>
               <div className="grid grid-cols-3 gap-4">
                 <div>
                   <p className="text-2xl font-black text-[#6C4CF1]">{payout.pendingThisWeek.toLocaleString()} <span className="text-sm font-bold">{payout.currency}</span></p>
-                  <p className="text-xs text-neutral-400 mt-0.5">This week</p>
+                  <p className="text-xs text-neutral-600 mt-0.5">This week</p>
                 </div>
                 <div>
                   <p className="text-2xl font-black text-[#0A0A0F]">{payout.pendingTotal.toLocaleString()} <span className="text-sm font-bold">{payout.currency}</span></p>
-                  <p className="text-xs text-neutral-400 mt-0.5">Pending total</p>
+                  <p className="text-xs text-neutral-600 mt-0.5">Pending total</p>
                 </div>
                 <div>
                   <p className="text-2xl font-black text-[#0A0A0F]">{payout.lifetime.toLocaleString()} <span className="text-sm font-bold">{payout.currency}</span></p>
-                  <p className="text-xs text-neutral-400 mt-0.5">Lifetime</p>
+                  <p className="text-xs text-neutral-600 mt-0.5">Lifetime</p>
                 </div>
               </div>
-              <p className="text-xs text-neutral-400 mt-4 pt-4 border-t border-black/[0.06]">
+              <p className="text-xs text-neutral-600 mt-4 pt-4 border-t border-black/[0.06]">
                 Next payout: <span className="font-semibold text-neutral-600">{new Date(payout.nextPayoutAt).toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" })}</span>
               </p>
             </div>
@@ -219,7 +219,7 @@ export default function ProfilePage() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-bold text-[#0A0A0F] truncate">{b.tourTitle ?? `Booking #${b.id}`}</p>
-                    <p className="text-xs text-neutral-400">{new Date(b.scheduledAt).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}</p>
+                    <p className="text-xs text-neutral-600">{new Date(b.scheduledAt).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}</p>
                   </div>
                   <div className="flex items-center gap-2 shrink-0">
                     <span className="text-sm font-bold text-[#6C4CF1]">{b.price} {b.currency}</span>
@@ -235,13 +235,13 @@ export default function ProfilePage() {
             <div className="bg-white rounded-3xl border border-black/[0.06] shadow-sm overflow-hidden">
               <div className="px-6 py-4 border-b border-black/[0.06] flex items-center justify-between">
                 <p className="text-sm font-black text-[#0A0A0F]">Past tours</p>
-                <span className="text-xs text-neutral-400">{pastBookings.length} total</span>
+                <span className="text-xs text-neutral-600">{pastBookings.length} total</span>
               </div>
               {pastBookings.slice(0, 5).map((b) => (
                 <div key={b.id} className="flex items-center gap-4 px-6 py-4 border-b border-black/[0.04] last:border-0">
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-semibold text-[#0A0A0F] truncate">{b.tourTitle ?? `Booking #${b.id}`}</p>
-                    <p className="text-xs text-neutral-400">{new Date(b.scheduledAt).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}</p>
+                    <p className="text-xs text-neutral-600">{new Date(b.scheduledAt).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}</p>
                   </div>
                   <div className="flex items-center gap-2 shrink-0">
                     <span className="text-sm font-semibold text-neutral-500">{b.price} {b.currency}</span>
@@ -261,7 +261,7 @@ export default function ProfilePage() {
                 </svg>
               </div>
               <p className="text-base font-black text-[#0A0A0F]">No tours yet</p>
-              <p className="text-sm text-neutral-400 mt-1">Download the app to book your first tour</p>
+              <p className="text-sm text-neutral-600 mt-1">Download the app to book your first tour</p>
               <Link href="/#download"
                 className="mt-5 inline-flex items-center gap-2 rounded-2xl bg-[#6C4CF1] text-white font-bold px-6 py-3 text-sm hover:bg-[#5a3dd4] transition-colors"
                 style={{ boxShadow: "0 4px 16px rgba(108,76,241,0.25)" }}>

@@ -173,7 +173,7 @@ export default function HeroCitySearch() {
 
   return (
     <div className="relative z-20 mx-auto w-full max-w-2xl" ref={boxRef}>
-      <p className="text-center text-sm font-semibold text-neutral-400 mb-3">
+      <p className="text-center text-sm font-semibold text-neutral-600 mb-3">
         {ux.searchSubtitle}
       </p>
 
@@ -196,7 +196,7 @@ export default function HeroCitySearch() {
           onFocus={() => setOpen(true)}
           onKeyDown={onKeyDown}
           placeholder={hints[hintIdx] ?? ux.searchWhereTo}
-          className="flex-1 min-w-0 bg-transparent py-3 text-[15px] font-medium text-[#0A0A0F] placeholder:text-neutral-400 focus:outline-none"
+          className="flex-1 min-w-0 bg-transparent py-3 text-[15px] font-medium text-[#0A0A0F] placeholder:text-neutral-600 focus:outline-none"
           aria-label="Search destination"
         />
 
@@ -225,7 +225,7 @@ export default function HeroCitySearch() {
                 </span>
                 <span className="text-sm font-bold text-[#0A0A0F]">{recentValid.label}</span>
               </span>
-              <span className="text-xs font-semibold text-neutral-400">Recent</span>
+              <span className="text-xs font-semibold text-neutral-600">Recent</span>
             </button>
           )}
           {matches.map((d, i) => (
@@ -241,7 +241,7 @@ export default function HeroCitySearch() {
                 <CityAvatar label={d.label} />
                 <span className="text-sm font-bold text-[#0A0A0F]">{d.label}</span>
               </span>
-              <span className="text-xs font-semibold text-neutral-400">
+              <span className="text-xs font-semibold text-neutral-600">
                 {d.count} {d.count === 1 ? "tour" : "tours"}
               </span>
             </button>
