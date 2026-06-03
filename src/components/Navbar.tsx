@@ -105,24 +105,6 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
             <span className="transition-colors duration-200">VibeGuide</span>
           </a>
 
-          {/* Kompakt arama — sadece sayfa kaydırılınca belirir (hero arama kaybolduğunda
-             erişim sağlar, Airbnb/GetYourGuide tarzı). Linkler kaybolmaz; arama yanlarında
-             açılır. /tours'a götürür. */}
-          {scrolled && (
-            <a
-              href="/tours"
-              aria-label="Search destinations"
-              className="hidden md:flex items-center gap-2 rounded-full border border-black/[0.08] bg-white pl-4 pr-2 py-1.5 text-sm font-medium text-neutral-500 shadow-sm transition-all hover:border-[#6C4CF1]/40 hover:shadow-md animate-[fadeSlideUp_0.2s_ease_both]"
-            >
-              <span>Where to?</span>
-              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#6C4CF1] text-white">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
-                </svg>
-              </span>
-            </a>
-          )}
-
           {/* Desktop links + mega menus */}
           <div className="hidden md:flex items-center gap-1 text-sm font-medium"
             onMouseLeave={() => setOpenMenu(null)}>
