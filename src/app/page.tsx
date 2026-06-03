@@ -39,7 +39,6 @@ export default function HomePage() {
 
   const secHow = useInView();
   const secModes = useInView();
-  const secManifesto = useInView();
   const secTrust = useInView();
 
   return (
@@ -275,38 +274,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── MANIFESTO ── */}
-      <section ref={secManifesto.ref as React.RefObject<HTMLElement>} className={`py-28 bg-[#F7F7FB] relative overflow-hidden reveal ${secManifesto.inView ? "in-view" : ""}`}>
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#6C4CF1]/5 rounded-full blur-[80px] pointer-events-none" />
-        <div className="relative mx-auto max-w-3xl px-6 text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1]">{t.manifesto.eyebrow}</p>
-          <h2 className="mt-6 text-4xl md:text-6xl font-black tracking-tight leading-tight text-[#0A0A0F]">
-            {t.manifesto.titleA}
-            <br />
-            <span className="text-neutral-700">{t.manifesto.titleB}</span>
-          </h2>
-          <div className="mx-auto mt-10 max-w-2xl space-y-5 text-left">
-            {t.manifesto.sub.split("\n\n").map((para, i) => {
-              const isHighlight = para.startsWith("Somewhere") || para.startsWith("VibeGuide brings") || para.startsWith("No forced") || para.startsWith("Just authentic");
-              return (
-                <p
-                  key={i}
-                  className={
-                    isHighlight
-                      ? "text-lg md:text-xl font-bold leading-8 text-[#0A0A0F]"
-                      : "text-base md:text-lg leading-8 text-neutral-800"
-                  }
-                >
-                  {para}
-                </p>
-              );
-            })}
-          </div>
-          <p className="mt-12 text-xl md:text-2xl font-black tracking-tight text-[#0A0A0F] border-t border-black/[0.06] pt-10">
-            {ux.realLocals}
-          </p>
-        </div>
-      </section>
 
 
       {/* ── TESTIMONIALS (real reviews) ── */}

@@ -86,10 +86,10 @@ export default function MainFooter() {
         <div className="mt-12 pt-8 border-t border-black/[0.06]">
           <div className="grid gap-2 md:grid-cols-2 text-xs text-neutral-800 leading-6">
             <div>
-              <p className="font-semibold text-neutral-700">VibeCore Turizm Seyahat Acentası ve Dijital Hizmetler Ticaret Ltd. Şti.</p>
-              <p>Vergi No: 9251328389 · Vergi Dairesi: Marmaris V.D.</p>
-              <p>Ticaret Sicil No: 12686</p>
-              <p>Beldibi Mah. Belmar Sk. No:9/1 İç Kapı No:4 Marmaris/Muğla, Türkiye</p>
+              <p className="font-semibold text-neutral-700">{locale === "tr" ? "VibeCore Turizm Seyahat Acentası ve Dijital Hizmetler Ticaret Ltd. Şti." : "VibeCore Tourism Travel Agency and Digital Services Trade Co. Ltd."}</p>
+              <p>{locale === "tr" ? "Vergi No" : "Tax No"}: 9251328389 · {locale === "tr" ? "Vergi Dairesi" : "Tax Office"}: {locale === "tr" ? "Marmaris V.D." : "Marmaris Tax Office"}</p>
+              <p>{locale === "tr" ? "Ticaret Sicil No" : "Trade Registry No"}: 12686</p>
+              <p>Beldibi Mah. Belmar Sk. No:9/1 İç Kapı No:4 Marmaris/Muğla, {locale === "tr" ? "Türkiye" : "Türkiye"}</p>
             </div>
             <div className="md:text-right">
               <p>📧 <a href="mailto:support@vibeguideapp.com" className="hover:text-black transition-colors">support@vibeguideapp.com</a></p>
