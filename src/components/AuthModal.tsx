@@ -6,6 +6,7 @@ import {
   signInWithEmail, signInWithGoogle, registerWithEmail, fbAuth, signOut
 } from "@/lib/firebase-client";
 import { API_BASE_URL } from "@/lib/api";
+import { useT } from "@/components/LanguageProvider";
 
 type Mode = "signin" | "register";
 type Role = "tourist" | "guide";
@@ -27,6 +28,60 @@ interface Props {
 
 export default function AuthModal({ initialMode = "signin", onClose }: Props) {
   const router = useRouter();
+  const { locale } = useT();
+  const tr = locale === "tr";
+  const am = {
+    verifyFirst: tr ? "Lütfen önce e-postanı doğrula. Onay bağlantısı için gelen kutunu kontrol et." : "Please verify your email first. Check your inbox for the confirmation link.",
+    registrationFailed: tr ? "Kayıt başarısız." : "Registration failed.",
+    googleFailed: tr ? "Google ile giriş başarısız. Lütfen tekrar dene." : "Google sign-in failed. Please try again.",
+    incorrectCreds: tr ? "E-posta veya şifre hatalı." : "Incorrect email or password.",
+    tooMany: tr ? "Çok fazla deneme. Lütfen sonra tekrar dene." : "Too many attempts. Try again later.",
+    signInFailed: tr ? "Giriş başarısız. Lütfen tekrar dene." : "Sign in failed. Please try again.",
+    passMismatch: tr ? "Şifreler eşleşmiyor." : "Passwords do not match.",
+    passMin: tr ? "Şifre en az 6 karakter olmalı." : "Password must be at least 6 characters.",
+    emailInUse: tr ? "Bu e-posta zaten kayıtlı." : "This email is already registered.",
+    weakPass: tr ? "Şifre çok zayıf." : "Password is too weak.",
+    registerFailedRetry: tr ? "Kayıt başarısız. Lütfen tekrar dene." : "Registration failed. Please try again.",
+    checkEmail: tr ? "E-postanı kontrol et" : "Check your email",
+    verifySentA: tr ? "Doğrulama bağlantısını şu adrese gönderdik: " : "We sent a verification link to ",
+    verifySentB: tr ? ". Hesabını etkinleştirmek için gelen kutundaki bağlantıya tıkla, sonra giriş yap." : ". Click the link in your inbox to activate your account, then sign in.",
+    gotIt: tr ? "Anladım" : "Got it",
+    didntReceive: tr ? "Almadın mı? " : "Didn't receive it? ",
+    emailSent: tr ? "E-posta gönderildi ✓" : "Email sent ✓",
+    sending: tr ? "Gönderiliyor…" : "Sending…",
+    resend: tr ? "Tekrar gönder" : "Resend email",
+    welcomeBack: tr ? "Tekrar hoş geldin" : "Welcome back",
+    whoAreYou: tr ? "Kimsin?" : "Who are you?",
+    applyAsGuide: tr ? "Rehber olarak başvur" : "Apply as guide",
+    createAccount: tr ? "Hesap oluştur" : "Create account",
+    subSignin: tr ? "Maceranı sürdürmek için giriş yap" : "Sign in to continue your adventure",
+    subRole: tr ? "VibeGuide'ı nasıl kullanacağını söyle" : "Tell us how you'll use VibeGuide",
+    subGuide: tr ? "Doğrulanmış rehber ağımıza katıl" : "Join our verified guide network",
+    subTourist: tr ? "Yerel rehberlerle keşfetmeye başla" : "Start exploring with local guides",
+    tabSignin: tr ? "Giriş yap" : "Sign in",
+    tabRegister: tr ? "Kayıt ol" : "Register",
+    imTourist: tr ? "Turistim" : "I'm a tourist",
+    imTouristSub: tr ? "Doğrulanmış yerel rehberlerle şehirleri keşfet" : "Discover cities with verified local guides",
+    imGuide: tr ? "Rehberim" : "I'm a guide",
+    imGuideSub: tr ? "Şehrini paylaş · sevdiğin işi yaparak kazan" : "Share your city · earn doing what you love",
+    badgeGuide: tr ? "🎤 Rehber başvurusu" : "🎤 Guide application",
+    badgeTourist: tr ? "✈️ Turist" : "✈️ Tourist",
+    guideInfo: tr ? "Rehber kaydı, doğrulama için resmi kokart fotoğraflarının yüklenmesini gerektirir. Seni tam başvuru formuna yönlendireceğiz." : "Guide registration requires uploading your official badge photos for verification. We'll take you to the full application form.",
+    continueGuide: tr ? "Rehber başvurusuna devam et →" : "Continue to guide application →",
+    guideTime: tr ? "Yaklaşık 2 dakika sürer · Admin 1–2 gün içinde inceler" : "Takes about 2 minutes · Admin reviews within 1–2 days",
+    continueGoogle: tr ? "Google ile devam et" : "Continue with Google",
+    or: tr ? "veya" : "or",
+    phFullName: tr ? "Ad soyad" : "Full name",
+    phEmail: tr ? "E-posta adresi" : "Email address",
+    phPassMin: tr ? "Şifre (en az 6 karakter)" : "Password (min. 6 chars)",
+    phPassConfirm: tr ? "Şifreyi onayla" : "Confirm password",
+    phPassword: tr ? "Şifre" : "Password",
+    pleaseWait: tr ? "Lütfen bekle…" : "Please wait…",
+    createAccountBtn: tr ? "Hesap oluştur →" : "Create account →",
+    signingIn: tr ? "Giriş yapılıyor…" : "Signing in…",
+    signinBtn: tr ? "Giriş yap →" : "Sign in →",
+    forgotPass: tr ? "Şifremi unuttum?" : "Forgot password?",
+  };
   const [mode, setMode] = useState<Mode>(initialMode);
   const [step, setStep] = useState<Step>(initialMode === "register" ? "role" : "form");
   const [role, setRole] = useState<Role | null>(null);
@@ -75,7 +130,7 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
     if (res.status === 404) {
       if (!user.emailVerified) {
         await signOut();
-        setError("Please verify your email first. Check your inbox for the confirmation link.");
+        setError(am.verifyFirst);
         return;
       }
       try { await registerTouristOnBackend(); } catch { onClose(); router.push("/register"); }
@@ -101,7 +156,7 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
       body: JSON.stringify({ fullName: fullName.trim() }),
     });
     if (res.status === 409) { onClose(); return; }
-    if (!res.ok) { const d = await res.json().catch(() => ({})); throw new Error(d.message ?? "Registration failed."); }
+    if (!res.ok) { const d = await res.json().catch(() => ({})); throw new Error(d.message ?? am.registrationFailed); }
     onClose();
     router.refresh();
   }
@@ -118,7 +173,7 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
       } else {
         await handleAfterLogin();
       }
-    } catch { setError("Google sign-in failed. Please try again."); }
+    } catch { setError(am.googleFailed); }
     finally { setLoading(false); }
   }
 
@@ -130,17 +185,17 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
     } catch (err: unknown) {
       const code = (err as { code?: string }).code ?? "";
       if (code === "auth/invalid-credential" || code === "auth/wrong-password" || code === "auth/user-not-found")
-        setError("Incorrect email or password.");
+        setError(am.incorrectCreds);
       else if (code === "auth/too-many-requests")
-        setError("Too many attempts. Try again later.");
-      else setError("Sign in failed. Please try again.");
+        setError(am.tooMany);
+      else setError(am.signInFailed);
     } finally { setLoading(false); }
   }
 
   async function onEmailRegister(e: React.FormEvent) {
     e.preventDefault(); setError(null);
-    if (password !== password2) { setError("Passwords do not match."); return; }
-    if (password.length < 6) { setError("Password must be at least 6 characters."); return; }
+    if (password !== password2) { setError(am.passMismatch); return; }
+    if (password.length < 6) { setError(am.passMin); return; }
     if (role === "guide") {
       // Guide kayıt sayfasına yönlendir — KYC foto gerekli
       onClose();
@@ -158,9 +213,9 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
       setStep("verify");
     } catch (err: unknown) {
       const code = (err as { code?: string }).code ?? "";
-      if (code === "auth/email-already-in-use") setError("This email is already registered.");
-      else if (code === "auth/weak-password") setError("Password is too weak.");
-      else setError("Registration failed. Please try again.");
+      if (code === "auth/email-already-in-use") setError(am.emailInUse);
+      else if (code === "auth/weak-password") setError(am.weakPass);
+      else setError(am.registerFailedRetry);
     } finally { setLoading(false); }
   }
 
@@ -204,24 +259,23 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
               <polyline points="22,6 12,13 2,6"/>
             </svg>
           </div>
-          <h2 className="text-xl font-black text-[#0A0A0F]">Check your email</h2>
+          <h2 className="text-xl font-black text-[#0A0A0F]">{am.checkEmail}</h2>
           <p className="mt-2 text-sm text-neutral-800 leading-6">
-            We sent a verification link to <strong className="text-[#0A0A0F]">{email}</strong>.
-            Click the link in your inbox to activate your account, then sign in.
+            {am.verifySentA}<strong className="text-[#0A0A0F]">{email}</strong>{am.verifySentB}
           </p>
           <button onClick={onClose}
             className="mt-6 w-full rounded-2xl bg-[#6C4CF1] text-white font-bold py-3 text-sm hover:bg-[#5a3dd4] transition-colors"
             style={{ boxShadow: "0 4px 16px rgba(108,76,241,0.25)" }}>
-            Got it
+            {am.gotIt}
           </button>
           <p className="mt-4 text-xs text-neutral-800">
-            Didn&apos;t receive it?{" "}
+            {am.didntReceive}
             {resendState === "sent" ? (
-              <span className="text-emerald-600 font-semibold">Email sent ✓</span>
+              <span className="text-emerald-600 font-semibold">{am.emailSent}</span>
             ) : (
               <button onClick={onResend} disabled={resendState === "sending"}
                 className="text-[#6C4CF1] font-semibold hover:underline disabled:opacity-50">
-                {resendState === "sending" ? "Sending…" : "Resend email"}
+                {resendState === "sending" ? am.sending : am.resend}
               </button>
             )}
           </p>
@@ -245,10 +299,10 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
               <span className="text-sm font-black text-[#0A0A0F]">VibeGuide</span>
             </div>
             <h2 className="text-2xl font-black text-[#0A0A0F]">
-              {mode === "signin" ? "Welcome back" : step === "role" ? "Who are you?" : role === "guide" ? "Apply as guide" : "Create account"}
+              {mode === "signin" ? am.welcomeBack : step === "role" ? am.whoAreYou : role === "guide" ? am.applyAsGuide : am.createAccount}
             </h2>
             <p className="mt-1 text-sm text-neutral-800">
-              {mode === "signin" ? "Sign in to continue your adventure" : step === "role" ? "Tell us how you'll use VibeGuide" : role === "guide" ? "Join our verified guide network" : "Start exploring with local guides"}
+              {mode === "signin" ? am.subSignin : step === "role" ? am.subRole : role === "guide" ? am.subGuide : am.subTourist}
             </p>
           </div>
 
@@ -257,7 +311,7 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
             {(["signin", "register"] as Mode[]).map((m) => (
               <button key={m} onClick={() => switchMode(m)}
                 className={`flex-1 py-2 rounded-xl text-sm font-bold transition-all ${mode === m ? "bg-white text-[#0A0A0F] shadow-sm" : "text-neutral-800 hover:text-neutral-800"}`}>
-                {m === "signin" ? "Sign in" : "Register"}
+                {m === "signin" ? am.tabSignin : am.tabRegister}
               </button>
             ))}
           </div>
@@ -275,8 +329,8 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
                   </svg>
                 </div>
                 <div className="flex-1 text-left">
-                  <p className="text-sm font-black text-[#0A0A0F]">I&apos;m a tourist</p>
-                  <p className="text-xs text-neutral-800 mt-0.5">Discover cities with verified local guides</p>
+                  <p className="text-sm font-black text-[#0A0A0F]">{am.imTourist}</p>
+                  <p className="text-xs text-neutral-800 mt-0.5">{am.imTouristSub}</p>
                 </div>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6C4CF1" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"><path d="M9 18l6-6-6-6"/></svg>
               </button>
@@ -291,8 +345,8 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
                   </svg>
                 </div>
                 <div className="flex-1 text-left">
-                  <p className="text-sm font-black text-[#0A0A0F]">I&apos;m a guide</p>
-                  <p className="text-xs text-neutral-800 mt-0.5">Share your city · earn doing what you love</p>
+                  <p className="text-sm font-black text-[#0A0A0F]">{am.imGuide}</p>
+                  <p className="text-xs text-neutral-800 mt-0.5">{am.imGuideSub}</p>
                 </div>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"><path d="M9 18l6-6-6-6"/></svg>
               </button>
@@ -308,7 +362,7 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
                 </button>
                 <span className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold ${role === "guide" ? "bg-emerald-50 text-emerald-700" : "bg-[#6C4CF1]/8 text-[#6C4CF1]"}`}>
-                  {role === "guide" ? "🎤 Guide application" : "✈️ Tourist"}
+                  {role === "guide" ? am.badgeGuide : am.badgeTourist}
                 </span>
               </div>
 
@@ -316,37 +370,37 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
                 /* Guide — KYC gerektiğinden tam sayfaya yönlendir */
                 <div className="text-center py-4">
                   <p className="text-sm text-neutral-700 leading-6 mb-4">
-                    Guide registration requires uploading your official badge photos for verification. We&apos;ll take you to the full application form.
+                    {am.guideInfo}
                   </p>
                   <a href="/register/guide"
                     onClick={onClose}
                     className="inline-flex items-center gap-2 rounded-2xl bg-emerald-500 text-white font-bold px-6 py-3 text-sm hover:bg-emerald-600 transition-colors">
-                    Continue to guide application →
+                    {am.continueGuide}
                   </a>
-                  <p className="mt-3 text-xs text-neutral-800">Takes about 2 minutes · Admin reviews within 1–2 days</p>
+                  <p className="mt-3 text-xs text-neutral-800">{am.guideTime}</p>
                 </div>
               ) : (
                 /* Tourist form */
                 <>
                   <button onClick={onGoogleSignIn} disabled={loading}
                     className="w-full flex items-center justify-center gap-3 border border-black/10 rounded-2xl px-5 py-3 text-sm font-bold text-[#0A0A0F] hover:bg-neutral-50 transition-colors disabled:opacity-50 mb-4">
-                    <GoogleIcon /> Continue with Google
+                    <GoogleIcon /> {am.continueGoogle}
                   </button>
                   <div className="flex items-center gap-3 mb-4">
                     <div className="flex-1 h-px bg-black/[0.06]" />
-                    <span className="text-xs text-neutral-700 font-medium">or</span>
+                    <span className="text-xs text-neutral-700 font-medium">{am.or}</span>
                     <div className="flex-1 h-px bg-black/[0.06]" />
                   </div>
                   <form onSubmit={onEmailRegister} className="space-y-3">
-                    <input type="text" required value={fullName} onChange={(e) => setFullName(e.target.value)} className={inputCls} placeholder="Full name" />
-                    <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} className={inputCls} placeholder="Email address" />
-                    <input type="password" required value={password} onChange={(e) => setPassword(e.target.value)} className={inputCls} placeholder="Password (min. 6 chars)" />
-                    <input type="password" required value={password2} onChange={(e) => setPassword2(e.target.value)} className={inputCls} placeholder="Confirm password" />
+                    <input type="text" required value={fullName} onChange={(e) => setFullName(e.target.value)} className={inputCls} placeholder={am.phFullName} />
+                    <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} className={inputCls} placeholder={am.phEmail} />
+                    <input type="password" required value={password} onChange={(e) => setPassword(e.target.value)} className={inputCls} placeholder={am.phPassMin} />
+                    <input type="password" required value={password2} onChange={(e) => setPassword2(e.target.value)} className={inputCls} placeholder={am.phPassConfirm} />
                     {error && <div className="rounded-2xl bg-red-50 border border-red-100 px-4 py-3 text-sm text-red-600">{error}</div>}
                     <button type="submit" disabled={loading}
                       className="w-full rounded-2xl bg-[#6C4CF1] text-white font-bold py-3 text-sm hover:bg-[#5a3dd4] transition-colors disabled:opacity-50"
                       style={{ boxShadow: "0 4px 16px rgba(108,76,241,0.25)" }}>
-                      {loading ? "Please wait…" : "Create account →"}
+                      {loading ? am.pleaseWait : am.createAccountBtn}
                     </button>
                   </form>
                 </>
@@ -359,25 +413,25 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
             <>
               <button onClick={onGoogleSignIn} disabled={loading}
                 className="w-full flex items-center justify-center gap-3 border border-black/10 rounded-2xl px-5 py-3 text-sm font-bold text-[#0A0A0F] hover:bg-neutral-50 transition-colors disabled:opacity-50 mb-4">
-                <GoogleIcon /> Continue with Google
+                <GoogleIcon /> {am.continueGoogle}
               </button>
               <div className="flex items-center gap-3 mb-4">
                 <div className="flex-1 h-px bg-black/[0.06]" />
-                <span className="text-xs text-neutral-700 font-medium">or</span>
+                <span className="text-xs text-neutral-700 font-medium">{am.or}</span>
                 <div className="flex-1 h-px bg-black/[0.06]" />
               </div>
               <form onSubmit={onEmailSignIn} className="space-y-3">
-                <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} className={inputCls} placeholder="Email address" />
-                <input type="password" required value={password} onChange={(e) => setPassword(e.target.value)} className={inputCls} placeholder="Password" />
+                <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} className={inputCls} placeholder={am.phEmail} />
+                <input type="password" required value={password} onChange={(e) => setPassword(e.target.value)} className={inputCls} placeholder={am.phPassword} />
                 {error && <div className="rounded-2xl bg-red-50 border border-red-100 px-4 py-3 text-sm text-red-600">{error}</div>}
                 <button type="submit" disabled={loading}
                   className="w-full rounded-2xl bg-[#6C4CF1] text-white font-bold py-3 text-sm hover:bg-[#5a3dd4] transition-colors disabled:opacity-50"
                   style={{ boxShadow: "0 4px 16px rgba(108,76,241,0.25)" }}>
-                  {loading ? "Signing in…" : "Sign in →"}
+                  {loading ? am.signingIn : am.signinBtn}
                 </button>
               </form>
               <p className="mt-3 text-center text-xs text-neutral-800">
-                <button className="text-[#6C4CF1] font-semibold hover:underline">Forgot password?</button>
+                <button className="text-[#6C4CF1] font-semibold hover:underline">{am.forgotPass}</button>
               </p>
             </>
           )}
