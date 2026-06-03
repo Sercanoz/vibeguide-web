@@ -67,7 +67,6 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
     { href: "/vibenow", label: "VibeNow" },
     { href: "/vibesquad", label: "VibeSquad" },
     { href: "/vibeask", label: "VibeAsk" },
-    { href: "/#how", label: nb.howItWorks },
   ];
 
   const initials = user && user !== "loading" && user.displayName
@@ -153,11 +152,6 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
             {/* VibeAsk */}
             <a href="/vibeask" className="px-3.5 py-2 rounded-xl font-medium text-neutral-800 hover:text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.06] transition-all">
               VibeAsk
-            </a>
-
-            {/* How it works */}
-            <a href="/#how" className="px-3.5 py-2 rounded-xl font-medium text-neutral-800 hover:text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.06] transition-all">
-              {nb.howItWorks}
             </a>
           </div>
 

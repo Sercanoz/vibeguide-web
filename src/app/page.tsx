@@ -81,13 +81,6 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Scroll cue */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-neutral-700 animate-bounce">
-          <span className="text-[10px] tracking-widest uppercase font-medium">Scroll</span>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path d="M7 2v10M7 12L3 8M7 12l4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </div>
       </section>
 
       {/* ── TRUST BAR ── */}
@@ -123,8 +116,24 @@ export default function HomePage() {
       {/* ── POPULAR TOURS (GYG-style rail) ── */}
       <PopularTours />
 
-      {/* ── DESTINATIONS ── */}
-      <Destinations />
+      {/* ── WHY VIBEGUIDE EXISTS ── */}
+      <section className="py-28 bg-[#F7F7FB] relative overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#6C4CF1]/5 rounded-full blur-[80px] pointer-events-none" />
+        <div className="relative mx-auto max-w-3xl px-6 text-center">
+          <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1]">VibeGuide Neden Var</p>
+          <h2 className="mt-6 text-4xl md:text-6xl font-black tracking-tight leading-tight text-[#0A0A0F]">
+            Turizm fazla robotlaştı.
+            <br />
+            <span className="text-neutral-700">Biz tekrar insanlaştırıyoruz.</span>
+          </h2>
+          <p className="mx-auto mt-10 max-w-2xl text-base md:text-lg leading-8 text-neutral-800">
+            Otobüs turları her şehirde aynı senaryoyu okuyor. QR kodlar gerçek sohbetin yerini aldı. Gezginler keşfetmekten çok sıra bekliyor. VibeGuide bunu tersine çevirir. Bir dokunuş, bir yerel, bir gerçek gün. VibeNow ile yalnız, VibeSquad ile grupla ya da Özel Turlar ile planlı — diğer tarafta hep gerçek bir insan var.
+          </p>
+          <p className="mt-10 text-xl md:text-2xl font-black tracking-tight text-[#0A0A0F] border-t border-black/[0.06] pt-10">
+            Senaryo yok. Tuzak yok. Sadece şehir, onu yaşayan birinin ağzından.
+          </p>
+        </div>
+      </section>
 
 
       {/* ── HOW IT WORKS ── */}
@@ -461,85 +470,6 @@ const CITY_PHOTOS: Record<string, string> = {
   antalya: "https://images.unsplash.com/photo-1589561084283-930aa7b1ce50?q=80&w=900",
   mugla: "https://images.unsplash.com/photo-1610116306796-6fea9f4fae38?q=80&w=900",
 };
-
-function Destinations() {
-  const { locale } = useT();
-  const hs = homeSections[locale] ?? homeSections.en;
-  const ux = uiExtra[locale] ?? uiExtra.en;
-  // city = display name (province if available, else legacy city), slug = ASCII for URL
-  // photo = a real tour cover from that city (fallback to fixed CITY_PHOTOS, then gradient)
-  const [cities, setCities] = useState<{ city: string; slug: string; count: number; photo: string | null }[]>([]);
-
-  useEffect(() => {
-    fetch(`${API_BASE_URL}/api/tours?locale=en`, { cache: "no-store" })
-      .then((r) => (r.ok ? r.json() : []))
-      .then((data: { city: string; provinceName?: string | null; provinceSlug?: string | null; coverPhotoUrl?: string }[]) => {
-        const map = new Map<string, { count: number; slug: string; photo: string | null }>();
-        for (const t of data) {
-          const display = t.provinceName || t.city;
-          const slug = t.provinceSlug || t.city.toLowerCase();
-          const cur = map.get(display);
-          map.set(display, {
-            count: (cur?.count ?? 0) + 1,
-            slug,
-            photo: cur?.photo ?? t.coverPhotoUrl ?? null,
-          });
-        }
-        const list = Array.from(map.entries())
-          .map(([city, v]) => ({ city, slug: v.slug, count: v.count, photo: v.photo }))
-          .sort((a, b) => b.count - a.count)
-          .slice(0, 6);
-        setCities(list);
-      })
-      .catch(() => {});
-  }, []);
-
-  if (cities.length === 0) return null;
-
-  // İlk kart büyük (2 sütun), gerisi normal — Airbnb/GYG mozaik hissi
-  return (
-    <section className="py-16 bg-[#F7F7FB]">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="text-center mb-10">
-          <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1]">{ux.searchWhereTo}</p>
-          <h2 className="mt-3 text-3xl md:text-5xl font-black tracking-tight text-[#0A0A0F]">{hs.exploreDestinations}</h2>
-          <p className="mt-2 text-sm text-neutral-800 max-w-md mx-auto">{hs.exploreDestSub}</p>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {cities.map((c, i) => {
-            // Önce o şehrin gerçek tur fotoğrafı, yoksa sabit şehir görseli
-            const photo = c.photo ?? CITY_PHOTOS[c.slug];
-            const big = i === 0;
-            return (
-              <a key={c.city}
-                href={`/tours?city=${encodeURIComponent(c.slug)}`}
-                className={`group relative rounded-3xl overflow-hidden ${big ? "col-span-2 row-span-2 min-h-[280px]" : "min-h-[180px]"}`}>
-                {photo ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src={photo} alt={c.city}
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                ) : (
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#6C4CF1] to-[#8B5CF6]" />
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-5">
-                  <h3 className={`font-black text-white ${big ? "text-3xl" : "text-xl"}`}>{c.city}</h3>
-                  <p className="text-white/70 text-xs font-semibold mt-0.5">
-                    {c.count} {c.count === 1 ? "tour" : "tours"}
-                  </p>
-                </div>
-                <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/15 backdrop-blur border border-white/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </div>
-              </a>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 interface Testimonial {
   id: number;
