@@ -192,13 +192,20 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
             </a>
           </div>
 
-          {/* Right side */}
-          <div className="flex items-center gap-2">
+          {/* Right side — md+ ekranda min genişlik: auth loading→çözüm geçişinde
+             sol linklerin kaymasını önler (layout shift fix). */}
+          <div className="flex items-center gap-2 md:justify-end md:min-w-[280px]">
             <LanguageSwitcher />
             <div className="hidden sm:block"><CurrencySwitcher /></div>
 
             {user === "loading" ? (
-              <div className="w-9 h-9 rounded-full bg-neutral-100 animate-pulse" />
+              /* Auth çözülene kadar, giriş-yapılmamış halinin genişliğini rezerve et
+                 → buton gelince navbar kaymaz (layout shift yok). Mobilde sadece daire. */
+              <>
+                <div className="hidden md:block w-[68px] h-9 rounded-xl bg-neutral-100 animate-pulse" />
+                <div className="hidden md:block w-[150px] h-9 rounded-full bg-neutral-100 animate-pulse" />
+                <div className="md:hidden w-9 h-9 rounded-full bg-neutral-100 animate-pulse" />
+              </>
             ) : isLoggedIn ? (
               /* Avatar dropdown */
               <div className="relative" ref={userMenuRef}>
