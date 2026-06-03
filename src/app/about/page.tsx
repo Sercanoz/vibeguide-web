@@ -1,97 +1,97 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/Navbar";
-import MainFooter from "@/components/MainFooter";
+import LegalMarkdown from "@/components/LegalMarkdown";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/about" },
-  title: "About Us | VibeGuide",
-  description: "VibeGuide is a digital tourism platform connecting travelers with verified, licensed local guides across Turkey.",
+  title: "VibeGuide Hakkında | VibeGuide",
+  description: "VibeGuide, gezginleri Türkiye genelindeki doğrulanmış yerel rehberler ve turizm profesyonelleriyle buluşturan dijital bir turizm platformudur.",
 };
+
+const BODY = `
+VibeGuide, gezginleri Türkiye genelindeki doğrulanmış yerel rehberler ve turizm profesyonelleriyle buluşturan dijital bir turizm platformudur.
+
+Uzun yıllardır uluslararası ziyaretçilere hizmet veren lisanslı profesyonel turist rehberleri tarafından kurulan VibeGuide, modern teknolojiyi gerçek yerel uzmanlıkla birleştirerek daha anlamlı, esnek ve unutulmaz seyahat deneyimleri sunmayı amaçlamaktadır.
+
+Kalabalık otobüs turlarına, ezbere anlatılan standart rotalara veya herkese aynı deneyimi sunan turizm ürünlerine bağlı kalmak yerine, VibeGuide gezginlerin destinasyonları gerçek yerel bilgi, profesyonel rehberlik ve yaşadıkları şehri gerçekten tanıyan insanlar tarafından tasarlanmış deneyimler aracılığıyla keşfetmesine yardımcı olur.
+
+## Ne Yapıyoruz?
+
+VibeGuide bir destinasyonu keşfetmenin üç farklı yolunu sunar:
+
+### VibeNow
+
+Anlık rehber eşleşmesi.
+
+Müsait yerel rehberlerle dakikalar içerisinde eşleşerek spontane keşifler yapabilir, son dakika planlarını değerlendirebilir ve bulunduğunuz şehri gerçek zamanlı olarak keşfetmeye başlayabilirsiniz.
+
+### VibeSquad
+
+Paylaşımlı grup deneyimleri.
+
+Gezginleri bir araya getirirken rehberli deneyimleri daha sosyal, daha erişilebilir ve daha ekonomik hale getirir.
+
+### Özel Turlar (Private Tours)
+
+Kişisel ilgi alanlarına, seyahat tarzına, programınıza ve önceliklerinize göre tasarlanan özel deneyimlerdir.
+
+Sunulan tüm deneyimler; açıkça tanımlanmış hizmet kapsamları, şeffaf fiyatlandırma, yayınlanmış iptal koşulları ve gezginlere güven vermek amacıyla uygulanan rehber doğrulama süreçleri üzerine kuruludur.
+
+## Misyonumuz
+
+Misyonumuz, kişisellikten uzak turizm anlayışını; destinasyonlarını içeriden tanıyan gerçek insanlar tarafından sunulan otantik yerel deneyimlerle değiştirmektir.
+
+Bizce gezginler, kalabalık gruplar halinde bir şemsiyeyi takip etmekten veya önceden kaydedilmiş sesli anlatımları dinlemekten çok daha fazlasını hak ediyor.
+
+Ziyaretçileri bilgili yerel profesyonellerle doğrudan buluşturarak gerçek kültürel etkileşimler, anlamlı sohbetler ve klasik turistik gezi anlayışının ötesine geçen unutulmaz deneyimler yaratıyoruz.
+
+## Profesyonel Standartlar ve Mevzuata Uyum
+
+VibeGuide, Türkiye Cumhuriyeti mevzuatı kapsamında yetkilendirilmiş lisanslı profesyonel turist rehberleri tarafından kurulmuş ve işletilmektedir.
+
+Platformun temeli, Türkiye'nin en çok ziyaret edilen destinasyonlarında uluslararası misafirlerle yıllar boyunca sahada çalışılarak kazanılan gerçek rehberlik deneyimine dayanmaktadır.
+
+Bu sektörel birikim, platform üzerinden sunulan deneyimlerin profesyonel rehberlik standartlarına, kültürel doğruluğa, misafir güvenliğine, operasyonel güvenilirliğe ve yüksek hizmet kalitesine uygun şekilde tasarlanmasına yardımcı olmaktadır.
+
+Mevzuatın gerekli gördüğü durumlarda, platform üzerinden sunulan bazı turizm hizmetleri Türk turizm mevzuatı kapsamında yetkilendirilmiş ve Türkiye Seyahat Acentaları Birliği (TÜRSAB) üyesi seyahat acenteleri tarafından veya bu acentelerle iş birliği içerisinde gerçekleştirilebilir.
+
+VibeGuide olarak doğrulanmış turizm profesyonelleriyle çalışmaya ve turizm, tüketici hakları, kişisel verilerin korunması ve dijital hizmetlere ilişkin yürürlükteki mevzuata uyum sağlamaya önem veriyoruz.
+
+## Neden VibeGuide?
+
+* Lisanslı ve doğrulanmış turizm profesyonelleri
+* Şeffaf fiyatlandırma ve yayınlanmış politikalar
+* Destinasyonları keşfetmenin esnek yolları
+* Gerçek yerel bilgi ve kültürel içgörüler
+* Güvenli rezervasyon altyapısı ve müşteri desteği
+* Profesyonel rehberler tarafından tasarlanmış deneyimler
+* Her deneyimin merkezinde insan ilişkileri ve gerçek etkileşim
+
+## Şirket Bilgileri
+
+**VİBECORE TURİZM SEYAHAT ACENTASI VE DİJİTAL HİZMETLER TİCARET LİMİTED ŞİRKETİ**
+
+Vergi Numarası: 9251328389
+
+Vergi Dairesi: Marmaris Vergi Dairesi
+
+Ticaret Sicil Numarası: 12686
+
+Beldibi Mah. Belmar Sk. No:9/1 İç Kapı No:4, Marmaris / Muğla / Türkiye
+
+E-posta: [support@vibeguideapp.com](mailto:support@vibeguideapp.com)
+
+Çalışma Saatleri: Pazartesi – Cuma, 09:00 – 18:00 (UTC+3)
+
+---
+
+İlgili Belgeler: [Rehber Doğrulama](/guide-verification) · [Güvenlik ve Ödemeler](/security) · [Yardım Merkezi](/help) · [İletişim](/contact)
+`;
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-white text-[#0A0A0F]">
-      <Navbar />
-
-      <div className="mx-auto max-w-3xl px-6 pt-28 pb-16">
-        <h1 className="text-4xl font-black mb-6">About VibeGuide</h1>
-
-        <p className="text-lg text-neutral-800 leading-8 mb-6">
-          VibeGuide is a digital tourism platform that connects travelers with verified local expertise across Türkiye.
-        </p>
-        <p className="text-neutral-800 leading-8 mb-6">
-          Founded by licensed professional tourist guides with years of experience serving international visitors, VibeGuide combines modern technology with authentic human connection to create more meaningful, flexible, and memorable travel experiences.
-        </p>
-        <p className="text-neutral-800 leading-8 mb-8">
-          Rather than relying on crowded buses, scripted audio guides, or one-size-fits-all tourism products, VibeGuide helps travelers discover destinations through real local knowledge, professional guidance, and carefully designed experiences led by people who genuinely know their cities.
-        </p>
-
-        <h2 className="text-xl font-black mb-4">What We Do</h2>
-        <p className="text-neutral-800 leading-7 mb-4">VibeGuide offers three ways to discover a destination:</p>
-        <h3 className="font-bold text-base mb-1">VibeNow</h3>
-        <p className="text-neutral-800 leading-7 mb-4">
-          Instant matching with available local guides for spontaneous experiences, last-minute exploration, and real-time local discovery.
-        </p>
-        <h3 className="font-bold text-base mb-1">VibeSquad</h3>
-        <p className="text-neutral-800 leading-7 mb-4">
-          Shared group experiences that bring travelers together while making guided experiences more social, accessible, and affordable.
-        </p>
-        <h3 className="font-bold text-base mb-1">Private Tours</h3>
-        <p className="text-neutral-800 leading-7 mb-6">
-          Personalized experiences designed around individual interests, travel styles, schedules, and priorities.
-        </p>
-        <p className="text-neutral-800 leading-7 mb-8">
-          Every experience is built around clearly defined service scopes, transparent pricing, published cancellation terms, and a guide verification process designed to provide clarity, reliability, and peace of mind.
-        </p>
-
-        <h2 className="text-xl font-black mb-4">Our Mission</h2>
-        <p className="text-neutral-800 leading-7 mb-4">
-          Our mission is to replace impersonal tourism with authentic local experiences led by real people who know their destinations from the inside.
-        </p>
-        <p className="text-neutral-800 leading-7 mb-4">
-          We believe travelers deserve more than following umbrellas through crowded streets or listening to prerecorded information.
-        </p>
-        <p className="text-neutral-800 leading-7 mb-8">
-          By connecting visitors directly with knowledgeable local professionals, we create opportunities for genuine cultural exchange, meaningful conversations, and memorable experiences that go beyond traditional sightseeing.
-        </p>
-
-        <h2 className="text-xl font-black mb-4">Professional Standards &amp; Compliance</h2>
-        <p className="text-neutral-800 leading-7 mb-4">
-          VibeGuide was founded and is operated by licensed professional tourist guides authorized under the regulations of the Republic of Türkiye.
-        </p>
-        <p className="text-neutral-800 leading-7 mb-4">
-          Our team&apos;s extensive field experience helps ensure that experiences offered through the platform reflect professional guiding standards, cultural accuracy, guest safety, operational reliability, and high-quality service.
-        </p>
-        <p className="text-neutral-800 leading-7 mb-4">
-          Where required by applicable regulations, tourism services available through the platform may be operated directly by, or in cooperation with, licensed travel agency partners authorized under Turkish tourism legislation and registered with the Association of Turkish Travel Agencies (TÜRSAB).
-        </p>
-        <p className="text-neutral-800 leading-7 mb-8">
-          We are committed to working with verified tourism professionals and maintaining compliance with applicable tourism, consumer protection, privacy, and digital service regulations.
-        </p>
-
-        <h2 className="text-xl font-black mb-4">Why VibeGuide</h2>
-        <ul className="list-disc pl-5 space-y-1.5 text-neutral-800 leading-7 mb-8">
-          <li>Verified tourism professionals</li>
-          <li>Transparent pricing and published policies</li>
-          <li>Flexible ways to explore destinations</li>
-          <li>Local knowledge and authentic experiences</li>
-          <li>Secure booking and customer support</li>
-          <li>Human connection at the center of every experience</li>
-        </ul>
-
-        <h2 className="text-xl font-black mb-4">Company Information</h2>
-        <div className="bg-neutral-50 rounded-2xl p-6 text-sm text-neutral-800 space-y-2">
-          <p className="font-semibold text-neutral-900">VİBECORE TURİZM SEYAHAT ACENTASI VE DİJİTAL HİZMETLER TİCARET LİMİTED ŞİRKETİ</p>
-          <p>Tax Number: 9251328389</p>
-          <p>Tax Office: Marmaris Tax Office</p>
-          <p>Trade Registry Number: 12686</p>
-          <p>Beldibi Mah. Belmar Sk. No:9/1 İç Kapı No:4, Marmaris / Muğla / Türkiye</p>
-          <p>Email: <a href="mailto:support@vibeguideapp.com" className="underline">support@vibeguideapp.com</a></p>
-          <p>Business Hours: Monday–Friday, 09:00–18:00 (UTC+3)</p>
-        </div>
-      </div>
-
-      <MainFooter />
-    </main>
+    <LegalMarkdown
+      title="VibeGuide Hakkında"
+      body={BODY}
+    />
   );
 }

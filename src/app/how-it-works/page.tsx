@@ -1,81 +1,111 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/Navbar";
-import MainFooter from "@/components/MainFooter";
+import LegalMarkdown from "@/components/LegalMarkdown";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/how-it-works" },
-  title: "How It Works | VibeGuide",
-  description: "Learn how VibeGuide's secure booking process works — from choosing your experience to meeting your verified guide.",
+  title: "Nasıl Çalışır? | VibeGuide",
+  description: "VibeGuide rezervasyon süreci adım adım — deneyim seçiminden doğrulanmış rehberinizle buluşmaya kadar.",
 };
 
-const steps = [
-  {
-    n: "1",
-    title: "Choose your experience",
-    text: "Browse predefined city tours, cultural walks, museum experiences and custom routes. Each experience has a clear scope, duration, language, meeting point and price.",
-  },
-  {
-    n: "2",
-    title: "Make a reservation",
-    text: "Select your date, time, language and number of participants. Complete your secure booking — payment is processed through our registered company.",
-  },
-  {
-    n: "3",
-    title: "Guide is verified and assigned",
-    text: "All experiences are conducted exclusively with VibeGuide-verified local guides who have passed identity checks, language assessments and platform standards.",
-  },
-  {
-    n: "4",
-    title: "Meeting point is shared",
-    text: "After confirmation, you receive the meeting point, time and full experience details. No surprises.",
-  },
-  {
-    n: "5",
-    title: "Experience the city",
-    text: "Meet your guide and explore safely, with a planned route and a real local who knows the city from the inside.",
-  },
-  {
-    n: "6",
-    title: "Support & resolution",
-    text: "In case of cancellation, delay or guide no-show, VibeGuide's support process steps in. Clear cancellation terms and refund policies apply in every case.",
-  },
-];
+const BODY = `
+## Rezervasyon süreci, adım adım
+
+VibeGuide; doğrulanmış rehberler, önceden tanımlanmış deneyimler, güvenli ödeme altyapısı ve desteklenen operasyon süreçleri ile çalışan dijital bir turizm rezervasyon platformudur.
+
+## 1. Deneyiminizi Seçin
+
+Şehir turları, kültürel yürüyüşler, müze deneyimleri, gastronomi rotaları ve özel turlar arasından size uygun deneyimi seçin.
+
+Her deneyim için aşağıdaki bilgiler rezervasyon öncesinde açıkça sunulur:
+
+* Deneyim kapsamı
+* Süre
+* Rehber dili
+* Buluşma noktası
+* Katılım koşulları
+* Fiyatlandırma bilgileri
+
+## 2. Rezervasyonunuzu Oluşturun
+
+Tarih, saat, dil ve katılımcı sayısını seçerek rezervasyonunuzu oluşturun.
+
+Ödeme işlemleri güvenli ve lisanslı ödeme kuruluşları aracılığıyla gerçekleştirilir.
+
+Rezervasyonunuz tamamlandıktan sonra onay bilgileri size iletilir.
+
+## 3. Rehber Eşleşmesi ve Doğrulama
+
+Platformda görev alan tüm rehberler VibeGuide doğrulama süreçlerinden geçmektedir.
+
+Doğrulama süreci gerektiğinde aşağıdaki unsurları içerebilir:
+
+* Kimlik doğrulaması
+* Mesleki doğrulama
+* Profesyonel turist rehberi kokartı kontrolü
+* Dil yetkilendirmelerinin doğrulanması
+* Platform standartlarının kabulü
+
+Rehberler yalnızca uzmanlık alanlarına ve uygun oldukları deneyimlere atanır veya eşleştirilir.
+
+## 4. Buluşma Bilgilerini Alın
+
+Rezervasyon onaylandıktan sonra aşağıdaki bilgiler sizinle paylaşılır:
+
+* Buluşma noktası
+* Başlangıç saati
+* Deneyim detayları
+* Rehber bilgileri (uygulanabildiği durumlarda)
+
+Böylece deneyim başlamadan önce gerekli tüm bilgilere sahip olursunuz.
+
+## 5. Şehri Yerel Bir Uzmanla Keşfedin
+
+Rehberinizle buluşun ve deneyiminize başlayın.
+
+VibeGuide deneyimleri, destinasyonu yakından tanıyan yerel uzmanlar ve profesyonel turist rehberleri tarafından sunulan gerçek yerel bilgiye dayanır.
+
+Amaç; standart turistik anlatımların ötesine geçerek daha anlamlı, daha kişisel ve daha otantik deneyimler sunmaktır.
+
+## 6. Destek ve Çözüm Süreci
+
+Bir gecikme, iptal veya operasyonel sorun yaşanması halinde VibeGuide destek süreci devreye girer.
+
+Duruma bağlı olarak aşağıdaki seçeneklerden biri sunulabilir:
+
+* Alternatif rehber
+* Alternatif tarih
+* Alternatif deneyim
+* İade süreci
+
+Tüm rezervasyonlar yayınlanmış [İptal ve İade Politikası](/cancellation-policy) hükümlerine tabidir.
+
+## 🔒 Güvenli ve Desteklenen Bir Deneyim
+
+VibeGuide üzerinden yapılan rezervasyonlar;
+
+* Güvenli ödeme altyapıları
+* Doğrulanmış rehberler
+* Şeffaf fiyatlandırma
+* Yayınlanmış politikalar
+* Müşteri desteği
+* Uyuşmazlık çözüm süreçleri
+
+ile desteklenmektedir.
+
+Ödeme işlemleri lisanslı ödeme kuruluşları aracılığıyla gerçekleştirilir.
+
+Rehber doğrulama süreçleri, rezervasyon yönetimi, müşteri desteği ve operasyonel koordinasyon VibeGuide tarafından yürütülmektedir.
+
+---
+
+İlgili Belgeler: [Rehber Doğrulama](/guide-verification) · [Güvenlik ve Ödemeler](/security) · [Yardım Merkezi](/help) · [İptal ve İade Politikası](/cancellation-policy)
+`;
 
 export default function HowItWorksPage() {
   return (
-    <main className="min-h-screen bg-white text-[#0A0A0F]">
-      <Navbar />
-
-      <div className="mx-auto max-w-3xl px-6 pt-28 pb-16">
-        <p className="text-sm font-black text-[#6C4CF1] mb-3 tracking-widest">HOW IT WORKS</p>
-        <h1 className="text-4xl font-black mb-4">The booking process, step by step</h1>
-        <p className="text-lg text-neutral-700 mb-12">
-          VibeGuide is a controlled digital tourism reservation platform — verified guides, predefined routes, secure payments and supported operations.
-        </p>
-
-        <div className="space-y-6">
-          {steps.map((s) => (
-            <div key={s.n} className="flex gap-5 p-6 bg-neutral-50 rounded-2xl">
-              <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-[#6C4CF1] text-white flex items-center justify-center font-black text-lg">
-                {s.n}
-              </div>
-              <div>
-                <h2 className="font-black text-lg mb-1">{s.title}</h2>
-                <p className="text-neutral-800 text-sm leading-7">{s.text}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-12 p-6 bg-[#F5F3FF] rounded-2xl border border-[#DDD6FE]">
-          <p className="font-black mb-2">🔒 Secure & supported</p>
-          <p className="text-sm text-neutral-800 leading-7">
-            All payments are processed through VibeCore Turizm Seyahat Acentası ve Dijital Hizmetler Ticaret Ltd. Şti., our registered Turkish company. Guide verification, cancellation terms and dispute resolution are managed by VibeGuide.
-          </p>
-        </div>
-      </div>
-
-      <MainFooter />
-    </main>
+    <LegalMarkdown
+      title="Nasıl Çalışır?"
+      body={BODY}
+    />
   );
 }
