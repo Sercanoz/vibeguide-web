@@ -74,13 +74,11 @@ export const metadata: Metadata = {
     "#cappadociatours",
     "#ephesustours",
   ],
-  alternates: {
-    canonical: "https://www.vibeguideapp.com",
-    languages: {
-      en: "https://www.vibeguideapp.com",
-      "x-default": "https://www.vibeguideapp.com",
-    },
-  },
+  // Canonical = "/" (ana sayfa). Alt sayfalar kendi alternates.canonical'ını
+  // metadata/layout'ta tanımlar → Next.js en yakın canonical'ı kullanır, bunu override eder.
+  // Eskiden burada absolute ana-sayfa canonical'ı + languages vardı → her sayfa onu miras
+  // alıp "ana sayfanın kopyası" görünüyordu (Google dizine eklemiyordu). Düzeltildi.
+  alternates: { canonical: "/" },
   openGraph: {
     title: "VibeGuide — Find your vibe. Live the city.",
     description:

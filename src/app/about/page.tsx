@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import MainFooter from "@/components/MainFooter";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/about" },
   title: "About Us | VibeGuide",
   description: "VibeGuide is a digital tourism platform connecting travelers with verified, licensed local guides across Turkey.",
 };

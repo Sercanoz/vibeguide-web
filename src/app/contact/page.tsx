@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import MainFooter from "@/components/MainFooter";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/contact" },
   title: "Contact | VibeGuide",
   description: "Contact VibeGuide for reservations, support, cancellations, refunds or guide applications.",
 };

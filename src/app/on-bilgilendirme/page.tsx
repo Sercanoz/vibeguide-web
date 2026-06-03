@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import LegalMarkdown from "@/components/LegalMarkdown";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/on-bilgilendirme" },
   title: "Ön Bilgilendirme Formu | VibeGuide",
   description: "6502 Sayılı Tüketicinin Korunması Hakkında Kanun ve Mesafeli Sözleşmeler Yönetmeliği kapsamında ön bilgilendirme formu.",
 };

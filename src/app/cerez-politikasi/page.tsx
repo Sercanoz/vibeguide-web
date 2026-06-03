@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import LegalMarkdown from "@/components/LegalMarkdown";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/cerez-politikasi" },
   title: "Çerez Politikası | VibeGuide",
   description: "VibeGuide web sitesinde kullanılan çerezler ve çerez tercihleri hakkında bilgilendirme.",
 };

@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import MainFooter from "@/components/MainFooter";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/guide-verification" },
   title: "Guide Verification | VibeGuide",
   description: "Every guide on VibeGuide passes identity verification, professional assessment and platform quality standards before being approved.",
 };

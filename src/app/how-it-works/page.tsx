@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import MainFooter from "@/components/MainFooter";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/how-it-works" },
   title: "How It Works | VibeGuide",
   description: "Learn how VibeGuide's secure booking process works — from choosing your experience to meeting your verified guide.",
 };

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import LegalMarkdown from "@/components/LegalMarkdown";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/mesafeli-satis" },
   title: "Mesafeli Satış Sözleşmesi | VibeGuide",
   description: "VibeGuide mesafeli satış sözleşmesi — 6502 sayılı Tüketicinin Korunması Hakkında Kanun kapsamında.",
 };

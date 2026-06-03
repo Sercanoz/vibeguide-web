@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import LegalMarkdown from "@/components/LegalMarkdown";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/kvkk" },
   title: "KVKK Aydınlatma Metni | VibeGuide",
   description: "VibeGuide kişisel verilerin korunması (KVKK 6698) aydınlatma metni.",
 };

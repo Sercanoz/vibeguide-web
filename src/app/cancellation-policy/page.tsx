@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import LegalMarkdown from "@/components/LegalMarkdown";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/cancellation-policy" },
   title: "Cancellation & Refund Policy | VibeGuide",
   description: "VibeGuide's cancellation and refund terms for all experience types — VibeNow, VibeSquad and Private Tours.",
 };
