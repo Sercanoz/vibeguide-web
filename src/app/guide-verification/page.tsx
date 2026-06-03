@@ -1,53 +1,114 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/Navbar";
-import MainFooter from "@/components/MainFooter";
+import LegalMarkdown from "@/components/LegalMarkdown";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/guide-verification" },
-  title: "Guide Verification | VibeGuide",
-  description: "Every guide on VibeGuide passes identity verification, professional assessment and platform quality standards before being approved.",
+  title: "Rehber Doğrulama | VibeGuide",
+  description: "VibeGuide'da her rehber, platforma katılmadan önce kimlik doğrulaması, mesleki doğrulama ve platform kalite standartlarından geçer.",
 };
 
-const checks = [
-  { icon: "🪪", title: "Identity verification", text: "Government-issued ID is reviewed before any guide is approved on the platform." },
-  { icon: "🎓", title: "Professional assessment", text: "Guides are evaluated for relevant experience, local expertise and service quality standards." },
-  { icon: "🗣️", title: "Language proficiency", text: "Language skills are assessed to ensure travelers receive the experience they booked." },
-  { icon: "🗺️", title: "Route & experience fit", text: "Guides are matched to tours that fit their knowledge area — no mismatches." },
-  { icon: "📋", title: "Platform rules acceptance", text: "Every guide signs and accepts VibeGuide's conduct, cancellation and quality standards." },
-  { icon: "🛡️", title: "User safety standards", text: "Behavioral standards and traveler safety policies are enforced throughout the guide's time on the platform." },
-];
+const BODY = `
+## Platforma katılmadan önce her rehber değerlendirilir
+
+VibeGuide, doğrulanmamış rehberlerin platform üzerinden hizmet sunmasına izin vermez.
+
+Lisanslı profesyonel turist rehberleri tarafından kurulan VibeGuide, hizmet kalitesini, gezgin güvenini ve operasyonel güvenilirliği korumak amacıyla yapılandırılmış bir doğrulama süreci uygular.
+
+Her rehber, platform üzerinden rezervasyon kabul etmeye başlamadan önce ilgili doğrulama ve inceleme süreçlerini tamamlamak zorundadır.
+
+## 🪪 Kimlik Doğrulaması
+
+Platforma kabul edilmeden önce rehberin kimliği doğrulanır.
+
+Gerekli durumlarda ek doğrulama belgeleri talep edilebilir ve güvenlik kontrolleri gerçekleştirilebilir.
+
+Bu süreç, platform güvenliğini korumaya ve sahte hesapların önlenmesine yardımcı olur.
+
+## 🎓 Mesleki Doğrulama
+
+Rehberler; mesleki geçmişleri, destinasyon bilgileri, rehberlik deneyimleri ve ilgili turizm mevzuatına uygunlukları açısından incelenebilir.
+
+Yasal olarak gerekli olduğu durumlarda;
+
+* Profesyonel turist rehberi kokartı
+* Resmi rehberlik yetkileri
+* Mesleki lisanslar
+* İlgili belgeler ve sertifikalar
+
+doğrulanabilir.
+
+## 🗣️ Dil Yetkilendirmesi
+
+VibeGuide'da hizmet veren profesyonel turist rehberleri, yalnızca resmi turist rehberi kokartlarında yer alan dillerde rehberlik hizmeti sunabilir.
+
+Bu dil yetkilendirmeleri, Türkiye Cumhuriyeti mevzuatı kapsamında gerçekleştirilen resmi yeterlilik süreçleri ve ilgili kurumlar tarafından yapılan değerlendirmeler sonucunda belirlenmektedir.
+
+VibeGuide, rehberlerin resmi turist rehberi belgelerinde ve kokartlarında yer alan dil yetkilerini doğrulayabilir.
+
+Bu uygulama, gezginlerin rezervasyon sırasında seçtikleri dilde hizmet alabilmelerine yardımcı olur.
+
+## 🗺️ Rota ve Deneyim Uygunluğu
+
+Rehberler, uzmanlık alanları, destinasyon bilgileri, dil yetkileri ve operasyonel uygunlukları doğrultusunda deneyimlerle eşleştirilebilir.
+
+Bu sayede gezginlerin, ziyaret ettikleri bölgeyi iyi tanıyan rehberlerle buluşması amaçlanır.
+
+## 📋 Platform Standartları
+
+Her rehber aşağıdaki politika ve kuralları inceleyerek kabul etmek zorundadır:
+
+* Hizmet kalite standartları
+* Gezginlere yönelik davranış kuralları
+* İptal ve rezervasyon kuralları
+* İletişim standartları
+* Platform kullanım kuralları
+* Operasyonel prosedürler
+
+Bu standartlara uyulmaması durumunda hesaplara kısıtlama uygulanabilir, hesaplar askıya alınabilir veya platform erişimi sonlandırılabilir.
+
+## 🛡️ Güvenlik ve Güven Standartları
+
+Gezgin güvenliği ve profesyonel davranış, platformun temel öncelikleri arasındadır.
+
+Rehberlerden;
+
+* Yürürlükteki mevzuata uygun davranmaları,
+* Platform kurallarına uymaları,
+* Profesyonel hizmet standartlarını korumaları,
+* Gezginlere saygılı ve güvenli bir deneyim sunmaları
+
+beklenmektedir.
+
+## Sürekli Değerlendirme
+
+Doğrulama süreci yalnızca platforma katılım aşamasında sona ermez.
+
+Rehber hesapları aşağıdaki kriterler doğrultusunda düzenli olarak gözden geçirilebilir:
+
+* Tamamlama oranları
+* Zamanında katılım performansı
+* Kullanıcı geri bildirimleri
+* Operasyonel güvenilirlik göstergeleri
+* Politika uyumluluğu
+
+Platform standartlarını karşılamayan rehberlerin hesapları kısıtlanabilir, askıya alınabilir veya platformdan kaldırılabilir.
+
+## Güven, Daha Rehberinizle Tanışmadan Başlar
+
+Rehber doğrulama sürecimiz, gezginlerin daha rezervasyon yapmadan önce güven duymalarına yardımcı olmak amacıyla tasarlanmıştır.
+
+Kimlik doğrulaması, mesleki doğrulama, resmi dil yetkilendirmeleri, operasyonel denetimler ve sürekli kalite kontrollerini bir araya getirerek VibeGuide, gezginlerin daha güvenli, daha şeffaf ve daha kaliteli deneyimler rezervasyon yapabilmesine yardımcı olur.
+
+---
+
+İlgili Belgeler: [Yardım Merkezi](/help) · [Güvenlik ve Ödemeler](/security) · [Kullanım Koşulları](/terms) · [Gizlilik Politikası](/privacy)
+`;
 
 export default function GuideVerificationPage() {
   return (
-    <main className="min-h-screen bg-white text-[#0A0A0F]">
-      <Navbar />
-
-      <div className="mx-auto max-w-3xl px-6 pt-28 pb-16">
-        <p className="text-sm font-black text-[#6C4CF1] mb-3 tracking-widest">GUIDE VERIFICATION</p>
-        <h1 className="text-4xl font-black mb-4">Every guide is reviewed before joining the platform</h1>
-        <p className="text-lg text-neutral-700 mb-12">
-          VibeGuide does not allow unverified guides. Every local guide on our platform has passed a structured review process covering identity, expertise and platform conduct standards.
-        </p>
-
-        <div className="grid gap-4 md:grid-cols-2">
-          {checks.map((c) => (
-            <div key={c.title} className="p-6 bg-neutral-50 rounded-2xl">
-              <p className="text-2xl mb-3">{c.icon}</p>
-              <h2 className="font-black mb-2">{c.title}</h2>
-              <p className="text-sm text-neutral-800 leading-7">{c.text}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-10 p-6 bg-[#F5F3FF] rounded-2xl border border-[#DDD6FE]">
-          <p className="font-black mb-2">Traveler confidence, built in</p>
-          <p className="text-sm text-neutral-800 leading-7">
-            Our verification process is designed to give travelers confidence before they ever meet their guide. If a guide does not meet our standards at any point, they are removed from the platform.
-          </p>
-        </div>
-      </div>
-
-      <MainFooter />
-    </main>
+    <LegalMarkdown
+      title="Rehber Doğrulama"
+      body={BODY}
+    />
   );
 }
