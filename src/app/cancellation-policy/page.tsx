@@ -3,77 +3,220 @@ import LegalMarkdown from "@/components/LegalMarkdown";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/cancellation-policy" },
-  title: "Cancellation & Refund Policy | VibeGuide",
-  description: "VibeGuide's cancellation and refund terms for all experience types — VibeNow, VibeSquad and Private Tours.",
+  title: "İptal ve İade Politikası | VibeGuide",
+  description: "VibeGuide iptal ve iade koşulları — VibeNow, VibeSquad ve Özel Turlar için.",
 };
 
 const BODY = `
-At VibeGuide, we want every traveler to feel confident when booking an experience. This Cancellation & Refund Policy explains when and how you may cancel a booking and when refunds are available.
+VibeGuide olarak, seyahat deneyimi rezervasyonu yapan her kullanıcının rezervasyon sürecinde kendini güvende hissetmesini önemsiyoruz. Bu İptal ve İade Politikası, rezervasyonların hangi koşullarda iptal edilebileceğini ve hangi durumlarda iade hakkı doğacağını açıklamaktadır.
 
-By completing a booking on VibeGuide, you agree to the terms below.
+VibeGuide üzerinden rezervasyon yaparak aşağıdaki şartları kabul etmiş sayılırsınız.
 
-## 1. Standard Cancellation
+## 1. Genel İptal Koşulları
 
-You may cancel most experiences and receive a **full refund** if you cancel at least **24 hours** before the scheduled start time.
+Rezervasyon sayfasında aksi belirtilmedikçe aşağıdaki kurallar uygulanır.
 
-* **Cancelled 24 hours or more before start:** Full refund
-* **Cancelled less than 24 hours before start:** No refund
-* **No-show:** No refund
+### Deneyim başlangıcından 24 saat veya daha önce yapılan iptaller
 
-Refunds are issued to the original payment method.
+* Ücretsiz iptal
+* Tam iade
 
-## 2. Cancellations by the Guide or VibeGuide
+### Deneyim başlangıcına 24 saatten daha az süre kala yapılan iptaller
 
-If a guide, provider, or VibeGuide cancels an experience for any reason, you are always entitled to one of the following, at your choice where possible:
+* Genel olarak iade yapılmaz.
 
-* A full refund, or
-* An alternative date, or
-* An equivalent experience with another verified guide.
+### Katılım sağlanmaması (No-Show)
 
-## 3. Weather and Force Majeure
+Kullanıcının rezervasyonu iptal etmeden deneyime katılmaması halinde rezervasyon "katılım sağlanmamış" (no-show) olarak değerlendirilir ve ücret iadesi yapılmaz.
 
-Some experiences depend on outdoor conditions. If an experience cannot be carried out safely due to severe weather, official restrictions, safety risks, natural events, transport disruptions, or other circumstances beyond our control, the experience may be rescheduled, modified, or cancelled.
+### Deneyim başladıktan sonra
 
-In these cases we will offer, where possible, an alternative arrangement or an appropriate refund.
+Yürürlükteki mevzuatın zorunlu kıldığı durumlar dışında, deneyimin kullanılmayan bölümleri için ücret iadesi yapılmaz.
 
-## 4. Late Arrival
+## 2. VibeNow Deneyimleri
 
-Please arrive at the meeting point at the scheduled time. If you arrive late and the guide can no longer reasonably accommodate you, or you cannot be reached within a reasonable waiting period, the booking may be treated as a no-show and no refund will be due.
+VibeNow, anlık veya çok kısa sürede rehber eşleşmesi sağlayan bir hizmettir.
 
-## 5. Third-Party Costs
+Bu nedenle rehberler, rezervasyon talebini kabul ettikten hemen sonra buluşma noktasına doğru hareket etmeye başlayabilir.
 
-Entrance fees to museums and historical sites, transport, food and beverages, and other third-party costs are generally **not included** unless explicitly stated. These third-party costs are non-refundable once incurred, even if part of the experience is later affected.
+### Rehber talebi kabul etmeden önce
 
-## 6. Group Experiences (VibeSquad)
+* Tam iade yapılır.
 
-Shared group experiences may require a minimum number of participants to take place. If the minimum is not met, the experience may be cancelled and you will receive a **full refund**, or you may join an alternative date where available.
+### Rehber talebi kabul ettikten sonra
 
-## 7. How to Cancel
+Rezervasyonun operasyonel durumuna bağlı olarak iptal hakkı kısıtlanabilir.
 
-To cancel a booking, use the cancellation option in the VibeGuide app, or contact us at [support@vibeguideapp.com](mailto:support@vibeguideapp.com). The cancellation time is recorded based on when your request is received.
+### Rehber buluşma noktasına doğru yola çıktıysa
 
-## 8. Refund Processing
+Rehber rezervasyonu kabul etmiş ve buluşma noktasına doğru hareket etmeye başlamışsa rezervasyon kısmen veya tamamen iade edilemez hale gelebilir.
 
-Approved refunds are processed to your original payment method. Depending on your bank or payment provider, it may take several business days for the refunded amount to appear in your account. VibeGuide does not store your card details; all payments and refunds are handled by licensed payment providers.
+Uygulanacak iptal koşulları rezervasyon sürecinde kullanıcıya gösterilir.
 
-## 9. Legal Note
+## 3. VibeSquad Grup Deneyimleri
 
-For experiences scheduled for a specific date or period, the statutory right of withdrawal may not apply under applicable consumer protection law. This policy is offered as part of our customer-satisfaction commitment and does not limit any non-waivable rights you may have under the law that governs your booking.
+Paylaşımlı grup deneyimlerinin gerçekleştirilebilmesi için belirli bir minimum katılımcı sayısına ulaşılması gerekebilir.
 
-## 10. Contact
+### Minimum katılımcı sayısına ulaşılamaması
 
-Questions about a cancellation or refund? Reach us anytime at [support@vibeguideapp.com](mailto:support@vibeguideapp.com).
+Gerekli minimum katılımcı sayısına ulaşılamaması halinde aşağıdaki seçeneklerden biri sunulabilir:
+
+* Tam iade
+* Alternatif tarih
+* Alternatif deneyim
+
+### Grup sahibi tarafından iptal
+
+Deneyim başlangıcından 24 saat veya daha önce:
+
+* Tüm katılımcılara tam iade
+
+Deneyim başlangıcına 24 saatten daha az süre kala:
+
+* İade hakkı bulunmayabilir.
+
+### Grup onayı veya kilitlenme süresi sonrasında
+
+Grubun kesinleşmesi veya rezervasyonların kilitlenmesi sonrasında yapılan iptaller, diğer katılımcıların ve operasyonun etkilenmemesi amacıyla kısıtlanabilir.
+
+## 4. Rehber veya Hizmet Sağlayıcı Kaynaklı İptaller
+
+Rehber, hizmet sağlayıcı veya VibeGuide tarafından deneyim başlamadan önce yapılan iptallerde, makul ölçüde aşağıdaki seçeneklerden biri sunulur:
+
+* Tam iade
+* Alternatif rehber
+* Alternatif tarih
+* Eşdeğer deneyim
+
+## 5. Rehberin Katılım Sağlamaması (Guide No-Show)
+
+Atanan rehberin geçerli bir operasyonel sebep olmaksızın deneyime katılmaması halinde kullanıcıya aşağıdaki seçeneklerden biri sunulur:
+
+* Tam iade
+* Alternatif rehber
+* Alternatif deneyim
+
+## 6. Geç Kalma ve Katılım Sağlanmaması
+
+Katılımcılar belirtilen buluşma noktasına zamanında ulaşmaktan sorumludur.
+
+Geç kalınması durumunda deneyim süresi kısalabilir.
+
+Geç kalınması nedeniyle kaybedilen süre için ücret iadesi yapılmaz.
+
+İptal işlemi gerçekleştirilmeden deneyime katılım sağlanmaması halinde rezervasyon "no-show" olarak değerlendirilir ve ücret iadesi yapılmaz.
+
+## 7. Katılımcı Davranış Kuralları
+
+VibeGuide aşağıdaki durumlarda herhangi bir ücret iadesi yapmaksızın katılımcının deneyimini sonlandırma veya katılımını reddetme hakkını saklı tutar:
+
+* Güvenliği tehlikeye atan davranışlar
+* Taciz veya rahatsız edici davranışlar
+* Ayrımcılık
+* Yasadışı faaliyetler
+* Hakaret veya kötüye kullanım
+* Deneyimi olumsuz etkileyecek ölçüde alkol veya madde etkisinde olmak
+* Diğer katılımcıların deneyimini bozacak davranışlarda bulunmak
+
+## 8. Hava Koşulları, Güvenlik ve Mücbir Sebepler
+
+Aşağıdaki durumlarda deneyimler ertelenebilir, değiştirilebilir veya iptal edilebilir:
+
+* Şiddetli hava koşulları
+* Doğal afetler
+* Kamu güvenliği riskleri
+* Resmi makam kararları
+* Ulaşım kesintileri
+* Sağlık ve salgın kaynaklı olağanüstü durumlar
+* Diğer mücbir sebepler
+
+Bu gibi durumlarda VibeGuide aşağıdaki seçeneklerden birini sunabilir:
+
+* Alternatif tarih
+* Alternatif deneyim
+* Seyahat kredisi
+* Tam iade
+
+Karar olayın niteliğine göre değerlendirilir.
+
+## 9. Üçüncü Taraf Hizmetleri ve Masraflar
+
+Müze girişleri, ulaşım hizmetleri, konaklama, yiyecek-içecek hizmetleri, ören yeri girişleri ve diğer üçüncü taraf hizmetler kendi sağlayıcılarının iptal ve iade politikalarına tabi olabilir.
+
+Bu hizmetlere ilişkin masraflar oluştuğu takdirde, ilgili üçüncü taraf sağlayıcıların iade kararlarından VibeGuide sorumlu değildir.
+
+## 10. Dolandırıcılık Önleme ve Ödeme İhtilafları
+
+VibeGuide; kullanıcıları, rehberleri ve ödeme sistemlerini korumak amacıyla aşağıdaki kayıtları saklayabilir:
+
+* Rezervasyon kayıtları
+* Rehber katılım kayıtları
+* Hizmet kayıtları
+* Konum doğrulama kayıtları
+* İletişim kayıtları
+* Operasyonel kayıtlar
+
+Bu kayıtlar aşağıdaki durumların incelenmesinde kullanılabilir:
+
+* Ödeme itirazları
+* Chargeback işlemleri
+* Dolandırıcılık incelemeleri
+* Kötüye kullanım durumları
+* Politika ihlalleri
+
+## 11. İade Süreci
+
+Onaylanan iadeler, rezervasyon sırasında kullanılan orijinal ödeme yöntemine gönderilir.
+
+Çoğu iade işlemi 5–10 iş günü içerisinde tamamlanır.
+
+İadenin hesabınıza yansıma süresi aşağıdaki faktörlere bağlı olarak değişebilir:
+
+* Kart kuruluşu
+* Banka
+* Ödeme kuruluşu
+* Uluslararası ödeme ağları
+
+İade işlemi başlatıldığında kullanıcıya bilgilendirme yapılabilir.
+
+VibeGuide ödeme kartı bilgilerini saklamaz. Tüm ödeme ve iade işlemleri lisanslı ödeme kuruluşları aracılığıyla gerçekleştirilir.
+
+## 12. Rezervasyon İptali Nasıl Yapılır?
+
+Rezervasyonlar aşağıdaki yöntemlerle iptal edilebilir:
+
+* VibeGuide mobil uygulaması üzerinden
+* VibeGuide internet sitesi üzerinden
+* [support@vibeguideapp.com](mailto:support@vibeguideapp.com) adresine başvurarak
+
+İptal zamanı, talebin VibeGuide sistemlerine ulaştığı tarih ve saate göre belirlenir.
+
+## 13. Yasal Bilgilendirme
+
+Yürürlükteki tüketici mevzuatı kapsamında belirli bir tarih veya dönemde gerçekleştirilecek turizm ve boş zaman değerlendirme hizmetleri için yasal cayma hakkı uygulanmayabilir.
+
+Bu İptal ve İade Politikası, VibeGuide'ın müşteri memnuniyeti yaklaşımının bir parçası olarak sunulmaktadır ve kullanıcıların yürürlükteki mevzuattan kaynaklanan devredilemez veya vazgeçilemez yasal haklarını sınırlandırmaz.
+
+## 14. İletişim
+
+**E-posta:** [support@vibeguideapp.com](mailto:support@vibeguideapp.com)
+
+**Çalışma Saatleri:** Pazartesi – Cuma, 09:00 – 18:00 (UTC+3)
+
+**Şirket Unvanı:** VİBECORE TURİZM SEYAHAT ACENTASI VE DİJİTAL HİZMETLER TİCARET LİMİTED ŞİRKETİ
+
+**Vergi Numarası:** 9251328389
 
 ---
 
-Related: [Pre-Information Form](/on-bilgilendirme) · [Distance Sales Agreement](/mesafeli-satis) · [Terms of Service](/terms)
+İlgili Belgeler: [Ön Bilgilendirme Formu](/on-bilgilendirme) · [Mesafeli Satış Sözleşmesi](/mesafeli-satis) · [Kullanım Koşulları](/terms) · [Gizlilik Politikası](/privacy) · [KVKK Aydınlatma Metni](/kvkk)
 `;
 
 export default function CancellationPolicyPage() {
   return (
     <LegalMarkdown
-      title="Cancellation & Refund Policy"
-      subtitle="Last Updated: January 2, 2026"
+      title="İptal ve İade Politikası"
+      subtitle="Son Güncelleme: 2 Ocak 2026"
       body={BODY}
     />
   );
