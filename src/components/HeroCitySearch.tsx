@@ -168,9 +168,9 @@ export default function HeroCitySearch() {
     }
   }
 
-  // Hiç destinasyon yoksa barı gösterme (boş katalog).
-  if (destinations.length === 0) return null;
-
+  // NOT: Eskiden destinasyon yüklenene kadar `return null` ile gizleniyordu →
+  // sayfa statikleşince (API client-side gecikince) kutu "geç beliriyor" hissi
+  // veriyordu. Artık kutu HER ZAMAN render edilir; öneriler API gelince zenginleşir.
   return (
     <div className="relative z-20 mx-auto w-full max-w-2xl" ref={boxRef}>
       <p className="text-center text-sm font-semibold text-neutral-800 mb-3">
