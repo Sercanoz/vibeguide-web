@@ -20,6 +20,23 @@ export default function HomePage() {
   const hs = homeSections[locale] ?? homeSections.en;
   const nb = navbarI18n[locale] ?? navbarI18n.en;
 
+  // "VibeGuide Neden Var" manifestosu — şimdilik TR + EN, diğerleri EN fallback.
+  const whyExistsTr = {
+    eyebrow: "VibeGuide Neden Var",
+    titleA: "Turizm fazla robotlaştı.",
+    titleB: "Biz tekrar insanlaştırıyoruz.",
+    body: "Otobüs turları her şehirde aynı senaryoyu okuyor. QR kodlar gerçek sohbetin yerini aldı. Gezginler keşfetmekten çok sıra bekliyor. VibeGuide bunu tersine çevirir. Bir dokunuş, bir yerel, bir gerçek gün. VibeNow ile yalnız, VibeSquad ile grupla ya da Özel Turlar ile planlı — diğer tarafta hep gerçek bir insan var.",
+    closing: "Senaryo yok. Tuzak yok. Sadece şehir, onu yaşayan birinin ağzından.",
+  };
+  const whyExistsEn = {
+    eyebrow: "Why VibeGuide Exists",
+    titleA: "Tourism got too robotic.",
+    titleB: "We're making it human again.",
+    body: "Bus tours read the same script in every city. QR codes replaced real conversation. Travellers spend more time queuing than discovering. VibeGuide flips that. One tap, one local, one real day. Solo with VibeNow, in a group with VibeSquad, or planned with Private Tours — there's always a real human on the other side.",
+    closing: "No script. No trap. Just the city, in the words of someone who lives it.",
+  };
+  const whyExists = locale === "tr" ? whyExistsTr : whyExistsEn;
+
   const secHow = useInView();
   const secModes = useInView();
   const secManifesto = useInView();
@@ -120,17 +137,17 @@ export default function HomePage() {
       <section className="py-28 bg-[#F7F7FB] relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#6C4CF1]/5 rounded-full blur-[80px] pointer-events-none" />
         <div className="relative mx-auto max-w-3xl px-6 text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1]">VibeGuide Neden Var</p>
+          <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1]">{whyExists.eyebrow}</p>
           <h2 className="mt-6 text-4xl md:text-6xl font-black tracking-tight leading-tight text-[#0A0A0F]">
-            Turizm fazla robotlaştı.
+            {whyExists.titleA}
             <br />
-            <span className="text-neutral-700">Biz tekrar insanlaştırıyoruz.</span>
+            <span className="text-neutral-700">{whyExists.titleB}</span>
           </h2>
           <p className="mx-auto mt-10 max-w-2xl text-base md:text-lg leading-8 text-neutral-800">
-            Otobüs turları her şehirde aynı senaryoyu okuyor. QR kodlar gerçek sohbetin yerini aldı. Gezginler keşfetmekten çok sıra bekliyor. VibeGuide bunu tersine çevirir. Bir dokunuş, bir yerel, bir gerçek gün. VibeNow ile yalnız, VibeSquad ile grupla ya da Özel Turlar ile planlı — diğer tarafta hep gerçek bir insan var.
+            {whyExists.body}
           </p>
           <p className="mt-10 text-xl md:text-2xl font-black tracking-tight text-[#0A0A0F] border-t border-black/[0.06] pt-10">
-            Senaryo yok. Tuzak yok. Sadece şehir, onu yaşayan birinin ağzından.
+            {whyExists.closing}
           </p>
         </div>
       </section>
