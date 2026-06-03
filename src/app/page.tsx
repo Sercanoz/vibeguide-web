@@ -103,7 +103,7 @@ export default function HomePage() {
               title: ux.trustInstantTitle, sub: ux.trustInstantSub,
             },
           ].map((item) => (
-            <div key={item.title} className="flex items-center gap-3">
+            <div key={item.title} className="flex items-center justify-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-[#F7F7FB] border border-black/[0.05] flex items-center justify-center shrink-0">
                 {item.icon}
               </div>
