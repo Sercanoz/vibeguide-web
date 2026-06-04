@@ -36,7 +36,7 @@ export default function HomePage() {
       <Navbar />
 
       {/* ── HERO — full-bleed Istanbul photo + centered search (Viator-style) ── */}
-      <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
+      <section className="relative min-h-[78vh] flex items-center pt-16 overflow-hidden">
         {/* Background photo */}
         <Image
           src="/hero-istanbul.jpg"
@@ -50,7 +50,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-black/30" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-black/45" />
 
-        <div className="relative z-10 mx-auto max-w-7xl px-6 py-20 w-full">
+        <div className="relative z-10 mx-auto max-w-7xl px-6 py-12 w-full">
           {/* Centered destination search — sits above headline */}
           <HeroCitySearch onDark />
 
