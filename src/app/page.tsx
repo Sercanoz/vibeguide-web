@@ -43,13 +43,13 @@ export default function HomePage() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center -z-10"
+          className="object-cover object-center"
         />
         {/* Readability overlays: darken + bottom gradient so white text + search pop */}
-        <div className="absolute inset-0 -z-10 bg-black/30" />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/40 via-black/10 to-black/45" />
+        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-black/45" />
 
-        <div className="relative mx-auto max-w-7xl px-6 py-20 w-full">
+        <div className="relative z-10 mx-auto max-w-7xl px-6 py-20 w-full">
           {/* Centered destination search — sits above headline */}
           <HeroCitySearch onDark />
 
