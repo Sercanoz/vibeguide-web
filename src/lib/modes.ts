@@ -4,6 +4,9 @@
 // screenshots: kullanıcı uygulamadan çekip /public/screens/ altına koyunca dolar;
 // boşken ekran-görüntüsü bölümü gizli kalır.
 
+import type { Locale } from "./i18n";
+import { MODE_CONTENT_I18N, MODE_UI } from "./modes-i18n";
+
 export type ModeStep = { title: string; desc: string };
 export type ModeBenefit = { title: string; desc: string };
 export type ModeFaq = { q: string; a: string };
@@ -32,11 +35,7 @@ export type Mode = {
   faqs: ModeFaq[];
   ctaTitle: string;
   screenshots: string[]; // /screens/<file> — boşsa bölüm gizli
-  tr?: ModeContent; // Türkçe override
 };
-
-const CTA_SUB = "Download VibeGuide free and start exploring.";
-const CTA_SUB_TR = "VibeGuide'ı ücretsiz indir ve keşfetmeye başla.";
 
 export const MODES: Mode[] = [
   {
@@ -68,28 +67,6 @@ export const MODES: Mode[] = [
     ],
     ctaTitle: "Ready to explore right now?",
     screenshots: [],
-    tr: {
-      tagline: "Dokun. Eşleş. Keşfet.",
-      heroSub:
-        "Keşfetmenin en hızlı yolu. Uygulamayı aç, nerede olduğunu seç ve yakınındaki doğrulanmış bir yerel rehberle eşleş — genellikle bir dakikadan kısa sürede.",
-      steps: [
-        { title: "Uygulamayı aç", desc: "VibeNow'u seç ve nerede keşfetmek istediğini paylaş." },
-        { title: "~60 sn'de eşleş", desc: "Yakınındaki doğrulanmış bir rehber talebini anında kabul eder." },
-        { title: "Yerelinle buluş", desc: "Konumunu canlı gör ve dakikalar içinde buluş." },
-        { title: "Keşfet, uygulamadan öde", desc: "Şehri gerçek bir yerelle gez. Güvenle öde, nakit yok." },
-      ],
-      benefits: [
-        { title: "Plan gerekmez", desc: "Spontane misin? Aç ve git — katı programlardan hoşlanmayan gezginler için." },
-        { title: "Canlı konum", desc: "Rehberinin haritada yaklaştığını izle — yerel uzmanlar için çağrı uygulaması gibi." },
-        { title: "Şeffaf fiyat", desc: "Onaylamadan önce fiyatı gör. Turist tuzağı sürprizi yok." },
-      ],
-      faqs: [
-        { q: "VibeNow gerçekten ne kadar hızlı?", a: "Yakında çevrimiçi rehber varsa çoğu eşleşme bir dakikadan kısa sürede olur. Uygulama, talep etmeden önce kimin müsait olduğunu gösterir." },
-        { q: "Hiç rehber müsait değilse?", a: "Şu an kimse boş değilse uygulama bunu anında söyler ve yerine VibeSquad grubu veya Özel tur önerir." },
-        { q: "Nasıl öderim?", a: "Uygulamadan güvenle — nakit gerekmez ve fiyatı önceden görürsün." },
-      ],
-      ctaTitle: "Hemen keşfetmeye hazır mısın?",
-    },
   },
   {
     slug: "vibesquad",
@@ -120,28 +97,6 @@ export const MODES: Mode[] = [
     ],
     ctaTitle: "Find your squad",
     screenshots: [],
-    tr: {
-      tagline: "Gruba katıl. Masrafı paylaş.",
-      heroSub:
-        "Bütçeli mi geziyorsun yoksa insanlarla tanışmayı mı seviyorsun? Aynı rotadaki küçük bir gruba katıl, tek bir yerel rehberi paylaş ve masrafı bölüş.",
-      steps: [
-        { title: "Bir grup seç", desc: "Şehre ve saate göre açık grupları gör ya da kendininkini başlat." },
-        { title: "Katıl ve paylaş", desc: "Doğrulanmış bir yerel rehber gruba liderlik eder; masraf paylaşılır." },
-        { title: "Buluş", desc: "Buluşma noktasında toplanın ve birlikte yola çıkın." },
-        { title: "Birlikte keşfet", desc: "Şehri gerçek bir yerel ve diğer gezginlerle gör." },
-      ],
-      benefits: [
-        { title: "En uygun fiyat", desc: "Tek rehberi paylaşmak, VibeSquad'ı bir yerelle keşfetmenin en ucuz yolu yapar." },
-        { title: "Gezginlerle tanış", desc: "Tasarımı sosyal — aynı rotadaki insanlarla birlikte keşfet." },
-        { title: "Yine de gerçek yerel", desc: "Ezbere otobüs turu yok. Her grubu doğrulanmış bir yerel yönetir." },
-      ],
-      faqs: [
-        { q: "Bir grup ne kadar büyük?", a: "Küçük gruplar — böylece rehber herkese ilgi gösterebilir, 50 kişilik otobüs turu değil." },
-        { q: "Kendi grubumu başlatabilir miyim?", a: "Evet — bir rota ve saat için grup oluştur, diğer gezginler sana katılabilir." },
-        { q: "Neden daha ucuz?", a: "Çünkü tek bir yerel rehberin maliyeti grup arasında paylaşılır." },
-      ],
-      ctaTitle: "Grubunu bul",
-    },
   },
   {
     slug: "private",
@@ -172,28 +127,6 @@ export const MODES: Mode[] = [
     ],
     ctaTitle: "Plan your private day",
     screenshots: [],
-    tr: {
-      tagline: "Senin yerelin. Senin günün.",
-      heroSub:
-        "Her şey sana mı kalsın? Tam bir gün için doğrulanmış bir yerel rehber ayırt — tam olarak görmek istediklerine göre tasarlanmış.",
-      steps: [
-        { title: "Rehberini seç", desc: "Doğrulanmış yerel rehberlere göz at ve sana en uygun olanı seç." },
-        { title: "Günü planla", desc: "İlgi alanlarını söyle; sana özel bir rota hazırlasınlar." },
-        { title: "Buluş ve keşfet", desc: "Şehirde tam bir gün, yalnızca sana veya grubuna özel." },
-        { title: "Uygulamadan güvenle öde", desc: "Önceden anlaşılan tek fiyat. Nakit yok, sürpriz yok." },
-      ],
-      benefits: [
-        { title: "Tamamen kişisel", desc: "Gün senin ilgi alanların ve temponla kurulur — başkasının değil." },
-        { title: "Sadece senin grubun", desc: "Özel, özeldir — yalnızca sen ve rehberin." },
-        { title: "En derin deneyim", desc: "Daha çok zaman, daha çok hikâye, şehrin yalnızca yerellerin bildiği yanları." },
-      ],
-      faqs: [
-        { q: "Rotayı özelleştirebilir miyim?", a: "Evet — zaten amaç bu. İlgi alanlarını söyle, rehberin ona göre planlar." },
-        { q: "Aileler için uygun mu?", a: "İdeal — özel rehber tempoyu ve içeriği çocuklar, yaşlılar, herkes için uyarlar." },
-        { q: "Ne kadar önceden rezerve etmeliyim?", a: "Özel turlar planlıdır, bu yüzden tercih ettiğin rehberi ve günü garanti etmek için önceden rezerve et." },
-      ],
-      ctaTitle: "Özel gününü planla",
-    },
   },
   {
     slug: "vibeask",
@@ -225,29 +158,6 @@ export const MODES: Mode[] = [
     ],
     ctaTitle: "Ask a local. Free, right now.",
     screenshots: [],
-    tr: {
-      tagline: "Cebinde bir yerel. Ücretsiz.",
-      heroSub:
-        "Her zaman bir tura ihtiyacın yok — bazen sadece gerçekten bilen bir yerele ihtiyacın var. Ne istersen sor, dakikalar içinde gerçek bir cevap al. Tamamen ücretsiz.",
-      steps: [
-        { title: "VibeAsk'a dokun", desc: "Doğrudan ana ekrandan — rezervasyon yok, taahhüt yok." },
-        { title: "Ne istersen sor", desc: "\"Yakında ne yiyebilirim?\" \"Topkapı'ya nasıl giderim?\" \"Burası değer mi?\" Yaz, fotoğraf gönder ya da sesli not bırak." },
-        { title: "Gerçek bir yerel yanıtlar", desc: "Doğrulanmış bir yerel rehber sana bizzat cevap verir — genellikle dakikalar içinde." },
-        { title: "Güvenle keşfet", desc: "Turist tuzağı yok, tahmin yok. Daha fazlasını istersen yerelin sana bizzat gösterebilir." },
-      ],
-      benefits: [
-        { title: "Gerçekten ücretsiz", desc: "Ücret yok, gizli koşul yok. Bir şey rezerve etmeden önce sor. Şehrinle böyle tanışırsın." },
-        { title: "Gerçek insan, yapay zekâ değil", desc: "Bir chatbot değil. Orada yaşayan ve turistlerin asla bulamadığını bilen lisanslı bir yerel." },
-        { title: "Turist tuzaklarını aş", desc: "Fiyat kontrol et, dolandırılma, gerçek mekânı bul — anında yanında bir yerel." },
-      ],
-      faqs: [
-        { q: "VibeAsk gerçekten ücretsiz mi?", a: "Evet. Bir yerel rehbere ne istersen ücretsiz sor — bu bizim şehre hoş geldin deyişimiz." },
-        { q: "Sorularımı kim yanıtlıyor?", a: "Gerçek, doğrulanmış bir yerel rehber — bot değil. Orada yaşayan ve şehri çok iyi bilen biri." },
-        { q: "Ne sorabilirim?", a: "Seyahatle ilgili her şey: yemek mekânları, makul fiyatlar, yol tarifi, neyin değer olduğu, neyin açık olduğu, gizli yerler — aklındaki her şey." },
-        { q: "Tur rezerve etmek zorunda mıyım?", a: "Asla. VibeAsk koşulsuz, ücretsiz yardımdır. Beğenirsen daha sonra tur rezerve edebilirsin — ama zorunda değilsin." },
-      ],
-      ctaTitle: "Bir yerele sor. Şimdi, ücretsiz.",
-    },
   },
 ];
 
@@ -257,16 +167,14 @@ export function getMode(slug: string): Mode | undefined {
   return BY_SLUG.get(slug);
 }
 
-/** Locale'e göre modun çevrilebilir alanlarını uygular (şimdilik tr; yoksa en). */
+/** Locale'e göre modun çevrilebilir alanlarını uygular (yoksa en fallback). */
 export function localizeMode(mode: Mode, locale: string): Mode {
-  if (locale === "tr" && mode.tr) {
-    return { ...mode, ...mode.tr };
-  }
-  return mode;
+  const t = MODE_CONTENT_I18N[mode.slug]?.[locale as Locale];
+  return t ? { ...mode, ...t } : mode;
 }
 
 export function ctaSub(locale: string): string {
-  return locale === "tr" ? CTA_SUB_TR : CTA_SUB;
+  return (MODE_UI[locale as Locale] ?? MODE_UI.en).ctaSub;
 }
 
-export const MODE_CTA_SUB = CTA_SUB;
+export const MODE_CTA_SUB = MODE_UI.en.ctaSub;

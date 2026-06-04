@@ -7,13 +7,16 @@ import MainFooter from "@/components/MainFooter";
 import PhoneFrame from "@/components/PhoneFrame";
 import { useT } from "@/components/LanguageProvider";
 import { MODES, localizeMode, ctaSub, type Mode } from "@/lib/modes";
+import { MODE_UI } from "@/lib/modes-i18n";
+import type { Locale } from "@/lib/i18n";
 
 const SITE = "https://www.vibeguideapp.com";
 
 /** Telefon mockup içeriği — moda göre renklenen mini uygulama ekranı. */
 function ModeMock({ mode, locale }: { mode: Mode; locale: string }) {
-  const nowLabel = locale === "tr" ? "İstanbul · şimdi" : "Istanbul · now";
-  const liveLabel = locale === "tr" ? "CANLI" : "LIVE";
+  const u = MODE_UI[locale as Locale] ?? MODE_UI.en;
+  const nowLabel = u.nowLabel;
+  const liveLabel = u.liveLabel;
   return (
     <div className="px-4 pb-5">
       <div className="flex items-center justify-between mb-3">
@@ -65,14 +68,7 @@ export default function ModePageView({ mode: rawMode }: { mode: Mode }) {
   const { locale } = useT();
   const mode = localizeMode(rawMode, locale);
   const others = MODES.filter((m) => m.slug !== rawMode.slug).map((m) => localizeMode(m, locale));
-  const tr = locale === "tr";
-  const ui = {
-    exploreTours: tr ? "Turları keşfet →" : "Explore tours →",
-    howItWorks: tr ? "Nasıl çalışır" : "How it works",
-    questions: tr ? "Sorular" : "Questions",
-    otherWays: tr ? "Keşfetmenin diğer yolları" : "The other ways to explore",
-    seeInApp: tr ? "Uygulamada gör" : "See it in the app",
-  };
+  const ui = MODE_UI[locale as Locale] ?? MODE_UI.en;
 
   const jsonLd = {
     "@context": "https://schema.org",
