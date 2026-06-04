@@ -11,6 +11,7 @@ import { getWhyExists } from "@/lib/why-exists-i18n";
 import { useInView } from "@/hooks/useInView";
 import Navbar from "@/components/Navbar";
 import HeroCitySearch from "@/components/HeroCitySearch";
+import HeroModeCards from "@/components/HeroModeCards";
 import MainFooter from "@/components/MainFooter";
 import Price from "@/components/Price";
 import { API_BASE_URL } from "@/lib/api";
@@ -53,8 +54,8 @@ export default function HomePage() {
           {/* Centered destination search — sits above headline */}
           <HeroCitySearch onDark />
 
-          <div className="mt-14 max-w-3xl mx-auto text-center">
-          {/* Copy */}
+          <div className="mt-14 max-w-3xl">
+          {/* Copy — left aligned */}
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/15 backdrop-blur-sm px-4 py-2 text-sm font-semibold text-white mb-8 animate-[fadeSlideUp_0.7s_ease_both]">
               <span className="h-1.5 w-1.5 rounded-full bg-[#34D399] animate-pulse shrink-0" />
@@ -69,23 +70,14 @@ export default function HomePage() {
               </span>
             </h1>
 
-            <div className="mt-6 text-[15px] leading-7 text-white/90 max-w-xl mx-auto space-y-3 drop-shadow-[0_1px_8px_rgba(0,0,0,0.4)]">
+            <div className="mt-6 text-[15px] leading-7 text-white/90 max-w-xl space-y-3 drop-shadow-[0_1px_8px_rgba(0,0,0,0.4)]">
               {t.hero.sub.split("\n\n").map((para, i) => (
                 <p key={i} style={{ whiteSpace: "pre-line" }}>{para}</p>
               ))}
             </div>
 
-            <div className="mt-10 flex flex-wrap justify-center gap-6 pt-6 border-t border-white/[0.18]">
-              {[
-                { svg: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>, label: t.hero.b1 },
-                { svg: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>, label: t.hero.b2 },
-                { svg: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>, label: t.hero.b3 },
-              ].map((b) => (
-                <span key={b.label} className="flex items-center gap-2 text-sm text-white/90">
-                  <span className="text-white">{b.svg}</span> {b.label}
-                </span>
-              ))}
-            </div>
+            {/* Mode cards — quick links to /vibenow /vibesquad /vibeask */}
+            <HeroModeCards locale={locale} />
           </div>
 
           </div>
