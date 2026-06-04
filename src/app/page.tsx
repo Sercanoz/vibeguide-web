@@ -15,6 +15,7 @@ import HeroModeCards from "@/components/HeroModeCards";
 import MainFooter from "@/components/MainFooter";
 import Price from "@/components/Price";
 import { API_BASE_URL } from "@/lib/api";
+import { HERO_BLUR } from "@/lib/hero-blur";
 
 export default function HomePage() {
   const { locale } = useT();
@@ -43,7 +44,10 @@ export default function HomePage() {
           alt="Istanbul at sunset — Hagia Sophia and the Bosphorus"
           fill
           priority
+          fetchPriority="high"
           sizes="100vw"
+          placeholder="blur"
+          blurDataURL={HERO_BLUR}
           className="object-cover object-center"
         />
         {/* Readability overlays: darken + bottom gradient so white text + search pop */}

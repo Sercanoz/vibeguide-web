@@ -1,0 +1,3 @@
+// Hero görseli için bulanık placeholder (sharp ile üretildi, derleme zamanı sabit).
+// Sayfa açılırken gri yerine bu bulanık önizleme görünür, resim inince yumuşak geçiş olur.
+export const HERO_BLUR = "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQAG/8QAIRAAAgICAQQDAAAAAAAAAAAAAQIAAwQREwUVQWEzUnH/xAAVAQEBAAAAAAAAAAAAAAAAAAABA//EABkRAAMAAwAAAAAAAAAAAAAAAAABERIhMf/aAAwDAQACEQMRAD8A0d+UlS743b0oG4TkdYfmVEwn15DkAn8h2Xl3hfkMOW2y4nkdm17klVtlXODPeEcBhitoj7CUzd7FbCFOvMo5sIj/2Q==";
