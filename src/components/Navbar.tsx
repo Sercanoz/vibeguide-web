@@ -8,6 +8,32 @@ import CurrencySwitcher from "./CurrencySwitcher";
 import AuthModal from "./AuthModal";
 import { fbAuth, signOut, type User } from "@/lib/firebase-client";
 import { API_BASE_URL } from "@/lib/api";
+import { CITY_GUIDE_LANGS } from "@/lib/cityGuides";
+
+// Navbar'daki Destinations menüsü — gerçek şehir rehberi sayfaları.
+const DESTINATIONS = [
+  { slug: "istanbul-tour-guide", name: "Istanbul", emoji: "🕌" },
+  { slug: "cappadocia-tour-guide", name: "Cappadocia", emoji: "🎈" },
+  { slug: "ephesus-tour-guide", name: "Ephesus", emoji: "🏛️" },
+];
+
+// Şehir rehberi sayfası sadece CITY_GUIDE_LANGS dillerinde var; başka dilde
+// kullanıcı için EN köke düş (yoksa 404). en → /slug, diğer → /<lang>/slug.
+function cityGuideHref(slug: string, locale: string): string {
+  const lang = (CITY_GUIDE_LANGS as readonly string[]).includes(locale) ? locale : "en";
+  return lang === "en" ? `/${slug}` : `/${lang}/${slug}`;
+}
+
+const APP_STORE_URL = "https://apps.apple.com/app/vibeguide";
+const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.vibeguide";
+
+// Cihaza göre doğru mağazaya götür (iOS → App Store, diğer → Play).
+function appStoreHref(): string {
+  if (typeof navigator !== "undefined" && /iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+    return APP_STORE_URL;
+  }
+  return PLAY_STORE_URL;
+}
 
 export default function Navbar({ activePage }: { activePage?: "tours" | "home" }) {
   const { locale } = useT();
@@ -17,7 +43,7 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
   const [user, setUser] = useState<User | null | "loading">("loading");
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [openMenu, setOpenMenu] = useState<"tours" | null>(null);
+  const [openMenu, setOpenMenu] = useState<"tours" | "destinations" | null>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const userMenuRef = useRef<HTMLDivElement>(null);
 
@@ -64,9 +90,10 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
 
   const navLinks = [
     { href: "/tours", label: nb.tours, key: "tours" },
-    { href: "/vibenow", label: "VibeNow" },
-    { href: "/vibesquad", label: "VibeSquad" },
-    { href: "/vibeask", label: "VibeAsk" },
+    ...DESTINATIONS.map((d) => ({
+      href: cityGuideHref(d.slug, locale),
+      label: `${d.emoji}  ${d.name}`,
+    })),
   ];
 
   const initials = user && user !== "loading" && user.displayName
@@ -139,26 +166,45 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
               )}
             </div>
 
-            {/* VibeNow */}
-            <a href="/vibenow" className="px-3.5 py-2 rounded-xl font-medium text-neutral-800 hover:text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.06] transition-all">
-              VibeNow
-            </a>
-
-            {/* VibeSquad */}
-            <a href="/vibesquad" className="px-3.5 py-2 rounded-xl font-medium text-neutral-800 hover:text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.06] transition-all">
-              VibeSquad
-            </a>
-
-            {/* VibeAsk */}
-            <a href="/vibeask" className="px-3.5 py-2 rounded-xl font-medium text-neutral-800 hover:text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.06] transition-all">
-              VibeAsk
-            </a>
+            {/* Destinations — dropdown */}
+            <div className="relative" onMouseEnter={() => setOpenMenu("destinations")}>
+              <a href="/tours"
+                className="flex items-center gap-1 px-3.5 py-2 rounded-xl font-medium text-neutral-800 hover:text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.06] transition-all">
+                {nb.destinations}
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={`transition-transform ${openMenu === "destinations" ? "rotate-180" : ""}`}><path d="M6 9l6 6 6-6"/></svg>
+              </a>
+              {openMenu === "destinations" && (
+                <div className="absolute left-0 top-full pt-2">
+                  <div className="w-[260px] bg-white rounded-2xl border border-black/[0.06] shadow-xl p-3 animate-[fadeSlideUp_0.15s_ease_both]">
+                    <div className="space-y-0.5">
+                      {DESTINATIONS.map((d) => (
+                        <a key={d.slug} href={cityGuideHref(d.slug, locale)}
+                          className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-[#F7F7FB] transition-colors text-sm font-semibold text-[#0A0A0F]">
+                          <span className="text-lg">{d.emoji}</span>{d.name}
+                        </a>
+                      ))}
+                    </div>
+                    <a href="/tours" className="mt-2 flex items-center justify-center gap-1.5 rounded-xl bg-[#6C4CF1] text-white text-sm font-bold py-2.5 hover:bg-[#5a3dd4] transition-colors">
+                      {nb.seeAllTours} →
+                    </a>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Right side — md+ ekranda SABİT genişlik + sağa yaslı: auth durumu
              (loading / avatar / butonlar) ne olursa olsun blok genişliği hiç
              değişmez → orta linkler asla kaymaz (layout shift fix). */}
-          <div className="flex items-center gap-2 justify-end md:w-[300px]">
+          <div className="flex items-center gap-2 justify-end md:w-[340px]">
+            {/* Get the app — device-aware store link */}
+            <a href={appStoreHref()} target="_blank" rel="noopener noreferrer"
+              className="hidden lg:flex items-center gap-1.5 text-sm font-semibold text-neutral-800 hover:text-[#6C4CF1] px-3 py-2 rounded-xl hover:bg-[#6C4CF1]/[0.06] transition-all">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/>
+              </svg>
+              {nb.getApp}
+            </a>
             <LanguageSwitcher />
             <div className="hidden sm:block"><CurrencySwitcher /></div>
 
@@ -249,13 +295,22 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
               {navLinks.map((l) => (
                 <a key={l.href} href={l.href} onClick={() => setMenuOpen(false)}
                   className={`flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-semibold transition-colors ${
-                    activePage === "tours" && l.key === "tours"
+                    activePage === "tours" && "key" in l && l.key === "tours"
                       ? "bg-[#6C4CF1]/8 text-[#6C4CF1]"
                       : "text-neutral-800 hover:bg-neutral-50 hover:text-black"
                   }`}>
                   {l.label}
                 </a>
               ))}
+            </div>
+            <div className="border-t border-black/[0.06] px-2 py-2">
+              <a href={appStoreHref()} target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}
+                className="flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-semibold text-neutral-800 hover:bg-neutral-50 hover:text-black transition-colors">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/>
+                </svg>
+                {nb.getApp}
+              </a>
             </div>
             <div className="border-t border-black/[0.06] px-4 py-3 sm:hidden flex items-center justify-between">
               <span className="text-xs font-bold text-neutral-800 uppercase tracking-wider">{locale === "tr" ? "Para Birimi" : "Currency"}</span>
