@@ -53,7 +53,7 @@ function CityAvatar({ label }: { label: string }) {
  * Hero üstündeki ortalı destinasyon arama barı. Sadece GERÇEK turu olan şehirleri
  * gösterir (boş sonuç olmaz). Seçim → /tours?city=<slug>. Boş "Explore" → tüm turlar.
  */
-export default function HeroCitySearch() {
+export default function HeroCitySearch({ onDark = false }: { onDark?: boolean } = {}) {
   const router = useRouter();
   const { locale } = useT();
   const ux = uiExtra[locale] ?? uiExtra.en;
@@ -173,15 +173,19 @@ export default function HeroCitySearch() {
   // veriyordu. Artık kutu HER ZAMAN render edilir; öneriler API gelince zenginleşir.
   return (
     <div className="relative z-20 mx-auto w-full max-w-2xl" ref={boxRef}>
-      <p className="text-center text-sm font-semibold text-neutral-800 mb-3">
+      <p className={`text-center text-sm font-semibold mb-3 ${
+        onDark ? "text-white drop-shadow-[0_1px_8px_rgba(0,0,0,0.5)]" : "text-neutral-800"
+      }`}>
         {ux.searchSubtitle}
       </p>
 
       <div
-        className={`flex items-center gap-2 rounded-full border bg-white/90 backdrop-blur-sm p-1.5 pl-5 transition-all ${
+        className={`flex items-center gap-2 rounded-full border bg-white p-1.5 pl-5 transition-all ${
           open
             ? "border-[#6C4CF1]/50 shadow-[0_8px_40px_rgba(108,76,241,0.18)]"
-            : "border-black/[0.08] shadow-[0_4px_24px_rgba(0,0,0,0.06)]"
+            : onDark
+              ? "border-white/30 shadow-[0_12px_50px_rgba(0,0,0,0.35)]"
+              : "border-black/[0.08] shadow-[0_4px_24px_rgba(0,0,0,0.06)]"
         }`}
       >
         <PinIcon />

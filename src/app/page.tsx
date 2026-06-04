@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { useT } from "@/components/LanguageProvider";
 import { homeTranslations } from "@/lib/home-i18n";
 import { uiExtra } from "@/lib/ui-extra-i18n";
@@ -33,49 +34,55 @@ export default function HomePage() {
 
       <Navbar />
 
-      {/* ── HERO — full-screen light ── */}
-      <section className="relative min-h-screen flex items-center pt-16 bg-white overflow-hidden">
-        {/* Subtle ambient — top right */}
-        <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-gradient-to-bl from-[#6C4CF1]/6 via-[#8B5CF6]/3 to-transparent rounded-full blur-[80px] pointer-events-none" />
-        {/* Bottom left accent */}
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-[#6C4CF1]/4 to-transparent rounded-full blur-[80px] pointer-events-none" />
-        {/* Dot grid */}
-        <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: "radial-gradient(circle, #6C4CF1 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
+      {/* ── HERO — full-bleed Istanbul photo + centered search (Viator-style) ── */}
+      <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
+        {/* Background photo */}
+        <Image
+          src="/hero-istanbul.jpg"
+          alt="Istanbul at sunset — Hagia Sophia and the Bosphorus"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center -z-10"
+        />
+        {/* Readability overlays: darken + bottom gradient so white text + search pop */}
+        <div className="absolute inset-0 -z-10 bg-black/30" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/40 via-black/10 to-black/45" />
 
         <div className="relative mx-auto max-w-7xl px-6 py-20 w-full">
-          {/* Centered destination search — sits above headline + phone */}
-          <HeroCitySearch />
+          {/* Centered destination search — sits above headline */}
+          <HeroCitySearch onDark />
 
           <div className="mt-14 max-w-3xl mx-auto text-center">
           {/* Copy */}
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#6C4CF1]/15 bg-[#6C4CF1]/5 px-4 py-2 text-sm font-semibold text-[#6C4CF1] mb-8 animate-[fadeSlideUp_0.7s_ease_both]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#10B981] animate-pulse shrink-0" />
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/15 backdrop-blur-sm px-4 py-2 text-sm font-semibold text-white mb-8 animate-[fadeSlideUp_0.7s_ease_both]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#34D399] animate-pulse shrink-0" />
               {t.hero.badge}
             </div>
 
-            <h1 className="text-5xl md:text-[72px] font-black leading-[0.98] tracking-tight text-[#0A0A0F]">
+            <h1 className="text-5xl md:text-[72px] font-black leading-[0.98] tracking-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]">
               {t.hero.titleA}
               <br />
-              <span className="bg-gradient-to-r from-[#6C4CF1] via-[#8B5CF6] to-[#EC4899] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#C4B5FD] via-[#DDD6FE] to-[#FBCFE8] bg-clip-text text-transparent">
                 {t.hero.titleAccent}
               </span>
             </h1>
 
-            <div className="mt-6 text-[15px] leading-7 text-neutral-800 max-w-xl mx-auto space-y-3">
+            <div className="mt-6 text-[15px] leading-7 text-white/90 max-w-xl mx-auto space-y-3 drop-shadow-[0_1px_8px_rgba(0,0,0,0.4)]">
               {t.hero.sub.split("\n\n").map((para, i) => (
                 <p key={i} style={{ whiteSpace: "pre-line" }}>{para}</p>
               ))}
             </div>
 
-            <div className="mt-10 flex flex-wrap justify-center gap-6 pt-6 border-t border-black/[0.06]">
+            <div className="mt-10 flex flex-wrap justify-center gap-6 pt-6 border-t border-white/[0.18]">
               {[
                 { svg: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>, label: t.hero.b1 },
                 { svg: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>, label: t.hero.b2 },
                 { svg: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>, label: t.hero.b3 },
               ].map((b) => (
-                <span key={b.label} className="flex items-center gap-2 text-sm text-neutral-800">
-                  <span className="text-[#6C4CF1]">{b.svg}</span> {b.label}
+                <span key={b.label} className="flex items-center gap-2 text-sm text-white/90">
+                  <span className="text-white">{b.svg}</span> {b.label}
                 </span>
               ))}
             </div>
