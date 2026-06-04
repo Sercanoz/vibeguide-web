@@ -54,9 +54,9 @@ export default function HomePage() {
           {/* Centered destination search — sits above headline */}
           <HeroCitySearch onDark />
 
-          <div className="mt-14 max-w-3xl">
-          {/* Copy — left aligned */}
-          <div>
+          <div className="mt-14">
+          {/* Copy — centered headline + badge */}
+          <div className="text-center max-w-3xl mx-auto">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/15 backdrop-blur-sm px-4 py-2 text-sm font-semibold text-white mb-8 animate-[fadeSlideUp_0.7s_ease_both]">
               <span className="h-1.5 w-1.5 rounded-full bg-[#34D399] animate-pulse shrink-0" />
               {t.hero.badge}
@@ -69,14 +69,10 @@ export default function HomePage() {
                 {t.hero.titleAccent}
               </span>
             </h1>
+          </div>
 
-            <div className="mt-6 text-[15px] leading-7 text-white/90 max-w-xl space-y-3 drop-shadow-[0_1px_8px_rgba(0,0,0,0.4)]">
-              {t.hero.sub.split("\n\n").map((para, i) => (
-                <p key={i} style={{ whiteSpace: "pre-line" }}>{para}</p>
-              ))}
-            </div>
-
-            {/* Mode cards — quick links to /vibenow /vibesquad /vibeask */}
+          {/* Mode cards — quick links to /vibenow /vibesquad /vibeask */}
+          <div className="mt-10 flex justify-center">
             <HeroModeCards locale={locale} />
           </div>
 

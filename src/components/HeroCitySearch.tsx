@@ -173,12 +173,6 @@ export default function HeroCitySearch({ onDark = false }: { onDark?: boolean } 
   // veriyordu. Artık kutu HER ZAMAN render edilir; öneriler API gelince zenginleşir.
   return (
     <div className="relative z-20 mx-auto w-full max-w-2xl" ref={boxRef}>
-      <p className={`text-center text-sm font-semibold mb-3 ${
-        onDark ? "text-white drop-shadow-[0_1px_8px_rgba(0,0,0,0.5)]" : "text-neutral-800"
-      }`}>
-        {ux.searchSubtitle}
-      </p>
-
       <div
         className={`flex items-center gap-2 rounded-full border bg-white p-1.5 pl-5 transition-all ${
           open

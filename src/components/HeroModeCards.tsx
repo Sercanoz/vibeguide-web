@@ -58,7 +58,7 @@ const CARDS: Card[] = [
 
 export default function HeroModeCards({ locale }: { locale: Locale }) {
   return (
-    <div className="mt-9 flex flex-col sm:flex-row gap-3 sm:max-w-2xl">
+    <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto sm:max-w-2xl">
       {CARDS.map((c) => (
         <Link
           key={c.slug}
