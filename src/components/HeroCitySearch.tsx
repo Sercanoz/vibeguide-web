@@ -20,6 +20,19 @@ type Destination = {
 
 const RECENT_KEY = "vg_recent_city";
 
+// Türkçe/aksan-duyarsız arama normalizasyonu. "İstanbul", "ISTANBUL", "istanbul"
+// hepsi aynı eşleşmeli. toLowerCase'in İ→i̇ (nokta) ve I→ı sorununu da çözer:
+// önce İ/I'yı düz i'ye sabitle, sonra diakritikleri sök.
+function norm(s: string): string {
+  return s
+    .replace(/İ/g, "i")
+    .replace(/I/g, "i")
+    .replace(/ı/g, "i")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "");
+}
+
 // Pin ikonu (bar + dropdown'da ortak kullanılıyor).
 function PinIcon({ size = 20, color = "#6C4CF1" }: { size?: number; color?: string }) {
   return (
@@ -125,9 +138,9 @@ export default function HeroCitySearch({ onDark = false }: { onDark?: boolean } 
   }, [query, hints.length]);
 
   const matches = useMemo(() => {
-    const q = query.trim().toLowerCase();
+    const q = norm(query.trim());
     const list = q
-      ? destinations.filter((d) => d.label.toLowerCase().includes(q))
+      ? destinations.filter((d) => norm(d.label).includes(q))
       : destinations;
     return list.slice(0, 6);
   }, [query, destinations]);
