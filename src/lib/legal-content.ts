@@ -60,7 +60,7 @@ export const privacy: Record<ExtendedLocale, PrivacyDict> = {
           "Booking and reservation systems",
           "Customer support communications",
           "Guide onboarding and verification systems",
-          "Payment and payout processing",
+          "Payment processing",
           "Analytics and operational services",
           "Marketing communications where permitted",
         ],
@@ -94,7 +94,7 @@ export const privacy: Record<ExtendedLocale, PrivacyDict> = {
           },
           {
             h: "D. Guide Verification Information",
-            p: "Guides may be required to provide government-issued identification, tourist guide license information, verification photos, and payment and payout information. This information is collected solely for identity verification, legal compliance, fraud prevention, operational security, and payout processing.",
+            p: "Guides may be required to provide government-issued identification, tourist guide license information, verification photos, and payment information. This information is collected solely for identity verification, legal compliance, fraud prevention, operational security, and payment processing.",
           },
           {
             h: "E. Location Information",
@@ -117,7 +117,7 @@ export const privacy: Record<ExtendedLocale, PrivacyDict> = {
           "Create and manage user accounts",
           "Process bookings and reservations",
           "Match travelers with guides",
-          "Process payments, refunds, and payouts",
+          "Process payments and refunds",
           "Verify guide eligibility and identity",
           "Provide customer support",
           "Prevent fraud, abuse, and unauthorized activity",
@@ -962,7 +962,7 @@ export const terms: Record<ExtendedLocale, TermsDict> = {
       },
       {
         h: "16. Off-Platform Transactions",
-        p: "Travellers and guides may not bypass the Platform for the purpose of avoiding fees, commissions, or policies, moving bookings outside VibeGuide, or exchanging payment information for off-platform transactions. Violations may result in booking cancellation, payout forfeiture, account suspension, or permanent platform removal.",
+        p: "Travellers and guides may not bypass the Platform for the purpose of avoiding fees, commissions, or policies, moving bookings outside VibeGuide, or exchanging payment information for off-platform transactions. Violations may result in booking cancellation, forfeiture of pending payments, account suspension, or permanent platform removal.",
       },
       {
         h: "17. User Conduct and Community Standards",
@@ -2649,7 +2649,7 @@ export const accountDeletion: Record<ExtendedLocale, AccountDeletionDict> = {
       "unresolved disputes",
       "pending refunds",
       "chargebacks",
-      "ongoing guide payouts",
+      "pending payment settlements",
       "or legal/compliance obligations",
     ],
     activeBookingsNote:
