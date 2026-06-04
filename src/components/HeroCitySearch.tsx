@@ -200,10 +200,14 @@ export default function HeroCitySearch({ onDark = false }: { onDark?: boolean } 
 
         <button
           onClick={() => go()}
-          className="shrink-0 rounded-full bg-gradient-to-r from-[#6C4CF1] via-[#8B5CF6] to-[#EC4899] px-6 py-3 text-sm font-bold text-white transition-transform hover:scale-[1.03] active:scale-95"
-          style={{ boxShadow: "0 4px 20px rgba(108,76,241,0.35)" }}
+          aria-label={ux.explore}
+          className="shrink-0 flex h-12 w-12 items-center justify-center rounded-full bg-[#6C4CF1] text-white transition-transform hover:scale-[1.06] active:scale-95"
+          style={{ boxShadow: "0 4px 20px rgba(108,76,241,0.4)" }}
         >
-          {ux.explore}
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="11" cy="11" r="7" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
         </button>
       </div>
 
