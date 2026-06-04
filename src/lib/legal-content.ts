@@ -21,7 +21,7 @@ export const APP_NAME = "VibeGuide";
 export const APP_DOMAIN = "www.vibeguideapp.com";
 export const SUPPORT_EMAIL = "support@vibeguideapp.com";
 export const COMPANY_LEGAL = "VibeGuide Teknoloji A.Ş."; // güncellenecek
-export const LAST_UPDATED = "2026-06-04";
+export const LAST_UPDATED = "04.06.2026";
 
 /* ════════ PRIVACY POLICY ════════ */
 type PrivacySubSection = { h: string; p?: string; list?: string[] };

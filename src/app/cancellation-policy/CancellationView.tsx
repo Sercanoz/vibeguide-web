@@ -3,8 +3,8 @@
 import LegalMarkdown from "@/components/LegalMarkdown";
 import { useT } from "@/components/LanguageProvider";
 
-const LAST_UPDATED_TR = "Son Güncelleme: 4 Haziran 2026";
-const LAST_UPDATED_EN = "Last updated: June 4, 2026";
+const LAST_UPDATED_TR = "Son Güncelleme: 04.06.2026";
+const LAST_UPDATED_EN = "Last updated: 04.06.2026";
 
 const BODY_TR = `
 VibeGuide olarak, seyahat deneyimi rezervasyonu yapan her kullanıcının rezervasyon sürecinde kendini güvende hissetmesini önemsiyoruz. Bu İptal ve İade Politikası, rezervasyonların hangi koşullarda iptal edilebileceğini ve hangi durumlarda iade hakkı doğacağını açıklamaktadır.
