@@ -24,17 +24,6 @@ function cityGuideHref(slug: string, locale: string): string {
   return lang === "en" ? `/${slug}` : `/${lang}/${slug}`;
 }
 
-const APP_STORE_URL = "https://apps.apple.com/app/vibeguide";
-const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.vibeguide";
-
-// Cihaza göre doğru mağazaya götür (iOS → App Store, diğer → Play).
-function appStoreHref(): string {
-  if (typeof navigator !== "undefined" && /iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-    return APP_STORE_URL;
-  }
-  return PLAY_STORE_URL;
-}
-
 export default function Navbar({ activePage }: { activePage?: "tours" | "home" }) {
   const { locale } = useT();
   const nb = navbarI18n[locale] ?? navbarI18n.en;
@@ -196,15 +185,7 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
           {/* Right side — md+ ekranda SABİT genişlik + sağa yaslı: auth durumu
              (loading / avatar / butonlar) ne olursa olsun blok genişliği hiç
              değişmez → orta linkler asla kaymaz (layout shift fix). */}
-          <div className="flex items-center gap-2 justify-end md:w-[340px]">
-            {/* Get the app — device-aware store link */}
-            <a href={appStoreHref()} target="_blank" rel="noopener noreferrer"
-              className="hidden lg:flex items-center gap-1.5 text-sm font-semibold text-neutral-800 hover:text-[#6C4CF1] px-3 py-2 rounded-xl hover:bg-[#6C4CF1]/[0.06] transition-all">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/>
-              </svg>
-              {nb.getApp}
-            </a>
+          <div className="flex items-center gap-2 justify-end md:w-[300px]">
             <LanguageSwitcher />
             <div className="hidden sm:block"><CurrencySwitcher /></div>
 
@@ -302,15 +283,6 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
                   {l.label}
                 </a>
               ))}
-            </div>
-            <div className="border-t border-black/[0.06] px-2 py-2">
-              <a href={appStoreHref()} target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}
-                className="flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-semibold text-neutral-800 hover:bg-neutral-50 hover:text-black transition-colors">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/>
-                </svg>
-                {nb.getApp}
-              </a>
             </div>
             <div className="border-t border-black/[0.06] px-4 py-3 sm:hidden flex items-center justify-between">
               <span className="text-xs font-bold text-neutral-800 uppercase tracking-wider">{locale === "tr" ? "Para Birimi" : "Currency"}</span>
