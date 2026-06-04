@@ -63,7 +63,7 @@ export default function HeroModeCards({ locale }: { locale: Locale }) {
         <Link
           key={c.slug}
           href={`/${c.slug}`}
-          className="group flex w-full sm:w-52 shrink-0 items-center gap-3 rounded-2xl bg-white/95 backdrop-blur-sm px-4 py-3 shadow-[0_8px_30px_rgba(0,0,0,0.18)] ring-1 ring-white/40 transition-transform hover:scale-[1.03] active:scale-95"
+          className="group flex w-full sm:w-56 shrink-0 items-center gap-3 rounded-2xl bg-white/95 backdrop-blur-sm px-4 py-3 shadow-[0_8px_30px_rgba(0,0,0,0.18)] ring-1 ring-white/40 transition-transform hover:scale-[1.03] active:scale-95"
         >
           <span
             className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl"
@@ -75,7 +75,7 @@ export default function HeroModeCards({ locale }: { locale: Locale }) {
             <span className="block text-[15px] font-black leading-tight text-[#0A0A0F]">
               {c.name}
             </span>
-            <span className="block text-[11px] leading-tight text-neutral-600 truncate">
+            <span className="block text-[10px] leading-snug text-neutral-600">
               {tagline(c.slug, locale)}
             </span>
           </span>
