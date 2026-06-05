@@ -7,7 +7,7 @@ import { homeTranslations } from "@/lib/home-i18n";
 import { uiExtra } from "@/lib/ui-extra-i18n";
 import { navbarI18n } from "@/lib/navbar-i18n";
 import { homeSections } from "@/lib/home-sections-i18n";
-import { getWhyExists } from "@/lib/why-exists-i18n";
+import { CITY_GUIDES, CITY_GUIDE_LANGS } from "@/lib/cityGuides";
 import { useInView } from "@/hooks/useInView";
 import Navbar from "@/components/Navbar";
 import HeroCitySearch from "@/components/HeroCitySearch";
@@ -23,9 +23,6 @@ export default function HomePage() {
   const ux = uiExtra[locale] ?? uiExtra.en;
   const hs = homeSections[locale] ?? homeSections.en;
   const nb = navbarI18n[locale] ?? navbarI18n.en;
-
-  // "Why VibeGuide Exists" manifestosu — tüm dillere çevrildi.
-  const whyExists = getWhyExists(locale);
 
   const secHow = useInView();
   const secModes = useInView();
@@ -132,27 +129,11 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── TOP DESTINATIONS ── */}
+      <TopDestinations />
+
       {/* ── POPULAR TOURS (GYG-style rail) ── */}
       <PopularTours />
-
-      {/* ── WHY VIBEGUIDE EXISTS ── */}
-      <section className="py-28 bg-[#F7F7FB] relative overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#6C4CF1]/5 rounded-full blur-[80px] pointer-events-none" />
-        <div className="relative mx-auto max-w-3xl px-6 text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1]">{whyExists.eyebrow}</p>
-          <h2 className="mt-6 text-4xl md:text-6xl font-black tracking-tight leading-tight text-[#0A0A0F]">
-            {whyExists.titleA}
-            <br />
-            <span className="text-neutral-700">{whyExists.titleB}</span>
-          </h2>
-          <p className="mx-auto mt-10 max-w-2xl text-base md:text-lg leading-8 text-neutral-800">
-            {whyExists.body}
-          </p>
-          <p className="mt-10 text-xl md:text-2xl font-black tracking-tight text-[#0A0A0F] border-t border-black/[0.06] pt-10">
-            {whyExists.closing}
-          </p>
-        </div>
-      </section>
 
 
       {/* ── HOW IT WORKS ── */}
@@ -334,6 +315,52 @@ function fmtDuration(m: number): string {
   const h = Math.floor(m / 60);
   const mm = m % 60;
   return mm > 0 ? `${h}h ${mm}m` : `${h}h`;
+}
+
+// Top Destinations — gerçek şehir rehberi sayfaları (Istanbul/Cappadocia/Ephesus).
+// Şehir rehberi yalnızca CITY_GUIDE_LANGS dillerinde var; diğer dilde EN köke düşer.
+function TopDestinations() {
+  const { locale } = useT();
+  const hs = homeSections[locale] ?? homeSections.en;
+  const href = (slug: string) => {
+    const lang = (CITY_GUIDE_LANGS as readonly string[]).includes(locale) ? locale : "en";
+    return lang === "en" ? `/${slug}` : `/${lang}/${slug}`;
+  };
+  return (
+    <section className="pt-16 pb-4 bg-white">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="mb-7">
+          <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1]">{hs.availableNow}</p>
+          <h2 className="mt-3 text-3xl md:text-5xl font-black tracking-tight text-[#0A0A0F]">{hs.exploreDestinations}</h2>
+          <p className="mt-2 text-sm text-neutral-800 max-w-md">{hs.exploreDestSub}</p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+          {CITY_GUIDES.map((c) => (
+            <a
+              key={c.slug}
+              href={href(c.slug)}
+              className="group relative overflow-hidden rounded-3xl aspect-[4/3] shadow-sm hover:shadow-xl transition-shadow"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={c.heroImage}
+                alt={c.cityName}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-5">
+                <h3 className="text-2xl font-black text-white drop-shadow">{c.cityName}</h3>
+                <span className="mt-1 inline-flex items-center gap-1 text-sm font-semibold text-white/90">
+                  {hs.exploreDestinations}
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
 
 function PopularTours() {
