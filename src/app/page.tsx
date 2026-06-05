@@ -87,7 +87,11 @@ export default function HomePage() {
 
       {/* ── TRUST BAR ── */}
       <section className="border-y border-black/[0.06] bg-white">
-        <div className="mx-auto max-w-7xl px-6 py-5 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+        <div className="mx-auto max-w-7xl px-6 pt-8 text-center">
+          <h2 className="text-2xl md:text-3xl font-black tracking-tight text-[#0A0A0F]">{ux.trustHeading}</h2>
+          <p className="mt-2 text-sm text-neutral-700 max-w-2xl mx-auto">{ux.trustHeadingSub}</p>
+        </div>
+        <div className="mx-auto max-w-7xl px-6 py-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
           {[
             {
               // Licensed local guides — shield
