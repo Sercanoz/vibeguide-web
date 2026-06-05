@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useCallback, useRef } from "react";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { API_BASE_URL } from "@/lib/api";
 import { useT } from "@/components/LanguageProvider";
 import { getToursT } from "@/lib/i18n";
@@ -83,6 +83,17 @@ interface TourDetail {
   importantInfo?: TourImportantInfo[];
 }
 
+// Kişi sayısına göre kişi-başı fiyat: tam eşleşen tier varsa onu (guideAmount/count),
+// yoksa basePrice. Toplam = perPerson * kişi.
+function perPersonForCount(tour: TourDetail, count: number): number {
+  const tiers = (tour.pricingTiers ?? []).filter(
+    (t) => t.participantCount > 0 && t.guideAmount > 0
+  );
+  const exact = tiers.find((t) => t.participantCount === count);
+  if (exact) return Math.round((exact.guideAmount / exact.participantCount) * 100) / 100;
+  return tour.basePrice;
+}
+
 function formatDuration(minutes: number): string {
   if (minutes < 60) return `${minutes} min`;
   const h = Math.floor(minutes / 60);
@@ -106,12 +117,16 @@ export default function TourDetailPage() {
   const params = useParams();
   const id = params?.id as string;
   const { locale } = useT();
+  const router = useRouter();
   const tt = getToursT(locale);
   const [tour, setTour] = useState<TourDetail | null | "loading" | "error">("loading");
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
   // Tur detay sekmeleri — uzun sayfayı bölümlere ayırır (GetYourGuide tarzı).
   const [activeTab, setActiveTab] = useState<"overview" | "itinerary" | "included" | "info">("overview");
+  // Rezervasyon widget'ı: tarih + kişi sayısı (checkout'a taşınır).
+  const [bkDate, setBkDate] = useState("");
+  const [bkPeople, setBkPeople] = useState(1);
 
   const openLightbox = useCallback((i: number) => { setLightboxIndex(i); setLightboxOpen(true); }, []);
   const closeLightbox = useCallback(() => setLightboxOpen(false), []);
@@ -628,49 +643,61 @@ export default function TourDetailPage() {
             </div>
           </div>
 
-          <a
-            href="/#download"
+          {/* ── Rezervasyon: tarih + kişi sayısı + canlı toplam ── */}
+          <div className="space-y-3">
+            <div>
+              <label className="block text-xs font-bold text-neutral-800 mb-1">{tt.bkDate}</label>
+              <input
+                type="date"
+                value={bkDate}
+                min={new Date().toISOString().split("T")[0]}
+                onChange={(e) => setBkDate(e.target.value)}
+                className="w-full rounded-xl border border-black/10 px-3.5 py-2.5 text-sm focus:outline-none focus:border-[#6C4CF1] focus:ring-2 focus:ring-[#6C4CF1]/10 transition-all"
+              />
+            </div>
+            <div>
+              <label className="block text-xs font-bold text-neutral-800 mb-1">{tt.bkTravelers}</label>
+              <div className="flex items-center justify-between rounded-xl border border-black/10 px-3 py-1.5">
+                <button
+                  type="button"
+                  onClick={() => setBkPeople((p) => Math.max(1, p - 1))}
+                  className="w-8 h-8 rounded-lg bg-[#F7F7FB] text-[#6C4CF1] font-black text-lg hover:bg-[#6C4CF1]/10 transition-colors"
+                  aria-label="−"
+                >−</button>
+                <span className="font-black text-base">{bkPeople}</span>
+                <button
+                  type="button"
+                  onClick={() => setBkPeople((p) => Math.min(20, p + 1))}
+                  className="w-8 h-8 rounded-lg bg-[#F7F7FB] text-[#6C4CF1] font-black text-lg hover:bg-[#6C4CF1]/10 transition-colors"
+                  aria-label="+"
+                >+</button>
+              </div>
+            </div>
+            <div className="flex items-center justify-between pt-1">
+              <span className="text-sm font-semibold text-neutral-800">{tt.bkTotal}</span>
+              <span className="text-2xl font-black text-[#6C4CF1]">
+                <Price amount={perPersonForCount(tour, bkPeople) * bkPeople} currency={tour.currency} />
+              </span>
+            </div>
+          </div>
+
+          <button
+            onClick={() => {
+              if (!bkDate) { alert(tt.bkSelectDate); return; }
+              router.push(`/tours/${tour.id}/checkout?date=${bkDate}&people=${bkPeople}`);
+            }}
             className="block w-full text-center rounded-full bg-[#6C4CF1] text-white font-bold py-3.5 hover:bg-[#5a3dd4] transition-colors shadow-sm hover:shadow-[0_0_20px_rgba(108,76,241,0.35)]"
           >
-            {tt.bookViaApp}
-          </a>
+            {tt.bkContinue}
+          </button>
 
-          <a
-            href={`https://wa.me/905308287696?text=${encodeURIComponent(`Hi! I'd like to book: ${tour.title}`)}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex w-full items-center justify-center gap-2 rounded-full border-2 border-[#25D366] text-[#1c8c44] font-bold py-3 hover:bg-[#25D366]/10 transition-colors"
-          >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.207zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/>
-            </svg>
-            {tt.bookViaWeb}
-          </a>
+          {/* iyzico güven rozeti */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/iyzico-cards.png" alt="iyzico ile Öde · Visa · Mastercard · Amex · Troy" className="h-6 w-auto mx-auto opacity-90" />
 
           <p className="text-xs text-neutral-800 text-center leading-5">
             {tt.bookNote}
           </p>
-
-          <div className="flex gap-2 pt-1">
-            <a
-              href="/#download"
-              className="flex-1 flex items-center justify-center gap-1.5 rounded-xl border border-black/10 py-2 text-xs font-semibold text-neutral-800 hover:border-[#6C4CF1]/40 hover:text-[#6C4CF1] transition-colors"
-            >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-              </svg>
-              App Store
-            </a>
-            <a
-              href="/#download"
-              className="flex-1 flex items-center justify-center gap-1.5 rounded-xl border border-black/10 py-2 text-xs font-semibold text-neutral-800 hover:border-[#6C4CF1]/40 hover:text-[#6C4CF1] transition-colors"
-            >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M3.18 23.76c.3.17.64.19.96.08l13.12-7.57-2.8-2.8-11.28 10.29zM20.9 10.42L17.96 8.7 14.84 11.8l3.13 3.12 2.95-1.7c.84-.48.84-2.32-.02-2.8zM2.14.75C2.05 1 2 1.26 2 1.56v20.89c0 .3.04.57.14.81L13.61 11.8 2.14.75zM3.18.24L14.84 11.8l-2.8 2.8L.22.32C.56.21.9.23 1.22.4l1.96 1.13V.24z"/>
-              </svg>
-              Google Play
-            </a>
-          </div>
         </aside>
       </div>
 
@@ -682,12 +709,15 @@ export default function TourDetailPage() {
             <Price amount={tour.basePrice} currency={tour.currency} />
           </p>
         </div>
-        <a
-          href="/#download"
+        <button
+          onClick={() => {
+            const d = bkDate || new Date().toISOString().split("T")[0];
+            router.push(`/tours/${tour.id}/checkout?date=${d}&people=${bkPeople}`);
+          }}
           className="rounded-full bg-[#6C4CF1] text-white font-bold px-6 py-3 text-sm hover:bg-[#5a3dd4] transition-colors"
         >
-          {tt.bookViaApp}
-        </a>
+          {tt.bkContinue}
+        </button>
       </div>
 
       <div className="md:hidden h-20" />
