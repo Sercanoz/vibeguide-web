@@ -542,7 +542,7 @@ const CAPPADOCIA: CityGuide = {
   citySlug: "nevsehir",
   cityName: "Cappadocia",
   heroImage:
-    "https://images.unsplash.com/photo-1570939274717-7eda259b50ed?q=80&w=1600",
+    "https://images.unsplash.com/photo-1627933577672-d191b77baa9c?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y2FwcGFkb2NpYXxlbnwwfHwwfHx8MA%3D%3D",
   i18n: {
     en: {
       metaTitle: "Cappadocia Tour Guide — Hot Air Balloon & Valley Tours",
@@ -937,7 +937,7 @@ const EPHESUS: CityGuide = {
   citySlug: "izmir",
   cityName: "Ephesus",
   heroImage:
-    "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1600",
+    "https://plus.unsplash.com/premium_photo-1661963222829-cf9572881843?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZXBoZXN1cyUyMHR1cmtleXxlbnwwfHwwfHx8MA%3D%3D",
   i18n: {
     en: {
       metaTitle: "Ephesus Tour Guide — Private & Group Tours",

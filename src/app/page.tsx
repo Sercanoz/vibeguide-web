@@ -88,7 +88,7 @@ export default function HomePage() {
           <h2 className="text-2xl md:text-3xl font-black tracking-tight text-[#0A0A0F]">{ux.trustHeading}</h2>
           <p className="mt-2 text-sm text-neutral-700 max-w-2xl mx-auto">{ux.trustHeadingSub}</p>
         </div>
-        <div className="mx-auto max-w-7xl px-6 py-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+        <div className="mx-auto max-w-7xl px-6 py-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
           {[
             {
               // Licensed local guides — shield
@@ -114,6 +114,11 @@ export default function HomePage() {
               // Money-back protection — wallet/refund
               icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EC4899" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>,
               title: ux.trustCancelTitle, sub: ux.trustCancelSub,
+            },
+            {
+              // 24/7 customer support — headset
+              icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>,
+              title: ux.trustSupportTitle, sub: ux.trustSupportSub,
             },
           ].map((item) => (
             <div key={item.title} className="flex items-center justify-center gap-3">
