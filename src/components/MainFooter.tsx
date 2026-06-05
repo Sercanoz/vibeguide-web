@@ -101,7 +101,7 @@ export default function MainFooter() {
           <div className="mt-8 flex justify-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/secure.png"
+              src="/secure.png?v=2"
               alt="iyzico ile Öde · Mastercard · Visa · American Express · Troy"
               className="h-7 w-auto opacity-90"
             />
