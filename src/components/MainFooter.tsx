@@ -97,6 +97,15 @@ export default function MainFooter() {
               <p>{ux.workingHours}</p>
             </div>
           </div>
+          {/* Ödeme güvenliği logoları — iyzico ile Öde, Visa, Mastercard, Amex, Troy */}
+          <div className="mt-8 flex justify-center">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/iyzico-cards.png"
+              alt="iyzico ile Öde · Mastercard · Visa · American Express · Troy"
+              className="h-7 w-auto opacity-90"
+            />
+          </div>
           <div className="mt-6 flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-xs text-neutral-700">{t.footer.copyright}</p>
             <p className="text-xs text-neutral-700">{ux.trustLine}</p>
