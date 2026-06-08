@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { API_BASE_URL } from "@/lib/api";
+import { clientFetch } from "@/lib/api";
 import { useT } from "@/components/LanguageProvider";
 import { uiExtra } from "@/lib/ui-extra-i18n";
 
@@ -81,7 +81,7 @@ export default function HeroCitySearch({ onDark = false }: { onDark?: boolean } 
   // Turları çek → benzersiz destinasyon listesi üret.
   useEffect(() => {
     let alive = true;
-    fetch(`${API_BASE_URL}/api/tours?locale=${locale}`, { cache: "no-store" })
+    clientFetch(`/api/tours?locale=${locale}`, { cache: "no-store" })
       .then((r) => (r.ok ? r.json() : []))
       .then((tours: TourLite[]) => {
         if (!alive || !Array.isArray(tours)) return;

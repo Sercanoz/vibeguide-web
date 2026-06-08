@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { fbAuth } from "@/lib/firebase-client";
+import { fbAuth, buildAuthHeaders } from "@/lib/firebase-client";
 import { API_BASE_URL } from "@/lib/api";
 
 export default function GuidePendingPage() {
@@ -13,9 +13,8 @@ export default function GuidePendingPage() {
       if (!user) { window.location.href = "/login"; return; }
       setEmail(user.email);
       try {
-        const token = await user.getIdToken(true);
         const res = await fetch(`${API_BASE_URL}/api/auth/me`, {
-          headers: { Authorization: `Bearer ${token}` },
+          headers: await buildAuthHeaders({ forceRefresh: true }),
         });
         if (res.ok) {
           const me = await res.json();

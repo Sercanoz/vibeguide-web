@@ -6,7 +6,7 @@ import { navbarI18n } from "@/lib/navbar-i18n";
 import LanguageSwitcher from "./LanguageSwitcher";
 import CurrencySwitcher from "./CurrencySwitcher";
 import AuthModal from "./AuthModal";
-import { fbAuth, signOut, type User } from "@/lib/firebase-client";
+import { fbAuth, signOut, buildAuthHeaders, type User } from "@/lib/firebase-client";
 import { API_BASE_URL } from "@/lib/api";
 import { CITY_GUIDE_LANGS } from "@/lib/cityGuides";
 
@@ -43,9 +43,8 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
       // Oturumu backend /me ile teyit et — kayıtlı kullanıcıysa (turist/rehber/admin)
       // navbar'da giriş yapmış göster. emailVerified'a bakmıyoruz (rehberi düşürüyordu).
       try {
-        const token = await u.getIdToken();
         const res = await fetch(`${API_BASE_URL}/api/auth/me`, {
-          headers: { Authorization: `Bearer ${token}` },
+          headers: await buildAuthHeaders(),
         });
         setUser(res.ok ? u : null);
       } catch {

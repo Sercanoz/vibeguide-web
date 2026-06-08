@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { API_BASE_URL } from "@/lib/api";
+import { serverFetch } from "@/lib/api";
 import { ATTRACTIONS, ATTRACTION_LANGS } from "@/lib/attractions";
 import { CITY_GUIDES, CITY_GUIDE_LANGS } from "@/lib/cityGuides";
 
@@ -36,7 +36,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Dynamic tour pages
   let tourRoutes: MetadataRoute.Sitemap = [];
   try {
-    const res = await fetch(`${API_BASE_URL}/api/tours?locale=en`, { next: { revalidate: 3600 } });
+    const res = await serverFetch(`/api/tours?locale=en`, { next: { revalidate: 3600 } });
     if (res.ok) {
       const tours: Tour[] = await res.json();
       tourRoutes = tours.map((t) => ({

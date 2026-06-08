@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useT } from "./LanguageProvider";
-import { API_BASE_URL } from "@/lib/api";
+import { clientFetch } from "@/lib/api";
 
 const DELAY_MS = 60000; // 1 dk — kullanıcı önce siteyi gezsin, sonra indirim teklifi
 const STORAGE_KEY = "vg_email_capture"; // "dismissed" | "subscribed"
@@ -60,7 +60,7 @@ export default function EmailCaptureModal() {
     if (!email.trim() || !email.includes("@")) { setError(ec.invalidEmail); return; }
     setState("loading");
     try {
-      const res = await fetch(`${API_BASE_URL}/api/subscribe`, {
+      const res = await clientFetch(`/api/subscribe`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: email.trim(), source: "homepage_popup", locale }),

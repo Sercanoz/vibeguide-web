@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useCallback, useRef } from "react";
 import { useParams, useRouter } from "next/navigation";
-import { API_BASE_URL } from "@/lib/api";
+import { clientFetch } from "@/lib/api";
 import { useT } from "@/components/LanguageProvider";
 import { getToursT } from "@/lib/i18n";
 import Navbar from "@/components/Navbar";
@@ -136,7 +136,7 @@ export default function TourDetailPage() {
   useEffect(() => {
     if (!id) return;
     setTour("loading");
-    fetch(`${API_BASE_URL}/api/tours/${id}?locale=${locale}`, { cache: "no-store" })
+    clientFetch(`/api/tours/${id}?locale=${locale}`, { cache: "no-store" })
       .then((r) => {
         if (r.status === 404) return null;
         if (!r.ok) return "error" as const;
@@ -852,7 +852,7 @@ function ReviewsSection({ tourId }: { tourId: number }) {
   const [data, setData] = useState<{ count: number; avgRating: number; reviews: PublicReview[] } | null>(null);
 
   useEffect(() => {
-    fetch(`${API_BASE_URL}/api/tours/${tourId}/public-reviews`)
+    clientFetch(`/api/tours/${tourId}/public-reviews`)
       .then((r) => (r.ok ? r.json() : null))
       .then((d) => d && setData(d))
       .catch(() => {});

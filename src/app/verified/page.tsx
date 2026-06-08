@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { fbAuth } from "@/lib/firebase-client";
+import { fbAuth, buildAuthHeaders } from "@/lib/firebase-client";
 import { API_BASE_URL } from "@/lib/api";
 
 type State = "working" | "done" | "error";
@@ -17,8 +17,10 @@ export default function VerifiedPage() {
       try {
         // Refresh so emailVerified=true is reflected in the ID token
         await user.reload();
-        const token = await user.getIdToken(true);
-        const headers = { "Content-Type": "application/json", Authorization: `Bearer ${token}` };
+        const headers = await buildAuthHeaders({
+          forceRefresh: true,
+          extra: { "Content-Type": "application/json" },
+        });
 
         // Already registered?
         const meRes = await fetch(`${API_BASE_URL}/api/auth/me`, { headers });

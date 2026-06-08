@@ -1,7 +1,7 @@
 "use client";
 
 import { use, useEffect, useState } from "react";
-import { API_BASE_URL } from "@/lib/api";
+import { clientFetch } from "@/lib/api";
 // (review submission page)
 
 type Props = { params: Promise<{ id: string }> };
@@ -23,7 +23,7 @@ export default function TourReviewPage(props: Props) {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch(`${API_BASE_URL}/api/tours/${tourId}?locale=en`)
+    clientFetch(`/api/tours/${tourId}?locale=en`)
       .then((r) => (r.ok ? r.json() : null))
       .then((d) => d && setTour({ id: d.id, title: d.title, city: d.city, coverPhotoUrl: d.coverPhotoUrl ?? d.photos?.[0]?.url }))
       .catch(() => {});
@@ -36,7 +36,7 @@ export default function TourReviewPage(props: Props) {
     if (rating < 1) { setError("Please select a star rating."); return; }
     setSubmitting(true);
     try {
-      const res = await fetch(`${API_BASE_URL}/api/tours/${tourId}/public-reviews`, {
+      const res = await clientFetch(`/api/tours/${tourId}/public-reviews`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ fullName: fullName.trim(), nationality: nationality.trim() || null, rating, comment: comment.trim() || null }),

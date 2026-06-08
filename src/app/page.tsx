@@ -13,7 +13,7 @@ import HeroCitySearch from "@/components/HeroCitySearch";
 import HeroModeCards from "@/components/HeroModeCards";
 import MainFooter from "@/components/MainFooter";
 import Price from "@/components/Price";
-import { API_BASE_URL } from "@/lib/api";
+import { clientFetch } from "@/lib/api";
 import { HERO_BLUR } from "@/lib/hero-blur";
 
 export default function HomePage() {
@@ -327,7 +327,7 @@ function PopularTours() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${API_BASE_URL}/api/tours?locale=en`, { cache: "no-store" })
+    clientFetch(`/api/tours?locale=en`, { cache: "no-store" })
       .then((r) => (r.ok ? r.json() : []))
       .then((data: PopularTour[]) => { setTours(data.slice(0, 10)); setLoading(false); })
       .catch(() => setLoading(false));
@@ -454,7 +454,7 @@ function Testimonials() {
   const [reviews, setReviews] = useState<Testimonial[]>([]);
 
   useEffect(() => {
-    fetch(`${API_BASE_URL}/api/tours/reviews/featured?limit=9`, { cache: "no-store" })
+    clientFetch(`/api/tours/reviews/featured?limit=9`, { cache: "no-store" })
       .then((r) => (r.ok ? r.json() : []))
       .then((d: Testimonial[]) => setReviews(d))
       .catch(() => {});

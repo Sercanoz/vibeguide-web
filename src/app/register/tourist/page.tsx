@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { registerWithEmail, signInWithGoogle, fbAuth } from "@/lib/firebase-client";
+import { registerWithEmail, signInWithGoogle, fbAuth, buildAuthHeaders } from "@/lib/firebase-client";
 import { API_BASE_URL } from "@/lib/api";
 import { useRedirectIfAuthed } from "@/hooks/useRedirectIfAuthed";
 
@@ -22,10 +22,12 @@ export default function RegisterTouristPage() {
     const user = fbAuth().currentUser;
     if (!user) throw new Error("No Firebase user");
     await user.reload();
-    const token = await user.getIdToken(true);
     const res = await fetch(`${API_BASE_URL}/api/auth/register-tourist`, {
       method: "POST",
-      headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+      headers: await buildAuthHeaders({
+        forceRefresh: true,
+        extra: { "Content-Type": "application/json" },
+      }),
       body: JSON.stringify({
         fullName: fullName.trim(),
       }),
@@ -55,10 +57,9 @@ export default function RegisterTouristPage() {
       await registerWithEmail(email, password);
       const user = fbAuth().currentUser;
       if (user) {
-        const token = await user.getIdToken();
         await fetch(`${API_BASE_URL}/api/auth/send-verification`, {
           method: "POST",
-          headers: { Authorization: `Bearer ${token}` },
+          headers: await buildAuthHeaders(),
         });
       }
       setStep("verify");

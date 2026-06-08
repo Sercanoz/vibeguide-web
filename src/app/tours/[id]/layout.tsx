@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { API_BASE_URL } from "@/lib/api";
+import { serverFetch } from "@/lib/api";
 import JsonLdScript from "@/components/JsonLdScript";
 
 const SITE = "https://www.vibeguideapp.com";
@@ -8,7 +8,7 @@ type Props = { params: Promise<{ id: string }> };
 // Tek fetch — generateMetadata + JSON-LD aynı veriyi paylaşır (Next dedupe eder).
 async function getTour(id: string) {
   try {
-    const res = await fetch(`${API_BASE_URL}/api/tours/${id}?locale=en`, {
+    const res = await serverFetch(`/api/tours/${id}?locale=en`, {
       next: { revalidate: 3600 },
     });
     if (!res.ok) return null;

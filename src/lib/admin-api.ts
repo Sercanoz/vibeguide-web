@@ -1,6 +1,6 @@
 "use client";
 
-import { fbAuth, getIdToken } from "./firebase-client";
+import { fbAuth, getIdToken, getAppCheckToken } from "./firebase-client";
 import { API_BASE_URL } from "./api";
 
 export type BookingDispute = {
@@ -116,6 +116,9 @@ export async function authedFetch<T>(
   const token = await getIdToken(user);
   if (!token) return { ok: false, status: 401, error: "not_signed_in" };
 
+  // App Check token (varsa) — backend AppCheck:Enabled olduğunda gerekir.
+  const appCheck = await getAppCheckToken();
+
   let res: Response;
   try {
     res = await fetch(`${API_BASE_URL}${path}`, {
@@ -123,6 +126,7 @@ export async function authedFetch<T>(
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
+        ...(appCheck ? { "X-Firebase-AppCheck": appCheck } : {}),
         ...(init?.headers ?? {}),
       },
       cache: "no-store",

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { API_BASE_URL } from "@/lib/api";
+import { clientFetch } from "@/lib/api";
 import { useT } from "@/components/LanguageProvider";
 import { getToursT } from "@/lib/i18n";
 import Navbar from "@/components/Navbar";
@@ -53,7 +53,7 @@ export default function CheckoutPage() {
 
   useEffect(() => {
     if (!id) return;
-    fetch(`${API_BASE_URL}/api/tours/${id}?locale=${locale}`, { cache: "no-store" })
+    clientFetch(`/api/tours/${id}?locale=${locale}`, { cache: "no-store" })
       .then((r) => (r.ok ? r.json() : "error"))
       .then((d) => setTour(d ?? "error"))
       .catch(() => setTour("error"));

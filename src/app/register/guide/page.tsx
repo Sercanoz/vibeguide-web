@@ -2,7 +2,7 @@
 
 import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
-import { registerWithEmail, signInWithEmail, signInWithGoogle, fbAuth } from "@/lib/firebase-client";
+import { registerWithEmail, signInWithEmail, signInWithGoogle, fbAuth, buildAuthHeaders } from "@/lib/firebase-client";
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { fbApp } from "@/lib/firebase-client";
 import { API_BASE_URL } from "@/lib/api";
@@ -72,10 +72,12 @@ export default function RegisterGuidePage() {
     const user = fbAuth().currentUser;
     if (!user) throw new Error("No Firebase user");
     await user.reload();
-    const token = await user.getIdToken(true);
     const res = await fetch(`${API_BASE_URL}/api/auth/register-guide`, {
       method: "POST",
-      headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+      headers: await buildAuthHeaders({
+        forceRefresh: true,
+        extra: { "Content-Type": "application/json" },
+      }),
       body: JSON.stringify({
         fullName: fullName.trim(),
         phoneNumber: null,

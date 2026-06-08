@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { fbAuth, signOut } from "@/lib/firebase-client";
+import { fbAuth, signOut, buildAuthHeaders } from "@/lib/firebase-client";
 import { API_BASE_URL } from "@/lib/api";
 import Navbar from "@/components/Navbar";
 
@@ -74,8 +74,7 @@ export default function ProfilePage() {
       await user.reload();
       // Email doğrulama kuralını backend uygular (rehber admin KYC onaylı, muaf).
       // me.ok değilse zaten aşağıda yönlendiriliyor — erken emailVerified bloğu yok.
-      const token = await user.getIdToken();
-      const headers = { Authorization: `Bearer ${token}` };
+      const headers = await buildAuthHeaders();
 
       const [meRes, bookingsRes] = await Promise.all([
         fetch(`${API_BASE_URL}/api/auth/me`, { headers }),

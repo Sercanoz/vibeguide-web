@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
-import { fbAuth, onIdTokenChanged, signOut, type User } from "@/lib/firebase-client";
+import { fbAuth, onIdTokenChanged, signOut, buildAuthHeaders, type User } from "@/lib/firebase-client";
 import { API_BASE_URL } from "@/lib/api";
 
 type AuthState = "loading" | "unauthenticated" | "unauthorized" | User;
@@ -26,9 +26,8 @@ export default function AdminAuthGuard({
         // Email must be verified, and force-refresh the token so a revoked
         // session is caught immediately (backend also re-checks with checkRevoked).
         if (!u.emailVerified) { setAuthState("unauthorized"); return; }
-        const token = await u.getIdToken(true);
         const res = await fetch(`${API_BASE_URL}/api/auth/me`, {
-          headers: { Authorization: `Bearer ${token}` },
+          headers: await buildAuthHeaders({ forceRefresh: true }),
           cache: "no-store",
         });
         if (!res.ok) { setAuthState("unauthorized"); return; }

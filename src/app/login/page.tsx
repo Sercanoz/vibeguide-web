@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { signInWithEmail, signInWithGoogle, fbAuth } from "@/lib/firebase-client";
+import { signInWithEmail, signInWithGoogle, fbAuth, buildAuthHeaders } from "@/lib/firebase-client";
 import { API_BASE_URL } from "@/lib/api";
 import { useRedirectIfAuthed } from "@/hooks/useRedirectIfAuthed";
 
@@ -17,9 +17,8 @@ export default function LoginPage() {
   async function handleAfterLogin() {
     const user = fbAuth().currentUser;
     if (!user) return;
-    const token = await user.getIdToken();
     const res = await fetch(`${API_BASE_URL}/api/auth/me`, {
-      headers: { Authorization: `Bearer ${token}` },
+      headers: await buildAuthHeaders(),
     });
     if (res.status === 404) {
       // Firebase'de var ama DB'de yok → kayıt seçimine yönlendir

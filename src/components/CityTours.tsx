@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { API_BASE_URL } from "@/lib/api";
+import { clientFetch } from "@/lib/api";
 import { homeSections } from "@/lib/home-sections-i18n";
 import Price from "@/components/Price";
 import type { Locale } from "@/lib/i18n";
@@ -36,7 +36,7 @@ export default function CityTours({
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${API_BASE_URL}/api/tours?city=${encodeURIComponent(citySlug)}&locale=${locale}`, { cache: "no-store" })
+    clientFetch(`/api/tours?city=${encodeURIComponent(citySlug)}&locale=${locale}`, { cache: "no-store" })
       .then((r) => (r.ok ? r.json() : []))
       .then((d: Tour[]) => { setTours(d.slice(0, 6)); setLoading(false); })
       .catch(() => setLoading(false));

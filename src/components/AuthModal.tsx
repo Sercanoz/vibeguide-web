@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import {
-  signInWithEmail, signInWithGoogle, registerWithEmail, fbAuth, signOut
+  signInWithEmail, signInWithGoogle, registerWithEmail, fbAuth, signOut, buildAuthHeaders
 } from "@/lib/firebase-client";
 import { API_BASE_URL } from "@/lib/api";
 import { useT } from "@/components/LanguageProvider";
@@ -118,9 +118,8 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
     if (!user) return;
     await user.reload();
 
-    const token = await user.getIdToken(true);
     const res = await fetch(`${API_BASE_URL}/api/auth/me`, {
-      headers: { Authorization: `Bearer ${token}` },
+      headers: await buildAuthHeaders({ forceRefresh: true }),
     });
     // Kayıtlı kullanıcı (turist/rehber/admin) → içeri al. Email doğrulama kuralını
     // backend uygular (turist için zorunlu, rehber admin KYC onaylı olduğu için muaf).
@@ -149,10 +148,12 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
     const user = fbAuth().currentUser;
     if (!user) throw new Error("No user");
     await user.reload();
-    const token = await user.getIdToken(true);
     const res = await fetch(`${API_BASE_URL}/api/auth/register-tourist`, {
       method: "POST",
-      headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+      headers: await buildAuthHeaders({
+        forceRefresh: true,
+        extra: { "Content-Type": "application/json" },
+      }),
       body: JSON.stringify({ fullName: fullName.trim() }),
     });
     if (res.status === 409) { onClose(); return; }
@@ -222,10 +223,9 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
   async function sendVerificationEmail() {
     const user = fbAuth().currentUser;
     if (!user) return;
-    const token = await user.getIdToken();
     await fetch(`${API_BASE_URL}/api/auth/send-verification`, {
       method: "POST",
-      headers: { Authorization: `Bearer ${token}` },
+      headers: await buildAuthHeaders(),
     });
   }
 

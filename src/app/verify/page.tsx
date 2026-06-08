@@ -2,8 +2,8 @@
 
 import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import { fbAuth } from "@/lib/firebase-client";
-import { API_BASE_URL } from "@/lib/api";
+import { fbAuth, buildAuthHeaders } from "@/lib/firebase-client";
+import { API_BASE_URL, clientFetch } from "@/lib/api";
 
 type State = "working" | "done" | "error";
 
@@ -18,17 +18,18 @@ function VerifyInner() {
     (async () => {
       try {
         // 1. Backend verifies the token + flips Firebase emailVerified=true
-        const res = await fetch(`${API_BASE_URL}/api/auth/verify?token=${encodeURIComponent(token)}`);
+        const res = await clientFetch(`/api/auth/verify?token=${encodeURIComponent(token)}`);
         if (!res.ok) { setState("error"); return; }
 
         // 2. If a Firebase session exists, refresh it and complete DB registration
         const user = fbAuth().currentUser;
         if (user) {
           await user.reload();
-          await user.getIdToken(true); // refresh so emailVerified=true is in the token
-
-          const idToken = await user.getIdToken();
-          const headers = { "Content-Type": "application/json", Authorization: `Bearer ${idToken}` };
+          // refresh so emailVerified=true is in the token
+          const headers = await buildAuthHeaders({
+            forceRefresh: true,
+            extra: { "Content-Type": "application/json" },
+          });
 
           const meRes = await fetch(`${API_BASE_URL}/api/auth/me`, { headers });
           if (meRes.status === 404) {
