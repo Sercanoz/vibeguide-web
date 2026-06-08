@@ -14,9 +14,11 @@ import { NextRequest, NextResponse } from "next/server";
 function buildCsp(nonce: string): string {
   return [
     "default-src 'self'",
-    // 'strict-dynamic': nonce'lu script'in yüklediği alt-script'lere güvenir;
-    // 'unsafe-inline'/'unsafe-eval' kaldırıldı. https: fallback eski tarayıcılar için.
-    `script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https: 'unsafe-inline'`,
+    // nonce + domain allowlist. NOT: 'strict-dynamic' KULLANILMIYOR çünkü
+    // App Check reCAPTCHA v3 (www.google.com/recaptcha + www.gstatic.com) dinamik
+    // yükleniyor ve nonce alamıyor → strict-dynamic onu bloklar (recaptcha-error).
+    // 'unsafe-eval' yok; reCAPTCHA + gtag için gerekli kaynaklar açıkça izinli.
+    `script-src 'self' 'nonce-${nonce}' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://apis.google.com https://www.googletagmanager.com https://www.google-analytics.com`,
     "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net",
     "img-src 'self' data: blob: https://images.unsplash.com https://static.independent.co.uk https://encrypted-tbn0.gstatic.com https://flagcdn.com https://haritaapitest-production.up.railway.app https://firebasestorage.googleapis.com https://www.google-analytics.com https://www.googletagmanager.com",
     "connect-src 'self' https://*.firebaseio.com https://*.googleapis.com https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://firebaseappcheck.googleapis.com https://content-firebaseappcheck.googleapis.com https://haritaapitest-production.up.railway.app wss://haritaapitest-production.up.railway.app https://www.google-analytics.com https://region1.google-analytics.com https://open.er-api.com https://www.google.com https://www.gstatic.com",
