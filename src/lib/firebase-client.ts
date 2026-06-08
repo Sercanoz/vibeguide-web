@@ -75,8 +75,7 @@ export async function getAppCheckToken(): Promise<string | null> {
   try {
     const res = await getAppCheckTokenRaw(_appCheck, /* forceRefresh */ false);
     return res.token;
-  } catch (e) {
-    console.error("[AppCheck DEBUG] getToken FAILED:", e);
+  } catch {
     return null;
   }
 }
