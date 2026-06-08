@@ -2,7 +2,9 @@
  * Structured data — JSON-LD for Google rich results.
  * Three schemas in one bundle: Organization, WebSite, MobileApplication.
  */
-export default function JsonLd() {
+import { jsonLdScript } from "@/lib/jsonld";
+
+export default function JsonLd({ nonce }: { nonce?: string }) {
   const data = {
     "@context": "https://schema.org",
     "@graph": [
@@ -68,7 +70,8 @@ export default function JsonLd() {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      nonce={nonce}
+      dangerouslySetInnerHTML={{ __html: jsonLdScript(data) }}
     />
   );
 }

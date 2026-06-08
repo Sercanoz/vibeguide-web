@@ -1,4 +1,6 @@
 /** Renders an FAQ section + JSON-LD FAQPage schema for SEO rich snippets. */
+import JsonLdScript from "@/components/JsonLdScript";
+
 export type Faq = { q: string; a: string };
 
 export default function CityFaqSchema({ city, faqs }: { city: string; faqs: Faq[] }) {
@@ -14,7 +16,7 @@ export default function CityFaqSchema({ city, faqs }: { city: string; faqs: Faq[
 
   return (
     <section className="py-20 bg-white">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <JsonLdScript data={jsonLd} />
       <div className="mx-auto max-w-3xl px-6">
         <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1] mb-4">FAQ</p>
         <h2 className="text-3xl md:text-4xl font-black mb-10 tracking-tight">

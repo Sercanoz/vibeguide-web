@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import MainFooter from "@/components/MainFooter";
 import PhoneFrame from "@/components/PhoneFrame";
 import { useT } from "@/components/LanguageProvider";
+import { jsonLdScript } from "@/lib/jsonld";
 import { MODES, localizeMode, ctaSub, type Mode } from "@/lib/modes";
 import { MODE_UI } from "@/lib/modes-i18n";
 import type { Locale } from "@/lib/i18n";
@@ -64,7 +65,7 @@ function ModeMock({ mode, locale }: { mode: Mode; locale: string }) {
   );
 }
 
-export default function ModePageView({ mode: rawMode }: { mode: Mode }) {
+export default function ModePageView({ mode: rawMode, nonce }: { mode: Mode; nonce?: string }) {
   const { locale } = useT();
   const mode = localizeMode(rawMode, locale);
   const others = MODES.filter((m) => m.slug !== rawMode.slug).map((m) => localizeMode(m, locale));
@@ -97,7 +98,8 @@ export default function ModePageView({ mode: rawMode }: { mode: Mode }) {
     <main className="min-h-screen bg-white text-[#0A0A0F] antialiased">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        nonce={nonce}
+        dangerouslySetInnerHTML={{ __html: jsonLdScript(jsonLd) }}
       />
 
       <Navbar />

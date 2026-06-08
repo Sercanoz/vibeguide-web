@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { API_BASE_URL } from "@/lib/api";
+import JsonLdScript from "@/components/JsonLdScript";
 
 const SITE = "https://www.vibeguideapp.com";
 type Props = { params: Promise<{ id: string }> };
@@ -91,12 +92,7 @@ export default async function TourLayout({
 
   return (
     <>
-      {jsonLd && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      )}
+      {jsonLd && <JsonLdScript data={jsonLd} />}
       {children}
     </>
   );

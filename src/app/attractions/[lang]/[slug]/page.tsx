@@ -5,6 +5,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import MainFooter from "@/components/MainFooter";
 import CityTours from "@/components/CityTours";
+import JsonLdScript from "@/components/JsonLdScript";
 import {
   ATTRACTION_LANGS,
   ATTRACTIONS,
@@ -122,10 +123,7 @@ export default async function AttractionPage({ params }: Props) {
       dir={rtl ? "rtl" : "ltr"}
       className="min-h-screen bg-white text-[#0A0A0F] antialiased"
     >
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLdScript data={jsonLd} />
 
       <Navbar />
 

@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { headers } from "next/headers";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import JsonLd from "@/components/JsonLd";
@@ -116,20 +117,19 @@ export const viewport: Viewport = {
   maximumScale: 5,
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // lang sabit "en": middleware'e (headers) bağımlılık kalkınca tüm statik sayfalar
-  // tekrar statik + cache'lenebilir olur → Google rahat tarar, site hızlanır.
-  // Çok dilli /[lang]/ sayfaları içeriği + hreflang ile dil sinyalini zaten veriyor.
+  // CSP nonce — middleware'in ürettiği nonce'u inline script'lere geçir.
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <head>
-        <JsonLd />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-SH98TTW4KS" />
-        <script dangerouslySetInnerHTML={{ __html: `
+        <JsonLd nonce={nonce} />
+        <script async nonce={nonce} src="https://www.googletagmanager.com/gtag/js?id=G-SH98TTW4KS" />
+        <script nonce={nonce} dangerouslySetInnerHTML={{ __html: `
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied' });

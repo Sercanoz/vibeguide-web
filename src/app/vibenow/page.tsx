@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import ModePageView from "@/components/ModePageView";
 import { getMode } from "@/lib/modes";
 
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title: mode.metaTitle, description: mode.metaDescription },
 };
 
-export default function Page() {
-  return <ModePageView mode={mode} />;
+export default async function Page() {
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
+  return <ModePageView mode={mode} nonce={nonce} />;
 }

@@ -5,6 +5,7 @@ import MainFooter from "@/components/MainFooter";
 import CityTours from "@/components/CityTours";
 import type { CityGuide, CityGuideLang } from "@/lib/cityGuides";
 import { RTL_CITY_LANGS } from "@/lib/cityGuides";
+import JsonLdScript from "@/components/JsonLdScript";
 
 const SITE = "https://www.vibeguideapp.com";
 
@@ -287,10 +288,7 @@ export default function CityGuideView({
         </div>
       </section>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLdScript data={jsonLd} />
 
       <MainFooter />
     </main>
