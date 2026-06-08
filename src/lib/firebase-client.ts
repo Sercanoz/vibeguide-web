@@ -71,13 +71,9 @@ export function fbApp(): FirebaseApp {
 export async function getAppCheckToken(): Promise<string | null> {
   if (typeof window === "undefined") return null;
   fbApp(); // init'i garanti et
-  if (!_appCheck) {
-    console.warn("[AppCheck DEBUG] _appCheck null — siteKey:", !!process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY);
-    return null;
-  }
+  if (!_appCheck) return null;
   try {
     const res = await getAppCheckTokenRaw(_appCheck, /* forceRefresh */ false);
-    console.log("[AppCheck DEBUG] token OK, len:", res.token?.length);
     return res.token;
   } catch (e) {
     console.error("[AppCheck DEBUG] getToken FAILED:", e);
