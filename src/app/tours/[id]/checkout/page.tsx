@@ -122,7 +122,7 @@ export default function CheckoutPage() {
               <div className="flex items-center justify-between mb-3">
                 <h2 className="text-lg font-black">{tt.coPayWith}</h2>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/secure.png?v=2" alt="iyzico · Visa · Mastercard · Amex · Troy" className="h-6 w-auto opacity-90" />
+                <img src="/logo_band_colored@2x.png" alt="iyzico · Visa · Mastercard · Amex · Troy" className="h-6 w-auto opacity-90" />
               </div>
               <p className="text-xs text-neutral-700 leading-5 mb-4">{tt.coSecureNote}</p>
 
