@@ -693,7 +693,7 @@ export default function TourDetailPage() {
 
           {/* iyzico güven rozeti */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo_band_colored@2x.png" alt="iyzico ile Öde · Visa · Mastercard · Amex · Troy" className="h-6 w-auto mx-auto opacity-90" />
+          <img src="/visamastercard.jpg" alt="iyzico ile Öde · Visa · Mastercard · Amex · Troy" className="h-6 w-auto mx-auto opacity-90" />
 
           <p className="text-xs text-neutral-800 text-center leading-5">
             {tt.bookNote}
