@@ -97,12 +97,12 @@ export default function MainFooter() {
               <p>{ux.workingHours}</p>
             </div>
           </div>
-          {/* Ödeme güvenliği logoları — iyzico ile Öde, Visa, Mastercard, Amex, Troy */}
+          {/* Ödeme güvenliği logoları — Visa, Mastercard, Amex, Troy */}
           <div className="mt-8 flex justify-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/visamastercard.jpg"
-              alt="iyzico ile Öde · Mastercard · Visa · American Express · Troy"
+              alt="Mastercard · Visa · American Express · Troy"
               className="h-7 w-auto opacity-90"
             />
           </div>

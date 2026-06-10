@@ -79,8 +79,8 @@ export default function CheckoutPage() {
       setNotice(tt.coFillAll);
       return;
     }
-    // iyzico API anahtarı geldiğinde burada gerçek ödeme oturumu açılacak
-    // (createCheckoutForm → iyzico'ya güvenli yönlendirme).
+    // Ödeme sağlayıcı API anahtarı geldiğinde burada gerçek ödeme oturumu açılacak
+    // (ödeme sağlayıcısına güvenli yönlendirme).
     setNotice(tt.coRedirectNote);
   }
 
