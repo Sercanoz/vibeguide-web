@@ -115,7 +115,7 @@ export const ATTRACTIONS: Attraction[] = [
     i18n: {
       en: {
         name: "Hagia Sophia",
-        metaTitle: "Hagia Sophia Tours & Local Guides | VibeGuide",
+        metaTitle: "Hagia Sophia Tours & Local Guides",
         metaDescription:
           "Explore Hagia Sophia in Istanbul with a verified local guide. Skip the confusion, hear 1,500 years of Byzantine and Ottoman history from a real expert.",
         intro: [
@@ -137,7 +137,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       de: {
         name: "Hagia Sophia",
-        metaTitle: "Hagia Sophia Touren & lokale Guides | VibeGuide",
+        metaTitle: "Hagia Sophia Touren & lokale Guides",
         metaDescription:
           "Entdecke die Hagia Sophia in Istanbul mit einem geprüften lokalen Guide. 1.500 Jahre byzantinische und osmanische Geschichte von einem echten Experten.",
         intro: [
@@ -159,7 +159,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       ru: {
         name: "Айя-София",
-        metaTitle: "Айя-София: экскурсии с местными гидами | VibeGuide",
+        metaTitle: "Айя-София: экскурсии с местными гидами",
         metaDescription:
           "Посетите Айя-Софию в Стамбуле с проверенным местным гидом. 1500 лет византийской и османской истории от настоящего эксперта.",
         intro: [
@@ -181,7 +181,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       ar: {
         name: "آيا صوفيا",
-        metaTitle: "جولات آيا صوفيا مع مرشدين محليين | VibeGuide",
+        metaTitle: "جولات آيا صوفيا مع مرشدين محليين",
         metaDescription:
           "اكتشف آيا صوفيا في إسطنبول مع مرشد محلي موثّق. 1500 عام من التاريخ البيزنطي والعثماني من خبير حقيقي.",
         intro: [
@@ -203,7 +203,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       es: {
         name: "Santa Sofía",
-        metaTitle: "Tours de Santa Sofía con guías locales | VibeGuide",
+        metaTitle: "Tours de Santa Sofía con guías locales",
         metaDescription:
           "Descubre Santa Sofía en Estambul con un guía local verificado. 1.500 años de historia bizantina y otomana de la mano de un experto real.",
         intro: [
@@ -225,7 +225,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       fr: {
         name: "Sainte-Sophie",
-        metaTitle: "Visites de Sainte-Sophie avec guides locaux | VibeGuide",
+        metaTitle: "Visites de Sainte-Sophie avec guides locaux",
         metaDescription:
           "Découvrez Sainte-Sophie à Istanbul avec un guide local vérifié. 1 500 ans d'histoire byzantine et ottomane par un véritable expert.",
         intro: [
@@ -247,7 +247,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       el: {
         name: "Αγία Σοφία",
-        metaTitle: "Ξεναγήσεις στην Αγία Σοφία με ντόπιους ξεναγούς | VibeGuide",
+        metaTitle: "Ξεναγήσεις στην Αγία Σοφία με ντόπιους ξεναγούς",
         metaDescription:
           "Εξερεύνησε την Αγία Σοφία στην Κωνσταντινούπολη με πιστοποιημένο ντόπιο ξεναγό. 1.500 χρόνια βυζαντινής και οθωμανικής ιστορίας από έναν πραγματικό ειδικό.",
         intro: [
@@ -269,7 +269,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       tr: {
         name: "Ayasofya",
-        metaTitle: "Ayasofya Turları & Yerel Rehberler | VibeGuide",
+        metaTitle: "Ayasofya Turları & Yerel Rehberler",
         metaDescription:
           "Ayasofya'yı doğrulanmış bir yerel rehberle gez. 1.500 yıllık Bizans ve Osmanlı tarihini gerçek bir uzmandan dinle.",
         intro: [
@@ -305,7 +305,7 @@ export const ATTRACTIONS: Attraction[] = [
     i18n: {
       en: {
         name: "Topkapi Palace",
-        metaTitle: "Topkapi Palace Tours & Local Guides | VibeGuide",
+        metaTitle: "Topkapi Palace Tours & Local Guides",
         metaDescription:
           "Discover Topkapi Palace, the heart of the Ottoman Empire, with a verified Istanbul guide. Harem, treasury, sacred relics and Bosphorus views explained.",
         intro: [
@@ -327,7 +327,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       de: {
         name: "Topkapı-Palast",
-        metaTitle: "Topkapı-Palast Touren & lokale Guides | VibeGuide",
+        metaTitle: "Topkapı-Palast Touren & lokale Guides",
         metaDescription:
           "Entdecke den Topkapı-Palast, das Herz des Osmanischen Reiches, mit einem geprüften Istanbul-Guide. Harem, Schatzkammer, heilige Reliquien und Bosporus-Blick erklärt.",
         intro: [
@@ -349,7 +349,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       ru: {
         name: "Дворец Топкапы",
-        metaTitle: "Дворец Топкапы: экскурсии с местными гидами | VibeGuide",
+        metaTitle: "Дворец Топкапы: экскурсии с местными гидами",
         metaDescription:
           "Откройте дворец Топкапы, сердце Османской империи, с проверенным гидом в Стамбуле. Гарем, сокровищница, священные реликвии и виды на Босфор.",
         intro: [
@@ -371,7 +371,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       ar: {
         name: "قصر توبكابي",
-        metaTitle: "جولات قصر توبكابي مع مرشدين محليين | VibeGuide",
+        metaTitle: "جولات قصر توبكابي مع مرشدين محليين",
         metaDescription:
           "اكتشف قصر توبكابي، قلب الإمبراطورية العثمانية، مع مرشد موثّق في إسطنبول. الحريم والخزينة والآثار المقدسة وإطلالات البوسفور بشرحٍ كامل.",
         intro: [
@@ -393,7 +393,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       es: {
         name: "Palacio de Topkapi",
-        metaTitle: "Tours del Palacio de Topkapi con guías locales | VibeGuide",
+        metaTitle: "Tours del Palacio de Topkapi con guías locales",
         metaDescription:
           "Descubre el Palacio de Topkapi, el corazón del Imperio otomano, con un guía verificado en Estambul. Harén, tesoro, reliquias sagradas y vistas del Bósforo.",
         intro: [
@@ -415,7 +415,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       fr: {
         name: "Palais de Topkapı",
-        metaTitle: "Visites du Palais de Topkapı avec guides locaux | VibeGuide",
+        metaTitle: "Visites du Palais de Topkapı avec guides locaux",
         metaDescription:
           "Découvrez le Palais de Topkapı, cœur de l'Empire ottoman, avec un guide vérifié à Istanbul. Harem, trésor, reliques sacrées et vues sur le Bosphore expliqués.",
         intro: [
@@ -437,7 +437,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       el: {
         name: "Ανάκτορο Τοπκαπί",
-        metaTitle: "Ξεναγήσεις στο Ανάκτορο Τοπκαπί με ντόπιους ξεναγούς | VibeGuide",
+        metaTitle: "Ξεναγήσεις στο Ανάκτορο Τοπκαπί με ντόπιους ξεναγούς",
         metaDescription:
           "Ανακάλυψε το Ανάκτορο Τοπκαπί, την καρδιά της Οθωμανικής Αυτοκρατορίας, με πιστοποιημένο ξεναγό στην Κωνσταντινούπολη. Χαρέμι, θησαυροφυλάκιο, ιερά κειμήλια και θέα στον Βόσπορο.",
         intro: [
@@ -459,7 +459,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       tr: {
         name: "Topkapı Sarayı",
-        metaTitle: "Topkapı Sarayı Turları & Yerel Rehberler | VibeGuide",
+        metaTitle: "Topkapı Sarayı Turları & Yerel Rehberler",
         metaDescription:
           "Osmanlı'nın kalbi Topkapı Sarayı'nı doğrulanmış bir İstanbul rehberiyle keşfet. Harem, hazine, kutsal emanetler ve Boğaz manzarası anlatımıyla.",
         intro: [
@@ -495,7 +495,7 @@ export const ATTRACTIONS: Attraction[] = [
     i18n: {
       en: {
         name: "Basilica Cistern",
-        metaTitle: "Basilica Cistern (Yerebatan) Tours & Local Guides | VibeGuide",
+        metaTitle: "Basilica Cistern (Yerebatan) Tours & Local Guides",
         metaDescription:
           "Descend into the Basilica Cistern, Istanbul's underground palace of water. See the Medusa heads and 336 columns with a verified local guide.",
         intro: [
@@ -517,7 +517,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       de: {
         name: "Cisterna Basilica",
-        metaTitle: "Cisterna Basilica (Yerebatan) Touren & lokale Guides | VibeGuide",
+        metaTitle: "Cisterna Basilica (Yerebatan) Touren & lokale Guides",
         metaDescription:
           "Steige hinab in die Cisterna Basilica, Istanbuls unterirdischen Wasserpalast. Sieh die Medusenköpfe und 336 Säulen mit einem geprüften lokalen Guide.",
         intro: [
@@ -539,7 +539,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       ru: {
         name: "Цистерна Базилика",
-        metaTitle: "Цистерна Базилика (Йеребатан): экскурсии с гидами | VibeGuide",
+        metaTitle: "Цистерна Базилика (Йеребатан): экскурсии с гидами",
         metaDescription:
           "Спуститесь в Цистерну Базилику, подземный водный дворец Стамбула. Увидьте головы Медузы и 336 колонн с проверенным местным гидом.",
         intro: [
@@ -561,7 +561,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       ar: {
         name: "صهريج البازيليك",
-        metaTitle: "جولات صهريج البازيليك (يره باطان) مع مرشدين | VibeGuide",
+        metaTitle: "جولات صهريج البازيليك (يره باطان) مع مرشدين",
         metaDescription:
           "انزل إلى صهريج البازيليك، قصر إسطنبول المائي تحت الأرض. شاهد رأسَي ميدوسا و336 عمودًا مع مرشد محلي موثّق.",
         intro: [
@@ -583,7 +583,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       es: {
         name: "Cisterna Basílica",
-        metaTitle: "Tours de la Cisterna Basílica (Yerebatan) con guías | VibeGuide",
+        metaTitle: "Tours de la Cisterna Basílica (Yerebatan) con guías",
         metaDescription:
           "Desciende a la Cisterna Basílica, el palacio de agua subterráneo de Estambul. Ve las cabezas de Medusa y 336 columnas con un guía local verificado.",
         intro: [
@@ -605,7 +605,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       fr: {
         name: "Citerne Basilique",
-        metaTitle: "Visites de la Citerne Basilique (Yerebatan) avec guides | VibeGuide",
+        metaTitle: "Visites de la Citerne Basilique (Yerebatan) avec guides",
         metaDescription:
           "Descendez dans la Citerne Basilique, le palais d'eau souterrain d'Istanbul. Voyez les têtes de Méduse et 336 colonnes avec un guide local vérifié.",
         intro: [
@@ -627,7 +627,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       el: {
         name: "Βασιλική Κινστέρνα",
-        metaTitle: "Ξεναγήσεις στη Βασιλική Κινστέρνα (Γερεμπατάν) | VibeGuide",
+        metaTitle: "Ξεναγήσεις στη Βασιλική Κινστέρνα (Γερεμπατάν)",
         metaDescription:
           "Κατέβα στη Βασιλική Κινστέρνα, το υπόγειο παλάτι νερού της Κωνσταντινούπολης. Δες τα κεφάλια της Μέδουσας και 336 κίονες με πιστοποιημένο ντόπιο ξεναγό.",
         intro: [
@@ -649,7 +649,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       tr: {
         name: "Yerebatan Sarnıcı",
-        metaTitle: "Yerebatan Sarnıcı Turları & Yerel Rehberler | VibeGuide",
+        metaTitle: "Yerebatan Sarnıcı Turları & Yerel Rehberler",
         metaDescription:
           "İstanbul'un yer altı su sarayı Yerebatan Sarnıcı'na in. Medusa başlarını ve 336 sütunu doğrulanmış bir yerel rehberle gör.",
         intro: [
@@ -685,7 +685,7 @@ export const ATTRACTIONS: Attraction[] = [
     i18n: {
       en: {
         name: "Blue Mosque",
-        metaTitle: "Blue Mosque (Sultanahmet) Tours & Local Guides | VibeGuide",
+        metaTitle: "Blue Mosque (Sultanahmet) Tours & Local Guides",
         metaDescription:
           "Visit the Blue Mosque in Istanbul with a verified local guide. Six minarets, 20,000 İznik tiles and a working mosque — visited respectfully and explained.",
         intro: [
@@ -707,7 +707,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       de: {
         name: "Blaue Moschee",
-        metaTitle: "Blaue Moschee (Sultanahmet) Touren & lokale Guides | VibeGuide",
+        metaTitle: "Blaue Moschee (Sultanahmet) Touren & lokale Guides",
         metaDescription:
           "Besuche die Blaue Moschee in Istanbul mit einem geprüften lokalen Guide. Sechs Minarette, 20.000 İznik-Fliesen und eine aktive Moschee — respektvoll erklärt.",
         intro: [
@@ -729,7 +729,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       ru: {
         name: "Голубая мечеть",
-        metaTitle: "Голубая мечеть (Султанахмет): экскурсии с гидами | VibeGuide",
+        metaTitle: "Голубая мечеть (Султанахмет): экскурсии с гидами",
         metaDescription:
           "Посетите Голубую мечеть в Стамбуле с проверенным местным гидом. Шесть минаретов, 20 000 изникских изразцов и действующая мечеть — с уважением и объяснением.",
         intro: [
@@ -751,7 +751,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       ar: {
         name: "المسجد الأزرق",
-        metaTitle: "جولات المسجد الأزرق (السلطان أحمد) مع مرشدين | VibeGuide",
+        metaTitle: "جولات المسجد الأزرق (السلطان أحمد) مع مرشدين",
         metaDescription:
           "زر المسجد الأزرق في إسطنبول مع مرشد محلي موثّق. ست مآذن و20 ألف بلاطة إزنيق ومسجد عامل — بزيارة محترمة وشرح وافٍ.",
         intro: [
@@ -773,7 +773,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       es: {
         name: "Mezquita Azul",
-        metaTitle: "Tours de la Mezquita Azul (Sultanahmet) con guías | VibeGuide",
+        metaTitle: "Tours de la Mezquita Azul (Sultanahmet) con guías",
         metaDescription:
           "Visita la Mezquita Azul en Estambul con un guía local verificado. Seis minaretes, 20.000 azulejos de İznik y una mezquita en activo — con respeto y explicación.",
         intro: [
@@ -795,7 +795,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       fr: {
         name: "Mosquée Bleue",
-        metaTitle: "Visites de la Mosquée Bleue (Sultanahmet) avec guides | VibeGuide",
+        metaTitle: "Visites de la Mosquée Bleue (Sultanahmet) avec guides",
         metaDescription:
           "Visitez la Mosquée Bleue à Istanbul avec un guide local vérifié. Six minarets, 20 000 carreaux d'İznik et une mosquée en activité — avec respect et explications.",
         intro: [
@@ -817,7 +817,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       el: {
         name: "Μπλε Τζαμί",
-        metaTitle: "Ξεναγήσεις στο Μπλε Τζαμί (Σουλταναχμέτ) | VibeGuide",
+        metaTitle: "Ξεναγήσεις στο Μπλε Τζαμί (Σουλταναχμέτ)",
         metaDescription:
           "Επισκέψου το Μπλε Τζαμί στην Κωνσταντινούπολη με πιστοποιημένο ντόπιο ξεναγό. Έξι μιναρέδες, 20.000 πλακάκια İznik και ένα ενεργό τζαμί — με σεβασμό και επεξήγηση.",
         intro: [
@@ -839,7 +839,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       tr: {
         name: "Sultanahmet Camii",
-        metaTitle: "Sultanahmet Camii Turları & Yerel Rehberler | VibeGuide",
+        metaTitle: "Sultanahmet Camii Turları & Yerel Rehberler",
         metaDescription:
           "İstanbul'da Sultanahmet Camii'ni (Mavi Cami) doğrulanmış bir yerel rehberle ziyaret et. Altı minare, 20.000 İznik çinisi ve ibadete açık bir cami — saygıyla ve anlatımla.",
         intro: [
@@ -875,7 +875,7 @@ export const ATTRACTIONS: Attraction[] = [
     i18n: {
       en: {
         name: "Ephesus",
-        metaTitle: "Ephesus Tours & Local Guides | VibeGuide",
+        metaTitle: "Ephesus Tours & Local Guides",
         metaDescription:
           "Walk ancient Ephesus near Selçuk, İzmir with a verified local guide. The Library of Celsus, the Great Theatre and marble streets — brought to life.",
         intro: [
@@ -897,7 +897,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       de: {
         name: "Ephesos",
-        metaTitle: "Ephesos Touren & lokale Guides | VibeGuide",
+        metaTitle: "Ephesos Touren & lokale Guides",
         metaDescription:
           "Erkunde das antike Ephesos bei Selçuk, İzmir mit einem geprüften lokalen Guide. Celsus-Bibliothek, großes Theater und Marmorstraßen — zum Leben erweckt.",
         intro: [
@@ -919,7 +919,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       ru: {
         name: "Эфес",
-        metaTitle: "Эфес: экскурсии с местными гидами | VibeGuide",
+        metaTitle: "Эфес: экскурсии с местными гидами",
         metaDescription:
           "Пройдите по античному Эфесу близ Сельчука (Измир) с проверенным местным гидом. Библиотека Цельса, Большой театр и мраморные улицы — оживают.",
         intro: [
@@ -941,7 +941,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       ar: {
         name: "أفسس",
-        metaTitle: "جولات أفسس مع مرشدين محليين | VibeGuide",
+        metaTitle: "جولات أفسس مع مرشدين محليين",
         metaDescription:
           "تجوّل في أفسس القديمة قرب سلجوق بإزمير مع مرشد محلي موثّق. مكتبة سيلسوس والمسرح الكبير والشوارع الرخامية تنبض بالحياة.",
         intro: [
@@ -963,7 +963,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       es: {
         name: "Éfeso",
-        metaTitle: "Tours de Éfeso con guías locales | VibeGuide",
+        metaTitle: "Tours de Éfeso con guías locales",
         metaDescription:
           "Recorre la antigua Éfeso cerca de Selçuk, İzmir con un guía local verificado. La Biblioteca de Celso, el Gran Teatro y calles de mármol cobran vida.",
         intro: [
@@ -985,7 +985,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       fr: {
         name: "Éphèse",
-        metaTitle: "Visites d'Éphèse avec guides locaux | VibeGuide",
+        metaTitle: "Visites d'Éphèse avec guides locaux",
         metaDescription:
           "Parcourez l'antique Éphèse près de Selçuk, İzmir avec un guide local vérifié. La Bibliothèque de Celsus, le Grand Théâtre et les rues de marbre prennent vie.",
         intro: [
@@ -1007,7 +1007,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       el: {
         name: "Έφεσος",
-        metaTitle: "Ξεναγήσεις στην Έφεσο με ντόπιους ξεναγούς | VibeGuide",
+        metaTitle: "Ξεναγήσεις στην Έφεσο με ντόπιους ξεναγούς",
         metaDescription:
           "Περπάτησε στην αρχαία Έφεσο κοντά στο Σελτσούκ της Σμύρνης με πιστοποιημένο ντόπιο ξεναγό. Η Βιβλιοθήκη του Κέλσου, το Μέγα Θέατρο και οι μαρμάρινοι δρόμοι ζωντανεύουν.",
         intro: [
@@ -1029,7 +1029,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       tr: {
         name: "Efes",
-        metaTitle: "Efes Turları & Yerel Rehberler | VibeGuide",
+        metaTitle: "Efes Turları & Yerel Rehberler",
         metaDescription:
           "İzmir Selçuk yakınındaki antik Efes'i doğrulanmış bir yerel rehberle gez. Celsus Kütüphanesi, Büyük Tiyatro ve mermer caddeler canlanıyor.",
         intro: [
@@ -1065,7 +1065,7 @@ export const ATTRACTIONS: Attraction[] = [
     i18n: {
       en: {
         name: "Cappadocia",
-        metaTitle: "Cappadocia Tours & Local Guides | VibeGuide",
+        metaTitle: "Cappadocia Tours & Local Guides",
         metaDescription:
           "Explore Cappadocia with a verified local guide. Hot-air balloons, fairy chimneys, cave churches and underground cities in Göreme and beyond.",
         intro: [
@@ -1087,7 +1087,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       de: {
         name: "Kappadokien",
-        metaTitle: "Kappadokien Touren & lokale Guides | VibeGuide",
+        metaTitle: "Kappadokien Touren & lokale Guides",
         metaDescription:
           "Entdecke Kappadokien mit einem geprüften lokalen Guide. Heißluftballons, Feenkamine, Höhlenkirchen und unterirdische Städte in Göreme und Umgebung.",
         intro: [
@@ -1109,7 +1109,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       ru: {
         name: "Каппадокия",
-        metaTitle: "Каппадокия: экскурсии с местными гидами | VibeGuide",
+        metaTitle: "Каппадокия: экскурсии с местными гидами",
         metaDescription:
           "Откройте Каппадокию с проверенным местным гидом. Воздушные шары, «дымоходы фей», пещерные церкви и подземные города в Гёреме и окрестностях.",
         intro: [
@@ -1131,7 +1131,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       ar: {
         name: "كابادوكيا",
-        metaTitle: "جولات كابادوكيا مع مرشدين محليين | VibeGuide",
+        metaTitle: "جولات كابادوكيا مع مرشدين محليين",
         metaDescription:
           "استكشف كابادوكيا مع مرشد محلي موثّق. مناطيد الهواء الساخن، والمداخن الجنّية، والكنائس الصخرية، والمدن تحت الأرض في غوريمه وما حولها.",
         intro: [
@@ -1153,7 +1153,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       es: {
         name: "Capadocia",
-        metaTitle: "Tours de Capadocia con guías locales | VibeGuide",
+        metaTitle: "Tours de Capadocia con guías locales",
         metaDescription:
           "Explora Capadocia con un guía local verificado. Globos aerostáticos, chimeneas de hadas, iglesias rupestres y ciudades subterráneas en Göreme y alrededores.",
         intro: [
@@ -1175,7 +1175,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       fr: {
         name: "Cappadoce",
-        metaTitle: "Visites de Cappadoce avec guides locaux | VibeGuide",
+        metaTitle: "Visites de Cappadoce avec guides locaux",
         metaDescription:
           "Explorez la Cappadoce avec un guide local vérifié. Montgolfières, cheminées de fées, églises rupestres et villes souterraines à Göreme et alentour.",
         intro: [
@@ -1197,7 +1197,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       el: {
         name: "Καππαδοκία",
-        metaTitle: "Ξεναγήσεις στην Καππαδοκία με ντόπιους ξεναγούς | VibeGuide",
+        metaTitle: "Ξεναγήσεις στην Καππαδοκία με ντόπιους ξεναγούς",
         metaDescription:
           "Εξερεύνησε την Καππαδοκία με πιστοποιημένο ντόπιο ξεναγό. Αερόστατα, «καμινάδες των ξωτικών», βραχώδεις εκκλησίες και υπόγειες πόλεις στο Γκαϊρεμέ και πέρα.",
         intro: [
@@ -1219,7 +1219,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       tr: {
         name: "Kapadokya",
-        metaTitle: "Kapadokya Turları & Yerel Rehberler | VibeGuide",
+        metaTitle: "Kapadokya Turları & Yerel Rehberler",
         metaDescription:
           "Kapadokya'yı doğrulanmış bir yerel rehberle keşfet. Sıcak hava balonları, peri bacaları, kaya kiliseleri ve Göreme çevresinde yer altı şehirleri.",
         intro: [

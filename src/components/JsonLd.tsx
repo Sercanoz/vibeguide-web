@@ -13,8 +13,10 @@ export default function JsonLd({ nonce }: { nonce?: string }) {
         "@id": "https://www.vibeguideapp.com/#org",
         name: "VibeGuide",
         url: "https://www.vibeguideapp.com",
-        logo: "https://www.vibeguideapp.com/icon.png",
-        sameAs: [],
+        // Google logo rich result ≥112×112 ister — 32px favicon değil.
+        logo: "https://www.vibeguideapp.com/vibeguide-icon.png",
+        // sameAs: sosyal hesaplar açılınca eklenecek (boş array göndermek yerine
+        // alanı tamamen kaldırdık).
         description:
           "VibeGuide connects travelers with verified local guides for instant tours, group experiences and private tours in Istanbul, Cappadocia and Ephesus.",
       },

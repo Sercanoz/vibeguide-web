@@ -3,8 +3,8 @@ import AboutView from "./AboutView";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/about" },
-  title: "VibeGuide Hakkında | VibeGuide",
-  description: "VibeGuide, gezginleri Türkiye genelindeki doğrulanmış yerel rehberler ve turizm profesyonelleriyle buluşturan dijital bir turizm platformudur.",
+  title: "About VibeGuide",
+  description: "VibeGuide is a digital tourism platform connecting travelers with verified local guides and tourism professionals across Turkey.",
 };
 
 export default function AboutPage() {

@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 
+// Checkout sayfası dizine eklenmesin (kullanıcıya özel akış).
 export const metadata: Metadata = {
-  title: "Become a Guide",
-  description: "Apply to become a verified local guide on VibeGuide.",
-  alternates: { canonical: "/register/guide" },
+  robots: { index: false, follow: false },
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

@@ -270,15 +270,17 @@ export default function CityGuideView({
         <div className="mx-auto max-w-2xl px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-black mb-4">{c.ctaTitle}</h2>
           <p className="text-neutral-700 mb-8 leading-7">{c.ctaSub}</p>
+          {/* Store listeleri yayına girince gerçek URL'lerle değiştir —
+              şimdilik anasayfa download bölümüne (boş # anchor SEO/UX kötüsü). */}
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="#"
+              href="/#download"
               className="flex items-center gap-3 rounded-2xl bg-[#0A0A0F] px-6 py-3.5 text-white font-bold text-sm hover:bg-black/80 transition-colors"
             >
               <span>▶</span> Google Play
             </a>
             <a
-              href="#"
+              href="/#download"
               className="flex items-center gap-3 rounded-2xl bg-[#0A0A0F] px-6 py-3.5 text-white font-bold text-sm hover:bg-black/80 transition-colors"
             >
               <span>📱</span> App Store

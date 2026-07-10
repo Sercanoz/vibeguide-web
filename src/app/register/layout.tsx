@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Sign Up | VibeGuide",
+  title: "Sign Up",
   description: "Create your VibeGuide account — explore tours or become a verified local guide.",
   alternates: { canonical: "/register" },
 };

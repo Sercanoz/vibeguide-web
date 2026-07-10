@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | VibeGuide",
+  title: "Terms of Service",
   description: "VibeGuide terms of service governing use of the platform, bookings and payments.",
   alternates: { canonical: "/terms" },
 };

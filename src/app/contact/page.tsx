@@ -3,7 +3,7 @@ import ContactView from "./ContactView";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/contact" },
-  title: "Contact | VibeGuide",
+  title: "Contact",
   description: "Contact VibeGuide for reservations, support, cancellations, refunds or guide applications.",
 };
 

@@ -14,6 +14,25 @@ const inter = Inter({
   display: "swap",
 });
 
+// Pathname'den <html lang> türet — dilli sayfalar (/de/istanbul-tour-guide,
+// /attractions/ru/hagia-sophia, Türkçe yasal sayfalar) doğru dil sinyali
+// versin. Middleware x-pathname header'ını sağlar.
+const CITY_LANG_PREFIXES = new Set(["de", "es", "fr", "it", "ar"]); // EN kökte
+const ATTRACTION_LANG_CODES = new Set(["en", "de", "ru", "ar", "es", "fr", "el", "tr"]);
+const TURKISH_ROOT_PAGES = new Set([
+  "kvkk", "cerez-politikasi", "mesafeli-satis", "on-bilgilendirme",
+]);
+
+function langFromPathname(pathname: string): string {
+  const seg = pathname.split("/").filter(Boolean);
+  if (seg[0] === "attractions" && seg[1] && ATTRACTION_LANG_CODES.has(seg[1])) {
+    return seg[1];
+  }
+  if (seg[0] && CITY_LANG_PREFIXES.has(seg[0])) return seg[0];
+  if (seg[0] && TURKISH_ROOT_PAGES.has(seg[0])) return "tr";
+  return "en";
+}
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.vibeguideapp.com"),
   title: {
@@ -123,9 +142,14 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   // CSP nonce — middleware'in ürettiği nonce'u inline script'lere geçir.
-  const nonce = (await headers()).get("x-nonce") ?? undefined;
+  const h = await headers();
+  const nonce = h.get("x-nonce") ?? undefined;
+  const lang = langFromPathname(h.get("x-pathname") ?? "/");
+  // Not: dir attribute'u bilinçli olarak html'e konmadı — Arapça sayfalarda
+  // RTL yönü CityGuideView/attraction sayfaları kendi <main>'inde yönetiyor;
+  // html'e koymak Navbar/footer'ı da çevirirdi.
   return (
-    <html lang="en" className={`${inter.variable} h-full antialiased`}>
+    <html lang={lang} className={`${inter.variable} h-full antialiased`}>
       <head>
         <JsonLd nonce={nonce} />
         <script async nonce={nonce} src="https://www.googletagmanager.com/gtag/js?id=G-SH98TTW4KS" />

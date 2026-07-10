@@ -3,8 +3,8 @@ import AccountDeletionView from "./AccountDeletionView";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/account-deletion" },
-  title: "Hesabınızı Silin | VibeGuide",
-  description: "VibeGuide hesabınızı uygulama içinden veya e-posta ile kalıcı olarak nasıl silersiniz.",
+  title: "Delete Your Account",
+  description: "How to permanently delete your VibeGuide account from within the app or by email.",
 };
 
 export default function AccountDeletionPage() {

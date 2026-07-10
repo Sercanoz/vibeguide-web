@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Account Deletion | VibeGuide",
+  title: "Account Deletion",
   description: "Request deletion of your VibeGuide account and personal data.",
   alternates: { canonical: "/account-deletion" },
 };

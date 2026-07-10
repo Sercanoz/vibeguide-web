@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Help Center | VibeGuide",
+  title: "Help Center",
   description: "VibeGuide help center — how VibeNow, VibeSquad and private tours work, payments, cancellations and safety.",
   alternates: { canonical: "/help" },
 };

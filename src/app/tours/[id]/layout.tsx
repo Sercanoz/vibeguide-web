@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const title = `${tour.title} · VibeGuide`;
   const description = tour.summary
-    ? `${tour.summary.slice(0, 155)}…`
+    ? (tour.summary.length > 155 ? `${tour.summary.slice(0, 155)}…` : tour.summary)
     : `Book ${tour.title} in ${tour.city} with verified local guides. ${tour.durationMinutes} min tour starting from ${tour.basePrice} ${tour.currency}.`;
   const image = tour.photos?.[0]?.url ?? tour.coverPhotoUrl ?? "/opengraph-image";
 

@@ -3,111 +3,108 @@ import LegalMarkdown from "@/components/LegalMarkdown";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/guide-verification" },
-  title: "Rehber Doğrulama | VibeGuide",
-  description: "VibeGuide'da her rehber, platforma katılmadan önce kimlik doğrulaması, mesleki doğrulama ve platform kalite standartlarından geçer.",
+  title: "Guide Verification",
+  description:
+    "Every guide on VibeGuide goes through identity verification, professional credential checks and platform quality standards before joining.",
 };
 
 const BODY = `
-## Platforma katılmadan önce her rehber değerlendirilir
+## Every guide is vetted before joining the platform
 
-VibeGuide, doğrulanmamış rehberlerin platform üzerinden hizmet sunmasına izin vermez.
+VibeGuide does not allow unverified guides to offer services through the platform.
 
-Lisanslı profesyonel turist rehberleri tarafından kurulan VibeGuide, hizmet kalitesini, gezgin güvenini ve operasyonel güvenilirliği korumak amacıyla yapılandırılmış bir doğrulama süreci uygular.
+Founded by licensed professional tourist guides, VibeGuide applies a structured verification process to protect service quality, traveler trust and operational reliability.
 
-Her rehber, platform üzerinden rezervasyon kabul etmeye başlamadan önce ilgili doğrulama ve inceleme süreçlerini tamamlamak zorundadır.
+Every guide must complete the relevant verification and review processes before accepting bookings through the platform.
 
-## 🪪 Kimlik Doğrulaması
+## 🪪 Identity Verification
 
-Platforma kabul edilmeden önce rehberin kimliği doğrulanır.
+A guide's identity is verified before they are admitted to the platform.
 
-Gerekli durumlarda ek doğrulama belgeleri talep edilebilir ve güvenlik kontrolleri gerçekleştirilebilir.
+Where necessary, additional verification documents may be requested and security checks may be performed.
 
-Bu süreç, platform güvenliğini korumaya ve sahte hesapların önlenmesine yardımcı olur.
+This process helps protect platform safety and prevent fake accounts.
 
-## 🎓 Mesleki Doğrulama
+## 🎓 Professional Verification
 
-Rehberler; mesleki geçmişleri, destinasyon bilgileri, rehberlik deneyimleri ve ilgili turizm mevzuatına uygunlukları açısından incelenebilir.
+Guides may be reviewed for their professional background, destination knowledge, guiding experience and compliance with applicable tourism legislation.
 
-Yasal olarak gerekli olduğu durumlarda;
+Where legally required, the following may be verified:
 
-* Profesyonel turist rehberi kokartı
-* Resmi rehberlik yetkileri
-* Mesleki lisanslar
-* İlgili belgeler ve sertifikalar
+* Professional tourist guide license (cockade)
+* Official guiding authorizations
+* Professional licenses
+* Related documents and certificates
 
-doğrulanabilir.
+## 🗣️ Language Authorization
 
-## 🗣️ Dil Yetkilendirmesi
+Professional tourist guides on VibeGuide may only provide guiding services in the languages listed on their official tourist guide license.
 
-VibeGuide'da hizmet veren profesyonel turist rehberleri, yalnızca resmi turist rehberi kokartlarında yer alan dillerde rehberlik hizmeti sunabilir.
+These language authorizations are determined through official qualification processes under the legislation of the Republic of Türkiye and assessments carried out by the relevant institutions.
 
-Bu dil yetkilendirmeleri, Türkiye Cumhuriyeti mevzuatı kapsamında gerçekleştirilen resmi yeterlilik süreçleri ve ilgili kurumlar tarafından yapılan değerlendirmeler sonucunda belirlenmektedir.
+VibeGuide may verify the language authorizations listed on guides' official tourist guide documents and licenses.
 
-VibeGuide, rehberlerin resmi turist rehberi belgelerinde ve kokartlarında yer alan dil yetkilerini doğrulayabilir.
+This helps travelers receive their experience in the language they selected at booking.
 
-Bu uygulama, gezginlerin rezervasyon sırasında seçtikleri dilde hizmet alabilmelerine yardımcı olur.
+## 🗺️ Route and Experience Suitability
 
-## 🗺️ Rota ve Deneyim Uygunluğu
+Guides may be matched with experiences based on their areas of expertise, destination knowledge, language authorizations and operational availability.
 
-Rehberler, uzmanlık alanları, destinasyon bilgileri, dil yetkileri ve operasyonel uygunlukları doğrultusunda deneyimlerle eşleştirilebilir.
+The goal is for travelers to meet guides who know the region they are visiting well.
 
-Bu sayede gezginlerin, ziyaret ettikleri bölgeyi iyi tanıyan rehberlerle buluşması amaçlanır.
+## 📋 Platform Standards
 
-## 📋 Platform Standartları
+Every guide must review and accept the following policies and rules:
 
-Her rehber aşağıdaki politika ve kuralları inceleyerek kabul etmek zorundadır:
+* Service quality standards
+* Code of conduct towards travelers
+* Cancellation and booking rules
+* Communication standards
+* Platform usage rules
+* Operational procedures
 
-* Hizmet kalite standartları
-* Gezginlere yönelik davranış kuralları
-* İptal ve rezervasyon kuralları
-* İletişim standartları
-* Platform kullanım kuralları
-* Operasyonel prosedürler
+Failure to comply with these standards may result in account restrictions, suspension or termination of platform access.
 
-Bu standartlara uyulmaması durumunda hesaplara kısıtlama uygulanabilir, hesaplar askıya alınabilir veya platform erişimi sonlandırılabilir.
+## 🛡️ Safety and Trust Standards
 
-## 🛡️ Güvenlik ve Güven Standartları
+Traveler safety and professional conduct are core priorities of the platform.
 
-Gezgin güvenliği ve profesyonel davranış, platformun temel öncelikleri arasındadır.
+Guides are expected to:
 
-Rehberlerden;
+* Act in accordance with applicable legislation
+* Follow platform rules
+* Maintain professional service standards
+* Provide travelers with a respectful and safe experience
 
-* Yürürlükteki mevzuata uygun davranmaları,
-* Platform kurallarına uymaları,
-* Profesyonel hizmet standartlarını korumaları,
-* Gezginlere saygılı ve güvenli bir deneyim sunmaları
+## Ongoing Review
 
-beklenmektedir.
+Verification does not end at onboarding.
 
-## Sürekli Değerlendirme
+Guide accounts may be reviewed regularly against the following criteria:
 
-Doğrulama süreci yalnızca platforma katılım aşamasında sona ermez.
+* Completion rates
+* On-time attendance performance
+* User feedback
+* Operational reliability indicators
+* Policy compliance
 
-Rehber hesapları aşağıdaki kriterler doğrultusunda düzenli olarak gözden geçirilebilir:
+Guides who do not meet platform standards may have their accounts restricted, suspended or removed from the platform.
 
-* Tamamlama oranları
-* Zamanında katılım performansı
-* Kullanıcı geri bildirimleri
-* Operasyonel güvenilirlik göstergeleri
-* Politika uyumluluğu
+## Trust Starts Before You Even Meet Your Guide
 
-Platform standartlarını karşılamayan rehberlerin hesapları kısıtlanabilir, askıya alınabilir veya platformdan kaldırılabilir.
+Our guide verification process is designed to help travelers feel confident before they even book.
 
-## Güven, Daha Rehberinizle Tanışmadan Başlar
-
-Rehber doğrulama sürecimiz, gezginlerin daha rezervasyon yapmadan önce güven duymalarına yardımcı olmak amacıyla tasarlanmıştır.
-
-Kimlik doğrulaması, mesleki doğrulama, resmi dil yetkilendirmeleri, operasyonel denetimler ve sürekli kalite kontrollerini bir araya getirerek VibeGuide, gezginlerin daha güvenli, daha şeffaf ve daha kaliteli deneyimler rezervasyon yapabilmesine yardımcı olur.
+By combining identity verification, professional verification, official language authorizations, operational reviews and ongoing quality checks, VibeGuide helps travelers book safer, more transparent and higher-quality experiences.
 
 ---
 
-İlgili Belgeler: [Yardım Merkezi](/help) · [Güvenlik ve Ödemeler](/security) · [Kullanım Koşulları](/terms) · [Gizlilik Politikası](/privacy)
+Related documents: [Help Center](/help) · [Safety & Payments](/security) · [Terms of Service](/terms) · [Privacy Policy](/privacy)
 `;
 
 export default function GuideVerificationPage() {
   return (
     <LegalMarkdown
-      title="Rehber Doğrulama"
+      title="Guide Verification"
       body={BODY}
     />
   );

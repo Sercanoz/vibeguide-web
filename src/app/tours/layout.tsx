@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 // (/tours) toplar → duplicate content önlenir, /tours doğru sayfa olarak değerlenir
 // (yoksa kök layout'un canonical'ını = ana sayfayı miras alıyordu).
 export const metadata: Metadata = {
-  title: "All Tours & Experiences | VibeGuide",
+  title: "All Tours & Experiences",
   description:
     "Browse verified local guides and curated tours across Türkiye — Istanbul, Cappadocia, Ephesus and more. Filter by interest, city and language.",
   alternates: {

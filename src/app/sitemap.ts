@@ -11,26 +11,26 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
 
   const staticRoutes: MetadataRoute.Sitemap = [
-    { url: `${SITE}/`, lastModified: now, changeFrequency: "weekly", priority: 1.0 },
-    { url: `${SITE}/tours`, lastModified: now, changeFrequency: "daily", priority: 0.9 },
-    { url: `${SITE}/vibenow`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
-    { url: `${SITE}/vibesquad`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
-    { url: `${SITE}/vibeask`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
-    { url: `${SITE}/private`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
-    { url: `${SITE}/how-it-works`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${SITE}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${SITE}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
-    { url: `${SITE}/guide-verification`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${SITE}/register`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${SITE}/help`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${SITE}/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.4 },
-    { url: `${SITE}/terms`, lastModified: now, changeFrequency: "yearly", priority: 0.4 },
-    { url: `${SITE}/kvkk`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
-    { url: `${SITE}/cerez-politikasi`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
-    { url: `${SITE}/mesafeli-satis`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
-    { url: `${SITE}/on-bilgilendirme`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
-    { url: `${SITE}/cancellation-policy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
-    { url: `${SITE}/account-deletion`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${SITE}/`, changeFrequency: "weekly", priority: 1.0 },
+    { url: `${SITE}/tours`, changeFrequency: "daily", priority: 0.9 },
+    { url: `${SITE}/vibenow`, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${SITE}/vibesquad`, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${SITE}/vibeask`, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${SITE}/private`, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${SITE}/how-it-works`, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${SITE}/about`, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${SITE}/contact`, changeFrequency: "monthly", priority: 0.5 },
+    { url: `${SITE}/guide-verification`, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${SITE}/register`, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${SITE}/help`, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${SITE}/privacy`, changeFrequency: "yearly", priority: 0.4 },
+    { url: `${SITE}/terms`, changeFrequency: "yearly", priority: 0.4 },
+    { url: `${SITE}/kvkk`, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${SITE}/cerez-politikasi`, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${SITE}/mesafeli-satis`, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${SITE}/on-bilgilendirme`, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${SITE}/cancellation-policy`, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${SITE}/account-deletion`, changeFrequency: "yearly", priority: 0.3 },
   ];
 
   // Dynamic tour pages
@@ -57,7 +57,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     languages["x-default"] = `${SITE}/attractions/en/${a.slug}`;
     return ATTRACTION_LANGS.map((l) => ({
       url: `${SITE}/attractions/${l}/${a.slug}`,
-      lastModified: now,
       changeFrequency: "weekly" as const,
       priority: 0.85,
       alternates: { languages },
@@ -74,7 +73,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     languages["x-default"] = cityUrl(g.slug, "en");
     return CITY_GUIDE_LANGS.map((l) => ({
       url: cityUrl(g.slug, l),
-      lastModified: now,
       changeFrequency: "weekly" as const,
       priority: l === "en" ? 0.9 : 0.8,
       alternates: { languages },

@@ -40,6 +40,9 @@ export function middleware(request: NextRequest) {
   // Nonce'u downstream'e (layout, RSC) header ile aktar.
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set("x-nonce", nonce);
+  // Root layout <html lang> için pathname — dilli sayfalar (/de/..., /attractions/ru/...)
+  // doğru lang attribute'u alsın (önceden her sayfa lang="en" idi).
+  requestHeaders.set("x-pathname", request.nextUrl.pathname);
 
   const response = NextResponse.next({ request: { headers: requestHeaders } });
   response.headers.set("Content-Security-Policy", buildCsp(nonce));

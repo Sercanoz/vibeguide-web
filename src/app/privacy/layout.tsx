@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | VibeGuide",
+  title: "Privacy Policy",
   description: "How VibeGuide collects, uses and protects your personal data. KVKK & GDPR compliant.",
   alternates: { canonical: "/privacy" },
 };

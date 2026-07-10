@@ -3,7 +3,7 @@ import MesafeliSatisView from "./MesafeliSatisView";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/mesafeli-satis" },
-  title: "Mesafeli Satış Sözleşmesi | VibeGuide",
+  title: "Mesafeli Satış Sözleşmesi",
   description: "VibeGuide mesafeli satış sözleşmesi — 6502 sayılı Tüketicinin Korunması Hakkında Kanun kapsamında.",
 };
 

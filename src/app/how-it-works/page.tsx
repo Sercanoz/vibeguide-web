@@ -3,108 +3,107 @@ import LegalMarkdown from "@/components/LegalMarkdown";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/how-it-works" },
-  title: "Nasıl Çalışır? | VibeGuide",
-  description: "VibeGuide rezervasyon süreci adım adım — deneyim seçiminden doğrulanmış rehberinizle buluşmaya kadar.",
+  title: "How It Works",
+  description:
+    "How booking a VibeGuide tour works, step by step — from choosing an experience to meeting your verified local guide.",
 };
 
 const BODY = `
-## Rezervasyon süreci, adım adım
+## The booking process, step by step
 
-VibeGuide; doğrulanmış rehberler, önceden tanımlanmış deneyimler, güvenli ödeme altyapısı ve desteklenen operasyon süreçleri ile çalışan dijital bir turizm rezervasyon platformudur.
+VibeGuide is a digital tourism booking platform built on verified guides, predefined experiences, secure payment infrastructure and supported operational processes.
 
-## 1. Deneyiminizi Seçin
+## 1. Choose Your Experience
 
-Şehir turları, kültürel yürüyüşler, müze deneyimleri, gastronomi rotaları ve özel turlar arasından size uygun deneyimi seçin.
+Pick the experience that suits you from city tours, cultural walks, museum experiences, food routes and private tours.
 
-Her deneyim için aşağıdaki bilgiler rezervasyon öncesinde açıkça sunulur:
+For every experience, the following is clearly presented before you book:
 
-* Deneyim kapsamı
-* Süre
-* Rehber dili
-* Buluşma noktası
-* Katılım koşulları
-* Fiyatlandırma bilgileri
+* What the experience covers
+* Duration
+* Guide language
+* Meeting point
+* Participation conditions
+* Pricing details
 
-## 2. Rezervasyonunuzu Oluşturun
+## 2. Create Your Booking
 
-Tarih, saat, dil ve katılımcı sayısını seçerek rezervasyonunuzu oluşturun.
+Create your booking by selecting the date, time, language and number of participants.
 
-Ödeme işlemleri güvenli ve lisanslı ödeme kuruluşları aracılığıyla gerçekleştirilir.
+Payments are processed through secure, licensed payment institutions.
 
-Rezervasyonunuz tamamlandıktan sonra onay bilgileri size iletilir.
+Once your booking is complete, your confirmation details are sent to you.
 
-## 3. Rehber Eşleşmesi ve Doğrulama
+## 3. Guide Matching and Verification
 
-Platformda görev alan tüm rehberler VibeGuide doğrulama süreçlerinden geçmektedir.
+Every guide on the platform goes through VibeGuide's verification processes.
 
-Doğrulama süreci gerektiğinde aşağıdaki unsurları içerebilir:
+Depending on the case, verification may include:
 
-* Kimlik doğrulaması
-* Mesleki doğrulama
-* Profesyonel turist rehberi kokartı kontrolü
-* Dil yetkilendirmelerinin doğrulanması
-* Platform standartlarının kabulü
+* Identity verification
+* Professional credential checks
+* Licensed tourist guide (cockade) verification
+* Confirmation of language authorizations
+* Acceptance of platform standards
 
-Rehberler yalnızca uzmanlık alanlarına ve uygun oldukları deneyimlere atanır veya eşleştirilir.
+Guides are only assigned or matched to experiences within their expertise and availability.
 
-## 4. Buluşma Bilgilerini Alın
+## 4. Receive Your Meeting Details
 
-Rezervasyon onaylandıktan sonra aşağıdaki bilgiler sizinle paylaşılır:
+After your booking is confirmed, the following is shared with you:
 
-* Buluşma noktası
-* Başlangıç saati
-* Deneyim detayları
-* Rehber bilgileri (uygulanabildiği durumlarda)
+* Meeting point
+* Start time
+* Experience details
+* Guide information (where applicable)
 
-Böylece deneyim başlamadan önce gerekli tüm bilgilere sahip olursunuz.
+So you have everything you need before the experience begins.
 
-## 5. Şehri Yerel Bir Uzmanla Keşfedin
+## 5. Explore the City with a Local Expert
 
-Rehberinizle buluşun ve deneyiminize başlayın.
+Meet your guide and start your experience.
 
-VibeGuide deneyimleri, destinasyonu yakından tanıyan yerel uzmanlar ve profesyonel turist rehberleri tarafından sunulan gerçek yerel bilgiye dayanır.
+VibeGuide experiences are built on genuine local knowledge, delivered by local experts and professional tourist guides who know the destination inside out.
 
-Amaç; standart turistik anlatımların ötesine geçerek daha anlamlı, daha kişisel ve daha otantik deneyimler sunmaktır.
+The goal is to go beyond standard tourist narratives and offer more meaningful, more personal and more authentic experiences.
 
-## 6. Destek ve Çözüm Süreci
+## 6. Support and Resolution
 
-Bir gecikme, iptal veya operasyonel sorun yaşanması halinde VibeGuide destek süreci devreye girer.
+If a delay, cancellation or operational issue occurs, VibeGuide's support process steps in.
 
-Duruma bağlı olarak aşağıdaki seçeneklerden biri sunulabilir:
+Depending on the situation, one of the following may be offered:
 
-* Alternatif rehber
-* Alternatif tarih
-* Alternatif deneyim
-* İade süreci
+* An alternative guide
+* An alternative date
+* An alternative experience
+* A refund
 
-Tüm rezervasyonlar yayınlanmış [İptal ve İade Politikası](/cancellation-policy) hükümlerine tabidir.
+All bookings are subject to the published [Cancellation & Refund Policy](/cancellation-policy).
 
-## 🔒 Güvenli ve Desteklenen Bir Deneyim
+## 🔒 A Safe and Supported Experience
 
-VibeGuide üzerinden yapılan rezervasyonlar;
+Bookings made through VibeGuide are backed by:
 
-* Güvenli ödeme altyapıları
-* Doğrulanmış rehberler
-* Şeffaf fiyatlandırma
-* Yayınlanmış politikalar
-* Müşteri desteği
-* Uyuşmazlık çözüm süreçleri
+* Secure payment infrastructure
+* Verified guides
+* Transparent pricing
+* Published policies
+* Customer support
+* Dispute resolution processes
 
-ile desteklenmektedir.
+Payments are processed through licensed payment institutions.
 
-Ödeme işlemleri lisanslı ödeme kuruluşları aracılığıyla gerçekleştirilir.
-
-Rehber doğrulama süreçleri, rezervasyon yönetimi, müşteri desteği ve operasyonel koordinasyon VibeGuide tarafından yürütülmektedir.
+Guide verification, booking management, customer support and operational coordination are handled by VibeGuide.
 
 ---
 
-İlgili Belgeler: [Rehber Doğrulama](/guide-verification) · [Güvenlik ve Ödemeler](/security) · [Yardım Merkezi](/help) · [İptal ve İade Politikası](/cancellation-policy)
+Related documents: [Guide Verification](/guide-verification) · [Safety & Payments](/security) · [Help Center](/help) · [Cancellation & Refund Policy](/cancellation-policy)
 `;
 
 export default function HowItWorksPage() {
   return (
     <LegalMarkdown
-      title="Nasıl Çalışır?"
+      title="How It Works"
       body={BODY}
     />
   );

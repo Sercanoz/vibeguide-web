@@ -44,7 +44,7 @@ export const MODES: Mode[] = [
     emoji: "⚡",
     color: "#6C4CF1",
     tagline: "Tap. Match. Go.",
-    metaTitle: "VibeNow — Instant Local Tour Guides On Demand | VibeGuide",
+    metaTitle: "VibeNow — Instant Local Tour Guides On Demand",
     metaDescription:
       "VibeNow matches you with a verified local guide in about 60 seconds. No planning, no waiting — open the app, pick a spot and explore with a real local.",
     heroSub:
@@ -74,7 +74,7 @@ export const MODES: Mode[] = [
     emoji: "👥",
     color: "#059669",
     tagline: "Join the squad. Split the cost.",
-    metaTitle: "VibeSquad — Affordable Small-Group Local Tours | VibeGuide",
+    metaTitle: "VibeSquad — Affordable Small-Group Local Tours",
     metaDescription:
       "VibeSquad puts you in a small group with travellers on the same route and a verified local guide — the most affordable way to explore a city with a real local.",
     heroSub:
@@ -104,7 +104,7 @@ export const MODES: Mode[] = [
     emoji: "💎",
     color: "#EC4899",
     tagline: "Your local. Your day.",
-    metaTitle: "Private Tours — Your Own Local Guide for a Full Day | VibeGuide",
+    metaTitle: "Private Tours — Your Own Local Guide for a Full Day",
     metaDescription:
       "Book a verified local guide just for you or your group — a full, personalised day in the city. Choose your guide, plan the perfect day, no scripts, no crowds.",
     heroSub:
@@ -134,7 +134,7 @@ export const MODES: Mode[] = [
     emoji: "💡",
     color: "#6C4CF1",
     tagline: "A local in your pocket. Free.",
-    metaTitle: "VibeAsk — Ask a Real Local Anything, Free | VibeGuide",
+    metaTitle: "VibeAsk — Ask a Real Local Anything, Free",
     metaDescription:
       "Lost? Curious? Wondering if a price is fair? Message a real, licensed local guide for free — instant answers, no tour required. Only on VibeGuide.",
     heroSub:

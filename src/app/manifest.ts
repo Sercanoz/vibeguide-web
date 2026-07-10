@@ -11,8 +11,10 @@ export default function manifest(): MetadataRoute.Manifest {
     background_color: "#ffffff",
     theme_color: "#6c4cf1",
     icons: [
-      { src: "/icon", sizes: "32x32", type: "image/png" },
-      { src: "/apple-icon", sizes: "180x180", type: "image/png" },
+      // /icon ve /apple-icon route'ları 404 veriyordu — gerçek dosyalar .png uzantılı.
+      { src: "/icon.png", sizes: "32x32", type: "image/png" },
+      { src: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+      { src: "/vibeguide-icon.png", sizes: "512x512", type: "image/png" },
     ],
   };
 }
