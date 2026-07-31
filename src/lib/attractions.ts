@@ -12,6 +12,9 @@ export const ATTRACTION_LANGS = [
   "fr",
   "el",
   "tr",
+  "it",
+  "pl",
+  "nl",
 ] as const;
 export type AttractionLang = (typeof ATTRACTION_LANGS)[number];
 
@@ -75,6 +78,18 @@ const IST: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
     toursHeading: "Yerel rehberlerle İstanbul turları",
     ctaSub: "VibeGuide'ı ücretsiz indir, 60 saniyede doğrulanmış bir İstanbul rehberiyle eşleş.",
   },
+  it: {
+    toursHeading: "Tour di Istanbul con guide locali",
+    ctaSub: "Scarica VibeGuide gratis e trova una guida verificata a Istanbul in 60 secondi.",
+  },
+  pl: {
+    toursHeading: "Wycieczki po Stambule z lokalnymi przewodnikami",
+    ctaSub: "Pobierz VibeGuide za darmo i znajdź zweryfikowanego przewodnika w Stambule w 60 sekund.",
+  },
+  nl: {
+    toursHeading: "Tours door Istanbul met lokale gidsen",
+    ctaSub: "Download VibeGuide gratis en vind een geverifieerde gids in Istanbul in 60 seconden.",
+  },
 };
 
 // Efes (İzmir / Selçuk) ortak metinleri.
@@ -87,6 +102,9 @@ const EPH: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   fr: { toursHeading: "Visites d'Éphèse avec guides locaux", ctaSub: "Téléchargez VibeGuide gratuitement et trouvez un guide local vérifié pour Éphèse en 60 secondes." },
   el: { toursHeading: "Ξεναγήσεις στην Έφεσο με ντόπιους ξεναγούς", ctaSub: "Κατέβασε δωρεάν το VibeGuide και βρες πιστοποιημένο ντόπιο ξεναγό στην Έφεσο σε 60 δευτερόλεπτα." },
   tr: { toursHeading: "Yerel rehberlerle Efes turları", ctaSub: "VibeGuide'ı ücretsiz indir, 60 saniyede Efes için doğrulanmış yerel bir rehberle eşleş." },
+  it: { toursHeading: "Tour di Efeso con guide locali", ctaSub: "Scarica VibeGuide gratis e trova una guida locale verificata per Efeso in 60 secondi." },
+  pl: { toursHeading: "Wycieczki po Efezie z lokalnymi przewodnikami", ctaSub: "Pobierz VibeGuide za darmo i znajdź zweryfikowanego lokalnego przewodnika po Efezie w 60 sekund." },
+  nl: { toursHeading: "Tours door Efeze met lokale gidsen", ctaSub: "Download VibeGuide gratis en vind een geverifieerde lokale gids voor Efeze in 60 seconden." },
 };
 
 // Kapadokya (Nevşehir / Göreme) ortak metinleri.
@@ -99,6 +117,9 @@ const CAP: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   fr: { toursHeading: "Visites de Cappadoce avec guides locaux", ctaSub: "Téléchargez VibeGuide gratuitement et trouvez un guide vérifié en Cappadoce en 60 secondes." },
   el: { toursHeading: "Ξεναγήσεις στην Καππαδοκία με ντόπιους ξεναγούς", ctaSub: "Κατέβασε δωρεάν το VibeGuide και βρες πιστοποιημένο ξεναγό στην Καππαδοκία σε 60 δευτερόλεπτα." },
   tr: { toursHeading: "Yerel rehberlerle Kapadokya turları", ctaSub: "VibeGuide'ı ücretsiz indir, 60 saniyede doğrulanmış bir Kapadokya rehberiyle eşleş." },
+  it: { toursHeading: "Tour della Cappadocia con guide locali", ctaSub: "Scarica VibeGuide gratis e trova una guida verificata in Cappadocia in 60 secondi." },
+  pl: { toursHeading: "Wycieczki po Kapadocji z lokalnymi przewodnikami", ctaSub: "Pobierz VibeGuide za darmo i znajdź zweryfikowanego przewodnika w Kapadocji w 60 sekund." },
+  nl: { toursHeading: "Tours door Cappadocië met lokale gidsen", ctaSub: "Download VibeGuide gratis en vind een geverifieerde gids in Cappadocië in 60 seconden." },
 };
 
 export const ATTRACTIONS: Attraction[] = [
@@ -289,6 +310,73 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: "Ayasofya'yı bir yerelle gez",
         ...IST.tr,
       },
+      it: {
+        name: "Basilica di Santa Sofia",
+        metaTitle: "Tour di Santa Sofia con guide locali",
+        metaDescription:
+          "Esplora Santa Sofia a Istanbul con una guida locale verificata. Niente confusione: ascolta 1.500 anni di storia bizantina e ottomana da un vero esperto.",
+        intro: [
+          "Santa Sofia è l'anima di Istanbul: cattedrale bizantina, moschea ottomana e monumento che veglia sulla città da quasi 1.500 anni. La sua immensa cupola, i mosaici dorati e la storia stratificata premiano chi capisce ciò che ha davanti.",
+          "Con un esperto locale di VibeGuide non devi tirare a indovinare. Ascolta le storie dietro i mosaici, i graffiti vichinghi e l'edificio che ha ridefinito l'architettura — al tuo ritmo e nella tua lingua.",
+        ],
+        highlights: [
+          { title: "La grande cupola", desc: "Alta 55 metri e, per 1.000 anni, la più grande del mondo." },
+          { title: "Mosaici bizantini", desc: "Immagini in foglia d'oro di imperatori e santi, nascoste per secoli." },
+          { title: "Storia stratificata", desc: "Cattedrale, moschea, museo e di nuovo moschea — ogni epoca ha lasciato il segno." },
+        ],
+        faqs: [
+          { q: "Serve una guida per Santa Sofia?", a: "È aperta a tutti, ma senza contesto la storia resta invisibile. Una guida locale trasforma una bella sala in 1.500 anni di racconti e ti aiuta a evitare le ore più affollate." },
+          { q: "L'ingresso a Santa Sofia è gratuito?", a: "Le regole d'ingresso cambiano nel tempo. Una guida VibeGuide ti dice la situazione attuale e il momento migliore per andare prima che tu prenoti." },
+          { q: "Quanto dura la visita?", a: "La maggior parte delle visite guidate dura 1–2 ore, spesso abbinate alla vicina Moschea Blu e alla piazza di Sultanahmet." },
+        ],
+        ctaTitle: "Scopri Santa Sofia con un locale",
+        ...IST.it,
+      },
+      pl: {
+        name: "Hagia Sophia",
+        metaTitle: "Hagia Sophia — wycieczki z lokalnymi przewodnikami",
+        metaDescription:
+          "Zwiedź Hagię Sophię w Stambule z zweryfikowanym lokalnym przewodnikiem. Bez chaosu — poznaj 1500 lat historii bizantyjskiej i osmańskiej od prawdziwego eksperta.",
+        intro: [
+          "Hagia Sophia to dusza Stambułu — bizantyjska katedra, osmański meczet i zabytek, który czuwa nad miastem od niemal 1500 lat. Ogromna kopuła, złote mozaiki i wielowarstwowa historia nagradzają tych, którzy rozumieją, na co patrzą.",
+          "Z lokalnym ekspertem VibeGuide nie musisz niczego zgadywać. Poznaj historie kryjące się za mozaikami, wikińskie graffiti i budowlę, która na nowo zdefiniowała architekturę — we własnym tempie i w swoim języku.",
+        ],
+        highlights: [
+          { title: "Wielka kopuła", desc: "Wysoka na 55 metrów i przez 1000 lat największa na świecie." },
+          { title: "Bizantyjskie mozaiki", desc: "Złocone wizerunki cesarzy i świętych, ukryte przez stulecia." },
+          { title: "Wielowarstwowa historia", desc: "Katedra, meczet, muzeum i znów meczet — każda epoka zostawiła ślad." },
+        ],
+        faqs: [
+          { q: "Czy potrzebuję przewodnika w Hagii Sophii?", a: "Wstęp jest dla wszystkich, ale bez kontekstu historia pozostaje niewidzialna. Lokalny przewodnik zamienia piękną salę w 1500 lat opowieści i pomaga uniknąć najbardziej zatłoczonych godzin." },
+          { q: "Czy wstęp do Hagii Sophii jest bezpłatny?", a: "Zasady wstępu z czasem się zmieniają. Przewodnik VibeGuide powie Ci, jak jest teraz i kiedy najlepiej się wybrać, zanim zarezerwujesz." },
+          { q: "Ile trwa zwiedzanie?", a: "Większość wycieczek z przewodnikiem trwa 1–2 godziny, często łączonych z pobliskim Błękitnym Meczetem i placem Sultanahmet." },
+        ],
+        ctaTitle: "Zobacz Hagię Sophię z lokalnym przewodnikiem",
+        ...IST.pl,
+      },
+      nl: {
+        name: "Hagia Sophia",
+        metaTitle: "Hagia Sophia-tours & lokale gidsen",
+        metaDescription:
+          "Verken de Hagia Sophia in Istanbul met een geverifieerde lokale gids. Geen verwarring — hoor 1.500 jaar Byzantijnse en Ottomaanse geschiedenis van een echte expert.",
+        intro: [
+          "De Hagia Sophia is de ziel van Istanbul — een Byzantijnse kathedraal, een Ottomaanse moskee en een monument dat al bijna 1.500 jaar over de stad waakt. De enorme koepel, de gouden mozaïeken en de gelaagde geschiedenis belonen wie begrijpt waar hij naar kijkt.",
+          "Met een lokale VibeGuide-expert hoef je niet te gissen. Hoor de verhalen achter de mozaïeken, de Vikinggraffiti en het gebouw dat de architectuur opnieuw definieerde — in jouw tempo en in jouw taal.",
+        ],
+        highlights: [
+          { title: "De grote koepel", desc: "55 meter hoog en 1.000 jaar lang de grootste ter wereld." },
+          { title: "Byzantijnse mozaïeken", desc: "Bladgouden beelden van keizers en heiligen, eeuwenlang verborgen." },
+          { title: "Gelaagde geschiedenis", desc: "Kathedraal, moskee, museum en opnieuw moskee — elk tijdperk liet zijn sporen na." },
+        ],
+        faqs: [
+          { q: "Heb ik een gids nodig voor de Hagia Sophia?", a: "Ze is voor iedereen toegankelijk, maar zonder context blijft de geschiedenis onzichtbaar. Een lokale gids maakt van een mooie zaal 1.500 jaar verhalen — en helpt je de drukste uren te vermijden." },
+          { q: "Is de Hagia Sophia gratis te bezoeken?", a: "De toegangsregels veranderen met de tijd. Een VibeGuide-gids vertelt je de actuele situatie en het beste moment om te gaan voordat je boekt." },
+          { q: "Hoe lang duurt een bezoek?", a: "De meeste rondleidingen duren 1–2 uur, vaak gecombineerd met de nabijgelegen Blauwe Moskee en het Sultanahmet-plein." },
+        ],
+        ctaTitle: "Bezoek de Hagia Sophia met een local",
+        ...IST.nl,
+      },
+
     },
   },
 
@@ -479,6 +567,73 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: "Topkapı'yı bir yerelle gez",
         ...IST.tr,
       },
+      it: {
+        name: "Palazzo Topkapı",
+        metaTitle: "Tour del Palazzo Topkapı con guide locali",
+        metaDescription:
+          "Scopri il Palazzo Topkapı, cuore dell'Impero ottomano, con una guida verificata di Istanbul. Harem, tesoro, reliquie sacre e vista sul Bosforo spiegati.",
+        intro: [
+          "Per 400 anni il Palazzo Topkapı è stato la residenza dei sultani ottomani e il centro di un impero. Oggi i suoi cortili, l'Harem, il Tesoro e le reliquie sacre raccontano la storia di una dinastia che governò tre continenti.",
+          "Un locale di VibeGuide dà senso a questo labirinto — dove risiedeva il potere, cosa significava ogni porta e le storie umane dietro i gioielli — così te ne vai con la comprensione, non solo con le foto.",
+        ],
+        highlights: [
+          { title: "L'Harem", desc: "Il mondo privato della famiglia del sultano — piastrellato, segreto, indimenticabile." },
+          { title: "Tesoro imperiale", desc: "Il Pugnale di Topkapı e il Diamante del Cucchiaio da 86 carati." },
+          { title: "Terrazze sul Bosforo", desc: "Dove i sultani osservavano il mare in cui l'Europa incontra l'Asia." },
+        ],
+        faqs: [
+          { q: "L'Harem è incluso nel biglietto?", a: "L'Harem di solito richiede un biglietto a parte. La tua guida VibeGuide ti spiega cosa vale la pena e organizza il percorso per te." },
+          { q: "Di quanto tempo ho bisogno?", a: "Prevedi 2–3 ore. Il palazzo è vasto; una guida ti tiene sui punti salienti senza affaticarti." },
+          { q: "È vicino a Santa Sofia?", a: "Sì — Topkapı, Santa Sofia e la Moschea Blu si trovano a breve distanza a piedi a Sultanahmet." },
+        ],
+        ctaTitle: "Visita Topkapı con un locale",
+        ...IST.it,
+      },
+      pl: {
+        name: "Pałac Topkapı",
+        metaTitle: "Pałac Topkapı — wycieczki z lokalnymi przewodnikami",
+        metaDescription:
+          "Odkryj Pałac Topkapı, serce Imperium Osmańskiego, z zweryfikowanym przewodnikiem ze Stambułu. Harem, skarbiec, święte relikwie i widoki na Bosfor z wyjaśnieniem.",
+        intro: [
+          "Przez 400 lat Pałac Topkapı był rezydencją sułtanów osmańskich i centrum imperium. Dziś jego dziedzińce, Harem, Skarbiec i święte relikwie opowiadają historię dynastii, która władała trzema kontynentami.",
+          "Lokalny przewodnik VibeGuide porządkuje ten rozległy kompleks — gdzie zasiadała władza, co oznaczała każda brama i jakie ludzkie historie kryją się za klejnotami — dzięki czemu wychodzisz z wiedzą, a nie tylko ze zdjęciami.",
+        ],
+        highlights: [
+          { title: "Harem", desc: "Prywatny świat rodziny sułtana — wyłożony kafelkami, tajemniczy, niezapomniany." },
+          { title: "Skarbiec cesarski", desc: "Sztylet Topkapı i 86-karatowy Diament Łyżkarza." },
+          { title: "Tarasy nad Bosforem", desc: "Gdzie sułtani spoglądali na morze, w którym Europa spotyka Azję." },
+        ],
+        faqs: [
+          { q: "Czy Harem jest wliczony w bilet?", a: "Harem zwykle wymaga osobnego biletu. Twój przewodnik VibeGuide wyjaśni, co warto zobaczyć, i ułoży dla Ciebie trasę." },
+          { q: "Ile czasu potrzebuję?", a: "Zaplanuj 2–3 godziny. Pałac jest ogromny; przewodnik prowadzi Cię przez najważniejsze miejsca bez zmęczenia." },
+          { q: "Czy to blisko Hagii Sophii?", a: "Tak — Topkapı, Hagia Sophia i Błękitny Meczet leżą w niewielkiej odległości spacerem w dzielnicy Sultanahmet." },
+        ],
+        ctaTitle: "Zwiedź Topkapı z lokalnym przewodnikiem",
+        ...IST.pl,
+      },
+      nl: {
+        name: "Topkapı-paleis",
+        metaTitle: "Topkapı-paleis-tours & lokale gidsen",
+        metaDescription:
+          "Ontdek het Topkapı-paleis, het hart van het Ottomaanse Rijk, met een geverifieerde gids uit Istanbul. Harem, schatkamer, heilige relikwieën en uitzicht op de Bosporus uitgelegd.",
+        intro: [
+          "400 jaar lang was het Topkapı-paleis de residentie van de Ottomaanse sultans en het centrum van een rijk. Vandaag vertellen de binnenhoven, de Harem, de Schatkamer en de heilige relikwieën het verhaal van een dynastie die over drie continenten heerste.",
+          "Een lokale VibeGuide brengt orde in het uitgestrekte geheel — waar de macht zetelde, wat elke poort betekende en de menselijke verhalen achter de juwelen — zodat je met begrip vertrekt, niet alleen met foto's.",
+        ],
+        highlights: [
+          { title: "De Harem", desc: "De privéwereld van de familie van de sultan — betegeld, geheimzinnig, onvergetelijk." },
+          { title: "Keizerlijke schatkamer", desc: "De Topkapı-dolk en de 86-karaats Lepelmakersdiamant." },
+          { title: "Terrassen aan de Bosporus", desc: "Waar sultans uitkeken over de zee waar Europa Azië ontmoet." },
+        ],
+        faqs: [
+          { q: "Zit de Harem bij het ticket inbegrepen?", a: "De Harem vereist meestal een apart ticket. Je VibeGuide-gids legt uit wat de moeite waard is en regelt de route voor je." },
+          { q: "Hoeveel tijd heb ik nodig?", a: "Reken op 2–3 uur. Het paleis is groot; een gids houdt je bij de hoogtepunten zonder vermoeidheid." },
+          { q: "Ligt het dicht bij de Hagia Sophia?", a: "Ja — Topkapı, de Hagia Sophia en de Blauwe Moskee liggen op korte loopafstand in Sultanahmet." },
+        ],
+        ctaTitle: "Wandel door Topkapı met een local",
+        ...IST.nl,
+      },
+
     },
   },
 
@@ -669,6 +824,73 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: "Sarnıcı bir yerelle keşfet",
         ...IST.tr,
       },
+      it: {
+        name: "Cisterna Basilica",
+        metaTitle: "Tour della Cisterna Basilica (Yerebatan) con guide locali",
+        metaDescription:
+          "Scendi nella Cisterna Basilica, il palazzo d'acqua sotterraneo di Istanbul. Ammira le teste di Medusa e le 336 colonne con una guida locale verificata.",
+        intro: [
+          "Sotto le strade di Sultanahmet si nasconde la Cisterna Basilica — un serbatoio sotterraneo di 1.500 anni con 336 colonne di marmo, luce soffusa ed echi di gocce. I bizantini la costruirono per rifornire d'acqua il Gran Palazzo; oggi è uno degli spazi più suggestivi di Istanbul.",
+          "Un locale di VibeGuide ti spiega le teste di Medusa capovolte, perché le colonne furono recuperate da templi più antichi e le leggende cresciute nel buio — trasformando una breve visita in una vera storia.",
+        ],
+        highlights: [
+          { title: "Le teste di Medusa", desc: "Due antichi volti di Medusa, posti di lato e capovolti — nessuno sa del tutto perché." },
+          { title: "336 colonne", desc: "Recuperate da rovine romane più antiche, ognuna leggermente diversa." },
+          { title: "L'atmosfera", desc: "Fresca, in penombra e piena di echi — un set cinematografico che prende vita sotto la città." },
+        ],
+        faqs: [
+          { q: "Vale la pena visitare la Cisterna Basilica?", a: "Assolutamente — è breve ma indimenticabile, e la storia la rende molto più ricca. Una guida ti mostra dettagli che la maggior parte dei visitatori ignora." },
+          { q: "Quanto dura la visita?", a: "Di solito 30–45 minuti, facile da abbinare a Santa Sofia e alla Moschea Blu lì accanto." },
+          { q: "È accessibile?", a: "Ci sono passerelle sopra l'acqua, ma anche qualche gradino. La tua guida ti dice cosa aspettarti in anticipo." },
+        ],
+        ctaTitle: "Esplora la Cisterna con un locale",
+        ...IST.it,
+      },
+      pl: {
+        name: "Cysterna Bazyliki",
+        metaTitle: "Cysterna Bazyliki (Yerebatan) — wycieczki z lokalnymi przewodnikami",
+        metaDescription:
+          "Zejdź do Cysterny Bazyliki, podziemnego pałacu wody w Stambule. Zobacz głowy Meduzy i 336 kolumn z zweryfikowanym lokalnym przewodnikiem.",
+        intro: [
+          "Pod ulicami Sultanahmet kryje się Cysterna Bazyliki — liczący 1500 lat podziemny zbiornik z 336 marmurowymi kolumnami, przyćmionym światłem i echem kapiącej wody. Bizantyjczycy zbudowali ją, by zaopatrywać w wodę Wielki Pałac; dziś to jedno z najbardziej klimatycznych miejsc Stambułu.",
+          "Lokalny przewodnik VibeGuide wyjaśnia odwrócone głowy Meduzy, dlaczego kolumny odzyskano ze starszych świątyń oraz legendy, które narodziły się w mroku — zamieniając krótką wizytę w prawdziwą opowieść.",
+        ],
+        highlights: [
+          { title: "Głowy Meduzy", desc: "Dwie antyczne twarze Meduzy, ustawione bokiem i do góry nogami — nikt do końca nie wie dlaczego." },
+          { title: "336 kolumn", desc: "Odzyskane ze starszych rzymskich ruin, każda nieco inna." },
+          { title: "Atmosfera", desc: "Chłodna, przyćmiona i pełna echa — filmowa sceneria ożywająca pod miastem." },
+        ],
+        faqs: [
+          { q: "Czy warto odwiedzić Cysternę Bazyliki?", a: "Zdecydowanie — jest krótka, ale niezapomniana, a historia czyni ją znacznie bogatszą. Przewodnik wskazuje szczegóły, które większość zwiedzających mija obojętnie." },
+          { q: "Ile trwa zwiedzanie?", a: "Zwykle 30–45 minut, łatwo połączyć z Hagią Sophią i Błękitnym Meczetem tuż obok." },
+          { q: "Czy jest dostępna dla osób z ograniczoną mobilnością?", a: "Nad wodą prowadzą pomosty, ale są też schody. Przewodnik z góry powie Ci, czego się spodziewać." },
+        ],
+        ctaTitle: "Odkryj Cysternę z lokalnym przewodnikiem",
+        ...IST.pl,
+      },
+      nl: {
+        name: "Basilica-cisterne",
+        metaTitle: "Basilica-cisterne (Yerebatan)-tours & lokale gidsen",
+        metaDescription:
+          "Daal af in de Basilica-cisterne, het ondergrondse waterpaleis van Istanbul. Zie de Medusakoppen en 336 zuilen met een geverifieerde lokale gids.",
+        intro: [
+          "Onder de straten van Sultanahmet ligt de Basilica-cisterne — een 1.500 jaar oud ondergronds waterreservoir met 336 marmeren zuilen, gedempt licht en druppelende echo's. De Byzantijnen bouwden haar om het Grote Paleis van water te voorzien; vandaag is het een van de meest sfeervolle plekken van Istanbul.",
+          "Een lokale VibeGuide legt de omgekeerde Medusakoppen uit, waarom zuilen werden hergebruikt uit oudere tempels en de legenden die in het donker ontstonden — en maakt van een kort bezoek een echt verhaal.",
+        ],
+        highlights: [
+          { title: "De Medusakoppen", desc: "Twee antieke Medusagezichten, zijwaarts en ondersteboven geplaatst — niemand weet volledig waarom." },
+          { title: "336 zuilen", desc: "Hergebruikt uit oudere Romeinse ruïnes, elk net iets anders." },
+          { title: "De sfeer", desc: "Koel, schemerig en galmend — een filmset die tot leven komt onder de stad." },
+        ],
+        faqs: [
+          { q: "Is de Basilica-cisterne de moeite waard?", a: "Absoluut — kort maar onvergetelijk, en de geschiedenis maakt het veel rijker. Een gids wijst details aan die de meeste bezoekers voorbijlopen." },
+          { q: "Hoe lang duurt het bezoek?", a: "Meestal 30–45 minuten, makkelijk te combineren met de Hagia Sophia en de Blauwe Moskee ernaast." },
+          { q: "Is het toegankelijk?", a: "Er zijn looppaden boven het water, maar ook enkele treden. Je gids vertelt je vooraf wat je kunt verwachten." },
+        ],
+        ctaTitle: "Verken de cisterne met een local",
+        ...IST.nl,
+      },
+
     },
   },
 
@@ -859,6 +1081,73 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: "Sultanahmet Camii'ni bir yerelle gez",
         ...IST.tr,
       },
+      it: {
+        name: "Moschea Blu",
+        metaTitle: "Tour della Moschea Blu (Sultanahmet) con guide locali",
+        metaDescription:
+          "Visita la Moschea Blu a Istanbul con una guida locale verificata. Sei minareti, 20.000 piastrelle di İznik e una moschea attiva — visitata con rispetto e spiegata.",
+        intro: [
+          "La Moschea Blu — Moschea di Sultanahmet — si affaccia su Santa Sofia oltre una piazza-giardino, con sei minareti che si ergono sulla città vecchia. All'interno, oltre 20.000 piastrelle di İznik dipinte a mano donano alla sala di preghiera il suo celebre bagliore azzurro.",
+          "È una moschea viva, non un museo. Un locale di VibeGuide ti aiuta a visitarla con rispetto — orari attorno alle preghiere, abbigliamento, etichetta — e svela la rivalità e l'ambizione dietro la sua costruzione.",
+        ],
+        highlights: [
+          { title: "Sei minareti", desc: "Una scelta audace nel 1616 che un tempo rivaleggiò con la stessa Mecca." },
+          { title: "20.000 piastrelle di İznik", desc: "Blu e verdi dipinti a mano che danno il nome alla moschea." },
+          { title: "Cupole a cascata", desc: "Una piramide di semicupole che definisce lo skyline di Istanbul." },
+        ],
+        faqs: [
+          { q: "I turisti possono entrare nella Moschea Blu?", a: "Sì, fuori dagli orari di preghiera e con abbigliamento sobrio. Una guida gestisce orari ed etichetta perché la tua visita sia serena e rispettosa." },
+          { q: "Devo coprirmi la testa?", a: "Le donne si coprono i capelli all'interno; di solito sono disponibili dei foulard. La tua guida ti dice esattamente cosa portare." },
+          { q: "È vicina a Santa Sofia?", a: "Si affacciano l'una sull'altra attraverso la piazza di Sultanahmet — a due minuti a piedi di distanza." },
+        ],
+        ctaTitle: "Visita la Moschea Blu con un locale",
+        ...IST.it,
+      },
+      pl: {
+        name: "Błękitny Meczet",
+        metaTitle: "Błękitny Meczet (Sultanahmet) — wycieczki z lokalnymi przewodnikami",
+        metaDescription:
+          "Odwiedź Błękitny Meczet w Stambule z zweryfikowanym lokalnym przewodnikiem. Sześć minaretów, 20 000 płytek z İznik i czynny meczet — zwiedzany z szacunkiem i objaśniony.",
+        intro: [
+          "Błękitny Meczet — Meczet Sultanahmet — stoi naprzeciw Hagii Sophii po drugiej stronie ogrodowego placu, a sześć minaretów wznosi się nad starym miastem. W środku ponad 20 000 ręcznie malowanych płytek z İznik nadaje sali modlitewnej słynną błękitną poświatę.",
+          "To żywy meczet, a nie muzeum. Lokalny przewodnik VibeGuide pomaga zwiedzać go z szacunkiem — dobór pory wokół modlitw, strój, etykieta — i odsłania rywalizację oraz ambicję stojące za jego budową.",
+        ],
+        highlights: [
+          { title: "Sześć minaretów", desc: "Śmiały wybór w 1616 roku, który niegdyś rywalizował z samą Mekką." },
+          { title: "20 000 płytek z İznik", desc: "Ręcznie malowane błękity i zielenie, od których meczet wziął nazwę." },
+          { title: "Kaskada kopuł", desc: "Piramida półkopuł, która definiuje panoramę Stambułu." },
+        ],
+        faqs: [
+          { q: "Czy turyści mogą wejść do Błękitnego Meczetu?", a: "Tak, poza godzinami modlitwy i w skromnym stroju. Przewodnik zajmuje się doborem pory i etykietą, aby wizyta była płynna i pełna szacunku." },
+          { q: "Czy muszę zakryć głowę?", a: "Kobiety zakrywają włosy w środku; chusty są zwykle dostępne na miejscu. Przewodnik dokładnie powie Ci, co zabrać." },
+          { q: "Czy to blisko Hagii Sophii?", a: "Stoją naprzeciw siebie po dwóch stronach placu Sultanahmet — dwie minuty spacerem." },
+        ],
+        ctaTitle: "Odwiedź Błękitny Meczet z lokalnym przewodnikiem",
+        ...IST.pl,
+      },
+      nl: {
+        name: "Blauwe Moskee",
+        metaTitle: "Blauwe Moskee (Sultanahmet)-tours & lokale gidsen",
+        metaDescription:
+          "Bezoek de Blauwe Moskee in Istanbul met een geverifieerde lokale gids. Zes minaretten, 20.000 İznik-tegels en een actieve moskee — respectvol bezocht en uitgelegd.",
+        intro: [
+          "De Blauwe Moskee — Sultanahmet-moskee — staat tegenover de Hagia Sophia aan een tuinplein, met zes minaretten die boven de oude stad uitrijzen. Binnen geven meer dan 20.000 handgeschilderde İznik-tegels de gebedshal zijn beroemde blauwe gloed.",
+          "Het is een levende moskee, geen museum. Een lokale VibeGuide helpt je respectvol te bezoeken — timing rond de gebeden, kleding, etiquette — en onthult de rivaliteit en ambitie achter de bouw.",
+        ],
+        highlights: [
+          { title: "Zes minaretten", desc: "Een gedurfde keuze in 1616 die ooit wedijverde met Mekka zelf." },
+          { title: "20.000 İznik-tegels", desc: "Handgeschilderde blauw- en groentinten die de moskee haar naam geven." },
+          { title: "Cascade van koepels", desc: "Een piramide van halve koepels die de skyline van Istanbul bepaalt." },
+        ],
+        faqs: [
+          { q: "Mogen toeristen de Blauwe Moskee binnen?", a: "Ja, buiten gebedstijden en met bescheiden kleding. Een gids regelt de timing en etiquette zodat je bezoek soepel en respectvol verloopt." },
+          { q: "Moet ik mijn hoofd bedekken?", a: "Vrouwen bedekken hun haar binnen; sjaals zijn er meestal beschikbaar. Je gids vertelt je precies wat je moet meenemen." },
+          { q: "Ligt het dicht bij de Hagia Sophia?", a: "Ze staan tegenover elkaar aan het Sultanahmet-plein — op twee minuten lopen van elkaar." },
+        ],
+        ctaTitle: "Bezoek de Blauwe Moskee met een local",
+        ...IST.nl,
+      },
+
     },
   },
 
@@ -1049,6 +1338,73 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: "Efes'i bir yerelle gez",
         ...EPH.tr,
       },
+      it: {
+        name: "Efeso",
+        metaTitle: "Tour di Efeso e guide locali",
+        metaDescription:
+          "Percorri l'antica Efeso vicino a Selçuk, İzmir con una guida locale verificata. La Biblioteca di Celso, il Grande Teatro e le vie di marmo prendono vita.",
+        intro: [
+          "Efeso fu una delle più grandi città del mondo antico — una metropoli romana di un quarto di milione di abitanti, dove camminò Marco Antonio e predicò San Paolo. Le sue vie di marmo, l'imponente Biblioteca di Celso e un teatro da 25.000 posti si ergono ancora vicino a Selçuk.",
+          "Un local di VibeGuide trasforma le rovine in una città viva — chi ci abitava, dove ci si lavava, si faceva la spesa e si pregava — così le pietre raccontano la loro storia invece di tacere.",
+        ],
+        highlights: [
+          { title: "Biblioteca di Celso", desc: "Una facciata di marmo a due piani, un tempo custode di 12.000 rotoli." },
+          { title: "Grande Teatro", desc: "Capienza di 25.000 posti — ancora oggi usato per eventi." },
+          { title: "Case a Terrazza", desc: "Dimore dell'élite romana con pavimenti a mosaico, al coperto." },
+        ],
+        faqs: [
+          { q: "Dove si trova Efeso?", a: "Vicino a Selçuk, nella provincia di İzmir, a circa un'ora dalla città di İzmir e non lontano dal porto di Kuşadası." },
+          { q: "Quanto tempo serve?", a: "Prevedi 2–3 ore sul sito; una guida ti tiene all'ombra e lontano dalla folla." },
+          { q: "È adatto ai passeggeri delle crociere?", a: "Sì — è una classica escursione a terra da Kuşadası. Una guida locale sfrutta al meglio il tempo limitato." },
+        ],
+        ctaTitle: "Percorri Efeso con un local",
+        ...EPH.it,
+      },
+      pl: {
+        name: "Efez",
+        metaTitle: "Wycieczki po Efezie i lokalni przewodnicy",
+        metaDescription:
+          "Przejdź się po starożytnym Efezie koło Selçuk w İzmirze z zweryfikowanym lokalnym przewodnikiem. Biblioteka Celsusa, Wielki Teatr i marmurowe ulice ożywają.",
+        intro: [
+          "Efez był jednym z największych miast starożytnego świata — rzymską metropolią liczącą ćwierć miliona mieszkańców, po której stąpał Marek Antoniusz i w której nauczał św. Paweł. Jego marmurowe ulice, strzelista Biblioteka Celsusa i teatr na 25 000 widzów wciąż stoją koło Selçuk.",
+          "Lokalny przewodnik VibeGuide zmienia ruiny w żywe miasto — kto tu mieszkał, gdzie się kąpano, robiono zakupy i modlono — tak by kamienie opowiedziały swoją historię, zamiast milczeć.",
+        ],
+        highlights: [
+          { title: "Biblioteka Celsusa", desc: "Dwukondygnacyjna marmurowa fasada, niegdyś mieszcząca 12 000 zwojów." },
+          { title: "Wielki Teatr", desc: "Miejsca dla 25 000 widzów — do dziś wykorzystywany na wydarzenia." },
+          { title: "Domy Tarasowe", desc: "Domy rzymskiej elity z mozaikowymi podłogami, pod zadaszeniem." },
+        ],
+        faqs: [
+          { q: "Gdzie leży Efez?", a: "Koło Selçuk w prowincji İzmir, około godziny od miasta İzmir i blisko portu Kuşadası." },
+          { q: "Ile czasu potrzebuję?", a: "Zaplanuj 2–3 godziny na miejscu; przewodnik prowadzi cię w cieniu i z dala od tłumów." },
+          { q: "Czy nadaje się dla pasażerów rejsów?", a: "Tak — to klasyczna wycieczka z portu Kuşadası. Lokalny przewodnik maksymalnie wykorzystuje ograniczony czas." },
+        ],
+        ctaTitle: "Przejdź się po Efezie z lokalnym przewodnikiem",
+        ...EPH.pl,
+      },
+      nl: {
+        name: "Efeze",
+        metaTitle: "Efeze-tours en lokale gidsen",
+        metaDescription:
+          "Wandel door het antieke Efeze bij Selçuk, İzmir met een geverifieerde lokale gids. De Bibliotheek van Celsus, het Grote Theater en marmeren straten komen tot leven.",
+        intro: [
+          "Efeze was een van de grootste steden van de antieke wereld — een Romeinse metropool van een kwart miljoen mensen, waar Marcus Antonius liep en de apostel Paulus predikte. De marmeren straten, de torenhoge Bibliotheek van Celsus en een theater voor 25.000 staan nog altijd bij Selçuk.",
+          "Een local van VibeGuide maakt van ruïnes een levende stad — wie hier woonde, waar men baadde, winkelde en aanbad — zodat de stenen hun verhaal vertellen in plaats van te zwijgen.",
+        ],
+        highlights: [
+          { title: "Bibliotheek van Celsus", desc: "Een marmeren gevel van twee verdiepingen, ooit thuis van 12.000 boekrollen." },
+          { title: "Grote Theater", desc: "Plaats voor 25.000 — vandaag de dag nog gebruikt voor evenementen." },
+          { title: "Terrashuizen", desc: "Woningen van de Romeinse elite met mozaïekvloeren, overdekt." },
+        ],
+        faqs: [
+          { q: "Waar ligt Efeze?", a: "Bij Selçuk in de provincie İzmir, ongeveer een uur van de stad İzmir en dicht bij de haven van Kuşadası." },
+          { q: "Hoeveel tijd heb ik nodig?", a: "Reken op 2–3 uur ter plaatse; een gids houdt je in de schaduw en uit de drukte." },
+          { q: "Is het geschikt voor cruisepassagiers?", a: "Ja — een klassieke excursie vanaf Kuşadası. Een lokale gids haalt het meeste uit beperkte tijd." },
+        ],
+        ctaTitle: "Wandel door Efeze met een local",
+        ...EPH.nl,
+      },
+
     },
   },
 
@@ -1238,6 +1594,327 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: "Kapadokya'yı bir yerelle keşfet",
         ...CAP.tr,
+      },
+      it: {
+        name: "Cappadocia",
+        metaTitle: "Tour della Cappadocia e guide locali",
+        metaDescription:
+          "Esplora la Cappadocia con una guida locale verificata. Mongolfiere, camini delle fate, chiese rupestri e città sotterranee a Göreme e dintorni.",
+        intro: [
+          "La Cappadocia è un paesaggio da sogno — valli di 'camini delle fate', chiese scavate nella roccia e affrescate mille anni fa, e intere città scolpite nel sottosuolo. All'alba, centinaia di mongolfiere si alzano su Göreme in uno dei grandi spettacoli del mondo.",
+          "Un local di VibeGuide sa quale valle cattura la luce migliore, quale chiesa rupestre si è conservata e dove non c'è folla — trasformando una foto famosa in una vera comprensione del luogo.",
+        ],
+        highlights: [
+          { title: "Mongolfiere", desc: "Voli all'alba sopra le valli — l'immagine che rappresenta la Cappadocia." },
+          { title: "Museo all'aperto di Göreme", desc: "Chiese rupestri bizantine con affreschi scavati nella roccia." },
+          { title: "Città sotterranee", desc: "Derinkuyu e Kaymaklı — intere città nascoste sottoterra." },
+        ],
+        faqs: [
+          { q: "Dove si trova la Cappadocia?", a: "Nell'Anatolia centrale, intorno a Göreme e Nevşehir, raggiungibile in volo a Kayseri o Nevşehir." },
+          { q: "I voli in mongolfiera sono garantiti?", a: "Dipendono dal meteo e si prenotano a parte. Una guida ti aiuta a pianificare il resto intorno a essi." },
+          { q: "Quanti giorni servono?", a: "Due giorni coprono con calma i punti salienti; una guida locale rende prezioso anche un solo giorno." },
+        ],
+        ctaTitle: "Scopri la Cappadocia con un local",
+        ...CAP.it,
+      },
+      pl: {
+        name: "Kapadocja",
+        metaTitle: "Wycieczki po Kapadocji i lokalni przewodnicy",
+        metaDescription:
+          "Zwiedzaj Kapadocję ze zweryfikowanym lokalnym przewodnikiem. Balony na ogrzane powietrze, kominy wróżek, skalne kościoły i podziemne miasta w Göreme i okolicy.",
+        intro: [
+          "Kapadocja to krajobraz jak ze snu — doliny 'kominów wróżek', wykute w skale kościoły pomalowane tysiąc lat temu i całe miasta wydrążone pod ziemią. O świcie setki balonów na ogrzane powietrze wznoszą się nad Göreme w jednym z największych widowisk świata.",
+          "Lokalny przewodnik VibeGuide wie, która dolina łapie najlepsze światło, który skalny kościół przetrwał i gdzie nie ma tłumów — zamieniając słynne zdjęcie w prawdziwe zrozumienie miejsca.",
+        ],
+        highlights: [
+          { title: "Balony na ogrzane powietrze", desc: "Loty o świcie nad dolinami — obraz, który definiuje Kapadocję." },
+          { title: "Muzeum na wolnym powietrzu w Göreme", desc: "Bizantyjskie skalne kościoły z freskami wykutymi w skale." },
+          { title: "Podziemne miasta", desc: "Derinkuyu i Kaymaklı — całe miasta ukryte pod ziemią." },
+        ],
+        faqs: [
+          { q: "Gdzie leży Kapadocja?", a: "W centralnej Anatolii, wokół Göreme i Nevşehir, dostępna samolotem do Kayseri lub Nevşehir." },
+          { q: "Czy loty balonem są gwarantowane?", a: "Zależą od pogody i rezerwuje się je osobno. Przewodnik pomoże zaplanować resztę wokół nich." },
+          { q: "Ile dni potrzebuję?", a: "Dwa dni spokojnie obejmują najważniejsze atrakcje; lokalny przewodnik sprawia, że liczy się nawet jeden dzień." },
+        ],
+        ctaTitle: "Odkryj Kapadocję z lokalnym przewodnikiem",
+        ...CAP.pl,
+      },
+      nl: {
+        name: "Cappadocië",
+        metaTitle: "Cappadocië-tours en lokale gidsen",
+        metaDescription:
+          "Ontdek Cappadocië met een geverifieerde lokale gids. Heteluchtballonnen, feeënschoorstenen, rotskerken en ondergrondse steden in Göreme en omgeving.",
+        intro: [
+          "Cappadocië is een landschap als uit een droom — valleien vol 'feeënschoorstenen', duizend jaar geleden beschilderde rotskerken en hele steden uitgehouwen onder de grond. Bij dageraad stijgen honderden heteluchtballonnen op boven Göreme, een van de grote schouwspelen ter wereld.",
+          "Een local van VibeGuide weet welke vallei het mooiste licht vangt, welke rotskerk bewaard is gebleven en waar de drukte niet is — en maakt van een beroemde foto een echt begrip van de plek.",
+        ],
+        highlights: [
+          { title: "Heteluchtballonnen", desc: "Vluchten bij dageraad boven de valleien — het beeld van Cappadocië." },
+          { title: "Openluchtmuseum Göreme", desc: "Byzantijnse rotskerken met in de rots uitgehouwen fresco's." },
+          { title: "Ondergrondse steden", desc: "Derinkuyu en Kaymaklı — hele steden verborgen onder de grond." },
+        ],
+        faqs: [
+          { q: "Waar ligt Cappadocië?", a: "In Centraal-Anatolië, rond Göreme en Nevşehir, bereikbaar per vlucht naar Kayseri of Nevşehir." },
+          { q: "Zijn ballonvluchten gegarandeerd?", a: "Ze zijn afhankelijk van het weer en worden apart geboekt. Een gids helpt je de rest eromheen te plannen." },
+          { q: "Hoeveel dagen heb ik nodig?", a: "Twee dagen dekken de hoogtepunten comfortabel; een lokale gids maakt zelfs één dag waardevol." },
+        ],
+        ctaTitle: "Ontdek Cappadocië met een local",
+        ...CAP.nl,
+      },
+
+    },
+  },
+  {
+    slug: "dolmabahce-palace",
+    city: "Istanbul",
+    citySlug: "istanbul",
+    emoji: "🏛️",
+    image:
+      "https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?q=80&w=1600",
+    lat: 41.03917,
+    lng: 29.00069,
+    i18n: {
+      en: {
+        name: "Dolmabahçe Palace",
+        metaTitle: "Dolmabahçe Palace Tours & Local Guides",
+        metaDescription:
+          "Visit Dolmabahçe Palace on the Bosphorus with a verified Istanbul guide. Gold ceilings, the world's largest crystal chandelier, and the room where Atatürk died.",
+        intro: [
+          "Dolmabahçe Palace is the most opulent chapter of the late Ottoman story. Built between 1843 and 1856 for Sultan Abdülmecid I by the Balyan architects, it replaced medieval Topkapı as the imperial residence — a deliberately European statement in Baroque, Rococo and Neoclassical style, with 285 rooms, 46 halls and 6 hammams stretched along the European shore of the Bosphorus.",
+          "With a VibeGuide local expert the excess makes sense. Entry follows a guided route, so a real guide is the difference between a corridor of gilded rooms and the true story — 14 tons of gold, a 4.5-ton chandelier, and the exact minute a nation stopped its clocks.",
+        ],
+        highlights: [
+          { title: "The Ceremonial Hall", desc: "Home to a 4.5-ton Bohemian crystal chandelier with 750 lamps — a gift from Queen Victoria and the largest of its kind on Earth." },
+          { title: "The Crystal Staircase", desc: "Banisters cut entirely from Baccarat crystal, beneath ceilings gilded with 14 tons of gold." },
+          { title: "Atatürk's Room", desc: "The founder of modern Turkey died here on 10 November 1938 at 09:05 — the palace clocks are still set to that moment." },
+        ],
+        faqs: [
+          { q: "Do I need a guide for Dolmabahçe Palace?", a: "Entry is by guided route, and the Selamlık, Harem and Ceremonial Hall each hide stories you'd walk straight past. A VibeGuide local turns the gilding into a narrative and helps you skip the longest queues." },
+          { q: "Why are all the clocks set to 09:05?", a: "Atatürk died in the palace at 09:05 on 10 November 1938. Many of Dolmabahçe's clocks are traditionally kept at that time in his memory." },
+          { q: "How long does a visit take?", a: "Most guided visits run 1–2 hours between the Selamlık, Harem and waterfront gardens, and pair beautifully with a Bosphorus cruise afterwards." },
+        ],
+        ctaTitle: "See Dolmabahçe with a local",
+        ...IST.en,
+      },
+      de: {
+        name: "Dolmabahçe-Palast",
+        metaTitle: "Dolmabahçe-Palast Touren & lokale Guides",
+        metaDescription:
+          "Besuche den Dolmabahçe-Palast am Bosporus mit einem geprüften Istanbul-Guide. Goldene Decken, der größte Kristalllüster der Welt und Atatürks Sterbezimmer.",
+        intro: [
+          "Der Dolmabahçe-Palast ist das prunkvollste Kapitel der späten Osmanenzeit. Zwischen 1843 und 1856 für Sultan Abdülmecid I. von den Balyan-Architekten erbaut, löste er das mittelalterliche Topkapı als Residenz ab — ein bewusst europäisches Statement in Barock, Rokoko und Klassizismus, mit 285 Zimmern, 46 Sälen und 6 Hammams am europäischen Bosporus-Ufer.",
+          "Mit einem lokalen VibeGuide-Experten ergibt der Überfluss einen Sinn. Der Besuch folgt einem geführten Rundgang — ein echter Guide macht aus einer Flucht vergoldeter Räume die wahre Geschichte: 14 Tonnen Gold, ein 4,5 Tonnen schwerer Lüster und die genaue Minute, in der eine Nation ihre Uhren anhielt.",
+        ],
+        highlights: [
+          { title: "Der Zeremoniensaal", desc: "Hier hängt ein 4,5 Tonnen schwerer böhmischer Kristalllüster mit 750 Lampen — ein Geschenk von Königin Victoria und der größte seiner Art weltweit." },
+          { title: "Die Kristalltreppe", desc: "Geländer vollständig aus Baccarat-Kristall, unter Decken, die mit 14 Tonnen Gold vergoldet sind." },
+          { title: "Atatürks Zimmer", desc: "Der Gründer der modernen Türkei starb hier am 10. November 1938 um 09:05 Uhr — die Uhren des Palastes stehen bis heute auf diesem Moment." },
+        ],
+        faqs: [
+          { q: "Brauche ich einen Guide für den Dolmabahçe-Palast?", a: "Der Zutritt erfolgt über einen geführten Rundgang, und Selamlık, Harem und Zeremoniensaal bergen jeweils Geschichten, an denen man sonst vorbeiläuft. Ein lokaler VibeGuide macht aus der Vergoldung eine Erzählung und hilft dir, die längsten Schlangen zu meiden." },
+          { q: "Warum stehen alle Uhren auf 09:05?", a: "Atatürk starb am 10. November 1938 um 09:05 Uhr im Palast. Viele Uhren im Dolmabahçe werden zu seinem Gedenken traditionell auf diese Zeit gestellt." },
+          { q: "Wie lange dauert ein Besuch?", a: "Die meisten geführten Besuche dauern 1–2 Stunden zwischen Selamlık, Harem und den Uferparks — und lassen sich danach wunderbar mit einer Bosporus-Fahrt verbinden." },
+        ],
+        ctaTitle: "Erlebe Dolmabahçe mit einem Local",
+        ...IST.de,
+      },
+      ru: {
+        name: "Дворец Долмабахче",
+        metaTitle: "Дворец Долмабахче: экскурсии с местными гидами",
+        metaDescription:
+          "Посетите дворец Долмабахче на Босфоре с проверенным гидом в Стамбуле. Золотые потолки, крупнейшая хрустальная люстра в мире и комната, где умер Ататюрк.",
+        intro: [
+          "Дворец Долмабахче — самая пышная глава поздней Османской истории. Построенный в 1843–1856 годах для султана Абдул-Меджида I архитекторами Бальян, он сменил средневековый Топкапы в роли резиденции — намеренно европейское заявление в стиле барокко, рококо и классицизма: 285 комнат, 46 залов и 6 хаммамов вдоль европейского берега Босфора.",
+          "С местным экспертом VibeGuide вся эта роскошь обретает смысл. Осмотр идёт по экскурсионному маршруту, и настоящий гид — это разница между анфиладой позолоченных залов и живой историей: 14 тонн золота, люстра в 4,5 тонны и та самая минута, когда целая страна остановила часы.",
+        ],
+        highlights: [
+          { title: "Церемониальный зал", desc: "Здесь висит богемская хрустальная люстра весом 4,5 тонны с 750 лампами — подарок королевы Виктории и крупнейшая в мире." },
+          { title: "Хрустальная лестница", desc: "Перила целиком из хрусталя Баккара — под потолками, позолоченными 14 тоннами золота." },
+          { title: "Комната Ататюрка", desc: "Основатель современной Турции умер здесь 10 ноября 1938 года в 09:05 — часы дворца до сих пор показывают это время." },
+        ],
+        faqs: [
+          { q: "Нужен ли гид для дворца Долмабахче?", a: "Вход только по экскурсионному маршруту, а Селамлык, Гарем и Церемониальный зал хранят истории, мимо которых легко пройти. Местный гид VibeGuide превращает позолоту в рассказ и помогает избежать самых длинных очередей." },
+          { q: "Почему все часы показывают 09:05?", a: "Ататюрк умер во дворце 10 ноября 1938 года в 09:05. Многие часы Долмабахче по традиции держат на этом времени в его память." },
+          { q: "Сколько длится посещение?", a: "Обычно экскурсия занимает 1–2 часа между Селамлыком, Гаремом и прибрежными садами и прекрасно сочетается с прогулкой по Босфору после." },
+        ],
+        ctaTitle: "Увидеть Долмабахче с местным гидом",
+        ...IST.ru,
+      },
+      ar: {
+        name: "قصر دولمة باهتشة",
+        metaTitle: "جولات قصر دولمة باهتشة مع مرشدين محليين",
+        metaDescription:
+          "زر قصر دولمة باهتشة على البوسفور مع مرشد موثّق في إسطنبول. أسقف مذهّبة، وأكبر ثريا كريستالية في العالم، والغرفة التي توفي فيها أتاتورك.",
+        intro: [
+          "قصر دولمة باهتشة هو الفصل الأكثر فخامة في تاريخ الدولة العثمانية المتأخر. شُيّد بين عامي 1843 و1856 للسلطان عبد المجيد الأول على يد معماريي عائلة باليان، ليحل محل قصر توپكاپي القديم كمقر للسلطنة — بيان أوروبي مقصود بأسلوب الباروك والروكوكو والكلاسيكية الجديدة، يضم 285 غرفة و46 قاعة و6 حمّامات على الضفة الأوروبية للبوسفور.",
+          "مع خبير محلي من VibeGuide يصبح لهذا البذخ معنى. الزيارة تسير وفق مسار مُرشَد، والمرشد الحقيقي هو الفرق بين رواق من الغرف المذهّبة وبين القصة الحقيقية — 14 طنًا من الذهب، وثريا تزن 4.5 طن، واللحظة التي أوقفت فيها أمة عقارب ساعاتها.",
+        ],
+        highlights: [
+          { title: "قاعة الاحتفالات", desc: "تحتضن ثريا كريستالية بوهيمية تزن 4.5 طن بـ750 مصباحًا — هدية من الملكة فيكتوريا وأكبر ثريا من نوعها في العالم." },
+          { title: "السلّم الكريستالي", desc: "درابزين منحوت بالكامل من كريستال باكارا، تحت أسقف مطلية بـ14 طنًا من الذهب." },
+          { title: "غرفة أتاتورك", desc: "توفي مؤسس تركيا الحديثة هنا في 10 نوفمبر 1938 عند الساعة 09:05 — ولا تزال ساعات القصر مضبوطة على تلك اللحظة." },
+        ],
+        faqs: [
+          { q: "هل أحتاج إلى مرشد لزيارة قصر دولمة باهتشة؟", a: "الدخول يكون عبر مسار مُرشَد، وكل من السلاملك والحرم وقاعة الاحتفالات يخفي قصصًا قد تمر بها دون أن تنتبه. المرشد المحلي من VibeGuide يحوّل الذهب إلى حكاية ويساعدك على تجنّب أطول الطوابير." },
+          { q: "لماذا كل الساعات مضبوطة على 09:05؟", a: "توفي أتاتورك في القصر عند الساعة 09:05 يوم 10 نوفمبر 1938. وتُضبط كثير من ساعات دولمة باهتشة تقليديًا على هذا الوقت تخليدًا لذكراه." },
+          { q: "كم تستغرق الزيارة؟", a: "تستغرق معظم الجولات المرشدة 1–2 ساعة بين السلاملك والحرم والحدائق المطلة على الماء، وتتكامل بشكل رائع مع جولة بحرية في البوسفور بعدها." },
+        ],
+        ctaTitle: "زر دولمة باهتشة مع مرشد محلي",
+        ...IST.ar,
+      },
+      es: {
+        name: "Palacio de Dolmabahçe",
+        metaTitle: "Tours del Palacio de Dolmabahçe con guías locales",
+        metaDescription:
+          "Visita el Palacio de Dolmabahçe en el Bósforo con un guía verificado de Estambul. Techos dorados, la mayor lámpara de cristal del mundo y la sala donde murió Atatürk.",
+        intro: [
+          "El Palacio de Dolmabahçe es el capítulo más suntuoso del ocaso otomano. Construido entre 1843 y 1856 para el sultán Abdülmecid I por los arquitectos Balyan, sustituyó al medieval Topkapı como residencia imperial — una declaración deliberadamente europea en estilo barroco, rococó y neoclásico, con 285 habitaciones, 46 salones y 6 hammams a lo largo de la orilla europea del Bósforo.",
+          "Con un experto local de VibeGuide, tanto lujo cobra sentido. La entrada sigue un recorrido guiado, así que un guía de verdad marca la diferencia entre una sucesión de salas doradas y la historia real: 14 toneladas de oro, una lámpara de 4,5 toneladas y el minuto exacto en que una nación detuvo sus relojes.",
+        ],
+        highlights: [
+          { title: "El Salón Ceremonial", desc: "Alberga una lámpara de cristal de Bohemia de 4,5 toneladas con 750 luces — un regalo de la reina Victoria y la mayor de su clase en el mundo." },
+          { title: "La Escalera de Cristal", desc: "Barandillas talladas íntegramente en cristal de Baccarat, bajo techos dorados con 14 toneladas de oro." },
+          { title: "La habitación de Atatürk", desc: "El fundador de la Turquía moderna murió aquí el 10 de noviembre de 1938 a las 09:05 — los relojes del palacio siguen marcando ese instante." },
+        ],
+        faqs: [
+          { q: "¿Necesito un guía para el Palacio de Dolmabahçe?", a: "La entrada es por recorrido guiado, y el Selamlık, el Harén y el Salón Ceremonial esconden historias que pasarías de largo. Un guía local de VibeGuide convierte el oro en relato y te ayuda a evitar las colas más largas." },
+          { q: "¿Por qué todos los relojes marcan las 09:05?", a: "Atatürk murió en el palacio a las 09:05 del 10 de noviembre de 1938. Muchos relojes de Dolmabahçe se mantienen tradicionalmente en esa hora en su memoria." },
+          { q: "¿Cuánto dura la visita?", a: "La mayoría de las visitas guiadas duran 1–2 horas entre el Selamlık, el Harén y los jardines junto al agua, y combinan de maravilla con un crucero por el Bósforo después." },
+        ],
+        ctaTitle: "Visita Dolmabahçe con un local",
+        ...IST.es,
+      },
+      fr: {
+        name: "Palais de Dolmabahçe",
+        metaTitle: "Visites du Palais de Dolmabahçe avec guides locaux",
+        metaDescription:
+          "Visitez le Palais de Dolmabahçe sur le Bosphore avec un guide vérifié d'Istanbul. Plafonds dorés, le plus grand lustre en cristal du monde et la chambre où mourut Atatürk.",
+        intro: [
+          "Le Palais de Dolmabahçe est le chapitre le plus fastueux de la fin de l'Empire ottoman. Bâti entre 1843 et 1856 pour le sultan Abdülmecid Ier par les architectes Balyan, il a remplacé le médiéval Topkapı comme résidence impériale — un manifeste délibérément européen de style baroque, rococo et néoclassique, avec 285 pièces, 46 salles et 6 hammams le long de la rive européenne du Bosphore.",
+          "Avec un expert local VibeGuide, toute cette démesure prend un sens. La visite suit un parcours guidé : un vrai guide fait la différence entre une enfilade de salons dorés et la véritable histoire — 14 tonnes d'or, un lustre de 4,5 tonnes et la minute précise où une nation a arrêté ses horloges.",
+        ],
+        highlights: [
+          { title: "La Salle des Cérémonies", desc: "Elle abrite un lustre en cristal de Bohême de 4,5 tonnes à 750 lampes — un cadeau de la reine Victoria et le plus grand de son genre au monde." },
+          { title: "L'Escalier de Cristal", desc: "Des rampes taillées entièrement dans le cristal de Baccarat, sous des plafonds dorés à 14 tonnes d'or." },
+          { title: "La chambre d'Atatürk", desc: "Le fondateur de la Turquie moderne y est mort le 10 novembre 1938 à 09h05 — les horloges du palais indiquent toujours cet instant." },
+        ],
+        faqs: [
+          { q: "Ai-je besoin d'un guide pour le Palais de Dolmabahçe ?", a: "L'entrée se fait par un parcours guidé, et le Selamlık, le Harem et la Salle des Cérémonies cachent chacun des récits que l'on manque sans explication. Un guide local VibeGuide transforme la dorure en histoire et vous aide à éviter les plus longues files." },
+          { q: "Pourquoi toutes les horloges indiquent-elles 09h05 ?", a: "Atatürk est mort au palais à 09h05 le 10 novembre 1938. De nombreuses horloges de Dolmabahçe sont traditionnellement maintenues à cette heure en sa mémoire." },
+          { q: "Combien de temps dure la visite ?", a: "La plupart des visites guidées durent 1 à 2 heures entre le Selamlık, le Harem et les jardins au bord de l'eau, et se marient à merveille avec une croisière sur le Bosphore ensuite." },
+        ],
+        ctaTitle: "Visitez Dolmabahçe avec un local",
+        ...IST.fr,
+      },
+      el: {
+        name: "Παλάτι Ντολμάμπαχτσε",
+        metaTitle: "Ξεναγήσεις στο Παλάτι Ντολμάμπαχτσε με ντόπιους ξεναγούς",
+        metaDescription:
+          "Επισκέψου το Παλάτι Ντολμάμπαχτσε στον Βόσπορο με πιστοποιημένο ξεναγό στην Κωνσταντινούπολη. Χρυσές οροφές, ο μεγαλύτερος κρυστάλλινος πολυέλαιος στον κόσμο και το δωμάτιο όπου πέθανε ο Ατατούρκ.",
+        intro: [
+          "Το Παλάτι Ντολμάμπαχτσε είναι το πιο πολυτελές κεφάλαιο της ύστερης οθωμανικής ιστορίας. Χτισμένο μεταξύ 1843 και 1856 για τον σουλτάνο Αμπντουλμετζίτ Α΄ από τους αρχιτέκτονες Μπαλιάν, αντικατέστησε το μεσαιωνικό Τοπ Καπί ως αυτοκρατορική κατοικία — μια σκόπιμα ευρωπαϊκή δήλωση σε στιλ μπαρόκ, ροκοκό και νεοκλασικισμού, με 285 δωμάτια, 46 αίθουσες και 6 χαμάμ κατά μήκος της ευρωπαϊκής όχθης του Βοσπόρου.",
+          "Με έναν ντόπιο ειδικό του VibeGuide, όλη αυτή η υπερβολή αποκτά νόημα. Η είσοδος γίνεται με καθορισμένη ξενάγηση, κι έτσι ένας πραγματικός ξεναγός είναι η διαφορά ανάμεσα σε μια σειρά επίχρυσων δωματίων και στην αληθινή ιστορία — 14 τόνοι χρυσού, ένας πολυέλαιος 4,5 τόνων και η ακριβής στιγμή που ένα έθνος σταμάτησε τα ρολόγια του.",
+        ],
+        highlights: [
+          { title: "Η Αίθουσα Τελετών", desc: "Φιλοξενεί έναν βοημικό κρυστάλλινο πολυέλαιο 4,5 τόνων με 750 λαμπτήρες — δώρο της βασίλισσας Βικτωρίας και ο μεγαλύτερος του είδους του στον κόσμο." },
+          { title: "Η Κρυστάλλινη Σκάλα", desc: "Κάγκελα σκαλισμένα ολόκληρα από κρύσταλλο Baccarat, κάτω από οροφές επιχρυσωμένες με 14 τόνους χρυσού." },
+          { title: "Το δωμάτιο του Ατατούρκ", desc: "Ο ιδρυτής της σύγχρονης Τουρκίας πέθανε εδώ στις 10 Νοεμβρίου 1938 στις 09:05 — τα ρολόγια του παλατιού δείχνουν ακόμη εκείνη τη στιγμή." },
+        ],
+        faqs: [
+          { q: "Χρειάζομαι ξεναγό για το Παλάτι Ντολμάμπαχτσε;", a: "Η είσοδος γίνεται με καθορισμένη ξενάγηση, και το Σελαμλίκ, το Χαρέμι και η Αίθουσα Τελετών κρύβουν το καθένα ιστορίες που θα προσπερνούσες. Ένας ντόπιος ξεναγός του VibeGuide μετατρέπει το χρυσάφι σε αφήγηση και σε βοηθά να αποφύγεις τις μεγαλύτερες ουρές." },
+          { q: "Γιατί όλα τα ρολόγια δείχνουν 09:05;", a: "Ο Ατατούρκ πέθανε στο παλάτι στις 09:05 της 10ης Νοεμβρίου 1938. Πολλά ρολόγια του Ντολμάμπαχτσε διατηρούνται παραδοσιακά σε εκείνη την ώρα στη μνήμη του." },
+          { q: "Πόσο διαρκεί η επίσκεψη;", a: "Οι περισσότερες ξεναγήσεις διαρκούν 1–2 ώρες ανάμεσα στο Σελαμλίκ, το Χαρέμι και τους παραλιακούς κήπους, και συνδυάζονται υπέροχα με μια κρουαζιέρα στον Βόσπορο μετά." },
+        ],
+        ctaTitle: "Δες το Ντολμάμπαχτσε με έναν ντόπιο",
+        ...IST.el,
+      },
+      tr: {
+        name: "Dolmabahçe Sarayı",
+        metaTitle: "Dolmabahçe Sarayı Turları & Yerel Rehberler",
+        metaDescription:
+          "Dolmabahçe Sarayı'nı Boğaz kıyısında doğrulanmış bir İstanbul rehberiyle gez. Altın tavanlar, dünyanın en büyük kristal avizesi ve Atatürk'ün vefat ettiği oda.",
+        intro: [
+          "Dolmabahçe Sarayı, geç Osmanlı hikâyesinin en görkemli bölümüdür. 1843–1856 arasında Sultan Abdülmecid için Balyan mimarlarınca inşa edildi ve orta çağdan kalma Topkapı'nın yerine hükümdar konutu oldu — Barok, Rokoko ve Neoklasik üsluplu, bilinçli biçimde Avrupai bir duruş; Boğaz'ın Avrupa yakası boyunca 285 oda, 46 salon ve 6 hamam.",
+          "VibeGuide yerel uzmanıyla bu ihtişam anlam kazanır. Giriş rehberli güzergâhla yapılır; gerçek bir rehber, yaldızlı odalar dizisiyle gerçek hikâye arasındaki farktır — 14 ton altın, 4,5 tonluk bir avize ve bütün bir milletin saatlerini durdurduğu o an.",
+        ],
+        highlights: [
+          { title: "Muayede Salonu", desc: "750 ampullü, 4,5 ton ağırlığında Bohemya kristal avizesine ev sahipliği yapar — Kraliçe Victoria'nın armağanı ve dünyanın türünün en büyüğü." },
+          { title: "Kristal Merdiven", desc: "Tümüyle Baccarat kristalinden oyulmuş küpeşteler, 14 ton altınla yaldızlanmış tavanların altında." },
+          { title: "Atatürk'ün Odası", desc: "Modern Türkiye'nin kurucusu burada 10 Kasım 1938'de saat 09:05'te vefat etti — sarayın saatleri hâlâ o ana ayarlı." },
+        ],
+        faqs: [
+          { q: "Dolmabahçe Sarayı için rehbere ihtiyacım var mı?", a: "Giriş rehberli güzergâhla yapılır; Selamlık, Harem ve Muayede Salonu'nun her biri fark etmeden geçeceğin hikâyeler saklar. VibeGuide yerel rehberi yaldızı anlatıya dönüştürür ve en uzun kuyruklardan kaçınmana yardım eder." },
+          { q: "Neden bütün saatler 09:05'i gösteriyor?", a: "Atatürk sarayda 10 Kasım 1938'de saat 09:05'te vefat etti. Dolmabahçe'deki birçok saat, anısına geleneksel olarak bu saatte tutulur." },
+          { q: "Ziyaret ne kadar sürer?", a: "Çoğu rehberli ziyaret Selamlık, Harem ve deniz kıyısı bahçeleri arasında 1–2 saat sürer ve ardından bir Boğaz turuyla çok iyi bütünleşir." },
+        ],
+        ctaTitle: "Dolmabahçe'yi bir yerelle gez",
+        ...IST.tr,
+      },
+      it: {
+        name: "Palazzo di Dolmabahçe",
+        metaTitle: "Tour del Palazzo di Dolmabahçe con guide locali",
+        metaDescription:
+          "Visita il Palazzo di Dolmabahçe sul Bosforo con una guida verificata di Istanbul. Soffitti dorati, il più grande lampadario di cristallo al mondo e la stanza dove morì Atatürk.",
+        intro: [
+          "Il Palazzo di Dolmabahçe è il capitolo più sontuoso del tardo Impero ottomano. Costruito tra il 1843 e il 1856 per il sultano Abdülmecid I dagli architetti Balyan, sostituì il medievale Topkapı come residenza imperiale — una dichiarazione volutamente europea in stile barocco, rococò e neoclassico, con 285 stanze, 46 sale e 6 hammam lungo la sponda europea del Bosforo.",
+          "Con un esperto locale VibeGuide tanto sfarzo acquista senso. L'ingresso segue un percorso guidato, quindi una vera guida è la differenza tra una fila di sale dorate e la storia autentica — 14 tonnellate d'oro, un lampadario di 4,5 tonnellate e il minuto esatto in cui una nazione fermò i suoi orologi.",
+        ],
+        highlights: [
+          { title: "La Sala delle Cerimonie", desc: "Ospita un lampadario in cristallo di Boemia da 4,5 tonnellate con 750 luci — un dono della regina Vittoria e il più grande del suo genere al mondo." },
+          { title: "La Scala di Cristallo", desc: "Ringhiere intagliate interamente nel cristallo di Baccarat, sotto soffitti dorati con 14 tonnellate d'oro." },
+          { title: "La stanza di Atatürk", desc: "Il fondatore della Turchia moderna morì qui il 10 novembre 1938 alle 09:05 — gli orologi del palazzo segnano ancora quell'istante." },
+        ],
+        faqs: [
+          { q: "Serve una guida per il Palazzo di Dolmabahçe?", a: "L'ingresso avviene con percorso guidato, e il Selamlık, l'Harem e la Sala delle Cerimonie nascondono ciascuno storie che altrimenti supereresti senza accorgertene. Una guida locale VibeGuide trasforma le dorature in racconto e ti aiuta a evitare le code più lunghe." },
+          { q: "Perché tutti gli orologi segnano le 09:05?", a: "Atatürk morì nel palazzo alle 09:05 del 10 novembre 1938. Molti orologi di Dolmabahçe vengono tenuti tradizionalmente a quell'ora in sua memoria." },
+          { q: "Quanto dura la visita?", a: "La maggior parte delle visite guidate dura 1–2 ore tra il Selamlık, l'Harem e i giardini sul mare, e si abbina magnificamente a una crociera sul Bosforo dopo." },
+        ],
+        ctaTitle: "Visita Dolmabahçe con un locale",
+        ...IST.it,
+      },
+      pl: {
+        name: "Pałac Dolmabahçe",
+        metaTitle: "Pałac Dolmabahçe — wycieczki z lokalnymi przewodnikami",
+        metaDescription:
+          "Zwiedź Pałac Dolmabahçe nad Bosforem z zweryfikowanym przewodnikiem w Stambule. Złocone sufity, największy kryształowy żyrandol świata i pokój, w którym zmarł Atatürk.",
+        intro: [
+          "Pałac Dolmabahçe to najbardziej przepychowy rozdział późnej historii osmańskiej. Wzniesiony w latach 1843–1856 dla sułtana Abdülmecida I przez architektów z rodu Balyan, zastąpił średniowieczny Topkapı jako rezydencja imperialna — celowo europejski manifest w stylu barokowym, rokokowym i klasycystycznym, z 285 pokojami, 46 salami i 6 hammamami wzdłuż europejskiego brzegu Bosforu.",
+          "Z lokalnym ekspertem VibeGuide ten nadmiar nabiera sensu. Zwiedzanie odbywa się wyznaczoną trasą z przewodnikiem, więc prawdziwy przewodnik to różnica między amfiladą złoconych sal a autentyczną historią — 14 ton złota, żyrandol ważący 4,5 tony i dokładna minuta, w której naród zatrzymał swoje zegary.",
+        ],
+        highlights: [
+          { title: "Sala Ceremonialna", desc: "Mieści czeski kryształowy żyrandol o wadze 4,5 tony z 750 lampkami — dar królowej Wiktorii i największy tego rodzaju na świecie." },
+          { title: "Kryształowe schody", desc: "Balustrady wykute w całości z kryształu Baccarat, pod sufitami złoconymi 14 tonami złota." },
+          { title: "Pokój Atatürka", desc: "Twórca współczesnej Turcji zmarł tu 10 listopada 1938 roku o 09:05 — zegary pałacu wciąż wskazują ten moment." },
+        ],
+        faqs: [
+          { q: "Czy potrzebuję przewodnika w Pałacu Dolmabahçe?", a: "Wstęp odbywa się wyznaczoną trasą z przewodnikiem, a Selamlık, Harem i Sala Ceremonialna kryją historie, które łatwo minąć. Lokalny przewodnik VibeGuide zamienia złocenia w opowieść i pomaga ominąć najdłuższe kolejki." },
+          { q: "Dlaczego wszystkie zegary wskazują 09:05?", a: "Atatürk zmarł w pałacu o 09:05 dnia 10 listopada 1938 roku. Wiele zegarów w Dolmabahçe tradycyjnie zatrzymano na tej godzinie ku jego pamięci." },
+          { q: "Ile trwa zwiedzanie?", a: "Większość wizyt z przewodnikiem trwa 1–2 godziny między Selamlıkiem, Haremem i nadbrzeżnymi ogrodami, a potem świetnie łączy się z rejsem po Bosforze." },
+        ],
+        ctaTitle: "Zobacz Dolmabahçe z lokalnym przewodnikiem",
+        ...IST.pl,
+      },
+      nl: {
+        name: "Dolmabahçe-paleis",
+        metaTitle: "Dolmabahçe-paleis tours & lokale gidsen",
+        metaDescription:
+          "Bezoek het Dolmabahçe-paleis aan de Bosporus met een geverifieerde gids in Istanbul. Gouden plafonds, 's werelds grootste kristallen kroonluchter en de kamer waar Atatürk stierf.",
+        intro: [
+          "Het Dolmabahçe-paleis is het meest weelderige hoofdstuk uit de late Ottomaanse geschiedenis. Gebouwd tussen 1843 en 1856 voor sultan Abdülmecid I door de architecten Balyan, verving het het middeleeuwse Topkapı als keizerlijke residentie — een bewust Europees statement in barok, rococo en neoclassicistische stijl, met 285 kamers, 46 zalen en 6 hammams langs de Europese oever van de Bosporus.",
+          "Met een lokale VibeGuide-expert krijgt al die overdaad betekenis. Het bezoek volgt een vaste route met gids, dus een echte gids is het verschil tussen een reeks vergulde kamers en het ware verhaal — 14 ton goud, een kroonluchter van 4,5 ton en het exacte moment waarop een natie haar klokken stilzette.",
+        ],
+        highlights: [
+          { title: "De Ceremoniezaal", desc: "Herbergt een Boheemse kristallen kroonluchter van 4,5 ton met 750 lampen — een geschenk van koningin Victoria en de grootste in zijn soort ter wereld." },
+          { title: "De Kristallen Trap", desc: "Leuningen volledig gesneden uit Baccarat-kristal, onder plafonds verguld met 14 ton goud." },
+          { title: "Atatürks kamer", desc: "De grondlegger van het moderne Turkije stierf hier op 10 november 1938 om 09:05 — de klokken van het paleis staan nog altijd op dat moment." },
+        ],
+        faqs: [
+          { q: "Heb ik een gids nodig voor het Dolmabahçe-paleis?", a: "De toegang gaat via een vaste route met gids, en de Selamlık, de Harem en de Ceremoniezaal verbergen elk verhalen waar je anders langsloopt. Een lokale VibeGuide-gids maakt van het verguldsel een verhaal en helpt je de langste rijen te vermijden." },
+          { q: "Waarom staan alle klokken op 09:05?", a: "Atatürk stierf in het paleis om 09:05 op 10 november 1938. Veel klokken in Dolmabahçe worden ter nagedachtenis traditioneel op dat tijdstip gehouden." },
+          { q: "Hoe lang duurt een bezoek?", a: "De meeste rondleidingen duren 1–2 uur tussen de Selamlık, de Harem en de tuinen aan het water, en zijn daarna prachtig te combineren met een boottocht over de Bosporus." },
+        ],
+        ctaTitle: "Bekijk Dolmabahçe met een local",
+        ...IST.nl,
       },
     },
   },
