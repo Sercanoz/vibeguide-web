@@ -364,6 +364,14 @@ const ISTANBUL: CityGuide = {
         { q: "Czy wycieczki po Stambule są odpowiednie dla rodzin z dziećmi?", a: "Tak. Prywatni przewodnicy dostosowują tempo i treść do dzieci, seniorów i mieszanych grup — krótsze trasy, przystanki na przekąskę i historie, które naprawdę bawią dzieci. Wystarczy powiedzieć przewodnikowi, kto bierze udział." },
         { q: "Czy muszę dawać napiwek przewodnikowi w Stambule?", a: "Napiwek nie jest wymagany — cena, którą widzisz, obejmuje całą wycieczkę. Jeśli świetnie się bawiłeś, napiwek będzie mile widziany, ale zawsze pozostaje dobrowolny i nigdy nie jest oczekiwany." },
       ],
+      landmarksHeading: "Najważniejsze zabytki Stambułu",
+      landmarksSub: "Poznaj każdy z zweryfikowanym lokalnym przewodnikiem.",
+      landmarks: [
+        { href: "/attractions/pl/hagia-sophia", icon: "🕌", name: "Hagia Sophia", desc: "Bizantyjska katedra zamieniona w meczet" },
+        { href: "/attractions/pl/blue-mosque", icon: "🕌", name: "Błękitny Meczet", desc: "Sześć minaretów i płytki z İznik" },
+        { href: "/attractions/pl/topkapi-palace", icon: "🏰", name: "Pałac Topkapı", desc: "Serce Imperium Osmańskiego" },
+        { href: "/attractions/pl/basilica-cistern", icon: "🏛️", name: "Cysterna Bazyliki", desc: "Podziemny pałac wody" },
+      ],
       otherHeading: "Odkryj więcej Turcji",
       otherCities: [
         { href: "/pl/cappadocia-tour-guide", icon: "🎈", name: "Przewodnik po Kapadocji", desc: "Balony na ogrzane powietrze, kominy wróżek i kościoły w skałach" },
@@ -431,6 +439,14 @@ const ISTANBUL: CityGuide = {
         { q: "Hoe krijg ik een privégids in Istanboel?", a: "Open de VibeGuide-app, kies Private Tour, selecteer een geverifieerde lokale gids en je datum, en je bent klaar. Je ziet de prijs vooraf en kunt je gids vóór de dag zelf een bericht sturen. Voor iets spontaans matcht VibeNow je in ongeveer 60 seconden met een beschikbare gids." },
         { q: "Zijn tours in Istanboel geschikt voor gezinnen en kinderen?", a: "Ja. Privégidsen stemmen het tempo en de inhoud af op kinderen, senioren en gemengde groepen — kortere routes, tussenstops voor een hapje en verhalen waar kinderen echt van genieten. Vertel je gids gewoon wie er meekomt." },
         { q: "Moet ik mijn gids in Istanboel een fooi geven?", a: "Een fooi is niet verplicht — de prijs die je ziet, dekt de tour. Als je een geweldige tijd had, wordt een fooi gewaardeerd, maar die is altijd vrijblijvend en wordt nooit verwacht." },
+      ],
+      landmarksHeading: "Topbezienswaardigheden van Istanbul",
+      landmarksSub: "Ontdek elk met een geverifieerde lokale gids.",
+      landmarks: [
+        { href: "/attractions/nl/hagia-sophia", icon: "🕌", name: "Hagia Sophia", desc: "Byzantijnse kathedraal werd moskee" },
+        { href: "/attractions/nl/blue-mosque", icon: "🕌", name: "Blauwe Moskee", desc: "Zes minaretten en İznik-tegels" },
+        { href: "/attractions/nl/topkapi-palace", icon: "🏰", name: "Topkapı-paleis", desc: "Hart van het Ottomaanse Rijk" },
+        { href: "/attractions/nl/basilica-cistern", icon: "🏛️", name: "Basilica-cisterne", desc: "Ondergronds waterpaleis" },
       ],
       otherHeading: "Ontdek meer van Turkije",
       otherCities: [
@@ -3707,6 +3723,12 @@ const BODRUM: CityGuide = {
         { q: "Which day trips are worth taking from Bodrum?", a: "The most popular are the Datça peninsula with its unspoilt coves, and the white travertine terraces of Pamukkale beside ancient Hierapolis. Your guide can arrange transport, timing and the route to dodge the crowds." },
         { q: "Do I need to tip my Bodrum guide?", a: "Tipping isn't required — the price you see covers the tour. If you had a great time, a tip is appreciated but always optional, and never expected." },
       ],
+      landmarksHeading: "Top day trips from Bodrum",
+      landmarksSub: "Explore each with a verified local guide.",
+      landmarks: [
+        { href: "/attractions/en/ephesus", icon: "🏛️", name: "Ephesus", desc: "Ancient Roman city" },
+        { href: "/attractions/en/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "White travertines & Hierapolis" },
+      ],
       otherHeading: "Explore more of Turkey",
       otherCities: [
         { href: "/marmaris-tour-guide", icon: "⛵", name: "Marmaris Tour Guide", desc: "Sailing, pine-clad bays & a lively marina" },
@@ -3774,6 +3796,12 @@ const BODRUM: CityGuide = {
         { q: "Wann ist die beste Reisezeit für Bodrum?", a: "Mai–Juni und September–Oktober bieten warmes Meer und weniger Andrang. Juli und August sind Hochsaison — heiß, lebhaft und ideal fürs Nachtleben. Ein lokaler Guide kennt zu jeder Zeit die ruhigsten Stunden für die antiken Stätten." },
         { q: "Welche Tagesausflüge lohnen sich ab Bodrum?", a: "Beliebt sind die Halbinsel Datça mit ihren unberührten Buchten und die weißen Kalkterrassen von Pamukkale mit dem antiken Hierapolis. Dein Guide kann Transport, Timing und Route so planen, dass du die Menge umgehst." },
         { q: "Muss ich meinem Bodrum-Guide Trinkgeld geben?", a: "Trinkgeld ist nicht erforderlich — der angezeigte Preis deckt die Tour ab. Wenn es dir gefallen hat, ist ein Trinkgeld willkommen, aber immer freiwillig und nie erwartet." },
+      ],
+      landmarksHeading: "Top-Tagesausflüge ab Bodrum",
+      landmarksSub: "Entdecke jede mit einem verifizierten lokalen Guide.",
+      landmarks: [
+        { href: "/attractions/de/ephesus", icon: "🏛️", name: "Ephesos", desc: "Antike römische Stadt" },
+        { href: "/attractions/de/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Weiße Kalkterrassen & Hierapolis" },
       ],
       otherHeading: "Mehr von der Türkei entdecken",
       otherCities: [
@@ -3843,6 +3871,12 @@ const BODRUM: CityGuide = {
         { q: "¿Qué excursiones de un día merecen la pena desde Bodrum?", a: "Las más populares son la península de Datça, con sus calas vírgenes, y las terrazas blancas de Pamukkale junto a la antigua Hierápolis. Tu guía puede organizar el transporte, los horarios y la ruta para esquivar las multitudes." },
         { q: "¿Debo dar propina a mi guía en Bodrum?", a: "La propina no es obligatoria: el precio que ves cubre el tour. Si lo has pasado muy bien, se agradece una propina, pero siempre es opcional y nunca se espera." },
       ],
+      landmarksHeading: "Mejores excursiones desde Bodrum",
+      landmarksSub: "Explora cada uno con un guía local verificado.",
+      landmarks: [
+        { href: "/attractions/es/ephesus", icon: "🏛️", name: "Éfeso", desc: "Antigua ciudad romana" },
+        { href: "/attractions/es/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Travertinos blancos y Hierápolis" },
+      ],
       otherHeading: "Explora más de Turquía",
       otherCities: [
         { href: "/es/marmaris-tour-guide", icon: "⛵", name: "Guía de Marmaris", desc: "Vela, calas rodeadas de pinos y una marina animada" },
@@ -3910,6 +3944,12 @@ const BODRUM: CityGuide = {
         { q: "Quelle est la meilleure période pour visiter Bodrum ?", a: "Mai–juin et septembre–octobre offrent une mer chaude et moins de foule. Juillet et août sont la haute saison : chaleur, animation et vie nocturne trépidante. Quelle que soit la saison, un guide local connaît les heures les plus calmes pour les sites antiques." },
         { q: "Quelles excursions valent la peine depuis Bodrum ?", a: "Les plus prisées sont la péninsule de Datça et ses criques préservées, ainsi que les terrasses blanches de Pamukkale près de l'antique Hiérapolis. Votre guide peut organiser le transport, le timing et l'itinéraire pour éviter la foule." },
         { q: "Dois-je donner un pourboire à mon guide à Bodrum ?", a: "Le pourboire n'est pas obligatoire — le prix affiché couvre la visite. Si vous avez passé un excellent moment, un pourboire est apprécié, mais il reste toujours facultatif et n'est jamais attendu." },
+      ],
+      landmarksHeading: "Meilleures excursions depuis Bodrum",
+      landmarksSub: "Explorez chacun avec un guide local vérifié.",
+      landmarks: [
+        { href: "/attractions/fr/ephesus", icon: "🏛️", name: "Éphèse", desc: "Ancienne cité romaine" },
+        { href: "/attractions/fr/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Travertins blancs et Hiérapolis" },
       ],
       otherHeading: "Explorez plus de la Turquie",
       otherCities: [
@@ -3979,6 +4019,12 @@ const BODRUM: CityGuide = {
         { q: "Quali gite valgono la pena da Bodrum?", a: "Le più amate sono la penisola di Datça con le sue baie incontaminate e le terrazze bianche di Pamukkale accanto all'antica Ierapoli. La tua guida può organizzare trasporto, orari e percorso per evitare la folla." },
         { q: "Devo lasciare la mancia alla mia guida a Bodrum?", a: "La mancia non è obbligatoria: il prezzo che vedi copre il tour. Se ti sei trovato benissimo, una mancia è gradita, ma è sempre facoltativa e mai attesa." },
       ],
+      landmarksHeading: "Migliori gite in giornata da Bodrum",
+      landmarksSub: "Esplora ciascuno con una guida locale verificata.",
+      landmarks: [
+        { href: "/attractions/it/ephesus", icon: "🏛️", name: "Efeso", desc: "Antica città romana" },
+        { href: "/attractions/it/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Travertini bianchi e Hierapolis" },
+      ],
       otherHeading: "Esplora di più della Turchia",
       otherCities: [
         { href: "/it/marmaris-tour-guide", icon: "⛵", name: "Guida di Marmaris", desc: "Vela, baie tra i pini e una marina vivace" },
@@ -4046,6 +4092,12 @@ const BODRUM: CityGuide = {
         { q: "ما أفضل وقت لزيارة بودروم؟", a: "يوفّر مايو–يونيو وسبتمبر–أكتوبر بحرًا دافئًا وازدحامًا أقل. يوليو وأغسطس ذروة الموسم: حرّ وحيوية وحياة ليلية صاخبة. مهما كان الموسم، يعرف المرشد المحلي أهدأ الساعات لزيارة المواقع الأثرية." },
         { q: "ما الرحلات اليومية التي تستحقّ من بودروم؟", a: "الأكثر رواجًا شبه جزيرة داتشا بخلجانها البكر، ومدرّجات باموكالي البيضاء قرب مدينة هيرابوليس القديمة. يمكن لمرشدك تنظيم النقل والتوقيت والمسار لتفادي الزحام." },
         { q: "هل يجب أن أعطي إكرامية لمرشدي في بودروم؟", a: "الإكرامية ليست إلزامية — فالسعر الذي تراه يغطي الجولة. إذا قضيت وقتًا رائعًا، فالإكرامية موضع تقدير لكنها دائمًا اختيارية وغير متوقَّعة أبدًا." },
+      ],
+      landmarksHeading: "أفضل الرحلات اليومية من بودروم",
+      landmarksSub: "استكشف كلًّا منها مع دليل محلي موثّق.",
+      landmarks: [
+        { href: "/attractions/ar/ephesus", icon: "🏛️", name: "أفسس", desc: "مدينة رومانية قديمة" },
+        { href: "/attractions/ar/pamukkale", icon: "🏞️", name: "باموكالي", desc: "مدرجات بيضاء وهيرابوليس" },
       ],
       otherHeading: "استكشف المزيد من تركيا",
       otherCities: [
@@ -4115,6 +4167,12 @@ const BODRUM: CityGuide = {
         { q: "Какие поездки стоит совершить из Бодрума?", a: "Самые популярные — полуостров Датча с его нетронутыми бухтами и белые террасы Памуккале рядом с античным Иераполисом. Гид может организовать транспорт, время и маршрут, чтобы обойти толпы." },
         { q: "Нужно ли давать чаевые гиду в Бодруме?", a: "Чаевые не обязательны — указанная цена покрывает экскурсию. Если вам понравилось, чаевые будут приятны, но всегда остаются на ваше усмотрение и никогда не ожидаются." },
       ],
+      landmarksHeading: "Лучшие однодневные поездки из Бодрума",
+      landmarksSub: "Осмотрите каждую с проверенным местным гидом.",
+      landmarks: [
+        { href: "/attractions/ru/ephesus", icon: "🏛️", name: "Эфес", desc: "Древний римский город" },
+        { href: "/attractions/ru/pamukkale", icon: "🏞️", name: "Памуккале", desc: "Белые травертины и Иераполис" },
+      ],
       otherHeading: "Откройте больше Турции",
       otherCities: [
         { href: "/ru/marmaris-tour-guide", icon: "⛵", name: "Гид по Мармарису", desc: "Парусный спорт, сосновые бухты и оживлённая марина" },
@@ -4182,6 +4240,12 @@ const BODRUM: CityGuide = {
         { q: "Bodrum'u ziyaret etmek için en iyi zaman ne?", a: "Mayıs–Haziran ile Eylül–Ekim ılık deniz ve daha az kalabalık sunar. Temmuz ve Ağustos yüksek sezondur: sıcak, hareketli ve coşkulu bir gece hayatı. Mevsim ne olursa olsun, yerel bir rehber antik yerleri gezmek için en sakin saatleri bilir." },
         { q: "Bodrum'dan hangi günübirlik turlar değer?", a: "En sevilenler, el değmemiş koylarıyla Datça yarımadası ve antik Hierapolis'in yanındaki Pamukkale'nin bembeyaz travertenleridir. Rehberiniz kalabalıktan kaçınmak için ulaşımı, zamanlamayı ve rotayı ayarlayabilir." },
         { q: "Bodrum rehberime bahşiş vermem gerekir mi?", a: "Bahşiş zorunlu değildir — gördüğünüz fiyat turu kapsar. Çok keyif aldıysanız bir bahşiş memnuniyetle karşılanır, ancak her zaman isteğe bağlıdır ve asla beklenmez." },
+      ],
+      landmarksHeading: "Bodrum'dan en iyi günübirlik turlar",
+      landmarksSub: "Her birini onaylı bir yerel rehberle keşfedin.",
+      landmarks: [
+        { href: "/attractions/tr/ephesus", icon: "🏛️", name: "Efes", desc: "Antik Roma kenti" },
+        { href: "/attractions/tr/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Beyaz travertenler ve Hierapolis" },
       ],
       otherHeading: "Türkiye'yi keşfetmeye devam edin",
       otherCities: [
@@ -4251,6 +4315,12 @@ const BODRUM: CityGuide = {
         { q: "Jakie wycieczki jednodniowe warto zrobić z Bodrum?", a: "Najpopularniejsze to półwysep Datça z dziewiczymi zatokami oraz białe tarasy Pamukkale obok antycznego Hierapolis. Przewodnik może zorganizować transport, czas i trasę tak, aby ominąć tłumy." },
         { q: "Czy muszę dawać napiwek przewodnikowi w Bodrum?", a: "Napiwek nie jest wymagany — cena, którą widzisz, obejmuje całą wycieczkę. Jeśli świetnie się bawiłeś, napiwek będzie mile widziany, ale zawsze pozostaje dobrowolny i nigdy nie jest oczekiwany." },
       ],
+      landmarksHeading: "Najlepsze wycieczki jednodniowe z Bodrum",
+      landmarksSub: "Poznaj każdą z zweryfikowanym lokalnym przewodnikiem.",
+      landmarks: [
+        { href: "/attractions/pl/ephesus", icon: "🏛️", name: "Efez", desc: "Starożytne rzymskie miasto" },
+        { href: "/attractions/pl/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Białe trawertyny i Hierapolis" },
+      ],
       otherHeading: "Odkryj więcej Turcji",
       otherCities: [
         { href: "/pl/marmaris-tour-guide", icon: "⛵", name: "Przewodnik po Marmaris", desc: "Żeglarstwo, porośnięte sosnami zatoki i tętniąca marina" },
@@ -4318,6 +4388,12 @@ const BODRUM: CityGuide = {
         { q: "Wat is de beste tijd om Bodrum te bezoeken?", a: "Mei–juni en september–oktober bieden een warme zee en minder drukte. Juli en augustus zijn hoogseizoen: heet, bruisend en met een levendig nachtleven. Welk seizoen het ook is, een lokale gids kent de rustigste uren voor de antieke sites." },
         { q: "Welke dagtochten zijn de moeite waard vanuit Bodrum?", a: "Het populairst zijn het schiereiland Datça met zijn ongerepte baaien en de witte terrassen van Pamukkale naast het antieke Hierapolis. Je gids kan het vervoer, de timing en de route zo regelen dat je de drukte vermijdt." },
         { q: "Moet ik mijn gids in Bodrum een fooi geven?", a: "Een fooi is niet verplicht — de prijs die je ziet, dekt de tour. Als je een geweldige tijd had, wordt een fooi gewaardeerd, maar die is altijd vrijblijvend en wordt nooit verwacht." },
+      ],
+      landmarksHeading: "Topdagtrips vanuit Bodrum",
+      landmarksSub: "Ontdek elk met een geverifieerde lokale gids.",
+      landmarks: [
+        { href: "/attractions/nl/ephesus", icon: "🏛️", name: "Efeze", desc: "Antieke Romeinse stad" },
+        { href: "/attractions/nl/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Witte travertijnen en Hierapolis" },
       ],
       otherHeading: "Ontdek meer van Turkije",
       otherCities: [
@@ -5157,6 +5233,12 @@ const MARMARIS: CityGuide = {
         { q: "What is the best time to visit Marmaris?", a: "May–June and September–October bring warm seas, sunny days and thinner crowds, ideal for boat trips and walking the old town. July and August are hot and lively, peak beach season. A local guide knows the best hours to be on the water." },
         { q: "Do I need to tip my Marmaris guide?", a: "Tipping isn't required — the price you see covers the tour. If you had a great time, a tip is appreciated but always optional, and never expected." },
       ],
+      landmarksHeading: "Top day trips from Marmaris",
+      landmarksSub: "Explore each with a verified local guide.",
+      landmarks: [
+        { href: "/attractions/en/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "White travertines & Hierapolis" },
+        { href: "/attractions/en/ephesus", icon: "🏛️", name: "Ephesus", desc: "Ancient Roman city" },
+      ],
       otherHeading: "Explore more of Turkey",
       otherCities: [
         { href: "/bodrum-tour-guide", icon: "⛵", name: "Bodrum Tour Guide", desc: "Crusader castle, turquoise bays & nightlife" },
@@ -5224,6 +5306,12 @@ const MARMARIS: CityGuide = {
         { q: "Wie viele Tage braucht man in Marmaris?", a: "Zwei bis drei Tage reichen für Altstadt und Burg, eine Bootstour und einen Landausflug wie Dalyan. Mit einer Woche kannst du die Kleopatra-Insel, die Bozburun-Halbinsel und einen Tag im Landesinneren ergänzen. Ein lokaler Guide hilft dir, das Beste aus deiner Zeit zu machen." },
         { q: "Wann ist die beste Reisezeit für Marmaris?", a: "Mai–Juni und September–Oktober bringen warmes Meer, sonnige Tage und weniger Andrang — ideal für Bootstouren und die Altstadt. Juli und August sind heiß und lebhaft, Hochsaison am Strand. Ein lokaler Guide kennt die besten Stunden auf dem Wasser." },
         { q: "Muss ich meinem Marmaris-Guide Trinkgeld geben?", a: "Trinkgeld ist nicht erforderlich — der angezeigte Preis deckt die Tour ab. Wenn es dir gefallen hat, ist ein Trinkgeld willkommen, aber immer freiwillig und nie erwartet." },
+      ],
+      landmarksHeading: "Top-Tagesausflüge ab Marmaris",
+      landmarksSub: "Entdecke jede mit einem verifizierten lokalen Guide.",
+      landmarks: [
+        { href: "/attractions/de/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Weiße Kalkterrassen & Hierapolis" },
+        { href: "/attractions/de/ephesus", icon: "🏛️", name: "Ephesos", desc: "Antike römische Stadt" },
       ],
       otherHeading: "Mehr von der Türkei entdecken",
       otherCities: [
@@ -5293,6 +5381,12 @@ const MARMARIS: CityGuide = {
         { q: "¿Cuál es la mejor época para visitar Marmaris?", a: "Mayo–junio y septiembre–octubre traen mares cálidos, días soleados y menos gente, ideales para excursiones en barco y pasear por el casco antiguo. Julio y agosto son calurosos y animados, plena temporada de playa. Un guía local conoce las mejores horas para estar en el agua." },
         { q: "¿Debo dar propina a mi guía en Marmaris?", a: "La propina no es obligatoria — el precio que ves cubre el tour. Si lo has pasado muy bien, una propina se agradece, pero siempre es opcional y nunca se espera." },
       ],
+      landmarksHeading: "Mejores excursiones desde Marmaris",
+      landmarksSub: "Explora cada uno con un guía local verificado.",
+      landmarks: [
+        { href: "/attractions/es/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Travertinos blancos y Hierápolis" },
+        { href: "/attractions/es/ephesus", icon: "🏛️", name: "Éfeso", desc: "Antigua ciudad romana" },
+      ],
       otherHeading: "Explora más de Turquía",
       otherCities: [
         { href: "/es/bodrum-tour-guide", icon: "⛵", name: "Guía de Bodrum", desc: "Castillo cruzado, bahías turquesa y vida nocturna" },
@@ -5360,6 +5454,12 @@ const MARMARIS: CityGuide = {
         { q: "Combien de jours faut-il à Marmaris ?", a: "Deux à trois jours permettent de profiter de la vieille ville et du château, de faire une sortie en bateau et une excursion terrestre comme Dalyan. Avec une semaine, vous pouvez ajouter l'île de Cléopâtre, la péninsule de Bozburun et une journée dans les terres. Un guide local vous aide à tirer le meilleur de votre temps." },
         { q: "Quelle est la meilleure période pour visiter Marmaris ?", a: "Mai–juin et septembre–octobre offrent une mer chaude, des journées ensoleillées et moins de monde, idéals pour les sorties en bateau et la vieille ville. Juillet et août sont chauds et animés, en pleine saison balnéaire. Un guide local connaît les meilleures heures pour être sur l'eau." },
         { q: "Dois-je donner un pourboire à mon guide à Marmaris ?", a: "Le pourboire n'est pas obligatoire — le prix affiché couvre la visite. Si vous avez passé un excellent moment, un pourboire est apprécié, mais il reste toujours facultatif et n'est jamais attendu." },
+      ],
+      landmarksHeading: "Meilleures excursions depuis Marmaris",
+      landmarksSub: "Explorez chacun avec un guide local vérifié.",
+      landmarks: [
+        { href: "/attractions/fr/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Travertins blancs et Hiérapolis" },
+        { href: "/attractions/fr/ephesus", icon: "🏛️", name: "Éphèse", desc: "Ancienne cité romaine" },
       ],
       otherHeading: "Explorez plus de la Turquie",
       otherCities: [
@@ -5429,6 +5529,12 @@ const MARMARIS: CityGuide = {
         { q: "Qual è il periodo migliore per visitare Marmaris?", a: "Maggio–giugno e settembre–ottobre offrono mari caldi, giornate soleggiate e meno folla, ideali per le gite in barca e per passeggiare nel centro storico. Luglio e agosto sono caldi e vivaci, alta stagione balneare. Una guida locale conosce le ore migliori per stare sull'acqua." },
         { q: "Devo lasciare la mancia alla mia guida a Marmaris?", a: "La mancia non è obbligatoria — il prezzo che vedi copre il tour. Se ti sei trovato benissimo, una mancia è gradita, ma è sempre facoltativa e mai attesa." },
       ],
+      landmarksHeading: "Migliori gite in giornata da Marmaris",
+      landmarksSub: "Esplora ciascuno con una guida locale verificata.",
+      landmarks: [
+        { href: "/attractions/it/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Travertini bianchi e Hierapolis" },
+        { href: "/attractions/it/ephesus", icon: "🏛️", name: "Efeso", desc: "Antica città romana" },
+      ],
       otherHeading: "Esplora di più della Turchia",
       otherCities: [
         { href: "/it/bodrum-tour-guide", icon: "⛵", name: "Guida di Bodrum", desc: "Castello crociato, baie turchesi e vita notturna" },
@@ -5496,6 +5602,12 @@ const MARMARIS: CityGuide = {
         { q: "كم يومًا تحتاج في مرمريس؟", a: "يومان إلى ثلاثة تكفي للاستمتاع بالبلدة القديمة والقلعة، ورحلة بحرية واحدة وجولة برّية كداليان. مع أسبوع يمكنك إضافة جزيرة كليوباترا وشبه جزيرة بوزبورون ويوم في الداخل. يساعدك دليل محلي على الاستفادة القصوى من وقتك." },
         { q: "ما أفضل وقت لزيارة مرمريس؟", a: "يوفّر مايو–يونيو وسبتمبر–أكتوبر بحرًا دافئًا وأيامًا مشمسة وازدحامًا أقلّ، وهو مثالي للرحلات البحرية والتجوّل في البلدة القديمة. يوليو وأغسطس حارّان وحيويّان، ذروة موسم الشاطئ. يعرف الدليل المحلي أفضل الساعات للوجود على الماء." },
         { q: "هل يجب أن أعطي إكرامية لدليلي في مرمريس؟", a: "الإكرامية ليست إلزامية — فالسعر الذي تراه يغطّي الجولة. إذا قضيت وقتًا رائعًا، فالإكرامية موضع تقدير لكنها دائمًا اختيارية وغير متوقَّعة أبدًا." },
+      ],
+      landmarksHeading: "أفضل الرحلات اليومية من مرماريس",
+      landmarksSub: "استكشف كلًّا منها مع دليل محلي موثّق.",
+      landmarks: [
+        { href: "/attractions/ar/pamukkale", icon: "🏞️", name: "باموكالي", desc: "مدرجات بيضاء وهيرابوليس" },
+        { href: "/attractions/ar/ephesus", icon: "🏛️", name: "أفسس", desc: "مدينة رومانية قديمة" },
       ],
       otherHeading: "اكتشف المزيد من تركيا",
       otherCities: [
@@ -5565,6 +5677,12 @@ const MARMARIS: CityGuide = {
         { q: "Когда лучше всего ехать в Мармарис?", a: "Май–июнь и сентябрь–октябрь дарят тёплое море, солнечные дни и меньше толп — идеально для морских прогулок и старого города. Июль и август жаркие и оживлённые — пик пляжного сезона. Местный гид знает лучшие часы, чтобы быть на воде." },
         { q: "Нужно ли давать чаевые гиду в Мармарисе?", a: "Чаевые не обязательны — указанная цена покрывает экскурсию. Если вам понравилось, чаевые будут приятны, но всегда остаются на ваше усмотрение и никогда не ожидаются." },
       ],
+      landmarksHeading: "Лучшие однодневные поездки из Мармариса",
+      landmarksSub: "Осмотрите каждую с проверенным местным гидом.",
+      landmarks: [
+        { href: "/attractions/ru/pamukkale", icon: "🏞️", name: "Памуккале", desc: "Белые травертины и Иераполис" },
+        { href: "/attractions/ru/ephesus", icon: "🏛️", name: "Эфес", desc: "Древний римский город" },
+      ],
       otherHeading: "Откройте больше Турции",
       otherCities: [
         { href: "/ru/bodrum-tour-guide", icon: "⛵", name: "Гид по Бодруму", desc: "Замок крестоносцев, бирюзовые бухты и ночная жизнь" },
@@ -5632,6 +5750,12 @@ const MARMARIS: CityGuide = {
         { q: "Marmaris için kaç gün gerekir?", a: "İki-üç gün; eski şehrin ve kalenin tadını çıkarmanıza, bir tekne turu ve Dalyan gibi bir kara gezisi yapmanıza yeter. Bir haftayla Kleopatra Adası'nı, Bozburun Yarımadası'nı ve iç kesimde bir günü ekleyebilirsiniz. Yerel bir rehber, elinizdeki süreyi en verimli değerlendirmenize yardımcı olur." },
         { q: "Marmaris'i ziyaret etmek için en iyi zaman ne?", a: "Mayıs–Haziran ile Eylül–Ekim; sıcak deniz, güneşli günler ve daha az kalabalık sunar; tekne turları ve eski şehir için idealdir. Temmuz ve Ağustos, plaj sezonunun zirvesiyle sıcak ve hareketlidir. Yerel bir rehber suda olmak için en iyi saatleri bilir." },
         { q: "Marmaris rehberime bahşiş vermem gerekir mi?", a: "Bahşiş zorunlu değildir — gördüğünüz fiyat turu kapsar. Çok keyif aldıysanız bir bahşiş memnuniyetle karşılanır, ancak her zaman isteğe bağlıdır ve asla beklenmez." },
+      ],
+      landmarksHeading: "Marmaris'ten en iyi günübirlik turlar",
+      landmarksSub: "Her birini onaylı bir yerel rehberle keşfedin.",
+      landmarks: [
+        { href: "/attractions/tr/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Beyaz travertenler ve Hierapolis" },
+        { href: "/attractions/tr/ephesus", icon: "🏛️", name: "Efes", desc: "Antik Roma kenti" },
       ],
       otherHeading: "Türkiye'yi keşfetmeye devam edin",
       otherCities: [
@@ -5701,6 +5825,12 @@ const MARMARIS: CityGuide = {
         { q: "Kiedy najlepiej odwiedzić Marmaris?", a: "Maj–czerwiec oraz wrzesień–październik przynoszą ciepłe morze, słoneczne dni i mniejsze tłumy, idealne na rejsy i spacery po starym mieście. Lipiec i sierpień są gorące i tętniące życiem, u szczytu sezonu plażowego. Lokalny przewodnik zna najlepsze godziny na wodzie." },
         { q: "Czy muszę dać napiwek przewodnikowi w Marmaris?", a: "Napiwek nie jest wymagany — cena, którą widzisz, pokrywa wycieczkę. Jeśli świetnie się bawiłeś, napiwek będzie mile widziany, ale zawsze jest dobrowolny i nigdy oczekiwany." },
       ],
+      landmarksHeading: "Najlepsze wycieczki jednodniowe z Marmaris",
+      landmarksSub: "Poznaj każdą z zweryfikowanym lokalnym przewodnikiem.",
+      landmarks: [
+        { href: "/attractions/pl/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Białe trawertyny i Hierapolis" },
+        { href: "/attractions/pl/ephesus", icon: "🏛️", name: "Efez", desc: "Starożytne rzymskie miasto" },
+      ],
       otherHeading: "Odkryj więcej Turcji",
       otherCities: [
         { href: "/pl/bodrum-tour-guide", icon: "⛵", name: "Przewodnik po Bodrum", desc: "Zamek krzyżowców, turkusowe zatoki i życie nocne" },
@@ -5768,6 +5898,12 @@ const MARMARIS: CityGuide = {
         { q: "Hoeveel dagen heb je nodig in Marmaris?", a: "Twee tot drie dagen laten je genieten van de oude stad en het kasteel, één boottocht maken en één landexcursie zoals Dalyan. Met een week kun je het Cleopatra-eiland, het Bozburun-schiereiland en een dag landinwaarts toevoegen. Een lokale gids helpt je het meeste uit je tijd te halen." },
         { q: "Wat is de beste tijd om Marmaris te bezoeken?", a: "Mei–juni en september–oktober brengen warme zeeën, zonnige dagen en minder drukte, ideaal voor boottochten en de oude stad. Juli en augustus zijn heet en levendig, op het hoogtepunt van het strandseizoen. Een lokale gids kent de beste uren om op het water te zijn." },
         { q: "Moet ik mijn gids in Marmaris een fooi geven?", a: "Een fooi is niet verplicht — de prijs die je ziet, dekt de tour. Als je een geweldige tijd had, wordt een fooi gewaardeerd, maar die is altijd vrijblijvend en wordt nooit verwacht." },
+      ],
+      landmarksHeading: "Topdagtrips vanuit Marmaris",
+      landmarksSub: "Ontdek elk met een geverifieerde lokale gids.",
+      landmarks: [
+        { href: "/attractions/nl/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Witte travertijnen en Hierapolis" },
+        { href: "/attractions/nl/ephesus", icon: "🏛️", name: "Efeze", desc: "Antieke Romeinse stad" },
       ],
       otherHeading: "Ontdek meer van Turkije",
       otherCities: [
