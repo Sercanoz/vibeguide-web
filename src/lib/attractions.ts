@@ -122,6 +122,51 @@ const CAP: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   nl: { toursHeading: "Tours door Cappadocië met lokale gidsen", ctaSub: "Download VibeGuide gratis en vind een geverifieerde gids in Cappadocië in 60 seconden." },
 };
 
+// İzmir / Bergama (Pergamon) ortak metinleri.
+const IZM: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
+  en: { toursHeading: "İzmir tours with local guides", ctaSub: "Download VibeGuide free and match with a verified İzmir guide in 60 seconds." },
+  de: { toursHeading: "İzmir-Touren mit lokalen Guides", ctaSub: "Lade VibeGuide kostenlos und finde in 60 Sekunden einen geprüften İzmir-Guide." },
+  ru: { toursHeading: "Экскурсии по Измиру с местными гидами", ctaSub: "Скачайте VibeGuide бесплатно и найдите проверенного гида в Измире за 60 секунд." },
+  ar: { toursHeading: "جولات إزمير مع مرشدين محليين", ctaSub: "حمّل VibeGuide مجانًا واعثر على مرشد موثّق في إزمير خلال 60 ثانية." },
+  es: { toursHeading: "Tours de Esmirna con guías locales", ctaSub: "Descarga VibeGuide gratis y encuentra un guía verificado en Esmirna en 60 segundos." },
+  fr: { toursHeading: "Visites d'İzmir avec guides locaux", ctaSub: "Téléchargez VibeGuide gratuitement et trouvez un guide vérifié à İzmir en 60 secondes." },
+  el: { toursHeading: "Ξεναγήσεις στη Σμύρνη με ντόπιους ξεναγούς", ctaSub: "Κατέβασε δωρεάν το VibeGuide και βρες πιστοποιημένο ξεναγό στη Σμύρνη σε 60 δευτερόλεπτα." },
+  tr: { toursHeading: "Yerel rehberlerle İzmir turları", ctaSub: "VibeGuide'ı ücretsiz indir, 60 saniyede doğrulanmış bir İzmir rehberiyle eşleş." },
+  it: { toursHeading: "Tour di Smirne con guide locali", ctaSub: "Scarica VibeGuide gratis e trova una guida verificata a Smirne in 60 secondi." },
+  pl: { toursHeading: "Wycieczki po Izmirze z lokalnymi przewodnikami", ctaSub: "Pobierz VibeGuide za darmo i znajdź zweryfikowanego przewodnika w Izmirze w 60 sekund." },
+  nl: { toursHeading: "İzmir-tours met lokale gidsen", ctaSub: "Download VibeGuide gratis en vind een geverifieerde gids in İzmir in 60 seconden." },
+};
+
+// Antalya (Aspendos / Kaleiçi) ortak metinleri.
+const ANT: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
+  en: { toursHeading: "Antalya tours with local guides", ctaSub: "Download VibeGuide free and match with a verified Antalya guide in 60 seconds." },
+  de: { toursHeading: "Antalya-Touren mit lokalen Guides", ctaSub: "Lade VibeGuide kostenlos und finde in 60 Sekunden einen geprüften Antalya-Guide." },
+  ru: { toursHeading: "Экскурсии по Анталье с местными гидами", ctaSub: "Скачайте VibeGuide бесплатно и найдите проверенного гида в Анталье за 60 секунд." },
+  ar: { toursHeading: "جولات أنطاليا مع مرشدين محليين", ctaSub: "حمّل VibeGuide مجانًا واعثر على مرشد موثّق في أنطاليا خلال 60 ثانية." },
+  es: { toursHeading: "Tours de Antalya con guías locales", ctaSub: "Descarga VibeGuide gratis y encuentra un guía verificado en Antalya en 60 segundos." },
+  fr: { toursHeading: "Visites d'Antalya avec guides locaux", ctaSub: "Téléchargez VibeGuide gratuitement et trouvez un guide vérifié à Antalya en 60 secondes." },
+  el: { toursHeading: "Ξεναγήσεις στην Αττάλεια με ντόπιους ξεναγούς", ctaSub: "Κατέβασε δωρεάν το VibeGuide και βρες πιστοποιημένο ξεναγό στην Αττάλεια σε 60 δευτερόλεπτα." },
+  tr: { toursHeading: "Yerel rehberlerle Antalya turları", ctaSub: "VibeGuide'ı ücretsiz indir, 60 saniyede doğrulanmış bir Antalya rehberiyle eşleş." },
+  it: { toursHeading: "Tour di Antalya con guide locali", ctaSub: "Scarica VibeGuide gratis e trova una guida verificata ad Antalya in 60 secondi." },
+  pl: { toursHeading: "Wycieczki po Antalyi z lokalnymi przewodnikami", ctaSub: "Pobierz VibeGuide za darmo i znajdź zweryfikowanego przewodnika w Antalyi w 60 sekund." },
+  nl: { toursHeading: "Antalya-tours met lokale gidsen", ctaSub: "Download VibeGuide gratis en vind een geverifieerde gids in Antalya in 60 seconden." },
+};
+
+// Pamukkale / Hierapolis (Denizli) ortak metinleri.
+const PAM: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
+  en: { toursHeading: "Pamukkale tours with local guides", ctaSub: "Download VibeGuide free and match with a verified Pamukkale guide in 60 seconds." },
+  de: { toursHeading: "Pamukkale-Touren mit lokalen Guides", ctaSub: "Lade VibeGuide kostenlos und finde in 60 Sekunden einen geprüften Pamukkale-Guide." },
+  ru: { toursHeading: "Экскурсии по Памуккале с местными гидами", ctaSub: "Скачайте VibeGuide бесплатно и найдите проверенного гида в Памуккале за 60 секунд." },
+  ar: { toursHeading: "جولات باموكالي مع مرشدين محليين", ctaSub: "حمّل VibeGuide مجانًا واعثر على مرشد موثّق في باموكالي خلال 60 ثانية." },
+  es: { toursHeading: "Tours de Pamukkale con guías locales", ctaSub: "Descarga VibeGuide gratis y encuentra un guía verificado en Pamukkale en 60 segundos." },
+  fr: { toursHeading: "Visites de Pamukkale avec guides locaux", ctaSub: "Téléchargez VibeGuide gratuitement et trouvez un guide vérifié à Pamukkale en 60 secondes." },
+  el: { toursHeading: "Ξεναγήσεις στο Παμούκαλε με ντόπιους ξεναγούς", ctaSub: "Κατέβασε δωρεάν το VibeGuide και βρες πιστοποιημένο ξεναγό στο Παμούκαλε σε 60 δευτερόλεπτα." },
+  tr: { toursHeading: "Yerel rehberlerle Pamukkale turları", ctaSub: "VibeGuide'ı ücretsiz indir, 60 saniyede doğrulanmış bir Pamukkale rehberiyle eşleş." },
+  it: { toursHeading: "Tour di Pamukkale con guide locali", ctaSub: "Scarica VibeGuide gratis e trova una guida verificata a Pamukkale in 60 secondi." },
+  pl: { toursHeading: "Wycieczki po Pamukkale z lokalnymi przewodnikami", ctaSub: "Pobierz VibeGuide za darmo i znajdź zweryfikowanego przewodnika w Pamukkale w 60 sekund." },
+  nl: { toursHeading: "Pamukkale-tours met lokale gidsen", ctaSub: "Download VibeGuide gratis en vind een geverifieerde gids in Pamukkale in 60 seconden." },
+};
+
 export const ATTRACTIONS: Attraction[] = [
   // ─────────────────────────────── HAGIA SOPHIA ───────────────────────────────
   {
@@ -1915,6 +1960,1784 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: "Bekijk Dolmabahçe met een local",
         ...IST.nl,
+      },
+    },
+  },
+  {
+    slug: "galata-tower",
+    city: "Istanbul",
+    citySlug: "istanbul",
+    emoji: "🗼",
+    image:
+      "https://images.unsplash.com/photo-1774434923581-91ed9d8ee79b?q=80&w=1600",
+    lat: 41.0256,
+    lng: 28.9744,
+    i18n: {
+      en: {
+        name: "Galata Tower",
+        metaTitle: "Galata Tower Tours & Local Guides",
+        metaDescription:
+          "Climb the Galata Tower in Istanbul with a verified local guide. Beat the queues, catch the sunset and hear the story of the Genoese tower over the Golden Horn.",
+        intro: [
+          "The Galata Tower has crowned the skyline of Beyoğlu since 1348, when the Genoese raised it as the \"Christea Turris\" — the Tower of Christ — at the top of their walled colony. Nearly 67 metres of medieval stone rise over nine floors to a top gallery with a full 360° sweep across the Golden Horn, the historic peninsula and the Bosphorus beyond.",
+          "It is a place wrapped in legend: in the 17th century Hezarfen Ahmed Çelebi is said to have strapped on wings and glided from the tower all the way across the Bosphorus to Üsküdar. With a VibeGuide local you time your climb to dodge the worst queues, arrive for the golden hour and hear the tales that the view alone can't tell.",
+        ],
+        highlights: [
+          { title: "360° Panorama", desc: "From the top gallery the whole city unfolds — Golden Horn, old city and both shores of the Bosphorus." },
+          { title: "Genoese Landmark", desc: "Built in 1348 as the \"Tower of Christ\", it has watched over Galata for nearly seven centuries." },
+          { title: "The Flight Legend", desc: "Hezarfen Ahmed Çelebi is said to have flown from here across the strait on home-made wings." },
+        ],
+        faqs: [
+          { q: "Is there a queue for the Galata Tower?", a: "Often, especially at sunset. A local guide helps you pick the right hour and handles the timing so you spend less time waiting and more time enjoying the view." },
+          { q: "When is the best time to go up?", a: "Late afternoon into sunset is magical, when the light turns gold over the water. Your guide can plan the day around it." },
+          { q: "How long does a visit take?", a: "The climb and the view take about 45 minutes to an hour, easily combined with a walk through Galata and Karaköy nearby." },
+        ],
+        ctaTitle: "See the Galata Tower with a local",
+        ...IST.en,
+      },
+      de: {
+        name: "Galataturm",
+        metaTitle: "Galataturm Touren & lokale Guides",
+        metaDescription:
+          "Erklimme den Galataturm in Istanbul mit einem geprüften lokalen Guide. Umgehe die Warteschlangen, erlebe den Sonnenuntergang und höre die Geschichte des genuesischen Turms.",
+        intro: [
+          "Der Galataturm krönt die Silhouette von Beyoğlu seit 1348, als die Genuesen ihn als \"Christea Turris\" — den Turm Christi — an der Spitze ihrer Kolonie errichteten. Fast 67 Meter mittelalterlicher Stein steigen über neun Stockwerke zu einer Aussichtsgalerie mit vollem 360°-Rundblick über das Goldene Horn, die historische Halbinsel und den Bosporus.",
+          "Der Turm ist von Legenden umwoben: Im 17. Jahrhundert soll Hezarfen Ahmed Çelebi mit selbstgebauten Flügeln vom Turm über den Bosporus bis nach Üsküdar geflogen sein. Mit einem VibeGuide-Local planst du deinen Aufstieg so, dass du die längsten Warteschlangen meidest, zur goldenen Stunde ankommst und die Geschichten hörst, die der Ausblick allein nicht erzählt.",
+        ],
+        highlights: [
+          { title: "360°-Panorama", desc: "Von der Galerie öffnet sich die ganze Stadt — Goldenes Horn, Altstadt und beide Ufer des Bosporus." },
+          { title: "Genuesisches Wahrzeichen", desc: "1348 als \"Turm Christi\" erbaut, wacht er seit fast sieben Jahrhunderten über Galata." },
+          { title: "Die Flug-Legende", desc: "Hezarfen Ahmed Çelebi soll von hier mit selbstgebauten Flügeln über die Meerenge geflogen sein." },
+        ],
+        faqs: [
+          { q: "Muss man am Galataturm anstehen?", a: "Oft, besonders zum Sonnenuntergang. Ein lokaler Guide hilft dir, die richtige Stunde zu wählen, und übernimmt das Timing, damit du weniger wartest und mehr genießt." },
+          { q: "Wann geht man am besten hinauf?", a: "Der späte Nachmittag bis zum Sonnenuntergang ist magisch, wenn das Licht über dem Wasser golden wird. Dein Guide plant den Tag darum herum." },
+          { q: "Wie lange dauert ein Besuch?", a: "Aufstieg und Ausblick dauern etwa 45 Minuten bis eine Stunde, gut kombinierbar mit einem Bummel durch Galata und Karaköy." },
+        ],
+        ctaTitle: "Erlebe den Galataturm mit einem Local",
+        ...IST.de,
+      },
+      ru: {
+        name: "Галатская башня",
+        metaTitle: "Галатская башня: экскурсии с местными гидами",
+        metaDescription:
+          "Поднимитесь на Галатскую башню в Стамбуле с проверенным местным гидом. Обойдите очереди, встретьте закат и узнайте историю генуэзской башни над Золотым Рогом.",
+        intro: [
+          "Галатская башня венчает силуэт Бейоглу с 1348 года, когда генуэзцы возвели её как «Christea Turris» — Башню Христа — на вершине своей колонии. Почти 67 метров средневекового камня поднимаются на девять этажей к верхней галерее с полным круговым обзором на 360° — на Золотой Рог, исторический полуостров и Босфор.",
+          "Башня окутана легендами: в XVII веке Хезарфен Ахмед Челеби, по преданию, надел крылья и перелетел с башни через Босфор до самого Ускюдара. С местным гидом VibeGuide вы подберёте время подъёма так, чтобы избежать длинных очередей, застать золотой час и услышать истории, которые не расскажет один лишь вид.",
+        ],
+        highlights: [
+          { title: "Панорама 360°", desc: "С верхней галереи открывается весь город — Золотой Рог, старый город и оба берега Босфора." },
+          { title: "Генуэзский символ", desc: "Построенная в 1348 году как «Башня Христа», она хранит Галату почти семь веков." },
+          { title: "Легенда о полёте", desc: "Говорят, Хезарфен Ахмед Челеби перелетел отсюда через пролив на самодельных крыльях." },
+        ],
+        faqs: [
+          { q: "Есть ли очередь на Галатскую башню?", a: "Часто, особенно на закате. Местный гид поможет выбрать удачный час и возьмёт на себя тайминг, чтобы вы меньше стояли и больше любовались видом." },
+          { q: "Когда лучше подниматься?", a: "Ближе к вечеру и на закате волшебно, когда свет над водой становится золотым. Гид спланирует день вокруг этого момента." },
+          { q: "Сколько длится визит?", a: "Подъём и обзор занимают около 45 минут — часа, легко сочетаются с прогулкой по Галате и Каракёю рядом." },
+        ],
+        ctaTitle: "Подняться на Галатскую башню с местным гидом",
+        ...IST.ru,
+      },
+      ar: {
+        name: "برج غلطة",
+        metaTitle: "جولات برج غلطة مع مرشدين محليين",
+        metaDescription:
+          "اصعد إلى برج غلطة في إسطنبول مع مرشد محلي موثّق. تجنّب الطوابير، والتقط لحظة الغروب، واستمع إلى قصة البرج الجنوي المطل على القرن الذهبي.",
+        intro: [
+          "يتوّج برج غلطة أفق بيوغلو منذ عام 1348، حين شيّده الجنويون باسم «كريستيا توريس» — برج المسيح — على قمة مستعمرتهم المسوّرة. نحو 67 مترًا من الحجر القروسطي ترتفع عبر تسعة طوابق إلى شرفة علوية تطل بزاوية 360 درجة كاملة على القرن الذهبي وشبه الجزيرة التاريخية والبوسفور.",
+          "إنه مكان تكتنفه الأساطير: في القرن السابع عشر يُقال إن هزارفن أحمد جلبي شدّ جناحين وطار من البرج عبر البوسفور حتى أسكودار. مع مرشد محلي من VibeGuide تختار توقيت صعودك لتتفادى أسوأ الطوابير، وتصل في الساعة الذهبية، وتسمع الحكايات التي لا يرويها المنظر وحده.",
+        ],
+        highlights: [
+          { title: "بانوراما 360 درجة", desc: "من الشرفة العليا تنكشف المدينة كلها — القرن الذهبي والمدينة القديمة وضفتا البوسفور." },
+          { title: "معلَم جنوي", desc: "بُني عام 1348 باسم «برج المسيح»، ويحرس غلطة منذ نحو سبعة قرون." },
+          { title: "أسطورة الطيران", desc: "يُقال إن هزارفن أحمد جلبي طار من هنا عبر المضيق بجناحين صنعهما بنفسه." },
+        ],
+        faqs: [
+          { q: "هل هناك طابور لصعود برج غلطة؟", a: "غالبًا، خاصة عند الغروب. المرشد المحلي يساعدك على اختيار الساعة المناسبة ويتولّى التوقيت لتنتظر أقل وتستمتع بالمنظر أكثر." },
+          { q: "ما أفضل وقت للصعود؟", a: "من بعد الظهر حتى الغروب وقت ساحر، حين يتحوّل الضوء فوق الماء إلى ذهبي. يمكن لمرشدك أن يرتّب اليوم حوله." },
+          { q: "كم تستغرق الزيارة؟", a: "يستغرق الصعود والمشاهدة نحو 45 دقيقة إلى ساعة، وتُدمج بسهولة مع جولة في غلطة وكاراكوي القريبتين." },
+        ],
+        ctaTitle: "زر برج غلطة مع مرشد محلي",
+        ...IST.ar,
+      },
+      es: {
+        name: "Torre de Gálata",
+        metaTitle: "Tours de la Torre de Gálata con guías locales",
+        metaDescription:
+          "Sube a la Torre de Gálata en Estambul con un guía local verificado. Evita las colas, disfruta del atardecer y escucha la historia de la torre genovesa sobre el Cuerno de Oro.",
+        intro: [
+          "La Torre de Gálata corona el perfil de Beyoğlu desde 1348, cuando los genoveses la levantaron como \"Christea Turris\" — la Torre de Cristo — en lo alto de su colonia amurallada. Casi 67 metros de piedra medieval se elevan por nueve pisos hasta una galería superior con una vista de 360° sobre el Cuerno de Oro, la península histórica y el Bósforo.",
+          "Es un lugar envuelto en leyendas: en el siglo XVII se dice que Hezarfen Ahmed Çelebi se ató unas alas y voló desde la torre cruzando el Bósforo hasta Üsküdar. Con un local de VibeGuide eliges la hora de subir para esquivar las peores colas, llegar en la hora dorada y oír las historias que la vista por sí sola no cuenta.",
+        ],
+        highlights: [
+          { title: "Panorámica de 360°", desc: "Desde la galería superior se despliega toda la ciudad: el Cuerno de Oro, la ciudad vieja y ambas orillas del Bósforo." },
+          { title: "Emblema genovés", desc: "Construida en 1348 como \"Torre de Cristo\", vela por Gálata desde hace casi siete siglos." },
+          { title: "La leyenda del vuelo", desc: "Se dice que Hezarfen Ahmed Çelebi voló desde aquí cruzando el estrecho con alas caseras." },
+        ],
+        faqs: [
+          { q: "¿Hay cola en la Torre de Gálata?", a: "A menudo, sobre todo al atardecer. Un guía local te ayuda a elegir la hora adecuada y se ocupa de los tiempos para que esperes menos y disfrutes más." },
+          { q: "¿Cuál es la mejor hora para subir?", a: "El final de la tarde hacia el atardecer es mágico, cuando la luz se vuelve dorada sobre el agua. Tu guía puede planear el día en torno a ese momento." },
+          { q: "¿Cuánto dura la visita?", a: "La subida y la vista llevan unos 45 minutos a una hora, fáciles de combinar con un paseo por Gálata y Karaköy, muy cerca." },
+        ],
+        ctaTitle: "Visita la Torre de Gálata con un local",
+        ...IST.es,
+      },
+      fr: {
+        name: "Tour de Galata",
+        metaTitle: "Visites de la Tour de Galata avec guides locaux",
+        metaDescription:
+          "Montez à la Tour de Galata à Istanbul avec un guide local vérifié. Évitez les files, profitez du coucher de soleil et découvrez l'histoire de la tour génoise.",
+        intro: [
+          "La Tour de Galata couronne l'horizon de Beyoğlu depuis 1348, quand les Génois l'érigèrent sous le nom de « Christea Turris » — la Tour du Christ — au sommet de leur colonie fortifiée. Près de 67 mètres de pierre médiévale s'élèvent sur neuf étages jusqu'à une galerie panoramique offrant une vue à 360° sur la Corne d'Or, la péninsule historique et le Bosphore.",
+          "C'est un lieu nimbé de légende : au XVIIe siècle, Hezarfen Ahmed Çelebi aurait attaché des ailes et volé depuis la tour à travers le Bosphore jusqu'à Üsküdar. Avec un local VibeGuide, vous choisissez l'heure de la montée pour éviter les pires files, arriver à l'heure dorée et écouter les récits que la vue seule ne raconte pas.",
+        ],
+        highlights: [
+          { title: "Panorama à 360°", desc: "Depuis la galerie, toute la ville se déploie : la Corne d'Or, la vieille ville et les deux rives du Bosphore." },
+          { title: "Emblème génois", desc: "Bâtie en 1348 comme « Tour du Christ », elle veille sur Galata depuis près de sept siècles." },
+          { title: "La légende du vol", desc: "Hezarfen Ahmed Çelebi aurait volé d'ici à travers le détroit avec des ailes fabriquées à la main." },
+        ],
+        faqs: [
+          { q: "Y a-t-il la queue à la Tour de Galata ?", a: "Souvent, surtout au coucher du soleil. Un guide local vous aide à choisir la bonne heure et gère le timing pour que vous attendiez moins et profitiez plus." },
+          { q: "Quel est le meilleur moment pour monter ?", a: "La fin d'après-midi jusqu'au coucher du soleil est magique, quand la lumière devient dorée sur l'eau. Votre guide peut organiser la journée autour de ce moment." },
+          { q: "Combien de temps dure la visite ?", a: "La montée et la vue prennent 45 minutes à une heure, faciles à combiner avec une balade dans Galata et Karaköy, tout proches." },
+        ],
+        ctaTitle: "Visitez la Tour de Galata avec un local",
+        ...IST.fr,
+      },
+      el: {
+        name: "Πύργος του Γαλατά",
+        metaTitle: "Ξεναγήσεις στον Πύργο του Γαλατά με ντόπιους ξεναγούς",
+        metaDescription:
+          "Ανέβα στον Πύργο του Γαλατά στην Κωνσταντινούπολη με πιστοποιημένο ντόπιο ξεναγό. Απόφυγε τις ουρές, ζήσε το ηλιοβασίλεμα και άκου την ιστορία του γενουατικού πύργου.",
+        intro: [
+          "Ο Πύργος του Γαλατά στεφανώνει τον ορίζοντα του Μπέιογλου από το 1348, όταν οι Γενουάτες τον έχτισαν ως «Christea Turris» — τον Πύργο του Χριστού — στην κορυφή της τειχισμένης αποικίας τους. Σχεδόν 67 μέτρα μεσαιωνικής πέτρας υψώνονται σε εννέα ορόφους ως μια πάνω γαλαρία με πλήρη θέα 360° στον Κεράτιο Κόλπο, την ιστορική χερσόνησο και τον Βόσπορο.",
+          "Είναι ένα μέρος τυλιγμένο στον θρύλο: τον 17ο αιώνα ο Χεζάρφεν Αχμέτ Τσελεμπί λέγεται πως έδεσε φτερά και πέταξε από τον πύργο πάνω από τον Βόσπορο ως το Ουσκουντάρ. Με έναν ντόπιο του VibeGuide επιλέγεις την ώρα της ανάβασης για να αποφύγεις τις χειρότερες ουρές, να φτάσεις στη χρυσή ώρα και να ακούσεις τις ιστορίες που η θέα από μόνη της δεν λέει.",
+        ],
+        highlights: [
+          { title: "Πανόραμα 360°", desc: "Από τη γαλαρία ξεδιπλώνεται όλη η πόλη — Κεράτιος Κόλπος, παλιά πόλη και οι δύο ακτές του Βοσπόρου." },
+          { title: "Γενουατικό ορόσημο", desc: "Χτισμένος το 1348 ως «Πύργος του Χριστού», φυλά τον Γαλατά σχεδόν επτά αιώνες." },
+          { title: "Ο θρύλος της πτήσης", desc: "Ο Χεζάρφεν Αχμέτ Τσελεμπί λέγεται πως πέταξε από εδώ πάνω από το στενό με χειροποίητα φτερά." },
+        ],
+        faqs: [
+          { q: "Έχει ουρά ο Πύργος του Γαλατά;", a: "Συχνά, ειδικά στο ηλιοβασίλεμα. Ένας ντόπιος ξεναγός σε βοηθά να διαλέξεις τη σωστή ώρα και αναλαμβάνει τον συγχρονισμό, ώστε να περιμένεις λιγότερο και να απολαμβάνεις περισσότερο." },
+          { q: "Ποια είναι η καλύτερη ώρα για ανάβαση;", a: "Το αργό απόγευμα προς το ηλιοβασίλεμα είναι μαγικό, όταν το φως γίνεται χρυσό πάνω από το νερό. Ο ξεναγός σου μπορεί να στήσει τη μέρα γύρω από αυτό." },
+          { q: "Πόσο διαρκεί η επίσκεψη;", a: "Η ανάβαση και η θέα παίρνουν περίπου 45 λεπτά με μία ώρα, εύκολα σε συνδυασμό με μια βόλτα στον Γαλατά και το Καράκιοϊ δίπλα." },
+        ],
+        ctaTitle: "Δες τον Πύργο του Γαλατά με έναν ντόπιο",
+        ...IST.el,
+      },
+      tr: {
+        name: "Galata Kulesi",
+        metaTitle: "Galata Kulesi Turları & Yerel Rehberler",
+        metaDescription:
+          "Galata Kulesi'ne doğrulanmış bir yerel rehberle çık. Kuyrukları aş, gün batımını yakala ve Haliç'e bakan Ceneviz kulesinin hikâyesini dinle.",
+        intro: [
+          "Galata Kulesi, Cenevizlilerin surlu kolonilerinin tepesinde \"Christea Turris\" — İsa Kulesi — olarak yükselttikleri 1348'den beri Beyoğlu'nun siluetini taçlandırır. Yaklaşık 67 metrelik ortaçağ taşı, dokuz kat boyunca Haliç'e, tarihi yarımadaya ve Boğaz'a tam 360° bakan üst galeriye uzanır.",
+          "Efsanelerle örülü bir yer: 17. yüzyılda Hezarfen Ahmed Çelebi'nin kanat takıp kuleden Boğaz'ı aşarak Üsküdar'a uçtuğu anlatılır. VibeGuide yerel rehberiyle çıkış saatini en uzun kuyrukları atlatacak, altın saate yetişecek ve manzaranın tek başına anlatamadığı hikâyeleri duyacak şekilde ayarlarsın.",
+        ],
+        highlights: [
+          { title: "360° Panorama", desc: "Üst galeriden tüm şehir açılır — Haliç, tarihi yarımada ve Boğaz'ın iki yakası." },
+          { title: "Ceneviz Simgesi", desc: "1348'de \"İsa Kulesi\" olarak inşa edildi ve yaklaşık yedi yüzyıldır Galata'yı gözler." },
+          { title: "Uçuş Efsanesi", desc: "Hezarfen Ahmed Çelebi'nin buradan kendi yaptığı kanatlarla boğazı aşıp uçtuğu söylenir." },
+        ],
+        faqs: [
+          { q: "Galata Kulesi'nde kuyruk oluyor mu?", a: "Sık sık, özellikle gün batımında. Yerel rehber doğru saati seçmene yardım eder ve zamanlamayı üstlenir; böylece daha az bekler, manzaranın tadını daha çok çıkarırsın." },
+          { q: "Çıkmak için en iyi zaman ne?", a: "Öğleden sonranın sonundan gün batımına kadar büyülüdür, ışık suyun üzerinde altına dönerken. Rehberin günü bu ana göre planlayabilir." },
+          { q: "Ziyaret ne kadar sürer?", a: "Çıkış ve manzara yaklaşık 45 dakika ile bir saat sürer; yakındaki Galata ve Karaköy gezisiyle rahatça birleşir." },
+        ],
+        ctaTitle: "Galata Kulesi'ni bir yerelle gez",
+        ...IST.tr,
+      },
+      it: {
+        name: "Torre di Galata",
+        metaTitle: "Tour della Torre di Galata con guide locali",
+        metaDescription:
+          "Sali sulla Torre di Galata a Istanbul con una guida locale verificata. Salta le code, goditi il tramonto e ascolta la storia della torre genovese sul Corno d'Oro.",
+        intro: [
+          "La Torre di Galata domina lo skyline di Beyoğlu dal 1348, quando i Genovesi la eressero come \"Christea Turris\" — la Torre di Cristo — in cima alla loro colonia fortificata. Quasi 67 metri di pietra medievale salgono per nove piani fino a una galleria panoramica con una vista a 360° sul Corno d'Oro, la penisola storica e il Bosforo.",
+          "È un luogo avvolto nella leggenda: nel XVII secolo si narra che Hezarfen Ahmed Çelebi si legò delle ali e volò dalla torre attraverso il Bosforo fino a Üsküdar. Con un local di VibeGuide scegli l'ora della salita per evitare le code peggiori, arrivare nell'ora dorata e ascoltare le storie che il panorama da solo non racconta.",
+        ],
+        highlights: [
+          { title: "Panorama a 360°", desc: "Dalla galleria si apre tutta la città: il Corno d'Oro, la città vecchia e le due rive del Bosforo." },
+          { title: "Simbolo genovese", desc: "Costruita nel 1348 come \"Torre di Cristo\", veglia su Galata da quasi sette secoli." },
+          { title: "La leggenda del volo", desc: "Si dice che Hezarfen Ahmed Çelebi volò da qui attraverso lo stretto con ali costruite a mano." },
+        ],
+        faqs: [
+          { q: "C'è la fila alla Torre di Galata?", a: "Spesso, soprattutto al tramonto. Una guida locale ti aiuta a scegliere l'ora giusta e gestisce i tempi, così aspetti meno e godi di più." },
+          { q: "Qual è l'ora migliore per salire?", a: "Il tardo pomeriggio verso il tramonto è magico, quando la luce si fa dorata sull'acqua. La tua guida può organizzare la giornata attorno a quel momento." },
+          { q: "Quanto dura la visita?", a: "La salita e la vista richiedono circa 45 minuti-un'ora, facili da abbinare a una passeggiata tra Galata e Karaköy, lì vicino." },
+        ],
+        ctaTitle: "Scopri la Torre di Galata con un locale",
+        ...IST.it,
+      },
+      pl: {
+        name: "Wieża Galata",
+        metaTitle: "Wieża Galata — wycieczki z lokalnymi przewodnikami",
+        metaDescription:
+          "Wejdź na Wieżę Galata w Stambule ze zweryfikowanym lokalnym przewodnikiem. Omiń kolejki, złap zachód słońca i poznaj historię genueńskiej wieży nad Złotym Rogiem.",
+        intro: [
+          "Wieża Galata wieńczy panoramę Beyoğlu od 1348 roku, gdy Genueńczycy wznieśli ją jako „Christea Turris” — Wieżę Chrystusa — na szczycie swojej otoczonej murami kolonii. Blisko 67 metrów średniowiecznego kamienia wznosi się przez dziewięć pięter do górnej galerii z pełnym widokiem 360° na Złoty Róg, historyczny półwysep i Bosfor.",
+          "To miejsce owiane legendą: w XVII wieku Hezarfen Ahmed Çelebi miał przypiąć skrzydła i przelecieć z wieży nad Bosforem aż do Üsküdaru. Z lokalnym przewodnikiem VibeGuide dobierzesz godzinę wejścia tak, by ominąć najgorsze kolejki, zdążyć na złotą godzinę i usłyszeć historie, których sam widok nie opowie.",
+        ],
+        highlights: [
+          { title: "Panorama 360°", desc: "Z górnej galerii rozpościera się całe miasto — Złoty Róg, stare miasto i oba brzegi Bosforu." },
+          { title: "Genueński symbol", desc: "Zbudowana w 1348 roku jako „Wieża Chrystusa”, czuwa nad Galatą od niemal siedmiu wieków." },
+          { title: "Legenda o locie", desc: "Podobno Hezarfen Ahmed Çelebi przeleciał stąd nad cieśniną na własnoręcznie zrobionych skrzydłach." },
+        ],
+        faqs: [
+          { q: "Czy do Wieży Galata są kolejki?", a: "Często, zwłaszcza o zachodzie słońca. Lokalny przewodnik pomoże wybrać właściwą godzinę i zajmie się rozplanowaniem czasu, byś mniej czekał, a więcej podziwiał." },
+          { q: "Kiedy najlepiej wejść na górę?", a: "Późne popołudnie i zachód słońca są magiczne, gdy światło nad wodą robi się złote. Przewodnik może ułożyć dzień wokół tej chwili." },
+          { q: "Ile trwa zwiedzanie?", a: "Wejście i widok zajmują około 45 minut do godziny, łatwo połączyć je ze spacerem po Galacie i pobliskim Karaköy." },
+        ],
+        ctaTitle: "Zobacz Wieżę Galata z lokalnym przewodnikiem",
+        ...IST.pl,
+      },
+      nl: {
+        name: "Galatatoren",
+        metaTitle: "Galatatoren-tours & lokale gidsen",
+        metaDescription:
+          "Beklim de Galatatoren in Istanbul met een geverifieerde lokale gids. Ontwijk de rijen, geniet van de zonsondergang en hoor het verhaal van de Genuese toren.",
+        intro: [
+          "De Galatatoren bekroont de skyline van Beyoğlu sinds 1348, toen de Genuezen hem optrokken als \"Christea Turris\" — de Toren van Christus — bovenaan hun ommuurde kolonie. Bijna 67 meter middeleeuwse steen rijst over negen verdiepingen naar een bovengalerij met een volledig 360°-uitzicht over de Gouden Hoorn, het historische schiereiland en de Bosporus.",
+          "Het is een plek vol legende: in de 17e eeuw zou Hezarfen Ahmed Çelebi vleugels hebben aangebonden en vanaf de toren over de Bosporus tot Üsküdar zijn gevlogen. Met een local van VibeGuide kies je het tijdstip van je klim om de ergste rijen te ontwijken, op het gouden uur aan te komen en de verhalen te horen die het uitzicht alleen niet vertelt.",
+        ],
+        highlights: [
+          { title: "360°-panorama", desc: "Vanaf de galerij ontvouwt de hele stad zich — Gouden Hoorn, oude stad en beide oevers van de Bosporus." },
+          { title: "Genuees baken", desc: "Gebouwd in 1348 als \"Toren van Christus\", waakt hij al bijna zeven eeuwen over Galata." },
+          { title: "De vlieglegende", desc: "Hezarfen Ahmed Çelebi zou vanaf hier met zelfgemaakte vleugels over de zeestraat zijn gevlogen." },
+        ],
+        faqs: [
+          { q: "Is er een rij bij de Galatatoren?", a: "Vaak, vooral bij zonsondergang. Een lokale gids helpt je het juiste uur te kiezen en regelt de timing, zodat je minder wacht en meer geniet van het uitzicht." },
+          { q: "Wanneer kun je het best omhoog?", a: "Het late middaguur tot zonsondergang is magisch, wanneer het licht boven het water goud kleurt. Je gids kan de dag daaromheen plannen." },
+          { q: "Hoe lang duurt een bezoek?", a: "De klim en het uitzicht kosten zo'n 45 minuten tot een uur, makkelijk te combineren met een wandeling door Galata en het nabije Karaköy." },
+        ],
+        ctaTitle: "Bezoek de Galatatoren met een local",
+        ...IST.nl,
+      },
+    },
+  },
+  {
+    slug: "grand-bazaar",
+    city: "Istanbul",
+    citySlug: "istanbul",
+    emoji: "🛍️",
+    image:
+      "https://images.unsplash.com/photo-1568592014308-076036f4f4b4?q=80&w=1600",
+    lat: 41.0106,
+    lng: 28.968,
+    i18n: {
+      en: {
+        name: "Grand Bazaar",
+        metaTitle: "Grand Bazaar Tours & Local Guides",
+        metaDescription:
+          "Explore Istanbul's Grand Bazaar with a verified local guide. Navigate 4,000 shops, haggle with confidence and find honest artisans instead of tourist traps.",
+        intro: [
+          "The Grand Bazaar is one of the oldest and largest covered markets on earth — a labyrinth begun under Mehmed the Conqueror between 1455 and 1461, grown over the centuries into more than sixty covered streets and around 4,000 shops. Carpets and kilims, gold and jewellery, ceramics, spices, lanterns and leather spill from every doorway beneath its painted vaults.",
+          "Haggling here is expected — it's half the fun — but the maze swallows newcomers whole. A VibeGuide local walks you through the right lanes, keeps you clear of tourist-trap prices, introduces you to honest artisans and translates both the language and the ritual of the bargain.",
+        ],
+        highlights: [
+          { title: "4,000 Shops", desc: "Over sixty covered streets of carpets, gold, ceramics, spices, lanterns and leather." },
+          { title: "The Art of Haggling", desc: "Bargaining is expected and part of the fun — a guide keeps the price honest." },
+          { title: "Living History", desc: "A covered market begun in the 1450s under Mehmed the Conqueror, still trading today." },
+        ],
+        faqs: [
+          { q: "Do I need a guide for the Grand Bazaar?", a: "You won't get lost forever, but you may overpay. A local guide knows the honest artisans, the fair price and the shortcuts through the maze." },
+          { q: "Is haggling really expected?", a: "Yes — it's part of the culture. Start low, stay friendly, and let your guide show you where the ritual ends and a fair deal begins." },
+          { q: "How long should I plan?", a: "Most guided visits run 1–2 hours and pair naturally with the nearby Spice Bazaar and the streets of Fatih." },
+        ],
+        ctaTitle: "Explore the Grand Bazaar with a local",
+        ...IST.en,
+      },
+      de: {
+        name: "Großer Basar",
+        metaTitle: "Großer Basar Touren & lokale Guides",
+        metaDescription:
+          "Entdecke Istanbuls Großen Basar mit einem geprüften lokalen Guide. Finde dich zwischen 4.000 Läden zurecht, handle sicher und triff ehrliche Handwerker statt Touristenfallen.",
+        intro: [
+          "Der Große Basar ist einer der ältesten und größten überdachten Märkte der Welt — ein Labyrinth, das unter Mehmed dem Eroberer zwischen 1455 und 1461 begann und über die Jahrhunderte zu mehr als sechzig überdachten Gassen mit rund 4.000 Läden wuchs. Teppiche und Kelims, Gold und Schmuck, Keramik, Gewürze, Laternen und Leder quellen unter den bemalten Gewölben aus jeder Tür.",
+          "Feilschen gehört hier dazu — es ist der halbe Spaß — doch das Gassengewirr verschluckt Neulinge im Nu. Ein VibeGuide-Local führt dich durch die richtigen Gassen, hält dich von Touristenfallen fern, stellt dir ehrliche Handwerker vor und übersetzt sowohl die Sprache als auch das Ritual des Handelns.",
+        ],
+        highlights: [
+          { title: "4.000 Läden", desc: "Über sechzig überdachte Gassen voller Teppiche, Gold, Keramik, Gewürze, Laternen und Leder." },
+          { title: "Die Kunst des Feilschens", desc: "Handeln wird erwartet und macht Spaß — ein Guide hält den Preis fair." },
+          { title: "Lebendige Geschichte", desc: "Ein überdachter Markt aus den 1450ern unter Mehmed dem Eroberer, bis heute in Betrieb." },
+        ],
+        faqs: [
+          { q: "Brauche ich einen Guide für den Großen Basar?", a: "Verloren gehst du nicht für immer, aber du zahlst leicht zu viel. Ein lokaler Guide kennt die ehrlichen Handwerker, den fairen Preis und die Abkürzungen durch das Labyrinth." },
+          { q: "Wird wirklich gehandelt?", a: "Ja — das gehört zur Kultur. Fang niedrig an, bleib freundlich, und dein Guide zeigt dir, wo das Ritual endet und ein fairer Deal beginnt." },
+          { q: "Wie viel Zeit sollte ich einplanen?", a: "Die meisten geführten Besuche dauern 1–2 Stunden und lassen sich gut mit dem nahen Gewürzbasar und den Gassen von Fatih verbinden." },
+        ],
+        ctaTitle: "Entdecke den Großen Basar mit einem Local",
+        ...IST.de,
+      },
+      ru: {
+        name: "Гранд-базар",
+        metaTitle: "Гранд-базар: экскурсии с местными гидами",
+        metaDescription:
+          "Исследуйте Гранд-базар Стамбула с проверенным местным гидом. Пройдите 4000 лавок, уверенно торгуйтесь и находите честных мастеров вместо туристических ловушек.",
+        intro: [
+          "Гранд-базар — один из старейших и крупнейших крытых рынков мира: лабиринт, заложенный при Мехмеде Завоевателе между 1455 и 1461 годами и разросшийся за века до более чем шестидесяти крытых улиц и примерно 4000 лавок. Ковры и килимы, золото и украшения, керамика, специи, фонари и кожа льются из каждой двери под расписными сводами.",
+          "Торг здесь ожидаем — это половина удовольствия, — но лабиринт проглатывает новичков целиком. Местный гид VibeGuide проведёт вас нужными рядами, убережёт от цен для туристов, познакомит с честными мастерами и переведёт и язык, и сам ритуал торга.",
+        ],
+        highlights: [
+          { title: "4000 лавок", desc: "Более шестидесяти крытых улиц с коврами, золотом, керамикой, специями, фонарями и кожей." },
+          { title: "Искусство торга", desc: "Торговаться принято, и это весело — гид удержит цену честной." },
+          { title: "Живая история", desc: "Крытый рынок, заложенный в 1450-х при Мехмеде Завоевателе, торгует и сегодня." },
+        ],
+        faqs: [
+          { q: "Нужен ли гид на Гранд-базаре?", a: "Навсегда вы не потеряетесь, но легко переплатите. Местный гид знает честных мастеров, справедливую цену и короткие пути через лабиринт." },
+          { q: "Действительно ли принято торговаться?", a: "Да, это часть культуры. Начинайте с низкой цены, будьте дружелюбны, а гид покажет, где заканчивается ритуал и начинается честная сделка." },
+          { q: "Сколько времени закладывать?", a: "Обычно экскурсия занимает 1–2 часа и естественно сочетается с соседним Египетским базаром и улицами Фатиха." },
+        ],
+        ctaTitle: "Исследовать Гранд-базар с местным гидом",
+        ...IST.ru,
+      },
+      ar: {
+        name: "البازار الكبير",
+        metaTitle: "جولات البازار الكبير مع مرشدين محليين",
+        metaDescription:
+          "اكتشف البازار الكبير في إسطنبول مع مرشد محلي موثّق. تنقّل بين 4000 متجر، وساوم بثقة، واعثر على حرفيين صادقين بدل فخاخ السياح.",
+        intro: [
+          "البازار الكبير من أقدم وأكبر الأسواق المسقوفة في العالم — متاهة بدأت في عهد محمد الفاتح بين عامي 1455 و1461، ونمت عبر القرون إلى أكثر من ستين شارعًا مسقوفًا ونحو 4000 متجر. السجاد والكليم والذهب والمجوهرات والخزف والتوابل والفوانيس والجلود تفيض من كل باب تحت أقواسه المزخرفة.",
+          "المساومة هنا متوقّعة — وهي نصف المتعة — لكن المتاهة تبتلع القادمين الجدد. مرشد محلي من VibeGuide يقودك عبر الممرات الصحيحة، ويبعدك عن أسعار السياح، ويعرّفك على حرفيين صادقين، ويترجم اللغة وطقس المساومة معًا.",
+        ],
+        highlights: [
+          { title: "4000 متجر", desc: "أكثر من ستين شارعًا مسقوفًا من السجاد والذهب والخزف والتوابل والفوانيس والجلود." },
+          { title: "فنّ المساومة", desc: "المساومة متوقّعة وممتعة — والمرشد يبقي السعر عادلًا." },
+          { title: "تاريخ حيّ", desc: "سوق مسقوف بدأ في خمسينيات القرن الخامس عشر في عهد محمد الفاتح، وما زال يعمل حتى اليوم." },
+        ],
+        faqs: [
+          { q: "هل أحتاج إلى مرشد في البازار الكبير؟", a: "لن تضيع إلى الأبد، لكنك قد تدفع أكثر من اللازم. المرشد المحلي يعرف الحرفيين الصادقين والسعر العادل والطرق المختصرة عبر المتاهة." },
+          { q: "هل المساومة متوقّعة فعلًا؟", a: "نعم، إنها جزء من الثقافة. ابدأ بسعر منخفض وابقَ ودودًا، ودع مرشدك يريك أين ينتهي الطقس ويبدأ الاتفاق العادل." },
+          { q: "كم من الوقت أخصّص؟", a: "تستغرق معظم الجولات 1–2 ساعة، وتتكامل بطبيعتها مع سوق التوابل القريب وأزقّة الفاتح." },
+        ],
+        ctaTitle: "اكتشف البازار الكبير مع مرشد محلي",
+        ...IST.ar,
+      },
+      es: {
+        name: "Gran Bazar",
+        metaTitle: "Tours del Gran Bazar con guías locales",
+        metaDescription:
+          "Explora el Gran Bazar de Estambul con un guía local verificado. Recorre 4.000 tiendas, regatea con seguridad y encuentra artesanos honestos en lugar de trampas para turistas.",
+        intro: [
+          "El Gran Bazar es uno de los mercados cubiertos más antiguos y grandes del mundo: un laberinto iniciado bajo Mehmed el Conquistador entre 1455 y 1461, que a lo largo de los siglos creció hasta más de sesenta calles cubiertas y unas 4.000 tiendas. Alfombras y kilims, oro y joyas, cerámica, especias, faroles y cuero se desbordan por cada puerta bajo sus bóvedas pintadas.",
+          "Aquí se espera que regatees — es parte de la diversión —, pero el laberinto se traga a los novatos. Un local de VibeGuide te lleva por las calles adecuadas, te aleja de los precios para turistas, te presenta a artesanos honestos y traduce tanto el idioma como el ritual del regateo.",
+        ],
+        highlights: [
+          { title: "4.000 tiendas", desc: "Más de sesenta calles cubiertas de alfombras, oro, cerámica, especias, faroles y cuero." },
+          { title: "El arte de regatear", desc: "Regatear se espera y es divertido — un guía mantiene el precio justo." },
+          { title: "Historia viva", desc: "Un mercado cubierto iniciado en la década de 1450 bajo Mehmed el Conquistador, activo aún hoy." },
+        ],
+        faqs: [
+          { q: "¿Necesito un guía para el Gran Bazar?", a: "No te perderás para siempre, pero es fácil pagar de más. Un guía local conoce a los artesanos honestos, el precio justo y los atajos por el laberinto." },
+          { q: "¿De verdad se espera regatear?", a: "Sí, es parte de la cultura. Empieza bajo, mantente amable y deja que tu guía te enseñe dónde acaba el ritual y empieza un trato justo." },
+          { q: "¿Cuánto tiempo debo reservar?", a: "La mayoría de las visitas guiadas duran 1–2 horas y se combinan de forma natural con el cercano Bazar de las Especias y las calles de Fatih." },
+        ],
+        ctaTitle: "Explora el Gran Bazar con un local",
+        ...IST.es,
+      },
+      fr: {
+        name: "Grand Bazar",
+        metaTitle: "Visites du Grand Bazar avec guides locaux",
+        metaDescription:
+          "Explorez le Grand Bazar d'Istanbul avec un guide local vérifié. Parcourez 4 000 boutiques, marchandez en confiance et trouvez des artisans honnêtes plutôt que des pièges à touristes.",
+        intro: [
+          "Le Grand Bazar est l'un des plus anciens et vastes marchés couverts du monde : un labyrinthe amorcé sous Mehmed le Conquérant entre 1455 et 1461, agrandi au fil des siècles en plus de soixante rues couvertes et près de 4 000 boutiques. Tapis et kilims, or et bijoux, céramiques, épices, lanternes et cuir débordent de chaque porte sous ses voûtes peintes.",
+          "Ici, marchander est attendu — c'est la moitié du plaisir —, mais le dédale engloutit les nouveaux venus. Un local VibeGuide vous mène dans les bonnes ruelles, vous écarte des prix pour touristes, vous présente des artisans honnêtes et traduit à la fois la langue et le rituel du marchandage.",
+        ],
+        highlights: [
+          { title: "4 000 boutiques", desc: "Plus de soixante rues couvertes de tapis, d'or, de céramiques, d'épices, de lanternes et de cuir." },
+          { title: "L'art de marchander", desc: "Le marchandage est attendu et amusant — un guide garde le prix honnête." },
+          { title: "Histoire vivante", desc: "Un marché couvert amorcé dans les années 1450 sous Mehmed le Conquérant, toujours en activité." },
+        ],
+        faqs: [
+          { q: "Ai-je besoin d'un guide pour le Grand Bazar ?", a: "Vous ne serez pas perdu à jamais, mais vous risquez de trop payer. Un guide local connaît les artisans honnêtes, le juste prix et les raccourcis du labyrinthe." },
+          { q: "Faut-il vraiment marchander ?", a: "Oui, cela fait partie de la culture. Commencez bas, restez aimable, et laissez votre guide vous montrer où finit le rituel et où commence un marché équitable." },
+          { q: "Combien de temps prévoir ?", a: "La plupart des visites guidées durent 1 à 2 heures et se marient naturellement avec le Bazar égyptien voisin et les rues de Fatih." },
+        ],
+        ctaTitle: "Explorez le Grand Bazar avec un local",
+        ...IST.fr,
+      },
+      el: {
+        name: "Μεγάλη Αγορά",
+        metaTitle: "Ξεναγήσεις στη Μεγάλη Αγορά με ντόπιους ξεναγούς",
+        metaDescription:
+          "Εξερεύνησε τη Μεγάλη Αγορά της Κωνσταντινούπολης με πιστοποιημένο ντόπιο ξεναγό. Περπάτα ανάμεσα σε 4.000 μαγαζιά, παζάρεψε με άνεση και βρες τίμιους τεχνίτες αντί για παγίδες τουριστών.",
+        intro: [
+          "Η Μεγάλη Αγορά είναι μία από τις παλαιότερες και μεγαλύτερες σκεπαστές αγορές του κόσμου — ένας λαβύρινθος που ξεκίνησε επί Μωάμεθ του Πορθητή μεταξύ 1455 και 1461 και μεγάλωσε στους αιώνες σε πάνω από εξήντα σκεπαστούς δρόμους και περίπου 4.000 μαγαζιά. Χαλιά και κιλίμια, χρυσός και κοσμήματα, κεραμικά, μπαχαρικά, φανάρια και δέρμα ξεχειλίζουν από κάθε πόρτα κάτω από τις ζωγραφιστές καμάρες.",
+          "Το παζάρι εδώ αναμένεται — είναι η μισή διασκέδαση — αλλά ο λαβύρινθος καταπίνει τους αρχάριους. Ένας ντόπιος του VibeGuide σε οδηγεί στα σωστά σοκάκια, σε κρατά μακριά από τιμές για τουρίστες, σου συστήνει τίμιους τεχνίτες και μεταφράζει και τη γλώσσα και το τελετουργικό του παζαριού.",
+        ],
+        highlights: [
+          { title: "4.000 μαγαζιά", desc: "Πάνω από εξήντα σκεπαστοί δρόμοι με χαλιά, χρυσό, κεραμικά, μπαχαρικά, φανάρια και δέρμα." },
+          { title: "Η τέχνη του παζαριού", desc: "Το παζάρεμα αναμένεται και έχει πλάκα — ο ξεναγός κρατά την τιμή τίμια." },
+          { title: "Ζωντανή ιστορία", desc: "Μια σκεπαστή αγορά που ξεκίνησε τη δεκαετία του 1450 επί Μωάμεθ του Πορθητή, ενεργή ακόμη σήμερα." },
+        ],
+        faqs: [
+          { q: "Χρειάζομαι ξεναγό για τη Μεγάλη Αγορά;", a: "Δεν θα χαθείς για πάντα, αλλά μπορεί να πληρώσεις παραπάνω. Ένας ντόπιος ξεναγός ξέρει τους τίμιους τεχνίτες, τη σωστή τιμή και τα περάσματα μέσα στον λαβύρινθο." },
+          { q: "Αναμένεται πράγματι παζάρι;", a: "Ναι, είναι μέρος της κουλτούρας. Ξεκίνα χαμηλά, μείνε φιλικός, και άσε τον ξεναγό σου να σου δείξει πού τελειώνει το τελετουργικό και αρχίζει μια δίκαιη συμφωνία." },
+          { q: "Πόσο χρόνο να υπολογίσω;", a: "Οι περισσότερες ξεναγήσεις διαρκούν 1–2 ώρες και συνδυάζονται φυσικά με το κοντινό Παζάρι Μπαχαρικών και τα σοκάκια του Φατίχ." },
+        ],
+        ctaTitle: "Εξερεύνησε τη Μεγάλη Αγορά με έναν ντόπιο",
+        ...IST.el,
+      },
+      tr: {
+        name: "Kapalıçarşı",
+        metaTitle: "Kapalıçarşı Turları & Yerel Rehberler",
+        metaDescription:
+          "İstanbul Kapalıçarşı'yı doğrulanmış bir yerel rehberle gez. 4.000 dükkânda yolunu bul, güvenle pazarlık et ve turist tuzağı yerine dürüst ustaları keşfet.",
+        intro: [
+          "Kapalıçarşı dünyanın en eski ve en büyük kapalı çarşılarından biri — Fatih Sultan Mehmed döneminde 1455 ile 1461 arasında başlayan, yüzyıllar içinde altmıştan fazla kapalı sokağa ve yaklaşık 4.000 dükkâna büyüyen bir labirent. Halılar ve kilimler, altın ve mücevher, seramik, baharat, fener ve deri; boyalı kubbelerin altında her kapıdan taşar.",
+          "Burada pazarlık beklenir — işin yarısı keyfidir — ama labirent acemileri bir çırpıda yutar. VibeGuide yerel rehberi seni doğru sokaklardan geçirir, turist fiyatlarından uzak tutar, dürüst ustalarla tanıştırır ve hem dili hem de pazarlığın ritüelini çevirir.",
+        ],
+        highlights: [
+          { title: "4.000 Dükkân", desc: "Altmıştan fazla kapalı sokakta halı, altın, seramik, baharat, fener ve deri." },
+          { title: "Pazarlık Sanatı", desc: "Pazarlık beklenir ve keyiflidir — rehber fiyatı dürüst tutar." },
+          { title: "Yaşayan Tarih", desc: "1450'lerde Fatih Sultan Mehmed döneminde başlayan kapalı çarşı, bugün hâlâ iş başında." },
+        ],
+        faqs: [
+          { q: "Kapalıçarşı için rehbere ihtiyacım var mı?", a: "Sonsuza dek kaybolmazsın ama kolayca fazla ödersin. Yerel rehber dürüst ustaları, adil fiyatı ve labirentin kestirmelerini bilir." },
+          { q: "Gerçekten pazarlık bekleniyor mu?", a: "Evet, kültürün parçası. Düşükten başla, güler yüzlü kal ve rehberin sana ritüelin nerede bitip adil pazarlığın nerede başladığını göstersin." },
+          { q: "Ne kadar zaman ayırmalıyım?", a: "Çoğu rehberli gezi 1–2 saat sürer ve yakındaki Mısır Çarşısı ile Fatih sokaklarıyla doğal biçimde birleşir." },
+        ],
+        ctaTitle: "Kapalıçarşı'yı bir yerelle keşfet",
+        ...IST.tr,
+      },
+      it: {
+        name: "Gran Bazar",
+        metaTitle: "Tour del Gran Bazar con guide locali",
+        metaDescription:
+          "Esplora il Gran Bazar di Istanbul con una guida locale verificata. Attraversa 4.000 negozi, contratta con sicurezza e trova artigiani onesti invece delle trappole per turisti.",
+        intro: [
+          "Il Gran Bazar è uno dei mercati coperti più antichi e grandi del mondo: un labirinto avviato sotto Maometto il Conquistatore tra il 1455 e il 1461, cresciuto nei secoli in oltre sessanta strade coperte e circa 4.000 negozi. Tappeti e kilim, oro e gioielli, ceramiche, spezie, lanterne e cuoio traboccano da ogni porta sotto le sue volte dipinte.",
+          "Qui contrattare è previsto — è metà del divertimento — ma il dedalo inghiotte i nuovi arrivati. Un local di VibeGuide ti guida per i vicoli giusti, ti tiene lontano dai prezzi da turista, ti presenta artigiani onesti e traduce sia la lingua sia il rituale della trattativa.",
+        ],
+        highlights: [
+          { title: "4.000 negozi", desc: "Oltre sessanta strade coperte di tappeti, oro, ceramiche, spezie, lanterne e cuoio." },
+          { title: "L'arte di contrattare", desc: "Contrattare è previsto ed è divertente — una guida mantiene il prezzo onesto." },
+          { title: "Storia viva", desc: "Un mercato coperto avviato negli anni 1450 sotto Maometto il Conquistatore, ancora attivo oggi." },
+        ],
+        faqs: [
+          { q: "Serve una guida per il Gran Bazar?", a: "Non ti perderai per sempre, ma è facile pagare troppo. Una guida locale conosce gli artigiani onesti, il prezzo giusto e le scorciatoie nel labirinto." },
+          { q: "Si contratta davvero?", a: "Sì, fa parte della cultura. Parti basso, resta cordiale e lascia che la tua guida ti mostri dove finisce il rituale e comincia un affare equo." },
+          { q: "Quanto tempo devo prevedere?", a: "La maggior parte delle visite guidate dura 1–2 ore e si abbina naturalmente al vicino Bazar delle Spezie e alle vie di Fatih." },
+        ],
+        ctaTitle: "Esplora il Gran Bazar con un locale",
+        ...IST.it,
+      },
+      pl: {
+        name: "Wielki Bazar",
+        metaTitle: "Wielki Bazar — wycieczki z lokalnymi przewodnikami",
+        metaDescription:
+          "Zwiedź Wielki Bazar w Stambule ze zweryfikowanym lokalnym przewodnikiem. Przejdź 4000 sklepów, targuj się pewnie i znajdź uczciwych rzemieślników zamiast pułapek na turystów.",
+        intro: [
+          "Wielki Bazar to jeden z najstarszych i największych krytych targów na świecie — labirynt rozpoczęty za Mehmeda Zdobywcy w latach 1455–1461, który przez wieki rozrósł się do ponad sześćdziesięciu krytych uliczek i około 4000 sklepów. Dywany i kilimy, złoto i biżuteria, ceramika, przyprawy, lampiony i skóra wylewają się z każdych drzwi pod malowanymi sklepieniami.",
+          "Targowanie się jest tu oczekiwane — to połowa zabawy — ale labirynt połyka nowicjuszy w całości. Lokalny przewodnik VibeGuide poprowadzi Cię właściwymi uliczkami, uchroni od cen dla turystów, przedstawi uczciwych rzemieślników i przetłumaczy zarówno język, jak i sam rytuał targu.",
+        ],
+        highlights: [
+          { title: "4000 sklepów", desc: "Ponad sześćdziesiąt krytych uliczek z dywanami, złotem, ceramiką, przyprawami, lampionami i skórą." },
+          { title: "Sztuka targowania", desc: "Targowanie jest oczekiwane i zabawne — przewodnik pilnuje uczciwej ceny." },
+          { title: "Żywa historia", desc: "Kryty targ rozpoczęty w latach 50. XV wieku za Mehmeda Zdobywcy, działający do dziś." },
+        ],
+        faqs: [
+          { q: "Czy potrzebuję przewodnika na Wielkim Bazarze?", a: "Nie zgubisz się na zawsze, ale łatwo przepłacisz. Lokalny przewodnik zna uczciwych rzemieślników, właściwą cenę i skróty przez labirynt." },
+          { q: "Czy naprawdę trzeba się targować?", a: "Tak, to część kultury. Zacznij nisko, bądź uprzejmy i pozwól przewodnikowi pokazać, gdzie kończy się rytuał, a zaczyna uczciwa transakcja." },
+          { q: "Ile czasu zaplanować?", a: "Większość wycieczek z przewodnikiem trwa 1–2 godziny i naturalnie łączy się z pobliskim Bazarem Egipskim oraz uliczkami Fatih." },
+        ],
+        ctaTitle: "Zwiedź Wielki Bazar z lokalnym przewodnikiem",
+        ...IST.pl,
+      },
+      nl: {
+        name: "Grote Bazaar",
+        metaTitle: "Grote Bazaar-tours & lokale gidsen",
+        metaDescription:
+          "Verken de Grote Bazaar van Istanbul met een geverifieerde lokale gids. Baan je weg door 4.000 winkels, onderhandel met vertrouwen en vind eerlijke ambachtslieden in plaats van toeristenvallen.",
+        intro: [
+          "De Grote Bazaar is een van de oudste en grootste overdekte markten ter wereld — een doolhof dat onder Mehmed de Veroveraar tussen 1455 en 1461 begon en door de eeuwen heen uitgroeide tot ruim zestig overdekte straten en zo'n 4.000 winkels. Tapijten en kelims, goud en sieraden, keramiek, specerijen, lantaarns en leer puilen uit elke deur onder de beschilderde gewelven.",
+          "Afdingen wordt hier verwacht — het is de halve pret — maar het doolhof slokt nieuwelingen in één keer op. Een local van VibeGuide loodst je door de juiste steegjes, houdt je weg van toeristenprijzen, stelt je voor aan eerlijke ambachtslieden en vertaalt zowel de taal als het ritueel van het onderhandelen.",
+        ],
+        highlights: [
+          { title: "4.000 winkels", desc: "Ruim zestig overdekte straten met tapijten, goud, keramiek, specerijen, lantaarns en leer." },
+          { title: "De kunst van het afdingen", desc: "Onderhandelen wordt verwacht en is leuk — een gids houdt de prijs eerlijk." },
+          { title: "Levende geschiedenis", desc: "Een overdekte markt begonnen in de jaren 1450 onder Mehmed de Veroveraar, nog altijd in bedrijf." },
+        ],
+        faqs: [
+          { q: "Heb ik een gids nodig voor de Grote Bazaar?", a: "Je raakt niet voorgoed verdwaald, maar je betaalt al snel te veel. Een lokale gids kent de eerlijke ambachtslieden, de juiste prijs en de sluiproutes door het doolhof." },
+          { q: "Wordt er echt afgedongen?", a: "Ja, het hoort bij de cultuur. Begin laag, blijf vriendelijk en laat je gids je tonen waar het ritueel eindigt en een eerlijke deal begint." },
+          { q: "Hoeveel tijd moet ik inplannen?", a: "De meeste rondleidingen duren 1–2 uur en combineren natuurlijk met de nabije Egyptische Bazaar en de straten van Fatih." },
+        ],
+        ctaTitle: "Verken de Grote Bazaar met een local",
+        ...IST.nl,
+      },
+    },
+  },
+  {
+    slug: "bosphorus",
+    city: "Istanbul",
+    citySlug: "istanbul",
+    emoji: "🚢",
+    image:
+      "https://images.unsplash.com/photo-1640301998084-c9b80babd03c?q=80&w=1600",
+    lat: 41.0766,
+    lng: 29.0575,
+    i18n: {
+      en: {
+        name: "The Bosphorus",
+        metaTitle: "Bosphorus Cruise Tours & Local Guides",
+        metaDescription:
+          "Cruise the Bosphorus in Istanbul with a verified local guide. Glide past Ottoman palaces, waterfront yalıs and the Maiden's Tower, and hear the story of each shore.",
+        intro: [
+          "The Bosphorus is the strait that splits a continent — the winding channel dividing Europe from Asia and linking the Black Sea to the Sea of Marmara. A classic boat tour glides past Ottoman palaces like Dolmabahçe, Beylerbeyi and Çırağan, the graceful wooden waterfront mansions known as yalıs, the Maiden's Tower on its islet, Rumeli Fortress and beneath the great suspension bridges.",
+          "The sunset cruise is one of Istanbul's iconic experiences, but from the water it's hard to tell one palace from the next. With a VibeGuide local aboard, you learn which is which, whose story belongs to which shore, and why this ribbon of water shaped an empire.",
+        ],
+        highlights: [
+          { title: "Palaces from the Water", desc: "Dolmabahçe, Beylerbeyi and Çırağan line the shores in Ottoman splendour." },
+          { title: "Two Continents", desc: "Europe on one bank, Asia on the other, joined by the great suspension bridges." },
+          { title: "Yalıs & the Maiden's Tower", desc: "Historic wooden waterfront mansions and the little tower that guards the strait." },
+        ],
+        faqs: [
+          { q: "Is a Bosphorus cruise worth it with a guide?", a: "From the water the palaces blur together. A local guide names each one, tells its story and points out the details you'd otherwise sail right past." },
+          { q: "When is the best time to cruise?", a: "Sunset is iconic, when the light glows on the palaces and bridges. Your guide can help you pick the hour and the right kind of boat." },
+          { q: "How long is a typical cruise?", a: "Tours range from about 1.5 to 3 hours depending on how far up the strait you go, easily paired with a walk along the waterfront." },
+        ],
+        ctaTitle: "Cruise the Bosphorus with a local",
+        ...IST.en,
+      },
+      de: {
+        name: "Bosporus",
+        metaTitle: "Bosporus-Bootstouren & lokale Guides",
+        metaDescription:
+          "Erkunde den Bosporus in Istanbul mit einem geprüften lokalen Guide. Gleite an osmanischen Palästen, Yalıs am Ufer und dem Mädchenturm vorbei und höre die Geschichte jedes Ufers.",
+        intro: [
+          "Der Bosporus ist die Meerenge, die einen Kontinent teilt — der gewundene Kanal, der Europa von Asien trennt und das Schwarze Meer mit dem Marmarameer verbindet. Eine klassische Bootstour gleitet vorbei an osmanischen Palästen wie Dolmabahçe, Beylerbeyi und Çırağan, den anmutigen hölzernen Ufervillen, den Yalıs, dem Mädchenturm auf seinem Inselchen, der Festung Rumeli und unter den großen Hängebrücken hindurch.",
+          "Die Sonnenuntergangsfahrt ist eines der ikonischen Erlebnisse Istanbuls, doch vom Wasser aus lässt sich ein Palast kaum vom nächsten unterscheiden. Mit einem VibeGuide-Local an Bord erfährst du, welcher welcher ist, wessen Geschichte zu welchem Ufer gehört und warum dieses Band aus Wasser ein Imperium prägte.",
+        ],
+        highlights: [
+          { title: "Paläste vom Wasser aus", desc: "Dolmabahçe, Beylerbeyi und Çırağan säumen die Ufer in osmanischem Glanz." },
+          { title: "Zwei Kontinente", desc: "Europa am einen Ufer, Asien am anderen, verbunden durch die großen Hängebrücken." },
+          { title: "Yalıs & Mädchenturm", desc: "Historische hölzerne Ufervillen und der kleine Turm, der die Meerenge bewacht." },
+        ],
+        faqs: [
+          { q: "Lohnt sich eine Bosporus-Fahrt mit Guide?", a: "Vom Wasser verschwimmen die Paläste. Ein lokaler Guide benennt jeden, erzählt seine Geschichte und zeigt dir Details, an denen du sonst vorbeiführest." },
+          { q: "Wann fährt man am besten?", a: "Der Sonnenuntergang ist ikonisch, wenn das Licht auf Palästen und Brücken glüht. Dein Guide hilft bei der Wahl der Stunde und des richtigen Bootes." },
+          { q: "Wie lange dauert eine Fahrt?", a: "Touren dauern etwa 1,5 bis 3 Stunden, je nachdem, wie weit du die Meerenge hinauffährst, gut kombinierbar mit einem Spaziergang am Ufer." },
+        ],
+        ctaTitle: "Erkunde den Bosporus mit einem Local",
+        ...IST.de,
+      },
+      ru: {
+        name: "Босфор",
+        metaTitle: "Босфор: прогулки на катере с местными гидами",
+        metaDescription:
+          "Пройдите по Босфору в Стамбуле с проверенным местным гидом. Скользите мимо османских дворцов, прибрежных ялы и Девичьей башни и узнайте историю каждого берега.",
+        intro: [
+          "Босфор — пролив, разделяющий континент: извилистый канал, что отделяет Европу от Азии и связывает Чёрное море с Мраморным. Классическая прогулка на катере скользит мимо османских дворцов — Долмабахче, Бейлербейи и Чыраган, изящных деревянных прибрежных особняков-ялы, Девичьей башни на островке, крепости Румели и под огромными висячими мостами.",
+          "Закатный круиз — одно из культовых впечатлений Стамбула, но с воды один дворец не отличить от другого. С местным гидом VibeGuide на борту вы поймёте, где какой, чья история принадлежит какому берегу и почему эта лента воды сформировала целую империю.",
+        ],
+        highlights: [
+          { title: "Дворцы с воды", desc: "Долмабахче, Бейлербейи и Чыраган выстроились по берегам в османском великолепии." },
+          { title: "Два континента", desc: "Европа на одном берегу, Азия на другом, соединённые огромными висячими мостами." },
+          { title: "Ялы и Девичья башня", desc: "Исторические деревянные особняки у воды и башенка, что стережёт пролив." },
+        ],
+        faqs: [
+          { q: "Стоит ли круиз по Босфору с гидом?", a: "С воды дворцы сливаются. Местный гид назовёт каждый, расскажет его историю и укажет детали, мимо которых вы бы просто проплыли." },
+          { q: "Когда лучше отправляться?", a: "Закат культовое время, когда свет играет на дворцах и мостах. Гид поможет выбрать час и подходящий катер." },
+          { q: "Сколько длится обычный круиз?", a: "Прогулки длятся примерно от 1,5 до 3 часов в зависимости от того, как далеко вы поднимаетесь по проливу; легко сочетаются с прогулкой по набережной." },
+        ],
+        ctaTitle: "Прокатиться по Босфору с местным гидом",
+        ...IST.ru,
+      },
+      ar: {
+        name: "مضيق البوسفور",
+        metaTitle: "جولات بحرية في البوسفور مع مرشدين محليين",
+        metaDescription:
+          "أبحر في مضيق البوسفور بإسطنبول مع مرشد محلي موثّق. مُرّ بالقصور العثمانية واليالي على الضفاف وبرج الفتاة، واستمع إلى قصة كل ضفة.",
+        intro: [
+          "البوسفور هو المضيق الذي يشطر قارّة — القناة المتعرّجة التي تفصل أوروبا عن آسيا وتصل البحر الأسود ببحر مرمرة. تنساب الجولة البحرية الكلاسيكية بمحاذاة قصور عثمانية مثل دولمة بهجة وبيلربيي وتشيراغان، والقصور الخشبية الرشيقة على الضفاف المعروفة باسم «اليالي»، وبرج الفتاة على جزيرته، وقلعة روملي، وتحت الجسور المعلّقة العظيمة.",
+          "رحلة الغروب من أيقونات إسطنبول، لكن من الماء يصعب تمييز قصر عن آخر. مع مرشد محلي من VibeGuide على متن القارب، تعرف أيّها أيّ، وأيّ قصة تخصّ أيّ ضفة، ولماذا صاغ هذا الشريط المائي إمبراطورية بأكملها.",
+        ],
+        highlights: [
+          { title: "القصور من الماء", desc: "دولمة بهجة وبيلربيي وتشيراغان تصطفّ على الضفاف ببهاء عثماني." },
+          { title: "قارّتان", desc: "أوروبا على ضفة وآسيا على الأخرى، تربطهما الجسور المعلّقة العظيمة." },
+          { title: "اليالي وبرج الفتاة", desc: "قصور خشبية تاريخية على الماء والبرج الصغير الذي يحرس المضيق." },
+        ],
+        faqs: [
+          { q: "هل تستحق جولة البوسفور مع مرشد؟", a: "من الماء تتشابه القصور. المرشد المحلي يسمّي كل واحد، ويروي قصته، ويشير إلى تفاصيل كنت ستمرّ بها دون أن تنتبه." },
+          { q: "ما أفضل وقت للإبحار؟", a: "الغروب وقت أيقوني، حين يتوهّج الضوء على القصور والجسور. يساعدك مرشدك على اختيار الساعة ونوع القارب المناسب." },
+          { q: "كم تستغرق الجولة عادةً؟", a: "تتراوح الجولات بين نحو ساعة ونصف وثلاث ساعات حسب مدى صعودك في المضيق، وتُدمج بسهولة مع نزهة على الواجهة البحرية." },
+        ],
+        ctaTitle: "أبحر في البوسفور مع مرشد محلي",
+        ...IST.ar,
+      },
+      es: {
+        name: "El Bósforo",
+        metaTitle: "Cruceros por el Bósforo con guías locales",
+        metaDescription:
+          "Navega el Bósforo en Estambul con un guía local verificado. Pasa junto a palacios otomanos, yalıs a la orilla y la Torre de la Doncella, y escucha la historia de cada margen.",
+        intro: [
+          "El Bósforo es el estrecho que parte un continente: el sinuoso canal que separa Europa de Asia y une el mar Negro con el mar de Mármara. Un crucero clásico se desliza junto a palacios otomanos como Dolmabahçe, Beylerbeyi y Çırağan, las elegantes mansiones de madera a la orilla llamadas yalıs, la Torre de la Doncella en su islote, la Fortaleza de Rumeli y bajo los grandes puentes colgantes.",
+          "El crucero al atardecer es una de las experiencias icónicas de Estambul, pero desde el agua cuesta distinguir un palacio del siguiente. Con un local de VibeGuide a bordo aprendes cuál es cuál, qué historia pertenece a cada margen y por qué esta cinta de agua dio forma a un imperio.",
+        ],
+        highlights: [
+          { title: "Palacios desde el agua", desc: "Dolmabahçe, Beylerbeyi y Çırağan bordean las orillas con esplendor otomano." },
+          { title: "Dos continentes", desc: "Europa en una orilla, Asia en la otra, unidas por los grandes puentes colgantes." },
+          { title: "Yalıs y la Torre de la Doncella", desc: "Históricas mansiones de madera junto al agua y la pequeña torre que guarda el estrecho." },
+        ],
+        faqs: [
+          { q: "¿Vale la pena un crucero por el Bósforo con guía?", a: "Desde el agua los palacios se confunden. Un guía local nombra cada uno, cuenta su historia y señala los detalles que de otro modo pasarías de largo." },
+          { q: "¿Cuál es la mejor hora para navegar?", a: "El atardecer es icónico, cuando la luz brilla sobre palacios y puentes. Tu guía te ayuda a elegir la hora y el tipo de barco adecuado." },
+          { q: "¿Cuánto dura un crucero típico?", a: "Los tours van de 1,5 a 3 horas según lo lejos que subas por el estrecho, fáciles de combinar con un paseo por la orilla." },
+        ],
+        ctaTitle: "Navega el Bósforo con un local",
+        ...IST.es,
+      },
+      fr: {
+        name: "Le Bosphore",
+        metaTitle: "Croisières sur le Bosphore avec guides locaux",
+        metaDescription:
+          "Naviguez sur le Bosphore à Istanbul avec un guide local vérifié. Longez les palais ottomans, les yalıs au bord de l'eau et la Tour de Léandre, et découvrez l'histoire de chaque rive.",
+        intro: [
+          "Le Bosphore est le détroit qui fend un continent : le chenal sinueux qui sépare l'Europe de l'Asie et relie la mer Noire à la mer de Marmara. Une croisière classique longe des palais ottomans comme Dolmabahçe, Beylerbeyi et Çırağan, les gracieuses demeures de bois au bord de l'eau appelées yalıs, la Tour de Léandre sur son îlot, la forteresse de Roumélie et passe sous les grands ponts suspendus.",
+          "La croisière au coucher du soleil est l'une des expériences emblématiques d'Istanbul, mais depuis l'eau il est difficile de distinguer un palais du suivant. Avec un local VibeGuide à bord, vous apprenez lequel est lequel, quelle histoire appartient à quelle rive et pourquoi ce ruban d'eau a façonné un empire.",
+        ],
+        highlights: [
+          { title: "Les palais depuis l'eau", desc: "Dolmabahçe, Beylerbeyi et Çırağan bordent les rives dans leur splendeur ottomane." },
+          { title: "Deux continents", desc: "L'Europe sur une rive, l'Asie sur l'autre, reliées par les grands ponts suspendus." },
+          { title: "Yalıs & Tour de Léandre", desc: "D'historiques demeures de bois au bord de l'eau et la petite tour qui garde le détroit." },
+        ],
+        faqs: [
+          { q: "Une croisière sur le Bosphore vaut-elle le coup avec un guide ?", a: "Depuis l'eau, les palais se confondent. Un guide local nomme chacun, raconte son histoire et pointe les détails que vous dépasseriez sinon sans les voir." },
+          { q: "Quel est le meilleur moment pour naviguer ?", a: "Le coucher de soleil est emblématique, quand la lumière embrase palais et ponts. Votre guide vous aide à choisir l'heure et le bon type de bateau." },
+          { q: "Combien de temps dure une croisière ?", a: "Les tours durent de 1h30 à 3 heures selon la distance parcourue dans le détroit, faciles à combiner avec une promenade au bord de l'eau." },
+        ],
+        ctaTitle: "Naviguez sur le Bosphore avec un local",
+        ...IST.fr,
+      },
+      el: {
+        name: "Βόσπορος",
+        metaTitle: "Κρουαζιέρες στον Βόσπορο με ντόπιους ξεναγούς",
+        metaDescription:
+          "Πλεύσε στον Βόσπορο της Κωνσταντινούπολης με πιστοποιημένο ντόπιο ξεναγό. Προσπέρασε οθωμανικά ανάκτορα, παραθαλάσσια γιαλιά και τον Πύργο της Κόρης, και άκου την ιστορία κάθε ακτής.",
+        intro: [
+          "Ο Βόσπορος είναι το στενό που σχίζει μια ήπειρο — το φιδίσιο κανάλι που χωρίζει την Ευρώπη από την Ασία και ενώνει τη Μαύρη Θάλασσα με τη Θάλασσα του Μαρμαρά. Μια κλασική κρουαζιέρα γλιστρά δίπλα σε οθωμανικά ανάκτορα όπως το Ντολμάμπαχτσε, το Μπεϊλέρμπεϊ και το Τσιράγαν, τα κομψά ξύλινα παραθαλάσσια αρχοντικά που λέγονται γιαλιά, τον Πύργο της Κόρης στη νησίδα του, το Φρούριο Ρούμελι και κάτω από τις μεγάλες κρεμαστές γέφυρες.",
+          "Η κρουαζιέρα του ηλιοβασιλέματος είναι από τις εμβληματικές εμπειρίες της Κωνσταντινούπολης, όμως από το νερό δύσκολα ξεχωρίζεις το ένα ανάκτορο από το άλλο. Με έναν ντόπιο του VibeGuide στο πλοίο, μαθαίνεις ποιο είναι ποιο, ποια ιστορία ανήκει σε ποια ακτή και γιατί αυτή η κορδέλα νερού διαμόρφωσε μια αυτοκρατορία.",
+        ],
+        highlights: [
+          { title: "Ανάκτορα από το νερό", desc: "Το Ντολμάμπαχτσε, το Μπεϊλέρμπεϊ και το Τσιράγαν στολίζουν τις ακτές με οθωμανική λαμπρότητα." },
+          { title: "Δύο ήπειροι", desc: "Η Ευρώπη στη μία όχθη, η Ασία στην άλλη, ενωμένες με τις μεγάλες κρεμαστές γέφυρες." },
+          { title: "Γιαλιά & Πύργος της Κόρης", desc: "Ιστορικά ξύλινα παραθαλάσσια αρχοντικά και ο μικρός πύργος που φυλά το στενό." },
+        ],
+        faqs: [
+          { q: "Αξίζει η κρουαζιέρα στον Βόσπορο με ξεναγό;", a: "Από το νερό τα ανάκτορα μπερδεύονται. Ένας ντόπιος ξεναγός ονομάζει το καθένα, λέει την ιστορία του και δείχνει λεπτομέρειες που αλλιώς θα προσπερνούσες." },
+          { q: "Ποια είναι η καλύτερη ώρα για πλεύση;", a: "Το ηλιοβασίλεμα είναι εμβληματικό, όταν το φως λάμπει σε ανάκτορα και γέφυρες. Ο ξεναγός σου βοηθά να διαλέξεις την ώρα και το σωστό σκάφος." },
+          { q: "Πόσο διαρκεί μια τυπική κρουαζιέρα;", a: "Οι εκδρομές κυμαίνονται από 1,5 έως 3 ώρες, ανάλογα με το πόσο ανεβαίνεις στο στενό, και συνδυάζονται εύκολα με μια βόλτα στην παραλία." },
+        ],
+        ctaTitle: "Πλεύσε στον Βόσπορο με έναν ντόπιο",
+        ...IST.el,
+      },
+      tr: {
+        name: "Boğaziçi",
+        metaTitle: "Boğaziçi Tekne Turları & Yerel Rehberler",
+        metaDescription:
+          "İstanbul Boğazı'nda doğrulanmış bir yerel rehberle gez. Osmanlı saraylarının, sahildeki yalıların ve Kız Kulesi'nin önünden geç, her kıyının hikâyesini dinle.",
+        intro: [
+          "Boğaziçi bir kıtayı ikiye bölen boğazdır — Avrupa'yı Asya'dan ayıran, Karadeniz'i Marmara'ya bağlayan kıvrımlı su yolu. Klasik bir tekne turu; Dolmabahçe, Beylerbeyi ve Çırağan gibi Osmanlı saraylarının, yalı denen zarif ahşap sahil konaklarının, adacığındaki Kız Kulesi'nin, Rumeli Hisarı'nın önünden ve büyük asma köprülerin altından süzülür.",
+          "Gün batımı turu İstanbul'un ikonik deneyimlerinden biridir ama sudan bakınca bir sarayı diğerinden ayırmak zordur. Teknede bir VibeGuide yerel rehberiyle hangisinin hangisi olduğunu, hangi hikâyenin hangi kıyıya ait olduğunu ve bu su şeridinin bir imparatorluğu neden şekillendirdiğini öğrenirsin.",
+        ],
+        highlights: [
+          { title: "Sudan Saraylar", desc: "Dolmabahçe, Beylerbeyi ve Çırağan Osmanlı ihtişamıyla kıyıları süsler." },
+          { title: "İki Kıta", desc: "Bir yakada Avrupa, diğerinde Asya; büyük asma köprülerle birleşir." },
+          { title: "Yalılar & Kız Kulesi", desc: "Tarihi ahşap sahil konakları ve boğazı gözleyen küçük kule." },
+        ],
+        faqs: [
+          { q: "Rehberli bir Boğaz turu değer mi?", a: "Sudan bakınca saraylar birbirine karışır. Yerel rehber her birini adlandırır, hikâyesini anlatır ve fark etmeden geçeceğin ayrıntıları gösterir." },
+          { q: "Tur için en iyi zaman ne?", a: "Gün batımı ikoniktir; ışık saraylara ve köprülere vururken. Rehberin saati ve doğru tekne türünü seçmene yardım eder." },
+          { q: "Tipik bir tur ne kadar sürer?", a: "Boğazda ne kadar yukarı çıktığına göre turlar yaklaşık 1,5 ile 3 saat arasında değişir; sahil yürüyüşüyle kolayca birleşir." },
+        ],
+        ctaTitle: "Boğaziçi'ni bir yerelle gez",
+        ...IST.tr,
+      },
+      it: {
+        name: "Il Bosforo",
+        metaTitle: "Crociere sul Bosforo con guide locali",
+        metaDescription:
+          "Naviga il Bosforo a Istanbul con una guida locale verificata. Sfila davanti a palazzi ottomani, yalı sull'acqua e la Torre della Fanciulla, e ascolta la storia di ogni sponda.",
+        intro: [
+          "Il Bosforo è lo stretto che divide un continente: il canale sinuoso che separa l'Europa dall'Asia e collega il Mar Nero al Mar di Marmara. Una classica crociera scivola davanti a palazzi ottomani come Dolmabahçe, Beylerbeyi e Çırağan, alle eleganti dimore di legno sull'acqua chiamate yalı, alla Torre della Fanciulla sul suo isolotto, alla Fortezza di Rumeli e sotto i grandi ponti sospesi.",
+          "La crociera al tramonto è una delle esperienze iconiche di Istanbul, ma dall'acqua è difficile distinguere un palazzo dall'altro. Con un local di VibeGuide a bordo scopri quale sia quale, quale storia appartenga a quale sponda e perché questo nastro d'acqua abbia plasmato un impero.",
+        ],
+        highlights: [
+          { title: "Palazzi dall'acqua", desc: "Dolmabahçe, Beylerbeyi e Çırağan costeggiano le sponde nello splendore ottomano." },
+          { title: "Due continenti", desc: "L'Europa su una riva, l'Asia sull'altra, unite dai grandi ponti sospesi." },
+          { title: "Yalı e Torre della Fanciulla", desc: "Storiche dimore di legno sull'acqua e la piccola torre che veglia sullo stretto." },
+        ],
+        faqs: [
+          { q: "Vale la pena una crociera sul Bosforo con guida?", a: "Dall'acqua i palazzi si confondono. Una guida locale nomina ciascuno, ne racconta la storia e indica i dettagli che altrimenti supereresti senza notarli." },
+          { q: "Qual è il momento migliore per navigare?", a: "Il tramonto è iconico, quando la luce risplende su palazzi e ponti. La tua guida ti aiuta a scegliere l'ora e il tipo di barca giusto." },
+          { q: "Quanto dura una crociera tipica?", a: "I tour vanno da circa 1,5 a 3 ore secondo quanto risali lo stretto, facili da abbinare a una passeggiata lungo l'acqua." },
+        ],
+        ctaTitle: "Naviga il Bosforo con un locale",
+        ...IST.it,
+      },
+      pl: {
+        name: "Bosfor",
+        metaTitle: "Rejsy po Bosforze z lokalnymi przewodnikami",
+        metaDescription:
+          "Popłyń po Bosforze w Stambule ze zweryfikowanym lokalnym przewodnikiem. Mijaj osmańskie pałace, nadbrzeżne yalı i Wieżę Panny, i poznaj historię każdego brzegu.",
+        intro: [
+          "Bosfor to cieśnina, która rozcina kontynent — kręty kanał oddzielający Europę od Azji i łączący Morze Czarne z Morzem Marmara. Klasyczny rejs sunie obok osmańskich pałaców, takich jak Dolmabahçe, Beylerbeyi i Çırağan, obok wdzięcznych drewnianych nadbrzeżnych rezydencji zwanych yalı, Wieży Panny na jej wysepce, Twierdzy Rumeli i pod wielkimi mostami wiszącymi.",
+          "Rejs o zachodzie słońca to jedno z ikonicznych przeżyć Stambułu, ale z wody trudno odróżnić jeden pałac od drugiego. Z lokalnym przewodnikiem VibeGuide na pokładzie dowiesz się, który jest który, czyja historia należy do którego brzegu i dlaczego ta wstęga wody ukształtowała imperium.",
+        ],
+        highlights: [
+          { title: "Pałace od strony wody", desc: "Dolmabahçe, Beylerbeyi i Çırağan zdobią brzegi w osmańskim przepychu." },
+          { title: "Dwa kontynenty", desc: "Europa na jednym brzegu, Azja na drugim, połączone wielkimi mostami wiszącymi." },
+          { title: "Yalı i Wieża Panny", desc: "Historyczne drewniane rezydencje nad wodą i mała wieża strzegąca cieśniny." },
+        ],
+        faqs: [
+          { q: "Czy rejs po Bosforze z przewodnikiem się opłaca?", a: "Z wody pałace się zlewają. Lokalny przewodnik nazwie każdy, opowie jego historię i wskaże szczegóły, które inaczej byś minął." },
+          { q: "Kiedy najlepiej płynąć?", a: "Zachód słońca jest ikoniczny, gdy światło rozświetla pałace i mosty. Przewodnik pomoże wybrać godzinę i właściwy rodzaj łodzi." },
+          { q: "Ile trwa typowy rejs?", a: "Wycieczki trwają od około 1,5 do 3 godzin, zależnie od tego, jak daleko płyniesz w górę cieśniny, i łatwo łączą się ze spacerem wzdłuż nabrzeża." },
+        ],
+        ctaTitle: "Popłyń po Bosforze z lokalnym przewodnikiem",
+        ...IST.pl,
+      },
+      nl: {
+        name: "De Bosporus",
+        metaTitle: "Bosporus-cruises & lokale gidsen",
+        metaDescription:
+          "Vaar over de Bosporus in Istanbul met een geverifieerde lokale gids. Glijd langs Ottomaanse paleizen, yalı's aan het water en de Meisjestoren, en hoor het verhaal van elke oever.",
+        intro: [
+          "De Bosporus is de zeestraat die een continent splijt — de kronkelende geul die Europa van Azië scheidt en de Zwarte Zee met de Zee van Marmara verbindt. Een klassieke boottocht glijdt langs Ottomaanse paleizen als Dolmabahçe, Beylerbeyi en Çırağan, de sierlijke houten waterkantvilla's die yalı's heten, de Meisjestoren op haar eilandje, het Rumeli-fort en onder de grote hangbruggen door.",
+          "De zonsondergangcruise is een van de iconische ervaringen van Istanbul, maar vanaf het water is het ene paleis nauwelijks van het andere te onderscheiden. Met een local van VibeGuide aan boord leer je welk paleis welk is, welk verhaal bij welke oever hoort en waarom dit lint van water een rijk vormgaf.",
+        ],
+        highlights: [
+          { title: "Paleizen vanaf het water", desc: "Dolmabahçe, Beylerbeyi en Çırağan sieren de oevers in Ottomaanse pracht." },
+          { title: "Twee continenten", desc: "Europa aan de ene oever, Azië aan de andere, verbonden door de grote hangbruggen." },
+          { title: "Yalı's & de Meisjestoren", desc: "Historische houten waterkantvilla's en het torentje dat de zeestraat bewaakt." },
+        ],
+        faqs: [
+          { q: "Is een Bosporus-cruise met gids de moeite waard?", a: "Vanaf het water lopen de paleizen door elkaar. Een lokale gids benoemt elk paleis, vertelt het verhaal en wijst de details aan die je anders voorbij zou varen." },
+          { q: "Wanneer kun je het best varen?", a: "De zonsondergang is iconisch, wanneer het licht op paleizen en bruggen gloeit. Je gids helpt je het uur en het juiste type boot te kiezen." },
+          { q: "Hoe lang duurt een typische cruise?", a: "Tochten duren zo'n 1,5 tot 3 uur, afhankelijk van hoe ver je de zeestraat op vaart, makkelijk te combineren met een wandeling langs het water." },
+        ],
+        ctaTitle: "Vaar over de Bosporus met een local",
+        ...IST.nl,
+      },
+    },
+  },
+  {
+    slug: "aspendos",
+    city: "Antalya",
+    citySlug: "antalya",
+    emoji: "🎭",
+    image:
+      "https://images.unsplash.com/photo-1674715577456-49ae7a6945a8?q=80&w=1600",
+    lat: 36.939,
+    lng: 31.172,
+    i18n: {
+      en: {
+        name: "Aspendos",
+        metaTitle: "Aspendos Roman Theatre Tours & Local Guides",
+        metaDescription:
+          "Visit Aspendos near Antalya with a verified local guide. Stand in the best-preserved Roman theatre in the world and hear how its acoustics still work after 1,800 years.",
+        intro: [
+          "Aspendos is the best-preserved Roman theatre in the world — built in the 2nd century AD under Marcus Aurelius by the architect Zenon, and still able to seat some 15,000 to 20,000 people. Whisper on the stage and the back row hears you: its acoustics remain astonishing after nearly 1,800 years.",
+          "With a VibeGuide local expert you don't just look at old stone. You learn how the theatre worked, why it survived intact, and what to notice in the nearby Roman aqueduct — at your pace, in your language, roughly 45 km east of Antalya near Serik.",
+        ],
+        highlights: [
+          { title: "Perfect Acoustics", desc: "A word spoken on stage still reaches the highest tier, no microphone needed." },
+          { title: "Intact Roman Design", desc: "The stage building and seating survive almost complete — rare anywhere in the world." },
+          { title: "Opera & Ballet Festival", desc: "Each summer the ancient theatre fills again for the Aspendos International Festival." },
+        ],
+        faqs: [
+          { q: "Why is Aspendos so famous?", a: "It's the best-preserved Roman theatre anywhere, and its acoustics still work — a guide shows you exactly where to stand to test them." },
+          { q: "How far is Aspendos from Antalya?", a: "About 45 km east, near Serik — an easy day trip your VibeGuide guide can help you plan around the crowds and the heat." },
+          { q: "Is there more to see nearby?", a: "Yes — a Roman aqueduct stands close by, and a guide can add it and the surrounding sites to your visit." },
+        ],
+        ctaTitle: "See Aspendos with a local",
+        ...ANT.en,
+      },
+      de: {
+        name: "Aspendos",
+        metaTitle: "Aspendos Theater Touren & lokale Guides",
+        metaDescription:
+          "Besuche Aspendos bei Antalya mit einem geprüften lokalen Guide. Steh im besterhaltenen römischen Theater der Welt und erlebe, wie seine Akustik nach 1.800 Jahren noch wirkt.",
+        intro: [
+          "Aspendos ist das besterhaltene römische Theater der Welt — im 2. Jahrhundert n. Chr. unter Marc Aurel vom Architekten Zenon erbaut und noch heute für etwa 15.000 bis 20.000 Menschen ausgelegt. Flüstere auf der Bühne, und die hinterste Reihe hört dich: Die Akustik bleibt nach fast 1.800 Jahren verblüffend.",
+          "Mit einem lokalen VibeGuide-Experten betrachtest du nicht nur alte Steine. Du erfährst, wie das Theater funktionierte, warum es unversehrt blieb und worauf du beim nahen römischen Aquädukt achten solltest — in deinem Tempo, in deiner Sprache, rund 45 km östlich von Antalya bei Serik.",
+        ],
+        highlights: [
+          { title: "Perfekte Akustik", desc: "Ein Wort auf der Bühne erreicht noch die oberste Reihe, ganz ohne Mikrofon." },
+          { title: "Intakte römische Bauweise", desc: "Bühnengebäude und Zuschauerränge sind fast vollständig erhalten — weltweit selten." },
+          { title: "Opern- & Ballettfestival", desc: "Jeden Sommer füllt sich das antike Theater beim Internationalen Aspendos-Festival wieder." },
+        ],
+        faqs: [
+          { q: "Warum ist Aspendos so berühmt?", a: "Es ist das besterhaltene römische Theater überhaupt, und seine Akustik wirkt noch — ein Guide zeigt dir genau, wo du das ausprobierst." },
+          { q: "Wie weit ist Aspendos von Antalya entfernt?", a: "Etwa 45 km östlich, bei Serik — ein leichter Tagesausflug, den dein VibeGuide-Guide um Menschenmassen und Hitze herum planen hilft." },
+          { q: "Gibt es in der Nähe mehr zu sehen?", a: "Ja — ein römisches Aquädukt steht ganz in der Nähe, und ein Guide bindet es und die umliegenden Stätten in deinen Besuch ein." },
+        ],
+        ctaTitle: "Erlebe Aspendos mit einem Local",
+        ...ANT.de,
+      },
+      ru: {
+        name: "Аспендос",
+        metaTitle: "Аспендос: экскурсии с местными гидами",
+        metaDescription:
+          "Посетите Аспендос под Анталией с проверенным местным гидом. Встаньте в лучше всего сохранившемся римском театре мира и услышьте, как его акустика работает спустя 1800 лет.",
+        intro: [
+          "Аспендос — лучше всего сохранившийся римский театр в мире. Он построен во II веке н. э. при Марке Аврелии архитектором Зеноном и до сих пор вмещает около 15 000–20 000 человек. Шепните на сцене — и вас услышат в последнем ряду: акустика поражает почти 1800 лет спустя.",
+          "С местным экспертом VibeGuide вы не просто смотрите на старые камни. Вы узнаёте, как работал театр, почему он уцелел и на что обратить внимание у соседнего римского акведука — в своём ритме и на своём языке, примерно в 45 км к востоку от Анталии, возле Серика.",
+        ],
+        highlights: [
+          { title: "Идеальная акустика", desc: "Слово со сцены слышно в верхнем ряду — без всякого микрофона." },
+          { title: "Цельная римская архитектура", desc: "Сцена и ряды сидений сохранились почти полностью — большая редкость в мире." },
+          { title: "Фестиваль оперы и балета", desc: "Каждое лето античный театр вновь наполняется на Международном фестивале в Аспендосе." },
+        ],
+        faqs: [
+          { q: "Чем знаменит Аспендос?", a: "Это лучше всех сохранившийся римский театр, и его акустика по-прежнему работает — гид покажет, где именно встать, чтобы это проверить." },
+          { q: "Как далеко Аспендос от Анталии?", a: "Около 45 км к востоку, возле Серика — лёгкая поездка на день, которую гид VibeGuide поможет спланировать в обход толп и жары." },
+          { q: "Есть ли что посмотреть рядом?", a: "Да — поблизости стоит римский акведук, и гид добавит его и окрестные памятники к вашему визиту." },
+        ],
+        ctaTitle: "Увидеть Аспендос с местным гидом",
+        ...ANT.ru,
+      },
+      ar: {
+        name: "أسبندوس",
+        metaTitle: "جولات مسرح أسبندوس الروماني مع مرشدين محليين",
+        metaDescription:
+          "زر أسبندوس قرب أنطاليا مع مرشد محلي موثّق. قف في أفضل مسرح روماني محفوظ في العالم واسمع كيف ما زالت صوتياته تعمل بعد 1800 عام.",
+        intro: [
+          "أسبندوس هو أفضل مسرح روماني محفوظ في العالم — بُني في القرن الثاني الميلادي في عهد ماركوس أوريليوس على يد المعماري زينون، وما زال يتّسع لنحو 15,000 إلى 20,000 شخص. اهمس على المسرح فيسمعك الصف الأخير: صوتياته تبقى مذهلة بعد نحو 1800 عام.",
+          "مع خبير محلي من VibeGuide لا تكتفي بالنظر إلى حجارة قديمة. تتعلّم كيف كان المسرح يعمل، ولماذا بقي سليمًا، وما الذي تلاحظه في القناة المائية الرومانية القريبة — على إيقاعك وبلغتك، على بُعد نحو 45 كم شرق أنطاليا قرب سِريك.",
+        ],
+        highlights: [
+          { title: "صوتيات مثالية", desc: "كلمة تُقال على المسرح تصل إلى أعلى صف دون أي ميكروفون." },
+          { title: "تصميم روماني كامل", desc: "بناء المسرح والمدرّجات محفوظان شبه كاملين — أمر نادر في أي مكان بالعالم." },
+          { title: "مهرجان الأوبرا والباليه", desc: "كل صيف يمتلئ المسرح القديم من جديد في مهرجان أسبندوس الدولي." },
+        ],
+        faqs: [
+          { q: "لماذا يشتهر أسبندوس؟", a: "إنه أفضل مسرح روماني محفوظ على الإطلاق، وصوتياته ما زالت تعمل — يريك المرشد أين تقف بالضبط لتجربتها." },
+          { q: "كم يبعد أسبندوس عن أنطاليا؟", a: "نحو 45 كم شرقًا قرب سِريك — رحلة يوم سهلة يساعدك مرشد VibeGuide على تنظيمها بعيدًا عن الزحام والحر." },
+          { q: "هل هناك ما يُشاهد في الجوار؟", a: "نعم — تقف قناة مائية رومانية قريبة، ويمكن للمرشد أن يضيفها والمواقع المحيطة إلى زيارتك." },
+        ],
+        ctaTitle: "زر أسبندوس مع مرشد محلي",
+        ...ANT.ar,
+      },
+      es: {
+        name: "Aspendos",
+        metaTitle: "Tours del Teatro Romano de Aspendos con guías locales",
+        metaDescription:
+          "Visita Aspendos cerca de Antalya con un guía local verificado. Ponte de pie en el teatro romano mejor conservado del mundo y escucha cómo su acústica aún funciona tras 1.800 años.",
+        intro: [
+          "Aspendos es el teatro romano mejor conservado del mundo — construido en el siglo II d. C. bajo Marco Aurelio por el arquitecto Zenón, y aún con capacidad para unas 15.000 a 20.000 personas. Susurra en el escenario y la última fila te oye: su acústica sigue asombrando casi 1.800 años después.",
+          "Con un experto local de VibeGuide no solo miras piedras antiguas. Aprendes cómo funcionaba el teatro, por qué sobrevivió intacto y qué observar en el cercano acueducto romano — a tu ritmo y en tu idioma, a unos 45 km al este de Antalya, junto a Serik.",
+        ],
+        highlights: [
+          { title: "Acústica perfecta", desc: "Una palabra dicha en el escenario llega a la grada más alta, sin micrófono." },
+          { title: "Diseño romano intacto", desc: "El edificio escénico y las gradas se conservan casi completos — algo raro en el mundo." },
+          { title: "Festival de Ópera y Ballet", desc: "Cada verano el teatro antiguo se llena de nuevo en el Festival Internacional de Aspendos." },
+        ],
+        faqs: [
+          { q: "¿Por qué es tan famoso Aspendos?", a: "Es el teatro romano mejor conservado que existe, y su acústica aún funciona — un guía te muestra exactamente dónde ponerte para comprobarla." },
+          { q: "¿A qué distancia está Aspendos de Antalya?", a: "A unos 45 km al este, junto a Serik — una excursión fácil de un día que tu guía de VibeGuide te ayuda a planear evitando el gentío y el calor." },
+          { q: "¿Hay más que ver cerca?", a: "Sí — un acueducto romano se alza muy cerca, y un guía puede añadirlo junto con los sitios de alrededor a tu visita." },
+        ],
+        ctaTitle: "Visita Aspendos con un local",
+        ...ANT.es,
+      },
+      fr: {
+        name: "Aspendos",
+        metaTitle: "Visites du théâtre romain d'Aspendos avec guides locaux",
+        metaDescription:
+          "Visitez Aspendos près d'Antalya avec un guide local vérifié. Tenez-vous dans le théâtre romain le mieux conservé du monde et écoutez son acoustique fonctionner encore après 1 800 ans.",
+        intro: [
+          "Aspendos est le théâtre romain le mieux conservé du monde — construit au IIe siècle apr. J.-C. sous Marc Aurèle par l'architecte Zénon, et pouvant encore accueillir quelque 15 000 à 20 000 personnes. Chuchotez sur la scène et le dernier rang vous entend : l'acoustique reste stupéfiante près de 1 800 ans plus tard.",
+          "Avec un expert local VibeGuide, vous ne regardez pas seulement de vieilles pierres. Vous comprenez comment le théâtre fonctionnait, pourquoi il a survécu intact et quoi observer sur l'aqueduc romain voisin — à votre rythme et dans votre langue, à environ 45 km à l'est d'Antalya, près de Serik.",
+        ],
+        highlights: [
+          { title: "Acoustique parfaite", desc: "Un mot dit sur scène atteint encore le gradin le plus haut, sans micro." },
+          { title: "Architecture romaine intacte", desc: "Le mur de scène et les gradins subsistent presque entiers — chose rare au monde." },
+          { title: "Festival d'opéra et de ballet", desc: "Chaque été, le théâtre antique se remplit à nouveau pour le Festival international d'Aspendos." },
+        ],
+        faqs: [
+          { q: "Pourquoi Aspendos est-il si célèbre ?", a: "C'est le théâtre romain le mieux conservé qui soit, et son acoustique fonctionne toujours — un guide vous montre exactement où vous placer pour l'essayer." },
+          { q: "À quelle distance Aspendos est-il d'Antalya ?", a: "Environ 45 km à l'est, près de Serik — une excursion facile à la journée que votre guide VibeGuide vous aide à planifier en évitant la foule et la chaleur." },
+          { q: "Y a-t-il autre chose à voir à proximité ?", a: "Oui — un aqueduc romain se dresse tout près, et un guide peut l'ajouter avec les sites alentour à votre visite." },
+        ],
+        ctaTitle: "Découvrez Aspendos avec un local",
+        ...ANT.fr,
+      },
+      el: {
+        name: "Άσπενδος",
+        metaTitle: "Ξεναγήσεις στο Ρωμαϊκό Θέατρο της Ασπένδου με ντόπιους ξεναγούς",
+        metaDescription:
+          "Επισκέψου την Άσπενδο κοντά στην Αττάλεια με πιστοποιημένο ντόπιο ξεναγό. Στάσου στο καλύτερα διατηρημένο ρωμαϊκό θέατρο του κόσμου και άκου την ακουστική του να λειτουργεί μετά από 1.800 χρόνια.",
+        intro: [
+          "Η Άσπενδος είναι το καλύτερα διατηρημένο ρωμαϊκό θέατρο του κόσμου — χτισμένο τον 2ο αιώνα μ.Χ. επί Μάρκου Αυρηλίου από τον αρχιτέκτονα Ζήνωνα, και ακόμη χωρά περίπου 15.000 έως 20.000 θεατές. Ψιθύρισε στη σκηνή και σε ακούει η τελευταία σειρά: η ακουστική παραμένει εκπληκτική σχεδόν 1.800 χρόνια μετά.",
+          "Με έναν ντόπιο ειδικό του VibeGuide δεν κοιτάς απλώς παλιές πέτρες. Μαθαίνεις πώς λειτουργούσε το θέατρο, γιατί σώθηκε ακέραιο και τι να προσέξεις στο κοντινό ρωμαϊκό υδραγωγείο — με τον δικό σου ρυθμό, στη γλώσσα σου, περίπου 45 χλμ. ανατολικά της Αττάλειας, κοντά στο Σέρικ.",
+        ],
+        highlights: [
+          { title: "Τέλεια ακουστική", desc: "Μια λέξη στη σκηνή φτάνει ως την ψηλότερη σειρά, χωρίς μικρόφωνο." },
+          { title: "Ακέραιη ρωμαϊκή αρχιτεκτονική", desc: "Το κτίριο της σκηνής και τα εδώλια σώζονται σχεδόν πλήρη — σπάνιο οπουδήποτε στον κόσμο." },
+          { title: "Φεστιβάλ όπερας και μπαλέτου", desc: "Κάθε καλοκαίρι το αρχαίο θέατρο ξαναγεμίζει για το Διεθνές Φεστιβάλ Ασπένδου." },
+        ],
+        faqs: [
+          { q: "Γιατί είναι τόσο διάσημη η Άσπενδος;", a: "Είναι το καλύτερα διατηρημένο ρωμαϊκό θέατρο που υπάρχει, και η ακουστική του δουλεύει ακόμη — ένας ξεναγός σου δείχνει ακριβώς πού να σταθείς για να τη δοκιμάσεις." },
+          { q: "Πόσο απέχει η Άσπενδος από την Αττάλεια;", a: "Περίπου 45 χλμ. ανατολικά, κοντά στο Σέρικ — μια εύκολη ημερήσια εκδρομή που ο ξεναγός VibeGuide σε βοηθά να οργανώσεις μακριά από τον συνωστισμό και τη ζέστη." },
+          { q: "Υπάρχει κάτι άλλο να δεις εκεί κοντά;", a: "Ναι — ένα ρωμαϊκό υδραγωγείο στέκει πολύ κοντά, και ένας ξεναγός μπορεί να το προσθέσει μαζί με τους γύρω χώρους στην επίσκεψή σου." },
+        ],
+        ctaTitle: "Δες την Άσπενδο με έναν ντόπιο",
+        ...ANT.el,
+      },
+      tr: {
+        name: "Aspendos",
+        metaTitle: "Aspendos Antik Tiyatrosu Turları & Yerel Rehberler",
+        metaDescription:
+          "Antalya yakınındaki Aspendos'u doğrulanmış bir yerel rehberle gez. Dünyanın en iyi korunmuş Roma tiyatrosunda dur ve 1.800 yıl sonra hâlâ işleyen akustiğini dinle.",
+        intro: [
+          "Aspendos dünyanın en iyi korunmuş Roma tiyatrosudur — MS 2. yüzyılda Marcus Aurelius döneminde mimar Zenon tarafından yapıldı ve hâlâ yaklaşık 15.000–20.000 kişi alabiliyor. Sahnede fısılda, en arka sıra seni duysun: akustiği neredeyse 1.800 yıl sonra bile hayret verici.",
+          "VibeGuide yerel uzmanıyla yalnızca eski taşlara bakmazsın. Tiyatronun nasıl çalıştığını, neden sağlam kaldığını ve yakındaki Roma su kemerinde neye dikkat edeceğini öğrenirsin — kendi temponda, kendi dilinde, Antalya'nın yaklaşık 45 km doğusunda, Serik yakınında.",
+        ],
+        highlights: [
+          { title: "Kusursuz Akustik", desc: "Sahnede söylenen bir söz en üst sıraya ulaşır, mikrofona gerek yok." },
+          { title: "Bozulmamış Roma Tasarımı", desc: "Sahne binası ve oturma sıraları neredeyse eksiksiz durur — dünyada nadir." },
+          { title: "Opera ve Bale Festivali", desc: "Her yaz antik tiyatro, Uluslararası Aspendos Festivali'yle yeniden dolar." },
+        ],
+        faqs: [
+          { q: "Aspendos neden bu kadar ünlü?", a: "Var olan en iyi korunmuş Roma tiyatrosudur ve akustiği hâlâ çalışır — rehber, denemek için tam olarak nerede duracağını gösterir." },
+          { q: "Aspendos Antalya'ya ne kadar uzak?", a: "Serik yakınında, yaklaşık 45 km doğuda — VibeGuide rehberinin kalabalık ve sıcaktan kaçınarak planlamana yardım ettiği kolay bir günübirlik gezi." },
+          { q: "Yakınlarda görülecek başka yer var mı?", a: "Evet — hemen yakında bir Roma su kemeri var; rehber onu ve çevredeki yerleri ziyaretine ekleyebilir." },
+        ],
+        ctaTitle: "Aspendos'u bir yerelle gez",
+        ...ANT.tr,
+      },
+      it: {
+        name: "Aspendos",
+        metaTitle: "Tour del Teatro Romano di Aspendos con guide locali",
+        metaDescription:
+          "Visita Aspendos vicino ad Antalya con una guida locale verificata. Entra nel teatro romano meglio conservato al mondo e ascolta la sua acustica funzionare ancora dopo 1.800 anni.",
+        intro: [
+          "Aspendos è il teatro romano meglio conservato al mondo — costruito nel II secolo d.C. sotto Marco Aurelio dall'architetto Zenone, e ancora capace di ospitare circa 15.000-20.000 persone. Sussurra sul palco e l'ultima fila ti sente: la sua acustica resta sbalorditiva quasi 1.800 anni dopo.",
+          "Con un esperto locale di VibeGuide non guardi soltanto vecchie pietre. Scopri come funzionava il teatro, perché è sopravvissuto intatto e cosa notare nel vicino acquedotto romano — al tuo ritmo e nella tua lingua, a circa 45 km a est di Antalya, presso Serik.",
+        ],
+        highlights: [
+          { title: "Acustica perfetta", desc: "Una parola detta sul palco raggiunge ancora l'ultima gradinata, senza microfono." },
+          { title: "Struttura romana intatta", desc: "L'edificio scenico e le gradinate si conservano quasi completi — cosa rara al mondo." },
+          { title: "Festival di Opera e Balletto", desc: "Ogni estate l'antico teatro torna a riempirsi per il Festival Internazionale di Aspendos." },
+        ],
+        faqs: [
+          { q: "Perché Aspendos è così famoso?", a: "È il teatro romano meglio conservato che esista, e la sua acustica funziona ancora — una guida ti mostra esattamente dove metterti per provarla." },
+          { q: "Quanto dista Aspendos da Antalya?", a: "Circa 45 km a est, presso Serik — una facile gita in giornata che la tua guida VibeGuide ti aiuta a organizzare evitando folla e caldo." },
+          { q: "C'è altro da vedere nei dintorni?", a: "Sì — un acquedotto romano si erge lì vicino, e una guida può aggiungerlo con i siti circostanti alla tua visita." },
+        ],
+        ctaTitle: "Scopri Aspendos con un locale",
+        ...ANT.it,
+      },
+      pl: {
+        name: "Aspendos",
+        metaTitle: "Aspendos — teatr rzymski, wycieczki z lokalnymi przewodnikami",
+        metaDescription:
+          "Zwiedź Aspendos koło Antalyi z zweryfikowanym lokalnym przewodnikiem. Stań w najlepiej zachowanym teatrze rzymskim świata i usłysz, jak jego akustyka działa po 1800 latach.",
+        intro: [
+          "Aspendos to najlepiej zachowany teatr rzymski na świecie — wzniesiony w II wieku n.e. za Marka Aureliusza przez architekta Zenona i wciąż mieszczący około 15 000–20 000 widzów. Szepnij na scenie, a usłyszy cię ostatni rząd: akustyka pozostaje zdumiewająca po niemal 1800 latach.",
+          "Z lokalnym ekspertem VibeGuide nie patrzysz tylko na stare kamienie. Dowiadujesz się, jak działał teatr, dlaczego przetrwał w całości i na co zwrócić uwagę przy pobliskim rzymskim akwedukcie — we własnym tempie i w swoim języku, około 45 km na wschód od Antalyi, koło Serik.",
+        ],
+        highlights: [
+          { title: "Idealna akustyka", desc: "Słowo wypowiedziane na scenie dociera do najwyższego rzędu, bez mikrofonu." },
+          { title: "Nienaruszona rzymska konstrukcja", desc: "Budynek sceny i widownia zachowały się niemal w całości — rzadkość na świecie." },
+          { title: "Festiwal opery i baletu", desc: "Każdego lata antyczny teatr znów się zapełnia podczas Międzynarodowego Festiwalu w Aspendos." },
+        ],
+        faqs: [
+          { q: "Dlaczego Aspendos jest tak sławny?", a: "To najlepiej zachowany teatr rzymski, jaki istnieje, a jego akustyka wciąż działa — przewodnik pokaże ci dokładnie, gdzie stanąć, by ją sprawdzić." },
+          { q: "Jak daleko jest Aspendos od Antalyi?", a: "Około 45 km na wschód, koło Serik — łatwa jednodniowa wycieczka, którą przewodnik VibeGuide pomoże zaplanować z dala od tłumów i upału." },
+          { q: "Czy w pobliżu jest coś jeszcze do zobaczenia?", a: "Tak — tuż obok stoi rzymski akwedukt, a przewodnik może dołączyć go wraz z okolicznymi zabytkami do twojej wizyty." },
+        ],
+        ctaTitle: "Zobacz Aspendos z lokalnym przewodnikiem",
+        ...ANT.pl,
+      },
+      nl: {
+        name: "Aspendos",
+        metaTitle: "Aspendos Romeins Theater-tours & lokale gidsen",
+        metaDescription:
+          "Bezoek Aspendos bij Antalya met een geverifieerde lokale gids. Sta in het best bewaarde Romeinse theater ter wereld en hoor hoe de akoestiek na 1.800 jaar nog werkt.",
+        intro: [
+          "Aspendos is het best bewaarde Romeinse theater ter wereld — gebouwd in de 2e eeuw n.Chr. onder Marcus Aurelius door architect Zenon, en nog altijd geschikt voor zo'n 15.000 tot 20.000 mensen. Fluister op het toneel en de achterste rij hoort je: de akoestiek blijft na bijna 1.800 jaar verbluffend.",
+          "Met een lokale VibeGuide-expert kijk je niet alleen naar oude stenen. Je leert hoe het theater werkte, waarom het gaaf bleef en waar je op moet letten bij het nabije Romeinse aquaduct — in jouw tempo en in jouw taal, ongeveer 45 km ten oosten van Antalya, bij Serik.",
+        ],
+        highlights: [
+          { title: "Perfecte akoestiek", desc: "Een woord op het toneel bereikt nog de bovenste rij, zonder microfoon." },
+          { title: "Gaaf Romeins ontwerp", desc: "Het toneelgebouw en de tribunes zijn bijna compleet bewaard — zeldzaam waar ook ter wereld." },
+          { title: "Opera- & balletfestival", desc: "Elke zomer stroomt het antieke theater weer vol voor het Internationale Aspendos-festival." },
+        ],
+        faqs: [
+          { q: "Waarom is Aspendos zo beroemd?", a: "Het is het best bewaarde Romeinse theater dat er is, en de akoestiek werkt nog — een gids laat je precies zien waar je moet staan om het te testen." },
+          { q: "Hoe ver is Aspendos van Antalya?", a: "Ongeveer 45 km naar het oosten, bij Serik — een makkelijke dagtrip die je VibeGuide-gids helpt plannen buiten de drukte en de hitte om." },
+          { q: "Is er in de buurt meer te zien?", a: "Ja — vlakbij staat een Romeins aquaduct, en een gids kan het samen met de omliggende plekken aan je bezoek toevoegen." },
+        ],
+        ctaTitle: "Bezoek Aspendos met een local",
+        ...ANT.nl,
+      },
+    },
+  },
+  {
+    slug: "kaleici",
+    city: "Antalya",
+    citySlug: "antalya",
+    emoji: "🏘️",
+    image:
+      "https://images.unsplash.com/photo-1690098520669-aa8bf6889a0a?q=80&w=1600",
+    lat: 36.8841,
+    lng: 30.7056,
+    i18n: {
+      en: {
+        name: "Kaleiçi (Old Town)",
+        metaTitle: "Kaleiçi Antalya Old Town Tours & Local Guides",
+        metaDescription:
+          "Wander Kaleiçi, Antalya's old town, with a verified local guide. Cobbled Ottoman lanes, Hadrian's Gate and a Roman harbour — the stories behind every corner.",
+        intro: [
+          "Kaleiçi is Antalya's atmospheric old town — a maze of cobbled lanes lined with restored Ottoman-Greek houses, boutique hotels and cafés, all wrapped around a Roman-era harbour. It's the kind of place where every archway hides a story.",
+          "With a VibeGuide local expert you don't just wander and hope. Walk through Hadrian's Gate, look up at the fluted Yivli Minaret, watch the sun set from Hıdırlık Tower and end with a boat trip from the old marina — at your pace, in your language.",
+        ],
+        highlights: [
+          { title: "Hadrian's Gate", desc: "A triple marble arch built in 130 AD for Emperor Hadrian's visit to the city." },
+          { title: "Yivli Minaret", desc: "The fluted brick minaret that has become the symbol of Antalya's skyline." },
+          { title: "The Roman Harbour", desc: "The old marina below the walls — perfect for a sunset boat trip." },
+        ],
+        faqs: [
+          { q: "What is there to do in Kaleiçi?", a: "Walk the Ottoman lanes, see Hadrian's Gate and Hıdırlık Tower, then take a harbour boat trip — a local guide ties it all into one easy route." },
+          { q: "Is Kaleiçi walkable?", a: "Yes, it's compact and best explored on foot; a guide keeps you off the tourist-trap streets and onto the beautiful ones." },
+          { q: "When is the best time to visit?", a: "Late afternoon into sunset is magical, especially from Hıdırlık Tower — your VibeGuide guide can time it perfectly." },
+        ],
+        ctaTitle: "Explore Kaleiçi with a local",
+        ...ANT.en,
+      },
+      de: {
+        name: "Kaleiçi (Altstadt)",
+        metaTitle: "Kaleiçi Antalya Altstadt Touren & lokale Guides",
+        metaDescription:
+          "Erkunde Kaleiçi, die Altstadt von Antalya, mit einem geprüften lokalen Guide. Osmanische Kopfsteingassen, das Hadrianstor und ein römischer Hafen — die Geschichten hinter jeder Ecke.",
+        intro: [
+          "Kaleiçi ist die stimmungsvolle Altstadt von Antalya — ein Labyrinth aus Kopfsteingassen mit restaurierten osmanisch-griechischen Häusern, Boutique-Hotels und Cafés, alles rund um einen römischen Hafen. Ein Ort, an dem jeder Torbogen eine Geschichte verbirgt.",
+          "Mit einem lokalen VibeGuide-Experten schlenderst du nicht nur auf gut Glück. Geh durch das Hadrianstor, blick hinauf zum kannelierten Yivli-Minarett, sieh den Sonnenuntergang vom Hıdırlık-Turm und schließe mit einer Bootsfahrt vom alten Hafen ab — in deinem Tempo, in deiner Sprache.",
+        ],
+        highlights: [
+          { title: "Das Hadrianstor", desc: "Ein dreifacher Marmorbogen, 130 n. Chr. zum Besuch von Kaiser Hadrian errichtet." },
+          { title: "Yivli-Minarett", desc: "Das kannelierte Ziegelminarett, zum Wahrzeichen der Silhouette von Antalya geworden." },
+          { title: "Der römische Hafen", desc: "Der alte Hafen unter den Mauern — ideal für eine Bootsfahrt zum Sonnenuntergang." },
+        ],
+        faqs: [
+          { q: "Was kann man in Kaleiçi unternehmen?", a: "Durch die osmanischen Gassen gehen, das Hadrianstor und den Hıdırlık-Turm sehen, dann eine Hafenrundfahrt machen — ein lokaler Guide fügt alles zu einer leichten Route zusammen." },
+          { q: "Kann man Kaleiçi zu Fuß erkunden?", a: "Ja, es ist kompakt und zu Fuß am schönsten; ein Guide hält dich fern von Touristenfallen und führt dich zu den schönen Ecken." },
+          { q: "Wann besucht man Kaleiçi am besten?", a: "Der späte Nachmittag bis zum Sonnenuntergang ist magisch, besonders vom Hıdırlık-Turm — dein VibeGuide-Guide plant den perfekten Zeitpunkt." },
+        ],
+        ctaTitle: "Entdecke Kaleiçi mit einem Local",
+        ...ANT.de,
+      },
+      ru: {
+        name: "Калеичи",
+        metaTitle: "Старый город Калеичи в Анталии: экскурсии с местными гидами",
+        metaDescription:
+          "Пройдитесь по Калеичи, старому городу Анталии, с проверенным местным гидом. Мощёные османские улочки, ворота Адриана и римская гавань — история за каждым углом.",
+        intro: [
+          "Калеичи — атмосферный старый город Анталии: лабиринт мощёных улочек с отреставрированными османско-греческими домами, бутик-отелями и кафе, окружающими гавань римских времён. Здесь за каждой аркой прячется своя история.",
+          "С местным экспертом VibeGuide вы не просто бродите наугад. Пройдите через ворота Адриана, поднимите взгляд на рифлёный минарет Йивли, встретьте закат с башни Хыдырлык и завершите прогулку лодочной поездкой из старой гавани — в своём ритме и на своём языке.",
+        ],
+        highlights: [
+          { title: "Ворота Адриана", desc: "Тройная мраморная арка, построенная в 130 году к визиту императора Адриана." },
+          { title: "Минарет Йивли", desc: "Рифлёный кирпичный минарет, ставший символом силуэта Анталии." },
+          { title: "Римская гавань", desc: "Старая пристань под стенами — идеальна для лодочной прогулки на закате." },
+        ],
+        faqs: [
+          { q: "Что делать в Калеичи?", a: "Пройтись по османским улочкам, увидеть ворота Адриана и башню Хыдырлык, а затем прокатиться на лодке из гавани — местный гид соберёт всё в один удобный маршрут." },
+          { q: "Можно ли обойти Калеичи пешком?", a: "Да, район компактный и лучше всего исследуется пешком; гид уводит вас от туристических ловушек к самым красивым улицам." },
+          { q: "Когда лучше приходить?", a: "Вечер к закату — волшебное время, особенно с башни Хыдырлык; гид VibeGuide подберёт идеальный момент." },
+        ],
+        ctaTitle: "Исследовать Калеичи с местным гидом",
+        ...ANT.ru,
+      },
+      ar: {
+        name: "كاليتشي",
+        metaTitle: "جولات مدينة كاليتشي القديمة في أنطاليا مع مرشدين محليين",
+        metaDescription:
+          "تجوّل في كاليتشي، مدينة أنطاليا القديمة، مع مرشد محلي موثّق. أزقّة عثمانية مرصوفة، وبوابة هادريان، وميناء روماني — القصص وراء كل زاوية.",
+        intro: [
+          "كاليتشي هي مدينة أنطاليا القديمة الساحرة — متاهة من الأزقّة المرصوفة تحيط بها بيوت عثمانية-يونانية مُرمّمة وفنادق صغيرة ومقاهٍ، وكلها تلتفّ حول ميناء يعود إلى العصر الروماني. مكان يخبّئ فيه كل قوس حكاية.",
+          "مع خبير محلي من VibeGuide لا تتجوّل على غير هدى. اعبر بوابة هادريان، وارفع نظرك إلى مئذنة يِيڤلي المضلّعة، وشاهد الغروب من برج هيدرلِك، واختم بجولة بحرية من الميناء القديم — على إيقاعك وبلغتك.",
+        ],
+        highlights: [
+          { title: "بوابة هادريان", desc: "قوس رخامي ثلاثي بُني عام 130م بمناسبة زيارة الإمبراطور هادريان للمدينة." },
+          { title: "مئذنة يِيڤلي", desc: "المئذنة الآجرّية المضلّعة التي صارت رمزًا لأفق أنطاليا." },
+          { title: "الميناء الروماني", desc: "المرسى القديم أسفل الأسوار — مثالي لجولة بحرية عند الغروب." },
+        ],
+        faqs: [
+          { q: "ماذا يمكن أن أفعل في كاليتشي؟", a: "امشِ في الأزقّة العثمانية، وشاهد بوابة هادريان وبرج هيدرلِك، ثم اركب جولة بحرية من الميناء — يجمع لك المرشد المحلي كل ذلك في مسار واحد سهل." },
+          { q: "هل يمكن التجوّل في كاليتشي مشيًا؟", a: "نعم، فهي مدمجة وأجمل ما تُكتشف سيرًا على الأقدام؛ يُبعدك المرشد عن الشوارع السياحية المزدحمة ويقودك إلى أجملها." },
+          { q: "ما أفضل وقت للزيارة؟", a: "ما بعد العصر حتى الغروب وقت ساحر، خصوصًا من برج هيدرلِك — يضبط لك مرشد VibeGuide التوقيت تمامًا." },
+        ],
+        ctaTitle: "استكشف كاليتشي مع مرشد محلي",
+        ...ANT.ar,
+      },
+      es: {
+        name: "Kaleiçi (Casco Antiguo)",
+        metaTitle: "Tours del casco antiguo de Kaleiçi en Antalya con guías locales",
+        metaDescription:
+          "Pasea por Kaleiçi, el casco antiguo de Antalya, con un guía local verificado. Callejuelas otomanas empedradas, la Puerta de Adriano y un puerto romano — la historia tras cada esquina.",
+        intro: [
+          "Kaleiçi es el evocador casco antiguo de Antalya — un laberinto de callejuelas empedradas con casas otomano-griegas restauradas, hoteles boutique y cafés, todo alrededor de un puerto de época romana. Es un lugar donde cada arco esconde una historia.",
+          "Con un experto local de VibeGuide no vagas al azar. Cruza la Puerta de Adriano, alza la vista al acanalado Minarete Yivli, contempla el atardecer desde la Torre Hıdırlık y termina con un paseo en barco desde el viejo puerto — a tu ritmo y en tu idioma.",
+        ],
+        highlights: [
+          { title: "Puerta de Adriano", desc: "Un triple arco de mármol erigido en el año 130 para la visita del emperador Adriano." },
+          { title: "Minarete Yivli", desc: "El minarete de ladrillo acanalado, convertido en símbolo del perfil de Antalya." },
+          { title: "El puerto romano", desc: "El viejo muelle bajo las murallas — perfecto para un paseo en barco al atardecer." },
+        ],
+        faqs: [
+          { q: "¿Qué se puede hacer en Kaleiçi?", a: "Recorrer las callejuelas otomanas, ver la Puerta de Adriano y la Torre Hıdırlık, y luego dar un paseo en barco por el puerto — un guía local lo une todo en una ruta fácil." },
+          { q: "¿Se puede recorrer Kaleiçi a pie?", a: "Sí, es compacto y se disfruta mejor caminando; un guía te aparta de las calles trampa y te lleva a las más bonitas." },
+          { q: "¿Cuál es el mejor momento para visitarlo?", a: "El atardecer es mágico, sobre todo desde la Torre Hıdırlık — tu guía de VibeGuide puede calcular el momento perfecto." },
+        ],
+        ctaTitle: "Explora Kaleiçi con un local",
+        ...ANT.es,
+      },
+      fr: {
+        name: "Kaleiçi (Vieille Ville)",
+        metaTitle: "Visites de la vieille ville de Kaleiçi à Antalya avec guides locaux",
+        metaDescription:
+          "Flânez dans Kaleiçi, la vieille ville d'Antalya, avec un guide local vérifié. Ruelles ottomanes pavées, porte d'Hadrien et port romain — l'histoire derrière chaque coin de rue.",
+        intro: [
+          "Kaleiçi est la vieille ville pleine de charme d'Antalya — un dédale de ruelles pavées bordées de maisons ottomanes-grecques restaurées, d'hôtels de charme et de cafés, le tout autour d'un port d'époque romaine. Un lieu où chaque arche cache une histoire.",
+          "Avec un expert local VibeGuide, vous ne flânez pas au hasard. Passez sous la porte d'Hadrien, levez les yeux vers le minaret cannelé Yivli, admirez le coucher de soleil depuis la tour Hıdırlık et terminez par une balade en bateau depuis le vieux port — à votre rythme et dans votre langue.",
+        ],
+        highlights: [
+          { title: "Porte d'Hadrien", desc: "Un triple arc de marbre édifié en 130 apr. J.-C. pour la visite de l'empereur Hadrien." },
+          { title: "Minaret Yivli", desc: "Le minaret de brique cannelé, devenu le symbole de la silhouette d'Antalya." },
+          { title: "Le port romain", desc: "Le vieux port au pied des remparts — parfait pour une balade en bateau au coucher du soleil." },
+        ],
+        faqs: [
+          { q: "Que faire à Kaleiçi ?", a: "Parcourir les ruelles ottomanes, voir la porte d'Hadrien et la tour Hıdırlık, puis faire une promenade en bateau depuis le port — un guide local relie le tout en un itinéraire facile." },
+          { q: "Peut-on visiter Kaleiçi à pied ?", a: "Oui, le quartier est compact et se découvre au mieux à pied ; un guide vous éloigne des rues à touristes pour vous mener aux plus belles." },
+          { q: "Quel est le meilleur moment pour visiter ?", a: "La fin d'après-midi jusqu'au coucher de soleil est magique, surtout depuis la tour Hıdırlık — votre guide VibeGuide en règle le timing parfait." },
+        ],
+        ctaTitle: "Explorez Kaleiçi avec un local",
+        ...ANT.fr,
+      },
+      el: {
+        name: "Καλεϊτσί",
+        metaTitle: "Ξεναγήσεις στην Παλιά Πόλη Καλεϊτσί της Αττάλειας με ντόπιους ξεναγούς",
+        metaDescription:
+          "Περπάτησε στο Καλεϊτσί, την παλιά πόλη της Αττάλειας, με πιστοποιημένο ντόπιο ξεναγό. Πλακόστρωτα οθωμανικά σοκάκια, η Πύλη του Αδριανού και ένα ρωμαϊκό λιμάνι — οι ιστορίες πίσω από κάθε γωνιά.",
+        intro: [
+          "Το Καλεϊτσί είναι η ατμοσφαιρική παλιά πόλη της Αττάλειας — ένας λαβύρινθος από πλακόστρωτα σοκάκια με αναστηλωμένα οθωμανικά-ελληνικά σπίτια, μπουτίκ ξενοδοχεία και καφέ, όλα γύρω από ένα λιμάνι ρωμαϊκής εποχής. Ένα μέρος όπου κάθε καμάρα κρύβει μια ιστορία.",
+          "Με έναν ντόπιο ειδικό του VibeGuide δεν περιπλανιέσαι στην τύχη. Πέρνα από την Πύλη του Αδριανού, σήκωσε το βλέμμα στον ραβδωτό μιναρέ Γιβλί, δες το ηλιοβασίλεμα από τον Πύργο Χιντιρλίκ και κλείσε με μια βαρκάδα από το παλιό λιμάνι — με τον δικό σου ρυθμό, στη γλώσσα σου.",
+        ],
+        highlights: [
+          { title: "Πύλη του Αδριανού", desc: "Τριπλή μαρμάρινη αψίδα χτισμένη το 130 μ.Χ. για την επίσκεψη του αυτοκράτορα Αδριανού." },
+          { title: "Μιναρές Γιβλί", desc: "Ο ραβδωτός πλίνθινος μιναρές που έγινε σύμβολο του ορίζοντα της Αττάλειας." },
+          { title: "Το ρωμαϊκό λιμάνι", desc: "Το παλιό λιμάνι κάτω από τα τείχη — ιδανικό για βαρκάδα στο ηλιοβασίλεμα." },
+        ],
+        faqs: [
+          { q: "Τι να κάνω στο Καλεϊτσί;", a: "Περπάτα στα οθωμανικά σοκάκια, δες την Πύλη του Αδριανού και τον Πύργο Χιντιρλίκ, και μετά κάνε βαρκάδα από το λιμάνι — ένας ντόπιος ξεναγός τα ενώνει όλα σε μια εύκολη διαδρομή." },
+          { q: "Γίνεται να το περπατήσω;", a: "Ναι, είναι συμπαγές και το απολαμβάνεις καλύτερα με τα πόδια· ένας ξεναγός σε κρατά μακριά από τους τουριστικούς δρόμους-παγίδες και σε πάει στους ωραίους." },
+          { q: "Πότε είναι η καλύτερη ώρα για επίσκεψη;", a: "Το απόγευμα προς το ηλιοβασίλεμα είναι μαγικό, ειδικά από τον Πύργο Χιντιρλίκ — ο ξεναγός VibeGuide ρυθμίζει τέλεια τον χρόνο." },
+        ],
+        ctaTitle: "Εξερεύνησε το Καλεϊτσί με έναν ντόπιο",
+        ...ANT.el,
+      },
+      tr: {
+        name: "Kaleiçi",
+        metaTitle: "Antalya Kaleiçi Turları & Yerel Rehberler",
+        metaDescription:
+          "Antalya'nın eski şehri Kaleiçi'ni doğrulanmış bir yerel rehberle gez. Arnavut kaldırımlı Osmanlı sokakları, Hadrian Kapısı ve bir Roma limanı — her köşenin ardındaki hikâyeler.",
+        intro: [
+          "Kaleiçi, Antalya'nın atmosferik eski şehridir — restore edilmiş Osmanlı-Rum evleri, butik oteller ve kafelerle çevrili arnavut kaldırımlı sokakların labirenti, hepsi Roma dönemi bir limanın etrafında. Her kemerin bir hikâye sakladığı bir yer.",
+          "VibeGuide yerel uzmanıyla rastgele dolaşmazsın. Hadrian Kapısı'ndan geç, yivli Yivli Minare'ye bak, Hıdırlık Kulesi'nden gün batımını izle ve eski marinadan tekne turuyla bitir — kendi temponda, kendi dilinde.",
+        ],
+        highlights: [
+          { title: "Hadrian Kapısı", desc: "İmparator Hadrian'ın şehri ziyareti için MS 130'da yapılan üç gözlü mermer takı." },
+          { title: "Yivli Minare", desc: "Antalya siluetinin simgesi hâline gelen yivli tuğla minare." },
+          { title: "Roma Limanı", desc: "Surların altındaki eski marina — gün batımı tekne turu için birebir." },
+        ],
+        faqs: [
+          { q: "Kaleiçi'nde ne yapılır?", a: "Osmanlı sokaklarında yürü, Hadrian Kapısı ve Hıdırlık Kulesi'ni gör, sonra limandan tekne turuna çık — yerel rehber hepsini tek kolay rotada birleştirir." },
+          { q: "Kaleiçi yürünerek gezilir mi?", a: "Evet, küçük ve derli topludur, en iyi yürüyerek keşfedilir; rehber seni turist tuzağı sokaklardan uzak tutup güzel olanlara götürür." },
+          { q: "En iyi ziyaret zamanı ne zaman?", a: "İkindiden gün batımına doğru büyülüdür, özellikle Hıdırlık Kulesi'nden — VibeGuide rehberin zamanlamayı kusursuz ayarlar." },
+        ],
+        ctaTitle: "Kaleiçi'ni bir yerelle keşfet",
+        ...ANT.tr,
+      },
+      it: {
+        name: "Kaleiçi (Città Vecchia)",
+        metaTitle: "Tour della città vecchia di Kaleiçi ad Antalya con guide locali",
+        metaDescription:
+          "Passeggia per Kaleiçi, la città vecchia di Antalya, con una guida locale verificata. Vicoli ottomani lastricati, la Porta di Adriano e un porto romano — le storie dietro ogni angolo.",
+        intro: [
+          "Kaleiçi è la suggestiva città vecchia di Antalya — un dedalo di vicoli lastricati fiancheggiati da case ottomano-greche restaurate, hotel di charme e caffè, tutto attorno a un porto di epoca romana. Un luogo dove ogni arco nasconde una storia.",
+          "Con un esperto locale di VibeGuide non vaghi a caso. Attraversa la Porta di Adriano, alza lo sguardo al minareto scanalato Yivli, ammira il tramonto dalla Torre Hıdırlık e concludi con un giro in barca dal vecchio porticciolo — al tuo ritmo e nella tua lingua.",
+        ],
+        highlights: [
+          { title: "Porta di Adriano", desc: "Un triplice arco di marmo eretto nel 130 d.C. per la visita dell'imperatore Adriano." },
+          { title: "Minareto Yivli", desc: "Il minareto in mattoni scanalato, divenuto simbolo del profilo di Antalya." },
+          { title: "Il porto romano", desc: "Il vecchio porticciolo sotto le mura — perfetto per un giro in barca al tramonto." },
+        ],
+        faqs: [
+          { q: "Cosa si può fare a Kaleiçi?", a: "Percorrere i vicoli ottomani, vedere la Porta di Adriano e la Torre Hıdırlık, poi fare un giro in barca dal porto — una guida locale unisce tutto in un itinerario semplice." },
+          { q: "Si può girare Kaleiçi a piedi?", a: "Sì, è compatta e si gode al meglio camminando; una guida ti tiene lontano dalle vie trappola per turisti e ti porta in quelle più belle." },
+          { q: "Qual è il momento migliore per la visita?", a: "Il tardo pomeriggio verso il tramonto è magico, soprattutto dalla Torre Hıdırlık — la tua guida VibeGuide sa calcolare il momento perfetto." },
+        ],
+        ctaTitle: "Esplora Kaleiçi con un locale",
+        ...ANT.it,
+      },
+      pl: {
+        name: "Kaleiçi (Stare Miasto)",
+        metaTitle: "Kaleiçi — stare miasto Antalyi, wycieczki z lokalnymi przewodnikami",
+        metaDescription:
+          "Przejdź się po Kaleiçi, starym mieście Antalyi, z zweryfikowanym lokalnym przewodnikiem. Brukowane osmańskie uliczki, Brama Hadriana i rzymski port — historie za każdym rogiem.",
+        intro: [
+          "Kaleiçi to klimatyczne stare miasto Antalyi — labirynt brukowanych uliczek z odrestaurowanymi osmańsko-greckimi domami, butikowymi hotelami i kawiarniami, a wszystko wokół portu z czasów rzymskich. Miejsce, gdzie każdy łuk kryje jakąś opowieść.",
+          "Z lokalnym ekspertem VibeGuide nie błądzisz na oślep. Przejdź przez Bramę Hadriana, spójrz w górę na żłobkowany minaret Yivli, popatrz na zachód słońca z Wieży Hıdırlık i zakończ rejsem łódką ze starej mariny — we własnym tempie i w swoim języku.",
+        ],
+        highlights: [
+          { title: "Brama Hadriana", desc: "Potrójny marmurowy łuk wzniesiony w 130 r. n.e. na wizytę cesarza Hadriana." },
+          { title: "Minaret Yivli", desc: "Żłobkowany ceglany minaret, który stał się symbolem panoramy Antalyi." },
+          { title: "Rzymski port", desc: "Stara marina pod murami — idealna na rejs o zachodzie słońca." },
+        ],
+        faqs: [
+          { q: "Co robić w Kaleiçi?", a: "Przejść osmańskimi uliczkami, zobaczyć Bramę Hadriana i Wieżę Hıdırlık, a potem popłynąć łódką z portu — lokalny przewodnik łączy to w jedną wygodną trasę." },
+          { q: "Czy Kaleiçi da się zwiedzać pieszo?", a: "Tak, jest zwarte i najlepiej poznaje się je na piechotę; przewodnik omija turystyczne pułapki i prowadzi cię na najładniejsze uliczki." },
+          { q: "Kiedy najlepiej je odwiedzić?", a: "Późne popołudnie ku zachodowi słońca jest magiczne, zwłaszcza z Wieży Hıdırlık — przewodnik VibeGuide dobierze idealny moment." },
+        ],
+        ctaTitle: "Odkryj Kaleiçi z lokalnym przewodnikiem",
+        ...ANT.pl,
+      },
+      nl: {
+        name: "Kaleiçi (Oude Stad)",
+        metaTitle: "Kaleiçi Antalya Oude Stad-tours & lokale gidsen",
+        metaDescription:
+          "Dwaal door Kaleiçi, de oude stad van Antalya, met een geverifieerde lokale gids. Geplaveide Ottomaanse steegjes, de Poort van Hadrianus en een Romeinse haven — de verhalen achter elke hoek.",
+        intro: [
+          "Kaleiçi is de sfeervolle oude stad van Antalya — een doolhof van geplaveide steegjes met gerestaureerde Ottomaans-Griekse huizen, boetiekhotels en cafés, alles rond een haven uit de Romeinse tijd. Een plek waar elke boog een verhaal verbergt.",
+          "Met een lokale VibeGuide-expert dwaal je niet zomaar rond. Loop door de Poort van Hadrianus, kijk omhoog naar de gecanneleerde Yivli-minaret, zie de zon ondergaan vanaf de Hıdırlık-toren en sluit af met een boottocht vanuit de oude jachthaven — in jouw tempo en in jouw taal.",
+        ],
+        highlights: [
+          { title: "Poort van Hadrianus", desc: "Een drievoudige marmeren boog, in 130 n.Chr. opgericht voor het bezoek van keizer Hadrianus." },
+          { title: "Yivli-minaret", desc: "De gecanneleerde bakstenen minaret, uitgegroeid tot symbool van de skyline van Antalya." },
+          { title: "De Romeinse haven", desc: "De oude jachthaven onder de muren — perfect voor een boottocht bij zonsondergang." },
+        ],
+        faqs: [
+          { q: "Wat is er te doen in Kaleiçi?", a: "Door de Ottomaanse steegjes lopen, de Poort van Hadrianus en de Hıdırlık-toren zien, en dan een boottocht vanuit de haven maken — een lokale gids rijgt het aaneen tot één makkelijke route." },
+          { q: "Is Kaleiçi te belopen?", a: "Ja, het is compact en het mooist te voet te verkennen; een gids houdt je weg van de toeristenvalstraatjes en leidt je naar de mooiste." },
+          { q: "Wanneer kun je het best gaan?", a: "De late namiddag richting zonsondergang is magisch, vooral vanaf de Hıdırlık-toren — je VibeGuide-gids timet het perfect." },
+        ],
+        ctaTitle: "Verken Kaleiçi met een local",
+        ...ANT.nl,
+      },
+    },
+  },
+  {
+    slug: "pergamon",
+    city: "İzmir",
+    citySlug: "izmir",
+    emoji: "🏛️",
+    image:
+      "https://images.unsplash.com/photo-1715080271610-c177c424aa6d?q=80&w=1600",
+    lat: 39.1324,
+    lng: 27.184,
+    i18n: {
+      en: {
+        name: "Pergamon",
+        metaTitle: "Pergamon (Bergama) Ancient City Tours & Local Guides",
+        metaDescription:
+          "Explore Pergamon, a UNESCO World Heritage ancient city near İzmir, with a verified local guide. The steepest theatre of antiquity, a legendary library and the Asklepion healing centre.",
+        intro: [
+          "Pergamon — Bergama today — was one of the great cities of the ancient world, first Greek and then Roman, and now a UNESCO World Heritage Site. Its Acropolis crowns a steep hill above the plain, home to the Temple of Trajan, the altar of Zeus and the steepest theatre of the ancient world, cut dramatically into the slope for around 10,000 spectators.",
+          "With a VibeGuide local expert the ruins come alive. Hear how the Library of Pergamon rivalled Alexandria and gave us parchment, then descend to the Asklepion healing centre and the vast Red Basilica (Kızıl Avlu) — at your pace, in your language, about an hour from Kuşadası or İzmir.",
+        ],
+        highlights: [
+          { title: "The Steep Theatre", desc: "The steepest theatre of the ancient world, carved into the hillside for some 10,000 spectators." },
+          { title: "The Great Library", desc: "Second only to Alexandria — here parchment (charta pergamena) was perfected." },
+          { title: "The Asklepion", desc: "One of antiquity's most famous healing centres, on the plain below the acropolis." },
+        ],
+        faqs: [
+          { q: "Where is Pergamon?", a: "In the town of Bergama, İzmir province — about an hour from Kuşadası or İzmir, and an easy day trip a local guide can plan for you." },
+          { q: "How much time do I need?", a: "The Acropolis, Asklepion and Red Basilica each deserve time; a half-day with a guide covers the highlights comfortably." },
+          { q: "Is a guide worth it at Pergamon?", a: "Absolutely — the library, the altar of Zeus and the healing rituals are stories, not signs; a guide brings the empty ruins back to life." },
+        ],
+        ctaTitle: "See Pergamon with a local",
+        ...IZM.en,
+      },
+      de: {
+        name: "Pergamon",
+        metaTitle: "Pergamon (Bergama) Antike Stadt Touren & lokale Guides",
+        metaDescription:
+          "Entdecke Pergamon, eine antike Stadt und UNESCO-Welterbe bei İzmir, mit einem geprüften lokalen Guide. Das steilste Theater der Antike, eine legendäre Bibliothek und das Asklepieion.",
+        intro: [
+          "Pergamon — heute Bergama — war eine der großen Städte der Antike, zuerst griechisch, dann römisch, und ist heute UNESCO-Welterbe. Seine Akropolis krönt einen steilen Hügel über der Ebene, mit dem Trajan-Tempel, dem Zeusaltar und dem steilsten Theater der antiken Welt, dramatisch in den Hang gebaut für rund 10.000 Zuschauer.",
+          "Mit einem lokalen VibeGuide-Experten erwachen die Ruinen zum Leben. Höre, wie die Bibliothek von Pergamon mit Alexandria wetteiferte und uns das Pergament schenkte, steig dann hinab zum Asklepieion und zur riesigen Roten Basilika (Kızıl Avlu) — in deinem Tempo, in deiner Sprache, etwa eine Stunde von Kuşadası oder İzmir.",
+        ],
+        highlights: [
+          { title: "Das steile Theater", desc: "Das steilste Theater der Antike, für rund 10.000 Zuschauer in den Hang gehauen." },
+          { title: "Die große Bibliothek", desc: "Nur Alexandria voraus — hier wurde das Pergament (charta pergamena) perfektioniert." },
+          { title: "Das Asklepieion", desc: "Eines der berühmtesten Heilzentren der Antike, in der Ebene unter der Akropolis." },
+        ],
+        faqs: [
+          { q: "Wo liegt Pergamon?", a: "In der Stadt Bergama, Provinz İzmir — etwa eine Stunde von Kuşadası oder İzmir und ein leichter Tagesausflug, den dir ein lokaler Guide plant." },
+          { q: "Wie viel Zeit brauche ich?", a: "Akropolis, Asklepieion und Rote Basilika verdienen je ihre Zeit; ein halber Tag mit Guide deckt die Höhepunkte bequem ab." },
+          { q: "Lohnt sich in Pergamon ein Guide?", a: "Absolut — die Bibliothek, der Zeusaltar und die Heilrituale sind Geschichten, keine Schilder; ein Guide erweckt die leeren Ruinen wieder." },
+        ],
+        ctaTitle: "Erlebe Pergamon mit einem Local",
+        ...IZM.de,
+      },
+      ru: {
+        name: "Пергам",
+        metaTitle: "Пергам (Бергама): экскурсии по древнему городу с местными гидами",
+        metaDescription:
+          "Осмотрите Пергам — древний город и объект ЮНЕСКО под Измиром — с проверенным местным гидом. Самый крутой театр античности, легендарная библиотека и лечебный Асклепион.",
+        intro: [
+          "Пергам — сегодня Бергама — был одним из великих городов древнего мира, сначала греческим, затем римским, а ныне — объект Всемирного наследия ЮНЕСКО. Его акрополь венчает крутой холм над равниной: храм Траяна, алтарь Зевса и самый крутой театр античности, эффектно врезанный в склон примерно на 10 000 зрителей.",
+          "С местным экспертом VibeGuide руины оживают. Услышьте, как Пергамская библиотека соперничала с Александрийской и подарила миру пергамент, а затем спуститесь к лечебному Асклепиону и огромной Красной базилике (Кызыл Авлу) — в своём ритме и на своём языке, примерно в часе от Кушадасы или Измира.",
+        ],
+        highlights: [
+          { title: "Крутой театр", desc: "Самый крутой театр античности, врезанный в склон примерно на 10 000 зрителей." },
+          { title: "Великая библиотека", desc: "Уступала лишь Александрийской — здесь довели до совершенства пергамент (charta pergamena)." },
+          { title: "Асклепион", desc: "Один из самых знаменитых лечебных центров древности, на равнине под акрополем." },
+        ],
+        faqs: [
+          { q: "Где находится Пергам?", a: "В городе Бергама, провинция Измир — примерно в часе от Кушадасы или Измира, лёгкая поездка на день, которую спланирует местный гид." },
+          { q: "Сколько времени нужно?", a: "Акрополь, Асклепион и Красная базилика заслуживают времени; полдня с гидом спокойно охватывают главное." },
+          { q: "Стоит ли брать гида в Пергаме?", a: "Безусловно — библиотека, алтарь Зевса и целебные ритуалы — это истории, а не таблички; гид вновь оживляет пустые руины." },
+        ],
+        ctaTitle: "Увидеть Пергам с местным гидом",
+        ...IZM.ru,
+      },
+      ar: {
+        name: "برغامة",
+        metaTitle: "جولات مدينة برغامة (بيرغاما) الأثرية مع مرشدين محليين",
+        metaDescription:
+          "اكتشف برغامة، المدينة الأثرية المُدرجة على قائمة اليونسكو قرب إزمير، مع مرشد محلي موثّق. أشد مسارح العصور القديمة انحدارًا، ومكتبة أسطورية، ومركز الأسكليبيون للاستشفاء.",
+        intro: [
+          "برغامة — بيرغاما اليوم — كانت من كبريات مدن العالم القديم، يونانية أولًا ثم رومانية، وهي اليوم موقع تراث عالمي لليونسكو. تتوّج أكروبوليسها تلّة شديدة الانحدار فوق السهل، وفيها معبد تراجان، ومذبح زيوس، وأشدّ مسارح العالم القديم انحدارًا، محفورًا بشكل مثير في المنحدر ليتّسع لنحو 10,000 متفرّج.",
+          "مع خبير محلي من VibeGuide تدبّ الحياة في الأطلال. اسمع كيف نافست مكتبة برغامة مكتبة الإسكندرية وأهدتنا الرَّق، ثم انزل إلى مركز الأسكليبيون للاستشفاء والبازيليك الحمراء الضخمة (كيزيل أڤلو) — على إيقاعك وبلغتك، على بُعد نحو ساعة من كوشآداسي أو إزمير.",
+        ],
+        highlights: [
+          { title: "المسرح شديد الانحدار", desc: "أشدّ مسارح العصور القديمة انحدارًا، محفور في سفح التلّة ليتّسع لنحو 10,000 متفرّج." },
+          { title: "المكتبة العظيمة", desc: "لم يسبقها إلا مكتبة الإسكندرية — هنا أُتقن صنع الرَّق (شارتا برغامينا)." },
+          { title: "الأسكليبيون", desc: "من أشهر مراكز الاستشفاء في العصور القديمة، في السهل أسفل الأكروبوليس." },
+        ],
+        faqs: [
+          { q: "أين تقع برغامة؟", a: "في مدينة بيرغاما بمحافظة إزمير — على بُعد نحو ساعة من كوشآداسي أو إزمير، ورحلة يوم سهلة يخطّط لها المرشد المحلي." },
+          { q: "كم من الوقت أحتاج؟", a: "يستحق كل من الأكروبوليس والأسكليبيون والبازيليك الحمراء وقتًا؛ نصف يوم مع مرشد يغطّي أبرز المعالم بأريحية." },
+          { q: "هل يستحق الأمر مرشدًا في برغامة؟", a: "بلا شك — المكتبة ومذبح زيوس وطقوس الاستشفاء قصص لا لافتات؛ المرشد يعيد الحياة إلى الأطلال الخاوية." },
+        ],
+        ctaTitle: "زر برغامة مع مرشد محلي",
+        ...IZM.ar,
+      },
+      es: {
+        name: "Pérgamo",
+        metaTitle: "Tours de la antigua ciudad de Pérgamo (Bergama) con guías locales",
+        metaDescription:
+          "Descubre Pérgamo, ciudad antigua y Patrimonio de la Humanidad cerca de Esmirna, con un guía local verificado. El teatro más empinado de la Antigüedad, una biblioteca legendaria y el Asclepión.",
+        intro: [
+          "Pérgamo — hoy Bergama — fue una de las grandes ciudades del mundo antiguo, primero griega y luego romana, y hoy Patrimonio de la Humanidad de la UNESCO. Su acrópolis corona una colina escarpada sobre la llanura, con el Templo de Trajano, el altar de Zeus y el teatro más empinado del mundo antiguo, tallado espectacularmente en la ladera para unos 10.000 espectadores.",
+          "Con un experto local de VibeGuide las ruinas cobran vida. Escucha cómo la Biblioteca de Pérgamo rivalizó con Alejandría y nos dio el pergamino, y luego baja al Asclepión y a la enorme Basílica Roja (Kızıl Avlu) — a tu ritmo y en tu idioma, a una hora de Kuşadası o Esmirna.",
+        ],
+        highlights: [
+          { title: "El teatro empinado", desc: "El teatro más empinado del mundo antiguo, tallado en la ladera para unos 10.000 espectadores." },
+          { title: "La gran biblioteca", desc: "Solo superada por Alejandría — aquí se perfeccionó el pergamino (charta pergamena)." },
+          { title: "El Asclepión", desc: "Uno de los centros de curación más famosos de la Antigüedad, en la llanura bajo la acrópolis." },
+        ],
+        faqs: [
+          { q: "¿Dónde está Pérgamo?", a: "En la localidad de Bergama, provincia de Esmirna — a una hora de Kuşadası o Esmirna, una excursión de un día fácil que un guía local puede planear." },
+          { q: "¿Cuánto tiempo necesito?", a: "La acrópolis, el Asclepión y la Basílica Roja merecen su tiempo; media jornada con guía cubre lo esencial con holgura." },
+          { q: "¿Vale la pena un guía en Pérgamo?", a: "Sin duda — la biblioteca, el altar de Zeus y los rituales de curación son relatos, no carteles; un guía devuelve la vida a las ruinas vacías." },
+        ],
+        ctaTitle: "Visita Pérgamo con un local",
+        ...IZM.es,
+      },
+      fr: {
+        name: "Pergame",
+        metaTitle: "Visites de la cité antique de Pergame (Bergama) avec guides locaux",
+        metaDescription:
+          "Découvrez Pergame, cité antique classée à l'UNESCO près d'Izmir, avec un guide local vérifié. Le théâtre le plus pentu de l'Antiquité, une bibliothèque légendaire et l'Asklépieion.",
+        intro: [
+          "Pergame — Bergama aujourd'hui — fut l'une des grandes cités du monde antique, d'abord grecque puis romaine, et désormais site du patrimoine mondial de l'UNESCO. Son acropole couronne une colline abrupte au-dessus de la plaine, avec le temple de Trajan, l'autel de Zeus et le théâtre le plus pentu du monde antique, taillé spectaculairement dans la pente pour près de 10 000 spectateurs.",
+          "Avec un expert local VibeGuide, les ruines reprennent vie. Écoutez comment la bibliothèque de Pergame rivalisa avec Alexandrie et nous donna le parchemin, puis descendez vers l'Asklépieion, centre de guérison, et l'immense Basilique Rouge (Kızıl Avlu) — à votre rythme et dans votre langue, à environ une heure de Kuşadası ou d'Izmir.",
+        ],
+        highlights: [
+          { title: "Le théâtre pentu", desc: "Le théâtre le plus pentu du monde antique, taillé dans le versant pour quelque 10 000 spectateurs." },
+          { title: "La grande bibliothèque", desc: "Seconde après Alexandrie — c'est ici que fut perfectionné le parchemin (charta pergamena)." },
+          { title: "L'Asklépieion", desc: "L'un des centres de guérison les plus célèbres de l'Antiquité, dans la plaine sous l'acropole." },
+        ],
+        faqs: [
+          { q: "Où se trouve Pergame ?", a: "Dans la ville de Bergama, province d'Izmir — à environ une heure de Kuşadası ou d'Izmir, une excursion à la journée facile qu'un guide local peut organiser." },
+          { q: "Combien de temps faut-il ?", a: "L'acropole, l'Asklépieion et la Basilique Rouge méritent chacun du temps ; une demi-journée avec un guide couvre confortablement les points forts." },
+          { q: "Un guide vaut-il la peine à Pergame ?", a: "Absolument — la bibliothèque, l'autel de Zeus et les rituels de guérison sont des récits, pas des panneaux ; un guide redonne vie aux ruines désertes." },
+        ],
+        ctaTitle: "Découvrez Pergame avec un local",
+        ...IZM.fr,
+      },
+      el: {
+        name: "Πέργαμος",
+        metaTitle: "Ξεναγήσεις στην αρχαία πόλη Πέργαμο (Μπεργκαμά) με ντόπιους ξεναγούς",
+        metaDescription:
+          "Εξερεύνησε την Πέργαμο, αρχαία πόλη και Μνημείο Παγκόσμιας Κληρονομιάς της UNESCO κοντά στη Σμύρνη, με πιστοποιημένο ντόπιο ξεναγό. Το πιο απόκρημνο θέατρο της αρχαιότητας, θρυλική βιβλιοθήκη και το Ασκληπιείο.",
+        intro: [
+          "Η Πέργαμος — σήμερα Μπεργκαμά — υπήρξε μια από τις μεγάλες πόλεις του αρχαίου κόσμου, πρώτα ελληνική και έπειτα ρωμαϊκή, και σήμερα Μνημείο Παγκόσμιας Κληρονομιάς της UNESCO. Η Ακρόπολή της στεφανώνει έναν απόκρημνο λόφο πάνω από την πεδιάδα, με τον Ναό του Τραϊανού, τον βωμό του Δία και το πιο απόκρημνο θέατρο του αρχαίου κόσμου, σκαλισμένο εντυπωσιακά στην πλαγιά για περίπου 10.000 θεατές.",
+          "Με έναν ντόπιο ειδικό του VibeGuide τα ερείπια ζωντανεύουν. Άκου πώς η Βιβλιοθήκη της Περγάμου συναγωνιζόταν την Αλεξάνδρεια και μας χάρισε την περγαμηνή, κι έπειτα κατέβα στο Ασκληπιείο και στη θεόρατη Κόκκινη Βασιλική (Κιζίλ Αβλού) — με τον δικό σου ρυθμό, στη γλώσσα σου, περίπου μία ώρα από το Κουσάντασι ή τη Σμύρνη.",
+        ],
+        highlights: [
+          { title: "Το απόκρημνο θέατρο", desc: "Το πιο απόκρημνο θέατρο του αρχαίου κόσμου, σκαλισμένο στην πλαγιά για περίπου 10.000 θεατές." },
+          { title: "Η μεγάλη βιβλιοθήκη", desc: "Δεύτερη μόνο μετά την Αλεξάνδρεια — εδώ τελειοποιήθηκε η περγαμηνή (charta pergamena)." },
+          { title: "Το Ασκληπιείο", desc: "Ένα από τα πιο φημισμένα κέντρα ίασης της αρχαιότητας, στην πεδιάδα κάτω από την ακρόπολη." },
+        ],
+        faqs: [
+          { q: "Πού βρίσκεται η Πέργαμος;", a: "Στην πόλη Μπεργκαμά, επαρχία Σμύρνης — περίπου μία ώρα από το Κουσάντασι ή τη Σμύρνη, μια εύκολη ημερήσια εκδρομή που οργανώνει ένας ντόπιος ξεναγός." },
+          { q: "Πόσο χρόνο χρειάζομαι;", a: "Η Ακρόπολη, το Ασκληπιείο και η Κόκκινη Βασιλική αξίζουν χρόνο· ένα μισό απόγευμα με ξεναγό καλύπτει άνετα τα κυριότερα." },
+          { q: "Αξίζει ξεναγός στην Πέργαμο;", a: "Οπωσδήποτε — η βιβλιοθήκη, ο βωμός του Δία και οι τελετές ίασης είναι ιστορίες, όχι πινακίδες· ένας ξεναγός ξαναζωντανεύει τα άδεια ερείπια." },
+        ],
+        ctaTitle: "Δες την Πέργαμο με έναν ντόπιο",
+        ...IZM.el,
+      },
+      tr: {
+        name: "Bergama (Pergamon)",
+        metaTitle: "Bergama (Pergamon) Antik Kenti Turları & Yerel Rehberler",
+        metaDescription:
+          "İzmir yakınındaki UNESCO Dünya Mirası antik kent Bergama'yı doğrulanmış bir yerel rehberle keşfet. Antik çağın en dik tiyatrosu, efsanevi bir kütüphane ve Asklepion sağlık merkezi.",
+        intro: [
+          "Pergamon — bugünkü Bergama — antik dünyanın büyük kentlerinden biriydi; önce Yunan, sonra Roma, bugün ise UNESCO Dünya Mirası. Akropolü, ovanın üzerinde dik bir tepeyi taçlandırır: Trajan Tapınağı, Zeus Sunağı ve antik dünyanın en dik tiyatrosu, yamaca çarpıcı biçimde oyulmuş, yaklaşık 10.000 seyirci için.",
+          "VibeGuide yerel uzmanıyla harabeler canlanır. Bergama Kütüphanesi'nin İskenderiye ile nasıl yarıştığını ve bize parşömeni kazandırdığını dinle, sonra Asklepion sağlık merkezine ve devasa Kızıl Avlu'ya (Kızıl Bazilika) in — kendi temponda, kendi dilinde, Kuşadası veya İzmir'e yaklaşık bir saat.",
+        ],
+        highlights: [
+          { title: "Dik Tiyatro", desc: "Antik dünyanın en dik tiyatrosu, yamaca oyulmuş, yaklaşık 10.000 seyirci için." },
+          { title: "Büyük Kütüphane", desc: "Yalnızca İskenderiye'nin gerisinde — parşömen (charta pergamena) burada mükemmelleştirildi." },
+          { title: "Asklepion", desc: "Antik çağın en ünlü sağlık merkezlerinden biri, akropolün altındaki ovada." },
+        ],
+        faqs: [
+          { q: "Bergama nerede?", a: "İzmir iline bağlı Bergama ilçesinde — Kuşadası veya İzmir'e yaklaşık bir saat, yerel rehberin planlayabileceği kolay bir günübirlik gezi." },
+          { q: "Ne kadar zaman gerekir?", a: "Akropol, Asklepion ve Kızıl Avlu ayrı ayrı zaman ister; rehberle yarım gün, öne çıkanları rahatça kapsar." },
+          { q: "Bergama'da rehber değer mi?", a: "Kesinlikle — kütüphane, Zeus Sunağı ve şifa ritüelleri tabela değil hikâyedir; rehber, boş harabelere yeniden hayat verir." },
+        ],
+        ctaTitle: "Bergama'yı bir yerelle gez",
+        ...IZM.tr,
+      },
+      it: {
+        name: "Pergamo",
+        metaTitle: "Tour dell'antica città di Pergamo (Bergama) con guide locali",
+        metaDescription:
+          "Esplora Pergamo, antica città Patrimonio dell'Umanità UNESCO vicino a Smirne, con una guida locale verificata. Il teatro più ripido dell'antichità, una biblioteca leggendaria e l'Asklepion.",
+        intro: [
+          "Pergamo — oggi Bergama — fu una delle grandi città del mondo antico, prima greca e poi romana, e oggi Patrimonio dell'Umanità UNESCO. La sua acropoli corona una collina ripida sopra la pianura, con il Tempio di Traiano, l'altare di Zeus e il teatro più ripido del mondo antico, scavato in modo spettacolare nel pendio per circa 10.000 spettatori.",
+          "Con un esperto locale di VibeGuide le rovine prendono vita. Ascolta come la Biblioteca di Pergamo rivaleggiò con Alessandria e ci diede la pergamena, poi scendi all'Asklepion, centro di guarigione, e all'immensa Basilica Rossa (Kızıl Avlu) — al tuo ritmo e nella tua lingua, a circa un'ora da Kuşadası o Smirne.",
+        ],
+        highlights: [
+          { title: "Il teatro ripido", desc: "Il teatro più ripido del mondo antico, scavato nel pendio per circa 10.000 spettatori." },
+          { title: "La grande biblioteca", desc: "Seconda solo ad Alessandria — qui fu perfezionata la pergamena (charta pergamena)." },
+          { title: "L'Asklepion", desc: "Uno dei centri di guarigione più celebri dell'antichità, nella pianura sotto l'acropoli." },
+        ],
+        faqs: [
+          { q: "Dove si trova Pergamo?", a: "Nella cittadina di Bergama, provincia di Smirne — a circa un'ora da Kuşadası o Smirne, una comoda gita in giornata che una guida locale può organizzare." },
+          { q: "Quanto tempo serve?", a: "Acropoli, Asklepion e Basilica Rossa meritano ciascuno del tempo; mezza giornata con una guida copre agevolmente i punti salienti." },
+          { q: "Vale la pena una guida a Pergamo?", a: "Assolutamente — la biblioteca, l'altare di Zeus e i rituali di guarigione sono racconti, non cartelli; una guida ridà vita alle rovine deserte." },
+        ],
+        ctaTitle: "Scopri Pergamo con un locale",
+        ...IZM.it,
+      },
+      pl: {
+        name: "Pergamon",
+        metaTitle: "Pergamon (Bergama) — starożytne miasto, wycieczki z lokalnymi przewodnikami",
+        metaDescription:
+          "Zwiedź Pergamon, starożytne miasto wpisane na listę UNESCO koło Izmiru, z zweryfikowanym lokalnym przewodnikiem. Najbardziej strome teatr antyku, legendarna biblioteka i Asklepion.",
+        intro: [
+          "Pergamon — dziś Bergama — był jednym z wielkich miast starożytnego świata, najpierw greckim, potem rzymskim, a obecnie jest obiektem światowego dziedzictwa UNESCO. Jego akropol wieńczy strome wzgórze nad równiną: Świątynia Trajana, ołtarz Zeusa i najbardziej strome teatr świata antycznego, efektownie wykuty w zboczu dla około 10 000 widzów.",
+          "Z lokalnym ekspertem VibeGuide ruiny ożywają. Posłuchaj, jak Biblioteka Pergamońska rywalizowała z Aleksandrią i dała nam pergamin, a potem zejdź do uzdrowiskowego Asklepionu i ogromnej Czerwonej Bazyliki (Kızıl Avlu) — we własnym tempie i w swoim języku, około godziny od Kuşadası lub Izmiru.",
+        ],
+        highlights: [
+          { title: "Strome teatr", desc: "Najbardziej strome teatr świata antycznego, wykuty w zboczu dla około 10 000 widzów." },
+          { title: "Wielka biblioteka", desc: "Ustępowała tylko Aleksandrii — tu udoskonalono pergamin (charta pergamena)." },
+          { title: "Asklepion", desc: "Jeden z najsłynniejszych ośrodków uzdrawiania antyku, na równinie pod akropolem." },
+        ],
+        faqs: [
+          { q: "Gdzie leży Pergamon?", a: "W miejscowości Bergama, prowincja Izmir — około godziny od Kuşadası lub Izmiru, łatwa jednodniowa wycieczka, którą zaplanuje lokalny przewodnik." },
+          { q: "Ile czasu potrzebuję?", a: "Akropol, Asklepion i Czerwona Bazylika — każde zasługuje na chwilę; pół dnia z przewodnikiem swobodnie obejmuje to, co najważniejsze." },
+          { q: "Czy w Pergamonie warto wziąć przewodnika?", a: "Zdecydowanie — biblioteka, ołtarz Zeusa i rytuały uzdrawiania to opowieści, nie tablice; przewodnik przywraca życie pustym ruinom." },
+        ],
+        ctaTitle: "Zobacz Pergamon z lokalnym przewodnikiem",
+        ...IZM.pl,
+      },
+      nl: {
+        name: "Pergamon",
+        metaTitle: "Pergamon (Bergama) Oude Stad-tours & lokale gidsen",
+        metaDescription:
+          "Ontdek Pergamon, een antieke stad en UNESCO-werelderfgoed bij Izmir, met een geverifieerde lokale gids. Het steilste theater van de oudheid, een legendarische bibliotheek en het Asklepion.",
+        intro: [
+          "Pergamon — nu Bergama — was een van de grote steden van de oude wereld, eerst Grieks en daarna Romeins, en tegenwoordig UNESCO-werelderfgoed. De Akropolis kroont een steile heuvel boven de vlakte, met de Trajanustempel, het altaar van Zeus en het steilste theater van de oude wereld, spectaculair in de helling uitgehakt voor zo'n 10.000 toeschouwers.",
+          "Met een lokale VibeGuide-expert komen de ruïnes tot leven. Hoor hoe de Bibliotheek van Pergamon wedijverde met Alexandrië en ons het perkament gaf, daal daarna af naar het geneescentrum Asklepion en de enorme Rode Basiliek (Kızıl Avlu) — in jouw tempo en in jouw taal, ongeveer een uur van Kuşadası of Izmir.",
+        ],
+        highlights: [
+          { title: "Het steile theater", desc: "Het steilste theater van de oude wereld, in de helling uitgehakt voor zo'n 10.000 toeschouwers." },
+          { title: "De grote bibliotheek", desc: "Alleen Alexandrië ging voor — hier werd het perkament (charta pergamena) vervolmaakt." },
+          { title: "Het Asklepion", desc: "Een van de beroemdste geneescentra van de oudheid, op de vlakte onder de akropolis." },
+        ],
+        faqs: [
+          { q: "Waar ligt Pergamon?", a: "In de stad Bergama, provincie Izmir — ongeveer een uur van Kuşadası of Izmir, een makkelijke dagtrip die een lokale gids voor je plant." },
+          { q: "Hoeveel tijd heb ik nodig?", a: "De Akropolis, het Asklepion en de Rode Basiliek verdienen elk hun tijd; een halve dag met een gids dekt de hoogtepunten comfortabel." },
+          { q: "Is een gids het waard in Pergamon?", a: "Zeker — de bibliotheek, het altaar van Zeus en de geneesrituelen zijn verhalen, geen bordjes; een gids blaast de lege ruïnes weer leven in." },
+        ],
+        ctaTitle: "Bezoek Pergamon met een local",
+        ...IZM.nl,
+      },
+    },
+  },
+  {
+    slug: "pamukkale",
+    city: "Pamukkale",
+    citySlug: "pamukkale",
+    emoji: "🏞️",
+    image:
+      "https://images.unsplash.com/photo-1779952747150-0fe7c299332b?q=80&w=1600",
+    lat: 37.9137,
+    lng: 29.1187,
+    i18n: {
+      en: {
+        name: "Pamukkale",
+        metaTitle: "Pamukkale & Hierapolis Tours with Local Guides",
+        metaDescription:
+          "Discover Pamukkale, the UNESCO 'Cotton Castle', with a verified local guide. Walk the white travertines, explore ancient Hierapolis and swim in Cleopatra's Pool.",
+        intro: [
+          "Pamukkale — the 'Cotton Castle' — is one of Turkey's most surreal sights: a hillside of dazzling white travertine terraces, carved over millennia by calcium-rich thermal water cascading down and petrifying into pools that look like frozen cotton. It is a UNESCO World Heritage Site in Denizli, and you walk it barefoot, ankle-deep in warm mineral water.",
+          "Just above the terraces stands Hierapolis, a Greco-Roman spa city with a grand theatre, one of Anatolia's largest necropolises and the thermal Antique Pool where you swim among toppled Roman columns. With a VibeGuide local you get the timing right, understand what you're seeing and make the long trip truly worth it.",
+        ],
+        highlights: [
+          { title: "White Travertine Terraces", desc: "Blinding-white calcium pools cascading down the hill — walk them barefoot in warm spring water." },
+          { title: "Ancient Hierapolis", desc: "A Greco-Roman spa city above the terraces: theatre, vast necropolis, Temple of Apollo and the sacred Plutonium." },
+          { title: "Cleopatra's Antique Pool", desc: "Swim in warm thermal water among ancient Roman columns toppled by an earthquake." },
+        ],
+        faqs: [
+          { q: "Do I need a guide for Pamukkale?", a: "You can wander alone, but Pamukkale and Hierapolis are two sites in one — thermal geology and a Roman city. A local guide connects them, times your visit around the crowds and glare, and makes a long day trip flow." },
+          { q: "When is the best time to visit Pamukkale?", a: "Early morning or late afternoon. Midday sun makes the white terraces blinding and the crowds peak; sunset over the pools is spectacular. A guide plans the day around this." },
+          { q: "How far is Pamukkale from the coast?", a: "It's about 19 km from Denizli and a long day trip from Antalya, Bodrum, Kuşadası or Marmaris. A guide handles the distance and timing so the drive is worth it." },
+        ],
+        ctaTitle: "See Pamukkale with a local",
+        ...PAM.en,
+      },
+      de: {
+        name: "Pamukkale",
+        metaTitle: "Pamukkale & Hierapolis Touren mit lokalen Guides",
+        metaDescription:
+          "Entdecke Pamukkale, das UNESCO-'Baumwollschloss', mit einem geprüften lokalen Guide. Laufe über die weißen Travertine, erkunde Hierapolis und bade im Kleopatra-Pool.",
+        intro: [
+          "Pamukkale — das 'Baumwollschloss' — ist einer der surrealsten Anblicke der Türkei: ein Hang aus strahlend weißen Travertin-Terrassen, über Jahrtausende von kalkreichem Thermalwasser geformt, das herabfließt und zu Becken erstarrt, die wie gefrorene Baumwolle wirken. Ein UNESCO-Welterbe in Denizli — du läufst barfuß, knöcheltief im warmen Mineralwasser.",
+          "Direkt über den Terrassen liegt Hierapolis, eine griechisch-römische Kurstadt mit großem Theater, einer der größten Nekropolen Anatoliens und dem Thermalbecken 'Antiker Pool', in dem du zwischen umgestürzten römischen Säulen schwimmst. Mit einem VibeGuide-Local stimmst du das Timing ab, verstehst, was du siehst, und der lange Ausflug lohnt sich wirklich.",
+        ],
+        highlights: [
+          { title: "Weiße Travertin-Terrassen", desc: "Blendend weiße Kalkbecken, die den Hang hinabfließen — barfuß im warmen Quellwasser." },
+          { title: "Antikes Hierapolis", desc: "Eine griechisch-römische Kurstadt über den Terrassen: Theater, riesige Nekropole, Apollon-Tempel und das heilige Plutonium." },
+          { title: "Kleopatras Antiker Pool", desc: "Bade im warmen Thermalwasser zwischen antiken römischen Säulen, die ein Erdbeben umwarf." },
+        ],
+        faqs: [
+          { q: "Brauche ich einen Guide für Pamukkale?", a: "Du kannst allein umherlaufen, aber Pamukkale und Hierapolis sind zwei Stätten in einer — Thermalgeologie und eine römische Stadt. Ein lokaler Guide verbindet beides, plant um Menschenmengen und Blendung herum und lässt den langen Ausflug fließen." },
+          { q: "Wann besucht man Pamukkale am besten?", a: "Früh am Morgen oder am späten Nachmittag. Die Mittagssonne macht die weißen Terrassen blendend, die Menschenmengen sind am größten; der Sonnenuntergang über den Becken ist spektakulär. Ein Guide plant den Tag danach." },
+          { q: "Wie weit ist Pamukkale von der Küste entfernt?", a: "Etwa 19 km von Denizli und ein langer Tagesausflug von Antalya, Bodrum, Kuşadası oder Marmaris. Ein Guide übernimmt Distanz und Timing, damit sich die Fahrt lohnt." },
+        ],
+        ctaTitle: "Erlebe Pamukkale mit einem Local",
+        ...PAM.de,
+      },
+      ru: {
+        name: "Памуккале",
+        metaTitle: "Памуккале и Иераполис: экскурсии с местными гидами",
+        metaDescription:
+          "Откройте Памуккале, «Хлопковый замок» из списка ЮНЕСКО, с проверенным местным гидом. Пройдите по белым травертинам, осмотрите Иераполис и искупайтесь в бассейне Клеопатры.",
+        intro: [
+          "Памуккале — «Хлопковый замок» — одно из самых сюрреалистичных мест Турции: склон из ослепительно белых травертиновых террас, за тысячелетия сотворённых богатой кальцием термальной водой, что стекает вниз и застывает бассейнами, похожими на замёрзший хлопок. Это объект Всемирного наследия ЮНЕСКО в Денизли, и вы идёте по нему босиком, по щиколотку в тёплой минеральной воде.",
+          "Прямо над террасами стоит Иераполис — греко-римский курортный город с большим театром, одним из крупнейших некрополей Анатолии и термальным Античным бассейном, где вы плаваете среди рухнувших римских колонн. С местным гидом VibeGuide вы верно рассчитаете время, поймёте, на что смотрите, и долгая поездка по-настоящему окупится.",
+        ],
+        highlights: [
+          { title: "Белые травертиновые террасы", desc: "Ослепительно белые кальциевые чаши, стекающие по склону — идите по ним босиком в тёплой воде источников." },
+          { title: "Древний Иераполис", desc: "Греко-римский курорт над террасами: театр, огромный некрополь, храм Аполлона и священный Плутоний." },
+          { title: "Античный бассейн Клеопатры", desc: "Купайтесь в тёплой термальной воде среди античных римских колонн, поваленных землетрясением." },
+        ],
+        faqs: [
+          { q: "Нужен ли гид в Памуккале?", a: "Гулять можно и самому, но Памуккале и Иераполис — две достопримечательности в одной: термальная геология и римский город. Местный гид свяжет их, спланирует визит в обход толп и слепящего солнца и сделает долгую поездку удобной." },
+          { q: "Когда лучше посещать Памуккале?", a: "Ранним утром или ближе к вечеру. Полуденное солнце делает белые террасы слепящими, а толпы — самыми плотными; закат над бассейнами великолепен. Гид спланирует день с учётом этого." },
+          { q: "Как далеко Памуккале от побережья?", a: "Около 19 км от Денизли и долгая однодневная поездка из Анталии, Бодрума, Кушадасы или Мармариса. Гид возьмёт на себя расстояние и время, чтобы дорога того стоила." },
+        ],
+        ctaTitle: "Увидеть Памуккале с местным гидом",
+        ...PAM.ru,
+      },
+      ar: {
+        name: "باموكالي",
+        metaTitle: "جولات باموكالي وهيرابوليس مع مرشدين محليين",
+        metaDescription:
+          "اكتشف باموكالي، «قلعة القطن» المدرجة في اليونسكو، مع مرشد محلي موثّق. امشِ على المصاطب البيضاء، واستكشف هيرابوليس القديمة، واسبح في حوض كليوباترا.",
+        intro: [
+          "باموكالي — «قلعة القطن» — من أكثر المشاهد سرياليةً في تركيا: تلّة من مصاطب الترافرتين البيضاء الباهرة، نحتتها عبر آلاف السنين مياهٌ حرارية غنية بالكالسيوم تنساب وتتحجّر أحواضًا تبدو كالقطن المتجمّد. إنه موقع تراث عالمي لليونسكو في دنيزلي، وتمشي عليه حافي القدمين، والماء المعدني الدافئ يبلغ الكاحل.",
+          "فوق المصاطب مباشرةً تقوم هيرابوليس، مدينة استشفاء يونانية رومانية بمسرح ضخم، وواحدة من أكبر مقابر الأناضول، وحوض الآثار الحراري حيث تسبح بين أعمدة رومانية مطروحة أرضًا. مع مرشد محلي من VibeGuide تضبط التوقيت، وتفهم ما تراه، وتصبح الرحلة الطويلة تستحق العناء حقًا.",
+        ],
+        highlights: [
+          { title: "مصاطب الترافرتين البيضاء", desc: "أحواض كلسية بيضاء باهرة تنساب على التلة — امشِ عليها حافيًا في ماء الينابيع الدافئ." },
+          { title: "هيرابوليس القديمة", desc: "مدينة استشفاء يونانية رومانية فوق المصاطب: مسرح، ومقبرة شاسعة، ومعبد أبولو، والبلوتونيوم المقدّس." },
+          { title: "حوض كليوباترا الأثري", desc: "اسبح في ماء حراري دافئ بين أعمدة رومانية قديمة أسقطها زلزال." },
+        ],
+        faqs: [
+          { q: "هل أحتاج إلى مرشد في باموكالي؟", a: "يمكنك التجوّل وحدك، لكن باموكالي وهيرابوليس موقعان في واحد — جيولوجيا حرارية ومدينة رومانية. المرشد المحلي يربط بينهما، ويوقّت زيارتك بعيدًا عن الزحام والوهج، ويجعل رحلة اليوم الطويلة سلسة." },
+          { q: "ما أفضل وقت لزيارة باموكالي؟", a: "الصباح الباكر أو نهاية العصر. شمس الظهيرة تجعل المصاطب البيضاء مبهرة والزحام في ذروته؛ وغروب الشمس فوق الأحواض ساحر. المرشد ينظّم اليوم على هذا الأساس." },
+          { q: "كم تبعد باموكالي عن الساحل؟", a: "نحو 19 كم من دنيزلي، ورحلة يوم طويلة من أنطاليا أو بودروم أو كوشأداسي أو مرمريس. المرشد يتكفّل بالمسافة والتوقيت لتستحق الرحلة عناءها." },
+        ],
+        ctaTitle: "زر باموكالي مع مرشد محلي",
+        ...PAM.ar,
+      },
+      es: {
+        name: "Pamukkale",
+        metaTitle: "Tours de Pamukkale y Hierápolis con guías locales",
+        metaDescription:
+          "Descubre Pamukkale, el 'Castillo de Algodón' de la UNESCO, con un guía local verificado. Camina por las travertinas blancas, explora Hierápolis y báñate en la Piscina de Cleopatra.",
+        intro: [
+          "Pamukkale — el 'Castillo de Algodón' — es una de las estampas más surrealistas de Turquía: una ladera de deslumbrantes terrazas de travertino blanco, esculpidas durante milenios por el agua termal rica en calcio que cae y se petrifica en pozas que parecen algodón congelado. Es Patrimonio Mundial de la UNESCO en Denizli, y se recorre descalzo, con el agua mineral tibia hasta el tobillo.",
+          "Justo sobre las terrazas se alza Hierápolis, una ciudad-balneario grecorromana con un gran teatro, una de las mayores necrópolis de Anatolia y la termal Piscina Antigua, donde nadas entre columnas romanas derribadas. Con un local de VibeGuide aciertas con los horarios, entiendes lo que ves y la larga excursión merece de veras la pena.",
+        ],
+        highlights: [
+          { title: "Terrazas de travertino blanco", desc: "Pozas de calcio de un blanco cegador que caen por la ladera — camínalas descalzo en agua termal tibia." },
+          { title: "Hierápolis antigua", desc: "Una ciudad-balneario grecorromana sobre las terrazas: teatro, enorme necrópolis, Templo de Apolo y el sagrado Plutonio." },
+          { title: "Piscina Antigua de Cleopatra", desc: "Nada en agua termal tibia entre columnas romanas antiguas derribadas por un terremoto." },
+        ],
+        faqs: [
+          { q: "¿Necesito un guía para Pamukkale?", a: "Puedes recorrerlo solo, pero Pamukkale y Hierápolis son dos sitios en uno: geología termal y una ciudad romana. Un guía local los conecta, planifica la visita esquivando multitudes y reflejos, y hace fluida la larga excursión." },
+          { q: "¿Cuál es la mejor hora para visitar Pamukkale?", a: "A primera hora o al final de la tarde. El sol del mediodía vuelve cegadoras las terrazas blancas y la multitud es máxima; el atardecer sobre las pozas es espectacular. Un guía organiza el día en torno a esto." },
+          { q: "¿A qué distancia está Pamukkale de la costa?", a: "A unos 19 km de Denizli y una larga excursión de un día desde Antalya, Bodrum, Kuşadası o Marmaris. Un guía se ocupa de la distancia y los tiempos para que el viaje valga la pena." },
+        ],
+        ctaTitle: "Visita Pamukkale con un local",
+        ...PAM.es,
+      },
+      fr: {
+        name: "Pamukkale",
+        metaTitle: "Visites de Pamukkale et Hiérapolis avec guides locaux",
+        metaDescription:
+          "Découvrez Pamukkale, le 'Château de coton' de l'UNESCO, avec un guide local vérifié. Marchez sur les travertins blancs, explorez Hiérapolis et baignez-vous dans la Piscine de Cléopâtre.",
+        intro: [
+          "Pamukkale — le 'Château de coton' — est l'un des spectacles les plus surréalistes de Turquie : un versant de terrasses de travertin d'un blanc éclatant, sculptées pendant des millénaires par une eau thermale riche en calcium qui ruisselle et se pétrifie en vasques semblables à du coton figé. C'est un site du patrimoine mondial de l'UNESCO à Denizli, et on le parcourt pieds nus, l'eau minérale tiède jusqu'aux chevilles.",
+          "Juste au-dessus des terrasses se dresse Hiérapolis, cité thermale gréco-romaine avec un grand théâtre, l'une des plus vastes nécropoles d'Anatolie et la Piscine antique thermale où l'on nage parmi des colonnes romaines effondrées. Avec un local VibeGuide, vous choisissez le bon moment, comprenez ce que vous voyez et cette longue excursion en vaut vraiment la peine.",
+        ],
+        highlights: [
+          { title: "Terrasses de travertin blanc", desc: "Des vasques calcaires d'un blanc aveuglant qui dévalent le versant — parcourez-les pieds nus dans l'eau de source tiède." },
+          { title: "Hiérapolis antique", desc: "Une cité thermale gréco-romaine au-dessus des terrasses : théâtre, vaste nécropole, temple d'Apollon et le sacré Plutonium." },
+          { title: "Piscine antique de Cléopâtre", desc: "Nagez dans une eau thermale tiède parmi d'antiques colonnes romaines renversées par un séisme." },
+        ],
+        faqs: [
+          { q: "Ai-je besoin d'un guide pour Pamukkale ?", a: "Vous pouvez flâner seul, mais Pamukkale et Hiérapolis sont deux sites en un : géologie thermale et cité romaine. Un guide local les relie, cale la visite hors des foules et de l'éblouissement, et fluidifie cette longue journée." },
+          { q: "Quel est le meilleur moment pour visiter Pamukkale ?", a: "Tôt le matin ou en fin d'après-midi. Le soleil de midi rend les terrasses blanches aveuglantes et la foule est à son comble ; le coucher de soleil sur les vasques est spectaculaire. Un guide organise la journée en conséquence." },
+          { q: "À quelle distance Pamukkale est-il de la côte ?", a: "À environ 19 km de Denizli et une longue excursion depuis Antalya, Bodrum, Kuşadası ou Marmaris. Un guide gère la distance et le timing pour que le trajet en vaille la peine." },
+        ],
+        ctaTitle: "Découvrez Pamukkale avec un local",
+        ...PAM.fr,
+      },
+      el: {
+        name: "Παμούκαλε",
+        metaTitle: "Ξεναγήσεις στο Παμούκαλε & στην Ιεράπολη με ντόπιους ξεναγούς",
+        metaDescription:
+          "Ανακάλυψε το Παμούκαλε, το «Βαμβακένιο Κάστρο» της UNESCO, με πιστοποιημένο ντόπιο ξεναγό. Περπάτησε στους λευκούς τραβερτίνες, εξερεύνησε την αρχαία Ιεράπολη και κολύμπησε στην Πισίνα της Κλεοπάτρας.",
+        intro: [
+          "Το Παμούκαλε — το «Βαμβακένιο Κάστρο» — είναι ένα από τα πιο σουρεαλιστικά θεάματα της Τουρκίας: μια πλαγιά με εκτυφλωτικά λευκές αναβαθμίδες τραβερτίνη, σμιλεμένες επί χιλιετίες από ιαματικό νερό πλούσιο σε ασβέστιο που κυλά και απολιθώνεται σε λιμνούλες που μοιάζουν με παγωμένο βαμβάκι. Είναι Μνημείο Παγκόσμιας Κληρονομιάς της UNESCO στο Ντενιζλί, και το περπατάς ξυπόλυτος, με το ζεστό μεταλλικό νερό ως τον αστράγαλο.",
+          "Ακριβώς πάνω από τις αναβαθμίδες υψώνεται η Ιεράπολη, μια ελληνορωμαϊκή λουτρόπολη με μεγάλο θέατρο, μία από τις μεγαλύτερες νεκροπόλεις της Ανατολίας και την ιαματική Αρχαία Πισίνα, όπου κολυμπάς ανάμεσα σε πεσμένους ρωμαϊκούς κίονες. Με έναν ντόπιο του VibeGuide πετυχαίνεις τον σωστό χρόνο, καταλαβαίνεις τι βλέπεις και το μεγάλο ταξίδι αξίζει πραγματικά.",
+        ],
+        highlights: [
+          { title: "Λευκές αναβαθμίδες τραβερτίνη", desc: "Εκτυφλωτικά λευκές ασβεστολιθικές λιμνούλες που κυλούν στην πλαγιά — περπάτησέ τες ξυπόλυτος στο ζεστό νερό της πηγής." },
+          { title: "Αρχαία Ιεράπολη", desc: "Μια ελληνορωμαϊκή λουτρόπολη πάνω από τις αναβαθμίδες: θέατρο, τεράστια νεκρόπολη, Ναός του Απόλλωνα και το ιερό Πλουτώνιο." },
+          { title: "Αρχαία Πισίνα της Κλεοπάτρας", desc: "Κολύμπησε σε ζεστό ιαματικό νερό ανάμεσα σε αρχαίους ρωμαϊκούς κίονες που έριξε σεισμός." },
+        ],
+        faqs: [
+          { q: "Χρειάζομαι ξεναγό για το Παμούκαλε;", a: "Μπορείς να περιπλανηθείς μόνος, αλλά το Παμούκαλε και η Ιεράπολη είναι δύο μνημεία σε ένα — ιαματική γεωλογία και ρωμαϊκή πόλη. Ένας ντόπιος ξεναγός τα συνδέει, ρυθμίζει την επίσκεψη μακριά από πλήθος και θάμβος και κάνει τη μεγάλη μέρα να κυλά." },
+          { q: "Πότε είναι η καλύτερη ώρα για το Παμούκαλε;", a: "Νωρίς το πρωί ή αργά το απόγευμα. Ο μεσημβρινός ήλιος κάνει τις λευκές αναβαθμίδες εκτυφλωτικές και το πλήθος κορυφώνεται· το ηλιοβασίλεμα πάνω από τις λιμνούλες είναι μαγευτικό. Ένας ξεναγός οργανώνει τη μέρα γύρω από αυτό." },
+          { q: "Πόσο απέχει το Παμούκαλε από τις ακτές;", a: "Περίπου 19 χλμ. από το Ντενιζλί και μια μεγάλη ημερήσια εκδρομή από Αττάλεια, Μπόντρουμ, Κουσάντασι ή Μαρμαρίδα. Ένας ξεναγός αναλαμβάνει απόσταση και χρόνο, ώστε να αξίζει το ταξίδι." },
+        ],
+        ctaTitle: "Δες το Παμούκαλε με έναν ντόπιο",
+        ...PAM.el,
+      },
+      tr: {
+        name: "Pamukkale",
+        metaTitle: "Pamukkale & Hierapolis Turları & Yerel Rehberler",
+        metaDescription:
+          "UNESCO'nun 'Pamuk Kalesi' Pamukkale'yi doğrulanmış bir yerel rehberle keşfet. Beyaz travertenlerde yürü, antik Hierapolis'i gez ve Kleopatra Havuzu'nda yüz.",
+        intro: [
+          "Pamukkale — 'Pamuk Kalesi' — Türkiye'nin en gerçeküstü manzaralarından biri: kalsiyum yüklü termal suyun binlerce yıl boyunca aşağı akıp donarak dondurulmuş pamuğu andıran havuzlar oluşturduğu, göz kamaştırıcı beyaz traverten teraslarından bir yamaç. Denizli'de bir UNESCO Dünya Mirası'dır ve üzerinde çıplak ayakla, ılık mineralli suda bilek boyu yürürsün.",
+          "Terasların hemen üstünde, büyük tiyatrosu, Anadolu'nun en büyük nekropollerinden biri ve devrilmiş Roma sütunları arasında yüzdüğün termal Antik Havuz'uyla Greko-Romen kaplıca kenti Hierapolis yükselir. VibeGuide yerel rehberiyle zamanlamayı tutturur, ne gördüğünü anlar ve uzun yolculuğu gerçekten değerli kılarsın.",
+        ],
+        highlights: [
+          { title: "Beyaz Traverten Terasları", desc: "Yamaçtan aşağı akan göz kamaştırıcı beyaz kalsiyum havuzları — ılık kaynak suyunda çıplak ayakla yürü." },
+          { title: "Antik Hierapolis", desc: "Terasların üstünde Greko-Romen bir kaplıca kenti: tiyatro, devasa nekropol, Apollon Tapınağı ve kutsal Plutonium." },
+          { title: "Kleopatra Antik Havuzu", desc: "Depremle devrilmiş antik Roma sütunları arasında ılık termal suda yüz." },
+        ],
+        faqs: [
+          { q: "Pamukkale için rehbere ihtiyacım var mı?", a: "Tek başına gezebilirsin ama Pamukkale ile Hierapolis tek yerde iki sit — termal jeoloji ve bir Roma kenti. Yerel rehber ikisini bağlar, ziyaretini kalabalık ve göz alıcı ışıktan uzağa ayarlar ve uzun günü akıcı kılar." },
+          { q: "Pamukkale'yi ziyaret için en iyi zaman ne?", a: "Sabah erken ya da öğleden sonra geç saatler. Öğle güneşi beyaz terasları göz alır ve kalabalık tavan yapar; havuzların üzerindeki gün batımı muhteşemdir. Rehber günü buna göre planlar." },
+          { q: "Pamukkale sahile ne kadar uzak?", a: "Denizli'ye yaklaşık 19 km; Antalya, Bodrum, Kuşadası ya da Marmaris'ten uzun bir günübirlik gezi. Rehber mesafe ve zamanlamayı üstlenir, böylece yol değer." },
+        ],
+        ctaTitle: "Pamukkale'yi bir yerelle gez",
+        ...PAM.tr,
+      },
+      it: {
+        name: "Pamukkale",
+        metaTitle: "Tour di Pamukkale e Hierapolis con guide locali",
+        metaDescription:
+          "Scopri Pamukkale, il 'Castello di Cotone' dell'UNESCO, con una guida locale verificata. Cammina sui travertini bianchi, esplora l'antica Hierapolis e nuota nella Piscina di Cleopatra.",
+        intro: [
+          "Pamukkale — il 'Castello di Cotone' — è uno degli spettacoli più surreali della Turchia: un pendio di abbaglianti terrazze di travertino bianco, scolpite per millenni dall'acqua termale ricca di calcio che scende e si pietrifica in vasche simili a cotone congelato. È Patrimonio Mondiale UNESCO a Denizli, e lo si percorre a piedi nudi, con l'acqua minerale tiepida fino alla caviglia.",
+          "Proprio sopra le terrazze sorge Hierapolis, città termale greco-romana con un grande teatro, una delle più vaste necropoli dell'Anatolia e la termale Piscina Antica, dove nuoti tra colonne romane rovesciate. Con un local di VibeGuide azzecchi i tempi, capisci ciò che vedi e la lunga gita ne vale davvero la pena.",
+        ],
+        highlights: [
+          { title: "Terrazze di travertino bianco", desc: "Vasche di calcio di un bianco accecante che scendono lungo il pendio — percorrile a piedi nudi nell'acqua sorgiva tiepida." },
+          { title: "Antica Hierapolis", desc: "Una città termale greco-romana sopra le terrazze: teatro, immensa necropoli, Tempio di Apollo e il sacro Plutonium." },
+          { title: "Piscina Antica di Cleopatra", desc: "Nuota in acqua termale tiepida tra antiche colonne romane rovesciate da un terremoto." },
+        ],
+        faqs: [
+          { q: "Serve una guida per Pamukkale?", a: "Puoi girarci da solo, ma Pamukkale e Hierapolis sono due siti in uno — geologia termale e una città romana. Una guida locale li collega, pianifica la visita evitando folla e riverbero e rende scorrevole la lunga giornata." },
+          { q: "Qual è il momento migliore per visitare Pamukkale?", a: "Di prima mattina o nel tardo pomeriggio. Il sole di mezzogiorno rende accecanti le terrazze bianche e la folla è al culmine; il tramonto sulle vasche è spettacolare. Una guida organizza la giornata di conseguenza." },
+          { q: "Quanto dista Pamukkale dalla costa?", a: "Circa 19 km da Denizli e una lunga gita di un giorno da Antalya, Bodrum, Kuşadası o Marmaris. Una guida gestisce distanza e tempi perché il viaggio valga la pena." },
+        ],
+        ctaTitle: "Scopri Pamukkale con un locale",
+        ...PAM.it,
+      },
+      pl: {
+        name: "Pamukkale",
+        metaTitle: "Pamukkale i Hierapolis — wycieczki z lokalnymi przewodnikami",
+        metaDescription:
+          "Odkryj Pamukkale, wpisany na listę UNESCO 'Bawełniany Zamek', z zweryfikowanym lokalnym przewodnikiem. Przejdź po białych trawertynach, zwiedź antyczne Hierapolis i wykąp się w Basenie Kleopatry.",
+        intro: [
+          "Pamukkale — 'Bawełniany Zamek' — to jeden z najbardziej surrealistycznych widoków Turcji: zbocze olśniewająco białych trawertynowych tarasów, rzeźbionych przez tysiąclecia przez bogatą w wapń wodę termalną, która spływa i kamienieje w baseny przypominające zmrożoną bawełnę. To obiekt światowego dziedzictwa UNESCO w Denizli, po którym chodzi się boso, po kostki w ciepłej wodzie mineralnej.",
+          "Tuż nad tarasami wznosi się Hierapolis, grecko-rzymskie miasto uzdrowiskowe z wielkim teatrem, jedną z największych nekropolii Anatolii i termalnym Antycznym Basenem, w którym pływasz wśród przewróconych rzymskich kolumn. Z lokalnym przewodnikiem VibeGuide trafiasz z porą, rozumiesz to, co widzisz, a długa wycieczka naprawdę się opłaca.",
+        ],
+        highlights: [
+          { title: "Białe tarasy trawertynowe", desc: "Oślepiająco białe wapienne baseny spływające po zboczu — przejdź je boso w ciepłej wodzie źródlanej." },
+          { title: "Antyczne Hierapolis", desc: "Grecko-rzymskie miasto uzdrowiskowe nad tarasami: teatr, ogromna nekropolia, Świątynia Apollina i święte Plutonium." },
+          { title: "Antyczny Basen Kleopatry", desc: "Popływaj w ciepłej wodzie termalnej wśród antycznych rzymskich kolumn przewróconych przez trzęsienie ziemi." },
+        ],
+        faqs: [
+          { q: "Czy potrzebuję przewodnika w Pamukkale?", a: "Możesz zwiedzać sam, ale Pamukkale i Hierapolis to dwa miejsca w jednym — geologia termalna i rzymskie miasto. Lokalny przewodnik je łączy, planuje wizytę z dala od tłumów i oślepiającego słońca i sprawia, że długi dzień płynie." },
+          { q: "Kiedy najlepiej odwiedzić Pamukkale?", a: "Wczesnym rankiem lub późnym popołudniem. Południowe słońce sprawia, że białe tarasy oślepiają, a tłum jest największy; zachód słońca nad basenami jest zjawiskowy. Przewodnik planuje dzień pod tym kątem." },
+          { q: "Jak daleko jest Pamukkale od wybrzeża?", a: "Około 19 km od Denizli i długa jednodniowa wycieczka z Antalyi, Bodrum, Kuşadası lub Marmaris. Przewodnik ogarnia dystans i czas, by wyjazd był wart zachodu." },
+        ],
+        ctaTitle: "Zobacz Pamukkale z lokalnym przewodnikiem",
+        ...PAM.pl,
+      },
+      nl: {
+        name: "Pamukkale",
+        metaTitle: "Pamukkale- & Hierapolis-tours met lokale gidsen",
+        metaDescription:
+          "Ontdek Pamukkale, het UNESCO-'Katoenkasteel', met een geverifieerde lokale gids. Loop over de witte travertijnen, verken het antieke Hierapolis en zwem in het Cleopatra-bad.",
+        intro: [
+          "Pamukkale — het 'Katoenkasteel' — is een van de meest surrealistische taferelen van Turkije: een helling van verblindend witte travertijnterrassen, over millennia uitgehouwen door kalkrijk thermaalwater dat naar beneden stroomt en versteent tot poelen die op bevroren katoen lijken. Het is UNESCO-werelderfgoed in Denizli, en je loopt er blootsvoets, tot je enkels in het warme mineraalwater.",
+          "Vlak boven de terrassen ligt Hierapolis, een Grieks-Romeinse kuurstad met een groot theater, een van de grootste necropolissen van Anatolië en het thermale Antieke Bad, waar je zwemt tussen omgevallen Romeinse zuilen. Met een local van VibeGuide kies je het juiste moment, begrijp je wat je ziet en is de lange trip het echt waard.",
+        ],
+        highlights: [
+          { title: "Witte travertijnterrassen", desc: "Verblindend witte kalkpoelen die langs de helling stromen — loop er blootsvoets doorheen in warm bronwater." },
+          { title: "Antiek Hierapolis", desc: "Een Grieks-Romeinse kuurstad boven de terrassen: theater, uitgestrekte necropolis, Apollotempel en het heilige Plutonium." },
+          { title: "Antieke Bad van Cleopatra", desc: "Zwem in warm thermaalwater tussen antieke Romeinse zuilen die door een aardbeving zijn omgevallen." },
+        ],
+        faqs: [
+          { q: "Heb ik een gids nodig voor Pamukkale?", a: "Je kunt er alleen rondlopen, maar Pamukkale en Hierapolis zijn twee locaties in één — thermale geologie en een Romeinse stad. Een lokale gids verbindt ze, plant je bezoek rond drukte en felle zon en laat de lange dag soepel verlopen." },
+          { q: "Wat is de beste tijd om Pamukkale te bezoeken?", a: "Vroeg in de ochtend of laat in de middag. De middagzon maakt de witte terrassen verblindend en de drukte piekt; de zonsondergang boven de poelen is spectaculair. Een gids plant de dag hieromheen." },
+          { q: "Hoe ver ligt Pamukkale van de kust?", a: "Ongeveer 19 km van Denizli en een lange dagtrip vanuit Antalya, Bodrum, Kuşadası of Marmaris. Een gids regelt afstand en timing zodat de rit de moeite waard is." },
+        ],
+        ctaTitle: "Bezoek Pamukkale met een local",
+        ...PAM.nl,
       },
     },
   },
