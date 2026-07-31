@@ -2187,6 +2187,13 @@ const ANTALYA: CityGuide = {
         { q: "Are Antalya tours suitable for families and beach days?", a: "Absolutely. Private guides tailor the pace for children, seniors and mixed groups — shorter old-town walks, a stop at the Düden Waterfalls, and easy beach time at Konyaaltı or Lara. Just tell your guide who's coming and what kind of day you want." },
         { q: "Do I need to tip my Antalya guide?", a: "Tipping isn't required — the price you see covers the tour. If you had a great time, a tip is appreciated but always optional, and never expected." },
       ],
+      landmarksHeading: "Top landmarks & day trips near Antalya",
+      landmarksSub: "Explore each with a verified local guide.",
+      landmarks: [
+        { href: "/attractions/en/aspendos", icon: "🎭", name: "Aspendos", desc: "Best-preserved Roman theatre" },
+        { href: "/attractions/en/kaleici", icon: "🏘️", name: "Kaleiçi (Old Town)", desc: "Antalya's historic old town" },
+        { href: "/attractions/en/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "White travertines & Hierapolis" },
+      ],
       otherHeading: "Explore more of Turkey",
       otherCities: [
         { href: "/bodrum-tour-guide", icon: "⛵", name: "Bodrum Tour Guide", desc: "Aegean marina, castle & whitewashed streets" },
@@ -2254,6 +2261,13 @@ const ANTALYA: CityGuide = {
         { q: "Wann ist die beste Reisezeit für Antalya?", a: "April–Juni und September–Oktober bieten warmes, angenehmes Wetter für Ruinen und Strände zugleich, bei weniger Andrang. Juli und August sind heiß und belebt — ideal fürs Meer, doch ein lokaler Guide führt dich früh am Morgen zu den Ruinen, bevor die Hitze kommt." },
         { q: "Sind Antalya-Touren für Familien und Strandtage geeignet?", a: "Absolut. Private Guides passen das Tempo an Kinder, Senioren und gemischte Gruppen an — kürzere Altstadtspaziergänge, ein Halt an den Düden-Wasserfällen und entspannte Strandzeit an Konyaaltı oder Lara. Sag deinem Guide einfach, wer dabei ist und wie dein Tag aussehen soll." },
         { q: "Muss ich meinem Antalya-Guide Trinkgeld geben?", a: "Trinkgeld ist nicht erforderlich — der angezeigte Preis deckt die Tour ab. Wenn es dir gefallen hat, ist ein Trinkgeld willkommen, aber immer freiwillig und nie erwartet." },
+      ],
+      landmarksHeading: "Top-Sehenswürdigkeiten & Tagesausflüge bei Antalya",
+      landmarksSub: "Entdecke jede mit einem verifizierten lokalen Guide.",
+      landmarks: [
+        { href: "/attractions/de/aspendos", icon: "🎭", name: "Aspendos", desc: "Besterhaltenes römisches Theater" },
+        { href: "/attractions/de/kaleici", icon: "🏘️", name: "Kaleiçi (Altstadt)", desc: "Antalyas historische Altstadt" },
+        { href: "/attractions/de/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Weiße Kalkterrassen & Hierapolis" },
       ],
       otherHeading: "Mehr von der Türkei entdecken",
       otherCities: [
@@ -2323,6 +2337,13 @@ const ANTALYA: CityGuide = {
         { q: "¿Los tours por Antalya son adecuados para familias y días de playa?", a: "Por supuesto. Los guías privados adaptan el ritmo para niños, personas mayores y grupos variados: paseos más cortos por el casco antiguo, una parada en las cascadas de Düden y tiempo tranquilo de playa en Konyaaltı o Lara. Solo dile a tu guía quién viene y qué tipo de día quieres." },
         { q: "¿Debo dar propina a mi guía en Antalya?", a: "La propina no es obligatoria: el precio que ves cubre el tour. Si lo has pasado muy bien, se agradece una propina, pero siempre es opcional y nunca se espera." },
       ],
+      landmarksHeading: "Monumentos y excursiones cerca de Antalya",
+      landmarksSub: "Explora cada uno con un guía local verificado.",
+      landmarks: [
+        { href: "/attractions/es/aspendos", icon: "🎭", name: "Aspendos", desc: "Teatro romano mejor conservado" },
+        { href: "/attractions/es/kaleici", icon: "🏘️", name: "Kaleiçi (Casco Antiguo)", desc: "Casco antiguo de Antalya" },
+        { href: "/attractions/es/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Travertinos blancos y Hierápolis" },
+      ],
       otherHeading: "Explora más de Turquía",
       otherCities: [
         { href: "/es/bodrum-tour-guide", icon: "⛵", name: "Guía de Bodrum", desc: "Puerto deportivo del Egeo, castillo y calles blancas" },
@@ -2390,6 +2411,13 @@ const ANTALYA: CityGuide = {
         { q: "Quelle est la meilleure période pour visiter Antalya ?", a: "Avril–juin et septembre–octobre offrent un climat chaud et agréable pour les ruines comme pour les plages, avec moins de foule. Juillet et août sont chauds et animés — parfaits pour la mer, mais un guide local vous emmènera aux ruines tôt le matin pour éviter la chaleur." },
         { q: "Les visites d'Antalya conviennent-elles aux familles et aux journées plage ?", a: "Tout à fait. Les guides privés adaptent le rythme aux enfants, aux seniors et aux groupes mixtes — promenades plus courtes dans la vieille ville, un arrêt aux cascades de Düden et un moment détente à la plage de Konyaaltı ou de Lara. Indiquez simplement à votre guide qui vous accompagne et le type de journée souhaité." },
         { q: "Dois-je donner un pourboire à mon guide à Antalya ?", a: "Le pourboire n'est pas obligatoire — le prix affiché couvre la visite. Si vous avez passé un excellent moment, un pourboire est apprécié, mais il reste toujours facultatif et n'est jamais attendu." },
+      ],
+      landmarksHeading: "Sites et excursions près d'Antalya",
+      landmarksSub: "Explorez chacun avec un guide local vérifié.",
+      landmarks: [
+        { href: "/attractions/fr/aspendos", icon: "🎭", name: "Aspendos", desc: "Théâtre romain le mieux conservé" },
+        { href: "/attractions/fr/kaleici", icon: "🏘️", name: "Kaleiçi (Vieille Ville)", desc: "Vieille ville historique d'Antalya" },
+        { href: "/attractions/fr/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Travertins blancs et Hiérapolis" },
       ],
       otherHeading: "Explorez plus de la Turquie",
       otherCities: [
@@ -2459,6 +2487,13 @@ const ANTALYA: CityGuide = {
         { q: "I tour di Antalya sono adatti a famiglie e giornate al mare?", a: "Assolutamente. Le guide private adattano il ritmo a bambini, anziani e gruppi misti: passeggiate più brevi nel centro storico, una sosta alle cascate di Düden e tempo rilassato in spiaggia a Konyaaltı o Lara. Basta dire alla tua guida chi partecipa e che tipo di giornata desideri." },
         { q: "Devo lasciare la mancia alla mia guida ad Antalya?", a: "La mancia non è obbligatoria: il prezzo che vedi copre il tour. Se ti sei trovato benissimo, una mancia è gradita, ma è sempre facoltativa e mai attesa." },
       ],
+      landmarksHeading: "Monumenti ed escursioni vicino ad Antalya",
+      landmarksSub: "Esplora ciascuno con una guida locale verificata.",
+      landmarks: [
+        { href: "/attractions/it/aspendos", icon: "🎭", name: "Aspendos", desc: "Teatro romano meglio conservato" },
+        { href: "/attractions/it/kaleici", icon: "🏘️", name: "Kaleiçi (Città Vecchia)", desc: "Il centro storico di Antalya" },
+        { href: "/attractions/it/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Travertini bianchi e Hierapolis" },
+      ],
       otherHeading: "Esplora di più della Turchia",
       otherCities: [
         { href: "/it/bodrum-tour-guide", icon: "⛵", name: "Guida di Bodrum", desc: "Porto turistico egeo, castello e vicoli bianchi" },
@@ -2526,6 +2561,13 @@ const ANTALYA: CityGuide = {
         { q: "ما أفضل وقت لزيارة أنطاليا؟", a: "يوفّر أبريل–يونيو وسبتمبر–أكتوبر طقسًا دافئًا مريحًا للآثار والشواطئ معًا، مع ازدحام أقل. يوليو وأغسطس حارّان ومزدحمان — مثاليان للبحر، لكن المرشد المحلي سيأخذك إلى الآثار في الصباح الباكر لتجنّب الحرّ." },
         { q: "هل جولات أنطاليا مناسبة للعائلات وأيام الشاطئ؟", a: "بالتأكيد. يكيّف المرشدون الخاصون الإيقاع للأطفال وكبار السن والمجموعات المختلطة — جولات أقصر في المدينة القديمة، ووقفة عند شلالات دودان، ووقت هادئ على شاطئ كونيا آلتي أو لارا. فقط أخبر مرشدك بمن سيرافقك ونوع اليوم الذي تريده." },
         { q: "هل يجب أن أعطي إكرامية لمرشدي في أنطاليا؟", a: "الإكرامية ليست إلزامية — فالسعر الذي تراه يغطي الجولة. إذا قضيت وقتًا رائعًا، فالإكرامية موضع تقدير لكنها دائمًا اختيارية وغير متوقَّعة أبدًا." },
+      ],
+      landmarksHeading: "أبرز المعالم والرحلات قرب أنطاليا",
+      landmarksSub: "استكشف كلًّا منها مع دليل محلي موثّق.",
+      landmarks: [
+        { href: "/attractions/ar/aspendos", icon: "🎭", name: "أسبندوس", desc: "أفضل مسرح روماني محفوظ" },
+        { href: "/attractions/ar/kaleici", icon: "🏘️", name: "كاليتشي", desc: "بلدة أنطاليا التاريخية القديمة" },
+        { href: "/attractions/ar/pamukkale", icon: "🏞️", name: "باموكالي", desc: "مدرجات بيضاء وهيرابوليس" },
       ],
       otherHeading: "استكشف المزيد من تركيا",
       otherCities: [
@@ -2595,6 +2637,13 @@ const ANTALYA: CityGuide = {
         { q: "Подходят ли экскурсии по Анталии для семей и пляжного отдыха?", a: "Безусловно. Частные гиды подстраивают темп под детей, пожилых и смешанные группы — более короткие прогулки по старому городу, остановка у водопадов Дюден и спокойное время на пляже Коньяалты или Лара. Просто скажите гиду, кто идёт с вами и какой день вы хотите." },
         { q: "Нужно ли давать чаевые гиду в Анталии?", a: "Чаевые не обязательны — указанная цена покрывает экскурсию. Если вам понравилось, чаевые будут приятны, но всегда остаются на ваше усмотрение и никогда не ожидаются." },
       ],
+      landmarksHeading: "Достопримечательности и поездки рядом с Анталией",
+      landmarksSub: "Осмотрите каждую с проверенным местным гидом.",
+      landmarks: [
+        { href: "/attractions/ru/aspendos", icon: "🎭", name: "Аспендос", desc: "Отлично сохранившийся римский театр" },
+        { href: "/attractions/ru/kaleici", icon: "🏘️", name: "Калеичи", desc: "Исторический старый город Антальи" },
+        { href: "/attractions/ru/pamukkale", icon: "🏞️", name: "Памуккале", desc: "Белые травертины и Иераполь" },
+      ],
       otherHeading: "Откройте больше Турции",
       otherCities: [
         { href: "/ru/bodrum-tour-guide", icon: "⛵", name: "Гид по Бодруму", desc: "Эгейская марина, замок и белоснежные улочки" },
@@ -2662,6 +2711,13 @@ const ANTALYA: CityGuide = {
         { q: "Antalya'yı ziyaret etmek için en iyi zaman ne?", a: "Nisan–Haziran ile Eylül–Ekim, hem kalıntılar hem plajlar için sıcak ve konforlu bir hava ve daha az kalabalık sunar. Temmuz ve Ağustos sıcak ve yoğundur — deniz için idealdir, ancak yerel bir rehber sıcaktan kaçınmak için sizi sabahın erken saatlerinde kalıntılara götürür." },
         { q: "Antalya turları aileler ve plaj günleri için uygun mu?", a: "Kesinlikle. Özel rehberler tempoyu çocuklara, yaşlılara ve karma gruplara göre uyarlar — daha kısa tarihi kent yürüyüşleri, Düden Şelaleleri'nde bir mola ve Konyaaltı ya da Lara'da rahat bir plaj vakti. Kimlerin geleceğini ve nasıl bir gün istediğinizi rehberinize söylemeniz yeterli." },
         { q: "Antalya rehberime bahşiş vermem gerekir mi?", a: "Bahşiş zorunlu değildir — gördüğünüz fiyat turu kapsar. Çok keyif aldıysanız bir bahşiş memnuniyetle karşılanır, ancak her zaman isteğe bağlıdır ve asla beklenmez." },
+      ],
+      landmarksHeading: "Antalya çevresindeki simgeler ve turlar",
+      landmarksSub: "Her birini onaylı bir yerel rehberle keşfedin.",
+      landmarks: [
+        { href: "/attractions/tr/aspendos", icon: "🎭", name: "Aspendos", desc: "En iyi korunmuş Roma tiyatrosu" },
+        { href: "/attractions/tr/kaleici", icon: "🏘️", name: "Kaleiçi", desc: "Antalya'nın tarihi eski şehri" },
+        { href: "/attractions/tr/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Beyaz travertenler ve Hierapolis" },
       ],
       otherHeading: "Türkiye'yi keşfetmeye devam edin",
       otherCities: [
@@ -2731,6 +2787,13 @@ const ANTALYA: CityGuide = {
         { q: "Czy wycieczki po Antalyi są odpowiednie dla rodzin i dni na plaży?", a: "Jak najbardziej. Prywatni przewodnicy dostosowują tempo do dzieci, seniorów i mieszanych grup — krótsze spacery po starówce, przystanek przy wodospadach Düden i spokojny czas na plaży w Konyaaltı lub Lara. Wystarczy powiedzieć przewodnikowi, kto bierze udział i jaki dzień chcesz przeżyć." },
         { q: "Czy muszę dawać napiwek przewodnikowi w Antalyi?", a: "Napiwek nie jest wymagany — cena, którą widzisz, obejmuje całą wycieczkę. Jeśli świetnie się bawiłeś, napiwek będzie mile widziany, ale zawsze pozostaje dobrowolny i nigdy nie jest oczekiwany." },
       ],
+      landmarksHeading: "Zabytki i wycieczki w pobliżu Antalyi",
+      landmarksSub: "Poznaj każde z zweryfikowanym lokalnym przewodnikiem.",
+      landmarks: [
+        { href: "/attractions/pl/aspendos", icon: "🎭", name: "Aspendos", desc: "Najlepiej zachowany rzymski teatr" },
+        { href: "/attractions/pl/kaleici", icon: "🏘️", name: "Kaleiçi (Stare Miasto)", desc: "Zabytkowa starówka Antalyi" },
+        { href: "/attractions/pl/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Białe trawertyny i Hierapolis" },
+      ],
       otherHeading: "Odkryj więcej Turcji",
       otherCities: [
         { href: "/pl/bodrum-tour-guide", icon: "⛵", name: "Przewodnik po Bodrum", desc: "Egejska marina, zamek i białe uliczki" },
@@ -2798,6 +2861,13 @@ const ANTALYA: CityGuide = {
         { q: "Wat is de beste tijd om Antalya te bezoeken?", a: "April–juni en september–oktober bieden warm, aangenaam weer voor zowel ruïnes als stranden, met minder drukte. Juli en augustus zijn heet en druk — ideaal voor de zee, maar een lokale gids neemt je vroeg in de ochtend mee naar de ruïnes om de hitte voor te zijn." },
         { q: "Zijn tours in Antalya geschikt voor gezinnen en stranddagen?", a: "Absoluut. Privégidsen stemmen het tempo af op kinderen, senioren en gemengde groepen — kortere wandelingen door de oude stad, een stop bij de Düden-watervallen en ontspannen strandtijd in Konyaaltı of Lara. Vertel je gids gewoon wie er meekomt en wat voor dag je wilt." },
         { q: "Moet ik mijn gids in Antalya een fooi geven?", a: "Een fooi is niet verplicht — de prijs die je ziet, dekt de tour. Als je een geweldige tijd had, wordt een fooi gewaardeerd, maar die is altijd vrijblijvend en wordt nooit verwacht." },
+      ],
+      landmarksHeading: "Bezienswaardigheden en dagtrips bij Antalya",
+      landmarksSub: "Ontdek elk met een geverifieerde lokale gids.",
+      landmarks: [
+        { href: "/attractions/nl/aspendos", icon: "🎭", name: "Aspendos", desc: "Best bewaarde Romeinse theater" },
+        { href: "/attractions/nl/kaleici", icon: "🏘️", name: "Kaleiçi (Oude Stad)", desc: "Historische oude stad van Antalya" },
+        { href: "/attractions/nl/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Witte travertijnen en Hierapolis" },
       ],
       otherHeading: "Ontdek meer van Turkije",
       otherCities: [
@@ -2877,6 +2947,13 @@ const IZMIR: CityGuide = {
         { q: "What is the best time to visit İzmir?", a: "April–June and September–October bring warm, comfortable weather and fewer crowds. Summer is hot but perfect for the nearby beaches; winter is mild and quiet. Whatever the season, a local guide knows the best hours to explore." },
         { q: "Do I need to tip my İzmir guide?", a: "Tipping isn't required — the price you see covers the tour. If you had a great time, a tip is appreciated but always optional, and never expected." },
       ],
+      landmarksHeading: "Top landmarks & day trips near Izmir",
+      landmarksSub: "Explore each with a verified local guide.",
+      landmarks: [
+        { href: "/attractions/en/ephesus", icon: "🏛️", name: "Ephesus", desc: "Ancient Roman city" },
+        { href: "/attractions/en/pergamon", icon: "🏺", name: "Pergamon", desc: "Acropolis & ancient library" },
+        { href: "/attractions/en/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "White travertines & Hierapolis" },
+      ],
       otherHeading: "Explore more of Turkey",
       otherCities: [
         { href: "/ephesus-tour-guide", icon: "🏛️", name: "Ephesus Tour Guide", desc: "Ancient Roman ruins near Selçuk, İzmir" },
@@ -2944,6 +3021,13 @@ const IZMIR: CityGuide = {
         { q: "Wie viele Tage braucht man in İzmir?", a: "Ein voller Tag deckt die Stadt ab — Konak, Kemeraltı, die Agora, Kadifekale und den Kordon. Mit einem zweiten und dritten Tag für Ephesus, Şirince und Çeşme wird İzmir zum idealen Ausgangspunkt für die gesamte Ägäisküste. Ein lokaler Guide hilft dir, das Beste aus deiner Zeit zu machen." },
         { q: "Wann ist die beste Reisezeit für İzmir?", a: "April–Juni und September–Oktober bieten warmes, angenehmes Wetter und weniger Andrang. Der Sommer ist heiß, aber perfekt für die nahen Strände; der Winter ist mild und ruhig. Egal zu welcher Jahreszeit — ein lokaler Guide kennt die besten Stunden zum Erkunden." },
         { q: "Muss ich meinem İzmir-Guide Trinkgeld geben?", a: "Trinkgeld ist nicht erforderlich — der angezeigte Preis deckt die Tour ab. Wenn es dir gefallen hat, freut sich dein Guide über ein Trinkgeld, aber es ist immer freiwillig und wird nie erwartet." },
+      ],
+      landmarksHeading: "Top-Sehenswürdigkeiten & Tagesausflüge bei Izmir",
+      landmarksSub: "Entdecke jede mit einem verifizierten lokalen Guide.",
+      landmarks: [
+        { href: "/attractions/de/ephesus", icon: "🏛️", name: "Ephesos", desc: "Antike römische Stadt" },
+        { href: "/attractions/de/pergamon", icon: "🏺", name: "Pergamon", desc: "Akropolis & antike Bibliothek" },
+        { href: "/attractions/de/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Weiße Kalkterrassen & Hierapolis" },
       ],
       otherHeading: "Entdecke mehr von der Türkei",
       otherCities: [
@@ -3013,6 +3097,13 @@ const IZMIR: CityGuide = {
         { q: "¿Cuál es la mejor época para visitar Izmir?", a: "De abril a junio y de septiembre a octubre hay un clima cálido y agradable y menos multitudes. El verano es caluroso pero perfecto para las playas cercanas; el invierno es suave y tranquilo. Sea cual sea la temporada, un guía local conoce las mejores horas para explorar." },
         { q: "¿Debo dar propina a mi guía en Izmir?", a: "La propina no es obligatoria — el precio que ves cubre el tour. Si lo has pasado muy bien, una propina se agradece, pero siempre es opcional y nunca se espera." },
       ],
+      landmarksHeading: "Monumentos y excursiones cerca de Izmir",
+      landmarksSub: "Explora cada uno con un guía local verificado.",
+      landmarks: [
+        { href: "/attractions/es/ephesus", icon: "🏛️", name: "Éfeso", desc: "Antigua ciudad romana" },
+        { href: "/attractions/es/pergamon", icon: "🏺", name: "Pérgamo", desc: "Acrópolis y biblioteca antigua" },
+        { href: "/attractions/es/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Travertinos blancos y Hierápolis" },
+      ],
       otherHeading: "Explora más de Turquía",
       otherCities: [
         { href: "/es/ephesus-tour-guide", icon: "🏛️", name: "Guía de Éfeso", desc: "Antiguas ruinas romanas cerca de Selçuk, İzmir" },
@@ -3080,6 +3171,13 @@ const IZMIR: CityGuide = {
         { q: "Combien de jours faut-il à İzmir ?", a: "Une journée complète suffit pour la ville — Konak, Kemeraltı, l'agora, Kadifekale et le Kordon. Ajoutez un deuxième et un troisième jour pour Éphèse, Şirince et Çeşme, et İzmir devient la base idéale pour toute la côte égéenne. Un guide local vous aide à tirer le meilleur de votre temps." },
         { q: "Quelle est la meilleure période pour visiter İzmir ?", a: "D'avril à juin et de septembre à octobre, le temps est chaud et agréable et les foules moins denses. L'été est chaud mais parfait pour les plages proches ; l'hiver est doux et calme. Quelle que soit la saison, un guide local connaît les meilleures heures pour explorer." },
         { q: "Dois-je donner un pourboire à mon guide à İzmir ?", a: "Le pourboire n'est pas obligatoire — le prix affiché couvre la visite. Si vous avez passé un excellent moment, un pourboire est apprécié, mais il reste toujours facultatif et n'est jamais attendu." },
+      ],
+      landmarksHeading: "Sites et excursions près d'Izmir",
+      landmarksSub: "Explorez chacun avec un guide local vérifié.",
+      landmarks: [
+        { href: "/attractions/fr/ephesus", icon: "🏛️", name: "Éphèse", desc: "Cité romaine antique" },
+        { href: "/attractions/fr/pergamon", icon: "🏺", name: "Pergame", desc: "Acropole et bibliothèque antique" },
+        { href: "/attractions/fr/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Travertins blancs et Hiérapolis" },
       ],
       otherHeading: "Explorez plus de la Turquie",
       otherCities: [
@@ -3149,6 +3247,13 @@ const IZMIR: CityGuide = {
         { q: "Qual è il periodo migliore per visitare Izmir?", a: "Da aprile a giugno e da settembre a ottobre il clima è caldo e piacevole e la folla minore. L'estate è calda ma perfetta per le spiagge vicine; l'inverno è mite e tranquillo. In qualsiasi stagione, una guida locale conosce le ore migliori per esplorare." },
         { q: "Devo lasciare la mancia alla mia guida a Izmir?", a: "La mancia non è obbligatoria — il prezzo che vedi copre il tour. Se ti sei trovato benissimo, una mancia è gradita, ma è sempre facoltativa e mai attesa." },
       ],
+      landmarksHeading: "Monumenti ed escursioni vicino a Izmir",
+      landmarksSub: "Esplora ciascuno con una guida locale verificata.",
+      landmarks: [
+        { href: "/attractions/it/ephesus", icon: "🏛️", name: "Efeso", desc: "Antica città romana" },
+        { href: "/attractions/it/pergamon", icon: "🏺", name: "Pergamo", desc: "Acropoli e biblioteca antica" },
+        { href: "/attractions/it/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Travertini bianchi e Hierapolis" },
+      ],
       otherHeading: "Esplora di più della Turchia",
       otherCities: [
         { href: "/it/ephesus-tour-guide", icon: "🏛️", name: "Guida di Efeso", desc: "Antiche rovine romane vicino a Selçuk, İzmir" },
@@ -3216,6 +3321,13 @@ const IZMIR: CityGuide = {
         { q: "كم يومًا تحتاج في إزمير؟", a: "يوم كامل يغطّي المدينة — كوناك وكِمِرألتي والأغورا وكاديفكاله والكوردون. أضِف يومًا ثانيًا وثالثًا لأفسس وشيرينجه وتشيشمه، فتصبح إزمير القاعدة المثالية لكامل ساحل بحر إيجه. يساعدك دليل محلي على الاستفادة القصوى من وقتك." },
         { q: "ما أفضل وقت لزيارة إزمير؟", a: "يوفّر أبريل–يونيو وسبتمبر–أكتوبر طقسًا دافئًا مريحًا وازدحامًا أقل. الصيف حار لكنه مثالي للشواطئ القريبة؛ والشتاء معتدل وهادئ. مهما كان الموسم، يعرف الدليل المحلي أفضل الساعات للاستكشاف." },
         { q: "هل يجب أن أعطي إكرامية لدليلي في إزمير؟", a: "الإكرامية ليست إلزامية — فالسعر الذي تراه يغطّي الجولة. إذا قضيت وقتًا رائعًا، فالإكرامية موضع تقدير لكنها دائمًا اختيارية وغير متوقَّعة أبدًا." },
+      ],
+      landmarksHeading: "أبرز المعالم والرحلات قرب إزمير",
+      landmarksSub: "استكشف كلًّا منها مع دليل محلي موثّق.",
+      landmarks: [
+        { href: "/attractions/ar/ephesus", icon: "🏛️", name: "أفسس", desc: "مدينة رومانية قديمة" },
+        { href: "/attractions/ar/pergamon", icon: "🏺", name: "برغامة", desc: "الأكروبوليس ومكتبة قديمة" },
+        { href: "/attractions/ar/pamukkale", icon: "🏞️", name: "باموكالي", desc: "مدرجات بيضاء وهيرابوليس" },
       ],
       otherHeading: "اكتشف المزيد من تركيا",
       otherCities: [
@@ -3285,6 +3397,13 @@ const IZMIR: CityGuide = {
         { q: "Когда лучше всего ехать в Измир?", a: "Апрель–июнь и сентябрь–октябрь дарят тёплую комфортную погоду и меньше толп. Лето жаркое, но отличное для близких пляжей; зима мягкая и тихая. В любой сезон местный гид знает лучшие часы для прогулок." },
         { q: "Нужно ли давать чаевые гиду в Измире?", a: "Чаевые не обязательны — указанная цена покрывает экскурсию. Если вам понравилось, чаевые будут приятны, но всегда остаются на ваше усмотрение и никогда не ожидаются." },
       ],
+      landmarksHeading: "Достопримечательности и поездки рядом с Измиром",
+      landmarksSub: "Осмотрите каждую с проверенным местным гидом.",
+      landmarks: [
+        { href: "/attractions/ru/ephesus", icon: "🏛️", name: "Эфес", desc: "Древний римский город" },
+        { href: "/attractions/ru/pergamon", icon: "🏺", name: "Пергам", desc: "Акрополь и античная библиотека" },
+        { href: "/attractions/ru/pamukkale", icon: "🏞️", name: "Памуккале", desc: "Белые травертины и Иераполь" },
+      ],
       otherHeading: "Откройте больше Турции",
       otherCities: [
         { href: "/ru/ephesus-tour-guide", icon: "🏛️", name: "Гид по Эфесу", desc: "Древнеримские руины близ Сельчука, Измир" },
@@ -3352,6 +3471,13 @@ const IZMIR: CityGuide = {
         { q: "İzmir için kaç gün gerekir?", a: "Tam bir gün şehri kapsar — Konak, Kemeraltı, Agora, Kadifekale ve Kordon. Efes, Şirince ve Çeşme için ikinci ve üçüncü günü ekleyin; İzmir tüm Ege kıyısı için ideal bir üsse dönüşür. Yerel bir rehber, elinizdeki süreyi en verimli değerlendirmenize yardımcı olur." },
         { q: "İzmir'i ziyaret etmek için en iyi zaman ne?", a: "Nisan–Haziran ile Eylül–Ekim ılıman, keyifli bir hava ve daha az kalabalık sunar. Yaz sıcaktır ama yakın plajlar için idealdir; kış ılıman ve sakindir. Mevsim ne olursa olsun, yerel bir rehber gezmek için en iyi saatleri bilir." },
         { q: "İzmir rehberime bahşiş vermem gerekir mi?", a: "Bahşiş zorunlu değildir — gördüğünüz fiyat turu kapsar. Çok keyif aldıysanız bir bahşiş memnuniyetle karşılanır, ancak her zaman isteğe bağlıdır ve asla beklenmez." },
+      ],
+      landmarksHeading: "İzmir çevresindeki simgeler ve turlar",
+      landmarksSub: "Her birini onaylı bir yerel rehberle keşfedin.",
+      landmarks: [
+        { href: "/attractions/tr/ephesus", icon: "🏛️", name: "Efes", desc: "Antik Roma kenti" },
+        { href: "/attractions/tr/pergamon", icon: "🏺", name: "Bergama (Pergamon)", desc: "Akropol ve antik kütüphane" },
+        { href: "/attractions/tr/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Beyaz travertenler ve Hierapolis" },
       ],
       otherHeading: "Türkiye'yi keşfetmeye devam edin",
       otherCities: [
@@ -3421,6 +3547,13 @@ const IZMIR: CityGuide = {
         { q: "Kiedy najlepiej odwiedzić Izmir?", a: "Od kwietnia do czerwca oraz od września do października pogoda jest ciepła i przyjemna, a tłumów mniej. Lato jest gorące, ale idealne na pobliskie plaże; zima jest łagodna i spokojna. Niezależnie od pory roku lokalny przewodnik zna najlepsze godziny na zwiedzanie." },
         { q: "Czy muszę dawać napiwek przewodnikowi w Izmirze?", a: "Napiwek nie jest wymagany — cena, którą widzisz, obejmuje wycieczkę. Jeśli świetnie się bawiłeś, napiwek będzie mile widziany, ale zawsze jest opcjonalny i nigdy nieoczekiwany." },
       ],
+      landmarksHeading: "Zabytki i wycieczki w pobliżu Izmiru",
+      landmarksSub: "Poznaj każde z zweryfikowanym lokalnym przewodnikiem.",
+      landmarks: [
+        { href: "/attractions/pl/ephesus", icon: "🏛️", name: "Efez", desc: "Starożytne rzymskie miasto" },
+        { href: "/attractions/pl/pergamon", icon: "🏺", name: "Pergamon", desc: "Akropol i antyczna biblioteka" },
+        { href: "/attractions/pl/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Białe trawertyny i Hierapolis" },
+      ],
       otherHeading: "Odkryj więcej Turcji",
       otherCities: [
         { href: "/pl/ephesus-tour-guide", icon: "🏛️", name: "Przewodnik po Efezie", desc: "Starożytne rzymskie ruiny koło Selçuk, Izmir" },
@@ -3488,6 +3621,13 @@ const IZMIR: CityGuide = {
         { q: "Hoeveel dagen heb je nodig in İzmir?", a: "Eén volle dag dekt de stad — Konak, Kemeraltı, de Agora, Kadifekale en de Kordon. Voeg een tweede en derde dag toe voor Efeze, Şirince en Çeşme, en İzmir wordt de ideale uitvalsbasis voor de hele Egeïsche kust. Een lokale gids helpt je het meeste uit je tijd te halen." },
         { q: "Wat is de beste tijd om İzmir te bezoeken?", a: "April–juni en september–oktober brengen warm, aangenaam weer en minder drukte. De zomer is heet maar perfect voor de nabijgelegen stranden; de winter is mild en rustig. Welk seizoen ook, een lokale gids kent de beste uren om te verkennen." },
         { q: "Moet ik mijn İzmir-gids een fooi geven?", a: "Fooien is niet verplicht — de prijs die je ziet dekt de tour. Als je een geweldige tijd had, wordt een fooi gewaardeerd, maar het is altijd optioneel en wordt nooit verwacht." },
+      ],
+      landmarksHeading: "Bezienswaardigheden en dagtrips bij Izmir",
+      landmarksSub: "Ontdek elk met een geverifieerde lokale gids.",
+      landmarks: [
+        { href: "/attractions/nl/ephesus", icon: "🏛️", name: "Efeze", desc: "Antieke Romeinse stad" },
+        { href: "/attractions/nl/pergamon", icon: "🏺", name: "Pergamon", desc: "Acropolis en antieke bibliotheek" },
+        { href: "/attractions/nl/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Witte travertijnen en Hierapolis" },
       ],
       otherHeading: "Ontdek meer van Turkije",
       otherCities: [
@@ -4257,6 +4397,13 @@ const KUSADASI: CityGuide = {
         { q: "When is the best time to visit Kuşadası?", a: "April–June and September–October offer warm days, calm seas and thinner crowds at Ephesus. July and August are hot and busy as the cruise season peaks. Whatever the month, a local guide knows the coolest, quietest hours to walk the ancient ruins." },
         { q: "Do I need to tip my Kuşadası guide?", a: "Tipping isn't required — the price you see covers the tour. If you had a great time, a tip is appreciated but always optional, and never expected." },
       ],
+      landmarksHeading: "Top landmarks & day trips near Kusadasi",
+      landmarksSub: "Explore each with a verified local guide.",
+      landmarks: [
+        { href: "/attractions/en/ephesus", icon: "🏛️", name: "Ephesus", desc: "Ancient Roman city" },
+        { href: "/attractions/en/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "White travertines & Hierapolis" },
+        { href: "/attractions/en/pergamon", icon: "🏺", name: "Pergamon", desc: "Acropolis & ancient library" },
+      ],
       otherHeading: "Explore more of Turkey",
       otherCities: [
         { href: "/ephesus-tour-guide", icon: "🏛️", name: "Ephesus Tour Guide", desc: "The ancient city itself — 20 minutes from Kuşadası" },
@@ -4324,6 +4471,13 @@ const KUSADASI: CityGuide = {
         { q: "Lohnt sich Kuşadası über Ephesus hinaus?", a: "Absolut. Schlendere über den Damm zur Taubeninsel mit ihrer kleinen Festung, entspanne am Frauenstrand, feilsche im Basar und sieh zu, wie die Sonne in der Ägäis versinkt. Für Natur ist der Nationalpark Dilek-Halbinsel nur eine kurze Fahrt entfernt. Ein lokaler Guide zeigt dir die Stadt, an der die meisten Kreuzfahrtgäste vorbeieilen." },
         { q: "Wann ist die beste Reisezeit für Kuşadası?", a: "April–Juni und September–Oktober bieten warme Tage, ruhige See und weniger Andrang in Ephesus. Juli und August sind heiß und belebt, wenn die Kreuzfahrtsaison ihren Höhepunkt erreicht. Egal in welchem Monat — ein lokaler Guide kennt die kühlsten, ruhigsten Stunden für den Gang durch die antiken Ruinen." },
         { q: "Muss ich meinem Kuşadası-Guide Trinkgeld geben?", a: "Trinkgeld ist nicht erforderlich — der angezeigte Preis deckt die Tour ab. Wenn es dir gefallen hat, ist ein Trinkgeld willkommen, aber immer freiwillig und nie erwartet." },
+      ],
+      landmarksHeading: "Top-Sehenswürdigkeiten & Tagesausflüge bei Kusadası",
+      landmarksSub: "Entdecke jede mit einem verifizierten lokalen Guide.",
+      landmarks: [
+        { href: "/attractions/de/ephesus", icon: "🏛️", name: "Ephesos", desc: "Antike römische Stadt" },
+        { href: "/attractions/de/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Weiße Kalkterrassen & Hierapolis" },
+        { href: "/attractions/de/pergamon", icon: "🏺", name: "Pergamon", desc: "Akropolis & antike Bibliothek" },
       ],
       otherHeading: "Mehr von der Türkei entdecken",
       otherCities: [
@@ -4393,6 +4547,13 @@ const KUSADASI: CityGuide = {
         { q: "¿Cuál es la mejor época para visitar Kuşadası?", a: "Abril–junio y septiembre–octubre ofrecen días cálidos, mar en calma y menos gente en Éfeso. Julio y agosto son calurosos y concurridos, con la temporada de cruceros en su punto álgido. Sea cual sea el mes, un guía local conoce las horas más frescas y tranquilas para recorrer las ruinas antiguas." },
         { q: "¿Debo dar propina a mi guía en Kuşadası?", a: "La propina no es obligatoria: el precio que ves cubre el tour. Si lo has pasado muy bien, se agradece una propina, pero siempre es opcional y nunca se espera." },
       ],
+      landmarksHeading: "Monumentos y excursiones cerca de Kusadasi",
+      landmarksSub: "Explora cada uno con un guía local verificado.",
+      landmarks: [
+        { href: "/attractions/es/ephesus", icon: "🏛️", name: "Éfeso", desc: "Antigua ciudad romana" },
+        { href: "/attractions/es/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Travertinos blancos y Hierápolis" },
+        { href: "/attractions/es/pergamon", icon: "🏺", name: "Pérgamo", desc: "Acrópolis y biblioteca antigua" },
+      ],
       otherHeading: "Explora más de Turquía",
       otherCities: [
         { href: "/es/ephesus-tour-guide", icon: "🏛️", name: "Guía de Éfeso", desc: "La propia ciudad antigua — a 20 minutos de Kuşadası" },
@@ -4460,6 +4621,13 @@ const KUSADASI: CityGuide = {
         { q: "Kuşadası vaut-il le détour au-delà d'Éphèse ?", a: "Absolument. Empruntez la chaussée vers l'île aux Pigeons et sa petite forteresse, détendez-vous à la plage des Dames, marchandez au bazar et regardez le soleil plonger dans l'Égée. Côté nature, le parc national de la péninsule de Dilek est à quelques minutes de route. Un guide local vous montre la ville que la plupart des croisiéristes traversent au pas de course." },
         { q: "Quelle est la meilleure période pour visiter Kuşadası ?", a: "Avril–juin et septembre–octobre offrent des journées douces, une mer calme et moins de monde à Éphèse. Juillet et août sont chauds et animés, au pic de la saison des croisières. Quel que soit le mois, un guide local connaît les heures les plus fraîches et les plus calmes pour parcourir les ruines antiques." },
         { q: "Dois-je donner un pourboire à mon guide à Kuşadası ?", a: "Le pourboire n'est pas obligatoire — le prix affiché couvre la visite. Si vous avez passé un excellent moment, un pourboire est apprécié, mais il reste toujours facultatif et n'est jamais attendu." },
+      ],
+      landmarksHeading: "Sites et excursions près de Kusadasi",
+      landmarksSub: "Explorez chacun avec un guide local vérifié.",
+      landmarks: [
+        { href: "/attractions/fr/ephesus", icon: "🏛️", name: "Éphèse", desc: "Cité romaine antique" },
+        { href: "/attractions/fr/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Travertins blancs et Hiérapolis" },
+        { href: "/attractions/fr/pergamon", icon: "🏺", name: "Pergame", desc: "Acropole et bibliothèque antique" },
       ],
       otherHeading: "Explorez plus de la Turquie",
       otherCities: [
@@ -4529,6 +4697,13 @@ const KUSADASI: CityGuide = {
         { q: "Qual è il periodo migliore per visitare Kuşadası?", a: "Aprile–giugno e settembre–ottobre offrono giornate calde, mare calmo e meno folla a Efeso. Luglio e agosto sono caldi e affollati, con la stagione delle crociere al culmine. In qualunque mese, una guida locale conosce le ore più fresche e tranquille per percorrere le rovine antiche." },
         { q: "Devo lasciare la mancia alla mia guida a Kuşadası?", a: "La mancia non è obbligatoria: il prezzo che vedi copre il tour. Se ti sei trovato benissimo, una mancia è gradita, ma è sempre facoltativa e mai attesa." },
       ],
+      landmarksHeading: "Monumenti ed escursioni vicino a Kusadasi",
+      landmarksSub: "Esplora ciascuno con una guida locale verificata.",
+      landmarks: [
+        { href: "/attractions/it/ephesus", icon: "🏛️", name: "Efeso", desc: "Antica città romana" },
+        { href: "/attractions/it/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Travertini bianchi e Hierapolis" },
+        { href: "/attractions/it/pergamon", icon: "🏺", name: "Pergamo", desc: "Acropoli e biblioteca antica" },
+      ],
       otherHeading: "Esplora di più della Turchia",
       otherCities: [
         { href: "/it/ephesus-tour-guide", icon: "🏛️", name: "Guida di Efeso", desc: "La città antica stessa — a 20 minuti da Kuşadası" },
@@ -4596,6 +4771,13 @@ const KUSADASI: CityGuide = {
         { q: "هل تستحق كوشاداسي الزيارة بعيدًا عن أفسس؟", a: "بالتأكيد. تمشَّ على الممشى إلى جزيرة الحمام وقلعتها الصغيرة، واسترخِ في شاطئ السيدات، وساوم في البازار، وشاهد الشمس تغرق في بحر إيجه. وللطبيعة، يبعد منتزه شبه جزيرة ديلك الوطني مسافة قصيرة بالسيارة. يُريك دليل محلي المدينة التي يمرّ بها معظم ركّاب الكروز مرور الكرام." },
         { q: "ما أفضل وقت لزيارة كوشاداسي؟", a: "يوفّر أبريل–يونيو وسبتمبر–أكتوبر أيامًا دافئة وبحرًا هادئًا وازدحامًا أقلّ في أفسس. يوليو وأغسطس حارّان ومزدحمان مع ذروة موسم الكروز. مهما كان الشهر، يعرف المرشد المحلي أبرد الساعات وأهدأها للسير بين الأطلال القديمة." },
         { q: "هل يجب أن أعطي إكرامية لمرشدي في كوشاداسي؟", a: "الإكرامية ليست إلزامية — فالسعر الذي تراه يغطي الجولة. إذا قضيت وقتًا رائعًا، فالإكرامية موضع تقدير لكنها دائمًا اختيارية وغير متوقَّعة أبدًا." },
+      ],
+      landmarksHeading: "أبرز المعالم والرحلات قرب كوش أداسي",
+      landmarksSub: "استكشف كلًّا منها مع دليل محلي موثّق.",
+      landmarks: [
+        { href: "/attractions/ar/ephesus", icon: "🏛️", name: "أفسس", desc: "مدينة رومانية قديمة" },
+        { href: "/attractions/ar/pamukkale", icon: "🏞️", name: "باموكالي", desc: "مدرجات بيضاء وهيرابوليس" },
+        { href: "/attractions/ar/pergamon", icon: "🏺", name: "برغامة", desc: "الأكروبوليس ومكتبة قديمة" },
       ],
       otherHeading: "استكشف المزيد من تركيا",
       otherCities: [
@@ -4665,6 +4847,13 @@ const KUSADASI: CityGuide = {
         { q: "Когда лучше всего ехать в Кушадасы?", a: "Апрель–июнь и сентябрь–октябрь дарят тёплые дни, спокойное море и меньше толп в Эфесе. Июль и август жаркие и людные — пик круизного сезона. В любой месяц местный гид знает самые прохладные и тихие часы для прогулки по античным руинам." },
         { q: "Нужно ли давать чаевые гиду в Кушадасы?", a: "Чаевые не обязательны — указанная цена покрывает экскурсию. Если вам понравилось, чаевые будут приятны, но всегда остаются на ваше усмотрение и никогда не ожидаются." },
       ],
+      landmarksHeading: "Достопримечательности и поездки рядом с Кушадасы",
+      landmarksSub: "Осмотрите каждую с проверенным местным гидом.",
+      landmarks: [
+        { href: "/attractions/ru/ephesus", icon: "🏛️", name: "Эфес", desc: "Древний римский город" },
+        { href: "/attractions/ru/pamukkale", icon: "🏞️", name: "Памуккале", desc: "Белые травертины и Иераполь" },
+        { href: "/attractions/ru/pergamon", icon: "🏺", name: "Пергам", desc: "Акрополь и античная библиотека" },
+      ],
       otherHeading: "Откройте больше Турции",
       otherCities: [
         { href: "/ru/ephesus-tour-guide", icon: "🏛️", name: "Гид по Эфесу", desc: "Сам античный город — в 20 минутах от Кушадасы" },
@@ -4732,6 +4921,13 @@ const KUSADASI: CityGuide = {
         { q: "Kuşadası, Efes dışında görülmeye değer mi?", a: "Kesinlikle. Güvercinada'ya ve küçük kalesine uzanan yolda yürüyün, Kadınlar Denizi'nde dinlenin, çarşıda pazarlık edin ve güneşin Ege'ye batışını izleyin. Doğa için Dilek Yarımadası Milli Parkı kısa bir araba mesafesinde. Yerel bir rehber, çoğu kruvaziyer yolcusunun koşar adım geçtiği kasabayı size gösterir." },
         { q: "Kuşadası'nı ziyaret etmek için en iyi zaman ne?", a: "Nisan–Haziran ile Eylül–Ekim; sıcak günler, sakin deniz ve Efes'te daha az kalabalık sunar. Temmuz ve Ağustos, kruvaziyer sezonunun zirvesiyle sıcak ve yoğundur. Ay hangisi olursa olsun, yerel bir rehber antik kalıntılarda yürümek için en serin ve en sakin saatleri bilir." },
         { q: "Kuşadası rehberime bahşiş vermem gerekir mi?", a: "Bahşiş zorunlu değildir — gördüğünüz fiyat turu kapsar. Çok keyif aldıysanız bir bahşiş memnuniyetle karşılanır, ancak her zaman isteğe bağlıdır ve asla beklenmez." },
+      ],
+      landmarksHeading: "Kuşadası çevresindeki simgeler ve turlar",
+      landmarksSub: "Her birini onaylı bir yerel rehberle keşfedin.",
+      landmarks: [
+        { href: "/attractions/tr/ephesus", icon: "🏛️", name: "Efes", desc: "Antik Roma kenti" },
+        { href: "/attractions/tr/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Beyaz travertenler ve Hierapolis" },
+        { href: "/attractions/tr/pergamon", icon: "🏺", name: "Bergama (Pergamon)", desc: "Akropol ve antik kütüphane" },
       ],
       otherHeading: "Türkiye'yi keşfetmeye devam edin",
       otherCities: [
@@ -4801,6 +4997,13 @@ const KUSADASI: CityGuide = {
         { q: "Kiedy najlepiej odwiedzić Kuşadası?", a: "Kwiecień–czerwiec oraz wrzesień–październik oferują ciepłe dni, spokojne morze i mniejsze tłumy w Efezie. Lipiec i sierpień są gorące i zatłoczone, u szczytu sezonu rejsowego. Niezależnie od miesiąca lokalny przewodnik zna najchłodniejsze i najspokojniejsze godziny na spacer po antycznych ruinach." },
         { q: "Czy muszę dać napiwek przewodnikowi w Kuşadası?", a: "Napiwek nie jest wymagany — cena, którą widzisz, pokrywa wycieczkę. Jeśli świetnie się bawiłeś, napiwek będzie mile widziany, ale zawsze jest dobrowolny i nigdy oczekiwany." },
       ],
+      landmarksHeading: "Zabytki i wycieczki w pobliżu Kusadasi",
+      landmarksSub: "Poznaj każde z zweryfikowanym lokalnym przewodnikiem.",
+      landmarks: [
+        { href: "/attractions/pl/ephesus", icon: "🏛️", name: "Efez", desc: "Starożytne rzymskie miasto" },
+        { href: "/attractions/pl/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Białe trawertyny i Hierapolis" },
+        { href: "/attractions/pl/pergamon", icon: "🏺", name: "Pergamon", desc: "Akropol i antyczna biblioteka" },
+      ],
       otherHeading: "Odkryj więcej Turcji",
       otherCities: [
         { href: "/pl/ephesus-tour-guide", icon: "🏛️", name: "Przewodnik po Efezie", desc: "Samo antyczne miasto — 20 minut od Kuşadası" },
@@ -4868,6 +5071,13 @@ const KUSADASI: CityGuide = {
         { q: "Is Kuşadası de moeite waard buiten Efeze?", a: "Absoluut. Wandel over de dam naar het Duiveneiland met zijn kleine fort, ontspan op het Damesstrand, onderhandel op de bazaar en kijk hoe de zon in de Egeïsche Zee wegzakt. Voor natuur ligt Nationaal Park Dilek-schiereiland op korte rijafstand. Een lokale gids laat je de stad zien waar de meeste cruisepassagiers langs haasten." },
         { q: "Wat is de beste tijd om Kuşadası te bezoeken?", a: "April–juni en september–oktober bieden warme dagen, kalme zee en minder drukte bij Efeze. Juli en augustus zijn heet en druk, op het hoogtepunt van het cruiseseizoen. Welke maand het ook is, een lokale gids kent de koelste, rustigste uren om door de antieke ruïnes te lopen." },
         { q: "Moet ik mijn gids in Kuşadası een fooi geven?", a: "Een fooi is niet verplicht — de prijs die je ziet, dekt de tour. Als je een geweldige tijd had, wordt een fooi gewaardeerd, maar die is altijd vrijblijvend en wordt nooit verwacht." },
+      ],
+      landmarksHeading: "Bezienswaardigheden en dagtrips bij Kusadasi",
+      landmarksSub: "Ontdek elk met een geverifieerde lokale gids.",
+      landmarks: [
+        { href: "/attractions/nl/ephesus", icon: "🏛️", name: "Efeze", desc: "Antieke Romeinse stad" },
+        { href: "/attractions/nl/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Witte travertijnen en Hierapolis" },
+        { href: "/attractions/nl/pergamon", icon: "🏺", name: "Pergamon", desc: "Acropolis en antieke bibliotheek" },
       ],
       otherHeading: "Ontdek meer van Turkije",
       otherCities: [
