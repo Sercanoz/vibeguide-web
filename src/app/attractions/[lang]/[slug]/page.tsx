@@ -15,6 +15,7 @@ import {
   allAttractionParams,
   type AttractionLang,
 } from "@/lib/attractions";
+import { getCityGuide, isCityGuideLang } from "@/lib/cityGuides";
 
 const SITE = "https://www.vibeguideapp.com";
 const DEFAULT_LANG: AttractionLang = "en";
@@ -73,6 +74,16 @@ export default async function AttractionPage({ params }: Props) {
 
   const c = attraction.i18n[lang];
   const rtl = RTL_LANGS.has(lang);
+
+  // Bu landmark'ın şehrinin tur-rehberi SEO sayfasına iç link (şehir guide'ı varsa).
+  // Attraction dilleri (11) ⊃ city-guide dilleri (10, el yok) → el için EN guide'a bağla.
+  const cityGuideSlug = `${attraction.citySlug}-tour-guide`;
+  const cgLang = isCityGuideLang(lang) ? lang : "en";
+  const cityGuideHref = getCityGuide(cityGuideSlug)
+    ? cgLang === "en"
+      ? `/${cityGuideSlug}`
+      : `/${cgLang}/${cityGuideSlug}`
+    : null;
 
   // Yapısal veri — TouristAttraction + FAQPage + BreadcrumbList.
   const jsonLd = {
@@ -183,6 +194,20 @@ export default async function AttractionPage({ params }: Props) {
         heading={c.toursHeading}
         locale={lang}
       />
+
+      {/* Internal link to the city tour-guide SEO page (keyword-rich anchor) */}
+      {cityGuideHref && (
+        <section className="pb-2">
+          <div className="mx-auto max-w-5xl px-6">
+            <Link
+              href={cityGuideHref}
+              className="inline-flex items-center gap-2 rounded-full border border-[#6C4CF1]/30 bg-[#6C4CF1]/[0.04] px-5 py-2.5 text-sm font-bold text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.08] transition-colors"
+            >
+              {c.toursHeading} →
+            </Link>
+          </div>
+        </section>
+      )}
 
       {/* FAQ */}
       <section className="py-16">
