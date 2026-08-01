@@ -1558,6 +1558,13 @@ const EPHESUS: CityGuide = {
         { q: "Is the House of the Virgin Mary included?", a: "It can be. The House of the Virgin Mary, in the hills above Ephesus, is a pilgrimage site sacred to both Christians and Muslims. Many private and full-day tours combine it with Ephesus and the Temple of Artemis — just let your guide know you'd like to include it." },
         { q: "Where is Ephesus and can I combine it with Şirince village?", a: "Ephesus is near the town of Selçuk in İzmir province, on Turkey's Aegean coast, close to Kuşadası. The charming hillside village of Şirince, famous for its fruit wines and Ottoman houses, is just a short drive away — guides often combine the two into one relaxed day." },
       ],
+      landmarksHeading: "Top sights & day trips near Ephesus",
+      landmarksSub: "Explore each with a verified local guide.",
+      landmarks: [
+        { href: "/attractions/en/ephesus", icon: "🏛️", name: "Ephesus", desc: "Ancient Roman city" },
+        { href: "/attractions/en/pergamon", icon: "🏺", name: "Pergamon", desc: "Acropolis & ancient library" },
+        { href: "/attractions/en/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "White travertines & Hierapolis" },
+      ],
       otherHeading: "Explore more of Turkey",
       otherCities: [
         { href: "/attractions/en/ephesus", icon: "🏛️", name: "Ephesus Travel Guide", desc: "Library of Celsus, Great Theatre & more" },
@@ -1621,6 +1628,13 @@ const EPHESUS: CityGuide = {
         { q: "Можно ли посетить Храм Артемиды с гидом?", a: "Да. Храм Артемиды — одно из Семи чудес света — находится всего в нескольких минутах от главного комплекса близ Сельчука. Сегодня стоит лишь одна колонна, и гид оживляет его масштаб и историю так, как одни руины не могут." },
         { q: "Входит ли в программу Дом Девы Марии?", a: "Может входить. Дом Девы Марии в холмах над Эфесом — место паломничества, священное и для христиан, и для мусульман. Многие частные экскурсии и туры на целый день объединяют его с Эфесом и Храмом Артемиды — просто скажите гиду, что хотите его включить." },
         { q: "Где находится Эфес и можно ли совместить его с деревней Шириндже?", a: "Эфес расположен близ городка Сельчук в провинции Измир, на Эгейском побережье Турции, недалеко от Кушадасы. Очаровательная горная деревня Шириндже, знаменитая фруктовыми винами и османскими домами, всего в короткой поездке — гиды часто объединяют их в один неспешный день." },
+      ],
+      landmarksHeading: "Достопримечательности и поездки рядом с Эфесом",
+      landmarksSub: "Осмотрите каждую с проверенным местным гидом.",
+      landmarks: [
+        { href: "/attractions/ru/ephesus", icon: "🏛️", name: "Эфес", desc: "Древний римский город" },
+        { href: "/attractions/ru/pergamon", icon: "🏺", name: "Пергам", desc: "Акрополь и античная библиотека" },
+        { href: "/attractions/ru/pamukkale", icon: "🏞️", name: "Памуккале", desc: "Белые травертины и Иераполь" },
       ],
       otherHeading: "Откройте больше Турции",
       otherCities: [
@@ -1686,6 +1700,13 @@ const EPHESUS: CityGuide = {
         { q: "Meryem Ana Evi dâhil mi?", a: "Dâhil olabilir. Efes'in yukarısındaki tepelerde yer alan Meryem Ana Evi, hem Hristiyanlar hem Müslümanlar için kutsal bir hac yeridir. Birçok özel ve tam günlük tur onu Efes ve Artemis Tapınağı ile birleştirir — dâhil etmek istediğinizi rehberinize söylemeniz yeterli." },
         { q: "Efes nerede ve Şirince köyüyle birleştirebilir miyim?", a: "Efes, Türkiye'nin Ege kıyısında, Kuşadası'na yakın konumda, İzmir ilinin Selçuk ilçesinin yanındadır. Meyve şaraplarıyla ve Osmanlı evleriyle ünlü şirin yamaç köyü Şirince, kısa bir araç yolculuğu uzaklıktadır — rehberler çoğu zaman ikisini keyifli tek bir günde birleştirir." },
       ],
+      landmarksHeading: "Efes çevresindeki simgeler ve turlar",
+      landmarksSub: "Her birini onaylı bir yerel rehberle keşfedin.",
+      landmarks: [
+        { href: "/attractions/tr/ephesus", icon: "🏛️", name: "Efes", desc: "Antik Roma şehri" },
+        { href: "/attractions/tr/pergamon", icon: "🏺", name: "Bergama (Pergamon)", desc: "Akropol ve antik kütüphane" },
+        { href: "/attractions/tr/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Beyaz travertenler ve Hierapolis" },
+      ],
       otherHeading: "Türkiye'yi keşfetmeye devam edin",
       otherCities: [
         { href: "/attractions/tr/ephesus", icon: "🏛️", name: "Efes Gezi Rehberi", desc: "Celsus Kütüphanesi, Büyük Tiyatro ve daha fazlası" },
@@ -1750,6 +1771,13 @@ const EPHESUS: CityGuide = {
         { q: "Czy Dom Marii Panny jest wliczony?", a: "Może być. Dom Marii Panny, w górach nad Efezem, to miejsce pielgrzymek święte zarówno dla chrześcijan, jak i muzułmanów. Wiele wycieczek prywatnych i całodniowych łączy go z Efezem i Świątynią Artemidy — wystarczy powiedzieć przewodnikowi, że chcesz go uwzględnić." },
         { q: "Gdzie leży Efez i czy mogę połączyć go z wioską Şirince?", a: "Efez znajduje się koło miasteczka Selçuk w prowincji Izmir, na tureckim wybrzeżu Morza Egejskiego, blisko Kuşadası. Urokliwa górska wioska Şirince, słynąca z win owocowych i osmańskich domów, leży zaledwie kilka minut jazdy dalej — przewodnicy często łączą oba miejsca w jeden spokojny dzień." },
       ],
+      landmarksHeading: "Zabytki i wycieczki w pobliżu Efezu",
+      landmarksSub: "Poznaj każde z zweryfikowanym lokalnym przewodnikiem.",
+      landmarks: [
+        { href: "/attractions/pl/ephesus", icon: "🏛️", name: "Efez", desc: "Starożytne miasto rzymskie" },
+        { href: "/attractions/pl/pergamon", icon: "🏺", name: "Pergamon", desc: "Akropol i starożytna biblioteka" },
+        { href: "/attractions/pl/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Białe trawertyny i Hierapolis" },
+      ],
       otherHeading: "Odkryj więcej Turcji",
       otherCities: [
         { href: "/pl/istanbul-tour-guide", icon: "🕌", name: "Przewodnik po Stambule", desc: "Hagia Sophia, Wielki Bazar i Bosfor" },
@@ -1813,6 +1841,13 @@ const EPHESUS: CityGuide = {
         { q: "Is het Huis van de Maagd Maria inbegrepen?", a: "Dat kan. Het Huis van de Maagd Maria, in de heuvels boven Efeze, is een bedevaartsoord dat heilig is voor zowel christenen als moslims. Veel privé- en dagtours combineren het met Efeze en de Tempel van Artemis — laat je gids gewoon weten dat je het wilt opnemen." },
         { q: "Waar ligt Efeze en kan ik het combineren met het dorpje Şirince?", a: "Efeze ligt bij het stadje Selçuk in de provincie İzmir, aan de Egeïsche kust van Turkije, dicht bij Kuşadası. Het charmante heuveldorpje Şirince, beroemd om zijn vruchtenwijnen en Ottomaanse huizen, ligt op korte rijafstand — gidsen combineren de twee vaak tot één ontspannen dag." },
       ],
+      landmarksHeading: "Bezienswaardigheden en dagtrips bij Efeze",
+      landmarksSub: "Ontdek elk met een geverifieerde lokale gids.",
+      landmarks: [
+        { href: "/attractions/nl/ephesus", icon: "🏛️", name: "Efeze", desc: "Antieke Romeinse stad" },
+        { href: "/attractions/nl/pergamon", icon: "🏺", name: "Pergamon", desc: "Akropolis & antieke bibliotheek" },
+        { href: "/attractions/nl/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Witte travertijnen & Hierapolis" },
+      ],
       otherHeading: "Ontdek meer van Turkije",
       otherCities: [
         { href: "/nl/istanbul-tour-guide", icon: "🕌", name: "Reisgids Istanboel", desc: "Hagia Sophia, Grote Bazaar & de Bosporus" },
@@ -1875,6 +1910,13 @@ const EPHESUS: CityGuide = {
         { q: "Kann ich den Tempel der Artemis mit einem Guide besuchen?", a: "Ja. Der Tempel der Artemis — eines der Sieben Weltwunder der Antike — liegt nur wenige Minuten vom Hauptgelände bei Selçuk entfernt. Heute steht nur noch eine einzige Säule, und ein Guide lässt seine einstige Größe und Geschichte auf eine Weise lebendig werden, wie es die Ruinen allein nicht können." },
         { q: "Ist das Haus der Jungfrau Maria inbegriffen?", a: "Es kann sein. Das Haus der Jungfrau Maria in den Hügeln oberhalb von Ephesus ist ein Pilgerort, der sowohl Christen als auch Muslimen heilig ist. Viele private und Ganztagestouren verbinden es mit Ephesus und dem Tempel der Artemis — sag deinem Guide einfach, dass du es einbeziehen möchtest." },
         { q: "Wo liegt Ephesus und kann ich es mit dem Dorf Şirince verbinden?", a: "Ephesus liegt nahe der Stadt Selçuk in der Provinz İzmir an der türkischen Ägäisküste, unweit von Kuşadası. Das charmante Bergdorf Şirince, bekannt für seine Fruchtweine und osmanischen Häuser, ist nur eine kurze Fahrt entfernt — Guides verbinden beide oft zu einem entspannten Tag." },
+      ],
+      landmarksHeading: "Top-Sehenswürdigkeiten & Tagesausflüge bei Ephesos",
+      landmarksSub: "Entdecke jede mit einem verifizierten lokalen Guide.",
+      landmarks: [
+        { href: "/attractions/de/ephesus", icon: "🏛️", name: "Ephesos", desc: "Antike römische Stadt" },
+        { href: "/attractions/de/pergamon", icon: "🏺", name: "Pergamon", desc: "Akropolis & antike Bibliothek" },
+        { href: "/attractions/de/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Weiße Travertine & Hierapolis" },
       ],
       otherHeading: "Mehr von der Türkei entdecken",
       otherCities: [
@@ -1940,6 +1982,13 @@ const EPHESUS: CityGuide = {
         { q: "¿Se incluye la Casa de la Virgen María?", a: "Puede incluirse. La Casa de la Virgen María, en las colinas sobre Éfeso, es un lugar de peregrinación sagrado tanto para cristianos como para musulmanes. Muchos tours privados y de día completo la combinan con Éfeso y el Templo de Artemisa: solo dile a tu guía que te gustaría incluirla." },
         { q: "¿Dónde está Éfeso y puedo combinarlo con el pueblo de Şirince?", a: "Éfeso está cerca de la localidad de Selçuk, en la provincia de İzmir, en la costa egea de Turquía, junto a Kuşadası. El encantador pueblo de montaña de Şirince, famoso por sus vinos de fruta y sus casas otomanas, queda a poca distancia en coche: los guías suelen combinar ambos en un día relajado." },
       ],
+      landmarksHeading: "Monumentos y excursiones cerca de Éfeso",
+      landmarksSub: "Explora cada uno con un guía local verificado.",
+      landmarks: [
+        { href: "/attractions/es/ephesus", icon: "🏛️", name: "Éfeso", desc: "Antigua ciudad romana" },
+        { href: "/attractions/es/pergamon", icon: "🏺", name: "Pérgamo", desc: "Acrópolis y biblioteca antigua" },
+        { href: "/attractions/es/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Travertinos blancos y Hierápolis" },
+      ],
       otherHeading: "Explora más de Turquía",
       otherCities: [
         { href: "/attractions/es/ephesus", icon: "🏛️", name: "Guía de Viaje de Éfeso", desc: "Biblioteca de Celso, Gran Teatro y más" },
@@ -2003,6 +2052,13 @@ const EPHESUS: CityGuide = {
         { q: "Puis-je visiter le temple d'Artémis avec un guide ?", a: "Oui. Le temple d'Artémis — l'une des Sept Merveilles du monde antique — se trouve à quelques minutes du site principal, près de Selçuk. Une seule colonne tient encore debout aujourd'hui, et un guide redonne vie à son ampleur et à son histoire d'une manière que les ruines seules ne permettent pas." },
         { q: "La Maison de la Vierge Marie est-elle incluse ?", a: "Elle peut l'être. La Maison de la Vierge Marie, dans les collines au-dessus d'Éphèse, est un lieu de pèlerinage sacré pour les chrétiens comme pour les musulmans. De nombreuses visites privées et d'une journée complète la combinent avec Éphèse et le temple d'Artémis — indiquez simplement à votre guide que vous souhaitez l'inclure." },
         { q: "Où se trouve Éphèse et puis-je la combiner avec le village de Şirince ?", a: "Éphèse se situe près de la ville de Selçuk, dans la province d'İzmir, sur la côte égéenne de la Turquie, à proximité de Kuşadası. Le charmant village de montagne de Şirince, réputé pour ses vins de fruits et ses maisons ottomanes, est à quelques minutes en voiture — les guides combinent souvent les deux en une journée détendue." },
+      ],
+      landmarksHeading: "Sites et excursions près d'Éphèse",
+      landmarksSub: "Explorez chacun avec un guide local vérifié.",
+      landmarks: [
+        { href: "/attractions/fr/ephesus", icon: "🏛️", name: "Éphèse", desc: "Cité romaine antique" },
+        { href: "/attractions/fr/pergamon", icon: "🏺", name: "Pergame", desc: "Acropole et bibliothèque antique" },
+        { href: "/attractions/fr/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Travertins blancs et Hiérapolis" },
       ],
       otherHeading: "Explorez plus de la Turquie",
       otherCities: [
@@ -2068,6 +2124,13 @@ const EPHESUS: CityGuide = {
         { q: "La Casa della Vergine Maria è inclusa?", a: "Può esserlo. La Casa della Vergine Maria, sulle colline sopra Efeso, è un luogo di pellegrinaggio sacro sia per i cristiani sia per i musulmani. Molti tour privati e di un'intera giornata la abbinano a Efeso e al Tempio di Artemide: basta dire alla tua guida che desideri includerla." },
         { q: "Dove si trova Efeso e posso abbinarlo al villaggio di Şirince?", a: "Efeso si trova vicino alla cittadina di Selçuk, nella provincia di İzmir, sulla costa egea della Turchia, vicino a Kuşadası. L'incantevole villaggio collinare di Şirince, famoso per i suoi vini di frutta e le case ottomane, è a breve distanza in auto: le guide spesso abbinano i due luoghi in una giornata rilassata." },
       ],
+      landmarksHeading: "Monumenti ed escursioni vicino a Efeso",
+      landmarksSub: "Esplora ciascuno con una guida locale verificata.",
+      landmarks: [
+        { href: "/attractions/it/ephesus", icon: "🏛️", name: "Efeso", desc: "Antica città romana" },
+        { href: "/attractions/it/pergamon", icon: "🏺", name: "Pergamo", desc: "Acropoli e antica biblioteca" },
+        { href: "/attractions/it/pamukkale", icon: "🏞️", name: "Pamukkale", desc: "Travertini bianchi e Hierapolis" },
+      ],
       otherHeading: "Esplora di più della Turchia",
       otherCities: [
         { href: "/attractions/it/ephesus", icon: "🏛️", name: "Guida di Viaggio di Efeso", desc: "Biblioteca di Celso, Grande Teatro e altro" },
@@ -2131,6 +2194,13 @@ const EPHESUS: CityGuide = {
         { q: "هل يمكنني زيارة معبد أرتميس مع مرشد؟", a: "نعم. يقع معبد أرتميس — إحدى عجائب الدنيا السبع في العالم القديم — على بُعد دقائق فقط من الموقع الرئيسي قرب سلجوق. لم يبقَ قائمًا اليوم سوى عمود واحد، ويُحيي المرشد ضخامته وتاريخه بطريقة لا تستطيعها الأطلال وحدها." },
         { q: "هل بيت السيدة مريم العذراء مُدرَج؟", a: "يمكن أن يكون كذلك. بيت السيدة مريم العذراء، في التلال المطلّة على أفسس، موقع حج مقدّس لدى المسيحيين والمسلمين معًا. تجمع كثير من الجولات الخاصة وجولات اليوم الكامل بينه وبين أفسس ومعبد أرتميس — فقط أخبر مرشدك بأنك تودّ إدراجه." },
         { q: "أين تقع أفسس وهل يمكنني دمجها مع قرية شيرينجة؟", a: "تقع أفسس قرب بلدة سلجوق في محافظة إزمير، على ساحل بحر إيجة في تركيا، بالقرب من كوش أداسي. أما قرية شيرينجة الجبلية الساحرة، الشهيرة بنبيذ الفواكه والبيوت العثمانية، فتبعد مسافة قصيرة بالسيارة — وكثيرًا ما يدمج المرشدون بينهما في يوم واحد هادئ." },
+      ],
+      landmarksHeading: "أبرز المعالم والرحلات قرب أفسس",
+      landmarksSub: "استكشف كلًّا منها مع دليل محلي موثّق.",
+      landmarks: [
+        { href: "/attractions/ar/ephesus", icon: "🏛️", name: "أفسس", desc: "مدينة رومانية قديمة" },
+        { href: "/attractions/ar/pergamon", icon: "🏺", name: "برغامة", desc: "الأكروبوليس والمكتبة القديمة" },
+        { href: "/attractions/ar/pamukkale", icon: "🏞️", name: "باموكالي", desc: "مدرجات بيضاء وهيرابوليس" },
       ],
       otherHeading: "استكشف المزيد من تركيا",
       otherCities: [
