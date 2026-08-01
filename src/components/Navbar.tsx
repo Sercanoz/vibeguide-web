@@ -8,21 +8,7 @@ import CurrencySwitcher from "./CurrencySwitcher";
 import AuthModal from "./AuthModal";
 import { fbAuth, signOut, buildAuthHeaders, type User } from "@/lib/firebase-client";
 import { API_BASE_URL } from "@/lib/api";
-import { CITY_GUIDE_LANGS } from "@/lib/cityGuides";
-
-// Navbar'daki Destinations menüsü — gerçek şehir rehberi sayfaları.
-const DESTINATIONS = [
-  { slug: "istanbul-tour-guide", name: "Istanbul", emoji: "🕌" },
-  { slug: "cappadocia-tour-guide", name: "Cappadocia", emoji: "🎈" },
-  { slug: "ephesus-tour-guide", name: "Ephesus", emoji: "🏛️" },
-];
-
-// Şehir rehberi sayfası sadece CITY_GUIDE_LANGS dillerinde var; başka dilde
-// kullanıcı için EN köke düş (yoksa 404). en → /slug, diğer → /<lang>/slug.
-function cityGuideHref(slug: string, locale: string): string {
-  const lang = (CITY_GUIDE_LANGS as readonly string[]).includes(locale) ? locale : "en";
-  return lang === "en" ? `/${slug}` : `/${lang}/${slug}`;
-}
+import { DESTINATIONS, cityGuideHref } from "@/lib/destinations";
 
 export default function Navbar({ activePage }: { activePage?: "tours" | "home" }) {
   const { locale } = useT();

@@ -4,6 +4,7 @@ import { useT } from "@/components/LanguageProvider";
 import { homeTranslations } from "@/lib/home-i18n";
 import { uiExtra } from "@/lib/ui-extra-i18n";
 import { navbarI18n } from "@/lib/navbar-i18n";
+import { DESTINATIONS, cityGuideHref } from "@/lib/destinations";
 
 /**
  * Sitenin tek footer'ı — ana sayfa, legal/support, mod ve atraksiyon sayfalarının
@@ -18,7 +19,7 @@ export default function MainFooter() {
   return (
     <footer className="bg-white border-t border-black/[0.06] px-6 py-16">
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-10 md:grid-cols-[2fr_auto_auto_auto] md:justify-between">
+        <div className="grid gap-10 md:grid-cols-[2fr_auto_auto_auto_auto] md:justify-between">
           <div>
             <h3 className="flex items-center gap-2.5 text-xl font-black">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -45,6 +46,18 @@ export default function MainFooter() {
                 <img src="/google-play-badge.svg" alt="Get it on Google Play" className="h-[52px] w-auto" />
               </a>
             </div>
+          </div>
+          <div>
+            <h4 className="text-sm font-black">{nb.destinations}</h4>
+            <ul className="mt-4 space-y-3 text-sm text-neutral-800">
+              {DESTINATIONS.map((d) => (
+                <li key={d.slug}>
+                  <a href={cityGuideHref(d.slug, locale)} className="hover:text-black transition-colors">
+                    {d.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
           <div>
             <h4 className="text-sm font-black">{t.footer.product}</h4>
