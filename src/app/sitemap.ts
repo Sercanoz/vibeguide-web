@@ -10,7 +10,7 @@ type Tour = { id: number; updatedAt?: string };
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
 
-  const staticRoutes: MetadataRoute.Sitemap = [
+  const staticRoutes: MetadataRoute.Sitemap = ([
     { url: `${SITE}/`, changeFrequency: "weekly", priority: 1.0 },
     { url: `${SITE}/tours`, changeFrequency: "daily", priority: 0.9 },
     { url: `${SITE}/vibenow`, changeFrequency: "monthly", priority: 0.85 },
@@ -31,7 +31,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE}/on-bilgilendirme`, changeFrequency: "yearly", priority: 0.3 },
     { url: `${SITE}/cancellation-policy`, changeFrequency: "yearly", priority: 0.3 },
     { url: `${SITE}/account-deletion`, changeFrequency: "yearly", priority: 0.3 },
-  ];
+  ] satisfies MetadataRoute.Sitemap).map((r) => ({ lastModified: now, ...r }));
 
   // Dynamic tour pages
   let tourRoutes: MetadataRoute.Sitemap = [];
