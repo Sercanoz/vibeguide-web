@@ -87,6 +87,12 @@ export default function CityGuideView({
           <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0F] via-[#0A0A0F]/70 to-transparent" />
         </div>
         <div className="relative mx-auto max-w-5xl px-6">
+          {/* Görünür breadcrumb — JSON-LD BreadcrumbList ile eşleşir (Google izi görünür ister). */}
+          <nav aria-label="Breadcrumb" className="mb-4 text-xs text-white/45">
+            <Link href="/" className="hover:text-white transition-colors">VibeGuide</Link>
+            <span className="mx-1.5" aria-hidden="true">›</span>
+            <span className="text-white/75">{c.h1}</span>
+          </nav>
           <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1] mb-4">
             {c.region}
           </p>

@@ -42,6 +42,10 @@ export type AttractionContent = {
   metaDescription: string;
   intro: string[]; // 1-2 kısa paragraf
   highlights: { title: string; desc: string }[];
+  // "Ziyaret planı" bölümü (opsiyonel): nasıl gidilir / bilet / saat / en iyi zaman.
+  // İçerik derinliği + transactional keyword (tickets/opening hours/best time).
+  planningHeading?: string;
+  planningParagraphs?: string[];
   faqs: { q: string; a: string }[];
   toursHeading: string;
   ctaTitle: string;

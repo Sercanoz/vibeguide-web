@@ -154,6 +154,12 @@ export default async function AttractionPage({ params }: Props) {
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0">
             <div className="mx-auto max-w-5xl px-6 pb-8">
+              {/* Görünür breadcrumb — JSON-LD BreadcrumbList ile eşleşir. */}
+              <nav aria-label="Breadcrumb" className="mb-3 text-xs text-white/70">
+                <Link href="/" className="hover:text-white transition-colors">VibeGuide</Link>
+                <span className="mx-1.5" aria-hidden="true">›</span>
+                <span className="text-white/90">{c.name}</span>
+              </nav>
               <span className="text-4xl">{attraction.emoji}</span>
               <h1 className="mt-2 text-4xl md:text-6xl font-black text-white tracking-tight">
                 {c.name}
@@ -192,6 +198,20 @@ export default async function AttractionPage({ params }: Props) {
           ))}
         </div>
       </section>
+
+      {/* Planning your visit — how to get there / tickets / hours / best time */}
+      {c.planningHeading && c.planningParagraphs && c.planningParagraphs.length > 0 && (
+        <section className="pb-10">
+          <div className="mx-auto max-w-3xl px-6">
+            <h2 className="text-2xl font-black mb-5 tracking-tight">{c.planningHeading}</h2>
+            <div className="space-y-4">
+              {c.planningParagraphs.map((p, i) => (
+                <p key={i} className="text-[16px] leading-7 text-neutral-800">{p}</p>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Tours for this city */}
       <CityTours
