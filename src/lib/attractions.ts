@@ -187,6 +187,36 @@ const PAM: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   nl: { toursHeading: "Pamukkale-tours met lokale gidsen", ctaSub: "Download VibeGuide gratis en vind een geverifieerde gids in Pamukkale in 60 seconden." },
 };
 
+// Bodrum (kale + antik Halikarnas) ortak metinleri.
+const BOD: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
+  en: { toursHeading: "Bodrum tours with local guides", ctaSub: "Download VibeGuide free and match with a verified Bodrum guide in 60 seconds." },
+  de: { toursHeading: "Bodrum-Touren mit lokalen Guides", ctaSub: "Lade VibeGuide kostenlos und finde in 60 Sekunden einen geprüften Bodrum-Guide." },
+  ru: { toursHeading: "Экскурсии по Бодруму с местными гидами", ctaSub: "Скачайте VibeGuide бесплатно и найдите проверенного гида в Бодруме за 60 секунд." },
+  ar: { toursHeading: "جولات بودروم مع مرشدين محليين", ctaSub: "حمّل VibeGuide مجانًا واعثر على مرشد موثّق في بودروم خلال 60 ثانية." },
+  es: { toursHeading: "Tours de Bodrum con guías locales", ctaSub: "Descarga VibeGuide gratis y encuentra un guía verificado en Bodrum en 60 segundos." },
+  fr: { toursHeading: "Visites de Bodrum avec guides locaux", ctaSub: "Téléchargez VibeGuide gratuitement et trouvez un guide vérifié à Bodrum en 60 secondes." },
+  el: { toursHeading: "Ξεναγήσεις στο Μπόντρουμ με ντόπιους ξεναγούς", ctaSub: "Κατέβασε δωρεάν το VibeGuide και βρες πιστοποιημένο ξεναγό στο Μπόντρουμ σε 60 δευτερόλεπτα." },
+  tr: { toursHeading: "Yerel rehberlerle Bodrum turları", ctaSub: "VibeGuide'ı ücretsiz indir, 60 saniyede doğrulanmış bir Bodrum rehberiyle eşleş." },
+  it: { toursHeading: "Tour di Bodrum con guide locali", ctaSub: "Scarica VibeGuide gratis e trova una guida verificata a Bodrum in 60 secondi." },
+  pl: { toursHeading: "Wycieczki po Bodrum z lokalnymi przewodnikami", ctaSub: "Pobierz VibeGuide za darmo i znajdź zweryfikowanego przewodnika w Bodrum w 60 sekund." },
+  nl: { toursHeading: "Bodrum-tours met lokale gidsen", ctaSub: "Download VibeGuide gratis en vind een geverifieerde gids in Bodrum in 60 seconden." },
+};
+
+// Şanlıurfa / Göbeklitepe ortak metinleri.
+const SAN: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
+  en: { toursHeading: "Şanlıurfa & Göbeklitepe tours with local guides", ctaSub: "Download VibeGuide free and match with a verified local guide in Şanlıurfa in 60 seconds." },
+  de: { toursHeading: "Şanlıurfa- & Göbeklitepe-Touren mit lokalen Guides", ctaSub: "Lade VibeGuide kostenlos und finde in 60 Sekunden einen geprüften lokalen Guide in Şanlıurfa." },
+  ru: { toursHeading: "Экскурсии по Шанлыурфе и Гёбекли-Тепе с местными гидами", ctaSub: "Скачайте VibeGuide бесплатно и найдите проверенного гида в Шанлыурфе за 60 секунд." },
+  ar: { toursHeading: "جولات شانلي أورفا وغوبكلي تبه مع مرشدين محليين", ctaSub: "حمّل VibeGuide مجانًا واعثر على مرشد محلي موثّق في شانلي أورفا خلال 60 ثانية." },
+  es: { toursHeading: "Tours de Şanlıurfa y Göbeklitepe con guías locales", ctaSub: "Descarga VibeGuide gratis y encuentra un guía local verificado en Şanlıurfa en 60 segundos." },
+  fr: { toursHeading: "Visites de Şanlıurfa et Göbeklitepe avec guides locaux", ctaSub: "Téléchargez VibeGuide gratuitement et trouvez un guide local vérifié à Şanlıurfa en 60 secondes." },
+  el: { toursHeading: "Ξεναγήσεις στη Σανλιούρφα και το Γκιομπεκλί Τεπέ με ντόπιους ξεναγούς", ctaSub: "Κατέβασε δωρεάν το VibeGuide και βρες πιστοποιημένο ντόπιο ξεναγό στη Σανλιούρφα σε 60 δευτερόλεπτα." },
+  tr: { toursHeading: "Yerel rehberlerle Şanlıurfa & Göbeklitepe turları", ctaSub: "VibeGuide'ı ücretsiz indir, 60 saniyede Şanlıurfa'da doğrulanmış yerel bir rehberle eşleş." },
+  it: { toursHeading: "Tour di Şanlıurfa e Göbeklitepe con guide locali", ctaSub: "Scarica VibeGuide gratis e trova una guida locale verificata a Şanlıurfa in 60 secondi." },
+  pl: { toursHeading: "Wycieczki po Şanlıurfie i Göbeklitepe z lokalnymi przewodnikami", ctaSub: "Pobierz VibeGuide za darmo i znajdź zweryfikowanego lokalnego przewodnika w Şanlıurfie w 60 sekund." },
+  nl: { toursHeading: "Şanlıurfa- & Göbeklitepe-tours met lokale gidsen", ctaSub: "Download VibeGuide gratis en vind een geverifieerde lokale gids in Şanlıurfa in 60 seconden." },
+};
+
 export const ATTRACTIONS: Attraction[] = [
   // ─────────────────────────────── HAGIA SOPHIA ───────────────────────────────
   {
@@ -4682,6 +4712,1992 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: "Bezoek Pamukkale met een local",
         ...PAM.nl,
+      },
+    },
+  },
+  {
+    slug: "suleymaniye-mosque",
+    city: "Istanbul",
+    citySlug: "istanbul",
+    emoji: "🕌",
+    image:
+      "https://images.unsplash.com/photo-1710162518260-1d200de27e1f?q=80&w=1600",
+    lat: 41.0165,
+    lng: 28.9639,
+    i18n: {
+      en: {
+        name: "Süleymaniye Mosque",
+        metaTitle: "Süleymaniye Mosque Tours & Local Guides",
+        metaDescription:
+          "Visit the Süleymaniye Mosque with a verified Istanbul guide. Mimar Sinan's masterpiece on the Third Hill, the tombs of Süleyman and Hürrem, and a panoramic terrace over the Golden Horn.",
+        intro: [
+          "The Süleymaniye Mosque crowns Istanbul's Third Hill above the Golden Horn, the imperial masterpiece of Mimar Sinan. Built between 1550 and 1557 for Sultan Süleyman the Magnificent, it balances a vast central dome on four minarets and a serene, light-filled prayer hall — the confident heart of classical Ottoman architecture at the height of the empire's power.",
+          "With a VibeGuide local expert the complex reads like a story rather than a monument. A real guide connects the dome and the courtyard to the sultan who built it and the architect who defied gravity, then leads you to the garden tombs of Süleyman and his wife Hürrem — and to a terrace with one of the finest free views in the city.",
+        ],
+        highlights: [
+          { title: "Sinan's great dome", desc: "A soaring central dome nearly 53 metres high, engineered so light and sound flow through the hall — the moment that sealed Mimar Sinan's genius." },
+          { title: "The imperial tombs", desc: "In the garden behind the mosque stand the domed tombs of Süleyman the Magnificent and his wife Hürrem Sultan (Roxelana), richly tiled inside." },
+          { title: "The panoramic terrace", desc: "The mosque's outer terrace opens onto a sweeping view over the Golden Horn and the domes of the old city — and it costs nothing." },
+        ],
+        planningHeading: "Planning your visit",
+        planningParagraphs: [
+          "The Süleymaniye Mosque sits above the Grand Bazaar quarter on the Third Hill. The easiest approach is the T1 tram to Beyazıt or Laleli, followed by a short uphill walk through the university district; ferries to Eminönü and a climb from the Golden Horn are a scenic alternative. The lanes around the mosque are full of traditional bean restaurants and tea gardens.",
+          "As a working mosque it welcomes visitors outside the five daily prayers, and it closes to tourists for a short time during each prayer and for longer at Friday midday. Early morning and late afternoon are the calmest, and the terrace is unforgettable near sunset. Even in peak season it stays far less crowded than the Blue Mosque.",
+          "Entry is free and there is no ticket to buy. Dress modestly — shoulders and knees covered, and a head covering for women; you remove your shoes and carry them in a bag. A licensed VibeGuide local guide times your visit around the prayer schedule, explains the etiquette so you feel at ease, and unpacks the history behind Sinan's dome and the imperial tombs.",
+        ],
+        faqs: [
+          { q: "Do I need a ticket for the Süleymaniye Mosque?", a: "No. It is a working mosque and entry is free. Visitors are welcome outside the five daily prayer times, and a VibeGuide local can plan your arrival so the mosque is open and calm." },
+          { q: "What should I wear inside?", a: "Dress modestly with shoulders and knees covered; women cover their hair with a scarf, and everyone removes their shoes at the door. Scarves are usually available to borrow at the entrance if you need one." },
+          { q: "Is it better than the Blue Mosque?", a: "It is Mimar Sinan's masterpiece and usually far less crowded, with a panoramic terrace the Blue Mosque lacks. Many guides consider it the finer building — a VibeGuide local can show you why." },
+          { q: "How long does a visit take?", a: "Most visits run 45 minutes to an hour between the prayer hall, the tombs and the terrace, and pair naturally with the nearby Grand Bazaar or a walk down to the Golden Horn." },
+        ],
+        ctaTitle: "See Süleymaniye with a local",
+        ...IST.en,
+      },
+      de: {
+        name: "Süleymaniye-Moschee",
+        metaTitle: "Süleymaniye-Moschee Touren & lokale Guides",
+        metaDescription:
+          "Besuche die Süleymaniye-Moschee mit einem geprüften Istanbul-Guide. Mimar Sinans Meisterwerk auf dem dritten Hügel, die Grabmäler von Süleyman und Hürrem und eine Panoramaterrasse über dem Goldenen Horn.",
+        intro: [
+          "Die Süleymaniye-Moschee krönt Istanbuls dritten Hügel über dem Goldenen Horn — das kaiserliche Meisterwerk von Mimar Sinan. Zwischen 1550 und 1557 für Sultan Süleyman den Prächtigen erbaut, balanciert sie eine gewaltige Zentralkuppel auf vier Minaretten und einem lichtdurchfluteten Gebetssaal — das selbstbewusste Herz der klassischen osmanischen Baukunst auf dem Höhepunkt der Macht des Reiches.",
+          "Mit einem lokalen VibeGuide-Experten wird die Anlage zur Geschichte statt zum bloßen Denkmal. Ein echter Guide verbindet Kuppel und Hof mit dem Sultan, der sie erbauen ließ, und dem Architekten, der die Schwerkraft überlistete, und führt dich zu den Gartengräbern von Süleyman und seiner Frau Hürrem — und zu einer Terrasse mit einem der schönsten kostenlosen Ausblicke der Stadt.",
+        ],
+        highlights: [
+          { title: "Sinans große Kuppel", desc: "Eine aufstrebende Zentralkuppel von fast 53 Metern Höhe, so konstruiert, dass Licht und Klang durch den Saal fließen — der Moment, der Mimar Sinans Genie besiegelte." },
+          { title: "Die kaiserlichen Grabmäler", desc: "Im Garten hinter der Moschee stehen die Kuppelgräber von Süleyman dem Prächtigen und seiner Frau Hürrem Sultan (Roxelane), innen reich mit Fliesen geschmückt." },
+          { title: "Die Panoramaterrasse", desc: "Die äußere Terrasse der Moschee öffnet sich zu einem weiten Blick über das Goldene Horn und die Kuppeln der Altstadt — und kostet nichts." },
+        ],
+        planningHeading: "Deine Besuchsplanung",
+        planningParagraphs: [
+          "Die Süleymaniye-Moschee liegt oberhalb des Großen Basars auf dem dritten Hügel. Am einfachsten kommst du mit der Straßenbahn T1 bis Beyazıt oder Laleli und gehst dann ein kurzes Stück bergauf durch das Universitätsviertel; Fähren nach Eminönü und ein Aufstieg vom Goldenen Horn sind eine landschaftlich reizvolle Alternative. In den Gassen rund um die Moschee gibt es traditionelle Bohnenrestaurants und Teegärten.",
+          "Als aktive Moschee empfängt sie Besucher außerhalb der fünf täglichen Gebete und bleibt Touristen während jedes Gebets kurz und freitagmittags länger verschlossen. Der frühe Morgen und der späte Nachmittag sind am ruhigsten, und die Terrasse ist bei Sonnenuntergang unvergesslich. Selbst in der Hochsaison bleibt sie weit weniger überlaufen als die Blaue Moschee.",
+          "Der Eintritt ist frei, es gibt kein Ticket. Kleide dich dezent — Schultern und Knie bedeckt, für Frauen ein Kopftuch; die Schuhe ziehst du aus und trägst sie in einer Tüte. Ein lizenzierter VibeGuide vor Ort legt deinen Besuch um die Gebetszeiten, erklärt die Etikette, damit du dich wohlfühlst, und entschlüsselt die Geschichte hinter Sinans Kuppel und den kaiserlichen Grabmälern.",
+        ],
+        faqs: [
+          { q: "Brauche ich ein Ticket für die Süleymaniye-Moschee?", a: "Nein. Es ist eine aktive Moschee, der Eintritt ist frei. Besucher sind außerhalb der fünf täglichen Gebetszeiten willkommen, und ein VibeGuide vor Ort plant deine Ankunft so, dass die Moschee offen und ruhig ist." },
+          { q: "Was soll ich drinnen tragen?", a: "Kleide dich dezent mit bedeckten Schultern und Knien; Frauen bedecken ihr Haar mit einem Tuch, und alle ziehen am Eingang die Schuhe aus. Am Eingang kann man sich meist ein Tuch leihen, falls du keins hast." },
+          { q: "Ist sie besser als die Blaue Moschee?", a: "Sie ist Mimar Sinans Meisterwerk und meist weit weniger überlaufen, mit einer Panoramaterrasse, die der Blauen Moschee fehlt. Viele Guides halten sie für das schönere Bauwerk — ein VibeGuide vor Ort zeigt dir, warum." },
+          { q: "Wie lange dauert ein Besuch?", a: "Die meisten Besuche dauern 45 Minuten bis eine Stunde zwischen Gebetssaal, Grabmälern und Terrasse und lassen sich gut mit dem nahen Großen Basar oder einem Spaziergang zum Goldenen Horn verbinden." },
+        ],
+        ctaTitle: "Erlebe Süleymaniye mit einem Local",
+        ...IST.de,
+      },
+      ru: {
+        name: "Мечеть Сулеймание",
+        metaTitle: "Мечеть Сулеймание: экскурсии с местными гидами",
+        metaDescription:
+          "Посетите мечеть Сулеймание с проверенным гидом в Стамбуле. Шедевр Мимара Синана на Третьем холме, гробницы Сулеймана и Хюррем и панорамная терраса над Золотым Рогом.",
+        intro: [
+          "Мечеть Сулеймание венчает Третий холм Стамбула над Золотым Рогом — имперский шедевр Мимара Синана. Построенная в 1550–1557 годах для султана Сулеймана Великолепного, она удерживает огромный центральный купол на четырёх минаретах и залитый светом молитвенный зал — уверенное сердце классической османской архитектуры на пике могущества империи.",
+          "С местным экспертом VibeGuide комплекс читается как история, а не просто памятник. Настоящий гид связывает купол и двор с султаном, который её построил, и зодчим, что бросил вызов гравитации, а затем ведёт вас к садовым гробницам Сулеймана и его жены Хюррем — и на террасу с одним из лучших бесплатных видов города.",
+        ],
+        highlights: [
+          { title: "Большой купол Синана", desc: "Взмывающий центральный купол высотой почти 53 метра, устроенный так, что свет и звук струятся сквозь зал — миг, закрепивший гений Мимара Синана." },
+          { title: "Имперские гробницы", desc: "В саду за мечетью стоят купольные гробницы Сулеймана Великолепного и его жены Хюррем Султан (Роксоланы), богато украшенные изразцами внутри." },
+          { title: "Панорамная терраса", desc: "Внешняя терраса мечети открывает широкий вид на Золотой Рог и купола старого города — и это бесплатно." },
+        ],
+        planningHeading: "Планирование визита",
+        planningParagraphs: [
+          "Мечеть Сулеймание стоит над кварталом Гранд-базара на Третьем холме. Проще всего добраться на трамвае T1 до остановки Beyazıt или Laleli, а оттуда подняться пешком через университетский квартал; паромы до Эминёню и подъём от Золотого Рога — живописная альтернатива. В переулках вокруг мечети полно традиционных фасолевых ресторанчиков и чайных садов.",
+          "Как действующая мечеть она принимает посетителей вне пяти ежедневных молитв и закрывается для туристов ненадолго во время каждой молитвы и дольше в пятницу в полдень. Раннее утро и поздний день самые спокойные, а терраса незабываема на закате. Даже в разгар сезона здесь гораздо свободнее, чем в Голубой мечети.",
+          "Вход бесплатный, билет не нужен. Одевайтесь скромно — плечи и колени закрыты, женщинам платок на голову; обувь снимают и несут в пакете. Лицензированный местный гид VibeGuide подстроит визит под расписание молитв, объяснит этикет, чтобы вы чувствовали себя свободно, и раскроет историю купола Синана и имперских гробниц.",
+        ],
+        faqs: [
+          { q: "Нужен ли билет в мечеть Сулеймание?", a: "Нет. Это действующая мечеть, вход бесплатный. Посетителей ждут вне пяти ежедневных молитв, и местный гид VibeGuide спланирует прибытие так, чтобы мечеть была открыта и спокойна." },
+          { q: "Что надеть внутри?", a: "Одевайтесь скромно: плечи и колени закрыты; женщины покрывают волосы платком, а обувь все снимают у входа. У входа обычно можно взять платок напрокат, если своего нет." },
+          { q: "Она лучше Голубой мечети?", a: "Это шедевр Мимара Синана, и обычно здесь куда свободнее, а панорамной террасы у Голубой мечети нет. Многие гиды считают её более совершенным зданием — местный гид VibeGuide покажет почему." },
+          { q: "Сколько длится посещение?", a: "Обычно визит занимает от 45 минут до часа между молитвенным залом, гробницами и террасой и хорошо сочетается с соседним Гранд-базаром или прогулкой к Золотому Рогу." },
+        ],
+        ctaTitle: "Увидеть Сулеймание с местным гидом",
+        ...IST.ru,
+      },
+      ar: {
+        name: "جامع السليمانية",
+        metaTitle: "جولات جامع السليمانية مع مرشدين محليين",
+        metaDescription:
+          "زر جامع السليمانية مع مرشد موثّق في إسطنبول. تحفة المعمار سنان على التل الثالث، وضريحا سليمان وخُرّم، وشرفة بانورامية تطل على القرن الذهبي.",
+        intro: [
+          "يتوّج جامع السليمانية التل الثالث في إسطنبول فوق القرن الذهبي، وهو التحفة السلطانية للمعمار سنان. شُيّد بين عامي 1550 و1557 للسلطان سليمان القانوني، وهو يوازن قبة مركزية هائلة على أربع مآذن وقاعة صلاة غارقة في الضوء — القلب الواثق للعمارة العثمانية الكلاسيكية في أوج قوة الإمبراطورية.",
+          "مع خبير محلي من VibeGuide يُقرأ المجمّع كقصة لا كمجرد أثر. المرشد الحقيقي يربط القبة والصحن بالسلطان الذي بناه والمعمار الذي تحدّى الجاذبية، ثم يقودك إلى ضريحي سليمان وزوجته خُرّم في الحديقة — وإلى شرفة تطل على أحد أجمل المناظر المجانية في المدينة.",
+        ],
+        highlights: [
+          { title: "قبة سنان الكبرى", desc: "قبة مركزية شامخة يبلغ ارتفاعها نحو 53 مترًا، صُمّمت ليتدفق الضوء والصوت عبر القاعة — اللحظة التي رسّخت عبقرية المعمار سنان." },
+          { title: "الأضرحة السلطانية", desc: "في الحديقة خلف الجامع يقوم ضريحا سليمان القانوني وزوجته خُرّم سلطان (روكسلانة) بقبتيهما، وهما مزيّنان بالقيشاني الغني من الداخل." },
+          { title: "الشرفة البانورامية", desc: "تنفتح الشرفة الخارجية للجامع على منظر واسع للقرن الذهبي وقباب المدينة القديمة — دون أي رسوم." },
+        ],
+        planningHeading: "التخطيط لزيارتك",
+        planningParagraphs: [
+          "يقع جامع السليمانية فوق حيّ البازار الكبير على التل الثالث. أسهل وصول هو بالترام T1 إلى محطة بايزيد أو لاليلي، ثم صعود قصير سيرًا عبر حي الجامعة؛ كما أن العبّارات إلى إمينونو والصعود من القرن الذهبي بديل خلاب. أزقة الجامع مليئة بمطاعم الفاصولياء التقليدية وحدائق الشاي.",
+          "بوصفه جامعًا عاملًا يستقبل الزوار خارج أوقات الصلوات الخمس، ويُغلق أمام السياح لفترة قصيرة أثناء كل صلاة ولفترة أطول ظهر الجمعة. الصباح الباكر وآخر النهار أهدأ الأوقات، والشرفة لا تُنسى قرب الغروب. وحتى في ذروة الموسم يبقى أقل ازدحامًا بكثير من الجامع الأزرق.",
+          "الدخول مجاني ولا تذكرة تُشترى. البس بحشمة — الكتفان والركبتان مغطّاة، وغطاء رأس للنساء؛ تخلع حذاءك وتحمله في كيس. يستطيع مرشد VibeGuide المحلي المرخّص أن ينظّم زيارتك حول مواقيت الصلاة، وأن يشرح آداب الدخول لتشعر بالراحة، وأن يفكّ لك تاريخ قبة سنان والأضرحة السلطانية.",
+        ],
+        faqs: [
+          { q: "هل أحتاج تذكرة لجامع السليمانية؟", a: "لا. إنه جامع عامل والدخول مجاني. يُرحَّب بالزوار خارج أوقات الصلوات الخمس، ويستطيع مرشد VibeGuide المحلي أن يخطّط وصولك بحيث يكون الجامع مفتوحًا وهادئًا." },
+          { q: "ماذا ألبس في الداخل؟", a: "البس بحشمة مع تغطية الكتفين والركبتين؛ تغطّي النساء شعرهن بوشاح، ويخلع الجميع أحذيتهم عند الباب. عادةً ما تتوفر أوشحة للاستعارة عند المدخل إن احتجت." },
+          { q: "هل هو أفضل من الجامع الأزرق؟", a: "إنه تحفة المعمار سنان وعادةً أقل ازدحامًا بكثير، وله شرفة بانورامية يفتقر إليها الجامع الأزرق. يعدّه كثير من المرشدين المبنى الأجمل — ومرشد VibeGuide المحلي يريك السبب." },
+          { q: "كم تستغرق الزيارة؟", a: "تستغرق معظم الزيارات من 45 دقيقة إلى ساعة بين قاعة الصلاة والأضرحة والشرفة، وتتكامل بسهولة مع البازار الكبير القريب أو نزهة إلى القرن الذهبي." },
+        ],
+        ctaTitle: "زر السليمانية مع مرشد محلي",
+        ...IST.ar,
+      },
+      es: {
+        name: "Mezquita de Solimán",
+        metaTitle: "Tours de la Mezquita de Solimán con guías locales",
+        metaDescription:
+          "Visita la Mezquita de Solimán con un guía verificado de Estambul. La obra maestra de Mimar Sinan en la Tercera Colina, las tumbas de Solimán y Hürrem y una terraza panorámica sobre el Cuerno de Oro.",
+        intro: [
+          "La Mezquita de Solimán corona la Tercera Colina de Estambul, sobre el Cuerno de Oro, la obra maestra imperial de Mimar Sinan. Construida entre 1550 y 1557 para el sultán Solimán el Magnífico, equilibra una enorme cúpula central sobre cuatro minaretes y una sala de oración serena y llena de luz — el corazón seguro de la arquitectura otomana clásica en el apogeo del imperio.",
+          "Con un experto local de VibeGuide el conjunto se lee como una historia y no como un simple monumento. Un guía de verdad conecta la cúpula y el patio con el sultán que la mandó erigir y el arquitecto que desafió la gravedad, y luego te lleva a las tumbas ajardinadas de Solimán y su esposa Hürrem — y a una terraza con una de las mejores vistas gratuitas de la ciudad.",
+        ],
+        highlights: [
+          { title: "La gran cúpula de Sinan", desc: "Una cúpula central que se eleva casi 53 metros, diseñada para que la luz y el sonido fluyan por la sala — el momento que selló el genio de Mimar Sinan." },
+          { title: "Las tumbas imperiales", desc: "En el jardín tras la mezquita se alzan las tumbas abovedadas de Solimán el Magnífico y su esposa Hürrem Sultan (Roxelana), ricamente alicatadas por dentro." },
+          { title: "La terraza panorámica", desc: "La terraza exterior de la mezquita se abre a una amplia vista sobre el Cuerno de Oro y las cúpulas de la ciudad vieja — y no cuesta nada." },
+        ],
+        planningHeading: "Planifica tu visita",
+        planningParagraphs: [
+          "La Mezquita de Solimán se alza sobre el barrio del Gran Bazar, en la Tercera Colina. La forma más fácil de llegar es el tranvía T1 hasta Beyazıt o Laleli, seguido de una corta subida a pie por el distrito universitario; los ferris a Eminönü y una cuesta desde el Cuerno de Oro son una alternativa pintoresca. Las callejuelas en torno a la mezquita están llenas de restaurantes tradicionales de alubias y jardines de té.",
+          "Como mezquita en funcionamiento recibe visitas fuera de las cinco oraciones diarias y cierra al turismo un rato durante cada oración y más tiempo el mediodía del viernes. La primera hora de la mañana y el final de la tarde son los momentos más tranquilos, y la terraza es inolvidable cerca del atardecer. Incluso en temporada alta está mucho menos concurrida que la Mezquita Azul.",
+          "La entrada es gratuita y no hay que comprar ticket. Viste con recato — hombros y rodillas cubiertos, y un pañuelo en la cabeza para las mujeres; te quitas los zapatos y los llevas en una bolsa. Un guía local titulado de VibeGuide organiza tu visita en torno al horario de oración, te explica la etiqueta para que estés cómodo y desvela la historia tras la cúpula de Sinan y las tumbas imperiales.",
+        ],
+        faqs: [
+          { q: "¿Necesito entrada para la Mezquita de Solimán?", a: "No. Es una mezquita en activo y la entrada es gratuita. Se admite a los visitantes fuera de las cinco oraciones diarias, y un guía local de VibeGuide puede planear tu llegada para que la mezquita esté abierta y tranquila." },
+          { q: "¿Qué debo llevar dentro?", a: "Viste con recato, con hombros y rodillas cubiertos; las mujeres se cubren el pelo con un pañuelo y todos se quitan los zapatos en la puerta. Suele haber pañuelos prestados en la entrada por si necesitas uno." },
+          { q: "¿Es mejor que la Mezquita Azul?", a: "Es la obra maestra de Mimar Sinan y suele estar mucho menos concurrida, con una terraza panorámica de la que carece la Mezquita Azul. Muchos guías la consideran el edificio más logrado — un guía local de VibeGuide te enseñará por qué." },
+          { q: "¿Cuánto dura la visita?", a: "La mayoría de las visitas dura de 45 minutos a una hora entre la sala de oración, las tumbas y la terraza, y se combina de forma natural con el cercano Gran Bazar o un paseo hasta el Cuerno de Oro." },
+        ],
+        ctaTitle: "Visita Solimán con un local",
+        ...IST.es,
+      },
+      fr: {
+        name: "Mosquée de Soliman",
+        metaTitle: "Visites de la Mosquée de Soliman avec guides locaux",
+        metaDescription:
+          "Visitez la Mosquée de Soliman avec un guide vérifié d'Istanbul. Le chef-d'œuvre de Mimar Sinan sur la Troisième Colline, les tombeaux de Soliman et Hürrem et une terrasse panoramique sur la Corne d'Or.",
+        intro: [
+          "La Mosquée de Soliman couronne la Troisième Colline d'Istanbul, au-dessus de la Corne d'Or, le chef-d'œuvre impérial de Mimar Sinan. Édifiée entre 1550 et 1557 pour le sultan Soliman le Magnifique, elle équilibre une immense coupole centrale sur quatre minarets et une salle de prière sereine, inondée de lumière — le cœur assuré de l'architecture ottomane classique à l'apogée de la puissance de l'empire.",
+          "Avec un expert local VibeGuide, le complexe se lit comme un récit plutôt que comme un simple monument. Un vrai guide relie la coupole et la cour au sultan qui l'a fait bâtir et à l'architecte qui a défié la gravité, puis vous mène aux tombeaux, dans le jardin, de Soliman et de son épouse Hürrem — et à une terrasse offrant l'une des plus belles vues gratuites de la ville.",
+        ],
+        highlights: [
+          { title: "La grande coupole de Sinan", desc: "Une coupole centrale culminant à près de 53 mètres, conçue pour que la lumière et le son circulent dans la salle — le moment qui scella le génie de Mimar Sinan." },
+          { title: "Les tombeaux impériaux", desc: "Dans le jardin derrière la mosquée s'élèvent les tombeaux à coupole de Soliman le Magnifique et de son épouse Hürrem Sultan (Roxelane), richement carrelés à l'intérieur." },
+          { title: "La terrasse panoramique", desc: "La terrasse extérieure de la mosquée s'ouvre sur une vaste vue de la Corne d'Or et des coupoles de la vieille ville — et elle est gratuite." },
+        ],
+        planningHeading: "Préparer votre visite",
+        planningParagraphs: [
+          "La Mosquée de Soliman domine le quartier du Grand Bazar, sur la Troisième Colline. Le plus simple est de prendre le tramway T1 jusqu'à Beyazıt ou Laleli, puis de monter à pied un court instant à travers le quartier universitaire ; les ferries pour Eminönü et une montée depuis la Corne d'Or offrent une alternative pittoresque. Les ruelles autour de la mosquée regorgent de restaurants de haricots traditionnels et de jardins de thé.",
+          "Mosquée en activité, elle accueille les visiteurs en dehors des cinq prières quotidiennes et ferme aux touristes brièvement pendant chaque prière et plus longuement le vendredi midi. Tôt le matin et en fin d'après-midi sont les moments les plus calmes, et la terrasse est inoubliable au coucher du soleil. Même en pleine saison, elle reste bien moins fréquentée que la Mosquée Bleue.",
+          "L'entrée est gratuite et il n'y a pas de billet à acheter. Habillez-vous sobrement — épaules et genoux couverts, et un foulard sur la tête pour les femmes ; vous retirez vos chaussures et les portez dans un sac. Un guide local agréé VibeGuide cale votre visite sur les horaires de prière, explique les usages pour que vous soyez à l'aise et dévoile l'histoire derrière la coupole de Sinan et les tombeaux impériaux.",
+        ],
+        faqs: [
+          { q: "Faut-il un billet pour la Mosquée de Soliman ?", a: "Non. C'est une mosquée en activité et l'entrée est gratuite. Les visiteurs sont les bienvenus en dehors des cinq prières quotidiennes, et un guide local VibeGuide peut planifier votre arrivée pour que la mosquée soit ouverte et calme." },
+          { q: "Comment dois-je m'habiller à l'intérieur ?", a: "Habillez-vous sobrement, épaules et genoux couverts ; les femmes couvrent leurs cheveux d'un foulard et chacun retire ses chaussures à l'entrée. On peut généralement emprunter un foulard à l'entrée si besoin." },
+          { q: "Est-elle mieux que la Mosquée Bleue ?", a: "C'est le chef-d'œuvre de Mimar Sinan, en général bien moins fréquenté, avec une terrasse panoramique que la Mosquée Bleue n'a pas. Beaucoup de guides la jugent plus aboutie — un guide local VibeGuide vous montrera pourquoi." },
+          { q: "Combien de temps dure la visite ?", a: "La plupart des visites durent de 45 minutes à une heure entre la salle de prière, les tombeaux et la terrasse, et se marient naturellement avec le Grand Bazar tout proche ou une descente vers la Corne d'Or." },
+        ],
+        ctaTitle: "Visitez Soliman avec un local",
+        ...IST.fr,
+      },
+      el: {
+        name: "Τζαμί Σουλεϊμανιγιέ",
+        metaTitle: "Ξεναγήσεις στο Τζαμί Σουλεϊμανιγιέ με ντόπιους ξεναγούς",
+        metaDescription:
+          "Επισκέψου το Τζαμί Σουλεϊμανιγιέ με πιστοποιημένο ξεναγό στην Κωνσταντινούπολη. Το αριστούργημα του Μιμάρ Σινάν στον Τρίτο Λόφο, οι τάφοι του Σουλεϊμάν και της Χιουρέμ και μια πανοραμική βεράντα πάνω από τον Κεράτιο.",
+        intro: [
+          "Το Τζαμί Σουλεϊμανιγιέ στέφει τον Τρίτο Λόφο της Κωνσταντινούπολης πάνω από τον Κεράτιο Κόλπο — το αυτοκρατορικό αριστούργημα του Μιμάρ Σινάν. Χτισμένο μεταξύ 1550 και 1557 για τον σουλτάνο Σουλεϊμάν τον Μεγαλοπρεπή, ισορροπεί έναν τεράστιο κεντρικό τρούλο πάνω σε τέσσερις μιναρέδες και μια γαλήνια, γεμάτη φως αίθουσα προσευχής — η αυτοπεποίθηση της κλασικής οθωμανικής αρχιτεκτονικής στο απόγειο της δύναμης της αυτοκρατορίας.",
+          "Με έναν ντόπιο ειδικό του VibeGuide το συγκρότημα διαβάζεται σαν ιστορία κι όχι σαν απλό μνημείο. Ένας πραγματικός ξεναγός συνδέει τον τρούλο και την αυλή με τον σουλτάνο που το έχτισε και τον αρχιτέκτονα που αψήφησε τη βαρύτητα, κι έπειτα σε οδηγεί στους τάφους του Σουλεϊμάν και της συζύγου του Χιουρέμ στον κήπο — και σε μια βεράντα με μία από τις ωραιότερες δωρεάν θέες της πόλης.",
+        ],
+        highlights: [
+          { title: "Ο μεγάλος τρούλος του Σινάν", desc: "Ένας κεντρικός τρούλος που υψώνεται σχεδόν 53 μέτρα, σχεδιασμένος ώστε το φως και ο ήχος να ρέουν μέσα στην αίθουσα — η στιγμή που σφράγισε την ιδιοφυΐα του Μιμάρ Σινάν." },
+          { title: "Οι αυτοκρατορικοί τάφοι", desc: "Στον κήπο πίσω από το τζαμί στέκουν οι θολωτοί τάφοι του Σουλεϊμάν του Μεγαλοπρεπούς και της συζύγου του Χιουρέμ Σουλτάν (Ροξελάνης), πλούσια διακοσμημένοι με πλακίδια στο εσωτερικό." },
+          { title: "Η πανοραμική βεράντα", desc: "Η εξωτερική βεράντα του τζαμιού ανοίγεται σε μια απέραντη θέα προς τον Κεράτιο και τους τρούλους της παλιάς πόλης — και δεν κοστίζει τίποτα." },
+        ],
+        planningHeading: "Οργανώστε την επίσκεψή σας",
+        planningParagraphs: [
+          "Το Τζαμί Σουλεϊμανιγιέ βρίσκεται πάνω από τη συνοικία του Μεγάλου Παζαριού, στον Τρίτο Λόφο. Ο ευκολότερος τρόπος να φτάσετε είναι με το τραμ T1 μέχρι το Μπαγιαζίτ ή το Λαλελί κι έπειτα ένα σύντομο ανηφορικό περπάτημα μέσα από την πανεπιστημιακή συνοικία· τα φέρι προς το Εμινονού και η ανάβαση από τον Κεράτιο είναι μια γραφική εναλλακτική. Τα σοκάκια γύρω από το τζαμί είναι γεμάτα παραδοσιακά εστιατόρια με φασόλια και τσαγκάδικα.",
+          "Ως ενεργό τζαμί δέχεται επισκέπτες εκτός των πέντε καθημερινών προσευχών και κλείνει για τους τουρίστες για λίγο σε κάθε προσευχή και για περισσότερο το μεσημέρι της Παρασκευής. Το νωρίς το πρωί και αργά το απόγευμα είναι τα πιο ήσυχα, και η βεράντα είναι αξέχαστη κοντά στο ηλιοβασίλεμα. Ακόμη και στην αιχμή της σεζόν παραμένει πολύ λιγότερο γεμάτο από το Μπλε Τζαμί.",
+          "Η είσοδος είναι δωρεάν και δεν υπάρχει εισιτήριο. Ντυθείτε σεμνά — ώμοι και γόνατα καλυμμένα, και μαντίλα στο κεφάλι για τις γυναίκες· βγάζετε τα παπούτσια σας και τα κρατάτε σε μια σακούλα. Ένας αδειούχος τοπικός ξεναγός της VibeGuide προσαρμόζει την επίσκεψή σας γύρω από το πρόγραμμα των προσευχών, εξηγεί την εθιμοτυπία για να νιώσετε άνετα και ξεδιπλώνει την ιστορία πίσω από τον τρούλο του Σινάν και τους αυτοκρατορικούς τάφους.",
+        ],
+        faqs: [
+          { q: "Χρειάζομαι εισιτήριο για το Τζαμί Σουλεϊμανιγιέ;", a: "Όχι. Είναι ενεργό τζαμί και η είσοδος είναι δωρεάν. Οι επισκέπτες είναι ευπρόσδεκτοι εκτός των πέντε καθημερινών προσευχών, και ένας ντόπιος ξεναγός της VibeGuide μπορεί να σχεδιάσει την άφιξή σας ώστε το τζαμί να είναι ανοιχτό και ήσυχο." },
+          { q: "Τι να φορέσω μέσα;", a: "Ντυθείτε σεμνά, με καλυμμένους ώμους και γόνατα· οι γυναίκες καλύπτουν τα μαλλιά με μαντίλα και όλοι βγάζουν τα παπούτσια στην πόρτα. Συνήθως υπάρχουν μαντίλες προς δανεισμό στην είσοδο αν χρειαστείτε." },
+          { q: "Είναι καλύτερο από το Μπλε Τζαμί;", a: "Είναι το αριστούργημα του Μιμάρ Σινάν και συνήθως πολύ λιγότερο γεμάτο, με μια πανοραμική βεράντα που δεν έχει το Μπλε Τζαμί. Πολλοί ξεναγοί το θεωρούν το αρτιότερο κτίριο — ένας ντόπιος ξεναγός της VibeGuide θα σας δείξει γιατί." },
+          { q: "Πόσο διαρκεί η επίσκεψη;", a: "Οι περισσότερες επισκέψεις κρατούν 45 λεπτά έως μία ώρα ανάμεσα στην αίθουσα προσευχής, τους τάφους και τη βεράντα, και συνδυάζονται φυσικά με το κοντινό Μεγάλο Παζάρι ή μια βόλτα ως τον Κεράτιο." },
+        ],
+        ctaTitle: "Δες το Σουλεϊμανιγιέ με έναν ντόπιο",
+        ...IST.el,
+      },
+      tr: {
+        name: "Süleymaniye Camii",
+        metaTitle: "Süleymaniye Camii Turları & Yerel Rehberler",
+        metaDescription:
+          "Süleymaniye Camii'ni doğrulanmış bir İstanbul rehberiyle gez. Haliç'e bakan üçüncü tepede Mimar Sinan'ın başyapıtı, Süleyman ve Hürrem'in türbeleri ve şehre bakan panoramik teras.",
+        intro: [
+          "Süleymaniye Camii, Haliç'in üstünde İstanbul'un üçüncü tepesini taçlandırır; Mimar Sinan'ın hükümdar başyapıtıdır. 1550–1557 arasında Kanuni Sultan Süleyman için inşa edilen yapı, devasa merkezî kubbesini dört minare ve ışıkla dolu, dingin bir harim üzerinde dengeler — imparatorluğun gücünün zirvesinde klasik Osmanlı mimarisinin kendinden emin kalbi.",
+          "VibeGuide yerel uzmanıyla külliye bir anıt değil, bir hikâye gibi okunur. Gerçek bir rehber kubbeyi ve avluyu, camiyi yaptıran padişaha ve yerçekimine meydan okuyan mimara bağlar; sonra sizi bahçedeki Süleyman ile eşi Hürrem'in türbelerine ve şehrin en güzel ücretsiz manzaralarından birine bakan bir terasa götürür.",
+        ],
+        highlights: [
+          { title: "Sinan'ın büyük kubbesi", desc: "Neredeyse 53 metre yükselen merkezî kubbe, ışığın ve sesin harim boyunca akacağı biçimde tasarlandı — Mimar Sinan'ın dehasını mühürleyen an." },
+          { title: "Hükümdar türbeleri", desc: "Caminin arkasındaki bahçede Kanuni Sultan Süleyman ile eşi Hürrem Sultan'ın (Roksolana) kubbeli türbeleri yer alır; içleri zengin çinilerle bezelidir." },
+          { title: "Panoramik teras", desc: "Caminin dış terası Haliç'e ve eski şehrin kubbelerine uzanan geniş bir manzaraya açılır — hem de ücretsizdir." },
+        ],
+        planningHeading: "Ziyaretinizi planlayın",
+        planningParagraphs: [
+          "Süleymaniye Camii, üçüncü tepede Kapalıçarşı semtinin üzerinde yükselir. En kolay ulaşım, T1 tramvayıyla Beyazıt ya da Laleli'ye inip üniversite semtinden kısa bir yokuş yürüyüşüdür; Eminönü'ne vapur ve Haliç'ten tırmanış da manzaralı bir alternatiftir. Caminin çevresindeki sokaklar geleneksel kuru fasulye lokantaları ve çay bahçeleriyle doludur.",
+          "İbadete açık bir cami olarak beş vakit namaz dışında ziyaretçi kabul eder; her namaz vaktinde kısa, cuma öğlesinde daha uzun süre turistlere kapanır. Erken sabah ve ikindi sonrası en sakin saatlerdir, teras ise gün batımına yakın unutulmazdır. En yoğun sezonda bile Sultanahmet Camii'nden çok daha tenha kalır.",
+          "Giriş ücretsizdir, bilet yoktur. Sade giyinin — omuzlar ve dizler kapalı, kadınlar için baş örtüsü; ayakkabılarınızı çıkarıp poşette taşırsınız. Lisanslı bir VibeGuide yerel rehberi ziyaretinizi namaz vakitlerine göre ayarlar, rahat edesiniz diye görgü kurallarını anlatır ve Sinan'ın kubbesiyle hükümdar türbelerinin ardındaki tarihi açar.",
+        ],
+        faqs: [
+          { q: "Süleymaniye Camii için bilet gerekir mi?", a: "Hayır. İbadete açık bir camidir ve giriş ücretsizdir. Ziyaretçiler beş vakit namaz dışında hoş karşılanır; VibeGuide yerel rehberi varışınızı caminin açık ve sakin olacağı bir zamana ayarlayabilir." },
+          { q: "İçeride ne giymeliyim?", a: "Omuzlar ve dizler kapalı, sade giyinin; kadınlar saçını bir eşarpla örter ve herkes kapıda ayakkabılarını çıkarır. İhtiyaç olursa girişte genellikle ödünç eşarp bulunur." },
+          { q: "Sultanahmet Camii'nden daha mı iyi?", a: "Burası Mimar Sinan'ın başyapıtıdır ve genellikle çok daha tenhadır; Sultanahmet'te olmayan panoramik bir terası vardır. Birçok rehber onu daha üstün bir yapı sayar — VibeGuide yerel rehberi nedenini gösterir." },
+          { q: "Ziyaret ne kadar sürer?", a: "Çoğu ziyaret harim, türbeler ve teras arasında 45 dakika ila bir saat sürer ve yakındaki Kapalıçarşı ya da Haliç'e inen bir yürüyüşle doğal biçimde birleşir." },
+        ],
+        ctaTitle: "Süleymaniye'yi bir yerelle gez",
+        ...IST.tr,
+      },
+      it: {
+        name: "Moschea di Solimano",
+        metaTitle: "Tour della Moschea di Solimano con guide locali",
+        metaDescription:
+          "Visita la Moschea di Solimano con una guida verificata di Istanbul. Il capolavoro di Mimar Sinan sulla Terza Collina, le tombe di Solimano e Hürrem e una terrazza panoramica sul Corno d'Oro.",
+        intro: [
+          "La Moschea di Solimano corona la Terza Collina di Istanbul, sopra il Corno d'Oro, il capolavoro imperiale di Mimar Sinan. Costruita tra il 1550 e il 1557 per il sultano Solimano il Magnifico, bilancia un'enorme cupola centrale su quattro minareti e una sala di preghiera serena e piena di luce — il cuore sicuro dell'architettura ottomana classica all'apice della potenza dell'impero.",
+          "Con un esperto locale VibeGuide il complesso si legge come un racconto e non come un semplice monumento. Una vera guida collega la cupola e il cortile al sultano che la fece erigere e all'architetto che sfidò la gravità, poi ti conduce alle tombe nel giardino di Solimano e della moglie Hürrem — e a una terrazza con una delle più belle vedute gratuite della città.",
+        ],
+        highlights: [
+          { title: "La grande cupola di Sinan", desc: "Una cupola centrale alta quasi 53 metri, progettata perché luce e suono scorrano nella sala — il momento che suggellò il genio di Mimar Sinan." },
+          { title: "Le tombe imperiali", desc: "Nel giardino dietro la moschea sorgono le tombe a cupola di Solimano il Magnifico e della moglie Hürrem Sultan (Roxelana), riccamente rivestite di piastrelle all'interno." },
+          { title: "La terrazza panoramica", desc: "La terrazza esterna della moschea si apre su un'ampia veduta del Corno d'Oro e delle cupole della città vecchia — ed è gratuita." },
+        ],
+        planningHeading: "Pianifica la tua visita",
+        planningParagraphs: [
+          "La Moschea di Solimano si erge sopra il quartiere del Gran Bazar, sulla Terza Collina. Il modo più semplice per arrivare è il tram T1 fino a Beyazıt o Laleli, seguito da una breve salita a piedi attraverso il quartiere universitario; i traghetti per Eminönü e una risalita dal Corno d'Oro sono un'alternativa pittoresca. I vicoli intorno alla moschea sono pieni di trattorie tradizionali di fagioli e giardini da tè.",
+          "Essendo una moschea in funzione accoglie i visitatori al di fuori delle cinque preghiere quotidiane e chiude ai turisti per poco durante ogni preghiera e più a lungo il venerdì a mezzogiorno. Il mattino presto e il tardo pomeriggio sono i momenti più tranquilli, e la terrazza è indimenticabile verso il tramonto. Anche in alta stagione resta molto meno affollata della Moschea Blu.",
+          "L'ingresso è gratuito e non c'è alcun biglietto da comprare. Vestiti in modo sobrio — spalle e ginocchia coperte e un foulard in testa per le donne; ti togli le scarpe e le porti in un sacchetto. Una guida locale abilitata di VibeGuide organizza la visita attorno all'orario delle preghiere, spiega l'etichetta perché tu sia a tuo agio e svela la storia dietro la cupola di Sinan e le tombe imperiali.",
+        ],
+        faqs: [
+          { q: "Serve un biglietto per la Moschea di Solimano?", a: "No. È una moschea in funzione e l'ingresso è gratuito. I visitatori sono benvenuti al di fuori delle cinque preghiere quotidiane, e una guida locale VibeGuide può pianificare il tuo arrivo perché la moschea sia aperta e tranquilla." },
+          { q: "Come devo vestirmi dentro?", a: "Vesti in modo sobrio, con spalle e ginocchia coperte; le donne coprono i capelli con un foulard e tutti si tolgono le scarpe all'ingresso. All'entrata di solito si possono prendere in prestito dei foulard se ti servono." },
+          { q: "È meglio della Moschea Blu?", a: "È il capolavoro di Mimar Sinan e di solito molto meno affollata, con una terrazza panoramica che la Moschea Blu non ha. Molte guide la considerano l'edificio più riuscito — una guida locale VibeGuide ti mostrerà perché." },
+          { q: "Quanto dura la visita?", a: "La maggior parte delle visite dura dai 45 minuti a un'ora tra sala di preghiera, tombe e terrazza, e si abbina naturalmente al vicino Gran Bazar o a una passeggiata fino al Corno d'Oro." },
+        ],
+        ctaTitle: "Visita Solimano con un locale",
+        ...IST.it,
+      },
+      pl: {
+        name: "Meczet Sulejmana",
+        metaTitle: "Meczet Sulejmana — wycieczki z lokalnymi przewodnikami",
+        metaDescription:
+          "Zwiedź Meczet Sulejmana z zweryfikowanym przewodnikiem w Stambule. Arcydzieło Mimara Sinana na Trzecim Wzgórzu, grobowce Sulejmana i Hürrem oraz panoramiczny taras nad Złotym Rogiem.",
+        intro: [
+          "Meczet Sulejmana wieńczy Trzecie Wzgórze Stambułu nad Złotym Rogiem — imperialne arcydzieło Mimara Sinana. Wzniesiony w latach 1550–1557 dla sułtana Sulejmana Wspaniałego, równoważy ogromną kopułę centralną na czterech minaretach i pełną światła, spokojną salę modlitwy — pewne siebie serce klasycznej architektury osmańskiej u szczytu potęgi imperium.",
+          "Z lokalnym ekspertem VibeGuide kompleks czyta się jak opowieść, a nie zwykły zabytek. Prawdziwy przewodnik łączy kopułę i dziedziniec z sułtanem, który go wzniósł, i architektem, który rzucił wyzwanie grawitacji, a potem prowadzi cię do ogrodowych grobowców Sulejmana i jego żony Hürrem — oraz na taras z jednym z najpiękniejszych darmowych widoków w mieście.",
+        ],
+        highlights: [
+          { title: "Wielka kopuła Sinana", desc: "Wznosząca się na niemal 53 metry kopuła centralna, zaprojektowana tak, by światło i dźwięk płynęły przez salę — moment, który przypieczętował geniusz Mimara Sinana." },
+          { title: "Grobowce sułtańskie", desc: "W ogrodzie za meczetem stoją kopułowe grobowce Sulejmana Wspaniałego i jego żony Hürrem Sultan (Roksolany), bogato wyłożone kaflami w środku." },
+          { title: "Panoramiczny taras", desc: "Zewnętrzny taras meczetu otwiera się na rozległy widok na Złoty Róg i kopuły starego miasta — i nic nie kosztuje." },
+        ],
+        planningHeading: "Zaplanuj wizytę",
+        planningParagraphs: [
+          "Meczet Sulejmana wznosi się nad dzielnicą Wielkiego Bazaru, na Trzecim Wzgórzu. Najłatwiej dojechać tramwajem T1 do Beyazıt lub Laleli, a stamtąd wejść pod górę krótkim spacerem przez dzielnicę uniwersytecką; promy do Eminönü i podejście od Złotego Rogu to malownicza alternatywa. Uliczki wokół meczetu pełne są tradycyjnych jadłodajni z fasolą i herbaciarni.",
+          "Jako czynny meczet przyjmuje zwiedzających poza pięcioma codziennymi modlitwami i zamyka się dla turystów na krótko podczas każdej modlitwy oraz na dłużej w piątkowe południe. Wczesny ranek i późne popołudnie są najspokojniejsze, a taras bywa niezapomniany o zachodzie słońca. Nawet w szczycie sezonu jest znacznie mniej tłoczno niż w Błękitnym Meczecie.",
+          "Wstęp jest bezpłatny i nie trzeba kupować biletu. Ubierz się skromnie — zakryte ramiona i kolana, a dla kobiet chusta na głowę; zdejmujesz buty i niesiesz je w torbie. Licencjonowany lokalny przewodnik VibeGuide dostosuje twoją wizytę do rozkładu modlitw, wyjaśni zasady, byś czuł się swobodnie, i odsłoni historię kryjącą się za kopułą Sinana i grobowcami sułtańskimi.",
+        ],
+        faqs: [
+          { q: "Czy potrzebuję biletu do Meczetu Sulejmana?", a: "Nie. To czynny meczet, a wstęp jest bezpłatny. Zwiedzających przyjmuje się poza pięcioma codziennymi modlitwami, a lokalny przewodnik VibeGuide zaplanuje twoje przybycie tak, by meczet był otwarty i spokojny." },
+          { q: "Co powinienem założyć w środku?", a: "Ubierz się skromnie, z zakrytymi ramionami i kolanami; kobiety nakrywają włosy chustą, a wszyscy zdejmują buty przy wejściu. Przy wejściu zwykle można pożyczyć chustę, jeśli jej potrzebujesz." },
+          { q: "Czy jest lepszy niż Błękitny Meczet?", a: "To arcydzieło Mimara Sinana i zwykle znacznie mniej zatłoczone, z panoramicznym tarasem, którego nie ma Błękitny Meczet. Wielu przewodników uważa go za doskonalszą budowlę — lokalny przewodnik VibeGuide pokaże ci dlaczego." },
+          { q: "Ile trwa zwiedzanie?", a: "Większość wizyt trwa od 45 minut do godziny między salą modlitwy, grobowcami i tarasem i naturalnie łączy się z pobliskim Wielkim Bazarem lub spacerem do Złotego Rogu." },
+        ],
+        ctaTitle: "Zobacz Meczet Sulejmana z lokalnym przewodnikiem",
+        ...IST.pl,
+      },
+      nl: {
+        name: "Süleymaniye-moskee",
+        metaTitle: "Süleymaniye-moskee tours & lokale gidsen",
+        metaDescription:
+          "Bezoek de Süleymaniye-moskee met een geverifieerde gids in Istanbul. Het meesterwerk van Mimar Sinan op de Derde Heuvel, de graven van Süleyman en Hürrem en een panoramaterras boven de Gouden Hoorn.",
+        intro: [
+          "De Süleymaniye-moskee kroont de Derde Heuvel van Istanbul boven de Gouden Hoorn — het keizerlijke meesterwerk van Mimar Sinan. Gebouwd tussen 1550 en 1557 voor sultan Süleyman de Grote, balanceert ze een enorme centrale koepel op vier minaretten en een serene, lichte gebedszaal — het zelfverzekerde hart van de klassieke Ottomaanse bouwkunst op het hoogtepunt van de macht van het rijk.",
+          "Met een lokale VibeGuide-expert leest het complex als een verhaal in plaats van een monument. Een echte gids verbindt de koepel en de binnenplaats met de sultan die haar liet bouwen en de architect die de zwaartekracht tartte, en leidt je dan naar de tuingraven van Süleyman en zijn vrouw Hürrem — en naar een terras met een van de mooiste gratis uitzichten van de stad.",
+        ],
+        highlights: [
+          { title: "Sinans grote koepel", desc: "Een centrale koepel die bijna 53 meter oprijst, zo ontworpen dat licht en geluid door de zaal stromen — het moment dat het genie van Mimar Sinan bezegelde." },
+          { title: "De keizerlijke graven", desc: "In de tuin achter de moskee staan de koepelgraven van Süleyman de Grote en zijn vrouw Hürrem Sultan (Roxelana), van binnen rijk betegeld." },
+          { title: "Het panoramaterras", desc: "Het buitenterras van de moskee opent op een weids uitzicht over de Gouden Hoorn en de koepels van de oude stad — en het kost niets." },
+        ],
+        planningHeading: "Plan je bezoek",
+        planningParagraphs: [
+          "De Süleymaniye-moskee verrijst boven de wijk van de Grote Bazaar, op de Derde Heuvel. Het eenvoudigst reis je met tram T1 tot Beyazıt of Laleli, gevolgd door een korte klim te voet door de universiteitswijk; veerboten naar Eminönü en een klim vanaf de Gouden Hoorn zijn een schilderachtig alternatief. De straatjes rond de moskee zitten vol traditionele bonenrestaurants en theetuinen.",
+          "Als werkende moskee ontvangt ze bezoekers buiten de vijf dagelijkse gebeden en sluit ze kort voor toeristen tijdens elk gebed en langer op vrijdagmiddag. De vroege ochtend en late namiddag zijn het rustigst, en het terras is onvergetelijk rond zonsondergang. Zelfs in het hoogseizoen blijft ze veel minder druk dan de Blauwe Moskee.",
+          "De toegang is gratis en er is geen kaartje te kopen. Kleed je bescheiden — schouders en knieën bedekt, en een hoofddoek voor vrouwen; je doet je schoenen uit en draagt ze in een tasje. Een erkende lokale VibeGuide-gids stemt je bezoek af op de gebedstijden, legt de etiquette uit zodat je je op je gemak voelt en ontrafelt de geschiedenis achter Sinans koepel en de keizerlijke graven.",
+        ],
+        faqs: [
+          { q: "Heb ik een kaartje nodig voor de Süleymaniye-moskee?", a: "Nee. Het is een werkende moskee en de toegang is gratis. Bezoekers zijn welkom buiten de vijf dagelijkse gebedstijden, en een lokale VibeGuide-gids kan je aankomst plannen zodat de moskee open en rustig is." },
+          { q: "Wat moet ik binnen dragen?", a: "Kleed je bescheiden met bedekte schouders en knieën; vrouwen bedekken hun haar met een doek en iedereen doet de schoenen uit bij de deur. Bij de ingang zijn meestal doeken te leen als je er een nodig hebt." },
+          { q: "Is ze beter dan de Blauwe Moskee?", a: "Het is het meesterwerk van Mimar Sinan en meestal veel minder druk, met een panoramaterras dat de Blauwe Moskee niet heeft. Veel gidsen vinden het het fraaiere gebouw — een lokale VibeGuide-gids laat je zien waarom." },
+          { q: "Hoe lang duurt een bezoek?", a: "De meeste bezoeken duren 45 minuten tot een uur tussen de gebedszaal, de graven en het terras, en laten zich natuurlijk combineren met de nabije Grote Bazaar of een wandeling naar de Gouden Hoorn." },
+        ],
+        ctaTitle: "Bekijk Süleymaniye met een local",
+        ...IST.nl,
+      },
+    },
+  },
+  {
+    slug: "spice-bazaar",
+    city: "Istanbul",
+    citySlug: "istanbul",
+    emoji: "🌶️",
+    image:
+      "https://images.unsplash.com/photo-1629212093570-ff59255e89e0?q=80&w=1600",
+    lat: 41.0165,
+    lng: 28.9704,
+    i18n: {
+      en: {
+        name: "Spice Bazaar",
+        metaTitle: "Spice Bazaar (Egyptian Bazaar) Tours & Local Guides",
+        metaDescription:
+          "Explore Istanbul's Spice Bazaar with a verified local guide. Heaped spices, saffron, Turkish delight and teas in a 17th-century covered market beside the New Mosque in Eminönü.",
+        intro: [
+          "The Spice Bazaar — the Mısır Çarşısı, or Egyptian Bazaar — is Istanbul's most fragrant market, a 17th-century L-shaped hall of vaulted arcades in the heart of Eminönü. Built in the 1660s as part of the New Mosque complex, it was funded by trade with Ottoman Egypt, and to this day its stalls overflow with pyramids of spice, saffron, dried fruit, nuts and tea.",
+          "With a VibeGuide local expert the crowd and the colour make sense. A real guide walks you past the tourist traps to honest, long-standing vendors, tells you what real saffron and pure Turkish delight should cost, and lets you taste before you buy — turning a chaotic aisle into a relaxed morning of flavours and stories.",
+        ],
+        highlights: [
+          { title: "Mountains of spice", desc: "Cones of paprika, sumac, cumin and cinnamon rise beside jars of deep-red saffron — the scents that gave the bazaar its name and its fame." },
+          { title: "Turkish delight & sweets", desc: "Trays of lokum in every flavour, from pomegranate and pistachio to rose, sit beside dried apricots, figs and honeyed nuts — most stalls offer a taste." },
+          { title: "Teas & the New Mosque", desc: "Apple tea, herbal blends and coffee fill the air, and the great domed Yeni Cami rises right beside the bazaar's main gate." },
+        ],
+        planningHeading: "Planning your visit",
+        planningParagraphs: [
+          "The Spice Bazaar sits in Eminönü, right beside the New Mosque and a two-minute walk from the Galata Bridge and the Bosphorus ferry piers. The easiest arrival is the T1 tram to the Eminönü stop, or a ferry across the Golden Horn; the waterfront setting makes it easy to fold into a day along the old city's shore.",
+          "The bazaar is busiest in the middle of the day, so an early-morning visit is calmer and lets you talk to vendors before the crowds arrive. It runs on a daily schedule and gets especially lively at weekends. Spring and autumn are pleasant, but the covered hall stays welcoming in any weather.",
+          "Entry is free and there is nothing to book — you simply walk in. Prices are rarely fixed, so a little friendly haggling is expected, and quality varies from stall to stall. A licensed VibeGuide local guide steers you to trusted vendors, helps you judge real saffron from dyed, and negotiates fair prices while you taste your way through the market.",
+        ],
+        faqs: [
+          { q: "Is the Spice Bazaar free to enter?", a: "Yes, entry is completely free and there is nothing to book. A VibeGuide local can meet you at the gate and guide you to the most trustworthy vendors inside." },
+          { q: "Should I haggle at the Spice Bazaar?", a: "Prices are rarely fixed, so polite bargaining is normal and expected. A local guide knows the fair rate for saffron, lokum and tea and negotiates for you so you don't overpay." },
+          { q: "How is it different from the Grand Bazaar?", a: "The Spice Bazaar is smaller, more fragrant and focused on food — spices, sweets, teas and nuts — while the Grand Bazaar is a vast maze of jewellery, carpets and crafts. Many visitors do both in one day." },
+          { q: "When is the best time to go?", a: "Mornings are the calmest, before tour groups and shoppers fill the aisles. Weekdays are quieter than weekends, and a VibeGuide local can time your visit for the best experience." },
+        ],
+        ctaTitle: "See the Spice Bazaar with a local",
+        ...IST.en,
+      },
+      de: {
+        name: "Ägyptischer Basar",
+        metaTitle: "Ägyptischer Basar (Gewürzbasar) Touren & lokale Guides",
+        metaDescription:
+          "Erkunde Istanbuls Gewürzbasar mit einem geprüften lokalen Guide. Berge von Gewürzen, Safran, Lokum und Tee in einer überdachten Markthalle aus dem 17. Jahrhundert neben der Neuen Moschee in Eminönü.",
+        intro: [
+          "Der Ägyptische Basar — der Mısır Çarşısı, der Gewürzbasar — ist Istanbuls duftendster Markt, eine L-förmige Halle mit gewölbten Arkaden aus dem 17. Jahrhundert im Herzen von Eminönü. In den 1660er-Jahren als Teil der Neuen-Moschee-Anlage errichtet, wurde er aus dem Handel mit dem osmanischen Ägypten finanziert, und bis heute quellen seine Stände über von Gewürzpyramiden, Safran, Trockenfrüchten, Nüssen und Tee.",
+          "Mit einem lokalen VibeGuide-Experten ergeben Gedränge und Farbenpracht einen Sinn. Ein echter Guide führt dich an den Touristenfallen vorbei zu ehrlichen, alteingesessenen Händlern, sagt dir, was echter Safran und reines Lokum kosten sollten, und lässt dich probieren, bevor du kaufst — so wird aus einer chaotischen Gasse ein entspannter Vormittag voller Aromen und Geschichten.",
+        ],
+        highlights: [
+          { title: "Berge von Gewürzen", desc: "Kegel aus Paprika, Sumach, Kreuzkümmel und Zimt türmen sich neben Gläsern mit tiefrotem Safran — die Düfte, die dem Basar Namen und Ruhm gaben." },
+          { title: "Lokum & Süßigkeiten", desc: "Tabletts mit Lokum in jeder Sorte, von Granatapfel und Pistazie bis Rose, stehen neben getrockneten Aprikosen, Feigen und honigüberzogenen Nüssen — die meisten Stände bieten eine Kostprobe." },
+          { title: "Tee & die Neue Moschee", desc: "Apfeltee, Kräutermischungen und Kaffee erfüllen die Luft, und die große Kuppel der Yeni Cami erhebt sich direkt neben dem Haupttor des Basars." },
+        ],
+        planningHeading: "Deine Besuchsplanung",
+        planningParagraphs: [
+          "Der Ägyptische Basar liegt in Eminönü, direkt neben der Neuen Moschee und zwei Gehminuten von der Galata-Brücke und den Bosporus-Fähranlegern entfernt. Am einfachsten kommst du mit der Straßenbahn T1 bis zur Haltestelle Eminönü oder mit der Fähre über das Goldene Horn; die Lage am Wasser macht ihn leicht in einen Tag entlang des Altstadtufers einzubauen.",
+          "Am belebtesten ist der Basar mittags, ein Besuch am frühen Morgen ist also ruhiger und lässt dich mit den Händlern reden, bevor die Menge kommt. Er hat täglich geöffnet und wird besonders am Wochenende lebhaft. Frühling und Herbst sind angenehm, doch die überdachte Halle bleibt bei jedem Wetter einladend.",
+          "Der Eintritt ist frei und man muss nichts buchen — du gehst einfach hinein. Preise sind selten festgelegt, ein wenig freundliches Feilschen wird also erwartet, und die Qualität schwankt von Stand zu Stand. Ein lizenzierter VibeGuide vor Ort führt dich zu vertrauenswürdigen Händlern, hilft dir, echten Safran von gefärbtem zu unterscheiden, und handelt faire Preise aus, während du dich durch den Markt probierst.",
+        ],
+        faqs: [
+          { q: "Ist der Eintritt in den Ägyptischen Basar frei?", a: "Ja, der Eintritt ist völlig frei und man muss nichts buchen. Ein VibeGuide vor Ort kann dich am Tor treffen und dich zu den vertrauenswürdigsten Händlern im Inneren führen." },
+          { q: "Sollte ich im Ägyptischen Basar feilschen?", a: "Preise sind selten festgelegt, höfliches Handeln ist also normal und erwünscht. Ein lokaler Guide kennt den fairen Preis für Safran, Lokum und Tee und verhandelt für dich, damit du nicht zu viel zahlst." },
+          { q: "Wie unterscheidet er sich vom Großen Basar?", a: "Der Ägyptische Basar ist kleiner, duftender und auf Lebensmittel ausgerichtet — Gewürze, Süßigkeiten, Tees und Nüsse — während der Große Basar ein riesiges Labyrinth aus Schmuck, Teppichen und Kunsthandwerk ist. Viele Besucher machen beides an einem Tag." },
+          { q: "Wann besucht man ihn am besten?", a: "Der Morgen ist am ruhigsten, bevor Reisegruppen und Käufer die Gänge füllen. Wochentage sind ruhiger als Wochenenden, und ein VibeGuide vor Ort legt deinen Besuch aufs beste Erlebnis." },
+        ],
+        ctaTitle: "Erlebe den Gewürzbasar mit einem Local",
+        ...IST.de,
+      },
+      ru: {
+        name: "Египетский базар",
+        metaTitle: "Египетский базар (рынок специй): экскурсии с местными гидами",
+        metaDescription:
+          "Исследуйте стамбульский Египетский базар с проверенным местным гидом. Горы специй, шафран, лукум и чаи в крытом рынке XVII века рядом с Новой мечетью в Эминёню.",
+        intro: [
+          "Египетский базар — Мысыр Чаршысы, рынок специй — самый ароматный рынок Стамбула, Г-образный зал сводчатых аркад XVII века в сердце Эминёню. Построенный в 1660-е годы как часть комплекса Новой мечети, он финансировался торговлей с османским Египтом, и по сей день его прилавки ломятся от пирамид пряностей, шафрана, сухофруктов, орехов и чая.",
+          "С местным экспертом VibeGuide толчея и краски обретают смысл. Настоящий гид проведёт вас мимо туристических ловушек к честным, старейшим торговцам, подскажет, сколько должны стоить настоящий шафран и чистый лукум, и даст попробовать перед покупкой — превращая хаотичный ряд в спокойное утро вкусов и историй.",
+        ],
+        highlights: [
+          { title: "Горы специй", desc: "Конусы паприки, сумаха, зиры и корицы высятся рядом с банками тёмно-красного шафрана — ароматы, что дали базару имя и славу." },
+          { title: "Лукум и сладости", desc: "Подносы с лукумом всех вкусов — от граната и фисташки до розы — стоят рядом с сушёными абрикосами, инжиром и орехами в меду; на большинстве прилавков дадут попробовать." },
+          { title: "Чаи и Новая мечеть", desc: "Яблочный чай, травяные смеси и кофе наполняют воздух, а большая купольная Йени Джами возвышается прямо у главных ворот базара." },
+        ],
+        planningHeading: "Планирование визита",
+        planningParagraphs: [
+          "Египетский базар стоит в Эминёню, прямо рядом с Новой мечетью, в двух минутах ходьбы от Галатского моста и причалов босфорских паромов. Проще всего добраться на трамвае T1 до остановки Eminönü или на пароме через Золотой Рог; расположение у воды позволяет легко вписать его в день вдоль берега старого города.",
+          "Базар оживлённее всего в середине дня, поэтому визит ранним утром спокойнее и даёт поговорить с торговцами до наплыва людей. Он работает ежедневно и особенно оживает по выходным. Весна и осень приятны, но крытый зал гостеприимен в любую погоду.",
+          "Вход бесплатный и ничего бронировать не нужно — вы просто заходите. Цены редко фиксированы, так что немного дружелюбного торга ожидаемо, а качество разнится от прилавка к прилавку. Лицензированный местный гид VibeGuide направит вас к надёжным торговцам, поможет отличить настоящий шафран от крашеного и договорится о честной цене, пока вы пробуете рынок на вкус.",
+        ],
+        faqs: [
+          { q: "Вход на Египетский базар бесплатный?", a: "Да, вход совершенно бесплатный и ничего бронировать не нужно. Местный гид VibeGuide может встретить вас у ворот и провести к самым надёжным торговцам внутри." },
+          { q: "Нужно ли торговаться на Египетском базаре?", a: "Цены редко фиксированы, поэтому вежливый торг нормален и ожидаем. Местный гид знает справедливую цену на шафран, лукум и чай и торгуется за вас, чтобы вы не переплатили." },
+          { q: "Чем он отличается от Гранд-базара?", a: "Египетский базар меньше, ароматнее и посвящён еде — специи, сладости, чаи и орехи, — тогда как Гранд-базар это огромный лабиринт украшений, ковров и ремёсел. Многие обходят оба за один день." },
+          { q: "Когда лучше всего идти?", a: "Утро спокойнее всего, пока туристические группы и покупатели не заполнили ряды. Будни тише выходных, а местный гид VibeGuide подберёт время для лучших впечатлений." },
+        ],
+        ctaTitle: "Увидеть Египетский базар с местным гидом",
+        ...IST.ru,
+      },
+      ar: {
+        name: "بازار التوابل",
+        metaTitle: "جولات بازار التوابل (السوق المصري) مع مرشدين محليين",
+        metaDescription:
+          "اكتشف بازار التوابل في إسطنبول مع مرشد محلي موثّق. أكوام التوابل والزعفران والملبن والشاي في سوق مسقوف من القرن السابع عشر بجوار الجامع الجديد في إمينونو.",
+        intro: [
+          "بازار التوابل — مصر چارشيسي، أو السوق المصري — هو أكثر أسواق إسطنبول عطرًا، قاعة على شكل حرف L من أروقة معقودة تعود إلى القرن السابع عشر في قلب إمينونو. شُيّد في ستينيات القرن السابع عشر كجزء من مجمّع الجامع الجديد، ومُوِّل من تجارة مصر العثمانية، وحتى اليوم تفيض بسطاته بأهرام التوابل والزعفران والفواكه المجففة والمكسّرات والشاي.",
+          "مع خبير محلي من VibeGuide يصبح للزحام والألوان معنى. المرشد الحقيقي يقودك بعيدًا عن مصائد السياح إلى بائعين أمناء عريقين، ويخبرك بما ينبغي أن يكلّفه الزعفران الحقيقي والملبن الخالص، ويتيح لك التذوّق قبل الشراء — فيحوّل ممرًا فوضويًا إلى صباح هادئ من النكهات والحكايات.",
+        ],
+        highlights: [
+          { title: "جبال من التوابل", desc: "أقماع من البابريكا والسمّاق والكمّون والقرفة ترتفع بجوار أوعية من الزعفران الأحمر الداكن — العطور التي منحت البازار اسمه وشهرته." },
+          { title: "الملبن والحلويات", desc: "صواني من الملبن بكل نكهة، من الرمان والفستق إلى الورد، تجاور المشمش المجفف والتين والمكسّرات بالعسل — ومعظم البسطات تقدّم مذاقًا." },
+          { title: "الشاي والجامع الجديد", desc: "شاي التفاح والخلطات العشبية والقهوة تملأ الهواء، وترتفع قبة الجامع الجديد الكبيرة تمامًا بجوار البوابة الرئيسية للبازار." },
+        ],
+        planningHeading: "التخطيط لزيارتك",
+        planningParagraphs: [
+          "يقع بازار التوابل في إمينونو، تمامًا بجوار الجامع الجديد وعلى بعد دقيقتين سيرًا من جسر غلطة وأرصفة عبّارات البوسفور. أسهل وصول هو بالترام T1 إلى محطة إمينونو، أو بعبّارة عبر القرن الذهبي؛ ويجعل الموقع على الماء من السهل دمجه في يوم على طول ساحل المدينة القديمة.",
+          "يبلغ البازار أوجّ ازدحامه في منتصف النهار، لذا فإن زيارة الصباح الباكر أهدأ وتتيح لك محادثة الباعة قبل توافد الحشود. يعمل يوميًا وينبض بالحياة خاصةً في عطلة نهاية الأسبوع. الربيع والخريف لطيفان، لكن القاعة المسقوفة تبقى مرحّبة في أي طقس.",
+          "الدخول مجاني ولا شيء يُحجَز — تدخل ببساطة. الأسعار نادرًا ما تكون ثابتة، لذا يُتوقّع بعض المساومة الودّية، وتتفاوت الجودة من بسطة إلى أخرى. يقودك مرشد VibeGuide المحلي المرخّص إلى باعة موثوقين، ويساعدك على تمييز الزعفران الحقيقي من المصبوغ، ويتفاوض على أسعار عادلة بينما تتذوّق طريقك عبر السوق.",
+        ],
+        faqs: [
+          { q: "هل الدخول إلى بازار التوابل مجاني؟", a: "نعم، الدخول مجاني تمامًا ولا شيء يُحجَز. يستطيع مرشد VibeGuide المحلي لقاءك عند البوابة وإرشادك إلى أكثر الباعة ثقةً في الداخل." },
+          { q: "هل عليّ المساومة في بازار التوابل؟", a: "الأسعار نادرًا ما تكون ثابتة، لذا فالمساومة المهذّبة أمر طبيعي ومتوقَّع. المرشد المحلي يعرف السعر العادل للزعفران والملبن والشاي ويفاوض عنك كي لا تدفع أكثر من اللازم." },
+          { q: "كيف يختلف عن البازار الكبير؟", a: "بازار التوابل أصغر وأكثر عطرًا ويتركّز على الطعام — توابل وحلويات وشاي ومكسّرات — بينما البازار الكبير متاهة واسعة من المجوهرات والسجّاد والحرف. كثيرون يزورون الاثنين في يوم واحد." },
+          { q: "ما أفضل وقت للذهاب؟", a: "الصباح أهدأ الأوقات، قبل أن تملأ المجموعات السياحية والمتسوقون الممرات. أيام الأسبوع أهدأ من العطلة، ويستطيع مرشد VibeGuide المحلي ضبط توقيت زيارتك لأفضل تجربة." },
+        ],
+        ctaTitle: "زر بازار التوابل مع مرشد محلي",
+        ...IST.ar,
+      },
+      es: {
+        name: "Bazar de las Especias",
+        metaTitle: "Tours del Bazar de las Especias (Bazar Egipcio) con guías locales",
+        metaDescription:
+          "Descubre el Bazar de las Especias de Estambul con un guía local verificado. Montañas de especias, azafrán, delicias turcas y tés en un mercado cubierto del siglo XVII junto a la Mezquita Nueva en Eminönü.",
+        intro: [
+          "El Bazar de las Especias — el Mısır Çarşısı, o Bazar Egipcio — es el mercado más aromático de Estambul, una sala en forma de L de arcadas abovedadas del siglo XVII en el corazón de Eminönü. Construido en la década de 1660 como parte del complejo de la Mezquita Nueva, se financió con el comercio del Egipto otomano, y hasta hoy sus puestos rebosan pirámides de especias, azafrán, fruta seca, frutos secos y té.",
+          "Con un experto local de VibeGuide, el gentío y el color cobran sentido. Un guía de verdad te lleva más allá de las trampas para turistas hasta vendedores honestos de toda la vida, te dice cuánto deberían costar el azafrán auténtico y las delicias turcas puras, y te deja probar antes de comprar — convirtiendo un pasillo caótico en una mañana tranquila de sabores e historias.",
+        ],
+        highlights: [
+          { title: "Montañas de especias", desc: "Conos de pimentón, zumaque, comino y canela se alzan junto a tarros de azafrán rojo intenso — los aromas que dieron al bazar su nombre y su fama." },
+          { title: "Delicias turcas y dulces", desc: "Bandejas de lokum de todos los sabores, de granada y pistacho a rosa, junto a orejones, higos y frutos secos con miel — casi todos los puestos ofrecen una cata." },
+          { title: "Tés y la Mezquita Nueva", desc: "El té de manzana, las mezclas de hierbas y el café llenan el aire, y la gran cúpula de la Yeni Cami se alza justo al lado de la puerta principal del bazar." },
+        ],
+        planningHeading: "Planifica tu visita",
+        planningParagraphs: [
+          "El Bazar de las Especias se encuentra en Eminönü, justo al lado de la Mezquita Nueva y a dos minutos a pie del Puente de Gálata y los embarcaderos de los ferris del Bósforo. Lo más fácil es el tranvía T1 hasta la parada de Eminönü, o un ferri por el Cuerno de Oro; su ubicación junto al agua permite encajarlo con facilidad en un día por la orilla de la ciudad vieja.",
+          "El bazar está más concurrido a mediodía, así que una visita a primera hora es más tranquila y te deja hablar con los vendedores antes de que llegue la multitud. Abre a diario y se anima especialmente los fines de semana. La primavera y el otoño son agradables, pero la sala cubierta resulta acogedora con cualquier clima.",
+          "La entrada es gratuita y no hay que reservar nada — simplemente entras. Los precios rara vez son fijos, así que se espera un poco de regateo amable, y la calidad varía de un puesto a otro. Un guía local titulado de VibeGuide te lleva a vendedores de confianza, te ayuda a distinguir el azafrán auténtico del teñido y negocia precios justos mientras te abres paso probando el mercado.",
+        ],
+        faqs: [
+          { q: "¿Es gratis entrar al Bazar de las Especias?", a: "Sí, la entrada es totalmente gratuita y no hay que reservar nada. Un guía local de VibeGuide puede recibirte en la puerta y llevarte a los vendedores más fiables del interior." },
+          { q: "¿Debo regatear en el Bazar de las Especias?", a: "Los precios rara vez son fijos, así que regatear con educación es normal y esperado. Un guía local conoce el precio justo del azafrán, el lokum y el té y negocia por ti para que no pagues de más." },
+          { q: "¿En qué se diferencia del Gran Bazar?", a: "El Bazar de las Especias es más pequeño, más aromático y centrado en la comida — especias, dulces, tés y frutos secos — mientras que el Gran Bazar es un enorme laberinto de joyería, alfombras y artesanía. Muchos visitantes hacen ambos en un día." },
+          { q: "¿Cuál es la mejor hora para ir?", a: "Las mañanas son las más tranquilas, antes de que los grupos y los compradores llenen los pasillos. Entre semana hay menos gente que los fines de semana, y un guía local de VibeGuide puede fijar tu visita para la mejor experiencia." },
+        ],
+        ctaTitle: "Visita el Bazar de las Especias con un local",
+        ...IST.es,
+      },
+      fr: {
+        name: "Bazar aux Épices",
+        metaTitle: "Visites du Bazar aux Épices (Bazar Égyptien) avec guides locaux",
+        metaDescription:
+          "Découvrez le Bazar aux Épices d'Istanbul avec un guide local vérifié. Montagnes d'épices, safran, loukoums et thés dans un marché couvert du XVIIe siècle près de la Nouvelle Mosquée à Eminönü.",
+        intro: [
+          "Le Bazar aux Épices — le Mısır Çarşısı, ou Bazar Égyptien — est le marché le plus parfumé d'Istanbul, une halle en L aux arcades voûtées du XVIIe siècle au cœur d'Eminönü. Bâti dans les années 1660 dans le cadre du complexe de la Nouvelle Mosquée, il fut financé par le commerce avec l'Égypte ottomane, et aujourd'hui encore ses étals débordent de pyramides d'épices, de safran, de fruits secs, de noix et de thé.",
+          "Avec un expert local VibeGuide, la foule et les couleurs prennent tout leur sens. Un vrai guide vous conduit au-delà des pièges à touristes vers des marchands honnêtes de longue date, vous dit ce que devraient coûter le vrai safran et le loukoum pur, et vous fait goûter avant d'acheter — transformant une allée chaotique en une matinée paisible de saveurs et de récits.",
+        ],
+        highlights: [
+          { title: "Des montagnes d'épices", desc: "Des cônes de paprika, de sumac, de cumin et de cannelle s'élèvent près de bocaux de safran rouge intense — les parfums qui ont donné au bazar son nom et sa renommée." },
+          { title: "Loukoums et douceurs", desc: "Des plateaux de loukoums de toutes les saveurs, de la grenade et la pistache à la rose, côtoient abricots secs, figues et noix au miel — la plupart des étals offrent une dégustation." },
+          { title: "Thés et la Nouvelle Mosquée", desc: "Le thé à la pomme, les mélanges d'herbes et le café emplissent l'air, et la grande coupole de la Yeni Cami se dresse juste à côté de la porte principale du bazar." },
+        ],
+        planningHeading: "Préparer votre visite",
+        planningParagraphs: [
+          "Le Bazar aux Épices se trouve à Eminönü, juste à côté de la Nouvelle Mosquée et à deux minutes à pied du pont de Galata et des embarcadères des ferries du Bosphore. Le plus simple est le tramway T1 jusqu'à l'arrêt Eminönü, ou un ferry à travers la Corne d'Or ; sa situation au bord de l'eau permet de l'intégrer facilement à une journée le long de la rive de la vieille ville.",
+          "Le bazar est le plus fréquenté en milieu de journée : une visite tôt le matin est donc plus calme et vous permet d'échanger avec les marchands avant l'arrivée de la foule. Il ouvre tous les jours et s'anime surtout le week-end. Le printemps et l'automne sont agréables, mais la halle couverte reste accueillante par tous les temps.",
+          "L'entrée est gratuite et il n'y a rien à réserver — il suffit d'entrer. Les prix sont rarement fixes, un peu de marchandage cordial est donc attendu, et la qualité varie d'un étal à l'autre. Un guide local agréé VibeGuide vous mène vers des marchands de confiance, vous aide à distinguer le vrai safran du teint et négocie des prix justes pendant que vous goûtez le marché.",
+        ],
+        faqs: [
+          { q: "L'entrée du Bazar aux Épices est-elle gratuite ?", a: "Oui, l'entrée est entièrement gratuite et il n'y a rien à réserver. Un guide local VibeGuide peut vous accueillir à la porte et vous mener vers les marchands les plus fiables à l'intérieur." },
+          { q: "Faut-il marchander au Bazar aux Épices ?", a: "Les prix sont rarement fixes, un marchandage poli est donc normal et attendu. Un guide local connaît le juste prix du safran, du loukoum et du thé et négocie pour vous afin que vous ne payiez pas trop cher." },
+          { q: "En quoi diffère-t-il du Grand Bazar ?", a: "Le Bazar aux Épices est plus petit, plus parfumé et centré sur l'alimentation — épices, douceurs, thés et noix — tandis que le Grand Bazar est un vaste dédale de bijoux, de tapis et d'artisanat. Beaucoup de visiteurs font les deux en une journée." },
+          { q: "Quel est le meilleur moment pour y aller ?", a: "Les matinées sont les plus calmes, avant que les groupes et les acheteurs n'envahissent les allées. La semaine est plus tranquille que le week-end, et un guide local VibeGuide peut caler votre visite pour la meilleure expérience." },
+        ],
+        ctaTitle: "Visitez le Bazar aux Épices avec un local",
+        ...IST.fr,
+      },
+      el: {
+        name: "Αγορά Μπαχαρικών",
+        metaTitle: "Ξεναγήσεις στην Αγορά Μπαχαρικών (Αιγυπτιακή Αγορά) με ντόπιους ξεναγούς",
+        metaDescription:
+          "Εξερεύνησε την Αγορά Μπαχαρικών της Κωνσταντινούπολης με πιστοποιημένο ντόπιο ξεναγό. Βουνά μπαχαρικών, σαφράν, λουκούμια και τσάγια σε μια σκεπαστή αγορά του 17ου αιώνα δίπλα στο Νέο Τζαμί, στο Εμινονού.",
+        intro: [
+          "Η Αγορά Μπαχαρικών — το Μισίρ Τσαρσί, ή Αιγυπτιακή Αγορά — είναι η πιο μυρωδάτη αγορά της Κωνσταντινούπολης, μια αίθουσα σε σχήμα Γ με θολωτές στοές του 17ου αιώνα στην καρδιά του Εμινονού. Χτισμένη τη δεκαετία του 1660 ως μέρος του συγκροτήματος του Νέου Τζαμιού, χρηματοδοτήθηκε από το εμπόριο με την οθωμανική Αίγυπτο, και ως σήμερα οι πάγκοι της ξεχειλίζουν από πυραμίδες μπαχαρικών, σαφράν, αποξηραμένα φρούτα, ξηρούς καρπούς και τσάι.",
+          "Με έναν ντόπιο ειδικό του VibeGuide το πλήθος και το χρώμα αποκτούν νόημα. Ένας πραγματικός ξεναγός σε οδηγεί πέρα από τις παγίδες για τουρίστες σε τίμιους, παλιούς εμπόρους, σου λέει πόσο πρέπει να κοστίζουν το αληθινό σαφράν και το γνήσιο λουκούμι, και σε αφήνει να δοκιμάσεις πριν αγοράσεις — μετατρέποντας έναν χαοτικό διάδρομο σε ένα ήρεμο πρωινό γεύσεων και ιστοριών.",
+        ],
+        highlights: [
+          { title: "Βουνά μπαχαρικών", desc: "Κώνοι από πάπρικα, σουμάκ, κύμινο και κανέλα υψώνονται δίπλα σε βάζα βαθυκόκκινου σαφράν — τα αρώματα που έδωσαν στην αγορά το όνομα και τη φήμη της." },
+          { title: "Λουκούμια και γλυκά", desc: "Δίσκοι με λουκούμια κάθε γεύσης, από ρόδι και φιστίκι ως τριαντάφυλλο, δίπλα σε αποξηραμένα βερίκοκα, σύκα και καρύδια με μέλι — οι περισσότεροι πάγκοι προσφέρουν μια γεύση." },
+          { title: "Τσάγια και το Νέο Τζαμί", desc: "Το τσάι μήλου, τα μείγματα βοτάνων και ο καφές γεμίζουν τον αέρα, και ο μεγάλος τρούλος του Γενί Τζαμί υψώνεται ακριβώς δίπλα στην κεντρική πύλη της αγοράς." },
+        ],
+        planningHeading: "Οργανώστε την επίσκεψή σας",
+        planningParagraphs: [
+          "Η Αγορά Μπαχαρικών βρίσκεται στο Εμινονού, ακριβώς δίπλα στο Νέο Τζαμί και δύο λεπτά με τα πόδια από τη Γέφυρα του Γαλατά και τις αποβάθρες των φέρι του Βοσπόρου. Ο ευκολότερος τρόπος να φτάσετε είναι με το τραμ T1 μέχρι τη στάση Εμινονού, ή με φέρι μέσω του Κεράτιου· η παραθαλάσσια θέση της την κάνει εύκολο κομμάτι μιας ημέρας κατά μήκος της ακτής της παλιάς πόλης.",
+          "Η αγορά έχει τη μεγαλύτερη κίνηση το μεσημέρι, οπότε μια πρωινή επίσκεψη είναι πιο ήρεμη και σας επιτρέπει να μιλήσετε με τους εμπόρους πριν φτάσει το πλήθος. Λειτουργεί καθημερινά και ζωντανεύει ιδιαίτερα τα σαββατοκύριακα. Η άνοιξη και το φθινόπωρο είναι ευχάριστα, όμως η σκεπαστή αίθουσα παραμένει φιλόξενη με κάθε καιρό.",
+          "Η είσοδος είναι δωρεάν και δεν χρειάζεται κράτηση — απλώς μπαίνετε. Οι τιμές σπάνια είναι σταθερές, οπότε λίγο φιλικό παζάρι είναι αναμενόμενο, και η ποιότητα διαφέρει από πάγκο σε πάγκο. Ένας αδειούχος τοπικός ξεναγός της VibeGuide σας οδηγεί σε έμπιστους εμπόρους, σας βοηθά να ξεχωρίσετε το αληθινό σαφράν από το βαμμένο και διαπραγματεύεται δίκαιες τιμές καθώς δοκιμάζετε την αγορά.",
+        ],
+        faqs: [
+          { q: "Είναι δωρεάν η είσοδος στην Αγορά Μπαχαρικών;", a: "Ναι, η είσοδος είναι εντελώς δωρεάν και δεν χρειάζεται κράτηση. Ένας ντόπιος ξεναγός της VibeGuide μπορεί να σας συναντήσει στην πύλη και να σας οδηγήσει στους πιο αξιόπιστους εμπόρους μέσα." },
+          { q: "Πρέπει να παζαρέψω στην Αγορά Μπαχαρικών;", a: "Οι τιμές σπάνια είναι σταθερές, οπότε το ευγενικό παζάρι είναι φυσιολογικό και αναμενόμενο. Ένας ντόπιος ξεναγός ξέρει τη δίκαιη τιμή για σαφράν, λουκούμι και τσάι και διαπραγματεύεται για εσάς ώστε να μην πληρώσετε παραπάνω." },
+          { q: "Σε τι διαφέρει από το Μεγάλο Παζάρι;", a: "Η Αγορά Μπαχαρικών είναι μικρότερη, πιο μυρωδάτη και εστιασμένη στο φαγητό — μπαχαρικά, γλυκά, τσάγια και ξηρούς καρπούς — ενώ το Μεγάλο Παζάρι είναι ένας τεράστιος λαβύρινθος από κοσμήματα, χαλιά και χειροτεχνίες. Πολλοί επισκέπτες κάνουν και τα δύο σε μία μέρα." },
+          { q: "Ποια είναι η καλύτερη ώρα για επίσκεψη;", a: "Τα πρωινά είναι τα πιο ήρεμα, πριν γεμίσουν τους διαδρόμους τα γκρουπ και οι αγοραστές. Οι καθημερινές είναι πιο ήσυχες από τα σαββατοκύριακα, και ένας ντόπιος ξεναγός της VibeGuide μπορεί να ρυθμίσει την επίσκεψή σας για την καλύτερη εμπειρία." },
+        ],
+        ctaTitle: "Δες την Αγορά Μπαχαρικών με έναν ντόπιο",
+        ...IST.el,
+      },
+      tr: {
+        name: "Mısır Çarşısı",
+        metaTitle: "Mısır Çarşısı Turları & Yerel Rehberler",
+        metaDescription:
+          "İstanbul'un Mısır Çarşısı'nı doğrulanmış bir yerel rehberle gez. Eminönü'nde Yeni Cami'nin yanındaki 17. yüzyıldan kalma kapalı çarşıda baharat tepeleri, safran, lokum ve çaylar.",
+        intro: [
+          "Mısır Çarşısı — baharat çarşısı — İstanbul'un en mis kokulu pazarıdır; Eminönü'nün kalbinde, 17. yüzyıldan kalma, L biçiminde tonozlu revaklardan oluşan bir çarşı. 1660'larda Yeni Cami külliyesinin parçası olarak inşa edildi ve Osmanlı Mısır'ıyla yapılan ticaretle finanse edildi; bugün de tezgâhları baharat piramitleri, safran, kuru meyve, kuruyemiş ve çayla taşar.",
+          "VibeGuide yerel uzmanıyla kalabalık da renk de anlam kazanır. Gerçek bir rehber sizi turist tuzaklarından geçirip dürüst, köklü esnafa götürür; gerçek safranın ve saf lokumun ne etmesi gerektiğini söyler ve almadan önce tattırır — kaotik bir koridoru tatların ve hikâyelerin dolu olduğu sakin bir sabaha çevirir.",
+        ],
+        highlights: [
+          { title: "Baharat dağları", desc: "Kırmızıbiber, sumak, kimyon ve tarçın külahları, koyu kırmızı safran kavanozlarının yanında yükselir — çarşıya adını ve ününü veren kokular." },
+          { title: "Lokum ve tatlılar", desc: "Nardan Antep fıstığına, gülden her çeşit lokum tepsileri; kuru kayısı, incir ve ballı kuruyemişlerin yanı başında durur — çoğu tezgâh tattırır." },
+          { title: "Çaylar ve Yeni Cami", desc: "Elma çayı, bitki karışımları ve kahve havayı doldurur; Yeni Cami'nin büyük kubbesi çarşının ana kapısının hemen yanında yükselir." },
+        ],
+        planningHeading: "Ziyaretinizi planlayın",
+        planningParagraphs: [
+          "Mısır Çarşısı Eminönü'nde, Yeni Cami'nin hemen yanında; Galata Köprüsü ve Boğaz vapur iskelelerine iki dakika yürüme mesafesinde yer alır. En kolay ulaşım T1 tramvayıyla Eminönü durağına inmek ya da Haliç'i geçen bir vapurdur; deniz kenarındaki konumu, onu eski şehir kıyısı boyunca bir güne kolayca eklemenizi sağlar.",
+          "Çarşı en çok gün ortasında kalabalıklaşır; bu yüzden erken sabah ziyareti daha sakindir ve kalabalık gelmeden esnafla sohbet etmenize izin verir. Her gün açıktır ve özellikle hafta sonları hareketlenir. İlkbahar ve sonbahar keyiflidir, ama kapalı çarşı her havada davetkâr kalır.",
+          "Giriş ücretsizdir ve rezervasyon gerekmez — öylece girersiniz. Fiyatlar nadiren sabittir, bu yüzden biraz dostça pazarlık beklenir ve kalite tezgâhtan tezgâha değişir. Lisanslı bir VibeGuide yerel rehberi sizi güvenilir esnafa yönlendirir, gerçek safranı boyalıdan ayırmanıza yardım eder ve siz çarşıyı tada tada gezerken adil fiyatlar için pazarlık eder.",
+        ],
+        faqs: [
+          { q: "Mısır Çarşısı'na giriş ücretsiz mi?", a: "Evet, giriş tümüyle ücretsizdir ve rezervasyon gerekmez. VibeGuide yerel rehberi sizi kapıda karşılayıp içerideki en güvenilir esnafa götürebilir." },
+          { q: "Mısır Çarşısı'nda pazarlık etmeli miyim?", a: "Fiyatlar nadiren sabittir, bu yüzden nazik bir pazarlık normaldir ve beklenir. Yerel rehber safranın, lokumun ve çayın adil fiyatını bilir ve fazla ödemeyesiniz diye sizin adınıza pazarlık eder." },
+          { q: "Kapalıçarşı'dan farkı ne?", a: "Mısır Çarşısı daha küçük, daha kokulu ve yiyeceğe odaklıdır — baharat, tatlı, çay ve kuruyemiş — Kapalıçarşı ise takı, halı ve el sanatlarından oluşan devasa bir labirenttir. Birçok ziyaretçi ikisini bir günde gezer." },
+          { q: "Gitmek için en iyi zaman ne?", a: "Sabahlar en sakin zamandır; turlar ve alışverişçiler koridorları doldurmadan önce. Hafta içi hafta sonundan daha tenhadır ve VibeGuide yerel rehberi en iyi deneyim için ziyaretinizi zamanlayabilir." },
+        ],
+        ctaTitle: "Mısır Çarşısı'nı bir yerelle gez",
+        ...IST.tr,
+      },
+      it: {
+        name: "Bazar delle Spezie",
+        metaTitle: "Tour del Bazar delle Spezie (Bazar Egiziano) con guide locali",
+        metaDescription:
+          "Scopri il Bazar delle Spezie di Istanbul con una guida locale verificata. Montagne di spezie, zafferano, lokum e tè in un mercato coperto del XVII secolo accanto alla Moschea Nuova a Eminönü.",
+        intro: [
+          "Il Bazar delle Spezie — il Mısır Çarşısı, o Bazar Egiziano — è il mercato più profumato di Istanbul, una sala a L di arcate a volta del XVII secolo nel cuore di Eminönü. Costruito negli anni 1660 come parte del complesso della Moschea Nuova, fu finanziato dal commercio con l'Egitto ottomano, e ancora oggi le sue bancarelle traboccano di piramidi di spezie, zafferano, frutta secca, noci e tè.",
+          "Con un esperto locale VibeGuide la folla e i colori acquistano senso. Una vera guida ti porta oltre le trappole per turisti verso venditori onesti di lunga data, ti dice quanto dovrebbero costare lo zafferano vero e il lokum puro e ti fa assaggiare prima di comprare — trasformando una corsia caotica in una mattinata tranquilla di sapori e racconti.",
+        ],
+        highlights: [
+          { title: "Montagne di spezie", desc: "Coni di paprica, sommacco, cumino e cannella si ergono accanto a vasi di zafferano rosso intenso — i profumi che hanno dato al bazar il nome e la fama." },
+          { title: "Lokum e dolci", desc: "Vassoi di lokum di ogni gusto, dal melograno e pistacchio alla rosa, accanto ad albicocche secche, fichi e noci al miele — quasi tutte le bancarelle offrono un assaggio." },
+          { title: "Tè e la Moschea Nuova", desc: "Il tè alla mela, le miscele di erbe e il caffè riempiono l'aria, e la grande cupola della Yeni Cami si erge proprio accanto alla porta principale del bazar." },
+        ],
+        planningHeading: "Pianifica la tua visita",
+        planningParagraphs: [
+          "Il Bazar delle Spezie si trova a Eminönü, proprio accanto alla Moschea Nuova e a due minuti a piedi dal Ponte di Galata e dai moli dei traghetti sul Bosforo. Il modo più semplice è il tram T1 fino alla fermata di Eminönü, o un traghetto attraverso il Corno d'Oro; la posizione sull'acqua lo rende facile da inserire in una giornata lungo la riva della città vecchia.",
+          "Il bazar è più affollato a metà giornata, quindi una visita di prima mattina è più tranquilla e ti permette di parlare con i venditori prima dell'arrivo della folla. È aperto tutti i giorni e si anima soprattutto nei fine settimana. Primavera e autunno sono piacevoli, ma la sala coperta resta accogliente con qualsiasi tempo.",
+          "L'ingresso è gratuito e non c'è nulla da prenotare — basta entrare. I prezzi sono raramente fissi, quindi un po' di cordiale contrattazione è prevista, e la qualità varia da bancarella a bancarella. Una guida locale abilitata di VibeGuide ti conduce da venditori fidati, ti aiuta a distinguere lo zafferano vero da quello tinto e negozia prezzi equi mentre assaggi il mercato.",
+        ],
+        faqs: [
+          { q: "L'ingresso al Bazar delle Spezie è gratuito?", a: "Sì, l'ingresso è del tutto gratuito e non c'è nulla da prenotare. Una guida locale VibeGuide può accoglierti alla porta e condurti dai venditori più affidabili all'interno." },
+          { q: "Devo contrattare al Bazar delle Spezie?", a: "I prezzi sono raramente fissi, quindi una contrattazione garbata è normale e prevista. Una guida locale conosce il giusto prezzo di zafferano, lokum e tè e tratta per te così non paghi troppo." },
+          { q: "In cosa differisce dal Gran Bazar?", a: "Il Bazar delle Spezie è più piccolo, più profumato e incentrato sul cibo — spezie, dolci, tè e noci — mentre il Gran Bazar è un vasto labirinto di gioielli, tappeti e artigianato. Molti visitatori fanno entrambi in un giorno." },
+          { q: "Qual è il momento migliore per andarci?", a: "Le mattine sono le più tranquille, prima che gruppi e acquirenti riempiano le corsie. I giorni feriali sono più calmi dei fine settimana, e una guida locale VibeGuide può programmare la tua visita per la migliore esperienza." },
+        ],
+        ctaTitle: "Visita il Bazar delle Spezie con un locale",
+        ...IST.it,
+      },
+      pl: {
+        name: "Bazar Egipski",
+        metaTitle: "Bazar Egipski (Bazar Korzenny) — wycieczki z lokalnymi przewodnikami",
+        metaDescription:
+          "Odkryj stambulski Bazar Egipski z zweryfikowanym lokalnym przewodnikiem. Góry przypraw, szafran, lokum i herbaty w krytej hali z XVII wieku obok Nowego Meczetu w Eminönü.",
+        intro: [
+          "Bazar Egipski — Mısır Çarşısı, czyli bazar korzenny — to najbardziej pachnący targ Stambułu, siedemnastowieczna hala w kształcie litery L ze sklepionymi arkadami w sercu Eminönü. Wzniesiony w latach 60. XVII wieku jako część kompleksu Nowego Meczetu, finansowany był z handlu z osmańskim Egiptem, a do dziś jego stragany uginają się od piramid przypraw, szafranu, suszonych owoców, orzechów i herbaty.",
+          "Z lokalnym ekspertem VibeGuide tłum i barwy nabierają sensu. Prawdziwy przewodnik prowadzi cię obok pułapek na turystów do uczciwych, wieloletnich sprzedawców, mówi, ile powinny kosztować prawdziwy szafran i czyste lokum, i pozwala spróbować przed zakupem — zamieniając chaotyczną alejkę w spokojny poranek smaków i opowieści.",
+        ],
+        highlights: [
+          { title: "Góry przypraw", desc: "Stożki papryki, sumaku, kminu i cynamonu wznoszą się obok słojów ciemnoczerwonego szafranu — zapachy, które dały bazarowi nazwę i sławę." },
+          { title: "Lokum i słodycze", desc: "Tace lokum we wszystkich smakach, od granatu i pistacji po różę, stoją obok suszonych moreli, fig i orzechów w miodzie — większość straganów częstuje próbką." },
+          { title: "Herbaty i Nowy Meczet", desc: "Herbata jabłkowa, mieszanki ziołowe i kawa wypełniają powietrze, a wielka kopuła Yeni Cami wznosi się tuż obok głównej bramy bazaru." },
+        ],
+        planningHeading: "Zaplanuj wizytę",
+        planningParagraphs: [
+          "Bazar Egipski leży w Eminönü, tuż obok Nowego Meczetu i dwie minuty spacerem od mostu Galata oraz przystani promów bosforskich. Najłatwiej dojechać tramwajem T1 do przystanku Eminönü albo promem przez Złoty Róg; nadmorskie położenie sprawia, że łatwo wpleść go w dzień wzdłuż brzegu starego miasta.",
+          "Bazar jest najtłoczniejszy w środku dnia, więc wizyta wczesnym rankiem jest spokojniejsza i pozwala porozmawiać ze sprzedawcami, zanim nadejdą tłumy. Działa codziennie i ożywa zwłaszcza w weekendy. Wiosna i jesień są przyjemne, ale kryta hala pozostaje przytulna przy każdej pogodzie.",
+          "Wstęp jest bezpłatny i nie trzeba nic rezerwować — po prostu wchodzisz. Ceny rzadko bywają stałe, więc odrobina życzliwego targowania jest oczekiwana, a jakość różni się od straganu do straganu. Licencjonowany lokalny przewodnik VibeGuide zaprowadzi cię do zaufanych sprzedawców, pomoże odróżnić prawdziwy szafran od barwionego i wynegocjuje uczciwe ceny, gdy będziesz smakować bazar.",
+        ],
+        faqs: [
+          { q: "Czy wstęp na Bazar Egipski jest bezpłatny?", a: "Tak, wstęp jest całkowicie bezpłatny i nie trzeba nic rezerwować. Lokalny przewodnik VibeGuide może spotkać się z tobą przy bramie i zaprowadzić do najbardziej godnych zaufania sprzedawców w środku." },
+          { q: "Czy powinienem się targować na Bazarze Egipskim?", a: "Ceny rzadko są stałe, więc uprzejme targowanie jest normalne i oczekiwane. Lokalny przewodnik zna uczciwą cenę szafranu, lokum i herbaty i negocjuje za ciebie, byś nie przepłacił." },
+          { q: "Czym różni się od Wielkiego Bazaru?", a: "Bazar Egipski jest mniejszy, bardziej pachnący i skupiony na jedzeniu — przyprawy, słodycze, herbaty i orzechy — podczas gdy Wielki Bazar to ogromny labirynt biżuterii, dywanów i rękodzieła. Wielu odwiedzających robi oba w jeden dzień." },
+          { q: "Kiedy najlepiej się wybrać?", a: "Poranki są najspokojniejsze, zanim wycieczki i kupujący wypełnią alejki. Dni powszednie są cichsze niż weekendy, a lokalny przewodnik VibeGuide może dobrać porę wizyty tak, by wrażenia były najlepsze." },
+        ],
+        ctaTitle: "Zobacz Bazar Egipski z lokalnym przewodnikiem",
+        ...IST.pl,
+      },
+      nl: {
+        name: "Egyptische Bazaar",
+        metaTitle: "Egyptische Bazaar (Kruidenbazaar) tours & lokale gidsen",
+        metaDescription:
+          "Verken de Kruidenbazaar van Istanbul met een geverifieerde lokale gids. Bergen kruiden, saffraan, lokum en thee in een overdekte markt uit de 17e eeuw naast de Nieuwe Moskee in Eminönü.",
+        intro: [
+          "De Egyptische Bazaar — de Mısır Çarşısı, of Kruidenbazaar — is de meest geurige markt van Istanbul, een L-vormige hal met gewelfde arcades uit de 17e eeuw in het hart van Eminönü. Gebouwd in de jaren 1660 als deel van het complex van de Nieuwe Moskee, werd hij bekostigd uit de handel met Ottomaans Egypte, en tot op vandaag puilen zijn kramen uit van piramides kruiden, saffraan, gedroogd fruit, noten en thee.",
+          "Met een lokale VibeGuide-expert krijgen de drukte en de kleuren betekenis. Een echte gids leidt je voorbij de toeristenvallen naar eerlijke, gevestigde verkopers, vertelt je wat echte saffraan en pure lokum horen te kosten, en laat je proeven voor je koopt — zo wordt een chaotisch gangpad een ontspannen ochtend vol smaken en verhalen.",
+        ],
+        highlights: [
+          { title: "Bergen kruiden", desc: "Kegels van paprika, sumak, komijn en kaneel rijzen op naast potten dieprode saffraan — de geuren die de bazaar zijn naam en faam gaven." },
+          { title: "Lokum en zoetigheid", desc: "Bladen lokum in elke smaak, van granaatappel en pistache tot roos, staan naast gedroogde abrikozen, vijgen en noten in honing — de meeste kramen bieden een proefje." },
+          { title: "Thee en de Nieuwe Moskee", desc: "Appelthee, kruidenmengsels en koffie vullen de lucht, en de grote koepel van de Yeni Cami rijst op vlak naast de hoofdpoort van de bazaar." },
+        ],
+        planningHeading: "Plan je bezoek",
+        planningParagraphs: [
+          "De Egyptische Bazaar ligt in Eminönü, vlak naast de Nieuwe Moskee en op twee minuten lopen van de Galatabrug en de veersteigers over de Bosporus. Het eenvoudigst reis je met tram T1 tot de halte Eminönü, of met een veerboot over de Gouden Hoorn; de ligging aan het water maakt hem makkelijk in te passen in een dag langs de oever van de oude stad.",
+          "De bazaar is het drukst midden op de dag, dus een bezoek in de vroege ochtend is rustiger en laat je met de verkopers praten voor de menigte komt. Hij is dagelijks open en wordt vooral in het weekend levendig. Lente en herfst zijn aangenaam, maar de overdekte hal blijft in elk weer gastvrij.",
+          "De toegang is gratis en er valt niets te reserveren — je loopt gewoon naar binnen. Prijzen liggen zelden vast, dus een beetje vriendelijk afdingen wordt verwacht, en de kwaliteit verschilt van kraam tot kraam. Een erkende lokale VibeGuide-gids brengt je naar betrouwbare verkopers, helpt je echte saffraan van gekleurde te onderscheiden en onderhandelt over eerlijke prijzen terwijl jij je een weg proeft door de markt.",
+        ],
+        faqs: [
+          { q: "Is de toegang tot de Egyptische Bazaar gratis?", a: "Ja, de toegang is volledig gratis en er valt niets te reserveren. Een lokale VibeGuide-gids kan je bij de poort ontmoeten en je naar de meest betrouwbare verkopers binnen leiden." },
+          { q: "Moet ik afdingen op de Egyptische Bazaar?", a: "Prijzen liggen zelden vast, dus beleefd onderhandelen is normaal en wordt verwacht. Een lokale gids kent de eerlijke prijs voor saffraan, lokum en thee en onderhandelt voor je zodat je niet te veel betaalt." },
+          { q: "Hoe verschilt hij van de Grote Bazaar?", a: "De Egyptische Bazaar is kleiner, geuriger en gericht op eten — kruiden, zoetigheid, thee en noten — terwijl de Grote Bazaar een enorm doolhof van sieraden, tapijten en ambacht is. Veel bezoekers doen beide op één dag." },
+          { q: "Wanneer kun je er het best heen?", a: "Ochtenden zijn het rustigst, voor groepen en kopers de gangpaden vullen. Doordeweeks is het stiller dan in het weekend, en een lokale VibeGuide-gids kan je bezoek plannen voor de beste ervaring." },
+        ],
+        ctaTitle: "Bekijk de Egyptische Bazaar met een local",
+        ...IST.nl,
+      },
+    },
+  },
+  {
+    slug: "maidens-tower",
+    city: "Istanbul",
+    citySlug: "istanbul",
+    emoji: "🗼",
+    image:
+      "https://images.unsplash.com/photo-1785323714172-8b9935a28236?q=80&w=1600",
+    lat: 41.0211,
+    lng: 29.0041,
+    i18n: {
+      en: {
+        name: "Maiden's Tower",
+        metaTitle: "Maiden's Tower (Kız Kulesi) Tours & Local Guides",
+        metaDescription:
+          "Visit the Maiden's Tower on its tiny Bosphorus islet with a verified Istanbul guide. Ancient legends, a short boat ride from Üsküdar and an unforgettable sunset skyline.",
+        intro: [
+          "The Maiden's Tower stands alone on a small islet in the Bosphorus, just off the Üsküdar shore on the Asian side, where the strait opens toward the Sea of Marmara. Small, white and impossibly photogenic, it has watched over the waterway for centuries as a lighthouse, a customs point and a quarantine station — and today, after a careful restoration, it welcomes visitors once more.",
+          "What makes the tower unforgettable is not its size but its stories. Turkish legend tells of a princess locked here to escape a prophesied snakebite; the Greek tale of Hero and Leander places its tragedy on these same waters. With a VibeGuide local expert the legends, the history and the skyline all click into place, turning a short boat trip into one of Istanbul's most romantic outings.",
+        ],
+        highlights: [
+          { title: "The islet and tower", desc: "A tiny rock in the middle of the Bosphorus crowned by a slender white tower — one of the most recognizable silhouettes in all of Istanbul." },
+          { title: "Legends on the water", desc: "The Turkish princess and the prophesied snake, and the Greek story of Leander swimming the strait for love — two tales bound to this single spot." },
+          { title: "Café and viewpoint", desc: "A café and viewing terrace let you linger with a 360-degree panorama of the old city, the Asian shore and passing ships." },
+        ],
+        planningHeading: "Planning your visit",
+        planningParagraphs: [
+          "The Maiden's Tower sits on its own islet, so every visit begins with a short boat ride. The main departure point is the Üsküdar waterfront on the Asian side, with additional boats from Kabataş on the European side. Both are easy to reach by ferry, tram or the Marmaray line, and the crossing itself gives you the tower framed against the water from the moment you set off.",
+          "The tower is open through the day and is at its most magical around sunset, when the light turns gold and the old city skyline glows behind it. Late spring and early autumn bring calm, mild weather ideal for the crossing; on windy or stormy days boat schedules can change, so it is worth keeping your plans flexible. Mornings tend to be the quietest for photographs on the islet.",
+          "Both the boat transfer and entry to the tower are ticketed, and space on the small island is limited, so it is best to plan ahead. A licensed VibeGuide local guide can arrange the crossing, time your visit for the best light and bring the legends and Bosphorus history to life — while pointing out exactly where to stand for that classic skyline photo.",
+        ],
+        faqs: [
+          { q: "How do I get to the Maiden's Tower?", a: "By a short boat ride from the Üsküdar waterfront on the Asian side, or from Kabataş on the European side. There is no bridge — the boat is part of the experience, and both piers are easy to reach by ferry, tram or Marmaray." },
+          { q: "What are the legends of the tower?", a: "A Turkish legend tells of a princess placed here to escape a prophecy that she would die of a snakebite, and the Greek tale of Hero and Leander sets its love tragedy on these waters. A local guide can tell both, and explain how the tower earned its name." },
+          { q: "Is the tower worth visiting after its restoration?", a: "Yes. After a recent careful restoration the tower reopened to visitors, with a café and viewing terrace, so you can now step inside and enjoy the panorama rather than only admiring it from shore." },
+          { q: "When is the best time to go?", a: "Sunset is the most memorable, with the old city glowing behind the tower, while mornings are quietest for photos. Calm days in late spring or early autumn make the boat crossing especially pleasant." },
+        ],
+        ctaTitle: "See the Maiden's Tower with a local",
+        ...IST.en,
+      },
+      de: {
+        name: "Mädchenturm",
+        metaTitle: "Mädchenturm (Kız Kulesi) Touren & lokale Guides",
+        metaDescription:
+          "Besuche den Mädchenturm auf seiner winzigen Bosporus-Insel mit einem geprüften Istanbul-Guide. Alte Legenden, eine kurze Bootsfahrt ab Üsküdar und ein unvergesslicher Sonnenuntergang.",
+        intro: [
+          "Der Mädchenturm steht allein auf einer kleinen Insel im Bosporus, direkt vor der Küste von Üsküdar auf der asiatischen Seite, dort wo sich die Meerenge zum Marmarameer öffnet. Klein, weiß und unglaublich fotogen, wacht er seit Jahrhunderten über die Wasserstraße — als Leuchtturm, Zollstation und Quarantänestation — und heute, nach einer sorgfältigen Restaurierung, empfängt er wieder Besucher.",
+          "Unvergesslich macht den Turm nicht seine Größe, sondern seine Geschichten. Eine türkische Legende erzählt von einer Prinzessin, die hier eingesperrt wurde, um einem prophezeiten Schlangenbiss zu entgehen; die griechische Sage von Hero und Leander verortet ihre Tragödie auf denselben Gewässern. Mit einem lokalen VibeGuide-Experten fügen sich Legenden, Geschichte und Skyline zusammen und machen aus einer kurzen Bootsfahrt einen der romantischsten Ausflüge Istanbuls.",
+        ],
+        highlights: [
+          { title: "Die Insel und der Turm", desc: "Ein winziger Felsen mitten im Bosporus, gekrönt von einem schlanken weißen Turm — eine der bekanntesten Silhouetten ganz Istanbuls." },
+          { title: "Legenden auf dem Wasser", desc: "Die türkische Prinzessin und die prophezeite Schlange sowie die griechische Geschichte von Leander, der aus Liebe die Meerenge durchschwamm — zwei Erzählungen, die diesen einen Ort verbinden." },
+          { title: "Café und Aussichtspunkt", desc: "Ein Café und eine Aussichtsterrasse laden zum Verweilen ein, mit 360-Grad-Panorama auf die Altstadt, das asiatische Ufer und vorbeiziehende Schiffe." },
+        ],
+        planningHeading: "Deine Besuchsplanung",
+        planningParagraphs: [
+          "Der Mädchenturm liegt auf einer eigenen Insel, jeder Besuch beginnt also mit einer kurzen Bootsfahrt. Der Hauptabfahrtsort ist die Uferpromenade von Üsküdar auf der asiatischen Seite, zusätzliche Boote fahren von Kabataş auf der europäischen Seite. Beide sind bequem mit Fähre, Straßenbahn oder der Marmaray-Linie zu erreichen, und schon die Überfahrt zeigt dir den Turm vor dem Wasser vom Moment des Ablegens an.",
+          "Der Turm ist tagsüber geöffnet und am zauberhaftesten um den Sonnenuntergang, wenn das Licht golden wird und die Altstadt-Silhouette dahinter leuchtet. Der späte Frühling und der frühe Herbst bringen ruhiges, mildes Wetter, ideal für die Überfahrt; an windigen oder stürmischen Tagen können sich die Bootszeiten ändern, plane also flexibel. Am Morgen ist es auf der Insel meist am ruhigsten für Fotos.",
+          "Sowohl die Bootsüberfahrt als auch der Eintritt in den Turm sind kostenpflichtig, und der Platz auf der kleinen Insel ist begrenzt, daher lohnt sich eine gute Planung. Ein lizenzierter VibeGuide vor Ort organisiert die Überfahrt, wählt die beste Lichtstimmung für deinen Besuch und lässt die Legenden und die Bosporus-Geschichte lebendig werden — und zeigt dir genau, wo du für das klassische Skyline-Foto stehen musst.",
+        ],
+        faqs: [
+          { q: "Wie komme ich zum Mädchenturm?", a: "Mit einer kurzen Bootsfahrt von der Uferpromenade in Üsküdar auf der asiatischen Seite oder von Kabataş auf der europäischen Seite. Es gibt keine Brücke — das Boot gehört zum Erlebnis, und beide Anleger sind bequem mit Fähre, Straßenbahn oder Marmaray erreichbar." },
+          { q: "Welche Legenden ranken sich um den Turm?", a: "Eine türkische Legende erzählt von einer Prinzessin, die hier untergebracht wurde, um einer Prophezeiung über einen tödlichen Schlangenbiss zu entgehen, und die griechische Sage von Hero und Leander verlegt ihre Liebestragödie auf diese Gewässer. Ein lokaler Guide erzählt beide und erklärt, wie der Turm zu seinem Namen kam." },
+          { q: "Lohnt sich der Turm nach der Restaurierung?", a: "Ja. Nach einer sorgfältigen Restaurierung hat der Turm wieder für Besucher geöffnet, mit einem Café und einer Aussichtsterrasse, sodass du nun hineingehen und das Panorama genießen kannst, statt ihn nur vom Ufer aus zu bewundern." },
+          { q: "Wann ist die beste Zeit für einen Besuch?", a: "Der Sonnenuntergang ist am eindrucksvollsten, wenn die Altstadt hinter dem Turm leuchtet, während der Morgen am ruhigsten für Fotos ist. Ruhige Tage im späten Frühling oder frühen Herbst machen die Bootsfahrt besonders angenehm." },
+        ],
+        ctaTitle: "Erlebe den Mädchenturm mit einem Local",
+        ...IST.de,
+      },
+      ru: {
+        name: "Девичья башня",
+        metaTitle: "Девичья башня (Кыз Кулеси): экскурсии с местными гидами",
+        metaDescription:
+          "Посетите Девичью башню на крошечном островке Босфора с проверенным гидом в Стамбуле. Древние легенды, короткая переправа из Ускюдара и незабываемый закат над старым городом.",
+        intro: [
+          "Девичья башня стоит одиноко на маленьком островке в Босфоре, у самого берега Ускюдара на азиатской стороне, там, где пролив открывается к Мраморному морю. Небольшая, белая и невероятно фотогеничная, она веками охраняла водный путь — как маяк, таможенный пост и карантинная станция, — а сегодня, после бережной реставрации, снова принимает гостей.",
+          "Незабываемой башню делает не её размер, а её истории. Турецкая легенда рассказывает о принцессе, запертой здесь, чтобы избежать предсказанного укуса змеи; греческое сказание о Геро и Леандре разворачивает свою трагедию на этих же водах. С местным экспертом VibeGuide легенды, история и панорама складываются воедино, превращая короткую прогулку на лодке в одно из самых романтичных путешествий Стамбула.",
+        ],
+        highlights: [
+          { title: "Островок и башня", desc: "Крошечная скала посреди Босфора, увенчанная стройной белой башней — один из самых узнаваемых силуэтов всего Стамбула." },
+          { title: "Легенды на воде", desc: "Турецкая принцесса и предсказанная змея, а также греческая история о Леандре, переплывавшем пролив ради любви — два предания, связанные с этим единственным местом." },
+          { title: "Кафе и смотровая площадка", desc: "Кафе и обзорная терраса позволяют задержаться здесь, любуясь панорамой на 360 градусов: старый город, азиатский берег и проходящие суда." },
+        ],
+        planningHeading: "Планирование визита",
+        planningParagraphs: [
+          "Девичья башня расположена на собственном островке, поэтому любое посещение начинается с короткой переправы на лодке. Главная точка отправления — набережная Ускюдара на азиатской стороне, дополнительные лодки идут из Кабаташа на европейской стороне. До обоих легко добраться на пароме, трамвае или линии Marmaray, а сама переправа с первых минут показывает башню на фоне воды.",
+          "Башня открыта в течение дня и особенно волшебна на закате, когда свет становится золотым, а силуэт старого города сияет за ней. Поздняя весна и ранняя осень дарят спокойную мягкую погоду, идеальную для переправы; в ветреные или штормовые дни расписание лодок может меняться, поэтому планы лучше держать гибкими. Утро обычно самое тихое время для фотографий на островке.",
+          "И переправа на лодке, и вход в башню платные, а место на маленьком острове ограничено, поэтому лучше планировать заранее. Лицензированный местный гид VibeGuide организует переправу, подберёт время визита для лучшего света и оживит легенды и историю Босфора — а заодно подскажет, где именно встать для того самого классического кадра с панорамой.",
+        ],
+        faqs: [
+          { q: "Как добраться до Девичьей башни?", a: "Короткой переправой на лодке от набережной Ускюдара на азиатской стороне или из Кабаташа на европейской. Моста нет — лодка часть впечатления, а до обоих причалов легко доехать на пароме, трамвае или Marmaray." },
+          { q: "Какие легенды связаны с башней?", a: "Турецкая легенда рассказывает о принцессе, помещённой сюда, чтобы избежать предсказания о смертельном укусе змеи, а греческое сказание о Геро и Леандре переносит свою любовную трагедию на эти воды. Местный гид расскажет обе и объяснит, откуда у башни такое название." },
+          { q: "Стоит ли посещать башню после реставрации?", a: "Да. После недавней бережной реставрации башня вновь открылась для гостей, с кафе и обзорной террасой, так что теперь можно зайти внутрь и насладиться панорамой, а не только любоваться башней с берега." },
+          { q: "Когда лучше всего идти?", a: "Закат самый запоминающийся, когда старый город сияет за башней, а утро самое тихое для фотографий. Спокойные дни поздней весны или ранней осени делают переправу особенно приятной." },
+        ],
+        ctaTitle: "Увидеть Девичью башню с местным гидом",
+        ...IST.ru,
+      },
+      ar: {
+        name: "برج الفتاة",
+        metaTitle: "جولات برج الفتاة (قيز كولسي) مع مرشدين محليين",
+        metaDescription:
+          "زر برج الفتاة على جزيرته الصغيرة في البوسفور مع مرشد موثّق في إسطنبول. أساطير قديمة، ورحلة قارب قصيرة من أسكودار، وغروب لا يُنسى خلف المدينة القديمة.",
+        intro: [
+          "يقف برج الفتاة وحيدًا على جزيرة صغيرة في البوسفور، قبالة ساحل أسكودار على الجانب الآسيوي مباشرةً، حيث ينفتح المضيق نحو بحر مرمرة. صغير وأبيض وشديد الجاذبية للتصوير، ظل قرونًا يحرس الممر المائي — منارةً ونقطة جمارك ومحطة حجر صحي — واليوم، بعد ترميم دقيق، يستقبل الزوار من جديد.",
+          "ما يجعل البرج لا يُنسى ليس حجمه بل حكاياته. تروي أسطورة تركية عن أميرة حُبست هنا لتنجو من نبوءة بلدغة أفعى؛ أما الحكاية اليونانية عن هيرو وليندر فتضع مأساتها على المياه نفسها. مع خبير محلي من VibeGuide تتضافر الأساطير والتاريخ والأفق معًا، فتتحول رحلة قارب قصيرة إلى واحدة من أكثر نزهات إسطنبول رومانسية.",
+        ],
+        highlights: [
+          { title: "الجزيرة والبرج", desc: "صخرة صغيرة في وسط البوسفور يتوّجها برج أبيض نحيل — واحد من أشهر الظلال الظلّية في إسطنبول كلها." },
+          { title: "أساطير على الماء", desc: "الأميرة التركية والأفعى المتنبأ بها، والحكاية اليونانية عن ليندر الذي عبر المضيق سباحةً من أجل الحب — حكايتان تربطهما هذه البقعة الواحدة." },
+          { title: "مقهى وإطلالة", desc: "يتيح لك مقهى وشرفة مطلة أن تمكث وتستمتع بمنظر بانورامي بزاوية 360 درجة للمدينة القديمة والساحل الآسيوي والسفن العابرة." },
+        ],
+        planningHeading: "التخطيط لزيارتك",
+        planningParagraphs: [
+          "يقع برج الفتاة على جزيرته الخاصة، لذا تبدأ كل زيارة برحلة قارب قصيرة. نقطة الانطلاق الرئيسية هي واجهة أسكودار البحرية على الجانب الآسيوي، مع قوارب إضافية من كاباتاش على الجانب الأوروبي. يسهل الوصول إلى كليهما بالعبّارة أو الترام أو خط مرمراي، والعبور نفسه يمنحك البرج مؤطّرًا أمام الماء منذ لحظة الانطلاق.",
+          "البرج مفتوح طوال النهار وأكثر سحرًا عند الغروب، حين يتحول الضوء إلى ذهبي ويتوهّج أفق المدينة القديمة خلفه. يجلب أواخر الربيع وأوائل الخريف طقسًا هادئًا معتدلًا مثاليًا للعبور؛ وفي الأيام العاصفة قد تتغير مواعيد القوارب، لذا من الأفضل إبقاء خططك مرنة. الصباح عادةً هو الأهدأ لالتقاط الصور على الجزيرة.",
+          "كل من رحلة القارب ودخول البرج مقابل تذكرة، والمساحة على الجزيرة الصغيرة محدودة، لذا يُستحسن التخطيط مسبقًا. يستطيع مرشد VibeGuide المحلي المرخّص أن ينظّم العبور، ويختار توقيت زيارتك لأفضل إضاءة، ويُحيي الأساطير وتاريخ البوسفور — بينما يدلّك على المكان الأمثل للوقوف لالتقاط تلك الصورة الكلاسيكية للأفق.",
+        ],
+        faqs: [
+          { q: "كيف أصل إلى برج الفتاة؟", a: "برحلة قارب قصيرة من واجهة أسكودار البحرية على الجانب الآسيوي، أو من كاباتاش على الجانب الأوروبي. لا يوجد جسر — القارب جزء من التجربة، ويسهل الوصول إلى كلا الرصيفين بالعبّارة أو الترام أو مرمراي." },
+          { q: "ما هي أساطير البرج؟", a: "تروي أسطورة تركية عن أميرة وُضعت هنا لتنجو من نبوءة بموتها بلدغة أفعى، وتنقل الحكاية اليونانية عن هيرو وليندر مأساتها العاطفية إلى هذه المياه. يستطيع مرشد محلي أن يروي الحكايتين ويشرح كيف نال البرج اسمه." },
+          { q: "هل يستحق البرج الزيارة بعد ترميمه؟", a: "نعم. بعد ترميم دقيق حديث أعيد فتح البرج للزوار، مع مقهى وشرفة مطلة، فصار بإمكانك الدخول والاستمتاع بالمنظر البانورامي بدلًا من الاكتفاء بمشاهدته من الشاطئ." },
+          { q: "ما هو أفضل وقت للزيارة؟", a: "الغروب هو الأكثر إثارة للذكرى، حين تتوهّج المدينة القديمة خلف البرج، بينما الصباح هو الأهدأ للصور. الأيام الهادئة في أواخر الربيع أو أوائل الخريف تجعل عبور القارب ممتعًا بشكل خاص." },
+        ],
+        ctaTitle: "زر برج الفتاة مع مرشد محلي",
+        ...IST.ar,
+      },
+      es: {
+        name: "Torre de la Doncella",
+        metaTitle: "Tours de la Torre de la Doncella (Kız Kulesi) con guías locales",
+        metaDescription:
+          "Visita la Torre de la Doncella en su diminuto islote del Bósforo con un guía verificado de Estambul. Leyendas antiguas, un corto trayecto en barco desde Üsküdar y un atardecer inolvidable.",
+        intro: [
+          "La Torre de la Doncella se alza solitaria sobre un pequeño islote en el Bósforo, frente a la orilla de Üsküdar en el lado asiático, donde el estrecho se abre hacia el mar de Mármara. Pequeña, blanca e increíblemente fotogénica, ha velado durante siglos por esta vía de agua como faro, punto de aduanas y estación de cuarentena — y hoy, tras una cuidadosa restauración, vuelve a recibir visitantes.",
+          "Lo que hace inolvidable la torre no es su tamaño, sino sus historias. Una leyenda turca habla de una princesa encerrada aquí para escapar de una mordedura de serpiente profetizada; el relato griego de Hero y Leandro sitúa su tragedia en estas mismas aguas. Con un experto local de VibeGuide, las leyendas, la historia y el horizonte encajan, convirtiendo un breve paseo en barco en una de las salidas más románticas de Estambul.",
+        ],
+        highlights: [
+          { title: "El islote y la torre", desc: "Una diminuta roca en medio del Bósforo coronada por una esbelta torre blanca — una de las siluetas más reconocibles de todo Estambul." },
+          { title: "Leyendas sobre el agua", desc: "La princesa turca y la serpiente profetizada, y la historia griega de Leandro cruzando el estrecho a nado por amor — dos relatos unidos a este único lugar." },
+          { title: "Café y mirador", desc: "Un café y una terraza panorámica invitan a quedarse, con vistas de 360 grados a la ciudad vieja, la orilla asiática y los barcos que pasan." },
+        ],
+        planningHeading: "Planifica tu visita",
+        planningParagraphs: [
+          "La Torre de la Doncella está en su propio islote, así que toda visita empieza con un corto trayecto en barco. El principal punto de salida es el paseo marítimo de Üsküdar, en el lado asiático, con barcos adicionales desde Kabataş, en el lado europeo. Ambos son fáciles de alcanzar en ferri, tranvía o la línea Marmaray, y la propia travesía te muestra la torre recortada sobre el agua desde el momento de zarpar.",
+          "La torre abre durante el día y resulta más mágica al atardecer, cuando la luz se vuelve dorada y el horizonte de la ciudad vieja brilla detrás. El final de la primavera y el principio del otoño traen un tiempo tranquilo y templado, ideal para la travesía; en días de viento o tormenta los horarios de los barcos pueden cambiar, así que conviene mantener los planes flexibles. Las mañanas suelen ser lo más tranquilo para las fotos en el islote.",
+          "Tanto el traslado en barco como la entrada a la torre requieren ticket, y el espacio en la pequeña isla es limitado, así que lo mejor es planificar con antelación. Un guía local titulado de VibeGuide puede organizar la travesía, ajustar el momento de tu visita para la mejor luz y dar vida a las leyendas y a la historia del Bósforo — señalándote además el punto exacto para esa foto clásica del horizonte.",
+        ],
+        faqs: [
+          { q: "¿Cómo llego a la Torre de la Doncella?", a: "Con un corto trayecto en barco desde el paseo marítimo de Üsküdar, en el lado asiático, o desde Kabataş, en el lado europeo. No hay puente — el barco forma parte de la experiencia, y a ambos embarcaderos se llega fácil en ferri, tranvía o Marmaray." },
+          { q: "¿Cuáles son las leyendas de la torre?", a: "Una leyenda turca cuenta la de una princesa encerrada aquí para escapar de una profecía sobre una mordedura mortal de serpiente, y el relato griego de Hero y Leandro sitúa su tragedia amorosa en estas aguas. Un guía local puede contarte ambas y explicar cómo la torre recibió su nombre." },
+          { q: "¿Merece la pena la torre tras su restauración?", a: "Sí. Tras una cuidadosa restauración reciente, la torre reabrió al público, con café y terraza panorámica, de modo que ahora puedes entrar y disfrutar del panorama en lugar de admirarla solo desde la orilla." },
+          { q: "¿Cuándo es el mejor momento para ir?", a: "El atardecer es el más memorable, con la ciudad vieja brillando tras la torre, mientras que las mañanas son lo más tranquilo para las fotos. Los días en calma de finales de primavera o principios de otoño hacen la travesía especialmente agradable." },
+        ],
+        ctaTitle: "Visita la Torre de la Doncella con un local",
+        ...IST.es,
+      },
+      fr: {
+        name: "Tour de Léandre",
+        metaTitle: "Visites de la Tour de Léandre (Kız Kulesi) avec guides locaux",
+        metaDescription:
+          "Visitez la Tour de Léandre sur son minuscule îlot du Bosphore avec un guide vérifié d'Istanbul. Légendes anciennes, une courte traversée en bateau depuis Üsküdar et un coucher de soleil inoubliable.",
+        intro: [
+          "La Tour de Léandre se dresse seule sur un petit îlot du Bosphore, juste au large d'Üsküdar sur la rive asiatique, là où le détroit s'ouvre vers la mer de Marmara. Petite, blanche et incroyablement photogénique, elle veille depuis des siècles sur cette voie d'eau — phare, poste de douane et station de quarantaine — et aujourd'hui, après une restauration minutieuse, elle accueille de nouveau les visiteurs.",
+          "Ce qui rend la tour inoubliable, ce n'est pas sa taille mais ses histoires. Une légende turque évoque une princesse enfermée ici pour échapper à une morsure de serpent prophétisée ; le récit grec de Héro et Léandre situe sa tragédie sur ces mêmes eaux. Avec un expert local VibeGuide, les légendes, l'histoire et l'horizon s'assemblent, transformant une courte traversée en bateau en l'une des sorties les plus romantiques d'Istanbul.",
+        ],
+        highlights: [
+          { title: "L'îlot et la tour", desc: "Un minuscule rocher au milieu du Bosphore couronné d'une fine tour blanche — l'une des silhouettes les plus reconnaissables de tout Istanbul." },
+          { title: "Des légendes sur l'eau", desc: "La princesse turque et le serpent prophétisé, et l'histoire grecque de Léandre traversant le détroit à la nage par amour — deux récits liés à ce seul lieu." },
+          { title: "Café et point de vue", desc: "Un café et une terrasse panoramique invitent à s'attarder, avec une vue à 360 degrés sur la vieille ville, la rive asiatique et les navires qui passent." },
+        ],
+        planningHeading: "Préparer votre visite",
+        planningParagraphs: [
+          "La Tour de Léandre se trouve sur son propre îlot, chaque visite commence donc par une courte traversée en bateau. Le principal point de départ est le front de mer d'Üsküdar, sur la rive asiatique, avec des bateaux supplémentaires depuis Kabataş, sur la rive européenne. Tous deux sont faciles d'accès en ferry, tramway ou par la ligne Marmaray, et la traversée elle-même vous offre la tour cadrée sur l'eau dès le départ.",
+          "La tour est ouverte dans la journée et se révèle la plus magique au coucher du soleil, quand la lumière devient dorée et que l'horizon de la vieille ville s'illumine derrière elle. La fin du printemps et le début de l'automne apportent un temps calme et doux, idéal pour la traversée ; par temps venteux ou orageux, les horaires des bateaux peuvent changer, mieux vaut donc rester flexible. Le matin est en général le plus tranquille pour les photos sur l'îlot.",
+          "La traversée en bateau comme l'entrée de la tour sont payantes, et la place sur la petite île est limitée, il est donc préférable de planifier à l'avance. Un guide local agréé VibeGuide peut organiser la traversée, choisir le moment de votre visite pour la meilleure lumière et faire vivre les légendes et l'histoire du Bosphore — tout en vous indiquant l'endroit exact où vous placer pour cette photo classique de l'horizon.",
+        ],
+        faqs: [
+          { q: "Comment se rend-on à la Tour de Léandre ?", a: "Par une courte traversée en bateau depuis le front de mer d'Üsküdar, sur la rive asiatique, ou depuis Kabataş, sur la rive européenne. Il n'y a pas de pont — le bateau fait partie de l'expérience, et les deux embarcadères sont faciles d'accès en ferry, tramway ou Marmaray." },
+          { q: "Quelles sont les légendes de la tour ?", a: "Une légende turque raconte l'histoire d'une princesse placée ici pour échapper à une prophétie annonçant une morsure de serpent mortelle, et le récit grec de Héro et Léandre situe sa tragédie amoureuse sur ces eaux. Un guide local peut vous conter les deux et expliquer comment la tour a reçu son nom." },
+          { q: "La tour vaut-elle la visite après sa restauration ?", a: "Oui. Après une restauration soignée récente, la tour a rouvert au public, avec un café et une terrasse panoramique, si bien que vous pouvez désormais entrer et profiter du panorama plutôt que de l'admirer seulement depuis la rive." },
+          { q: "Quel est le meilleur moment pour y aller ?", a: "Le coucher du soleil est le plus mémorable, avec la vieille ville qui brille derrière la tour, tandis que le matin est le plus calme pour les photos. Les journées paisibles de fin de printemps ou de début d'automne rendent la traversée particulièrement agréable." },
+        ],
+        ctaTitle: "Visitez la Tour de Léandre avec un local",
+        ...IST.fr,
+      },
+      el: {
+        name: "Πύργος του Λέανδρου",
+        metaTitle: "Ξεναγήσεις στον Πύργο του Λέανδρου (Kız Kulesi) με ντόπιους ξεναγούς",
+        metaDescription:
+          "Επισκέψου τον Πύργο του Λέανδρου στο μικροσκοπικό νησάκι του στον Βόσπορο με πιστοποιημένο ξεναγό στην Κωνσταντινούπολη. Αρχαίοι θρύλοι, μια σύντομη βαρκάδα από το Ουσκουντάρ και ένα αξέχαστο ηλιοβασίλεμα.",
+        intro: [
+          "Ο Πύργος του Λέανδρου στέκει μόνος του σε ένα μικρό νησάκι στον Βόσπορο, ακριβώς μπροστά από την ακτή του Ουσκουντάρ στην ασιατική πλευρά, εκεί όπου το στενό ανοίγει προς τη Θάλασσα του Μαρμαρά. Μικρός, λευκός και απίστευτα φωτογενής, φυλάει επί αιώνες αυτόν τον υδάτινο δρόμο — ως φάρος, τελωνειακό σημείο και σταθμός καραντίνας — και σήμερα, ύστερα από μια προσεκτική αποκατάσταση, υποδέχεται ξανά επισκέπτες.",
+          "Αυτό που κάνει τον πύργο αξέχαστο δεν είναι το μέγεθός του αλλά οι ιστορίες του. Ένας τουρκικός θρύλος μιλά για μια πριγκίπισσα που κλείστηκε εδώ για να γλιτώσει από ένα προφητευμένο δάγκωμα φιδιού· ο ελληνικός μύθος της Ηρώς και του Λέανδρου τοποθετεί την τραγωδία του στα ίδια νερά. Με έναν ντόπιο ειδικό της VibeGuide, οι θρύλοι, η ιστορία και ο ορίζοντας δένουν μεταξύ τους, μετατρέποντας μια σύντομη βαρκάδα σε μία από τις πιο ρομαντικές εξορμήσεις της Κωνσταντινούπολης.",
+        ],
+        highlights: [
+          { title: "Το νησάκι και ο πύργος", desc: "Ένας μικροσκοπικός βράχος στη μέση του Βοσπόρου στεφανωμένος με έναν λεπτό λευκό πύργο — μία από τις πιο αναγνωρίσιμες σιλουέτες όλης της Κωνσταντινούπολης." },
+          { title: "Θρύλοι πάνω στο νερό", desc: "Η τουρκική πριγκίπισσα και το προφητευμένο φίδι, καθώς και η ελληνική ιστορία του Λέανδρου που διέσχιζε κολυμπώντας το στενό για την αγάπη — δύο αφηγήσεις δεμένες με αυτό το μοναδικό σημείο." },
+          { title: "Καφέ και θέα", desc: "Ένα καφέ και μια βεράντα θέασης σε προσκαλούν να μείνεις, με πανόραμα 360 μοιρών στην παλιά πόλη, την ασιατική ακτή και τα πλοία που περνούν." },
+        ],
+        planningHeading: "Οργανώστε την επίσκεψή σας",
+        planningParagraphs: [
+          "Ο Πύργος του Λέανδρου βρίσκεται στο δικό του νησάκι, οπότε κάθε επίσκεψη ξεκινά με μια σύντομη βαρκάδα. Το κύριο σημείο αναχώρησης είναι η παραλιακή του Ουσκουντάρ στην ασιατική πλευρά, με επιπλέον βάρκες από το Καμπατάς στην ευρωπαϊκή πλευρά. Και στα δύο φτάνεις εύκολα με φέρι, τραμ ή τη γραμμή Marmaray, ενώ το ίδιο το πέρασμα σου δίνει τον πύργο κορνιζαρισμένο πάνω στο νερό από τη στιγμή που ξεκινάς.",
+          "Ο πύργος είναι ανοιχτός κατά τη διάρκεια της ημέρας και είναι πιο μαγικός γύρω στο ηλιοβασίλεμα, όταν το φως γίνεται χρυσό και η σιλουέτα της παλιάς πόλης λάμπει πίσω του. Το τέλος της άνοιξης και η αρχή του φθινοπώρου φέρνουν ήρεμο, ήπιο καιρό ιδανικό για το πέρασμα· σε μέρες με άνεμο ή θαλασσοταραχή τα δρομολόγια των βαρκών μπορεί να αλλάξουν, γι' αυτό αξίζει να κρατάς ευέλικτο πρόγραμμα. Τα πρωινά είναι συνήθως τα πιο ήσυχα για φωτογραφίες στο νησάκι.",
+          "Τόσο η μεταφορά με τη βάρκα όσο και η είσοδος στον πύργο απαιτούν εισιτήριο, και ο χώρος στο μικρό νησί είναι περιορισμένος, οπότε είναι καλύτερα να προγραμματίσεις εκ των προτέρων. Ένας αδειούχος τοπικός ξεναγός της VibeGuide μπορεί να κανονίσει το πέρασμα, να επιλέξει την ώρα της επίσκεψής σου για το καλύτερο φως και να ζωντανέψει τους θρύλους και την ιστορία του Βοσπόρου — δείχνοντάς σου παράλληλα ακριβώς πού να σταθείς για εκείνη την κλασική φωτογραφία με τον ορίζοντα.",
+        ],
+        faqs: [
+          { q: "Πώς φτάνω στον Πύργο του Λέανδρου;", a: "Με μια σύντομη βαρκάδα από την παραλιακή του Ουσκουντάρ στην ασιατική πλευρά, ή από το Καμπατάς στην ευρωπαϊκή πλευρά. Δεν υπάρχει γέφυρα — η βάρκα είναι μέρος της εμπειρίας, και στις δύο αποβάθρες φτάνεις εύκολα με φέρι, τραμ ή Marmaray." },
+          { q: "Ποιοι είναι οι θρύλοι του πύργου;", a: "Ένας τουρκικός θρύλος αφηγείται μια πριγκίπισσα που τοποθετήθηκε εδώ για να γλιτώσει από μια προφητεία περί θανατηφόρου δαγκώματος φιδιού, ενώ ο ελληνικός μύθος της Ηρώς και του Λέανδρου μεταφέρει την ερωτική του τραγωδία σε αυτά τα νερά. Ένας ντόπιος ξεναγός μπορεί να σου πει και τους δύο και να εξηγήσει πώς πήρε το όνομά του ο πύργος." },
+          { q: "Αξίζει ο πύργος μετά την αποκατάστασή του;", a: "Ναι. Ύστερα από μια πρόσφατη προσεκτική αποκατάσταση, ο πύργος άνοιξε ξανά για τους επισκέπτες, με καφέ και βεράντα θέασης, ώστε τώρα μπορείς να μπεις μέσα και να απολαύσεις το πανόραμα αντί απλώς να τον θαυμάζεις από την ακτή." },
+          { q: "Πότε είναι η καλύτερη ώρα να πας;", a: "Το ηλιοβασίλεμα είναι το πιο αξιομνημόνευτο, με την παλιά πόλη να λάμπει πίσω από τον πύργο, ενώ τα πρωινά είναι τα πιο ήσυχα για φωτογραφίες. Οι ήρεμες μέρες στο τέλος της άνοιξης ή στην αρχή του φθινοπώρου κάνουν το πέρασμα ιδιαίτερα ευχάριστο." },
+        ],
+        ctaTitle: "Δες τον Πύργο του Λέανδρου με έναν ντόπιο",
+        ...IST.el,
+      },
+      tr: {
+        name: "Kız Kulesi",
+        metaTitle: "Kız Kulesi Turları & Yerel Rehberler",
+        metaDescription:
+          "Kız Kulesi'ni Boğaz'ın küçücük adacığında doğrulanmış bir İstanbul rehberiyle gez. Eski efsaneler, Üsküdar'dan kısa bir tekne yolculuğu ve unutulmaz bir gün batımı.",
+        intro: [
+          "Kız Kulesi, Boğaz'ın ortasında küçük bir adacıkta tek başına yükselir; Asya yakasında Üsküdar kıyısının hemen açığında, boğazın Marmara Denizi'ne açıldığı yerdedir. Küçük, beyaz ve inanılmaz fotojenik bu kule, yüzyıllardır bu su yolunu bir deniz feneri, gümrük noktası ve karantina istasyonu olarak beklemiş — bugün ise özenli bir restorasyonun ardından yeniden ziyaretçilerini ağırlıyor.",
+          "Kuleyi unutulmaz kılan boyutu değil hikâyeleridir. Bir Türk efsanesi, kehanetteki yılan sokmasından kurtulsun diye buraya kapatılan bir prensesi anlatır; Hero ile Leandros'un Yunan hikâyesi ise trajedisini aynı sularda kurar. VibeGuide yerel uzmanıyla efsaneler, tarih ve silüet yerli yerine oturur; kısa bir tekne yolculuğu İstanbul'un en romantik gezilerinden birine dönüşür.",
+        ],
+        highlights: [
+          { title: "Adacık ve kule", desc: "Boğaz'ın tam ortasında küçücük bir kayalık ve onu taçlandıran zarif beyaz bir kule — tüm İstanbul'un en tanınabilir silüetlerinden biri." },
+          { title: "Su üstünde efsaneler", desc: "Türk prensesi ve kehanetteki yılan ile aşk uğruna boğazı yüzerek geçen Leandros'un Yunan hikâyesi — bu tek noktaya bağlanan iki anlatı." },
+          { title: "Kafe ve seyir noktası", desc: "Bir kafe ve seyir terası oyalanmanız için davet çıkarır; tarihi yarımadaya, Asya kıyısına ve geçen gemilere 360 derecelik bir manzara sunar." },
+        ],
+        planningHeading: "Ziyaretinizi planlayın",
+        planningParagraphs: [
+          "Kız Kulesi kendi adacığında yer alır, bu yüzden her ziyaret kısa bir tekne yolculuğuyla başlar. Ana kalkış noktası Asya yakasındaki Üsküdar sahilidir; Avrupa yakasında Kabataş'tan da ek seferler yapılır. İkisine de vapur, tramvay ya da Marmaray hattıyla kolayca ulaşılır ve geçişin kendisi, yola çıktığınız andan itibaren kuleyi suyun önünde çerçeveler.",
+          "Kule gün boyunca açıktır ve en büyülü hali gün batımına yakın olandır; ışık altın rengine döner ve tarihi yarımadanın silüeti arkasında parlar. İlkbahar sonu ve sonbahar başı, geçiş için ideal sakin ve ılıman bir hava getirir; rüzgârlı veya fırtınalı günlerde tekne saatleri değişebilir, bu yüzden planınızı esnek tutmakta fayda var. Sabahlar adacıkta fotoğraf çekmek için genellikle en sakin zamandır.",
+          "Hem tekne geçişi hem de kuleye giriş biletlidir ve küçük adadaki yer sınırlıdır, bu yüzden önceden planlamak en iyisidir. Lisanslı bir VibeGuide yerel rehberi geçişi ayarlayabilir, ziyaretinizi en iyi ışığa göre zamanlayabilir ve efsaneleri ile Boğaz tarihini canlandırabilir — o klasik silüet fotoğrafı için tam olarak nerede duracağınızı da gösterir.",
+        ],
+        faqs: [
+          { q: "Kız Kulesi'ne nasıl giderim?", a: "Asya yakasında Üsküdar sahilinden ya da Avrupa yakasında Kabataş'tan kısa bir tekne yolculuğuyla. Köprü yoktur — tekne deneyimin bir parçasıdır ve her iki iskeleye de vapur, tramvay veya Marmaray ile kolayca ulaşılır." },
+          { q: "Kulenin efsaneleri nelerdir?", a: "Bir Türk efsanesi, yılan sokmasıyla öleceği kehanetinden kurtulsun diye buraya yerleştirilen bir prensesi anlatır; Hero ile Leandros'un Yunan hikâyesi ise aşk trajedisini bu sulara taşır. Yerel bir rehber ikisini de anlatabilir ve kulenin adını nasıl aldığını açıklayabilir." },
+          { q: "Kule restorasyonundan sonra gezmeye değer mi?", a: "Evet. Yakın zamandaki özenli restorasyonun ardından kule ziyarete yeniden açıldı; bir kafe ve seyir terasıyla artık içeri girip manzaranın tadını çıkarabilir, sadece kıyıdan seyretmekle kalmazsınız." },
+          { q: "Gitmek için en iyi zaman ne zaman?", a: "Gün batımı en akılda kalıcı olandır; tarihi yarımada kulenin arkasında parlar, sabahlar ise fotoğraf için en sakin zamandır. İlkbahar sonu veya sonbahar başındaki durgun günler tekne geçişini özellikle keyifli kılar." },
+        ],
+        ctaTitle: "Kız Kulesi'ni bir yerelle gez",
+        ...IST.tr,
+      },
+      it: {
+        name: "Torre della Fanciulla",
+        metaTitle: "Tour della Torre della Fanciulla (Kız Kulesi) con guide locali",
+        metaDescription:
+          "Visita la Torre della Fanciulla sul suo minuscolo isolotto del Bosforo con una guida verificata di Istanbul. Leggende antiche, una breve traversata in barca da Üsküdar e un tramonto indimenticabile.",
+        intro: [
+          "La Torre della Fanciulla si erge solitaria su un piccolo isolotto nel Bosforo, appena al largo della riva di Üsküdar sul lato asiatico, dove lo stretto si apre verso il Mar di Marmara. Piccola, bianca e incredibilmente fotogenica, ha vegliato per secoli su questa via d'acqua come faro, dogana e stazione di quarantena — e oggi, dopo un attento restauro, accoglie di nuovo i visitatori.",
+          "Ciò che rende la torre indimenticabile non è la sua dimensione ma le sue storie. Una leggenda turca racconta di una principessa rinchiusa qui per sfuggire a un morso di serpente profetizzato; il racconto greco di Ero e Leandro colloca la sua tragedia su queste stesse acque. Con un esperto locale di VibeGuide, leggende, storia e skyline si incastrano, trasformando una breve gita in barca in una delle uscite più romantiche di Istanbul.",
+        ],
+        highlights: [
+          { title: "L'isolotto e la torre", desc: "Un minuscolo scoglio in mezzo al Bosforo coronato da una snella torre bianca — una delle sagome più riconoscibili di tutta Istanbul." },
+          { title: "Leggende sull'acqua", desc: "La principessa turca e il serpente profetizzato, e la storia greca di Leandro che attraversa a nuoto lo stretto per amore — due racconti legati a questo unico luogo." },
+          { title: "Caffè e punto panoramico", desc: "Un caffè e una terrazza panoramica invitano a trattenersi, con una vista a 360 gradi sulla città vecchia, la sponda asiatica e le navi di passaggio." },
+        ],
+        planningHeading: "Pianifica la tua visita",
+        planningParagraphs: [
+          "La Torre della Fanciulla si trova sul suo isolotto, quindi ogni visita inizia con una breve traversata in barca. Il principale punto di partenza è il lungomare di Üsküdar, sul lato asiatico, con barche aggiuntive da Kabataş, sul lato europeo. Entrambi sono facili da raggiungere in traghetto, tram o con la linea Marmaray, e la traversata stessa ti regala la torre incorniciata sull'acqua fin dal momento della partenza.",
+          "La torre è aperta durante il giorno ed è più magica intorno al tramonto, quando la luce si fa dorata e lo skyline della città vecchia risplende dietro di essa. La tarda primavera e l'inizio dell'autunno portano un tempo calmo e mite, ideale per la traversata; nelle giornate ventose o di mare mosso gli orari delle barche possono cambiare, perciò conviene tenere i piani flessibili. Le mattine sono di solito il momento più tranquillo per le foto sull'isolotto.",
+          "Sia il trasferimento in barca sia l'ingresso alla torre sono a pagamento, e lo spazio sulla piccola isola è limitato, quindi è meglio pianificare in anticipo. Una guida locale abilitata di VibeGuide può organizzare la traversata, calibrare il momento della visita per la luce migliore e dare vita alle leggende e alla storia del Bosforo — indicandoti inoltre il punto esatto in cui metterti per quella classica foto dello skyline.",
+        ],
+        faqs: [
+          { q: "Come si raggiunge la Torre della Fanciulla?", a: "Con una breve traversata in barca dal lungomare di Üsküdar, sul lato asiatico, o da Kabataş, sul lato europeo. Non c'è un ponte — la barca fa parte dell'esperienza, ed entrambi gli imbarcaderi sono facili da raggiungere in traghetto, tram o Marmaray." },
+          { q: "Quali sono le leggende della torre?", a: "Una leggenda turca narra di una principessa messa qui per sfuggire a una profezia su un morso mortale di serpente, mentre il racconto greco di Ero e Leandro trasporta la sua tragedia d'amore su queste acque. Una guida locale può raccontarti entrambe e spiegare come la torre abbia preso il suo nome." },
+          { q: "Vale la pena visitare la torre dopo il restauro?", a: "Sì. Dopo un recente e attento restauro la torre ha riaperto ai visitatori, con un caffè e una terrazza panoramica, così ora puoi entrare e goderti il panorama invece di ammirarla solo dalla riva." },
+          { q: "Qual è il momento migliore per andare?", a: "Il tramonto è il più memorabile, con la città vecchia che brilla dietro la torre, mentre le mattine sono le più tranquille per le foto. Le giornate calme di fine primavera o inizio autunno rendono la traversata particolarmente piacevole." },
+        ],
+        ctaTitle: "Visita la Torre della Fanciulla con un locale",
+        ...IST.it,
+      },
+      pl: {
+        name: "Wieża Leandra",
+        metaTitle: "Wieża Leandra (Kız Kulesi) — wycieczki z lokalnymi przewodnikami",
+        metaDescription:
+          "Zwiedź Wieżę Leandra na jej maleńkiej wysepce na Bosforze z zweryfikowanym przewodnikiem w Stambule. Dawne legendy, krótki rejs z Üsküdaru i niezapomniany zachód słońca.",
+        intro: [
+          "Wieża Leandra stoi samotnie na małej wysepce na Bosforze, tuż przy brzegu Üsküdaru po azjatyckiej stronie, tam gdzie cieśnina otwiera się w stronę Morza Marmara. Niewielka, biała i niezwykle fotogeniczna, przez wieki strzegła tego szlaku wodnego jako latarnia morska, punkt celny i stacja kwarantanny — a dziś, po starannej renowacji, znów wita zwiedzających.",
+          "To, co czyni wieżę niezapomnianą, to nie jej rozmiar, lecz jej historie. Turecka legenda opowiada o księżniczce zamkniętej tutaj, by uniknęła przepowiedzianego ukąszenia węża; grecki mit o Hero i Leandrze osadza swoją tragedię na tych samych wodach. Z lokalnym ekspertem VibeGuide legendy, historia i panorama układają się w całość, zmieniając krótki rejs w jedną z najbardziej romantycznych wypraw Stambułu.",
+        ],
+        highlights: [
+          { title: "Wysepka i wieża", desc: "Maleńka skała pośrodku Bosforu zwieńczona smukłą białą wieżą — jedna z najbardziej rozpoznawalnych sylwetek całego Stambułu." },
+          { title: "Legendy na wodzie", desc: "Turecka księżniczka i przepowiedziany wąż oraz grecka opowieść o Leandrze przepływającym cieśninę dla miłości — dwie historie związane z tym jednym miejscem." },
+          { title: "Kawiarnia i punkt widokowy", desc: "Kawiarnia i taras widokowy zachęcają, by zostać dłużej, z panoramą 360 stopni na stare miasto, azjatycki brzeg i przepływające statki." },
+        ],
+        planningHeading: "Zaplanuj wizytę",
+        planningParagraphs: [
+          "Wieża Leandra leży na własnej wysepce, więc każda wizyta zaczyna się od krótkiego rejsu. Głównym punktem odpływu jest nabrzeże Üsküdaru po azjatyckiej stronie, a dodatkowe łodzie kursują z Kabataş po europejskiej stronie. Do obu łatwo dotrzeć promem, tramwajem lub linią Marmaray, a sama przeprawa pokazuje wieżę na tle wody od chwili wypłynięcia.",
+          "Wieża jest otwarta w ciągu dnia i najbardziej magiczna około zachodu słońca, gdy światło staje się złote, a sylwetka starego miasta lśni za nią. Późna wiosna i wczesna jesień przynoszą spokojną, łagodną pogodę idealną na przeprawę; w wietrzne lub sztormowe dni rozkłady łodzi mogą się zmieniać, więc warto zachować elastyczność planów. Poranki są zwykle najspokojniejsze na zdjęcia na wysepce.",
+          "Zarówno rejs łodzią, jak i wstęp do wieży są biletowane, a miejsca na małej wyspie jest niewiele, więc najlepiej planować z wyprzedzeniem. Licencjonowany lokalny przewodnik VibeGuide może zorganizować przeprawę, dobrać porę wizyty pod najlepsze światło i ożywić legendy oraz historię Bosforu — a przy tym wskazać dokładnie miejsce, z którego zrobisz klasyczne zdjęcie panoramy.",
+        ],
+        faqs: [
+          { q: "Jak dotrzeć do Wieży Leandra?", a: "Krótkim rejsem z nabrzeża Üsküdaru po azjatyckiej stronie lub z Kabataş po europejskiej stronie. Nie ma mostu — łódź jest częścią przeżycia, a do obu przystani łatwo dojechać promem, tramwajem lub Marmarayem." },
+          { q: "Jakie są legendy wieży?", a: "Turecka legenda opowiada o księżniczce umieszczonej tutaj, by uniknęła przepowiedni o śmiertelnym ukąszeniu węża, a grecki mit o Hero i Leandrze przenosi swoją miłosną tragedię na te wody. Lokalny przewodnik opowie obie i wyjaśni, skąd wieża wzięła swoją nazwę." },
+          { q: "Czy warto odwiedzić wieżę po renowacji?", a: "Tak. Po niedawnej starannej renowacji wieża znów otwarła się dla zwiedzających, z kawiarnią i tarasem widokowym, więc teraz można wejść do środka i cieszyć się panoramą, zamiast podziwiać ją jedynie z brzegu." },
+          { q: "Kiedy najlepiej się wybrać?", a: "Zachód słońca jest najbardziej zapadający w pamięć, gdy stare miasto lśni za wieżą, a poranki są najspokojniejsze na zdjęcia. Spokojne dni późnej wiosny lub wczesnej jesieni sprawiają, że przeprawa jest szczególnie przyjemna." },
+        ],
+        ctaTitle: "Zobacz Wieżę Leandra z lokalnym przewodnikiem",
+        ...IST.pl,
+      },
+      nl: {
+        name: "Meisjestoren",
+        metaTitle: "Meisjestoren (Kız Kulesi) tours & lokale gidsen",
+        metaDescription:
+          "Bezoek de Meisjestoren op haar piepkleine eilandje in de Bosporus met een geverifieerde gids in Istanbul. Oude legenden, een korte boottocht vanaf Üsküdar en een onvergetelijke zonsondergang.",
+        intro: [
+          "De Meisjestoren staat alleen op een klein eilandje in de Bosporus, vlak voor de kust van Üsküdar aan de Aziatische kant, waar de zeestraat zich opent naar de Zee van Marmara. Klein, wit en ongelooflijk fotogeniek, waakt hij al eeuwen over deze waterweg — als vuurtoren, douanepost en quarantainestation — en vandaag, na een zorgvuldige restauratie, verwelkomt hij opnieuw bezoekers.",
+          "Wat de toren onvergetelijk maakt, is niet zijn omvang maar zijn verhalen. Een Turkse legende vertelt over een prinses die hier werd opgesloten om aan een voorspelde slangenbeet te ontkomen; het Griekse verhaal van Hero en Leander plaatst zijn tragedie op ditzelfde water. Met een lokale VibeGuide-expert vallen de legenden, de geschiedenis en de skyline op hun plaats, en verandert een korte boottocht in een van de meest romantische uitstapjes van Istanbul.",
+        ],
+        highlights: [
+          { title: "Het eilandje en de toren", desc: "Een piepkleine rots midden in de Bosporus, gekroond door een slanke witte toren — een van de meest herkenbare silhouetten van heel Istanbul." },
+          { title: "Legenden op het water", desc: "De Turkse prinses en de voorspelde slang, en het Griekse verhaal van Leander die uit liefde de zeestraat overzwom — twee vertellingen verbonden met deze ene plek." },
+          { title: "Café en uitzichtpunt", desc: "Een café en een uitkijkterras nodigen uit om te blijven, met een panorama van 360 graden over de oude stad, de Aziatische oever en voorbijvarende schepen." },
+        ],
+        planningHeading: "Plan je bezoek",
+        planningParagraphs: [
+          "De Meisjestoren ligt op een eigen eilandje, dus elk bezoek begint met een korte boottocht. Het belangrijkste vertrekpunt is de boulevard van Üsküdar aan de Aziatische kant, met extra boten vanaf Kabataş aan de Europese kant. Beide zijn eenvoudig te bereiken met de veerboot, tram of de Marmaray-lijn, en de overtocht zelf laat je de toren al vanaf het vertrek tegen het water zien.",
+          "De toren is overdag geopend en op zijn mooist rond zonsondergang, wanneer het licht goudkleurig wordt en de skyline van de oude stad erachter oplicht. Het late voorjaar en het vroege najaar brengen kalm, mild weer dat ideaal is voor de overtocht; op winderige of stormachtige dagen kunnen de bootschema's veranderen, dus houd je plannen flexibel. De ochtenden zijn meestal het rustigst voor foto's op het eilandje.",
+          "Zowel de boottransfer als de toegang tot de toren zijn met kaartje, en de ruimte op het kleine eiland is beperkt, dus plan het liefst vooruit. Een erkende lokale VibeGuide-gids kan de overtocht regelen, je bezoek afstemmen op het beste licht en de legenden en de geschiedenis van de Bosporus tot leven brengen — en je precies aanwijzen waar je moet gaan staan voor die klassieke skylinefoto.",
+        ],
+        faqs: [
+          { q: "Hoe kom ik bij de Meisjestoren?", a: "Met een korte boottocht vanaf de boulevard van Üsküdar aan de Aziatische kant, of vanaf Kabataş aan de Europese kant. Er is geen brug — de boot hoort bij de ervaring, en beide steigers zijn eenvoudig te bereiken met veerboot, tram of Marmaray." },
+          { q: "Wat zijn de legenden van de toren?", a: "Een Turkse legende vertelt over een prinses die hier werd geplaatst om aan een voorspelling over een dodelijke slangenbeet te ontkomen, en het Griekse verhaal van Hero en Leander verplaatst zijn liefdesdrama naar dit water. Een lokale gids kan ze allebei vertellen en uitleggen hoe de toren aan zijn naam kwam." },
+          { q: "Is de toren de moeite waard na de restauratie?", a: "Ja. Na een recente zorgvuldige restauratie heropende de toren voor bezoekers, met een café en een uitkijkterras, zodat je nu naar binnen kunt en van het panorama kunt genieten in plaats van hem alleen vanaf de wal te bewonderen." },
+          { q: "Wanneer kun je het beste gaan?", a: "De zonsondergang is het meest memorabel, met de oude stad die achter de toren oplicht, terwijl de ochtenden het rustigst zijn voor foto's. Kalme dagen in het late voorjaar of vroege najaar maken de overtocht bijzonder aangenaam." },
+        ],
+        ctaTitle: "Bekijk de Meisjestoren met een local",
+        ...IST.nl,
+      },
+    },
+  },
+  {
+    slug: "temple-of-artemis",
+    city: "Selçuk",
+    citySlug: "ephesus",
+    emoji: "🏛️",
+    image:
+      "https://images.unsplash.com/photo-1547126627-af8df614498c?q=80&w=1600",
+    lat: 37.9497,
+    lng: 27.3639,
+    i18n: {
+      en: {
+        name: "Temple of Artemis",
+        metaTitle: "Temple of Artemis at Ephesus Tours & Local Guides",
+        metaDescription:
+          "Visit the Temple of Artemis at Selçuk with a verified local guide. One of the Seven Wonders of the Ancient World, now a single column rising from storks and marsh beside Ephesus.",
+        intro: [
+          "The Temple of Artemis at Selçuk, just minutes from Ephesus, was once one of the Seven Wonders of the Ancient World — a marble temple so vast it stood four times larger than the Parthenon in Athens. Ancient travellers wrote that they had seen many wonders, but nothing to rival the house of Artemis reaching to the clouds.",
+          "Today the site is humble: a single re-erected column rises from the marshy foundations, often with a stork's nest perched on top and the birds wading in the reeds below. Yet standing here, where kings once competed to raise the grandest sanctuary in the ancient world, is one of history's quietest and most moving lessons. A VibeGuide local expert restores the temple in your imagination, columns and crowds and all.",
+        ],
+        highlights: [
+          { title: "A vanished Wonder", desc: "One of the Seven Wonders of the Ancient World, once four times the size of the Parthenon, reduced now to foundations and a single standing column." },
+          { title: "The lone column and its storks", desc: "A solitary re-erected marble column rises from the marsh, often crowned by a stork's nest — an unforgettable image of grandeur returned to nature." },
+          { title: "The Selçuk hill cluster", desc: "The temple pairs naturally with the Basilica of St John and the İsa Bey Mosque crowning the hill just above it, and with Ephesus close by." },
+        ],
+        planningHeading: "Planning your visit",
+        planningParagraphs: [
+          "The Temple of Artemis lies on the edge of Selçuk town, only a few minutes by car or a pleasant walk from the main Ephesus entrance, so the two are almost always visited together. Selçuk sits on the İzmir–Aydın rail line and is easy to reach by train, bus or a short drive from İzmir and the coastal resorts, and the site itself is right beside the road below the castle hill.",
+          "The temple is an open, low-lying site and usually free to enter, best appreciated in the softer light of morning or late afternoon when the lone column catches the sun and the storks are active. Spring and autumn are the most comfortable seasons; summer around Ephesus can be very hot, so bring water and sun protection whatever the time of year.",
+          "Because so little stands today, the Temple of Artemis rewards imagination more than sightseeing, and this is exactly where a licensed VibeGuide local guide makes the difference. A guide can weave the temple, Ephesus, the Basilica of St John and the İsa Bey Mosque into one Selçuk itinerary, and rebuild the vanished Wonder in your mind so a single column becomes the greatest temple of the ancient world.",
+        ],
+        faqs: [
+          { q: "Is there much left of the Temple of Artemis?", a: "Very little stands today — mainly the marshy foundations and one re-erected column, often topped by a stork's nest. Its power lies in what it once was: a guide brings the vanished Wonder back to life where the ruins alone cannot." },
+          { q: "How does it relate to Ephesus?", a: "The temple is at Selçuk, only minutes from the main Ephesus site, and the two are naturally visited together along with the Basilica of St John and the İsa Bey Mosque on the hill just above." },
+          { q: "Do I need a ticket for the Temple of Artemis?", a: "The temple is an open site and is usually free to enter, unlike the ticketed Ephesus ruins nearby. A local guide can arrange a combined Selçuk itinerary that flows smoothly between the sites." },
+          { q: "When is the best time to visit?", a: "Morning or late afternoon light suits the lone column best, and spring and autumn are the most comfortable seasons. Summers here are hot, so carry water and sun protection." },
+        ],
+        ctaTitle: "See the Temple of Artemis with a local",
+        ...EPH.en,
+      },
+      de: {
+        name: "Artemis-Tempel",
+        metaTitle: "Artemis-Tempel bei Ephesos Touren & lokale Guides",
+        metaDescription:
+          "Besuche den Artemis-Tempel bei Selçuk mit einem geprüften lokalen Guide. Eines der Sieben Weltwunder der Antike — heute eine einzelne Säule zwischen Störchen und Marschland neben Ephesos.",
+        intro: [
+          "Der Artemis-Tempel bei Selçuk, nur wenige Minuten von Ephesos entfernt, war einst eines der Sieben Weltwunder der Antike — ein Marmortempel so gewaltig, dass er viermal größer war als der Parthenon in Athen. Antike Reisende schrieben, sie hätten viele Wunder gesehen, doch nichts, das sich mit dem in die Wolken ragenden Haus der Artemis messen konnte.",
+          "Heute ist die Stätte bescheiden: Eine einzige wieder aufgerichtete Säule erhebt sich aus den sumpfigen Fundamenten, oft mit einem Storchennest auf der Spitze und Vögeln, die im Schilf darunter waten. Doch hier zu stehen, wo einst Könige wetteiferten, das prächtigste Heiligtum der antiken Welt zu errichten, ist eine der leisesten und ergreifendsten Lektionen der Geschichte. Ein lokaler VibeGuide-Experte lässt den Tempel in deiner Vorstellung wiedererstehen — Säulen, Menschenmengen und alles.",
+        ],
+        highlights: [
+          { title: "Ein verschwundenes Weltwunder", desc: "Eines der Sieben Weltwunder der Antike, einst viermal so groß wie der Parthenon, heute auf Fundamente und eine einzige stehende Säule reduziert." },
+          { title: "Die einsame Säule und ihre Störche", desc: "Eine einzelne wieder aufgerichtete Marmorsäule ragt aus dem Sumpf, oft von einem Storchennest gekrönt — ein unvergessliches Bild von Größe, die an die Natur zurückfiel." },
+          { title: "Der Hügel von Selçuk", desc: "Der Tempel verbindet sich ganz natürlich mit der Johannesbasilika und der İsa-Bey-Moschee auf dem Hügel direkt darüber sowie mit dem nahen Ephesos." },
+        ],
+        planningHeading: "Deine Besuchsplanung",
+        planningParagraphs: [
+          "Der Artemis-Tempel liegt am Rand der Stadt Selçuk, nur wenige Minuten mit dem Auto oder ein angenehmer Spaziergang vom Haupteingang von Ephesos entfernt, sodass beide fast immer zusammen besucht werden. Selçuk liegt an der Bahnlinie İzmir–Aydın und ist bequem mit Zug, Bus oder einer kurzen Fahrt von İzmir und den Küstenorten zu erreichen; die Stätte selbst liegt direkt an der Straße unterhalb des Burgbergs.",
+          "Der Tempel ist eine offene, tief gelegene Stätte und in der Regel kostenlos zugänglich, am schönsten im weicheren Licht des Morgens oder späten Nachmittags, wenn die einsame Säule die Sonne einfängt und die Störche aktiv sind. Frühling und Herbst sind die angenehmsten Jahreszeiten; der Sommer um Ephesos kann sehr heiß werden, nimm also zu jeder Jahreszeit Wasser und Sonnenschutz mit.",
+          "Da heute so wenig steht, belohnt der Artemis-Tempel eher die Vorstellungskraft als das bloße Besichtigen — und genau hier macht ein lizenzierter VibeGuide vor Ort den Unterschied. Ein Guide verwebt Tempel, Ephesos, Johannesbasilika und İsa-Bey-Moschee zu einer Selçuk-Route und baut das verschwundene Weltwunder in deinem Kopf wieder auf, sodass aus einer einzigen Säule der größte Tempel der antiken Welt wird.",
+        ],
+        faqs: [
+          { q: "Ist vom Artemis-Tempel noch viel übrig?", a: "Heute steht nur sehr wenig — vor allem die sumpfigen Fundamente und eine wieder aufgerichtete Säule, oft von einem Storchennest gekrönt. Seine Kraft liegt in dem, was er einst war: Ein Guide erweckt das verschwundene Weltwunder zum Leben, wo die Ruinen allein es nicht können." },
+          { q: "Wie hängt er mit Ephesos zusammen?", a: "Der Tempel liegt in Selçuk, nur wenige Minuten von der Hauptstätte Ephesos entfernt, und beide werden natürlich zusammen mit der Johannesbasilika und der İsa-Bey-Moschee auf dem Hügel darüber besucht." },
+          { q: "Brauche ich ein Ticket für den Artemis-Tempel?", a: "Der Tempel ist eine offene Stätte und in der Regel kostenlos zugänglich, anders als die nahen, ticketpflichtigen Ruinen von Ephesos. Ein lokaler Guide kann eine kombinierte Selçuk-Route zusammenstellen, die reibungslos zwischen den Orten verläuft." },
+          { q: "Wann ist die beste Besuchszeit?", a: "Das Licht am Morgen oder späten Nachmittag passt am besten zur einsamen Säule, und Frühling und Herbst sind die angenehmsten Jahreszeiten. Die Sommer sind hier heiß, nimm also Wasser und Sonnenschutz mit." },
+        ],
+        ctaTitle: "Erlebe den Artemis-Tempel mit einem Local",
+        ...EPH.de,
+      },
+      ru: {
+        name: "Храм Артемиды",
+        metaTitle: "Храм Артемиды в Эфесе: экскурсии с местными гидами",
+        metaDescription:
+          "Посетите храм Артемиды в Сельчуке с проверенным местным гидом. Одно из семи чудес древнего мира, ныне единственная колонна среди аистов и болота рядом с Эфесом.",
+        intro: [
+          "Храм Артемиды в Сельчуке, всего в нескольких минутах от Эфеса, некогда был одним из семи чудес древнего мира — мраморный храм столь огромный, что вчетверо превосходил афинский Парфенон. Древние путешественники писали, что видели много чудес, но ничего, что могло бы сравниться с домом Артемиды, вздымавшимся к облакам.",
+          "Сегодня место скромно: единственная вновь поднятая колонна возвышается над заболоченными фундаментами, часто с гнездом аиста на вершине и птицами, бродящими в тростнике внизу. И всё же стоять здесь, где когда-то цари соперничали, возводя величайшее святилище древнего мира, — один из самых тихих и трогательных уроков истории. Местный эксперт VibeGuide восстанавливает храм в вашем воображении — с колоннами, толпами и всем прочим.",
+        ],
+        highlights: [
+          { title: "Исчезнувшее чудо", desc: "Одно из семи чудес древнего мира, некогда вчетверо больше Парфенона, ныне сведённое к фундаментам и единственной стоящей колонне." },
+          { title: "Одинокая колонна и её аисты", desc: "Одинокая вновь поднятая мраморная колонна вздымается над болотом, часто увенчанная гнездом аиста — незабываемый образ величия, вернувшегося к природе." },
+          { title: "Холм Сельчука", desc: "Храм естественно сочетается с базиликой Святого Иоанна и мечетью Иса-бей, венчающими холм прямо над ним, а также с близким Эфесом." },
+        ],
+        planningHeading: "Планирование визита",
+        planningParagraphs: [
+          "Храм Артемиды находится на краю городка Сельчук, всего в нескольких минутах на машине или приятной прогулке от главного входа в Эфес, поэтому эти два места почти всегда посещают вместе. Сельчук стоит на железнодорожной линии Измир–Айдын, до него легко добраться поездом, автобусом или на короткой машине из Измира и прибрежных курортов, а сам объект расположен прямо у дороги под замковым холмом.",
+          "Храм — открытая, низинная площадка, вход обычно свободный, и он лучше всего смотрится в мягком свете утра или позднего дня, когда одинокая колонна ловит солнце, а аисты оживают. Весна и осень — самые комфортные сезоны; лето вокруг Эфеса бывает очень жарким, так что берите воду и защиту от солнца в любое время года.",
+          "Поскольку сегодня стоит так мало, храм Артемиды вознаграждает воображение больше, чем осмотр, и именно здесь лицензированный местный гид VibeGuide меняет всё. Гид может связать храм, Эфес, базилику Святого Иоанна и мечеть Иса-бей в единый маршрут по Сельчуку и заново возвести исчезнувшее чудо в вашем воображении, так что одна колонна становится величайшим храмом древнего мира.",
+        ],
+        faqs: [
+          { q: "Много ли осталось от храма Артемиды?", a: "Сегодня стоит очень мало — в основном заболоченные фундаменты и одна вновь поднятая колонна, часто увенчанная гнездом аиста. Его сила в том, чем он был когда-то: гид возвращает исчезнувшее чудо к жизни там, где одни руины бессильны." },
+          { q: "Как он связан с Эфесом?", a: "Храм находится в Сельчуке, всего в нескольких минутах от главного объекта Эфеса, и оба естественно посещают вместе с базиликой Святого Иоанна и мечетью Иса-бей на холме прямо над ним." },
+          { q: "Нужен ли билет в храм Артемиды?", a: "Храм — открытая площадка, вход обычно свободный, в отличие от платных руин Эфеса неподалёку. Местный гид может составить объединённый маршрут по Сельчуку, плавно связывающий эти места." },
+          { q: "Когда лучше всего посещать?", a: "Свет утра или позднего дня подходит одинокой колонне лучше всего, а весна и осень — самые комфортные сезоны. Лето здесь жаркое, так что берите воду и защиту от солнца." },
+        ],
+        ctaTitle: "Увидеть храм Артемиды с местным гидом",
+        ...EPH.ru,
+      },
+      ar: {
+        name: "معبد أرتميس",
+        metaTitle: "جولات معبد أرتميس في أفسس مع مرشدين محليين",
+        metaDescription:
+          "زر معبد أرتميس في سلجوق مع مرشد محلي موثّق. أحد عجائب الدنيا السبع في العالم القديم، واليوم عمود واحد يرتفع بين اللقالق والمستنقع قرب أفسس.",
+        intro: [
+          "كان معبد أرتميس في سلجوق، على بُعد دقائق من أفسس، ذات يوم أحد عجائب الدنيا السبع في العالم القديم — معبد رخامي بلغ من الضخامة أن حجمه كان أربعة أضعاف معبد البارثينون في أثينا. كتب الرحّالة القدماء أنهم رأوا عجائب كثيرة، لكن لا شيء يضاهي بيت أرتميس الممتد نحو الغيوم.",
+          "أما اليوم فالموقع متواضع: عمود واحد أُعيد نصبه يرتفع من الأساسات المستنقعية، وغالبًا يعلوه عش لقلق فيما تخوض الطيور في القصب أسفله. ومع ذلك، الوقوف هنا حيث تنافس الملوك يومًا على تشييد أعظم معبد في العالم القديم هو أحد أهدأ دروس التاريخ وأكثرها تأثيرًا. يعيد خبير محلي من VibeGuide بناء المعبد في مخيلتك — بأعمدته وحشوده وكل شيء.",
+        ],
+        highlights: [
+          { title: "أعجوبة زائلة", desc: "أحد عجائب الدنيا السبع في العالم القديم، وكان يومًا أربعة أضعاف البارثينون، وقد اختُزل الآن إلى أساسات وعمود واحد قائم." },
+          { title: "العمود المنفرد ولقالقه", desc: "عمود رخامي وحيد أُعيد نصبه يرتفع من المستنقع، وكثيرًا ما يتوّجه عش لقلق — صورة لا تُنسى للعظمة وقد عادت إلى الطبيعة." },
+          { title: "تلة سلجوق", desc: "يتكامل المعبد بشكل طبيعي مع كنيسة القديس يوحنا ومسجد عيسى بك اللذين يتوّجان التلة فوقه مباشرة، ومع أفسس القريبة." },
+        ],
+        planningHeading: "التخطيط لزيارتك",
+        planningParagraphs: [
+          "يقع معبد أرتميس على أطراف بلدة سلجوق، على بُعد دقائق قليلة بالسيارة أو مسيرًا لطيفًا من المدخل الرئيسي لأفسس، لذا يُزاران معًا في الغالب. تقع سلجوق على خط سكة حديد إزمير–أيدين ويسهل الوصول إليها بالقطار أو الحافلة أو بمشوار قصير من إزمير والمنتجعات الساحلية، والموقع نفسه بمحاذاة الطريق تحت تلة القلعة مباشرة.",
+          "المعبد موقع مفتوح منخفض والدخول إليه مجاني عادةً، وأجمل ما يكون في ضوء الصباح الناعم أو أصيل العصر حين يلتقط العمود الوحيد الشمس وتنشط اللقالق. الربيع والخريف أكثر المواسم راحةً؛ أما الصيف حول أفسس فقد يكون شديد الحر، لذا احمل الماء وواقي الشمس في أي وقت من السنة.",
+          "ولأن ما تبقّى قائمًا اليوم قليل جدًا، فإن معبد أرتميس يكافئ الخيال أكثر مما يكافئ مجرد المشاهدة، وهنا بالضبط يصنع مرشد VibeGuide المحلي المرخّص الفارق. يستطيع المرشد أن ينسج المعبد وأفسس وكنيسة القديس يوحنا ومسجد عيسى بك في مسار واحد لسلجوق، وأن يعيد بناء الأعجوبة الزائلة في ذهنك فيتحول عمود واحد إلى أعظم معبد في العالم القديم.",
+        ],
+        faqs: [
+          { q: "هل بقي الكثير من معبد أرتميس؟", a: "لم يبقَ قائمًا اليوم إلا القليل جدًا — أساسات مستنقعية وعمود واحد أُعيد نصبه، غالبًا يعلوه عش لقلق. قوته في ما كان عليه يومًا: يُعيد المرشد الأعجوبة الزائلة إلى الحياة حيث تعجز الأطلال وحدها." },
+          { q: "ما علاقته بأفسس؟", a: "المعبد في سلجوق، على بُعد دقائق فقط من موقع أفسس الرئيسي، ويُزاران معًا بطبيعة الحال مع كنيسة القديس يوحنا ومسجد عيسى بك على التلة فوقه مباشرة." },
+          { q: "هل أحتاج إلى تذكرة لمعبد أرتميس؟", a: "المعبد موقع مفتوح ودخوله مجاني عادةً، بخلاف أطلال أفسس المجاورة التي تتطلب تذكرة. يستطيع مرشد محلي أن يعدّ مسارًا موحدًا لسلجوق ينساب بسلاسة بين المواقع." },
+          { q: "ما هو أفضل وقت للزيارة؟", a: "ضوء الصباح أو أصيل العصر يليق بالعمود الوحيد أكثر من غيره، والربيع والخريف أكثر المواسم راحةً. الصيف هنا حار، لذا احمل الماء وواقي الشمس." },
+        ],
+        ctaTitle: "زر معبد أرتميس مع مرشد محلي",
+        ...EPH.ar,
+      },
+      es: {
+        name: "Templo de Artemisa",
+        metaTitle: "Tours del Templo de Artemisa en Éfeso con guías locales",
+        metaDescription:
+          "Visita el Templo de Artemisa en Selçuk con un guía local verificado. Una de las Siete Maravillas del Mundo Antiguo, hoy una sola columna que se alza entre cigüeñas y marisma junto a Éfeso.",
+        intro: [
+          "El Templo de Artemisa en Selçuk, a solo unos minutos de Éfeso, fue en su día una de las Siete Maravillas del Mundo Antiguo — un templo de mármol tan colosal que era cuatro veces mayor que el Partenón de Atenas. Los viajeros antiguos escribieron que habían visto muchas maravillas, pero nada que rivalizara con la casa de Artemisa alzándose hacia las nubes.",
+          "Hoy el lugar es humilde: una única columna vuelta a erigir se alza sobre los cimientos pantanosos, a menudo con un nido de cigüeña en lo alto y las aves vadeando entre los juncos abajo. Y sin embargo, estar aquí, donde antaño los reyes competían por levantar el santuario más grandioso del mundo antiguo, es una de las lecciones más silenciosas y conmovedoras de la historia. Un experto local de VibeGuide reconstruye el templo en tu imaginación — columnas, multitudes y todo lo demás.",
+        ],
+        highlights: [
+          { title: "Una Maravilla desaparecida", desc: "Una de las Siete Maravillas del Mundo Antiguo, en su día cuatro veces el tamaño del Partenón, reducida hoy a cimientos y una sola columna en pie." },
+          { title: "La columna solitaria y sus cigüeñas", desc: "Una solitaria columna de mármol vuelta a erigir se alza desde la marisma, a menudo coronada por un nido de cigüeña — una imagen inolvidable de la grandeza devuelta a la naturaleza." },
+          { title: "El conjunto de la colina de Selçuk", desc: "El templo se combina de forma natural con la Basílica de San Juan y la Mezquita de İsa Bey que coronan la colina justo por encima, y con la cercana Éfeso." },
+        ],
+        planningHeading: "Planifica tu visita",
+        planningParagraphs: [
+          "El Templo de Artemisa se encuentra a las afueras del pueblo de Selçuk, a solo unos minutos en coche o un agradable paseo desde la entrada principal de Éfeso, así que ambos se visitan casi siempre juntos. Selçuk está en la línea ferroviaria İzmir–Aydın y es fácil de alcanzar en tren, autobús o con un corto trayecto desde İzmir y las localidades costeras, y el propio recinto está justo al borde de la carretera, bajo la colina del castillo.",
+          "El templo es un recinto abierto y de tierras bajas, normalmente de entrada gratuita, y se aprecia mejor con la luz más suave de la mañana o el atardecer, cuando la columna solitaria atrapa el sol y las cigüeñas están activas. La primavera y el otoño son las estaciones más cómodas; el verano en torno a Éfeso puede ser muy caluroso, así que lleva agua y protección solar en cualquier época del año.",
+          "Como hoy queda tan poco en pie, el Templo de Artemisa premia la imaginación más que la simple visita, y es justo aquí donde un guía local titulado de VibeGuide marca la diferencia. Un guía puede entrelazar el templo, Éfeso, la Basílica de San Juan y la Mezquita de İsa Bey en un solo itinerario por Selçuk, y reconstruir la Maravilla desaparecida en tu mente para que una sola columna se convierta en el mayor templo del mundo antiguo.",
+        ],
+        faqs: [
+          { q: "¿Queda mucho del Templo de Artemisa?", a: "Hoy queda muy poco en pie — sobre todo los cimientos pantanosos y una columna vuelta a erigir, a menudo rematada por un nido de cigüeña. Su fuerza está en lo que fue: un guía devuelve a la vida la Maravilla desaparecida allí donde las ruinas por sí solas no pueden." },
+          { q: "¿Qué relación tiene con Éfeso?", a: "El templo está en Selçuk, a solo unos minutos del recinto principal de Éfeso, y ambos se visitan de forma natural junto con la Basílica de San Juan y la Mezquita de İsa Bey en la colina justo por encima." },
+          { q: "¿Necesito entrada para el Templo de Artemisa?", a: "El templo es un recinto abierto y normalmente de entrada gratuita, a diferencia de las ruinas de Éfeso, cercanas y con entrada. Un guía local puede organizar un itinerario combinado por Selçuk que enlace con fluidez los distintos lugares." },
+          { q: "¿Cuándo es el mejor momento para visitarlo?", a: "La luz de la mañana o del atardecer sienta mejor a la columna solitaria, y la primavera y el otoño son las estaciones más cómodas. Los veranos aquí son calurosos, así que lleva agua y protección solar." },
+        ],
+        ctaTitle: "Visita el Templo de Artemisa con un local",
+        ...EPH.es,
+      },
+      fr: {
+        name: "Temple d'Artémis",
+        metaTitle: "Visites du Temple d'Artémis à Éphèse avec guides locaux",
+        metaDescription:
+          "Visitez le Temple d'Artémis à Selçuk avec un guide local vérifié. L'une des Sept Merveilles du monde antique, aujourd'hui une seule colonne dressée parmi les cigognes et le marais près d'Éphèse.",
+        intro: [
+          "Le Temple d'Artémis à Selçuk, à quelques minutes seulement d'Éphèse, fut jadis l'une des Sept Merveilles du monde antique — un temple de marbre si vaste qu'il était quatre fois plus grand que le Parthénon d'Athènes. Les voyageurs de l'Antiquité écrivaient avoir vu bien des merveilles, mais rien qui rivalisât avec la demeure d'Artémis s'élevant jusqu'aux nuages.",
+          "Aujourd'hui le site est modeste : une unique colonne relevée s'élève des fondations marécageuses, souvent surmontée d'un nid de cigogne, tandis que les oiseaux pataugent dans les roseaux en contrebas. Et pourtant, se tenir ici, là où des rois rivalisèrent jadis pour ériger le plus grandiose sanctuaire du monde antique, est l'une des leçons les plus silencieuses et les plus émouvantes de l'histoire. Un expert local VibeGuide reconstruit le temple dans votre imagination — colonnes, foules et tout le reste.",
+        ],
+        highlights: [
+          { title: "Une Merveille disparue", desc: "L'une des Sept Merveilles du monde antique, jadis quatre fois la taille du Parthénon, réduite aujourd'hui à des fondations et une seule colonne debout." },
+          { title: "La colonne solitaire et ses cigognes", desc: "Une unique colonne de marbre relevée s'élève du marais, souvent couronnée d'un nid de cigogne — une image inoubliable de la grandeur rendue à la nature." },
+          { title: "L'ensemble de la colline de Selçuk", desc: "Le temple s'associe naturellement à la Basilique Saint-Jean et à la Mosquée d'İsa Bey qui couronnent la colline juste au-dessus, ainsi qu'à Éphèse toute proche." },
+        ],
+        planningHeading: "Préparer votre visite",
+        planningParagraphs: [
+          "Le Temple d'Artémis se trouve en bordure de la ville de Selçuk, à quelques minutes seulement en voiture ou par une agréable marche depuis l'entrée principale d'Éphèse, de sorte que les deux se visitent presque toujours ensemble. Selçuk est sur la ligne ferroviaire İzmir–Aydın et se rejoint facilement en train, en bus ou par un court trajet depuis İzmir et les stations balnéaires, et le site lui-même borde la route, sous la colline du château.",
+          "Le temple est un site ouvert, en contrebas, dont l'entrée est généralement gratuite, et qu'on apprécie le mieux dans la lumière plus douce du matin ou de la fin d'après-midi, quand la colonne solitaire capte le soleil et que les cigognes s'animent. Le printemps et l'automne sont les saisons les plus agréables ; l'été autour d'Éphèse peut être très chaud, alors emportez de l'eau et une protection solaire quelle que soit la période.",
+          "Comme il reste si peu debout aujourd'hui, le Temple d'Artémis récompense l'imagination plus que la simple visite, et c'est précisément là qu'un guide local agréé VibeGuide fait la différence. Un guide peut relier le temple, Éphèse, la Basilique Saint-Jean et la Mosquée d'İsa Bey en un seul itinéraire à Selçuk, et rebâtir la Merveille disparue dans votre esprit pour qu'une seule colonne redevienne le plus grand temple du monde antique.",
+        ],
+        faqs: [
+          { q: "Reste-t-il beaucoup du Temple d'Artémis ?", a: "Il reste très peu de choses debout aujourd'hui — surtout les fondations marécageuses et une colonne relevée, souvent surmontée d'un nid de cigogne. Sa force tient à ce qu'il fut : un guide ramène à la vie la Merveille disparue là où les ruines seules ne le peuvent pas." },
+          { q: "Quel est son lien avec Éphèse ?", a: "Le temple est à Selçuk, à quelques minutes seulement du site principal d'Éphèse, et les deux se visitent naturellement avec la Basilique Saint-Jean et la Mosquée d'İsa Bey sur la colline juste au-dessus." },
+          { q: "Faut-il un billet pour le Temple d'Artémis ?", a: "Le temple est un site ouvert dont l'entrée est généralement gratuite, contrairement aux ruines payantes d'Éphèse toutes proches. Un guide local peut organiser un itinéraire combiné à Selçuk qui relie les sites en douceur." },
+          { q: "Quel est le meilleur moment pour visiter ?", a: "La lumière du matin ou de la fin d'après-midi met le mieux en valeur la colonne solitaire, et le printemps et l'automne sont les saisons les plus agréables. Les étés sont chauds ici, alors emportez de l'eau et une protection solaire." },
+        ],
+        ctaTitle: "Visitez le Temple d'Artémis avec un local",
+        ...EPH.fr,
+      },
+      el: {
+        name: "Ναός της Αρτέμιδος",
+        metaTitle: "Ξεναγήσεις στον Ναό της Αρτέμιδος στην Έφεσο με ντόπιους ξεναγούς",
+        metaDescription:
+          "Επισκέψου τον Ναό της Αρτέμιδος στο Σελτσούκ με πιστοποιημένο ντόπιο ξεναγό. Ένα από τα Επτά Θαύματα του αρχαίου κόσμου, σήμερα μια μόνη κολόνα ανάμεσα σε πελαργούς και βάλτο δίπλα στην Έφεσο.",
+        intro: [
+          "Ο Ναός της Αρτέμιδος στο Σελτσούκ, μόλις λίγα λεπτά από την Έφεσο, ήταν κάποτε ένα από τα Επτά Θαύματα του αρχαίου κόσμου — ένας μαρμάρινος ναός τόσο τεράστιος που ήταν τέσσερις φορές μεγαλύτερος από τον Παρθενώνα της Αθήνας. Οι αρχαίοι ταξιδιώτες έγραφαν πως είχαν δει πολλά θαύματα, μα τίποτα που να συναγωνίζεται τον οίκο της Αρτέμιδος που έφτανε ως τα σύννεφα.",
+          "Σήμερα ο χώρος είναι ταπεινός: μία μόνη ανεγερμένη ξανά κολόνα υψώνεται από τα ελώδη θεμέλια, συχνά με μια φωλιά πελαργού στην κορυφή και τα πουλιά να τσαλαβουτούν στα καλάμια από κάτω. Κι όμως, το να στέκεσαι εδώ, όπου κάποτε βασιλιάδες συναγωνίζονταν να υψώσουν το μεγαλοπρεπέστερο ιερό του αρχαίου κόσμου, είναι ένα από τα πιο σιωπηλά και συγκινητικά μαθήματα της ιστορίας. Ένας ντόπιος ειδικός της VibeGuide ανασυγκροτεί τον ναό στη φαντασία σου — με κολόνες, πλήθη και όλα.",
+        ],
+        highlights: [
+          { title: "Ένα χαμένο Θαύμα", desc: "Ένα από τα Επτά Θαύματα του αρχαίου κόσμου, κάποτε τέσσερις φορές το μέγεθος του Παρθενώνα, που έχει μείνει σήμερα σε θεμέλια και μία μόνη όρθια κολόνα." },
+          { title: "Η μοναχική κολόνα και οι πελαργοί της", desc: "Μια μοναχική μαρμάρινη κολόνα, ανεγερμένη ξανά, υψώνεται από τον βάλτο, συχνά στεφανωμένη με μια φωλιά πελαργού — μια αξέχαστη εικόνα του μεγαλείου που επέστρεψε στη φύση." },
+          { title: "Το σύμπλεγμα του λόφου του Σελτσούκ", desc: "Ο ναός συνδυάζεται φυσικά με τη Βασιλική του Αγίου Ιωάννη και το Τζαμί İsa Bey που στεφανώνουν τον λόφο ακριβώς από πάνω, καθώς και με τη γειτονική Έφεσο." },
+        ],
+        planningHeading: "Οργανώστε την επίσκεψή σας",
+        planningParagraphs: [
+          "Ο Ναός της Αρτέμιδος βρίσκεται στην άκρη της πόλης του Σελτσούκ, μόλις λίγα λεπτά με το αυτοκίνητο ή ένα ευχάριστο περπάτημα από την κύρια είσοδο της Εφέσου, γι' αυτό και τα δύο επισκέπτονται σχεδόν πάντα μαζί. Το Σελτσούκ βρίσκεται στη σιδηροδρομική γραμμή Ιζμίρ–Αϊδίν και φτάνεις εύκολα με τρένο, λεωφορείο ή μια σύντομη διαδρομή από το Ιζμίρ και τα παραθαλάσσια θέρετρα, ενώ ο ίδιος ο χώρος είναι ακριβώς δίπλα στον δρόμο, κάτω από τον λόφο του κάστρου.",
+          "Ο ναός είναι ένας ανοιχτός, χαμηλός χώρος με είσοδο συνήθως ελεύθερη, και εκτιμάται καλύτερα στο πιο απαλό φως του πρωινού ή του απογεύματος, όταν η μοναχική κολόνα πιάνει τον ήλιο και οι πελαργοί δραστηριοποιούνται. Η άνοιξη και το φθινόπωρο είναι οι πιο άνετες εποχές· το καλοκαίρι γύρω από την Έφεσο μπορεί να είναι πολύ ζεστό, γι' αυτό να έχεις νερό και αντηλιακή προστασία όποια εποχή κι αν πας.",
+          "Επειδή τόσο λίγα στέκουν σήμερα, ο Ναός της Αρτέμιδος ανταμείβει τη φαντασία περισσότερο από την απλή περιήγηση, κι εδώ ακριβώς κάνει τη διαφορά ένας αδειούχος ντόπιος ξεναγός της VibeGuide. Ένας ξεναγός μπορεί να πλέξει τον ναό, την Έφεσο, τη Βασιλική του Αγίου Ιωάννη και το Τζαμί İsa Bey σε ένα ενιαίο δρομολόγιο στο Σελτσούκ, και να ξαναχτίσει το χαμένο Θαύμα στο μυαλό σου, ώστε μια μόνη κολόνα να γίνει ο μεγαλύτερος ναός του αρχαίου κόσμου.",
+        ],
+        faqs: [
+          { q: "Έχει μείνει πολύ από τον Ναό της Αρτέμιδος;", a: "Σήμερα στέκουν πολύ λίγα — κυρίως τα ελώδη θεμέλια και μία ανεγερμένη ξανά κολόνα, συχνά με μια φωλιά πελαργού στην κορυφή. Η δύναμή του κρύβεται σε αυτό που κάποτε ήταν: ένας ξεναγός ζωντανεύει το χαμένο Θαύμα εκεί όπου τα ερείπια από μόνα τους δεν μπορούν." },
+          { q: "Πώς σχετίζεται με την Έφεσο;", a: "Ο ναός βρίσκεται στο Σελτσούκ, μόλις λίγα λεπτά από τον κύριο χώρο της Εφέσου, και τα δύο επισκέπτονται φυσικά μαζί με τη Βασιλική του Αγίου Ιωάννη και το Τζαμί İsa Bey στον λόφο ακριβώς από πάνω." },
+          { q: "Χρειάζομαι εισιτήριο για τον Ναό της Αρτέμιδος;", a: "Ο ναός είναι ανοιχτός χώρος με είσοδο συνήθως ελεύθερη, σε αντίθεση με τα εισιτηριακά ερείπια της γειτονικής Εφέσου. Ένας ντόπιος ξεναγός μπορεί να οργανώσει ένα ενιαίο δρομολόγιο στο Σελτσούκ που κυλά ομαλά ανάμεσα στους χώρους." },
+          { q: "Πότε είναι η καλύτερη ώρα για επίσκεψη;", a: "Το φως του πρωινού ή του απογεύματος ταιριάζει καλύτερα στη μοναχική κολόνα, και η άνοιξη και το φθινόπωρο είναι οι πιο άνετες εποχές. Τα καλοκαίρια εδώ είναι ζεστά, γι' αυτό να έχεις νερό και αντηλιακή προστασία." },
+        ],
+        ctaTitle: "Δες τον Ναό της Αρτέμιδος με έναν ντόπιο",
+        ...EPH.el,
+      },
+      tr: {
+        name: "Artemis Tapınağı",
+        metaTitle: "Efes Artemis Tapınağı Turları & Yerel Rehberler",
+        metaDescription:
+          "Selçuk'taki Artemis Tapınağı'nı doğrulanmış bir yerel rehberle gez. Antik Dünyanın Yedi Harikasından biri, bugün Efes'in yanında leylekler ve bataklık arasında yükselen tek bir sütun.",
+        intro: [
+          "Efes'e yalnızca birkaç dakika mesafedeki Selçuk'ta bulunan Artemis Tapınağı, bir zamanlar Antik Dünyanın Yedi Harikasından biriydi — Atina'daki Parthenon'un dört katı büyüklükte, devasa bir mermer tapınak. Antik gezginler pek çok harika gördüklerini, ama bulutlara uzanan Artemis'in evine denk hiçbir şey görmediklerini yazmışlardı.",
+          "Bugün ise alan alçakgönüllüdür: bataklık temellerden yeniden dikilmiş tek bir sütun yükselir; çoğu zaman tepesinde bir leylek yuvası, aşağıda sazlıkta dolaşan kuşlarla. Yine de bir zamanlar kralların antik dünyanın en görkemli tapınağını dikmek için yarıştığı bu yerde durmak, tarihin en sessiz ve en dokunaklı derslerinden biridir. VibeGuide yerel uzmanı, tapınağı sütunları, kalabalıkları ve her şeyiyle hayalinizde yeniden kurar.",
+        ],
+        highlights: [
+          { title: "Kaybolmuş bir Harika", desc: "Antik Dünyanın Yedi Harikasından biri, bir zamanlar Parthenon'un dört katı büyüklüğündeyken bugün temellere ve ayakta kalan tek bir sütuna indirgenmiş." },
+          { title: "Yalnız sütun ve leylekleri", desc: "Yeniden dikilmiş yalnız bir mermer sütun bataklıktan yükselir, çoğu zaman tepesinde bir leylek yuvasıyla — doğaya dönmüş bir ihtişamın unutulmaz görüntüsü." },
+          { title: "Selçuk tepesi topluluğu", desc: "Tapınak, hemen yukarıdaki tepeyi taçlandıran St. Jean Bazilikası ve İsa Bey Camii ile ve yakındaki Efes'le doğal biçimde bütünleşir." },
+        ],
+        planningHeading: "Ziyaretinizi planlayın",
+        planningParagraphs: [
+          "Artemis Tapınağı, Selçuk ilçesinin kenarında; ana Efes girişinden yalnızca birkaç dakika arabayla ya da keyifli bir yürüyüş mesafesindedir, bu yüzden ikisi neredeyse her zaman birlikte gezilir. Selçuk, İzmir–Aydın demiryolu hattı üzerindedir ve trenle, otobüsle ya da İzmir ve kıyı tatil yerlerinden kısa bir sürüşle kolayca ulaşılır; alanın kendisi ise kale tepesinin altında, yolun hemen kenarındadır.",
+          "Tapınak, girişi genellikle ücretsiz, açık ve alçak bir alandır; en güzel hâli, yalnız sütunun güneşi yakaladığı ve leyleklerin canlandığı sabahın ya da ikindinin daha yumuşak ışığındadır. İlkbahar ve sonbahar en rahat mevsimlerdir; Efes çevresinde yaz çok sıcak olabilir, bu yüzden yılın hangi zamanı olursa olsun su ve güneş koruması getirin.",
+          "Bugün ayakta çok az şey kaldığından, Artemis Tapınağı gezmekten çok hayal gücünü ödüllendirir; farkı tam da burada lisanslı bir VibeGuide yerel rehberi yaratır. Bir rehber; tapınağı, Efes'i, St. Jean Bazilikası'nı ve İsa Bey Camii'ni tek bir Selçuk rotasında örebilir ve kaybolmuş Harikayı zihninizde yeniden inşa ederek tek bir sütunu antik dünyanın en büyük tapınağına dönüştürebilir.",
+        ],
+        faqs: [
+          { q: "Artemis Tapınağı'ndan geriye çok şey kaldı mı?", a: "Bugün ayakta çok az şey kaldı — çoğunlukla bataklık temeller ve yeniden dikilmiş, tepesinde sıklıkla bir leylek yuvası bulunan tek bir sütun. Gücü, bir zamanlar ne olduğunda gizli: bir rehber, yalnızca kalıntıların yapamadığını yaparak kaybolmuş Harikayı yeniden canlandırır." },
+          { q: "Efes ile ilişkisi nedir?", a: "Tapınak Selçuk'ta, ana Efes alanına yalnızca birkaç dakika mesafededir ve ikisi, hemen yukarıdaki tepede yer alan St. Jean Bazilikası ve İsa Bey Camii ile birlikte doğal olarak gezilir." },
+          { q: "Artemis Tapınağı için bilet gerekiyor mu?", a: "Tapınak açık bir alandır ve girişi genellikle ücretsizdir; yakındaki biletli Efes kalıntılarından farklı olarak. Yerel bir rehber, alanlar arasında akıcı biçimde ilerleyen birleşik bir Selçuk rotası düzenleyebilir." },
+          { q: "Ziyaret için en iyi zaman ne zaman?", a: "Sabah ya da ikindi ışığı yalnız sütuna en çok yakışan zamandır; ilkbahar ve sonbahar da en rahat mevsimlerdir. Buradaki yazlar sıcaktır, bu yüzden su ve güneş koruması taşıyın." },
+        ],
+        ctaTitle: "Artemis Tapınağı'nı bir yerelle gez",
+        ...EPH.tr,
+      },
+      it: {
+        name: "Tempio di Artemide",
+        metaTitle: "Tour del Tempio di Artemide a Efeso con guide locali",
+        metaDescription:
+          "Visita il Tempio di Artemide a Selçuk con una guida locale verificata. Una delle Sette Meraviglie del mondo antico, oggi una sola colonna che si erge tra cicogne e palude accanto a Efeso.",
+        intro: [
+          "Il Tempio di Artemide a Selçuk, a pochi minuti da Efeso, fu un tempo una delle Sette Meraviglie del mondo antico — un tempio di marmo così vasto da essere quattro volte più grande del Partenone di Atene. I viaggiatori antichi scrivevano di aver visto molte meraviglie, ma nulla che rivaleggiasse con la dimora di Artemide che si ergeva verso le nuvole.",
+          "Oggi il sito è umile: un'unica colonna rieretta si leva dalle fondamenta paludose, spesso con un nido di cicogna in cima e gli uccelli che guadano tra i canneti in basso. Eppure trovarsi qui, dove un tempo i re gareggiavano per innalzare il santuario più grandioso del mondo antico, è una delle lezioni più silenziose e commoventi della storia. Un esperto locale di VibeGuide ricostruisce il tempio nella tua immaginazione — colonne, folle e tutto il resto.",
+        ],
+        highlights: [
+          { title: "Una Meraviglia scomparsa", desc: "Una delle Sette Meraviglie del mondo antico, un tempo quattro volte il Partenone, ridotta oggi a fondamenta e a una sola colonna in piedi." },
+          { title: "La colonna solitaria e le sue cicogne", desc: "Una solitaria colonna di marmo rieretta si erge dalla palude, spesso coronata da un nido di cicogna — un'immagine indimenticabile della grandezza restituita alla natura." },
+          { title: "Il complesso della collina di Selçuk", desc: "Il tempio si abbina naturalmente alla Basilica di San Giovanni e alla Moschea di İsa Bey che coronano la collina proprio al di sopra, e alla vicina Efeso." },
+        ],
+        planningHeading: "Pianifica la tua visita",
+        planningParagraphs: [
+          "Il Tempio di Artemide si trova ai margini della cittadina di Selçuk, a pochi minuti in auto o a una piacevole passeggiata dall'ingresso principale di Efeso, così che i due si visitano quasi sempre insieme. Selçuk è sulla linea ferroviaria İzmir–Aydın ed è facile da raggiungere in treno, autobus o con un breve tragitto da İzmir e dalle località costiere, e il sito stesso è proprio a bordo strada, sotto la collina del castello.",
+          "Il tempio è un sito aperto e in pianura, di solito a ingresso gratuito, e si apprezza al meglio nella luce più morbida del mattino o del tardo pomeriggio, quando la colonna solitaria cattura il sole e le cicogne sono attive. La primavera e l'autunno sono le stagioni più confortevoli; l'estate intorno a Efeso può essere molto calda, quindi porta acqua e protezione solare in qualsiasi periodo dell'anno.",
+          "Poiché oggi resta in piedi così poco, il Tempio di Artemide premia l'immaginazione più della semplice visita, ed è proprio qui che una guida locale abilitata di VibeGuide fa la differenza. Una guida può intrecciare il tempio, Efeso, la Basilica di San Giovanni e la Moschea di İsa Bey in un unico itinerario a Selçuk, e ricostruire la Meraviglia scomparsa nella tua mente, così che una sola colonna diventi il più grande tempio del mondo antico.",
+        ],
+        faqs: [
+          { q: "È rimasto molto del Tempio di Artemide?", a: "Oggi resta in piedi molto poco — soprattutto le fondamenta paludose e una colonna rieretta, spesso sormontata da un nido di cicogna. La sua forza sta in ciò che fu: una guida riporta in vita la Meraviglia scomparsa là dove le rovine da sole non possono." },
+          { q: "Che rapporto ha con Efeso?", a: "Il tempio è a Selçuk, a pochi minuti dal sito principale di Efeso, e i due si visitano naturalmente insieme alla Basilica di San Giovanni e alla Moschea di İsa Bey sulla collina appena sopra." },
+          { q: "Serve un biglietto per il Tempio di Artemide?", a: "Il tempio è un sito aperto e di solito a ingresso gratuito, a differenza delle vicine rovine di Efeso a pagamento. Una guida locale può organizzare un itinerario combinato a Selçuk che scorre agevolmente tra i siti." },
+          { q: "Qual è il momento migliore per visitarlo?", a: "La luce del mattino o del tardo pomeriggio valorizza al meglio la colonna solitaria, e la primavera e l'autunno sono le stagioni più confortevoli. Le estati qui sono calde, quindi porta acqua e protezione solare." },
+        ],
+        ctaTitle: "Visita il Tempio di Artemide con un locale",
+        ...EPH.it,
+      },
+      pl: {
+        name: "Świątynia Artemidy",
+        metaTitle: "Świątynia Artemidy w Efezie — wycieczki z lokalnymi przewodnikami",
+        metaDescription:
+          "Zwiedź Świątynię Artemidy w Selçuku ze zweryfikowanym lokalnym przewodnikiem. Jeden z siedmiu cudów świata starożytnego, dziś pojedyncza kolumna wznosząca się wśród bocianów i bagien obok Efezu.",
+        intro: [
+          "Świątynia Artemidy w Selçuku, zaledwie kilka minut od Efezu, była niegdyś jednym z siedmiu cudów świata starożytnego — marmurową świątynią tak ogromną, że była czterokrotnie większa od ateńskiego Partenonu. Starożytni podróżnicy pisali, że widzieli wiele cudów, lecz nic, co dorównywałoby domowi Artemidy sięgającemu chmur.",
+          "Dziś miejsce jest skromne: pojedyncza ponownie wzniesiona kolumna wyrasta z bagnistych fundamentów, często z bocianim gniazdem na szczycie i ptakami brodzącymi w trzcinach poniżej. A jednak stanie tutaj, gdzie niegdyś królowie rywalizowali o wzniesienie najwspanialszej świątyni świata starożytnego, to jedna z najcichszych i najbardziej wzruszających lekcji historii. Lokalny ekspert VibeGuide odbudowuje świątynię w twojej wyobraźni — z kolumnami, tłumami i wszystkim innym.",
+        ],
+        highlights: [
+          { title: "Zaginiony cud", desc: "Jeden z siedmiu cudów świata starożytnego, niegdyś czterokrotnie większy od Partenonu, dziś sprowadzony do fundamentów i jednej stojącej kolumny." },
+          { title: "Samotna kolumna i jej bociany", desc: "Samotna, ponownie wzniesiona marmurowa kolumna wyrasta z bagna, często zwieńczona bocianim gniazdem — niezapomniany obraz wielkości oddanej naturze." },
+          { title: "Zespół wzgórza w Selçuku", desc: "Świątynia naturalnie łączy się z Bazyliką św. Jana i Meczetem İsa Bey wieńczącymi wzgórze tuż nad nią oraz z pobliskim Efezem." },
+        ],
+        planningHeading: "Zaplanuj wizytę",
+        planningParagraphs: [
+          "Świątynia Artemidy leży na skraju miasteczka Selçuk, zaledwie kilka minut samochodem lub przyjemny spacer od głównego wejścia do Efezu, więc te dwa miejsca zwiedza się niemal zawsze razem. Selçuk leży na linii kolejowej İzmir–Aydın i łatwo tu dojechać pociągiem, autobusem lub krótkim przejazdem z İzmiru i nadmorskich kurortów, a samo stanowisko znajduje się tuż przy drodze, pod wzgórzem zamkowym.",
+          "Świątynia to otwarte, nisko położone stanowisko, zwykle z bezpłatnym wstępem, najlepiej podziwiane w łagodniejszym świetle poranka lub późnego popołudnia, gdy samotna kolumna chwyta słońce, a bociany są aktywne. Wiosna i jesień to najprzyjemniejsze pory roku; lato w okolicach Efezu bywa bardzo upalne, więc niezależnie od pory roku zabierz wodę i ochronę przeciwsłoneczną.",
+          "Ponieważ dziś tak niewiele stoi, Świątynia Artemidy nagradza wyobraźnię bardziej niż samo zwiedzanie, i właśnie tu licencjonowany lokalny przewodnik VibeGuide robi różnicę. Przewodnik potrafi połączyć świątynię, Efez, Bazylikę św. Jana i Meczet İsa Bey w jedną trasę po Selçuku i odbudować zaginiony cud w twojej wyobraźni, tak że pojedyncza kolumna staje się największą świątynią świata starożytnego.",
+        ],
+        faqs: [
+          { q: "Czy dużo zostało ze Świątyni Artemidy?", a: "Dziś stoi bardzo niewiele — głównie bagniste fundamenty i jedna ponownie wzniesiona kolumna, często zwieńczona bocianim gniazdem. Jej siła tkwi w tym, czym była: przewodnik przywraca zaginiony cud do życia tam, gdzie same ruiny tego nie potrafią." },
+          { q: "Jak wiąże się z Efezem?", a: "Świątynia jest w Selçuku, zaledwie kilka minut od głównego stanowiska Efezu, i oba miejsca zwiedza się naturalnie razem z Bazyliką św. Jana i Meczetem İsa Bey na wzgórzu tuż powyżej." },
+          { q: "Czy potrzebuję biletu do Świątyni Artemidy?", a: "Świątynia to otwarte stanowisko, zwykle z bezpłatnym wstępem, w przeciwieństwie do pobliskich, biletowanych ruin Efezu. Lokalny przewodnik może ułożyć łączoną trasę po Selçuku, która płynnie prowadzi między stanowiskami." },
+          { q: "Kiedy najlepiej odwiedzić to miejsce?", a: "Światło poranka lub późnego popołudnia najlepiej pasuje do samotnej kolumny, a wiosna i jesień to najprzyjemniejsze pory roku. Lata są tu upalne, więc zabierz wodę i ochronę przeciwsłoneczną." },
+        ],
+        ctaTitle: "Zobacz Świątynię Artemidy z lokalnym przewodnikiem",
+        ...EPH.pl,
+      },
+      nl: {
+        name: "Tempel van Artemis",
+        metaTitle: "Tempel van Artemis bij Efeze tours & lokale gidsen",
+        metaDescription:
+          "Bezoek de Tempel van Artemis in Selçuk met een geverifieerde lokale gids. Een van de Zeven Wereldwonderen van de oudheid, nu een enkele zuil te midden van ooievaars en moeras naast Efeze.",
+        intro: [
+          "De Tempel van Artemis in Selçuk, op slechts enkele minuten van Efeze, was ooit een van de Zeven Wereldwonderen van de oudheid — een marmeren tempel zo enorm dat hij vier keer groter was dan het Parthenon in Athene. Reizigers uit de oudheid schreven dat ze veel wonderen hadden gezien, maar niets dat kon wedijveren met het huis van Artemis dat tot de wolken reikte.",
+          "Vandaag is de plek bescheiden: een enkele opnieuw opgerichte zuil rijst op uit de moerassige fundamenten, vaak met een ooievaarsnest bovenop en de vogels wadend in het riet eronder. En toch is hier staan, waar ooit koningen wedijverden om het grootste heiligdom van de antieke wereld op te richten, een van de stilste en meest ontroerende lessen uit de geschiedenis. Een lokale VibeGuide-expert bouwt de tempel weer op in je verbeelding — zuilen, menigten en al het andere.",
+        ],
+        highlights: [
+          { title: "Een verdwenen Wereldwonder", desc: "Een van de Zeven Wereldwonderen van de oudheid, ooit vier keer zo groot als het Parthenon, nu teruggebracht tot fundamenten en een enkele staande zuil." },
+          { title: "De eenzame zuil en zijn ooievaars", desc: "Een eenzame, opnieuw opgerichte marmeren zuil rijst op uit het moeras, vaak bekroond door een ooievaarsnest — een onvergetelijk beeld van grootsheid die aan de natuur is teruggegeven." },
+          { title: "Het heuvelcluster van Selçuk", desc: "De tempel combineert vanzelf met de Basiliek van Sint-Jan en de İsa Bey-moskee die de heuvel er vlak boven bekronen, en met het nabije Efeze." },
+        ],
+        planningHeading: "Plan je bezoek",
+        planningParagraphs: [
+          "De Tempel van Artemis ligt aan de rand van het stadje Selçuk, op slechts enkele minuten met de auto of een aangename wandeling van de hoofdingang van Efeze, zodat de twee vrijwel altijd samen worden bezocht. Selçuk ligt aan de spoorlijn İzmir–Aydın en is eenvoudig te bereiken met de trein, de bus of een korte rit vanuit İzmir en de kustplaatsen, en de plek zelf ligt pal langs de weg onder de kasteelheuvel.",
+          "De tempel is een open, laaggelegen terrein met doorgaans gratis toegang, en komt het best tot zijn recht in het zachtere licht van de ochtend of de late namiddag, wanneer de eenzame zuil de zon vangt en de ooievaars actief zijn. Lente en herfst zijn de aangenaamste seizoenen; de zomer rond Efeze kan erg heet zijn, dus neem het hele jaar door water en zonbescherming mee.",
+          "Omdat er vandaag zo weinig overeind staat, beloont de Tempel van Artemis de verbeelding meer dan het gewone rondkijken, en juist hier maakt een erkende lokale VibeGuide-gids het verschil. Een gids kan de tempel, Efeze, de Basiliek van Sint-Jan en de İsa Bey-moskee tot één Selçuk-route verweven, en het verdwenen Wereldwonder in je hoofd herbouwen, zodat een enkele zuil de grootste tempel van de antieke wereld wordt.",
+        ],
+        faqs: [
+          { q: "Is er veel over van de Tempel van Artemis?", a: "Vandaag staat er heel weinig overeind — vooral de moerassige fundamenten en een opnieuw opgerichte zuil, vaak bekroond door een ooievaarsnest. Zijn kracht schuilt in wat hij ooit was: een gids brengt het verdwenen Wereldwonder tot leven waar de ruïnes alleen dat niet kunnen." },
+          { q: "Wat is de relatie met Efeze?", a: "De tempel ligt in Selçuk, op slechts enkele minuten van de hoofdsite van Efeze, en de twee worden vanzelf samen bezocht met de Basiliek van Sint-Jan en de İsa Bey-moskee op de heuvel er vlak boven." },
+          { q: "Heb ik een ticket nodig voor de Tempel van Artemis?", a: "De tempel is een open terrein en meestal gratis toegankelijk, anders dan de nabije ruïnes van Efeze waarvoor een ticket nodig is. Een lokale gids kan een gecombineerde Selçuk-route samenstellen die soepel tussen de locaties doorloopt." },
+          { q: "Wanneer kun je het best gaan?", a: "Het licht van de ochtend of de late namiddag past het best bij de eenzame zuil, en lente en herfst zijn de aangenaamste seizoenen. De zomers zijn hier heet, dus neem water en zonbescherming mee." },
+        ],
+        ctaTitle: "Bekijk de Tempel van Artemis met een local",
+        ...EPH.nl,
+      },
+    },
+  },
+  {
+    slug: "bodrum-castle",
+    city: "Bodrum",
+    citySlug: "bodrum",
+    emoji: "🏰",
+    image:
+      "https://images.unsplash.com/photo-1760197045829-221c11482607?q=80&w=1600",
+    lat: 37.0322,
+    lng: 27.4289,
+    i18n: {
+      en: {
+        name: "Bodrum Castle",
+        metaTitle: "Bodrum Castle & Underwater Museum Tours with Local Guides",
+        metaDescription:
+          "Explore Bodrum Castle, the Knights Hospitaller fortress above the harbour, with a licensed local guide. Crusader towers, the Museum of Underwater Archaeology and the Uluburun shipwreck.",
+        intro: [
+          "Bodrum Castle, the Castle of St Peter, stands guard over the town's turquoise harbour like a stone crown. The Knights Hospitaller began raising it in the early 15th century, hauling up blocks from the ruined Mausoleum at Halicarnassus — one of the Seven Wonders of the Ancient World — so that fragments of an ancient king's tomb are woven into the walls of a Crusader fortress.",
+          "Its towers still carry the names of the nations that built them — English, French, Italian, German and the Snake Tower — and each rises over the marina with sweeping Aegean views. Inside, the castle houses the celebrated Museum of Underwater Archaeology, where ancient shipwrecks, amphorae and the treasures of the Bronze Age Uluburun wreck tell the story of the sea. With a VibeGuide local expert, the layers of Crusader, Ottoman and ancient history fall into place.",
+        ],
+        highlights: [
+          { title: "The Knights' Towers", desc: "The English, French, Italian, German and Snake towers each rise over the harbour, built by the different tongues of the Hospitaller order in the 15th century." },
+          { title: "Museum of Underwater Archaeology", desc: "One of the finest of its kind, displaying ancient shipwrecks, amphorae and glass recovered from the floor of the Aegean." },
+          { title: "The Uluburun Wreck", desc: "Finds from a 14th-century BC merchant ship — copper, ingots, gold and exotic cargo — reveal Bronze Age trade across the whole eastern Mediterranean." },
+        ],
+        planningHeading: "Planning your visit",
+        planningParagraphs: [
+          "Bodrum Castle sits right on the peninsula between the town's two bays, so from almost anywhere in the centre it is a short, scenic walk along the marina. Most visitors arrive at Bodrum by road from Milas–Bodrum Airport, or by ferry from the surrounding coast and the nearby Greek islands, and the castle is impossible to miss on the skyline above the harbour.",
+          "Summer on the Aegean is hot and busy, so the mildest, quietest times to climb the ramparts are late spring and early autumn. Mornings bring the softest light for photographs over the marina, and the sea breezes make the open terraces pleasant even in high season. Wear sturdy shoes — the castle is built on rock, with steps, ramps and uneven ground throughout.",
+          "Entry to the castle and its Museum of Underwater Archaeology is ticketed, and the site combines a fortress, several towers and museum halls in one visit. A licensed VibeGuide local guide can help you make sense of it all — connecting the Crusader towers to the sunken cargoes below, and adding the short uphill walk to the remains of the Mausoleum at Halicarnassus, the ancient wonder whose stones helped build the walls.",
+        ],
+        faqs: [
+          { q: "Is Bodrum Castle worth visiting?", a: "Very much so. It is one of the best-preserved Crusader castles in the Mediterranean and also home to a world-class Museum of Underwater Archaeology, all wrapped in some of the finest harbour views on the Aegean coast." },
+          { q: "What is inside Bodrum Castle?", a: "The castle holds the Museum of Underwater Archaeology, with ancient shipwrecks, thousands of amphorae, glass and the treasures of the Bronze Age Uluburun wreck, alongside the historic English, French, Italian, German and Snake towers." },
+          { q: "Is Bodrum Castle connected to the Mausoleum at Halicarnassus?", a: "Yes. The Knights Hospitaller reused stones from the ruined Mausoleum — one of the Seven Wonders of the Ancient World — to build the castle. The Mausoleum site itself lies a short walk uphill in town and pairs perfectly with a castle visit." },
+          { q: "Do I need a guide for Bodrum Castle?", a: "You can wander alone, but the castle blends Crusader, Ottoman and ancient maritime history that is easy to miss. A licensed VibeGuide local guide ties the towers, the shipwrecks and the Mausoleum into one clear story." },
+        ],
+        ctaTitle: "See Bodrum Castle with a local",
+        ...BOD.en,
+      },
+      de: {
+        name: "Burg von Bodrum",
+        metaTitle: "Burg von Bodrum & Unterwassermuseum: Touren mit lokalen Guides",
+        metaDescription:
+          "Entdecke die Burg von Bodrum, die Festung der Johanniter über dem Hafen, mit einem lizenzierten lokalen Guide. Kreuzfahrertürme, das Museum für Unterwasserarchäologie und das Uluburun-Wrack.",
+        intro: [
+          "Die Burg von Bodrum, die Burg des heiligen Petrus, wacht wie eine steinerne Krone über dem türkisfarbenen Hafen der Stadt. Die Johanniter begannen im frühen 15. Jahrhundert mit dem Bau und schleppten Blöcke vom zerstörten Mausoleum von Halikarnassos herauf — einem der Sieben Weltwunder der Antike —, sodass Bruchstücke des Grabmals eines antiken Königs in den Mauern einer Kreuzfahrerfestung stecken.",
+          "Ihre Türme tragen bis heute die Namen der Nationen, die sie errichteten — der englische, der französische, der italienische, der deutsche und der Schlangenturm — und jeder erhebt sich über dem Yachthafen mit weitem Blick über die Ägäis. Im Inneren beherbergt die Burg das berühmte Museum für Unterwasserarchäologie, in dem antike Schiffswracks, Amphoren und die Schätze des bronzezeitlichen Uluburun-Wracks die Geschichte des Meeres erzählen. Mit einem lokalen VibeGuide-Experten fügen sich die Schichten aus Kreuzfahrer-, osmanischer und antiker Geschichte zusammen.",
+        ],
+        highlights: [
+          { title: "Die Türme der Ritter", desc: "Der englische, französische, italienische, deutsche und der Schlangenturm erheben sich über dem Hafen, im 15. Jahrhundert von den verschiedenen Zungen des Johanniterordens erbaut." },
+          { title: "Museum für Unterwasserarchäologie", desc: "Eines der bedeutendsten seiner Art, mit antiken Schiffswracks, Amphoren und Glas, geborgen vom Grund der Ägäis." },
+          { title: "Das Uluburun-Wrack", desc: "Funde eines Handelsschiffs aus dem 14. Jahrhundert v. Chr. — Kupfer, Barren, Gold und exotische Fracht — offenbaren den bronzezeitlichen Handel über das gesamte östliche Mittelmeer." },
+        ],
+        planningHeading: "Deine Besuchsplanung",
+        planningParagraphs: [
+          "Die Burg von Bodrum liegt direkt auf der Halbinsel zwischen den beiden Buchten der Stadt, sodass sie von fast überall im Zentrum nur einen kurzen, malerischen Spaziergang am Yachthafen entfernt ist. Die meisten Besucher erreichen Bodrum auf der Straße vom Flughafen Milas–Bodrum oder per Fähre von der umliegenden Küste und den nahen griechischen Inseln — die Burg ist über dem Hafen nicht zu übersehen.",
+          "Der Sommer an der Ägäis ist heiß und voll, daher sind das späte Frühjahr und der frühe Herbst die mildesten und ruhigsten Zeiten, um die Wehrgänge zu erklimmen. Morgens fällt das weichste Licht für Fotos über dem Yachthafen, und die Meeresbrise macht die offenen Terrassen selbst in der Hochsaison angenehm. Trage festes Schuhwerk — die Burg steht auf Fels, mit Stufen, Rampen und unebenem Boden überall.",
+          "Der Eintritt in die Burg und ihr Museum für Unterwasserarchäologie ist kostenpflichtig, und die Anlage vereint Festung, mehrere Türme und Museumssäle in einem Besuch. Ein lizenzierter lokaler VibeGuide-Guide hilft dir, das Ganze zu verstehen — er verbindet die Kreuzfahrertürme mit den versunkenen Frachten darunter und ergänzt den kurzen Aufstieg zu den Resten des Mausoleums von Halikarnassos, jenes antiken Weltwunders, dessen Steine die Mauern mit erbauten.",
+        ],
+        faqs: [
+          { q: "Lohnt sich ein Besuch der Burg von Bodrum?", a: "Auf jeden Fall. Sie ist eine der am besten erhaltenen Kreuzfahrerburgen im Mittelmeer und zugleich Heimat eines weltberühmten Museums für Unterwasserarchäologie — umrahmt von einigen der schönsten Hafenblicke der Ägäisküste." },
+          { q: "Was gibt es in der Burg von Bodrum zu sehen?", a: "Die Burg beherbergt das Museum für Unterwasserarchäologie mit antiken Schiffswracks, Tausenden von Amphoren, Glas und den Schätzen des bronzezeitlichen Uluburun-Wracks sowie die historischen Türme England, Frankreich, Italien, Deutschland und den Schlangenturm." },
+          { q: "Steht die Burg von Bodrum mit dem Mausoleum von Halikarnassos in Verbindung?", a: "Ja. Die Johanniter verwendeten Steine des zerstörten Mausoleums — eines der Sieben Weltwunder der Antike — für den Bau der Burg. Die Stätte des Mausoleums liegt einen kurzen Fußweg bergauf in der Stadt und lässt sich ideal mit einem Burgbesuch verbinden." },
+          { q: "Brauche ich einen Guide für die Burg von Bodrum?", a: "Du kannst allein umhergehen, aber die Burg vereint Kreuzfahrer-, osmanische und antike Seefahrtsgeschichte, die man leicht übersieht. Ein lizenzierter lokaler VibeGuide-Guide verbindet Türme, Schiffswracks und Mausoleum zu einer klaren Erzählung." },
+        ],
+        ctaTitle: "Erlebe die Burg von Bodrum mit einem Local",
+        ...BOD.de,
+      },
+      ru: {
+        name: "Замок Бодрум",
+        metaTitle: "Замок Бодрум и Музей подводной археологии: экскурсии с местными гидами",
+        metaDescription:
+          "Исследуйте замок Бодрум, крепость госпитальеров над гаванью, с лицензированным местным гидом. Башни крестоносцев, Музей подводной археологии и корабль Улубурун.",
+        intro: [
+          "Замок Бодрум, замок Святого Петра, стоит над бирюзовой гаванью города словно каменная корона. Госпитальеры начали возводить его в начале XV века, поднимая наверх блоки от разрушенного Мавзолея в Галикарнасе — одного из семи чудес света древности, — так что фрагменты гробницы античного царя вплетены в стены крепости крестоносцев.",
+          "Его башни до сих пор носят имена народов, которые их построили — Английская, Французская, Итальянская, Немецкая и Змеиная, — и каждая возвышается над мариной с широким видом на Эгейское море. Внутри замок хранит знаменитый Музей подводной археологии, где древние кораблекрушения, амфоры и сокровища бронзового века с корабля Улубурун рассказывают историю моря. С местным экспертом VibeGuide слои истории крестоносцев, османов и античности складываются в единую картину.",
+        ],
+        highlights: [
+          { title: "Башни рыцарей", desc: "Английская, Французская, Итальянская, Немецкая и Змеиная башни возвышаются над гаванью, построенные в XV веке разными языками ордена госпитальеров." },
+          { title: "Музей подводной археологии", desc: "Один из лучших в своём роде — здесь выставлены древние кораблекрушения, амфоры и стекло, поднятые со дна Эгейского моря." },
+          { title: "Корабль Улубурун", desc: "Находки с торгового судна XIV века до н. э. — медь, слитки, золото и экзотический груз — раскрывают торговлю бронзового века по всему восточному Средиземноморью." },
+        ],
+        planningHeading: "Планирование визита",
+        planningParagraphs: [
+          "Замок Бодрум расположен прямо на полуострове между двумя бухтами города, так что почти из любой точки центра до него ведёт короткая живописная прогулка вдоль марины. Большинство гостей приезжают в Бодрум по дороге из аэропорта Милас–Бодрум или на пароме с окрестного побережья и ближайших греческих островов, и замок невозможно не заметить на фоне гавани.",
+          "Лето на Эгейском море жаркое и людное, поэтому самое мягкое и спокойное время подниматься на стены — поздняя весна и ранняя осень. Утром свет самый мягкий для снимков над мариной, а морской бриз делает открытые террасы приятными даже в разгар сезона. Наденьте прочную обувь — замок стоит на скале, повсюду ступени, пандусы и неровная поверхность.",
+          "Вход в замок и его Музей подводной археологии платный, и осмотр объединяет крепость, несколько башен и музейные залы в одно посещение. Лицензированный местный гид VibeGuide поможет во всём разобраться — свяжет башни крестоносцев с затонувшими грузами внизу и добавит короткий подъём к руинам Мавзолея в Галикарнасе, того самого чуда света, чьи камни легли в стены замка.",
+        ],
+        faqs: [
+          { q: "Стоит ли посещать замок Бодрум?", a: "Безусловно. Это одна из наиболее сохранившихся крепостей крестоносцев в Средиземноморье и одновременно дом для Музея подводной археологии мирового уровня — и всё это в обрамлении одних из красивейших видов на гавань Эгейского побережья." },
+          { q: "Что находится внутри замка Бодрум?", a: "В замке размещён Музей подводной археологии с древними кораблекрушениями, тысячами амфор, стеклом и сокровищами корабля Улубурун бронзового века, а также исторические Английская, Французская, Итальянская, Немецкая и Змеиная башни." },
+          { q: "Связан ли замок Бодрум с Мавзолеем в Галикарнасе?", a: "Да. Госпитальеры использовали камни разрушенного Мавзолея — одного из семи чудес света древности — для постройки замка. Сам участок Мавзолея находится в коротком подъёме в городе и прекрасно сочетается с визитом в замок." },
+          { q: "Нужен ли гид для замка Бодрум?", a: "Можно гулять и самостоятельно, но замок соединяет историю крестоносцев, османов и античного мореплавания, которую легко упустить. Лицензированный местный гид VibeGuide связывает башни, кораблекрушения и Мавзолей в одну ясную историю." },
+        ],
+        ctaTitle: "Увидеть замок Бодрум с местным гидом",
+        ...BOD.ru,
+      },
+      ar: {
+        name: "قلعة بودروم",
+        metaTitle: "قلعة بودروم ومتحف الآثار تحت الماء: جولات مع مرشدين محليين",
+        metaDescription:
+          "استكشف قلعة بودروم، حصن فرسان الإسبتارية فوق الميناء، مع مرشد محلي مرخّص. أبراج الصليبيين، ومتحف الآثار تحت الماء، وحطام سفينة أولوبورون.",
+        intro: [
+          "تقف قلعة بودروم، قلعة القديس بطرس، حارسةً فوق الميناء الفيروزي للمدينة كأنها تاج من حجر. بدأ فرسان الإسبتارية ببنائها في أوائل القرن الخامس عشر، ناقلين إليها كتلًا من ضريح هاليكارناسوس المدمّر — أحد عجائب الدنيا السبع في العالم القديم — حتى إن شظايا من قبر ملك قديم صارت جزءًا من جدران حصن صليبي.",
+          "لا تزال أبراجها تحمل أسماء الأمم التي شيّدتها — البرج الإنجليزي والفرنسي والإيطالي والألماني وبرج الأفعى — ويرتفع كل منها فوق المرسى بإطلالات واسعة على بحر إيجه. وفي داخلها تضم القلعة متحف الآثار تحت الماء الشهير، حيث تروي حطام السفن القديمة والجرار والكنوز المنتشلة من سفينة أولوبورون من العصر البرونزي حكاية البحر. ومع خبير محلي من VibeGuide تتضح طبقات التاريخ الصليبي والعثماني والقديم." ,
+        ],
+        highlights: [
+          { title: "أبراج الفرسان", desc: "يرتفع كل من البرج الإنجليزي والفرنسي والإيطالي والألماني وبرج الأفعى فوق الميناء، شيّدها في القرن الخامس عشر مختلف ألسنة رهبانية الإسبتارية." },
+          { title: "متحف الآثار تحت الماء", desc: "من أرقى المتاحف من نوعه، يعرض حطام السفن القديمة والجرار والزجاج المنتشل من قاع بحر إيجه." },
+          { title: "حطام أولوبورون", desc: "مكتشفات من سفينة تجارية تعود للقرن الرابع عشر قبل الميلاد — نحاس وسبائك وذهب وبضائع نادرة — تكشف عن تجارة العصر البرونزي عبر شرق المتوسط بأكمله." },
+        ],
+        planningHeading: "التخطيط لزيارتك",
+        planningParagraphs: [
+          "تقع قلعة بودروم مباشرة على شبه الجزيرة بين خليجي المدينة، فمن أي مكان تقريبًا في المركز تبعد مسيرًا قصيرًا وخلابًا بمحاذاة المرسى. يصل معظم الزوار إلى بودروم برًا من مطار ميلاس–بودروم، أو بالعبّارة من السواحل المجاورة والجزر اليونانية القريبة، ولا يمكن أن تفوتك القلعة على الأفق فوق الميناء.",
+          "الصيف على بحر إيجه حار ومزدحم، لذا فإن أفضل الأوقات وأهدأها لصعود الأسوار هي أواخر الربيع وأوائل الخريف. يمنح الصباح أعذب ضوء للصور فوق المرسى، ويجعل نسيم البحر الشرفات المكشوفة لطيفة حتى في ذروة الموسم. انتعل حذاءً متينًا — فالقلعة مبنية على الصخر، وفيها درجات ومنحدرات وأرض غير مستوية في كل مكان.",
+          "الدخول إلى القلعة ومتحف الآثار تحت الماء مقابل تذكرة، ويجمع الموقع بين حصن وعدة أبراج وقاعات متحف في زيارة واحدة. يستطيع مرشد VibeGuide المحلي المرخّص أن يساعدك على فهم كل ذلك — يربط أبراج الصليبيين بالحمولات الغارقة في الأسفل، ويضيف الصعود القصير إلى بقايا ضريح هاليكارناسوس، تلك الأعجوبة القديمة التي أسهمت حجارتها في بناء الأسوار.",
+        ],
+        faqs: [
+          { q: "هل تستحق قلعة بودروم الزيارة؟", a: "بلا شك. فهي من أفضل القلاع الصليبية المحفوظة في المتوسط، وتضم في الوقت نفسه متحفًا عالميًا للآثار تحت الماء، وكل ذلك محاط بأجمل إطلالات الميناء على ساحل بحر إيجه." },
+          { q: "ماذا يوجد داخل قلعة بودروم؟", a: "تضم القلعة متحف الآثار تحت الماء بما فيه من حطام سفن قديمة وآلاف الجرار والزجاج وكنوز سفينة أولوبورون من العصر البرونزي، إلى جانب الأبراج التاريخية: الإنجليزي والفرنسي والإيطالي والألماني وبرج الأفعى." },
+          { q: "هل ترتبط قلعة بودروم بضريح هاليكارناسوس؟", a: "نعم. أعاد فرسان الإسبتارية استخدام حجارة الضريح المدمّر — أحد عجائب الدنيا السبع في العالم القديم — في بناء القلعة. ويقع موقع الضريح نفسه على مسيرة قصيرة صعودًا في المدينة ويتكامل تمامًا مع زيارة القلعة." },
+          { q: "هل أحتاج إلى مرشد لزيارة قلعة بودروم؟", a: "يمكنك التجوّل وحدك، لكن القلعة تمزج تاريخ الصليبيين والعثمانيين والملاحة القديمة الذي يسهل تفويته. يربط مرشد VibeGuide المحلي المرخّص بين الأبراج وحطام السفن والضريح في حكاية واحدة واضحة." },
+        ],
+        ctaTitle: "زر قلعة بودروم مع مرشد محلي",
+        ...BOD.ar,
+      },
+      es: {
+        name: "Castillo de Bodrum",
+        metaTitle: "Castillo de Bodrum y Museo de Arqueología Submarina con guías locales",
+        metaDescription:
+          "Explora el Castillo de Bodrum, la fortaleza de los Caballeros Hospitalarios sobre el puerto, con un guía local titulado. Torres cruzadas, el Museo de Arqueología Submarina y el pecio de Uluburun.",
+        intro: [
+          "El Castillo de Bodrum, el Castillo de San Pedro, vigila el puerto turquesa de la ciudad como una corona de piedra. Los Caballeros Hospitalarios empezaron a levantarlo a comienzos del siglo XV, subiendo bloques del arruinado Mausoleo de Halicarnaso — una de las Siete Maravillas del Mundo Antiguo —, de modo que fragmentos de la tumba de un rey antiguo quedaron entretejidos en los muros de una fortaleza cruzada.",
+          "Sus torres aún llevan los nombres de las naciones que las construyeron — la inglesa, la francesa, la italiana, la alemana y la Torre de la Serpiente — y cada una se alza sobre el puerto deportivo con amplias vistas del Egeo. En su interior, el castillo alberga el célebre Museo de Arqueología Submarina, donde antiguos pecios, ánforas y los tesoros del naufragio de Uluburun de la Edad del Bronce cuentan la historia del mar. Con un experto local de VibeGuide, las capas cruzada, otomana y antigua encajan en su sitio.",
+        ],
+        highlights: [
+          { title: "Las torres de los Caballeros", desc: "Las torres inglesa, francesa, italiana, alemana y de la Serpiente se alzan sobre el puerto, construidas en el siglo XV por las distintas lenguas de la orden Hospitalaria." },
+          { title: "Museo de Arqueología Submarina", desc: "Uno de los mejores de su clase, con antiguos pecios, ánforas y vidrio rescatados del fondo del Egeo." },
+          { title: "El pecio de Uluburun", desc: "Los hallazgos de un barco mercante del siglo XIV a. C. — cobre, lingotes, oro y cargamento exótico — revelan el comercio de la Edad del Bronce por todo el Mediterráneo oriental." },
+        ],
+        planningHeading: "Planifica tu visita",
+        planningParagraphs: [
+          "El Castillo de Bodrum se asienta justo en la península entre las dos bahías de la ciudad, así que desde casi cualquier punto del centro es un paseo corto y pintoresco junto al puerto deportivo. La mayoría de los visitantes llegan a Bodrum por carretera desde el aeropuerto de Milas–Bodrum, o en ferry desde la costa cercana y las islas griegas próximas, y el castillo es imposible de perder en el perfil sobre el puerto.",
+          "El verano en el Egeo es caluroso y concurrido, así que las épocas más suaves y tranquilas para subir a las murallas son finales de primavera y principios de otoño. Las mañanas ofrecen la luz más suave para fotografiar el puerto deportivo, y la brisa marina hace agradables las terrazas abiertas incluso en temporada alta. Lleva calzado resistente: el castillo se asienta sobre roca, con escalones, rampas y suelo irregular por todas partes.",
+          "La entrada al castillo y a su Museo de Arqueología Submarina requiere ticket, y el recinto combina fortaleza, varias torres y salas de museo en una sola visita. Un guía local titulado de VibeGuide puede ayudarte a entenderlo todo — enlazando las torres cruzadas con los cargamentos hundidos abajo y añadiendo el corto ascenso hasta los restos del Mausoleo de Halicarnaso, la maravilla antigua cuyas piedras ayudaron a levantar los muros.",
+        ],
+        faqs: [
+          { q: "¿Merece la pena visitar el Castillo de Bodrum?", a: "Sin duda. Es uno de los castillos cruzados mejor conservados del Mediterráneo y a la vez sede de un Museo de Arqueología Submarina de nivel mundial, todo ello enmarcado por algunas de las mejores vistas de puerto de la costa del Egeo." },
+          { q: "¿Qué hay dentro del Castillo de Bodrum?", a: "El castillo guarda el Museo de Arqueología Submarina, con antiguos pecios, miles de ánforas, vidrio y los tesoros del naufragio de Uluburun de la Edad del Bronce, junto a las históricas torres inglesa, francesa, italiana, alemana y de la Serpiente." },
+          { q: "¿Está el Castillo de Bodrum relacionado con el Mausoleo de Halicarnaso?", a: "Sí. Los Caballeros Hospitalarios reutilizaron piedras del arruinado Mausoleo — una de las Siete Maravillas del Mundo Antiguo — para construir el castillo. El propio yacimiento del Mausoleo queda a un corto paseo cuesta arriba en la ciudad y combina perfectamente con la visita al castillo." },
+          { q: "¿Necesito un guía para el Castillo de Bodrum?", a: "Puedes recorrerlo por tu cuenta, pero el castillo mezcla historia cruzada, otomana y marítima antigua que es fácil pasar por alto. Un guía local titulado de VibeGuide une las torres, los pecios y el Mausoleo en un relato claro." },
+        ],
+        ctaTitle: "Visita el Castillo de Bodrum con un local",
+        ...BOD.es,
+      },
+      fr: {
+        name: "Château de Bodrum",
+        metaTitle: "Château de Bodrum & Musée d'archéologie sous-marine avec guides locaux",
+        metaDescription:
+          "Explorez le Château de Bodrum, la forteresse des Hospitaliers au-dessus du port, avec un guide local agréé. Tours des croisés, Musée d'archéologie sous-marine et l'épave d'Uluburun.",
+        intro: [
+          "Le Château de Bodrum, le château Saint-Pierre, veille sur le port turquoise de la ville telle une couronne de pierre. Les Hospitaliers commencèrent à l'élever au début du XVe siècle, hissant des blocs du Mausolée d'Halicarnasse en ruine — l'une des Sept Merveilles du monde antique —, si bien que des fragments du tombeau d'un roi antique se retrouvent enchâssés dans les murs d'une forteresse de croisés.",
+          "Ses tours portent encore les noms des nations qui les bâtirent — anglaise, française, italienne, allemande et la tour du Serpent — et chacune domine la marina avec de vastes vues sur la mer Égée. À l'intérieur, le château abrite le célèbre Musée d'archéologie sous-marine, où d'antiques épaves, des amphores et les trésors de l'épave d'Uluburun de l'âge du bronze racontent l'histoire de la mer. Avec un expert local VibeGuide, les strates croisée, ottomane et antique se mettent en place.",
+        ],
+        highlights: [
+          { title: "Les tours des Chevaliers", desc: "Les tours anglaise, française, italienne, allemande et du Serpent dominent le port, bâties au XVe siècle par les différentes langues de l'ordre des Hospitaliers." },
+          { title: "Musée d'archéologie sous-marine", desc: "L'un des plus beaux de son genre, présentant d'antiques épaves, des amphores et du verre remontés du fond de la mer Égée." },
+          { title: "L'épave d'Uluburun", desc: "Les trouvailles d'un navire marchand du XIVe siècle av. J.-C. — cuivre, lingots, or et cargaison exotique — révèlent le commerce de l'âge du bronze à travers toute la Méditerranée orientale." },
+        ],
+        planningHeading: "Préparer votre visite",
+        planningParagraphs: [
+          "Le Château de Bodrum se dresse sur la presqu'île entre les deux baies de la ville, si bien que de presque partout dans le centre, il n'est qu'à une courte et jolie marche le long de la marina. La plupart des visiteurs arrivent à Bodrum par la route depuis l'aéroport de Milas–Bodrum, ou en ferry depuis la côte alentour et les îles grecques voisines, et le château est impossible à manquer sur la ligne d'horizon au-dessus du port.",
+          "L'été sur l'Égée est chaud et animé : les moments les plus doux et les plus calmes pour gravir les remparts sont donc la fin du printemps et le début de l'automne. Le matin offre la lumière la plus douce pour photographier la marina, et la brise marine rend les terrasses ouvertes agréables même en haute saison. Portez de bonnes chaussures — le château est bâti sur le roc, avec marches, rampes et sols inégaux partout.",
+          "L'entrée au château et à son Musée d'archéologie sous-marine est payante, et le site réunit une forteresse, plusieurs tours et des salles de musée en une seule visite. Un guide local agréé VibeGuide vous aide à tout comprendre — reliant les tours des croisés aux cargaisons englouties en contrebas, et ajoutant la courte montée jusqu'aux vestiges du Mausolée d'Halicarnasse, cette merveille antique dont les pierres ont contribué à bâtir les murs.",
+        ],
+        faqs: [
+          { q: "Le Château de Bodrum vaut-il la visite ?", a: "Assurément. C'est l'un des châteaux de croisés les mieux conservés de Méditerranée et aussi le siège d'un Musée d'archéologie sous-marine de classe mondiale, le tout entouré de quelques-unes des plus belles vues de port de la côte égéenne." },
+          { q: "Qu'y a-t-il à l'intérieur du Château de Bodrum ?", a: "Le château abrite le Musée d'archéologie sous-marine, avec d'antiques épaves, des milliers d'amphores, du verre et les trésors de l'épave d'Uluburun de l'âge du bronze, aux côtés des tours historiques anglaise, française, italienne, allemande et du Serpent." },
+          { q: "Le Château de Bodrum est-il lié au Mausolée d'Halicarnasse ?", a: "Oui. Les Hospitaliers ont réemployé les pierres du Mausolée en ruine — l'une des Sept Merveilles du monde antique — pour bâtir le château. Le site du Mausolée se trouve à une courte montée dans la ville et se marie parfaitement avec la visite du château." },
+          { q: "Ai-je besoin d'un guide pour le Château de Bodrum ?", a: "Vous pouvez flâner seul, mais le château mêle histoire croisée, ottomane et maritime antique qu'il est facile de manquer. Un guide local agréé VibeGuide relie les tours, les épaves et le Mausolée en un récit clair." },
+        ],
+        ctaTitle: "Visitez le Château de Bodrum avec un local",
+        ...BOD.fr,
+      },
+      el: {
+        name: "Κάστρο του Μπόντρουμ",
+        metaTitle: "Κάστρο του Μπόντρουμ & Μουσείο Υποβρύχιας Αρχαιολογίας με ντόπιους ξεναγούς",
+        metaDescription:
+          "Εξερεύνησε το Κάστρο του Μπόντρουμ, το φρούριο των Ιπποτών του Αγίου Ιωάννη πάνω από το λιμάνι, με πιστοποιημένο ντόπιο ξεναγό. Πύργοι των σταυροφόρων, Μουσείο Υποβρύχιας Αρχαιολογίας και το ναυάγιο του Ουλουμπουρούν.",
+        intro: [
+          "Το Κάστρο του Μπόντρουμ, το Κάστρο του Αγίου Πέτρου, φρουρεί το τιρκουάζ λιμάνι της πόλης σαν πέτρινο στέμμα. Οι Ιππότες του Αγίου Ιωάννη άρχισαν να το χτίζουν στις αρχές του 15ου αιώνα, ανεβάζοντας ογκόλιθους από το ερειπωμένο Μαυσωλείο της Αλικαρνασσού — ένα από τα Επτά Θαύματα του αρχαίου κόσμου —, έτσι που θραύσματα του τάφου ενός αρχαίου βασιλιά είναι υφασμένα στα τείχη ενός σταυροφορικού φρουρίου.",
+          "Οι πύργοι του φέρουν ακόμη τα ονόματα των εθνών που τους έχτισαν — ο Αγγλικός, ο Γαλλικός, ο Ιταλικός, ο Γερμανικός και ο Πύργος του Φιδιού — και ο καθένας υψώνεται πάνω από τη μαρίνα με πανοραμική θέα στο Αιγαίο. Στο εσωτερικό του, το κάστρο στεγάζει το φημισμένο Μουσείο Υποβρύχιας Αρχαιολογίας, όπου αρχαία ναυάγια, αμφορείς και οι θησαυροί του ναυαγίου του Ουλουμπουρούν της Εποχής του Χαλκού αφηγούνται την ιστορία της θάλασσας. Με έναν ντόπιο ειδικό του VibeGuide, τα στρώματα της σταυροφορικής, οθωμανικής και αρχαίας ιστορίας μπαίνουν στη θέση τους.",
+        ],
+        highlights: [
+          { title: "Οι πύργοι των Ιπποτών", desc: "Ο Αγγλικός, ο Γαλλικός, ο Ιταλικός, ο Γερμανικός και ο Πύργος του Φιδιού υψώνονται πάνω από το λιμάνι, χτισμένοι τον 15ο αιώνα από τις διαφορετικές γλώσσες του Τάγματος του Αγίου Ιωάννη." },
+          { title: "Μουσείο Υποβρύχιας Αρχαιολογίας", desc: "Ένα από τα καλύτερα του είδους του, με αρχαία ναυάγια, αμφορείς και γυαλί ανασυρμένα από τον βυθό του Αιγαίου." },
+          { title: "Το ναυάγιο του Ουλουμπουρούν", desc: "Ευρήματα από ένα εμπορικό πλοίο του 14ου αιώνα π.Χ. — χαλκός, ράβδοι μετάλλου, χρυσός και εξωτικό φορτίο — αποκαλύπτουν το εμπόριο της Εποχής του Χαλκού σε όλη την ανατολική Μεσόγειο." },
+        ],
+        planningHeading: "Οργανώστε την επίσκεψή σας",
+        planningParagraphs: [
+          "Το Κάστρο του Μπόντρουμ βρίσκεται ακριβώς στη χερσόνησο ανάμεσα στους δύο κόλπους της πόλης, οπότε από σχεδόν οποιοδήποτε σημείο του κέντρου απέχει μια σύντομη, γραφική βόλτα κατά μήκος της μαρίνας. Οι περισσότεροι επισκέπτες φτάνουν στο Μπόντρουμ οδικώς από το αεροδρόμιο Μιλάς–Μπόντρουμ ή με φέρι από τη γύρω ακτή και τα κοντινά ελληνικά νησιά, και το κάστρο είναι αδύνατον να το χάσετε στον ορίζοντα πάνω από το λιμάνι.",
+          "Το καλοκαίρι στο Αιγαίο είναι ζεστό και πολυσύχναστο, γι' αυτό οι πιο ήπιες και ήσυχες εποχές για να ανεβείτε στις επάλξεις είναι το τέλος της άνοιξης και οι αρχές του φθινοπώρου. Το πρωί προσφέρει το πιο απαλό φως για φωτογραφίες πάνω από τη μαρίνα, και η θαλασσινή αύρα κάνει τις ανοιχτές βεράντες ευχάριστες ακόμη και στην αιχμή της σεζόν. Φορέστε γερά παπούτσια — το κάστρο είναι χτισμένο σε βράχο, με σκαλιά, ράμπες και ανώμαλο έδαφος παντού.",
+          "Η είσοδος στο κάστρο και στο Μουσείο Υποβρύχιας Αρχαιολογίας απαιτεί εισιτήριο, και ο χώρος συνδυάζει ένα φρούριο, αρκετούς πύργους και αίθουσες μουσείου σε μία επίσκεψη. Ένας αδειούχος ντόπιος ξεναγός της VibeGuide μπορεί να σας βοηθήσει να τα βγάλετε νόημα όλα — συνδέοντας τους πύργους των σταυροφόρων με τα βυθισμένα φορτία από κάτω και προσθέτοντας τη σύντομη ανηφόρα ως τα ερείπια του Μαυσωλείου της Αλικαρνασσού, εκείνο το αρχαίο θαύμα του οποίου οι πέτρες βοήθησαν να χτιστούν τα τείχη.",
+        ],
+        faqs: [
+          { q: "Αξίζει να επισκεφθείτε το Κάστρο του Μπόντρουμ;", a: "Απολύτως. Είναι ένα από τα καλύτερα διατηρημένα σταυροφορικά κάστρα της Μεσογείου και συνάμα στεγάζει ένα παγκόσμιας κλάσης Μουσείο Υποβρύχιας Αρχαιολογίας, όλα πλαισιωμένα από μερικές από τις ωραιότερες θέες λιμανιού στην ακτή του Αιγαίου." },
+          { q: "Τι υπάρχει μέσα στο Κάστρο του Μπόντρουμ;", a: "Το κάστρο φιλοξενεί το Μουσείο Υποβρύχιας Αρχαιολογίας, με αρχαία ναυάγια, χιλιάδες αμφορείς, γυαλί και τους θησαυρούς του ναυαγίου του Ουλουμπουρούν της Εποχής του Χαλκού, μαζί με τους ιστορικούς πύργους: Αγγλικό, Γαλλικό, Ιταλικό, Γερμανικό και του Φιδιού." },
+          { q: "Συνδέεται το Κάστρο του Μπόντρουμ με το Μαυσωλείο της Αλικαρνασσού;", a: "Ναι. Οι Ιππότες του Αγίου Ιωάννη ξαναχρησιμοποίησαν πέτρες από το ερειπωμένο Μαυσωλείο — ένα από τα Επτά Θαύματα του αρχαίου κόσμου — για να χτίσουν το κάστρο. Ο ίδιος ο χώρος του Μαυσωλείου βρίσκεται σε μια σύντομη ανηφόρα μέσα στην πόλη και ταιριάζει τέλεια με μια επίσκεψη στο κάστρο." },
+          { q: "Χρειάζομαι ξεναγό για το Κάστρο του Μπόντρουμ;", a: "Μπορείτε να περιπλανηθείτε μόνοι, αλλά το κάστρο συνδυάζει σταυροφορική, οθωμανική και αρχαία ναυτική ιστορία που εύκολα σας ξεφεύγει. Ένας αδειούχος ντόπιος ξεναγός της VibeGuide συνδέει τους πύργους, τα ναυάγια και το Μαυσωλείο σε μία καθαρή αφήγηση." },
+        ],
+        ctaTitle: "Δες το Κάστρο του Μπόντρουμ με έναν ντόπιο",
+        ...BOD.el,
+      },
+      tr: {
+        name: "Bodrum Kalesi",
+        metaTitle: "Bodrum Kalesi & Sualtı Arkeoloji Müzesi Turları | Yerel Rehberler",
+        metaDescription:
+          "Limanın üzerindeki St. Peter Şövalyeleri kalesini, lisanslı bir yerel rehberle keşfet. Haçlı kuleleri, Sualtı Arkeoloji Müzesi ve Uluburun batığı.",
+        intro: [
+          "Bodrum Kalesi, yani St. Peter Kalesi, kentin turkuaz limanını taştan bir taç gibi korur. Rodos (St. Jean) Şövalyeleri 15. yüzyılın başlarında inşasına başladı ve yıkık Halikarnas Mozolesi'nden — antik dünyanın Yedi Harikası'ndan biri — bloklar taşıdı; öyle ki antik bir kralın mezarından kalan parçalar bir Haçlı kalesinin duvarlarına işlendi.",
+          "Kuleleri hâlâ onları yapan ulusların adını taşır — İngiliz, Fransız, İtalyan, Alman ve Yılanlı Kule — ve her biri marina üzerinde Ege'ye açılan geniş manzaralarla yükselir. İçeride kale, ünlü Sualtı Arkeoloji Müzesi'ne ev sahipliği yapar; burada antik batıklar, amphoralar ve Tunç Çağı'na ait Uluburun batığının hazineleri denizin hikâyesini anlatır. Bir VibeGuide yerel uzmanıyla Haçlı, Osmanlı ve antik katmanlar yerli yerine oturur.",
+        ],
+        highlights: [
+          { title: "Şövalye Kuleleri", desc: "İngiliz, Fransız, İtalyan, Alman ve Yılanlı Kule limanın üzerinde yükselir; 15. yüzyılda Şövalye tarikatının farklı dilleri tarafından inşa edildi." },
+          { title: "Sualtı Arkeoloji Müzesi", desc: "Türünün en iyilerinden biri; Ege'nin dibinden çıkarılan antik batıkları, amphoraları ve cam eserleri sergiler." },
+          { title: "Uluburun Batığı", desc: "MÖ 14. yüzyıla ait bir ticaret gemisinin buluntuları — bakır, külçe, altın ve egzotik yük — Tunç Çağı'nda tüm Doğu Akdeniz ticaretini gözler önüne serer." },
+        ],
+        planningHeading: "Ziyaretinizi planlayın",
+        planningParagraphs: [
+          "Bodrum Kalesi, kentin iki koyu arasındaki yarımadanın tam üzerinde yer alır; bu yüzden merkezdeki hemen her noktadan marina boyunca kısa ve keyifli bir yürüyüşle ulaşılır. Ziyaretçilerin çoğu Bodrum'a Milas–Bodrum Havalimanı'ndan karayoluyla ya da çevre kıyılardan ve yakın Yunan adalarından feribotla gelir; kale, limanın üzerindeki siluette gözden kaçırılamaz.",
+          "Ege'de yaz sıcak ve kalabalıktır; bu nedenle surlara çıkmak için en ılıman ve sakin zamanlar ilkbahar sonu ile sonbahar başıdır. Sabahlar, marina üzerindeki fotoğraflar için en yumuşak ışığı verir ve deniz meltemi açık terasları yüksek sezonda bile ferah kılar. Sağlam ayakkabı giyin — kale kayalık üzerine kuruludur; her yerde basamak, rampa ve engebeli zemin vardır.",
+          "Kaleye ve Sualtı Arkeoloji Müzesi'ne giriş biletlidir; alan tek bir ziyarette bir kaleyi, birkaç kuleyi ve müze salonlarını bir araya getirir. Lisanslı bir VibeGuide yerel rehberi her şeyi anlamlandırmanıza yardımcı olur — Haçlı kulelerini aşağıdaki batık yüklerle ilişkilendirir ve kentin yokuş yukarısındaki Halikarnas Mozolesi kalıntılarına yapılacak kısa yürüyüşü ekler; duvarların yapımına taşları katkı sunan o antik harikaya.",
+        ],
+        faqs: [
+          { q: "Bodrum Kalesi görülmeye değer mi?", a: "Kesinlikle. Akdeniz'in en iyi korunmuş Haçlı kalelerinden biri olmasının yanı sıra dünya çapında bir Sualtı Arkeoloji Müzesi'ne ev sahipliği yapar; hepsi Ege kıyısının en güzel liman manzaralarıyla çevrilidir." },
+          { q: "Bodrum Kalesi'nin içinde ne var?", a: "Kalede, antik batıklar, binlerce amphora, cam eserler ve Tunç Çağı Uluburun batığının hazineleriyle Sualtı Arkeoloji Müzesi bulunur; ayrıca tarihi İngiliz, Fransız, İtalyan, Alman ve Yılanlı kuleler yer alır." },
+          { q: "Bodrum Kalesi'nin Halikarnas Mozolesi ile bağlantısı var mı?", a: "Evet. Şövalyeler kaleyi inşa ederken yıkık Mozole'nin — antik dünyanın Yedi Harikası'ndan biri — taşlarını yeniden kullandı. Mozole alanının kendisi kentte kısa bir yokuş yürüyüşü mesafesindedir ve kale ziyaretiyle mükemmel bütünleşir." },
+          { q: "Bodrum Kalesi için rehbere ihtiyacım var mı?", a: "Tek başınıza gezebilirsiniz, ama kale kolayca gözden kaçan Haçlı, Osmanlı ve antik denizcilik tarihini bir araya getirir. Lisanslı bir VibeGuide yerel rehberi kuleleri, batıkları ve Mozole'yi tek ve net bir hikâyede birleştirir." },
+        ],
+        ctaTitle: "Bodrum Kalesi'ni bir yerelle gez",
+        ...BOD.tr,
+      },
+      it: {
+        name: "Castello di Bodrum",
+        metaTitle: "Castello di Bodrum e Museo di Archeologia Subacquea con guide locali",
+        metaDescription:
+          "Esplora il Castello di Bodrum, la fortezza dei Cavalieri Ospitalieri sopra il porto, con una guida locale abilitata. Torri crociate, il Museo di Archeologia Subacquea e il relitto di Uluburun.",
+        intro: [
+          "Il Castello di Bodrum, il Castello di San Pietro, veglia sul porto turchese della città come una corona di pietra. I Cavalieri Ospitalieri cominciarono a innalzarlo agli inizi del XV secolo, trascinando in alto blocchi dal Mausoleo di Alicarnasso in rovina — una delle Sette Meraviglie del mondo antico —, così che frammenti della tomba di un re antico sono intessuti nelle mura di una fortezza crociata.",
+          "Le sue torri portano ancora i nomi delle nazioni che le costruirono — inglese, francese, italiana, tedesca e la Torre del Serpente — e ciascuna si erge sul porticciolo con ampie vedute sull'Egeo. All'interno, il castello ospita il celebre Museo di Archeologia Subacquea, dove antichi relitti, anfore e i tesori del relitto di Uluburun dell'età del bronzo raccontano la storia del mare. Con un esperto locale VibeGuide, gli strati crociato, ottomano e antico trovano il loro posto.",
+        ],
+        highlights: [
+          { title: "Le torri dei Cavalieri", desc: "Le torri inglese, francese, italiana, tedesca e del Serpente si ergono sul porto, costruite nel XV secolo dalle diverse lingue dell'ordine Ospitaliero." },
+          { title: "Museo di Archeologia Subacquea", desc: "Uno dei migliori nel suo genere, espone antichi relitti, anfore e vetri recuperati dal fondo dell'Egeo." },
+          { title: "Il relitto di Uluburun", desc: "I reperti di una nave mercantile del XIV secolo a.C. — rame, lingotti, oro e carico esotico — rivelano il commercio dell'età del bronzo in tutto il Mediterraneo orientale." },
+        ],
+        planningHeading: "Pianifica la tua visita",
+        planningParagraphs: [
+          "Il Castello di Bodrum sorge proprio sulla penisola tra le due baie della città, così da quasi ogni punto del centro è una breve e panoramica passeggiata lungo il porticciolo. La maggior parte dei visitatori arriva a Bodrum su strada dall'aeroporto di Milas–Bodrum, o in traghetto dalla costa circostante e dalle vicine isole greche, e il castello è impossibile da non notare nel profilo sopra il porto.",
+          "L'estate sull'Egeo è calda e affollata, perciò i periodi più miti e tranquilli per salire sui bastioni sono la tarda primavera e l'inizio dell'autunno. Le mattine offrono la luce più morbida per fotografare il porticciolo, e la brezza marina rende gradevoli le terrazze aperte anche in alta stagione. Indossa scarpe robuste — il castello è costruito sulla roccia, con gradini, rampe e terreno irregolare ovunque.",
+          "L'ingresso al castello e al suo Museo di Archeologia Subacquea è a pagamento, e il sito unisce una fortezza, diverse torri e sale museali in un'unica visita. Una guida locale abilitata di VibeGuide può aiutarti a dare senso a tutto — collegando le torri crociate ai carichi affondati sottostanti e aggiungendo la breve salita ai resti del Mausoleo di Alicarnasso, l'antica meraviglia le cui pietre contribuirono a costruire le mura.",
+        ],
+        faqs: [
+          { q: "Vale la pena visitare il Castello di Bodrum?", a: "Assolutamente sì. È uno dei castelli crociati meglio conservati del Mediterraneo e insieme sede di un Museo di Archeologia Subacquea di livello mondiale, il tutto incorniciato da alcune delle più belle vedute di porto della costa egea." },
+          { q: "Cosa c'è dentro il Castello di Bodrum?", a: "Il castello custodisce il Museo di Archeologia Subacquea, con antichi relitti, migliaia di anfore, vetri e i tesori del relitto di Uluburun dell'età del bronzo, accanto alle storiche torri inglese, francese, italiana, tedesca e del Serpente." },
+          { q: "Il Castello di Bodrum è legato al Mausoleo di Alicarnasso?", a: "Sì. I Cavalieri Ospitalieri riutilizzarono le pietre del Mausoleo in rovina — una delle Sette Meraviglie del mondo antico — per costruire il castello. Il sito del Mausoleo si trova a una breve salita in città e si abbina alla perfezione con la visita al castello." },
+          { q: "Serve una guida per il Castello di Bodrum?", a: "Puoi girarlo da solo, ma il castello intreccia storia crociata, ottomana e marittima antica che è facile lasciarsi sfuggire. Una guida locale abilitata di VibeGuide lega le torri, i relitti e il Mausoleo in un racconto chiaro." },
+        ],
+        ctaTitle: "Visita il Castello di Bodrum con un locale",
+        ...BOD.it,
+      },
+      pl: {
+        name: "Zamek w Bodrum",
+        metaTitle: "Zamek w Bodrum i Muzeum Archeologii Podwodnej z lokalnymi przewodnikami",
+        metaDescription:
+          "Odkryj Zamek w Bodrum, twierdzę joannitów nad portem, z licencjonowanym lokalnym przewodnikiem. Wieże krzyżowców, Muzeum Archeologii Podwodnej i wrak z Uluburun.",
+        intro: [
+          "Zamek w Bodrum, Zamek Świętego Piotra, strzeże turkusowego portu miasta niczym kamienna korona. Joannici zaczęli go wznosić na początku XV wieku, wciągając bloki z ruin Mauzoleum w Halikarnasie — jednego z siedmiu cudów świata starożytnego — tak że fragmenty grobowca starożytnego króla wplecione są w mury krzyżowej twierdzy.",
+          "Jego wieże wciąż noszą imiona narodów, które je zbudowały — Angielska, Francuska, Włoska, Niemiecka i Wieża Węża — a każda wznosi się nad mariną z rozległym widokiem na Morze Egejskie. Wewnątrz zamek mieści słynne Muzeum Archeologii Podwodnej, gdzie starożytne wraki, amfory i skarby z wraku z Uluburun z epoki brązu opowiadają historię morza. Z lokalnym ekspertem VibeGuide warstwy krzyżowa, osmańska i antyczna układają się w całość.",
+        ],
+        highlights: [
+          { title: "Wieże Rycerzy", desc: "Wieża Angielska, Francuska, Włoska, Niemiecka i Wieża Węża wznoszą się nad portem, zbudowane w XV wieku przez różne języki zakonu joannitów." },
+          { title: "Muzeum Archeologii Podwodnej", desc: "Jedno z najlepszych tego rodzaju, prezentuje starożytne wraki, amfory i szkło wydobyte z dna Morza Egejskiego." },
+          { title: "Wrak z Uluburun", desc: "Znaleziska ze statku handlowego z XIV wieku p.n.e. — miedź, sztaby, złoto i egzotyczny ładunek — odsłaniają handel epoki brązu w całej wschodniej części Morza Śródziemnego." },
+        ],
+        planningHeading: "Zaplanuj wizytę",
+        planningParagraphs: [
+          "Zamek w Bodrum stoi na półwyspie między dwiema zatokami miasta, więc z niemal każdego miejsca w centrum dzieli go krótki, malowniczy spacer wzdłuż mariny. Większość odwiedzających dociera do Bodrum drogą z lotniska Milas–Bodrum albo promem z okolicznego wybrzeża i pobliskich greckich wysp, a zamku nie sposób przeoczyć w panoramie nad portem.",
+          "Lato nad Morzem Egejskim jest gorące i tłoczne, więc najłagodniejsze i najspokojniejsze pory na wejście na mury to późna wiosna i wczesna jesień. Poranki dają najmiększe światło do zdjęć nad mariną, a morska bryza sprawia, że otwarte tarasy są przyjemne nawet w szczycie sezonu. Załóż solidne buty — zamek stoi na skale, wszędzie są schody, podjazdy i nierówny grunt.",
+          "Wstęp do zamku i jego Muzeum Archeologii Podwodnej jest biletowany, a teren łączy twierdzę, kilka wież i sale muzealne w jednej wizycie. Licencjonowany lokalny przewodnik VibeGuide pomoże to wszystko zrozumieć — łącząc wieże krzyżowców z zatopionymi ładunkami poniżej i dodając krótkie podejście do pozostałości Mauzoleum w Halikarnasie, tego antycznego cudu, którego kamienie pomogły wznieść mury.",
+        ],
+        faqs: [
+          { q: "Czy warto zwiedzić Zamek w Bodrum?", a: "Zdecydowanie tak. To jeden z najlepiej zachowanych zamków krzyżowców nad Morzem Śródziemnym, a zarazem siedziba światowej klasy Muzeum Archeologii Podwodnej, wszystko w otoczeniu jednych z najpiękniejszych widoków na port na wybrzeżu egejskim." },
+          { q: "Co znajduje się wewnątrz Zamku w Bodrum?", a: "Zamek mieści Muzeum Archeologii Podwodnej ze starożytnymi wrakami, tysiącami amfor, szkłem i skarbami z wraku z Uluburun z epoki brązu, obok historycznych wież: Angielskiej, Francuskiej, Włoskiej, Niemieckiej i Wieży Węża." },
+          { q: "Czy Zamek w Bodrum jest powiązany z Mauzoleum w Halikarnasie?", a: "Tak. Joannici wykorzystali kamienie z ruin Mauzoleum — jednego z siedmiu cudów świata starożytnego — do budowy zamku. Samo stanowisko Mauzoleum leży o krótkie podejście w mieście i doskonale łączy się ze zwiedzaniem zamku." },
+          { q: "Czy potrzebuję przewodnika w Zamku w Bodrum?", a: "Możesz zwiedzać samodzielnie, ale zamek splata historię krzyżowców, osmańską i antyczną historię morską, którą łatwo przeoczyć. Licencjonowany lokalny przewodnik VibeGuide wiąże wieże, wraki i Mauzoleum w jedną klarowną opowieść." },
+        ],
+        ctaTitle: "Zobacz Zamek w Bodrum z lokalnym przewodnikiem",
+        ...BOD.pl,
+      },
+      nl: {
+        name: "Kasteel van Bodrum",
+        metaTitle: "Kasteel van Bodrum & Museum voor Onderwaterarcheologie met lokale gidsen",
+        metaDescription:
+          "Ontdek het Kasteel van Bodrum, de burcht van de Hospitaalridders boven de haven, met een erkende lokale gids. Kruisvaarderstorens, het Museum voor Onderwaterarcheologie en het Uluburun-wrak.",
+        intro: [
+          "Het Kasteel van Bodrum, het Kasteel van Sint-Pieter, waakt over de turkooizen haven van de stad als een stenen kroon. De Hospitaalridders begonnen het in het begin van de 15e eeuw op te trekken en sleepten blokken omhoog van het verwoeste Mausoleum van Halicarnassus — een van de Zeven Wereldwonderen van de oudheid — zodat fragmenten van het graf van een oude koning verweven zitten in de muren van een kruisvaardersburcht.",
+          "De torens dragen nog altijd de namen van de naties die ze bouwden — de Engelse, Franse, Italiaanse, Duitse en de Slangentoren — en elk rijst boven de jachthaven op met weidse uitzichten over de Egeïsche Zee. Binnenin herbergt het kasteel het beroemde Museum voor Onderwaterarcheologie, waar oude scheepswrakken, amforen en de schatten van het Uluburun-wrak uit de bronstijd het verhaal van de zee vertellen. Met een lokale VibeGuide-expert vallen de kruisvaarders-, Ottomaanse en antieke lagen op hun plaats.",
+        ],
+        highlights: [
+          { title: "De torens van de Ridders", desc: "De Engelse, Franse, Italiaanse, Duitse en de Slangentoren rijzen op boven de haven, in de 15e eeuw gebouwd door de verschillende talen van de Hospitaalorde." },
+          { title: "Museum voor Onderwaterarcheologie", desc: "Een van de beste in zijn soort, met oude scheepswrakken, amforen en glas geborgen van de bodem van de Egeïsche Zee." },
+          { title: "Het Uluburun-wrak", desc: "Vondsten van een koopvaardijschip uit de 14e eeuw v.Chr. — koper, baren, goud en exotische lading — onthullen de handel uit de bronstijd over de hele oostelijke Middellandse Zee." },
+        ],
+        planningHeading: "Plan je bezoek",
+        planningParagraphs: [
+          "Het Kasteel van Bodrum ligt pal op het schiereiland tussen de twee baaien van de stad, dus vanaf vrijwel elk punt in het centrum is het een korte, schilderachtige wandeling langs de jachthaven. De meeste bezoekers komen over de weg naar Bodrum vanaf de luchthaven Milas–Bodrum, of met de veerboot vanaf de omliggende kust en de nabije Griekse eilanden, en het kasteel is onmogelijk te missen in de skyline boven de haven.",
+          "De zomer aan de Egeïsche Zee is heet en druk, dus de mildste en rustigste tijden om de wallen te beklimmen zijn het late voorjaar en het vroege najaar. De ochtenden geven het zachtste licht voor foto's boven de jachthaven, en de zeebries maakt de open terrassen aangenaam, zelfs in het hoogseizoen. Draag stevige schoenen — het kasteel is op de rots gebouwd, met overal trappen, hellingen en ongelijke grond.",
+          "De toegang tot het kasteel en zijn Museum voor Onderwaterarcheologie is met kaartje, en het terrein verenigt een burcht, meerdere torens en museumzalen in één bezoek. Een erkende lokale VibeGuide-gids helpt je er wijs uit te worden — hij verbindt de kruisvaarderstorens met de gezonken ladingen eronder en voegt de korte klim toe naar de resten van het Mausoleum van Halicarnassus, dat antieke wonder waarvan de stenen mee de muren bouwden.",
+        ],
+        faqs: [
+          { q: "Is het Kasteel van Bodrum een bezoek waard?", a: "Absoluut. Het is een van de best bewaarde kruisvaardersburchten van de Middellandse Zee en tegelijk de thuisbasis van een Museum voor Onderwaterarcheologie van wereldklasse, alles omlijst door enkele van de mooiste havenuitzichten van de Egeïsche kust." },
+          { q: "Wat is er binnen het Kasteel van Bodrum te zien?", a: "Het kasteel bewaart het Museum voor Onderwaterarcheologie, met oude scheepswrakken, duizenden amforen, glas en de schatten van het Uluburun-wrak uit de bronstijd, naast de historische Engelse, Franse, Italiaanse, Duitse en Slangentoren." },
+          { q: "Heeft het Kasteel van Bodrum een band met het Mausoleum van Halicarnassus?", a: "Ja. De Hospitaalridders hergebruikten stenen van het verwoeste Mausoleum — een van de Zeven Wereldwonderen van de oudheid — om het kasteel te bouwen. De site van het Mausoleum ligt op een korte klim in de stad en combineert perfect met een kasteelbezoek." },
+          { q: "Heb ik een gids nodig voor het Kasteel van Bodrum?", a: "Je kunt er alleen rondlopen, maar het kasteel verweeft kruisvaarders-, Ottomaanse en antieke maritieme geschiedenis die je makkelijk mist. Een erkende lokale VibeGuide-gids bindt de torens, de wrakken en het Mausoleum tot één helder verhaal." },
+        ],
+        ctaTitle: "Bekijk het Kasteel van Bodrum met een local",
+        ...BOD.nl,
+      },
+    },
+  },
+  {
+    slug: "gobeklitepe",
+    city: "Şanlıurfa",
+    citySlug: "sanliurfa",
+    emoji: "🗿",
+    image:
+      "https://images.unsplash.com/photo-1763388061716-ead75bde1d5a?q=80&w=1600",
+    lat: 37.2231,
+    lng: 38.9224,
+    i18n: {
+      en: {
+        name: "Göbeklitepe",
+        metaTitle: "Göbeklitepe Tours (World's Oldest Temple) with Local Guides",
+        metaDescription:
+          "Visit Göbeklitepe near Şanlıurfa with a licensed local guide — the world's oldest known temple, built around 9600 BC, 6,000 years before Stonehenge. A UNESCO World Heritage Site.",
+        intro: [
+          "Göbeklitepe is the oldest known monumental sanctuary on Earth, raised around 9600 BC — roughly 6,000 years before Stonehenge and the pyramids of Giza. On a bare hilltop near Şanlıurfa in southeastern Turkey, hunter-gatherers who had not yet invented pottery, writing or farming somehow quarried, carved and raised great rings of T-shaped limestone pillars. It is a discovery that rewrote the story of civilisation: here the temple may have come before the town.",
+          "The pillars stand up to several metres tall and are carved in relief with foxes, boars, snakes, scorpions and cranes — a stone bestiary from the dawn of belief. Today a modern covered walkway shelters the enclosures and lets you look down into them without touching this fragile place. Because so much is invisible to the untrained eye, a licensed VibeGuide local guide is essential to read the symbols and explain why Göbeklitepe changed everything.",
+        ],
+        highlights: [
+          { title: "The world's first temple", desc: "Built around 9600 BC by pre-pottery Neolithic people — about 6,000 years older than Stonehenge — and inscribed as a UNESCO World Heritage Site." },
+          { title: "The carved T-pillars", desc: "Great limestone pillars arranged in rings, carved in relief with foxes, boars, snakes, scorpions and cranes from the dawn of religion." },
+          { title: "Urfa Man in Şanlıurfa", desc: "Pair the site with the Şanlıurfa Archaeology Museum, home to original pillars and the 11,000-year-old Urfa Man, the oldest life-size human statue known." },
+        ],
+        planningHeading: "Planning your visit",
+        planningParagraphs: [
+          "Göbeklitepe lies about 20 km from the centre of Şanlıurfa, the nearest city and the natural base for a visit. Most travellers fly into Şanlıurfa and reach the site by car, taxi or organised tour along a short, well-signed road that ends at the visitor centre, from where a shuttle and walkway lead to the enclosures. There is little else nearby, so it is best combined with the city itself.",
+          "The hilltop is open and exposed, with almost no shade, so the summer sun of southeastern Turkey can be fierce. Aim for early morning or late afternoon, and bring water, a hat and sun protection; spring and autumn are the most comfortable seasons overall. The covered walkway keeps you above the enclosures, so wear comfortable shoes for the gentle walk.",
+          "Entry is ticketed, and what makes Göbeklitepe unforgettable is understanding what you are seeing — otherwise the pillars can look like plain stones on a hill. A licensed VibeGuide local guide brings the enclosures to life, decodes the animal reliefs, and links the site to the Şanlıurfa Archaeology Museum, where the original pillars and the astonishing Urfa Man complete the story.",
+        ],
+        faqs: [
+          { q: "How old is Göbeklitepe?", a: "Göbeklitepe was built around 9600 BC, making it roughly 11,000 years old — about 6,000 years older than Stonehenge and the Egyptian pyramids, and the oldest known monumental temple in the world." },
+          { q: "Why is Göbeklitepe so important?", a: "It was raised by hunter-gatherers before pottery, writing or farming, which suggests that organised religion and monumental building may have come before settled village life — overturning the old idea that farming came first. It is a UNESCO World Heritage Site." },
+          { q: "How do I get to Göbeklitepe?", a: "The site is about 20 km from Şanlıurfa in southeastern Turkey. Most visitors fly into Şanlıurfa and reach Göbeklitepe by car, taxi or organised tour, with a visitor centre, shuttle and covered walkway at the site." },
+          { q: "Do I need a guide for Göbeklitepe?", a: "Strongly recommended. Much of the site's meaning is invisible without context, and a licensed VibeGuide local guide explains the T-pillars, the animal carvings and why the discovery rewrote human history — then links it to the Urfa Man in the city museum." },
+        ],
+        ctaTitle: "See Göbeklitepe with a local",
+        ...SAN.en,
+      },
+      de: {
+        name: "Göbeklitepe",
+        metaTitle: "Göbeklitepe-Touren (ältester Tempel der Welt) mit lokalen Guides",
+        metaDescription:
+          "Besuche Göbeklitepe bei Şanlıurfa mit einem lizenzierten lokalen Guide — der älteste bekannte Tempel der Welt, um 9600 v. Chr. erbaut, 6.000 Jahre vor Stonehenge. UNESCO-Welterbe.",
+        intro: [
+          "Göbeklitepe ist das älteste bekannte monumentale Heiligtum der Erde, um 9600 v. Chr. errichtet — etwa 6.000 Jahre vor Stonehenge und den Pyramiden von Gizeh. Auf einem kahlen Hügel bei Şanlıurfa im Südosten der Türkei brachen, behauten und errichteten Jäger und Sammler, die noch weder Töpferei noch Schrift noch Ackerbau kannten, große Ringe aus T-förmigen Kalksteinpfeilern. Eine Entdeckung, die die Geschichte der Zivilisation neu schrieb: Hier stand der Tempel womöglich vor der Stadt.",
+          "Die Pfeiler ragen mehrere Meter hoch auf und sind mit Reliefs von Füchsen, Wildschweinen, Schlangen, Skorpionen und Kranichen verziert — ein steinernes Bestiarium aus der Morgendämmerung des Glaubens. Heute schützt ein moderner überdachter Steg die Anlagen und lässt dich in sie hineinblicken, ohne diesen fragilen Ort zu berühren. Weil dem ungeschulten Auge so vieles verborgen bleibt, ist ein lizenzierter lokaler VibeGuide-Guide unverzichtbar, um die Symbole zu deuten und zu erklären, warum Göbeklitepe alles veränderte.",
+        ],
+        highlights: [
+          { title: "Der erste Tempel der Welt", desc: "Um 9600 v. Chr. von Menschen der vorkeramischen Jungsteinzeit erbaut — etwa 6.000 Jahre älter als Stonehenge — und als UNESCO-Welterbe eingetragen." },
+          { title: "Die behauenen T-Pfeiler", desc: "Große Kalksteinpfeiler in Ringen angeordnet, mit Reliefs von Füchsen, Wildschweinen, Schlangen, Skorpionen und Kranichen aus der Frühzeit der Religion." },
+          { title: "Der Urfa-Mann in Şanlıurfa", desc: "Verbinde die Stätte mit dem Archäologiemuseum von Şanlıurfa, Heimat originaler Pfeiler und des 11.000 Jahre alten Urfa-Manns, der ältesten bekannten lebensgroßen Menschenstatue." },
+        ],
+        planningHeading: "Deine Besuchsplanung",
+        planningParagraphs: [
+          "Göbeklitepe liegt etwa 20 km vom Zentrum Şanlıurfas entfernt, der nächstgelegenen Stadt und dem natürlichen Ausgangspunkt für einen Besuch. Die meisten Reisenden fliegen nach Şanlıurfa und erreichen die Stätte mit Auto, Taxi oder organisierter Tour über eine kurze, gut ausgeschilderte Straße, die am Besucherzentrum endet; von dort führen Shuttle und Steg zu den Anlagen. In der Umgebung gibt es kaum etwas anderes, daher verbindet man den Besuch am besten mit der Stadt selbst.",
+          "Der Hügel liegt offen und ungeschützt, fast ohne Schatten, sodass die Sommersonne im Südosten der Türkei erbarmungslos sein kann. Ziele auf den frühen Morgen oder den späten Nachmittag und nimm Wasser, Hut und Sonnenschutz mit; Frühling und Herbst sind insgesamt die angenehmsten Jahreszeiten. Der überdachte Steg hält dich über den Anlagen, trage also bequeme Schuhe für den leichten Rundgang.",
+          "Der Eintritt ist kostenpflichtig, und was Göbeklitepe unvergesslich macht, ist das Verständnis dessen, was man sieht — sonst wirken die Pfeiler wie schlichte Steine auf einem Hügel. Ein lizenzierter lokaler VibeGuide-Guide erweckt die Anlagen zum Leben, entschlüsselt die Tierreliefs und verknüpft die Stätte mit dem Archäologiemuseum von Şanlıurfa, wo die originalen Pfeiler und der erstaunliche Urfa-Mann die Geschichte vollenden.",
+        ],
+        faqs: [
+          { q: "Wie alt ist Göbeklitepe?", a: "Göbeklitepe wurde um 9600 v. Chr. erbaut und ist damit rund 11.000 Jahre alt — etwa 6.000 Jahre älter als Stonehenge und die ägyptischen Pyramiden und der älteste bekannte monumentale Tempel der Welt." },
+          { q: "Warum ist Göbeklitepe so bedeutend?", a: "Es wurde von Jägern und Sammlern vor Töpferei, Schrift und Ackerbau errichtet, was nahelegt, dass organisierte Religion und monumentales Bauen dem sesshaften Dorfleben vorausgingen — und die alte Vorstellung umstürzt, der Ackerbau sei zuerst gekommen. Es ist UNESCO-Welterbe." },
+          { q: "Wie komme ich nach Göbeklitepe?", a: "Die Stätte liegt etwa 20 km von Şanlıurfa im Südosten der Türkei. Die meisten Besucher fliegen nach Şanlıurfa und erreichen Göbeklitepe mit Auto, Taxi oder organisierter Tour; vor Ort gibt es ein Besucherzentrum, einen Shuttle und einen überdachten Steg." },
+          { q: "Brauche ich einen Guide für Göbeklitepe?", a: "Dringend zu empfehlen. Ein Großteil der Bedeutung bleibt ohne Kontext unsichtbar, und ein lizenzierter lokaler VibeGuide-Guide erklärt die T-Pfeiler, die Tierreliefs und warum die Entdeckung die Menschheitsgeschichte neu schrieb — und verknüpft sie mit dem Urfa-Mann im Stadtmuseum." },
+        ],
+        ctaTitle: "Erlebe Göbeklitepe mit einem Local",
+        ...SAN.de,
+      },
+      ru: {
+        name: "Гёбекли-Тепе",
+        metaTitle: "Экскурсии в Гёбекли-Тепе (древнейший храм мира) с местными гидами",
+        metaDescription:
+          "Посетите Гёбекли-Тепе близ Шанлыурфы с лицензированным местным гидом — древнейший известный храм мира, построенный около 9600 г. до н. э., за 6000 лет до Стоунхенджа. Объект ЮНЕСКО.",
+        intro: [
+          "Гёбекли-Тепе — древнейшее известное монументальное святилище на Земле, возведённое около 9600 года до н. э., примерно за 6000 лет до Стоунхенджа и пирамид Гизы. На голом холме близ Шанлыурфы на юго-востоке Турции охотники-собиратели, ещё не знавшие ни керамики, ни письма, ни земледелия, каким-то образом вырубили, вырезали и подняли огромные круги из T-образных известняковых столбов. Это открытие переписало историю цивилизации: здесь храм, возможно, появился раньше поселения.",
+          "Столбы достигают нескольких метров в высоту и покрыты рельефами лисиц, кабанов, змей, скорпионов и журавлей — каменный бестиарий на заре веры. Сегодня современный крытый настил укрывает ограды и позволяет заглянуть в них, не касаясь этого хрупкого места. Поскольку столь многое незаметно неопытному глазу, лицензированный местный гид VibeGuide необходим, чтобы прочесть символы и объяснить, почему Гёбекли-Тепе изменил всё.",
+        ],
+        highlights: [
+          { title: "Первый храм в мире", desc: "Возведён около 9600 г. до н. э. людьми докерамического неолита — примерно на 6000 лет старше Стоунхенджа — и внесён в список Всемирного наследия ЮНЕСКО." },
+          { title: "Резные T-образные столбы", desc: "Огромные известняковые столбы, расставленные кругами, с рельефами лисиц, кабанов, змей, скорпионов и журавлей на заре религии." },
+          { title: "Человек из Урфы в Шанлыурфе", desc: "Совместите объект с Археологическим музеем Шанлыурфы, где хранятся оригинальные столбы и 11 000-летний Человек из Урфы — древнейшая известная статуя человека в натуральную величину." },
+        ],
+        planningHeading: "Планирование визита",
+        planningParagraphs: [
+          "Гёбекли-Тепе находится примерно в 20 км от центра Шанлыурфы — ближайшего города и естественной базы для поездки. Большинство путешественников прилетают в Шанлыурфу и добираются до объекта на автомобиле, такси или в составе организованного тура по короткой, хорошо обозначенной дороге, ведущей к центру для посетителей, откуда шаттл и настил ведут к оградам. Поблизости почти ничего больше нет, поэтому лучше сочетать визит с самим городом.",
+          "Вершина холма открыта и незащищена, тени почти нет, так что летнее солнце юго-востока Турции бывает беспощадным. Планируйте раннее утро или поздний день и берите воду, головной убор и защиту от солнца; весна и осень в целом самые комфортные сезоны. Крытый настил держит вас над оградами, так что наденьте удобную обувь для лёгкой прогулки.",
+          "Вход платный, а незабываемым Гёбекли-Тепе делает понимание того, что вы видите, — иначе столбы могут выглядеть как обычные камни на холме. Лицензированный местный гид VibeGuide оживляет ограды, расшифровывает рельефы животных и связывает объект с Археологическим музеем Шанлыурфы, где оригинальные столбы и поразительный Человек из Урфы завершают рассказ.",
+        ],
+        faqs: [
+          { q: "Сколько лет Гёбекли-Тепе?", a: "Гёбекли-Тепе построен около 9600 года до н. э., то есть ему примерно 11 000 лет — почти на 6000 лет старше Стоунхенджа и египетских пирамид, и это древнейший известный монументальный храм в мире." },
+          { q: "Почему Гёбекли-Тепе так важен?", a: "Его возвели охотники-собиратели до появления керамики, письма и земледелия, что позволяет предположить, что организованная религия и монументальное строительство могли предшествовать оседлой деревенской жизни — опровергая старую идею, что земледелие было первым. Это объект Всемирного наследия ЮНЕСКО." },
+          { q: "Как добраться до Гёбекли-Тепе?", a: "Объект находится примерно в 20 км от Шанлыурфы на юго-востоке Турции. Большинство гостей прилетают в Шанлыурфу и добираются до Гёбекли-Тепе на автомобиле, такси или с организованным туром; на месте есть центр для посетителей, шаттл и крытый настил." },
+          { q: "Нужен ли гид для Гёбекли-Тепе?", a: "Крайне рекомендуется. Многое в смысле объекта незаметно без контекста, а лицензированный местный гид VibeGuide объясняет T-образные столбы, изображения животных и то, почему открытие переписало историю человечества, а затем связывает его с Человеком из Урфы в городском музее." },
+        ],
+        ctaTitle: "Увидеть Гёбекли-Тепе с местным гидом",
+        ...SAN.ru,
+      },
+      ar: {
+        name: "غوبكلي تبه",
+        metaTitle: "جولات غوبكلي تبه (أقدم معبد في العالم) مع مرشدين محليين",
+        metaDescription:
+          "زر غوبكلي تبه قرب شانلي أورفا مع مرشد محلي مرخّص — أقدم معبد معروف في العالم، شُيّد نحو 9600 قبل الميلاد، قبل ستونهنج بـ6000 عام. موقع تراث عالمي لليونسكو.",
+        intro: [
+          "غوبكلي تبه هو أقدم مَعبد أثري معروف على وجه الأرض، شُيّد نحو عام 9600 قبل الميلاد — أي قبل ستونهنج وأهرامات الجيزة بنحو 6000 عام. فوق تلة جرداء قرب شانلي أورفا في جنوب شرق تركيا، قام صيادون جامعون لم يعرفوا بعد الفخار ولا الكتابة ولا الزراعة، بطريقة ما، بقطع ونحت ورفع حلقات ضخمة من أعمدة حجرية جيرية على شكل حرف T. إنه اكتشاف أعاد كتابة قصة الحضارة: فهنا ربما جاء المعبد قبل المدينة.",
+          "ترتفع الأعمدة عدة أمتار وقد نُقشت عليها بارزةً صور ثعالب وخنازير برية وأفاعٍ وعقارب وطيور كركي — سِفر حجري للكائنات من فجر الإيمان. واليوم يحمي ممشى مسقوف حديث المحيطات ويتيح لك النظر إليها دون لمس هذا المكان الهش. ولأن الكثير خفيّ عن العين غير المدربة، فإن مرشد VibeGuide المحلي المرخّص لا غنى عنه لقراءة الرموز وشرح لماذا غيّر غوبكلي تبه كل شيء.",
+        ],
+        highlights: [
+          { title: "أول معبد في العالم", desc: "شُيّد نحو 9600 قبل الميلاد على يد إنسان العصر الحجري الحديث قبل اختراع الفخار — أي أقدم من ستونهنج بنحو 6000 عام — ومُدرج على قائمة التراث العالمي لليونسكو." },
+          { title: "أعمدة T المنقوشة", desc: "أعمدة حجرية جيرية ضخمة مرتبة في حلقات، منقوش عليها بارزةً ثعالب وخنازير وأفاعٍ وعقارب وطيور كركي من فجر الأديان." },
+          { title: "رجل أورفا في شانلي أورفا", desc: "اقرن الموقع بمتحف شانلي أورفا للآثار، الذي يضم الأعمدة الأصلية ورجل أورفا الذي يعود عمره إلى 11000 عام، أقدم تمثال بشري بالحجم الطبيعي معروف." },
+        ],
+        planningHeading: "التخطيط لزيارتك",
+        planningParagraphs: [
+          "يقع غوبكلي تبه على نحو 20 كم من مركز شانلي أورفا، أقرب مدينة وقاعدة الانطلاق الطبيعية للزيارة. يصل معظم المسافرين جوًا إلى شانلي أورفا ثم يبلغون الموقع بالسيارة أو التاكسي أو ضمن جولة منظّمة عبر طريق قصير جيد الإشارات ينتهي عند مركز الزوار، ومنه تقود حافلة نقل وممشى إلى المحيطات. لا يوجد الكثير غير ذلك في الجوار، فالأفضل الجمع بينه وبين المدينة نفسها.",
+          "قمة التل مكشوفة وبلا ظل تقريبًا، لذا قد تكون شمس الصيف في جنوب شرق تركيا حارقة. استهدف الصباح الباكر أو ما بعد الظهيرة، واصطحب الماء وقبعة وواقيًا من الشمس؛ والربيع والخريف هما الأكثر راحةً على العموم. يبقيك الممشى المسقوف فوق المحيطات، فانتعل حذاءً مريحًا للسير الخفيف.",
+          "الدخول مقابل تذكرة، وما يجعل غوبكلي تبه لا يُنسى هو فهم ما تراه — وإلا فقد تبدو الأعمدة مجرد حجارة على تلة. يبعث مرشد VibeGuide المحلي المرخّص الحياة في المحيطات، ويفك رموز نقوش الحيوانات، ويربط الموقع بمتحف شانلي أورفا للآثار، حيث تُكمل الأعمدة الأصلية ورجل أورفا المذهل القصة." ,
+        ],
+        faqs: [
+          { q: "كم يبلغ عمر غوبكلي تبه؟", a: "شُيّد غوبكلي تبه نحو عام 9600 قبل الميلاد، أي إن عمره نحو 11000 عام — أقدم من ستونهنج والأهرامات المصرية بنحو 6000 عام، وهو أقدم معبد أثري معروف في العالم." },
+          { q: "لماذا يُعد غوبكلي تبه بهذه الأهمية؟", a: "شيّده صيادون جامعون قبل الفخار والكتابة والزراعة، ما يوحي بأن الدين المنظّم والبناء الضخم ربما سبقا حياة القرى المستقرة — على عكس الفكرة القديمة بأن الزراعة جاءت أولًا. وهو موقع تراث عالمي لليونسكو." },
+          { q: "كيف أصل إلى غوبكلي تبه؟", a: "يقع الموقع على نحو 20 كم من شانلي أورفا في جنوب شرق تركيا. يصل معظم الزوار جوًا إلى شانلي أورفا ثم يبلغون غوبكلي تبه بالسيارة أو التاكسي أو ضمن جولة منظّمة، ويوجد في الموقع مركز زوار وحافلة نقل وممشى مسقوف." },
+          { q: "هل أحتاج إلى مرشد لزيارة غوبكلي تبه؟", a: "يُنصح بذلك بشدة. الكثير من معنى الموقع خفيّ دون سياق، ويشرح مرشد VibeGuide المحلي المرخّص أعمدة T ونقوش الحيوانات ولماذا أعاد الاكتشاف كتابة تاريخ البشرية — ثم يربطه برجل أورفا في متحف المدينة." },
+        ],
+        ctaTitle: "زر غوبكلي تبه مع مرشد محلي",
+        ...SAN.ar,
+      },
+      es: {
+        name: "Göbeklitepe",
+        metaTitle: "Tours a Göbeklitepe (el templo más antiguo del mundo) con guías locales",
+        metaDescription:
+          "Visita Göbeklitepe cerca de Şanlıurfa con un guía local titulado — el templo conocido más antiguo del mundo, construido hacia el 9600 a. C., 6.000 años antes de Stonehenge. Patrimonio de la Humanidad de la UNESCO.",
+        intro: [
+          "Göbeklitepe es el santuario monumental más antiguo que se conoce en la Tierra, levantado hacia el 9600 a. C. — unos 6.000 años antes que Stonehenge y las pirámides de Guiza. En una colina desnuda cerca de Şanlıurfa, en el sureste de Turquía, cazadores-recolectores que aún no habían inventado la cerámica, la escritura ni la agricultura extrajeron, tallaron y erigieron de algún modo grandes círculos de pilares de piedra caliza en forma de T. Es un hallazgo que reescribió la historia de la civilización: aquí el templo pudo llegar antes que el pueblo.",
+          "Los pilares se alzan varios metros y están tallados en relieve con zorros, jabalíes, serpientes, escorpiones y grullas — un bestiario de piedra del amanecer de la fe. Hoy una moderna pasarela cubierta protege los recintos y permite asomarse a ellos sin tocar este lugar frágil. Como tanto resulta invisible para el ojo no entrenado, un guía local titulado de VibeGuide es esencial para leer los símbolos y explicar por qué Göbeklitepe lo cambió todo.",
+        ],
+        highlights: [
+          { title: "El primer templo del mundo", desc: "Construido hacia el 9600 a. C. por gentes del Neolítico precerámico — unos 6.000 años más antiguo que Stonehenge — e inscrito como Patrimonio de la Humanidad de la UNESCO." },
+          { title: "Los pilares en T tallados", desc: "Grandes pilares de piedra caliza dispuestos en círculos, tallados en relieve con zorros, jabalíes, serpientes, escorpiones y grullas del amanecer de la religión." },
+          { title: "El Hombre de Urfa en Şanlıurfa", desc: "Combina el sitio con el Museo Arqueológico de Şanlıurfa, hogar de pilares originales y del Hombre de Urfa de 11.000 años, la estatua humana de tamaño natural más antigua que se conoce." },
+        ],
+        planningHeading: "Planifica tu visita",
+        planningParagraphs: [
+          "Göbeklitepe se encuentra a unos 20 km del centro de Şanlıurfa, la ciudad más cercana y la base natural para la visita. La mayoría de los viajeros vuela a Şanlıurfa y llega al sitio en coche, taxi o tour organizado por una carretera corta y bien señalizada que termina en el centro de visitantes, desde donde una lanzadera y una pasarela conducen a los recintos. Hay poco más en los alrededores, así que conviene combinarlo con la propia ciudad.",
+          "La cima de la colina es abierta y expuesta, casi sin sombra, así que el sol de verano del sureste de Turquía puede ser feroz. Apunta a primera hora de la mañana o al final de la tarde, y lleva agua, sombrero y protección solar; la primavera y el otoño son, en conjunto, las estaciones más cómodas. La pasarela cubierta te mantiene por encima de los recintos, así que usa calzado cómodo para el paseo suave.",
+          "La entrada requiere ticket, y lo que hace inolvidable Göbeklitepe es entender lo que estás viendo — de lo contrario, los pilares pueden parecer simples piedras en una colina. Un guía local titulado de VibeGuide da vida a los recintos, descifra los relieves de animales y enlaza el sitio con el Museo Arqueológico de Şanlıurfa, donde los pilares originales y el asombroso Hombre de Urfa completan la historia.",
+        ],
+        faqs: [
+          { q: "¿Qué antigüedad tiene Göbeklitepe?", a: "Göbeklitepe se construyó hacia el 9600 a. C., por lo que tiene unos 11.000 años — cerca de 6.000 años más que Stonehenge y las pirámides egipcias, y es el templo monumental más antiguo que se conoce en el mundo." },
+          { q: "¿Por qué es tan importante Göbeklitepe?", a: "Lo levantaron cazadores-recolectores antes de la cerámica, la escritura o la agricultura, lo que sugiere que la religión organizada y la construcción monumental pudieron preceder a la vida sedentaria en aldeas — dando la vuelta a la vieja idea de que la agricultura fue lo primero. Es Patrimonio de la Humanidad de la UNESCO." },
+          { q: "¿Cómo llego a Göbeklitepe?", a: "El sitio está a unos 20 km de Şanlıurfa, en el sureste de Turquía. La mayoría de los visitantes vuela a Şanlıurfa y llega a Göbeklitepe en coche, taxi o tour organizado, con centro de visitantes, lanzadera y pasarela cubierta en el lugar." },
+          { q: "¿Necesito un guía para Göbeklitepe?", a: "Muy recomendable. Gran parte del significado del sitio es invisible sin contexto, y un guía local titulado de VibeGuide explica los pilares en T, los grabados de animales y por qué el hallazgo reescribió la historia humana — para luego enlazarlo con el Hombre de Urfa en el museo de la ciudad." },
+        ],
+        ctaTitle: "Visita Göbeklitepe con un local",
+        ...SAN.es,
+      },
+      fr: {
+        name: "Göbeklitepe",
+        metaTitle: "Visites de Göbeklitepe (plus ancien temple du monde) avec guides locaux",
+        metaDescription:
+          "Visitez Göbeklitepe près de Şanlıurfa avec un guide local agréé — le plus ancien temple connu au monde, bâti vers 9600 av. J.-C., 6 000 ans avant Stonehenge. Site du patrimoine mondial de l'UNESCO.",
+        intro: [
+          "Göbeklitepe est le plus ancien sanctuaire monumental connu sur Terre, élevé vers 9600 av. J.-C. — environ 6 000 ans avant Stonehenge et les pyramides de Gizeh. Sur une colline nue près de Şanlıurfa, dans le sud-est de la Turquie, des chasseurs-cueilleurs qui n'avaient encore inventé ni la poterie, ni l'écriture, ni l'agriculture ont pourtant extrait, sculpté et dressé de grands cercles de piliers de calcaire en forme de T. Une découverte qui a réécrit l'histoire de la civilisation : ici, le temple a peut-être précédé la ville.",
+          "Les piliers s'élèvent sur plusieurs mètres et sont sculptés en relief de renards, sangliers, serpents, scorpions et grues — un bestiaire de pierre à l'aube de la croyance. Aujourd'hui, une passerelle couverte moderne abrite les enceintes et permet de les contempler d'en haut sans toucher ce lieu fragile. Comme tant de choses échappent à l'œil non averti, un guide local agréé VibeGuide est essentiel pour lire les symboles et expliquer pourquoi Göbeklitepe a tout changé.",
+        ],
+        highlights: [
+          { title: "Le premier temple du monde", desc: "Bâti vers 9600 av. J.-C. par des peuples du Néolithique précéramique — environ 6 000 ans plus ancien que Stonehenge — et inscrit au patrimoine mondial de l'UNESCO." },
+          { title: "Les piliers en T sculptés", desc: "De grands piliers de calcaire disposés en cercles, sculptés en relief de renards, sangliers, serpents, scorpions et grues à l'aube de la religion." },
+          { title: "L'Homme d'Urfa à Şanlıurfa", desc: "Associez le site au Musée archéologique de Şanlıurfa, qui abrite des piliers originaux et l'Homme d'Urfa vieux de 11 000 ans, la plus ancienne statue humaine grandeur nature connue." },
+        ],
+        planningHeading: "Préparer votre visite",
+        planningParagraphs: [
+          "Göbeklitepe se trouve à environ 20 km du centre de Şanlıurfa, la ville la plus proche et la base naturelle d'une visite. La plupart des voyageurs prennent l'avion jusqu'à Şanlıurfa et rejoignent le site en voiture, en taxi ou en visite organisée, par une route courte et bien signalée qui se termine au centre des visiteurs, d'où une navette et une passerelle mènent aux enceintes. Il y a peu d'autre chose à proximité, mieux vaut donc l'associer à la ville elle-même.",
+          "Le sommet de la colline est ouvert et exposé, presque sans ombre, si bien que le soleil d'été du sud-est de la Turquie peut être brûlant. Visez tôt le matin ou en fin d'après-midi, et emportez de l'eau, un chapeau et une protection solaire ; le printemps et l'automne sont globalement les saisons les plus agréables. La passerelle couverte vous maintient au-dessus des enceintes, portez donc de bonnes chaussures pour cette promenade facile.",
+          "L'entrée est payante, et ce qui rend Göbeklitepe inoubliable, c'est de comprendre ce que l'on voit — sinon les piliers peuvent ressembler à de simples pierres sur une colline. Un guide local agréé VibeGuide fait vivre les enceintes, décrypte les reliefs animaliers et relie le site au Musée archéologique de Şanlıurfa, où les piliers d'origine et l'étonnant Homme d'Urfa complètent l'histoire.",
+        ],
+        faqs: [
+          { q: "Quel âge a Göbeklitepe ?", a: "Göbeklitepe a été bâti vers 9600 av. J.-C., ce qui lui donne environ 11 000 ans — quelque 6 000 ans de plus que Stonehenge et les pyramides d'Égypte, et c'est le plus ancien temple monumental connu au monde." },
+          { q: "Pourquoi Göbeklitepe est-il si important ?", a: "Il a été élevé par des chasseurs-cueilleurs avant la poterie, l'écriture ou l'agriculture, ce qui suggère que la religion organisée et la construction monumentale ont pu précéder la vie villageoise sédentaire — renversant la vieille idée selon laquelle l'agriculture serait venue en premier. C'est un site du patrimoine mondial de l'UNESCO." },
+          { q: "Comment se rendre à Göbeklitepe ?", a: "Le site est à environ 20 km de Şanlıurfa, dans le sud-est de la Turquie. La plupart des visiteurs prennent l'avion jusqu'à Şanlıurfa et rejoignent Göbeklitepe en voiture, en taxi ou en visite organisée ; on trouve sur place un centre des visiteurs, une navette et une passerelle couverte." },
+          { q: "Ai-je besoin d'un guide pour Göbeklitepe ?", a: "Vivement recommandé. Une grande part du sens du site est invisible sans contexte, et un guide local agréé VibeGuide explique les piliers en T, les gravures animales et pourquoi la découverte a réécrit l'histoire humaine — avant de la relier à l'Homme d'Urfa au musée de la ville." },
+        ],
+        ctaTitle: "Visitez Göbeklitepe avec un local",
+        ...SAN.fr,
+      },
+      el: {
+        name: "Γκιομπεκλί Τεπέ",
+        metaTitle: "Ξεναγήσεις στο Γκιομπεκλί Τεπέ (ο αρχαιότερος ναός του κόσμου) με ντόπιους ξεναγούς",
+        metaDescription:
+          "Επισκέψου το Γκιομπεκλί Τεπέ κοντά στη Σανλιούρφα με πιστοποιημένο ντόπιο ξεναγό — τον αρχαιότερο γνωστό ναό του κόσμου, χτισμένο γύρω στο 9600 π.Χ., 6.000 χρόνια πριν από το Στόουνχεντζ. Μνημείο Παγκόσμιας Κληρονομιάς της UNESCO.",
+        intro: [
+          "Το Γκιομπεκλί Τεπέ είναι το αρχαιότερο γνωστό μνημειακό ιερό στη Γη, υψωμένο γύρω στο 9600 π.Χ. — περίπου 6.000 χρόνια πριν από το Στόουνχεντζ και τις πυραμίδες της Γκίζας. Πάνω σε έναν γυμνό λόφο κοντά στη Σανλιούρφα, στη νοτιοανατολική Τουρκία, κυνηγοί-τροφοσυλλέκτες που δεν είχαν ακόμη εφεύρει την κεραμική, τη γραφή ή τη γεωργία, κατάφεραν να λατομήσουν, να σκαλίσουν και να ανεγείρουν μεγάλους κύκλους από ασβεστολιθικούς πυλώνες σχήματος Τ. Μια ανακάλυψη που ξαναέγραψε την ιστορία του πολιτισμού: εδώ ο ναός ίσως προηγήθηκε της πόλης.",
+          "Οι πυλώνες υψώνονται αρκετά μέτρα και είναι σκαλισμένοι ανάγλυφα με αλεπούδες, αγριογούρουνα, φίδια, σκορπιούς και γερανούς — ένα πέτρινο ζωολόγιο από την αυγή της πίστης. Σήμερα ένας σύγχρονος στεγασμένος διάδρομος προστατεύει τους περιβόλους και σου επιτρέπει να τους κοιτάξεις από ψηλά χωρίς να αγγίξεις αυτόν τον εύθραυστο τόπο. Επειδή τόσα πολλά είναι αόρατα στο ανεκπαίδευτο μάτι, ένας πιστοποιημένος ντόπιος ξεναγός της VibeGuide είναι απαραίτητος για να διαβάσει τα σύμβολα και να εξηγήσει γιατί το Γκιομπεκλί Τεπέ τα άλλαξε όλα.",
+        ],
+        highlights: [
+          { title: "Ο πρώτος ναός του κόσμου", desc: "Χτισμένος γύρω στο 9600 π.Χ. από ανθρώπους της Νεολιθικής προκεραμικής εποχής — περίπου 6.000 χρόνια αρχαιότερος από το Στόουνχεντζ — και εγγεγραμμένος ως Μνημείο Παγκόσμιας Κληρονομιάς της UNESCO." },
+          { title: "Οι σκαλισμένοι πυλώνες Τ", desc: "Μεγάλοι ασβεστολιθικοί πυλώνες διατεταγμένοι σε κύκλους, σκαλισμένοι ανάγλυφα με αλεπούδες, αγριογούρουνα, φίδια, σκορπιούς και γερανούς από την αυγή της θρησκείας." },
+          { title: "Ο Άνθρωπος της Ούρφα στη Σανλιούρφα", desc: "Συνδύασε τον χώρο με το Αρχαιολογικό Μουσείο της Σανλιούρφα, όπου φυλάσσονται αυθεντικοί πυλώνες και ο Άνθρωπος της Ούρφα ηλικίας 11.000 ετών, το αρχαιότερο γνωστό ανθρώπινο άγαλμα σε φυσικό μέγεθος." },
+        ],
+        planningHeading: "Οργανώστε την επίσκεψή σας",
+        planningParagraphs: [
+          "Το Γκιομπεκλί Τεπέ βρίσκεται περίπου 20 χλμ. από το κέντρο της Σανλιούρφα, της πλησιέστερης πόλης και της φυσικής βάσης για μια επίσκεψη. Οι περισσότεροι ταξιδιώτες πετούν ως τη Σανλιούρφα και φτάνουν στον χώρο με αυτοκίνητο, ταξί ή οργανωμένη ξενάγηση μέσω ενός σύντομου, καλά σηματοδοτημένου δρόμου που καταλήγει στο κέντρο επισκεπτών, από όπου ένα λεωφορείο μεταφοράς και ένας διάδρομος οδηγούν στους περιβόλους. Δεν υπάρχουν πολλά άλλα εκεί κοντά, οπότε είναι καλύτερο να συνδυαστεί με την ίδια την πόλη.",
+          "Η κορυφή του λόφου είναι ανοιχτή και εκτεθειμένη, σχεδόν χωρίς σκιά, οπότε ο καλοκαιρινός ήλιος της νοτιοανατολικής Τουρκίας μπορεί να είναι αμείλικτος. Στοχεύστε νωρίς το πρωί ή αργά το απόγευμα και πάρτε μαζί νερό, καπέλο και αντηλιακή προστασία· η άνοιξη και το φθινόπωρο είναι συνολικά οι πιο άνετες εποχές. Ο στεγασμένος διάδρομος σας κρατά πάνω από τους περιβόλους, φορέστε λοιπόν άνετα παπούτσια για το ήπιο περπάτημα.",
+          "Η είσοδος απαιτεί εισιτήριο, και αυτό που κάνει το Γκιομπεκλί Τεπέ αξέχαστο είναι να καταλάβεις τι βλέπεις — αλλιώς οι πυλώνες μπορεί να μοιάζουν με απλές πέτρες σε έναν λόφο. Ένας αδειούχος ντόπιος ξεναγός της VibeGuide ζωντανεύει τους περιβόλους, αποκρυπτογραφεί τα ανάγλυφα των ζώων και συνδέει τον χώρο με το Αρχαιολογικό Μουσείο της Σανλιούρφα, όπου οι αυθεντικοί πυλώνες και ο εκπληκτικός Άνθρωπος της Ούρφα ολοκληρώνουν την ιστορία.",
+        ],
+        faqs: [
+          { q: "Πόσο παλιό είναι το Γκιομπεκλί Τεπέ;", a: "Το Γκιομπεκλί Τεπέ χτίστηκε γύρω στο 9600 π.Χ., επομένως είναι περίπου 11.000 ετών — κάπου 6.000 χρόνια αρχαιότερο από το Στόουνχεντζ και τις αιγυπτιακές πυραμίδες, και ο αρχαιότερος γνωστός μνημειακός ναός στον κόσμο." },
+          { q: "Γιατί είναι τόσο σημαντικό το Γκιομπεκλί Τεπέ;", a: "Υψώθηκε από κυνηγούς-τροφοσυλλέκτες πριν από την κεραμική, τη γραφή ή τη γεωργία, κάτι που υποδηλώνει ότι η οργανωμένη θρησκεία και η μνημειακή δόμηση ίσως προηγήθηκαν της μόνιμης ζωής στα χωριά — ανατρέποντας την παλιά ιδέα ότι η γεωργία ήρθε πρώτη. Είναι Μνημείο Παγκόσμιας Κληρονομιάς της UNESCO." },
+          { q: "Πώς φτάνω στο Γκιομπεκλί Τεπέ;", a: "Ο χώρος βρίσκεται περίπου 20 χλμ. από τη Σανλιούρφα, στη νοτιοανατολική Τουρκία. Οι περισσότεροι επισκέπτες πετούν ως τη Σανλιούρφα και φτάνουν στο Γκιομπεκλί Τεπέ με αυτοκίνητο, ταξί ή οργανωμένη ξενάγηση, με κέντρο επισκεπτών, λεωφορείο μεταφοράς και στεγασμένο διάδρομο στον χώρο." },
+          { q: "Χρειάζομαι ξεναγό για το Γκιομπεκλί Τεπέ;", a: "Συνιστάται ανεπιφύλακτα. Μεγάλο μέρος του νοήματος του χώρου είναι αόρατο χωρίς πλαίσιο, και ένας αδειούχος ντόπιος ξεναγός της VibeGuide εξηγεί τους πυλώνες Τ, τα σκαλίσματα των ζώων και γιατί η ανακάλυψη ξαναέγραψε την ανθρώπινη ιστορία — και έπειτα το συνδέει με τον Άνθρωπο της Ούρφα στο μουσείο της πόλης." },
+        ],
+        ctaTitle: "Δες το Γκιομπεκλί Τεπέ με έναν ντόπιο",
+        ...SAN.el,
+      },
+      tr: {
+        name: "Göbeklitepe",
+        metaTitle: "Göbeklitepe Turları (Dünyanın En Eski Tapınağı) | Yerel Rehberler",
+        metaDescription:
+          "Şanlıurfa yakınındaki Göbeklitepe'yi lisanslı bir yerel rehberle gez — dünyanın bilinen en eski tapınağı, MÖ 9600 civarında inşa edildi, Stonehenge'den 6.000 yıl önce. UNESCO Dünya Mirası.",
+        intro: [
+          "Göbeklitepe, yeryüzünün bilinen en eski anıtsal tapınağıdır; MÖ 9600 civarında yükseltilmiştir — Stonehenge ve Giza piramitlerinden yaklaşık 6.000 yıl önce. Güneydoğu Türkiye'de, Şanlıurfa yakınlarındaki çıplak bir tepede, henüz çömlekçiliği, yazıyı ve tarımı bilmeyen avcı-toplayıcılar, bir şekilde T biçimli kireç taşı dikilitaşlardan büyük halkalar oydu, işledi ve dikti. Bu, uygarlık tarihini yeniden yazan bir keşiftir: burada tapınak, kentten önce gelmiş olabilir.",
+          "Dikilitaşlar birkaç metre yüksekliğe ulaşır ve üzerlerinde tilkiler, yaban domuzları, yılanlar, akrepler ve turnalar kabartma olarak işlenmiştir — inancın şafağından taştan bir hayvanlar kitabı. Bugün modern bir üstü kapalı gezi yolu çevrimleri korur ve bu kırılgan yere dokunmadan içlerine bakmanı sağlar. Eğitimsiz göze pek çok şey görünmez olduğundan, sembolleri okumak ve Göbeklitepe'nin neden her şeyi değiştirdiğini anlatmak için lisanslı bir VibeGuide yerel rehberi vazgeçilmezdir.",
+        ],
+        highlights: [
+          { title: "Dünyanın ilk tapınağı", desc: "MÖ 9600 civarında çanak çömlek öncesi Neolitik insanlarca inşa edildi — Stonehenge'den yaklaşık 6.000 yıl daha eski — ve UNESCO Dünya Mirası Listesi'ne alındı." },
+          { title: "İşlenmiş T dikilitaşlar", desc: "Halkalar hâlinde dizilmiş büyük kireç taşı dikilitaşlar; dinin şafağından tilkiler, yaban domuzları, yılanlar, akrepler ve turnalarla kabartma olarak bezenmiş." },
+          { title: "Şanlıurfa'da Urfa Adamı", desc: "Alanı, özgün dikilitaşların ve bilinen en eski gerçek boyutlu insan heykeli olan 11.000 yıllık Urfa Adamı'nın bulunduğu Şanlıurfa Arkeoloji Müzesi ile birleştir." },
+        ],
+        planningHeading: "Ziyaretinizi planlayın",
+        planningParagraphs: [
+          "Göbeklitepe, en yakın kent ve ziyaret için doğal üs olan Şanlıurfa merkezinden yaklaşık 20 km uzaktadır. Çoğu gezgin uçakla Şanlıurfa'ya gelir ve alana; ziyaretçi merkezinde son bulan kısa, işaretleri iyi bir yolla otomobil, taksi ya da organize turla ulaşır; oradan bir servis ve gezi yolu çevrimlere götürür. Yakında başka pek bir şey olmadığından, en iyisi kentin kendisiyle birlikte gezmektir.",
+          "Tepe açık ve korunaksızdır, neredeyse hiç gölge yoktur; bu yüzden güneydoğu Türkiye'nin yaz güneşi sert olabilir. Sabahın erken saatlerini ya da öğleden sonranın geç saatlerini hedefleyin; yanınıza su, şapka ve güneş koruması alın; genel olarak en konforlu mevsimler ilkbahar ve sonbahardır. Üstü kapalı gezi yolu sizi çevrimlerin üzerinde tutar, bu yüzden hafif yürüyüş için rahat ayakkabı giyin.",
+          "Giriş biletlidir ve Göbeklitepe'yi unutulmaz kılan şey, gördüğünüzü anlamaktır — yoksa dikilitaşlar bir tepedeki sıradan taşlar gibi görünebilir. Lisanslı bir VibeGuide yerel rehberi çevrimleri canlandırır, hayvan kabartmalarını çözer ve alanı; özgün dikilitaşların ve şaşırtıcı Urfa Adamı'nın hikâyeyi tamamladığı Şanlıurfa Arkeoloji Müzesi ile ilişkilendirir.",
+        ],
+        faqs: [
+          { q: "Göbeklitepe kaç yaşında?", a: "Göbeklitepe MÖ 9600 civarında inşa edildi; yani yaklaşık 11.000 yaşında — Stonehenge ve Mısır piramitlerinden yaklaşık 6.000 yıl daha eski ve dünyanın bilinen en eski anıtsal tapınağı." },
+          { q: "Göbeklitepe neden bu kadar önemli?", a: "Çömlekçilik, yazı ve tarımdan önce avcı-toplayıcılarca yükseltildi; bu da örgütlü dinin ve anıtsal yapının yerleşik köy yaşamından önce gelmiş olabileceğini düşündürür — tarımın önce geldiği eski görüşü tersine çevirir. UNESCO Dünya Mirası alanıdır." },
+          { q: "Göbeklitepe'ye nasıl giderim?", a: "Alan, güneydoğu Türkiye'de Şanlıurfa'ya yaklaşık 20 km uzaktadır. Çoğu ziyaretçi uçakla Şanlıurfa'ya gelir ve Göbeklitepe'ye otomobil, taksi veya organize turla ulaşır; alanda ziyaretçi merkezi, servis ve üstü kapalı gezi yolu vardır." },
+          { q: "Göbeklitepe için rehbere ihtiyacım var mı?", a: "Kesinlikle önerilir. Alanın anlamının çoğu bağlam olmadan görünmez; lisanslı bir VibeGuide yerel rehberi T dikilitaşları, hayvan işlemelerini ve keşfin insanlık tarihini neden yeniden yazdığını anlatır — sonra kent müzesindeki Urfa Adamı ile ilişkilendirir." },
+        ],
+        ctaTitle: "Göbeklitepe'yi bir yerelle gez",
+        ...SAN.tr,
+      },
+      it: {
+        name: "Göbeklitepe",
+        metaTitle: "Tour di Göbeklitepe (il tempio più antico del mondo) con guide locali",
+        metaDescription:
+          "Visita Göbeklitepe vicino a Şanlıurfa con una guida locale abilitata — il più antico tempio conosciuto al mondo, costruito verso il 9600 a.C., 6.000 anni prima di Stonehenge. Patrimonio dell'Umanità UNESCO.",
+        intro: [
+          "Göbeklitepe è il più antico santuario monumentale conosciuto sulla Terra, innalzato verso il 9600 a.C. — circa 6.000 anni prima di Stonehenge e delle piramidi di Giza. Su una collina spoglia vicino a Şanlıurfa, nel sud-est della Turchia, cacciatori-raccoglitori che non avevano ancora inventato la ceramica, la scrittura o l'agricoltura riuscirono in qualche modo a estrarre, scolpire ed erigere grandi cerchi di pilastri di calcare a forma di T. È una scoperta che ha riscritto la storia della civiltà: qui il tempio potrebbe aver preceduto la città.",
+          "I pilastri si innalzano per diversi metri e sono scolpiti a rilievo con volpi, cinghiali, serpenti, scorpioni e gru — un bestiario di pietra dall'alba della fede. Oggi una moderna passerella coperta protegge i recinti e permette di affacciarsi su di essi senza toccare questo luogo fragile. Poiché tanto risulta invisibile all'occhio inesperto, una guida locale abilitata di VibeGuide è essenziale per leggere i simboli e spiegare perché Göbeklitepe abbia cambiato tutto.",
+        ],
+        highlights: [
+          { title: "Il primo tempio del mondo", desc: "Costruito verso il 9600 a.C. da popoli del Neolitico preceramico — circa 6.000 anni più antico di Stonehenge — e iscritto come Patrimonio dell'Umanità UNESCO." },
+          { title: "I pilastri a T scolpiti", desc: "Grandi pilastri di calcare disposti in cerchi, scolpiti a rilievo con volpi, cinghiali, serpenti, scorpioni e gru dall'alba della religione." },
+          { title: "L'Uomo di Urfa a Şanlıurfa", desc: "Abbina il sito al Museo archeologico di Şanlıurfa, che custodisce pilastri originali e l'Uomo di Urfa di 11.000 anni, la più antica statua umana a grandezza naturale conosciuta." },
+        ],
+        planningHeading: "Pianifica la tua visita",
+        planningParagraphs: [
+          "Göbeklitepe si trova a circa 20 km dal centro di Şanlıurfa, la città più vicina e la base naturale per una visita. La maggior parte dei viaggiatori vola a Şanlıurfa e raggiunge il sito in auto, taxi o tour organizzato lungo una strada breve e ben segnalata che termina al centro visitatori, da cui una navetta e una passerella conducono ai recinti. Nei dintorni c'è poco altro, quindi conviene abbinarlo alla città stessa.",
+          "La cima della collina è aperta ed esposta, quasi priva di ombra, così il sole estivo del sud-est della Turchia può essere spietato. Punta al mattino presto o al tardo pomeriggio e porta acqua, cappello e protezione solare; primavera e autunno sono nel complesso le stagioni più comode. La passerella coperta ti tiene al di sopra dei recinti, quindi indossa scarpe comode per la breve camminata.",
+          "L'ingresso è a pagamento, e ciò che rende Göbeklitepe indimenticabile è capire ciò che si sta vedendo — altrimenti i pilastri possono sembrare semplici pietre su una collina. Una guida locale abilitata di VibeGuide dà vita ai recinti, decifra i rilievi degli animali e collega il sito al Museo archeologico di Şanlıurfa, dove i pilastri originali e lo straordinario Uomo di Urfa completano la storia.",
+        ],
+        faqs: [
+          { q: "Quanto è antico Göbeklitepe?", a: "Göbeklitepe fu costruito verso il 9600 a.C., il che lo rende vecchio di circa 11.000 anni — circa 6.000 anni più di Stonehenge e delle piramidi egizie, ed è il più antico tempio monumentale conosciuto al mondo." },
+          { q: "Perché Göbeklitepe è così importante?", a: "Fu innalzato da cacciatori-raccoglitori prima della ceramica, della scrittura o dell'agricoltura, il che suggerisce che la religione organizzata e la costruzione monumentale possano aver preceduto la vita stanziale nei villaggi — ribaltando la vecchia idea che l'agricoltura fosse venuta prima. È Patrimonio dell'Umanità UNESCO." },
+          { q: "Come si arriva a Göbeklitepe?", a: "Il sito è a circa 20 km da Şanlıurfa, nel sud-est della Turchia. La maggior parte dei visitatori vola a Şanlıurfa e raggiunge Göbeklitepe in auto, taxi o tour organizzato; sul posto ci sono centro visitatori, navetta e passerella coperta." },
+          { q: "Serve una guida per Göbeklitepe?", a: "Vivamente consigliata. Gran parte del significato del sito è invisibile senza contesto, e una guida locale abilitata di VibeGuide spiega i pilastri a T, gli intagli di animali e perché la scoperta abbia riscritto la storia umana — per poi collegarla all'Uomo di Urfa nel museo cittadino." },
+        ],
+        ctaTitle: "Visita Göbeklitepe con un locale",
+        ...SAN.it,
+      },
+      pl: {
+        name: "Göbeklitepe",
+        metaTitle: "Göbeklitepe (najstarsza świątynia świata) — wycieczki z lokalnymi przewodnikami",
+        metaDescription:
+          "Zwiedź Göbeklitepe koło Şanlıurfy z licencjonowanym lokalnym przewodnikiem — najstarszą znaną świątynię świata, wzniesioną około 9600 r. p.n.e., 6000 lat przed Stonehenge. Obiekt UNESCO.",
+        intro: [
+          "Göbeklitepe to najstarsze znane monumentalne sanktuarium na Ziemi, wzniesione około 9600 r. p.n.e. — mniej więcej 6000 lat przed Stonehenge i piramidami w Gizie. Na nagim wzgórzu koło Şanlıurfy na południowym wschodzie Turcji łowcy-zbieracze, którzy nie wynaleźli jeszcze ceramiki, pisma ani rolnictwa, w jakiś sposób wydobyli, wyrzeźbili i wznieśli wielkie kręgi wapiennych filarów w kształcie litery T. To odkrycie, które przepisało historię cywilizacji: tutaj świątynia mogła powstać przed miastem.",
+          "Filary sięgają kilku metrów wysokości i pokryte są reliefami lisów, dzików, węży, skorpionów i żurawi — kamienny bestiariusz z zarania wiary. Dziś nowoczesna zadaszona kładka chroni kręgi i pozwala zajrzeć w nie z góry, nie dotykając tego kruchego miejsca. Ponieważ tak wiele jest niewidoczne dla niewprawnego oka, licencjonowany lokalny przewodnik VibeGuide jest niezbędny, by odczytać symbole i wyjaśnić, dlaczego Göbeklitepe zmieniło wszystko.",
+        ],
+        highlights: [
+          { title: "Pierwsza świątynia świata", desc: "Wzniesiona około 9600 r. p.n.e. przez ludzi neolitu przedceramicznego — około 6000 lat starsza od Stonehenge — i wpisana na Listę światowego dziedzictwa UNESCO." },
+          { title: "Rzeźbione filary T", desc: "Wielkie wapienne filary ustawione w kręgi, pokryte reliefami lisów, dzików, węży, skorpionów i żurawi z zarania religii." },
+          { title: "Człowiek z Urfy w Şanlıurfie", desc: "Połącz to miejsce z Muzeum Archeologicznym w Şanlıurfie, gdzie znajdują się oryginalne filary i liczący 11 000 lat Człowiek z Urfy, najstarszy znany posąg człowieka naturalnej wielkości." },
+        ],
+        planningHeading: "Zaplanuj wizytę",
+        planningParagraphs: [
+          "Göbeklitepe leży około 20 km od centrum Şanlıurfy, najbliższego miasta i naturalnej bazy wypadowej. Większość podróżnych przylatuje do Şanlıurfy i dociera na miejsce samochodem, taksówką lub z zorganizowaną wycieczką krótką, dobrze oznakowaną drogą kończącą się przy centrum dla zwiedzających, skąd bus i kładka prowadzą do kręgów. W pobliżu jest niewiele innych atrakcji, więc najlepiej połączyć to z samym miastem.",
+          "Szczyt wzgórza jest otwarty i wystawiony na słońce, niemal bez cienia, więc letnie słońce południowo-wschodniej Turcji potrafi być bezlitosne. Celuj we wczesny ranek lub późne popołudnie i weź wodę, kapelusz oraz ochronę przeciwsłoneczną; wiosna i jesień to ogólnie najwygodniejsze pory roku. Zadaszona kładka utrzymuje cię ponad kręgami, więc załóż wygodne buty na łagodny spacer.",
+          "Wstęp jest biletowany, a tym, co czyni Göbeklitepe niezapomnianym, jest zrozumienie tego, co się widzi — inaczej filary mogą wyglądać jak zwykłe kamienie na wzgórzu. Licencjonowany lokalny przewodnik VibeGuide ożywia kręgi, odczytuje reliefy zwierząt i łączy to miejsce z Muzeum Archeologicznym w Şanlıurfie, gdzie oryginalne filary i zdumiewający Człowiek z Urfy dopełniają opowieści.",
+        ],
+        faqs: [
+          { q: "Ile lat ma Göbeklitepe?", a: "Göbeklitepe zbudowano około 9600 r. p.n.e., co daje mu około 11 000 lat — mniej więcej 6000 lat więcej niż Stonehenge i piramidy egipskie, i jest najstarszą znaną monumentalną świątynią na świecie." },
+          { q: "Dlaczego Göbeklitepe jest tak ważne?", a: "Wznieśli je łowcy-zbieracze przed ceramiką, pismem i rolnictwem, co sugeruje, że zorganizowana religia i monumentalne budownictwo mogły poprzedzić osiadłe życie w wioskach — obalając dawną ideę, że rolnictwo było pierwsze. To obiekt światowego dziedzictwa UNESCO." },
+          { q: "Jak dojechać do Göbeklitepe?", a: "Miejsce leży około 20 km od Şanlıurfy na południowym wschodzie Turcji. Większość odwiedzających przylatuje do Şanlıurfy i dociera do Göbeklitepe samochodem, taksówką lub z zorganizowaną wycieczką; na miejscu jest centrum dla zwiedzających, bus i zadaszona kładka." },
+          { q: "Czy potrzebuję przewodnika w Göbeklitepe?", a: "Zdecydowanie zalecany. Znaczna część sensu tego miejsca jest niewidoczna bez kontekstu, a licencjonowany lokalny przewodnik VibeGuide objaśnia filary T, rzeźby zwierząt i to, dlaczego odkrycie przepisało historię ludzkości — a potem łączy je z Człowiekiem z Urfy w muzeum miejskim." },
+        ],
+        ctaTitle: "Zobacz Göbeklitepe z lokalnym przewodnikiem",
+        ...SAN.pl,
+      },
+      nl: {
+        name: "Göbeklitepe",
+        metaTitle: "Göbeklitepe-tours (oudste tempel ter wereld) met lokale gidsen",
+        metaDescription:
+          "Bezoek Göbeklitepe bij Şanlıurfa met een erkende lokale gids — de oudste bekende tempel ter wereld, gebouwd rond 9600 v.Chr., 6.000 jaar vóór Stonehenge. UNESCO-werelderfgoed.",
+        intro: [
+          "Göbeklitepe is het oudste bekende monumentale heiligdom op aarde, opgericht rond 9600 v.Chr. — zo'n 6.000 jaar vóór Stonehenge en de piramides van Gizeh. Op een kale heuveltop bij Şanlıurfa in het zuidoosten van Turkije wisten jager-verzamelaars die nog geen aardewerk, schrift of landbouw hadden uitgevonden op de een of andere manier grote ringen van T-vormige kalkstenen pilaren te houwen, te bewerken en op te richten. Het is een ontdekking die het verhaal van de beschaving herschreef: hier kwam de tempel misschien vóór de stad.",
+          "De pilaren rijzen meerdere meters hoog op en zijn in reliëf bewerkt met vossen, everzwijnen, slangen, schorpioenen en kraanvogels — een stenen bestiarium uit de dageraad van het geloof. Vandaag beschermt een moderne overdekte loopbrug de omheiningen en laat je erin kijken zonder deze kwetsbare plek aan te raken. Omdat zoveel onzichtbaar is voor het ongeoefende oog, is een erkende lokale VibeGuide-gids onmisbaar om de symbolen te lezen en uit te leggen waarom Göbeklitepe alles veranderde.",
+        ],
+        highlights: [
+          { title: "De eerste tempel ter wereld", desc: "Gebouwd rond 9600 v.Chr. door mensen uit het prekeramische neolithicum — zo'n 6.000 jaar ouder dan Stonehenge — en ingeschreven als UNESCO-werelderfgoed." },
+          { title: "De bewerkte T-pilaren", desc: "Grote kalkstenen pilaren in ringen gerangschikt, in reliëf bewerkt met vossen, everzwijnen, slangen, schorpioenen en kraanvogels uit de dageraad van de religie." },
+          { title: "De Urfa-man in Şanlıurfa", desc: "Combineer de site met het Archeologisch Museum van Şanlıurfa, met originele pilaren en de 11.000 jaar oude Urfa-man, het oudst bekende mensbeeld op ware grootte." },
+        ],
+        planningHeading: "Plan je bezoek",
+        planningParagraphs: [
+          "Göbeklitepe ligt zo'n 20 km van het centrum van Şanlıurfa, de dichtstbijzijnde stad en de natuurlijke uitvalsbasis voor een bezoek. De meeste reizigers vliegen naar Şanlıurfa en bereiken de site met de auto, taxi of georganiseerde tour via een korte, goed bewegwijzerde weg die eindigt bij het bezoekerscentrum, van waaruit een pendelbus en loopbrug naar de omheiningen leiden. Er is verder weinig in de buurt, dus combineer het bij voorkeur met de stad zelf.",
+          "De heuveltop is open en onbeschut, met vrijwel geen schaduw, dus de zomerzon van zuidoostelijk Turkije kan meedogenloos zijn. Mik op de vroege ochtend of de late namiddag en neem water, een hoed en zonbescherming mee; het voorjaar en het najaar zijn al met al de aangenaamste seizoenen. De overdekte loopbrug houdt je boven de omheiningen, dus draag comfortabele schoenen voor de rustige wandeling.",
+          "De toegang is met kaartje, en wat Göbeklitepe onvergetelijk maakt, is begrijpen wat je ziet — anders kunnen de pilaren lijken op gewone stenen op een heuvel. Een erkende lokale VibeGuide-gids brengt de omheiningen tot leven, ontcijfert de dierenreliëfs en verbindt de site met het Archeologisch Museum van Şanlıurfa, waar de originele pilaren en de verbluffende Urfa-man het verhaal compleet maken.",
+        ],
+        faqs: [
+          { q: "Hoe oud is Göbeklitepe?", a: "Göbeklitepe werd gebouwd rond 9600 v.Chr., wat het ongeveer 11.000 jaar oud maakt — zo'n 6.000 jaar ouder dan Stonehenge en de Egyptische piramides, en de oudste bekende monumentale tempel ter wereld." },
+          { q: "Waarom is Göbeklitepe zo belangrijk?", a: "Het werd opgericht door jager-verzamelaars vóór aardewerk, schrift of landbouw, wat suggereert dat georganiseerde religie en monumentale bouw mogelijk vooraf gingen aan het gevestigde dorpsleven — waarmee het oude idee dat landbouw eerst kwam wordt omgekeerd. Het is UNESCO-werelderfgoed." },
+          { q: "Hoe kom ik bij Göbeklitepe?", a: "De site ligt zo'n 20 km van Şanlıurfa in het zuidoosten van Turkije. De meeste bezoekers vliegen naar Şanlıurfa en bereiken Göbeklitepe met de auto, taxi of georganiseerde tour; ter plaatse zijn een bezoekerscentrum, pendelbus en overdekte loopbrug." },
+          { q: "Heb ik een gids nodig voor Göbeklitepe?", a: "Sterk aanbevolen. Veel van de betekenis van de site is onzichtbaar zonder context, en een erkende lokale VibeGuide-gids legt de T-pilaren uit, de dierensneden en waarom de ontdekking de menselijke geschiedenis herschreef — en verbindt het dan met de Urfa-man in het stadsmuseum." },
+        ],
+        ctaTitle: "Bekijk Göbeklitepe met een local",
+        ...SAN.nl,
       },
     },
   },
