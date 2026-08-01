@@ -13,6 +13,7 @@ import {
   getAttraction,
   isAttractionLang,
   allAttractionParams,
+  ATTR_HEADINGS,
   type AttractionLang,
 } from "@/lib/attractions";
 import { getCityGuide, isCityGuideLang, OG_LOCALE } from "@/lib/cityGuides";
@@ -74,6 +75,7 @@ export default async function AttractionPage({ params }: Props) {
 
   const c = attraction.i18n[lang];
   const rtl = RTL_LANGS.has(lang);
+  const h = ATTR_HEADINGS[lang];
 
   // Bu landmark'ın şehrinin tur-rehberi SEO sayfasına iç link (şehir guide'ı varsa).
   // Attraction dilleri (11) ⊃ city-guide dilleri (10, el yok) → el için EN guide'a bağla.
@@ -175,6 +177,9 @@ export default async function AttractionPage({ params }: Props) {
 
       {/* Highlights */}
       <section className="pb-6">
+        <div className="mx-auto max-w-5xl px-6">
+          <h2 className="text-2xl font-black mb-6 tracking-tight">{h.highlights}</h2>
+        </div>
         <div className="mx-auto max-w-5xl px-6 grid sm:grid-cols-3 gap-5">
           {c.highlights.map((h) => (
             <div
@@ -213,6 +218,7 @@ export default async function AttractionPage({ params }: Props) {
       {/* FAQ */}
       <section className="py-16">
         <div className="mx-auto max-w-3xl px-6">
+          <h2 className="text-2xl font-black mb-6 tracking-tight">{h.faq}</h2>
           <div className="space-y-3">
             {c.faqs.map((f) => (
               <details
@@ -242,7 +248,7 @@ export default async function AttractionPage({ params }: Props) {
           <section className="pb-4">
             <div className="mx-auto max-w-5xl px-6">
               <h2 className="text-2xl font-black mb-6 tracking-tight">
-                {c.toursHeading}
+                {h.more}
               </h2>
               <div className="grid sm:grid-cols-3 gap-4">
                 {others.map((o) => (

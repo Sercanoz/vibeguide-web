@@ -18,6 +18,22 @@ export const ATTRACTION_LANGS = [
 ] as const;
 export type AttractionLang = (typeof ATTRACTION_LANGS)[number];
 
+// Mekan sayfası bölüm başlıkları (dile göre) — highlights/FAQ/other-landmarks
+// için lokalize H2. İçerikte alan yok; şablon geneli, tek yerden.
+export const ATTR_HEADINGS: Record<AttractionLang, { highlights: string; faq: string; more: string }> = {
+  en: { highlights: "Highlights", faq: "Frequently asked questions", more: "More to explore" },
+  de: { highlights: "Höhepunkte", faq: "Häufig gestellte Fragen", more: "Mehr entdecken" },
+  ru: { highlights: "Главное", faq: "Часто задаваемые вопросы", more: "Что ещё посмотреть" },
+  ar: { highlights: "أبرز المعالم", faq: "الأسئلة الشائعة", more: "المزيد للاستكشاف" },
+  es: { highlights: "Lo más destacado", faq: "Preguntas frecuentes", more: "Más que explorar" },
+  fr: { highlights: "Points forts", faq: "Questions fréquentes", more: "À découvrir aussi" },
+  el: { highlights: "Κυριότερα σημεία", faq: "Συχνές ερωτήσεις", more: "Ανακαλύψτε περισσότερα" },
+  tr: { highlights: "Öne çıkanlar", faq: "Sıkça sorulan sorular", more: "Keşfedilecek daha fazlası" },
+  it: { highlights: "In evidenza", faq: "Domande frequenti", more: "Altro da esplorare" },
+  pl: { highlights: "Najważniejsze", faq: "Najczęściej zadawane pytania", more: "Więcej do odkrycia" },
+  nl: { highlights: "Hoogtepunten", faq: "Veelgestelde vragen", more: "Meer om te ontdekken" },
+};
+
 export const RTL_LANGS: ReadonlySet<AttractionLang> = new Set(["ar"]);
 
 export type AttractionContent = {
