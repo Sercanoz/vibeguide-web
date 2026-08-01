@@ -65,6 +65,7 @@ export default function CityGuideView({
             src={guide.heroImage}
             alt={c.h1}
             fill
+            sizes="100vw"
             className="object-cover opacity-30"
             priority
           />

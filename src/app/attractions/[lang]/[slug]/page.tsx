@@ -15,7 +15,7 @@ import {
   allAttractionParams,
   type AttractionLang,
 } from "@/lib/attractions";
-import { getCityGuide, isCityGuideLang } from "@/lib/cityGuides";
+import { getCityGuide, isCityGuideLang, OG_LOCALE } from "@/lib/cityGuides";
 
 const SITE = "https://www.vibeguideapp.com";
 const DEFAULT_LANG: AttractionLang = "en";
@@ -55,7 +55,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `${SITE}/attractions/${lang}/${slug}`,
       siteName: "VibeGuide",
       type: "website",
-      locale: lang,
+      locale: OG_LOCALE[lang] ?? "en_US",
       images: [{ url: attraction.image, width: 1200, height: 630, alt: c.name }],
     },
     twitter: {
@@ -145,6 +145,7 @@ export default async function AttractionPage({ params }: Props) {
             src={attraction.image}
             alt={c.name}
             fill
+            sizes="100vw"
             priority
             className="object-cover"
           />

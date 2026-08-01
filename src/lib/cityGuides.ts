@@ -13,6 +13,13 @@ const SITE = "https://www.vibeguideapp.com";
 export const CITY_GUIDE_LANGS = ["en", "de", "es", "fr", "it", "ar", "ru", "tr", "pl", "nl"] as const;
 export type CityGuideLang = (typeof CITY_GUIDE_LANGS)[number];
 
+// og:locale, dil kodu → language_TERRITORY (OG spec çıplak "de" değil "de_DE" ister).
+// 11 dili kapsar (mekan sayfaları 'el' de kullanıyor).
+export const OG_LOCALE: Record<string, string> = {
+  en: "en_US", de: "de_DE", es: "es_ES", fr: "fr_FR", it: "it_IT",
+  ar: "ar_AE", ru: "ru_RU", tr: "tr_TR", pl: "pl_PL", nl: "nl_NL", el: "el_GR",
+};
+
 export const RTL_CITY_LANGS = new Set<CityGuideLang>(["ar"]);
 
 export function isCityGuideLang(v: string): v is CityGuideLang {
@@ -5954,7 +5961,7 @@ export function buildCityGuideMetadata(
       url,
       siteName: "VibeGuide",
       type: "website",
-      locale: lang,
+      locale: OG_LOCALE[lang] ?? "en_US",
       images: [{ url: guide.heroImage, width: 1200, height: 630, alt: c.h1 }],
     },
     twitter: {

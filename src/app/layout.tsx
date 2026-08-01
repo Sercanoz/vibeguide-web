@@ -7,6 +7,8 @@ import { LanguageProvider } from "@/components/LanguageProvider";
 import { CurrencyProvider } from "@/components/CurrencyProvider";
 import CookieBanner from "@/components/CookieBanner";
 import EmailCaptureGate from "@/components/EmailCaptureGate";
+import { CITY_GUIDE_LANGS } from "@/lib/cityGuides";
+import { ATTRACTION_LANGS } from "@/lib/attractions";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -17,8 +19,12 @@ const inter = Inter({
 // Pathname'den <html lang> türet — dilli sayfalar (/de/istanbul-tour-guide,
 // /attractions/ru/hagia-sophia, Türkçe yasal sayfalar) doğru dil sinyali
 // versin. Middleware x-pathname header'ını sağlar.
-const CITY_LANG_PREFIXES = new Set(["de", "es", "fr", "it", "ar"]); // EN kökte
-const ATTRACTION_LANG_CODES = new Set(["en", "de", "ru", "ar", "es", "fr", "el", "tr"]);
+// Kaynak dizilerden türet — elle liste tutma, drift etmesin. EN kökte sunulur,
+// diğer tüm şehir-guide dilleri /<lang>/ prefix'idir; mekan dilleri (el dâhil) 11.
+const CITY_LANG_PREFIXES = new Set<string>(
+  CITY_GUIDE_LANGS.filter((l) => l !== "en"),
+);
+const ATTRACTION_LANG_CODES = new Set<string>(ATTRACTION_LANGS);
 const TURKISH_ROOT_PAGES = new Set([
   "kvkk", "cerez-politikasi", "mesafeli-satis", "on-bilgilendirme",
 ]);
