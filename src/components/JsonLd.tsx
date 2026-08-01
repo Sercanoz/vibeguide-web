@@ -18,7 +18,21 @@ export default function JsonLd({ nonce }: { nonce?: string }) {
         // sameAs: sosyal hesaplar açılınca eklenecek (boş array göndermek yerine
         // alanı tamamen kaldırdık).
         description:
-          "VibeGuide connects travelers with verified local guides for instant tours, group experiences and private tours in Istanbul, Cappadocia and Ephesus.",
+          "VibeGuide connects travelers with verified local guides for instant tours, group experiences and private tours across Turkey — Istanbul, Cappadocia, Ephesus, Antalya, İzmir, Bodrum, Kuşadası and Marmaris.",
+        contactPoint: {
+          "@type": "ContactPoint",
+          contactType: "customer support",
+          email: "support@vibeguideapp.com",
+          telephone: "+905308287696",
+          availableLanguage: ["en", "tr"],
+        },
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Beldibi Mah. Belmar Sk. No:9/1 İç Kapı No:4",
+          addressLocality: "Marmaris",
+          addressRegion: "Muğla",
+          addressCountry: "TR",
+        },
       },
       {
         "@type": "WebSite",

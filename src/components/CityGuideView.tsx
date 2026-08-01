@@ -38,6 +38,21 @@ export default function CityGuideView({
         { "@type": "ListItem", position: 2, name: c.h1, item: url },
       ],
     },
+    {
+      // Şehri bir turistik destinasyon varlığı olarak tanımla (mekanlar zaten
+      // TouristAttraction veriyor; şehir guide'ları geride kalıyordu).
+      // aggregateRating EKLENMEZ — sayfada görünür review yok (Google politikası).
+      "@type": "TouristDestination",
+      name: c.h1,
+      description: c.metaDescription,
+      image: guide.heroImage,
+      url,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: guide.cityName,
+        addressCountry: "TR",
+      },
+    },
   ];
   if (c.faqs && c.faqs.length > 0) {
     graph.push({
