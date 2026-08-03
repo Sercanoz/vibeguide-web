@@ -247,14 +247,14 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
               <>
                 <span className="nav-auth-guest contents">
                   <button onClick={() => setAuthModal("signin")}
-                    className="hidden md:block text-sm font-semibold text-neutral-700 hover:text-[#6C4CF1] px-3 py-2 rounded-xl hover:bg-[#6C4CF1]/[0.06] transition-all duration-150">
+                    className="hidden md:block whitespace-nowrap text-[13px] font-semibold text-neutral-700 hover:text-[#6C4CF1] px-2.5 py-1.5 rounded-lg hover:bg-[#6C4CF1]/[0.06] transition-all duration-150">
                     {nb.signIn}
                   </button>
                   <button onClick={() => setAuthModal("register")}
-                    className="hidden md:flex items-center gap-1.5 rounded-full bg-[#6C4CF1] px-5 py-2 text-sm font-semibold text-white hover:bg-[#5a3dd4] transition-all duration-150 hover:scale-[1.03]"
+                    className="hidden md:flex items-center gap-1 whitespace-nowrap rounded-full bg-[#6C4CF1] px-3.5 py-1.5 text-[13px] font-semibold text-white hover:bg-[#5a3dd4] transition-all duration-150 hover:scale-[1.03]"
                     style={{ boxShadow: "0 2px 12px rgba(108,76,241,0.3)" }}>
                     {nb.startExploring}
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M5 12h14M12 5l7 7-7 7"/>
                     </svg>
                   </button>

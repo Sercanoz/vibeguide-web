@@ -77,7 +77,7 @@ export default function HomePage() {
           </div>
 
           {/* Mode cards — quick links to /vibenow /vibesquad /vibeask */}
-          <div className="mt-10 flex justify-start">
+          <div className="mt-10 flex justify-center">
             <HeroModeCards locale={locale} />
           </div>
 
