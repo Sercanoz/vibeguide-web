@@ -1292,7 +1292,7 @@ export const terms: Record<ExtendedLocale, TermsDict> = {
     lastUpdatedLabel: "Последнее обновление",
     intro: "Настоящие Условия использования регулируют ваш доступ к VibeGuide и его использование, включая веб-сайт, мобильное приложение, сервисы и связанные функции. Используя VibeGuide, вы соглашаетесь с настоящими Условиями.",
     sections: [
-      { h: "1. Сведения о компании", p: `VibeGuide управляется компанией ${COMPANY_LEGAL}, Стамбул, Турция. Правовые вопросы: ${SUPPORT_EMAIL}.` },
+      { h: "1. Сведения о компании", p: `VibeGuide управляется компанией ${COMPANY_LEGAL}, Стамбул, Турция. Правовые вопросы: ${SUPPORT_EMAIL}. Туры, бронирования и туристические услуги, предлагаемые через VibeGuide, организуются и осуществляются компанией Anadolu Tur. Sey. Tur. Tic. Ltd. Şti. (Helliantus Anadolu Tours) — туристическим агентством с лицензией TÜRSAB (Ассоциация туристических агентств Турции) категории «A» (Лицензия № 5058), Kuşadası / Aydın, Türkiye. VibeCore выступает в качестве владельца платформы и посредника, оказывающего услуги.` },
       { h: "2. Описание платформы", p: "VibeGuide — цифровая туристическая платформа, соединяющая путешественников с лицензированными местными гидами в Турции. VibeGuide является торговой площадкой и посредником. Гиды работают как независимые поставщики услуг." },
       { h: "3. Требования к возрасту", list: ["Для создания аккаунта и совершения бронирований необходимо быть не моложе 18 лет.", "Участие несовершеннолетних возможно только под контролем родителя или опекуна.", "Гиды обязаны пройти верификацию личности и загрузить действующий кокарт."] },
       { h: "4. Аккаунты", list: ["Вы несёте ответственность за безопасность своих учётных данных и всю активность в аккаунте.", "VibeGuide вправе приостановить или удалить аккаунты, нарушающие настоящие Условия.", "Туристы должны подтвердить адрес электронной почты до бронирования."] },
@@ -1327,7 +1327,7 @@ export const terms: Record<ExtendedLocale, TermsDict> = {
     lastUpdatedLabel: "Zuletzt aktualisiert",
     intro: "Diese Nutzungsbedingungen regeln Ihren Zugang zu und Ihre Nutzung von VibeGuide, einschließlich Website, App, Dienste und zugehörige Funktionen. Durch die Nutzung von VibeGuide stimmen Sie diesen Bedingungen zu.",
     sections: [
-      { h: "1. Unternehmensangaben", p: `VibeGuide wird von der VİBECORE TURİZM SEYAHAT ACENTASI VE DİJİTAL HİZMETLER TİCARET LİMİTED ŞİRKETİ betrieben. Rechtliche Fragen: ${SUPPORT_EMAIL}.` },
+      { h: "1. Unternehmensangaben", p: `VibeGuide wird von der VİBECORE TURİZM SEYAHAT ACENTASI VE DİJİTAL HİZMETLER TİCARET LİMİTED ŞİRKETİ betrieben. Rechtliche Fragen: ${SUPPORT_EMAIL}. Die über VibeGuide angebotenen Touren, Buchungen und Reiseleistungen werden von Anadolu Tur. Sey. Tur. Tic. Ltd. Şti. (Helliantus Anadolu Tours) organisiert und durchgeführt, einem Reisebüro der Kategorie «A» nach TÜRSAB (türkischer Reisebüroverband) mit der Lizenz-Nr. 5058, Kuşadası / Aydın, Türkiye. VibeCore handelt als Plattformbetreiber und vermittelnder Diensteanbieter.` },
       { h: "2. Plattformbeschreibung", p: "VibeGuide ist eine digitale Reiseplattform, die Reisende mit lizenzierten lokalen Guides in der Türkei verbindet. VibeGuide fungiert als Marktplatz und Vermittler. Guides arbeiten als unabhängige Dienstleister." },
       { h: "3. Voraussetzungen", list: ["Zur Kontoerstellung und Buchung müssen Sie mindestens 18 Jahre alt sein.", "Minderjährige dürfen nur unter Aufsicht eines Elternteils oder gesetzlichen Vormunds teilnehmen.", "Guides müssen sich vor der Aktivierung verifizieren lassen und einen gültigen Kokart hochladen."] },
       { h: "4. Benutzerkonten", list: ["Sie sind für die Sicherheit Ihrer Anmeldedaten und alle Aktivitäten in Ihrem Konto verantwortlich.", "VibeGuide kann Konten bei Verstößen gegen diese Bedingungen sperren oder beenden.", "Touristen müssen vor der Buchung ihre E-Mail-Adresse bestätigen."] },
@@ -1362,7 +1362,7 @@ export const terms: Record<ExtendedLocale, TermsDict> = {
     lastUpdatedLabel: "Última actualización",
     intro: "Estas Condiciones de servicio rigen tu acceso y uso de VibeGuide, incluyendo sitio web, app, servicios y funciones relacionadas. Al usar VibeGuide, aceptas estas Condiciones.",
     sections: [
-      { h: "1. Información de la empresa", p: `VibeGuide es operado por ${COMPANY_LEGAL}, Estambul, Turquía. Preguntas legales: ${SUPPORT_EMAIL}.` },
+      { h: "1. Información de la empresa", p: `VibeGuide es operado por ${COMPANY_LEGAL}, Estambul, Turquía. Preguntas legales: ${SUPPORT_EMAIL}. Los tours, las reservas y los servicios de viaje ofrecidos a través de VibeGuide son organizados y operados por Anadolu Tur. Sey. Tur. Tic. Ltd. Şti. (Helliantus Anadolu Tours), una agencia de viajes de categoría «A» de TÜRSAB (Asociación de Agencias de Viajes de Turquía), con Licencia n.º 5058, Kuşadası / Aydın, Türkiye. VibeCore actúa como titular de la plataforma y prestador de servicios de intermediación.` },
       { h: "2. Descripción de la plataforma", p: "VibeGuide es una plataforma de viajes digital que conecta a viajeros con guías locales con licencia en Turquía. VibeGuide actúa como marketplace e intermediario. Los guías operan como proveedores de servicios independientes." },
       { h: "3. Requisitos", list: ["Debes tener al menos 18 años para crear una cuenta y realizar reservas.", "Los menores de 18 años solo pueden participar bajo supervisión de un padre o tutor legal.", "Los guías deben completar la verificación de identidad y subir un kokart válido antes de activarse."] },
       { h: "4. Cuentas de usuario", list: ["Eres responsable de la seguridad de tus credenciales y toda la actividad en tu cuenta.", "VibeGuide puede suspender o cancelar cuentas que incumplan estas Condiciones.", "Los turistas deben verificar su correo electrónico antes de realizar reservas."] },
@@ -1397,7 +1397,7 @@ export const terms: Record<ExtendedLocale, TermsDict> = {
     lastUpdatedLabel: "最終更新",
     intro: "本利用規約は、ウェブサイト、モバイルアプリ、サービス、関連機能を含むVibeGuideへのアクセスおよび使用を規定します。VibeGuideを使用することで、本規約に同意したものとみなされます。",
     sections: [
-      { h: "1. 会社情報", p: `VibeGuideは${COMPANY_LEGAL}（トルコ・イスタンブール）が運営しています。法的なご質問: ${SUPPORT_EMAIL}。` },
+      { h: "1. 会社情報", p: `VibeGuideは${COMPANY_LEGAL}（トルコ・イスタンブール）が運営しています。法的なご質問: ${SUPPORT_EMAIL}。 VibeGuideを通じて提供されるツアー、予約および旅行サービスは、TÜRSAB（トルコ旅行代理店協会）のAグループ旅行代理店ライセンス（ライセンス番号5058）を有するAnadolu Tur. Sey. Tur. Tic. Ltd. Şti.（Helliantus Anadolu Tours）（Kuşadası / Aydın, Türkiye）により企画・運営されています。VibeCoreは、プラットフォーム運営者および仲介サービス提供者として機能します。` },
       { h: "2. プラットフォームの概要", p: "VibeGuideは、旅行者をトルコの認定地元ガイドと結びつけるデジタル旅行プラットフォームです。VibeGuideはマーケットプレイスおよび仲介者として機能します。ガイドは独立したサービス提供者として運営されます。" },
       { h: "3. 利用資格", list: ["アカウント作成および予約には18歳以上であることが必要です。", "未成年者は保護者の監督のもとのみ参加できます。", "ガイドは有効なコカルトをアップロードし、本人確認を完了する必要があります。"] },
       { h: "4. ユーザーアカウント", list: ["ログイン情報の安全管理とアカウント上の全活動に責任を負います。", "VibeGuideは規約違反のアカウントを停止または削除できます。", "観光客は予約前にメールアドレスを確認する必要があります。"] },
@@ -1432,7 +1432,7 @@ export const terms: Record<ExtendedLocale, TermsDict> = {
     lastUpdatedLabel: "最后更新",
     intro: "本服务条款规定您对VibeGuide的访问和使用，包括网站、移动应用、服务及相关功能。使用VibeGuide即表示您同意本条款。",
     sections: [
-      { h: "1. 公司信息", p: `VibeGuide由${COMPANY_LEGAL}（土耳其伊斯坦布尔）运营。法律问题: ${SUPPORT_EMAIL}。` },
+      { h: "1. 公司信息", p: `VibeGuide由${COMPANY_LEGAL}（土耳其伊斯坦布尔）运营。法律问题: ${SUPPORT_EMAIL}。 通过VibeGuide提供的行程、预订及旅行服务，由持有TÜRSAB（土耳其旅行社协会）A类旅行社牌照（牌照编号5058）的Anadolu Tur. Sey. Tur. Tic. Ltd. Şti.（Helliantus Anadolu Tours）组织并运营，地址为Kuşadası / Aydın, Türkiye。VibeCore作为平台所有者及中介服务提供者。` },
       { h: "2. 平台描述", p: "VibeGuide是一个数字旅游平台，将旅行者与土耳其持牌本地向导连接起来。VibeGuide作为市场平台和中介运营。向导作为独立服务提供商运营。" },
       { h: "3. 资格要求", list: ["创建账户和进行预订需年满18周岁。", "未成年人只能在父母或法定监护人的监督下参与。", "向导必须在激活前完成身份验证并上传有效的科卡特。"] },
       { h: "4. 用户账户", list: ["您负责保护登录信息的安全以及账户下的所有活动。", "VibeGuide可以暂停或终止违反本条款的账户。", "游客在预订前必须验证电子邮件地址。"] },
@@ -1467,7 +1467,7 @@ export const terms: Record<ExtendedLocale, TermsDict> = {
     lastUpdatedLabel: "Τελευταία ενημέρωση",
     intro: "Αυτοί οι Όροι Χρήσης διέπουν την πρόσβαση και τη χρήση του VibeGuide, συμπεριλαμβανομένων του ιστοτόπου, της εφαρμογής και των σχετικών υπηρεσιών. Χρησιμοποιώντας το VibeGuide, αποδέχεστε αυτούς τους Όρους.",
     sections: [
-      { h: "1. Στοιχεία εταιρείας", p: `VibeGuide διαχειρίζεται η ${COMPANY_LEGAL}, Κωνσταντινούπολη, Τουρκία. Νομικές ερωτήσεις: ${SUPPORT_EMAIL}.` },
+      { h: "1. Στοιχεία εταιρείας", p: `VibeGuide διαχειρίζεται η ${COMPANY_LEGAL}, Κωνσταντινούπολη, Τουρκία. Νομικές ερωτήσεις: ${SUPPORT_EMAIL}. Οι εκδρομές, οι κρατήσεις και οι ταξιδιωτικές υπηρεσίες που προσφέρονται μέσω του VibeGuide οργανώνονται και εκτελούνται από την Anadolu Tur. Sey. Tur. Tic. Ltd. Şti. (Helliantus Anadolu Tours), ταξιδιωτικό πρακτορείο κατηγορίας «A» της TÜRSAB (Ένωση Τουριστικών Πρακτορείων Τουρκίας), με Άδεια αρ. 5058, Kuşadası / Aydın, Türkiye. Η VibeCore ενεργεί ως ιδιοκτήτρια της πλατφόρμας και πάροχος ενδιάμεσων υπηρεσιών.` },
       { h: "2. Περιγραφή πλατφόρμας", p: "Το VibeGuide είναι ψηφιακή πλατφόρμα ταξιδιών που συνδέει ταξιδιώτες με αδειοδοτημένους τοπικούς ξεναγούς στην Τουρκία. Λειτουργεί ως αγορά και διαμεσολαβητής. Οι ξεναγοί λειτουργούν ως ανεξάρτητοι πάροχοι υπηρεσιών." },
       { h: "3. Προϋποθέσεις", list: ["Πρέπει να είστε τουλάχιστον 18 ετών για να δημιουργήσετε λογαριασμό και να κάνετε κρατήσεις.", "Οι ανήλικοι μπορούν να συμμετέχουν μόνο υπό την επίβλεψη γονέα ή κηδεμόνα.", "Οι ξεναγοί πρέπει να ολοκληρώσουν επαλήθευση ταυτότητας και να ανεβάσουν έγκυρο κοκάρτ."] },
       { h: "4. Λογαριασμοί", list: ["Είστε υπεύθυνοι για την ασφάλεια των διαπιστευτηρίων σας και όλη τη δραστηριότητα στο λογαριασμό.", "Το VibeGuide μπορεί να αναστείλει ή να τερματίσει λογαριασμούς που παραβιάζουν τους Όρους."] },
@@ -1495,7 +1495,7 @@ export const terms: Record<ExtendedLocale, TermsDict> = {
     lastUpdatedLabel: "Последно обновяване",
     intro: "Тези Условия за ползване уреждат достъпа и използването на VibeGuide, включително уебсайта, приложението и свързаните услуги. Използвайки VibeGuide, вие се съгласявате с тези Условия.",
     sections: [
-      { h: "1. Информация за компанията", p: `VibeGuide се управлява от ${COMPANY_LEGAL}, Истанбул, Турция. Правни въпроси: ${SUPPORT_EMAIL}.` },
+      { h: "1. Информация за компанията", p: `VibeGuide се управлява от ${COMPANY_LEGAL}, Истанбул, Турция. Правни въпроси: ${SUPPORT_EMAIL}. Турове, резервации и туристически услуги, предлагани чрез VibeGuide, се организират и осъществяват от Anadolu Tur. Sey. Tur. Tic. Ltd. Şti. (Helliantus Anadolu Tours) — туристическа агенция категория «A» на TÜRSAB (Асоциация на туристическите агенции в Турция), с Лиценз № 5058, Kuşadası / Aydın, Türkiye. VibeCore действа като собственик на платформата и посредник, предоставящ услуги.` },
       { h: "2. Описание на платформата", p: "VibeGuide е дигитална туристическа платформа, свързваща пътуващи с лицензирани местни водачи в Турция. Действа като пазар и посредник. Водачите работят като независими доставчици на услуги." },
       { h: "3. Изисквания", list: ["Трябва да сте поне на 18 години за създаване на акаунт и резервации.", "Непълнолетните могат да участват само под надзора на родител или настойник.", "Водачите трябва да завършат проверка на самоличността и да качат валиден кокарт."] },
       { h: "4-5. Акаунти и резервации", list: ["Отговаряте за сигурността на данните си и цялата дейност в акаунта.", "Резервацията се потвърждава само след назначаване на водач и обработка на плащане."] },
@@ -1518,7 +1518,7 @@ export const terms: Record<ExtendedLocale, TermsDict> = {
     lastUpdatedLabel: "Poslednje ažuriranje",
     intro: "Ovi Uslovi korišćenja uređuju pristup i korišćenje VibeGuide-a, uključujući veb sajt, aplikaciju i povezane usluge. Korišćenjem VibeGuide-a prihvatate ove Uslove.",
     sections: [
-      { h: "1. Podaci o kompaniji", p: `VibeGuide upravlja ${COMPANY_LEGAL}, Istanbul, Turska. Pravna pitanja: ${SUPPORT_EMAIL}.` },
+      { h: "1. Podaci o kompaniji", p: `VibeGuide upravlja ${COMPANY_LEGAL}, Istanbul, Turska. Pravna pitanja: ${SUPPORT_EMAIL}. Ture, rezervacije i putne usluge ponuđene putem VibeGuidea organizira i provodi Anadolu Tur. Sey. Tur. Tic. Ltd. Şti. (Helliantus Anadolu Tours), putnička agencija kategorije «A» pri TÜRSAB-u (Udruženje putničkih agencija Turske), s Licencom br. 5058, Kuşadası / Aydın, Türkiye. VibeCore djeluje kao vlasnik platforme i posrednički pružatelj usluga.` },
       { h: "2. Opis platforme", p: "VibeGuide je digitalna platforma za putovanja koja povezuje putnike sa licenciranim lokalnim vodičima u Turskoj. Deluje kao tržište i posrednik. Vodiči rade kao nezavisni pružaoci usluga." },
       { h: "3. Uslovi", list: ["Morate imati najmanje 18 godina za kreiranje naloga i rezervacije.", "Maloletnici mogu učestvovati samo uz nadzor roditelja ili zakonskog zastupnika.", "Vodiči moraju završiti verifikaciju identiteta i postaviti važeći kokart."] },
       { h: "4-5. Nalozi i rezervacije", list: ["Odgovorni ste za bezbednost podataka i svu aktivnost na nalogu.", "Rezervacija se potvrđuje tek nakon dodeljivanja vodiča i obrade plaćanja."] },
@@ -1541,7 +1541,7 @@ export const terms: Record<ExtendedLocale, TermsDict> = {
     lastUpdatedLabel: "최종 업데이트",
     intro: "본 서비스 이용약관은 웹사이트, 모바일 앱, 서비스 및 관련 기능을 포함한 VibeGuide의 접근 및 사용을 규정합니다. VibeGuide를 사용함으로써 본 약관에 동의합니다.",
     sections: [
-      { h: "1. 회사 정보", p: `VibeGuide는 ${COMPANY_LEGAL}(터키 이스탄불)에서 운영합니다. 법적 문의: ${SUPPORT_EMAIL}.` },
+      { h: "1. 회사 정보", p: `VibeGuide는 ${COMPANY_LEGAL}(터키 이스탄불)에서 운영합니다. 법적 문의: ${SUPPORT_EMAIL}. VibeGuide를 통해 제공되는 투어, 예약 및 여행 서비스는 TÜRSAB(터키여행사협회) A그룹 여행사 라이선스(라이선스 번호 5058)를 보유한 Anadolu Tur. Sey. Tur. Tic. Ltd. Şti.(Helliantus Anadolu Tours), Kuşadası / Aydın, Türkiye에 의해 기획 및 운영됩니다. VibeCore는 플랫폼 소유자이자 중개 서비스 제공자로서 역할을 수행합니다.` },
       { h: "2. 플랫폼 설명", p: "VibeGuide는 터키에서 여행자를 면허 취득 현지 가이드와 연결하는 디지털 여행 플랫폼입니다. 마켓플레이스 및 중개자로 운영됩니다. 가이드는 독립적인 서비스 제공업체로 운영됩니다." },
       { h: "3. 자격 요건", list: ["계정 생성 및 예약에는 18세 이상이어야 합니다.", "미성년자는 부모 또는 법정 후견인의 감독 하에만 참여할 수 있습니다.", "가이드는 유효한 코카르트를 업로드하고 신원 확인을 완료해야 합니다."] },
       { h: "4-5. 계정 및 예약", list: ["로그인 정보 보안과 계정 활동에 책임을 집니다.", "예약은 가이드 배정 및 결제 처리 후에만 확인됩니다."] },
@@ -1564,7 +1564,7 @@ export const terms: Record<ExtendedLocale, TermsDict> = {
     lastUpdatedLabel: "Ultimo aggiornamento",
     intro: "Questi Termini di servizio regolano l'accesso e l'utilizzo di VibeGuide, inclusi sito web, app, servizi e funzionalità correlate. Utilizzando VibeGuide, accetti questi Termini.",
     sections: [
-      { h: "1. Informazioni sull'azienda", p: `VibeGuide è gestito da ${COMPANY_LEGAL}, Istanbul, Turchia. Domande legali: ${SUPPORT_EMAIL}.` },
+      { h: "1. Informazioni sull'azienda", p: `VibeGuide è gestito da ${COMPANY_LEGAL}, Istanbul, Turchia. Domande legali: ${SUPPORT_EMAIL}. I tour, le prenotazioni e i servizi di viaggio offerti tramite VibeGuide sono organizzati e gestiti da Anadolu Tur. Sey. Tur. Tic. Ltd. Şti. (Helliantus Anadolu Tours), un'agenzia di viaggi di categoria «A» TÜRSAB (Associazione delle Agenzie di Viaggio della Turchia), con Licenza n. 5058, Kuşadası / Aydın, Türkiye. VibeCore agisce in qualità di titolare della piattaforma e prestatore di servizi di intermediazione.` },
       { h: "2. Descrizione della piattaforma", p: "VibeGuide è una piattaforma di viaggi digitale che mette in contatto i viaggiatori con guide locali autorizzate in Turchia. Funge da marketplace e intermediario. Le guide operano come fornitori di servizi indipendenti." },
       { h: "3. Requisiti", list: ["Devi avere almeno 18 anni per creare un account e fare prenotazioni.", "I minori possono partecipare solo sotto la supervisione di un genitore o tutore legale.", "Le guide devono completare la verifica dell'identità e caricare un kokart valido."] },
       { h: "4-5. Account e prenotazioni", list: ["Sei responsabile della sicurezza delle tue credenziali e di tutta l'attività sull'account.", "Una prenotazione è confermata solo dopo l'assegnazione di una guida e l'elaborazione del pagamento."] },
@@ -1587,7 +1587,7 @@ export const terms: Record<ExtendedLocale, TermsDict> = {
     lastUpdatedLabel: "Zadnje ažuriranje",
     intro: "Ovi Uvjeti korištenja uređuju pristup i korištenje VibeGuide-a, uključujući web stranicu, aplikaciju i povezane usluge. Korištenjem VibeGuide-a prihvaćate ove Uvjete.",
     sections: [
-      { h: "1. Podaci o tvrtki", p: `VibeGuide upravlja ${COMPANY_LEGAL}, Istanbul, Turska. Pravna pitanja: ${SUPPORT_EMAIL}.` },
+      { h: "1. Podaci o tvrtki", p: `VibeGuide upravlja ${COMPANY_LEGAL}, Istanbul, Turska. Pravna pitanja: ${SUPPORT_EMAIL}. Ture, rezervacije i putne usluge ponuđene putem VibeGuide-a organizuje i sprovodi Anadolu Tur. Sey. Tur. Tic. Ltd. Şti. (Helliantus Anadolu Tours), turistička agencija kategorije «A» pri TÜRSAB-u (Udruženje turističkih agencija Turske), sa Licencom br. 5058, Kuşadası / Aydın, Türkiye. VibeCore deluje kao vlasnik platforme i posrednički pružalac usluga.` },
       { h: "2. Opis platforme", p: "VibeGuide je digitalna turistička platforma koja povezuje putnike s licenciranim lokalnim vodičima u Turskoj. Djeluje kao tržišno mjesto i posrednik. Vodiči rade kao neovisni pružatelji usluga." },
       { h: "3. Uvjeti", list: ["Morate imati najmanje 18 godina za kreiranje računa i rezervacije.", "Maloljetnici mogu sudjelovati samo uz nadzor roditelja ili zakonskog zastupnika.", "Vodiči moraju dovršiti provjeru identiteta i učitati valjani kokart."] },
       { h: "4-5. Računi i rezervacije", list: ["Odgovorni ste za sigurnost podataka i svu aktivnost na računu.", "Rezervacija se potvrđuje tek nakon dodjele vodiča i obrade plaćanja."] },
@@ -1611,6 +1611,7 @@ export const terms: Record<ExtendedLocale, TermsDict> = {
     intro: "Ces Conditions régissent votre accès et votre utilisation de VibeGuide, y compris notre site web, application mobile, services et outils de réservation. En utilisant VibeGuide, vous acceptez ces Conditions.",
     sections: [
       { h: "1. Acceptation", p: "En accédant à VibeGuide, vous acceptez ces Conditions. Si vous n'acceptez pas, veuillez ne pas utiliser la plateforme." },
+      { h: "Société et prestataire de services de voyage", p: `VibeGuide est exploitée par VİBECORE TURİZM SEYAHAT ACENTASI VE DİJİTAL HİZMETLER TİCARET LİMİTED ŞİRKETİ (propriétaire de la plateforme et prestataire de services d'intermédiation). Les circuits, les réservations et les services de voyage proposés via VibeGuide sont organisés et exploités par Anadolu Tur. Sey. Tur. Tic. Ltd. Şti. (Helliantus Anadolu Tours), une agence de voyages de catégorie «A» TÜRSAB (Association des agences de voyages de Turquie), titulaire de la Licence n° 5058, Kuşadası / Aydın, Türkiye.` },
       { h: "2. Éligibilité", p: "Vous devez avoir au moins 18 ans. En utilisant VibeGuide, vous confirmez disposer de la capacité juridique pour accepter ces Conditions." },
       { h: "3. Description du service", p: "VibeGuide met en relation des touristes avec des guides locaux indépendants. VibeGuide est une plateforme uniquement — les guides sont des prestataires indépendants, pas des employés." },
       { h: "4. Comptes utilisateurs", list: ["Vous êtes responsable de la confidentialité de votre mot de passe.", "Les informations de compte doivent être exactes et à jour.", "Partagez votre compte avec personne."] },
@@ -1634,6 +1635,7 @@ export const terms: Record<ExtendedLocale, TermsDict> = {
     intro: "Acești Termeni guvernează accesul și utilizarea VibeGuide, inclusiv site-ul nostru, aplicația mobilă, serviciile și instrumentele de rezervare. Prin utilizarea VibeGuide, acceptați acești Termeni.",
     sections: [
       { h: "1. Acceptare", p: "Accesând VibeGuide, acceptați acești Termeni. Dacă nu sunteți de acord, nu utilizați platforma." },
+      { h: "Societate și furnizor de servicii de călătorie", p: `VibeGuide este operat de VİBECORE TURİZM SEYAHAT ACENTASI VE DİJİTAL HİZMETLER TİCARET LİMİTED ŞİRKETİ (proprietar al platformei și furnizor de servicii de intermediere). Tururile, rezervările și serviciile de călătorie oferite prin VibeGuide sunt organizate și operate de Anadolu Tur. Sey. Tur. Tic. Ltd. Şti. (Helliantus Anadolu Tours), o agenție de turism de categoria «A» TÜRSAB (Asociația Agențiilor de Turism din Turcia), cu Licența nr. 5058, Kuşadası / Aydın, Türkiye.` },
       { h: "2. Eligibilitate", p: "Trebuie să aveți cel puțin 18 ani. Utilizând VibeGuide, confirmați că aveți capacitate juridică de a accepta acești Termeni." },
       { h: "3. Descrierea serviciului", p: "VibeGuide conectează turiști cu ghizi locali independenți. VibeGuide este doar o platformă — ghizii sunt prestatori independenți, nu angajați." },
       { h: "4. Conturi de utilizator", list: ["Sunteți responsabil pentru confidențialitatea parolei.", "Informațiile contului trebuie să fie exacte și actualizate.", "Nu partajați contul cu nimeni."] },
@@ -1657,6 +1659,7 @@ export const terms: Record<ExtendedLocale, TermsDict> = {
     intro: "تحكم هذه الشروط وصولك إلى VibeGuide واستخدامك لها، بما يشمل موقعنا الإلكتروني والتطبيق والخدمات وأدوات الحجز. باستخدامك VibeGuide، فإنك توافق على هذه الشروط.",
     sections: [
       { h: "1. القبول", p: "بالوصول إلى VibeGuide، فإنك توافق على هذه الشروط. إن لم تكن موافقاً، يُرجى عدم استخدام المنصة." },
+      { h: "الشركة ومقدِّم خدمات السفر", p: `تُدار منصة VibeGuide من قِبَل شركة VİBECORE TURİZM SEYAHAT ACENTASI VE DİJİTAL HİZMETLER TİCARET LİMİTED ŞİRKETİ (مالكة المنصة ومقدِّمة خدمات وساطة). ويتم تنظيم وتشغيل الجولات والحجوزات وخدمات السفر المقدَّمة عبر VibeGuide من قِبَل شركة Anadolu Tur. Sey. Tur. Tic. Ltd. Şti. (Helliantus Anadolu Tours)، وهي وكالة سفر من الفئة «A» مرخَّصة من TÜRSAB (اتحاد وكالات السفر التركية)، بموجب الترخيص رقم 5058، Kuşadası / Aydın, Türkiye.` },
       { h: "2. الأهلية", p: "يجب أن يكون عمرك 18 عاماً على الأقل. باستخدامك VibeGuide، تؤكد أن لديك الأهلية القانونية للقبول بهذه الشروط." },
       { h: "3. وصف الخدمة", p: "تربط VibeGuide السياح بالمرشدين المحليين المستقلين. VibeGuide منصة فحسب — المرشدون متعاقدون مستقلون، وليسوا موظفين." },
       { h: "4. حسابات المستخدمين", list: ["أنت مسؤول عن سرية كلمة المرور.", "يجب أن تكون معلومات الحساب دقيقة ومحدّثة.", "لا تشارك حسابك مع أحد."] },
@@ -1680,6 +1683,7 @@ export const terms: Record<ExtendedLocale, TermsDict> = {
     intro: "Deze Voorwaarden regelen uw toegang tot en gebruik van VibeGuide, inclusief onze website, mobiele app, diensten en boekingstools. Door VibeGuide te gebruiken, gaat u akkoord met deze Voorwaarden.",
     sections: [
       { h: "1. Acceptatie", p: "Door VibeGuide te gebruiken, accepteert u deze Voorwaarden. Als u het er niet mee eens bent, gebruik het platform dan niet." },
+      { h: "Bedrijf & reisdienstverlener", p: `VibeGuide wordt geëxploiteerd door VİBECORE TURİZM SEYAHAT ACENTASI VE DİJİTAL HİZMETLER TİCARET LİMİTED ŞİRKETİ (eigenaar van het platform en bemiddelende dienstverlener). De via VibeGuide aangeboden tours, boekingen en reisdiensten worden georganiseerd en uitgevoerd door Anadolu Tur. Sey. Tur. Tic. Ltd. Şti. (Helliantus Anadolu Tours), een reisbureau van categorie «A» van TÜRSAB (de Turkse bond van reisbureaus), met Vergunningsnr. 5058, Kuşadası / Aydın, Türkiye.` },
       { h: "2. Geschiktheid", p: "U moet minimaal 18 jaar oud zijn. Door VibeGuide te gebruiken, bevestigt u juridisch bekwaam te zijn deze Voorwaarden te accepteren." },
       { h: "3. Servicebeschrijving", p: "VibeGuide verbindt toeristen met onafhankelijke lokale gidsen. VibeGuide is alleen een platform — gidsen zijn onafhankelijke contractanten, geen werknemers." },
       { h: "4. Gebruikersaccounts", list: ["U bent verantwoordelijk voor de vertrouwelijkheid van uw wachtwoord.", "Accountinformatie moet accuraat en up-to-date zijn.", "Deel uw account met niemand."] },
@@ -1703,6 +1707,7 @@ export const terms: Record<ExtendedLocale, TermsDict> = {
     intro: "Niniejsze Warunki regulują dostęp i korzystanie z VibeGuide, w tym naszej strony internetowej, aplikacji mobilnej, usług i narzędzi rezerwacyjnych. Korzystając z VibeGuide, akceptujesz niniejsze Warunki.",
     sections: [
       { h: "1. Akceptacja", p: "Uzyskując dostęp do VibeGuide, akceptujesz niniejsze Warunki. Jeśli się nie zgadzasz, prosimy nie korzystać z platformy." },
+      { h: "Firma i dostawca usług turystycznych", p: `VibeGuide jest prowadzone przez VİBECORE TURİZM SEYAHAT ACENTASI VE DİJİTAL HİZMETLER TİCARET LİMİTED ŞİRKETİ (właściciel platformy i pośredniczący usługodawca). Wycieczki, rezerwacje i usługi turystyczne oferowane za pośrednictwem VibeGuide są organizowane i realizowane przez Anadolu Tur. Sey. Tur. Tic. Ltd. Şti. (Helliantus Anadolu Tours), biuro podróży kategorii «A» zrzeszone w TÜRSAB (Stowarzyszenie Biur Podróży Turcji), posiadające Licencję nr 5058, Kuşadası / Aydın, Türkiye.` },
       { h: "2. Wymagania", p: "Musisz mieć co najmniej 18 lat. Korzystając z VibeGuide, potwierdzasz posiadanie zdolności prawnej do zaakceptowania niniejszych Warunków." },
       { h: "3. Opis usługi", p: "VibeGuide łączy turystów z niezależnymi lokalnymi przewodnikami. VibeGuide to tylko platforma — przewodnicy są niezależnymi wykonawcami, nie pracownikami." },
       { h: "4. Konta użytkowników", list: ["Odpowiadasz za poufność swojego hasła.", "Informacje o koncie muszą być dokładne i aktualne.", "Nie udostępniaj konta nikomu."] },
@@ -1726,6 +1731,7 @@ export const terms: Record<ExtendedLocale, TermsDict> = {
     intro: "Ці Умови регулюють ваш доступ до VibeGuide та її використання, включаючи наш веб-сайт, мобільний додаток, сервіси та інструменти бронювання. Використовуючи VibeGuide, ви погоджуєтеся з цими Умовами.",
     sections: [
       { h: "1. Прийняття", p: "Отримуючи доступ до VibeGuide, ви приймаєте ці Умови. Якщо ви не погоджуєтеся, будь ласка, не використовуйте платформу." },
+      { h: "Компанія та постачальник туристичних послуг", p: `VibeGuide управляється компанією VİBECORE TURİZM SEYAHAT ACENTASI VE DİJİTAL HİZMETLER TİCARET LİMİTED ŞİRKETİ (власник платформи та посередник, що надає послуги). Тури, бронювання та туристичні послуги, що пропонуються через VibeGuide, організовуються та здійснюються компанією Anadolu Tur. Sey. Tur. Tic. Ltd. Şti. (Helliantus Anadolu Tours) — туристичною агенцією категорії «A» TÜRSAB (Асоціація туристичних агенцій Туреччини), з Ліцензією № 5058, Kuşadası / Aydın, Türkiye.` },
       { h: "2. Допустимість", p: "Вам має бути не менше 18 років. Використовуючи VibeGuide, ви підтверджуєте наявність правоздатності для прийняття цих Умов." },
       { h: "3. Опис сервісу", p: "VibeGuide з'єднує туристів з незалежними місцевими гідами. VibeGuide — лише платформа; гіди є незалежними підрядниками, а не співробітниками." },
       { h: "4. Облікові записи", list: ["Ви відповідаєте за конфіденційність пароля.", "Інформація акаунту має бути точною та актуальною.", "Не діліться акаунтом з іншими."] },
@@ -1749,6 +1755,7 @@ export const terms: Record<ExtendedLocale, TermsDict> = {
     intro: "Syarat ini mengatur akses dan penggunaan VibeGuide, termasuk situs web, aplikasi mobile, layanan, dan alat pemesanan kami. Dengan menggunakan VibeGuide, Anda menyetujui Syarat ini.",
     sections: [
       { h: "1. Penerimaan", p: "Dengan mengakses VibeGuide, Anda menerima Syarat ini. Jika tidak setuju, mohon jangan gunakan platform." },
+      { h: "Perusahaan & Penyedia Layanan Perjalanan", p: `VibeGuide dioperasikan oleh VİBECORE TURİZM SEYAHAT ACENTASI VE DİJİTAL HİZMETLER TİCARET LİMİTED ŞİRKETİ (pemilik platform dan penyedia layanan perantara). Tur, pemesanan, dan layanan perjalanan yang ditawarkan melalui VibeGuide diselenggarakan dan dioperasikan oleh Anadolu Tur. Sey. Tur. Tic. Ltd. Şti. (Helliantus Anadolu Tours), sebuah agen perjalanan Golongan «A» TÜRSAB (Asosiasi Agen Perjalanan Turki), dengan Lisensi No. 5058, Kuşadası / Aydın, Türkiye.` },
       { h: "2. Kelayakan", p: "Anda harus berusia minimal 18 tahun. Dengan menggunakan VibeGuide, Anda mengonfirmasi memiliki kapasitas hukum untuk menerima Syarat ini." },
       { h: "3. Deskripsi Layanan", p: "VibeGuide menghubungkan wisatawan dengan pemandu lokal independen. VibeGuide hanya platform — pemandu adalah kontraktor independen, bukan karyawan." },
       { h: "4. Akun Pengguna", list: ["Anda bertanggung jawab atas kerahasiaan kata sandi.", "Informasi akun harus akurat dan terkini.", "Jangan bagikan akun dengan siapapun."] },
@@ -1772,6 +1779,7 @@ export const terms: Record<ExtendedLocale, TermsDict> = {
     intro: "Estes Termos regem o seu acesso e utilização do VibeGuide, incluindo o nosso site, aplicação móvel, serviços e ferramentas de reserva. Ao utilizar o VibeGuide, aceita estes Termos.",
     sections: [
       { h: "1. Aceitação", p: "Ao aceder ao VibeGuide, aceita estes Termos. Se não concordar, por favor não utilize a plataforma." },
+      { h: "Empresa e prestador de serviços de viagem", p: `O VibeGuide é operado pela VİBECORE TURİZM SEYAHAT ACENTASI VE DİJİTAL HİZMETLER TİCARET LİMİTED ŞİRKETİ (proprietária da plataforma e prestadora de serviços de intermediação). Os passeios, as reservas e os serviços de viagem oferecidos através do VibeGuide são organizados e operados pela Anadolu Tur. Sey. Tur. Tic. Ltd. Şti. (Helliantus Anadolu Tours), uma agência de viagens de categoria «A» da TÜRSAB (Associação das Agências de Viagens da Turquia), com Licença n.º 5058, Kuşadası / Aydın, Türkiye.` },
       { h: "2. Elegibilidade", p: "Deve ter pelo menos 18 anos. Ao utilizar o VibeGuide, confirma ter capacidade jurídica para aceitar estes Termos." },
       { h: "3. Descrição do serviço", p: "O VibeGuide liga turistas a guias locais independentes. O VibeGuide é apenas uma plataforma — os guias são prestadores independentes, não funcionários." },
       { h: "4. Contas de utilizador", list: ["É responsável pela confidencialidade da sua palavra-passe.", "As informações da conta devem ser precisas e atualizadas.", "Não partilhe a sua conta com ninguém."] },
