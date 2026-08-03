@@ -11,6 +11,8 @@ VibeGuide olarak, seyahat deneyimi rezervasyonu yapan her kullanıcının rezerv
 
 VibeGuide üzerinden rezervasyon yaparak aşağıdaki şartları kabul etmiş sayılırsınız.
 
+**Seyahat Hizmeti Sağlayıcısı:** Platform üzerinden sunulan turizm/seyahat hizmetleri, TÜRSAB A Grubu Seyahat Acentası belgesine sahip **Anadolu Tur. Sey. Tur. Tic. Ltd. Şti. (Helliantus Anadolu Tours), TÜRSAB Belge No: 5058** (Cumhuriyet Mah., İnönü Bulvarı, Şeref Gedik İş Merkezi, Kuşadası/Aydın) tarafından organize edilmektedir. VibeCore, platformu işleten aracı hizmet sağlayıcıdır. Bu politikada tanımlanan iptal ve iade işlemleri, ilgili seyahat acentesinin operasyonel koşulları çerçevesinde yürütülür.
+
 ## 1. Genel İptal Koşulları
 
 Rezervasyon sayfasında aksi belirtilmedikçe aşağıdaki kurallar uygulanır.
@@ -215,6 +217,8 @@ const BODY_EN = `
 At VibeGuide, we want every user who books a travel experience to feel secure throughout the booking process. This Cancellation & Refund Policy explains under which conditions bookings may be cancelled and when a refund right arises.
 
 By making a booking through VibeGuide, you are deemed to have accepted the terms below.
+
+**Travel Service Provider:** Tourism/travel services offered through the platform are organized by **Anadolu Tur. Sey. Tur. Tic. Ltd. Şti. (Helliantus Anadolu Tours), TÜRSAB A-Group Travel Agency License No. 5058** (Cumhuriyet Mah., İnönü Bulvarı, Şeref Gedik İş Merkezi, Kuşadası/Aydın, Türkiye). VibeCore operates the platform as an intermediary service provider. The cancellations and refunds described in this policy are handled within the operational conditions of the licensed travel agency.
 
 ## 1. General Cancellation Conditions
 

@@ -48,7 +48,7 @@ Platformun temeli, Türkiye'nin en çok ziyaret edilen destinasyonlarında ulusl
 
 Bu sektörel birikim, platform üzerinden sunulan deneyimlerin profesyonel rehberlik standartlarına, kültürel doğruluğa, misafir güvenliğine, operasyonel güvenilirliğe ve yüksek hizmet kalitesine uygun şekilde tasarlanmasına yardımcı olmaktadır.
 
-Mevzuatın gerekli gördüğü durumlarda, platform üzerinden sunulan bazı turizm hizmetleri Türk turizm mevzuatı kapsamında yetkilendirilmiş ve Türkiye Seyahat Acentaları Birliği (TÜRSAB) üyesi seyahat acenteleri tarafından veya bu acentelerle iş birliği içerisinde gerçekleştirilebilir.
+Mevzuatın gerekli gördüğü durumlarda, platform üzerinden sunulan turizm/seyahat hizmetleri, Türk turizm mevzuatı kapsamında yetkilendirilmiş ve Türkiye Seyahat Acentaları Birliği (TÜRSAB) üyesi bir A Grubu seyahat acentesi olan **Anadolu Tur. Sey. Tur. Tic. Ltd. Şti. (Helliantus Anadolu Tours), TÜRSAB Belge No: 5058** tarafından organize edilmektedir. VibeCore, platformu işleten aracı hizmet sağlayıcı konumundadır.
 
 VibeGuide olarak doğrulanmış turizm profesyonelleriyle çalışmaya ve turizm, tüketici hakları, kişisel verilerin korunması ve dijital hizmetlere ilişkin yürürlükteki mevzuata uyum sağlamaya önem veriyoruz.
 
@@ -128,7 +128,7 @@ The platform is built on real guiding experience gained over years of fieldwork 
 
 This industry experience helps ensure that the experiences offered through the platform are designed in line with professional guiding standards, cultural accuracy, guest safety, operational reliability, and high service quality.
 
-Where required by legislation, some tourism services offered through the platform may be carried out by, or in cooperation with, travel agencies authorized under Turkish tourism legislation and that are members of the Association of Turkish Travel Agencies (TÜRSAB).
+Where required by legislation, tourism/travel services offered through the platform are organized by **Anadolu Tur. Sey. Tur. Tic. Ltd. Şti. (Helliantus Anadolu Tours), a TÜRSAB A-Group travel agency (License No. 5058)** authorized under Turkish tourism legislation and a member of the Association of Turkish Travel Agencies (TÜRSAB). VibeCore acts as the intermediary provider operating the platform.
 
 At VibeGuide, we are committed to working with verified tourism professionals and to complying with applicable legislation on tourism, consumer rights, the protection of personal data, and digital services.
 
