@@ -29,7 +29,21 @@ E-posta: [support@vibeguideapp.com](mailto:support@vibeguideapp.com)
 
 Telefon: +90 530 828 76 96
 
-Bundan sonra "SATICI" veya "VibeGuide" olarak anılacaktır.
+Bundan sonra "SATICI" veya "VibeGuide" olarak anılacaktır. VİBECORE, VibeGuide platformunun sahibi ve işletmecisi (aracı hizmet sağlayıcı) konumundadır.
+
+### SEYAHAT ACENTESİ (HİZMET SAĞLAYICI)
+
+VibeGuide platformu üzerinden sunulan tur, rezervasyon ve seyahat hizmetleri; 1618 sayılı Seyahat Acentaları ve Seyahat Acentaları Birliği Kanunu uyarınca aşağıda bilgileri verilen TÜRSAB A Grubu seyahat acentesi tarafından organize edilmekte ve yürütülmektedir:
+
+Unvan: **ANADOLU TUR. SEY. TUR. TİC. LTD. ŞTİ.**
+
+Acenta Ticari Unvanı: **Helliantus Anadolu Tours**
+
+TÜRSAB Belge No: **5058**
+
+Adres: Cumhuriyet Mah., İnönü Bulvarı, Şeref Gedik İş Merkezi, Kuşadası / Aydın / Türkiye
+
+Seyahat hizmetinin ifası, yukarıda belirtilen TÜRSAB belgeli seyahat acentesi tarafından gerçekleştirilir.
 
 ### ALICI
 
@@ -254,7 +268,21 @@ Email: [support@vibeguideapp.com](mailto:support@vibeguideapp.com)
 
 Phone: +90 530 828 76 96
 
-Hereinafter referred to as the "SELLER" or "VibeGuide".
+Hereinafter referred to as the "SELLER" or "VibeGuide". VİBECORE is the owner and operator of the VibeGuide platform (intermediary service provider).
+
+### TRAVEL AGENCY (SERVICE PROVIDER)
+
+Tours, bookings and travel services offered through the VibeGuide platform are organized and operated by the following TÜRSAB A Group travel agency, in accordance with Turkish Law No. 1618 on Travel Agencies:
+
+Title: **ANADOLU TUR. SEY. TUR. TİC. LTD. ŞTİ.**
+
+Agency Trade Name: **Helliantus Anadolu Tours**
+
+TÜRSAB License No: **5058**
+
+Address: Cumhuriyet Mah., İnönü Bulvarı, Şeref Gedik İş Merkezi, Kuşadası / Aydın / Türkiye
+
+The travel service is performed by the TÜRSAB-licensed travel agency stated above.
 
 ### BUYER
 

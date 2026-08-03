@@ -31,6 +31,20 @@ Beldibi Mah. Belmar Sk. No:9/1 İç Kapı No:4, Marmaris / Muğla / Türkiye
 
 **Çalışma Saatleri:** Hafta içi 09:00 – 18:00 (UTC+3)
 
+VİBECORE, VibeGuide platformunun sahibi ve işletmecisi (aracı hizmet sağlayıcı) konumundadır.
+
+### Seyahat Acentesi (Hizmet Sağlayıcı)
+
+VibeGuide platformu üzerinden sunulan tur, rezervasyon ve seyahat hizmetleri, 1618 sayılı Seyahat Acentaları ve Seyahat Acentaları Birliği Kanunu uyarınca aşağıdaki TÜRSAB A Grubu seyahat acentesi tarafından organize edilmekte ve yürütülmektedir:
+
+**Unvan:** ANADOLU TUR. SEY. TUR. TİC. LTD. ŞTİ.
+
+**Acenta Ticari Unvanı:** Helliantus Anadolu Tours
+
+**TÜRSAB Belge No:** 5058
+
+**Adres:** Cumhuriyet Mah., İnönü Bulvarı, Şeref Gedik İş Merkezi, Kuşadası / Aydın / Türkiye
+
 ## 2. VibeGuide'ın Rolü
 
 VibeGuide, kullanıcıların doğrulanmış rehberler ve tur sağlayıcıları ile rezervasyon yapabilmesini sağlayan dijital bir turizm platformudur.
@@ -234,6 +248,20 @@ Beldibi Mah. Belmar Sk. No:9/1 İç Kapı No:4, Marmaris / Muğla / Türkiye
 **Phone:** +90 530 828 76 96
 
 **Working Hours:** Weekdays 09:00 – 18:00 (UTC+3)
+
+VİBECORE is the owner and operator of the VibeGuide platform (intermediary service provider).
+
+### Travel Agency (Service Provider)
+
+Tours, bookings and travel services offered through the VibeGuide platform are organized and operated by the following TÜRSAB A Group travel agency, in accordance with Turkish Law No. 1618 on Travel Agencies:
+
+**Title:** ANADOLU TUR. SEY. TUR. TİC. LTD. ŞTİ.
+
+**Agency Trade Name:** Helliantus Anadolu Tours
+
+**TÜRSAB License No:** 5058
+
+**Address:** Cumhuriyet Mah., İnönü Bulvarı, Şeref Gedik İş Merkezi, Kuşadası / Aydın / Türkiye
 
 ## 2. Role of VibeGuide
 

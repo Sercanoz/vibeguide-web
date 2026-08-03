@@ -854,7 +854,7 @@ export const terms: Record<ExtendedLocale, TermsDict> = {
     sections: [
       {
         h: "1. Company Information",
-        p: `VibeGuide is operated by VİBECORE TURİZM SEYAHAT ACENTASI VE DİJİTAL HİZMETLER TİCARET LİMİTED ŞİRKETİ.`,
+        p: `VibeGuide is operated by VİBECORE TURİZM SEYAHAT ACENTASI VE DİJİTAL HİZMETLER TİCARET LİMİTED ŞİRKETİ (platform owner / intermediary). Tours, bookings and travel services offered through VibeGuide are organized and operated by Anadolu Tur. Sey. Tur. Tic. Ltd. Şti. (Helliantus Anadolu Tours), a TÜRSAB A Group Travel Agency (License No. 5058), Kuşadası / Aydın, Türkiye.`,
         list: [
           `Support & legal: ${SUPPORT_EMAIL}`,
           `Website: www.vibeguideapp.com`,
@@ -1042,7 +1042,7 @@ export const terms: Record<ExtendedLocale, TermsDict> = {
     sections: [
       {
         h: "1. Şirket bilgileri",
-        p: `VibeGuide, VİBECORE TURİZM SEYAHAT ACENTASI VE DİJİTAL HİZMETLER TİCARET LİMİTED ŞİRKETİ tarafından işletilmektedir. Hukuki sorular için: ${SUPPORT_EMAIL}.`,
+        p: `VibeGuide, VİBECORE TURİZM SEYAHAT ACENTASI VE DİJİTAL HİZMETLER TİCARET LİMİTED ŞİRKETİ (platform sahibi / aracı hizmet sağlayıcı) tarafından işletilmektedir. VibeGuide üzerinden sunulan tur, rezervasyon ve seyahat hizmetleri, TÜRSAB A Grubu seyahat acentesi Anadolu Tur. Sey. Tur. Tic. Ltd. Şti. (Helliantus Anadolu Tours, TÜRSAB Belge No: 5058, Kuşadası / Aydın) tarafından organize edilir. Hukuki sorular için: ${SUPPORT_EMAIL}.`,
       },
       {
         h: "2. Platform tanımı",
