@@ -56,6 +56,10 @@ export type Attraction = {
   slug: string;
   city: string; // tur eşleştirmesi için (görsel ad)
   citySlug: string; // /api/tours?city=<slug>
+  // Şehir tur-rehberi linki için slug override — citySlug tur-eşleştirmeye göredir
+  // (ör. cappadocia mekanı citySlug="nevsehir") ama guide "cappadocia-tour-guide".
+  // Verilmezse citySlug kullanılır.
+  guideSlug?: string;
   emoji: string;
   image: string;
   lat: number;
@@ -1836,6 +1840,7 @@ export const ATTRACTIONS: Attraction[] = [
   // ────────────────────────────────── CAPPADOCIA ──────────────────────────────
   {
     slug: "cappadocia",
+    guideSlug: "cappadocia",
     city: "Cappadocia",
     citySlug: "nevsehir",
     emoji: "🎈",

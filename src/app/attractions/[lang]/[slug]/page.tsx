@@ -79,13 +79,16 @@ export default async function AttractionPage({ params }: Props) {
 
   // Bu landmark'ın şehrinin tur-rehberi SEO sayfasına iç link (şehir guide'ı varsa).
   // Attraction dilleri (11) ⊃ city-guide dilleri (10, el yok) → el için EN guide'a bağla.
-  const cityGuideSlug = `${attraction.citySlug}-tour-guide`;
+  const cityGuideSlug = `${attraction.guideSlug ?? attraction.citySlug}-tour-guide`;
   const cgLang = isCityGuideLang(lang) ? lang : "en";
-  const cityGuideHref = getCityGuide(cityGuideSlug)
+  const cityGuide = getCityGuide(cityGuideSlug);
+  const cityGuideHref = cityGuide
     ? cgLang === "en"
       ? `/${cityGuideSlug}`
       : `/${cgLang}/${cityGuideSlug}`
     : null;
+  // Breadcrumb'ta gösterilecek şehir adı (guide varsa onun lokalize h1'i, yoksa attraction.city).
+  const cityCrumbName = cityGuide?.i18n[cgLang]?.h1 ?? attraction.city;
 
   // Yapısal veri — TouristAttraction + FAQPage + BreadcrumbList.
   const jsonLd = {
@@ -118,11 +121,15 @@ export default async function AttractionPage({ params }: Props) {
       },
       {
         "@type": "BreadcrumbList",
+        // Görünür breadcrumb ile eşleşir: şehir guide'ı varsa 3 seviye.
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "VibeGuide", item: SITE },
+          ...(cityGuideHref
+            ? [{ "@type": "ListItem", position: 2, name: cityCrumbName, item: `${SITE}${cityGuideHref}` }]
+            : []),
           {
             "@type": "ListItem",
-            position: 2,
+            position: cityGuideHref ? 3 : 2,
             name: c.name,
             item: `${SITE}/attractions/${lang}/${slug}`,
           },
@@ -158,6 +165,12 @@ export default async function AttractionPage({ params }: Props) {
               <nav aria-label="Breadcrumb" className="mb-3 text-xs text-white/70">
                 <Link href="/" className="hover:text-white transition-colors">VibeGuide</Link>
                 <span className="mx-1.5" aria-hidden="true">›</span>
+                {cityGuideHref && (
+                  <>
+                    <Link href={cityGuideHref} className="hover:text-white transition-colors">{cityCrumbName}</Link>
+                    <span className="mx-1.5" aria-hidden="true">›</span>
+                  </>
+                )}
                 <span className="text-white/90">{c.name}</span>
               </nav>
               <span className="text-4xl">{attraction.emoji}</span>
