@@ -5,6 +5,7 @@ import { homeTranslations } from "@/lib/home-i18n";
 import { uiExtra } from "@/lib/ui-extra-i18n";
 import { navbarI18n } from "@/lib/navbar-i18n";
 import { DESTINATIONS, cityGuideHref } from "@/lib/destinations";
+import { ATTRACTION_LANGS, ATTR_HUB } from "@/lib/attractions";
 
 /**
  * Sitenin tek footer'ı — ana sayfa, legal/support, mod ve atraksiyon sayfalarının
@@ -15,6 +16,10 @@ export default function MainFooter() {
   const t = homeTranslations[locale];
   const ux = uiExtra[locale] ?? uiExtra.en;
   const nb = navbarI18n[locale] ?? navbarI18n.en;
+  // Atraksiyon hub'ı sadece 11 attraction dilinde var; dışındaysa EN'e düş.
+  const hubLang = ((ATTRACTION_LANGS as readonly string[]).includes(locale)
+    ? locale
+    : "en") as (typeof ATTRACTION_LANGS)[number];
 
   return (
     <footer className="bg-white border-t border-black/[0.06] px-6 py-16">
@@ -57,6 +62,11 @@ export default function MainFooter() {
                   </a>
                 </li>
               ))}
+              <li>
+                <a href={`/attractions/${hubLang}`} className="hover:text-black transition-colors font-semibold text-[#6C4CF1]">
+                  {ATTR_HUB[hubLang].h1} →
+                </a>
+              </li>
             </ul>
           </div>
           <div>

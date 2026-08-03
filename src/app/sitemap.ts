@@ -58,10 +58,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     return ATTRACTION_LANGS.map((l) => ({
       url: `${SITE}/attractions/${l}/${a.slug}`,
       changeFrequency: "weekly" as const,
-      priority: 0.85,
+      priority: 0.7,
       alternates: { languages },
     }));
   });
+
+  // Atraksiyon hub sayfaları — /attractions/<lang> (her dil + hreflang).
+  const hubLanguages: Record<string, string> = {};
+  for (const l of ATTRACTION_LANGS) hubLanguages[l] = `${SITE}/attractions/${l}`;
+  hubLanguages["x-default"] = `${SITE}/attractions/en`;
+  const attractionHubRoutes: MetadataRoute.Sitemap = ATTRACTION_LANGS.map((l) => ({
+    url: `${SITE}/attractions/${l}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.75,
+    alternates: { languages: hubLanguages },
+  }));
 
   // City tour-guide pages — every city × every language, with hreflang alternates.
   // EN lives at the root URL; other languages under /<lang>.
@@ -79,5 +91,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }));
   });
 
-  return [...staticRoutes, ...cityGuideRoutes, ...tourRoutes, ...attractionRoutes];
+  return [...staticRoutes, ...cityGuideRoutes, ...tourRoutes, ...attractionHubRoutes, ...attractionRoutes];
 }
