@@ -125,14 +125,14 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
     // backend uygular (turist için zorunlu, rehber admin KYC onaylı olduğu için muaf).
     // Web'de erken Firebase emailVerified bloğu KALDIRILDI — rehberi içeri sokmuyordu.
 
-    // me 404 = henüz DB kaydı yok. Yeni turist kaydı için email doğrulanmış olmalı.
+    // me 404 = henüz DB kaydı yok → turist kaydını tamamla.
+    // NOT: Firebase hesabı sunucuda verified olsa bile, yeni basılan ID token bir süre
+    // email_verified=false taşıyabilir (Admin SDK propagation gecikmesi). Bu yüzden
+    // stale client property'sine (user.emailVerified) TAKILMA — token'ı zorla tazele ve
+    // doğrulamayı BACKEND'e bırak (registerTouristOnBackend gerekirse retry eder).
     if (res.status === 404) {
-      if (!user.emailVerified) {
-        await signOut();
-        setError(am.verifyFirst);
-        return;
-      }
-      try { await registerTouristOnBackend(); } catch { onClose(); router.push("/register"); }
+      await user.getIdToken(true);
+      await registerTouristOnBackend();
       return;
     }
     if (res.ok) {
@@ -147,19 +147,47 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
   async function registerTouristOnBackend() {
     const user = fbAuth().currentUser;
     if (!user) throw new Error("No user");
-    await user.reload();
-    const res = await fetch(`${API_BASE_URL}/api/auth/register-tourist`, {
-      method: "POST",
-      headers: await buildAuthHeaders({
-        forceRefresh: true,
-        extra: { "Content-Type": "application/json" },
-      }),
-      body: JSON.stringify({ fullName: fullName.trim() }),
-    });
-    if (res.status === 409) { onClose(); return; }
-    if (!res.ok) { const d = await res.json().catch(() => ({})); throw new Error(d.message ?? am.registrationFailed); }
-    onClose();
-    router.refresh();
+    // Login'de fullName state'i boş olabilir → makul bir isme düş (backend zorunlu tutuyor).
+    const name = fullName.trim() || user.displayName || (user.email?.split("@")[0] ?? "Traveller");
+
+    const attempt = async () => {
+      await user.reload();
+      return fetch(`${API_BASE_URL}/api/auth/register-tourist`, {
+        method: "POST",
+        headers: await buildAuthHeaders({
+          forceRefresh: true,
+          extra: { "Content-Type": "application/json" },
+        }),
+        body: JSON.stringify({ fullName: name }),
+      });
+    };
+
+    let res = await attempt();
+
+    // Token'ın email_verified claim'i propagation yüzünden geç kalmış olabilir →
+    // kısa bekleyip token'ı tazele, 1 kez daha dene.
+    if (!res.ok && res.status !== 409) {
+      const d = await res.json().catch(() => ({} as { error?: string; message?: string }));
+      if (d.error === "email_not_verified") {
+        await new Promise((r) => setTimeout(r, 1500));
+        await user.getIdToken(true);
+        res = await attempt();
+      } else {
+        setError(d.message ?? am.registrationFailed);
+        return;
+      }
+    }
+
+    if (res.ok) { onClose(); router.refresh(); return; }
+    if (res.status === 409) {
+      const d = await res.json().catch(() => ({} as { error?: string }));
+      if (d.error === "email_already_in_use") { setError(am.emailInUse); return; }
+      // already_registered (bu UID zaten kayıtlı) → içeri al
+      onClose(); router.refresh(); return;
+    }
+    const d = await res.json().catch(() => ({} as { error?: string; message?: string }));
+    if (d.error === "email_not_verified") { setError(am.verifyFirst); return; }
+    setError(d.message ?? am.registrationFailed);
   }
 
   async function onGoogleSignIn() {
