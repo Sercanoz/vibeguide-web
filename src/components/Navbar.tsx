@@ -15,7 +15,10 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
   const nb = navbarI18n[locale] ?? navbarI18n.en;
   const [menuOpen, setMenuOpen] = useState(false);
   const [authModal, setAuthModal] = useState<"signin" | "register" | null>(null);
-  const [user, setUser] = useState<User | null | "loading">("loading");
+  // Başlangıç null → SSR + ilk paint'te logged-out butonları hemen gelir (flash yok).
+  // Önceden giriş yapılmışsa (localStorage hint) effect skeleton'a çevirir → "Sign in"
+  // flash'ı olmadan avatar'a geçer. Hydration mismatch olmaması için init deterministik.
+  const [user, setUser] = useState<User | null | "loading">(null);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [openMenu, setOpenMenu] = useState<"tours" | "destinations" | null>(null);
@@ -23,8 +26,12 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
   const userMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Daha önce giriş yapılmışsa auth çözülene kadar skeleton göster (buton flash'ı olmasın).
+    if (typeof window !== "undefined" && localStorage.getItem("vg_authed") === "1") {
+      setUser("loading");
+    }
     const unsub = fbAuth().onAuthStateChanged(async (u) => {
-      if (!u) { setUser(null); return; }
+      if (!u) { localStorage.removeItem("vg_authed"); setUser(null); return; }
       // Email doğrulama kuralını backend uygular (rehber admin KYC onaylı, muaf).
       // Oturumu backend /me ile teyit et — kayıtlı kullanıcıysa (turist/rehber/admin)
       // navbar'da giriş yapmış göster. emailVerified'a bakmıyoruz (rehberi düşürüyordu).
@@ -32,7 +39,8 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
         const res = await fetch(`${API_BASE_URL}/api/auth/me`, {
           headers: await buildAuthHeaders(),
         });
-        setUser(res.ok ? u : null);
+        if (res.ok) { localStorage.setItem("vg_authed", "1"); setUser(u); }
+        else { localStorage.removeItem("vg_authed"); setUser(null); }
       } catch {
         setUser(u); // ağ hatası → oturumu düşürme
       }

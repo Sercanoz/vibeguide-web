@@ -140,7 +140,9 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
       onClose();
       if (me.role === "Admin") router.push("/admin");
       else if (me.role === "PendingGuide") router.push("/guide/pending");
-      else router.refresh();
+      // Tam reload — Navbar'ın Firebase auth listener'ı router.refresh()'te yeniden
+      // çalışmıyor; reload ile navbar kesin "giriş yapıldı" durumuna geçer.
+      else window.location.reload();
     } else { onClose(); }
   }
 
@@ -178,12 +180,12 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
       }
     }
 
-    if (res.ok) { onClose(); router.refresh(); return; }
+    if (res.ok) { window.location.reload(); return; }
     if (res.status === 409) {
       const d = await res.json().catch(() => ({} as { error?: string }));
       if (d.error === "email_already_in_use") { setError(am.emailInUse); return; }
-      // already_registered (bu UID zaten kayıtlı) → içeri al
-      onClose(); router.refresh(); return;
+      // already_registered (bu UID zaten kayıtlı) → içeri al (tam reload → navbar güncellenir)
+      window.location.reload(); return;
     }
     const d = await res.json().catch(() => ({} as { error?: string; message?: string }));
     if (d.error === "email_not_verified") { setError(am.verifyFirst); return; }
