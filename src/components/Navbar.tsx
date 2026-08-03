@@ -1,10 +1,7 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useT } from "./LanguageProvider";
-
-// SSR'da useLayoutEffect uyarısını önle: sunucuda useEffect, client'ta useLayoutEffect.
-const useIsoLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 import { navbarI18n } from "@/lib/navbar-i18n";
 import LanguageSwitcher from "./LanguageSwitcher";
 import CurrencySwitcher from "./CurrencySwitcher";
@@ -28,16 +25,17 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
   const menuRef = useRef<HTMLDivElement>(null);
   const userMenuRef = useRef<HTMLDivElement>(null);
 
-  // Daha önce giriş yapılmışsa auth çözülene kadar skeleton göster — PAINT'TEN ÖNCE
-  // (useLayoutEffect) çalışır ki client-side navigasyonda (My Profile vb.) logged-out
-  // butonları ("Start exploring") 1 frame bile boyanmasın.
-  useIsoLayoutEffect(() => {
-    if (localStorage.getItem("vg_authed") === "1") setUser("loading");
-  }, []);
-
+  // Auth-flash önleme CSS+inline-script ile yapılıyor (layout.tsx <head> + globals.css):
+  // paint öncesi <html data-authed> set edilir, navbar hem butonu hem skeleton'ı basar,
+  // CSS doğru olanı gösterir. Burada sadece data-authed'ı login/logout'ta güncel tutuyoruz.
   useEffect(() => {
     const unsub = fbAuth().onAuthStateChanged(async (u) => {
-      if (!u) { localStorage.removeItem("vg_authed"); setUser(null); return; }
+      if (!u) {
+        localStorage.removeItem("vg_authed");
+        document.documentElement.removeAttribute("data-authed");
+        setUser(null);
+        return;
+      }
       // Email doğrulama kuralını backend uygular (rehber admin KYC onaylı, muaf).
       // Oturumu backend /me ile teyit et — kayıtlı kullanıcıysa (turist/rehber/admin)
       // navbar'da giriş yapmış göster. emailVerified'a bakmıyoruz (rehberi düşürüyordu).
@@ -45,8 +43,15 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
         const res = await fetch(`${API_BASE_URL}/api/auth/me`, {
           headers: await buildAuthHeaders(),
         });
-        if (res.ok) { localStorage.setItem("vg_authed", "1"); setUser(u); }
-        else { localStorage.removeItem("vg_authed"); setUser(null); }
+        if (res.ok) {
+          localStorage.setItem("vg_authed", "1");
+          document.documentElement.setAttribute("data-authed", "1");
+          setUser(u);
+        } else {
+          localStorage.removeItem("vg_authed");
+          document.documentElement.removeAttribute("data-authed");
+          setUser(null);
+        }
       } catch {
         setUser(u); // ağ hatası → oturumu düşürme
       }
@@ -188,10 +193,7 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
             <LanguageSwitcher />
             <div className="hidden sm:block"><CurrencySwitcher /></div>
 
-            {user === "loading" ? (
-              /* Sağ blok zaten sabit w-[300px]; sadece görsel bir iskelet göster. */
-              <div className="w-9 h-9 rounded-full bg-neutral-100 animate-pulse" />
-            ) : isLoggedIn ? (
+            {isLoggedIn ? (
               /* Avatar dropdown */
               <div className="relative" ref={userMenuRef}>
                 <button
@@ -240,19 +242,24 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
                 )}
               </div>
             ) : (
+              /* Auth çözülene kadar hem butonlar hem skeleton DOM'da; inline-script + CSS
+                 (data-authed) paint ÖNCESİ doğru olanı seçer → login'de "Sign in" flash yok. */
               <>
-                <button onClick={() => setAuthModal("signin")}
-                  className="hidden md:block text-sm font-semibold text-neutral-700 hover:text-[#6C4CF1] px-3 py-2 rounded-xl hover:bg-[#6C4CF1]/[0.06] transition-all duration-150">
-                  {nb.signIn}
-                </button>
-                <button onClick={() => setAuthModal("register")}
-                  className="hidden md:flex items-center gap-1.5 rounded-full bg-[#6C4CF1] px-5 py-2 text-sm font-semibold text-white hover:bg-[#5a3dd4] transition-all duration-150 hover:scale-[1.03]"
-                  style={{ boxShadow: "0 2px 12px rgba(108,76,241,0.3)" }}>
-                  {nb.startExploring}
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
-                </button>
+                <span className="nav-auth-guest contents">
+                  <button onClick={() => setAuthModal("signin")}
+                    className="hidden md:block text-sm font-semibold text-neutral-700 hover:text-[#6C4CF1] px-3 py-2 rounded-xl hover:bg-[#6C4CF1]/[0.06] transition-all duration-150">
+                    {nb.signIn}
+                  </button>
+                  <button onClick={() => setAuthModal("register")}
+                    className="hidden md:flex items-center gap-1.5 rounded-full bg-[#6C4CF1] px-5 py-2 text-sm font-semibold text-white hover:bg-[#5a3dd4] transition-all duration-150 hover:scale-[1.03]"
+                    style={{ boxShadow: "0 2px 12px rgba(108,76,241,0.3)" }}>
+                    {nb.startExploring}
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </button>
+                </span>
+                <div className="nav-auth-skel w-9 h-9 rounded-full bg-neutral-100 animate-pulse" aria-hidden="true" />
               </>
             )}
 

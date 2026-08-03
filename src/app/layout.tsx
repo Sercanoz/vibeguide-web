@@ -137,6 +137,13 @@ export default async function RootLayout({
           var c = localStorage.getItem('vg_cookie_consent');
           if (c === 'accepted') gtag('consent', 'update', { analytics_storage: 'granted' });
         `}} />
+        {/* Auth flash önleme (dark-mode flash deseni): paint'ten ÖNCE, daha önce giriş
+            yapılmışsa <html data-authed="1"> set et → CSS logged-out butonlarını gizler,
+            skeleton gösterir. SSR auth-agnostik olduğu için navbar aksi halde "Sign in"
+            flash'ı yapıyordu (login olmuş kullanıcıda hard refresh'te). */}
+        <script nonce={nonce} dangerouslySetInnerHTML={{ __html: `
+          try { if (localStorage.getItem('vg_authed') === '1') document.documentElement.setAttribute('data-authed','1'); } catch(e){}
+        `}} />
       </head>
       <body className="min-h-full flex flex-col bg-white text-vg-ink">
         <LanguageProvider>
