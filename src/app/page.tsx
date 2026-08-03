@@ -15,6 +15,8 @@ import MainFooter from "@/components/MainFooter";
 import Price from "@/components/Price";
 import { clientFetch } from "@/lib/api";
 import { HERO_BLUR } from "@/lib/hero-blur";
+import { DESTINATIONS, cityGuideHref } from "@/lib/destinations";
+import { ATTRACTION_LANGS, ATTR_HUB } from "@/lib/attractions";
 
 export default function HomePage() {
   const { locale } = useT();
@@ -22,6 +24,9 @@ export default function HomePage() {
   const ux = uiExtra[locale] ?? uiExtra.en;
   const hs = homeSections[locale] ?? homeSections.en;
   const nb = navbarI18n[locale] ?? navbarI18n.en;
+  const hubLang = ((ATTRACTION_LANGS as readonly string[]).includes(locale)
+    ? locale
+    : "en") as (typeof ATTRACTION_LANGS)[number];
 
   const secHow = useInView();
   const secModes = useInView();
@@ -260,6 +265,30 @@ export default function HomePage() {
       </section>
 
 
+
+      {/* ── POPULAR DESTINATIONS (SSR internal links → city guides + attractions hub) ── */}
+      <section className="py-16 bg-white border-t border-black/[0.04]">
+        <div className="mx-auto max-w-6xl px-6">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-center">{nb.destinations}</h2>
+          <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {DESTINATIONS.map((d) => (
+              <a
+                key={d.slug}
+                href={cityGuideHref(d.slug, locale)}
+                className="group flex items-center gap-3 rounded-2xl border border-black/[0.06] bg-[#F7F7FB] p-4 hover:border-[#6C4CF1]/30 transition-colors"
+              >
+                <span className="text-2xl" aria-hidden="true">{d.emoji}</span>
+                <span className="font-black leading-tight group-hover:text-[#6C4CF1] transition-colors">{d.name}</span>
+              </a>
+            ))}
+          </div>
+          <div className="mt-6 text-center">
+            <a href={`/attractions/${hubLang}`} className="text-sm font-bold text-[#6C4CF1] hover:underline">
+              {ATTR_HUB[hubLang].h1} →
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* ── TESTIMONIALS (real reviews) ── */}
       <Testimonials />
