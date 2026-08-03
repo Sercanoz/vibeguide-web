@@ -109,6 +109,7 @@ export default function MainFooter() {
         <div className="mt-12 pt-8 border-t border-black/[0.06]">
           <div className="grid gap-2 md:grid-cols-2 text-xs text-neutral-800 leading-6">
             <div>
+              <p className="text-[10px] font-bold uppercase tracking-wide text-neutral-500 mb-0.5">{locale === "tr" ? "Platform işletmecisi" : "Platform operator"}</p>
               <p className="font-semibold text-neutral-700">{locale === "tr" ? "VibeCore Turizm Seyahat Acentası ve Dijital Hizmetler Ticaret Ltd. Şti." : "VibeCore Tourism Travel Agency and Digital Services Trade Co. Ltd."}</p>
               <p>{locale === "tr" ? "Vergi No" : "Tax No"}: 9251328389 · {locale === "tr" ? "Vergi Dairesi" : "Tax Office"}: {locale === "tr" ? "Marmaris V.D." : "Marmaris Tax Office"}</p>
               <p>{locale === "tr" ? "Ticaret Sicil No" : "Trade Registry No"}: 12686</p>
@@ -120,6 +121,26 @@ export default function MainFooter() {
               <p>{ux.workingHours}</p>
             </div>
           </div>
+
+          {/* Seyahat operasyonları — hizmetleri yürüten TÜRSAB A Grubu acente (1618 s.k.
+             yasal zorunluluk + şeffaflık; VibeCore platformu işletir, acente seyahati organize eder). */}
+          <div className="mt-6 rounded-2xl bg-[#F7F7FB] border border-black/[0.06] p-4 text-xs text-neutral-800 leading-6">
+            <p className="text-[10px] font-bold uppercase tracking-wide text-neutral-500 mb-1">{locale === "tr" ? "Seyahat operasyonları" : "Travel operations"}</p>
+            {locale === "tr" ? (
+              <p>
+                Tur, rezervasyon ve seyahat hizmetleri, TÜRSAB A Grubu Seyahat Acentası{" "}
+                <span className="font-semibold text-neutral-700">Anadolu Tur. Sey. Tur. Tic. Ltd. Şti.</span>{" "}
+                (Helliantus Anadolu Tours, TÜRSAB Belge No: <span className="font-semibold text-neutral-700">5058</span>) tarafından organize edilmekte ve yürütülmektedir. Adres: Cumhuriyet Mah., İnönü Bulvarı, Şeref Gedik İş Merkezi, Kuşadası/Aydın.
+              </p>
+            ) : (
+              <p>
+                Tours, bookings and travel services offered through VibeGuide are organized and operated by{" "}
+                <span className="font-semibold text-neutral-700">Anadolu Tur. Sey. Tur. Tic. Ltd. Şti.</span>{" "}
+                (Helliantus Anadolu Tours), a TÜRSAB A Group Travel Agency (License No. <span className="font-semibold text-neutral-700">5058</span>). Address: Cumhuriyet Mah., İnönü Bulvarı, Şeref Gedik İş Merkezi, Kuşadası/Aydın, Türkiye.
+              </p>
+            )}
+          </div>
+
           {/* Ödeme güvenliği logoları — Visa, Mastercard, Amex, Troy */}
           <div className="mt-8 flex justify-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}
