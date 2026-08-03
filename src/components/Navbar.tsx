@@ -1,7 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useT } from "./LanguageProvider";
+
+// SSR'da useLayoutEffect uyarısını önle: sunucuda useEffect, client'ta useLayoutEffect.
+const useIsoLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 import { navbarI18n } from "@/lib/navbar-i18n";
 import LanguageSwitcher from "./LanguageSwitcher";
 import CurrencySwitcher from "./CurrencySwitcher";
@@ -25,11 +28,14 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
   const menuRef = useRef<HTMLDivElement>(null);
   const userMenuRef = useRef<HTMLDivElement>(null);
 
+  // Daha önce giriş yapılmışsa auth çözülene kadar skeleton göster — PAINT'TEN ÖNCE
+  // (useLayoutEffect) çalışır ki client-side navigasyonda (My Profile vb.) logged-out
+  // butonları ("Start exploring") 1 frame bile boyanmasın.
+  useIsoLayoutEffect(() => {
+    if (localStorage.getItem("vg_authed") === "1") setUser("loading");
+  }, []);
+
   useEffect(() => {
-    // Daha önce giriş yapılmışsa auth çözülene kadar skeleton göster (buton flash'ı olmasın).
-    if (typeof window !== "undefined" && localStorage.getItem("vg_authed") === "1") {
-      setUser("loading");
-    }
     const unsub = fbAuth().onAuthStateChanged(async (u) => {
       if (!u) { localStorage.removeItem("vg_authed"); setUser(null); return; }
       // Email doğrulama kuralını backend uygular (rehber admin KYC onaylı, muaf).
