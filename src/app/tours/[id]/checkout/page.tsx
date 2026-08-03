@@ -49,6 +49,7 @@ export default function CheckoutPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [agreed, setAgreed] = useState(false);
   const [notice, setNotice] = useState<string | null>(null);
 
   useEffect(() => {
@@ -77,6 +78,10 @@ export default function CheckoutPage() {
   function pay() {
     if (!name.trim() || !email.trim() || !phone.trim()) {
       setNotice(tt.coFillAll);
+      return;
+    }
+    if (!agreed) {
+      setNotice(tt.coAgreeErr);
       return;
     }
     // Ödeme sağlayıcı API anahtarı geldiğinde burada gerçek ödeme oturumu açılacak
@@ -131,6 +136,24 @@ export default function CheckoutPage() {
                 </div>
               )}
 
+              <label className="mb-4 flex items-start gap-2.5 cursor-pointer select-none">
+                <input
+                  type="checkbox"
+                  checked={agreed}
+                  onChange={(e) => setAgreed(e.target.checked)}
+                  className="mt-0.5 h-4 w-4 shrink-0 accent-[#6C4CF1]"
+                />
+                <span className="text-xs leading-relaxed text-neutral-700">
+                  {tt.coAgreeText}{" "}
+                  <Link href="/mesafeli-satis" target="_blank" className="font-semibold text-[#6C4CF1] hover:underline">
+                    {tt.coDistanceContract}
+                  </Link>{" "}
+                  <Link href="/on-bilgilendirme" target="_blank" className="font-semibold text-[#6C4CF1] hover:underline">
+                    {tt.coAndPreInfo}
+                  </Link>.
+                </span>
+              </label>
+
               <button
                 onClick={pay}
                 className="w-full rounded-full bg-[#6C4CF1] text-white font-bold py-3.5 hover:bg-[#5a3dd4] transition-colors flex items-center justify-center gap-2"
@@ -138,6 +161,10 @@ export default function CheckoutPage() {
               >
                 {tt.coPayNow} · <Price amount={total} currency={tour.currency} />
               </button>
+
+              <p className="mt-4 text-[11px] leading-relaxed text-neutral-500">
+                {tt.coProvider}
+              </p>
             </section>
           </div>
 
