@@ -3901,5 +3901,5799 @@ export const BLOG_POSTS: BlogPost[] = [
         "ctaSub": "인증된 현지 가이드와 매칭해 열기구를 중심으로 일정을 짜고 인파가 놓치는 계곡을 발견하세요."
       }
     }
+  },
+  {
+    "slug": "istanbul-3-day-itinerary",
+    "category": "itineraries",
+    "heroImage": "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?q=80&w=1600",
+    "publishDate": "2026-08-04",
+    "relatedCityGuides": [
+      "istanbul-tour-guide"
+    ],
+    "relatedAttractions": [
+      "hagia-sophia",
+      "blue-mosque",
+      "topkapi-palace",
+      "grand-bazaar",
+      "bosphorus"
+    ],
+    "i18n": {
+      "en": {
+        "title": "3 Days in Istanbul: The Perfect First-Timer Itinerary",
+        "metaTitle": "3 Days in Istanbul — Perfect Itinerary for First-Timers",
+        "metaDescription": "How to spend 3 days in Istanbul: a day-by-day itinerary covering Sultanahmet, the Bosphorus and the bazaars, with local-guide tips on beating the queues and crowds.",
+        "excerpt": "Three days is just enough to fall for Istanbul. Here's a day-by-day plan across two continents — the great monuments, the Bosphorus and the backstreets most visitors miss.",
+        "intro": [
+          "Istanbul is enormous, layered and impossible to fully «see» in three days — but three days is plenty to fall in love with it. Straddling Europe and Asia across the Bosphorus, the city stacks Byzantine cathedrals, Ottoman palaces, humming bazaars and hillside neighbourhoods into one of the most rewarding city breaks anywhere.",
+          "This <strong>3-day Istanbul itinerary</strong> is built for a first-timer who wants the essentials without rushing: the great monuments of Sultanahmet on day one, the Bosphorus and the bazaars on day two, and the local, less-touristy side of the city on day three. A licensed local guide can compress the queues and the walking on the busy days — but the plan works on its own too."
+        ],
+        "sections": [
+          {
+            "heading": "Day 1: Sultanahmet — the historic heart",
+            "paragraphs": [
+              "Start in <strong>Sultanahmet</strong>, the historic peninsula where the biggest sights sit within a short walk of each other. Begin early at <strong>Hagia Sophia</strong>, the 1,500-year-old former cathedral and mosque, then cross the square to the <strong>Blue Mosque</strong> with its cascade of domes and six minarets. Both are free to enter but get very busy — arriving at opening time makes a real difference.",
+              "In the afternoon, tour <strong>Topkapı Palace</strong>, the sprawling seat of the Ottoman sultans, and drop into the underground <strong>Basilica Cistern</strong> nearby. If you have energy left, the <strong>Grand Bazaar</strong> is a short walk away for a first browse. This is the most monument-heavy day, and where a guide pays off most — skipping ticket lines at Topkapı and explaining the layers of history you'd otherwise walk straight past."
+            ]
+          },
+          {
+            "heading": "Day 2: The Bosphorus and the bazaars",
+            "paragraphs": [
+              "Give day two to the water and the markets. A morning <strong>Bosphorus cruise</strong> is the classic way to grasp Istanbul's geography — palaces, wooden waterfront mansions and the two continents sliding past on either side. Public ferries are cheap and just as scenic as the tourist boats.",
+              "Back on land, dive into the <strong>Grand Bazaar</strong> and the aromatic <strong>Spice Bazaar</strong> for carpets, lamps, tea and Turkish delight — haggling expected and part of the fun. In the afternoon, cross the Galata Bridge to <strong>Karaköy</strong> and up to <strong>Galata Tower</strong> for a sunset view over the old city, then explore the cafés and boutiques of the Galata and Beyoğlu districts as the evening comes alive."
+            ]
+          },
+          {
+            "heading": "Day 3: Local neighbourhoods and the Asian side",
+            "paragraphs": [
+              "Use your last day to see the Istanbul that locals love. Spend the morning in <strong>Balat and Fener</strong>, the photogenic old Greek and Jewish quarters with rainbow houses, antique shops and hilltop churches — a world away from the monument crowds. It's one of the city's most rewarding neighbourhoods to wander slowly.",
+              "In the afternoon, take a ferry across to the <strong>Asian side</strong> and the buzzing streets of Kadıköy, with its produce market, street food and easy-going cafés. Ending your trip on a different continent, watching the ferries criss-cross the Bosphorus at dusk, is the perfect note to leave Istanbul on — and a reminder of just how much more there is to come back for."
+            ]
+          },
+          {
+            "heading": "Practical tips for 3 days in Istanbul",
+            "paragraphs": [
+              "Get an <strong>Istanbulkart</strong> travel card on arrival — it works on ferries, trams, buses and the metro, and makes hopping between the two sides effortless and cheap. Base yourself in or near Sultanahmet for day one, or in Galata/Beyoğlu if you prefer restaurants and nightlife within walking distance.",
+              "Wear comfortable shoes — Istanbul is hilly and cobbled — and dress modestly for the mosques, with a scarf for women to cover their hair. The big Sultanahmet sights are busiest in the middle of the day, so go early or late. Three days moves fast, so a licensed local guide for at least the first day is the single best way to see more with less stress."
+            ]
+          },
+          {
+            "heading": "Extending your trip beyond 3 days",
+            "paragraphs": [
+              "If you can add a fourth or fifth day, Istanbul rewards it. A day trip to the <strong>Princes' Islands</strong> gives you a car-free escape of pine forests and Belle Époque mansions, reached by a scenic ferry. Alternatively, add a slower half-day in the <strong>Süleymaniye Mosque</strong> and the atmospheric backstreets around it, or a hammam experience in a historic Ottoman bathhouse.",
+              "Many travellers use Istanbul as the opening act of a longer Turkey trip, flying on to Cappadocia for the balloons or down to the Aegean for Ephesus and the coast. Three days in Istanbul is the perfect foundation — enough to understand the city, and enough to know you'll want to return."
+            ]
+          }
+        ],
+        "faqHeading": "Frequently asked questions",
+        "faqs": [
+          {
+            "q": "Is 3 days enough for Istanbul?",
+            "a": "Three days is enough to cover the essentials comfortably — Sultanahmet's monuments, a Bosphorus cruise, the bazaars and a local neighbourhood like Balat. You won't see everything, but you'll get a real feel for the city. Four or five days lets you add the Princes' Islands or the Asian side at a slower pace."
+          },
+          {
+            "q": "What is the best area to stay in Istanbul for a first visit?",
+            "a": "Sultanahmet puts you within walking distance of Hagia Sophia, the Blue Mosque and Topkapı, ideal for a short first trip. Galata and Beyoğlu are better if you want restaurants, bars and nightlife on your doorstep, with an easy tram or ferry to the old city."
+          },
+          {
+            "q": "Do I need a guide for Istanbul or can I do it independently?",
+            "a": "You can navigate Istanbul independently with a transit card and a map, but a licensed local guide is invaluable on the monument-heavy first day — skipping ticket queues at Topkapı, explaining the history, and reaching neighbourhoods most visitors miss. Many people guide day one and explore solo afterwards."
+          },
+          {
+            "q": "How do I get around Istanbul in 3 days?",
+            "a": "Get an Istanbulkart card, which works on trams, ferries, buses and the metro. The tram covers Sultanahmet and Galata, and cheap public ferries cross the Bosphorus and reach the Asian side. Traffic is heavy, so trams and ferries are usually faster than taxis."
+          },
+          {
+            "q": "What should I wear to visit the mosques in Istanbul?",
+            "a": "Dress modestly: shoulders and knees covered for everyone, and a headscarf for women to cover their hair inside mosques. You'll remove your shoes at the entrance, so easy footwear helps. Scarves are often available to borrow at the door if you forget one."
+          }
+        ],
+        "relatedHeading": "Plan your Istanbul trip",
+        "ctaTitle": "See Istanbul with a licensed local guide",
+        "ctaSub": "Skip the queues and discover the neighbourhoods most visitors miss. Book a verified Istanbul guide on VibeGuide — you'll see the price up front."
+      },
+      "de": {
+        "title": "3 Tage in Istanbul: Der perfekte Reiseplan für Erstbesucher",
+        "metaTitle": "3 Tage Istanbul — Perfekter Reiseplan für Einsteiger",
+        "metaDescription": "3 Tage Istanbul: ein Tag-für-Tag-Reiseplan durch Sultanahmet, den Bosporus und die Basare, mit Tipps von Guides gegen Warteschlangen und Menschenmassen.",
+        "excerpt": "Drei Tage genügen, um sich in Istanbul zu verlieben. Hier ist ein Tag-für-Tag-Plan über zwei Kontinente — die großen Monumente, der Bosporus und die Gassen, die die meisten Besucher verpassen.",
+        "intro": [
+          "Istanbul ist riesig, vielschichtig und in drei Tagen unmöglich vollständig zu «sehen» — doch drei Tage reichen völlig, um sich in die Stadt zu verlieben. Über den Bosporus hinweg zwischen Europa und Asien gelegen, vereint die Stadt byzantinische Kathedralen, osmanische Paläste, quirlige Basare und Hügelviertel zu einem der lohnendsten Städtetrips überhaupt.",
+          "Dieser <strong>3-Tage-Reiseplan für Istanbul</strong> ist für Erstbesucher gemacht, die das Wesentliche ohne Hetze erleben wollen: die großen Monumente von Sultanahmet am ersten Tag, den Bosporus und die Basare am zweiten und die lokale, weniger touristische Seite der Stadt am dritten Tag. Ein lizenzierter lokaler Guide kann an den vollen Tagen die Warteschlangen und die Wege verkürzen — der Plan funktioniert aber auch für sich allein."
+        ],
+        "sections": [
+          {
+            "heading": "Tag 1: Sultanahmet — das historische Herz",
+            "paragraphs": [
+              "Beginnen Sie in <strong>Sultanahmet</strong>, der historischen Halbinsel, wo die größten Sehenswürdigkeiten nur wenige Gehminuten voneinander entfernt liegen. Starten Sie früh an der <strong>Hagia Sophia</strong>, der 1.500 Jahre alten einstigen Kathedrale und Moschee, und überqueren Sie dann den Platz zur <strong>Blauen Moschee</strong> mit ihrer Kaskade von Kuppeln und sechs Minaretten. Beide sind kostenlos, aber sehr besucht — zur Öffnungszeit anzukommen macht einen echten Unterschied.",
+              "Am Nachmittag besichtigen Sie den <strong>Topkapı-Palast</strong>, den weitläufigen Sitz der osmanischen Sultane, und schauen in die unterirdische <strong>Cisterna Basilica</strong> in der Nähe hinein. Wenn noch Energie bleibt, ist der <strong>Große Basar</strong> für einen ersten Bummel nur ein kurzer Weg entfernt. Das ist der monumentenreichste Tag und der, an dem sich ein Guide am meisten lohnt — er umgeht die Ticketschlangen am Topkapı und erklärt die Schichten der Geschichte, an denen Sie sonst achtlos vorbeigingen."
+            ]
+          },
+          {
+            "heading": "Tag 2: Der Bosporus und die Basare",
+            "paragraphs": [
+              "Widmen Sie Tag zwei dem Wasser und den Märkten. Eine morgendliche <strong>Bosporus-Fahrt</strong> ist der klassische Weg, Istanbuls Geografie zu erfassen — Paläste, hölzerne Ufervillen und die beiden Kontinente, die zu beiden Seiten vorbeiziehen. Öffentliche Fähren sind günstig und genauso malerisch wie die Touristenboote.",
+              "Zurück an Land tauchen Sie in den <strong>Großen Basar</strong> und den duftenden <strong>Ägyptischen Basar</strong> ein — Teppiche, Lampen, Tee und türkischer Honig, wobei Feilschen erwartet wird und Teil des Vergnügens ist. Am Nachmittag überqueren Sie die Galata-Brücke nach <strong>Karaköy</strong> und hinauf zum <strong>Galataturm</strong> für einen Blick über die Altstadt bei Sonnenuntergang, und erkunden dann die Cafés und Boutiquen der Viertel Galata und Beyoğlu, während der Abend zum Leben erwacht."
+            ]
+          },
+          {
+            "heading": "Tag 3: Lokale Viertel und die asiatische Seite",
+            "paragraphs": [
+              "Nutzen Sie Ihren letzten Tag, um das Istanbul zu sehen, das die Einheimischen lieben. Verbringen Sie den Vormittag in <strong>Balat und Fener</strong>, den fotogenen alten griechischen und jüdischen Vierteln mit ihren bunten Häusern, Antiquitätenläden und Kirchen auf den Hügeln — eine Welt fern der Monumentenmassen. Es ist eines der lohnendsten Viertel der Stadt, um langsam zu schlendern.",
+              "Am Nachmittag nehmen Sie eine Fähre auf die <strong>asiatische Seite</strong> und in die belebten Straßen von Kadıköy mit seinem Gemüsemarkt, Streetfood und entspannten Cafés. Ihre Reise auf einem anderen Kontinent zu beenden und den Fähren beim Kreuzen des Bosporus in der Dämmerung zuzusehen, ist der perfekte Abschluss für Istanbul — und eine Erinnerung daran, wie viel mehr es zu entdecken gibt, wenn Sie zurückkommen."
+            ]
+          },
+          {
+            "heading": "Praktische Tipps für 3 Tage in Istanbul",
+            "paragraphs": [
+              "Besorgen Sie sich bei der Ankunft eine <strong>Istanbulkart</strong> — sie funktioniert in Fähren, Straßenbahnen, Bussen und der Metro und macht das Wechseln zwischen den beiden Seiten mühelos und günstig. Quartieren Sie sich für Tag eins in oder nahe Sultanahmet ein, oder in Galata/Beyoğlu, wenn Sie Restaurants und Nachtleben in Gehweite bevorzugen.",
+              "Tragen Sie bequeme Schuhe — Istanbul ist hügelig und mit Kopfsteinpflaster — und kleiden Sie sich für die Moscheen dezent, mit einem Tuch für Frauen zum Bedecken der Haare. Die großen Sehenswürdigkeiten von Sultanahmet sind mittags am vollsten, gehen Sie also früh oder spät. Drei Tage vergehen schnell, daher ist ein lizenzierter lokaler Guide für zumindest den ersten Tag der beste Weg, mehr mit weniger Stress zu sehen."
+            ]
+          },
+          {
+            "heading": "Ihre Reise über 3 Tage hinaus verlängern",
+            "paragraphs": [
+              "Wenn Sie einen vierten oder fünften Tag anhängen können, belohnt Istanbul es. Ein Tagesausflug zu den <strong>Prinzeninseln</strong> bietet eine autofreie Auszeit aus Pinienwäldern und Belle-Époque-Villen, erreichbar per malerischer Fähre. Alternativ fügen Sie einen entspannten halben Tag in der <strong>Süleymaniye-Moschee</strong> und den stimmungsvollen Gassen ringsum hinzu, oder ein Hammam-Erlebnis in einem historischen osmanischen Badehaus.",
+              "Viele Reisende nutzen Istanbul als Auftakt einer längeren Türkei-Reise und fliegen weiter nach Kappadokien zu den Ballons oder hinunter an die Ägäis zu Ephesos und der Küste. Drei Tage in Istanbul sind das perfekte Fundament — genug, um die Stadt zu verstehen, und genug, um zu wissen, dass Sie zurückkehren wollen."
+            ]
+          }
+        ],
+        "faqHeading": "Häufig gestellte Fragen",
+        "faqs": [
+          {
+            "q": "Reichen 3 Tage für Istanbul?",
+            "a": "Drei Tage reichen, um das Wesentliche in Ruhe abzudecken — die Monumente von Sultanahmet, eine Bosporus-Fahrt, die Basare und ein lokales Viertel wie Balat. Sie werden nicht alles sehen, aber ein echtes Gefühl für die Stadt bekommen. Vier oder fünf Tage lassen Raum für die Prinzeninseln oder die asiatische Seite in langsamerem Tempo."
+          },
+          {
+            "q": "Welches ist das beste Viertel zum Übernachten in Istanbul beim ersten Besuch?",
+            "a": "Sultanahmet bringt Sie in Gehweite von Hagia Sophia, Blauer Moschee und Topkapı, ideal für einen kurzen ersten Trip. Galata und Beyoğlu sind besser, wenn Sie Restaurants, Bars und Nachtleben vor der Tür wollen, mit einer bequemen Straßenbahn oder Fähre in die Altstadt."
+          },
+          {
+            "q": "Brauche ich einen Guide für Istanbul oder schaffe ich es allein?",
+            "a": "Sie können Istanbul mit einer Verkehrskarte und einer Karte allein erkunden, doch ein lizenzierter lokaler Guide ist am monumentenreichen ersten Tag von unschätzbarem Wert — er umgeht die Ticketschlangen am Topkapı, erklärt die Geschichte und führt zu Vierteln, die die meisten Besucher verpassen. Viele lassen sich Tag eins führen und erkunden danach selbst."
+          },
+          {
+            "q": "Wie komme ich in 3 Tagen in Istanbul herum?",
+            "a": "Besorgen Sie sich eine Istanbulkart, die in Straßenbahnen, Fähren, Bussen und der Metro funktioniert. Die Straßenbahn erschließt Sultanahmet und Galata, und günstige öffentliche Fähren queren den Bosporus und erreichen die asiatische Seite. Der Verkehr ist dicht, daher sind Straßenbahnen und Fähren meist schneller als Taxis."
+          },
+          {
+            "q": "Was soll ich für den Besuch der Moscheen in Istanbul tragen?",
+            "a": "Kleiden Sie sich dezent: Schultern und Knie bei allen bedeckt, und ein Kopftuch für Frauen zum Bedecken der Haare in den Moscheen. Am Eingang ziehen Sie die Schuhe aus, daher hilft bequemes Schuhwerk. Am Eingang können oft Tücher ausgeliehen werden, falls Sie eines vergessen."
+          }
+        ],
+        "relatedHeading": "Planen Sie Ihre Istanbul-Reise",
+        "ctaTitle": "Istanbul mit einem lizenzierten lokalen Guide erleben",
+        "ctaSub": "Umgehen Sie die Warteschlangen und entdecken Sie die Viertel, die die meisten Besucher verpassen. Buchen Sie einen verifizierten Istanbul-Guide auf VibeGuide — den Preis sehen Sie vorab."
+      },
+      "es": {
+        "title": "3 días en Estambul: el itinerario perfecto para quien va por primera vez",
+        "metaTitle": "3 días en Estambul — Itinerario perfecto para novatos",
+        "metaDescription": "Cómo pasar 3 días en Estambul: un itinerario día a día por Sultanahmet, el Bósforo y los bazares, con consejos de guías locales para evitar colas y multitudes.",
+        "excerpt": "Tres días bastan para enamorarse de Estambul. Aquí tienes un plan día a día por dos continentes: los grandes monumentos, el Bósforo y las callejuelas que la mayoría se pierde.",
+        "intro": [
+          "Estambul es enorme, tiene mil capas y es imposible «verla» del todo en tres días, pero tres días sobran para enamorarse de ella. A caballo entre Europa y Asia a través del Bósforo, la ciudad reúne catedrales bizantinas, palacios otomanos, bazares bulliciosos y barrios en ladera en una de las escapadas urbanas más gratificantes que existen.",
+          "Este <strong>itinerario de 3 días por Estambul</strong> está pensado para quien la visita por primera vez y quiere lo esencial sin agobios: los grandes monumentos de Sultanahmet el primer día, el Bósforo y los bazares el segundo, y la cara más local y menos turística el tercero. Un guía local titulado puede reducir las colas y las caminatas en los días más intensos, pero el plan también funciona por sí solo."
+        ],
+        "sections": [
+          {
+            "heading": "Día 1: Sultanahmet, el corazón histórico",
+            "paragraphs": [
+              "Empieza en <strong>Sultanahmet</strong>, la península histórica donde los grandes monumentos quedan a pocos pasos unos de otros. Comienza temprano en <strong>Santa Sofía</strong>, la antigua catedral y mezquita de 1.500 años, y luego cruza la plaza hasta la <strong>Mezquita Azul</strong>, con su cascada de cúpulas y seis alminares. Ambas son de entrada gratuita pero se llenan mucho: llegar a la hora de apertura marca una diferencia real.",
+              "Por la tarde recorre el <strong>Palacio de Topkapı</strong>, la extensa sede de los sultanes otomanos, y asómate a la <strong>Cisterna Basílica</strong> subterránea, cerca de allí. Si te quedan fuerzas, el <strong>Gran Bazar</strong> está a un paso para una primera vuelta. Es el día con más monumentos y donde más se nota un guía: se saltan las colas de entrada en Topkapı y se explican las capas de historia por las que, si no, pasarías de largo."
+            ]
+          },
+          {
+            "heading": "Día 2: el Bósforo y los bazares",
+            "paragraphs": [
+              "Dedica el segundo día al agua y a los mercados. Un <strong>crucero por el Bósforo</strong> por la mañana es la forma clásica de captar la geografía de Estambul: palacios, mansiones de madera junto al agua y los dos continentes desfilando a ambos lados. Los ferris públicos son baratos y tan panorámicos como los barcos turísticos.",
+              "De vuelta en tierra, sumérgete en el <strong>Gran Bazar</strong> y en el aromático <strong>Bazar de las Especias</strong> en busca de alfombras, lámparas, té y delicias turcas: se espera el regateo y forma parte de la diversión. Por la tarde cruza el puente de Gálata hacia <strong>Karaköy</strong> y sube a la <strong>Torre de Gálata</strong> para ver la puesta de sol sobre la ciudad vieja; luego explora los cafés y boutiques de los barrios de Gálata y Beyoğlu mientras la noche cobra vida."
+            ]
+          },
+          {
+            "heading": "Día 3: barrios locales y el lado asiático",
+            "paragraphs": [
+              "Aprovecha tu último día para conocer el Estambul que aman los locales. Pasa la mañana en <strong>Balat y Fener</strong>, los fotogénicos y antiguos barrios griego y judío, con casas de colores, tiendas de antigüedades e iglesias en lo alto de la colina: un mundo aparte de las multitudes de los monumentos. Es uno de los barrios más gratificantes de la ciudad para pasear con calma.",
+              "Por la tarde, toma un ferri hacia el <strong>lado asiático</strong> y las animadas calles de Kadıköy, con su mercado de productos frescos, comida callejera y cafés relajados. Terminar el viaje en otro continente, viendo los ferris cruzar el Bósforo al atardecer, es la nota perfecta para despedirse de Estambul, y un recordatorio de todo lo que queda por descubrir cuando vuelvas."
+            ]
+          },
+          {
+            "heading": "Consejos prácticos para 3 días en Estambul",
+            "paragraphs": [
+              "Consigue una tarjeta de transporte <strong>Istanbulkart</strong> al llegar: sirve en ferris, tranvías, autobuses y metro, y hace que saltar de un lado a otro sea sencillo y barato. Alójate en Sultanahmet o cerca para el primer día, o en Gálata/Beyoğlu si prefieres restaurantes y vida nocturna a un paseo.",
+              "Lleva calzado cómodo —Estambul tiene cuestas y adoquines— y viste con recato para las mezquitas, con un pañuelo para que las mujeres se cubran el pelo. Los grandes monumentos de Sultanahmet están más llenos a mediodía, así que ve temprano o tarde. Tres días pasan rápido, por lo que un guía local titulado al menos el primer día es la mejor forma de ver más con menos estrés."
+            ]
+          },
+          {
+            "heading": "Ampliar tu viaje más allá de 3 días",
+            "paragraphs": [
+              "Si puedes añadir un cuarto o quinto día, Estambul lo recompensa. Una excursión a las <strong>Islas de los Príncipes</strong> te ofrece una escapada sin coches, entre pinares y mansiones de la Belle Époque, a la que se llega en un pintoresco ferri. También puedes sumar media jornada tranquila en la <strong>Mezquita de Solimán</strong> y sus evocadoras callejuelas, o una experiencia de hammam en un baño otomano histórico.",
+              "Muchos viajeros usan Estambul como acto inicial de un viaje más largo por Turquía, volando después a Capadocia por los globos o bajando al Egeo para ver Éfeso y la costa. Tres días en Estambul son la base perfecta: suficientes para entender la ciudad, y suficientes para saber que querrás volver."
+            ]
+          }
+        ],
+        "faqHeading": "Preguntas frecuentes",
+        "faqs": [
+          {
+            "q": "¿Bastan 3 días para Estambul?",
+            "a": "Tres días bastan para cubrir lo esencial con calma: los monumentos de Sultanahmet, un crucero por el Bósforo, los bazares y un barrio local como Balat. No lo verás todo, pero captarás de verdad la ciudad. Con cuatro o cinco días puedes añadir las Islas de los Príncipes o el lado asiático a un ritmo más pausado."
+          },
+          {
+            "q": "¿Cuál es la mejor zona para alojarse en Estambul en una primera visita?",
+            "a": "Sultanahmet te deja a un paseo de Santa Sofía, la Mezquita Azul y Topkapı, ideal para un primer viaje corto. Gálata y Beyoğlu son mejores si quieres restaurantes, bares y vida nocturna a la puerta, con un cómodo tranvía o ferri hacia la ciudad vieja."
+          },
+          {
+            "q": "¿Necesito un guía para Estambul o puedo hacerlo por mi cuenta?",
+            "a": "Puedes moverte por Estambul por tu cuenta con una tarjeta de transporte y un mapa, pero un guía local titulado es valiosísimo el primer día, cargado de monumentos: se salta las colas de entrada en Topkapí, explica la historia y llega a barrios que la mayoría se pierde. Muchos contratan guía el primer día y exploran solos después."
+          },
+          {
+            "q": "¿Cómo me muevo por Estambul en 3 días?",
+            "a": "Consigue una tarjeta Istanbulkart, que sirve en tranvías, ferris, autobuses y metro. El tranvía cubre Sultanahmet y Gálata, y los baratos ferris públicos cruzan el Bósforo y llegan al lado asiático. El tráfico es intenso, así que tranvías y ferris suelen ser más rápidos que los taxis."
+          },
+          {
+            "q": "¿Qué debo llevar para visitar las mezquitas de Estambul?",
+            "a": "Viste con recato: hombros y rodillas cubiertos para todos, y un pañuelo para que las mujeres se cubran el pelo dentro de las mezquitas. Te quitarás los zapatos en la entrada, así que un calzado fácil ayuda. En la puerta suele haber pañuelos para tomar prestados si olvidas uno."
+          }
+        ],
+        "relatedHeading": "Planifica tu viaje a Estambul",
+        "ctaTitle": "Descubre Estambul con un guía local titulado",
+        "ctaSub": "Sáltate las colas y descubre los barrios que la mayoría se pierde. Reserva un guía verificado de Estambul en VibeGuide: verás el precio por adelantado."
+      },
+      "fr": {
+        "title": "3 jours à Istanbul : l'itinéraire parfait pour une première visite",
+        "metaTitle": "3 jours à Istanbul — Itinéraire parfait pour débuter",
+        "metaDescription": "Comment passer 3 jours à Istanbul : un itinéraire jour par jour à travers Sultanahmet, le Bosphore et les bazars, avec les astuces de guides pour éviter files et foules.",
+        "excerpt": "Trois jours suffisent pour tomber amoureux d'Istanbul. Voici un plan jour par jour sur deux continents : les grands monuments, le Bosphore et les ruelles que la plupart des visiteurs manquent.",
+        "intro": [
+          "Istanbul est immense, tout en strates et impossible à «voir» entièrement en trois jours — mais trois jours suffisent amplement pour en tomber amoureux. À cheval sur l'Europe et l'Asie de part et d'autre du Bosphore, la ville empile cathédrales byzantines, palais ottomans, bazars bouillonnants et quartiers à flanc de colline pour former l'un des plus beaux city-breaks qui soient.",
+          "Cet <strong>itinéraire de 3 jours à Istanbul</strong> est conçu pour une première visite qui veut l'essentiel sans se presser : les grands monuments de Sultanahmet le premier jour, le Bosphore et les bazars le deuxième, et le visage local, moins touristique, de la ville le troisième. Un guide local agréé peut réduire les files et la marche lors des journées chargées — mais le plan fonctionne aussi très bien seul."
+        ],
+        "sections": [
+          {
+            "heading": "Jour 1 : Sultanahmet, le cœur historique",
+            "paragraphs": [
+              "Commencez par <strong>Sultanahmet</strong>, la péninsule historique où les plus grands sites se trouvent à quelques minutes de marche les uns des autres. Débutez tôt à <strong>Sainte-Sophie</strong>, l'ancienne cathédrale et mosquée vieille de 1 500 ans, puis traversez la place jusqu'à la <strong>Mosquée Bleue</strong> et sa cascade de coupoles surmontée de six minarets. L'entrée des deux est gratuite mais elles sont très fréquentées : arriver à l'ouverture change vraiment la donne.",
+              "L'après-midi, visitez le <strong>palais de Topkapı</strong>, vaste résidence des sultans ottomans, et faites un saut à la <strong>Citerne Basilique</strong> souterraine, tout près. S'il vous reste de l'énergie, le <strong>Grand Bazar</strong> est à deux pas pour une première flânerie. C'est la journée la plus dense en monuments et celle où un guide se révèle le plus précieux : il évite les files aux caisses de Topkapı et explique les strates d'histoire devant lesquelles vous passeriez sinon sans les voir."
+            ]
+          },
+          {
+            "heading": "Jour 2 : le Bosphore et les bazars",
+            "paragraphs": [
+              "Consacrez le deuxième jour à l'eau et aux marchés. Une <strong>croisière sur le Bosphore</strong> le matin est la façon classique de saisir la géographie d'Istanbul : palais, yalis de bois au bord de l'eau et les deux continents qui défilent de part et d'autre. Les ferries publics sont bon marché et tout aussi pittoresques que les bateaux touristiques.",
+              "De retour à terre, plongez dans le <strong>Grand Bazar</strong> et l'odorant <strong>Bazar aux épices</strong> pour tapis, lampes, thé et loukoums — le marchandage est attendu et fait partie du plaisir. L'après-midi, franchissez le pont de Galata jusqu'à <strong>Karaköy</strong> puis montez à la <strong>tour de Galata</strong> pour un coucher de soleil sur la vieille ville, avant d'explorer les cafés et boutiques des quartiers de Galata et Beyoğlu à l'heure où la soirée s'anime."
+            ]
+          },
+          {
+            "heading": "Jour 3 : quartiers locaux et rive asiatique",
+            "paragraphs": [
+              "Profitez de votre dernier jour pour découvrir l'Istanbul qu'aiment les habitants. Passez la matinée à <strong>Balat et Fener</strong>, les anciens quartiers grec et juif, photogéniques, aux maisons arc-en-ciel, aux brocantes et aux églises perchées — à des lieues de la foule des monuments. C'est l'un des quartiers les plus gratifiants de la ville où flâner sans hâte.",
+              "L'après-midi, prenez un ferry vers la <strong>rive asiatique</strong> et les rues animées de Kadıköy, avec son marché de primeurs, sa street food et ses cafés décontractés. Terminer son voyage sur un autre continent, en regardant les ferries sillonner le Bosphore au crépuscule, est la note parfaite pour quitter Istanbul — et un rappel de tout ce qui reste à découvrir pour un prochain retour."
+            ]
+          },
+          {
+            "heading": "Conseils pratiques pour 3 jours à Istanbul",
+            "paragraphs": [
+              "Procurez-vous une carte de transport <strong>Istanbulkart</strong> dès l'arrivée : elle fonctionne dans les ferries, tramways, bus et le métro, et rend le passage d'une rive à l'autre facile et bon marché. Logez à Sultanahmet ou à proximité pour le premier jour, ou à Galata/Beyoğlu si vous préférez restaurants et vie nocturne à distance de marche.",
+              "Portez des chaussures confortables — Istanbul est vallonnée et pavée — et habillez-vous sobrement pour les mosquées, avec un foulard pour que les femmes se couvrent les cheveux. Les grands sites de Sultanahmet sont les plus fréquentés en milieu de journée : allez-y tôt ou tard. Trois jours passent vite, aussi un guide local agréé au moins le premier jour est-il le meilleur moyen d'en voir plus avec moins de stress."
+            ]
+          },
+          {
+            "heading": "Prolonger votre séjour au-delà de 3 jours",
+            "paragraphs": [
+              "Si vous pouvez ajouter un quatrième ou cinquième jour, Istanbul vous le rendra. Une excursion aux <strong>Îles des Princes</strong> offre une échappée sans voiture, entre pinèdes et villas Belle Époque, accessible par un ferry pittoresque. Vous pouvez aussi ajouter une demi-journée tranquille à la <strong>mosquée de Soliman</strong> et dans les ruelles pleines d'atmosphère qui l'entourent, ou une expérience de hammam dans un bain ottoman historique.",
+              "Beaucoup de voyageurs font d'Istanbul le prologue d'un voyage plus long en Turquie, s'envolant ensuite vers la Cappadoce pour les montgolfières ou descendant vers l'Égée pour Éphèse et la côte. Trois jours à Istanbul sont la base parfaite : assez pour comprendre la ville, et assez pour savoir que vous voudrez y revenir."
+            ]
+          }
+        ],
+        "faqHeading": "Questions fréquentes",
+        "faqs": [
+          {
+            "q": "Trois jours suffisent-ils pour Istanbul ?",
+            "a": "Trois jours suffisent pour couvrir l'essentiel tranquillement : les monuments de Sultanahmet, une croisière sur le Bosphore, les bazars et un quartier local comme Balat. Vous ne verrez pas tout, mais vous ressentirez vraiment la ville. Quatre ou cinq jours permettent d'ajouter les Îles des Princes ou la rive asiatique à un rythme plus lent."
+          },
+          {
+            "q": "Quel est le meilleur quartier où loger à Istanbul pour une première visite ?",
+            "a": "Sultanahmet vous met à distance de marche de Sainte-Sophie, de la Mosquée Bleue et de Topkapı, idéal pour un premier court séjour. Galata et Beyoğlu sont préférables si vous voulez restaurants, bars et vie nocturne au pas de la porte, avec un tramway ou un ferry facile vers la vieille ville."
+          },
+          {
+            "q": "Ai-je besoin d'un guide pour Istanbul ou puis-je m'en passer ?",
+            "a": "Vous pouvez parcourir Istanbul seul avec une carte de transport et un plan, mais un guide local agréé est précieux le premier jour, dense en monuments : il évite les files aux caisses de Topkapı, explique l'histoire et vous mène dans des quartiers que la plupart manquent. Beaucoup se font guider le premier jour puis explorent seuls ensuite."
+          },
+          {
+            "q": "Comment se déplacer à Istanbul en 3 jours ?",
+            "a": "Procurez-vous une carte Istanbulkart, valable dans les tramways, ferries, bus et le métro. Le tramway dessert Sultanahmet et Galata, et de bon marché ferries publics traversent le Bosphore et atteignent la rive asiatique. La circulation est dense, aussi tramways et ferries sont-ils souvent plus rapides que les taxis."
+          },
+          {
+            "q": "Comment m'habiller pour visiter les mosquées d'Istanbul ?",
+            "a": "Habillez-vous sobrement : épaules et genoux couverts pour tous, et un foulard pour que les femmes se couvrent les cheveux à l'intérieur des mosquées. Vous ôterez vos chaussures à l'entrée, des chaussures faciles à enlever sont donc pratiques. Des foulards sont souvent prêtés à la porte si vous en oubliez un."
+          }
+        ],
+        "relatedHeading": "Planifiez votre séjour à Istanbul",
+        "ctaTitle": "Découvrez Istanbul avec un guide local agréé",
+        "ctaSub": "Évitez les files et découvrez les quartiers que la plupart des visiteurs manquent. Réservez un guide vérifié à Istanbul sur VibeGuide — le prix est affiché à l'avance."
+      },
+      "it": {
+        "title": "3 giorni a Istanbul: l'itinerario perfetto per la prima volta",
+        "metaTitle": "3 giorni a Istanbul — Itinerario perfetto per la prima volta",
+        "metaDescription": "Come trascorrere 3 giorni a Istanbul: un itinerario giorno per giorno tra Sultanahmet, il Bosforo e i bazar, con i consigli di una guida locale per evitare code e folla.",
+        "excerpt": "Tre giorni bastano per innamorarsi di Istanbul. Ecco un piano giorno per giorno tra due continenti: i grandi monumenti, il Bosforo e le vie nascoste che la maggior parte dei visitatori si perde.",
+        "intro": [
+          "Istanbul è enorme, stratificata e impossibile da «vedere» del tutto in tre giorni — ma tre giorni bastano per innamorarsene. A cavallo tra Europa e Asia lungo il Bosforo, la città accumula cattedrali bizantine, palazzi ottomani, bazar vivaci e quartieri collinari in una delle city break più appaganti al mondo.",
+          "Questo <strong>itinerario di 3 giorni a Istanbul</strong> è pensato per chi la visita per la prima volta e vuole l'essenziale senza correre: i grandi monumenti di Sultanahmet il primo giorno, il Bosforo e i bazar il secondo, e il lato più locale e meno turistico della città il terzo. Una guida locale abilitata può ridurre le code e i tragitti a piedi nei giorni più intensi — ma il piano funziona anche da solo."
+        ],
+        "sections": [
+          {
+            "heading": "Giorno 1: Sultanahmet — il cuore storico",
+            "paragraphs": [
+              "Comincia da <strong>Sultanahmet</strong>, la penisola storica dove i monumenti principali si trovano a breve distanza a piedi l'uno dall'altro. Inizia presto dalla <strong>Santa Sofia</strong>, l'ex cattedrale e moschea di 1.500 anni, poi attraversa la piazza fino alla <strong>Moschea Blu</strong> con la sua cascata di cupole e sei minareti. L'ingresso a entrambe è gratuito ma sono molto affollate — arrivare all'apertura fa davvero la differenza.",
+              "Nel pomeriggio visita il <strong>Palazzo Topkapı</strong>, l'immensa sede dei sultani ottomani, e fai un salto alla vicina <strong>Cisterna Basilica</strong> sotterranea. Se hai ancora energie, il <strong>Gran Bazar</strong> è a due passi per un primo giro. È la giornata più ricca di monumenti, e quella in cui una guida rende di più — saltare le code dei biglietti a Topkapı e spiegare gli strati di storia davanti ai quali passeresti dritto."
+            ]
+          },
+          {
+            "heading": "Giorno 2: il Bosforo e i bazar",
+            "paragraphs": [
+              "Dedica il secondo giorno all'acqua e ai mercati. Una <strong>crociera sul Bosforo</strong> al mattino è il modo classico per cogliere la geografia di Istanbul — palazzi, ville di legno sul lungomare e i due continenti che scorrono ai due lati. I traghetti pubblici sono economici e scenografici quanto le barche turistiche.",
+              "Tornato a terra, tuffati nel <strong>Gran Bazar</strong> e nell'aromatico <strong>Bazar delle Spezie</strong> per tappeti, lampade, tè e delizie turche — la contrattazione è prevista e fa parte del divertimento. Nel pomeriggio attraversa il Ponte di Galata verso <strong>Karaköy</strong> e sali sulla <strong>Torre di Galata</strong> per un tramonto sulla città vecchia, poi esplora i caffè e le boutique di Galata e Beyoğlu mentre la sera prende vita."
+            ]
+          },
+          {
+            "heading": "Giorno 3: i quartieri locali e la sponda asiatica",
+            "paragraphs": [
+              "Usa l'ultimo giorno per vedere l'Istanbul che amano i locali. Passa la mattina a <strong>Balat e Fener</strong>, i fotogenici antichi quartieri greco ed ebraico con case color arcobaleno, negozi d'antiquariato e chiese in cima alla collina — un mondo lontano dalla folla dei monumenti. È uno dei quartieri più appaganti da girare con calma.",
+              "Nel pomeriggio prendi un traghetto verso la <strong>sponda asiatica</strong> e le vie vivaci di Kadıköy, con il suo mercato ortofrutticolo, lo street food e i caffè rilassati. Concludere il viaggio su un continente diverso, guardando i traghetti incrociarsi sul Bosforo al crepuscolo, è la nota perfetta per lasciare Istanbul — e un promemoria di quanto altro ci sia per cui tornare."
+            ]
+          },
+          {
+            "heading": "Consigli pratici per 3 giorni a Istanbul",
+            "paragraphs": [
+              "Procurati una tessera di trasporto <strong>Istanbulkart</strong> all'arrivo — funziona su traghetti, tram, autobus e metro, e rende gli spostamenti tra le due sponde facili ed economici. Alloggia a Sultanahmet o nei dintorni per il primo giorno, oppure a Galata/Beyoğlu se preferisci ristoranti e vita notturna a portata di piedi.",
+              "Indossa scarpe comode — Istanbul è collinare e acciottolata — e vestiti in modo sobrio per le moschee, con un foulard per le donne per coprire i capelli. I grandi monumenti di Sultanahmet sono più affollati a metà giornata, quindi vai presto o tardi. Tre giorni volano, perciò una guida locale abilitata almeno per il primo giorno è il modo migliore per vedere di più con meno stress."
+            ]
+          },
+          {
+            "heading": "Prolungare il viaggio oltre i 3 giorni",
+            "paragraphs": [
+              "Se puoi aggiungere un quarto o quinto giorno, Istanbul lo ripaga. Una gita alle <strong>Isole dei Principi</strong> offre una fuga senza auto tra pinete e ville Belle Époque, raggiunta con un traghetto panoramico. In alternativa, aggiungi una mezza giornata più lenta alla <strong>Moschea di Solimano</strong> e alle suggestive vie retrostanti, o l'esperienza di un hammam in uno storico bagno ottomano.",
+              "Molti viaggiatori usano Istanbul come atto d'apertura di un viaggio più lungo in Turchia, volando poi in Cappadocia per le mongolfiere o scendendo verso l'Egeo per Efeso e la costa. Tre giorni a Istanbul sono la base perfetta — abbastanza per capire la città, e abbastanza per sapere che vorrai tornare."
+            ]
+          }
+        ],
+        "faqHeading": "Domande frequenti",
+        "faqs": [
+          {
+            "q": "Tre giorni bastano per Istanbul?",
+            "a": "Tre giorni bastano per coprire l'essenziale con comodità — i monumenti di Sultanahmet, una crociera sul Bosforo, i bazar e un quartiere locale come Balat. Non vedrai tutto, ma coglierai il vero spirito della città. Quattro o cinque giorni permettono di aggiungere le Isole dei Principi o la sponda asiatica con più calma."
+          },
+          {
+            "q": "Qual è la zona migliore dove alloggiare a Istanbul alla prima visita?",
+            "a": "Sultanahmet ti mette a pochi passi da Santa Sofia, dalla Moschea Blu e da Topkapı, ideale per un primo breve viaggio. Galata e Beyoğlu sono meglio se vuoi ristoranti, bar e vita notturna sotto casa, con un facile tram o traghetto per la città vecchia."
+          },
+          {
+            "q": "Serve una guida per Istanbul o posso visitarla in autonomia?",
+            "a": "Puoi muoverti a Istanbul in autonomia con una tessera di trasporto e una mappa, ma una guida locale abilitata è preziosa nel primo giorno ricco di monumenti — saltando le code dei biglietti a Topkapı, spiegando la storia e raggiungendo quartieri che molti si perdono. Molti prenotano una guida il primo giorno e poi esplorano da soli."
+          },
+          {
+            "q": "Come mi sposto a Istanbul in 3 giorni?",
+            "a": "Procurati una Istanbulkart, che funziona su tram, traghetti, autobus e metro. Il tram copre Sultanahmet e Galata, e i traghetti pubblici economici attraversano il Bosforo e raggiungono la sponda asiatica. Il traffico è intenso, quindi tram e traghetti sono di solito più veloci dei taxi."
+          },
+          {
+            "q": "Come devo vestirmi per visitare le moschee a Istanbul?",
+            "a": "Vestiti in modo sobrio: spalle e ginocchia coperte per tutti, e un foulard per le donne per coprire i capelli dentro le moschee. All'ingresso ti toglierai le scarpe, quindi calzature comode aiutano. Spesso all'ingresso ci sono foulard in prestito se ne dimentichi uno."
+          }
+        ],
+        "relatedHeading": "Pianifica il tuo viaggio a Istanbul",
+        "ctaTitle": "Scopri Istanbul con una guida locale abilitata",
+        "ctaSub": "Salta le code e scopri i quartieri che molti si perdono. Prenota una guida verificata di Istanbul su VibeGuide — vedrai il prezzo in anticipo."
+      },
+      "ar": {
+        "title": "ثلاثة أيام في إسطنبول: البرنامج المثالي للزائر لأول مرة",
+        "metaTitle": "٣ أيام في إسطنبول — برنامج مثالي للزائرين لأول مرة",
+        "metaDescription": "كيف تقضي ٣ أيام في إسطنبول: برنامج يوماً بيوم يغطي السلطان أحمد والبوسفور والأسواق، مع نصائح مرشد محلي لتجنّب الطوابير والزحام.",
+        "excerpt": "ثلاثة أيام تكفي تماماً لتقع في حب إسطنبول. إليك خطة يوماً بيوم عبر قارتين — المعالم العظيمة والبوسفور والأزقة التي يفوّتها معظم الزوار.",
+        "intro": [
+          "إسطنبول مدينة هائلة ومتعددة الطبقات ويستحيل «رؤيتها» بالكامل في ثلاثة أيام — لكن ثلاثة أيام تكفي تماماً لتقع في حبها. تمتد المدينة بين أوروبا وآسيا عبر مضيق البوسفور، وتجمع الكاتدرائيات البيزنطية والقصور العثمانية والأسواق النابضة والأحياء المعلّقة على التلال في واحدة من أكثر الرحلات الحضرية القصيرة إمتاعاً في العالم.",
+          "صُمّم هذا <strong>برنامج إسطنبول لثلاثة أيام</strong> للزائر لأول مرة الذي يريد الأساسيات دون تسرّع: المعالم العظيمة في السلطان أحمد في اليوم الأول، والبوسفور والأسواق في اليوم الثاني، والوجه المحلي الأقل ازدحاماً بالسياح في اليوم الثالث. يستطيع مرشد محلي مرخّص أن يختصر الطوابير والمشي في الأيام المزدحمة — لكن الخطة تعمل بمفردها أيضاً."
+        ],
+        "sections": [
+          {
+            "heading": "اليوم الأول: السلطان أحمد — القلب التاريخي",
+            "paragraphs": [
+              "ابدأ في <strong>السلطان أحمد</strong>، شبه الجزيرة التاريخية حيث تقع أكبر المعالم على مسافة قصيرة سيراً من بعضها. ابدأ باكراً في <strong>آيا صوفيا</strong>، الكاتدرائية والمسجد السابق الذي يبلغ عمره ١٥٠٠ عام، ثم اعبر الساحة إلى <strong>المسجد الأزرق</strong> بقبابه المتتالية ومآذنه الست. كلاهما مجاني الدخول لكنهما يزدحمان بشدة — والوصول عند وقت الافتتاح يُحدث فرقاً حقيقياً.",
+              "في فترة بعد الظهر، تجوّل في <strong>قصر توبكابي</strong>، المقر المترامي لسلاطين الدولة العثمانية، وعرّج على <strong>صهريج البازيليك</strong> تحت الأرض القريب منه. إن بقيت لديك طاقة، فإن <strong>البازار الكبير</strong> على بُعد مشية قصيرة لجولة استكشافية أولى. هذا هو اليوم الأكثر ازدحاماً بالمعالم، وحيث يثبت المرشد فائدته أكثر — بتخطّي طوابير التذاكر في توبكابي وشرح طبقات التاريخ التي قد تمر بجانبها دون أن تنتبه."
+            ]
+          },
+          {
+            "heading": "اليوم الثاني: البوسفور والأسواق",
+            "paragraphs": [
+              "خصّص اليوم الثاني للماء والأسواق. تُعدّ <strong>رحلة بحرية في البوسفور</strong> صباحاً الطريقة الكلاسيكية لفهم جغرافيا إسطنبول — القصور والقصور الخشبية على الواجهة المائية والقارتان تنزلقان على كلا الجانبين. العبّارات العامة رخيصة وخلّابة تماماً مثل قوارب السياح.",
+              "بالعودة إلى اليابسة، اغطس في <strong>البازار الكبير</strong> و<strong>سوق التوابل</strong> العطري لشراء السجاد والمصابيح والشاي والملبّن التركي — والمساومة متوقّعة وجزء من المتعة. في فترة بعد الظهر، اعبر جسر غلطة إلى <strong>كاراكوي</strong> وصعوداً إلى <strong>برج غلطة</strong> لمنظر الغروب فوق المدينة القديمة، ثم استكشف مقاهي وبوتيكات أحياء غلطة وبيه أوغلو مع دبيب الحياة في المساء."
+            ]
+          },
+          {
+            "heading": "اليوم الثالث: الأحياء المحلية والجانب الآسيوي",
+            "paragraphs": [
+              "استغل يومك الأخير لرؤية إسطنبول التي يعشقها السكان المحليون. اقضِ الصباح في <strong>بالات وفنر</strong>، الحيّين اليونانيين واليهوديين القديمين الجميلين بمنازلهما بألوان قوس قزح ومحال العتيقات والكنائس على قمم التلال — عالم بعيد عن زحام المعالم. إنه من أكثر أحياء المدينة إمتاعاً للتجول ببطء.",
+              "في فترة بعد الظهر، خذ عبّارة إلى <strong>الجانب الآسيوي</strong> وشوارع كاديكوي النابضة، بسوقها للخضار وطعام الشارع ومقاهيها المريحة. أن تختم رحلتك في قارة مختلفة، وأنت تشاهد العبّارات تتقاطع عبر البوسفور عند الغسق، هو الختام المثالي لمغادرة إسطنبول — وتذكير بكمّ ما ينتظرك من أسباب للعودة."
+            ]
+          },
+          {
+            "heading": "نصائح عملية لثلاثة أيام في إسطنبول",
+            "paragraphs": [
+              "احصل على بطاقة تنقّل <strong>Istanbulkart</strong> عند وصولك — فهي تعمل على العبّارات والترام والحافلات والمترو، وتجعل التنقّل بين الجانبين سهلاً ورخيصاً. اتخذ قاعدتك في السلطان أحمد أو قربه لليوم الأول، أو في غلطة/بيه أوغلو إن كنت تفضّل المطاعم والحياة الليلية على مسافة سير.",
+              "ارتدِ حذاءً مريحاً — فإسطنبول مليئة بالتلال والحصى — والبس بتحفّظ عند المساجد، مع وشاح للنساء لتغطية الشعر. تزدحم معالم السلطان أحمد الكبرى في منتصف النهار، لذا اذهب باكراً أو متأخراً. تمرّ الأيام الثلاثة بسرعة، لذا فإن استئجار مرشد محلي مرخّص لليوم الأول على الأقل هو أفضل طريقة لرؤية المزيد بتوتر أقل."
+            ]
+          },
+          {
+            "heading": "تمديد رحلتك إلى أكثر من ثلاثة أيام",
+            "paragraphs": [
+              "إن استطعت إضافة يوم رابع أو خامس، فإن إسطنبول تكافئك عليه. رحلة يومية إلى <strong>جزر الأميرات</strong> تمنحك ملاذاً خالياً من السيارات بين غابات الصنوبر وقصور الحقبة الجميلة، تصل إليها بعبّارة خلّابة. أو أضف نصف يوم متأنٍّ في <strong>مسجد السليمانية</strong> والأزقة الساحرة المحيطة به، أو تجربة حمّام في حمّام عثماني تاريخي.",
+              "يستخدم كثير من المسافرين إسطنبول كافتتاحية لرحلة أطول في تركيا، فيطيرون إلى كابادوكيا للمناطيد أو ينزلون إلى بحر إيجه لأفسس والساحل. ثلاثة أيام في إسطنبول أساس مثالي — يكفي لفهم المدينة، ويكفي لتعلم أنك سترغب في العودة."
+            ]
+          }
+        ],
+        "faqHeading": "الأسئلة الشائعة",
+        "faqs": [
+          {
+            "q": "هل تكفي ثلاثة أيام لإسطنبول؟",
+            "a": "ثلاثة أيام تكفي لتغطية الأساسيات براحة — معالم السلطان أحمد، ورحلة بحرية في البوسفور، والأسواق، وحيّ محلي مثل بالات. لن ترى كل شيء، لكنك ستكوّن إحساساً حقيقياً بالمدينة. أربعة أو خمسة أيام تتيح لك إضافة جزر الأميرات أو الجانب الآسيوي بوتيرة أبطأ."
+          },
+          {
+            "q": "ما أفضل منطقة للإقامة في إسطنبول لأول زيارة؟",
+            "a": "السلطان أحمد يضعك على مسافة سير من آيا صوفيا والمسجد الأزرق وتوبكابي، وهو مثالي لرحلة أولى قصيرة. غلطة وبيه أوغلو أفضل إن كنت تريد المطاعم والحانات والحياة الليلية عند بابك، مع ترام أو عبّارة سهلة إلى المدينة القديمة."
+          },
+          {
+            "q": "هل أحتاج إلى مرشد في إسطنبول أم يمكنني التجول بمفردي؟",
+            "a": "يمكنك التنقّل في إسطنبول بمفردك ببطاقة نقل وخريطة، لكن المرشد المحلي المرخّص لا يُقدّر بثمن في اليوم الأول المزدحم بالمعالم — بتخطّي طوابير التذاكر في توبكابي وشرح التاريخ والوصول إلى أحياء يفوّتها معظم الزوار. كثيرون يستعينون بمرشد في اليوم الأول ثم يستكشفون بمفردهم."
+          },
+          {
+            "q": "كيف أتنقّل في إسطنبول خلال ثلاثة أيام؟",
+            "a": "احصل على بطاقة Istanbulkart التي تعمل على الترام والعبّارات والحافلات والمترو. يغطي الترام السلطان أحمد وغلطة، وتعبر العبّارات العامة الرخيصة البوسفور وتصل إلى الجانب الآسيوي. حركة المرور كثيفة، لذا فالترام والعبّارات عادة أسرع من سيارات الأجرة."
+          },
+          {
+            "q": "ماذا ألبس لزيارة المساجد في إسطنبول؟",
+            "a": "البس بتحفّظ: تغطية الكتفين والركبتين للجميع، ووشاح للنساء لتغطية الشعر داخل المساجد. ستخلع حذاءك عند المدخل، لذا يساعد الحذاء السهل. غالباً ما تتوفّر أوشحة للاستعارة عند الباب إن نسيت واحداً."
+          }
+        ],
+        "relatedHeading": "خطّط لرحلتك إلى إسطنبول",
+        "ctaTitle": "شاهد إسطنبول مع مرشد محلي مرخّص",
+        "ctaSub": "تخطَّ الطوابير واكتشف الأحياء التي يفوّتها معظم الزوار. احجز مرشد إسطنبول موثّقاً على VibeGuide — سترى السعر مسبقاً."
+      },
+      "ru": {
+        "title": "3 дня в Стамбуле: идеальный маршрут для первого визита",
+        "metaTitle": "3 дня в Стамбуле — идеальный маршрут для новичков",
+        "metaDescription": "Как провести 3 дня в Стамбуле: маршрут по дням через Султанахмет, Босфор и базары с советами местного гида, как избежать очередей и толп.",
+        "excerpt": "Трёх дней достаточно, чтобы влюбиться в Стамбул. Вот план по дням через два континента — великие памятники, Босфор и переулки, которые пропускает большинство туристов.",
+        "intro": [
+          "Стамбул огромен, многослоен, и его невозможно полностью «увидеть» за три дня — но трёх дней достаточно, чтобы в него влюбиться. Раскинувшись между Европой и Азией по берегам Босфора, город соединяет византийские соборы, османские дворцы, шумные базары и холмистые кварталы в одну из самых благодарных коротких поездок в мире.",
+          "Этот <strong>маршрут на 3 дня по Стамбулу</strong> составлен для тех, кто впервые хочет увидеть главное без спешки: великие памятники Султанахмета в первый день, Босфор и базары во второй, и местную, менее туристическую сторону города в третий. Лицензированный местный гид сократит очереди и пешие переходы в насыщенные дни — но план работает и сам по себе."
+        ],
+        "sections": [
+          {
+            "heading": "День 1: Султанахмет — историческое сердце",
+            "paragraphs": [
+              "Начните с <strong>Султанахмета</strong>, исторического полуострова, где главные достопримечательности находятся в двух шагах друг от друга. Начните пораньше с <strong>Айя-Софии</strong>, бывшего собора и мечети возрастом 1500 лет, затем пересеките площадь к <strong>Голубой мечети</strong> с каскадом куполов и шестью минаретами. Вход в обе бесплатный, но народу много — прийти к открытию действительно важно.",
+              "Днём осмотрите <strong>дворец Топкапы</strong>, обширную резиденцию османских султанов, и загляните в подземную <strong>Цистерну Базилику</strong> неподалёку. Если останутся силы, <strong>Гранд-базар</strong> совсем рядом — для первого знакомства. Это самый насыщенный памятниками день, и именно здесь гид особенно окупается — минуя очереди за билетами в Топкапы и объясняя слои истории, мимо которых вы иначе прошли бы не заметив."
+            ]
+          },
+          {
+            "heading": "День 2: Босфор и базары",
+            "paragraphs": [
+              "Отдайте второй день воде и рынкам. Утренний <strong>круиз по Босфору</strong> — классический способ понять географию Стамбула: дворцы, деревянные особняки на набережной и два континента, проплывающие по обеим сторонам. Городские паромы дёшевы и столь же живописны, как туристические катера.",
+              "Вернувшись на сушу, погрузитесь в <strong>Гранд-базар</strong> и ароматный <strong>Египетский базар</strong> за коврами, лампами, чаем и рахат-лукумом — торг ожидаем и составляет часть удовольствия. Днём перейдите Галатский мост в <strong>Каракёй</strong> и поднимитесь на <strong>Галатскую башню</strong>, чтобы встретить закат над старым городом, затем исследуйте кафе и бутики районов Галата и Бейоглу, когда вечер оживает."
+            ]
+          },
+          {
+            "heading": "День 3: местные кварталы и азиатская сторона",
+            "paragraphs": [
+              "Используйте последний день, чтобы увидеть Стамбул, который любят местные. Проведите утро в <strong>Балате и Фенере</strong>, фотогеничных старых греческом и еврейском кварталах с разноцветными домами, антикварными лавками и церквями на вершине холма — целый мир вдали от толп у памятников. Это один из самых благодарных кварталов для неспешных прогулок.",
+              "Днём переправьтесь на пароме на <strong>азиатскую сторону</strong>, в оживлённые улицы Кадыкёя, с его продуктовым рынком, уличной едой и непринуждёнными кафе. Завершить поездку на другом континенте, глядя, как паромы снуют по Босфору в сумерках, — идеальная нота, чтобы покинуть Стамбул, и напоминание о том, сколько всего ещё ждёт вашего возвращения."
+            ]
+          },
+          {
+            "heading": "Практические советы на 3 дня в Стамбуле",
+            "paragraphs": [
+              "Получите транспортную карту <strong>Istanbulkart</strong> по прибытии — она работает на паромах, трамваях, автобусах и метро и делает перемещения между двумя берегами простыми и дешёвыми. Поселитесь в Султанахмете или рядом на первый день, либо в Галате/Бейоглу, если предпочитаете рестораны и ночную жизнь в шаговой доступности.",
+              "Наденьте удобную обувь — Стамбул холмист и вымощен брусчаткой — и одевайтесь скромно для мечетей, женщинам понадобится платок, чтобы покрыть волосы. Крупные достопримечательности Султанахмета наиболее многолюдны в середине дня, поэтому идите рано или поздно. Три дня летят быстро, поэтому лицензированный местный гид хотя бы на первый день — лучший способ увидеть больше с меньшим стрессом."
+            ]
+          },
+          {
+            "heading": "Продление поездки сверх 3 дней",
+            "paragraphs": [
+              "Если можете добавить четвёртый или пятый день, Стамбул вознаградит вас. Поездка на <strong>Принцевы острова</strong> подарит побег без машин среди сосновых лесов и особняков Прекрасной эпохи, куда добираются на живописном пароме. Или добавьте неспешные полдня в <strong>мечети Сулеймание</strong> и атмосферных переулках вокруг неё, либо опыт хаммама в историческом османском бане.",
+              "Многие путешественники используют Стамбул как первый акт более длинного тура по Турции, улетая затем в Каппадокию за шарами или спускаясь к Эгейскому морю к Эфесу и побережью. Три дня в Стамбуле — идеальная основа: достаточно, чтобы понять город, и достаточно, чтобы захотеть вернуться."
+            ]
+          }
+        ],
+        "faqHeading": "Часто задаваемые вопросы",
+        "faqs": [
+          {
+            "q": "Достаточно ли 3 дней для Стамбула?",
+            "a": "Трёх дней достаточно, чтобы спокойно охватить главное — памятники Султанахмета, круиз по Босфору, базары и местный квартал вроде Балата. Всё вы не увидите, но по-настоящему почувствуете город. Четыре-пять дней позволят добавить Принцевы острова или азиатскую сторону в более спокойном темпе."
+          },
+          {
+            "q": "Какой район лучший для проживания в Стамбуле при первом визите?",
+            "a": "Султанахмет ставит вас в шаговой доступности от Айя-Софии, Голубой мечети и Топкапы, что идеально для короткой первой поездки. Галата и Бейоглу лучше, если хотите рестораны, бары и ночную жизнь под боком, с удобным трамваем или паромом до старого города."
+          },
+          {
+            "q": "Нужен ли гид для Стамбула или можно осмотреть всё самостоятельно?",
+            "a": "Вы можете передвигаться по Стамбулу самостоятельно с транспортной картой и картой города, но лицензированный местный гид бесценен в первый насыщенный памятниками день — минуя очереди за билетами в Топкапы, объясняя историю и приводя в кварталы, которые многие пропускают. Многие берут гида на первый день, а потом исследуют сами."
+          },
+          {
+            "q": "Как передвигаться по Стамбулу за 3 дня?",
+            "a": "Получите карту Istanbulkart, которая работает на трамваях, паромах, автобусах и метро. Трамвай охватывает Султанахмет и Галату, а дешёвые городские паромы пересекают Босфор и достигают азиатской стороны. Движение плотное, поэтому трамваи и паромы обычно быстрее такси."
+          },
+          {
+            "q": "Что надеть для посещения мечетей в Стамбуле?",
+            "a": "Одевайтесь скромно: плечи и колени прикрыты у всех, а женщинам — платок, чтобы покрыть волосы внутри мечетей. При входе вы снимете обувь, поэтому удобная обувь пригодится. У входа часто можно одолжить платок, если вы его забыли."
+          }
+        ],
+        "relatedHeading": "Спланируйте поездку в Стамбул",
+        "ctaTitle": "Откройте Стамбул с лицензированным местным гидом",
+        "ctaSub": "Минуйте очереди и откройте кварталы, которые пропускает большинство. Забронируйте проверенного гида по Стамбулу на VibeGuide — цену увидите заранее."
+      },
+      "tr": {
+        "title": "İstanbul'da 3 Gün: İlk Kez Gelenler İçin Kusursuz Rota",
+        "metaTitle": "İstanbul'da 3 Gün — İlk Kez Gelenler İçin Kusursuz Rota",
+        "metaDescription": "İstanbul'da 3 gün nasıl geçirilir: Sultanahmet, Boğaz ve çarşıları kapsayan günlük rota; kuyruk ve kalabalıktan kaçmak için yerel rehber ipuçlarıyla.",
+        "excerpt": "Üç gün, İstanbul'a âşık olmaya tam yetiyor. İşte iki kıtaya yayılan günlük bir plan — büyük anıtlar, Boğaz ve çoğu ziyaretçinin kaçırdığı arka sokaklar.",
+        "intro": [
+          "İstanbul kocaman, katman katman ve üç günde tamamen «görmek» imkânsız — ama üç gün ona âşık olmaya fazlasıyla yeter. Boğaz boyunca Avrupa ile Asya'ya uzanan şehir; Bizans katedrallerini, Osmanlı saraylarını, cıvıl cıvıl çarşıları ve yamaçlara kurulu mahalleleri dünyanın en doyurucu şehir kaçamaklarından birinde bir araya getiriyor.",
+          "Bu <strong>3 günlük İstanbul rotası</strong>, aceleye getirmeden temeli görmek isteyen, şehre ilk kez gelenler için hazırlandı: birinci gün Sultanahmet'in büyük anıtları, ikinci gün Boğaz ve çarşılar, üçüncü gün ise şehrin daha yerel, turistik olmayan yüzü. Ruhsatlı bir yerel rehber, yoğun günlerde kuyrukları ve yürüyüşü kısaltabilir — ama plan tek başına da işe yarıyor."
+        ],
+        "sections": [
+          {
+            "heading": "1. Gün: Sultanahmet — tarihi kalp",
+            "paragraphs": [
+              "<strong>Sultanahmet</strong>'te başlayın; en büyük görülecek yerlerin kısa bir yürüyüş mesafesinde bir arada olduğu tarihi yarımada. Erken saatte <strong>Ayasofya</strong>'dan başlayın; 1.500 yıllık eski katedral ve cami. Ardından meydanı geçerek kubbe kaskadları ve altı minaresiyle <strong>Sultanahmet Camii</strong>'ne geçin. İkisi de ücretsiz ama çok kalabalık oluyor — açılışta gelmek gerçekten fark yaratıyor.",
+              "Öğleden sonra Osmanlı padişahlarının uçsuz bucaksız merkezi <strong>Topkapı Sarayı</strong>'nı gezin ve yakındaki yeraltı <strong>Yerebatan Sarnıcı</strong>'na uğrayın. Enerjiniz kaldıysa <strong>Kapalıçarşı</strong> ilk turu atmak için kısa bir yürüyüş mesafesinde. Anıt bakımından en yoğun gün bu ve rehberin en çok işe yaradığı yer de burası — Topkapı'daki bilet kuyruklarını atlatmak ve yoksa fark etmeden geçip gideceğiniz tarih katmanlarını anlatmak."
+            ]
+          },
+          {
+            "heading": "2. Gün: Boğaz ve çarşılar",
+            "paragraphs": [
+              "İkinci günü suya ve çarşılara ayırın. Sabah bir <strong>Boğaz turu</strong>, İstanbul'un coğrafyasını kavramanın klasik yolu — saraylar, ahşap yalılar ve iki yakada süzülüp giden iki kıta. Vapurlar hem ucuz hem de tur tekneleri kadar manzaralı.",
+              "Karaya döndüğünüzde halı, lamba, çay ve lokum için <strong>Kapalıçarşı</strong>'ya ve mis kokulu <strong>Mısır Çarşısı</strong>'na dalın — pazarlık beklenir ve işin keyfinin bir parçasıdır. Öğleden sonra Galata Köprüsü'nü geçip <strong>Karaköy</strong>'e, ardından eski şehir üzerinde gün batımı manzarası için <strong>Galata Kulesi</strong>'ne çıkın; sonra akşam canlanırken Galata ve Beyoğlu'nun kafelerini ve butiklerini keşfedin."
+            ]
+          },
+          {
+            "heading": "3. Gün: yerel mahalleler ve Anadolu yakası",
+            "paragraphs": [
+              "Son gününüzü, yerlilerin sevdiği İstanbul'u görmeye ayırın. Sabahı; rengârenk evleri, antikacıları ve tepedeki kiliseleriyle fotojenik eski Rum ve Yahudi mahalleleri <strong>Balat ve Fener</strong>'de geçirin — anıt kalabalığından bambaşka bir dünya. Ağır ağır dolaşmak için şehrin en doyurucu mahallelerinden biri.",
+              "Öğleden sonra bir vapurla <strong>Anadolu yakası</strong>'na; sebze meyve pazarı, sokak lezzetleri ve rahat kafeleriyle Kadıköy'ün hareketli sokaklarına geçin. Yolculuğunuzu başka bir kıtada, alacakaranlıkta vapurların Boğaz'ı çaprazlamasına bakarak bitirmek İstanbul'dan ayrılmak için kusursuz bir nota — ve geri dönmek için daha ne çok şey olduğunun bir hatırlatıcısı."
+            ]
+          },
+          {
+            "heading": "İstanbul'da 3 gün için pratik ipuçları",
+            "paragraphs": [
+              "Varışta bir <strong>İstanbulkart</strong> alın — vapur, tramvay, otobüs ve metroda çalışır; iki yaka arasında gidip gelmeyi zahmetsiz ve ucuz kılar. Birinci gün için Sultanahmet'te ya da yakınında; yürüme mesafesinde restoran ve gece hayatı istiyorsanız Galata/Beyoğlu'nda konaklayın.",
+              "Rahat ayakkabı giyin — İstanbul yokuşlu ve arnavut kaldırımlı — ve camiler için kapalı giyinin, kadınlar saçını örtmek için bir eşarp taşısın. Büyük Sultanahmet mekânları gün ortasında en kalabalık, o yüzden erken ya da geç gidin. Üç gün hızlı akıp geçer, bu yüzden en azından ilk gün için ruhsatlı bir yerel rehber, daha az stresle daha çok şey görmenin açık ara en iyi yolu."
+            ]
+          },
+          {
+            "heading": "Gezinizi 3 günün ötesine uzatmak",
+            "paragraphs": [
+              "Dördüncü ya da beşinci bir gün ekleyebilirseniz İstanbul bunun karşılığını fazlasıyla verir. <strong>Adalar</strong>'a bir günlük gezi, manzaralı bir vapurla ulaşılan, çam ormanları ve Belle Époque köşkleriyle arabasız bir kaçamak sunar. Alternatif olarak <strong>Süleymaniye Camii</strong> ve çevresindeki atmosferik arka sokaklarda daha sakin bir yarım gün geçirebilir ya da tarihi bir Osmanlı hamamında hamam keyfi yaşayabilirsiniz.",
+              "Birçok gezgin İstanbul'u daha uzun bir Türkiye gezisinin açılış perdesi olarak kullanıp balonlar için Kapadokya'ya ya da Efes ve kıyı için Ege'ye uçar. İstanbul'da üç gün kusursuz bir temeldir — şehri anlamaya yeter ve geri dönmek isteyeceğinizi bilmeye de yeter."
+            ]
+          }
+        ],
+        "faqHeading": "Sıkça sorulan sorular",
+        "faqs": [
+          {
+            "q": "İstanbul için 3 gün yeterli mi?",
+            "a": "Üç gün, temeli rahatça görmeye yeter — Sultanahmet'in anıtları, bir Boğaz turu, çarşılar ve Balat gibi bir yerel mahalle. Her şeyi göremezsiniz ama şehrin gerçek havasını yakalarsınız. Dört ya da beş gün, Adalar'ı veya Anadolu yakasını daha sakin bir tempoda eklemenize imkân tanır."
+          },
+          {
+            "q": "İlk ziyaret için İstanbul'da konaklamak için en iyi bölge neresi?",
+            "a": "Sultanahmet sizi Ayasofya, Sultanahmet Camii ve Topkapı'ya yürüme mesafesinde tutar; kısa bir ilk gezi için ideal. Kapınızın önünde restoran, bar ve gece hayatı istiyorsanız Galata ve Beyoğlu daha iyi; eski şehre kolay tramvay ya da vapur var."
+          },
+          {
+            "q": "İstanbul için rehbere ihtiyacım var mı, yoksa kendi başıma gezebilir miyim?",
+            "a": "Bir ulaşım kartı ve haritayla İstanbul'da kendi başınıza gezebilirsiniz, ama anıt yoğunluklu ilk günde ruhsatlı bir yerel rehber paha biçilmezdir — Topkapı'da bilet kuyruğunu atlamak, tarihi anlatmak ve çoğu ziyaretçinin kaçırdığı mahallelere ulaşmak. Birçok kişi ilk günü rehberle gezip sonra kendi başına keşfeder."
+          },
+          {
+            "q": "İstanbul'da 3 günde nasıl ulaşım sağlarım?",
+            "a": "Tramvay, vapur, otobüs ve metroda çalışan bir İstanbulkart alın. Tramvay Sultanahmet ve Galata'yı kapsar, ucuz vapurlar Boğaz'ı geçip Anadolu yakasına ulaşır. Trafik yoğun olduğundan tramvay ve vapurlar genellikle taksiden daha hızlıdır."
+          },
+          {
+            "q": "İstanbul'da camileri ziyaret etmek için ne giymeliyim?",
+            "a": "Kapalı giyinin: herkes için omuzlar ve dizler örtülü, kadınlar cami içinde saçını örtmek için bir başörtüsü. Girişte ayakkabınızı çıkaracaksınız, o yüzden kolay çıkan ayakkabı işe yarar. Unutursanız kapıda çoğu zaman ödünç eşarp bulunur."
+          }
+        ],
+        "relatedHeading": "İstanbul gezinizi planlayın",
+        "ctaTitle": "İstanbul'u ruhsatlı bir yerel rehberle görün",
+        "ctaSub": "Kuyrukları atlayın ve çoğu ziyaretçinin kaçırdığı mahalleleri keşfedin. VibeGuide'da doğrulanmış bir İstanbul rehberi ayırtın — fiyatı önceden görürsünüz."
+      },
+      "pl": {
+        "title": "3 dni w Stambule: idealny plan dla początkujących",
+        "metaTitle": "3 dni w Stambule — idealny plan na pierwszy raz",
+        "metaDescription": "Jak spędzić 3 dni w Stambule: plan dzień po dniu przez Sultanahmet, Bosfor i bazary, z radami lokalnego przewodnika, jak omijać kolejki i tłumy.",
+        "excerpt": "Trzy dni wystarczą, by zakochać się w Stambule. Oto plan dzień po dniu na dwóch kontynentach — wielkie zabytki, Bosfor i uliczki, które większość turystów omija.",
+        "intro": [
+          "Stambuł jest ogromny, wielowarstwowy i niemożliwy do pełnego «zobaczenia» w trzy dni — ale trzy dni w zupełności wystarczą, by się w nim zakochać. Rozłożony między Europą a Azją wzdłuż Bosforu, miasto łączy bizantyjskie katedry, osmańskie pałace, gwarne bazary i wzgórzowe dzielnice w jedną z najbardziej satysfakcjonujących krótkich wypraw na świecie.",
+          "Ten <strong>plan 3 dni w Stambule</strong> jest pomyślany dla kogoś, kto odwiedza miasto po raz pierwszy i chce zobaczyć to, co najważniejsze, bez pośpiechu: wielkie zabytki Sultanahmet pierwszego dnia, Bosfor i bazary drugiego, a trzeciego lokalną, mniej turystyczną stronę miasta. Licencjonowany lokalny przewodnik potrafi skrócić kolejki i marsze w najbardziej intensywne dni — ale plan działa też samodzielnie."
+        ],
+        "sections": [
+          {
+            "heading": "Dzień 1: Sultanahmet — historyczne serce",
+            "paragraphs": [
+              "Zacznij od <strong>Sultanahmet</strong>, historycznego półwyspu, gdzie największe atrakcje leżą blisko siebie w zasięgu spaceru. Rozpocznij wcześnie od <strong>Hagia Sophia</strong>, liczącej 1500 lat dawnej katedry i meczetu, potem przejdź przez plac do <strong>Błękitnego Meczetu</strong> z kaskadą kopuł i sześcioma minaretami. Wstęp do obu jest bezpłatny, ale są bardzo zatłoczone — przyjście na otwarcie robi realną różnicę.",
+              "Po południu zwiedź <strong>Pałac Topkapı</strong>, rozległą siedzibę osmańskich sułtanów, i zajrzyj do pobliskiej podziemnej <strong>Cysterny Bazyliki</strong>. Jeśli zostanie energia, <strong>Wielki Bazar</strong> jest o krok stąd na pierwsze rozeznanie. To dzień najbardziej nasycony zabytkami i ten, w którym przewodnik opłaca się najbardziej — omijając kolejki po bilety w Topkapı i tłumacząc warstwy historii, obok których inaczej przeszedłbyś obojętnie."
+            ]
+          },
+          {
+            "heading": "Dzień 2: Bosfor i bazary",
+            "paragraphs": [
+              "Poświęć drugi dzień wodzie i targom. Poranny <strong>rejs po Bosforze</strong> to klasyczny sposób, by pojąć geografię Stambułu — pałace, drewniane rezydencje nad wodą i dwa kontynenty przesuwające się po obu stronach. Publiczne promy są tanie i równie malownicze jak łodzie turystyczne.",
+              "Z powrotem na lądzie zanurz się w <strong>Wielki Bazar</strong> i aromatyczny <strong>Bazar Egipski</strong> po dywany, lampy, herbatę i tureckie słodycze — targowanie się jest oczekiwane i stanowi część zabawy. Po południu przejdź przez Most Galata do <strong>Karaköy</strong> i wejdź na <strong>Wieżę Galata</strong> na zachód słońca nad starym miastem, a potem odkryj kawiarnie i butiki dzielnic Galata i Beyoğlu, gdy wieczór nabiera życia."
+            ]
+          },
+          {
+            "heading": "Dzień 3: lokalne dzielnice i strona azjatycka",
+            "paragraphs": [
+              "Wykorzystaj ostatni dzień, by zobaczyć Stambuł, który kochają miejscowi. Spędź poranek w <strong>Balat i Fener</strong>, fotogenicznych dawnych dzielnicach greckiej i żydowskiej z tęczowymi domami, sklepami z antykami i kościołami na wzgórzach — świat z dala od tłumów przy zabytkach. To jedna z najbardziej satysfakcjonujących dzielnic do powolnego zwiedzania.",
+              "Po południu wsiądź na prom na <strong>stronę azjatycką</strong>, na tętniące życiem ulice Kadıköy z targiem warzywnym, ulicznym jedzeniem i swobodnymi kawiarniami. Zakończenie podróży na innym kontynencie, patrząc, jak promy krzyżują się na Bosforze o zmierzchu, to idealny akcent na pożegnanie ze Stambułem — i przypomnienie, jak wiele jeszcze zostaje do odkrycia."
+            ]
+          },
+          {
+            "heading": "Praktyczne wskazówki na 3 dni w Stambule",
+            "paragraphs": [
+              "Zdobądź kartę transportową <strong>Istanbulkart</strong> zaraz po przyjeździe — działa na promach, tramwajach, autobusach i metrze, dzięki czemu przemieszczanie się między stronami jest łatwe i tanie. Zatrzymaj się w Sultanahmet lub w pobliżu na pierwszy dzień, albo w Galata/Beyoğlu, jeśli wolisz restauracje i życie nocne w zasięgu spaceru.",
+              "Załóż wygodne buty — Stambuł jest pagórkowaty i brukowany — i ubierz się skromnie do meczetów, z chustą dla kobiet do przykrycia włosów. Wielkie zabytki Sultanahmet są najbardziej zatłoczone w środku dnia, więc idź wcześnie lub późno. Trzy dni mijają szybko, dlatego licencjonowany lokalny przewodnik przynajmniej na pierwszy dzień to najlepszy sposób, by zobaczyć więcej przy mniejszym stresie."
+            ]
+          },
+          {
+            "heading": "Przedłużenie podróży ponad 3 dni",
+            "paragraphs": [
+              "Jeśli możesz dodać czwarty lub piąty dzień, Stambuł to wynagrodzi. Wycieczka na <strong>Wyspy Książęce</strong> daje ucieczkę bez samochodów wśród sosnowych lasów i rezydencji Belle Époque, do której dopłyniesz malowniczym promem. Alternatywnie dodaj spokojniejsze pół dnia w <strong>Meczecie Sulejmana</strong> i klimatycznych uliczkach wokół niego albo doświadczenie hammamu w zabytkowej osmańskiej łaźni.",
+              "Wielu podróżnych używa Stambułu jako aktu otwierającego dłuższą podróż po Turcji, lecąc dalej do Kapadocji po balony lub w dół nad Morze Egejskie do Efezu i wybrzeża. Trzy dni w Stambule to idealny fundament — dość, by zrozumieć miasto, i dość, by wiedzieć, że zechcesz wrócić."
+            ]
+          }
+        ],
+        "faqHeading": "Najczęściej zadawane pytania",
+        "faqs": [
+          {
+            "q": "Czy 3 dni wystarczą na Stambuł?",
+            "a": "Trzy dni wystarczą, by wygodnie objąć to, co najważniejsze — zabytki Sultanahmet, rejs po Bosforze, bazary i lokalną dzielnicę jak Balat. Nie zobaczysz wszystkiego, ale naprawdę poczujesz miasto. Cztery lub pięć dni pozwala dodać Wyspy Książęce lub stronę azjatycką w wolniejszym tempie."
+          },
+          {
+            "q": "Jaka jest najlepsza okolica na nocleg w Stambule przy pierwszej wizycie?",
+            "a": "Sultanahmet stawia cię w zasięgu spaceru od Hagia Sophia, Błękitnego Meczetu i Topkapı, co jest idealne na krótką pierwszą podróż. Galata i Beyoğlu są lepsze, jeśli chcesz restauracji, barów i życia nocnego pod bokiem, z łatwym tramwajem lub promem do starego miasta."
+          },
+          {
+            "q": "Czy potrzebuję przewodnika po Stambule, czy poradzę sobie sam?",
+            "a": "Możesz poruszać się po Stambule samodzielnie z kartą transportową i mapą, ale licencjonowany lokalny przewodnik jest nieoceniony pierwszego, nasyconego zabytkami dnia — omijając kolejki po bilety w Topkapı, tłumacząc historię i docierając do dzielnic, które wielu omija. Wielu bierze przewodnika na pierwszy dzień, a potem zwiedza samodzielnie."
+          },
+          {
+            "q": "Jak poruszać się po Stambule w 3 dni?",
+            "a": "Zdobądź kartę Istanbulkart, która działa na tramwajach, promach, autobusach i metrze. Tramwaj obejmuje Sultanahmet i Galatę, a tanie publiczne promy przecinają Bosfor i docierają na stronę azjatycką. Ruch jest duży, więc tramwaje i promy są zwykle szybsze niż taksówki."
+          },
+          {
+            "q": "W co się ubrać, by zwiedzać meczety w Stambule?",
+            "a": "Ubierz się skromnie: zakryte ramiona i kolana u wszystkich, a chusta dla kobiet do przykrycia włosów wewnątrz meczetów. Przy wejściu zdejmiesz buty, więc wygodne obuwie pomaga. Przy wejściu często można wypożyczyć chustę, jeśli o niej zapomnisz."
+          }
+        ],
+        "relatedHeading": "Zaplanuj podróż do Stambułu",
+        "ctaTitle": "Zobacz Stambuł z licencjonowanym lokalnym przewodnikiem",
+        "ctaSub": "Omiń kolejki i odkryj dzielnice, które większość omija. Zarezerwuj zweryfikowanego przewodnika po Stambule na VibeGuide — cenę zobaczysz z góry."
+      },
+      "nl": {
+        "title": "3 dagen in Istanbul: het perfecte programma voor first-timers",
+        "metaTitle": "3 dagen Istanbul — perfect programma voor beginners",
+        "metaDescription": "Hoe besteed je 3 dagen in Istanbul: een dagindeling langs Sultanahmet, de Bosporus en de bazaars, met tips van lokale gidsen om drukte en wachtrijen te vermijden.",
+        "excerpt": "Drie dagen zijn precies genoeg om verliefd te worden op Istanbul. Hier is een dagindeling over twee continenten — de grote monumenten, de Bosporus en de achterafstraatjes die de meeste bezoekers missen.",
+        "intro": [
+          "Istanbul is enorm, gelaagd en onmogelijk volledig te «zien» in drie dagen — maar drie dagen zijn ruim genoeg om er verliefd op te worden. De stad ligt over de Bosporus verspreid over Europa en Azië en stapelt Byzantijnse kathedralen, Ottomaanse paleizen, bruisende bazaars en heuvelachtige wijken op tot een van de meest lonende stedentrips ter wereld.",
+          "Dit <strong>3-daagse Istanbul-programma</strong> is gemaakt voor een first-timer die de essentie wil zonder te haasten: de grote monumenten van Sultanahmet op dag één, de Bosporus en de bazaars op dag twee, en de lokale, minder toeristische kant van de stad op dag drie. Een erkende lokale gids kan op de drukke dagen de wachtrijen en het lopen inkorten — maar het plan werkt ook op zichzelf."
+        ],
+        "sections": [
+          {
+            "heading": "Dag 1: Sultanahmet — het historische hart",
+            "paragraphs": [
+              "Begin in <strong>Sultanahmet</strong>, het historische schiereiland waar de grootste bezienswaardigheden op korte loopafstand van elkaar liggen. Start vroeg bij de <strong>Hagia Sophia</strong>, de 1.500 jaar oude voormalige kathedraal en moskee, en steek dan het plein over naar de <strong>Blauwe Moskee</strong> met haar cascade van koepels en zes minaretten. Beide zijn gratis toegankelijk maar worden erg druk — bij openingstijd arriveren maakt echt verschil.",
+              "Bezoek in de middag het <strong>Topkapı-paleis</strong>, de uitgestrekte residentie van de Ottomaanse sultans, en wip binnen bij de ondergrondse <strong>Basilica-cisterne</strong> in de buurt. Als je nog energie hebt, ligt de <strong>Grote Bazaar</strong> op korte loopafstand voor een eerste rondje. Dit is de dag met de meeste monumenten, en waar een gids het meest loont — de wachtrijen bij Topkapı overslaan en de lagen geschiedenis uitleggen die je anders zomaar voorbij zou lopen."
+            ]
+          },
+          {
+            "heading": "Dag 2: de Bosporus en de bazaars",
+            "paragraphs": [
+              "Wijd dag twee aan het water en de markten. Een ochtendlijke <strong>Bosporus-cruise</strong> is de klassieke manier om Istanbuls geografie te vatten — paleizen, houten waterfront-herenhuizen en de twee continenten die aan weerszijden voorbijglijden. Openbare veerboten zijn goedkoop en net zo schilderachtig als de toeristenboten.",
+              "Terug op het land duik je in de <strong>Grote Bazaar</strong> en de geurige <strong>Kruidenbazaar</strong> voor tapijten, lampen, thee en Turks fruit — afdingen hoort erbij en is onderdeel van het plezier. Steek in de middag de Galatabrug over naar <strong>Karaköy</strong> en klim naar de <strong>Galatatoren</strong> voor een zonsondergang over de oude stad, en verken daarna de cafés en boetieks van de wijken Galata en Beyoğlu als de avond tot leven komt."
+            ]
+          },
+          {
+            "heading": "Dag 3: lokale wijken en de Aziatische kant",
+            "paragraphs": [
+              "Gebruik je laatste dag om het Istanbul te zien waar de bewoners van houden. Breng de ochtend door in <strong>Balat en Fener</strong>, de fotogenieke oude Griekse en Joodse wijken met regenbooghuizen, antiekwinkels en heuveltopkerken — een wereld verwijderd van de monumentendrukte. Het is een van de meest lonende wijken van de stad om rustig doorheen te dwalen.",
+              "Neem in de middag een veerboot naar de <strong>Aziatische kant</strong> en de bruisende straten van Kadıköy, met zijn versmarkt, streetfood en ontspannen cafés. Je reis afsluiten op een ander continent, terwijl je de veerboten in de schemering over de Bosporus ziet kruisen, is de perfecte noot om Istanbul op te verlaten — en een herinnering aan hoeveel er nog te ontdekken valt bij een volgende keer."
+            ]
+          },
+          {
+            "heading": "Praktische tips voor 3 dagen Istanbul",
+            "paragraphs": [
+              "Schaf bij aankomst een <strong>Istanbulkart</strong> vervoerskaart aan — die werkt op veerboten, trams, bussen en de metro, en maakt het wisselen tussen de twee kanten moeiteloos en goedkoop. Verblijf in of nabij Sultanahmet voor dag één, of in Galata/Beyoğlu als je restaurants en nachtleven op loopafstand verkiest.",
+              "Draag comfortabele schoenen — Istanbul is heuvelachtig en met kasseien — en kleed je bescheiden voor de moskeeën, met een sjaal voor vrouwen om het haar te bedekken. De grote bezienswaardigheden van Sultanahmet zijn het drukst midden op de dag, dus ga vroeg of laat. Drie dagen gaan snel voorbij, dus een erkende lokale gids voor minstens de eerste dag is de allerbeste manier om meer te zien met minder stress."
+            ]
+          },
+          {
+            "heading": "Je reis verlengen na 3 dagen",
+            "paragraphs": [
+              "Als je een vierde of vijfde dag kunt toevoegen, beloont Istanbul dat. Een dagtrip naar de <strong>Prinseneilanden</strong> geeft je een autovrije ontsnapping van dennenbossen en Belle Époque-villa's, bereikbaar met een schilderachtige veerboot. Voeg als alternatief een rustige halve dag toe in de <strong>Süleymaniye-moskee</strong> en de sfeervolle achterafstraatjes eromheen, of een hammam-ervaring in een historisch Ottomaans badhuis.",
+              "Veel reizigers gebruiken Istanbul als de opening van een langere Turkije-reis, om door te vliegen naar Cappadocië voor de ballonnen of naar de Egeïsche kust voor Efeze en de kust. Drie dagen in Istanbul zijn de perfecte basis — genoeg om de stad te begrijpen, en genoeg om te weten dat je terug wilt komen."
+            ]
+          }
+        ],
+        "faqHeading": "Veelgestelde vragen",
+        "faqs": [
+          {
+            "q": "Zijn 3 dagen genoeg voor Istanbul?",
+            "a": "Drie dagen zijn genoeg om de essentie comfortabel te dekken — de monumenten van Sultanahmet, een Bosporus-cruise, de bazaars en een lokale wijk als Balat. Je ziet niet alles, maar je krijgt een echt gevoel voor de stad. Vier of vijf dagen laten je de Prinseneilanden of de Aziatische kant in een rustiger tempo toevoegen."
+          },
+          {
+            "q": "Wat is de beste buurt om te overnachten in Istanbul bij een eerste bezoek?",
+            "a": "Sultanahmet plaatst je op loopafstand van de Hagia Sophia, de Blauwe Moskee en Topkapı, ideaal voor een korte eerste reis. Galata en Beyoğlu zijn beter als je restaurants, bars en nachtleven voor de deur wilt, met een makkelijke tram of veerboot naar de oude stad."
+          },
+          {
+            "q": "Heb ik een gids nodig voor Istanbul of kan ik het zelfstandig doen?",
+            "a": "Je kunt Istanbul zelfstandig verkennen met een vervoerskaart en een kaart, maar een erkende lokale gids is van onschatbare waarde op de monumentrijke eerste dag — de wachtrijen bij Topkapı overslaan, de geschiedenis uitleggen en wijken bereiken die de meeste bezoekers missen. Veel mensen nemen dag één met een gids en verkennen daarna op eigen houtje."
+          },
+          {
+            "q": "Hoe verplaats ik me in Istanbul in 3 dagen?",
+            "a": "Schaf een Istanbulkart aan, die werkt op trams, veerboten, bussen en de metro. De tram bedient Sultanahmet en Galata, en goedkope openbare veerboten steken de Bosporus over en bereiken de Aziatische kant. Het verkeer is druk, dus trams en veerboten zijn meestal sneller dan taxi's."
+          },
+          {
+            "q": "Wat moet ik dragen om de moskeeën in Istanbul te bezoeken?",
+            "a": "Kleed je bescheiden: schouders en knieën bedekt voor iedereen, en een hoofddoek voor vrouwen om het haar binnen te bedekken. Je trekt je schoenen uit bij de ingang, dus makkelijk schoeisel helpt. Aan de deur zijn vaak sjaals te leen als je er een vergeet."
+          }
+        ],
+        "relatedHeading": "Plan je Istanbul-reis",
+        "ctaTitle": "Bekijk Istanbul met een erkende lokale gids",
+        "ctaSub": "Sla de wachtrijen over en ontdek de wijken die de meeste bezoekers missen. Boek een geverifieerde Istanbul-gids op VibeGuide — je ziet de prijs vooraf."
+      },
+      "pt": {
+        "title": "3 dias em Istambul: o itinerário perfeito para a primeira visita",
+        "metaTitle": "3 dias em Istambul — itinerário perfeito para principiantes",
+        "metaDescription": "Como passar 3 dias em Istambul: um itinerário dia a dia por Sultanahmet, o Bósforo e os bazares, com dicas de guias locais para evitar filas e multidões.",
+        "excerpt": "Três dias são o suficiente para se apaixonar por Istambul. Aqui fica um plano dia a dia por dois continentes — os grandes monumentos, o Bósforo e as ruelas que a maioria dos visitantes ignora.",
+        "intro": [
+          "Istambul é enorme, cheia de camadas e impossível de «ver» por completo em três dias — mas três dias chegam de sobra para se apaixonar por ela. Estendendo-se pela Europa e pela Ásia ao longo do Bósforo, a cidade acumula catedrais bizantinas, palácios otomanos, bazares vibrantes e bairros de encosta num dos city breaks mais compensadores do mundo.",
+          "Este <strong>itinerário de 3 dias em Istambul</strong> foi pensado para quem a visita pela primeira vez e quer o essencial sem correrias: os grandes monumentos de Sultanahmet no primeiro dia, o Bósforo e os bazares no segundo, e o lado local e menos turístico da cidade no terceiro. Um guia local licenciado consegue reduzir as filas e as caminhadas nos dias mais cheios — mas o plano também funciona por si só."
+        ],
+        "sections": [
+          {
+            "heading": "Dia 1: Sultanahmet — o coração histórico",
+            "paragraphs": [
+              "Comece em <strong>Sultanahmet</strong>, a península histórica onde os maiores pontos de interesse ficam a curta distância a pé uns dos outros. Comece cedo na <strong>Santa Sofia</strong>, a antiga catedral e mesquita com 1.500 anos, e depois atravesse a praça até à <strong>Mesquita Azul</strong>, com a sua cascata de cúpulas e seis minaretes. Ambas têm entrada gratuita mas enchem muito — chegar à hora de abertura faz mesmo diferença.",
+              "À tarde, visite o <strong>Palácio de Topkapı</strong>, a vasta sede dos sultões otomanos, e passe pela subterrânea <strong>Cisterna da Basílica</strong> ali perto. Se ainda tiver energia, o <strong>Grande Bazar</strong> fica a curta distância a pé para uma primeira volta. Este é o dia mais carregado de monumentos, e onde um guia mais compensa — saltar as filas de bilhetes em Topkapı e explicar as camadas de história por que passaria sem reparar."
+            ]
+          },
+          {
+            "heading": "Dia 2: o Bósforo e os bazares",
+            "paragraphs": [
+              "Dedique o segundo dia à água e aos mercados. Um <strong>cruzeiro pelo Bósforo</strong> de manhã é a forma clássica de perceber a geografia de Istambul — palácios, mansões de madeira à beira-mar e os dois continentes a deslizar de cada lado. Os ferries públicos são baratos e tão panorâmicos como os barcos turísticos.",
+              "De volta a terra, mergulhe no <strong>Grande Bazar</strong> e no aromático <strong>Bazar das Especiarias</strong> à procura de tapetes, candeeiros, chá e delícias turcas — o regateio é esperado e faz parte da diversão. À tarde, atravesse a Ponte de Gálata até <strong>Karaköy</strong> e suba à <strong>Torre de Gálata</strong> para ver o pôr do sol sobre a cidade velha, e depois explore os cafés e as boutiques dos bairros de Gálata e Beyoğlu enquanto a noite ganha vida."
+            ]
+          },
+          {
+            "heading": "Dia 3: bairros locais e o lado asiático",
+            "paragraphs": [
+              "Aproveite o último dia para conhecer a Istambul que os habitantes adoram. Passe a manhã em <strong>Balat e Fener</strong>, os fotogénicos antigos bairros grego e judaico, com casas coloridas, lojas de antiguidades e igrejas no alto das colinas — um mundo à parte das multidões dos monumentos. É um dos bairros mais compensadores da cidade para percorrer com calma.",
+              "À tarde, apanhe um ferry até ao <strong>lado asiático</strong> e às ruas animadas de Kadıköy, com o seu mercado de produtos frescos, comida de rua e cafés descontraídos. Terminar a viagem noutro continente, a ver os ferries a cruzar o Bósforo ao entardecer, é a nota perfeita para deixar Istambul — e uma lembrança de quanto ainda há para regressar a descobrir."
+            ]
+          },
+          {
+            "heading": "Dicas práticas para 3 dias em Istambul",
+            "paragraphs": [
+              "Compre um passe de transportes <strong>Istanbulkart</strong> à chegada — funciona em ferries, elétricos, autocarros e metro, e torna o vaivém entre os dois lados fácil e barato. Fique em Sultanahmet ou perto para o primeiro dia, ou em Gálata/Beyoğlu se preferir restaurantes e vida noturna a pé.",
+              "Use calçado confortável — Istambul é cheia de subidas e calçada — e vista-se com discrição para as mesquitas, com um lenço para as mulheres cobrirem o cabelo. Os grandes pontos de Sultanahmet enchem a meio do dia, por isso vá cedo ou ao fim do dia. Três dias passam depressa, por isso um guia local licenciado, pelo menos no primeiro dia, é a melhor forma de ver mais com menos stress."
+            ]
+          },
+          {
+            "heading": "Prolongar a viagem para além dos 3 dias",
+            "paragraphs": [
+              "Se puder acrescentar um quarto ou quinto dia, Istambul recompensa-o. Uma excursão de um dia às <strong>Ilhas dos Príncipes</strong> oferece uma fuga sem carros, de pinhais e mansões da Belle Époque, alcançada por um ferry panorâmico. Em alternativa, acrescente meio dia mais tranquilo na <strong>Mesquita de Solimão</strong> e nas ruelas cheias de atmosfera à sua volta, ou uma experiência de hammam num banho otomano histórico.",
+              "Muitos viajantes usam Istambul como abertura de uma viagem mais longa pela Turquia, seguindo de avião para a Capadócia pelos balões ou descendo ao Egeu por Éfeso e pela costa. Três dias em Istambul são a base perfeita — que chegam para compreender a cidade, e que chegam para saber que vai querer voltar."
+            ]
+          }
+        ],
+        "faqHeading": "Perguntas frequentes",
+        "faqs": [
+          {
+            "q": "Três dias chegam para Istambul?",
+            "a": "Três dias chegam para cobrir o essencial com conforto — os monumentos de Sultanahmet, um cruzeiro pelo Bósforo, os bazares e um bairro local como Balat. Não verá tudo, mas ficará com uma verdadeira noção da cidade. Quatro ou cinco dias permitem acrescentar as Ilhas dos Príncipes ou o lado asiático a um ritmo mais calmo."
+          },
+          {
+            "q": "Qual é a melhor zona para ficar em Istambul numa primeira visita?",
+            "a": "Sultanahmet coloca-o a pé da Santa Sofia, da Mesquita Azul e de Topkapı, ideal para uma primeira viagem curta. Gálata e Beyoğlu são melhores se quiser restaurantes, bares e vida noturna à porta, com elétrico ou ferry fácil para a cidade velha."
+          },
+          {
+            "q": "Preciso de um guia para Istambul ou posso fazê-lo por conta própria?",
+            "a": "Pode explorar Istambul por conta própria com um passe de transportes e um mapa, mas um guia local licenciado é valiosíssimo no primeiro dia carregado de monumentos — saltar filas de bilhetes em Topkapı, explicar a história e chegar a bairros que a maioria ignora. Muitos contratam guia no primeiro dia e exploram sozinhos depois."
+          },
+          {
+            "q": "Como me desloco em Istambul em 3 dias?",
+            "a": "Compre um Istanbulkart, que funciona em elétricos, ferries, autocarros e metro. O elétrico serve Sultanahmet e Gálata, e os ferries públicos baratos cruzam o Bósforo e chegam ao lado asiático. O trânsito é intenso, por isso elétricos e ferries costumam ser mais rápidos do que táxis."
+          },
+          {
+            "q": "O que devo vestir para visitar as mesquitas em Istambul?",
+            "a": "Vista-se com discrição: ombros e joelhos cobertos para todos, e um lenço na cabeça para as mulheres cobrirem o cabelo dentro das mesquitas. Tira-se o calçado à entrada, por isso sapatos fáceis ajudam. Há muitas vezes lenços emprestados à porta se se esquecer de um."
+          }
+        ],
+        "relatedHeading": "Planeie a sua viagem a Istambul",
+        "ctaTitle": "Conheça Istambul com um guia local licenciado",
+        "ctaSub": "Salte as filas e descubra os bairros que a maioria dos visitantes ignora. Reserve um guia de Istambul verificado na VibeGuide — vê o preço à partida."
+      },
+      "ja": {
+        "title": "イスタンブール3日間：初めての人のための完璧なモデルプラン",
+        "metaTitle": "イスタンブール3日間 — 初訪問者に最適なモデルプラン",
+        "metaDescription": "イスタンブールで過ごす3日間：スルタンアフメット、ボスポラス海峡、バザールを巡る日別プラン。行列と混雑を避ける地元ガイドのコツ付き。",
+        "excerpt": "3日間はイスタンブールに恋するのに十分な時間。二つの大陸にまたがる日別プランをご紹介します — 壮大な遺跡、ボスポラス海峡、そして多くの旅行者が見逃す路地裏まで。",
+        "intro": [
+          "イスタンブールは広大で、幾層にも重なり、3日間では到底「見尽くす」ことはできません — けれど3日間は恋に落ちるには十分すぎるほどです。ボスポラス海峡を挟んでヨーロッパとアジアにまたがるこの街は、ビザンティンの大聖堂、オスマンの宮殿、活気あふれるバザール、丘の斜面に広がる街並みを一つに束ね、世界でも屈指の充実した都市滞在を生み出します。",
+          "この<strong>イスタンブール3日間モデルプラン</strong>は、急がずに要所を押さえたい初訪問者のために組み立てられています。1日目はスルタンアフメットの壮大な遺跡、2日目はボスポラス海峡とバザール、3日目は観光ずれしていない地元の一面へ。混雑する日には公認の地元ガイドが行列と歩行時間を圧縮してくれますが、プランそのものだけでも十分に機能します。"
+        ],
+        "sections": [
+          {
+            "heading": "1日目：スルタンアフメット — 歴史の中心",
+            "paragraphs": [
+              "<strong>スルタンアフメット</strong>から始めましょう。最大級の見どころが徒歩圏内に集まる歴史地区です。まず朝早く、築1500年の元大聖堂にしてモスクである<strong>アヤソフィア</strong>へ。それから広場を渡り、幾重にも連なるドームと六本のミナレットを誇る<strong>ブルーモスク</strong>へ。どちらも入場は無料ですが非常に混雑します — 開場時刻に着くことが大きな違いを生みます。",
+              "午後はオスマン帝国のスルタンたちの広大な居城<strong>トプカプ宮殿</strong>を巡り、近くの地下にある<strong>地下宮殿（バシリカ・シスタン）</strong>にも立ち寄りましょう。まだ余力があれば、<strong>グランドバザール</strong>は徒歩すぐで、最初の下見にちょうどよいでしょう。この日が最も遺跡の多い一日で、ガイドが最も真価を発揮する場面でもあります — トプカプのチケット行列を飛ばし、素通りしてしまいがちな歴史の層を解き明かしてくれます。"
+            ]
+          },
+          {
+            "heading": "2日目：ボスポラス海峡とバザール",
+            "paragraphs": [
+              "2日目は水辺と市場に充てましょう。午前の<strong>ボスポラス・クルーズ</strong>はイスタンブールの地理を体感する定番です — 宮殿、木造の水辺の邸宅、そして左右を流れゆく二つの大陸。公共フェリーは安く、観光船に劣らず絶景です。",
+              "陸に戻ったら、<strong>グランドバザール</strong>と香り高い<strong>エジプシャンバザール（スパイスバザール）</strong>に飛び込み、絨毯、ランプ、紅茶、ターキッシュディライトを。値引き交渉は当然で、それも楽しみの一つです。午後はガラタ橋を渡って<strong>カラキョイ</strong>へ、さらに<strong>ガラタ塔</strong>へ登り、旧市街に沈む夕日を眺めましょう。夜が動き出す頃、ガラタとベイオール地区のカフェやブティックを歩いて回ります。"
+            ]
+          },
+          {
+            "heading": "3日目：地元の街並みとアジア側",
+            "paragraphs": [
+              "最終日は地元の人が愛するイスタンブールを。午前中は<strong>バラットとフェネル</strong>で過ごしましょう。カラフルな家々、アンティークショップ、丘の上の教会が残る、写真映えする旧ギリシャ人・ユダヤ人街です — 遺跡の人混みとはまるで別世界。ゆっくり歩き回るのに、街でも指折りの魅力ある地区です。",
+              "午後はフェリーで<strong>アジア側</strong>へ渡り、青物市場やストリートフード、気取らないカフェが賑わうカドゥキョイの通りへ。旅の締めくくりを別の大陸で、夕暮れにボスポラス海峡を行き交うフェリーを眺めながら迎えるのは、イスタンブールを去るのに最高の一節です — そして、また戻りたくなる理由がどれほど残っているかを思い知らせてくれます。"
+            ]
+          },
+          {
+            "heading": "イスタンブール3日間の実用的なヒント",
+            "paragraphs": [
+              "到着したら交通カード<strong>Istanbulkart</strong>を手に入れましょう — フェリー、トラム、バス、地下鉄で使え、二つの側を行き来するのが楽で安くなります。1日目はスルタンアフメット内かその近くを拠点に、レストランやナイトライフが徒歩圏にほしいならガラタ／ベイオールを選びましょう。",
+              "歩きやすい靴を — イスタンブールは坂と石畳が多いのです — そしてモスクでは控えめな服装を、女性は髪を覆うスカーフを。スルタンアフメットの主要な見どころは昼間が最も混むので、早朝か夕方に。3日間はあっという間なので、少なくとも初日だけでも公認の地元ガイドを頼むのが、より少ないストレスでより多くを見る一番の方法です。"
+            ]
+          },
+          {
+            "heading": "3日間を超えて旅を延ばすなら",
+            "paragraphs": [
+              "4日目や5日目を足せるなら、イスタンブールはそれに応えてくれます。<strong>プリンセス諸島</strong>への日帰りは、松林とベル・エポック様式の邸宅が広がる車のない別天地へ、絶景のフェリーで渡ります。あるいは<strong>スレイマニエ・モスク</strong>とその周辺の趣ある路地でゆっくり半日を過ごしたり、歴史あるオスマンの浴場でハマム体験をしたりするのもよいでしょう。",
+              "多くの旅行者はイスタンブールをより長いトルコ旅行の幕開けとし、気球を目当てにカッパドキアへ、あるいはエフェソスと海岸を目指してエーゲ海方面へ飛びます。イスタンブールの3日間は完璧な土台です — 街を理解するのに十分で、また戻りたくなると悟るのにも十分なのです。"
+            ]
+          }
+        ],
+        "faqHeading": "よくある質問",
+        "faqs": [
+          {
+            "q": "イスタンブールに3日間で足りますか？",
+            "a": "3日間あれば要所をゆったり押さえられます — スルタンアフメットの遺跡、ボスポラス・クルーズ、バザール、そしてバラットのような地元の街。すべては見られませんが、街の本当の空気はつかめます。4〜5日あれば、プリンセス諸島やアジア側をよりゆっくり加えられます。"
+          },
+          {
+            "q": "初訪問でイスタンブールに泊まるのに最適なエリアは？",
+            "a": "スルタンアフメットはアヤソフィア、ブルーモスク、トプカプが徒歩圏で、短い初旅行に理想的です。レストラン、バー、ナイトライフをすぐそばに求めるなら、旧市街へトラムやフェリーで手軽に行けるガラタやベイオールがよいでしょう。"
+          },
+          {
+            "q": "イスタンブールにガイドは必要ですか、それとも自分で回れますか？",
+            "a": "交通カードと地図があれば自分でも回れますが、遺跡の多い初日には公認の地元ガイドが計り知れない価値を持ちます — トプカプのチケット行列を飛ばし、歴史を解説し、多くの旅行者が見逃す街並みへ導いてくれます。初日だけガイドを頼み、その後は自由に歩く人も多いです。"
+          },
+          {
+            "q": "3日間でイスタンブールをどう移動しますか？",
+            "a": "トラム、フェリー、バス、地下鉄で使えるIstanbulkartを入手しましょう。トラムはスルタンアフメットとガラタをカバーし、安い公共フェリーがボスポラス海峡を渡ってアジア側へ届きます。渋滞が激しいので、トラムやフェリーはたいていタクシーより速いです。"
+          },
+          {
+            "q": "イスタンブールでモスクを訪れる際、何を着るべきですか？",
+            "a": "控えめな服装を：全員が肩と膝を覆い、女性はモスク内で髪を覆うスカーフを。入口で靴を脱ぐので、脱ぎ履きしやすい靴が便利です。忘れても、入口で借りられるスカーフが用意されていることが多いです。"
+          }
+        ],
+        "relatedHeading": "イスタンブール旅行を計画する",
+        "ctaTitle": "公認の地元ガイドとイスタンブールを巡る",
+        "ctaSub": "行列を飛ばし、多くの旅行者が見逃す街並みを発見しましょう。VibeGuideで認証済みのイスタンブールガイドを予約 — 料金は事前に表示されます。"
+      },
+      "ko": {
+        "title": "이스탄불 3일: 첫 방문자를 위한 완벽한 일정",
+        "metaTitle": "이스탄불 3일 — 첫 방문자를 위한 완벽한 일정",
+        "metaDescription": "이스탄불에서 3일 보내는 법: 술탄아흐메트, 보스포루스, 바자르를 아우르는 일자별 일정과 줄·인파를 피하는 현지 가이드 팁.",
+        "excerpt": "3일이면 이스탄불에 반하기에 충분합니다. 두 대륙을 넘나드는 일자별 계획을 소개합니다 — 위대한 유적, 보스포루스, 그리고 대부분의 방문객이 놓치는 뒷골목까지.",
+        "intro": [
+          "이스탄불은 거대하고 층층이 쌓여 있어 3일 만에 온전히 「다 보기」란 불가능합니다 — 하지만 3일이면 사랑에 빠지기엔 차고 넘칩니다. 보스포루스 해협을 사이에 두고 유럽과 아시아에 걸쳐 있는 이 도시는 비잔틴 대성당, 오스만 궁전, 활기 넘치는 바자르, 언덕배기 동네를 한데 쌓아 세계에서 손꼽히게 보람 있는 도시 여행을 만들어냅니다.",
+          "이 <strong>이스탄불 3일 일정</strong>은 서두르지 않으면서 핵심을 놓치고 싶지 않은 첫 방문자를 위해 짜였습니다. 첫째 날은 술탄아흐메트의 위대한 유적, 둘째 날은 보스포루스와 바자르, 셋째 날은 관광지 티가 덜 나는 현지의 얼굴을 봅니다. 붐비는 날에는 면허를 가진 현지 가이드가 줄과 걷는 시간을 줄여줄 수 있지만, 이 계획만으로도 충분히 잘 돌아갑니다."
+        ],
+        "sections": [
+          {
+            "heading": "1일차: 술탄아흐메트 — 역사의 심장",
+            "paragraphs": [
+              "<strong>술탄아흐메트</strong>에서 시작하세요. 가장 큰 명소들이 서로 걸어서 가까운 거리에 모여 있는 역사 반도입니다. 이른 아침 1500년 된 옛 대성당이자 모스크인 <strong>아야소피아</strong>부터 시작한 뒤, 광장을 건너 겹겹이 이어지는 돔과 여섯 개의 미나레트를 자랑하는 <strong>블루 모스크</strong>로 가세요. 둘 다 입장은 무료지만 매우 붐빕니다 — 개장 시간에 도착하면 확실히 다릅니다.",
+              "오후에는 오스만 술탄들의 광대한 거처인 <strong>톱카프 궁전</strong>을 둘러보고, 근처 지하의 <strong>바실리카 저수지(예레바탄)</strong>에도 들러보세요. 힘이 남았다면 <strong>그랜드 바자르</strong>가 걸어서 가까워 첫 구경에 좋습니다. 이날이 유적이 가장 많은 날이자 가이드의 진가가 가장 잘 드러나는 날입니다 — 톱카프의 매표 줄을 건너뛰고, 그냥 지나쳤을 역사의 층위를 풀어줍니다."
+            ]
+          },
+          {
+            "heading": "2일차: 보스포루스와 바자르",
+            "paragraphs": [
+              "둘째 날은 물과 시장에 내어주세요. 오전 <strong>보스포루스 크루즈</strong>는 이스탄불의 지리를 파악하는 고전적인 방법입니다 — 궁전, 물가의 목조 저택, 그리고 양쪽으로 스쳐 지나가는 두 대륙. 공공 페리는 저렴하면서도 관광 보트 못지않게 경치가 좋습니다.",
+              "다시 뭍으로 돌아와 <strong>그랜드 바자르</strong>와 향긋한 <strong>스파이스 바자르</strong>에 뛰어들어 카펫, 램프, 차, 터키시 딜라이트를 만나보세요 — 흥정은 당연하고 그 자체가 재미입니다. 오후에는 갈라타 다리를 건너 <strong>카라쿄이</strong>로, 이어 <strong>갈라타 탑</strong>에 올라 구시가지 위로 지는 노을을 감상하세요. 저녁이 살아나는 동안 갈라타와 베이오을루 지구의 카페와 부티크를 둘러봅니다."
+            ]
+          },
+          {
+            "heading": "3일차: 현지 동네와 아시아 지역",
+            "paragraphs": [
+              "마지막 날은 현지인이 사랑하는 이스탄불을 보는 데 쓰세요. 오전은 <strong>발라트와 페네르</strong>에서 보내세요. 무지개빛 집들, 골동품 가게, 언덕 위 교회가 있는 사진 찍기 좋은 옛 그리스인·유대인 구역으로 — 유적의 인파와는 딴 세상입니다. 천천히 거닐기에 도시에서 가장 보람 있는 동네 중 하나입니다.",
+              "오후에는 페리를 타고 <strong>아시아 지역</strong>으로 건너가 청과 시장, 길거리 음식, 느긋한 카페가 붐비는 카드쾨이의 거리를 걸어보세요. 다른 대륙에서 여정을 마무리하며 해질 무렵 보스포루스를 오가는 페리를 바라보는 것은 이스탄불을 떠나기에 더없이 완벽한 마침표입니다 — 그리고 다시 돌아올 이유가 얼마나 많이 남았는지 일깨워 줍니다."
+            ]
+          },
+          {
+            "heading": "이스탄불 3일을 위한 실용 팁",
+            "paragraphs": [
+              "도착하면 교통카드 <strong>Istanbulkart</strong>를 장만하세요 — 페리, 트램, 버스, 지하철에서 모두 쓰이며 두 지역을 오가기를 손쉽고 저렴하게 해줍니다. 첫째 날에는 술탄아흐메트 안이나 근처에 묵고, 걸어서 닿는 거리에 식당과 밤 문화를 원한다면 갈라타/베이오을루를 택하세요.",
+              "편한 신발을 신으세요 — 이스탄불은 언덕과 자갈길이 많습니다 — 모스크에서는 단정하게 입고, 여성은 머리를 가릴 스카프를 준비하세요. 술탄아흐메트의 큰 명소는 한낮에 가장 붐비니 이른 아침이나 늦은 시간에 가세요. 3일은 빠르게 흐르니, 적어도 첫날만이라도 면허 있는 현지 가이드를 두는 것이 스트레스를 줄이면서 더 많이 보는 최고의 방법입니다."
+            ]
+          },
+          {
+            "heading": "3일을 넘겨 여행을 늘린다면",
+            "paragraphs": [
+              "넷째 날이나 다섯째 날을 더할 수 있다면 이스탄불은 그만큼 보답합니다. <strong>프린세스 제도</strong> 당일치기는 소나무 숲과 벨 에포크 저택이 있는, 차 없는 안식처로 경치 좋은 페리를 타고 갑니다. 아니면 <strong>술레이마니예 모스크</strong>와 그 주변의 정취 있는 뒷골목에서 느긋하게 반나절을 보내거나, 역사 깊은 오스만 목욕탕에서 하맘을 체험해 보세요.",
+              "많은 여행자가 이스탄불을 더 긴 터키 여행의 서막으로 삼아, 열기구를 보러 카파도키아로, 혹은 에페소스와 해안을 향해 에게해 쪽으로 날아갑니다. 이스탄불의 3일은 완벽한 토대입니다 — 도시를 이해하기에 충분하고, 다시 오고 싶어질 것을 깨닫기에도 충분합니다."
+            ]
+          }
+        ],
+        "faqHeading": "자주 묻는 질문",
+        "faqs": [
+          {
+            "q": "이스탄불에 3일이면 충분한가요?",
+            "a": "3일이면 핵심을 여유 있게 둘러볼 수 있습니다 — 술탄아흐메트의 유적, 보스포루스 크루즈, 바자르, 그리고 발라트 같은 현지 동네까지. 전부는 못 보지만 도시의 진짜 분위기는 느낄 수 있습니다. 4~5일이면 프린세스 제도나 아시아 지역을 더 여유롭게 더할 수 있습니다."
+          },
+          {
+            "q": "첫 방문에 이스탄불에서 묵기 좋은 지역은 어디인가요?",
+            "a": "술탄아흐메트는 아야소피아, 블루 모스크, 톱카프가 걸어서 닿는 거리라 짧은 첫 여행에 이상적입니다. 식당, 바, 밤 문화를 바로 곁에 두고 싶다면 구시가지로 트램이나 페리로 쉽게 가는 갈라타와 베이오을루가 낫습니다."
+          },
+          {
+            "q": "이스탄불에 가이드가 필요한가요, 아니면 혼자 다닐 수 있나요?",
+            "a": "교통카드와 지도만 있으면 혼자서도 다닐 수 있지만, 유적이 많은 첫날에는 면허 있는 현지 가이드가 값을 매길 수 없는 도움이 됩니다 — 톱카프 매표 줄을 건너뛰고, 역사를 설명하며, 대부분의 방문객이 놓치는 동네로 이끌어 줍니다. 첫날만 가이드와 다니고 이후엔 혼자 다니는 사람이 많습니다."
+          },
+          {
+            "q": "3일 동안 이스탄불에서 어떻게 이동하나요?",
+            "a": "트램, 페리, 버스, 지하철에서 쓰이는 Istanbulkart를 장만하세요. 트램은 술탄아흐메트와 갈라타를 잇고, 저렴한 공공 페리가 보스포루스를 건너 아시아 지역까지 갑니다. 교통 체증이 심해 트램과 페리가 대개 택시보다 빠릅니다."
+          },
+          {
+            "q": "이스탄불에서 모스크를 방문할 때 무엇을 입어야 하나요?",
+            "a": "단정하게 입으세요: 모두 어깨와 무릎을 가리고, 여성은 모스크 안에서 머리를 가릴 스카프를 준비하세요. 입구에서 신발을 벗으니 신고 벗기 쉬운 신발이 좋습니다. 깜빡했더라도 입구에서 빌릴 수 있는 스카프가 마련된 경우가 많습니다."
+          }
+        ],
+        "relatedHeading": "이스탄불 여행 계획하기",
+        "ctaTitle": "면허 있는 현지 가이드와 이스탄불을 만나보세요",
+        "ctaSub": "줄을 건너뛰고 대부분의 방문객이 놓치는 동네를 발견하세요. VibeGuide에서 인증된 이스탄불 가이드를 예약하세요 — 가격이 미리 표시됩니다."
+      }
+    }
+  },
+  {
+    "slug": "turkey-visa-entry-requirements",
+    "category": "practical",
+    "heroImage": "https://images.unsplash.com/photo-1589561253898-768105ca91a8?q=80&w=1600",
+    "publishDate": "2026-08-04",
+    "relatedCityGuides": [
+      "istanbul-tour-guide"
+    ],
+    "relatedAttractions": [
+      "hagia-sophia"
+    ],
+    "i18n": {
+      "en": {
+        "title": "Turkey Visa & Entry Requirements: A Simple Guide",
+        "metaTitle": "Turkey Visa & Entry Requirements — Simple 2026 Guide",
+        "metaDescription": "Do you need a visa for Turkey? A clear guide to the Turkey e-Visa, who's exempt, passport validity rules and what to have ready at the airport before you travel.",
+        "excerpt": "Most visitors either travel visa-free or get a quick online e-Visa. Here's who needs what, how the e-Visa works, and the passport rules that trip people up at the airport.",
+        "intro": [
+          "Turkey is one of the easier major destinations to enter, but the rules depend entirely on your nationality — some travellers arrive completely visa-free, others need a quick online <strong>e-Visa</strong>, and a few must apply at an embassy. Getting it right before you fly avoids stress at the airport.",
+          "This guide explains the main entry routes in plain terms: who's visa-exempt, how the e-Visa works, the passport-validity rule that catches people out, and what to have ready on arrival. <strong>Always confirm the current rules for your own passport on the official Turkish government e-Visa site before booking</strong>, as requirements can change."
+        ],
+        "sections": [
+          {
+            "heading": "Do you need a visa for Turkey?",
+            "paragraphs": [
+              "It depends on your nationality. Citizens of many countries — including most of the EU, the UK and several others — can enter <strong>visa-free</strong> for tourism for a set number of days (commonly 90 days within a 180-day period). Travellers from some countries, including the United States, Canada and Australia, typically need an <strong>e-Visa</strong>, which is quick and inexpensive to obtain online.",
+              "A smaller number of nationalities must apply for a visa in advance through a Turkish embassy or consulate. Because the lists change, the only reliable way to know your category is to check the <strong>official e-Visa website (evisa.gov.tr)</strong> with your specific passport before you travel. Don't rely on old forum posts or third-party sites."
+            ]
+          },
+          {
+            "heading": "How the Turkey e-Visa works",
+            "paragraphs": [
+              "If you need an e-Visa, the process is straightforward and done entirely online, usually in a few minutes. You enter your passport details, travel dates and payment on the official site, and the approved e-Visa arrives by email as a PDF. Most single-entry tourist e-Visas allow a stay of up to 30 or 90 days depending on nationality, and are valid for 180 days from the date issued.",
+              "Two important warnings. First, <strong>only use the official government site, evisa.gov.tr</strong> — many look-alike third-party sites charge inflated fees for the same document. Second, apply at least a few days before travel, and carry a printed copy as well as the email. While approval is usually instant, it's not guaranteed, so don't leave it to the airport."
+            ]
+          },
+          {
+            "heading": "Passport validity and entry rules",
+            "paragraphs": [
+              "The rule that catches travellers out most often is <strong>passport validity</strong>. Turkey generally requires your passport to be valid for at least <strong>150 days (about five months) beyond your date of entry</strong>, and to have at least one blank page for stamps. If your passport is close to expiry, renew it well before you travel — border officers do enforce this.",
+              "At passport control you may be asked about your onward or return travel and where you're staying, so have your return ticket and first hotel booking handy. Entry is normally quick and friendly. Keep your e-Visa or entry stamp safe, as you may need to show it when you leave."
+            ]
+          },
+          {
+            "heading": "At the airport and after you arrive",
+            "paragraphs": [
+              "Turkey's main gateways — Istanbul Airport (IST), Sabiha Gökçen (SAW) on the Asian side, and the coastal airports at Antalya, İzmir, Bodrum and Dalaman — are modern and used to international arrivals. Follow signs for e-Visa or visa-free entry, have your passport and any printed e-Visa ready, and expect a straightforward stamp-and-go for most tourists.",
+              "Once through, official airport taxis, the Havaist/Havabus airport shuttles and metro links get you into the city. Agree taxi fares or insist on the meter, and consider a pre-booked transfer for late arrivals. If you're starting your trip with a tour, a local guide can meet you and smooth the first, jet-lagged day."
+            ]
+          },
+          {
+            "heading": "Other practical entry tips",
+            "paragraphs": [
+              "<strong>Travel insurance</strong> isn't formally required for most tourists, but it's strongly recommended, especially cover that includes medical care and any active pursuits like ballooning or boat trips. Keep a digital and paper copy of your policy alongside your passport and e-Visa.",
+              "Turkey has no general vaccination entry requirements for most travellers, but check your own government's current travel-health advice before you go. And remember that visa rules govern how long you can stay — overstaying leads to fines and entry bans, so note your permitted days and don't exceed them. When in doubt, the official e-Visa site is always the final word."
+            ]
+          }
+        ],
+        "faqHeading": "Frequently asked questions",
+        "faqs": [
+          {
+            "q": "Do I need a visa to visit Turkey?",
+            "a": "It depends on your nationality. Many travellers, including most EU and UK citizens, enter visa-free for tourism, while others (such as US, Canadian and Australian passport holders) need a quick online e-Visa. Always check the official evisa.gov.tr site for your specific passport before booking."
+          },
+          {
+            "q": "How do I get a Turkey e-Visa?",
+            "a": "Apply on the official government site evisa.gov.tr. Enter your passport details, dates and payment, and the approved e-Visa arrives by email as a PDF, usually within minutes. Avoid third-party sites that charge inflated fees, and print a copy to carry with you."
+          },
+          {
+            "q": "How long can I stay in Turkey as a tourist?",
+            "a": "Most tourists can stay up to 90 days within any 180-day period, though the exact limit depends on your nationality and visa type. Overstaying results in fines and possible entry bans, so check your permitted duration and don't exceed it."
+          },
+          {
+            "q": "How many months must my passport be valid to enter Turkey?",
+            "a": "Turkey generally requires your passport to be valid for at least 150 days (about five months) beyond your entry date, with a blank page for stamps. If your passport is near expiry, renew it before you travel, as this rule is enforced at the border."
+          },
+          {
+            "q": "Is the Turkey e-Visa the same as a visa on arrival?",
+            "a": "No. The e-Visa is obtained online before you travel and is the standard route for nationalities that require a visa. Turkey has largely phased out visa-on-arrival, so arrange your e-Visa in advance rather than relying on getting one at the airport."
+          }
+        ],
+        "relatedHeading": "Plan your Turkey trip",
+        "ctaTitle": "Ready to explore Turkey?",
+        "ctaSub": "Once your entry is sorted, make the most of every day with a licensed local guide. Discover verified guides across Turkey on VibeGuide."
+      },
+      "de": {
+        "title": "Visum & Einreisebestimmungen für die Türkei: ein einfacher Leitfaden",
+        "metaTitle": "Türkei-Visum & Einreise — Einfacher Leitfaden 2026",
+        "metaDescription": "Brauchen Sie ein Visum für die Türkei? Ein klarer Leitfaden zum türkischen e-Visa, wer befreit ist, zu Passgültigkeitsregeln und was Sie am Flughafen bereithalten sollten.",
+        "excerpt": "Die meisten Besucher reisen visumfrei oder holen sich ein schnelles Online-e-Visa. Hier steht, wer was braucht, wie das e-Visa funktioniert und welche Passregeln am Flughafen zum Stolperstein werden.",
+        "intro": [
+          "Die Türkei gehört zu den einfacher zu bereisenden großen Zielen, doch die Regeln hängen ganz von Ihrer Staatsangehörigkeit ab — manche Reisende reisen völlig visumfrei ein, andere brauchen ein schnelles Online-<strong>e-Visa</strong>, und einige wenige müssen bei einer Botschaft beantragen. Es vor dem Abflug richtig zu machen, erspart Stress am Flughafen.",
+          "Dieser Leitfaden erklärt die wichtigsten Einreisewege in klaren Worten: wer visumbefreit ist, wie das e-Visa funktioniert, die Passgültigkeitsregel, die viele überrascht, und was Sie bei der Ankunft bereithalten sollten. <strong>Bestätigen Sie die aktuellen Regeln für Ihren eigenen Pass immer auf der offiziellen e-Visa-Website der türkischen Regierung, bevor Sie buchen</strong>, denn die Anforderungen können sich ändern."
+        ],
+        "sections": [
+          {
+            "heading": "Brauchen Sie ein Visum für die Türkei?",
+            "paragraphs": [
+              "Das hängt von Ihrer Staatsangehörigkeit ab. Bürger vieler Länder — darunter der Großteil der EU, das Vereinigte Königreich und weitere — können für den Tourismus <strong>visumfrei</strong> für eine festgelegte Anzahl an Tagen einreisen (häufig 90 Tage innerhalb von 180 Tagen). Reisende aus einigen Ländern, darunter die USA, Kanada und Australien, brauchen in der Regel ein <strong>e-Visa</strong>, das online schnell und günstig zu erhalten ist.",
+              "Eine kleinere Zahl von Nationalitäten muss vorab ein Visum über eine türkische Botschaft oder ein Konsulat beantragen. Da sich die Listen ändern, ist der einzige verlässliche Weg, Ihre Kategorie zu kennen, die <strong>offizielle e-Visa-Website (evisa.gov.tr)</strong> mit Ihrem konkreten Pass vor der Reise zu prüfen. Verlassen Sie sich nicht auf alte Forenbeiträge oder Drittanbieterseiten."
+            ]
+          },
+          {
+            "heading": "So funktioniert das türkische e-Visa",
+            "paragraphs": [
+              "Wenn Sie ein e-Visa benötigen, ist der Ablauf unkompliziert und komplett online, meist in wenigen Minuten erledigt. Sie geben Ihre Passdaten, Reisedaten und die Zahlung auf der offiziellen Seite ein, und das genehmigte e-Visa kommt per E-Mail als PDF. Die meisten touristischen e-Visa für die einmalige Einreise erlauben je nach Staatsangehörigkeit einen Aufenthalt von bis zu 30 oder 90 Tagen und sind ab dem Ausstellungsdatum 180 Tage gültig.",
+              "Zwei wichtige Warnungen. Erstens: <strong>Nutzen Sie nur die offizielle Regierungsseite evisa.gov.tr</strong> — viele täuschend ähnliche Drittanbieterseiten verlangen überhöhte Gebühren für dasselbe Dokument. Zweitens: Beantragen Sie es mindestens einige Tage vor der Reise und führen Sie neben der E-Mail einen Ausdruck mit. Zwar erfolgt die Genehmigung meist sofort, garantiert ist sie aber nicht — überlassen Sie es also nicht dem Flughafen."
+            ]
+          },
+          {
+            "heading": "Passgültigkeit und Einreiseregeln",
+            "paragraphs": [
+              "Die Regel, die Reisende am häufigsten überrascht, ist die <strong>Passgültigkeit</strong>. Die Türkei verlangt in der Regel, dass Ihr Pass über Ihr Einreisedatum hinaus noch mindestens <strong>150 Tage (etwa fünf Monate)</strong> gültig ist und mindestens eine freie Seite für Stempel hat. Ist Ihr Pass kurz vor dem Ablauf, erneuern Sie ihn rechtzeitig vor der Reise — die Grenzbeamten setzen dies durch.",
+              "Bei der Passkontrolle können Sie nach Ihrer Weiter- oder Rückreise und Ihrer Unterkunft gefragt werden, halten Sie also Ihr Rückflugticket und die erste Hotelbuchung bereit. Die Einreise verläuft normalerweise schnell und freundlich. Bewahren Sie Ihr e-Visa oder Ihren Einreisestempel gut auf, da Sie ihn bei der Ausreise vorzeigen müssen könnten."
+            ]
+          },
+          {
+            "heading": "Am Flughafen und nach der Ankunft",
+            "paragraphs": [
+              "Die wichtigsten Drehkreuze der Türkei — der Flughafen Istanbul (IST), Sabiha Gökçen (SAW) auf der asiatischen Seite sowie die Küstenflughäfen in Antalya, İzmir, Bodrum und Dalaman — sind modern und an internationale Ankünfte gewöhnt. Folgen Sie den Schildern für e-Visa oder visumfreie Einreise, halten Sie Ihren Pass und ein etwaiges ausgedrucktes e-Visa bereit, und rechnen Sie für die meisten Touristen mit einem unkomplizierten Stempeln-und-durch.",
+              "Sind Sie durch, bringen Sie offizielle Flughafentaxis, die Havaist/Havabus-Flughafenshuttles und Metroverbindungen in die Stadt. Vereinbaren Sie Taxipreise oder bestehen Sie auf das Taxameter, und erwägen Sie für späte Ankünfte einen vorab gebuchten Transfer. Wenn Sie Ihre Reise mit einer Tour beginnen, kann ein lokaler Guide Sie abholen und den ersten, vom Jetlag geprägten Tag erleichtern."
+            ]
+          },
+          {
+            "heading": "Weitere praktische Einreisetipps",
+            "paragraphs": [
+              "Eine <strong>Reiseversicherung</strong> ist für die meisten Touristen nicht formell vorgeschrieben, aber dringend zu empfehlen, besonders ein Schutz, der medizinische Versorgung und aktive Unternehmungen wie Ballonfahrten oder Bootstouren einschließt. Bewahren Sie eine digitale und eine Papierkopie Ihrer Police neben Pass und e-Visa auf.",
+              "Die Türkei hat für die meisten Reisenden keine allgemeinen Impfvorschriften zur Einreise, prüfen Sie aber vor der Reise die aktuellen reisemedizinischen Hinweise Ihrer eigenen Regierung. Und denken Sie daran: Die Visumregeln bestimmen, wie lange Sie bleiben dürfen — ein Überschreiten führt zu Geldstrafen und Einreisesperren, notieren Sie sich also Ihre erlaubten Tage und überschreiten Sie sie nicht. Im Zweifel hat die offizielle e-Visa-Seite immer das letzte Wort."
+            ]
+          }
+        ],
+        "faqHeading": "Häufig gestellte Fragen",
+        "faqs": [
+          {
+            "q": "Brauche ich ein Visum für einen Besuch in der Türkei?",
+            "a": "Das hängt von Ihrer Staatsangehörigkeit ab. Viele Reisende, darunter die meisten EU- und UK-Bürger, reisen für den Tourismus visumfrei ein, während andere (etwa Inhaber von US-, kanadischen und australischen Pässen) ein schnelles Online-e-Visa brauchen. Prüfen Sie für Ihren konkreten Pass immer die offizielle Seite evisa.gov.tr, bevor Sie buchen."
+          },
+          {
+            "q": "Wie bekomme ich ein türkisches e-Visa?",
+            "a": "Beantragen Sie es auf der offiziellen Regierungsseite evisa.gov.tr. Geben Sie Ihre Passdaten, Daten und die Zahlung ein, und das genehmigte e-Visa kommt per E-Mail als PDF, meist innerhalb von Minuten. Meiden Sie Drittanbieterseiten mit überhöhten Gebühren und drucken Sie eine Kopie zum Mitführen aus."
+          },
+          {
+            "q": "Wie lange darf ich als Tourist in der Türkei bleiben?",
+            "a": "Die meisten Touristen dürfen bis zu 90 Tage innerhalb eines Zeitraums von 180 Tagen bleiben, wobei das genaue Limit von Staatsangehörigkeit und Visumart abhängt. Ein Überschreiten führt zu Geldstrafen und möglichen Einreisesperren, prüfen Sie also Ihre erlaubte Dauer und überschreiten Sie sie nicht."
+          },
+          {
+            "q": "Wie viele Monate muss mein Pass für die Einreise in die Türkei gültig sein?",
+            "a": "Die Türkei verlangt in der Regel, dass Ihr Pass über Ihr Einreisedatum hinaus noch mindestens 150 Tage (etwa fünf Monate) gültig ist, mit einer freien Seite für Stempel. Ist Ihr Pass kurz vor dem Ablauf, erneuern Sie ihn vor der Reise, da diese Regel an der Grenze durchgesetzt wird."
+          },
+          {
+            "q": "Ist das türkische e-Visa dasselbe wie ein Visum bei der Ankunft?",
+            "a": "Nein. Das e-Visa wird vor der Reise online beschafft und ist der Standardweg für Nationalitäten, die ein Visum benötigen. Die Türkei hat das Visum bei der Ankunft weitgehend abgeschafft, richten Sie Ihr e-Visa also vorab ein, statt darauf zu setzen, am Flughafen eines zu bekommen."
+          }
+        ],
+        "relatedHeading": "Planen Sie Ihre Türkei-Reise",
+        "ctaTitle": "Bereit, die Türkei zu erkunden?",
+        "ctaSub": "Sobald Ihre Einreise geklärt ist, holen Sie mit einem lizenzierten lokalen Guide das Beste aus jedem Tag heraus. Entdecken Sie verifizierte Guides in der ganzen Türkei auf VibeGuide."
+      },
+      "es": {
+        "title": "Visado y requisitos de entrada a Turquía: una guía sencilla",
+        "metaTitle": "Visado y entrada a Turquía — Guía sencilla 2026",
+        "metaDescription": "¿Necesitas visado para Turquía? Una guía clara del e-Visa turco, quién está exento, las reglas de validez del pasaporte y qué tener listo en el aeropuerto.",
+        "excerpt": "La mayoría de los visitantes viajan sin visado u obtienen un rápido e-Visa en línea. Aquí verás quién necesita qué, cómo funciona el e-Visa y las reglas del pasaporte que hacen tropezar en el aeropuerto.",
+        "intro": [
+          "Turquía es uno de los grandes destinos más fáciles de entrar, pero las reglas dependen por completo de tu nacionalidad: algunos viajeros llegan sin visado alguno, otros necesitan un rápido <strong>e-Visa</strong> en línea, y unos pocos deben solicitarlo en una embajada. Acertar antes de volar te evita agobios en el aeropuerto.",
+          "Esta guía explica las principales vías de entrada en términos claros: quién está exento de visado, cómo funciona el e-Visa, la regla de validez del pasaporte que sorprende a muchos, y qué tener listo al llegar. <strong>Confirma siempre las reglas vigentes para tu propio pasaporte en el sitio oficial de e-Visa del gobierno turco antes de reservar</strong>, ya que los requisitos pueden cambiar."
+        ],
+        "sections": [
+          {
+            "heading": "¿Necesitas visado para Turquía?",
+            "paragraphs": [
+              "Depende de tu nacionalidad. Los ciudadanos de muchos países —incluida la mayor parte de la UE, el Reino Unido y varios más— pueden entrar <strong>sin visado</strong> por turismo durante un número determinado de días (por lo común, 90 días dentro de un periodo de 180). Los viajeros de algunos países, como Estados Unidos, Canadá y Australia, suelen necesitar un <strong>e-Visa</strong>, rápido y económico de obtener en línea.",
+              "Un número menor de nacionalidades debe solicitar el visado con antelación a través de una embajada o consulado turco. Como las listas cambian, la única forma fiable de conocer tu categoría es consultar el <strong>sitio web oficial de e-Visa (evisa.gov.tr)</strong> con tu pasaporte concreto antes de viajar. No te fíes de mensajes antiguos de foros ni de sitios de terceros."
+            ]
+          },
+          {
+            "heading": "Cómo funciona el e-Visa de Turquía",
+            "paragraphs": [
+              "Si necesitas un e-Visa, el proceso es sencillo y totalmente en línea, normalmente en unos minutos. Introduces los datos de tu pasaporte, las fechas de viaje y el pago en el sitio oficial, y el e-Visa aprobado llega por correo electrónico en PDF. La mayoría de los e-Visa turísticos de entrada única permiten una estancia de hasta 30 o 90 días según la nacionalidad, y son válidos durante 180 días desde la fecha de emisión.",
+              "Dos advertencias importantes. Primera: <strong>usa solo el sitio oficial del gobierno, evisa.gov.tr</strong>; muchos sitios de terceros de aspecto parecido cobran tarifas infladas por el mismo documento. Segunda: solicítalo al menos unos días antes de viajar y lleva una copia impresa además del correo. Aunque la aprobación suele ser instantánea, no está garantizada, así que no lo dejes para el aeropuerto."
+            ]
+          },
+          {
+            "heading": "Validez del pasaporte y reglas de entrada",
+            "paragraphs": [
+              "La regla que más sorprende a los viajeros es la <strong>validez del pasaporte</strong>. Turquía suele exigir que tu pasaporte sea válido durante al menos <strong>150 días (unos cinco meses) más allá de tu fecha de entrada</strong> y que tenga al menos una página en blanco para sellos. Si tu pasaporte está cerca de caducar, renuévalo mucho antes de viajar: los agentes de frontera hacen cumplir esto.",
+              "En el control de pasaportes pueden preguntarte por tu viaje de salida o de regreso y por dónde te alojas, así que ten a mano tu billete de vuelta y la reserva del primer hotel. La entrada suele ser rápida y cordial. Guarda bien tu e-Visa o el sello de entrada, ya que podrías tener que mostrarlo al salir."
+            ]
+          },
+          {
+            "heading": "En el aeropuerto y tras llegar",
+            "paragraphs": [
+              "Las principales puertas de entrada de Turquía —el aeropuerto de Estambul (IST), Sabiha Gökçen (SAW) en el lado asiático, y los aeropuertos costeros de Antalya, İzmir, Bodrum y Dalaman— son modernos y están acostumbrados a las llegadas internacionales. Sigue las señales de e-Visa o entrada sin visado, ten listos tu pasaporte y cualquier e-Visa impreso, y espera un trámite de sellado sencillo para la mayoría de los turistas.",
+              "Una vez fuera, los taxis oficiales del aeropuerto, las lanzaderas Havaist/Havabus y las conexiones de metro te llevan a la ciudad. Acuerda la tarifa del taxi o insiste en el taxímetro, y considera un traslado reservado con antelación para llegadas nocturnas. Si empiezas tu viaje con un tour, un guía local puede recibirte y suavizar el primer día, con el desfase horario."
+            ]
+          },
+          {
+            "heading": "Otros consejos prácticos de entrada",
+            "paragraphs": [
+              "El <strong>seguro de viaje</strong> no es obligatorio formalmente para la mayoría de los turistas, pero se recomienda encarecidamente, sobre todo una cobertura que incluya asistencia médica y actividades activas como los globos o las excursiones en barco. Guarda una copia digital y otra en papel de tu póliza junto al pasaporte y el e-Visa.",
+              "Turquía no tiene requisitos generales de vacunación para entrar para la mayoría de los viajeros, pero consulta las recomendaciones de salud vigentes de tu propio gobierno antes de ir. Y recuerda que las reglas de visado rigen cuánto tiempo puedes quedarte: excederse acarrea multas y prohibiciones de entrada, así que anota tus días permitidos y no los superes. En caso de duda, el sitio oficial de e-Visa siempre tiene la última palabra."
+            ]
+          }
+        ],
+        "faqHeading": "Preguntas frecuentes",
+        "faqs": [
+          {
+            "q": "¿Necesito visado para visitar Turquía?",
+            "a": "Depende de tu nacionalidad. Muchos viajeros, incluida la mayoría de los ciudadanos de la UE y el Reino Unido, entran sin visado por turismo, mientras que otros (como los titulares de pasaporte de EE. UU., Canadá y Australia) necesitan un rápido e-Visa en línea. Consulta siempre el sitio oficial evisa.gov.tr para tu pasaporte concreto antes de reservar."
+          },
+          {
+            "q": "¿Cómo obtengo un e-Visa de Turquía?",
+            "a": "Solicítalo en el sitio oficial del gobierno evisa.gov.tr. Introduce los datos de tu pasaporte, las fechas y el pago, y el e-Visa aprobado llega por correo electrónico en PDF, normalmente en minutos. Evita los sitios de terceros que cobran tarifas infladas e imprime una copia para llevarla contigo."
+          },
+          {
+            "q": "¿Cuánto tiempo puedo quedarme en Turquía como turista?",
+            "a": "La mayoría de los turistas pueden quedarse hasta 90 días dentro de cualquier periodo de 180 días, aunque el límite exacto depende de tu nacionalidad y tipo de visado. Excederse acarrea multas y posibles prohibiciones de entrada, así que comprueba tu duración permitida y no la superes."
+          },
+          {
+            "q": "¿Cuántos meses debe ser válido mi pasaporte para entrar en Turquía?",
+            "a": "Turquía suele exigir que tu pasaporte sea válido durante al menos 150 días (unos cinco meses) más allá de tu fecha de entrada, con una página en blanco para sellos. Si tu pasaporte está cerca de caducar, renuévalo antes de viajar, ya que esta regla se hace cumplir en la frontera."
+          },
+          {
+            "q": "¿Es el e-Visa de Turquía lo mismo que un visado a la llegada?",
+            "a": "No. El e-Visa se obtiene en línea antes de viajar y es la vía habitual para las nacionalidades que requieren visado. Turquía ha eliminado en gran medida el visado a la llegada, así que gestiona tu e-Visa con antelación en lugar de fiarte de conseguir uno en el aeropuerto."
+          }
+        ],
+        "relatedHeading": "Planifica tu viaje a Turquía",
+        "ctaTitle": "¿Listo para explorar Turquía?",
+        "ctaSub": "Una vez resuelta tu entrada, aprovecha al máximo cada día con un guía local titulado. Descubre guías verificados por toda Turquía en VibeGuide."
+      },
+      "fr": {
+        "title": "Visa et formalités d'entrée en Turquie : un guide simple",
+        "metaTitle": "Visa et entrée en Turquie — Guide simple 2026",
+        "metaDescription": "Faut-il un visa pour la Turquie ? Un guide clair sur l'e-Visa turc, qui en est exempté, les règles de validité du passeport et ce qu'il faut avoir à l'aéroport.",
+        "excerpt": "La plupart des visiteurs voyagent sans visa ou obtiennent un e-Visa en ligne rapide. Voici qui a besoin de quoi, comment fonctionne l'e-Visa, et les règles de passeport qui font trébucher à l'aéroport.",
+        "intro": [
+          "La Turquie est l'une des grandes destinations les plus faciles d'accès, mais les règles dépendent entièrement de votre nationalité — certains voyageurs entrent totalement sans visa, d'autres ont besoin d'un <strong>e-Visa</strong> en ligne rapide, et quelques-uns doivent faire la demande auprès d'une ambassade. Bien s'y prendre avant de partir évite le stress à l'aéroport.",
+          "Ce guide explique les principales voies d'entrée en termes simples : qui est dispensé de visa, comment fonctionne l'e-Visa, la règle de validité du passeport qui prend les gens au dépourvu, et ce qu'il faut avoir à l'arrivée. <strong>Vérifiez toujours les règles en vigueur pour votre propre passeport sur le site officiel d'e-Visa du gouvernement turc avant de réserver</strong>, car les exigences peuvent changer."
+        ],
+        "sections": [
+          {
+            "heading": "Faut-il un visa pour la Turquie ?",
+            "paragraphs": [
+              "Cela dépend de votre nationalité. Les ressortissants de nombreux pays — dont la majeure partie de l'UE, le Royaume-Uni et plusieurs autres — peuvent entrer <strong>sans visa</strong> pour le tourisme pendant un nombre de jours déterminé (souvent 90 jours sur une période de 180). Les voyageurs de certains pays, dont les États-Unis, le Canada et l'Australie, ont généralement besoin d'un <strong>e-Visa</strong>, rapide et peu coûteux à obtenir en ligne.",
+              "Un plus petit nombre de nationalités doit demander un visa à l'avance auprès d'une ambassade ou d'un consulat turc. Comme les listes évoluent, la seule façon fiable de connaître votre catégorie est de consulter le <strong>site officiel d'e-Visa (evisa.gov.tr)</strong> avec votre passeport précis avant de voyager. Ne vous fiez pas à d'anciens messages de forums ni à des sites tiers."
+            ]
+          },
+          {
+            "heading": "Comment fonctionne l'e-Visa turc",
+            "paragraphs": [
+              "Si vous avez besoin d'un e-Visa, la démarche est simple et entièrement en ligne, généralement en quelques minutes. Vous saisissez les données de votre passeport, vos dates de voyage et le paiement sur le site officiel, et l'e-Visa approuvé arrive par e-mail au format PDF. La plupart des e-Visa touristiques à entrée unique autorisent un séjour pouvant aller jusqu'à 30 ou 90 jours selon la nationalité, et sont valables 180 jours à compter de la date de délivrance.",
+              "Deux avertissements importants. Premièrement : <strong>n'utilisez que le site officiel du gouvernement, evisa.gov.tr</strong> — de nombreux sites tiers ressemblants facturent des frais gonflés pour le même document. Deuxièmement : faites la demande au moins quelques jours avant le voyage et emportez une copie imprimée en plus de l'e-mail. Si l'approbation est généralement instantanée, elle n'est pas garantie : ne la laissez donc pas pour l'aéroport."
+            ]
+          },
+          {
+            "heading": "Validité du passeport et règles d'entrée",
+            "paragraphs": [
+              "La règle qui prend le plus souvent les voyageurs au dépourvu est la <strong>validité du passeport</strong>. La Turquie exige en général que votre passeport soit valable au moins <strong>150 jours (environ cinq mois) au-delà de votre date d'entrée</strong>, et comporte au moins une page vierge pour les tampons. Si votre passeport approche de l'expiration, renouvelez-le bien avant de voyager — les agents des frontières appliquent cette règle.",
+              "Au contrôle des passeports, on peut vous interroger sur votre voyage de sortie ou de retour et sur votre lieu de séjour : ayez donc votre billet retour et votre première réservation d'hôtel à portée de main. L'entrée est normalement rapide et cordiale. Conservez précieusement votre e-Visa ou votre tampon d'entrée, car vous pourriez devoir le présenter à la sortie."
+            ]
+          },
+          {
+            "heading": "À l'aéroport et après l'arrivée",
+            "paragraphs": [
+              "Les principales portes d'entrée de la Turquie — l'aéroport d'Istanbul (IST), Sabiha Gökçen (SAW) sur la rive asiatique, et les aéroports côtiers d'Antalya, İzmir, Bodrum et Dalaman — sont modernes et habitués aux arrivées internationales. Suivez les panneaux pour l'e-Visa ou l'entrée sans visa, ayez votre passeport et tout e-Visa imprimé prêts, et attendez-vous à un simple tampon-et-c'est-parti pour la plupart des touristes.",
+              "Une fois passé, les taxis officiels de l'aéroport, les navettes Havaist/Havabus et les liaisons de métro vous conduisent en ville. Convenez du tarif du taxi ou exigez le compteur, et envisagez un transfert réservé à l'avance pour les arrivées tardives. Si vous commencez votre voyage par une visite guidée, un guide local peut vous accueillir et adoucir ce premier jour marqué par le décalage horaire."
+            ]
+          },
+          {
+            "heading": "Autres conseils pratiques pour l'entrée",
+            "paragraphs": [
+              "L'<strong>assurance voyage</strong> n'est pas officiellement obligatoire pour la plupart des touristes, mais elle est vivement recommandée, en particulier une couverture incluant les soins médicaux et les activités actives comme la montgolfière ou les sorties en bateau. Conservez une copie numérique et une copie papier de votre contrat aux côtés de votre passeport et de votre e-Visa.",
+              "La Turquie n'impose pas d'obligations vaccinales générales à l'entrée pour la plupart des voyageurs, mais consultez les recommandations sanitaires en vigueur de votre propre gouvernement avant de partir. Et rappelez-vous que les règles de visa régissent la durée de votre séjour — un dépassement entraîne amendes et interdictions d'entrée : notez donc vos jours autorisés et ne les dépassez pas. En cas de doute, le site officiel d'e-Visa a toujours le dernier mot."
+            ]
+          }
+        ],
+        "faqHeading": "Questions fréquentes",
+        "faqs": [
+          {
+            "q": "Ai-je besoin d'un visa pour visiter la Turquie ?",
+            "a": "Cela dépend de votre nationalité. De nombreux voyageurs, dont la plupart des ressortissants de l'UE et du Royaume-Uni, entrent sans visa pour le tourisme, tandis que d'autres (comme les titulaires de passeport américain, canadien et australien) ont besoin d'un e-Visa en ligne rapide. Vérifiez toujours le site officiel evisa.gov.tr pour votre passeport précis avant de réserver."
+          },
+          {
+            "q": "Comment obtenir un e-Visa pour la Turquie ?",
+            "a": "Faites la demande sur le site officiel du gouvernement evisa.gov.tr. Saisissez les données de votre passeport, les dates et le paiement, et l'e-Visa approuvé arrive par e-mail au format PDF, généralement en quelques minutes. Évitez les sites tiers qui facturent des frais gonflés et imprimez une copie à emporter."
+          },
+          {
+            "q": "Combien de temps puis-je rester en Turquie en tant que touriste ?",
+            "a": "La plupart des touristes peuvent rester jusqu'à 90 jours sur toute période de 180 jours, même si la limite exacte dépend de votre nationalité et du type de visa. Un dépassement entraîne des amendes et d'éventuelles interdictions d'entrée : vérifiez donc votre durée autorisée et ne la dépassez pas."
+          },
+          {
+            "q": "Combien de mois mon passeport doit-il être valable pour entrer en Turquie ?",
+            "a": "La Turquie exige en général que votre passeport soit valable au moins 150 jours (environ cinq mois) au-delà de votre date d'entrée, avec une page vierge pour les tampons. Si votre passeport approche de l'expiration, renouvelez-le avant de voyager, car cette règle est appliquée à la frontière."
+          },
+          {
+            "q": "L'e-Visa turc est-il la même chose qu'un visa à l'arrivée ?",
+            "a": "Non. L'e-Visa s'obtient en ligne avant le voyage et constitue la voie standard pour les nationalités qui requièrent un visa. La Turquie a largement supprimé le visa à l'arrivée : organisez donc votre e-Visa à l'avance plutôt que de compter en obtenir un à l'aéroport."
+          }
+        ],
+        "relatedHeading": "Planifiez votre voyage en Turquie",
+        "ctaTitle": "Prêt à explorer la Turquie ?",
+        "ctaSub": "Une fois votre entrée réglée, profitez au maximum de chaque journée avec un guide local agréé. Découvrez des guides vérifiés partout en Turquie sur VibeGuide."
+      },
+      "it": {
+        "title": "Visto e requisiti d'ingresso per la Turchia: una guida semplice",
+        "metaTitle": "Visto e ingresso in Turchia — Guida semplice 2026",
+        "metaDescription": "Serve il visto per la Turchia? Una guida chiara all'e-Visa turco, chi è esente, le regole di validità del passaporto e cosa avere pronto in aeroporto.",
+        "excerpt": "La maggior parte dei visitatori viaggia senza visto o ottiene un rapido e-Visa online. Ecco chi ha bisogno di cosa, come funziona l'e-Visa e le regole del passaporto che traggono in inganno in aeroporto.",
+        "intro": [
+          "La Turchia è una delle grandi destinazioni più facili in cui entrare, ma le regole dipendono interamente dalla tua nazionalità — alcuni viaggiatori arrivano del tutto senza visto, altri hanno bisogno di un rapido <strong>e-Visa</strong> online, e alcuni devono fare domanda in ambasciata. Sistemare tutto prima di volare evita stress in aeroporto.",
+          "Questa guida spiega le principali vie d'ingresso in termini semplici: chi è esente dal visto, come funziona l'e-Visa, la regola di validità del passaporto che coglie di sorpresa, e cosa avere pronto all'arrivo. <strong>Verifica sempre le regole attuali per il tuo passaporto sul sito ufficiale e-Visa del governo turco prima di prenotare</strong>, perché i requisiti possono cambiare."
+        ],
+        "sections": [
+          {
+            "heading": "Serve un visto per la Turchia?",
+            "paragraphs": [
+              "Dipende dalla tua nazionalità. I cittadini di molti paesi — tra cui gran parte dell'UE, il Regno Unito e diversi altri — possono entrare <strong>senza visto</strong> per turismo per un certo numero di giorni (comunemente 90 giorni entro un periodo di 180 giorni). I viaggiatori di alcuni paesi, tra cui Stati Uniti, Canada e Australia, di solito hanno bisogno di un <strong>e-Visa</strong>, rapido ed economico da ottenere online.",
+              "Un numero minore di nazionalità deve richiedere il visto in anticipo tramite un'ambasciata o un consolato turco. Poiché gli elenchi cambiano, l'unico modo affidabile per conoscere la tua categoria è controllare il <strong>sito ufficiale e-Visa (evisa.gov.tr)</strong> con il tuo specifico passaporto prima di viaggiare. Non affidarti a vecchi post di forum o a siti di terze parti."
+            ]
+          },
+          {
+            "heading": "Come funziona l'e-Visa turco",
+            "paragraphs": [
+              "Se ti serve un e-Visa, la procedura è semplice e si svolge interamente online, di solito in pochi minuti. Inserisci i dati del passaporto, le date di viaggio e il pagamento sul sito ufficiale, e l'e-Visa approvato arriva via email in PDF. La maggior parte degli e-Visa turistici a ingresso singolo consente un soggiorno fino a 30 o 90 giorni a seconda della nazionalità, ed è valida per 180 giorni dalla data di emissione.",
+              "Due avvertenze importanti. Primo, <strong>usa solo il sito ufficiale del governo, evisa.gov.tr</strong> — molti siti simili di terze parti fanno pagare tariffe gonfiate per lo stesso documento. Secondo, fai domanda almeno qualche giorno prima del viaggio e porta con te una copia stampata oltre all'email. Anche se l'approvazione è di solito immediata, non è garantita, quindi non rimandarla all'aeroporto."
+            ]
+          },
+          {
+            "heading": "Validità del passaporto e regole d'ingresso",
+            "paragraphs": [
+              "La regola che coglie più spesso di sorpresa i viaggiatori è la <strong>validità del passaporto</strong>. La Turchia richiede generalmente che il passaporto sia valido per almeno <strong>150 giorni (circa cinque mesi) oltre la data d'ingresso</strong>, e che abbia almeno una pagina libera per i timbri. Se il tuo passaporto è vicino alla scadenza, rinnovalo con largo anticipo — gli agenti di frontiera lo fanno rispettare.",
+              "Al controllo passaporti potrebbero chiederti del viaggio di proseguimento o di ritorno e di dove alloggerai, quindi tieni a portata di mano il biglietto di ritorno e la prenotazione del primo hotel. L'ingresso è di norma rapido e cordiale. Conserva con cura l'e-Visa o il timbro d'ingresso, perché potresti doverlo mostrare alla partenza."
+            ]
+          },
+          {
+            "heading": "In aeroporto e dopo l'arrivo",
+            "paragraphs": [
+              "I principali scali della Turchia — l'aeroporto di Istanbul (IST), Sabiha Gökçen (SAW) sulla sponda asiatica, e gli aeroporti costieri di Antalya, İzmir, Bodrum e Dalaman — sono moderni e abituati agli arrivi internazionali. Segui le indicazioni per l'e-Visa o l'ingresso senza visto, tieni pronti passaporto ed eventuale e-Visa stampato, e aspettati un timbro-e-via semplice per la maggior parte dei turisti.",
+              "Una volta passato, i taxi ufficiali dell'aeroporto, le navette Havaist/Havabus e i collegamenti metro ti portano in città. Concorda la tariffa del taxi o insisti sul tassametro, e valuta un transfer prenotato in anticipo per gli arrivi a tarda ora. Se inizi il viaggio con un tour, una guida locale può venirti incontro e rendere più fluida la prima, stanca giornata."
+            ]
+          },
+          {
+            "heading": "Altri consigli pratici d'ingresso",
+            "paragraphs": [
+              "L'<strong>assicurazione di viaggio</strong> non è formalmente richiesta per la maggior parte dei turisti, ma è caldamente consigliata, soprattutto una copertura che includa le cure mediche e le attività attive come il volo in mongolfiera o le gite in barca. Tieni una copia digitale e cartacea della polizza insieme al passaporto e all'e-Visa.",
+              "La Turchia non ha requisiti generali di vaccinazione all'ingresso per la maggior parte dei viaggiatori, ma controlla i consigli sanitari di viaggio attuali del tuo governo prima di partire. E ricorda che le regole sul visto stabiliscono quanto puoi restare — superare il termine comporta multe e divieti d'ingresso, quindi annota i giorni consentiti e non superarli. In caso di dubbio, il sito ufficiale e-Visa è sempre l'ultima parola."
+            ]
+          }
+        ],
+        "faqHeading": "Domande frequenti",
+        "faqs": [
+          {
+            "q": "Serve un visto per visitare la Turchia?",
+            "a": "Dipende dalla tua nazionalità. Molti viaggiatori, tra cui gran parte dei cittadini UE e britannici, entrano senza visto per turismo, mentre altri (come i titolari di passaporto statunitense, canadese e australiano) hanno bisogno di un rapido e-Visa online. Controlla sempre il sito ufficiale evisa.gov.tr per il tuo specifico passaporto prima di prenotare."
+          },
+          {
+            "q": "Come ottengo l'e-Visa turco?",
+            "a": "Fai domanda sul sito ufficiale del governo evisa.gov.tr. Inserisci i dati del passaporto, le date e il pagamento, e l'e-Visa approvato arriva via email in PDF, di solito in pochi minuti. Evita i siti di terze parti che fanno pagare tariffe gonfiate, e stampa una copia da portare con te."
+          },
+          {
+            "q": "Quanto posso restare in Turchia come turista?",
+            "a": "La maggior parte dei turisti può restare fino a 90 giorni in un periodo di 180 giorni, anche se il limite esatto dipende dalla tua nazionalità e dal tipo di visto. Superare il termine comporta multe ed eventuali divieti d'ingresso, quindi controlla la durata consentita e non superarla."
+          },
+          {
+            "q": "Per quanti mesi deve essere valido il passaporto per entrare in Turchia?",
+            "a": "La Turchia richiede generalmente che il passaporto sia valido per almeno 150 giorni (circa cinque mesi) oltre la data d'ingresso, con una pagina libera per i timbri. Se il tuo passaporto è vicino alla scadenza, rinnovalo prima di viaggiare, perché questa regola viene fatta rispettare alla frontiera."
+          },
+          {
+            "q": "L'e-Visa turco è la stessa cosa del visto all'arrivo?",
+            "a": "No. L'e-Visa si ottiene online prima di viaggiare ed è la via standard per le nazionalità che richiedono un visto. La Turchia ha in gran parte eliminato il visto all'arrivo, quindi organizza l'e-Visa in anticipo invece di affidarti a ottenerne uno in aeroporto."
+          }
+        ],
+        "relatedHeading": "Pianifica il tuo viaggio in Turchia",
+        "ctaTitle": "Pronto a esplorare la Turchia?",
+        "ctaSub": "Una volta sistemato l'ingresso, sfrutta al massimo ogni giornata con una guida locale abilitata. Scopri guide verificate in tutta la Turchia su VibeGuide."
+      },
+      "ar": {
+        "title": "تأشيرة تركيا ومتطلبات الدخول: دليل مبسّط",
+        "metaTitle": "تأشيرة تركيا ومتطلبات الدخول — دليل مبسّط ٢٠٢٦",
+        "metaDescription": "هل تحتاج تأشيرة لتركيا؟ دليل واضح عن التأشيرة الإلكترونية e-Visa، ومن هم المعفَون، وقواعد صلاحية جواز السفر، وما يجب تجهيزه في المطار قبل السفر.",
+        "excerpt": "معظم الزوار إما يسافرون بدون تأشيرة أو يحصلون على تأشيرة إلكترونية سريعة. إليك من يحتاج ماذا، وكيف تعمل الـ e-Visa، وقواعد الجواز التي توقع الناس في المطار.",
+        "intro": [
+          "تُعدّ تركيا من أسهل الوجهات الكبرى دخولاً، لكن القواعد تعتمد كلياً على جنسيتك — بعض المسافرين يصلون بدون تأشيرة تماماً، وآخرون يحتاجون إلى <strong>تأشيرة إلكترونية e-Visa</strong> سريعة، وقلّة عليهم التقديم في سفارة. ضبط الأمر قبل الطيران يجنّبك التوتر في المطار.",
+          "يشرح هذا الدليل مسارات الدخول الرئيسية بعبارات واضحة: من المعفى من التأشيرة، وكيف تعمل الـ e-Visa، وقاعدة صلاحية الجواز التي توقع الناس، وما يجب تجهيزه عند الوصول. <strong>تأكّد دائماً من القواعد الحالية لجواز سفرك على الموقع الرسمي للتأشيرة الإلكترونية التابع للحكومة التركية قبل الحجز</strong>، فالمتطلبات قد تتغيّر."
+        ],
+        "sections": [
+          {
+            "heading": "هل تحتاج إلى تأشيرة لتركيا؟",
+            "paragraphs": [
+              "يعتمد الأمر على جنسيتك. يمكن لمواطني كثير من الدول — بما في ذلك معظم دول الاتحاد الأوروبي والمملكة المتحدة وعدة دول أخرى — الدخول <strong>بدون تأشيرة</strong> للسياحة لعدد محدد من الأيام (غالباً ٩٠ يوماً ضمن فترة ١٨٠ يوماً). أما المسافرون من بعض الدول، بما فيها الولايات المتحدة وكندا وأستراليا، فيحتاجون عادةً إلى <strong>تأشيرة إلكترونية e-Visa</strong> يسهل الحصول عليها عبر الإنترنت بسرعة وبتكلفة زهيدة.",
+              "على عدد أقل من الجنسيات التقديم للتأشيرة مسبقاً عبر سفارة أو قنصلية تركية. ولأن القوائم تتغيّر، فإن الطريقة الوحيدة الموثوقة لمعرفة فئتك هي مراجعة <strong>الموقع الرسمي للتأشيرة الإلكترونية (evisa.gov.tr)</strong> بجواز سفرك المحدد قبل السفر. لا تعتمد على منشورات المنتديات القديمة أو المواقع غير الرسمية."
+            ]
+          },
+          {
+            "heading": "كيف تعمل التأشيرة الإلكترونية التركية",
+            "paragraphs": [
+              "إن كنت بحاجة إلى e-Visa، فالعملية بسيطة وتتم بالكامل عبر الإنترنت، عادة في دقائق قليلة. تُدخل بيانات جواز سفرك وتواريخ السفر والدفع على الموقع الرسمي، وتصلك التأشيرة المعتمدة عبر البريد الإلكتروني كملف PDF. تسمح معظم التأشيرات السياحية لدخول واحد بإقامة تصل إلى ٣٠ أو ٩٠ يوماً حسب الجنسية، وتكون صالحة لمدة ١٨٠ يوماً من تاريخ الإصدار.",
+              "تحذيران مهمان. أولاً، <strong>استخدم الموقع الحكومي الرسمي فقط، evisa.gov.tr</strong> — فكثير من المواقع المشابهة تفرض رسوماً مبالغاً فيها للوثيقة نفسها. ثانياً، قدّم قبل السفر بأيام قليلة على الأقل، واحمل نسخة مطبوعة إلى جانب البريد الإلكتروني. ورغم أن الموافقة تكون فورية عادة، فهي غير مضمونة، لذا لا تؤجّلها إلى المطار."
+            ]
+          },
+          {
+            "heading": "صلاحية جواز السفر وقواعد الدخول",
+            "paragraphs": [
+              "القاعدة التي توقع المسافرين أكثر من غيرها هي <strong>صلاحية جواز السفر</strong>. تشترط تركيا عموماً أن يكون جوازك صالحاً لمدة <strong>١٥٠ يوماً على الأقل (نحو خمسة أشهر) بعد تاريخ دخولك</strong>، وأن يحتوي على صفحة فارغة واحدة على الأقل للأختام. إن كان جوازك قريباً من الانتهاء، فجدّده قبل السفر بوقت كافٍ — فموظفو الحدود يطبّقون هذه القاعدة فعلاً.",
+              "عند نقطة مراقبة الجوازات قد يُسأل عن سفرك التالي أو عودتك وأين تقيم، فاحتفظ بتذكرة العودة وحجز أول فندق في متناول اليد. الدخول عادة سريع وودّي. احتفظ بتأشيرتك الإلكترونية أو ختم الدخول بأمان، فقد تحتاج إلى إبرازه عند المغادرة."
+            ]
+          },
+          {
+            "heading": "في المطار وبعد وصولك",
+            "paragraphs": [
+              "بوابات تركيا الرئيسية — مطار إسطنبول (IST)، وصبيحة كوكجن (SAW) على الجانب الآسيوي، والمطارات الساحلية في أنطاليا وإزمير وبودروم ودالامان — حديثة ومعتادة على الوافدين الدوليين. اتبع لافتات التأشيرة الإلكترونية أو الدخول بدون تأشيرة، وجهّز جوازك وأي e-Visa مطبوعة، وتوقّع ختماً ومروراً سلساً لمعظم السياح.",
+              "بعد اجتياز البوابة، تنقلك سيارات الأجرة الرسمية في المطار وحافلات Havaist/Havabus وخطوط المترو إلى المدينة. اتفق على أجرة سيارة الأجرة أو أصرّ على العدّاد، وفكّر في حجز مسبق للتوصيل عند الوصول المتأخر. إن كنت تبدأ رحلتك بجولة، فيمكن لمرشد محلي أن يستقبلك ويسهّل يومك الأول المرهق بالسفر."
+            ]
+          },
+          {
+            "heading": "نصائح عملية أخرى للدخول",
+            "paragraphs": [
+              "<strong>التأمين على السفر</strong> ليس مطلوباً رسمياً لمعظم السياح، لكنه موصى به بشدة، خاصة تغطية تشمل الرعاية الطبية وأي أنشطة نشطة مثل ركوب المناطيد أو الرحلات البحرية. احتفظ بنسخة رقمية وورقية من وثيقتك إلى جانب جوازك وتأشيرتك الإلكترونية.",
+              "ليس لدى تركيا متطلبات تطعيم عامة للدخول لمعظم المسافرين، لكن راجع نصائح الصحة والسفر الحالية لحكومتك قبل الذهاب. وتذكّر أن قواعد التأشيرة تحكم مدة إقامتك — فتجاوزها يؤدي إلى غرامات وحظر دخول، لذا دوّن أيامك المسموحة ولا تتجاوزها. وعند الشك، يبقى الموقع الرسمي للتأشيرة الإلكترونية الكلمة الفصل دائماً."
+            ]
+          }
+        ],
+        "faqHeading": "الأسئلة الشائعة",
+        "faqs": [
+          {
+            "q": "هل أحتاج إلى تأشيرة لزيارة تركيا؟",
+            "a": "يعتمد الأمر على جنسيتك. كثير من المسافرين، بمن فيهم معظم مواطني الاتحاد الأوروبي والمملكة المتحدة، يدخلون بدون تأشيرة للسياحة، بينما يحتاج آخرون (مثل حاملي جوازات الولايات المتحدة وكندا وأستراليا) إلى تأشيرة إلكترونية سريعة. راجع دائماً الموقع الرسمي evisa.gov.tr لجواز سفرك المحدد قبل الحجز."
+          },
+          {
+            "q": "كيف أحصل على تأشيرة تركيا الإلكترونية؟",
+            "a": "قدّم على الموقع الحكومي الرسمي evisa.gov.tr. أدخل بيانات جوازك والتواريخ والدفع، وتصلك التأشيرة المعتمدة عبر البريد الإلكتروني كملف PDF، عادة خلال دقائق. تجنّب المواقع غير الرسمية التي تفرض رسوماً مبالغاً فيها، واطبع نسخة تحملها معك."
+          },
+          {
+            "q": "كم يمكنني البقاء في تركيا كسائح؟",
+            "a": "يمكن لمعظم السياح البقاء حتى ٩٠ يوماً ضمن أي فترة ١٨٠ يوماً، رغم أن الحد الدقيق يعتمد على جنسيتك ونوع تأشيرتك. تجاوز المدة يؤدي إلى غرامات واحتمال حظر الدخول، لذا تحقّق من مدتك المسموحة ولا تتجاوزها."
+          },
+          {
+            "q": "كم شهراً يجب أن يكون جواز سفري صالحاً لدخول تركيا؟",
+            "a": "تشترط تركيا عموماً أن يكون جوازك صالحاً لمدة ١٥٠ يوماً على الأقل (نحو خمسة أشهر) بعد تاريخ دخولك، مع صفحة فارغة للأختام. إن كان جوازك قريباً من الانتهاء، فجدّده قبل السفر، فهذه القاعدة تُطبَّق على الحدود."
+          },
+          {
+            "q": "هل التأشيرة الإلكترونية التركية هي نفسها تأشيرة الوصول؟",
+            "a": "لا. تُستخرج الـ e-Visa عبر الإنترنت قبل السفر وهي المسار المعتاد للجنسيات التي تتطلب تأشيرة. ألغت تركيا إلى حد كبير تأشيرة الوصول، لذا رتّب تأشيرتك الإلكترونية مسبقاً بدلاً من الاعتماد على الحصول عليها في المطار."
+          }
+        ],
+        "relatedHeading": "خطّط لرحلتك إلى تركيا",
+        "ctaTitle": "مستعد لاستكشاف تركيا؟",
+        "ctaSub": "بعد ترتيب دخولك، استفد من كل يوم مع مرشد محلي مرخّص. اكتشف مرشدين موثّقين في جميع أنحاء تركيا على VibeGuide."
+      },
+      "ru": {
+        "title": "Виза и правила въезда в Турцию: простое руководство",
+        "metaTitle": "Виза и въезд в Турцию — простой гид 2026",
+        "metaDescription": "Нужна ли виза в Турцию? Понятный гид по турецкой e-Visa, кто освобождён, правила срока действия паспорта и что подготовить в аэропорту.",
+        "excerpt": "Большинство гостей едут без визы или быстро оформляют e-Visa онлайн. Вот кому что нужно, как работает e-Visa и правила паспорта, которые подводят людей в аэропорту.",
+        "intro": [
+          "Турция — одно из самых простых для въезда крупных направлений, но правила полностью зависят от вашего гражданства — одни путешественники прибывают совсем без визы, другим нужна быстрая онлайн-<strong>e-Visa</strong>, а некоторым надо подавать заявление в посольство. Уладить всё до вылета избавит от стресса в аэропорту.",
+          "Это руководство простыми словами объясняет основные пути въезда: кто освобождён от визы, как работает e-Visa, правило срока действия паспорта, которое застаёт врасплох, и что подготовить по прибытии. <strong>Всегда проверяйте актуальные правила для вашего паспорта на официальном сайте e-Visa правительства Турции перед бронированием</strong>, так как требования могут меняться."
+        ],
+        "sections": [
+          {
+            "heading": "Нужна ли виза в Турцию?",
+            "paragraphs": [
+              "Это зависит от вашего гражданства. Граждане многих стран — включая большую часть ЕС, Великобританию и ряд других — могут въезжать <strong>без визы</strong> для туризма на определённое число дней (обычно 90 дней в течение 180-дневного периода). Путешественникам из некоторых стран, включая США, Канаду и Австралию, обычно нужна <strong>e-Visa</strong>, которую быстро и недорого оформить онлайн.",
+              "Меньшему числу гражданств приходится оформлять визу заранее через турецкое посольство или консульство. Поскольку списки меняются, единственный надёжный способ узнать вашу категорию — проверить <strong>официальный сайт e-Visa (evisa.gov.tr)</strong> с вашим конкретным паспортом перед поездкой. Не полагайтесь на старые посты на форумах или сторонние сайты."
+            ]
+          },
+          {
+            "heading": "Как работает турецкая e-Visa",
+            "paragraphs": [
+              "Если вам нужна e-Visa, процесс прост и полностью проходит онлайн, обычно за несколько минут. Вы вводите данные паспорта, даты поездки и оплату на официальном сайте, и одобренная e-Visa приходит на email в виде PDF. Большинство однократных туристических e-Visa разрешают пребывание до 30 или 90 дней в зависимости от гражданства и действительны 180 дней с даты выдачи.",
+              "Два важных предупреждения. Во-первых, <strong>используйте только официальный государственный сайт, evisa.gov.tr</strong> — множество похожих сторонних сайтов берут завышенную плату за тот же документ. Во-вторых, подавайте заявление хотя бы за несколько дней до поездки и везите с собой распечатанную копию наряду с email. Хотя одобрение обычно мгновенное, оно не гарантировано, поэтому не откладывайте до аэропорта."
+            ]
+          },
+          {
+            "heading": "Срок действия паспорта и правила въезда",
+            "paragraphs": [
+              "Правило, которое чаще всего застаёт путешественников врасплох, — это <strong>срок действия паспорта</strong>. Турция обычно требует, чтобы паспорт был действителен не менее <strong>150 дней (около пяти месяцев) после даты въезда</strong> и имел хотя бы одну чистую страницу для штампов. Если срок вашего паспорта подходит к концу, обновите его заранее — пограничники это соблюдают.",
+              "На паспортном контроле вас могут спросить о дальнейшей поездке или возвращении и о том, где вы остановитесь, поэтому держите под рукой обратный билет и бронь первого отеля. Въезд обычно быстрый и доброжелательный. Сохраните e-Visa или штамп о въезде, так как их могут попросить показать при выезде."
+            ]
+          },
+          {
+            "heading": "В аэропорту и после прибытия",
+            "paragraphs": [
+              "Главные ворота Турции — аэропорт Стамбула (IST), Сабиха Гёкчен (SAW) на азиатской стороне и прибрежные аэропорты в Анталье, Измире, Бодруме и Даламане — современны и привыкли к международным прибытиям. Следуйте указателям на e-Visa или безвизовый въезд, держите наготове паспорт и распечатанную e-Visa, и ожидайте простого «штамп и вперёд» для большинства туристов.",
+              "После контроля официальные аэропортовые такси, шаттлы Havaist/Havabus и линии метро довезут вас до города. Договаривайтесь о цене такси или настаивайте на счётчике, а для поздних прибытий подумайте о заранее заказанном трансфере. Если вы начинаете поездку с тура, местный гид может встретить вас и сгладить первый день с усталостью от перелёта."
+            ]
+          },
+          {
+            "heading": "Другие практические советы по въезду",
+            "paragraphs": [
+              "<strong>Туристическая страховка</strong> формально не требуется для большинства туристов, но настоятельно рекомендуется, особенно покрытие, включающее медицинскую помощь и активные занятия вроде полётов на шаре или прогулок на лодке. Держите цифровую и бумажную копию полиса рядом с паспортом и e-Visa.",
+              "У Турции нет общих требований по вакцинации для въезда для большинства путешественников, но перед поездкой проверьте актуальные медицинские рекомендации вашего правительства. И помните, что визовые правила определяют, сколько вы можете оставаться — превышение срока ведёт к штрафам и запретам на въезд, поэтому запишите разрешённые дни и не превышайте их. В случае сомнений официальный сайт e-Visa всегда последнее слово."
+            ]
+          }
+        ],
+        "faqHeading": "Часто задаваемые вопросы",
+        "faqs": [
+          {
+            "q": "Нужна ли виза для посещения Турции?",
+            "a": "Это зависит от вашего гражданства. Многие путешественники, включая большинство граждан ЕС и Великобритании, въезжают без визы для туризма, тогда как другим (например, владельцам паспортов США, Канады и Австралии) нужна быстрая онлайн-e-Visa. Всегда проверяйте официальный сайт evisa.gov.tr для вашего конкретного паспорта перед бронированием."
+          },
+          {
+            "q": "Как оформить турецкую e-Visa?",
+            "a": "Подайте заявление на официальном государственном сайте evisa.gov.tr. Введите данные паспорта, даты и оплату, и одобренная e-Visa придёт на email в виде PDF, обычно в течение минут. Избегайте сторонних сайтов с завышенной платой и распечатайте копию, чтобы взять с собой."
+          },
+          {
+            "q": "Сколько я могу оставаться в Турции как турист?",
+            "a": "Большинство туристов могут оставаться до 90 дней в течение любого 180-дневного периода, хотя точный лимит зависит от гражданства и типа визы. Превышение срока ведёт к штрафам и возможным запретам на въезд, поэтому проверьте разрешённую продолжительность и не превышайте её."
+          },
+          {
+            "q": "Сколько месяцев должен быть действителен паспорт для въезда в Турцию?",
+            "a": "Турция обычно требует, чтобы паспорт был действителен не менее 150 дней (около пяти месяцев) после даты въезда, с чистой страницей для штампов. Если срок вашего паспорта подходит к концу, обновите его перед поездкой, так как это правило соблюдается на границе."
+          },
+          {
+            "q": "Турецкая e-Visa — это то же самое, что виза по прибытии?",
+            "a": "Нет. E-Visa оформляется онлайн до поездки и является стандартным путём для гражданств, которым нужна виза. Турция в основном отказалась от визы по прибытии, поэтому оформляйте e-Visa заранее, а не рассчитывайте получить её в аэропорту."
+          }
+        ],
+        "relatedHeading": "Спланируйте поездку в Турцию",
+        "ctaTitle": "Готовы исследовать Турцию?",
+        "ctaSub": "Когда с въездом улажено, проведите каждый день по максимуму с лицензированным местным гидом. Найдите проверенных гидов по всей Турции на VibeGuide."
+      },
+      "tr": {
+        "title": "Türkiye Vize ve Giriş Şartları: Basit Bir Rehber",
+        "metaTitle": "Türkiye Vize ve Giriş Şartları — Basit 2026 Rehberi",
+        "metaDescription": "Türkiye için vize gerekir mi? Türkiye e-Vizesi, kimlerin muaf olduğu, pasaport geçerlilik kuralları ve havaalanında hazır bulundurmanız gerekenlere dair net bir rehber.",
+        "excerpt": "Ziyaretçilerin çoğu ya vizesiz geliyor ya da hızlıca çevrimiçi bir e-Vize alıyor. İşte kimin neye ihtiyacı olduğu, e-Vizenin nasıl işlediği ve havaalanında insanları zora sokan pasaport kuralları.",
+        "intro": [
+          "Türkiye, giriş açısından büyük destinasyonların en kolaylarından biri, ama kurallar tamamen uyruğunuza bağlı — kimi gezginler tamamen vizesiz geliyor, kimileri hızlı bir çevrimiçi <strong>e-Vize</strong>'ye ihtiyaç duyuyor, birkaçının ise bir elçilikten başvurması gerekiyor. Uçmadan önce bunu doğru yapmak havaalanında stresi önler.",
+          "Bu rehber başlıca giriş yollarını sade bir dille açıklıyor: kim vizeden muaf, e-Vize nasıl işliyor, insanları zora sokan pasaport geçerlilik kuralı ve varışta neyi hazır bulundurmanız gerektiği. <strong>Şartlar değişebileceğinden, rezervasyon yapmadan önce kendi pasaportunuza dair güncel kuralları her zaman resmî Türk devletinin e-Vize sitesinden doğrulayın.</strong>"
+        ],
+        "sections": [
+          {
+            "heading": "Türkiye için vize gerekir mi?",
+            "paragraphs": [
+              "Uyruğunuza bağlı. Birçok ülkenin — AB'nin büyük kısmı, Birleşik Krallık ve birkaçı dâhil — vatandaşları turizm amacıyla belirli bir gün sayısı için <strong>vizesiz</strong> girebiliyor (genellikle 180 günlük dönem içinde 90 gün). Amerika Birleşik Devletleri, Kanada ve Avustralya gibi bazı ülkelerden gelen gezginler ise genellikle çevrimiçi olarak hızlı ve ucuz alınan bir <strong>e-Vize</strong>'ye ihtiyaç duyar.",
+              "Daha az sayıda uyruğun ise önceden bir Türk elçiliği ya da konsolosluğu üzerinden vize başvurusu yapması gerekir. Listeler değiştiği için kategorinizi öğrenmenin tek güvenilir yolu, seyahatten önce kendi pasaportunuzla <strong>resmî e-Vize web sitesini (evisa.gov.tr)</strong> kontrol etmektir. Eski forum paylaşımlarına ya da üçüncü taraf sitelere güvenmeyin."
+            ]
+          },
+          {
+            "heading": "Türkiye e-Vizesi nasıl işler",
+            "paragraphs": [
+              "e-Vizeye ihtiyacınız varsa süreç basit ve tamamen çevrimiçi, genellikle birkaç dakikada tamamlanır. Pasaport bilgilerinizi, seyahat tarihlerinizi ve ödemeyi resmî sitede girersiniz, onaylanan e-Vize e-posta ile PDF olarak gelir. Çoğu tek girişli turistik e-Vize, uyruğa göre 30 ya da 90 güne kadar kalışa izin verir ve düzenlendiği tarihten itibaren 180 gün geçerlidir.",
+              "İki önemli uyarı. Birincisi, <strong>yalnızca resmî devlet sitesini, evisa.gov.tr'yi kullanın</strong> — birçok benzer görünümlü üçüncü taraf site aynı belge için şişirilmiş ücretler alır. İkincisi, seyahatten en az birkaç gün önce başvurun ve e-postanın yanında bir de basılı kopya taşıyın. Onay genellikle anında olsa da garanti değildir, o yüzden işi havaalanına bırakmayın."
+            ]
+          },
+          {
+            "heading": "Pasaport geçerliliği ve giriş kuralları",
+            "paragraphs": [
+              "Gezginleri en sık zora sokan kural <strong>pasaport geçerliliği</strong>dir. Türkiye genellikle pasaportunuzun <strong>giriş tarihinizden itibaren en az 150 gün (yaklaşık beş ay)</strong> geçerli olmasını ve damgalar için en az bir boş sayfası bulunmasını ister. Pasaportunuzun süresi dolmak üzereyse seyahatten çok önce yenileyin — sınır görevlileri bunu gerçekten uyguluyor.",
+              "Pasaport kontrolünde sonraki ya da dönüş seyahatiniz ve nerede kalacağınız sorulabilir, o yüzden dönüş biletinizi ve ilk otel rezervasyonunuzu elinizin altında tutun. Giriş normalde hızlı ve güler yüzlüdür. e-Vizenizi ya da giriş damganızı iyi saklayın, çıkışta göstermeniz gerekebilir."
+            ]
+          },
+          {
+            "heading": "Havaalanında ve vardıktan sonra",
+            "paragraphs": [
+              "Türkiye'nin başlıca kapıları — İstanbul Havalimanı (IST), Anadolu yakasındaki Sabiha Gökçen (SAW) ve Antalya, İzmir, Bodrum ve Dalaman'daki kıyı havaalanları — modern ve uluslararası varışlara alışkın. e-Vize ya da vizesiz giriş tabelalarını izleyin, pasaportunuzu ve varsa basılı e-Vizenizi hazır tutun; çoğu turist için düz bir damga-geç işlemi bekleyin.",
+              "Geçtikten sonra resmî havaalanı taksileri, Havaist/Havabus havaalanı servisleri ve metro bağlantıları sizi şehre taşır. Taksi ücretinde anlaşın ya da taksimetrede ısrar edin ve geç varışlar için önceden ayırtılmış bir transfer düşünün. Gezinize bir turla başlıyorsanız yerel bir rehber sizi karşılayıp jet-lag'li ilk günü kolaylaştırabilir."
+            ]
+          },
+          {
+            "heading": "Diğer pratik giriş ipuçları",
+            "paragraphs": [
+              "<strong>Seyahat sigortası</strong> çoğu turist için resmen zorunlu değil, ama özellikle tıbbi bakımı ve balon turu veya tekne gezisi gibi aktif etkinlikleri kapsayan bir teminat şiddetle tavsiye edilir. Poliçenizin dijital ve kâğıt bir kopyasını pasaportunuz ve e-Vizenizle birlikte saklayın.",
+              "Türkiye'nin çoğu gezgin için genel bir aşı giriş şartı yok, ama gitmeden önce kendi ülkenizin güncel seyahat-sağlık tavsiyelerini kontrol edin. Ve unutmayın ki vize kuralları ne kadar kalabileceğinizi belirler — süreyi aşmak para cezasına ve giriş yasağına yol açar, o yüzden izin verilen günlerinizi not edin ve aşmayın. Kararsız kaldığınızda resmî e-Vize sitesi her zaman son sözü söyler."
+            ]
+          }
+        ],
+        "faqHeading": "Sıkça sorulan sorular",
+        "faqs": [
+          {
+            "q": "Türkiye'yi ziyaret etmek için vizeye ihtiyacım var mı?",
+            "a": "Uyruğunuza bağlı. AB ve Birleşik Krallık vatandaşlarının çoğu dâhil birçok gezgin turizm için vizesiz girerken, diğerleri (ABD, Kanada ve Avustralya pasaportu sahipleri gibi) hızlı bir çevrimiçi e-Vizeye ihtiyaç duyar. Rezervasyon yapmadan önce kendi pasaportunuz için her zaman resmî evisa.gov.tr sitesini kontrol edin."
+          },
+          {
+            "q": "Türkiye e-Vizesini nasıl alırım?",
+            "a": "Resmî devlet sitesi evisa.gov.tr üzerinden başvurun. Pasaport bilgilerinizi, tarihleri ve ödemeyi girin; onaylanan e-Vize genellikle dakikalar içinde e-posta ile PDF olarak gelir. Şişirilmiş ücret alan üçüncü taraf sitelerden kaçının ve yanınızda taşımak için bir kopya yazdırın."
+          },
+          {
+            "q": "Türkiye'de turist olarak ne kadar kalabilirim?",
+            "a": "Çoğu turist herhangi bir 180 günlük dönemde 90 güne kadar kalabilir, ancak tam sınır uyruğunuza ve vize türünüze bağlıdır. Süreyi aşmak para cezasına ve olası giriş yasaklarına yol açar, bu yüzden izin verilen sürenizi kontrol edin ve aşmayın."
+          },
+          {
+            "q": "Türkiye'ye girmek için pasaportumun kaç ay geçerli olması gerekir?",
+            "a": "Türkiye genellikle pasaportunuzun giriş tarihinizden itibaren en az 150 gün (yaklaşık beş ay) geçerli olmasını ve damgalar için boş bir sayfası bulunmasını ister. Pasaportunuzun süresi dolmak üzereyse seyahatten önce yenileyin, çünkü bu kural sınırda uygulanır."
+          },
+          {
+            "q": "Türkiye e-Vizesi, kapıda vize ile aynı şey mi?",
+            "a": "Hayır. e-Vize seyahatten önce çevrimiçi alınır ve vize gerektiren uyruklar için standart yoldur. Türkiye kapıda vizeyi büyük ölçüde kaldırdı, o yüzden havaalanında almaya güvenmek yerine e-Vizenizi önceden ayarlayın."
+          }
+        ],
+        "relatedHeading": "Türkiye gezinizi planlayın",
+        "ctaTitle": "Türkiye'yi keşfetmeye hazır mısınız?",
+        "ctaSub": "Girişiniz halloldu mu, ruhsatlı bir yerel rehberle her günü en iyi şekilde değerlendirin. Türkiye genelinde doğrulanmış rehberleri VibeGuide'da keşfedin."
+      },
+      "pl": {
+        "title": "Wiza i wymogi wjazdowe do Turcji: prosty przewodnik",
+        "metaTitle": "Wiza i wjazd do Turcji — prosty przewodnik 2026",
+        "metaDescription": "Czy potrzebujesz wizy do Turcji? Jasny przewodnik po tureckiej e-Visa, kto jest zwolniony, zasady ważności paszportu i co przygotować na lotnisku.",
+        "excerpt": "Większość odwiedzających podróżuje bez wizy lub szybko wyrabia e-Visa online. Oto kto czego potrzebuje, jak działa e-Visa i zasady paszportowe, które zaskakują ludzi na lotnisku.",
+        "intro": [
+          "Turcja to jeden z łatwiejszych do wjazdu wielkich kierunków, ale zasady zależą całkowicie od twojego obywatelstwa — niektórzy podróżni przybywają zupełnie bez wizy, inni potrzebują szybkiej <strong>e-Visa</strong> online, a nieliczni muszą złożyć wniosek w ambasadzie. Załatwienie tego przed lotem pozwala uniknąć stresu na lotnisku.",
+          "Ten przewodnik prostymi słowami wyjaśnia główne drogi wjazdu: kto jest zwolniony z wizy, jak działa e-Visa, zasada ważności paszportu, która zaskakuje ludzi, i co przygotować po przylocie. <strong>Zawsze potwierdzaj aktualne zasady dla własnego paszportu na oficjalnej rządowej stronie e-Visa Turcji przed rezerwacją</strong>, ponieważ wymogi mogą się zmieniać."
+        ],
+        "sections": [
+          {
+            "heading": "Czy potrzebujesz wizy do Turcji?",
+            "paragraphs": [
+              "To zależy od twojego obywatelstwa. Obywatele wielu krajów — w tym większości UE, Wielkiej Brytanii i kilku innych — mogą wjechać <strong>bez wizy</strong> w celach turystycznych na określoną liczbę dni (zwykle 90 dni w okresie 180 dni). Podróżni z niektórych krajów, w tym ze Stanów Zjednoczonych, Kanady i Australii, zazwyczaj potrzebują <strong>e-Visa</strong>, którą szybko i tanio wyrabia się online.",
+              "Mniejsza liczba narodowości musi złożyć wniosek o wizę z wyprzedzeniem w tureckiej ambasadzie lub konsulacie. Ponieważ listy się zmieniają, jedynym pewnym sposobem, by poznać swoją kategorię, jest sprawdzenie <strong>oficjalnej strony e-Visa (evisa.gov.tr)</strong> ze swoim konkretnym paszportem przed podróżą. Nie polegaj na starych wpisach na forach ani na stronach zewnętrznych."
+            ]
+          },
+          {
+            "heading": "Jak działa turecka e-Visa",
+            "paragraphs": [
+              "Jeśli potrzebujesz e-Visa, proces jest prosty i odbywa się w całości online, zwykle w kilka minut. Podajesz dane paszportu, daty podróży i płatność na oficjalnej stronie, a zatwierdzona e-Visa przychodzi mailem jako PDF. Większość jednokrotnych turystycznych e-Visa pozwala na pobyt do 30 lub 90 dni w zależności od obywatelstwa i jest ważna przez 180 dni od daty wydania.",
+              "Dwa ważne ostrzeżenia. Po pierwsze, <strong>korzystaj wyłącznie z oficjalnej strony rządowej, evisa.gov.tr</strong> — wiele łudząco podobnych stron zewnętrznych pobiera zawyżone opłaty za ten sam dokument. Po drugie, złóż wniosek co najmniej kilka dni przed podróżą i miej przy sobie wydruk oprócz maila. Choć zatwierdzenie jest zwykle natychmiastowe, nie jest gwarantowane, więc nie zostawiaj tego na lotnisko."
+            ]
+          },
+          {
+            "heading": "Ważność paszportu i zasady wjazdu",
+            "paragraphs": [
+              "Zasadą, która najczęściej zaskakuje podróżnych, jest <strong>ważność paszportu</strong>. Turcja zazwyczaj wymaga, by paszport był ważny co najmniej <strong>150 dni (około pięciu miesięcy) po dacie wjazdu</strong> i miał co najmniej jedną wolną stronę na pieczątki. Jeśli twój paszport zbliża się do terminu ważności, wymień go z dużym wyprzedzeniem — funkcjonariusze graniczni tego pilnują.",
+              "Przy kontroli paszportowej mogą zapytać o dalszą lub powrotną podróż oraz o miejsce pobytu, więc miej pod ręką bilet powrotny i rezerwację pierwszego hotelu. Wjazd jest zwykle szybki i uprzejmy. Zachowaj e-Visa lub pieczątkę wjazdową, bo możesz je musieć okazać przy wyjeździe."
+            ]
+          },
+          {
+            "heading": "Na lotnisku i po przybyciu",
+            "paragraphs": [
+              "Główne bramy Turcji — lotnisko w Stambule (IST), Sabiha Gökçen (SAW) po stronie azjatyckiej oraz nadmorskie lotniska w Antalyi, Izmirze, Bodrum i Dalaman — są nowoczesne i przyzwyczajone do międzynarodowych przylotów. Kieruj się znakami do e-Visa lub wjazdu bezwizowego, miej gotowy paszport i ewentualną wydrukowaną e-Visa i spodziewaj się prostego „pieczątka i idziemy” dla większości turystów.",
+              "Po przejściu oficjalne taksówki lotniskowe, autobusy Havaist/Havabus i połączenia metra dowiozą cię do miasta. Ustal cenę taksówki lub nalegaj na taksometr, a przy późnych przylotach rozważ wcześniej zarezerwowany transfer. Jeśli zaczynasz podróż od wycieczki, lokalny przewodnik może wyjść ci naprzeciw i ułatwić pierwszy, zmęczony lotem dzień."
+            ]
+          },
+          {
+            "heading": "Inne praktyczne wskazówki wjazdowe",
+            "paragraphs": [
+              "<strong>Ubezpieczenie podróżne</strong> nie jest formalnie wymagane dla większości turystów, ale jest zdecydowanie zalecane, zwłaszcza pokrycie obejmujące opiekę medyczną i aktywne zajęcia, jak loty balonem czy rejsy. Miej cyfrową i papierową kopię polisy obok paszportu i e-Visa.",
+              "Turcja nie ma ogólnych wymogów szczepień przy wjeździe dla większości podróżnych, ale przed wyjazdem sprawdź aktualne zalecenia zdrowotne własnego rządu. I pamiętaj, że zasady wizowe określają, jak długo możesz zostać — przekroczenie terminu grozi karami i zakazami wjazdu, więc zanotuj dozwolone dni i ich nie przekraczaj. W razie wątpliwości oficjalna strona e-Visa jest zawsze ostatnim słowem."
+            ]
+          }
+        ],
+        "faqHeading": "Najczęściej zadawane pytania",
+        "faqs": [
+          {
+            "q": "Czy potrzebuję wizy, by odwiedzić Turcję?",
+            "a": "To zależy od twojego obywatelstwa. Wielu podróżnych, w tym większość obywateli UE i Wielkiej Brytanii, wjeżdża bez wizy w celach turystycznych, podczas gdy inni (jak posiadacze paszportów USA, Kanady i Australii) potrzebują szybkiej e-Visa online. Zawsze sprawdzaj oficjalną stronę evisa.gov.tr dla swojego konkretnego paszportu przed rezerwacją."
+          },
+          {
+            "q": "Jak wyrobić turecką e-Visa?",
+            "a": "Złóż wniosek na oficjalnej stronie rządowej evisa.gov.tr. Podaj dane paszportu, daty i płatność, a zatwierdzona e-Visa przyjdzie mailem jako PDF, zwykle w ciągu kilku minut. Unikaj stron zewnętrznych pobierających zawyżone opłaty i wydrukuj kopię do zabrania ze sobą."
+          },
+          {
+            "q": "Jak długo mogę zostać w Turcji jako turysta?",
+            "a": "Większość turystów może zostać do 90 dni w dowolnym okresie 180 dni, choć dokładny limit zależy od obywatelstwa i rodzaju wizy. Przekroczenie terminu grozi karami i możliwymi zakazami wjazdu, więc sprawdź dozwolony czas pobytu i go nie przekraczaj."
+          },
+          {
+            "q": "Ile miesięcy musi być ważny paszport, by wjechać do Turcji?",
+            "a": "Turcja zazwyczaj wymaga, by paszport był ważny co najmniej 150 dni (około pięciu miesięcy) po dacie wjazdu, z wolną stroną na pieczątki. Jeśli twój paszport zbliża się do terminu ważności, wymień go przed podróżą, ponieważ ta zasada jest egzekwowana na granicy."
+          },
+          {
+            "q": "Czy turecka e-Visa to to samo co wiza po przylocie?",
+            "a": "Nie. E-Visa wyrabia się online przed podróżą i jest standardową drogą dla narodowości wymagających wizy. Turcja w dużej mierze wycofała wizę po przylocie, więc załatw e-Visa z wyprzedzeniem, zamiast liczyć na jej uzyskanie na lotnisku."
+          }
+        ],
+        "relatedHeading": "Zaplanuj podróż do Turcji",
+        "ctaTitle": "Gotowy odkrywać Turcję?",
+        "ctaSub": "Gdy wjazd masz załatwiony, wykorzystaj każdy dzień w pełni z licencjonowanym lokalnym przewodnikiem. Odkryj zweryfikowanych przewodników w całej Turcji na VibeGuide."
+      },
+      "nl": {
+        "title": "Visum & inreisvereisten Turkije: een eenvoudige gids",
+        "metaTitle": "Visum & inreis Turkije — eenvoudige gids 2026",
+        "metaDescription": "Heb je een visum nodig voor Turkije? Een heldere gids over het Turkse e-Visum, wie is vrijgesteld, paspoortgeldigheid en wat je klaar moet hebben op de luchthaven.",
+        "excerpt": "De meeste bezoekers reizen visumvrij of halen snel een online e-Visum. Hier lees je wie wat nodig heeft, hoe het e-Visum werkt en de paspoortregels waar mensen op de luchthaven over struikelen.",
+        "intro": [
+          "Turkije is een van de eenvoudigere grote bestemmingen om binnen te komen, maar de regels hangen volledig af van je nationaliteit — sommige reizigers komen volledig visumvrij aan, anderen hebben een snel online <strong>e-Visum</strong> nodig, en enkelen moeten bij een ambassade aanvragen. Het vooraf goed regelen voorkomt stress op de luchthaven.",
+          "Deze gids legt de belangrijkste inreisroutes in gewone taal uit: wie is vrijgesteld van visum, hoe het e-Visum werkt, de regel voor paspoortgeldigheid waar mensen op struikelen, en wat je bij aankomst klaar moet hebben. <strong>Bevestig altijd de actuele regels voor je eigen paspoort op de officiële website van de Turkse overheid voor het e-Visum voordat je boekt</strong>, want de vereisten kunnen veranderen."
+        ],
+        "sections": [
+          {
+            "heading": "Heb je een visum nodig voor Turkije?",
+            "paragraphs": [
+              "Het hangt af van je nationaliteit. Burgers van veel landen — waaronder het grootste deel van de EU, het VK en enkele andere — kunnen <strong>visumvrij</strong> binnenkomen voor toerisme voor een vast aantal dagen (vaak 90 dagen binnen een periode van 180 dagen). Reizigers uit sommige landen, waaronder de Verenigde Staten, Canada en Australië, hebben doorgaans een <strong>e-Visum</strong> nodig, dat snel en goedkoop online te verkrijgen is.",
+              "Een kleiner aantal nationaliteiten moet vooraf een visum aanvragen via een Turkse ambassade of consulaat. Omdat de lijsten veranderen, is de enige betrouwbare manier om je categorie te kennen het raadplegen van de <strong>officiële e-Visum-website (evisa.gov.tr)</strong> met je specifieke paspoort voordat je reist. Vertrouw niet op oude forumberichten of sites van derden."
+            ]
+          },
+          {
+            "heading": "Hoe het Turkse e-Visum werkt",
+            "paragraphs": [
+              "Als je een e-Visum nodig hebt, is het proces eenvoudig en volledig online, meestal in een paar minuten. Je voert je paspoortgegevens, reisdata en betaling in op de officiële site, en het goedgekeurde e-Visum komt per e-mail als pdf. De meeste toeristische e-Visa voor eenmalige toegang staan een verblijf van maximaal 30 of 90 dagen toe, afhankelijk van nationaliteit, en zijn 180 dagen geldig vanaf de uitgiftedatum.",
+              "Twee belangrijke waarschuwingen. Ten eerste: <strong>gebruik alleen de officiële overheidssite, evisa.gov.tr</strong> — veel lookalike-sites van derden rekenen opgeblazen kosten voor hetzelfde document. Ten tweede: vraag minstens enkele dagen voor vertrek aan, en neem naast de e-mail ook een afgedrukte kopie mee. Hoewel goedkeuring meestal direct is, is die niet gegarandeerd, dus laat het niet aan de luchthaven over."
+            ]
+          },
+          {
+            "heading": "Paspoortgeldigheid en inreisregels",
+            "paragraphs": [
+              "De regel waar reizigers het vaakst over struikelen, is de <strong>paspoortgeldigheid</strong>. Turkije eist doorgaans dat je paspoort nog minstens <strong>150 dagen (ongeveer vijf maanden) na je inreisdatum</strong> geldig is, en minstens één blanco pagina voor stempels heeft. Als je paspoort bijna verloopt, vernieuw het dan ruim voor je reist — grensbeambten handhaven dit echt.",
+              "Bij de paspoortcontrole kan je gevraagd worden naar je doorreis of terugreis en waar je verblijft, dus houd je retourticket en de boeking van je eerste hotel bij de hand. De inreis verloopt normaal snel en vriendelijk. Bewaar je e-Visum of inreisstempel goed, want je moet die mogelijk tonen bij vertrek."
+            ]
+          },
+          {
+            "heading": "Op de luchthaven en na aankomst",
+            "paragraphs": [
+              "De belangrijkste toegangspoorten van Turkije — Istanbul Airport (IST), Sabiha Gökçen (SAW) aan de Aziatische kant, en de kustluchthavens bij Antalya, İzmir, Bodrum en Dalaman — zijn modern en gewend aan internationale aankomsten. Volg de borden voor e-Visum of visumvrije inreis, houd je paspoort en een eventueel afgedrukt e-Visum klaar, en verwacht voor de meeste toeristen een eenvoudige stempel-en-doorgaan.",
+              "Eenmaal doorheen brengen officiële luchthaventaxi's, de Havaist/Havabus-luchthavenshuttles en metroverbindingen je de stad in. Spreek taxitarieven af of sta erop dat de meter aangaat, en overweeg een vooraf geboekte transfer bij late aankomsten. Als je je reis met een tour begint, kan een lokale gids je opwachten en de eerste, door jetlag getekende dag soepel laten verlopen."
+            ]
+          },
+          {
+            "heading": "Andere praktische inreistips",
+            "paragraphs": [
+              "Een <strong>reisverzekering</strong> is voor de meeste toeristen niet formeel verplicht, maar wordt sterk aanbevolen, vooral dekking die medische zorg omvat en actieve activiteiten zoals ballonvaren of boottochten. Bewaar een digitale en papieren kopie van je polis naast je paspoort en e-Visum.",
+              "Turkije heeft voor de meeste reizigers geen algemene vaccinatie-inreisvereisten, maar controleer voor vertrek het actuele reisgezondheidsadvies van je eigen overheid. En onthoud dat visumregels bepalen hoe lang je mag blijven — te lang blijven leidt tot boetes en inreisverboden, dus noteer je toegestane dagen en overschrijd ze niet. Bij twijfel is de officiële e-Visum-site altijd het laatste woord."
+            ]
+          }
+        ],
+        "faqHeading": "Veelgestelde vragen",
+        "faqs": [
+          {
+            "q": "Heb ik een visum nodig om Turkije te bezoeken?",
+            "a": "Het hangt af van je nationaliteit. Veel reizigers, waaronder de meeste EU- en VK-burgers, komen visumvrij binnen voor toerisme, terwijl anderen (zoals houders van een Amerikaans, Canadees of Australisch paspoort) een snel online e-Visum nodig hebben. Controleer altijd de officiële site evisa.gov.tr voor je specifieke paspoort voordat je boekt."
+          },
+          {
+            "q": "Hoe krijg ik een Turks e-Visum?",
+            "a": "Vraag aan op de officiële overheidssite evisa.gov.tr. Voer je paspoortgegevens, data en betaling in, en het goedgekeurde e-Visum komt per e-mail als pdf, meestal binnen enkele minuten. Vermijd sites van derden die opgeblazen kosten rekenen, en print een kopie om mee te nemen."
+          },
+          {
+            "q": "Hoe lang mag ik als toerist in Turkije blijven?",
+            "a": "De meeste toeristen mogen tot 90 dagen binnen elke periode van 180 dagen blijven, hoewel de exacte limiet afhangt van je nationaliteit en visumtype. Te lang blijven leidt tot boetes en mogelijke inreisverboden, dus controleer je toegestane duur en overschrijd die niet."
+          },
+          {
+            "q": "Hoeveel maanden moet mijn paspoort geldig zijn om Turkije binnen te komen?",
+            "a": "Turkije eist doorgaans dat je paspoort nog minstens 150 dagen (ongeveer vijf maanden) na je inreisdatum geldig is, met een blanco pagina voor stempels. Als je paspoort bijna verloopt, vernieuw het dan voor je reist, want deze regel wordt aan de grens gehandhaafd."
+          },
+          {
+            "q": "Is het Turkse e-Visum hetzelfde als een visum bij aankomst?",
+            "a": "Nee. Het e-Visum wordt online verkregen voordat je reist en is de standaardroute voor nationaliteiten die een visum nodig hebben. Turkije heeft het visum bij aankomst grotendeels afgeschaft, dus regel je e-Visum vooraf in plaats van te vertrouwen op verkrijgen op de luchthaven."
+          }
+        ],
+        "relatedHeading": "Plan je Turkije-reis",
+        "ctaTitle": "Klaar om Turkije te ontdekken?",
+        "ctaSub": "Zodra je inreis geregeld is, haal het meeste uit elke dag met een erkende lokale gids. Ontdek geverifieerde gidsen in heel Turkije op VibeGuide."
+      },
+      "pt": {
+        "title": "Visto e requisitos de entrada na Turquia: um guia simples",
+        "metaTitle": "Visto e entrada na Turquia — guia simples 2026",
+        "metaDescription": "Precisa de visto para a Turquia? Um guia claro sobre o e-Visa da Turquia, quem está isento, regras de validade do passaporte e o que ter pronto no aeroporto.",
+        "excerpt": "A maioria dos visitantes viaja sem visto ou obtém rapidamente um e-Visa online. Aqui fica quem precisa de quê, como funciona o e-Visa e as regras de passaporte que tramam as pessoas no aeroporto.",
+        "intro": [
+          "A Turquia é um dos grandes destinos mais fáceis de entrar, mas as regras dependem inteiramente da sua nacionalidade — alguns viajantes chegam totalmente sem visto, outros precisam de um rápido <strong>e-Visa</strong> online, e alguns têm de o requerer numa embaixada. Acertar nisto antes de voar evita stress no aeroporto.",
+          "Este guia explica as principais vias de entrada em termos simples: quem está isento de visto, como funciona o e-Visa, a regra de validade do passaporte que apanha as pessoas desprevenidas, e o que ter pronto à chegada. <strong>Confirme sempre as regras atuais para o seu próprio passaporte no site oficial do e-Visa do governo turco antes de reservar</strong>, pois os requisitos podem mudar."
+        ],
+        "sections": [
+          {
+            "heading": "Precisa de visto para a Turquia?",
+            "paragraphs": [
+              "Depende da sua nacionalidade. Os cidadãos de muitos países — incluindo a maioria da UE, o Reino Unido e vários outros — podem entrar <strong>sem visto</strong> para turismo durante um número fixo de dias (habitualmente 90 dias num período de 180 dias). Os viajantes de alguns países, incluindo os Estados Unidos, o Canadá e a Austrália, precisam normalmente de um <strong>e-Visa</strong>, rápido e barato de obter online.",
+              "Um número menor de nacionalidades tem de requerer visto com antecedência numa embaixada ou consulado turco. Como as listas mudam, a única forma fiável de saber a sua categoria é consultar o <strong>site oficial do e-Visa (evisa.gov.tr)</strong> com o seu passaporte específico antes de viajar. Não confie em publicações antigas de fóruns nem em sites de terceiros."
+            ]
+          },
+          {
+            "heading": "Como funciona o e-Visa da Turquia",
+            "paragraphs": [
+              "Se precisar de um e-Visa, o processo é simples e feito inteiramente online, normalmente em poucos minutos. Introduz os dados do passaporte, as datas de viagem e o pagamento no site oficial, e o e-Visa aprovado chega por e-mail em PDF. A maioria dos e-Visa de turismo de entrada única permite uma estadia até 30 ou 90 dias consoante a nacionalidade, e é válida por 180 dias a partir da data de emissão.",
+              "Dois avisos importantes. Primeiro, <strong>use apenas o site oficial do governo, evisa.gov.tr</strong> — muitos sites de terceiros semelhantes cobram taxas inflacionadas pelo mesmo documento. Segundo, faça o pedido pelo menos alguns dias antes de viajar, e leve uma cópia impressa além do e-mail. Embora a aprovação seja normalmente imediata, não é garantida, por isso não deixe para o aeroporto."
+            ]
+          },
+          {
+            "heading": "Validade do passaporte e regras de entrada",
+            "paragraphs": [
+              "A regra que mais apanha os viajantes desprevenidos é a <strong>validade do passaporte</strong>. A Turquia exige geralmente que o seu passaporte seja válido por, pelo menos, <strong>150 dias (cerca de cinco meses) para além da data de entrada</strong>, e que tenha, pelo menos, uma página em branco para carimbos. Se o seu passaporte estiver perto de expirar, renove-o bastante antes de viajar — os agentes de fronteira fazem cumprir isto.",
+              "No controlo de passaportes poderão perguntar-lhe sobre a viagem de continuação ou de regresso e onde vai ficar, por isso tenha à mão o bilhete de regresso e a reserva do primeiro hotel. A entrada é normalmente rápida e simpática. Guarde bem o seu e-Visa ou carimbo de entrada, pois poderá ter de o mostrar à saída."
+            ]
+          },
+          {
+            "heading": "No aeroporto e depois de chegar",
+            "paragraphs": [
+              "As principais portas de entrada da Turquia — o Aeroporto de Istambul (IST), Sabiha Gökçen (SAW) no lado asiático, e os aeroportos costeiros de Antália, Esmirna, Bodrum e Dalaman — são modernos e habituados a chegadas internacionais. Siga as indicações para e-Visa ou entrada sem visto, tenha o passaporte e qualquer e-Visa impresso à mão, e conte com um carimba-e-segue simples para a maioria dos turistas.",
+              "Uma vez lá dentro, os táxis oficiais do aeroporto, as shuttles Havaist/Havabus e as ligações de metro levam-no à cidade. Combine as tarifas de táxi ou insista no taxímetro, e considere um transfer reservado com antecedência para chegadas tardias. Se começar a viagem com um passeio, um guia local pode recebê-lo e suavizar o primeiro dia, ainda com jet lag."
+            ]
+          },
+          {
+            "heading": "Outras dicas práticas de entrada",
+            "paragraphs": [
+              "Um <strong>seguro de viagem</strong> não é formalmente obrigatório para a maioria dos turistas, mas é fortemente recomendado, sobretudo cobertura que inclua cuidados médicos e atividades como passeios de balão ou de barco. Guarde uma cópia digital e em papel da apólice junto do passaporte e do e-Visa.",
+              "A Turquia não tem, para a maioria dos viajantes, requisitos gerais de vacinação à entrada, mas verifique os conselhos atuais de saúde em viagem do seu próprio governo antes de partir. E lembre-se de que as regras de visto determinam quanto tempo pode ficar — exceder o prazo leva a multas e proibições de entrada, por isso anote os dias permitidos e não os ultrapasse. Na dúvida, o site oficial do e-Visa tem sempre a última palavra."
+            ]
+          }
+        ],
+        "faqHeading": "Perguntas frequentes",
+        "faqs": [
+          {
+            "q": "Preciso de visto para visitar a Turquia?",
+            "a": "Depende da sua nacionalidade. Muitos viajantes, incluindo a maioria dos cidadãos da UE e do Reino Unido, entram sem visto para turismo, enquanto outros (como os titulares de passaporte dos EUA, do Canadá e da Austrália) precisam de um rápido e-Visa online. Verifique sempre o site oficial evisa.gov.tr para o seu passaporte específico antes de reservar."
+          },
+          {
+            "q": "Como obtenho um e-Visa para a Turquia?",
+            "a": "Faça o pedido no site oficial do governo, evisa.gov.tr. Introduza os dados do passaporte, as datas e o pagamento, e o e-Visa aprovado chega por e-mail em PDF, normalmente em minutos. Evite sites de terceiros que cobram taxas inflacionadas, e imprima uma cópia para levar consigo."
+          },
+          {
+            "q": "Quanto tempo posso ficar na Turquia como turista?",
+            "a": "A maioria dos turistas pode ficar até 90 dias em qualquer período de 180 dias, embora o limite exato dependa da sua nacionalidade e do tipo de visto. Exceder o prazo resulta em multas e possíveis proibições de entrada, por isso confirme a duração permitida e não a ultrapasse."
+          },
+          {
+            "q": "Por quantos meses o meu passaporte tem de ser válido para entrar na Turquia?",
+            "a": "A Turquia exige geralmente que o passaporte seja válido por, pelo menos, 150 dias (cerca de cinco meses) para além da data de entrada, com uma página em branco para carimbos. Se o seu passaporte estiver perto de expirar, renove-o antes de viajar, pois esta regra é aplicada na fronteira."
+          },
+          {
+            "q": "O e-Visa da Turquia é o mesmo que um visto à chegada?",
+            "a": "Não. O e-Visa obtém-se online antes de viajar e é a via padrão para as nacionalidades que exigem visto. A Turquia praticamente eliminou o visto à chegada, por isso trate do seu e-Visa com antecedência em vez de contar com obtê-lo no aeroporto."
+          }
+        ],
+        "relatedHeading": "Planeie a sua viagem à Turquia",
+        "ctaTitle": "Pronto para explorar a Turquia?",
+        "ctaSub": "Depois de resolvida a entrada, aproveite ao máximo cada dia com um guia local licenciado. Descubra guias verificados por toda a Turquia na VibeGuide."
+      },
+      "ja": {
+        "title": "トルコのビザと入国要件：わかりやすいガイド",
+        "metaTitle": "トルコのビザと入国要件 — わかりやすい2026年版",
+        "metaDescription": "トルコにビザは必要？トルコのe-Visa、免除対象者、パスポート有効期間の規則、渡航前に空港で用意すべきものを明快に解説するガイド。",
+        "excerpt": "ほとんどの旅行者はビザ免除か、素早く取れるオンラインe-Visaで入国します。誰に何が必要か、e-Visaの仕組み、空港でつまずくパスポート規則を解説します。",
+        "intro": [
+          "トルコは主要な渡航先の中でも入国しやすい国の一つですが、規則は国籍によって完全に異なります — まったくビザなしで到着できる旅行者もいれば、素早く取れるオンラインの<strong>e-Visa</strong>が必要な人もおり、大使館で申請しなければならない人もわずかにいます。渡航前に正しく整えておけば、空港での不安を避けられます。",
+          "このガイドは主な入国ルートをわかりやすく説明します：ビザ免除の対象者、e-Visaの仕組み、人がつまずくパスポート有効期間の規則、そして到着時に用意しておくべきもの。<strong>要件は変わり得るため、予約前に必ずトルコ政府公式のe-Visaサイトでご自身のパスポートの最新規則を確認してください</strong>。"
+        ],
+        "sections": [
+          {
+            "heading": "トルコにビザは必要ですか？",
+            "paragraphs": [
+              "国籍によります。多くの国 — EU加盟国の大半、英国、その他いくつかの国を含む — の市民は、一定日数（一般に180日間のうち90日）まで観光目的で<strong>ビザなし</strong>入国できます。米国、カナダ、オーストラリアなど一部の国からの旅行者は、通常<strong>e-Visa</strong>が必要で、オンラインで素早く安価に取得できます。",
+              "より少数の国籍は、トルコの大使館または領事館を通じて事前にビザを申請しなければなりません。リストは変わるため、自分の区分を確実に知る唯一の方法は、渡航前にご自身のパスポートで<strong>公式e-Visaサイト（evisa.gov.tr）</strong>を確認することです。古いフォーラムの投稿や第三者サイトを当てにしないでください。"
+            ]
+          },
+          {
+            "heading": "トルコのe-Visaの仕組み",
+            "paragraphs": [
+              "e-Visaが必要な場合、手続きは簡単で、通常は数分ですべてオンラインで完結します。公式サイトでパスポート情報、渡航日、支払いを入力すると、承認されたe-VisaがPDFとしてメールで届きます。ほとんどのシングルエントリー観光e-Visaは国籍に応じて最長30日または90日の滞在を認め、発行日から180日間有効です。",
+              "重要な注意点が二つ。第一に、<strong>公式政府サイトのevisa.gov.trのみを利用してください</strong> — 同じ書類に対して高額な手数料を請求するそっくりの第三者サイトが数多くあります。第二に、渡航の少なくとも数日前に申請し、メールに加えて印刷したものを携帯してください。承認は通常即時ですが保証はされないので、空港任せにしないでください。"
+            ]
+          },
+          {
+            "heading": "パスポートの有効期間と入国規則",
+            "paragraphs": [
+              "旅行者が最も頻繁につまずく規則が<strong>パスポートの有効期間</strong>です。トルコは一般に、パスポートが<strong>入国日から少なくとも150日（約5か月）以上有効</strong>で、スタンプ用の空白ページが最低1ページあることを求めます。パスポートが期限切れ間近なら、渡航前に余裕をもって更新してください — 国境の係官はこれを実際に適用します。",
+              "入国審査では、次の渡航や帰国の予定、滞在先を尋ねられることがあるので、復路の航空券と最初のホテル予約を手元に用意しておきましょう。入国は通常、迅速で友好的です。出国時に提示を求められることがあるため、e-Visaや入国スタンプは大切に保管してください。"
+            ]
+          },
+          {
+            "heading": "空港で、そして到着後に",
+            "paragraphs": [
+              "トルコの主要な玄関口 — イスタンブール空港（IST）、アジア側のサビハ・ギョクチェン空港（SAW）、アンタルヤ・イズミル・ボドルム・ダラマンの沿岸空港 — は近代的で、国際線の到着に慣れています。e-Visaまたはビザ免除入国の案内に従い、パスポートと印刷したe-Visaを用意すれば、大半の観光客はスタンプを押されてスムーズに通過できます。",
+              "通過後は、公式の空港タクシー、Havaist／Havabusの空港シャトル、地下鉄で市内へ入れます。タクシー料金は事前に合意するかメーター使用を求め、深夜到着なら事前予約の送迎を検討しましょう。ツアーで旅を始めるなら、地元ガイドが出迎えて、時差ぼけの初日を和らげてくれます。"
+            ]
+          },
+          {
+            "heading": "その他の実用的な入国のヒント",
+            "paragraphs": [
+              "<strong>海外旅行保険</strong>はほとんどの観光客に正式に義務づけられてはいませんが、強く推奨されます。特に医療や、気球やボートツアーなどのアクティビティを含む補償を。証券のデジタルと紙のコピーを、パスポートやe-Visaと一緒に保管しておきましょう。",
+              "トルコにはほとんどの旅行者に対する一般的なワクチン接種の入国要件はありませんが、出発前にご自身の政府の最新の渡航健康情報を確認してください。そしてビザ規則が滞在可能期間を定めていることを忘れずに — 超過滞在は罰金と入国禁止につながるので、許可された日数を控え、超えないようにしましょう。迷ったときは、公式e-Visaサイトが常に最終的な拠りどころです。"
+            ]
+          }
+        ],
+        "faqHeading": "よくある質問",
+        "faqs": [
+          {
+            "q": "トルコを訪れるのにビザは必要ですか？",
+            "a": "国籍によります。EUや英国の市民の多くを含む多くの旅行者は観光でビザなし入国でき、その他（米国・カナダ・オーストラリアのパスポート保持者など）は素早く取れるオンラインe-Visaが必要です。予約前に必ず公式のevisa.gov.trでご自身のパスポートを確認してください。"
+          },
+          {
+            "q": "トルコのe-Visaはどう取得しますか？",
+            "a": "公式政府サイトのevisa.gov.trで申請します。パスポート情報、日付、支払いを入力すると、承認されたe-VisaがPDFとしてメールで、通常は数分以内に届きます。高額な手数料を請求する第三者サイトは避け、携帯用にコピーを印刷しておきましょう。"
+          },
+          {
+            "q": "観光客としてトルコにどのくらい滞在できますか？",
+            "a": "ほとんどの観光客は180日間のうち最長90日滞在できますが、正確な上限は国籍とビザの種類によります。超過滞在は罰金や入国禁止の可能性を招くので、許可された期間を確認し、超えないようにしましょう。"
+          },
+          {
+            "q": "トルコに入国するにはパスポートが何か月有効である必要がありますか？",
+            "a": "トルコは一般に、入国日から少なくとも150日（約5か月）以上有効なパスポートと、スタンプ用の空白ページを求めます。期限切れ間近なら渡航前に更新してください。この規則は国境で適用されます。"
+          },
+          {
+            "q": "トルコのe-Visaは到着ビザと同じですか？",
+            "a": "いいえ。e-Visaは渡航前にオンラインで取得するもので、ビザが必要な国籍の標準ルートです。トルコは到着ビザをほぼ廃止しているので、空港での取得を当てにせず、事前にe-Visaを手配してください。"
+          }
+        ],
+        "relatedHeading": "トルコ旅行を計画する",
+        "ctaTitle": "トルコを探索する準備はできましたか？",
+        "ctaSub": "入国の手配が済んだら、公認の地元ガイドと共に毎日を最大限に。VibeGuideでトルコ各地の認証済みガイドを見つけましょう。"
+      },
+      "ko": {
+        "title": "터키 비자 및 입국 요건: 간단 가이드",
+        "metaTitle": "터키 비자 및 입국 요건 — 간단한 2026 가이드",
+        "metaDescription": "터키에 비자가 필요할까요? 터키 e-Visa, 면제 대상, 여권 유효기간 규정, 출발 전 공항에서 준비할 것을 명확히 정리한 가이드.",
+        "excerpt": "대부분의 방문객은 무비자로 가거나 빠른 온라인 e-Visa로 입국합니다. 누구에게 무엇이 필요한지, e-Visa 절차, 공항에서 사람들이 걸리는 여권 규정을 알려드립니다.",
+        "intro": [
+          "터키는 주요 여행지 중에서도 입국이 수월한 편이지만, 규정은 전적으로 국적에 따라 달라집니다 — 어떤 여행자는 완전히 무비자로 도착하고, 다른 이들은 빠른 온라인 <strong>e-Visa</strong>가 필요하며, 소수는 대사관에서 신청해야 합니다. 출발 전에 제대로 해두면 공항에서의 긴장을 피할 수 있습니다.",
+          "이 가이드는 주요 입국 경로를 쉬운 말로 설명합니다: 누가 비자 면제인지, e-Visa가 어떻게 작동하는지, 사람들이 걸려 넘어지는 여권 유효기간 규정, 그리고 도착 시 준비할 것. <strong>요건은 바뀔 수 있으니, 예약 전에 반드시 터키 정부 공식 e-Visa 사이트에서 본인 여권의 현행 규정을 확인하세요</strong>."
+        ],
+        "sections": [
+          {
+            "heading": "터키에 비자가 필요한가요?",
+            "paragraphs": [
+              "국적에 따라 다릅니다. 많은 나라 — 대부분의 EU, 영국, 그 외 여러 나라 포함 — 국민은 정해진 일수 동안(흔히 180일 중 90일) 관광 목적으로 <strong>무비자</strong> 입국이 가능합니다. 미국, 캐나다, 호주 등 일부 국가의 여행자는 대개 <strong>e-Visa</strong>가 필요하며, 온라인에서 빠르고 저렴하게 발급받을 수 있습니다.",
+              "더 적은 수의 국적은 터키 대사관이나 영사관을 통해 사전에 비자를 신청해야 합니다. 목록은 바뀌므로 본인의 구분을 확실히 아는 유일한 방법은 출발 전에 본인 여권으로 <strong>공식 e-Visa 웹사이트(evisa.gov.tr)</strong>를 확인하는 것입니다. 오래된 포럼 게시물이나 제3자 사이트에 의존하지 마세요."
+            ]
+          },
+          {
+            "heading": "터키 e-Visa는 어떻게 작동하나요",
+            "paragraphs": [
+              "e-Visa가 필요하다면 절차는 간단하며 전부 온라인에서, 보통 몇 분 안에 끝납니다. 공식 사이트에서 여권 정보, 여행 날짜, 결제를 입력하면 승인된 e-Visa가 PDF로 이메일로 도착합니다. 대부분의 단수 관광 e-Visa는 국적에 따라 최대 30일 또는 90일 체류를 허용하며, 발급일로부터 180일간 유효합니다.",
+              "중요한 두 가지 경고. 첫째, <strong>공식 정부 사이트 evisa.gov.tr만 사용하세요</strong> — 같은 서류에 부풀려진 수수료를 청구하는 유사 제3자 사이트가 많습니다. 둘째, 여행 최소 며칠 전에 신청하고, 이메일과 함께 인쇄본을 지참하세요. 승인은 대개 즉시지만 보장되지는 않으니 공항에 맡기지 마세요."
+            ]
+          },
+          {
+            "heading": "여권 유효기간과 입국 규정",
+            "paragraphs": [
+              "여행자가 가장 자주 걸리는 규정은 <strong>여권 유효기간</strong>입니다. 터키는 일반적으로 여권이 <strong>입국일로부터 최소 150일(약 5개월) 이상 유효</strong>하고, 도장 찍을 빈 페이지가 최소 한 장 있을 것을 요구합니다. 여권 만료가 임박했다면 여행 전에 넉넉히 갱신하세요 — 국경 심사관이 실제로 이를 시행합니다.",
+              "여권 심사에서 이후 여정이나 귀국편, 숙소를 물을 수 있으니 귀국 항공권과 첫 호텔 예약을 손에 두세요. 입국은 보통 빠르고 친절합니다. 출국 시 제시를 요구받을 수 있으니 e-Visa나 입국 도장을 안전하게 보관하세요."
+            ]
+          },
+          {
+            "heading": "공항에서, 그리고 도착 후",
+            "paragraphs": [
+              "터키의 주요 관문 — 이스탄불 공항(IST), 아시아 지역의 사비하 괵첸(SAW), 안탈리아·이즈미르·보드룸·달라만의 해안 공항 — 은 현대적이며 국제선 도착에 익숙합니다. e-Visa 또는 무비자 입국 표지를 따라가고, 여권과 인쇄한 e-Visa를 준비하면 대부분의 관광객은 도장 찍고 무난히 통과합니다.",
+              "통과 후에는 공식 공항 택시, Havaist/Havabus 공항 셔틀, 지하철로 시내에 들어갑니다. 택시 요금은 미리 합의하거나 미터기 사용을 요구하고, 늦은 도착이라면 사전 예약 픽업을 고려하세요. 투어로 여행을 시작한다면 현지 가이드가 마중 나와 시차에 지친 첫날을 부드럽게 해줄 수 있습니다."
+            ]
+          },
+          {
+            "heading": "그 밖의 실용적인 입국 팁",
+            "paragraphs": [
+              "<strong>여행자 보험</strong>은 대부분의 관광객에게 공식적으로 필수는 아니지만 강력히 권장되며, 특히 의료와 열기구나 보트 투어 같은 활동을 포함하는 보장이 좋습니다. 보험 증서의 디지털본과 종이본을 여권, e-Visa와 함께 보관하세요.",
+              "터키는 대부분의 여행자에게 일반적인 예방접종 입국 요건은 없지만, 출발 전에 본인 정부의 현행 여행 건강 권고를 확인하세요. 그리고 비자 규정이 체류 가능 기간을 정한다는 점을 기억하세요 — 초과 체류는 벌금과 입국 금지로 이어지니 허용 일수를 적어두고 넘기지 마세요. 애매할 때는 언제나 공식 e-Visa 사이트가 최종 기준입니다."
+            ]
+          }
+        ],
+        "faqHeading": "자주 묻는 질문",
+        "faqs": [
+          {
+            "q": "터키를 방문하려면 비자가 필요한가요?",
+            "a": "국적에 따라 다릅니다. 대부분의 EU·영국 시민을 포함한 많은 여행자는 관광으로 무비자 입국이 가능하고, 그 외(미국·캐나다·호주 여권 소지자 등)는 빠른 온라인 e-Visa가 필요합니다. 예약 전에 항상 공식 evisa.gov.tr에서 본인 여권을 확인하세요."
+          },
+          {
+            "q": "터키 e-Visa는 어떻게 받나요?",
+            "a": "공식 정부 사이트 evisa.gov.tr에서 신청하세요. 여권 정보, 날짜, 결제를 입력하면 승인된 e-Visa가 PDF로 이메일에, 보통 몇 분 안에 도착합니다. 부풀려진 수수료를 청구하는 제3자 사이트는 피하고, 지참용 사본을 인쇄하세요."
+          },
+          {
+            "q": "관광객으로 터키에 얼마나 머물 수 있나요?",
+            "a": "대부분의 관광객은 180일 중 최대 90일 머물 수 있지만, 정확한 한도는 국적과 비자 종류에 따라 다릅니다. 초과 체류는 벌금과 입국 금지 가능성을 초래하니 허용 기간을 확인하고 넘기지 마세요."
+          },
+          {
+            "q": "터키에 입국하려면 여권이 몇 개월 유효해야 하나요?",
+            "a": "터키는 일반적으로 입국일로부터 최소 150일(약 5개월) 이상 유효한 여권과 도장용 빈 페이지를 요구합니다. 여권 만료가 임박했다면 여행 전에 갱신하세요. 이 규정은 국경에서 시행됩니다."
+          },
+          {
+            "q": "터키 e-Visa는 도착 비자와 같은 건가요?",
+            "a": "아닙니다. e-Visa는 여행 전 온라인으로 받는 것으로, 비자가 필요한 국적의 표준 경로입니다. 터키는 도착 비자를 대체로 폐지했으니 공항에서 받기를 기대하지 말고 미리 e-Visa를 준비하세요."
+          }
+        ],
+        "relatedHeading": "터키 여행 계획하기",
+        "ctaTitle": "터키를 탐험할 준비가 되셨나요?",
+        "ctaSub": "입국 준비가 끝나면 면허 있는 현지 가이드와 하루하루를 최대한 누리세요. VibeGuide에서 터키 전역의 인증된 가이드를 만나보세요."
+      }
+    }
+  },
+  {
+    "slug": "turkish-food-guide-what-to-eat",
+    "category": "guides",
+    "heroImage": "https://images.unsplash.com/photo-1561651823-34feb02250e4?q=80&w=1600",
+    "publishDate": "2026-08-04",
+    "relatedCityGuides": [
+      "istanbul-tour-guide",
+      "izmir-tour-guide"
+    ],
+    "relatedAttractions": [
+      "spice-bazaar",
+      "grand-bazaar"
+    ],
+    "i18n": {
+      "en": {
+        "title": "Turkish Food Guide: What to Eat in Turkey",
+        "metaTitle": "Turkish Food Guide — What to Eat & Drink in Turkey",
+        "metaDescription": "A local guide to Turkish food: the must-try dishes, street food, breakfast, sweets and drinks — from kebabs and meze to baklava, simit and Turkish tea and coffee.",
+        "excerpt": "Turkish cuisine is one of the world's great food traditions. Here are the dishes, street snacks and drinks to seek out — and how to eat like a local, not a tourist.",
+        "intro": [
+          "Turkish cuisine is one of the world's great food cultures — a crossroads of Mediterranean, Middle Eastern, Central Asian and Balkan flavours built on superb produce, grilled meats, fresh vegetables and an endless array of meze. Eating well is one of the biggest joys of any trip to Turkey, and it's easy on any budget.",
+          "This guide runs through the <strong>dishes and drinks to seek out</strong>, from a proper Turkish breakfast to street-food snacks, grilled kebabs, seafood on the coast and the sweets and hot drinks that round off every meal. Skip the tourist-trap restaurants near the big sights — the best food is where the locals eat, and a guide can take you straight to it."
+        ],
+        "sections": [
+          {
+            "heading": "Turkish breakfast: a feast to start the day",
+            "paragraphs": [
+              "A traditional <strong>Turkish breakfast (kahvaltı)</strong> is a spread, not a plate: white cheese and aged kaşar, olives, tomatoes and cucumbers, honey with clotted cream (bal-kaymak), jams, boiled eggs, and warm bread, all grazed slowly over endless glasses of tea. On weekends, Turks linger over it for hours.",
+              "Look out for <strong>menemen</strong>, soft eggs scrambled with tomatoes, peppers and spices, and <strong>simit</strong>, the sesame-crusted bread ring sold from street carts everywhere. A leisurely breakfast is a genuine highlight of Turkish food culture, and many places serve a serpme kahvaltı — an all-you-can-eat spread — perfect for sharing."
+            ]
+          },
+          {
+            "heading": "Kebabs, meze and the main event",
+            "paragraphs": [
+              "Turkey's grilled meats go far beyond the familiar döner. Seek out <strong>Adana and Urfa kebab</strong> (spicy and mild minced-lamb skewers), <strong>şiş</strong> (cubed grilled meat), <strong>İskender</strong> (sliced döner over bread with tomato sauce and yoghurt) and the slow-cooked stews of the southeast. Each region has its own speciality worth trying.",
+              "Just as important is <strong>meze</strong> — the parade of small cold and hot starters that opens a proper meal: smoky aubergine, stuffed vine leaves, yoghurt dips, sea beans, spicy ezme and more. Order a spread of meze to share, and don't miss <strong>pide</strong> (boat-shaped Turkish flatbread) and <strong>lahmacun</strong>, the thin, crispy «Turkish pizza» topped with spiced mince."
+            ]
+          },
+          {
+            "heading": "Street food and coastal seafood",
+            "paragraphs": [
+              "Turkey's street food is superb and cheap. In Istanbul, try a <strong>balık ekmek</strong> (grilled fish sandwich) by the water at Eminönü, roasted chestnuts and corn from carts, <strong>kokoreç</strong> for the adventurous, and <strong>midye dolma</strong> (stuffed mussels) with a squeeze of lemon. Gözleme — thin stuffed flatbread cooked on a griddle — is a perfect quick lunch.",
+              "On the <strong>Aegean and Mediterranean coasts</strong> — İzmir, Bodrum, Kuşadası, Antalya — the emphasis shifts to fresh seafood and olive-oil vegetable dishes. A meal of grilled fish, meze and a glass of rakı, the anise spirit that turns milky with water, by the harbour at sunset is a quintessential Turkish coastal experience."
+            ]
+          },
+          {
+            "heading": "Sweets, tea and Turkish coffee",
+            "paragraphs": [
+              "Save room for dessert. <strong>Baklava</strong> — layered filo with pistachios or walnuts and syrup — is the star, best from a specialist shop, especially those from Gaziantep. Try also <strong>künefe</strong> (warm shredded pastry with melted cheese and syrup), <strong>lokum</strong> (Turkish delight) and milk puddings like sütlaç.",
+              "Drinks are a ritual. <strong>Çay (tea)</strong> is served all day in tulip-shaped glasses and offered everywhere as hospitality. <strong>Turkish coffee</strong>, thick and unfiltered, is brewed slowly and sipped with a glass of water and often a piece of lokum — and by tradition, the grounds left in the cup can be read for your fortune. Refusing a glass of tea from a shopkeeper is almost impossible, and that's part of the charm."
+            ]
+          },
+          {
+            "heading": "How to eat like a local",
+            "paragraphs": [
+              "The single best tip: <strong>eat where the locals eat</strong>. Avoid restaurants with pushy touts and multi-language picture menus right next to the major monuments — they trade on location, not quality. Walk a few streets back, look for places busy with Turkish families, and you'll eat better for less.",
+              "A <strong>lokanta</strong> (a casual eatery with trays of home-style dishes you point at) is a great-value lunch. Try the local speciality of each region rather than the same döner everywhere. And if you want to skip the guesswork, a food-focused walk with a local guide is one of the most rewarding ways to understand a Turkish city — following your nose through markets, bakeries and hole-in-the-wall spots you'd never find alone."
+            ]
+          }
+        ],
+        "faqHeading": "Frequently asked questions",
+        "faqs": [
+          {
+            "q": "What food is Turkey most famous for?",
+            "a": "Turkey is famous for kebabs (Adana, Urfa, İskender and döner), meze starters, pide and lahmacun flatbreads, and sweets like baklava and Turkish delight. A lavish multi-dish breakfast and rituals of tea and Turkish coffee are equally central to the food culture."
+          },
+          {
+            "q": "What should I eat for breakfast in Turkey?",
+            "a": "A traditional Turkish breakfast is a shared spread of cheeses, olives, tomatoes, cucumbers, honey with clotted cream, jams, eggs and warm bread, with endless tea. Look for menemen (eggs with tomato and peppers) and simit, the sesame bread ring sold on the street."
+          },
+          {
+            "q": "Is Turkish food good for vegetarians?",
+            "a": "Yes. While Turkey is known for grilled meats, its meze and vegetable dishes are excellent for vegetarians — stuffed vine leaves, aubergine dishes, beans in olive oil, lentil soup, salads and pide with cheese. Just confirm that broths and fillings are meat-free when ordering."
+          },
+          {
+            "q": "How do I avoid tourist-trap restaurants in Turkey?",
+            "a": "Avoid places with touts outside and laminated picture menus right beside the big sights. Walk a few streets away, choose spots busy with locals, and try a lokanta serving home-style trays. A local food guide is the surest way to find authentic, good-value places."
+          },
+          {
+            "q": "What is the national drink of Turkey?",
+            "a": "Tea (çay), served in small tulip-shaped glasses, is the everyday national drink and a gesture of hospitality offered everywhere. Turkish coffee, thick and slowly brewed, is the traditional coffee, while rakı, an anise spirit, is the classic drink with meze and seafood."
+          }
+        ],
+        "relatedHeading": "Taste Turkey with a local",
+        "ctaTitle": "Discover Turkish food with a local guide",
+        "ctaSub": "The best meals are where the locals eat. Book a verified guide on VibeGuide and follow your nose through Turkey's markets and backstreets."
+      },
+      "de": {
+        "title": "Leitfaden zur türkischen Küche: Was man in der Türkei essen sollte",
+        "metaTitle": "Türkische Küche — Was man in der Türkei essen & trinken sollte",
+        "metaDescription": "Ein lokaler Leitfaden zur türkischen Küche: die Gerichte zum Probieren, Streetfood, Frühstück, Süßes und Getränke — von Kebab und Meze bis Baklava, Simit, Tee und Kaffee.",
+        "excerpt": "Die türkische Küche ist eine der großen Esskulturen der Welt. Hier sind die Gerichte, Snacks und Getränke, nach denen Sie suchen sollten — und wie man wie ein Einheimischer isst, nicht wie ein Tourist.",
+        "intro": [
+          "Die türkische Küche ist eine der großen Esskulturen der Welt — ein Kreuzungspunkt mediterraner, nahöstlicher, zentralasiatischer und balkanischer Aromen, aufgebaut auf hervorragenden Produkten, gegrilltem Fleisch, frischem Gemüse und einer endlosen Vielfalt an Meze. Gut zu essen ist eine der größten Freuden jeder Türkei-Reise, und das mit jedem Budget.",
+          "Dieser Leitfaden führt durch die <strong>Gerichte und Getränke, nach denen Sie suchen sollten</strong>, von einem echten türkischen Frühstück über Streetfood-Snacks, gegrillten Kebab und Meeresfrüchte an der Küste bis zu den Süßspeisen und heißen Getränken, die jede Mahlzeit abrunden. Meiden Sie die Touristenfallen-Restaurants nahe den großen Sehenswürdigkeiten — das beste Essen gibt es dort, wo die Einheimischen essen, und ein Guide kann Sie direkt dorthin bringen."
+        ],
+        "sections": [
+          {
+            "heading": "Türkisches Frühstück: ein Festmahl zum Tagesstart",
+            "paragraphs": [
+              "Ein traditionelles <strong>türkisches Frühstück (kahvaltı)</strong> ist ein Gedeck, kein Teller: Weißkäse und gereifter Kaşar, Oliven, Tomaten und Gurken, Honig mit Sahne (bal-kaymak), Marmeladen, gekochte Eier und warmes Brot, alles langsam bei endlosen Gläsern Tee genossen. Am Wochenende zelebrieren es die Türken stundenlang.",
+              "Halten Sie Ausschau nach <strong>menemen</strong>, weichen Rühreiern mit Tomaten, Paprika und Gewürzen, und <strong>simit</strong>, dem mit Sesam bestreuten Brotring, der überall von Straßenwagen verkauft wird. Ein gemächliches Frühstück ist ein echtes Highlight der türkischen Esskultur, und viele Orte servieren ein serpme kahvaltı — ein All-you-can-eat-Gedeck — perfekt zum Teilen."
+            ]
+          },
+          {
+            "heading": "Kebab, Meze und der Hauptgang",
+            "paragraphs": [
+              "Die gegrillten Fleischgerichte der Türkei gehen weit über den bekannten Döner hinaus. Suchen Sie nach <strong>Adana- und Urfa-Kebab</strong> (scharfe und milde Spieße aus Lammhackfleisch), <strong>şiş</strong> (gegrillte Fleischwürfel), <strong>İskender</strong> (Döner-Scheiben auf Brot mit Tomatensauce und Joghurt) und den langsam geschmorten Eintöpfen des Südostens. Jede Region hat ihre eigene Spezialität, die einen Versuch wert ist.",
+              "Ebenso wichtig ist <strong>Meze</strong> — die Parade kleiner kalter und warmer Vorspeisen, die eine richtige Mahlzeit eröffnet: rauchige Auberginen, gefüllte Weinblätter, Joghurt-Dips, Meerbohnen, scharfe Ezme und mehr. Bestellen Sie eine Auswahl an Meze zum Teilen und verpassen Sie nicht <strong>pide</strong> (kahnförmiges türkisches Fladenbrot) und <strong>lahmacun</strong>, die dünne, knusprige «türkische Pizza» mit gewürztem Hackfleisch."
+            ]
+          },
+          {
+            "heading": "Streetfood und Meeresfrüchte an der Küste",
+            "paragraphs": [
+              "Das Streetfood der Türkei ist hervorragend und günstig. In Istanbul probieren Sie ein <strong>balık ekmek</strong> (gegrilltes Fischsandwich) am Wasser in Eminönü, geröstete Kastanien und Mais von Wagen, <strong>kokoreç</strong> für Abenteuerlustige und <strong>midye dolma</strong> (gefüllte Miesmuscheln) mit einem Spritzer Zitrone. Gözleme — dünnes gefülltes Fladenbrot vom Grillblech — ist ein perfektes schnelles Mittagessen.",
+              "An der <strong>Ägäis- und Mittelmeerküste</strong> — İzmir, Bodrum, Kuşadası, Antalya — verlagert sich der Schwerpunkt auf frische Meeresfrüchte und Gemüsegerichte in Olivenöl. Ein Mahl aus gegrilltem Fisch, Meze und einem Glas Rakı, dem Anisschnaps, der mit Wasser milchig wird, am Hafen bei Sonnenuntergang ist ein Inbegriff des türkischen Küstenerlebnisses."
+            ]
+          },
+          {
+            "heading": "Süßes, Tee und türkischer Kaffee",
+            "paragraphs": [
+              "Lassen Sie Platz für den Nachtisch. <strong>Baklava</strong> — geschichtetes Filoteig mit Pistazien oder Walnüssen und Sirup — ist der Star, am besten aus einem Spezialgeschäft, besonders die aus Gaziantep. Probieren Sie auch <strong>künefe</strong> (warmes geraspeltes Teiggebäck mit geschmolzenem Käse und Sirup), <strong>lokum</strong> (türkischer Honig) und Milchpuddings wie sütlaç.",
+              "Getränke sind ein Ritual. <strong>Çay (Tee)</strong> wird den ganzen Tag in tulpenförmigen Gläsern serviert und überall als Zeichen der Gastfreundschaft angeboten. <strong>Türkischer Kaffee</strong>, dickflüssig und ungefiltert, wird langsam gebrüht und mit einem Glas Wasser und oft einem Stück Lokum getrunken — und der Tradition nach lässt sich der im Tässchen verbleibende Satz für Ihre Zukunft deuten. Ein Glas Tee vom Ladenbesitzer abzulehnen, ist fast unmöglich, und das ist Teil des Charmes."
+            ]
+          },
+          {
+            "heading": "Wie man wie ein Einheimischer isst",
+            "paragraphs": [
+              "Der beste Tipp überhaupt: <strong>Essen Sie dort, wo die Einheimischen essen</strong>. Meiden Sie Restaurants mit aufdringlichen Anwerbern und mehrsprachigen Bildmenüs direkt neben den großen Monumenten — sie leben von der Lage, nicht von der Qualität. Gehen Sie ein paar Straßen weiter, suchen Sie Orte, die von türkischen Familien gefüllt sind, und Sie essen besser für weniger.",
+              "Eine <strong>lokanta</strong> (ein zwangloses Lokal mit Tabletts voller hausgemachter Gerichte, auf die Sie zeigen) ist ein Mittagessen mit tollem Preis-Leistungs-Verhältnis. Probieren Sie die lokale Spezialität jeder Region statt überall denselben Döner. Und wenn Sie das Rätselraten überspringen möchten, ist ein kulinarischer Spaziergang mit einem lokalen Guide einer der lohnendsten Wege, eine türkische Stadt zu verstehen — der Nase nach durch Märkte, Bäckereien und winzige Läden, die Sie allein nie finden würden."
+            ]
+          }
+        ],
+        "faqHeading": "Häufig gestellte Fragen",
+        "faqs": [
+          {
+            "q": "Wofür ist die Türkei kulinarisch am bekanntesten?",
+            "a": "Die Türkei ist bekannt für Kebab (Adana, Urfa, İskender und Döner), Meze-Vorspeisen, Fladenbrote wie Pide und Lahmacun sowie Süßes wie Baklava und türkischen Honig. Ein üppiges Frühstück aus vielen Gerichten sowie die Rituale von Tee und türkischem Kaffee sind ebenso zentral für die Esskultur."
+          },
+          {
+            "q": "Was sollte ich in der Türkei zum Frühstück essen?",
+            "a": "Ein traditionelles türkisches Frühstück ist ein geteiltes Gedeck aus Käsesorten, Oliven, Tomaten, Gurken, Honig mit Sahne, Marmeladen, Eiern und warmem Brot, mit endlosem Tee. Halten Sie Ausschau nach menemen (Eier mit Tomaten und Paprika) und simit, dem Sesam-Brotring, der auf der Straße verkauft wird."
+          },
+          {
+            "q": "Ist die türkische Küche gut für Vegetarier?",
+            "a": "Ja. Zwar ist die Türkei für gegrilltes Fleisch bekannt, doch ihre Meze und Gemüsegerichte sind hervorragend für Vegetarier — gefüllte Weinblätter, Auberginengerichte, Bohnen in Olivenöl, Linsensuppe, Salate und Pide mit Käse. Bestätigen Sie beim Bestellen nur, dass Brühen und Füllungen fleischfrei sind."
+          },
+          {
+            "q": "Wie vermeide ich Touristenfallen-Restaurants in der Türkei?",
+            "a": "Meiden Sie Orte mit Anwerbern draußen und laminierten Bildmenüs direkt neben den großen Sehenswürdigkeiten. Gehen Sie ein paar Straßen weiter, wählen Sie Lokale voller Einheimischer und probieren Sie eine Lokanta mit hausgemachten Tabletts. Ein lokaler Food-Guide ist der sicherste Weg, authentische Orte mit gutem Preis-Leistungs-Verhältnis zu finden."
+          },
+          {
+            "q": "Was ist das Nationalgetränk der Türkei?",
+            "a": "Tee (çay), in kleinen tulpenförmigen Gläsern serviert, ist das alltägliche Nationalgetränk und eine überall angebotene Geste der Gastfreundschaft. Türkischer Kaffee, dickflüssig und langsam gebrüht, ist der traditionelle Kaffee, während Rakı, ein Anisschnaps, das klassische Getränk zu Meze und Meeresfrüchten ist."
+          }
+        ],
+        "relatedHeading": "Schmecken Sie die Türkei mit einem Einheimischen",
+        "ctaTitle": "Entdecken Sie die türkische Küche mit einem lokalen Guide",
+        "ctaSub": "Die besten Mahlzeiten gibt es dort, wo die Einheimischen essen. Buchen Sie einen verifizierten Guide auf VibeGuide und folgen Sie Ihrer Nase durch die Märkte und Gassen der Türkei."
+      },
+      "es": {
+        "title": "Guía de la comida turca: qué comer en Turquía",
+        "metaTitle": "Guía de comida turca — Qué comer y beber en Turquía",
+        "metaDescription": "Una guía local de la comida turca: los platos imprescindibles, la comida callejera, el desayuno, los dulces y las bebidas, del kebab y el meze al baklava, el simit, el té y el café.",
+        "excerpt": "La cocina turca es una de las grandes tradiciones gastronómicas del mundo. Aquí tienes los platos, tentempiés callejeros y bebidas que buscar, y cómo comer como un local, no como un turista.",
+        "intro": [
+          "La cocina turca es una de las grandes culturas gastronómicas del mundo: un cruce de sabores mediterráneos, de Oriente Medio, de Asia Central y de los Balcanes construido sobre productos excelentes, carnes a la brasa, verduras frescas y un sinfín de mezes. Comer bien es una de las mayores alegrías de cualquier viaje a Turquía, y es fácil con cualquier presupuesto.",
+          "Esta guía repasa los <strong>platos y bebidas que buscar</strong>, desde un buen desayuno turco hasta los tentempiés callejeros, los kebabs a la brasa, el pescado y marisco de la costa y los dulces y bebidas calientes que rematan cada comida. Evita los restaurantes trampa para turistas junto a los grandes monumentos: la mejor comida está donde comen los locales, y un guía puede llevarte directo allí."
+        ],
+        "sections": [
+          {
+            "heading": "Desayuno turco: un festín para empezar el día",
+            "paragraphs": [
+              "Un <strong>desayuno turco tradicional (kahvaltı)</strong> es un despliegue, no un plato: queso blanco y kaşar curado, aceitunas, tomates y pepinos, miel con nata cuajada (bal-kaymak), mermeladas, huevos cocidos y pan caliente, todo picoteado con calma entre vasos interminables de té. Los fines de semana, los turcos lo alargan durante horas.",
+              "Busca el <strong>menemen</strong>, huevos revueltos y jugosos con tomate, pimientos y especias, y el <strong>simit</strong>, el aro de pan cubierto de sésamo que se vende en carritos por todas partes. Un desayuno pausado es un auténtico placer de la cultura gastronómica turca, y muchos sitios sirven un serpme kahvaltı —un despliegue a discreción— perfecto para compartir."
+            ]
+          },
+          {
+            "heading": "Kebabs, meze y el plato principal",
+            "paragraphs": [
+              "Las carnes a la brasa de Turquía van mucho más allá del conocido döner. Busca el <strong>kebab de Adana y Urfa</strong> (brochetas de cordero picado, picantes y suaves), el <strong>şiş</strong> (dados de carne a la brasa), el <strong>İskender</strong> (döner en lonchas sobre pan con salsa de tomate y yogur) y los guisos a fuego lento del sureste. Cada región tiene su propia especialidad que merece la pena probar.",
+              "Igual de importante es el <strong>meze</strong>: el desfile de pequeños entrantes fríos y calientes con que arranca una buena comida —berenjena ahumada, hojas de parra rellenas, salsas de yogur, hinojo marino, ezme picante y más—. Pide una selección de mezes para compartir, y no te pierdas la <strong>pide</strong> (pan plano turco en forma de barca) ni el <strong>lahmacun</strong>, la fina y crujiente «pizza turca» con carne picada especiada."
+            ]
+          },
+          {
+            "heading": "Comida callejera y marisco de la costa",
+            "paragraphs": [
+              "La comida callejera de Turquía es excelente y barata. En Estambul, prueba un <strong>balık ekmek</strong> (bocadillo de pescado a la brasa) junto al agua en Eminönü, castañas y maíz asados en carritos, <strong>kokoreç</strong> para los atrevidos y <strong>midye dolma</strong> (mejillones rellenos) con un chorrito de limón. El gözleme —fino pan plano relleno cocido en una plancha— es un almuerzo rápido perfecto.",
+              "En las <strong>costas del Egeo y el Mediterráneo</strong> —İzmir, Bodrum, Kuşadası, Antalya— el acento se desplaza al pescado fresco y a las verduras al aceite de oliva. Una comida de pescado a la brasa, meze y un vaso de rakı, el aguardiente de anís que se vuelve lechoso con agua, junto al puerto al atardecer es una experiencia costera turca por excelencia."
+            ]
+          },
+          {
+            "heading": "Dulces, té y café turco",
+            "paragraphs": [
+              "Deja hueco para el postre. El <strong>baklava</strong> —capas de masa filo con pistachos o nueces y almíbar— es la estrella, mejor de una tienda especializada, sobre todo los de Gaziantep. Prueba también el <strong>künefe</strong> (masa fina en hebras, caliente, con queso fundido y almíbar), el <strong>lokum</strong> (delicias turcas) y postres lácteos como el sütlaç.",
+              "Las bebidas son un ritual. El <strong>çay (té)</strong> se sirve todo el día en vasos con forma de tulipán y se ofrece por todas partes como hospitalidad. El <strong>café turco</strong>, espeso y sin filtrar, se prepara despacio y se saborea con un vaso de agua y a menudo un trozo de lokum; y, por tradición, los posos que quedan en la taza pueden leerse para adivinar tu suerte. Rechazar un vaso de té de un comerciante es casi imposible, y eso forma parte del encanto."
+            ]
+          },
+          {
+            "heading": "Cómo comer como un local",
+            "paragraphs": [
+              "El mejor consejo de todos: <strong>come donde comen los locales</strong>. Evita los restaurantes con captadores insistentes y cartas con fotos en varios idiomas justo al lado de los grandes monumentos: viven de la ubicación, no de la calidad. Camina unas calles hacia atrás, busca sitios llenos de familias turcas y comerás mejor por menos.",
+              "Una <strong>lokanta</strong> (una casa de comidas informal con bandejas de platos caseros que señalas) es un almuerzo con estupenda relación calidad-precio. Prueba la especialidad local de cada región en lugar del mismo döner en todas partes. Y si quieres saltarte las conjeturas, un paseo gastronómico con un guía local es una de las formas más gratificantes de entender una ciudad turca: siguiendo tu olfato por mercados, panaderías y locales diminutos que nunca encontrarías solo."
+            ]
+          }
+        ],
+        "faqHeading": "Preguntas frecuentes",
+        "faqs": [
+          {
+            "q": "¿Por qué comida es más famosa Turquía?",
+            "a": "Turquía es famosa por los kebabs (Adana, Urfa, İskender y döner), los entrantes meze, los panes planos pide y lahmacun, y los dulces como el baklava y las delicias turcas. Un opulento desayuno de muchos platos y los rituales del té y el café turco son igual de centrales en su cultura gastronómica."
+          },
+          {
+            "q": "¿Qué debo desayunar en Turquía?",
+            "a": "Un desayuno turco tradicional es un despliegue compartido de quesos, aceitunas, tomates, pepinos, miel con nata cuajada, mermeladas, huevos y pan caliente, con té sin fin. Busca el menemen (huevos con tomate y pimientos) y el simit, el aro de pan con sésamo que se vende en la calle."
+          },
+          {
+            "q": "¿La comida turca es buena para vegetarianos?",
+            "a": "Sí. Aunque Turquía es conocida por sus carnes a la brasa, sus mezes y platos de verdura son excelentes para vegetarianos: hojas de parra rellenas, platos de berenjena, alubias al aceite de oliva, sopa de lentejas, ensaladas y pide con queso. Solo confirma al pedir que los caldos y rellenos no lleven carne."
+          },
+          {
+            "q": "¿Cómo evito los restaurantes trampa para turistas en Turquía?",
+            "a": "Evita los sitios con captadores en la puerta y cartas plastificadas con fotos justo al lado de los grandes monumentos. Camina unas calles y elige locales llenos de gente local, y prueba una lokanta con bandejas caseras. Un guía gastronómico local es la forma más segura de encontrar sitios auténticos y con buena relación calidad-precio."
+          },
+          {
+            "q": "¿Cuál es la bebida nacional de Turquía?",
+            "a": "El té (çay), servido en pequeños vasos con forma de tulipán, es la bebida nacional del día a día y un gesto de hospitalidad que se ofrece por todas partes. El café turco, espeso y de preparación lenta, es el café tradicional, mientras que el rakı, un aguardiente de anís, es la bebida clásica con meze y marisco."
+          }
+        ],
+        "relatedHeading": "Saborea Turquía con un local",
+        "ctaTitle": "Descubre la comida turca con un guía local",
+        "ctaSub": "Las mejores comidas están donde comen los locales. Reserva un guía verificado en VibeGuide y sigue tu olfato por los mercados y callejuelas de Turquía."
+      },
+      "fr": {
+        "title": "Guide de la cuisine turque : que manger en Turquie",
+        "metaTitle": "Cuisine turque — Que manger et boire en Turquie",
+        "metaDescription": "Un guide local de la cuisine turque : les plats incontournables, la street food, le petit-déjeuner, les douceurs et les boissons — du kebab et des mezze au baklava, simit, thé et café.",
+        "excerpt": "La cuisine turque est l'une des grandes traditions gastronomiques du monde. Voici les plats, en-cas de rue et boissons à chercher — et comment manger comme un local, pas comme un touriste.",
+        "intro": [
+          "La cuisine turque est l'une des grandes cultures gastronomiques du monde — un carrefour de saveurs méditerranéennes, moyen-orientales, d'Asie centrale et des Balkans, bâti sur des produits superbes, des viandes grillées, des légumes frais et une infinité de mezze. Bien manger est l'un des plus grands plaisirs de tout voyage en Turquie, et cela reste accessible à tous les budgets.",
+          "Ce guide passe en revue les <strong>plats et boissons à chercher</strong>, d'un vrai petit-déjeuner turc aux en-cas de rue, en passant par les kebabs grillés, les fruits de mer sur la côte et les douceurs et boissons chaudes qui closent chaque repas. Fuyez les restaurants pièges à touristes près des grands sites — la meilleure cuisine se trouve là où mangent les locaux, et un guide peut vous y mener directement."
+        ],
+        "sections": [
+          {
+            "heading": "Le petit-déjeuner turc : un festin pour commencer la journée",
+            "paragraphs": [
+              "Un <strong>petit-déjeuner turc traditionnel (kahvaltı)</strong> est un étalage, pas une assiette : fromage blanc et kaşar affiné, olives, tomates et concombres, miel à la crème caillée (bal-kaymak), confitures, œufs durs et pain chaud, le tout grignoté lentement au fil de verres de thé sans fin. Le week-end, les Turcs s'y attardent pendant des heures.",
+              "Guettez le <strong>menemen</strong>, des œufs brouillés moelleux aux tomates, poivrons et épices, et le <strong>simit</strong>, l'anneau de pain croûté de sésame vendu partout depuis des charrettes de rue. Un petit-déjeuner pris sans hâte est un vrai temps fort de la culture culinaire turque, et de nombreux endroits servent un serpme kahvaltı — un étalage à volonté — parfait à partager."
+            ]
+          },
+          {
+            "heading": "Kebabs, mezze et le plat principal",
+            "paragraphs": [
+              "Les viandes grillées de Turquie vont bien au-delà du fameux döner. Cherchez le <strong>kebab d'Adana et d'Urfa</strong> (brochettes d'agneau haché, épicées et douces), le <strong>şiş</strong> (viande grillée en dés), l'<strong>İskender</strong> (döner tranché sur du pain avec sauce tomate et yaourt) et les ragoûts mijotés du sud-est. Chaque région a sa spécialité, à goûter absolument.",
+              "Tout aussi essentiel est le <strong>mezze</strong> — le défilé de petites entrées froides et chaudes qui ouvre un vrai repas : aubergine fumée, feuilles de vigne farcies, sauces au yaourt, salicorne, ezme épicé et bien plus. Commandez un assortiment de mezze à partager, et ne manquez pas la <strong>pide</strong> (pain plat turc en forme de barque) ni le <strong>lahmacun</strong>, la fine et croustillante «pizza turque» garnie de viande hachée épicée."
+            ]
+          },
+          {
+            "heading": "Street food et fruits de mer du littoral",
+            "paragraphs": [
+              "La street food de Turquie est superbe et bon marché. À Istanbul, goûtez un <strong>balık ekmek</strong> (sandwich au poisson grillé) au bord de l'eau à Eminönü, des châtaignes et du maïs grillés vendus sur des charrettes, le <strong>kokoreç</strong> pour les aventureux, et le <strong>midye dolma</strong> (moules farcies) avec un filet de citron. Le gözleme — fine galette farcie cuite sur une plaque — est un déjeuner rapide parfait.",
+              "Sur les <strong>côtes de l'Égée et de la Méditerranée</strong> — İzmir, Bodrum, Kuşadası, Antalya — l'accent se déplace vers le poisson frais et les légumes à l'huile d'olive. Un repas de poisson grillé, de mezze et d'un verre de rakı, l'alcool anisé qui devient laiteux avec l'eau, au bord du port au coucher du soleil, est l'expérience côtière turque par excellence."
+            ]
+          },
+          {
+            "heading": "Douceurs, thé et café turc",
+            "paragraphs": [
+              "Gardez de la place pour le dessert. Le <strong>baklava</strong> — feuilles de filo superposées aux pistaches ou aux noix et au sirop — en est la vedette, meilleur chez un spécialiste, surtout ceux de Gaziantep. Goûtez aussi le <strong>künefe</strong> (pâtisserie chaude de cheveux d'ange au fromage fondu et au sirop), le <strong>lokum</strong> (loukoums) et les entremets au lait comme le sütlaç.",
+              "Les boissons sont un rituel. Le <strong>çay (thé)</strong> se sert toute la journée dans des verres en forme de tulipe et s'offre partout en signe d'hospitalité. Le <strong>café turc</strong>, épais et non filtré, s'infuse lentement et se déguste avec un verre d'eau et souvent un morceau de lokum — et, par tradition, le marc laissé au fond de la tasse peut se lire pour prédire votre avenir. Refuser un verre de thé d'un commerçant est presque impossible, et cela fait partie du charme."
+            ]
+          },
+          {
+            "heading": "Comment manger comme un local",
+            "paragraphs": [
+              "Le meilleur conseil de tous : <strong>mangez là où mangent les locaux</strong>. Évitez les restaurants aux rabatteurs insistants et aux menus illustrés en plusieurs langues juste à côté des grands monuments — ils vivent de l'emplacement, pas de la qualité. Reculez de quelques rues, cherchez les endroits pleins de familles turques, et vous mangerez mieux pour moins cher.",
+              "Une <strong>lokanta</strong> (une gargote décontractée avec des plateaux de plats maison que l'on désigne du doigt) offre un déjeuner d'un excellent rapport qualité-prix. Goûtez la spécialité locale de chaque région plutôt que le même döner partout. Et si vous voulez éviter les incertitudes, une balade gourmande avec un guide local est l'une des façons les plus enrichissantes de comprendre une ville turque — en suivant votre nez à travers marchés, boulangeries et échoppes minuscules que vous ne trouveriez jamais seul."
+            ]
+          }
+        ],
+        "faqHeading": "Questions fréquentes",
+        "faqs": [
+          {
+            "q": "Pour quelle cuisine la Turquie est-elle la plus connue ?",
+            "a": "La Turquie est réputée pour ses kebabs (Adana, Urfa, İskender et döner), ses entrées mezze, ses galettes pide et lahmacun, et ses douceurs comme le baklava et les loukoums. Un généreux petit-déjeuner à plusieurs plats et les rituels du thé et du café turc sont tout aussi centraux dans sa culture culinaire."
+          },
+          {
+            "q": "Que prendre au petit-déjeuner en Turquie ?",
+            "a": "Un petit-déjeuner turc traditionnel est un étalage à partager de fromages, olives, tomates, concombres, miel à la crème caillée, confitures, œufs et pain chaud, avec du thé à volonté. Guettez le menemen (œufs à la tomate et aux poivrons) et le simit, l'anneau de pain au sésame vendu dans la rue."
+          },
+          {
+            "q": "La cuisine turque est-elle adaptée aux végétariens ?",
+            "a": "Oui. Si la Turquie est connue pour ses viandes grillées, ses mezze et plats de légumes sont excellents pour les végétariens — feuilles de vigne farcies, plats d'aubergine, haricots à l'huile d'olive, soupe de lentilles, salades et pide au fromage. Confirmez simplement à la commande que bouillons et garnitures sont sans viande."
+          },
+          {
+            "q": "Comment éviter les restaurants pièges à touristes en Turquie ?",
+            "a": "Évitez les endroits aux rabatteurs à l'extérieur et aux menus illustrés plastifiés juste à côté des grands sites. Reculez de quelques rues, choisissez des lieux pleins de locaux, et essayez une lokanta aux plateaux maison. Un guide gourmand local est le moyen le plus sûr de trouver des adresses authentiques et d'un bon rapport qualité-prix."
+          },
+          {
+            "q": "Quelle est la boisson nationale de la Turquie ?",
+            "a": "Le thé (çay), servi dans de petits verres en forme de tulipe, est la boisson nationale du quotidien et un geste d'hospitalité offert partout. Le café turc, épais et lentement infusé, est le café traditionnel, tandis que le rakı, un alcool anisé, est la boisson classique avec les mezze et les fruits de mer."
+          }
+        ],
+        "relatedHeading": "Goûtez la Turquie avec un local",
+        "ctaTitle": "Découvrez la cuisine turque avec un guide local",
+        "ctaSub": "Les meilleurs repas sont là où mangent les locaux. Réservez un guide vérifié sur VibeGuide et suivez votre nez à travers les marchés et ruelles de Turquie."
+      },
+      "it": {
+        "title": "Guida al cibo turco: cosa mangiare in Turchia",
+        "metaTitle": "Guida al cibo turco — Cosa mangiare e bere in Turchia",
+        "metaDescription": "Una guida locale al cibo turco: i piatti imperdibili, lo street food, la colazione, i dolci e le bevande — dai kebab ai meze, dal baklava al simit e al tè e caffè turco.",
+        "excerpt": "La cucina turca è una delle grandi tradizioni gastronomiche del mondo. Ecco i piatti, gli spuntini di strada e le bevande da cercare — e come mangiare da locale, non da turista.",
+        "intro": [
+          "La cucina turca è una delle grandi culture gastronomiche del mondo — un crocevia di sapori mediterranei, mediorientali, centroasiatici e balcanici costruito su prodotti eccellenti, carni alla griglia, verdure fresche e un'infinita varietà di meze. Mangiare bene è una delle gioie più grandi di ogni viaggio in Turchia, ed è alla portata di ogni budget.",
+          "Questa guida passa in rassegna i <strong>piatti e le bevande da cercare</strong>, da una vera colazione turca agli spuntini di strada, ai kebab alla griglia, al pesce sulla costa e ai dolci e alle bevande calde che chiudono ogni pasto. Evita i ristoranti acchiappa-turisti vicino ai grandi monumenti — il cibo migliore è dove mangiano i locali, e una guida può portarti dritto lì."
+        ],
+        "sections": [
+          {
+            "heading": "Colazione turca: un banchetto per iniziare la giornata",
+            "paragraphs": [
+              "Una tradizionale <strong>colazione turca (kahvaltı)</strong> è un'imbandigione, non un piatto: formaggio bianco e kaşar stagionato, olive, pomodori e cetrioli, miele con panna rappresa (bal-kaymak), marmellate, uova sode e pane caldo, il tutto assaporato lentamente tra infiniti bicchieri di tè. Nei fine settimana i turchi vi indugiano per ore.",
+              "Cerca il <strong>menemen</strong>, uova morbide strapazzate con pomodori, peperoni e spezie, e il <strong>simit</strong>, la ciambella di pane ricoperta di sesamo venduta ovunque dai carretti di strada. Una colazione senza fretta è un vero punto forte della cultura gastronomica turca, e molti locali servono un serpme kahvaltı — un'imbandigione a volontà — perfetta da condividere."
+            ]
+          },
+          {
+            "heading": "Kebab, meze e il piatto principale",
+            "paragraphs": [
+              "Le carni alla griglia della Turchia vanno ben oltre il familiare döner. Cerca l'<strong>Adana e l'Urfa kebab</strong> (spiedini di agnello macinato, piccante e delicato), lo <strong>şiş</strong> (carne a cubetti alla griglia), l'<strong>İskender</strong> (döner affettato su pane con salsa di pomodoro e yogurt) e gli stufati a cottura lenta del sud-est. Ogni regione ha la sua specialità da provare.",
+              "Altrettanto importante è il <strong>meze</strong> — la sfilata di piccoli antipasti freddi e caldi che apre un pasto come si deve: melanzane affumicate, foglie di vite ripiene, salse allo yogurt, salicornia, ezme piccante e altro ancora. Ordina un'imbandigione di meze da condividere, e non perderti la <strong>pide</strong> (focaccia turca a forma di barchetta) e la <strong>lahmacun</strong>, la sottile e croccante «pizza turca» condita con carne macinata speziata."
+            ]
+          },
+          {
+            "heading": "Street food e pesce della costa",
+            "paragraphs": [
+              "Lo street food turco è superbo ed economico. A Istanbul, prova un <strong>balık ekmek</strong> (panino con pesce alla griglia) in riva all'acqua a Eminönü, castagne e mais arrostiti dai carretti, il <strong>kokoreç</strong> per i più audaci, e i <strong>midye dolma</strong> (cozze ripiene) con una spruzzata di limone. Il gözleme — sottile focaccia ripiena cotta sulla piastra — è un perfetto pranzo veloce.",
+              "Sulle <strong>coste egea e mediterranea</strong> — İzmir, Bodrum, Kuşadası, Antalya — l'accento si sposta sul pesce fresco e sulle verdure all'olio d'oliva. Un pasto di pesce alla griglia, meze e un bicchiere di rakı, il distillato all'anice che diventa lattiginoso con l'acqua, sul porto al tramonto è un'esperienza costiera turca per eccellenza."
+            ]
+          },
+          {
+            "heading": "Dolci, tè e caffè turco",
+            "paragraphs": [
+              "Lascia spazio per il dolce. Il <strong>baklava</strong> — pasta fillo a strati con pistacchi o noci e sciroppo — è la star, migliore da una pasticceria specializzata, in particolare quelle di Gaziantep. Prova anche il <strong>künefe</strong> (pasta kadaif calda con formaggio fuso e sciroppo), il <strong>lokum</strong> (delizia turca) e budini di latte come il sütlaç.",
+              "Le bevande sono un rito. Il <strong>çay (tè)</strong> viene servito tutto il giorno in bicchieri a forma di tulipano e offerto ovunque come ospitalità. Il <strong>caffè turco</strong>, denso e non filtrato, si prepara lentamente e si sorseggia con un bicchiere d'acqua e spesso un pezzo di lokum — e per tradizione, i fondi lasciati nella tazza possono essere letti per predire la fortuna. Rifiutare un bicchiere di tè da un negoziante è quasi impossibile, e questo fa parte del fascino."
+            ]
+          },
+          {
+            "heading": "Come mangiare da locale",
+            "paragraphs": [
+              "Il consiglio migliore in assoluto: <strong>mangia dove mangiano i locali</strong>. Evita i ristoranti con imbonitori insistenti e menu illustrati in più lingue proprio accanto ai grandi monumenti — vivono di posizione, non di qualità. Cammina qualche strada più indietro, cerca i locali pieni di famiglie turche, e mangerai meglio spendendo meno.",
+              "Una <strong>lokanta</strong> (una trattoria informale con vassoi di piatti casalinghi da indicare) è un pranzo dall'ottimo rapporto qualità-prezzo. Prova la specialità locale di ogni regione invece del solito döner ovunque. E se vuoi evitare i tentativi a caso, una passeggiata gastronomica con una guida locale è uno dei modi più appaganti per capire una città turca — seguendo il naso tra mercati, forni e localini che non troveresti mai da solo."
+            ]
+          }
+        ],
+        "faqHeading": "Domande frequenti",
+        "faqs": [
+          {
+            "q": "Per quale cibo è più famosa la Turchia?",
+            "a": "La Turchia è famosa per i kebab (Adana, Urfa, İskender e döner), gli antipasti meze, le focacce pide e lahmacun, e dolci come il baklava e la delizia turca. Una sontuosa colazione a più piatti e i riti del tè e del caffè turco sono altrettanto centrali nella cultura gastronomica."
+          },
+          {
+            "q": "Cosa dovrei mangiare a colazione in Turchia?",
+            "a": "Una tradizionale colazione turca è un'imbandigione condivisa di formaggi, olive, pomodori, cetrioli, miele con panna rappresa, marmellate, uova e pane caldo, con tè a volontà. Cerca il menemen (uova con pomodoro e peperoni) e il simit, la ciambella di pane al sesamo venduta per strada."
+          },
+          {
+            "q": "Il cibo turco va bene per i vegetariani?",
+            "a": "Sì. Anche se la Turchia è nota per le carni alla griglia, i suoi meze e piatti di verdure sono eccellenti per i vegetariani — foglie di vite ripiene, piatti di melanzane, fagioli all'olio d'oliva, zuppa di lenticchie, insalate e pide con formaggio. Assicurati solo che brodi e ripieni siano senza carne quando ordini."
+          },
+          {
+            "q": "Come evito i ristoranti acchiappa-turisti in Turchia?",
+            "a": "Evita i locali con imbonitori all'esterno e menu illustrati plastificati proprio accanto ai grandi monumenti. Cammina qualche strada più in là, scegli locali pieni di gente del posto, e prova una lokanta con vassoi di piatti casalinghi. Una guida gastronomica locale è il modo più sicuro per trovare posti autentici e convenienti."
+          },
+          {
+            "q": "Qual è la bevanda nazionale della Turchia?",
+            "a": "Il tè (çay), servito in piccoli bicchieri a forma di tulipano, è la bevanda nazionale di tutti i giorni e un gesto di ospitalità offerto ovunque. Il caffè turco, denso e preparato lentamente, è il caffè tradizionale, mentre il rakı, un distillato all'anice, è la bevanda classica con meze e pesce."
+          }
+        ],
+        "relatedHeading": "Assapora la Turchia con un locale",
+        "ctaTitle": "Scopri il cibo turco con una guida locale",
+        "ctaSub": "I pasti migliori sono dove mangiano i locali. Prenota una guida verificata su VibeGuide e segui il naso tra i mercati e le vie nascoste della Turchia."
+      },
+      "ar": {
+        "title": "دليل الطعام التركي: ماذا تأكل في تركيا",
+        "metaTitle": "دليل الطعام التركي — ماذا تأكل وتشرب في تركيا",
+        "metaDescription": "دليل محلي للطعام التركي: الأطباق التي يجب تجربتها، وطعام الشارع، والفطور، والحلويات، والمشروبات — من الكباب والمزة إلى البقلاوة والسميت والشاي والقهوة التركية.",
+        "excerpt": "المطبخ التركي أحد أعظم تقاليد الطعام في العالم. إليك الأطباق ووجبات الشارع الخفيفة والمشروبات التي تستحق البحث عنها — وكيف تأكل كأهل البلد لا كسائح.",
+        "intro": [
+          "المطبخ التركي أحد أعظم ثقافات الطعام في العالم — ملتقى نكهات متوسطية وشرق أوسطية وآسيوية وسطى وبلقانية، مبني على منتجات رائعة ولحوم مشوية وخضار طازجة وتشكيلة لا تنتهي من المزة. الأكل الجيد من أعظم متع أي رحلة إلى تركيا، وهو سهل على أي ميزانية.",
+          "يستعرض هذا الدليل <strong>الأطباق والمشروبات التي تستحق البحث عنها</strong>، من فطور تركي حقيقي إلى وجبات الشارع الخفيفة، والكباب المشوي، والمأكولات البحرية على الساحل، والحلويات والمشروبات الساخنة التي تختم كل وجبة. تجنّب مطاعم مصائد السياح قرب المعالم الكبرى — أفضل الطعام حيث يأكل أهل البلد، ويمكن لمرشد أن يأخذك إليه مباشرة."
+        ],
+        "sections": [
+          {
+            "heading": "الفطور التركي: وليمة لبدء اليوم",
+            "paragraphs": [
+              "الـ<strong>فطور التركي التقليدي (kahvaltı)</strong> سفرة لا صحن: جبن أبيض وكاشار معتّق، وزيتون، وطماطم وخيار، وعسل مع القشطة (bal-kaymak)، ومربّيات، وبيض مسلوق، وخبز دافئ، يُتناول كله على مهل مع أكواب لا تنتهي من الشاي. في عطلة نهاية الأسبوع، يطيل الأتراك الجلوس عليه لساعات.",
+              "انتبه إلى <strong>menemen</strong>، بيض طري مخفوق مع الطماطم والفلفل والبهارات، و<strong>simit</strong>، حلقة الخبز المغطاة بالسمسم التي تُباع من عربات الشارع في كل مكان. الفطور المتأنّي متعة حقيقية من ثقافة الطعام التركية، وكثير من الأماكن تقدّم serpme kahvaltı — سفرة مفتوحة تأكل منها ما شئت — مثالية للمشاركة."
+            ]
+          },
+          {
+            "heading": "الكباب والمزة والطبق الرئيسي",
+            "paragraphs": [
+              "تتجاوز اللحوم المشوية التركية الدونر المألوف بكثير. ابحث عن <strong>كباب أضنة وأورفة</strong> (أسياخ لحم ضأن مفروم حار ومعتدل)، و<strong>şiş</strong> (لحم مشوي مكعّب)، و<strong>İskender</strong> (شرائح دونر فوق خبز مع صلصة الطماطم واللبن) والطواجي بطيئة الطهي في الجنوب الشرقي. لكل منطقة تخصّصها الجدير بالتجربة.",
+              "لا يقل أهميةً <strong>المزة</strong> — موكب المقبلات الباردة والساخنة الصغيرة الذي يفتتح وجبة حقيقية: باذنجان مدخّن، وورق عنب محشو، وغموسات لبن، وسالِكورنيا، وإزمي حارة والمزيد. اطلب تشكيلة مزة للمشاركة، ولا تفوّت <strong>pide</strong> (خبز مسطّح تركي على شكل قارب) و<strong>lahmacun</strong>، الـ«بيتزا التركية» الرقيقة المقرمشة المغطاة باللحم المفروم المتبّل."
+            ]
+          },
+          {
+            "heading": "طعام الشارع والمأكولات البحرية الساحلية",
+            "paragraphs": [
+              "طعام الشارع في تركيا رائع ورخيص. في إسطنبول، جرّب <strong>balık ekmek</strong> (ساندويتش سمك مشوي) على الماء في إمينونو، والكستناء والذرة المشوية من العربات، و<strong>kokoreç</strong> للمغامرين، و<strong>midye dolma</strong> (بلح البحر المحشو) مع عصرة ليمون. الـ gözleme — خبز مسطّح رقيق محشو يُطهى على صاج — غداء سريع مثالي.",
+              "على <strong>سواحل بحر إيجه والبحر المتوسط</strong> — إزمير، بودروم، كوشاداسي، أنطاليا — يتحوّل التركيز إلى المأكولات البحرية الطازجة وأطباق الخضار بزيت الزيتون. وجبة من سمك مشوي ومزة وكأس من الراكي، مشروب اليانسون الذي يصير حليبياً بالماء، عند الميناء وقت الغروب هي تجربة ساحلية تركية أصيلة."
+            ]
+          },
+          {
+            "heading": "الحلويات والشاي والقهوة التركية",
+            "paragraphs": [
+              "وفّر مكاناً للتحلية. <strong>البقلاوة</strong> — طبقات فيلو مع الفستق أو الجوز والقطر — هي النجمة، وأفضلها من محل متخصص، خاصة تلك القادمة من غازي عنتاب. جرّب أيضاً <strong>künefe</strong> (عجينة مبشورة دافئة مع جبن ذائب وقطر)، و<strong>lokum</strong> (الملبّن التركي) وحلويات الحليب مثل sütlaç.",
+              "المشروبات طقس. يُقدَّم <strong>Çay (الشاي)</strong> طوال اليوم في أكواب على شكل زهرة التوليب ويُبذل في كل مكان كرمز ضيافة. أما <strong>القهوة التركية</strong>، الثقيلة غير المصفّاة، فتُحضَّر ببطء وتُحتسى مع كأس ماء وغالباً قطعة lokum — وبحسب التقليد، يمكن قراءة الثفل المتبقّي في الفنجان لمعرفة حظّك. رفض كأس شاي من صاحب محل شبه مستحيل، وهذا جزء من السحر."
+            ]
+          },
+          {
+            "heading": "كيف تأكل كأهل البلد",
+            "paragraphs": [
+              "أفضل نصيحة على الإطلاق: <strong>كُل حيث يأكل أهل البلد</strong>. تجنّب المطاعم ذات المنادين المُلحّين وقوائم الصور متعددة اللغات الملاصقة للمعالم الكبرى — فهي تتاجر بالموقع لا بالجودة. امشِ بضعة شوارع إلى الوراء، وابحث عن أماكن مزدحمة بالعائلات التركية، وستأكل أفضل بأقل تكلفة.",
+              "الـ<strong>lokanta</strong> (مطعم عادي بصواني أطباق منزلية تشير إليها بيدك) غداء ممتاز القيمة. جرّب تخصّص كل منطقة بدل الدونر نفسه في كل مكان. وإن أردت تجنّب التخمين، فإن جولة تتمحور حول الطعام مع مرشد محلي من أكثر الطرق إمتاعاً لفهم مدينة تركية — تتبع أنفك عبر الأسواق والمخابز والأماكن الصغيرة الخفية التي لن تجدها بمفردك أبداً."
+            ]
+          }
+        ],
+        "faqHeading": "الأسئلة الشائعة",
+        "faqs": [
+          {
+            "q": "بأي طعام تشتهر تركيا أكثر؟",
+            "a": "تشتهر تركيا بالكباب (أضنة وأورفة وإسكندر والدونر)، ومقبلات المزة، وخبز البيدي واللحم عجين، وحلويات كالبقلاوة والملبّن التركي. كما أن الفطور الفاخر متعدد الأطباق وطقوس الشاي والقهوة التركية جوهرية بالقدر نفسه في ثقافة الطعام."
+          },
+          {
+            "q": "ماذا آكل على الفطور في تركيا؟",
+            "a": "الفطور التركي التقليدي سفرة مشتركة من الأجبان والزيتون والطماطم والخيار والعسل مع القشطة والمربّيات والبيض والخبز الدافئ، مع شاي لا ينتهي. ابحث عن menemen (بيض مع طماطم وفلفل) و simit، حلقة خبز السمسم التي تُباع في الشارع."
+          },
+          {
+            "q": "هل الطعام التركي جيد للنباتيين؟",
+            "a": "نعم. رغم شهرة تركيا باللحوم المشوية، فإن مزتها وأطباق الخضار ممتازة للنباتيين — ورق عنب محشو، وأطباق باذنجان، وفاصولياء بزيت الزيتون، وشوربة عدس، وسلطات، وبيدي بالجبن. فقط تأكّد أن المرق والحشوات خالية من اللحم عند الطلب."
+          },
+          {
+            "q": "كيف أتجنّب مطاعم مصائد السياح في تركيا؟",
+            "a": "تجنّب الأماكن ذات المنادين في الخارج وقوائم الصور المغلّفة الملاصقة للمعالم الكبرى. امشِ بضعة شوارع بعيداً، واختر أماكن مزدحمة بأهل البلد، وجرّب lokanta تقدّم صواني منزلية. مرشد طعام محلي هو أضمن طريقة لإيجاد أماكن أصيلة ذات قيمة جيدة."
+          },
+          {
+            "q": "ما المشروب الوطني لتركيا؟",
+            "a": "الشاي (çay)، المقدَّم في أكواب صغيرة على شكل زهرة التوليب، هو المشروب الوطني اليومي وبادرة ضيافة تُبذل في كل مكان. القهوة التركية، الثقيلة بطيئة التحضير، هي القهوة التقليدية، بينما الراكي، مشروب اليانسون، هو المشروب الكلاسيكي مع المزة والمأكولات البحرية."
+          }
+        ],
+        "relatedHeading": "تذوّق تركيا مع محلي",
+        "ctaTitle": "اكتشف الطعام التركي مع مرشد محلي",
+        "ctaSub": "أفضل الوجبات حيث يأكل أهل البلد. احجز مرشداً موثّقاً على VibeGuide وتتبّع أنفك عبر أسواق تركيا وأزقتها."
+      },
+      "ru": {
+        "title": "Гид по турецкой кухне: что есть в Турции",
+        "metaTitle": "Гид по турецкой кухне — что есть и пить в Турции",
+        "metaDescription": "Местный гид по турецкой кухне: обязательные блюда, уличная еда, завтрак, сладости и напитки — от кебабов и мезе до пахлавы, симита и турецкого чая и кофе.",
+        "excerpt": "Турецкая кухня — одна из великих гастрономических традиций мира. Вот блюда, уличные закуски и напитки, которые стоит искать — и как есть по-местному, а не по-туристически.",
+        "intro": [
+          "Турецкая кухня — одна из великих кулинарных культур мира, перекрёсток средиземноморских, ближневосточных, среднеазиатских и балканских вкусов, построенный на превосходных продуктах, мясе на гриле, свежих овощах и бесконечном разнообразии мезе. Вкусно есть — одна из главных радостей любой поездки в Турцию, и это доступно при любом бюджете.",
+          "Этот гид проходит по <strong>блюдам и напиткам, которые стоит искать</strong>, от настоящего турецкого завтрака до уличных закусок, кебабов на гриле, морепродуктов на побережье и сладостей и горячих напитков, которыми завершается каждая трапеза. Обходите туристические ловушки-рестораны у крупных достопримечательностей — лучшая еда там, где едят местные, и гид приведёт вас прямо туда."
+        ],
+        "sections": [
+          {
+            "heading": "Турецкий завтрак: пир, чтобы начать день",
+            "paragraphs": [
+              "Традиционный <strong>турецкий завтрак (kahvaltı)</strong> — это застолье, а не тарелка: белый сыр и выдержанный кашар, оливки, помидоры и огурцы, мёд со сливками каймак (bal-kaymak), джемы, варёные яйца и тёплый хлеб, всё это неспешно смакуется под бесконечные стаканы чая. По выходным турки засиживаются за ним часами.",
+              "Обратите внимание на <strong>менемен</strong>, нежную яичницу с помидорами, перцем и специями, и <strong>симит</strong>, кольцо хлеба в кунжуте, которое продают с уличных тележек повсюду. Неспешный завтрак — настоящая жемчужина турецкой гастрономической культуры, и многие места подают serpme kahvaltı — застолье «сколько съешь» — идеально для компании."
+            ]
+          },
+          {
+            "heading": "Кебабы, мезе и главное блюдо",
+            "paragraphs": [
+              "Мясо на гриле в Турции выходит далеко за пределы привычного донера. Ищите <strong>адана и урфа кебаб</strong> (острые и мягкие шампуры из рубленой баранины), <strong>шиш</strong> (мясо кубиками на гриле), <strong>искендер</strong> (нарезанный донер на хлебе с томатным соусом и йогуртом) и тушёные блюда медленного приготовления с юго-востока. У каждого региона своя фирменная еда, которую стоит попробовать.",
+              "Не менее важен <strong>мезе</strong> — парад маленьких холодных и горячих закусок, открывающих настоящую трапезу: копчёные баклажаны, фаршированные виноградные листья, йогуртовые соусы, солерос, острый эзме и многое другое. Закажите набор мезе на компанию и не пропустите <strong>пиде</strong> (турецкую лепёшку в форме лодочки) и <strong>лахмаджун</strong>, тонкую хрустящую «турецкую пиццу» с пряным фаршем."
+            ]
+          },
+          {
+            "heading": "Уличная еда и морепродукты побережья",
+            "paragraphs": [
+              "Уличная еда в Турции превосходна и дёшева. В Стамбуле попробуйте <strong>балык-экмек</strong> (сэндвич с жареной рыбой) у воды в Эминёню, жареные каштаны и кукурузу с тележек, <strong>кокореч</strong> для смелых и <strong>мидье долма</strong> (фаршированные мидии) со свежим лимоном. Гёзлеме — тонкая лепёшка с начинкой, приготовленная на садже, — идеальный быстрый обед.",
+              "На <strong>Эгейском и Средиземноморском побережьях</strong> — Измир, Бодрум, Кушадасы, Анталья — акцент смещается на свежие морепродукты и овощные блюда на оливковом масле. Трапеза из рыбы на гриле, мезе и стакана ракы, анисового напитка, который белеет от воды, у гавани на закате — квинтэссенция турецкого побережья."
+            ]
+          },
+          {
+            "heading": "Сладости, чай и турецкий кофе",
+            "paragraphs": [
+              "Оставьте место для десерта. <strong>Пахлава</strong> — слоёное тесто фило с фисташками или грецкими орехами и сиропом — звезда, лучше всего из специализированной лавки, особенно из Газиантепа. Попробуйте также <strong>кюнефе</strong> (тёплое тесто кадаиф с расплавленным сыром и сиропом), <strong>лукум</strong> (рахат-лукум) и молочные пудинги вроде сютлача.",
+              "Напитки — это ритуал. <strong>Чай (çay)</strong> подают весь день в стаканчиках-тюльпанах и предлагают повсюду как знак гостеприимства. <strong>Турецкий кофе</strong>, густой и нефильтрованный, варят медленно и пьют со стаканом воды и часто кусочком лукума — а по традиции по гуще, оставшейся в чашке, можно гадать о судьбе. Отказаться от стакана чая, предложенного лавочником, почти невозможно, и в этом часть очарования."
+            ]
+          },
+          {
+            "heading": "Как есть по-местному",
+            "paragraphs": [
+              "Самый лучший совет: <strong>ешьте там, где едят местные</strong>. Избегайте ресторанов с назойливыми зазывалами и многоязычными меню с картинками прямо у крупных памятников — они торгуют местоположением, а не качеством. Пройдите на пару улиц вглубь, ищите места, полные турецких семей, и поедите лучше за меньшие деньги.",
+              "<strong>Локанта</strong> (простая столовая с подносами домашних блюд, на которые вы указываете) — обед с отличным соотношением цены и качества. Пробуйте местную фирменную еду каждого региона, а не один и тот же донер везде. А если хотите обойтись без догадок, гастрономическая прогулка с местным гидом — один из самых благодарных способов понять турецкий город, идя на запах через рынки, пекарни и крошечные заведения, которые вы никогда не нашли бы сами."
+            ]
+          }
+        ],
+        "faqHeading": "Часто задаваемые вопросы",
+        "faqs": [
+          {
+            "q": "Чем Турция наиболее известна из еды?",
+            "a": "Турция славится кебабами (адана, урфа, искендер и донер), закусками мезе, лепёшками пиде и лахмаджун, а также сладостями вроде пахлавы и рахат-лукума. Обильный завтрак из множества блюд и ритуалы чая и турецкого кофе столь же важны для гастрономической культуры."
+          },
+          {
+            "q": "Что мне съесть на завтрак в Турции?",
+            "a": "Традиционный турецкий завтрак — это общее застолье из сыров, оливок, помидоров, огурцов, мёда со сливками, джемов, яиц и тёплого хлеба с бесконечным чаем. Ищите менемен (яйца с помидорами и перцем) и симит, кольцо хлеба в кунжуте, продаваемое на улице."
+          },
+          {
+            "q": "Подходит ли турецкая еда вегетарианцам?",
+            "a": "Да. Хотя Турция известна мясом на гриле, её мезе и овощные блюда отлично подходят вегетарианцам — фаршированные виноградные листья, блюда из баклажанов, фасоль на оливковом масле, чечевичный суп, салаты и пиде с сыром. Просто уточняйте при заказе, что бульоны и начинки без мяса."
+          },
+          {
+            "q": "Как избежать туристических ловушек-ресторанов в Турции?",
+            "a": "Избегайте мест с зазывалами снаружи и ламинированными меню с картинками прямо у крупных достопримечательностей. Пройдите на пару улиц дальше, выбирайте места, полные местных, и попробуйте локанту с подносами домашних блюд. Местный гастрономический гид — самый верный способ найти аутентичные и недорогие места."
+          },
+          {
+            "q": "Какой национальный напиток Турции?",
+            "a": "Чай (çay), подаваемый в маленьких стаканчиках-тюльпанах, — повседневный национальный напиток и жест гостеприимства, предлагаемый повсюду. Турецкий кофе, густой и медленно сваренный, — традиционный кофе, а ракы, анисовый напиток, — классический напиток к мезе и морепродуктам."
+          }
+        ],
+        "relatedHeading": "Попробуйте Турцию с местным",
+        "ctaTitle": "Откройте турецкую кухню с местным гидом",
+        "ctaSub": "Лучшие трапезы там, где едят местные. Забронируйте проверенного гида на VibeGuide и идите на запах через рынки и переулки Турции."
+      },
+      "tr": {
+        "title": "Türk Mutfağı Rehberi: Türkiye'de Ne Yenir",
+        "metaTitle": "Türk Mutfağı — Türkiye'de Ne Yenir, Ne İçilir",
+        "metaDescription": "Türk mutfağına yerel bir rehber: mutlaka denenmesi gereken yemekler, sokak lezzetleri, kahvaltı, tatlılar ve içecekler — kebap ve mezeden baklava, simit ve Türk çayı ile kahvesine.",
+        "excerpt": "Türk mutfağı dünyanın büyük yemek geleneklerinden biri. İşte aranması gereken yemekler, sokak atıştırmalıkları ve içecekler — ve turist gibi değil, yerli gibi nasıl yenir.",
+        "intro": [
+          "Türk mutfağı dünyanın büyük yemek kültürlerinden biri — Akdeniz, Orta Doğu, Orta Asya ve Balkan lezzetlerinin kesiştiği; enfes ürünler, ızgara etler, taze sebzeler ve bitmek bilmeyen bir meze çeşitliliği üzerine kurulu bir kavşak. İyi yemek, Türkiye'ye yapılan her gezinin en büyük keyiflerinden biri ve her bütçeye uygun.",
+          "Bu rehber, gerçek bir Türk kahvaltısından sokak lezzetlerine, ızgara kebaplardan kıyıdaki deniz ürünlerine ve her öğünü tamamlayan tatlılar ile sıcak içeceklere kadar <strong>aranması gereken yemek ve içecekleri</strong> anlatıyor. Büyük mekânların yanındaki turist tuzağı lokantaları geçin — en iyi yemek yerlilerin yediği yerde ve bir rehber sizi doğrudan oraya götürür."
+        ],
+        "sections": [
+          {
+            "heading": "Türk kahvaltısı: güne başlamak için bir ziyafet",
+            "paragraphs": [
+              "Geleneksel bir <strong>Türk kahvaltısı</strong> bir tabak değil, bir sofradır: beyaz peynir ve olgunlaşmış kaşar, zeytin, domates ve salatalık, bal-kaymak, reçeller, haşlanmış yumurta ve sıcak ekmek; hepsi bitmek bilmeyen çay bardakları eşliğinde ağır ağır tadılır. Hafta sonları Türkler saatlerce sofradan kalkmaz.",
+              "Domates, biber ve baharatla pişirilen yumuşak yumurta <strong>menemen</strong>'e ve her yerde seyyar tezgâhlardan satılan susamlı halka ekmek <strong>simit</strong>'e dikkat edin. Uzun bir kahvaltı, Türk yemek kültürünün gerçek bir zirvesidir ve birçok yer paylaşmak için ideal bir serpme kahvaltı — sınırsız bir sofra — sunar."
+            ]
+          },
+          {
+            "heading": "Kebaplar, mezeler ve ana olay",
+            "paragraphs": [
+              "Türkiye'nin ızgara etleri, tanıdık dönerin çok ötesine geçer. <strong>Adana ve Urfa kebabı</strong>'nı (acılı ve acısız kıyma şişleri), <strong>şiş</strong>'i (kuşbaşı ızgara et), <strong>İskender</strong>'i (ekmek üzerinde domates sos ve yoğurtla dilimlenmiş döner) ve güneydoğunun ağır ateşte pişen yahnilerini arayın. Her bölgenin denemeye değer kendi özel lezzeti var.",
+              "Bir o kadar önemlisi de <strong>meze</strong> — düzgün bir öğünü açan küçük soğuk ve sıcak başlangıçların geçit töreni: közlenmiş patlıcan, sarma, yoğurtlu soslar, deniz börülcesi, acılı ezme ve daha fazlası. Paylaşmak için bir meze sofrası ısmarlayın ve <strong>pide</strong>'yi (kayık biçimli Türk pidesi) ve baharatlı kıymayla kaplı ince, çıtır <strong>lahmacun</strong>'u kaçırmayın."
+            ]
+          },
+          {
+            "heading": "Sokak lezzetleri ve kıyıda deniz ürünleri",
+            "paragraphs": [
+              "Türkiye'nin sokak lezzetleri hem enfes hem ucuz. İstanbul'da Eminönü'nde su kenarında bir <strong>balık ekmek</strong>, tezgâhlardan közlenmiş kestane ve mısır, cesurlar için <strong>kokoreç</strong> ve bir dilim limon sıkılmış <strong>midye dolma</strong> deneyin. Sac üzerinde pişirilen ince dolgulu <strong>gözleme</strong>, kusursuz bir hızlı öğle yemeği.",
+              "<strong>Ege ve Akdeniz kıyılarında</strong> — İzmir, Bodrum, Kuşadası, Antalya — vurgu taze deniz ürünlerine ve zeytinyağlı sebze yemeklerine kayar. Limanda gün batımında ızgara balık, meze ve suyla bulanan anason içkisi rakıdan bir kadeh eşliğindeki bir öğün, tam anlamıyla Türk kıyı deneyimidir."
+            ]
+          },
+          {
+            "heading": "Tatlılar, çay ve Türk kahvesi",
+            "paragraphs": [
+              "Tatlıya yer bırakın. <strong>Baklava</strong> — fıstık ya da cevizle ve şerbetle katmanlanmış yufka — baş tacıdır; en iyisi uzman bir dükkândan, özellikle de Gaziantep'ten olanı. Ayrıca <strong>künefe</strong>'yi (erimiş peynir ve şerbetle sıcak tel kadayıf), <strong>lokum</strong>'u ve sütlaç gibi sütlü tatlıları deneyin.",
+              "İçecekler bir ritüeldir. <strong>Çay</strong> bütün gün ince belli bardaklarda servis edilir ve her yerde bir misafirperverlik jesti olarak ikram edilir. Koyu ve filtresiz <strong>Türk kahvesi</strong> ağır ağır pişirilir; bir bardak su ve çoğu zaman bir parça lokumla yudumlanır — ve geleneğe göre fincanda kalan telve, falınız için okunabilir. Bir esnaftan gelen çay ikramını geri çevirmek neredeyse imkânsızdır ve işin cazibesinin bir parçası da budur."
+            ]
+          },
+          {
+            "heading": "Yerli gibi nasıl yenir",
+            "paragraphs": [
+              "En iyi tek tavsiye: <strong>yerlilerin yediği yerde yiyin</strong>. Büyük anıtların hemen yanında ısrarcı hanutçuları ve çok dilli resimli menüleri olan lokantalardan kaçının — kaliteden değil, konumdan geçiniyorlar. Birkaç sokak geriye yürüyün, Türk aileleriyle dolu yerleri arayın; daha azına daha iyi yersiniz.",
+              "Bir <strong>lokanta</strong> (parmakla gösterdiğiniz ev yemeği tepsileriyle sade bir yer) hesaplı bir öğle yemeğidir. Her yerde aynı döner yerine her bölgenin yerel lezzetini deneyin. Ve tahmin yürütmeyi atlamak isterseniz, yerel bir rehberle çıkılan yemek odaklı bir yürüyüş, bir Türk şehrini anlamanın en doyurucu yollarından biridir — pazarlar, fırınlar ve tek başınıza asla bulamayacağınız köşe başı mekânlar arasında burnunuzun peşinden gitmek."
+            ]
+          }
+        ],
+        "faqHeading": "Sıkça sorulan sorular",
+        "faqs": [
+          {
+            "q": "Türkiye en çok hangi yemeğiyle ünlüdür?",
+            "a": "Türkiye kebaplarıyla (Adana, Urfa, İskender ve döner), meze başlangıçlarıyla, pide ve lahmacunla ve baklava ile lokum gibi tatlılarla ünlüdür. Çok çeşitli, bereketli bir kahvaltı ile çay ve Türk kahvesi ritüelleri de yemek kültürünün tam merkezinde yer alır."
+          },
+          {
+            "q": "Türkiye'de kahvaltıda ne yemeliyim?",
+            "a": "Geleneksel bir Türk kahvaltısı; peynirler, zeytin, domates, salatalık, bal-kaymak, reçeller, yumurta ve sıcak ekmekten oluşan, bitmek bilmeyen çay eşliğinde paylaşılan bir sofradır. Menemene (domates ve biberli yumurta) ve sokakta satılan susamlı halka ekmek simide bakın."
+          },
+          {
+            "q": "Türk mutfağı vejetaryenler için iyi mi?",
+            "a": "Evet. Türkiye ızgara etleriyle bilinse de mezeleri ve sebze yemekleri vejetaryenler için mükemmeldir — sarma, patlıcan yemekleri, zeytinyağlı fasulye, mercimek çorbası, salatalar ve peynirli pide. Sipariş verirken sadece et sularının ve iç harçların etsiz olduğunu doğrulayın."
+          },
+          {
+            "q": "Türkiye'de turist tuzağı lokantalardan nasıl kaçınırım?",
+            "a": "Büyük mekânların hemen yanında kapıda hanutçusu ve laminatlı resimli menüsü olan yerlerden kaçının. Birkaç sokak öteye yürüyün, yerlilerle dolu yerleri seçin ve ev yemeği tepsileri sunan bir lokantayı deneyin. Yerel bir yemek rehberi, otantik ve hesaplı yerler bulmanın en garanti yoludur."
+          },
+          {
+            "q": "Türkiye'nin millî içeceği nedir?",
+            "a": "Küçük ince belli bardaklarda servis edilen çay, günlük millî içecek ve her yerde sunulan bir misafirperverlik jestidir. Koyu ve ağır pişen Türk kahvesi geleneksel kahvedir; anason içkisi rakı ise meze ve deniz ürünleriyle içilen klasik içkidir."
+          }
+        ],
+        "relatedHeading": "Türkiye'yi bir yerliyle tadın",
+        "ctaTitle": "Türk mutfağını yerel bir rehberle keşfedin",
+        "ctaSub": "En iyi yemekler yerlilerin yediği yerdedir. VibeGuide'da doğrulanmış bir rehber ayırtın ve Türkiye'nin pazarları ile arka sokaklarında burnunuzun peşinden gidin."
+      },
+      "pl": {
+        "title": "Przewodnik po kuchni tureckiej: co jeść w Turcji",
+        "metaTitle": "Kuchnia turecka — co jeść i pić w Turcji",
+        "metaDescription": "Lokalny przewodnik po kuchni tureckiej: obowiązkowe dania, street food, śniadanie, słodycze i napoje — od kebabów i meze po baklawę, simit oraz turecką herbatę i kawę.",
+        "excerpt": "Kuchnia turecka to jedna z wielkich tradycji kulinarnych świata. Oto dania, przekąski uliczne i napoje, których warto szukać — i jak jeść jak miejscowy, a nie turysta.",
+        "intro": [
+          "Kuchnia turecka to jedna z wielkich kultur kulinarnych świata — skrzyżowanie smaków śródziemnomorskich, bliskowschodnich, środkowoazjatyckich i bałkańskich, zbudowane na doskonałych produktach, mięsach z grilla, świeżych warzywach i niekończącej się gamie meze. Dobre jedzenie to jedna z największych radości każdej podróży do Turcji i jest w zasięgu każdego budżetu.",
+          "Ten przewodnik omawia <strong>dania i napoje, których warto szukać</strong>, od prawdziwego tureckiego śniadania po uliczne przekąski, kebaby z grilla, owoce morza na wybrzeżu oraz słodycze i gorące napoje wieńczące każdy posiłek. Omijaj restauracje-pułapki na turystów przy wielkich zabytkach — najlepsze jedzenie jest tam, gdzie jedzą miejscowi, a przewodnik zaprowadzi cię prosto do niego."
+        ],
+        "sections": [
+          {
+            "heading": "Tureckie śniadanie: uczta na początek dnia",
+            "paragraphs": [
+              "Tradycyjne <strong>tureckie śniadanie (kahvaltı)</strong> to zastawa, nie talerz: biały ser i dojrzewający kaşar, oliwki, pomidory i ogórki, miód z gęstą śmietaną (bal-kaymak), dżemy, jajka na twardo i ciepły chleb, wszystko powoli degustowane przy niekończących się szklankach herbaty. W weekendy Turcy przesiadują nad nim godzinami.",
+              "Wypatruj <strong>menemen</strong>, miękkiej jajecznicy z pomidorami, papryką i przyprawami, oraz <strong>simit</strong>, obwarzanka posypanego sezamem, sprzedawanego wszędzie z ulicznych wózków. Śniadanie bez pośpiechu to prawdziwa perła tureckiej kultury kulinarnej, a wiele lokali podaje serpme kahvaltı — zastawę do woli — idealną do dzielenia się."
+            ]
+          },
+          {
+            "heading": "Kebaby, meze i danie główne",
+            "paragraphs": [
+              "Tureckie mięsa z grilla wykraczają daleko poza znany döner. Szukaj <strong>kebabu Adana i Urfa</strong> (pikantne i łagodne szaszłyki z mielonej jagnięciny), <strong>şiş</strong> (mięso w kostkach z grilla), <strong>İskender</strong> (plastry döneru na chlebie z sosem pomidorowym i jogurtem) oraz długo duszonych potraw z południowego wschodu. Każdy region ma swoją specjalność wartą spróbowania.",
+              "Równie ważne jest <strong>meze</strong> — parada małych zimnych i ciepłych przystawek otwierających porządny posiłek: dymne bakłażany, faszerowane liście winogron, dipy jogurtowe, soliród, pikantne ezme i więcej. Zamów zestaw meze do dzielenia i nie przegap <strong>pide</strong> (tureckiego płaskiego chleba w kształcie łódki) oraz <strong>lahmacun</strong>, cienkiej, chrupiącej «tureckiej pizzy» z przyprawionym mięsem mielonym."
+            ]
+          },
+          {
+            "heading": "Street food i owoce morza z wybrzeża",
+            "paragraphs": [
+              "Turecki street food jest znakomity i tani. W Stambule spróbuj <strong>balık ekmek</strong> (kanapki z rybą z grilla) nad wodą w Eminönü, pieczonych kasztanów i kukurydzy z wózków, <strong>kokoreç</strong> dla odważnych i <strong>midye dolma</strong> (faszerowanych małży) ze skropieniem cytryną. Gözleme — cienki nadziewany placek pieczony na blasze — to idealny szybki lunch.",
+              "Na <strong>wybrzeżach egejskim i śródziemnomorskim</strong> — Izmir, Bodrum, Kuşadası, Antalya — akcent przesuwa się na świeże owoce morza i warzywa w oliwie. Posiłek z ryby z grilla, meze i szklanki rakı, anyżowego trunku, który mętnieje z wodą, przy porcie o zachodzie słońca to kwintesencja tureckiego wybrzeża."
+            ]
+          },
+          {
+            "heading": "Słodycze, herbata i turecka kawa",
+            "paragraphs": [
+              "Zostaw miejsce na deser. <strong>Baklawa</strong> — warstwowe ciasto filo z pistacjami lub orzechami włoskimi i syropem — jest gwiazdą, najlepsza ze specjalistycznej cukierni, zwłaszcza tej z Gaziantepu. Spróbuj też <strong>künefe</strong> (ciepłego ciasta kadaif z roztopionym serem i syropem), <strong>lokum</strong> (tureckiej rozkoszy) i puddingów mlecznych jak sütlaç.",
+              "Napoje to rytuał. <strong>Çay (herbata)</strong> jest podawana przez cały dzień w szklankach w kształcie tulipana i oferowana wszędzie jako gościnność. <strong>Turecka kawa</strong>, gęsta i niefiltrowana, jest parzona powoli i sączona ze szklanką wody, a często kawałkiem lokum — a zgodnie z tradycją fusy pozostałe w filiżance można odczytać z wróżby. Odmówienie szklanki herbaty od sprzedawcy jest niemal niemożliwe, i to część uroku."
+            ]
+          },
+          {
+            "heading": "Jak jeść jak miejscowy",
+            "paragraphs": [
+              "Najlepsza rada: <strong>jedz tam, gdzie jedzą miejscowi</strong>. Unikaj restauracji z natrętnymi naganiaczami i wielojęzycznymi menu ze zdjęciami tuż przy wielkich zabytkach — żyją z lokalizacji, nie z jakości. Przejdź kilka ulic dalej, szukaj lokali pełnych tureckich rodzin, a zjesz lepiej i taniej.",
+              "<strong>Lokanta</strong> (swobodna jadłodajnia z tacami domowych dań, które wskazujesz) to lunch o świetnym stosunku ceny do jakości. Spróbuj lokalnej specjalności każdego regionu zamiast tego samego döneru wszędzie. A jeśli chcesz uniknąć zgadywania, kulinarny spacer z lokalnym przewodnikiem to jeden z najbardziej satysfakcjonujących sposobów, by zrozumieć turecke miasto — idąc za nosem przez targi, piekarnie i małe knajpki, których sam nigdy byś nie znalazł."
+            ]
+          }
+        ],
+        "faqHeading": "Najczęściej zadawane pytania",
+        "faqs": [
+          {
+            "q": "Z jakiego jedzenia Turcja jest najbardziej znana?",
+            "a": "Turcja słynie z kebabów (Adana, Urfa, İskender i döner), przystawek meze, placków pide i lahmacun oraz słodyczy jak baklawa i turecka rozkosz. Wystawne wielodaniowe śniadanie oraz rytuały herbaty i tureckiej kawy są równie ważne dla kultury kulinarnej."
+          },
+          {
+            "q": "Co jeść na śniadanie w Turcji?",
+            "a": "Tradycyjne tureckie śniadanie to wspólna zastawa serów, oliwek, pomidorów, ogórków, miodu z gęstą śmietaną, dżemów, jajek i ciepłego chleba, z herbatą do woli. Wypatruj menemen (jajek z pomidorami i papryką) oraz simit, obwarzanka sezamowego sprzedawanego na ulicy."
+          },
+          {
+            "q": "Czy turecka kuchnia jest dobra dla wegetarian?",
+            "a": "Tak. Choć Turcja słynie z mięs z grilla, jej meze i dania warzywne są znakomite dla wegetarian — faszerowane liście winogron, dania z bakłażana, fasola w oliwie, zupa z soczewicy, sałatki i pide z serem. Przy zamawianiu upewnij się tylko, że buliony i nadzienia są bezmięsne."
+          },
+          {
+            "q": "Jak uniknąć restauracji-pułapek na turystów w Turcji?",
+            "a": "Unikaj lokali z naganiaczami na zewnątrz i laminowanymi menu ze zdjęciami tuż obok wielkich zabytków. Przejdź kilka ulic dalej, wybieraj miejsca pełne miejscowych i spróbuj lokanty z tacami domowych dań. Lokalny przewodnik kulinarny to najpewniejszy sposób, by znaleźć autentyczne miejsca w dobrej cenie."
+          },
+          {
+            "q": "Jaki jest napój narodowy Turcji?",
+            "a": "Herbata (çay), podawana w małych szklankach w kształcie tulipana, to codzienny napój narodowy i gest gościnności oferowany wszędzie. Turecka kawa, gęsta i wolno parzona, to tradycyjna kawa, a rakı, anyżowy trunek, to klasyczny napój do meze i owoców morza."
+          }
+        ],
+        "relatedHeading": "Smakuj Turcję z miejscowym",
+        "ctaTitle": "Odkryj turecką kuchnię z lokalnym przewodnikiem",
+        "ctaSub": "Najlepsze posiłki są tam, gdzie jedzą miejscowi. Zarezerwuj zweryfikowanego przewodnika na VibeGuide i idź za nosem przez targi i uliczki Turcji."
+      },
+      "nl": {
+        "title": "Gids voor Turks eten: wat te eten in Turkije",
+        "metaTitle": "Turks eten — wat te eten & drinken in Turkije",
+        "metaDescription": "Een lokale gids voor Turks eten: de must-try gerechten, streetfood, ontbijt, zoetigheden en drankjes — van kebab en meze tot baklava, simit en Turkse thee en koffie.",
+        "excerpt": "De Turkse keuken is een van 's werelds grote eettradities. Hier zijn de gerechten, straatsnacks en drankjes om op te zoeken — en hoe je eet als een local, niet als toerist.",
+        "intro": [
+          "De Turkse keuken is een van 's werelds grote eetculturen — een kruispunt van mediterrane, Midden-Oosterse, Centraal-Aziatische en Balkansmaken, gebouwd op voortreffelijke producten, gegrild vlees, verse groenten en een eindeloze reeks meze. Goed eten is een van de grootste geneugten van elke reis naar Turkije, en het kan bij elk budget.",
+          "Deze gids loopt de <strong>gerechten en drankjes om op te zoeken</strong> af, van een echt Turks ontbijt tot streetfood-snacks, gegrilde kebab, zeevruchten aan de kust en de zoetigheden en warme dranken die elke maaltijd afronden. Sla de toeristenval-restaurants bij de grote bezienswaardigheden over — het beste eten is waar de locals eten, en een gids brengt je er rechtstreeks heen."
+        ],
+        "sections": [
+          {
+            "heading": "Turks ontbijt: een feestmaal om de dag te beginnen",
+            "paragraphs": [
+              "Een traditioneel <strong>Turks ontbijt (kahvaltı)</strong> is een uitgebreide tafel, geen bord: witte kaas en gerijpte kaşar, olijven, tomaten en komkommers, honing met dikke room (bal-kaymak), jams, gekookte eieren en warm brood, alles langzaam geproefd bij eindeloze glaasjes thee. In het weekend blijven Turken er uren aan zitten.",
+              "Let op <strong>menemen</strong>, zachte eieren geroerd met tomaten, pepers en kruiden, en <strong>simit</strong>, de met sesam bedekte broodring die overal van straatkarren wordt verkocht. Een uitgebreid ontbijt is een echt hoogtepunt van de Turkse eetcultuur, en veel plekken serveren een serpme kahvaltı — een all-you-can-eat tafel — perfect om te delen."
+            ]
+          },
+          {
+            "heading": "Kebab, meze en het hoofdgerecht",
+            "paragraphs": [
+              "Het gegrilde vlees van Turkije gaat veel verder dan de bekende döner. Zoek naar <strong>Adana- en Urfa-kebab</strong> (pittige en milde spiesen van gehakt lamsvlees), <strong>şiş</strong> (gegrilde vleesblokjes), <strong>İskender</strong> (gesneden döner op brood met tomatensaus en yoghurt) en de langzaam gegaarde stoofpotten van het zuidoosten. Elke regio heeft zijn eigen specialiteit die het proberen waard is.",
+              "Even belangrijk is <strong>meze</strong> — de parade van kleine koude en warme voorgerechten waarmee een echte maaltijd opent: gerookte aubergine, gevulde wijnbladeren, yoghurtdips, zeekraal, pittige ezme en meer. Bestel een tafel meze om te delen, en mis de <strong>pide</strong> (bootvormig Turks platbrood) en <strong>lahmacun</strong> niet, de dunne, knapperige «Turkse pizza» belegd met gekruid gehakt."
+            ]
+          },
+          {
+            "heading": "Streetfood en zeevruchten aan de kust",
+            "paragraphs": [
+              "De streetfood van Turkije is voortreffelijk en goedkoop. Probeer in Istanbul een <strong>balık ekmek</strong> (gegrild visbroodje) aan het water bij Eminönü, geroosterde kastanjes en maïs van karren, <strong>kokoreç</strong> voor de avontuurlijken, en <strong>midye dolma</strong> (gevulde mosselen) met een scheutje citroen. Gözleme — dun gevuld platbrood gebakken op een plaat — is een perfecte snelle lunch.",
+              "Aan de <strong>Egeïsche en mediterrane kust</strong> — İzmir, Bodrum, Kuşadası, Antalya — verschuift de nadruk naar verse zeevruchten en groentegerechten met olijfolie. Een maaltijd van gegrilde vis, meze en een glas rakı, de anijssterke drank die melkachtig wordt met water, aan de haven bij zonsondergang is een typisch Turkse kustervaring."
+            ]
+          },
+          {
+            "heading": "Zoetigheden, thee en Turkse koffie",
+            "paragraphs": [
+              "Houd ruimte voor het toetje. <strong>Baklava</strong> — laagjes filodeeg met pistache of walnoten en siroop — is de ster, het best van een gespecialiseerde winkel, vooral die uit Gaziantep. Probeer ook <strong>künefe</strong> (warm gerafeld deeg met gesmolten kaas en siroop), <strong>lokum</strong> (Turks fruit) en melkpuddingen zoals sütlaç.",
+              "Drankjes zijn een ritueel. <strong>Çay (thee)</strong> wordt de hele dag geserveerd in tulpvormige glaasjes en overal aangeboden als gastvrijheid. <strong>Turkse koffie</strong>, dik en ongefilterd, wordt langzaam gezet en genipt met een glas water en vaak een stukje lokum — en volgens traditie kan het bezinksel in het kopje worden gelezen voor je toekomst. Een glaasje thee van een winkelier weigeren is bijna onmogelijk, en dat is deel van de charme."
+            ]
+          },
+          {
+            "heading": "Hoe je eet als een local",
+            "paragraphs": [
+              "De allerbeste tip: <strong>eet waar de locals eten</strong>. Vermijd restaurants met opdringerige ronselaars en meertalige menu's met foto's pal naast de grote monumenten — ze teren op locatie, niet op kwaliteit. Loop een paar straten terug, zoek plekken vol met Turkse gezinnen, en je eet beter voor minder.",
+              "Een <strong>lokanta</strong> (een eenvoudige eetgelegenheid met bakken huisgemaakte gerechten die je aanwijst) is een lunch met veel waar voor je geld. Probeer de lokale specialiteit van elke regio in plaats van overal dezelfde döner. En wil je het giswerk overslaan, dan is een op eten gerichte wandeling met een lokale gids een van de meest lonende manieren om een Turkse stad te begrijpen — je neus achterna door markten, bakkerijen en verborgen adresjes die je alleen nooit zou vinden."
+            ]
+          }
+        ],
+        "faqHeading": "Veelgestelde vragen",
+        "faqs": [
+          {
+            "q": "Waar is Turkije het meest beroemd om qua eten?",
+            "a": "Turkije is beroemd om kebab (Adana, Urfa, İskender en döner), meze-voorgerechten, pide- en lahmacun-platbroden, en zoetigheden als baklava en Turks fruit. Een overvloedig ontbijt met veel gerechten en de rituelen van thee en Turkse koffie zijn even centraal in de eetcultuur."
+          },
+          {
+            "q": "Wat moet ik in Turkije eten als ontbijt?",
+            "a": "Een traditioneel Turks ontbijt is een gedeelde tafel van kazen, olijven, tomaten, komkommers, honing met dikke room, jams, eieren en warm brood, met eindeloze thee. Let op menemen (eieren met tomaat en pepers) en simit, de sesambroodring die op straat wordt verkocht."
+          },
+          {
+            "q": "Is Turks eten geschikt voor vegetariërs?",
+            "a": "Ja. Hoewel Turkije bekend is om gegrild vlees, zijn de meze en groentegerechten uitstekend voor vegetariërs — gevulde wijnbladeren, auberginegerechten, bonen in olijfolie, linzensoep, salades en pide met kaas. Bevestig bij het bestellen alleen dat bouillons en vullingen vleesvrij zijn."
+          },
+          {
+            "q": "Hoe vermijd ik toeristenval-restaurants in Turkije?",
+            "a": "Vermijd plekken met ronselaars buiten en gelamineerde menu's met foto's pal naast de grote bezienswaardigheden. Loop een paar straten weg, kies plekken vol locals, en probeer een lokanta met huisgemaakte bakken. Een lokale eetgids is de zekerste manier om authentieke, prijs-kwaliteitsbewuste plekken te vinden."
+          },
+          {
+            "q": "Wat is de nationale drank van Turkije?",
+            "a": "Thee (çay), geserveerd in kleine tulpvormige glaasjes, is de dagelijkse nationale drank en een gebaar van gastvrijheid dat overal wordt aangeboden. Turkse koffie, dik en langzaam gezet, is de traditionele koffie, terwijl rakı, een anijssterke drank, de klassieke drank is bij meze en zeevruchten."
+          }
+        ],
+        "relatedHeading": "Proef Turkije met een local",
+        "ctaTitle": "Ontdek Turks eten met een lokale gids",
+        "ctaSub": "De beste maaltijden zijn waar de locals eten. Boek een geverifieerde gids op VibeGuide en volg je neus door de markten en achterafstraatjes van Turkije."
+      },
+      "pt": {
+        "title": "Guia da comida turca: o que comer na Turquia",
+        "metaTitle": "Comida turca — o que comer e beber na Turquia",
+        "metaDescription": "Um guia local da comida turca: os pratos imperdíveis, comida de rua, pequeno-almoço, doces e bebidas — de kebabs e meze a baklava, simit e chá e café turcos.",
+        "excerpt": "A cozinha turca é uma das grandes tradições gastronómicas do mundo. Aqui ficam os pratos, os petiscos de rua e as bebidas a procurar — e como comer como um local, não como um turista.",
+        "intro": [
+          "A cozinha turca é uma das grandes culturas gastronómicas do mundo — um cruzamento de sabores mediterrânicos, do Médio Oriente, da Ásia Central e dos Balcãs, assente em produtos soberbos, carnes grelhadas, legumes frescos e uma infindável variedade de meze. Comer bem é uma das maiores alegrias de qualquer viagem à Turquia, e é acessível a qualquer orçamento.",
+          "Este guia percorre os <strong>pratos e bebidas a procurar</strong>, de um verdadeiro pequeno-almoço turco a petiscos de rua, kebabs grelhados, marisco na costa e os doces e bebidas quentes que rematam cada refeição. Evite os restaurantes armadilha para turistas junto aos grandes monumentos — a melhor comida está onde os locais comem, e um guia leva-o lá diretamente."
+        ],
+        "sections": [
+          {
+            "heading": "Pequeno-almoço turco: um banquete para começar o dia",
+            "paragraphs": [
+              "Um <strong>pequeno-almoço turco tradicional (kahvaltı)</strong> é uma mesa farta, não um prato: queijo branco e kaşar curado, azeitonas, tomates e pepinos, mel com nata espessa (bal-kaymak), compotas, ovos cozidos e pão quente, tudo saboreado devagar entre copos infindáveis de chá. Aos fins de semana, os turcos prolongam-no durante horas.",
+              "Fique atento ao <strong>menemen</strong>, ovos mexidos macios com tomate, pimentos e especiarias, e ao <strong>simit</strong>, a rosca de pão coberta de sésamo vendida em carrinhos de rua por todo o lado. Um pequeno-almoço demorado é um verdadeiro ponto alto da cultura gastronómica turca, e muitos sítios servem um serpme kahvaltı — uma mesa à discrição — perfeito para partilhar."
+            ]
+          },
+          {
+            "heading": "Kebabs, meze e o prato principal",
+            "paragraphs": [
+              "As carnes grelhadas da Turquia vão muito além do familiar döner. Procure o <strong>kebab Adana e Urfa</strong> (espetadas de borrego picado, picantes e suaves), o <strong>şiş</strong> (carne grelhada em cubos), o <strong>İskender</strong> (döner fatiado sobre pão com molho de tomate e iogurte) e os guisados lentos do sudeste. Cada região tem a sua especialidade que vale a pena provar.",
+              "Igualmente importante é o <strong>meze</strong> — o desfile de pequenas entradas frias e quentes que abre uma refeição a sério: beringela fumada, folhas de videira recheadas, molhos de iogurte, salicórnia, ezme picante e muito mais. Peça uma mesa de meze para partilhar, e não perca a <strong>pide</strong> (pão achatado turco em forma de barco) e a <strong>lahmacun</strong>, a fina e estaladiça «pizza turca» coberta de carne picada temperada."
+            ]
+          },
+          {
+            "heading": "Comida de rua e marisco da costa",
+            "paragraphs": [
+              "A comida de rua da Turquia é excelente e barata. Em Istambul, prove um <strong>balık ekmek</strong> (sanduíche de peixe grelhado) à beira-água em Eminönü, castanhas e milho assados nos carrinhos, <strong>kokoreç</strong> para os mais aventureiros, e <strong>midye dolma</strong> (mexilhões recheados) com um pingo de limão. O gözleme — pão achatado fino recheado, cozinhado numa chapa — é um almoço rápido perfeito.",
+              "Nas <strong>costas do Egeu e do Mediterrâneo</strong> — Esmirna, Bodrum, Kuşadası, Antália — a ênfase passa para o marisco fresco e os pratos de legumes em azeite. Uma refeição de peixe grelhado, meze e um copo de rakı, a aguardente de anis que fica leitosa com água, no cais ao pôr do sol, é uma experiência costeira quintessencialmente turca."
+            ]
+          },
+          {
+            "heading": "Doces, chá e café turco",
+            "paragraphs": [
+              "Guarde espaço para a sobremesa. A <strong>baklava</strong> — massa folhada em camadas com pistácio ou noz e calda — é a estrela, melhor numa casa especializada, sobretudo as de Gaziantep. Prove também o <strong>künefe</strong> (massa em fios quente com queijo derretido e calda), o <strong>lokum</strong> (delícia turca) e pudins de leite como o sütlaç.",
+              "As bebidas são um ritual. O <strong>çay (chá)</strong> serve-se o dia todo em copos em forma de tulipa e é oferecido em toda a parte como sinal de hospitalidade. O <strong>café turco</strong>, espesso e não filtrado, é preparado devagar e saboreado com um copo de água e, muitas vezes, um pedaço de lokum — e, por tradição, a borra que fica na chávena pode ser lida para prever o seu futuro. Recusar um copo de chá de um comerciante é quase impossível, e isso faz parte do encanto."
+            ]
+          },
+          {
+            "heading": "Como comer como um local",
+            "paragraphs": [
+              "A melhor dica de todas: <strong>coma onde os locais comem</strong>. Evite restaurantes com angariadores insistentes e ementas com fotos em várias línguas mesmo ao lado dos grandes monumentos — vivem da localização, não da qualidade. Ande umas ruas para trás, procure sítios cheios de famílias turcas, e comerá melhor por menos.",
+              "Uma <strong>lokanta</strong> (uma casa de comida simples com tabuleiros de pratos caseiros que se apontam) é um almoço com ótima relação qualidade-preço. Prove a especialidade local de cada região em vez do mesmo döner por todo o lado. E se quiser saltar as adivinhas, um passeio gastronómico com um guia local é uma das formas mais compensadoras de compreender uma cidade turca — seguindo o faro por mercados, padarias e tasquinhas que nunca encontraria sozinho."
+            ]
+          }
+        ],
+        "faqHeading": "Perguntas frequentes",
+        "faqs": [
+          {
+            "q": "Por que comida é a Turquia mais famosa?",
+            "a": "A Turquia é famosa pelos kebabs (Adana, Urfa, İskender e döner), pelas entradas meze, pelos pães achatados pide e lahmacun, e por doces como a baklava e a delícia turca. Um pequeno-almoço farto de vários pratos e os rituais do chá e do café turco são igualmente centrais na cultura gastronómica."
+          },
+          {
+            "q": "O que devo comer ao pequeno-almoço na Turquia?",
+            "a": "Um pequeno-almoço turco tradicional é uma mesa partilhada de queijos, azeitonas, tomates, pepinos, mel com nata espessa, compotas, ovos e pão quente, com chá sem fim. Procure o menemen (ovos com tomate e pimentos) e o simit, a rosca de pão de sésamo vendida na rua."
+          },
+          {
+            "q": "A comida turca é boa para vegetarianos?",
+            "a": "Sim. Embora a Turquia seja conhecida pelas carnes grelhadas, os seus meze e pratos de legumes são excelentes para vegetarianos — folhas de videira recheadas, pratos de beringela, feijão em azeite, sopa de lentilhas, saladas e pide com queijo. Basta confirmar, ao pedir, que os caldos e recheios não têm carne."
+          },
+          {
+            "q": "Como evito restaurantes armadilha para turistas na Turquia?",
+            "a": "Evite sítios com angariadores à porta e ementas plastificadas com fotos mesmo ao lado dos grandes monumentos. Ande umas ruas para longe, escolha locais cheios de gente local, e experimente uma lokanta com tabuleiros de comida caseira. Um guia gastronómico local é a forma mais segura de encontrar sítios autênticos e com boa relação qualidade-preço."
+          },
+          {
+            "q": "Qual é a bebida nacional da Turquia?",
+            "a": "O chá (çay), servido em pequenos copos em forma de tulipa, é a bebida nacional do dia a dia e um gesto de hospitalidade oferecido em toda a parte. O café turco, espesso e preparado devagar, é o café tradicional, enquanto o rakı, uma aguardente de anis, é a bebida clássica com meze e marisco."
+          }
+        ],
+        "relatedHeading": "Saboreie a Turquia com um local",
+        "ctaTitle": "Descubra a comida turca com um guia local",
+        "ctaSub": "As melhores refeições estão onde os locais comem. Reserve um guia verificado na VibeGuide e siga o faro pelos mercados e ruelas da Turquia."
+      },
+      "ja": {
+        "title": "トルコ料理ガイド：トルコで何を食べるべきか",
+        "metaTitle": "トルコ料理ガイド — トルコで食べるべきもの・飲むべきもの",
+        "metaDescription": "トルコ料理の地元ガイド：外せない料理、屋台、朝食、スイーツ、飲み物 — ケバブやメゼからバクラヴァ、シミット、トルコの紅茶とコーヒーまで。",
+        "excerpt": "トルコ料理は世界屈指の食の伝統です。探し求めるべき料理、屋台の軽食、飲み物、そして観光客ではなく地元の人のように食べる方法をご紹介します。",
+        "intro": [
+          "トルコ料理は世界屈指の食文化です — 地中海、中東、中央アジア、バルカンの味が交わる十字路であり、素晴らしい食材、炭火の肉、新鮮な野菜、果てしないメゼの数々の上に築かれています。おいしく食べることはトルコ旅行の最大の喜びの一つで、どんな予算でも手が届きます。",
+          "このガイドは、本格的なトルコ式朝食から屋台の軽食、炭火のケバブ、海岸のシーフード、そしてすべての食事を締めくくるスイーツと温かい飲み物まで、<strong>探し求めるべき料理と飲み物</strong>を案内します。大きな観光名所のそばの観光客向けの店は避けましょう — 一番おいしいのは地元の人が食べる場所で、ガイドがそこへまっすぐ連れて行ってくれます。"
+        ],
+        "sections": [
+          {
+            "heading": "トルコの朝食：一日を始めるごちそう",
+            "paragraphs": [
+              "伝統的な<strong>トルコの朝食（kahvaltı）</strong>は一皿ではなく、広げられた食卓です：白チーズと熟成カシャル、オリーブ、トマトとキュウリ、クロテッドクリーム添えの蜂蜜（bal-kaymak）、ジャム類、茹で卵、温かいパン — それらを果てしない紅茶のグラスとともにゆっくりつまみます。週末には、トルコの人々は何時間もかけて味わいます。",
+              "<strong>menemen</strong>（トマト、ピーマン、スパイスと炒めたやわらかな卵）と、いたるところの屋台で売られるゴマまぶしのリング状パン<strong>simit</strong>にも注目を。ゆったりした朝食はトルコの食文化の真の見どころで、多くの店が serpme kahvaltı — 食べ放題の朝食 — を出しており、シェアするのに最適です。"
+            ]
+          },
+          {
+            "heading": "ケバブ、メゼ、そして主役",
+            "paragraphs": [
+              "トルコの炭火の肉はおなじみのドネルをはるかに超えます。<strong>アダナ・ケバブとウルファ・ケバブ</strong>（辛口とマイルドの羊ひき肉の串）、<strong>şiş</strong>（角切り肉の炭火焼き）、<strong>İskender</strong>（パンの上に薄切りドネルをのせトマトソースとヨーグルトをかけたもの）、そして南東部の煮込み料理を探してみましょう。地方ごとに試す価値のある名物があります。",
+              "同じくらい大切なのが<strong>メゼ</strong> — 本格的な食事の幕開けを飾る、小さな冷菜と温菜の行列です：スモーキーなナス、ブドウの葉の詰め物、ヨーグルトのディップ、シーアスパラガス、辛口のエズメなど。シェア用にメゼをひと通り注文し、<strong>pide</strong>（舟形のトルコのフラットブレッド）と、スパイシーなひき肉をのせた薄くパリッとした「トルコ風ピザ」<strong>lahmacun</strong>もお忘れなく。"
+            ]
+          },
+          {
+            "heading": "屋台料理と海岸のシーフード",
+            "paragraphs": [
+              "トルコの屋台料理は素晴らしく、しかも安い。イスタンブールでは、エミノニュの水辺で<strong>balık ekmek</strong>（焼き魚サンド）を、屋台の焼き栗やトウモロコシを、冒険好きには<strong>kokoreç</strong>を、そしてレモンを絞った<strong>midye dolma</strong>（ムール貝の詰め物）を試してみましょう。鉄板で焼く薄い詰め物入りフラットブレッド、ギョズレメは完璧な手軽なランチです。",
+              "<strong>エーゲ海と地中海の海岸</strong> — イズミル、ボドルム、クシャダス、アンタルヤ — では、新鮮なシーフードとオリーブオイルの野菜料理へと重心が移ります。焼き魚、メゼ、そして水を加えると白く濁るアニスの酒ラクを一杯、港で夕日を眺めながらの食事は、まさにトルコの海岸ならではの体験です。"
+            ]
+          },
+          {
+            "heading": "スイーツ、紅茶、そしてトルココーヒー",
+            "paragraphs": [
+              "デザートのために腹を空けておきましょう。<strong>バクラヴァ</strong> — ピスタチオやクルミとシロップを挟んだ層状のフィロ生地 — が主役で、専門店、とりわけガズィアンテプのものが最高です。<strong>künefe</strong>（溶けたチーズとシロップをかけた温かい細切りペストリー）、<strong>lokum</strong>（ターキッシュディライト）、そして sütlaç のようなミルクプディングも試してみましょう。",
+              "飲み物は儀式です。<strong>Çay（紅茶）</strong>は一日中チューリップ型のグラスで供され、もてなしとしてどこでも差し出されます。濃く漉さない<strong>トルココーヒー</strong>はゆっくり淹れられ、水のグラスと、しばしば lokum を一片添えて味わいます — そして伝統では、カップに残った粉で運勢を占うこともできます。店主から差し出される紅茶を断るのはほぼ不可能で、それも魅力の一部です。"
+            ]
+          },
+          {
+            "heading": "地元の人のように食べるには",
+            "paragraphs": [
+              "最良のコツはただ一つ：<strong>地元の人が食べる場所で食べること</strong>。主要な記念物のすぐ隣にある、しつこい客引きと多言語の写真付きメニューのある店は避けましょう — 質ではなく立地で商売しているのです。数本裏の通りへ歩き、トルコの家族で賑わう店を探せば、より安くよりおいしく食べられます。",
+              "<strong>lokanta</strong>（指差して選ぶ家庭料理のトレイが並ぶ気軽な食堂）は値打ちのあるランチです。どこでも同じドネルではなく、その土地ごとの名物を試しましょう。当てずっぽうを避けたいなら、地元ガイドとの食をめぐる散策は、トルコの街を理解する最も実りある方法の一つです — 市場、パン屋、路地の小さな名店を、鼻を頼りに巡っていくのです。"
+            ]
+          }
+        ],
+        "faqHeading": "よくある質問",
+        "faqs": [
+          {
+            "q": "トルコで最も有名な料理は何ですか？",
+            "a": "トルコはケバブ（アダナ、ウルファ、イスケンデル、ドネル）、前菜のメゼ、ピデやラフマジュンのフラットブレッド、バクラヴァやターキッシュディライトなどのスイーツで有名です。豪華な品数の多い朝食と、紅茶やトルココーヒーの儀式も同じくらい食文化の中心です。"
+          },
+          {
+            "q": "トルコで朝食に何を食べるべきですか？",
+            "a": "伝統的なトルコの朝食は、チーズ、オリーブ、トマト、キュウリ、クロテッドクリーム添えの蜂蜜、ジャム、卵、温かいパンを、果てしない紅茶とともに囲む共有の食卓です。menemen（トマトとピーマンの卵）と、路上で売られるゴマのリング状パン simit を探してみましょう。"
+          },
+          {
+            "q": "トルコ料理はベジタリアンに向いていますか？",
+            "a": "はい。トルコは炭火の肉で知られますが、メゼと野菜料理はベジタリアンに最適です — ブドウの葉の詰め物、ナス料理、オリーブオイルの豆、レンズ豆のスープ、サラダ、チーズのピデなど。注文時に出汁や具に肉が入っていないか確認するだけでよいでしょう。"
+          },
+          {
+            "q": "トルコで観光客向けのぼったくり店をどう避けますか？",
+            "a": "大きな名所のすぐそばで、外に客引きがいてラミネート加工の写真付きメニューを置く店は避けましょう。数本離れた通りへ歩き、地元の人で賑わう店を選び、家庭料理のトレイを出す lokanta を試しましょう。地元の食のガイドは、本格的で値打ちのある店を見つける最も確実な方法です。"
+          },
+          {
+            "q": "トルコの国民的な飲み物は何ですか？",
+            "a": "小さなチューリップ型のグラスで供される紅茶（çay）が日常の国民的な飲み物で、どこでも差し出されるもてなしのしるしです。濃くゆっくり淹れるトルココーヒーが伝統的なコーヒーで、アニスの酒ラクはメゼやシーフードと合わせる定番の飲み物です。"
+          }
+        ],
+        "relatedHeading": "地元の人とトルコを味わう",
+        "ctaTitle": "地元ガイドとトルコ料理を発見する",
+        "ctaSub": "最高の食事は地元の人が食べる場所にあります。VibeGuideで認証済みのガイドを予約し、鼻を頼りにトルコの市場と路地裏を巡りましょう。"
+      },
+      "ko": {
+        "title": "터키 음식 가이드: 터키에서 무엇을 먹을까",
+        "metaTitle": "터키 음식 가이드 — 터키에서 먹고 마실 것",
+        "metaDescription": "터키 음식 현지 가이드: 꼭 먹어야 할 요리, 길거리 음식, 아침, 디저트, 음료 — 케밥과 메제부터 바클라바, 시미트, 터키 홍차와 커피까지.",
+        "excerpt": "터키 요리는 세계 최고의 음식 전통 중 하나입니다. 찾아 먹어야 할 요리, 길거리 간식, 음료와 함께, 관광객이 아닌 현지인처럼 먹는 법을 알려드립니다.",
+        "intro": [
+          "터키 요리는 세계 최고의 음식 문화 중 하나입니다 — 지중해, 중동, 중앙아시아, 발칸의 맛이 교차하는 지점으로, 훌륭한 식재료와 숯불 고기, 신선한 채소, 끝없이 이어지는 메제 위에 세워졌습니다. 잘 먹는 것은 터키 여행의 가장 큰 즐거움 중 하나이며, 어떤 예산으로도 누릴 수 있습니다.",
+          "이 가이드는 제대로 된 터키식 아침부터 길거리 간식, 숯불 케밥, 해안의 해산물, 그리고 모든 식사를 마무리하는 디저트와 따뜻한 음료까지 <strong>찾아 먹어야 할 요리와 음료</strong>를 짚어봅니다. 큰 명소 근처의 관광객 함정 식당은 피하세요 — 최고의 음식은 현지인이 먹는 곳에 있고, 가이드가 그곳으로 곧장 데려다줄 수 있습니다."
+        ],
+        "sections": [
+          {
+            "heading": "터키식 아침: 하루를 여는 만찬",
+            "paragraphs": [
+              "전통 <strong>터키식 아침(kahvaltı)</strong>은 한 접시가 아니라 한 상 가득입니다: 흰 치즈와 숙성 카샤르, 올리브, 토마토와 오이, 클로티드 크림을 곁들인 꿀(bal-kaymak), 잼, 삶은 달걀, 따뜻한 빵 — 이 모두를 끝없는 홍차 잔과 함께 천천히 즐깁니다. 주말이면 터키 사람들은 몇 시간이고 느긋하게 이를 즐깁니다.",
+              "토마토, 고추, 향신료와 함께 부드럽게 익힌 달걀 <strong>menemen</strong>과, 어디서나 길거리 수레에서 파는 참깨 입힌 링 모양 빵 <strong>simit</strong>을 눈여겨보세요. 여유로운 아침은 터키 음식 문화의 진짜 하이라이트이며, 많은 곳에서 serpme kahvaltı — 무제한으로 즐기는 한 상 — 를 내는데, 나눠 먹기에 그만입니다."
+            ]
+          },
+          {
+            "heading": "케밥, 메제, 그리고 메인 요리",
+            "paragraphs": [
+              "터키의 숯불 고기는 익숙한 되네르를 훨씬 넘어섭니다. <strong>아다나·우르파 케밥</strong>(매콤하고 순한 양 다짐육 꼬치), <strong>şiş</strong>(깍둑 썬 숯불 고기), <strong>İskender</strong>(빵 위에 얇게 썬 되네르를 얹고 토마토소스와 요구르트를 곁들인 것), 그리고 남동부의 뭉근히 끓인 스튜를 찾아보세요. 지역마다 시도해 볼 만한 고유의 명물이 있습니다.",
+              "그에 못지않게 중요한 것이 <strong>메제</strong> — 제대로 된 식사의 문을 여는 작은 냉·온 전채의 행렬입니다: 훈연한 가지, 포도잎 말이, 요구르트 딥, 함초, 매콤한 에즈메 등. 나눠 먹을 메제를 한 상 시키고, <strong>pide</strong>(배 모양의 터키식 플랫브레드)와, 양념한 다짐육을 얹은 얇고 바삭한 「터키식 피자」 <strong>lahmacun</strong>도 놓치지 마세요."
+            ]
+          },
+          {
+            "heading": "길거리 음식과 해안의 해산물",
+            "paragraphs": [
+              "터키의 길거리 음식은 훌륭하고 저렴합니다. 이스탄불에서는 에미뇌뉴 물가에서 <strong>balık ekmek</strong>(생선 구이 샌드위치)을, 수레의 군밤과 옥수수를, 모험심 있는 이들에겐 <strong>kokoreç</strong>를, 레몬을 짜 넣은 <strong>midye dolma</strong>(홍합 속 채움)를 맛보세요. 철판에 굽는 얇은 속 채운 플랫브레드 괴즐레메는 완벽한 간편 점심입니다.",
+              "<strong>에게해와 지중해 연안</strong> — 이즈미르, 보드룸, 쿠샤다스, 안탈리아 — 에서는 신선한 해산물과 올리브유 채소 요리로 무게 중심이 옮겨갑니다. 항구에서 해질 무렵, 생선 구이와 메제, 그리고 물을 타면 뿌옇게 변하는 아니스 술 라크 한 잔을 곁들인 식사는 더없이 터키다운 해안의 경험입니다."
+            ]
+          },
+          {
+            "heading": "디저트, 홍차, 그리고 터키 커피",
+            "paragraphs": [
+              "디저트를 위한 배를 남겨두세요. <strong>바클라바</strong> — 피스타치오나 호두와 시럽을 겹겹이 넣은 필로 반죽 — 가 주인공이며, 전문점, 특히 가지안테프의 것이 최고입니다. <strong>künefe</strong>(녹인 치즈와 시럽을 곁들인 따뜻한 실 페이스트리), <strong>lokum</strong>(터키시 딜라이트), sütlaç 같은 우유 푸딩도 맛보세요.",
+              "음료는 하나의 의식입니다. <strong>Çay(홍차)</strong>는 튤립 모양 잔에 하루 종일 나오며 어디서나 환대의 표시로 건네집니다. 진하고 거르지 않은 <strong>터키 커피</strong>는 천천히 끓여 물 한 잔과, 흔히 lokum 한 조각과 함께 음미합니다 — 전통에 따르면 잔에 남은 찌꺼기로 운세를 점치기도 합니다. 상점 주인이 건네는 홍차 한 잔을 거절하기란 거의 불가능하며, 그것 또한 매력의 일부입니다."
+            ]
+          },
+          {
+            "heading": "현지인처럼 먹는 법",
+            "paragraphs": [
+              "최고의 팁은 단 하나: <strong>현지인이 먹는 곳에서 먹기</strong>. 주요 명소 바로 옆에 있는, 집요한 호객꾼과 다국어 사진 메뉴가 있는 식당은 피하세요 — 그들은 품질이 아니라 위치로 장사합니다. 몇 골목만 뒤로 걸어가 터키 가족들로 붐비는 곳을 찾으면 더 싸고 더 잘 먹을 수 있습니다.",
+              "<strong>lokanta</strong>(손으로 가리켜 고르는 가정식 트레이가 있는 편한 식당)는 가성비 좋은 점심입니다. 어디서나 똑같은 되네르 대신 지역별 명물을 시도하세요. 헤매기 싫다면, 현지 가이드와 함께하는 음식 중심의 산책이 터키 도시를 이해하는 가장 보람 있는 방법 중 하나입니다 — 시장, 빵집, 혼자서는 결코 못 찾을 작은 명소를 코를 따라 누비는 것이죠."
+            ]
+          }
+        ],
+        "faqHeading": "자주 묻는 질문",
+        "faqs": [
+          {
+            "q": "터키가 가장 유명한 음식은 무엇인가요?",
+            "a": "터키는 케밥(아다나, 우르파, 이스켄데르, 되네르), 전채인 메제, 피데와 라흐마준 플랫브레드, 바클라바와 터키시 딜라이트 같은 디저트로 유명합니다. 푸짐한 여러 접시의 아침과 홍차·터키 커피의 의식도 음식 문화의 핵심입니다."
+          },
+          {
+            "q": "터키에서 아침으로 무엇을 먹어야 하나요?",
+            "a": "전통 터키식 아침은 치즈, 올리브, 토마토, 오이, 클로티드 크림 곁들인 꿀, 잼, 달걀, 따뜻한 빵을 끝없는 홍차와 함께 나눠 먹는 한 상입니다. menemen(토마토·고추 달걀)과 길거리에서 파는 참깨 링 빵 simit을 찾아보세요."
+          },
+          {
+            "q": "터키 음식은 채식주의자에게 좋은가요?",
+            "a": "네. 터키는 숯불 고기로 유명하지만 메제와 채소 요리는 채식주의자에게 훌륭합니다 — 포도잎 말이, 가지 요리, 올리브유에 익힌 콩, 렌틸 수프, 샐러드, 치즈 피데 등. 주문할 때 육수와 속이 고기 없이 만들어졌는지만 확인하세요."
+          },
+          {
+            "q": "터키에서 관광객 함정 식당을 어떻게 피하나요?",
+            "a": "큰 명소 바로 옆에 호객꾼이 있고 코팅된 사진 메뉴가 놓인 곳은 피하세요. 몇 골목 떨어진 곳으로 걸어가 현지인으로 붐비는 곳을 고르고, 가정식 트레이를 내는 lokanta를 시도하세요. 현지 음식 가이드가 진짜배기 가성비 좋은 곳을 찾는 가장 확실한 방법입니다."
+          },
+          {
+            "q": "터키의 국민 음료는 무엇인가요?",
+            "a": "작은 튤립 모양 잔에 나오는 홍차(çay)가 일상의 국민 음료이자 어디서나 건네는 환대의 표시입니다. 진하고 천천히 끓이는 터키 커피가 전통 커피이며, 아니스 술 라크는 메제와 해산물에 곁들이는 대표 음료입니다."
+          }
+        ],
+        "relatedHeading": "현지인과 터키를 맛보다",
+        "ctaTitle": "현지 가이드와 터키 음식을 발견하세요",
+        "ctaSub": "최고의 식사는 현지인이 먹는 곳에 있습니다. VibeGuide에서 인증된 가이드를 예약하고 터키의 시장과 뒷골목을 코를 따라 누벼보세요."
+      }
+    }
+  },
+  {
+    "slug": "ephesus-day-trip-from-kusadasi",
+    "category": "guides",
+    "heroImage": "https://images.unsplash.com/photo-1589553416260-f586c8f1514f?q=80&w=1600",
+    "publishDate": "2026-08-04",
+    "relatedCityGuides": [
+      "kusadasi-tour-guide",
+      "ephesus-tour-guide",
+      "izmir-tour-guide"
+    ],
+    "relatedAttractions": [
+      "ephesus",
+      "temple-of-artemis"
+    ],
+    "i18n": {
+      "en": {
+        "title": "Ephesus Day Trip from Kuşadası: The Complete Guide",
+        "metaTitle": "Ephesus Day Trip from Kuşadası — Complete Cruise Guide",
+        "metaDescription": "Everything you need for an Ephesus day trip from Kuşadası: distance, timing for cruise passengers, what to see, ticket tips and why a licensed guide is required inside the site.",
+        "excerpt": "Ephesus is just 20 minutes from Kuşadası's cruise port — the perfect shore excursion. Here's how to plan it, what to see and why only a licensed guide can lead you inside.",
+        "intro": [
+          "Ephesus is the star day trip on Turkey's Aegean coast, and Kuşadası — one of the country's busiest cruise ports — is its ideal launch point. Just 20 minutes away by road, the vast Greco-Roman city makes a perfect half- or full-day outing, whether you're on a cruise stopover or based on the coast for a few nights.",
+          "This guide covers everything for an <strong>Ephesus day trip from Kuşadası</strong>: how far it is, how to time it around a cruise ship's departure, what to see inside the ruins, ticketing quirks like the Terrace Houses, and why — uniquely at Ephesus — you need a <strong>licensed guide</strong> to be led through the ancient site. Do it right and it's one of the most memorable days in Turkey."
+        ],
+        "sections": [
+          {
+            "heading": "How far is Ephesus from Kuşadası?",
+            "paragraphs": [
+              "Ephesus lies about <strong>18 km — roughly 20 minutes by road</strong> — from Kuşadası's cruise port, next to the town of Selçuk. That short distance is exactly why it's the number-one excursion from Kuşadası: you can be walking among 2,000-year-old marble streets barely half an hour after stepping off the ship.",
+              "Because it's so close, a licensed guide can comfortably combine Ephesus with two nearby sites — the <strong>House of the Virgin Mary</strong> in the hills above and the lone standing column of the <strong>Temple of Artemis</strong>, one of the Seven Wonders of the Ancient World — in a single, unhurried outing."
+            ]
+          },
+          {
+            "heading": "For cruise passengers: timing it right",
+            "paragraphs": [
+              "If you're arriving by cruise ship with only a few hours ashore, Ephesus is close enough for a relaxed half-day shore excursion straight from the terminal. The key is timing: a good local guide plans the whole outing around your ship's all-aboard time, handles transport and tickets, and always builds in a safety margin so you're back comfortably before departure.",
+              "This is where booking a private licensed guide beats a huge coach tour — you move faster, skip the herd, see the highlights efficiently, and never risk the ship leaving without you. VibeNow can even match you with an available guide in about 60 seconds the moment you dock, if you'd rather arrange it on the spot."
+            ]
+          },
+          {
+            "heading": "What to see inside Ephesus",
+            "paragraphs": [
+              "Ephesus is remarkably complete. The showpiece is the <strong>Library of Celsus</strong>, its restored two-storey façade one of the most photographed sights in Turkey. Walk down the marble <strong>Curetes Street</strong> past temples, fountains and shopfronts to the <strong>Great Theatre</strong>, which once seated 25,000 and still hosts events today.",
+              "For an extra ticket, the <strong>Terrace Houses</strong> — the covered remains of wealthy Roman homes with astonishing mosaics and frescoes — are the site's hidden gem and well worth it. A guide brings the ruined streets to life, explaining daily Roman life, the vanished harbour and the layers of Greek, Roman and early Christian history that most visitors walk straight past."
+            ]
+          },
+          {
+            "heading": "Tickets, licensing and practical tips",
+            "paragraphs": [
+              "Two ticketing notes: the main site has one entry ticket, and the <strong>Terrace Houses require a separate ticket</strong> on top of it. More importantly, Ephesus is one of the sites where <strong>only an officially licensed guide is permitted to lead tours inside the ancient city</strong> — every guide on VibeGuide holds that Ministry of Culture and Tourism licence, so booking through the platform keeps you fully covered.",
+              "Practically: wear a hat, sunscreen and comfortable shoes, and bring water — the marble streets are exposed with little shade and get very hot in summer. Go early or late in the day to avoid both the midday heat and the peak of the cruise crowds. There are two entrances (upper and lower); a guide can plan the walk downhill so you finish near the exit."
+            ]
+          },
+          {
+            "heading": "Combining Ephesus with more of the region",
+            "paragraphs": [
+              "If you have a full day rather than a cruise stopover, pair Ephesus with the charming hill village of <strong>Şirince</strong>, known for its fruit wines and old Greek-Ottoman houses, for a relaxed afternoon of tasting after the ruins. The House of the Virgin Mary and the Temple of Artemis slot easily into the same trip.",
+              "With more time, Kuşadası is a springboard for the ancient Ionian cities of Priene, Miletus and Didyma, the white travertines of Pamukkale, and the coves of Dilek Peninsula National Park. But Ephesus alone justifies the trip — and with a licensed local guide to unlock its history, it's an unforgettable day out from Kuşadası."
+            ]
+          }
+        ],
+        "faqHeading": "Frequently asked questions",
+        "faqs": [
+          {
+            "q": "How far is Ephesus from Kuşadası port?",
+            "a": "Ephesus is about 18 km — roughly a 20-minute drive — from Kuşadası's cruise port, near the town of Selçuk. Its closeness makes it the top day trip from Kuşadası and an easy half-day shore excursion for cruise passengers."
+          },
+          {
+            "q": "Can I visit Ephesus on a cruise stopover from Kuşadası?",
+            "a": "Yes. Ephesus is close enough for a relaxed half-day shore excursion. A licensed guide plans the timing around your ship's all-aboard time, handles transport and tickets, and builds in a margin so you're back comfortably before departure. A private guide is faster and safer than a large coach tour."
+          },
+          {
+            "q": "Do you need a licensed guide for Ephesus?",
+            "a": "Only officially licensed guides are permitted to lead tours inside the ancient city of Ephesus. Every guide on VibeGuide holds the Turkish Ministry of Culture and Tourism licence, so booking through the platform keeps you fully compliant and covered."
+          },
+          {
+            "q": "Do the Ephesus Terrace Houses need a separate ticket?",
+            "a": "Yes. The main Ephesus site has one entry ticket, and the Terrace Houses — the beautifully preserved Roman homes with mosaics and frescoes — require an additional ticket on top. They're a highlight and well worth the extra cost."
+          },
+          {
+            "q": "What else can I combine with an Ephesus day trip?",
+            "a": "A licensed guide can easily combine Ephesus with the House of the Virgin Mary, the Temple of Artemis and the wine village of Şirince in one outing. With a full day, Priene, Miletus, Didyma or Pamukkale are also reachable from Kuşadası."
+          }
+        ],
+        "relatedHeading": "Explore Ephesus and the Aegean",
+        "ctaTitle": "See Ephesus with a licensed guide",
+        "ctaSub": "Only licensed guides can lead you inside the ancient city — and cruise timing is everything. Book a verified Ephesus guide on VibeGuide."
+      },
+      "de": {
+        "title": "Tagesausflug nach Ephesos von Kuşadası: der komplette Leitfaden",
+        "metaTitle": "Ephesos-Tagesausflug ab Kuşadası — Kreuzfahrt-Guide",
+        "metaDescription": "Alles für einen Ephesos-Tagesausflug ab Kuşadası: Entfernung, Timing für Kreuzfahrtgäste, was es zu sehen gibt, Ticket-Tipps und warum im Gelände ein lizenzierter Guide Pflicht ist.",
+        "excerpt": "Ephesos ist nur 20 Minuten vom Kreuzfahrthafen Kuşadası entfernt — der perfekte Landausflug. Hier steht, wie Sie ihn planen, was Sie sehen und warum nur ein lizenzierter Guide Sie hineinführen darf.",
+        "intro": [
+          "Ephesos ist der Star-Tagesausflug an der türkischen Ägäisküste, und Kuşadası — einer der geschäftigsten Kreuzfahrthäfen des Landes — ist der ideale Ausgangspunkt. Nur 20 Minuten über die Straße entfernt, macht die weitläufige griechisch-römische Stadt einen perfekten Halb- oder Ganztagesausflug, ob Sie auf einem Kreuzfahrt-Zwischenstopp sind oder für ein paar Nächte an der Küste wohnen.",
+          "Dieser Leitfaden deckt alles für einen <strong>Ephesos-Tagesausflug ab Kuşadası</strong> ab: wie weit es ist, wie man ihn um die Abfahrt eines Kreuzfahrtschiffs herum plant, was es in den Ruinen zu sehen gibt, Ticket-Eigenheiten wie die Terrassenhäuser und warum — einzigartig in Ephesos — ein <strong>lizenzierter Guide</strong> nötig ist, um durch die antike Stätte geführt zu werden. Richtig gemacht, ist es einer der einprägsamsten Tage in der Türkei."
+        ],
+        "sections": [
+          {
+            "heading": "Wie weit ist Ephesos von Kuşadası entfernt?",
+            "paragraphs": [
+              "Ephesos liegt etwa <strong>18 km — rund 20 Minuten über die Straße</strong> — vom Kreuzfahrthafen Kuşadası entfernt, neben der Stadt Selçuk. Genau diese kurze Distanz macht es zum Ausflug Nummer eins ab Kuşadası: Kaum eine halbe Stunde nach dem Verlassen des Schiffs können Sie zwischen 2.000 Jahre alten Marmorstraßen wandeln.",
+              "Weil es so nah ist, kann ein lizenzierter Guide Ephesos bequem mit zwei nahegelegenen Stätten verbinden — dem <strong>Haus der Jungfrau Maria</strong> in den Hügeln darüber und der einzelnen stehenden Säule des <strong>Artemis-Tempels</strong>, einem der Sieben Weltwunder der Antike — in einem einzigen, entspannten Ausflug."
+            ]
+          },
+          {
+            "heading": "Für Kreuzfahrtgäste: das richtige Timing",
+            "paragraphs": [
+              "Wenn Sie mit einem Kreuzfahrtschiff ankommen und nur wenige Stunden an Land haben, ist Ephesos nah genug für einen entspannten halbtägigen Landausflug direkt vom Terminal. Der Schlüssel ist das Timing: Ein guter lokaler Guide plant den ganzen Ausflug um die All-aboard-Zeit Ihres Schiffs, kümmert sich um Transport und Tickets und baut stets einen Sicherheitspuffer ein, damit Sie bequem vor der Abfahrt zurück sind.",
+              "Hier schlägt die Buchung eines privaten lizenzierten Guides die riesige Bustour — Sie sind schneller, umgehen die Herde, sehen die Höhepunkte effizient und riskieren nie, dass das Schiff ohne Sie ablegt. VibeNow kann Sie sogar in etwa 60 Sekunden mit einem verfügbaren Guide zusammenbringen, sobald Sie anlegen, falls Sie es lieber vor Ort arrangieren."
+            ]
+          },
+          {
+            "heading": "Was es in Ephesos zu sehen gibt",
+            "paragraphs": [
+              "Ephesos ist bemerkenswert vollständig. Das Prunkstück ist die <strong>Celsus-Bibliothek</strong>, deren restaurierte zweistöckige Fassade eine der meistfotografierten Sehenswürdigkeiten der Türkei ist. Gehen Sie die marmorne <strong>Kuretenstraße</strong> hinab, vorbei an Tempeln, Brunnen und Ladenfronten, bis zum <strong>Großen Theater</strong>, das einst 25.000 Menschen fasste und noch heute Veranstaltungen beherbergt.",
+              "Gegen ein zusätzliches Ticket sind die <strong>Terrassenhäuser</strong> — die überdachten Überreste wohlhabender römischer Häuser mit erstaunlichen Mosaiken und Fresken — das verborgene Juwel der Stätte und den Aufpreis wert. Ein Guide erweckt die zerfallenen Straßen zum Leben und erklärt den römischen Alltag, den verschwundenen Hafen und die Schichten griechischer, römischer und frühchristlicher Geschichte, an denen die meisten Besucher achtlos vorbeigehen."
+            ]
+          },
+          {
+            "heading": "Tickets, Lizenzen und praktische Tipps",
+            "paragraphs": [
+              "Zwei Ticket-Hinweise: Das Hauptgelände hat ein Eintrittsticket, und die <strong>Terrassenhäuser erfordern ein separates Ticket</strong> obendrauf. Wichtiger noch: Ephesos ist eine der Stätten, an denen <strong>nur ein offiziell lizenzierter Guide Touren durch die antike Stadt führen darf</strong> — jeder Guide auf VibeGuide besitzt diese Lizenz des Kultur- und Tourismusministeriums, sodass eine Buchung über die Plattform Sie voll absichert.",
+              "Praktisch: Tragen Sie Hut, Sonnencreme und bequeme Schuhe und bringen Sie Wasser mit — die Marmorstraßen liegen frei mit wenig Schatten und werden im Sommer sehr heiß. Gehen Sie früh oder spät am Tag, um sowohl der Mittagshitze als auch dem Höhepunkt der Kreuzfahrtmassen zu entgehen. Es gibt zwei Eingänge (oberer und unterer); ein Guide kann den Weg bergab planen, sodass Sie nahe dem Ausgang enden."
+            ]
+          },
+          {
+            "heading": "Ephesos mit mehr von der Region verbinden",
+            "paragraphs": [
+              "Wenn Sie einen ganzen Tag statt eines Kreuzfahrt-Zwischenstopps haben, kombinieren Sie Ephesos mit dem charmanten Hügeldorf <strong>Şirince</strong>, bekannt für seine Fruchtweine und alten griechisch-osmanischen Häuser, für einen entspannten Nachmittag mit Verkostung nach den Ruinen. Das Haus der Jungfrau Maria und der Artemis-Tempel fügen sich mühelos in dieselbe Tour.",
+              "Mit mehr Zeit ist Kuşadası ein Sprungbrett zu den antiken ionischen Städten Priene, Milet und Didyma, den weißen Sinterterrassen von Pamukkale und den Buchten des Nationalparks Dilek-Halbinsel. Doch schon Ephesos allein rechtfertigt die Reise — und mit einem lizenzierten lokalen Guide, der seine Geschichte aufschließt, ist es ein unvergesslicher Tagesausflug ab Kuşadası."
+            ]
+          }
+        ],
+        "faqHeading": "Häufig gestellte Fragen",
+        "faqs": [
+          {
+            "q": "Wie weit ist Ephesos vom Hafen Kuşadası entfernt?",
+            "a": "Ephesos ist etwa 18 km — rund 20 Minuten Fahrt — vom Kreuzfahrthafen Kuşadası entfernt, nahe der Stadt Selçuk. Seine Nähe macht es zum Top-Tagesausflug ab Kuşadası und zu einem einfachen halbtägigen Landausflug für Kreuzfahrtgäste."
+          },
+          {
+            "q": "Kann ich Ephesos bei einem Kreuzfahrt-Zwischenstopp ab Kuşadası besuchen?",
+            "a": "Ja. Ephesos ist nah genug für einen entspannten halbtägigen Landausflug. Ein lizenzierter Guide plant das Timing um die All-aboard-Zeit Ihres Schiffs, kümmert sich um Transport und Tickets und baut einen Puffer ein, damit Sie bequem vor der Abfahrt zurück sind. Ein privater Guide ist schneller und sicherer als eine große Bustour."
+          },
+          {
+            "q": "Braucht man einen lizenzierten Guide für Ephesos?",
+            "a": "Nur offiziell lizenzierte Guides dürfen Touren durch die antike Stadt Ephesos führen. Jeder Guide auf VibeGuide besitzt die Lizenz des türkischen Kultur- und Tourismusministeriums, sodass eine Buchung über die Plattform Sie voll regelkonform und abgesichert hält."
+          },
+          {
+            "q": "Brauchen die Terrassenhäuser von Ephesos ein separates Ticket?",
+            "a": "Ja. Das Hauptgelände von Ephesos hat ein Eintrittsticket, und die Terrassenhäuser — die wunderbar erhaltenen römischen Häuser mit Mosaiken und Fresken — erfordern ein zusätzliches Ticket obendrauf. Sie sind ein Höhepunkt und den Aufpreis wert."
+          },
+          {
+            "q": "Was kann ich sonst noch mit einem Ephesos-Tagesausflug verbinden?",
+            "a": "Ein lizenzierter Guide kann Ephesos mühelos mit dem Haus der Jungfrau Maria, dem Artemis-Tempel und dem Weindorf Şirince in einem Ausflug verbinden. Mit einem ganzen Tag sind auch Priene, Milet, Didyma oder Pamukkale von Kuşadası aus erreichbar."
+          }
+        ],
+        "relatedHeading": "Entdecken Sie Ephesos und die Ägäis",
+        "ctaTitle": "Ephesos mit einem lizenzierten Guide erleben",
+        "ctaSub": "Nur lizenzierte Guides dürfen Sie in die antike Stadt führen — und beim Kreuzfahrt-Timing zählt jede Minute. Buchen Sie einen verifizierten Ephesos-Guide auf VibeGuide."
+      },
+      "es": {
+        "title": "Excursión a Éfeso desde Kuşadası: la guía completa",
+        "metaTitle": "Excursión a Éfeso desde Kuşadası — Guía para cruceros",
+        "metaDescription": "Todo para una excursión de un día a Éfeso desde Kuşadası: distancia, horarios para cruceristas, qué ver, consejos de entradas y por qué se exige un guía titulado dentro del recinto.",
+        "excerpt": "Éfeso está a solo 20 minutos del puerto de cruceros de Kuşadası: la excursión de costa perfecta. Aquí verás cómo planificarla, qué ver y por qué solo un guía titulado puede guiarte dentro.",
+        "intro": [
+          "Éfeso es la excursión estrella de la costa egea de Turquía, y Kuşadası —uno de los puertos de cruceros más concurridos del país— es su punto de partida ideal. A solo 20 minutos por carretera, la vasta ciudad grecorromana es una salida perfecta de medio día o de día completo, ya estés en una escala de crucero o alojado en la costa unas noches.",
+          "Esta guía cubre todo lo necesario para una <strong>excursión a Éfeso desde Kuşadası</strong>: a qué distancia está, cómo ajustar los tiempos a la salida del crucero, qué ver dentro de las ruinas, particularidades de las entradas como las Casas Adosadas, y por qué —de forma única en Éfeso— necesitas un <strong>guía titulado</strong> para que te guíe por el yacimiento antiguo. Bien hecho, es uno de los días más memorables de Turquía."
+        ],
+        "sections": [
+          {
+            "heading": "¿A qué distancia está Éfeso de Kuşadası?",
+            "paragraphs": [
+              "Éfeso se encuentra a unos <strong>18 km —unos 20 minutos por carretera—</strong> del puerto de cruceros de Kuşadası, junto a la localidad de Selçuk. Esa corta distancia es justo por lo que es la excursión número uno desde Kuşadası: puedes estar paseando entre calles de mármol de 2.000 años apenas media hora después de bajar del barco.",
+              "Como está tan cerca, un guía titulado puede combinar cómodamente Éfeso con dos lugares próximos —la <strong>Casa de la Virgen María</strong> en las colinas de arriba y la única columna en pie del <strong>Templo de Artemisa</strong>, una de las Siete Maravillas del Mundo Antiguo— en una sola salida, sin prisas."
+            ]
+          },
+          {
+            "heading": "Para cruceristas: acertar con los tiempos",
+            "paragraphs": [
+              "Si llegas en crucero con solo unas horas en tierra, Éfeso está lo bastante cerca para una relajada excursión de costa de medio día directa desde la terminal. La clave es el horario: un buen guía local planifica toda la salida en torno a la hora de embarque de tu barco, se encarga del transporte y las entradas, y siempre reserva un margen de seguridad para que vuelvas con tiempo antes de la partida.",
+              "Aquí es donde reservar un guía titulado privado supera a un enorme tour en autocar: te mueves más rápido, evitas el rebaño, ves lo esencial con eficacia y nunca corres el riesgo de que el barco zarpe sin ti. VibeNow incluso puede emparejarte con un guía disponible en unos 60 segundos en cuanto atracas, si prefieres organizarlo sobre la marcha."
+            ]
+          },
+          {
+            "heading": "Qué ver dentro de Éfeso",
+            "paragraphs": [
+              "Éfeso está notablemente completo. La pieza estrella es la <strong>Biblioteca de Celso</strong>, cuya fachada restaurada de dos plantas es uno de los lugares más fotografiados de Turquía. Baja por la calle de mármol <strong>de los Curetes</strong>, entre templos, fuentes y fachadas de tiendas, hasta el <strong>Gran Teatro</strong>, que llegó a acoger a 25.000 personas y todavía alberga eventos hoy.",
+              "Con una entrada extra, las <strong>Casas Adosadas</strong> —los restos cubiertos de casas romanas acomodadas, con mosaicos y frescos asombrosos— son la joya oculta del sitio y merecen mucho la pena. Un guía da vida a las calles en ruinas, explicando la vida cotidiana romana, el puerto desaparecido y las capas de historia griega, romana y paleocristiana por las que la mayoría de los visitantes pasa de largo."
+            ]
+          },
+          {
+            "heading": "Entradas, licencias y consejos prácticos",
+            "paragraphs": [
+              "Dos apuntes sobre las entradas: el recinto principal tiene una entrada única, y las <strong>Casas Adosadas requieren una entrada aparte</strong> además de esa. Más importante aún: Éfeso es uno de los lugares donde <strong>solo un guía oficialmente titulado puede dirigir visitas dentro de la ciudad antigua</strong>: todos los guías de VibeGuide poseen esa licencia del Ministerio de Cultura y Turismo, así que reservar por la plataforma te deja totalmente cubierto.",
+              "En la práctica: lleva sombrero, protector solar y calzado cómodo, y trae agua; las calles de mármol están al descubierto, con poca sombra, y en verano se calientan mucho. Ve temprano o tarde para esquivar tanto el calor del mediodía como el pico de las multitudes de cruceros. Hay dos entradas (superior e inferior); un guía puede planear el recorrido cuesta abajo para que termines cerca de la salida."
+            ]
+          },
+          {
+            "heading": "Combinar Éfeso con más de la región",
+            "paragraphs": [
+              "Si tienes un día completo en vez de una escala de crucero, combina Éfeso con el encantador pueblo de montaña de <strong>Şirince</strong>, conocido por sus vinos de frutas y sus viejas casas grecootomanas, para una tarde relajada de catas tras las ruinas. La Casa de la Virgen María y el Templo de Artemisa encajan con facilidad en el mismo viaje.",
+              "Con más tiempo, Kuşadası es un trampolín hacia las antiguas ciudades jonias de Priene, Mileto y Dídima, las travertinas blancas de Pamukkale y las calas del Parque Nacional de la Península de Dilek. Pero Éfeso por sí solo justifica el viaje, y con un guía local titulado que desvele su historia, es una jornada inolvidable desde Kuşadası."
+            ]
+          }
+        ],
+        "faqHeading": "Preguntas frecuentes",
+        "faqs": [
+          {
+            "q": "¿A qué distancia está Éfeso del puerto de Kuşadası?",
+            "a": "Éfeso está a unos 18 km —unos 20 minutos en coche— del puerto de cruceros de Kuşadası, cerca de la localidad de Selçuk. Su cercanía lo convierte en la mejor excursión desde Kuşadası y en una sencilla salida de costa de medio día para los cruceristas."
+          },
+          {
+            "q": "¿Puedo visitar Éfeso en una escala de crucero desde Kuşadası?",
+            "a": "Sí. Éfeso está lo bastante cerca para una relajada excursión de costa de medio día. Un guía titulado planifica los tiempos en torno a la hora de embarque de tu barco, se encarga del transporte y las entradas, y reserva un margen para que vuelvas con tiempo antes de la partida. Un guía privado es más rápido y seguro que un gran tour en autocar."
+          },
+          {
+            "q": "¿Se necesita un guía titulado para Éfeso?",
+            "a": "Solo los guías oficialmente titulados pueden dirigir visitas dentro de la ciudad antigua de Éfeso. Todos los guías de VibeGuide poseen la licencia del Ministerio de Cultura y Turismo de Turquía, así que reservar por la plataforma te mantiene plenamente en regla y cubierto."
+          },
+          {
+            "q": "¿Las Casas Adosadas de Éfeso necesitan una entrada aparte?",
+            "a": "Sí. El recinto principal de Éfeso tiene una entrada única, y las Casas Adosadas —las casas romanas bellamente conservadas, con mosaicos y frescos— requieren una entrada adicional además de esa. Son un momento cumbre y merecen el coste extra."
+          },
+          {
+            "q": "¿Qué más puedo combinar con una excursión a Éfeso?",
+            "a": "Un guía titulado puede combinar con facilidad Éfeso con la Casa de la Virgen María, el Templo de Artemisa y el pueblo vinícola de Şirince en una salida. Con un día completo, también se puede llegar a Priene, Mileto, Dídima o Pamukkale desde Kuşadası."
+          }
+        ],
+        "relatedHeading": "Explora Éfeso y el Egeo",
+        "ctaTitle": "Descubre Éfeso con un guía titulado",
+        "ctaSub": "Solo los guías titulados pueden guiarte dentro de la ciudad antigua, y el horario del crucero lo es todo. Reserva un guía verificado de Éfeso en VibeGuide."
+      },
+      "fr": {
+        "title": "Excursion à Éphèse depuis Kuşadası : le guide complet",
+        "metaTitle": "Excursion à Éphèse depuis Kuşadası — Guide croisière",
+        "metaDescription": "Tout pour une excursion d'une journée à Éphèse depuis Kuşadası : distance, timing pour croisiéristes, que voir, astuces billets et pourquoi un guide agréé est exigé sur le site.",
+        "excerpt": "Éphèse n'est qu'à 20 minutes du port de croisière de Kuşadası — l'excursion à terre parfaite. Voici comment la planifier, que voir et pourquoi seul un guide agréé peut vous mener à l'intérieur.",
+        "intro": [
+          "Éphèse est l'excursion vedette de la côte égéenne de Turquie, et Kuşadası — l'un des ports de croisière les plus fréquentés du pays — en est le point de départ idéal. À seulement 20 minutes par la route, la vaste cité gréco-romaine offre une sortie parfaite d'une demi-journée ou d'une journée entière, que vous soyez en escale de croisière ou installé sur la côte pour quelques nuits.",
+          "Ce guide couvre tout pour une <strong>excursion à Éphèse depuis Kuşadası</strong> : la distance, comment caler le timing sur le départ d'un navire de croisière, que voir dans les ruines, les subtilités de billetterie comme les Maisons en terrasse, et pourquoi — fait unique à Éphèse — il faut un <strong>guide agréé</strong> pour être conduit à travers le site antique. Bien menée, c'est l'une des journées les plus mémorables de Turquie."
+        ],
+        "sections": [
+          {
+            "heading": "À quelle distance se trouve Éphèse de Kuşadası ?",
+            "paragraphs": [
+              "Éphèse se situe à environ <strong>18 km — soit près de 20 minutes par la route</strong> — du port de croisière de Kuşadası, à côté de la ville de Selçuk. Cette courte distance explique précisément pourquoi c'est l'excursion numéro un depuis Kuşadası : vous pouvez marcher parmi des rues de marbre vieilles de 2 000 ans à peine une demi-heure après avoir quitté le navire.",
+              "Parce qu'elle est si proche, un guide agréé peut aisément associer Éphèse à deux sites voisins — la <strong>Maison de la Vierge Marie</strong> dans les collines au-dessus et l'unique colonne dressée du <strong>temple d'Artémis</strong>, l'une des Sept Merveilles du monde antique — en une seule sortie, sans se presser."
+            ]
+          },
+          {
+            "heading": "Pour les croisiéristes : bien caler le timing",
+            "paragraphs": [
+              "Si vous arrivez en navire de croisière avec seulement quelques heures à terre, Éphèse est assez proche pour une excursion à terre détendue d'une demi-journée directement depuis le terminal. La clé, c'est le timing : un bon guide local planifie toute la sortie autour de l'heure de rembarquement de votre navire, gère le transport et les billets, et prévoit toujours une marge de sécurité pour que vous soyez de retour bien avant le départ.",
+              "C'est là que réserver un guide agréé privé l'emporte sur un énorme circuit en autocar : vous avancez plus vite, échappez au troupeau, voyez l'essentiel efficacement et ne risquez jamais que le navire parte sans vous. VibeNow peut même vous mettre en relation avec un guide disponible en une soixantaine de secondes dès votre accostage, si vous préférez tout organiser sur place."
+            ]
+          },
+          {
+            "heading": "Que voir à l'intérieur d'Éphèse",
+            "paragraphs": [
+              "Éphèse est remarquablement complète. La pièce maîtresse est la <strong>bibliothèque de Celsus</strong>, dont la façade restaurée à deux niveaux est l'un des sites les plus photographiés de Turquie. Descendez la rue de marbre <strong>des Curètes</strong> au milieu des temples, fontaines et devantures jusqu'au <strong>Grand Théâtre</strong>, qui accueillait jadis 25 000 spectateurs et accueille encore des événements aujourd'hui.",
+              "Moyennant un billet supplémentaire, les <strong>Maisons en terrasse</strong> — les vestiges couverts de riches demeures romaines aux mosaïques et fresques saisissantes — sont le joyau caché du site et valent largement le détour. Un guide fait revivre les rues en ruine, expliquant la vie quotidienne romaine, le port disparu et les strates d'histoire grecque, romaine et paléochrétienne devant lesquelles la plupart des visiteurs passent sans les voir."
+            ]
+          },
+          {
+            "heading": "Billets, agrément et conseils pratiques",
+            "paragraphs": [
+              "Deux remarques sur la billetterie : le site principal a un billet d'entrée unique, et les <strong>Maisons en terrasse nécessitent un billet distinct</strong> en plus. Plus important encore, Éphèse est l'un des sites où <strong>seul un guide officiellement agréé est autorisé à conduire des visites à l'intérieur de la cité antique</strong> — chaque guide de VibeGuide détient cette licence du ministère de la Culture et du Tourisme, si bien que réserver via la plateforme vous couvre entièrement.",
+              "En pratique : portez un chapeau, de la crème solaire et des chaussures confortables, et emportez de l'eau — les rues de marbre sont exposées, avec peu d'ombre, et deviennent très chaudes en été. Allez-y tôt ou tard dans la journée pour éviter à la fois la chaleur de midi et le pic des foules de croisiéristes. Il y a deux entrées (haute et basse) ; un guide peut planifier le parcours en descente pour que vous terminiez près de la sortie."
+            ]
+          },
+          {
+            "heading": "Associer Éphèse à d'autres sites de la région",
+            "paragraphs": [
+              "Si vous avez une journée entière plutôt qu'une escale de croisière, associez Éphèse au charmant village de collines de <strong>Şirince</strong>, réputé pour ses vins de fruits et ses vieilles maisons gréco-ottomanes, pour une après-midi de dégustation détendue après les ruines. La Maison de la Vierge Marie et le temple d'Artémis s'insèrent aisément dans le même circuit.",
+              "Avec plus de temps, Kuşadası est un tremplin vers les antiques cités ioniennes de Priène, Milet et Didymes, les travertins blancs de Pamukkale et les criques du parc national de la péninsule de Dilek. Mais Éphèse à elle seule justifie le voyage — et avec un guide local agréé pour en révéler l'histoire, c'est une journée inoubliable au départ de Kuşadası."
+            ]
+          }
+        ],
+        "faqHeading": "Questions fréquentes",
+        "faqs": [
+          {
+            "q": "À quelle distance Éphèse est-elle du port de Kuşadası ?",
+            "a": "Éphèse est à environ 18 km — soit près de 20 minutes en voiture — du port de croisière de Kuşadası, près de la ville de Selçuk. Sa proximité en fait la meilleure excursion au départ de Kuşadası et une sortie à terre facile d'une demi-journée pour les croisiéristes."
+          },
+          {
+            "q": "Puis-je visiter Éphèse lors d'une escale de croisière depuis Kuşadası ?",
+            "a": "Oui. Éphèse est assez proche pour une excursion à terre détendue d'une demi-journée. Un guide agréé cale le timing sur l'heure de rembarquement de votre navire, gère le transport et les billets, et prévoit une marge pour que vous soyez de retour bien avant le départ. Un guide privé est plus rapide et plus sûr qu'un grand circuit en autocar."
+          },
+          {
+            "q": "Faut-il un guide agréé pour Éphèse ?",
+            "a": "Seuls les guides officiellement agréés sont autorisés à conduire des visites à l'intérieur de la cité antique d'Éphèse. Chaque guide de VibeGuide détient la licence du ministère turc de la Culture et du Tourisme, si bien que réserver via la plateforme vous maintient parfaitement en règle et couvert."
+          },
+          {
+            "q": "Les Maisons en terrasse d'Éphèse nécessitent-elles un billet distinct ?",
+            "a": "Oui. Le site principal d'Éphèse a un billet d'entrée unique, et les Maisons en terrasse — les demeures romaines magnifiquement conservées, aux mosaïques et fresques — nécessitent un billet supplémentaire en plus. Elles sont un temps fort et valent bien ce coût additionnel."
+          },
+          {
+            "q": "Que puis-je associer d'autre à une excursion à Éphèse ?",
+            "a": "Un guide agréé peut aisément associer Éphèse à la Maison de la Vierge Marie, au temple d'Artémis et au village viticole de Şirince en une seule sortie. Avec une journée entière, Priène, Milet, Didymes ou Pamukkale sont aussi accessibles depuis Kuşadası."
+          }
+        ],
+        "relatedHeading": "Explorez Éphèse et l'Égée",
+        "ctaTitle": "Découvrez Éphèse avec un guide agréé",
+        "ctaSub": "Seuls les guides agréés peuvent vous mener à l'intérieur de la cité antique — et le timing de la croisière est déterminant. Réservez un guide vérifié à Éphèse sur VibeGuide."
+      },
+      "it": {
+        "title": "Gita a Efeso da Kuşadası: la guida completa",
+        "metaTitle": "Gita a Efeso da Kuşadası — Guida completa per crociere",
+        "metaDescription": "Tutto per una gita a Efeso da Kuşadası: distanza, tempi per i passeggeri delle crociere, cosa vedere, consigli sui biglietti e perché serve una guida abilitata nel sito.",
+        "excerpt": "Efeso è a soli 20 minuti dal porto crociere di Kuşadası — la scala a terra perfetta. Ecco come organizzarla, cosa vedere e perché solo una guida abilitata può accompagnarti all'interno.",
+        "intro": [
+          "Efeso è la gita giornaliera per eccellenza sulla costa egea della Turchia, e Kuşadası — uno dei porti crociera più trafficati del paese — è il suo punto di partenza ideale. A soli 20 minuti di strada, la vasta città greco-romana è una gita perfetta di mezza o intera giornata, sia che tu sia in scalo da una crociera sia che alloggi sulla costa per qualche notte.",
+          "Questa guida copre tutto per una <strong>gita a Efeso da Kuşadası</strong>: quanto dista, come organizzare i tempi attorno alla partenza della nave, cosa vedere tra le rovine, particolarità dei biglietti come le Case a Terrazza, e perché — unicamente a Efeso — serve una <strong>guida abilitata</strong> per essere accompagnati nell'antico sito. Fatto bene, è una delle giornate più memorabili in Turchia."
+        ],
+        "sections": [
+          {
+            "heading": "Quanto dista Efeso da Kuşadası?",
+            "paragraphs": [
+              "Efeso si trova a circa <strong>18 km — grosso modo 20 minuti di strada</strong> — dal porto crociere di Kuşadası, accanto alla cittadina di Selçuk. Proprio quella breve distanza è il motivo per cui è l'escursione numero uno da Kuşadası: puoi camminare tra strade di marmo di 2.000 anni fa appena mezz'ora dopo esser sceso dalla nave.",
+              "Poiché è così vicina, una guida abilitata può comodamente combinare Efeso con due siti vicini — la <strong>Casa della Vergine Maria</strong> sulle colline sovrastanti e la solitaria colonna superstite del <strong>Tempio di Artemide</strong>, una delle Sette Meraviglie del Mondo Antico — in un'unica gita senza fretta."
+            ]
+          },
+          {
+            "heading": "Per i passeggeri delle crociere: organizzare i tempi",
+            "paragraphs": [
+              "Se arrivi con una nave da crociera con solo poche ore a terra, Efeso è abbastanza vicina per una rilassata escursione di mezza giornata direttamente dal terminal. La chiave sono i tempi: una buona guida locale organizza l'intera gita attorno all'orario di rientro a bordo della nave, gestisce trasporto e biglietti, e prevede sempre un margine di sicurezza così sei di ritorno con comodo prima della partenza.",
+              "È qui che prenotare una guida privata abilitata batte un enorme tour in pullman — ti muovi più veloce, eviti la calca, vedi i punti salienti in modo efficiente, e non rischi mai che la nave parta senza di te. VibeNow può persino abbinarti a una guida disponibile in circa 60 secondi nel momento in cui attracchi, se preferisci organizzarti sul posto."
+            ]
+          },
+          {
+            "heading": "Cosa vedere all'interno di Efeso",
+            "paragraphs": [
+              "Efeso è notevolmente completa. Il pezzo forte è la <strong>Biblioteca di Celso</strong>, la cui facciata restaurata a due piani è una delle viste più fotografate della Turchia. Percorri la marmorea <strong>Via dei Cureti</strong> tra templi, fontane e vetrine di negozi fino al <strong>Grande Teatro</strong>, che un tempo ospitava 25.000 persone e ancora oggi ospita eventi.",
+              "Con un biglietto extra, le <strong>Case a Terrazza</strong> — i resti coperti delle dimore romane benestanti con mosaici e affreschi sorprendenti — sono la gemma nascosta del sito e valgono davvero. Una guida dà vita alle strade in rovina, spiegando la vita quotidiana romana, il porto scomparso e gli strati di storia greca, romana e paleocristiana davanti ai quali la maggior parte dei visitatori passa dritto."
+            ]
+          },
+          {
+            "heading": "Biglietti, abilitazione e consigli pratici",
+            "paragraphs": [
+              "Due note sui biglietti: il sito principale ha un unico biglietto d'ingresso, e le <strong>Case a Terrazza richiedono un biglietto separato</strong> in aggiunta. Ancora più importante, Efeso è uno dei siti dove <strong>solo una guida ufficialmente abilitata è autorizzata ad accompagnare i tour all'interno dell'antica città</strong> — ogni guida su VibeGuide possiede quella licenza del Ministero della Cultura e del Turismo, quindi prenotare tramite la piattaforma ti tiene pienamente coperto.",
+              "In pratica: indossa cappello, crema solare e scarpe comode, e porta acqua — le strade di marmo sono esposte con poca ombra e diventano molto calde d'estate. Vai presto o tardi nella giornata per evitare sia la calura di mezzogiorno sia il picco della folla delle crociere. Ci sono due ingressi (alto e basso); una guida può pianificare la passeggiata in discesa così finisci vicino all'uscita."
+            ]
+          },
+          {
+            "heading": "Combinare Efeso con il resto della regione",
+            "paragraphs": [
+              "Se hai un'intera giornata invece di uno scalo crociera, abbina Efeso all'incantevole villaggio collinare di <strong>Şirince</strong>, noto per i suoi vini di frutta e le vecchie case greco-ottomane, per un pomeriggio rilassato di degustazioni dopo le rovine. La Casa della Vergine Maria e il Tempio di Artemide si inseriscono facilmente nella stessa gita.",
+              "Con più tempo, Kuşadası è un trampolino di lancio per le antiche città ioniche di Priene, Mileto e Didima, i bianchi travertini di Pamukkale e le insenature del Parco Nazionale della Penisola di Dilek. Ma Efeso da sola giustifica il viaggio — e con una guida locale abilitata a svelarne la storia, è una giornata indimenticabile da Kuşadası."
+            ]
+          }
+        ],
+        "faqHeading": "Domande frequenti",
+        "faqs": [
+          {
+            "q": "Quanto dista Efeso dal porto di Kuşadası?",
+            "a": "Efeso è a circa 18 km — grosso modo 20 minuti d'auto — dal porto crociere di Kuşadası, vicino alla cittadina di Selçuk. La sua vicinanza ne fa la principale gita giornaliera da Kuşadası e una facile escursione di mezza giornata per i passeggeri delle crociere."
+          },
+          {
+            "q": "Posso visitare Efeso durante uno scalo crociera da Kuşadası?",
+            "a": "Sì. Efeso è abbastanza vicina per una rilassata escursione di mezza giornata. Una guida abilitata organizza i tempi attorno all'orario di rientro a bordo della nave, gestisce trasporto e biglietti, e prevede un margine così sei di ritorno con comodo prima della partenza. Una guida privata è più veloce e sicura di un grande tour in pullman."
+          },
+          {
+            "q": "Serve una guida abilitata per Efeso?",
+            "a": "Solo le guide ufficialmente abilitate sono autorizzate ad accompagnare i tour all'interno dell'antica città di Efeso. Ogni guida su VibeGuide possiede la licenza del Ministero della Cultura e del Turismo turco, quindi prenotare tramite la piattaforma ti tiene pienamente in regola e coperto."
+          },
+          {
+            "q": "Le Case a Terrazza di Efeso richiedono un biglietto separato?",
+            "a": "Sì. Il sito principale di Efeso ha un unico biglietto d'ingresso, e le Case a Terrazza — le dimore romane splendidamente conservate con mosaici e affreschi — richiedono un biglietto aggiuntivo in più. Sono un punto forte e valgono ampiamente il costo extra."
+          },
+          {
+            "q": "Cos'altro posso combinare con una gita a Efeso?",
+            "a": "Una guida abilitata può facilmente combinare Efeso con la Casa della Vergine Maria, il Tempio di Artemide e il villaggio del vino di Şirince in un'unica gita. Con un'intera giornata, anche Priene, Mileto, Didima o Pamukkale sono raggiungibili da Kuşadası."
+          }
+        ],
+        "relatedHeading": "Esplora Efeso e l'Egeo",
+        "ctaTitle": "Scopri Efeso con una guida abilitata",
+        "ctaSub": "Solo le guide abilitate possono accompagnarti nell'antica città — e i tempi della crociera sono tutto. Prenota una guida verificata di Efeso su VibeGuide."
+      },
+      "ar": {
+        "title": "رحلة يومية إلى أفسس من كوشاداسي: الدليل الكامل",
+        "metaTitle": "رحلة يومية إلى أفسس من كوشاداسي — دليل الرحلات البحرية الكامل",
+        "metaDescription": "كل ما تحتاجه لرحلة يومية إلى أفسس من كوشاداسي: المسافة، وتوقيت ركاب السفن السياحية، وما تشاهده، ونصائح التذاكر، ولماذا يلزم مرشد مرخّص داخل الموقع.",
+        "excerpt": "أفسس على بُعد ٢٠ دقيقة فقط من ميناء كوشاداسي البحري — رحلة الشاطئ المثالية. إليك كيف تخطّط لها، وما تشاهده، ولماذا لا يقودك داخلها سوى مرشد مرخّص.",
+        "intro": [
+          "أفسس هي نجمة الرحلات اليومية على ساحل بحر إيجه التركي، وكوشاداسي — أحد أكثر موانئ السفن السياحية ازدحاماً في البلاد — نقطة انطلاقها المثالية. على بُعد ٢٠ دقيقة فقط بالطريق، تشكّل المدينة الإغريقية الرومانية الشاسعة نزهة نصف يوم أو يوم كامل مثالية، سواء كنت في توقّف سفينة سياحية أو مقيماً على الساحل لبضع ليالٍ.",
+          "يغطّي هذا الدليل كل شيء عن <strong>رحلة يومية إلى أفسس من كوشاداسي</strong>: كم تبعد، وكيف توقّتها حول موعد مغادرة السفينة السياحية، وما تشاهده داخل الأطلال، وطرائف التذاكر مثل بيوت المدرّجات، ولماذا — بشكل فريد في أفسس — تحتاج إلى <strong>مرشد مرخّص</strong> ليقودك عبر الموقع الأثري. افعلها بشكل صحيح وستكون واحداً من أكثر الأيام التي لا تُنسى في تركيا."
+        ],
+        "sections": [
+          {
+            "heading": "كم تبعد أفسس عن كوشاداسي؟",
+            "paragraphs": [
+              "تقع أفسس على بُعد نحو <strong>١٨ كم — قرابة ٢٠ دقيقة بالطريق</strong> — من ميناء كوشاداسي البحري، بجوار بلدة سلجوق. تلك المسافة القصيرة هي بالضبط سبب كونها النزهة رقم واحد من كوشاداسي: يمكنك أن تمشي بين شوارع رخامية عمرها ٢٠٠٠ عام بعد نصف ساعة بالكاد من نزولك من السفينة.",
+              "ولأنها قريبة جداً، يستطيع مرشد مرخّص أن يجمع بين أفسس وموقعين قريبين بارتياح — <strong>بيت السيدة مريم العذراء</strong> في التلال الأعلى، والعمود المنفرد القائم من <strong>معبد أرتميس</strong>، أحد عجائب العالم القديم السبع — في نزهة واحدة غير متعجّلة."
+            ]
+          },
+          {
+            "heading": "لركاب السفن السياحية: ضبط التوقيت",
+            "paragraphs": [
+              "إن كنت تصل بسفينة سياحية ولديك ساعات قليلة فقط على البر، فإن أفسس قريبة بما يكفي لرحلة شاطئ نصف يوم مريحة مباشرة من الميناء. المفتاح هو التوقيت: مرشد محلي جيد يخطّط النزهة كلها حول موعد الصعود النهائي لسفينتك، ويتولّى النقل والتذاكر، ويترك دائماً هامش أمان لتعود بارتياح قبل المغادرة.",
+              "هنا يتفوّق حجز مرشد خاص مرخّص على جولة حافلة ضخمة — تتحرّك أسرع، وتتجنّب القطيع، وترى أبرز المعالم بكفاءة، ولا تخاطر أبداً بمغادرة السفينة دونك. بل يمكن لـ VibeNow أن يطابقك مع مرشد متاح في نحو ٦٠ ثانية لحظة رسوّك، إن فضّلت ترتيبها في الحال."
+            ]
+          },
+          {
+            "heading": "ماذا تشاهد داخل أفسس",
+            "paragraphs": [
+              "أفسس مكتملة إلى حد لافت. الأيقونة هي <strong>مكتبة سلسوس</strong>، بواجهتها المرمّمة ذات الطابقين، من أكثر المعالم تصويراً في تركيا. امشِ في شارع <strong>كوريتيس</strong> الرخامي مروراً بالمعابد والنافورات والواجهات التجارية إلى <strong>المسرح الكبير</strong>، الذي كان يتّسع لـ ٢٥٠٠٠ متفرّج وما زال يستضيف الفعاليات حتى اليوم.",
+              "مقابل تذكرة إضافية، تُعدّ <strong>بيوت المدرّجات</strong> — البقايا المسقوفة لمنازل رومانية ثرية بفسيفساء وجداريات مذهلة — الجوهرة الخفية للموقع وتستحق العناء. يبعث المرشد الحياة في الشوارع المهدّمة، شارحاً الحياة الرومانية اليومية، والميناء المندثر، وطبقات التاريخ الإغريقي والروماني والمسيحي المبكر التي يمر بها معظم الزوار دون انتباه."
+            ]
+          },
+          {
+            "heading": "التذاكر والترخيص ونصائح عملية",
+            "paragraphs": [
+              "ملاحظتان عن التذاكر: للموقع الرئيسي تذكرة دخول واحدة، و<strong>بيوت المدرّجات تتطلب تذكرة منفصلة</strong> فوقها. والأهم، أفسس أحد المواقع التي <strong>يُسمح فيها فقط لمرشد مرخّص رسمياً بقيادة الجولات داخل المدينة القديمة</strong> — وكل مرشد على VibeGuide يحمل ترخيص وزارة الثقافة والسياحة ذاك، لذا فالحجز عبر المنصة يبقيك مغطّى بالكامل.",
+              "عملياً: البس قبعة وواقي شمس وحذاءً مريحاً، واحمل الماء — فالشوارع الرخامية مكشوفة بظل قليل وتصير حارة جداً صيفاً. اذهب باكراً أو متأخراً لتجنّب حرارة الظهيرة وذروة زحام السفن معاً. للموقع مدخلان (علوي وسفلي)؛ يمكن لمرشد أن يخطّط المسير نزولاً لتنتهي قرب المخرج."
+            ]
+          },
+          {
+            "heading": "الجمع بين أفسس والمزيد من المنطقة",
+            "paragraphs": [
+              "إن كان لديك يوم كامل بدل توقّف سفينة، فاقرن أفسس بقرية <strong>شيرينجه</strong> الجبلية الساحرة، المعروفة بنبيذ فواكهها وبيوتها الإغريقية العثمانية القديمة، لأصيل مريح من التذوّق بعد الأطلال. ويندرج بيت السيدة مريم العذراء ومعبد أرتميس بسهولة في الرحلة نفسها.",
+              "بمزيد من الوقت، كوشاداسي منصة انطلاق لمدن أيونيا القديمة برييني وميليتوس وديديما، ومصاطب باموكالي البيضاء، وخلجان حديقة شبه جزيرة ديليك الوطنية. لكن أفسس وحدها تبرّر الرحلة — ومع مرشد محلي مرخّص لفكّ أسرار تاريخها، تصير يوماً لا يُنسى انطلاقاً من كوشاداسي."
+            ]
+          }
+        ],
+        "faqHeading": "الأسئلة الشائعة",
+        "faqs": [
+          {
+            "q": "كم تبعد أفسس عن ميناء كوشاداسي؟",
+            "a": "تبعد أفسس نحو ١٨ كم — قرابة ٢٠ دقيقة بالسيارة — عن ميناء كوشاداسي البحري، قرب بلدة سلجوق. قربها يجعلها الرحلة اليومية الأولى من كوشاداسي ونزهة شاطئ نصف يوم سهلة لركاب السفن السياحية."
+          },
+          {
+            "q": "هل يمكنني زيارة أفسس في توقّف سفينة سياحية من كوشاداسي؟",
+            "a": "نعم. أفسس قريبة بما يكفي لرحلة شاطئ نصف يوم مريحة. يخطّط مرشد مرخّص التوقيت حول موعد الصعود النهائي لسفينتك، ويتولّى النقل والتذاكر، ويترك هامشاً لتعود بارتياح قبل المغادرة. المرشد الخاص أسرع وأأمن من جولة حافلة كبيرة."
+          },
+          {
+            "q": "هل تحتاج إلى مرشد مرخّص لأفسس؟",
+            "a": "يُسمح فقط للمرشدين المرخّصين رسمياً بقيادة الجولات داخل مدينة أفسس القديمة. كل مرشد على VibeGuide يحمل ترخيص وزارة الثقافة والسياحة التركية، لذا فالحجز عبر المنصة يبقيك ملتزماً بالكامل ومغطّى."
+          },
+          {
+            "q": "هل تحتاج بيوت المدرّجات في أفسس إلى تذكرة منفصلة؟",
+            "a": "نعم. للموقع الرئيسي في أفسس تذكرة دخول واحدة، وبيوت المدرّجات — المنازل الرومانية المحفوظة بروعة بفسيفسائها وجدارياتها — تتطلب تذكرة إضافية فوقها. إنها من أبرز المعالم وتستحق التكلفة الإضافية."
+          },
+          {
+            "q": "ماذا يمكنني أن أجمع مع رحلة أفسس اليومية؟",
+            "a": "يمكن لمرشد مرخّص أن يجمع بسهولة بين أفسس وبيت السيدة مريم العذراء ومعبد أرتميس وقرية النبيذ شيرينجه في نزهة واحدة. بيوم كامل، يمكن أيضاً الوصول إلى برييني وميليتوس وديديما أو باموكالي من كوشاداسي."
+          }
+        ],
+        "relatedHeading": "استكشف أفسس وبحر إيجه",
+        "ctaTitle": "شاهد أفسس مع مرشد مرخّص",
+        "ctaSub": "المرشدون المرخّصون وحدهم يمكنهم قيادتك داخل المدينة القديمة — وتوقيت السفينة كل شيء. احجز مرشد أفسس موثّقاً على VibeGuide."
+      },
+      "ru": {
+        "title": "Поездка в Эфес из Кушадасы: полный путеводитель",
+        "metaTitle": "Эфес из Кушадасы — полный путеводитель для круизов",
+        "metaDescription": "Всё для поездки в Эфес из Кушадасы: расстояние, тайминг для круизных пассажиров, что посмотреть, советы по билетам и почему на территории нужен лицензированный гид.",
+        "excerpt": "Эфес всего в 20 минутах от круизного порта Кушадасы — идеальная береговая экскурсия. Вот как её спланировать, что посмотреть и почему провести вас внутрь может только лицензированный гид.",
+        "intro": [
+          "Эфес — главная однодневная поездка на Эгейском побережье Турции, а Кушадасы — один из самых оживлённых круизных портов страны — идеальная отправная точка. Всего в 20 минутах езды, огромный греко-римский город становится отличной вылазкой на полдня или целый день, будь вы на круизной остановке или живёте на побережье несколько ночей.",
+          "Этот путеводитель охватывает всё для <strong>поездки в Эфес из Кушадасы</strong>: как далеко это, как рассчитать время под отправление круизного лайнера, что посмотреть среди руин, особенности билетов вроде Террасных домов, и почему — уникально для Эфеса — вам нужен <strong>лицензированный гид</strong>, чтобы вас провели по древнему городу. Сделайте всё правильно — и это один из самых запоминающихся дней в Турции."
+        ],
+        "sections": [
+          {
+            "heading": "Как далеко Эфес от Кушадасы?",
+            "paragraphs": [
+              "Эфес лежит примерно в <strong>18 км — около 20 минут езды</strong> — от круизного порта Кушадасы, рядом с городком Сельчук. Именно это короткое расстояние делает его экскурсией номер один из Кушадасы: вы можете гулять среди мраморных улиц возрастом 2000 лет всего через полчаса после схода с лайнера.",
+              "Поскольку он так близко, лицензированный гид может спокойно объединить Эфес с двумя близлежащими объектами — <strong>Домом Девы Марии</strong> в холмах над ним и одиноко стоящей колонной <strong>храма Артемиды</strong>, одного из Семи чудес древнего мира — в одну неспешную поездку."
+            ]
+          },
+          {
+            "heading": "Для круизных пассажиров: правильный тайминг",
+            "paragraphs": [
+              "Если вы прибываете на круизном лайнере всего с несколькими часами на берегу, Эфес достаточно близок для спокойной береговой экскурсии на полдня прямо от терминала. Ключ — тайминг: хороший местный гид планирует всю вылазку под время возвращения на борт вашего судна, берёт на себя транспорт и билеты и всегда закладывает запас, чтобы вы спокойно вернулись до отправления.",
+              "Именно здесь бронирование частного лицензированного гида превосходит огромный автобусный тур — вы движетесь быстрее, минуете толпу, эффективно осматриваете главное и никогда не рискуете, что судно уйдёт без вас. VibeNow может даже подобрать вам свободного гида примерно за 60 секунд в момент швартовки, если вы предпочитаете организовать всё на месте."
+            ]
+          },
+          {
+            "heading": "Что посмотреть внутри Эфеса",
+            "paragraphs": [
+              "Эфес удивительно целостен. Главная жемчужина — <strong>Библиотека Цельса</strong>, чей отреставрированный двухэтажный фасад — одна из самых фотографируемых достопримечательностей Турции. Пройдите по мраморной <strong>улице Куретов</strong> мимо храмов, фонтанов и витрин лавок к <strong>Большому театру</strong>, который когда-то вмещал 25 000 человек и до сих пор принимает мероприятия.",
+              "За отдельный билет <strong>Террасные дома</strong> — крытые остатки богатых римских жилищ с поразительными мозаиками и фресками — скрытая жемчужина объекта, и они того стоят. Гид оживляет разрушенные улицы, объясняя повседневную римскую жизнь, исчезнувшую гавань и слои греческой, римской и раннехристианской истории, мимо которых большинство посетителей проходит не заметив."
+            ]
+          },
+          {
+            "heading": "Билеты, лицензирование и практические советы",
+            "paragraphs": [
+              "Две заметки о билетах: основной объект имеет один входной билет, а <strong>Террасные дома требуют отдельного билета</strong> сверх него. Что важнее, Эфес — один из объектов, где <strong>только официально лицензированному гиду разрешено проводить туры внутри древнего города</strong> — каждый гид на VibeGuide имеет эту лицензию Министерства культуры и туризма, поэтому бронирование через платформу полностью вас страхует.",
+              "Практически: наденьте шляпу, солнцезащитный крем и удобную обувь и возьмите воду — мраморные улицы открыты, тени мало, а летом становится очень жарко. Идите рано или поздно, чтобы избежать и полуденной жары, и пика круизных толп. Есть два входа (верхний и нижний); гид может спланировать прогулку под гору, чтобы вы закончили у выхода."
+            ]
+          },
+          {
+            "heading": "Сочетание Эфеса с остальным регионом",
+            "paragraphs": [
+              "Если у вас целый день, а не круизная остановка, соедините Эфес с очаровательной горной деревней <strong>Шириндже</strong>, известной фруктовыми винами и старыми греко-османскими домами, для спокойного дегустационного вечера после руин. Дом Девы Марии и храм Артемиды легко вписываются в ту же поездку.",
+              "При наличии большего времени Кушадасы — трамплин к древним ионийским городам Приене, Милет и Дидима, белым травертинам Памуккале и бухтам национального парка полуострова Дилек. Но один только Эфес оправдывает поездку — а с лицензированным местным гидом, раскрывающим его историю, это незабываемый день из Кушадасы."
+            ]
+          }
+        ],
+        "faqHeading": "Часто задаваемые вопросы",
+        "faqs": [
+          {
+            "q": "Как далеко Эфес от порта Кушадасы?",
+            "a": "Эфес примерно в 18 км — около 20 минут езды — от круизного порта Кушадасы, рядом с городком Сельчук. Его близость делает его главной однодневной поездкой из Кушадасы и лёгкой береговой экскурсией на полдня для круизных пассажиров."
+          },
+          {
+            "q": "Можно ли посетить Эфес во время круизной остановки из Кушадасы?",
+            "a": "Да. Эфес достаточно близок для спокойной береговой экскурсии на полдня. Лицензированный гид планирует время под возвращение на борт вашего судна, берёт на себя транспорт и билеты и закладывает запас, чтобы вы спокойно вернулись до отправления. Частный гид быстрее и безопаснее большого автобусного тура."
+          },
+          {
+            "q": "Нужен ли лицензированный гид для Эфеса?",
+            "a": "Только официально лицензированным гидам разрешено проводить туры внутри древнего города Эфес. Каждый гид на VibeGuide имеет лицензию турецкого Министерства культуры и туризма, поэтому бронирование через платформу полностью соблюдает правила и вас страхует."
+          },
+          {
+            "q": "Нужен ли отдельный билет на Террасные дома Эфеса?",
+            "a": "Да. Основной объект Эфеса имеет один входной билет, а Террасные дома — прекрасно сохранившиеся римские жилища с мозаиками и фресками — требуют дополнительного билета сверху. Это изюминка, вполне стоящая доплаты."
+          },
+          {
+            "q": "Что ещё можно совместить с поездкой в Эфес?",
+            "a": "Лицензированный гид легко объединит Эфес с Домом Девы Марии, храмом Артемиды и винной деревней Шириндже в одну поездку. При целом дне из Кушадасы также достижимы Приене, Милет, Дидима или Памуккале."
+          }
+        ],
+        "relatedHeading": "Исследуйте Эфес и Эгейское побережье",
+        "ctaTitle": "Откройте Эфес с лицензированным гидом",
+        "ctaSub": "Только лицензированные гиды могут провести вас внутрь древнего города — а тайминг круиза решает всё. Забронируйте проверенного гида по Эфесу на VibeGuide."
+      },
+      "tr": {
+        "title": "Kuşadası'ndan Efes Günübirlik Gezisi: Eksiksiz Rehber",
+        "metaTitle": "Kuşadası'ndan Efes Gezisi — Eksiksiz Kruvaziyer Rehberi",
+        "metaDescription": "Kuşadası'ndan Efes günübirlik gezisi için ihtiyacınız olan her şey: mesafe, kruvaziyer yolcuları için zamanlama, görülecekler, bilet ipuçları ve neden ruhsatlı rehber şart olduğu.",
+        "excerpt": "Efes, Kuşadası'nın kruvaziyer limanına yalnızca 20 dakika — kusursuz bir liman turu. İşte nasıl planlanır, ne görülür ve içeri neden yalnızca ruhsatlı bir rehberin sizi götürebileceği.",
+        "intro": [
+          "Efes, Türkiye'nin Ege kıyısındaki yıldız günübirlik gezisi ve ülkenin en yoğun kruvaziyer limanlarından biri olan Kuşadası da onun ideal kalkış noktası. Karayoluyla yalnızca 20 dakika uzaklıktaki uçsuz bucaksız Greko-Romen kenti; ister bir kruvaziyer molasında olun ister birkaç gecelik kıyıda konaklayın, kusursuz bir yarım ya da tam günlük gezi sunar.",
+          "Bu rehber, <strong>Kuşadası'ndan Efes günübirlik gezisi</strong> için her şeyi kapsıyor: ne kadar uzakta olduğu, bir kruvaziyer gemisinin kalkışına göre nasıl zamanlanacağı, harabelerin içinde ne görüleceği, Yamaç Evler gibi bilet ayrıntıları ve neden — Efes'e özgü biçimde — antik alanda gezdirilmek için bir <strong>ruhsatlı rehbere</strong> ihtiyaç duyduğunuz. Doğru yaparsanız Türkiye'nin en unutulmaz günlerinden biri olur."
+        ],
+        "sections": [
+          {
+            "heading": "Efes, Kuşadası'na ne kadar uzak?",
+            "paragraphs": [
+              "Efes, Kuşadası'nın kruvaziyer limanından yaklaşık <strong>18 km — karayoluyla kabaca 20 dakika</strong> uzaklıkta, Selçuk ilçesinin hemen yanında yer alır. İşte bu kısa mesafe, onu Kuşadası'ndan bir numaralı gezi yapan şeydir: gemiden indikten sadece yarım saat sonra 2.000 yıllık mermer sokaklarda yürüyor olabilirsiniz.",
+              "Bu kadar yakın olduğu için ruhsatlı bir rehber, Efes'i yakındaki iki yerle — yukarıdaki tepelerde bulunan <strong>Meryem Ana Evi</strong> ve Antik Dünyanın Yedi Harikası'ndan biri olan <strong>Artemis Tapınağı</strong>'nın tek başına ayakta duran sütunu — tek ve telaşsız bir gezide rahatça birleştirebilir."
+            ]
+          },
+          {
+            "heading": "Kruvaziyer yolcuları için: zamanlamayı tutturmak",
+            "paragraphs": [
+              "Karaya çıkmak için yalnızca birkaç saatiniz olan bir kruvaziyer gemisiyle geliyorsanız, Efes doğrudan terminalden rahat bir yarım günlük liman turu için yeterince yakın. İşin anahtarı zamanlama: iyi bir yerel rehber tüm geziyi geminizin kalkış saatine göre planlar, ulaşım ve biletleri halleder ve kalkıştan önce rahatça dönebilmeniz için her zaman bir güvenlik payı bırakır.",
+              "İşte tam da burada özel ruhsatlı bir rehber ayırtmak, kocaman bir otobüs turunu geride bırakır — daha hızlı hareket eder, sürüyü atlar, öne çıkanları verimli görür ve geminin sizi bırakıp gitme riskini asla almazsınız. Tercihen işi anında ayarlamak isterseniz, VibeNow siz limana yanaşır yanaşmaz sizi yaklaşık 60 saniyede müsait bir rehberle eşleştirebilir."
+            ]
+          },
+          {
+            "heading": "Efes'in içinde neler görülür",
+            "paragraphs": [
+              "Efes olağanüstü derecede eksiksiz. Baş yapıt, restore edilmiş iki katlı cephesiyle Türkiye'nin en çok fotoğraflanan yerlerinden biri olan <strong>Celsus Kütüphanesi</strong>. Tapınakların, çeşmelerin ve dükkân cephelerinin yanından geçen mermer <strong>Kuretler Caddesi</strong>'nden aşağı, bir zamanlar 25.000 kişilik olan ve bugün hâlâ etkinliklere ev sahipliği yapan <strong>Büyük Tiyatro</strong>'ya yürüyün.",
+              "Ek bir bilet karşılığında, hayranlık uyandıran mozaik ve freskleriyle varlıklı Roma evlerinin üstü örtülü kalıntıları <strong>Yamaç Evler</strong>, alanın gizli hazinesi ve fazlasıyla değer. Bir rehber harap sokakları canlandırır; günlük Roma yaşamını, yok olmuş limanı ve çoğu ziyaretçinin fark etmeden geçtiği Yunan, Roma ve erken Hristiyan tarihinin katmanlarını anlatır."
+            ]
+          },
+          {
+            "heading": "Biletler, ruhsat ve pratik ipuçları",
+            "paragraphs": [
+              "İki bilet notu: ana alanın tek bir giriş bileti var ve <strong>Yamaç Evler bunun üstüne ayrı bir bilet gerektiriyor</strong>. Daha da önemlisi, Efes, antik kentin içinde <strong>tur gezdirmesine yalnızca resmî ruhsatlı bir rehbere izin verilen</strong> yerlerden biri — VibeGuide'daki her rehber o Kültür ve Turizm Bakanlığı ruhsatını taşır, dolayısıyla platform üzerinden ayırtmak sizi tümüyle güvence altına alır.",
+              "Pratik olarak: şapka, güneş kremi ve rahat ayakkabı giyin ve yanınıza su alın — mermer sokaklar açıkta, gölgesi az ve yazın çok ısınıyor. Hem öğle sıcağından hem de kruvaziyer kalabalığının doruğundan kaçınmak için günün erken ya da geç saatlerinde gidin. İki giriş var (üst ve alt); bir rehber, çıkışın yakınında bitirmeniz için yürüyüşü yokuş aşağı planlayabilir."
+            ]
+          },
+          {
+            "heading": "Efes'i bölgenin geri kalanıyla birleştirmek",
+            "paragraphs": [
+              "Bir kruvaziyer molası yerine tam bir gününüz varsa, Efes'i meyve şaraplarıyla ve eski Rum-Osmanlı evleriyle bilinen şirin dağ köyü <strong>Şirince</strong> ile eşleştirin; harabelerden sonra rahat bir tadım öğleden sonrası için. Meryem Ana Evi ve Artemis Tapınağı aynı geziye kolayca sığar.",
+              "Daha fazla zamanla Kuşadası; antik İon kentleri Priene, Milet ve Didim'e, Pamukkale'nin beyaz travertenlerine ve Dilek Yarımadası Millî Parkı'nın koylarına açılan bir sıçrama tahtasıdır. Ama tek başına Efes bile geziyi haklı çıkarır — ve tarihini açığa çıkaracak ruhsatlı bir yerel rehberle Kuşadası'ndan unutulmaz bir gün olur."
+            ]
+          }
+        ],
+        "faqHeading": "Sıkça sorulan sorular",
+        "faqs": [
+          {
+            "q": "Efes, Kuşadası limanına ne kadar uzak?",
+            "a": "Efes, Kuşadası'nın kruvaziyer limanından yaklaşık 18 km — kabaca 20 dakikalık bir yolculuk — uzaklıkta, Selçuk ilçesinin yakınındadır. Yakınlığı, onu Kuşadası'ndan en gözde günübirlik gezi ve kruvaziyer yolcuları için kolay bir yarım günlük liman turu yapar."
+          },
+          {
+            "q": "Kuşadası'ndan bir kruvaziyer molasında Efes'i ziyaret edebilir miyim?",
+            "a": "Evet. Efes, rahat bir yarım günlük liman turu için yeterince yakın. Ruhsatlı bir rehber zamanlamayı geminizin kalkış saatine göre planlar, ulaşım ve biletleri halleder ve kalkıştan önce rahatça dönmeniz için bir pay bırakır. Özel bir rehber, büyük bir otobüs turundan daha hızlı ve daha güvenlidir."
+          },
+          {
+            "q": "Efes için ruhsatlı bir rehbere ihtiyacınız var mı?",
+            "a": "Efes antik kentinin içinde tur gezdirmesine yalnızca resmî ruhsatlı rehberlere izin verilir. VibeGuide'daki her rehber Türkiye Kültür ve Turizm Bakanlığı ruhsatını taşır, dolayısıyla platform üzerinden ayırtmak sizi tümüyle kurallara uygun ve güvence altında tutar."
+          },
+          {
+            "q": "Efes Yamaç Evler için ayrı bir bilet gerekir mi?",
+            "a": "Evet. Ana Efes alanının tek bir giriş bileti var; mozaik ve freskleriyle güzelce korunmuş Roma evleri olan Yamaç Evler ise bunun üstüne ek bir bilet gerektirir. Öne çıkan bir yer ve ek bedele fazlasıyla değer."
+          },
+          {
+            "q": "Bir Efes gezisiyle başka neleri birleştirebilirim?",
+            "a": "Ruhsatlı bir rehber Efes'i Meryem Ana Evi, Artemis Tapınağı ve şarap köyü Şirince ile tek bir gezide kolayca birleştirebilir. Tam bir günle Priene, Milet, Didim ya da Pamukkale de Kuşadası'ndan ulaşılabilir."
+          }
+        ],
+        "relatedHeading": "Efes'i ve Ege'yi keşfedin",
+        "ctaTitle": "Efes'i ruhsatlı bir rehberle görün",
+        "ctaSub": "Antik kentin içine sizi yalnızca ruhsatlı rehberler götürebilir — ve kruvaziyerde zamanlama her şeydir. VibeGuide'da doğrulanmış bir Efes rehberi ayırtın."
+      },
+      "pl": {
+        "title": "Wycieczka do Efezu z Kuşadası: kompletny przewodnik",
+        "metaTitle": "Efez z Kuşadası — kompletny przewodnik dla rejsów",
+        "metaDescription": "Wszystko do wycieczki do Efezu z Kuşadası: odległość, czas dla pasażerów rejsów, co zobaczyć, wskazówki o biletach i dlaczego na terenie potrzebny jest licencjonowany przewodnik.",
+        "excerpt": "Efez jest tylko 20 minut od portu rejsowego Kuşadası — idealna wycieczka na ląd. Oto jak ją zaplanować, co zobaczyć i dlaczego tylko licencjonowany przewodnik może cię oprowadzić w środku.",
+        "intro": [
+          "Efez to najważniejsza jednodniowa wycieczka na egejskim wybrzeżu Turcji, a Kuşadası — jeden z najbardziej ruchliwych portów rejsowych kraju — to jego idealny punkt startowy. Zaledwie 20 minut drogi, rozległe grecko-rzymskie miasto stanowi idealną wyprawę na pół dnia lub cały dzień, niezależnie od tego, czy jesteś na postoju rejsowym, czy mieszkasz na wybrzeżu przez kilka nocy.",
+          "Ten przewodnik obejmuje wszystko do <strong>wycieczki do Efezu z Kuşadası</strong>: jak daleko to jest, jak zaplanować czas wokół odpłynięcia statku rejsowego, co zobaczyć wśród ruin, osobliwości biletowe jak Domy Tarasowe, i dlaczego — wyjątkowo w Efezie — potrzebujesz <strong>licencjonowanego przewodnika</strong>, by oprowadził cię po starożytnym mieście. Zrób to dobrze, a będzie to jeden z najbardziej pamiętnych dni w Turcji."
+        ],
+        "sections": [
+          {
+            "heading": "Jak daleko jest Efez od Kuşadası?",
+            "paragraphs": [
+              "Efez leży około <strong>18 km — mniej więcej 20 minut drogi</strong> — od portu rejsowego Kuşadası, obok miasteczka Selçuk. Właśnie ta niewielka odległość sprawia, że jest to wycieczka numer jeden z Kuşadası: możesz spacerować wśród liczących 2000 lat marmurowych ulic zaledwie pół godziny po zejściu ze statku.",
+              "Ponieważ jest tak blisko, licencjonowany przewodnik może wygodnie połączyć Efez z dwoma pobliskimi miejscami — <strong>Domem Dziewicy Maryi</strong> na wzgórzach powyżej i samotnie stojącą kolumną <strong>Świątyni Artemidy</strong>, jednego z siedmiu cudów świata starożytnego — w jednej, niespiesznej wyprawie."
+            ]
+          },
+          {
+            "heading": "Dla pasażerów rejsów: właściwy czas",
+            "paragraphs": [
+              "Jeśli przybywasz statkiem rejsowym z zaledwie kilkoma godzinami na lądzie, Efez jest wystarczająco blisko na spokojną półdniową wycieczkę prosto z terminalu. Kluczem jest czas: dobry lokalny przewodnik planuje całą wyprawę wokół godziny powrotu na pokład twojego statku, zajmuje się transportem i biletami i zawsze wbudowuje margines bezpieczeństwa, byś wygodnie wrócił przed odpłynięciem.",
+              "To właśnie tu rezerwacja prywatnego licencjonowanego przewodnika bije ogromną wycieczkę autokarową — poruszasz się szybciej, omijasz tłum, sprawnie widzisz najważniejsze punkty i nigdy nie ryzykujesz, że statek odpłynie bez ciebie. VibeNow może nawet dopasować ci dostępnego przewodnika w około 60 sekund w chwili zacumowania, jeśli wolisz zorganizować to na miejscu."
+            ]
+          },
+          {
+            "heading": "Co zobaczyć wewnątrz Efezu",
+            "paragraphs": [
+              "Efez jest niezwykle kompletny. Perłą jest <strong>Biblioteka Celsusa</strong>, której odrestaurowana dwupiętrowa fasada jest jednym z najczęściej fotografowanych widoków w Turcji. Przejdź marmurową <strong>Ulicą Kuretów</strong> obok świątyń, fontann i witryn sklepów aż do <strong>Wielkiego Teatru</strong>, który niegdyś mieścił 25 000 osób i do dziś gości wydarzenia.",
+              "Za dodatkowy bilet <strong>Domy Tarasowe</strong> — zadaszone pozostałości bogatych rzymskich domów ze zdumiewającymi mozaikami i freskami — to ukryty klejnot miejsca i naprawdę warte odwiedzenia. Przewodnik ożywia zrujnowane ulice, tłumacząc codzienne rzymskie życie, zaginiony port i warstwy greckiej, rzymskiej i wczesnochrześcijańskiej historii, obok których większość zwiedzających przechodzi obojętnie."
+            ]
+          },
+          {
+            "heading": "Bilety, licencje i praktyczne wskazówki",
+            "paragraphs": [
+              "Dwie uwagi o biletach: główny teren ma jeden bilet wstępu, a <strong>Domy Tarasowe wymagają osobnego biletu</strong> ponadto. Co ważniejsze, Efez to jedno z miejsc, gdzie <strong>tylko oficjalnie licencjonowany przewodnik może prowadzić wycieczki wewnątrz starożytnego miasta</strong> — każdy przewodnik na VibeGuide posiada tę licencję Ministerstwa Kultury i Turystyki, więc rezerwacja przez platformę w pełni cię zabezpiecza.",
+              "Praktycznie: załóż kapelusz, krem z filtrem i wygodne buty oraz weź wodę — marmurowe ulice są odsłonięte, z niewielkim cieniem, i latem robią się bardzo gorące. Idź wcześnie lub późno, by uniknąć zarówno południowego upału, jak i szczytu tłumów z rejsów. Są dwa wejścia (górne i dolne); przewodnik może zaplanować spacer w dół, byś skończył przy wyjściu."
+            ]
+          },
+          {
+            "heading": "Łączenie Efezu z resztą regionu",
+            "paragraphs": [
+              "Jeśli masz cały dzień zamiast postoju rejsowego, połącz Efez z uroczą górską wioską <strong>Şirince</strong>, znaną z win owocowych i starych grecko-osmańskich domów, na spokojne popołudnie degustacji po ruinach. Dom Dziewicy Maryi i Świątynia Artemidy łatwo wpasowują się w tę samą wycieczkę.",
+              "Przy większej ilości czasu Kuşadası to odskocznia do starożytnych jońskich miast Priene, Milet i Didyma, białych trawertynów Pamukkale i zatoczek Parku Narodowego Półwyspu Dilek. Ale sam Efez uzasadnia wyprawę — a z licencjonowanym lokalnym przewodnikiem odsłaniającym jego historię jest to niezapomniany dzień z Kuşadası."
+            ]
+          }
+        ],
+        "faqHeading": "Najczęściej zadawane pytania",
+        "faqs": [
+          {
+            "q": "Jak daleko jest Efez od portu Kuşadası?",
+            "a": "Efez jest około 18 km — mniej więcej 20 minut jazdy — od portu rejsowego Kuşadası, blisko miasteczka Selçuk. Jego bliskość czyni go najlepszą jednodniową wycieczką z Kuşadası i łatwą półdniową wyprawą na ląd dla pasażerów rejsów."
+          },
+          {
+            "q": "Czy mogę zwiedzić Efez podczas postoju rejsowego z Kuşadası?",
+            "a": "Tak. Efez jest wystarczająco blisko na spokojną półdniową wycieczkę na ląd. Licencjonowany przewodnik planuje czas wokół godziny powrotu na pokład twojego statku, zajmuje się transportem i biletami i wbudowuje margines, byś wygodnie wrócił przed odpłynięciem. Prywatny przewodnik jest szybszy i bezpieczniejszy niż duża wycieczka autokarowa."
+          },
+          {
+            "q": "Czy potrzebujesz licencjonowanego przewodnika do Efezu?",
+            "a": "Tylko oficjalnie licencjonowani przewodnicy mogą prowadzić wycieczki wewnątrz starożytnego miasta Efez. Każdy przewodnik na VibeGuide posiada licencję tureckiego Ministerstwa Kultury i Turystyki, więc rezerwacja przez platformę zapewnia pełną zgodność i ochronę."
+          },
+          {
+            "q": "Czy Domy Tarasowe w Efezie wymagają osobnego biletu?",
+            "a": "Tak. Główny teren Efezu ma jeden bilet wstępu, a Domy Tarasowe — pięknie zachowane rzymskie domy z mozaikami i freskami — wymagają dodatkowego biletu ponadto. To atrakcja warta dodatkowego kosztu."
+          },
+          {
+            "q": "Co jeszcze mogę połączyć z wycieczką do Efezu?",
+            "a": "Licencjonowany przewodnik może łatwo połączyć Efez z Domem Dziewicy Maryi, Świątynią Artemidy i winiarską wioską Şirince w jednej wyprawie. Przy całym dniu z Kuşadası osiągalne są także Priene, Milet, Didyma czy Pamukkale."
+          }
+        ],
+        "relatedHeading": "Odkryj Efez i wybrzeże egejskie",
+        "ctaTitle": "Zobacz Efez z licencjonowanym przewodnikiem",
+        "ctaSub": "Tylko licencjonowani przewodnicy mogą oprowadzić cię wewnątrz starożytnego miasta — a czas rejsu jest wszystkim. Zarezerwuj zweryfikowanego przewodnika po Efezie na VibeGuide."
+      },
+      "nl": {
+        "title": "Dagtrip naar Efeze vanuit Kuşadası: de complete gids",
+        "metaTitle": "Dagtrip Efeze vanuit Kuşadası — complete cruisegids",
+        "metaDescription": "Alles voor een dagtrip naar Efeze vanuit Kuşadası: afstand, timing voor cruisepassagiers, wat te zien, tickettips en waarom een erkende gids op de site verplicht is.",
+        "excerpt": "Efeze ligt op slechts 20 minuten van de cruisehaven van Kuşadası — de perfecte excursie aan wal. Hier lees je hoe je het plant, wat te zien en waarom alleen een erkende gids je naar binnen kan leiden.",
+        "intro": [
+          "Efeze is de topdagtrip aan de Egeïsche kust van Turkije, en Kuşadası — een van de drukste cruisehavens van het land — is het ideale vertrekpunt. Op slechts 20 minuten rijden maakt de uitgestrekte Grieks-Romeinse stad een perfecte uitstap van een halve of hele dag, of je nu een cruisestop maakt of een paar nachten aan de kust verblijft.",
+          "Deze gids behandelt alles voor een <strong>dagtrip naar Efeze vanuit Kuşadası</strong>: hoe ver het is, hoe je het timet rond het vertrek van een cruiseschip, wat te zien binnen de ruïnes, ticketbijzonderheden zoals de Terrashuizen, en waarom je — uniek bij Efeze — een <strong>erkende gids</strong> nodig hebt om door de antieke site geleid te worden. Doe het goed en het is een van de meest onvergetelijke dagen in Turkije."
+        ],
+        "sections": [
+          {
+            "heading": "Hoe ver is Efeze van Kuşadası?",
+            "paragraphs": [
+              "Efeze ligt op ongeveer <strong>18 km — grofweg 20 minuten met de auto</strong> — van de cruisehaven van Kuşadası, naast het stadje Selçuk. Die korte afstand is precies waarom het de nummer-één-excursie vanuit Kuşadası is: je kunt amper een half uur na het van boord stappen tussen 2.000 jaar oude marmeren straten lopen.",
+              "Omdat het zo dichtbij is, kan een erkende gids Efeze comfortabel combineren met twee nabijgelegen bezienswaardigheden — het <strong>Huis van de Maagd Maria</strong> in de heuvels erboven en de eenzame overeind staande zuil van de <strong>Tempel van Artemis</strong>, een van de Zeven Wereldwonderen — in één ontspannen uitstap."
+            ]
+          },
+          {
+            "heading": "Voor cruisepassagiers: de juiste timing",
+            "paragraphs": [
+              "Als je met een cruiseschip aankomt met maar een paar uur aan wal, is Efeze dichtbij genoeg voor een ontspannen excursie van een halve dag rechtstreeks vanaf de terminal. De sleutel is timing: een goede lokale gids plant de hele uitstap rond de all-aboard-tijd van je schip, regelt vervoer en tickets, en bouwt altijd een veiligheidsmarge in zodat je comfortabel terug bent voor vertrek.",
+              "Dit is waar het boeken van een privé-erkende gids een enorme bustour verslaat — je gaat sneller, ontloopt de kudde, ziet de hoogtepunten efficiënt, en riskeert nooit dat het schip zonder je vertrekt. VibeNow kan je zelfs binnen ongeveer 60 seconden koppelen aan een beschikbare gids zodra je aanmeert, als je het liever ter plekke regelt."
+            ]
+          },
+          {
+            "heading": "Wat te zien binnen Efeze",
+            "paragraphs": [
+              "Efeze is opmerkelijk compleet. Het pronkstuk is de <strong>Bibliotheek van Celsus</strong>, met zijn gerestaureerde tweeverdiepingengevel een van de meest gefotografeerde bezienswaardigheden van Turkije. Loop over de marmeren <strong>Curetes-straat</strong> langs tempels, fonteinen en winkelpuien naar het <strong>Grote Theater</strong>, dat ooit plaats bood aan 25.000 mensen en vandaag nog evenementen hosts.",
+              "Voor een extra ticket zijn de <strong>Terrashuizen</strong> — de overdekte resten van welgestelde Romeinse woningen met verbluffende mozaïeken en fresco's — de verborgen parel van de site en meer dan de moeite waard. Een gids brengt de vervallen straten tot leven, en legt het dagelijkse Romeinse leven uit, de verdwenen haven en de lagen Griekse, Romeinse en vroegchristelijke geschiedenis waar de meeste bezoekers zomaar voorbij lopen."
+            ]
+          },
+          {
+            "heading": "Tickets, licenties en praktische tips",
+            "paragraphs": [
+              "Twee ticketopmerkingen: de hoofdsite heeft één toegangsticket, en de <strong>Terrashuizen vereisen een apart ticket</strong> daarbovenop. Belangrijker nog, Efeze is een van de sites waar <strong>alleen een officieel erkende gids tours binnen de antieke stad mag leiden</strong> — elke gids op VibeGuide bezit die licentie van het Ministerie van Cultuur en Toerisme, dus boeken via het platform houdt je volledig gedekt.",
+              "Praktisch: draag een hoed, zonnebrandcrème en comfortabele schoenen, en neem water mee — de marmeren straten liggen open met weinig schaduw en worden 's zomers erg heet. Ga vroeg of laat op de dag om zowel de middaghitte als de piek van de cruisedrukte te vermijden. Er zijn twee ingangen (boven en onder); een gids kan de wandeling bergafwaarts plannen zodat je bij de uitgang eindigt."
+            ]
+          },
+          {
+            "heading": "Efeze combineren met meer van de regio",
+            "paragraphs": [
+              "Als je een hele dag hebt in plaats van een cruisestop, combineer Efeze dan met het charmante heuveldorp <strong>Şirince</strong>, bekend om zijn vruchtenwijnen en oude Grieks-Ottomaanse huizen, voor een ontspannen middag proeven na de ruïnes. Het Huis van de Maagd Maria en de Tempel van Artemis passen makkelijk in dezelfde trip.",
+              "Met meer tijd is Kuşadası een springplank naar de antieke Ionische steden Priëne, Milete en Didyma, de witte travertijnterrassen van Pamukkale, en de baaien van het nationaal park Dilek-schiereiland. Maar Efeze alleen rechtvaardigt de trip al — en met een erkende lokale gids om zijn geschiedenis te ontsluiten, is het een onvergetelijke dag uit vanuit Kuşadası."
+            ]
+          }
+        ],
+        "faqHeading": "Veelgestelde vragen",
+        "faqs": [
+          {
+            "q": "Hoe ver is Efeze van de haven van Kuşadası?",
+            "a": "Efeze ligt op ongeveer 18 km — grofweg 20 minuten rijden — van de cruisehaven van Kuşadası, nabij het stadje Selçuk. De nabijheid maakt het de topdagtrip vanuit Kuşadası en een makkelijke excursie van een halve dag voor cruisepassagiers."
+          },
+          {
+            "q": "Kan ik Efeze bezoeken tijdens een cruisestop vanuit Kuşadası?",
+            "a": "Ja. Efeze ligt dichtbij genoeg voor een ontspannen excursie van een halve dag. Een erkende gids plant de timing rond de all-aboard-tijd van je schip, regelt vervoer en tickets, en bouwt een marge in zodat je comfortabel terug bent voor vertrek. Een privégids is sneller en veiliger dan een grote bustour."
+          },
+          {
+            "q": "Heb je een erkende gids nodig voor Efeze?",
+            "a": "Alleen officieel erkende gidsen mogen tours leiden binnen de antieke stad Efeze. Elke gids op VibeGuide bezit de licentie van het Turkse Ministerie van Cultuur en Toerisme, dus boeken via het platform houdt je volledig in orde en gedekt."
+          },
+          {
+            "q": "Vereisen de Terrashuizen van Efeze een apart ticket?",
+            "a": "Ja. De hoofdsite van Efeze heeft één toegangsticket, en de Terrashuizen — de prachtig bewaarde Romeinse woningen met mozaïeken en fresco's — vereisen een aanvullend ticket daarbovenop. Ze zijn een hoogtepunt en meer dan de extra kosten waard."
+          },
+          {
+            "q": "Wat kan ik nog meer combineren met een dagtrip naar Efeze?",
+            "a": "Een erkende gids kan Efeze makkelijk combineren met het Huis van de Maagd Maria, de Tempel van Artemis en het wijndorp Şirince in één uitstap. Met een hele dag zijn Priëne, Milete, Didyma of Pamukkale ook bereikbaar vanuit Kuşadası."
+          }
+        ],
+        "relatedHeading": "Ontdek Efeze en de Egeïsche kust",
+        "ctaTitle": "Bekijk Efeze met een erkende gids",
+        "ctaSub": "Alleen erkende gidsen mogen je binnen de antieke stad leiden — en cruise-timing is alles. Boek een geverifieerde Efeze-gids op VibeGuide."
+      },
+      "pt": {
+        "title": "Excursão a Éfeso a partir de Kuşadası: o guia completo",
+        "metaTitle": "Excursão a Éfeso de Kuşadası — guia completo de cruzeiro",
+        "metaDescription": "Tudo para uma excursão a Éfeso a partir de Kuşadası: distância, timing para passageiros de cruzeiro, o que ver, dicas de bilhetes e porque é obrigatório um guia licenciado.",
+        "excerpt": "Éfeso fica a apenas 20 minutos do porto de cruzeiros de Kuşadası — a excursão em terra perfeita. Aqui fica como planeá-la, o que ver e porque só um guia licenciado o pode conduzir lá dentro.",
+        "intro": [
+          "Éfeso é a excursão de um dia em destaque na costa do Egeu da Turquia, e Kuşadası — um dos portos de cruzeiro mais movimentados do país — é o seu ponto de partida ideal. A apenas 20 minutos de estrada, a vasta cidade greco-romana faz um passeio perfeito de meio-dia ou de dia inteiro, quer esteja em escala de cruzeiro quer instalado na costa por umas noites.",
+          "Este guia cobre tudo para uma <strong>excursão a Éfeso a partir de Kuşadası</strong>: a que distância fica, como calcular o tempo em torno da partida de um navio de cruzeiro, o que ver dentro das ruínas, particularidades de bilhética como as Casas em Terraço, e porque — de forma única em Éfeso — precisa de um <strong>guia licenciado</strong> para ser conduzido pelo sítio antigo. Feito como deve ser, é um dos dias mais memoráveis da Turquia."
+        ],
+        "sections": [
+          {
+            "heading": "A que distância fica Éfeso de Kuşadası?",
+            "paragraphs": [
+              "Éfeso fica a cerca de <strong>18 km — mais ou menos 20 minutos de estrada</strong> — do porto de cruzeiros de Kuşadası, junto à localidade de Selçuk. É precisamente essa curta distância que faz dela a excursão número um a partir de Kuşadası: pode estar a caminhar por ruas de mármore com 2.000 anos mal meia hora depois de descer do navio.",
+              "Por ficar tão perto, um guia licenciado pode combinar confortavelmente Éfeso com dois locais próximos — a <strong>Casa da Virgem Maria</strong> nas colinas acima e a coluna solitária ainda de pé do <strong>Templo de Ártemis</strong>, uma das Sete Maravilhas do Mundo Antigo — num único passeio sem pressas."
+            ]
+          },
+          {
+            "heading": "Para passageiros de cruzeiro: calcular bem o tempo",
+            "paragraphs": [
+              "Se chega de navio de cruzeiro com apenas algumas horas em terra, Éfeso fica perto o suficiente para uma tranquila excursão de meio-dia diretamente do terminal. A chave é o timing: um bom guia local planeia todo o passeio em torno da hora de embarque do seu navio, trata do transporte e dos bilhetes, e prevê sempre uma margem de segurança para regressar com folga antes da partida.",
+              "É aqui que reservar um guia licenciado privado supera uma enorme excursão de autocarro — anda mais depressa, foge do rebanho, vê os pontos altos de forma eficiente, e nunca corre o risco de o navio partir sem si. O VibeNow pode até encontrar-lhe um guia disponível em cerca de 60 segundos assim que atraca, se preferir tratar disso no momento."
+            ]
+          },
+          {
+            "heading": "O que ver dentro de Éfeso",
+            "paragraphs": [
+              "Éfeso está notavelmente completa. A peça de destaque é a <strong>Biblioteca de Celso</strong>, cuja fachada restaurada de dois pisos é um dos locais mais fotografados da Turquia. Desça a <strong>Rua dos Curetes</strong>, de mármore, por templos, fontes e montras até ao <strong>Grande Teatro</strong>, que já acolheu 25.000 pessoas e ainda hoje recebe eventos.",
+              "Por um bilhete adicional, as <strong>Casas em Terraço</strong> — os restos cobertos de casas romanas ricas, com mosaicos e frescos deslumbrantes — são a joia escondida do sítio e valem bem a pena. Um guia dá vida às ruas em ruínas, explicando o quotidiano romano, o porto desaparecido e as camadas de história grega, romana e paleocristã por que a maioria dos visitantes passa sem reparar."
+            ]
+          },
+          {
+            "heading": "Bilhetes, licenciamento e dicas práticas",
+            "paragraphs": [
+              "Duas notas de bilhética: o sítio principal tem um bilhete de entrada, e as <strong>Casas em Terraço exigem um bilhete à parte</strong> por cima desse. Mais importante ainda, Éfeso é um dos locais onde <strong>só um guia oficialmente licenciado está autorizado a conduzir visitas dentro da cidade antiga</strong> — todos os guias da VibeGuide possuem essa licença do Ministério da Cultura e do Turismo, por isso reservar através da plataforma mantém-no totalmente coberto.",
+              "Na prática: use chapéu, protetor solar e calçado confortável, e leve água — as ruas de mármore são expostas, com pouca sombra, e ficam muito quentes no verão. Vá cedo ou ao fim do dia para evitar tanto o calor do meio-dia como o pico das multidões dos cruzeiros. Há duas entradas (superior e inferior); um guia pode planear o percurso a descer para terminar perto da saída."
+            ]
+          },
+          {
+            "heading": "Combinar Éfeso com mais da região",
+            "paragraphs": [
+              "Se tiver um dia inteiro em vez de uma escala de cruzeiro, junte Éfeso à encantadora aldeia serrana de <strong>Şirince</strong>, conhecida pelos seus vinhos de fruta e pelas antigas casas greco-otomanas, para uma tarde descontraída de provas depois das ruínas. A Casa da Virgem Maria e o Templo de Ártemis encaixam facilmente na mesma viagem.",
+              "Com mais tempo, Kuşadası é uma rampa de lançamento para as antigas cidades jónicas de Priene, Mileto e Dídima, os travertinos brancos de Pamukkale e as enseadas do Parque Nacional da Península de Dilek. Mas só Éfeso já justifica a viagem — e, com um guia local licenciado a desvendar a sua história, é um dia inesquecível a partir de Kuşadası."
+            ]
+          }
+        ],
+        "faqHeading": "Perguntas frequentes",
+        "faqs": [
+          {
+            "q": "A que distância fica Éfeso do porto de Kuşadası?",
+            "a": "Éfeso fica a cerca de 18 km — mais ou menos 20 minutos de carro — do porto de cruzeiros de Kuşadası, perto da localidade de Selçuk. A sua proximidade faz dela a principal excursão a partir de Kuşadası e uma fácil visita de meio-dia em terra para passageiros de cruzeiro."
+          },
+          {
+            "q": "Posso visitar Éfeso numa escala de cruzeiro a partir de Kuşadası?",
+            "a": "Sim. Éfeso fica perto o suficiente para uma tranquila excursão de meio-dia. Um guia licenciado planeia o timing em torno da hora de embarque do seu navio, trata do transporte e dos bilhetes, e prevê uma margem para regressar com folga antes da partida. Um guia privado é mais rápido e mais seguro do que uma grande excursão de autocarro."
+          },
+          {
+            "q": "É preciso um guia licenciado para Éfeso?",
+            "a": "Só guias oficialmente licenciados estão autorizados a conduzir visitas dentro da cidade antiga de Éfeso. Todos os guias da VibeGuide possuem a licença do Ministério da Cultura e do Turismo da Turquia, por isso reservar através da plataforma mantém-no totalmente em conformidade e coberto."
+          },
+          {
+            "q": "As Casas em Terraço de Éfeso precisam de um bilhete à parte?",
+            "a": "Sim. O sítio principal de Éfeso tem um bilhete de entrada, e as Casas em Terraço — as casas romanas lindamente preservadas, com mosaicos e frescos — exigem um bilhete adicional por cima. São um ponto alto e valem bem o custo extra."
+          },
+          {
+            "q": "O que mais posso combinar com uma excursão a Éfeso?",
+            "a": "Um guia licenciado pode facilmente combinar Éfeso com a Casa da Virgem Maria, o Templo de Ártemis e a aldeia vinhateira de Şirince num único passeio. Com um dia inteiro, Priene, Mileto, Dídima ou Pamukkale também são alcançáveis a partir de Kuşadası."
+          }
+        ],
+        "relatedHeading": "Explore Éfeso e o Egeu",
+        "ctaTitle": "Conheça Éfeso com um guia licenciado",
+        "ctaSub": "Só guias licenciados o podem conduzir dentro da cidade antiga — e o timing do cruzeiro é tudo. Reserve um guia de Éfeso verificado na VibeGuide."
+      },
+      "ja": {
+        "title": "クシャダスからのエフェソス日帰り旅行：完全ガイド",
+        "metaTitle": "クシャダスからのエフェソス日帰り — クルーズ完全ガイド",
+        "metaDescription": "クシャダスからのエフェソス日帰りに必要なすべて：距離、クルーズ乗客の時間配分、見どころ、チケットのコツ、そして遺跡内で公認ガイドが必要な理由。",
+        "excerpt": "エフェソスはクシャダスのクルーズ港からわずか20分 — 完璧な寄港地観光です。計画の立て方、見どころ、そして公認ガイドだけが遺跡内へ案内できる理由を解説します。",
+        "intro": [
+          "エフェソスはトルコのエーゲ海岸で一番人気の日帰り先で、国内屈指の混雑するクルーズ港クシャダスは、その理想的な出発点です。陸路でわずか20分、この広大なギリシャ・ローマ都市は、クルーズの寄港でも海岸に数泊する滞在でも、完璧な半日または一日の外出になります。",
+          "このガイドは<strong>クシャダスからのエフェソス日帰り旅行</strong>に必要なすべてを扱います：距離、クルーズ船の出航に合わせた時間配分、遺跡内の見どころ、テラスハウスなどチケットの注意点、そして — エフェソス独特の点として — 古代都市を案内してもらうには<strong>公認ガイド</strong>が必要な理由。正しく行えば、トルコで最も忘れがたい一日の一つになります。"
+        ],
+        "sections": [
+          {
+            "heading": "エフェソスはクシャダスからどれくらい遠い？",
+            "paragraphs": [
+              "エフェソスはクシャダスのクルーズ港から約<strong>18km — 陸路でおよそ20分</strong> — の、セルチュクの町のそばにあります。この近さこそ、クシャダスからの一番人気の外出である理由です：船を降りてわずか30分ほどで、2000年前の大理石の通りを歩けるのです。",
+              "とても近いため、公認ガイドはエフェソスに近くの二つの名所 — 丘の上にある<strong>聖母マリアの家</strong>と、古代世界七不思議の一つ<strong>アルテミス神殿</strong>の一本だけ立つ円柱 — を、ゆったりした一度の外出に無理なく組み合わせられます。"
+            ]
+          },
+          {
+            "heading": "クルーズ乗客へ：うまく時間を計る",
+            "paragraphs": [
+              "クルーズ船で到着し上陸できるのが数時間だけでも、エフェソスはターミナルからそのまま行けるゆとりある半日の寄港地観光に十分近い場所です。鍵は時間配分です：優れた地元ガイドは船の乗船締切時刻を軸に外出全体を計画し、交通とチケットを手配し、常に安全のための余裕を組み込んで、出航前に余裕をもって戻れるようにします。",
+              "ここで、公認の専属ガイドを予約することが大型バスツアーに勝ります — より速く動き、群れを避け、見どころを効率よく回り、船に置いていかれる心配もありません。その場で手配したければ、VibeNowは着岸したその瞬間に、約60秒で対応可能なガイドを見つけることさえできます。"
+            ]
+          },
+          {
+            "heading": "エフェソスで見るべきもの",
+            "paragraphs": [
+              "エフェソスは驚くほど保存状態がよいです。目玉は<strong>ケルスス図書館</strong>で、復元された二層のファサードはトルコで最も写真に撮られる光景の一つです。大理石の<strong>クレテス通り</strong>を、神殿や噴水や店先を過ぎて<strong>大劇場</strong>まで歩きましょう。かつて2万5千人を収容し、今もイベントが催されています。",
+              "追加チケットで入れる<strong>テラスハウス</strong> — 息をのむモザイクとフレスコが残る裕福なローマ人邸宅の屋根付き遺構 — は、この遺跡の隠れた名所で、その価値は十分にあります。ガイドは廃墟となった通りに命を吹き込み、ローマ人の日常、消えた港、そして多くの旅行者が素通りするギリシャ・ローマ・初期キリスト教の歴史の層を解き明かしてくれます。"
+            ]
+          },
+          {
+            "heading": "チケット、ライセンス、実用的なヒント",
+            "paragraphs": [
+              "チケットについて二点：主要遺跡には入場券が一枚あり、<strong>テラスハウスにはそれとは別のチケットが必要</strong>です。さらに重要なのは、エフェソスは<strong>公式に認可されたガイドだけが古代都市内でツアーを先導することを許される</strong>数少ない場所の一つだということです — VibeGuideのすべてのガイドはその文化観光省のライセンスを保持しているので、プラットフォーム経由で予約すれば完全に安心です。",
+              "実用面：帽子、日焼け止め、歩きやすい靴を身につけ、水を持参しましょう — 大理石の通りは日陰がほとんどなく、夏はとても暑くなります。真昼の暑さとクルーズの人出のピークの両方を避けるため、朝早くか夕方に行きましょう。入口は二つ（上と下）あり、ガイドが下り坂で歩くよう計画して出口近くで終われるようにしてくれます。"
+            ]
+          },
+          {
+            "heading": "エフェソスと周辺をもっと組み合わせる",
+            "paragraphs": [
+              "クルーズの寄港ではなく丸一日あるなら、エフェソスに魅力的な丘の村<strong>シリンジェ</strong> — フルーツワインと古いギリシャ・オスマン様式の家々で知られる — を組み合わせ、遺跡のあとゆったりした午後の試飲を楽しみましょう。聖母マリアの家とアルテミス神殿も同じ旅程に難なく収まります。",
+              "さらに時間があれば、クシャダスは古代イオニアの都市プリエネ、ミレトス、ディディマ、白いパムッカレの石灰棚、ディレク半島国立公園の入り江への足がかりになります。けれどエフェソスだけでも旅の価値は十分 — その歴史を解き明かす公認の地元ガイドがいれば、クシャダスからの忘れられない一日になります。"
+            ]
+          }
+        ],
+        "faqHeading": "よくある質問",
+        "faqs": [
+          {
+            "q": "エフェソスはクシャダス港からどれくらい遠いですか？",
+            "a": "エフェソスはクシャダスのクルーズ港から約18km — 車でおよそ20分 — の、セルチュクの町の近くにあります。その近さから、クシャダスからの一番人気の日帰り先であり、クルーズ乗客にとって手軽な半日の寄港地観光になります。"
+          },
+          {
+            "q": "クシャダスからのクルーズ寄港でエフェソスを訪れられますか？",
+            "a": "はい。エフェソスはゆったりした半日の寄港地観光に十分近い場所です。公認ガイドが船の乗船締切時刻を軸に時間を計画し、交通とチケットを手配し、出航前に余裕をもって戻れるよう余裕を組み込みます。専属ガイドは大型バスツアーより速く安全です。"
+          },
+          {
+            "q": "エフェソスに公認ガイドは必要ですか？",
+            "a": "公式に認可されたガイドだけが古代都市エフェソス内でツアーを先導することを許されています。VibeGuideのすべてのガイドはトルコ文化観光省のライセンスを保持しているので、プラットフォーム経由で予約すれば完全に規定に沿い、安心です。"
+          },
+          {
+            "q": "エフェソスのテラスハウスには別のチケットが必要ですか？",
+            "a": "はい。エフェソスの主要遺跡には入場券が一枚あり、テラスハウス — モザイクとフレスコが美しく残るローマ人邸宅 — にはそれとは別のチケットが必要です。見どころであり、追加費用の価値は十分にあります。"
+          },
+          {
+            "q": "エフェソス日帰り旅行に他に何を組み合わせられますか？",
+            "a": "公認ガイドはエフェソスに、聖母マリアの家、アルテミス神殿、ワインの村シリンジェを一度の外出で難なく組み合わせられます。丸一日あれば、プリエネ、ミレトス、ディディマ、パムッカレもクシャダスから行けます。"
+          }
+        ],
+        "relatedHeading": "エフェソスとエーゲ海を探索する",
+        "ctaTitle": "公認ガイドとエフェソスを巡る",
+        "ctaSub": "古代都市の内部へ案内できるのは公認ガイドだけ — そしてクルーズの時間配分がすべてです。VibeGuideで認証済みのエフェソスガイドを予約しましょう。"
+      },
+      "ko": {
+        "title": "쿠샤다스에서 떠나는 에페소스 당일치기: 완벽 가이드",
+        "metaTitle": "쿠샤다스발 에페소스 당일치기 — 크루즈 완벽 가이드",
+        "metaDescription": "쿠샤다스에서 에페소스 당일치기에 필요한 모든 것: 거리, 크루즈 승객의 시간 배분, 볼거리, 티켓 팁, 그리고 유적 안에서 면허 가이드가 필요한 이유.",
+        "excerpt": "에페소스는 쿠샤다스 크루즈 항구에서 단 20분 — 완벽한 기항지 관광입니다. 계획하는 법, 볼거리, 그리고 면허 가이드만이 내부로 안내할 수 있는 이유를 알려드립니다.",
+        "intro": [
+          "에페소스는 터키 에게해 연안 최고의 당일치기 명소이며, 나라에서 가장 붐비는 크루즈 항구 중 하나인 쿠샤다스는 그 이상적인 출발점입니다. 육로로 단 20분 거리인 이 광대한 그리스·로마 도시는, 크루즈 기항 중이든 해안에 며칠 묵는 여행이든 완벽한 반나절 또는 하루 나들이가 됩니다.",
+          "이 가이드는 <strong>쿠샤다스에서 떠나는 에페소스 당일치기</strong>에 필요한 모든 것을 다룹니다: 거리, 크루즈선 출항에 맞춘 시간 배분, 유적 내부의 볼거리, 테라스 하우스 같은 티켓의 유의점, 그리고 — 에페소스만의 특징으로 — 고대 유적지를 안내받으려면 <strong>면허 가이드</strong>가 필요한 이유. 제대로 하면 터키에서 가장 잊지 못할 하루가 됩니다."
+        ],
+        "sections": [
+          {
+            "heading": "에페소스는 쿠샤다스에서 얼마나 먼가요?",
+            "paragraphs": [
+              "에페소스는 쿠샤다스 크루즈 항구에서 약 <strong>18km — 육로로 약 20분</strong> — 거리인 셀축 마을 옆에 있습니다. 이 짧은 거리야말로 쿠샤다스에서 첫손에 꼽히는 나들이인 이유입니다: 배에서 내린 지 겨우 30분 남짓이면 2000년 된 대리석 거리를 걸을 수 있습니다.",
+              "아주 가깝기 때문에 면허 가이드는 에페소스에 근처의 두 명소 — 언덕 위의 <strong>성모 마리아의 집</strong>과, 고대 세계 7대 불가사의 중 하나인 <strong>아르테미스 신전</strong>의 홀로 선 기둥 — 을 서두르지 않는 한 번의 나들이에 여유롭게 엮을 수 있습니다."
+            ]
+          },
+          {
+            "heading": "크루즈 승객을 위해: 시간 맞추기",
+            "paragraphs": [
+              "크루즈선으로 도착해 상륙 시간이 몇 시간뿐이라도, 에페소스는 터미널에서 바로 다녀오는 여유로운 반나절 기항지 관광에 충분히 가깝습니다. 핵심은 시간 배분입니다: 좋은 현지 가이드는 배의 최종 승선 시각을 중심으로 나들이 전체를 계획하고, 교통과 티켓을 처리하며, 출항 전에 여유롭게 돌아오도록 항상 안전 여유를 둡니다.",
+              "바로 여기서 면허 있는 개인 가이드 예약이 대형 버스 투어를 앞섭니다 — 더 빨리 움직이고, 무리를 피하며, 하이라이트를 효율적으로 보고, 배가 당신을 두고 떠날 위험이 결코 없습니다. 즉석에서 잡고 싶다면, VibeNow가 당신이 접안하는 순간 약 60초 만에 이용 가능한 가이드를 매칭해 줄 수도 있습니다."
+            ]
+          },
+          {
+            "heading": "에페소스 안에서 볼 것",
+            "paragraphs": [
+              "에페소스는 놀랍도록 온전합니다. 백미는 <strong>켈수스 도서관</strong>으로, 복원된 2층 파사드는 터키에서 가장 많이 사진에 담기는 광경 중 하나입니다. 대리석 <strong>쿠레테스 거리</strong>를 따라 신전과 분수, 상점 자리를 지나 <strong>대극장</strong>까지 걸어보세요. 한때 2만 5천 명을 수용했고 지금도 행사가 열립니다.",
+              "추가 티켓으로 들어가는 <strong>테라스 하우스</strong> — 놀라운 모자이크와 프레스코가 남은 부유한 로마인 저택의 지붕 덮인 유구 — 는 이 유적지의 숨은 보석이며 충분히 값어치를 합니다. 가이드는 폐허가 된 거리에 생명을 불어넣어, 로마인의 일상, 사라진 항구, 그리고 대부분의 방문객이 그냥 지나치는 그리스·로마·초기 기독교 역사의 층위를 풀어줍니다."
+            ]
+          },
+          {
+            "heading": "티켓, 면허, 실용 팁",
+            "paragraphs": [
+              "티켓에 관한 두 가지: 본 유적지에는 입장권이 하나 있고, <strong>테라스 하우스는 그 위에 별도의 티켓이 필요</strong>합니다. 더 중요하게, 에페소스는 <strong>공식 면허 가이드만이 고대 도시 내부에서 투어를 인솔하도록 허용된</strong> 몇 안 되는 유적지 중 하나입니다 — VibeGuide의 모든 가이드는 그 문화관광부 면허를 보유하므로, 플랫폼을 통해 예약하면 완전히 보장받습니다.",
+              "실용적으로: 모자, 자외선 차단제, 편한 신발을 갖추고 물을 챙기세요 — 대리석 거리는 그늘이 거의 없이 트여 있어 여름에는 매우 덥습니다. 한낮의 더위와 크루즈 인파의 절정을 모두 피하려면 이른 아침이나 늦은 시간에 가세요. 입구가 둘(위·아래) 있으니, 가이드가 내리막으로 걷도록 계획해 출구 근처에서 마치게 할 수 있습니다."
+            ]
+          },
+          {
+            "heading": "에페소스에 이 지역을 더 엮기",
+            "paragraphs": [
+              "크루즈 기항이 아니라 하루가 온전히 있다면, 에페소스에 매력적인 언덕 마을 <strong>시린제</strong> — 과일 와인과 옛 그리스·오스만 가옥으로 유명한 — 를 엮어, 유적 후 느긋한 오후의 시음을 즐기세요. 성모 마리아의 집과 아르테미스 신전도 같은 여정에 쉽게 들어갑니다.",
+              "시간이 더 있으면 쿠샤다스는 고대 이오니아 도시 프리에네, 밀레투스, 디디마, 파묵칼레의 하얀 석회붕, 딜렉 반도 국립공원의 후미로 향하는 발판입니다. 하지만 에페소스만으로도 여정의 가치는 충분합니다 — 그 역사를 풀어줄 면허 있는 현지 가이드와 함께라면, 쿠샤다스에서 떠나는 잊지 못할 하루가 됩니다."
+            ]
+          }
+        ],
+        "faqHeading": "자주 묻는 질문",
+        "faqs": [
+          {
+            "q": "에페소스는 쿠샤다스 항구에서 얼마나 먼가요?",
+            "a": "에페소스는 쿠샤다스 크루즈 항구에서 약 18km — 차로 약 20분 — 거리인 셀축 마을 근처에 있습니다. 가까워서 쿠샤다스에서 가장 인기 있는 당일치기이자 크루즈 승객에게 손쉬운 반나절 기항지 관광입니다."
+          },
+          {
+            "q": "쿠샤다스에서 크루즈 기항 중에 에페소스를 방문할 수 있나요?",
+            "a": "네. 에페소스는 여유로운 반나절 기항지 관광에 충분히 가깝습니다. 면허 가이드가 배의 최종 승선 시각을 중심으로 시간을 계획하고, 교통과 티켓을 처리하며, 출항 전에 여유롭게 돌아오도록 여유를 둡니다. 개인 가이드는 대형 버스 투어보다 빠르고 안전합니다."
+          },
+          {
+            "q": "에페소스에 면허 가이드가 필요한가요?",
+            "a": "공식 면허 가이드만이 고대 도시 에페소스 내부에서 투어를 인솔하도록 허용됩니다. VibeGuide의 모든 가이드는 터키 문화관광부 면허를 보유하므로, 플랫폼을 통해 예약하면 규정을 완전히 지키고 보장받습니다."
+          },
+          {
+            "q": "에페소스 테라스 하우스는 별도 티켓이 필요한가요?",
+            "a": "네. 에페소스 본 유적지에는 입장권이 하나 있고, 테라스 하우스 — 모자이크와 프레스코가 아름답게 보존된 로마인 저택 — 는 그 위에 추가 티켓이 필요합니다. 하이라이트이며 추가 비용의 값어치를 충분히 합니다."
+          },
+          {
+            "q": "에페소스 당일치기에 무엇을 더 엮을 수 있나요?",
+            "a": "면허 가이드는 에페소스에 성모 마리아의 집, 아르테미스 신전, 와인 마을 시린제를 한 번의 나들이에 쉽게 엮을 수 있습니다. 하루가 온전히 있으면 프리에네, 밀레투스, 디디마, 파묵칼레도 쿠샤다스에서 갈 수 있습니다."
+          }
+        ],
+        "relatedHeading": "에페소스와 에게해를 탐험하다",
+        "ctaTitle": "면허 가이드와 에페소스를 만나보세요",
+        "ctaSub": "고대 도시 내부로는 면허 가이드만이 안내할 수 있고 — 크루즈 시간 배분이 전부입니다. VibeGuide에서 인증된 에페소스 가이드를 예약하세요."
+      }
+    }
+  },
+  {
+    "slug": "top-things-to-do-in-istanbul",
+    "category": "guides",
+    "heroImage": "https://images.unsplash.com/photo-1527838832700-5059252407fa?q=80&w=1600",
+    "publishDate": "2026-08-04",
+    "relatedCityGuides": [
+      "istanbul-tour-guide"
+    ],
+    "relatedAttractions": [
+      "hagia-sophia",
+      "topkapi-palace",
+      "basilica-cistern",
+      "grand-bazaar",
+      "galata-tower",
+      "bosphorus"
+    ],
+    "i18n": {
+      "en": {
+        "title": "Top Things to Do in Istanbul: A Local's Highlights",
+        "metaTitle": "Top Things to Do in Istanbul — A Local Guide's Picks",
+        "metaDescription": "The best things to do in Istanbul, chosen by local guides: the great monuments, a Bosphorus cruise, the bazaars, hidden neighbourhoods, a hammam and the Asian side.",
+        "excerpt": "From Hagia Sophia to a Bosphorus sunset, a hammam to the backstreets of Balat — the experiences that make Istanbul unforgettable, picked by the people who live there.",
+        "intro": [
+          "Few cities offer as much as Istanbul. Spanning two continents and layered with Byzantine and Ottoman history, it rewards both the monument-hunter and the wanderer, the foodie and the shopper. The challenge isn't finding things to do — it's choosing between them.",
+          "This is a local guide's shortlist of the <strong>best things to do in Istanbul</strong>: the unmissable monuments, the experiences that capture the city's spirit, and a few things most first-timers overlook. Mix the big sights with the small pleasures — a tea by the water, a walk through a hillside quarter — and you'll understand why Istanbul gets under people's skin."
+        ],
+        "sections": [
+          {
+            "heading": "Stand inside the great monuments",
+            "paragraphs": [
+              "Start with the icons of <strong>Sultanahmet</strong>. <strong>Hagia Sophia</strong>, 1,500 years old and layered with cathedral and mosque history, is one of the most extraordinary buildings on earth. Across the square, the <strong>Blue Mosque</strong> dazzles with its cascade of domes and blue İznik tiles, while <strong>Topkapı Palace</strong> unfolds the opulent world of the Ottoman sultans across courtyards, harem and treasury.",
+              "Don't miss the atmospheric <strong>Basilica Cistern</strong> underground, a forest of Roman columns rising from still water. These sights are free or cheap to enter but extremely busy — arrive at opening time, and consider a licensed guide to skip the ticket queues at Topkapı and understand the history you're standing in."
+            ]
+          },
+          {
+            "heading": "Cruise the Bosphorus",
+            "paragraphs": [
+              "No visit is complete without getting out on the <strong>Bosphorus</strong>, the strait that divides Europe and Asia. A cruise — whether a cheap public ferry or a dedicated tour boat — reveals Istanbul's geography like nothing else: Ottoman palaces, wooden waterfront mansions (yalıs), fortresses and bridges gliding past on both continents.",
+              "Time it for late afternoon and you'll watch the light turn golden over the domes and minarets. For a smaller-scale version, take the commuter ferry to the Asian side and back — it's one of the great cheap pleasures of the city, glass of tea in hand as the seagulls wheel overhead."
+            ]
+          },
+          {
+            "heading": "Get lost in the bazaars",
+            "paragraphs": [
+              "The <strong>Grand Bazaar</strong> is one of the world's oldest and largest covered markets — a labyrinth of over 4,000 shops selling carpets, lamps, jewellery, ceramics and leather. Haggling is expected and part of the theatre; even if you buy nothing, the atmosphere is unforgettable.",
+              "Nearby, the <strong>Spice Bazaar</strong> assaults the senses with mounds of spices, dried fruit, Turkish delight and teas. Beyond the tourist stalls, explore the surrounding streets and hans (old trading courtyards) where locals still shop. A guide can steer you to honest sellers and away from the overpriced tourist traps that cluster near the entrances."
+            ]
+          },
+          {
+            "heading": "Wander the neighbourhoods and cross to Asia",
+            "paragraphs": [
+              "The Istanbul locals love is in its neighbourhoods. Climb <strong>Galata Tower</strong> for a panorama, then explore the cafés and boutiques of <strong>Galata and Beyoğlu</strong> and the length of İstiklal Avenue. Photograph the rainbow houses and antique shops of <strong>Balat and Fener</strong>, the old Greek and Jewish quarters that most tour groups skip entirely.",
+              "Then take a ferry across to the <strong>Asian side</strong> and the lively streets of Kadıköy, with its food market, street eats and relaxed cafés — a different, more local rhythm from the tourist core. Ending an afternoon on a different continent, watching the ferries criss-cross the water, is quintessential Istanbul."
+            ]
+          },
+          {
+            "heading": "Experience a Turkish bath and the food",
+            "paragraphs": [
+              "For something unforgettable, visit a historic <strong>hammam (Turkish bath)</strong> — several date back to Ottoman times, with marble interiors and a ritual of steam, scrub and foam massage that leaves you glowing. It's a centuries-old tradition and a wonderful way to unwind after days of walking.",
+              "Above all, eat. Graze a long Turkish breakfast, try a balık ekmek fish sandwich by the water, order a spread of meze, and finish with baklava and Turkish coffee. Istanbul's food is a highlight in itself, and a food-focused walk with a local guide — through markets, bakeries and family lokantas — is one of the most rewarding things you can do in the city."
+            ]
+          }
+        ],
+        "faqHeading": "Frequently asked questions",
+        "faqs": [
+          {
+            "q": "What are the top things to do in Istanbul?",
+            "a": "The essentials are Hagia Sophia, the Blue Mosque and Topkapı Palace in Sultanahmet, a Bosphorus cruise, the Grand and Spice Bazaars, Galata Tower, the Balat neighbourhood, a ferry to the Asian side, and a historic hammam. Mixing the great monuments with local neighbourhoods and food gives the fullest experience."
+          },
+          {
+            "q": "What is the number one attraction in Istanbul?",
+            "a": "Hagia Sophia is Istanbul's most iconic single sight — a 1,500-year-old former cathedral and mosque of extraordinary scale and history. It's usually paired with the neighbouring Blue Mosque and Topkapı Palace, all within a short walk in Sultanahmet."
+          },
+          {
+            "q": "Is a Bosphorus cruise worth it in Istanbul?",
+            "a": "Yes. A Bosphorus cruise is one of the best things to do in Istanbul, revealing the city's two-continent geography, palaces and waterfront mansions. Cheap public ferries are just as scenic as tourist boats, especially in the golden light of late afternoon."
+          },
+          {
+            "q": "What can you do in Istanbul away from the tourist crowds?",
+            "a": "Explore the rainbow houses and antique shops of Balat and Fener, cross to the local streets of Kadıköy on the Asian side, ride a commuter ferry with a glass of tea, and eat where locals do a few streets back from the monuments. A local guide can reveal these lesser-known corners."
+          },
+          {
+            "q": "Should I do a Turkish bath in Istanbul?",
+            "a": "A hammam is a memorable, centuries-old experience — steam, an exfoliating scrub and a foam massage in a marble Ottoman bathhouse. Several historic hammams welcome visitors, and it's a wonderful way to relax after long days of sightseeing on foot."
+          }
+        ],
+        "relatedHeading": "Do more in Istanbul",
+        "ctaTitle": "Experience the best of Istanbul",
+        "ctaSub": "See the icons and the hidden corners with someone who knows the city. Book a verified Istanbul guide on VibeGuide — price shown up front."
+      },
+      "de": {
+        "title": "Die besten Dinge, die man in Istanbul tun kann: die Highlights eines Einheimischen",
+        "metaTitle": "Top-Aktivitäten in Istanbul — Die Tipps eines lokalen Guides",
+        "metaDescription": "Die besten Dinge in Istanbul, ausgewählt von lokalen Guides: die großen Monumente, eine Bosporus-Fahrt, die Basare, verborgene Viertel, ein Hammam und die asiatische Seite.",
+        "excerpt": "Von der Hagia Sophia bis zum Sonnenuntergang am Bosporus, vom Hammam bis zu den Gassen von Balat — die Erlebnisse, die Istanbul unvergesslich machen, ausgewählt von den Menschen, die dort leben.",
+        "intro": [
+          "Wenige Städte bieten so viel wie Istanbul. Über zwei Kontinente verteilt und durchzogen von byzantinischer und osmanischer Geschichte, belohnt es sowohl den Monumentenjäger als auch den Flaneur, den Feinschmecker wie den Shopper. Die Herausforderung ist nicht, Dinge zum Tun zu finden — sondern, zwischen ihnen zu wählen.",
+          "Dies ist die Auswahlliste eines lokalen Guides der <strong>besten Dinge, die man in Istanbul tun kann</strong>: die unverzichtbaren Monumente, die Erlebnisse, die den Geist der Stadt einfangen, und ein paar Dinge, die die meisten Erstbesucher übersehen. Mischen Sie die großen Sehenswürdigkeiten mit den kleinen Freuden — einem Tee am Wasser, einem Spaziergang durch ein Hügelviertel — und Sie werden verstehen, warum Istanbul den Menschen ans Herz wächst."
+        ],
+        "sections": [
+          {
+            "heading": "In den großen Monumenten stehen",
+            "paragraphs": [
+              "Beginnen Sie mit den Ikonen von <strong>Sultanahmet</strong>. Die <strong>Hagia Sophia</strong>, 1.500 Jahre alt und geschichtet mit Kathedralen- und Moscheegeschichte, ist eines der außergewöhnlichsten Gebäude der Erde. Über den Platz hinweg blendet die <strong>Blaue Moschee</strong> mit ihrer Kaskade von Kuppeln und blauen İznik-Fliesen, während der <strong>Topkapı-Palast</strong> die opulente Welt der osmanischen Sultane über Höfe, Harem und Schatzkammer entfaltet.",
+              "Verpassen Sie nicht die stimmungsvolle <strong>Cisterna Basilica</strong> im Untergrund, einen Wald römischer Säulen, die aus stillem Wasser aufsteigen. Diese Sehenswürdigkeiten sind kostenlos oder günstig, aber extrem voll — kommen Sie zur Öffnungszeit und erwägen Sie einen lizenzierten Guide, um die Ticketschlangen am Topkapı zu umgehen und die Geschichte zu verstehen, in der Sie stehen."
+            ]
+          },
+          {
+            "heading": "Den Bosporus befahren",
+            "paragraphs": [
+              "Kein Besuch ist vollständig, ohne auf den <strong>Bosporus</strong> hinauszufahren, die Meerenge, die Europa und Asien trennt. Eine Fahrt — ob günstige öffentliche Fähre oder eigenes Tourboot — offenbart Istanbuls Geografie wie nichts sonst: osmanische Paläste, hölzerne Ufervillen (yalıs), Festungen und Brücken, die auf beiden Kontinenten vorbeigleiten.",
+              "Legen Sie sie in den späten Nachmittag, und Sie sehen das Licht golden über den Kuppeln und Minaretten werden. Für eine kleinere Variante nehmen Sie die Pendlerfähre zur asiatischen Seite und zurück — es ist eine der großen günstigen Freuden der Stadt, das Teeglas in der Hand, während die Möwen über einem kreisen."
+            ]
+          },
+          {
+            "heading": "Sich in den Basaren verlieren",
+            "paragraphs": [
+              "Der <strong>Große Basar</strong> ist einer der ältesten und größten überdachten Märkte der Welt — ein Labyrinth aus über 4.000 Läden, die Teppiche, Lampen, Schmuck, Keramik und Leder verkaufen. Feilschen wird erwartet und gehört zum Schauspiel; selbst wenn Sie nichts kaufen, ist die Atmosphäre unvergesslich.",
+              "In der Nähe überfällt der <strong>Ägyptische Basar</strong> die Sinne mit Bergen von Gewürzen, Trockenfrüchten, türkischem Honig und Tees. Jenseits der Touristenstände erkunden Sie die umliegenden Straßen und Hans (alte Handelshöfe), wo Einheimische noch einkaufen. Ein Guide kann Sie zu ehrlichen Verkäufern lenken und weg von den überteuerten Touristenfallen, die sich nahe den Eingängen ballen."
+            ]
+          },
+          {
+            "heading": "Durch die Viertel schlendern und nach Asien übersetzen",
+            "paragraphs": [
+              "Das Istanbul, das die Einheimischen lieben, liegt in seinen Vierteln. Steigen Sie auf den <strong>Galataturm</strong> für ein Panorama und erkunden Sie dann die Cafés und Boutiquen von <strong>Galata und Beyoğlu</strong> und die ganze İstiklal-Allee entlang. Fotografieren Sie die bunten Häuser und Antiquitätenläden von <strong>Balat und Fener</strong>, den alten griechischen und jüdischen Vierteln, die die meisten Reisegruppen komplett auslassen.",
+              "Nehmen Sie dann eine Fähre auf die <strong>asiatische Seite</strong> und in die lebhaften Straßen von Kadıköy mit seinem Lebensmittelmarkt, Streetfood und entspannten Cafés — ein anderer, lokalerer Rhythmus als der touristische Kern. Einen Nachmittag auf einem anderen Kontinent zu beenden und den Fähren beim Kreuzen des Wassers zuzusehen, ist Istanbul in Reinform."
+            ]
+          },
+          {
+            "heading": "Ein türkisches Bad und die Küche erleben",
+            "paragraphs": [
+              "Für etwas Unvergessliches besuchen Sie ein historisches <strong>Hammam (türkisches Bad)</strong> — einige reichen bis in osmanische Zeiten zurück, mit Marmorinnenräumen und einem Ritual aus Dampf, Peeling und Schaummassage, das Sie strahlen lässt. Es ist eine jahrhundertealte Tradition und eine wunderbare Art, nach Tagen des Gehens abzuschalten.",
+              "Vor allem: Essen Sie. Genießen Sie ein langes türkisches Frühstück, probieren Sie ein balık ekmek Fischsandwich am Wasser, bestellen Sie eine Auswahl an Meze und schließen Sie mit Baklava und türkischem Kaffee ab. Istanbuls Küche ist ein Highlight für sich, und ein kulinarischer Spaziergang mit einem lokalen Guide — durch Märkte, Bäckereien und Familien-Lokantas — ist eines der lohnendsten Dinge, die Sie in der Stadt tun können."
+            ]
+          }
+        ],
+        "faqHeading": "Häufig gestellte Fragen",
+        "faqs": [
+          {
+            "q": "Was sind die besten Dinge, die man in Istanbul tun kann?",
+            "a": "Zum Wesentlichen zählen Hagia Sophia, Blaue Moschee und Topkapı-Palast in Sultanahmet, eine Bosporus-Fahrt, der Große und der Ägyptische Basar, der Galataturm, das Viertel Balat, eine Fähre auf die asiatische Seite und ein historisches Hammam. Die großen Monumente mit lokalen Vierteln und Küche zu mischen, ergibt das rundeste Erlebnis."
+          },
+          {
+            "q": "Was ist die Attraktion Nummer eins in Istanbul?",
+            "a": "Die Hagia Sophia ist Istanbuls ikonischste Einzelsehenswürdigkeit — eine 1.500 Jahre alte einstige Kathedrale und Moschee von außergewöhnlichem Ausmaß und außergewöhnlicher Geschichte. Sie wird meist mit der benachbarten Blauen Moschee und dem Topkapı-Palast kombiniert, alle nur einen kurzen Weg entfernt in Sultanahmet."
+          },
+          {
+            "q": "Lohnt sich eine Bosporus-Fahrt in Istanbul?",
+            "a": "Ja. Eine Bosporus-Fahrt ist eines der besten Dinge in Istanbul und offenbart die Zwei-Kontinente-Geografie der Stadt, Paläste und Ufervillen. Günstige öffentliche Fähren sind genauso malerisch wie Touristenboote, besonders im goldenen Licht des späten Nachmittags."
+          },
+          {
+            "q": "Was kann man in Istanbul abseits der Touristenmassen tun?",
+            "a": "Erkunden Sie die bunten Häuser und Antiquitätenläden von Balat und Fener, wechseln Sie in die lokalen Straßen von Kadıköy auf der asiatischen Seite, fahren Sie mit einer Pendlerfähre und einem Glas Tee, und essen Sie dort, wo die Einheimischen es tun, ein paar Straßen hinter den Monumenten. Ein lokaler Guide kann diese weniger bekannten Ecken erschließen."
+          },
+          {
+            "q": "Sollte ich in Istanbul ein türkisches Bad machen?",
+            "a": "Ein Hammam ist ein einprägsames, jahrhundertealtes Erlebnis — Dampf, ein Peeling-Schrubben und eine Schaummassage in einem marmornen osmanischen Badehaus. Mehrere historische Hammams empfangen Besucher, und es ist eine wunderbare Art, nach langen Tagen zu Fuß zu entspannen."
+          }
+        ],
+        "relatedHeading": "Mehr erleben in Istanbul",
+        "ctaTitle": "Erleben Sie das Beste von Istanbul",
+        "ctaSub": "Sehen Sie die Ikonen und die verborgenen Ecken mit jemandem, der die Stadt kennt. Buchen Sie einen verifizierten Istanbul-Guide auf VibeGuide — Preis vorab angezeigt."
+      },
+      "es": {
+        "title": "Qué hacer en Estambul: los imprescindibles de un guía local",
+        "metaTitle": "Qué hacer en Estambul — La selección de un guía local",
+        "metaDescription": "Lo mejor que hacer en Estambul, elegido por guías locales: los grandes monumentos, un crucero por el Bósforo, los bazares, barrios ocultos, un hammam y el lado asiático.",
+        "excerpt": "De Santa Sofía a un atardecer en el Bósforo, de un hammam a las callejuelas de Balat: las experiencias que hacen inolvidable Estambul, elegidas por quienes viven allí.",
+        "intro": [
+          "Pocas ciudades ofrecen tanto como Estambul. Repartida entre dos continentes y cargada de historia bizantina y otomana, recompensa tanto al cazador de monumentos como al paseante, al goloso como al comprador. El reto no es encontrar cosas que hacer, sino elegir entre ellas.",
+          "Esta es la lista selecta de un guía local con <strong>lo mejor que hacer en Estambul</strong>: los monumentos imperdibles, las experiencias que capturan el espíritu de la ciudad, y algunas cosas que la mayoría de los novatos pasa por alto. Mezcla los grandes lugares con los pequeños placeres —un té junto al agua, un paseo por un barrio en ladera— y entenderás por qué Estambul se te mete dentro."
+        ],
+        "sections": [
+          {
+            "heading": "Estar dentro de los grandes monumentos",
+            "paragraphs": [
+              "Empieza por los iconos de <strong>Sultanahmet</strong>. <strong>Santa Sofía</strong>, con 1.500 años y una historia superpuesta de catedral y mezquita, es uno de los edificios más extraordinarios de la tierra. Al otro lado de la plaza, la <strong>Mezquita Azul</strong> deslumbra con su cascada de cúpulas y azulejos azules de İznik, mientras que el <strong>Palacio de Topkapı</strong> despliega el opulento mundo de los sultanes otomanos por patios, harén y tesoro.",
+              "No te pierdas la evocadora <strong>Cisterna Basílica</strong> bajo tierra, un bosque de columnas romanas que se alza sobre aguas quietas. Estos lugares son gratuitos o baratos, pero están extremadamente concurridos: llega a la hora de apertura, y plantéate un guía titulado para saltarte las colas de entrada en Topkapí y comprender la historia en la que estás de pie."
+            ]
+          },
+          {
+            "heading": "Navegar por el Bósforo",
+            "paragraphs": [
+              "Ninguna visita está completa sin salir al <strong>Bósforo</strong>, el estrecho que divide Europa y Asia. Un crucero —ya sea un barato ferri público o un barco turístico dedicado— revela la geografía de Estambul como ninguna otra cosa: palacios otomanos, mansiones de madera junto al agua (yalıs), fortalezas y puentes deslizándose por ambos continentes.",
+              "Prográmalo para el final de la tarde y verás la luz volverse dorada sobre las cúpulas y los alminares. Para una versión a menor escala, toma el ferri de cercanías al lado asiático y de vuelta: es uno de los grandes placeres baratos de la ciudad, con un vaso de té en la mano mientras las gaviotas trazan círculos sobre tu cabeza."
+            ]
+          },
+          {
+            "heading": "Perderse en los bazares",
+            "paragraphs": [
+              "El <strong>Gran Bazar</strong> es uno de los mercados cubiertos más antiguos y grandes del mundo: un laberinto de más de 4.000 tiendas que venden alfombras, lámparas, joyas, cerámica y cuero. Se espera el regateo y forma parte del teatro; aunque no compres nada, el ambiente es inolvidable.",
+              "Cerca, el <strong>Bazar de las Especias</strong> asalta los sentidos con montañas de especias, fruta seca, delicias turcas y tés. Más allá de los puestos turísticos, explora las calles de alrededor y los hanes (antiguos patios de comercio) donde los locales aún compran. Un guía puede orientarte hacia vendedores honestos y lejos de las trampas turísticas de precios inflados que se agolpan junto a las entradas."
+            ]
+          },
+          {
+            "heading": "Pasear por los barrios y cruzar a Asia",
+            "paragraphs": [
+              "El Estambul que aman los locales está en sus barrios. Sube a la <strong>Torre de Gálata</strong> para una panorámica, y luego explora los cafés y boutiques de <strong>Gálata y Beyoğlu</strong> y todo lo largo de la avenida İstiklal. Fotografía las casas de colores y las tiendas de antigüedades de <strong>Balat y Fener</strong>, los antiguos barrios griego y judío que la mayoría de los grupos turísticos se salta por completo.",
+              "Después toma un ferri hacia el <strong>lado asiático</strong> y las animadas calles de Kadıköy, con su mercado de alimentos, su comida callejera y sus cafés relajados: un ritmo distinto y más local que el núcleo turístico. Terminar una tarde en otro continente, viendo los ferris cruzar el agua, es Estambul por excelencia."
+            ]
+          },
+          {
+            "heading": "Vivir un baño turco y la comida",
+            "paragraphs": [
+              "Para algo inolvidable, visita un <strong>hammam (baño turco)</strong> histórico: varios se remontan a la época otomana, con interiores de mármol y un ritual de vapor, exfoliación y masaje de espuma que te deja radiante. Es una tradición de siglos y una forma maravillosa de relajarse tras días de caminata.",
+              "Y sobre todo, come. Picotea un largo desayuno turco, prueba un bocadillo de pescado balık ekmek junto al agua, pide una selección de meze y termina con baklava y café turco. La comida de Estambul es un momento cumbre en sí mismo, y un paseo gastronómico con un guía local —por mercados, panaderías y lokantas familiares— es una de las cosas más gratificantes que puedes hacer en la ciudad."
+            ]
+          }
+        ],
+        "faqHeading": "Preguntas frecuentes",
+        "faqs": [
+          {
+            "q": "¿Qué es lo mejor que hacer en Estambul?",
+            "a": "Lo esencial son Santa Sofía, la Mezquita Azul y el Palacio de Topkapí en Sultanahmet, un crucero por el Bósforo, el Gran Bazar y el Bazar de las Especias, la Torre de Gálata, el barrio de Balat, un ferri al lado asiático y un hammam histórico. Mezclar los grandes monumentos con barrios locales y comida ofrece la experiencia más completa."
+          },
+          {
+            "q": "¿Cuál es la atracción número uno de Estambul?",
+            "a": "Santa Sofía es el lugar más icónico de Estambul: una antigua catedral y mezquita de 1.500 años, de escala e historia extraordinarias. Suele combinarse con la vecina Mezquita Azul y el Palacio de Topkapí, todos a un corto paseo en Sultanahmet."
+          },
+          {
+            "q": "¿Merece la pena un crucero por el Bósforo en Estambul?",
+            "a": "Sí. Un crucero por el Bósforo es una de las mejores cosas que hacer en Estambul, pues revela la geografía de dos continentes de la ciudad, sus palacios y mansiones junto al agua. Los baratos ferris públicos son tan panorámicos como los barcos turísticos, sobre todo con la luz dorada del final de la tarde."
+          },
+          {
+            "q": "¿Qué se puede hacer en Estambul lejos de las multitudes turísticas?",
+            "a": "Explora las casas de colores y las tiendas de antigüedades de Balat y Fener, cruza a las calles locales de Kadıköy en el lado asiático, viaja en un ferri de cercanías con un vaso de té, y come donde comen los locales unas calles detrás de los monumentos. Un guía local puede revelarte estos rincones menos conocidos."
+          },
+          {
+            "q": "¿Debería darme un baño turco en Estambul?",
+            "a": "Un hammam es una experiencia memorable de siglos: vapor, una exfoliación y un masaje de espuma en un baño otomano de mármol. Varios hammams históricos reciben visitantes, y es una forma maravillosa de relajarse tras largos días de turismo a pie."
+          }
+        ],
+        "relatedHeading": "Haz más en Estambul",
+        "ctaTitle": "Vive lo mejor de Estambul",
+        "ctaSub": "Ve los iconos y los rincones ocultos con alguien que conoce la ciudad. Reserva un guía verificado de Estambul en VibeGuide, con el precio mostrado por adelantado."
+      },
+      "fr": {
+        "title": "Que faire à Istanbul : les incontournables d'un guide local",
+        "metaTitle": "Que faire à Istanbul — La sélection d'un guide local",
+        "metaDescription": "Le meilleur à faire à Istanbul, choisi par des guides locaux : les grands monuments, une croisière sur le Bosphore, les bazars, des quartiers cachés, un hammam et la rive asiatique.",
+        "excerpt": "De Sainte-Sophie à un coucher de soleil sur le Bosphore, d'un hammam aux ruelles de Balat : les expériences qui rendent Istanbul inoubliable, choisies par ceux qui y vivent.",
+        "intro": [
+          "Peu de villes offrent autant qu'Istanbul. À cheval sur deux continents et chargée d'histoire byzantine et ottomane, elle comble aussi bien le chasseur de monuments que le flâneur, le gourmand que l'amateur de shopping. Le défi n'est pas de trouver quoi faire — c'est de choisir.",
+          "Voici la sélection d'un guide local du <strong>meilleur à faire à Istanbul</strong> : les monuments incontournables, les expériences qui captent l'esprit de la ville, et quelques choses que la plupart des primo-visiteurs négligent. Mêlez les grands sites aux petits plaisirs — un thé au bord de l'eau, une promenade dans un quartier de collines — et vous comprendrez pourquoi Istanbul se glisse sous la peau."
+        ],
+        "sections": [
+          {
+            "heading": "Se tenir au cœur des grands monuments",
+            "paragraphs": [
+              "Commencez par les icônes de <strong>Sultanahmet</strong>. <strong>Sainte-Sophie</strong>, vieille de 1 500 ans et superposant une histoire de cathédrale et de mosquée, est l'un des édifices les plus extraordinaires de la planète. De l'autre côté de la place, la <strong>Mosquée Bleue</strong> éblouit par sa cascade de coupoles et ses carreaux bleus d'İznik, tandis que le <strong>palais de Topkapı</strong> déploie le monde opulent des sultans ottomans à travers cours, harem et trésor.",
+              "Ne manquez pas l'envoûtante <strong>Citerne Basilique</strong> souterraine, une forêt de colonnes romaines s'élevant d'une eau immobile. Ces sites sont gratuits ou bon marché, mais extrêmement fréquentés — arrivez à l'ouverture, et envisagez un guide agréé pour éviter les files aux caisses de Topkapı et comprendre l'histoire dans laquelle vous vous tenez."
+            ]
+          },
+          {
+            "heading": "Naviguer sur le Bosphore",
+            "paragraphs": [
+              "Aucune visite n'est complète sans prendre le large sur le <strong>Bosphore</strong>, le détroit qui sépare l'Europe et l'Asie. Une croisière — que ce soit un ferry public bon marché ou un bateau d'excursion — révèle la géographie d'Istanbul comme rien d'autre : palais ottomans, demeures de bois au bord de l'eau (yalıs), forteresses et ponts glissant sur les deux continents.",
+              "Programmez-la en fin d'après-midi et vous verrez la lumière virer à l'or sur les coupoles et les minarets. Pour une version plus modeste, prenez le ferry de banlieue vers la rive asiatique et retour — c'est l'un des grands plaisirs bon marché de la ville, un verre de thé à la main tandis que les mouettes tournoient au-dessus de vous."
+            ]
+          },
+          {
+            "heading": "Se perdre dans les bazars",
+            "paragraphs": [
+              "Le <strong>Grand Bazar</strong> est l'un des marchés couverts les plus anciens et les plus vastes du monde — un labyrinthe de plus de 4 000 boutiques vendant tapis, lampes, bijoux, céramiques et cuir. Le marchandage est attendu et fait partie du théâtre ; même si vous n'achetez rien, l'atmosphère est inoubliable.",
+              "Tout près, le <strong>Bazar aux épices</strong> assaille les sens de monceaux d'épices, de fruits secs, de loukoums et de thés. Au-delà des étals touristiques, explorez les rues alentour et les hans (anciennes cours de commerce) où les locaux font encore leurs courses. Un guide peut vous orienter vers des vendeurs honnêtes et loin des pièges à touristes aux prix gonflés qui s'agglutinent près des entrées."
+            ]
+          },
+          {
+            "heading": "Flâner dans les quartiers et traverser vers l'Asie",
+            "paragraphs": [
+              "L'Istanbul qu'aiment les locaux se trouve dans ses quartiers. Montez à la <strong>tour de Galata</strong> pour un panorama, puis explorez les cafés et boutiques de <strong>Galata et Beyoğlu</strong> et toute la longueur de l'avenue İstiklal. Photographiez les maisons arc-en-ciel et les brocantes de <strong>Balat et Fener</strong>, les anciens quartiers grec et juif que la plupart des groupes touristiques évitent complètement.",
+              "Prenez ensuite un ferry vers la <strong>rive asiatique</strong> et les rues animées de Kadıköy, avec son marché alimentaire, sa street food et ses cafés décontractés — un rythme différent, plus local, que le cœur touristique. Terminer une après-midi sur un autre continent, en regardant les ferries sillonner l'eau, c'est Istanbul par excellence."
+            ]
+          },
+          {
+            "heading": "Vivre un bain turc et la gastronomie",
+            "paragraphs": [
+              "Pour une expérience inoubliable, visitez un <strong>hammam (bain turc)</strong> historique — plusieurs remontent à l'époque ottomane, avec leurs intérieurs de marbre et un rituel de vapeur, de gommage et de massage à la mousse qui vous laisse rayonnant. C'est une tradition séculaire et une merveilleuse façon de se détendre après des journées de marche.",
+              "Et surtout, mangez. Savourez un long petit-déjeuner turc, goûtez un sandwich au poisson balık ekmek au bord de l'eau, commandez un assortiment de mezze, et terminez par un baklava et un café turc. La gastronomie d'Istanbul est un temps fort en soi, et une balade gourmande avec un guide local — à travers marchés, boulangeries et lokantas familiales — est l'une des choses les plus enrichissantes à faire dans la ville."
+            ]
+          }
+        ],
+        "faqHeading": "Questions fréquentes",
+        "faqs": [
+          {
+            "q": "Quelles sont les meilleures choses à faire à Istanbul ?",
+            "a": "L'essentiel : Sainte-Sophie, la Mosquée Bleue et le palais de Topkapı à Sultanahmet, une croisière sur le Bosphore, le Grand Bazar et le Bazar aux épices, la tour de Galata, le quartier de Balat, un ferry vers la rive asiatique et un hammam historique. Mêler les grands monuments aux quartiers locaux et à la gastronomie offre l'expérience la plus complète."
+          },
+          {
+            "q": "Quelle est l'attraction numéro un d'Istanbul ?",
+            "a": "Sainte-Sophie est le site le plus emblématique d'Istanbul — une ancienne cathédrale et mosquée de 1 500 ans, d'une échelle et d'une histoire extraordinaires. On la combine généralement avec la Mosquée Bleue voisine et le palais de Topkapı, tous à quelques minutes de marche à Sultanahmet."
+          },
+          {
+            "q": "Une croisière sur le Bosphore vaut-elle la peine à Istanbul ?",
+            "a": "Oui. Une croisière sur le Bosphore est l'une des meilleures choses à faire à Istanbul, révélant la géographie à deux continents de la ville, ses palais et ses demeures au bord de l'eau. Les ferries publics bon marché sont tout aussi pittoresques que les bateaux touristiques, surtout dans la lumière dorée de fin d'après-midi."
+          },
+          {
+            "q": "Que faire à Istanbul loin des foules touristiques ?",
+            "a": "Explorez les maisons arc-en-ciel et les brocantes de Balat et Fener, passez dans les rues locales de Kadıköy sur la rive asiatique, prenez un ferry de banlieue avec un verre de thé, et mangez là où mangent les locaux, quelques rues derrière les monuments. Un guide local peut vous révéler ces coins méconnus."
+          },
+          {
+            "q": "Devrais-je faire un bain turc à Istanbul ?",
+            "a": "Un hammam est une expérience mémorable et séculaire — vapeur, gommage exfoliant et massage à la mousse dans un bain ottoman de marbre. Plusieurs hammams historiques accueillent les visiteurs, et c'est une merveilleuse façon de se détendre après de longues journées de visite à pied."
+          }
+        ],
+        "relatedHeading": "Faites-en plus à Istanbul",
+        "ctaTitle": "Vivez le meilleur d'Istanbul",
+        "ctaSub": "Voyez les icônes et les recoins cachés avec quelqu'un qui connaît la ville. Réservez un guide vérifié à Istanbul sur VibeGuide — le prix est affiché à l'avance."
+      },
+      "it": {
+        "title": "Le cose migliori da fare a Istanbul: i consigli di un locale",
+        "metaTitle": "Cosa fare a Istanbul — I consigli di una guida locale",
+        "metaDescription": "Le cose migliori da fare a Istanbul, scelte dalle guide locali: i grandi monumenti, una crociera sul Bosforo, i bazar, i quartieri nascosti, un hammam e la sponda asiatica.",
+        "excerpt": "Da Santa Sofia a un tramonto sul Bosforo, da un hammam alle vie di Balat — le esperienze che rendono Istanbul indimenticabile, scelte da chi ci vive.",
+        "intro": [
+          "Poche città offrono tanto quanto Istanbul. A cavallo di due continenti e stratificata di storia bizantina e ottomana, ripaga sia il cacciatore di monumenti sia il vagabondo, il buongustaio e chi ama fare shopping. La sfida non è trovare cose da fare — è scegliere tra loro.",
+          "Questa è la lista ristretta di una guida locale delle <strong>cose migliori da fare a Istanbul</strong>: i monumenti imperdibili, le esperienze che catturano lo spirito della città, e alcune cose che molti alla prima visita trascurano. Mescola i grandi monumenti con i piccoli piaceri — un tè in riva all'acqua, una passeggiata in un quartiere collinare — e capirai perché Istanbul entra sotto la pelle."
+        ],
+        "sections": [
+          {
+            "heading": "Stare dentro i grandi monumenti",
+            "paragraphs": [
+              "Comincia dalle icone di <strong>Sultanahmet</strong>. La <strong>Santa Sofia</strong>, 1.500 anni e stratificata di storia di cattedrale e moschea, è uno degli edifici più straordinari della terra. Dall'altra parte della piazza, la <strong>Moschea Blu</strong> incanta con la sua cascata di cupole e le piastrelle blu di İznik, mentre il <strong>Palazzo Topkapı</strong> dispiega il mondo opulento dei sultani ottomani tra cortili, harem e tesoro.",
+              "Non perdere la suggestiva <strong>Cisterna Basilica</strong> sotterranea, una foresta di colonne romane che si erge dall'acqua immobile. Questi luoghi sono gratuiti o economici da visitare ma estremamente affollati — arriva all'apertura, e considera una guida abilitata per saltare le code dei biglietti a Topkapı e capire la storia in cui ti trovi."
+            ]
+          },
+          {
+            "heading": "Fare una crociera sul Bosforo",
+            "paragraphs": [
+              "Nessuna visita è completa senza uscire sul <strong>Bosforo</strong>, lo stretto che divide Europa e Asia. Una crociera — che sia un economico traghetto pubblico o una barca da tour dedicata — rivela la geografia di Istanbul come nient'altro: palazzi ottomani, ville di legno sul lungomare (yalı), fortezze e ponti che scivolano via su entrambi i continenti.",
+              "Programmala per il tardo pomeriggio e vedrai la luce farsi dorata sulle cupole e i minareti. Per una versione in scala minore, prendi il traghetto dei pendolari per la sponda asiatica e ritorno — è uno dei grandi piaceri economici della città, un bicchiere di tè in mano mentre i gabbiani volteggiano in alto."
+            ]
+          },
+          {
+            "heading": "Perdersi nei bazar",
+            "paragraphs": [
+              "Il <strong>Gran Bazar</strong> è uno dei mercati coperti più antichi e grandi del mondo — un labirinto di oltre 4.000 negozi che vendono tappeti, lampade, gioielli, ceramiche e pelletteria. La contrattazione è prevista e fa parte del teatro; anche se non compri nulla, l'atmosfera è indimenticabile.",
+              "Lì vicino, il <strong>Bazar delle Spezie</strong> assale i sensi con montagne di spezie, frutta secca, delizie turche e tè. Oltre le bancarelle turistiche, esplora le strade circostanti e gli han (antichi cortili commerciali) dove i locali fanno ancora acquisti. Una guida può indirizzarti verso venditori onesti e lontano dalle trappole per turisti a prezzo gonfiato che si accalcano vicino agli ingressi."
+            ]
+          },
+          {
+            "heading": "Girovagare per i quartieri e passare in Asia",
+            "paragraphs": [
+              "L'Istanbul che i locali amano è nei suoi quartieri. Sali sulla <strong>Torre di Galata</strong> per un panorama, poi esplora i caffè e le boutique di <strong>Galata e Beyoğlu</strong> e tutta la lunghezza di Viale İstiklal. Fotografa le case color arcobaleno e i negozi d'antiquariato di <strong>Balat e Fener</strong>, gli antichi quartieri greco ed ebraico che la maggior parte dei gruppi turistici salta del tutto.",
+              "Poi prendi un traghetto verso la <strong>sponda asiatica</strong> e le vivaci vie di Kadıköy, con il suo mercato del cibo, lo street food e i caffè rilassati — un ritmo diverso e più locale rispetto al nucleo turistico. Concludere un pomeriggio su un continente diverso, guardando i traghetti incrociarsi sull'acqua, è Istanbul per eccellenza."
+            ]
+          },
+          {
+            "heading": "Vivere un bagno turco e il cibo",
+            "paragraphs": [
+              "Per qualcosa di indimenticabile, visita uno storico <strong>hammam (bagno turco)</strong> — diversi risalgono all'epoca ottomana, con interni in marmo e un rito di vapore, scrub e massaggio con schiuma che ti lascia raggiante. È una tradizione secolare e un modo meraviglioso per rilassarsi dopo giorni di camminate.",
+              "Soprattutto, mangia. Assapora una lunga colazione turca, prova un panino di pesce balık ekmek in riva all'acqua, ordina un'imbandigione di meze e concludi con baklava e caffè turco. Il cibo di Istanbul è di per sé un punto forte, e una passeggiata gastronomica con una guida locale — tra mercati, forni e lokanta familiari — è una delle cose più appaganti che puoi fare in città."
+            ]
+          }
+        ],
+        "faqHeading": "Domande frequenti",
+        "faqs": [
+          {
+            "q": "Quali sono le cose migliori da fare a Istanbul?",
+            "a": "L'essenziale è Santa Sofia, la Moschea Blu e il Palazzo Topkapı a Sultanahmet, una crociera sul Bosforo, il Gran Bazar e il Bazar delle Spezie, la Torre di Galata, il quartiere di Balat, un traghetto per la sponda asiatica e un hammam storico. Mescolare i grandi monumenti con i quartieri locali e il cibo dà l'esperienza più completa."
+          },
+          {
+            "q": "Qual è l'attrazione numero uno di Istanbul?",
+            "a": "La Santa Sofia è la singola vista più iconica di Istanbul — un'ex cattedrale e moschea di 1.500 anni di scala e storia straordinarie. Di solito si abbina alle vicine Moschea Blu e Palazzo Topkapı, tutte a breve distanza a piedi a Sultanahmet."
+          },
+          {
+            "q": "Vale la pena fare una crociera sul Bosforo a Istanbul?",
+            "a": "Sì. Una crociera sul Bosforo è una delle cose migliori da fare a Istanbul, rivelando la geografia a due continenti della città, i palazzi e le ville sul lungomare. Gli economici traghetti pubblici sono scenografici quanto le barche turistiche, specialmente nella luce dorata del tardo pomeriggio."
+          },
+          {
+            "q": "Cosa si può fare a Istanbul lontano dalla folla turistica?",
+            "a": "Esplora le case color arcobaleno e i negozi d'antiquariato di Balat e Fener, passa alle vie locali di Kadıköy sulla sponda asiatica, sali su un traghetto dei pendolari con un bicchiere di tè, e mangia dove mangiano i locali qualche strada dietro i monumenti. Una guida locale può svelare questi angoli meno noti."
+          },
+          {
+            "q": "Dovrei fare un bagno turco a Istanbul?",
+            "a": "Un hammam è un'esperienza memorabile e secolare — vapore, uno scrub esfoliante e un massaggio con schiuma in un bagno ottomano di marmo. Diversi hammam storici accolgono i visitatori, ed è un modo meraviglioso per rilassarsi dopo lunghe giornate di visite a piedi."
+          }
+        ],
+        "relatedHeading": "Fai di più a Istanbul",
+        "ctaTitle": "Vivi il meglio di Istanbul",
+        "ctaSub": "Vedi le icone e gli angoli nascosti con qualcuno che conosce la città. Prenota una guida verificata di Istanbul su VibeGuide — prezzo mostrato in anticipo."
+      },
+      "ar": {
+        "title": "أفضل ما تفعله في إسطنبول: مختارات محلي",
+        "metaTitle": "أفضل ما تفعله في إسطنبول — اختيارات مرشد محلي",
+        "metaDescription": "أفضل الأنشطة في إسطنبول باختيار مرشدين محليين: المعالم العظيمة، رحلة بوسفور، الأسواق، الأحياء الخفية، حمّام تركي، والجانب الآسيوي.",
+        "excerpt": "من آيا صوفيا إلى غروب البوسفور، ومن حمّام تركي إلى أزقة بالات — التجارب التي تجعل إسطنبول لا تُنسى، مختارة ممّن يعيشون فيها.",
+        "intro": [
+          "قليل من المدن تقدّم بقدر ما تقدّمه إسطنبول. تمتد عبر قارتين وتتراكم فيها طبقات التاريخ البيزنطي والعثماني، فتكافئ صائد المعالم والمتجوّل، وعاشق الطعام والمتسوّق على حد سواء. التحدي ليس في إيجاد ما تفعله — بل في الاختيار بينها.",
+          "هذه قائمة مختصرة لمرشد محلي بـ<strong>أفضل ما تفعله في إسطنبول</strong>: المعالم التي لا تُفوَّت، والتجارب التي تلتقط روح المدينة، وأشياء قليلة يغفل عنها معظم الزوار لأول مرة. امزج بين المعالم الكبرى والمتع الصغيرة — شاي على الماء، ومسيرة عبر حيّ على تلة — وستفهم لماذا تتغلغل إسطنبول في نفوس الناس."
+        ],
+        "sections": [
+          {
+            "heading": "قف داخل المعالم العظيمة",
+            "paragraphs": [
+              "ابدأ بأيقونات <strong>السلطان أحمد</strong>. <strong>آيا صوفيا</strong>، بعمرها البالغ ١٥٠٠ عام وطبقاتها من تاريخ كاتدرائية ومسجد، من أكثر المباني استثنائيةً على الأرض. وعبر الساحة، يبهر <strong>المسجد الأزرق</strong> بقبابه المتتالية وبلاطه الإزنيقي الأزرق، بينما يفتح <strong>قصر توبكابي</strong> عالم سلاطين الدولة العثمانية الفخم عبر الأفنية والحرم والخزينة.",
+              "لا تفوّت <strong>صهريج البازيليك</strong> الساحر تحت الأرض، غابة من الأعمدة الرومانية تنهض من ماء ساكن. هذه المعالم مجانية أو رخيصة الدخول لكنها مزدحمة للغاية — صل عند وقت الافتتاح، وفكّر في مرشد مرخّص لتخطّي طوابير التذاكر في توبكابي وفهم التاريخ الذي تقف داخله."
+            ]
+          },
+          {
+            "heading": "أبحر في البوسفور",
+            "paragraphs": [
+              "لا تكتمل أي زيارة دون الخروج إلى <strong>البوسفور</strong>، المضيق الفاصل بين أوروبا وآسيا. رحلة بحرية — سواء بعبّارة عامة رخيصة أو قارب جولة مخصّص — تكشف جغرافيا إسطنبول كما لا يفعل شيء آخر: قصور عثمانية، وقصور خشبية على الواجهة المائية (yalıs)، وحصون وجسور تنساب على كلتا القارتين.",
+              "وقّتها في وقت متأخر من بعد الظهر لتشاهد الضوء يتحوّل ذهبياً فوق القباب والمآذن. ولنسخة أصغر، خذ عبّارة الركّاب إلى الجانب الآسيوي وعُد — إنها من أعظم متع المدينة الرخيصة، وكأس شاي في يدك بينما تحوم النوارس فوق رأسك."
+            ]
+          },
+          {
+            "heading": "تُه في الأسواق",
+            "paragraphs": [
+              "الـ<strong>بازار الكبير</strong> أحد أقدم وأكبر الأسواق المسقوفة في العالم — متاهة من أكثر من ٤٠٠٠ محل تبيع السجاد والمصابيح والمجوهرات والخزف والجلود. المساومة متوقّعة وجزء من العرض؛ وحتى إن لم تشترِ شيئاً، فالأجواء لا تُنسى.",
+              "قريباً منه، يهاجم <strong>سوق التوابل</strong> الحواس بأكوام من البهارات والفواكه المجفّفة والملبّن التركي والشاي. وراء أكشاك السياح، استكشف الشوارع المحيطة والخانات (أفنية التجارة القديمة) حيث ما زال أهل البلد يتسوّقون. يمكن لمرشد أن يوجّهك إلى باعة أمناء وبعيداً عن مصائد السياح باهظة الأسعار المتجمّعة قرب المداخل."
+            ]
+          },
+          {
+            "heading": "تجوّل في الأحياء واعبر إلى آسيا",
+            "paragraphs": [
+              "إسطنبول التي يعشقها أهلها في أحيائها. اصعد <strong>برج غلطة</strong> لبانوراما، ثم استكشف مقاهي وبوتيكات <strong>غلطة وبيه أوغلو</strong> وطول شارع الاستقلال. صوّر منازل قوس قزح ومحال العتيقات في <strong>بالات وفنر</strong>، الحيّين اليونانيين واليهوديين القديمين اللذين تتخطّاهما معظم المجموعات السياحية تماماً.",
+              "ثم خذ عبّارة إلى <strong>الجانب الآسيوي</strong> وشوارع كاديكوي النابضة، بسوق طعامها ووجباتها الشارعية ومقاهيها المريحة — إيقاع مختلف أكثر محليةً عن قلب السياحة. أن تختم أصيلاً في قارة مختلفة، وأنت تشاهد العبّارات تتقاطع عبر الماء، هو جوهر إسطنبول."
+            ]
+          },
+          {
+            "heading": "جرّب الحمّام التركي والطعام",
+            "paragraphs": [
+              "لتجربة لا تُنسى، زُر <strong>حمّاماً تركياً</strong> تاريخياً — يعود بعضها إلى العصر العثماني، بديكورات رخامية وطقس من البخار والفرك ومساج الرغوة يترك بشرتك متوهّجة. إنه تقليد عمره قرون وطريقة رائعة للاسترخاء بعد أيام من المشي.",
+              "وقبل كل شيء، كُل. تناول فطوراً تركياً طويلاً على مهل، وجرّب ساندويتش سمك balık ekmek على الماء، واطلب تشكيلة مزة، واختم ببقلاوة وقهوة تركية. طعام إسطنبول متعة بحد ذاته، وجولة تتمحور حول الطعام مع مرشد محلي — عبر الأسواق والمخابز واللوكانتات العائلية — من أكثر ما يمكنك فعله إمتاعاً في المدينة."
+            ]
+          }
+        ],
+        "faqHeading": "الأسئلة الشائعة",
+        "faqs": [
+          {
+            "q": "ما أفضل الأنشطة في إسطنبول؟",
+            "a": "الأساسيات هي آيا صوفيا والمسجد الأزرق وقصر توبكابي في السلطان أحمد، ورحلة بوسفور، والبازار الكبير وسوق التوابل، وبرج غلطة، وحيّ بالات، وعبّارة إلى الجانب الآسيوي، وحمّام تركي تاريخي. مزج المعالم العظيمة بالأحياء المحلية والطعام يمنح التجربة الأكمل."
+          },
+          {
+            "q": "ما المعلم رقم واحد في إسطنبول؟",
+            "a": "آيا صوفيا هي أشهر معلم منفرد في إسطنبول — كاتدرائية ومسجد سابق عمره ١٥٠٠ عام بحجم وتاريخ استثنائيين. تُقرن عادة بالمسجد الأزرق المجاور وقصر توبكابي، وكلها على مسافة سير قصيرة في السلطان أحمد."
+          },
+          {
+            "q": "هل تستحق رحلة البوسفور البحرية العناء في إسطنبول؟",
+            "a": "نعم. رحلة البوسفور البحرية من أفضل ما تفعله في إسطنبول، تكشف جغرافيا المدينة عبر القارتين وقصورها وقصورها المائية. العبّارات العامة الرخيصة خلّابة تماماً مثل قوارب السياح، خاصة في الضوء الذهبي لآخر النهار."
+          },
+          {
+            "q": "ماذا يمكنك أن تفعل في إسطنبول بعيداً عن زحام السياح؟",
+            "a": "استكشف منازل قوس قزح ومحال العتيقات في بالات وفنر، واعبر إلى شوارع كاديكوي المحلية على الجانب الآسيوي، واركب عبّارة ركّاب وكأس شاي في يدك، وكُل حيث يأكل أهل البلد على بُعد بضعة شوارع من المعالم. يمكن لمرشد محلي أن يكشف هذه الزوايا الأقل شهرة."
+          },
+          {
+            "q": "هل يجدر بي تجربة حمّام تركي في إسطنبول؟",
+            "a": "الحمّام تجربة لا تُنسى عمرها قرون — بخار وفرك مقشّر ومساج رغوة في حمّام عثماني رخامي. ترحّب عدة حمّامات تاريخية بالزوار، وهي طريقة رائعة للاسترخاء بعد أيام طويلة من التجوّل سيراً."
+          }
+        ],
+        "relatedHeading": "افعل المزيد في إسطنبول",
+        "ctaTitle": "عِش أفضل ما في إسطنبول",
+        "ctaSub": "شاهد الأيقونات والزوايا الخفية مع من يعرف المدينة. احجز مرشد إسطنبول موثّقاً على VibeGuide — السعر معروض مسبقاً."
+      },
+      "ru": {
+        "title": "Что посмотреть в Стамбуле: избранное от местного гида",
+        "metaTitle": "Что посмотреть в Стамбуле — выбор местного гида",
+        "metaDescription": "Лучшее, что стоит сделать в Стамбуле, по выбору местных гидов: великие памятники, круиз по Босфору, базары, скрытые кварталы, хаммам и азиатская сторона.",
+        "excerpt": "От Айя-Софии до заката на Босфоре, от хаммама до переулков Балата — впечатления, которые делают Стамбул незабываемым, отобранные теми, кто здесь живёт.",
+        "intro": [
+          "Мало какие города предлагают столько, сколько Стамбул. Раскинувшись на двух континентах и напластовав византийскую и османскую историю, он вознаграждает и охотника за памятниками, и странника, и гурмана, и любителя шопинга. Проблема не в том, чтобы найти чем заняться, — а в том, чтобы выбрать.",
+          "Это краткий список местного гида <strong>лучшего, что стоит сделать в Стамбуле</strong>: непременные памятники, впечатления, схватывающие дух города, и несколько вещей, которые многие новички упускают. Смешайте крупные достопримечательности с маленькими радостями — чай у воды, прогулка по холмистому кварталу — и вы поймёте, почему Стамбул проникает под кожу."
+        ],
+        "sections": [
+          {
+            "heading": "Постоять внутри великих памятников",
+            "paragraphs": [
+              "Начните с икон <strong>Султанахмета</strong>. <strong>Айя-София</strong>, возрастом 1500 лет и напластованная историей собора и мечети, — одно из самых необычайных зданий на земле. Через площадь <strong>Голубая мечеть</strong> ослепляет каскадом куполов и синими изникскими изразцами, а <strong>дворец Топкапы</strong> раскрывает роскошный мир османских султанов через дворы, гарем и сокровищницу.",
+              "Не пропустите атмосферную подземную <strong>Цистерну Базилику</strong> — лес римских колонн, вырастающих из неподвижной воды. Эти места бесплатны или дёшевы для входа, но чрезвычайно многолюдны — приходите к открытию и подумайте о лицензированном гиде, чтобы миновать очереди за билетами в Топкапы и понять историю, среди которой вы стоите."
+            ]
+          },
+          {
+            "heading": "Прокатиться по Босфору",
+            "paragraphs": [
+              "Ни один визит не полон без выхода на <strong>Босфор</strong>, пролив, разделяющий Европу и Азию. Круиз — будь то дешёвый городской паром или специальный экскурсионный катер — раскрывает географию Стамбула как ничто другое: османские дворцы, деревянные особняки на набережной (yalı), крепости и мосты, скользящие мимо на обоих континентах.",
+              "Подгадайте его на поздний день, и вы увидите, как свет золотит купола и минареты. Для варианта поменьше сядьте на пригородный паром до азиатской стороны и обратно — это одно из великих дешёвых удовольствий города, со стаканом чая в руке, пока чайки кружат над головой."
+            ]
+          },
+          {
+            "heading": "Затеряться на базарах",
+            "paragraphs": [
+              "<strong>Гранд-базар</strong> — один из старейших и крупнейших крытых рынков мира, лабиринт из более чем 4000 лавок, торгующих коврами, лампами, украшениями, керамикой и кожей. Торг ожидаем и составляет часть представления; даже если вы ничего не купите, атмосфера незабываема.",
+              "Рядом <strong>Египетский базар</strong> атакует чувства грудами специй, сухофруктов, рахат-лукума и чаёв. За туристическими прилавками исследуйте окрестные улицы и ханы (старые торговые дворы), где местные до сих пор делают покупки. Гид направит вас к честным продавцам и подальше от завышенных туристических ловушек, которые толпятся у входов."
+            ]
+          },
+          {
+            "heading": "Побродить по кварталам и переправиться в Азию",
+            "paragraphs": [
+              "Стамбул, который любят местные, — в его кварталах. Поднимитесь на <strong>Галатскую башню</strong> ради панорамы, затем исследуйте кафе и бутики <strong>Галаты и Бейоглу</strong> и всю длину проспекта Истикляль. Сфотографируйте разноцветные дома и антикварные лавки <strong>Балата и Фенера</strong>, старых греческого и еврейского кварталов, которые большинство групп пропускает целиком.",
+              "Затем сядьте на паром на <strong>азиатскую сторону</strong>, в оживлённые улицы Кадыкёя, с его продуктовым рынком, уличной едой и непринуждёнными кафе — иной, более местный ритм, чем в туристическом центре. Завершить день на другом континенте, глядя, как паромы снуют по воде, — это квинтэссенция Стамбула."
+            ]
+          },
+          {
+            "heading": "Испытать турецкую баню и еду",
+            "paragraphs": [
+              "Ради чего-то незабываемого посетите исторический <strong>хаммам (турецкую баню)</strong> — некоторые восходят к османским временам, с мраморными интерьерами и ритуалом пара, пилинга и пенного массажа, после которого вы сияете. Это многовековая традиция и чудесный способ расслабиться после дней ходьбы.",
+              "И прежде всего — ешьте. Насладитесь долгим турецким завтраком, попробуйте сэндвич с рыбой балык-экмек у воды, закажите набор мезе и завершите пахлавой и турецким кофе. Еда Стамбула сама по себе изюминка, а гастрономическая прогулка с местным гидом — через рынки, пекарни и семейные локанты — одно из самых благодарных занятий в городе."
+            ]
+          }
+        ],
+        "faqHeading": "Часто задаваемые вопросы",
+        "faqs": [
+          {
+            "q": "Что стоит сделать в Стамбуле в первую очередь?",
+            "a": "Обязательное — Айя-София, Голубая мечеть и дворец Топкапы в Султанахмете, круиз по Босфору, Гранд-базар и Египетский базар, Галатская башня, квартал Балат, паром на азиатскую сторону и исторический хаммам. Сочетание великих памятников с местными кварталами и едой даёт самое полное впечатление."
+          },
+          {
+            "q": "Какая достопримечательность в Стамбуле номер один?",
+            "a": "Айя-София — самая знаковая отдельная достопримечательность Стамбула, бывший собор и мечеть возрастом 1500 лет необычайного масштаба и истории. Её обычно сочетают с соседними Голубой мечетью и дворцом Топкапы, все в шаговой доступности в Султанахмете."
+          },
+          {
+            "q": "Стоит ли круиз по Босфору в Стамбуле?",
+            "a": "Да. Круиз по Босфору — одно из лучших занятий в Стамбуле, раскрывающее двухконтинентальную географию города, дворцы и особняки на набережной. Дешёвые городские паромы столь же живописны, как туристические катера, особенно в золотом свете позднего дня."
+          },
+          {
+            "q": "Что можно делать в Стамбуле вдали от туристических толп?",
+            "a": "Исследуйте разноцветные дома и антикварные лавки Балата и Фенера, переправьтесь на местные улицы Кадыкёя на азиатской стороне, прокатитесь на пригородном пароме со стаканом чая и ешьте там, где едят местные, на пару улиц позади памятников. Местный гид раскроет эти малоизвестные уголки."
+          },
+          {
+            "q": "Стоит ли посетить турецкую баню в Стамбуле?",
+            "a": "Хаммам — запоминающееся, многовековое впечатление: пар, отшелушивающий пилинг и пенный массаж в мраморной османской бане. Несколько исторических хаммамов принимают посетителей, и это чудесный способ расслабиться после долгих дней осмотра пешком."
+          }
+        ],
+        "relatedHeading": "Больше впечатлений в Стамбуле",
+        "ctaTitle": "Испытайте лучшее в Стамбуле",
+        "ctaSub": "Увидьте иконы и скрытые уголки с тем, кто знает город. Забронируйте проверенного гида по Стамбулу на VibeGuide — цена показана заранее."
+      },
+      "tr": {
+        "title": "İstanbul'da Yapılacak En İyi Şeyler: Bir Yerlinin Seçtikleri",
+        "metaTitle": "İstanbul'da Yapılacak En İyi Şeyler — Bir Rehberin Seçimi",
+        "metaDescription": "Yerel rehberlerin seçtiği, İstanbul'da yapılacak en iyi şeyler: büyük anıtlar, bir Boğaz turu, çarşılar, gizli mahalleler, bir hamam ve Anadolu yakası.",
+        "excerpt": "Ayasofya'dan bir Boğaz gün batımına, bir hamamdan Balat'ın arka sokaklarına — İstanbul'u unutulmaz kılan deneyimler, orada yaşayanların seçtikleriyle.",
+        "intro": [
+          "Çok az şehir İstanbul kadar çok şey sunar. İki kıtaya yayılan ve Bizans ile Osmanlı tarihiyle katman katman olan şehir; hem anıt avcısını hem gezgini, hem yemek meraklısını hem alışverişçiyi ödüllendirir. Zorluk yapacak bir şey bulmak değil — aralarından seçim yapmak.",
+          "Bu, yerel bir rehberin <strong>İstanbul'da yapılacak en iyi şeyler</strong> kısa listesi: kaçırılmayacak anıtlar, şehrin ruhunu yakalayan deneyimler ve şehre ilk kez gelenlerin çoğunun gözden kaçırdığı birkaç şey. Büyük mekânları küçük keyiflerle harmanlayın — su kenarında bir çay, bir yamaç mahallesinde bir yürüyüş — ve İstanbul'un insanın içine neden işlediğini anlarsınız."
+        ],
+        "sections": [
+          {
+            "heading": "Büyük anıtların içinde durun",
+            "paragraphs": [
+              "<strong>Sultanahmet</strong>'in simgeleriyle başlayın. 1.500 yaşında olan ve katedral ile cami tarihini katman katman taşıyan <strong>Ayasofya</strong>, yeryüzündeki en olağanüstü yapılardan biri. Meydanın karşısında kubbe kaskadları ve mavi İznik çinileriyle göz kamaştıran <strong>Sultanahmet Camii</strong> yer alır; <strong>Topkapı Sarayı</strong> ise Osmanlı padişahlarının görkemli dünyasını avlular, harem ve hazine boyunca gözler önüne serer.",
+              "Yeraltında durgun sudan yükselen bir Roma sütunları ormanı olan atmosferik <strong>Yerebatan Sarnıcı</strong>'nı kaçırmayın. Bu mekânlar ücretsiz ya da ucuz ama son derece kalabalık — açılışta gelin ve Topkapı'daki bilet kuyruklarını atlamak ve içinde durduğunuz tarihi anlamak için ruhsatlı bir rehber düşünün."
+            ]
+          },
+          {
+            "heading": "Boğaz'da tur yapın",
+            "paragraphs": [
+              "Avrupa ile Asya'yı ayıran boğaz <strong>Boğaz</strong>'a açılmadan hiçbir ziyaret tamamlanmış sayılmaz. Bir tur — ister ucuz bir vapur ister özel bir tur teknesi olsun — İstanbul'un coğrafyasını başka hiçbir şeyin yapamayacağı gibi açığa çıkarır: her iki kıtada süzülüp giden Osmanlı sarayları, ahşap yalılar, hisarlar ve köprüler.",
+              "Bunu öğleden sonranın geç saatlerine denk getirin; kubbeler ve minareler üzerinde ışığın altına dönüşünü izleyin. Daha küçük ölçekli bir versiyon için Anadolu yakasına gidip gelen vapura binin — martılar tepenizde dönerken elinizde bir bardak çayla, şehrin büyük ve ucuz keyiflerinden biri."
+            ]
+          },
+          {
+            "heading": "Çarşılarda kaybolun",
+            "paragraphs": [
+              "<strong>Kapalıçarşı</strong> dünyanın en eski ve en büyük kapalı çarşılarından biri — halı, lamba, mücevher, seramik ve deri satan 4.000'den fazla dükkândan oluşan bir labirent. Pazarlık beklenir ve gösterinin bir parçasıdır; hiçbir şey almasanız bile atmosferi unutulmazdır.",
+              "Yakınında <strong>Mısır Çarşısı</strong>, baharat tepeleri, kuru meyveler, lokum ve çaylarla duyulara meydan okur. Turistik tezgâhların ötesinde, yerlilerin hâlâ alışveriş yaptığı çevre sokakları ve hanları (eski ticaret avluları) keşfedin. Bir rehber sizi dürüst satıcılara yönlendirip girişlerin yakınında kümelenen fahiş fiyatlı turist tuzaklarından uzaklaştırabilir."
+            ]
+          },
+          {
+            "heading": "Mahallelerde dolaşın ve Asya'ya geçin",
+            "paragraphs": [
+              "Yerlilerin sevdiği İstanbul mahallelerindedir. Manzara için <strong>Galata Kulesi</strong>'ne çıkın, ardından <strong>Galata ve Beyoğlu</strong>'nun kafelerini ve butiklerini ve İstiklal Caddesi boyunca gezin. Çoğu tur grubunun tümüyle atladığı eski Rum ve Yahudi mahalleleri <strong>Balat ve Fener</strong>'in rengârenk evlerini ve antikacılarını fotoğraflayın.",
+              "Sonra bir vapurla <strong>Anadolu yakası</strong>'na; yemek pazarı, sokak lezzetleri ve rahat kafeleriyle Kadıköy'ün canlı sokaklarına geçin — turistik merkezden farklı, daha yerel bir ritim. Bir öğleden sonrayı başka bir kıtada, vapurların suyu çaprazlamasını izleyerek bitirmek, tam anlamıyla İstanbul'dur."
+            ]
+          },
+          {
+            "heading": "Bir Türk hamamı ve yemeği deneyimleyin",
+            "paragraphs": [
+              "Unutulmaz bir şey için tarihi bir <strong>hamam (Türk hamamı)</strong> ziyaret edin — birçoğu Osmanlı dönemine uzanır; mermer iç mekânları ve sizi ışıl ışıl bırakan buhar, kese ve köpük masajı ritüeliyle. Yüzyıllar öncesine dayanan bir gelenek ve günlerce yürüdükten sonra dinlenmenin harika bir yolu.",
+              "Ama hepsinden önce, yiyin. Uzun bir Türk kahvaltısının tadını çıkarın, su kenarında bir balık ekmek deneyin, bir meze sofrası ısmarlayın ve baklava ile Türk kahvesiyle bitirin. İstanbul'un yemeği başlı başına bir zirvedir ve yerel bir rehberle çıkılan yemek odaklı bir yürüyüş — pazarlar, fırınlar ve aile lokantaları arasında — şehirde yapabileceğiniz en doyurucu şeylerden biridir."
+            ]
+          }
+        ],
+        "faqHeading": "Sıkça sorulan sorular",
+        "faqs": [
+          {
+            "q": "İstanbul'da yapılacak en iyi şeyler nelerdir?",
+            "a": "Temeller: Sultanahmet'te Ayasofya, Sultanahmet Camii ve Topkapı Sarayı, bir Boğaz turu, Kapalıçarşı ve Mısır Çarşısı, Galata Kulesi, Balat mahallesi, Anadolu yakasına bir vapur ve tarihi bir hamam. Büyük anıtları yerel mahalleler ve yemekle harmanlamak en dolu deneyimi verir."
+          },
+          {
+            "q": "İstanbul'un bir numaralı cazibesi nedir?",
+            "a": "Ayasofya, İstanbul'un en simgesel tek mekânıdır — olağanüstü ölçek ve tarihe sahip, 1.500 yıllık eski bir katedral ve cami. Genellikle komşusu Sultanahmet Camii ve Topkapı Sarayı ile birlikte gezilir; hepsi Sultanahmet'te kısa bir yürüyüş mesafesinde."
+          },
+          {
+            "q": "İstanbul'da bir Boğaz turu buna değer mi?",
+            "a": "Evet. Bir Boğaz turu, İstanbul'da yapılacak en iyi şeylerden biridir; şehrin iki kıtalı coğrafyasını, saraylarını ve yalılarını açığa çıkarır. Ucuz vapurlar, özellikle öğleden sonranın geç saatlerindeki altın ışıkta, tur tekneleri kadar manzaralıdır."
+          },
+          {
+            "q": "İstanbul'da turist kalabalığından uzakta neler yapılabilir?",
+            "a": "Balat ve Fener'in rengârenk evlerini ve antikacılarını keşfedin, Anadolu yakasında Kadıköy'ün yerel sokaklarına geçin, bir bardak çayla bir vapura binin ve anıtlardan birkaç sokak geride yerlilerin yediği yerde yiyin. Yerel bir rehber bu daha az bilinen köşeleri açığa çıkarabilir."
+          },
+          {
+            "q": "İstanbul'da bir Türk hamamına gitmeli miyim?",
+            "a": "Bir hamam, unutulmaz ve yüzyıllar öncesine dayanan bir deneyimdir — mermer bir Osmanlı hamamında buhar, arındırıcı bir kese ve bir köpük masajı. Birçok tarihi hamam ziyaretçileri ağırlar ve uzun yürüyüş günlerinden sonra dinlenmenin harika bir yoludur."
+          }
+        ],
+        "relatedHeading": "İstanbul'da daha fazlasını yapın",
+        "ctaTitle": "İstanbul'un en iyisini yaşayın",
+        "ctaSub": "Simgeleri ve gizli köşeleri şehri tanıyan biriyle görün. VibeGuide'da doğrulanmış bir İstanbul rehberi ayırtın — fiyat önceden gösterilir."
+      },
+      "pl": {
+        "title": "Najlepsze atrakcje Stambułu: wybór lokalnego przewodnika",
+        "metaTitle": "Co robić w Stambule — wybór lokalnego przewodnika",
+        "metaDescription": "Najlepsze atrakcje Stambułu wybrane przez lokalnych przewodników: wielkie zabytki, rejs po Bosforze, bazary, ukryte dzielnice, hammam i strona azjatycka.",
+        "excerpt": "Od Hagia Sophia po zachód słońca nad Bosforem, od hammamu po uliczki Balat — przeżycia, które czynią Stambuł niezapomnianym, wybrane przez tych, którzy tam mieszkają.",
+        "intro": [
+          "Niewiele miast oferuje tyle, co Stambuł. Rozciągnięty na dwóch kontynentach i nawarstwiony bizantyjską i osmańską historią, wynagradza zarówno łowcę zabytków, jak i włóczęgę, smakosza i miłośnika zakupów. Wyzwaniem nie jest znalezienie zajęć — lecz wybór spośród nich.",
+          "Oto krótka lista lokalnego przewodnika <strong>najlepszych atrakcji Stambułu</strong>: nieodzowne zabytki, przeżycia oddające ducha miasta i kilka rzeczy, które wielu przybyszów po raz pierwszy pomija. Połącz wielkie zabytki z drobnymi przyjemnościami — herbata nad wodą, spacer po wzgórzowej dzielnicy — a zrozumiesz, dlaczego Stambuł wchodzi pod skórę."
+        ],
+        "sections": [
+          {
+            "heading": "Stanąć wewnątrz wielkich zabytków",
+            "paragraphs": [
+              "Zacznij od ikon <strong>Sultanahmet</strong>. <strong>Hagia Sophia</strong>, licząca 1500 lat i nawarstwiona historią katedry i meczetu, to jeden z najbardziej niezwykłych budynków na ziemi. Po drugiej stronie placu <strong>Błękitny Meczet</strong> olśniewa kaskadą kopuł i niebieskimi kaflami z İznik, a <strong>Pałac Topkapı</strong> rozwija przepyszny świat osmańskich sułtanów wśród dziedzińców, haremu i skarbca.",
+              "Nie przegap klimatycznej podziemnej <strong>Cysterny Bazyliki</strong>, lasu rzymskich kolumn wyrastających z nieruchomej wody. Te miejsca są darmowe lub tanie w zwiedzaniu, ale skrajnie zatłoczone — przyjdź na otwarcie i rozważ licencjonowanego przewodnika, by ominąć kolejki po bilety w Topkapı i zrozumieć historię, wśród której stoisz."
+            ]
+          },
+          {
+            "heading": "Popłynąć w rejs po Bosforze",
+            "paragraphs": [
+              "Żadna wizyta nie jest pełna bez wypłynięcia na <strong>Bosfor</strong>, cieśninę dzielącą Europę i Azję. Rejs — czy to tani publiczny prom, czy dedykowana łódź wycieczkowa — odsłania geografię Stambułu jak nic innego: osmańskie pałace, drewniane rezydencje nad wodą (yalı), twierdze i mosty przesuwające się po obu kontynentach.",
+              "Zaplanuj go na późne popołudnie, a zobaczysz, jak światło złoci kopuły i minarety. Dla wersji na mniejszą skalę wsiądź na prom podmiejski na stronę azjatycką i z powrotem — to jedna z wielkich tanich przyjemności miasta, ze szklanką herbaty w dłoni, gdy mewy krążą nad głową."
+            ]
+          },
+          {
+            "heading": "Zgubić się na bazarach",
+            "paragraphs": [
+              "<strong>Wielki Bazar</strong> to jeden z najstarszych i największych zadaszonych targów świata — labirynt ponad 4000 sklepów sprzedających dywany, lampy, biżuterię, ceramikę i wyroby skórzane. Targowanie się jest oczekiwane i stanowi część teatru; nawet jeśli nic nie kupisz, atmosfera jest niezapomniana.",
+              "W pobliżu <strong>Bazar Egipski</strong> atakuje zmysły stosami przypraw, suszonych owoców, tureckich słodyczy i herbat. Poza turystycznymi straganami odkryj okoliczne ulice i hany (dawne dziedzińce handlowe), gdzie miejscowi wciąż robią zakupy. Przewodnik może skierować cię do uczciwych sprzedawców i z dala od zawyżonych pułapek na turystów tłoczących się przy wejściach."
+            ]
+          },
+          {
+            "heading": "Powłóczyć się po dzielnicach i przeprawić do Azji",
+            "paragraphs": [
+              "Stambuł, który kochają miejscowi, jest w jego dzielnicach. Wejdź na <strong>Wieżę Galata</strong> po panoramę, a potem odkryj kawiarnie i butiki <strong>Galata i Beyoğlu</strong> oraz całą długość alei İstiklal. Sfotografuj tęczowe domy i sklepy z antykami <strong>Balat i Fener</strong>, dawnych dzielnic greckiej i żydowskiej, które większość grup turystycznych całkowicie omija.",
+              "Potem wsiądź na prom na <strong>stronę azjatycką</strong>, na tętniące życiem ulice Kadıköy z targiem spożywczym, ulicznym jedzeniem i swobodnymi kawiarniami — inny, bardziej lokalny rytm niż turystyczne centrum. Zakończenie popołudnia na innym kontynencie, patrząc, jak promy krzyżują się na wodzie, to kwintesencja Stambułu."
+            ]
+          },
+          {
+            "heading": "Doświadczyć tureckiej łaźni i jedzenia",
+            "paragraphs": [
+              "Dla czegoś niezapomnianego odwiedź zabytkowy <strong>hammam (turecką łaźnię)</strong> — kilka sięga czasów osmańskich, z marmurowymi wnętrzami i rytuałem pary, peelingu i masażu pianą, który pozostawia cię promiennym. To wielowiekowa tradycja i wspaniały sposób, by odpocząć po dniach chodzenia.",
+              "Przede wszystkim jedz. Delektuj się długim tureckim śniadaniem, spróbuj kanapki rybnej balık ekmek nad wodą, zamów zestaw meze i zakończ baklawą oraz turecką kawą. Jedzenie Stambułu jest atrakcją samą w sobie, a kulinarny spacer z lokalnym przewodnikiem — przez targi, piekarnie i rodzinne lokanty — to jedna z najbardziej satysfakcjonujących rzeczy, jakie możesz zrobić w mieście."
+            ]
+          }
+        ],
+        "faqHeading": "Najczęściej zadawane pytania",
+        "faqs": [
+          {
+            "q": "Jakie są najlepsze atrakcje Stambułu?",
+            "a": "Podstawą są Hagia Sophia, Błękitny Meczet i Pałac Topkapı w Sultanahmet, rejs po Bosforze, Wielki Bazar i Bazar Egipski, Wieża Galata, dzielnica Balat, prom na stronę azjatycką i zabytkowy hammam. Połączenie wielkich zabytków z lokalnymi dzielnicami i jedzeniem daje najpełniejsze przeżycie."
+          },
+          {
+            "q": "Jaka jest atrakcja numer jeden w Stambule?",
+            "a": "Hagia Sophia to najbardziej ikoniczna pojedyncza atrakcja Stambułu — licząca 1500 lat dawna katedra i meczet o niezwykłej skali i historii. Zwykle łączy się ją z sąsiednim Błękitnym Meczetem i Pałacem Topkapı, wszystkimi w zasięgu spaceru w Sultanahmet."
+          },
+          {
+            "q": "Czy rejs po Bosforze w Stambule jest tego wart?",
+            "a": "Tak. Rejs po Bosforze to jedna z najlepszych atrakcji Stambułu, odsłaniająca dwukontynentalną geografię miasta, pałace i rezydencje nad wodą. Tanie publiczne promy są równie malownicze jak łodzie turystyczne, zwłaszcza w złotym świetle późnego popołudnia."
+          },
+          {
+            "q": "Co można robić w Stambule z dala od turystycznych tłumów?",
+            "a": "Odkryj tęczowe domy i sklepy z antykami Balat i Fener, przepraw się na lokalne ulice Kadıköy po stronie azjatyckiej, przejedź się promem podmiejskim ze szklanką herbaty i jedz tam, gdzie miejscowi, kilka ulic za zabytkami. Lokalny przewodnik może odsłonić te mniej znane zakątki."
+          },
+          {
+            "q": "Czy powinienem skorzystać z tureckiej łaźni w Stambule?",
+            "a": "Hammam to pamiętne, wielowiekowe przeżycie — para, złuszczający peeling i masaż pianą w marmurowej osmańskiej łaźni. Kilka zabytkowych hammamów wita gości i to wspaniały sposób, by się zrelaksować po długich dniach zwiedzania na piechotę."
+          }
+        ],
+        "relatedHeading": "Rób więcej w Stambule",
+        "ctaTitle": "Przeżyj to, co najlepsze w Stambule",
+        "ctaSub": "Zobacz ikony i ukryte zakątki z kimś, kto zna miasto. Zarezerwuj zweryfikowanego przewodnika po Stambule na VibeGuide — cena pokazana z góry."
+      },
+      "nl": {
+        "title": "Top-dingen om te doen in Istanbul: hoogtepunten van een local",
+        "metaTitle": "Top-dingen om te doen in Istanbul — keuzes van een gids",
+        "metaDescription": "De beste dingen om te doen in Istanbul, gekozen door lokale gidsen: de grote monumenten, een Bosporus-cruise, de bazaars, verborgen wijken, een hammam en de Aziatische kant.",
+        "excerpt": "Van de Hagia Sophia tot een Bosporus-zonsondergang, een hammam tot de achterafstraatjes van Balat — de ervaringen die Istanbul onvergetelijk maken, gekozen door wie er woont.",
+        "intro": [
+          "Weinig steden bieden zoveel als Istanbul. Verspreid over twee continenten en gelaagd met Byzantijnse en Ottomaanse geschiedenis, beloont het zowel de monumentenjager als de zwerver, de fijnproever als de shopper. De uitdaging is niet dingen vinden om te doen — het is kiezen tussen ze.",
+          "Dit is de shortlist van een lokale gids met de <strong>beste dingen om te doen in Istanbul</strong>: de onmisbare monumenten, de ervaringen die de geest van de stad vatten, en een paar dingen die de meeste first-timers over het hoofd zien. Combineer de grote bezienswaardigheden met de kleine genoegens — een thee aan het water, een wandeling door een heuvelwijk — en je begrijpt waarom Istanbul mensen onder de huid kruipt."
+        ],
+        "sections": [
+          {
+            "heading": "Sta binnen in de grote monumenten",
+            "paragraphs": [
+              "Begin met de iconen van <strong>Sultanahmet</strong>. De <strong>Hagia Sophia</strong>, 1.500 jaar oud en gelaagd met kathedraal- en moskeegeschiedenis, is een van de meest buitengewone gebouwen ter wereld. Aan de overkant van het plein verblindt de <strong>Blauwe Moskee</strong> met haar cascade van koepels en blauwe İznik-tegels, terwijl het <strong>Topkapı-paleis</strong> de weelderige wereld van de Ottomaanse sultans ontvouwt over binnenplaatsen, harem en schatkamer.",
+              "Mis de sfeervolle <strong>Basilica-cisterne</strong> ondergronds niet, een woud van Romeinse zuilen dat opdoemt uit stilstaand water. Deze bezienswaardigheden zijn gratis of goedkoop toegankelijk maar extreem druk — arriveer bij openingstijd, en overweeg een erkende gids om de ticketrijen bij Topkapı over te slaan en de geschiedenis te begrijpen waar je in staat."
+            ]
+          },
+          {
+            "heading": "Cruise over de Bosporus",
+            "paragraphs": [
+              "Geen bezoek is compleet zonder het water op te gaan op de <strong>Bosporus</strong>, de zeestraat die Europa en Azië scheidt. Een cruise — of het nu een goedkope openbare veerboot of een speciale tourboot is — onthult Istanbuls geografie als niets anders: Ottomaanse paleizen, houten waterfront-herenhuizen (yalı's), forten en bruggen die op beide continenten voorbijglijden.",
+              "Time het voor de late namiddag en je ziet het licht goudkleurig worden over de koepels en minaretten. Voor een kleinschaligere versie neem je de forensenveerboot naar de Aziatische kant en terug — het is een van de grote goedkope geneugten van de stad, glaasje thee in de hand terwijl de meeuwen boven je cirkelen."
+            ]
+          },
+          {
+            "heading": "Verdwaal in de bazaars",
+            "paragraphs": [
+              "De <strong>Grote Bazaar</strong> is een van 's werelds oudste en grootste overdekte markten — een labyrint van meer dan 4.000 winkels met tapijten, lampen, sieraden, keramiek en leer. Afdingen wordt verwacht en hoort bij het theater; zelfs als je niets koopt, is de sfeer onvergetelijk.",
+              "In de buurt bestormt de <strong>Kruidenbazaar</strong> de zintuigen met bergen specerijen, gedroogd fruit, Turks fruit en thee. Voorbij de toeristenkraampjes verken je de omliggende straten en hans (oude handelsbinnenplaatsen) waar locals nog winkelen. Een gids kan je naar eerlijke verkopers sturen en weg van de te dure toeristenvallen die zich bij de ingangen verzamelen."
+            ]
+          },
+          {
+            "heading": "Dwaal door de wijken en steek over naar Azië",
+            "paragraphs": [
+              "Het Istanbul waar de locals van houden zit in de wijken. Beklim de <strong>Galatatoren</strong> voor een panorama, en verken dan de cafés en boetieks van <strong>Galata en Beyoğlu</strong> en de hele lengte van de İstiklal-laan. Fotografeer de regenbooghuizen en antiekwinkels van <strong>Balat en Fener</strong>, de oude Griekse en Joodse wijken die de meeste tourgroepen volledig overslaan.",
+              "Neem dan een veerboot naar de <strong>Aziatische kant</strong> en de levendige straten van Kadıköy, met zijn voedselmarkt, streetfood en ontspannen cafés — een ander, lokaler ritme dan de toeristenkern. Een namiddag afsluiten op een ander continent, terwijl je de veerboten over het water ziet kruisen, is typisch Istanbul."
+            ]
+          },
+          {
+            "heading": "Beleef een Turks bad en het eten",
+            "paragraphs": [
+              "Voor iets onvergetelijks bezoek je een historische <strong>hammam (Turks bad)</strong> — verscheidene dateren uit de Ottomaanse tijd, met marmeren interieurs en een ritueel van stoom, scrub en schuimmassage dat je stralend achterlaat. Het is een eeuwenoude traditie en een heerlijke manier om te ontspannen na dagen lopen.",
+              "En bovenal: eet. Geniet van een lang Turks ontbijt, probeer een balık ekmek visbroodje aan het water, bestel een tafel meze, en eindig met baklava en Turkse koffie. Istanbuls eten is op zich een hoogtepunt, en een op eten gerichte wandeling met een lokale gids — door markten, bakkerijen en familie-lokanta's — is een van de meest lonende dingen die je in de stad kunt doen."
+            ]
+          }
+        ],
+        "faqHeading": "Veelgestelde vragen",
+        "faqs": [
+          {
+            "q": "Wat zijn de top-dingen om te doen in Istanbul?",
+            "a": "De essentie is de Hagia Sophia, de Blauwe Moskee en het Topkapı-paleis in Sultanahmet, een Bosporus-cruise, de Grote en de Kruidenbazaar, de Galatatoren, de wijk Balat, een veerboot naar de Aziatische kant, en een historische hammam. De grote monumenten combineren met lokale wijken en eten geeft de volste ervaring."
+          },
+          {
+            "q": "Wat is de belangrijkste bezienswaardigheid van Istanbul?",
+            "a": "De Hagia Sophia is Istanbuls meest iconische enkele bezienswaardigheid — een 1.500 jaar oude voormalige kathedraal en moskee van buitengewone schaal en geschiedenis. Ze wordt meestal gecombineerd met de nabijgelegen Blauwe Moskee en het Topkapı-paleis, alle op korte loopafstand in Sultanahmet."
+          },
+          {
+            "q": "Is een Bosporus-cruise de moeite waard in Istanbul?",
+            "a": "Ja. Een Bosporus-cruise is een van de beste dingen om te doen in Istanbul, en onthult de tweecontinentgeografie van de stad, paleizen en waterfront-herenhuizen. Goedkope openbare veerboten zijn net zo schilderachtig als toeristenboten, vooral in het gouden licht van de late namiddag."
+          },
+          {
+            "q": "Wat kun je in Istanbul doen weg van de toeristendrukte?",
+            "a": "Verken de regenbooghuizen en antiekwinkels van Balat en Fener, steek over naar de lokale straten van Kadıköy aan de Aziatische kant, neem een forensenveerboot met een glaasje thee, en eet waar locals doen een paar straten terug van de monumenten. Een lokale gids kan deze minder bekende hoekjes onthullen."
+          },
+          {
+            "q": "Moet ik een Turks bad doen in Istanbul?",
+            "a": "Een hammam is een gedenkwaardige, eeuwenoude ervaring — stoom, een exfoliërende scrub en een schuimmassage in een marmeren Ottomaans badhuis. Verscheidene historische hammams verwelkomen bezoekers, en het is een heerlijke manier om te ontspannen na lange dagen bezichtigen te voet."
+          }
+        ],
+        "relatedHeading": "Doe meer in Istanbul",
+        "ctaTitle": "Beleef het beste van Istanbul",
+        "ctaSub": "Zie de iconen en de verborgen hoekjes met iemand die de stad kent. Boek een geverifieerde Istanbul-gids op VibeGuide — prijs vooraf getoond."
+      },
+      "pt": {
+        "title": "Melhores coisas para fazer em Istambul: os favoritos de um local",
+        "metaTitle": "Melhores coisas para fazer em Istambul — escolhas de um guia",
+        "metaDescription": "As melhores coisas para fazer em Istambul, escolhidas por guias locais: os grandes monumentos, um cruzeiro pelo Bósforo, os bazares, bairros escondidos, um hammam e o lado asiático.",
+        "excerpt": "Da Santa Sofia a um pôr do sol no Bósforo, de um hammam às ruelas de Balat — as experiências que tornam Istambul inesquecível, escolhidas por quem lá vive.",
+        "intro": [
+          "Poucas cidades oferecem tanto como Istambul. Estendendo-se por dois continentes e cheia de camadas de história bizantina e otomana, recompensa tanto o caçador de monumentos como o caminhante, tanto o apreciador de comida como quem gosta de compras. O desafio não é encontrar o que fazer — é escolher entre tudo.",
+          "Esta é a lista curta de um guia local com as <strong>melhores coisas para fazer em Istambul</strong>: os monumentos imperdíveis, as experiências que captam o espírito da cidade, e algumas coisas que a maioria dos que a visitam pela primeira vez ignora. Misture os grandes pontos com os pequenos prazeres — um chá à beira-água, um passeio por um bairro de encosta — e vai perceber porque é que Istambul entranha-se nas pessoas."
+        ],
+        "sections": [
+          {
+            "heading": "Entre nos grandes monumentos",
+            "paragraphs": [
+              "Comece pelos ícones de <strong>Sultanahmet</strong>. A <strong>Santa Sofia</strong>, com 1.500 anos e camadas de história de catedral e mesquita, é um dos edifícios mais extraordinários do planeta. Do outro lado da praça, a <strong>Mesquita Azul</strong> deslumbra com a sua cascata de cúpulas e azulejos azuis de İznik, enquanto o <strong>Palácio de Topkapı</strong> desdobra o mundo opulento dos sultões otomanos por pátios, harém e tesouro.",
+              "Não perca a subterrânea e cheia de atmosfera <strong>Cisterna da Basílica</strong>, uma floresta de colunas romanas a erguer-se de água parada. Estes pontos são gratuitos ou baratos mas extremamente cheios — chegue à hora de abertura, e considere um guia licenciado para saltar as filas de bilhetes em Topkapı e compreender a história em que está a pisar."
+            ]
+          },
+          {
+            "heading": "Faça um cruzeiro pelo Bósforo",
+            "paragraphs": [
+              "Nenhuma visita fica completa sem sair para o <strong>Bósforo</strong>, o estreito que separa a Europa da Ásia. Um cruzeiro — seja um ferry público barato seja um barco de passeio dedicado — revela a geografia de Istambul como mais nada: palácios otomanos, mansões de madeira à beira-mar (yalıs), fortalezas e pontes a deslizar em ambos os continentes.",
+              "Calcule para o fim da tarde e verá a luz tornar-se dourada sobre as cúpulas e os minaretes. Para uma versão à escala mais pequena, apanhe o ferry de passageiros até ao lado asiático e volte — é um dos grandes prazeres baratos da cidade, copo de chá na mão enquanto as gaivotas voam por cima."
+            ]
+          },
+          {
+            "heading": "Perca-se nos bazares",
+            "paragraphs": [
+              "O <strong>Grande Bazar</strong> é um dos mercados cobertos mais antigos e maiores do mundo — um labirinto de mais de 4.000 lojas com tapetes, candeeiros, joias, cerâmica e couro. O regateio é esperado e faz parte do espetáculo; mesmo que não compre nada, a atmosfera é inesquecível.",
+              "Ali perto, o <strong>Bazar das Especiarias</strong> assalta os sentidos com montes de especiarias, fruta seca, delícias turcas e chás. Para além das bancas turísticas, explore as ruas em redor e os hans (antigos pátios de comércio) onde os locais ainda fazem compras. Um guia pode encaminhá-lo para vendedores honestos e afastá-lo das armadilhas caras para turistas que se juntam junto às entradas."
+            ]
+          },
+          {
+            "heading": "Vagueie pelos bairros e atravesse para a Ásia",
+            "paragraphs": [
+              "A Istambul que os locais adoram está nos seus bairros. Suba à <strong>Torre de Gálata</strong> para um panorama, e depois explore os cafés e as boutiques de <strong>Gálata e Beyoğlu</strong> e toda a extensão da Avenida İstiklal. Fotografe as casas coloridas e as lojas de antiguidades de <strong>Balat e Fener</strong>, os antigos bairros grego e judaico que a maioria dos grupos de excursão ignora por completo.",
+              "Depois apanhe um ferry até ao <strong>lado asiático</strong> e às ruas animadas de Kadıköy, com o seu mercado de comida, petiscos de rua e cafés descontraídos — um ritmo diferente e mais local do que o núcleo turístico. Terminar uma tarde noutro continente, a ver os ferries a cruzar as águas, é a essência de Istambul."
+            ]
+          },
+          {
+            "heading": "Viva um banho turco e a comida",
+            "paragraphs": [
+              "Para algo inesquecível, visite um <strong>hammam (banho turco)</strong> histórico — vários datam da época otomana, com interiores de mármore e um ritual de vapor, esfoliação e massagem com espuma que o deixa a brilhar. É uma tradição com séculos e uma forma maravilhosa de descontrair depois de dias a andar a pé.",
+              "E, acima de tudo, coma. Saboreie um longo pequeno-almoço turco, prove uma sanduíche de peixe balık ekmek à beira-água, peça uma mesa de meze, e termine com baklava e café turco. A comida de Istambul é, por si só, um ponto alto, e um passeio gastronómico com um guia local — por mercados, padarias e lokantas de família — é uma das coisas mais compensadoras que pode fazer na cidade."
+            ]
+          }
+        ],
+        "faqHeading": "Perguntas frequentes",
+        "faqs": [
+          {
+            "q": "Quais são as melhores coisas para fazer em Istambul?",
+            "a": "O essencial é a Santa Sofia, a Mesquita Azul e o Palácio de Topkapı em Sultanahmet, um cruzeiro pelo Bósforo, o Grande Bazar e o Bazar das Especiarias, a Torre de Gálata, o bairro de Balat, um ferry até ao lado asiático, e um hammam histórico. Misturar os grandes monumentos com bairros locais e comida dá a experiência mais completa."
+          },
+          {
+            "q": "Qual é a atração número um de Istambul?",
+            "a": "A Santa Sofia é o ponto mais icónico de Istambul — uma antiga catedral e mesquita com 1.500 anos, de escala e história extraordinárias. Costuma juntar-se à vizinha Mesquita Azul e ao Palácio de Topkapı, todos a curta distância a pé em Sultanahmet."
+          },
+          {
+            "q": "Vale a pena um cruzeiro pelo Bósforo em Istambul?",
+            "a": "Sim. Um cruzeiro pelo Bósforo é uma das melhores coisas para fazer em Istambul, revelando a geografia de dois continentes da cidade, palácios e mansões à beira-mar. Os ferries públicos baratos são tão panorâmicos como os barcos turísticos, sobretudo na luz dourada do fim da tarde."
+          },
+          {
+            "q": "O que se pode fazer em Istambul longe das multidões turísticas?",
+            "a": "Explore as casas coloridas e as lojas de antiguidades de Balat e Fener, atravesse para as ruas locais de Kadıköy no lado asiático, ande num ferry de passageiros com um copo de chá, e coma onde os locais comem umas ruas para trás dos monumentos. Um guia local pode revelar estes recantos menos conhecidos."
+          },
+          {
+            "q": "Devo fazer um banho turco em Istambul?",
+            "a": "Um hammam é uma experiência memorável e com séculos — vapor, uma esfoliação e uma massagem com espuma num banho otomano de mármore. Vários hammams históricos recebem visitantes, e é uma forma maravilhosa de relaxar depois de longos dias a passear a pé."
+          }
+        ],
+        "relatedHeading": "Faça mais em Istambul",
+        "ctaTitle": "Viva o melhor de Istambul",
+        "ctaSub": "Veja os ícones e os recantos escondidos com quem conhece a cidade. Reserve um guia de Istambul verificado na VibeGuide — preço mostrado à partida."
+      },
+      "ja": {
+        "title": "イスタンブールですべき最高の体験：地元ガイドの厳選",
+        "metaTitle": "イスタンブールですべきこと — 地元ガイドの厳選",
+        "metaDescription": "地元ガイドが選ぶイスタンブールで最高の体験：壮大な記念物、ボスポラス・クルーズ、バザール、隠れた街並み、ハマム、そしてアジア側。",
+        "excerpt": "アヤソフィアからボスポラスの夕日まで、ハマムからバラットの路地裏まで — イスタンブールを忘れがたいものにする体験を、そこに暮らす人々が選びました。",
+        "intro": [
+          "イスタンブールほど多くを差し出す街はそう多くありません。二つの大陸にまたがり、ビザンティンとオスマンの歴史が幾層にも重なり、記念物を追う人にも、そぞろ歩く人にも、食通にも、買い物好きにも報いてくれます。難しいのはすることを見つけることではなく — その中から選ぶことです。",
+          "これは<strong>イスタンブールですべき最高のこと</strong>を集めた地元ガイドの厳選リストです：見逃せない記念物、街の魂を捉える体験、そして多くの初訪問者が見落とす少しのもの。大きな見どころと小さな楽しみ — 水辺での一杯の紅茶、丘の上の一角の散策 — を織り交ぜれば、なぜイスタンブールが人の心に染み込むのかが分かるでしょう。"
+        ],
+        "sections": [
+          {
+            "heading": "壮大な記念物の中に立つ",
+            "paragraphs": [
+              "<strong>スルタンアフメット</strong>の象徴から始めましょう。<strong>アヤソフィア</strong>は築1500年、大聖堂とモスクの歴史が層をなす、地上で最も並外れた建造物の一つです。広場を挟んで、<strong>ブルーモスク</strong>は幾重にも連なるドームと青いイズニックタイルで人を魅了し、<strong>トプカプ宮殿</strong>は中庭、ハーレム、宝物庫を通じてオスマン帝国のスルタンたちの豪奢な世界を繰り広げます。",
+              "地下の趣ある<strong>地下宮殿（バシリカ・シスタン）</strong>もお忘れなく。静かな水面から立ち上るローマの列柱の森です。これらの見どころは入場が無料か安価ですが非常に混雑します — 開場時刻に着き、トプカプのチケット行列を飛ばして自分が立つ歴史を理解するために、公認ガイドを検討しましょう。"
+            ]
+          },
+          {
+            "heading": "ボスポラスをクルーズする",
+            "paragraphs": [
+              "ヨーロッパとアジアを分ける海峡<strong>ボスポラス</strong>に出ずして訪問は完結しません。クルーズは — 安い公共フェリーでも専用の観光船でも — イスタンブールの地理を何にも増して明かしてくれます：オスマンの宮殿、木造の水辺の邸宅（yalı）、要塞や橋が両大陸で滑るように過ぎていきます。",
+              "午後遅くに合わせれば、ドームとミナレットの上で光が黄金色に変わるのを眺められます。小規模版なら、通勤フェリーでアジア側へ渡って戻るのもよいでしょう — 頭上をカモメが舞う中、手に紅茶のグラスを持って味わう、街の大きな安上がりの楽しみの一つです。"
+            ]
+          },
+          {
+            "heading": "バザールで迷子になる",
+            "paragraphs": [
+              "<strong>グランドバザール</strong>は世界最古かつ最大級の屋根付き市場の一つ — 絨毯、ランプ、宝飾品、陶器、革製品を売る4000軒を超える店の迷宮です。値引き交渉は当然で、芝居の一部。たとえ何も買わなくても、その雰囲気は忘れられません。",
+              "近くの<strong>エジプシャンバザール（スパイスバザール）</strong>は、山盛りのスパイス、ドライフルーツ、ターキッシュディライト、紅茶で五感を刺激します。観光客向けの露店の先へ、地元の人が今も買い物をする周辺の通りやハン（古い交易の中庭）を探索しましょう。ガイドは正直な売り手へと導き、入口付近に群がる高値の観光客向けの罠から遠ざけてくれます。"
+            ]
+          },
+          {
+            "heading": "街並みを歩き、アジアへ渡る",
+            "paragraphs": [
+              "地元の人が愛するイスタンブールはその街並みにあります。<strong>ガラタ塔</strong>に登ってパノラマを望み、<strong>ガラタとベイオール</strong>のカフェやブティック、そしてイスティクラル通りをたどりましょう。多くのツアーグループがまるごと素通りする旧ギリシャ人・ユダヤ人街<strong>バラットとフェネル</strong>の虹色の家々やアンティークショップを写真に収めましょう。",
+              "それからフェリーで<strong>アジア側</strong>へ渡り、食品市場、ストリートフード、くつろいだカフェのあるカドゥキョイの賑やかな通りへ — 観光の中心とは違う、より地元らしいリズムです。別の大陸で午後を締めくくり、水面を行き交うフェリーを眺めるのは、まさにイスタンブールそのものです。"
+            ]
+          },
+          {
+            "heading": "トルコ式風呂と食を体験する",
+            "paragraphs": [
+              "忘れがたい何かを求めるなら、歴史ある<strong>ハマム（トルコ式風呂）</strong>を訪ねましょう — オスマン時代に遡るものもいくつかあり、大理石の内装と、蒸気、垢すり、泡マッサージの儀式が、あなたを輝かせてくれます。何世紀も続く伝統で、歩き回った日々のあとにくつろぐ素晴らしい方法です。",
+              "何よりも、食べましょう。長いトルコ式朝食をゆっくりつまみ、水辺で balık ekmek の魚サンドを試し、メゼをひと通り頼み、バクラヴァとトルココーヒーで締めくくりを。イスタンブールの食はそれ自体が見どころで、地元ガイドとの食をめぐる散策 — 市場、パン屋、家族経営の lokanta を巡る — は、この街でできる最も実りある体験の一つです。"
+            ]
+          }
+        ],
+        "faqHeading": "よくある質問",
+        "faqs": [
+          {
+            "q": "イスタンブールですべき最高のことは何ですか？",
+            "a": "定番はスルタンアフメットのアヤソフィア、ブルーモスク、トプカプ宮殿、ボスポラス・クルーズ、グランドバザールとスパイスバザール、ガラタ塔、バラット地区、アジア側へのフェリー、そして歴史あるハマムです。壮大な記念物を地元の街並みや食と織り交ぜると、最も充実した体験になります。"
+          },
+          {
+            "q": "イスタンブールで一番の見どころは何ですか？",
+            "a": "アヤソフィアはイスタンブールで最も象徴的な単一の見どころです — 並外れた規模と歴史を持つ築1500年の元大聖堂にしてモスク。通常は隣接するブルーモスクやトプカプ宮殿と組み合わせられ、いずれもスルタンアフメット内で徒歩圏です。"
+          },
+          {
+            "q": "イスタンブールでボスポラス・クルーズは価値がありますか？",
+            "a": "はい。ボスポラス・クルーズはイスタンブールですべき最高のことの一つで、二大陸の地理、宮殿、水辺の邸宅を明かしてくれます。安い公共フェリーは、とりわけ午後遅くの黄金色の光の中では、観光船に劣らず絶景です。"
+          },
+          {
+            "q": "観光客の人混みを離れてイスタンブールで何ができますか？",
+            "a": "バラットとフェネルの虹色の家々やアンティークショップを探索し、アジア側カドゥキョイの地元の通りへ渡り、手に紅茶を持って通勤フェリーに乗り、記念物から数本裏で地元の人と同じ場所で食べましょう。地元ガイドがこうした知られざる一角を明かしてくれます。"
+          },
+          {
+            "q": "イスタンブールでトルコ式風呂をすべきですか？",
+            "a": "ハマムは忘れがたい、何世紀も続く体験です — 大理石のオスマン浴場で、蒸気、垢すり、泡マッサージを。歴史あるハマムのいくつかが訪問者を歓迎しており、徒歩で長い一日を過ごしたあとにくつろぐ素晴らしい方法です。"
+          }
+        ],
+        "relatedHeading": "イスタンブールでもっと楽しむ",
+        "ctaTitle": "イスタンブールの最高を体験する",
+        "ctaSub": "象徴も隠れた一角も、街を知る人とともに。VibeGuideで認証済みのイスタンブールガイドを予約 — 料金は事前に表示されます。"
+      },
+      "ko": {
+        "title": "이스탄불에서 할 최고의 것들: 현지 가이드의 하이라이트",
+        "metaTitle": "이스탄불에서 할 것들 — 현지 가이드의 추천",
+        "metaDescription": "현지 가이드가 고른 이스탄불 최고의 체험: 위대한 유적, 보스포루스 크루즈, 바자르, 숨은 동네, 하맘, 그리고 아시아 지역.",
+        "excerpt": "아야소피아부터 보스포루스의 노을까지, 하맘부터 발라트의 뒷골목까지 — 이스탄불을 잊지 못하게 만드는 체험을, 그곳에 사는 사람들이 골랐습니다.",
+        "intro": [
+          "이스탄불만큼 많은 것을 내주는 도시는 흔치 않습니다. 두 대륙에 걸쳐 있고 비잔틴과 오스만의 역사가 층층이 쌓여, 유적을 좇는 이에게도 거니는 이에게도, 미식가에게도 쇼핑객에게도 보답합니다. 어려운 것은 할 일을 찾는 게 아니라 — 그중에서 고르는 것입니다.",
+          "이것은 <strong>이스탄불에서 할 최고의 것들</strong>을 모은 현지 가이드의 엄선 목록입니다: 놓칠 수 없는 유적, 도시의 정신을 담아내는 체험, 그리고 대부분의 첫 방문자가 지나치는 몇 가지. 큰 명소와 작은 즐거움 — 물가에서의 홍차 한 잔, 언덕배기 동네의 산책 — 을 뒤섞으면, 왜 이스탄불이 사람들 마음에 스며드는지 알게 됩니다."
+        ],
+        "sections": [
+          {
+            "heading": "위대한 유적 안에 서보기",
+            "paragraphs": [
+              "<strong>술탄아흐메트</strong>의 상징에서 시작하세요. 1500년 된, 대성당과 모스크의 역사가 겹겹이 쌓인 <strong>아야소피아</strong>는 지구상에서 가장 비범한 건축물 중 하나입니다. 광장 건너편에서 <strong>블루 모스크</strong>는 겹겹이 이어지는 돔과 푸른 이즈니크 타일로 눈을 사로잡고, <strong>톱카프 궁전</strong>은 안뜰과 하렘, 보물고를 통해 오스만 술탄들의 호화로운 세계를 펼쳐 보입니다.",
+              "지하의 정취 있는 <strong>바실리카 저수지(예레바탄)</strong>도 놓치지 마세요. 고요한 물에서 솟아오른 로마 기둥의 숲입니다. 이 명소들은 입장이 무료이거나 저렴하지만 매우 붐빕니다 — 개장 시간에 도착하고, 톱카프의 매표 줄을 건너뛰고 자신이 서 있는 역사를 이해하려면 면허 가이드를 고려하세요."
+            ]
+          },
+          {
+            "heading": "보스포루스를 크루즈하기",
+            "paragraphs": [
+              "유럽과 아시아를 가르는 해협 <strong>보스포루스</strong>로 나가지 않고서는 어떤 방문도 완성되지 않습니다. 크루즈는 — 저렴한 공공 페리든 전용 관광 보트든 — 이스탄불의 지리를 그 무엇보다 잘 드러냅니다: 오스만 궁전, 물가의 목조 저택(yalı), 요새와 다리가 양쪽 대륙에서 미끄러지듯 스쳐 갑니다.",
+              "늦은 오후로 시간을 맞추면 돔과 미나레트 위로 빛이 황금빛으로 물드는 것을 볼 수 있습니다. 소규모 버전으로는 통근 페리를 타고 아시아 지역으로 건너갔다 돌아오세요 — 머리 위로 갈매기가 맴도는 가운데 손에 홍차 한 잔을 들고 즐기는, 도시의 크나큰 저렴한 즐거움 중 하나입니다."
+            ]
+          },
+          {
+            "heading": "바자르에서 길을 잃기",
+            "paragraphs": [
+              "<strong>그랜드 바자르</strong>는 세계에서 가장 오래되고 큰 지붕 덮인 시장 중 하나입니다 — 카펫, 램프, 보석, 도자기, 가죽을 파는 4000개가 넘는 상점의 미로. 흥정은 당연하고 그 연극의 일부입니다. 아무것도 사지 않더라도 그 분위기는 잊을 수 없습니다.",
+              "가까운 <strong>스파이스 바자르</strong>는 산더미 같은 향신료, 말린 과일, 터키시 딜라이트, 차로 감각을 자극합니다. 관광객용 노점 너머로, 현지인이 지금도 장을 보는 주변 거리와 한(옛 교역 안뜰)을 탐험하세요. 가이드는 정직한 상인에게 이끌고, 입구 근처에 몰린 바가지 관광 함정에서 멀어지게 해줍니다."
+            ]
+          },
+          {
+            "heading": "동네를 거닐고 아시아로 건너가기",
+            "paragraphs": [
+              "현지인이 사랑하는 이스탄불은 그 동네에 있습니다. <strong>갈라타 탑</strong>에 올라 파노라마를 보고, <strong>갈라타와 베이오을루</strong>의 카페와 부티크, 이스티클랄 거리를 따라가 보세요. 대부분의 투어 그룹이 통째로 지나치는 옛 그리스인·유대인 구역 <strong>발라트와 페네르</strong>의 무지개빛 집들과 골동품 가게를 사진에 담으세요.",
+              "그런 다음 페리를 타고 <strong>아시아 지역</strong>으로 건너가, 청과 시장, 길거리 음식, 느긋한 카페가 있는 카드쾨이의 활기찬 거리로 — 관광 중심지와는 다른, 더 현지다운 리듬입니다. 다른 대륙에서 오후를 마무리하며 물 위를 오가는 페리를 바라보는 것은 더없이 이스탄불다운 일입니다."
+            ]
+          },
+          {
+            "heading": "터키식 목욕과 음식을 체험하기",
+            "paragraphs": [
+              "잊지 못할 무언가를 원한다면 역사 깊은 <strong>하맘(터키식 목욕탕)</strong>을 찾아보세요 — 오스만 시대로 거슬러 오르는 곳도 여럿이며, 대리석 내부와 증기·때밀이·거품 마사지의 의식이 당신을 빛나게 합니다. 수백 년 된 전통이자, 며칠 걷고 난 뒤 긴장을 푸는 멋진 방법입니다.",
+              "무엇보다 드세요. 긴 터키식 아침을 천천히 즐기고, 물가에서 balık ekmek 생선 샌드위치를 맛보고, 메제를 한 상 시키고, 바클라바와 터키 커피로 마무리하세요. 이스탄불의 음식은 그 자체로 하이라이트이며, 현지 가이드와 함께하는 음식 중심의 산책 — 시장, 빵집, 가족이 운영하는 lokanta를 누비는 — 은 이 도시에서 할 수 있는 가장 보람 있는 일 중 하나입니다."
+            ]
+          }
+        ],
+        "faqHeading": "자주 묻는 질문",
+        "faqs": [
+          {
+            "q": "이스탄불에서 할 최고의 것들은 무엇인가요?",
+            "a": "핵심은 술탄아흐메트의 아야소피아, 블루 모스크, 톱카프 궁전, 보스포루스 크루즈, 그랜드·스파이스 바자르, 갈라타 탑, 발라트 동네, 아시아 지역행 페리, 그리고 역사 깊은 하맘입니다. 위대한 유적을 현지 동네와 음식과 뒤섞으면 가장 풍부한 경험이 됩니다."
+          },
+          {
+            "q": "이스탄불의 최고 명소는 무엇인가요?",
+            "a": "아야소피아는 이스탄불에서 가장 상징적인 단일 명소입니다 — 비범한 규모와 역사를 지닌 1500년 된 옛 대성당이자 모스크. 보통 인접한 블루 모스크, 톱카프 궁전과 함께 묶이며, 모두 술탄아흐메트 안에서 걸어서 닿는 거리입니다."
+          },
+          {
+            "q": "이스탄불에서 보스포루스 크루즈는 할 만한가요?",
+            "a": "네. 보스포루스 크루즈는 이스탄불에서 할 최고의 것들 중 하나로, 두 대륙의 지리, 궁전, 물가 저택을 드러냅니다. 저렴한 공공 페리는, 특히 늦은 오후의 황금빛 속에서는 관광 보트 못지않게 경치가 좋습니다."
+          },
+          {
+            "q": "관광객 인파를 벗어나 이스탄불에서 무엇을 할 수 있나요?",
+            "a": "발라트와 페네르의 무지개빛 집들과 골동품 가게를 탐험하고, 아시아 지역 카드쾨이의 현지 거리로 건너가고, 손에 홍차를 들고 통근 페리를 타고, 명소에서 몇 골목 뒤 현지인이 먹는 곳에서 드세요. 현지 가이드가 이런 덜 알려진 구석을 보여줄 수 있습니다."
+          },
+          {
+            "q": "이스탄불에서 터키식 목욕을 해봐야 하나요?",
+            "a": "하맘은 잊지 못할, 수백 년 된 체험입니다 — 대리석 오스만 목욕탕에서 증기, 각질 제거 때밀이, 거품 마사지를. 역사 깊은 하맘 여러 곳이 방문객을 반기며, 걸어서 긴 하루를 보낸 뒤 긴장을 푸는 멋진 방법입니다."
+          }
+        ],
+        "relatedHeading": "이스탄불에서 더 많은 것을",
+        "ctaTitle": "이스탄불의 정수를 경험하세요",
+        "ctaSub": "상징도 숨은 구석도, 도시를 아는 사람과 함께. VibeGuide에서 인증된 이스탄불 가이드를 예약하세요 — 가격이 미리 표시됩니다."
+      }
+    }
+  },
+  {
+    "slug": "turkey-trip-cost-budget-guide",
+    "category": "practical",
+    "heroImage": "https://images.unsplash.com/photo-1610116306796-6fea9f4fae38?q=80&w=1600",
+    "publishDate": "2026-08-04",
+    "relatedCityGuides": [
+      "istanbul-tour-guide",
+      "cappadocia-tour-guide"
+    ],
+    "relatedAttractions": [
+      "cappadocia",
+      "pamukkale"
+    ],
+    "i18n": {
+      "en": {
+        "title": "How Much Does a Turkey Trip Cost? A Budget Guide",
+        "metaTitle": "How Much Does a Turkey Trip Cost? — Budget Guide",
+        "metaDescription": "How much does it cost to travel in Turkey? A practical budget guide to daily costs for accommodation, food, transport, tours and the balloon ride — for every budget.",
+        "excerpt": "Turkey offers big value for money — but costs vary widely by season and style. Here's a realistic breakdown of daily budgets, from backpacker to comfortable.",
+        "intro": [
+          "Turkey is one of the best-value major destinations in the region: world-class sights, superb food and comfortable hotels often cost far less than in Western Europe. But «how much does a Turkey trip cost?» has no single answer — it swings widely with the season, your travel style, and headline extras like the Cappadocia balloon.",
+          "This guide gives a <strong>realistic breakdown of daily costs</strong> — accommodation, food, transport, sightseeing and tours — across three broad budgets, plus the big one-off expenses to plan for. Prices in Turkey shift with inflation and exchange rates, so treat these as proportional guidance rather than fixed figures, and always check current prices before you book."
+        ],
+        "sections": [
+          {
+            "heading": "Three daily budgets: what to expect",
+            "paragraphs": [
+              "As a rough guide, a <strong>budget traveller</strong> staying in hostels or simple guesthouses, eating street food and lokantas, and using public transport can travel comfortably on a modest daily sum. A <strong>mid-range traveller</strong> in a good three- or four-star hotel, eating in proper restaurants and taking the odd private tour, should budget noticeably more per day.",
+              "A <strong>comfort or luxury traveller</strong> in boutique hotels and cave suites, with private guides and transfers throughout, will spend more again — but still often less than an equivalent trip in Western Europe. The point is that Turkey scales beautifully: it's genuinely rewarding on a tight budget and a real bargain at the top end."
+            ]
+          },
+          {
+            "heading": "Accommodation, food and transport",
+            "paragraphs": [
+              "<strong>Accommodation</strong> is where Turkey shines. Hostels and simple guesthouses are cheap, mid-range hotels offer strong value, and even Cappadocia's famous cave hotels are affordable compared with luxury elsewhere. Prices spike in high summer on the coast and around the New Year, so book ahead for those periods.",
+              "<strong>Food</strong> can cost very little if you eat like a local — a simit and tea for breakfast, a lokanta lunch, street food snacks — or more in tourist-facing restaurants by the big sights. <strong>Transport</strong> is a bargain: city trams, ferries and buses are cheap with a transit card, and long-distance intercity coaches and domestic flights (Istanbul to Cappadocia or the coast) are very reasonable if booked ahead."
+            ]
+          },
+          {
+            "heading": "Sightseeing, tours and guides",
+            "paragraphs": [
+              "Entry fees for the major sights — Hagia Sophia is free, while Topkapı, Ephesus and others charge — add up over a trip, and a <strong>Museum Pass</strong> can save money if you're visiting many state sites. Budget for these when planning your days.",
+              "<strong>Guided tours</strong> range widely: a big coach group tour is cheapest per head, while a private licensed guide costs more but shapes the whole day around you and skips the queues. On VibeGuide you always see the exact price before you book, with no hidden fees, and joining a VibeSquad group tour is the most economical way to have a licensed guide. It's often worth paying for a guide at the sites where it matters most, like Ephesus."
+            ]
+          },
+          {
+            "heading": "The big extras: the Cappadocia balloon and more",
+            "paragraphs": [
+              "Some experiences sit outside a normal daily budget and are worth planning for. The <strong>Cappadocia hot-air balloon</strong> is the classic splurge — a significant one-off cost, priced and ticketed separately by the balloon companies, that rises with season and demand. For most travellers it's a once-in-a-lifetime highlight worth the money; book ahead as flights sell out.",
+              "Other bigger-ticket extras include gület boat cruises on the coast, a hammam experience, domestic flights to save time, and special day trips with private transport. Factoring a few of these into your budget upfront prevents surprises — and lets you say yes to the experiences that make the trip."
+            ]
+          },
+          {
+            "heading": "How to save money in Turkey",
+            "paragraphs": [
+              "The biggest savings come from <strong>travelling in shoulder or low season</strong> (spring, autumn or winter), when hotels and flights are far cheaper than in high summer. Eating where locals eat, using public transport with a transit card, and booking intercity travel ahead all stretch your budget significantly.",
+              "Pay in Turkish lira rather than accepting card charges in your home currency, carry some cash for small vendors and markets, and haggle politely in the bazaars. And remember that value isn't only about the cheapest option — a licensed local guide for a key day or two often saves you money on avoided tourist traps and wasted time, while making the whole trip better."
+            ]
+          }
+        ],
+        "faqHeading": "Frequently asked questions",
+        "faqs": [
+          {
+            "q": "Is Turkey an expensive country to visit?",
+            "a": "No — Turkey is one of the best-value major destinations, with world-class sights, food and hotels typically costing far less than in Western Europe. Costs rise in high summer on the coast and for headline extras like the Cappadocia balloon, but overall it offers strong value at every budget level."
+          },
+          {
+            "q": "How much money do I need per day in Turkey?",
+            "a": "It depends on your style. Budget travellers using hostels, street food and public transport can travel on a modest daily sum; mid-range travellers in good hotels with the odd private tour need noticeably more; and comfort travellers with private guides and boutique stays more again, though still often less than equivalent Western European trips."
+          },
+          {
+            "q": "How much does the Cappadocia balloon ride cost?",
+            "a": "The hot-air balloon is a significant one-off expense, priced and ticketed separately by the balloon companies, and it rises with season and demand. It sits outside a normal daily budget, so plan for it and book ahead, as popular sunrise flights sell out quickly."
+          },
+          {
+            "q": "What is the cheapest time to travel in Turkey?",
+            "a": "Winter (excluding the New Year period) and the shoulder seasons of spring and autumn are cheapest for flights and hotels, well below the high-summer coastal peak. Travelling off-season is the single biggest way to cut the cost of a Turkey trip."
+          },
+          {
+            "q": "How can I save money when travelling in Turkey?",
+            "a": "Travel in shoulder or low season, eat where locals eat, use a transit card for cheap city transport, book intercity coaches and flights ahead, pay in Turkish lira, and haggle in the bazaars. A licensed guide for a key day can also save money by helping you avoid tourist traps and wasted time."
+          }
+        ],
+        "relatedHeading": "Plan your Turkey budget",
+        "ctaTitle": "Great value, guided by locals",
+        "ctaSub": "See the exact price before you book, with no hidden fees. Find licensed guides and group tours across Turkey on VibeGuide."
+      },
+      "de": {
+        "title": "Was kostet eine Türkei-Reise? Ein Budget-Leitfaden",
+        "metaTitle": "Was kostet eine Türkei-Reise? — Budget-Leitfaden",
+        "metaDescription": "Was kostet das Reisen in der Türkei? Ein praktischer Budget-Leitfaden zu Tageskosten für Unterkunft, Essen, Transport, Touren und die Ballonfahrt — für jedes Budget.",
+        "excerpt": "Die Türkei bietet viel fürs Geld — doch die Kosten schwanken stark nach Saison und Stil. Hier ist eine realistische Aufschlüsselung der Tagesbudgets, vom Backpacker bis zum Komfortreisenden.",
+        "intro": [
+          "Die Türkei ist eines der preiswertesten großen Reiseziele der Region: Weltklasse-Sehenswürdigkeiten, hervorragendes Essen und komfortable Hotels kosten oft weit weniger als in Westeuropa. Doch «Was kostet eine Türkei-Reise?» hat keine einzelne Antwort — es schwankt stark mit der Saison, Ihrem Reisestil und großen Extras wie dem Ballon in Kappadokien.",
+          "Dieser Leitfaden gibt eine <strong>realistische Aufschlüsselung der Tageskosten</strong> — Unterkunft, Essen, Transport, Besichtigungen und Touren — über drei grobe Budgets hinweg, plus die großen einmaligen Ausgaben, für die man planen sollte. Die Preise in der Türkei verschieben sich mit Inflation und Wechselkursen, behandeln Sie diese also als proportionale Orientierung statt als feste Zahlen und prüfen Sie vor der Buchung stets die aktuellen Preise."
+        ],
+        "sections": [
+          {
+            "heading": "Drei Tagesbudgets: was Sie erwartet",
+            "paragraphs": [
+              "Als grobe Richtschnur: Ein <strong>Budget-Reisender</strong>, der in Hostels oder einfachen Pensionen übernachtet, Streetfood und Lokantas isst und öffentliche Verkehrsmittel nutzt, kann bequem mit einer bescheidenen Tagessumme reisen. Ein <strong>Mittelklasse-Reisender</strong> in einem guten Drei- oder Vier-Sterne-Hotel, der in richtigen Restaurants isst und ab und zu eine private Tour macht, sollte pro Tag merklich mehr einplanen.",
+              "Ein <strong>Komfort- oder Luxusreisender</strong> in Boutique-Hotels und Höhlensuiten, mit privaten Guides und Transfers durchgehend, gibt noch einmal mehr aus — aber oft immer noch weniger als eine vergleichbare Reise in Westeuropa. Der Punkt ist: Die Türkei skaliert wunderbar — sie ist auf schmalem Budget wirklich lohnend und am oberen Ende ein echtes Schnäppchen."
+            ]
+          },
+          {
+            "heading": "Unterkunft, Essen und Transport",
+            "paragraphs": [
+              "Bei der <strong>Unterkunft</strong> glänzt die Türkei. Hostels und einfache Pensionen sind günstig, Mittelklassehotels bieten ein starkes Preis-Leistungs-Verhältnis, und selbst Kappadokiens berühmte Höhlenhotels sind im Vergleich zum Luxus anderswo erschwinglich. Die Preise schnellen im Hochsommer an der Küste und um Neujahr herum hoch, buchen Sie also für diese Zeiträume im Voraus.",
+              "<strong>Essen</strong> kann sehr wenig kosten, wenn Sie wie ein Einheimischer essen — ein Simit und Tee zum Frühstück, ein Lokanta-Mittagessen, Streetfood-Snacks — oder mehr in touristischen Restaurants bei den großen Sehenswürdigkeiten. <strong>Transport</strong> ist ein Schnäppchen: Stadtbahnen, Fähren und Busse sind mit einer Verkehrskarte günstig, und Überland-Fernbusse sowie Inlandsflüge (Istanbul nach Kappadokien oder an die Küste) sind bei früher Buchung sehr vernünftig."
+            ]
+          },
+          {
+            "heading": "Besichtigungen, Touren und Guides",
+            "paragraphs": [
+              "Eintrittsgebühren für die großen Sehenswürdigkeiten — die Hagia Sophia ist kostenlos, während Topkapı, Ephesos und andere Gebühren erheben — summieren sich über eine Reise, und ein <strong>Museum Pass</strong> kann Geld sparen, wenn Sie viele staatliche Stätten besuchen. Planen Sie diese bei der Tagesgestaltung ein.",
+              "<strong>Geführte Touren</strong> reichen weit auseinander: Eine große Busgruppentour ist pro Kopf am günstigsten, während ein privater lizenzierter Guide mehr kostet, aber den ganzen Tag um Sie herum gestaltet und die Warteschlangen überspringt. Auf VibeGuide sehen Sie stets den genauen Preis, bevor Sie buchen, ohne versteckte Gebühren, und einer VibeSquad-Gruppentour beizutreten ist der wirtschaftlichste Weg, einen lizenzierten Guide zu haben. Es lohnt sich oft, für einen Guide dort zu zahlen, wo es am meisten zählt, wie in Ephesos."
+            ]
+          },
+          {
+            "heading": "Die großen Extras: der Ballon in Kappadokien und mehr",
+            "paragraphs": [
+              "Manche Erlebnisse liegen außerhalb eines normalen Tagesbudgets und sind eine Planung wert. Der <strong>Heißluftballon in Kappadokien</strong> ist der klassische Luxus — eine erhebliche einmalige Ausgabe, von den Ballonfirmen separat bepreist und ausgestellt, die mit Saison und Nachfrage steigt. Für die meisten Reisenden ist es ein einmaliges Highlight, das Geld wert; buchen Sie im Voraus, da die Flüge ausverkauft sind.",
+              "Weitere kostspieligere Extras sind Gület-Bootstouren an der Küste, ein Hammam-Erlebnis, Inlandsflüge zum Zeitsparen und besondere Tagesausflüge mit privatem Transport. Ein paar davon von Anfang an ins Budget einzurechnen, verhindert Überraschungen — und lässt Sie zu den Erlebnissen Ja sagen, die die Reise ausmachen."
+            ]
+          },
+          {
+            "heading": "Wie man in der Türkei Geld spart",
+            "paragraphs": [
+              "Die größten Ersparnisse ergeben sich aus dem <strong>Reisen in der Neben- oder Vorsaison</strong> (Frühling, Herbst oder Winter), wenn Hotels und Flüge weit günstiger sind als im Hochsommer. Dort zu essen, wo Einheimische essen, öffentliche Verkehrsmittel mit einer Verkehrskarte zu nutzen und Überlandreisen im Voraus zu buchen, strecken Ihr Budget alle erheblich.",
+              "Zahlen Sie in türkischer Lira, statt Kartenabbuchungen in Ihrer Heimatwährung zu akzeptieren, führen Sie etwas Bargeld für kleine Händler und Märkte mit und feilschen Sie höflich in den Basaren. Und denken Sie daran: Wert bedeutet nicht nur die günstigste Option — ein lizenzierter lokaler Guide für einen oder zwei wichtige Tage spart Ihnen oft Geld durch vermiedene Touristenfallen und verschwendete Zeit, während er die ganze Reise besser macht."
+            ]
+          }
+        ],
+        "faqHeading": "Häufig gestellte Fragen",
+        "faqs": [
+          {
+            "q": "Ist die Türkei ein teures Reiseland?",
+            "a": "Nein — die Türkei ist eines der preiswertesten großen Reiseziele, wobei Weltklasse-Sehenswürdigkeiten, Essen und Hotels typischerweise weit weniger kosten als in Westeuropa. Die Kosten steigen im Hochsommer an der Küste und für große Extras wie den Ballon in Kappadokien, doch insgesamt bietet sie auf jeder Budgetstufe ein starkes Preis-Leistungs-Verhältnis."
+          },
+          {
+            "q": "Wie viel Geld brauche ich pro Tag in der Türkei?",
+            "a": "Das hängt von Ihrem Stil ab. Budget-Reisende mit Hostels, Streetfood und öffentlichem Verkehr kommen mit einer bescheidenen Tagessumme aus; Mittelklasse-Reisende in guten Hotels mit gelegentlicher privater Tour brauchen merklich mehr; und Komfortreisende mit privaten Guides und Boutique-Aufenthalten noch einmal mehr, wenn auch oft weniger als vergleichbare westeuropäische Reisen."
+          },
+          {
+            "q": "Was kostet die Ballonfahrt in Kappadokien?",
+            "a": "Der Heißluftballon ist eine erhebliche einmalige Ausgabe, von den Ballonfirmen separat bepreist und ausgestellt, und er steigt mit Saison und Nachfrage. Er liegt außerhalb eines normalen Tagesbudgets, planen Sie ihn also ein und buchen Sie im Voraus, da beliebte Flüge zum Sonnenaufgang schnell ausverkauft sind."
+          },
+          {
+            "q": "Wann ist die günstigste Reisezeit für die Türkei?",
+            "a": "Der Winter (außer der Neujahrszeit) und die Nebensaisons Frühling und Herbst sind am günstigsten für Flüge und Hotels, deutlich unter dem Hochsommer-Höhepunkt an der Küste. Außerhalb der Saison zu reisen, ist der wirkungsvollste Einzelweg, die Kosten einer Türkei-Reise zu senken."
+          },
+          {
+            "q": "Wie kann ich beim Reisen in der Türkei Geld sparen?",
+            "a": "Reisen Sie in der Neben- oder Vorsaison, essen Sie dort, wo Einheimische essen, nutzen Sie eine Verkehrskarte für günstigen Stadtverkehr, buchen Sie Überlandbusse und Flüge im Voraus, zahlen Sie in türkischer Lira und feilschen Sie in den Basaren. Ein lizenzierter Guide für einen wichtigen Tag kann ebenfalls Geld sparen, indem er Ihnen hilft, Touristenfallen und verschwendete Zeit zu vermeiden."
+          }
+        ],
+        "relatedHeading": "Planen Sie Ihr Türkei-Budget",
+        "ctaTitle": "Gutes Preis-Leistungs-Verhältnis, geführt von Einheimischen",
+        "ctaSub": "Sehen Sie den genauen Preis, bevor Sie buchen, ohne versteckte Gebühren. Finden Sie lizenzierte Guides und Gruppentouren in der ganzen Türkei auf VibeGuide."
+      },
+      "es": {
+        "title": "¿Cuánto cuesta un viaje a Turquía? Una guía de presupuesto",
+        "metaTitle": "¿Cuánto cuesta un viaje a Turquía? — Guía de presupuesto",
+        "metaDescription": "¿Cuánto cuesta viajar por Turquía? Una guía práctica de costes diarios de alojamiento, comida, transporte, tours y el paseo en globo, para todos los presupuestos.",
+        "excerpt": "Turquía ofrece una gran relación calidad-precio, pero los costes varían mucho según la temporada y el estilo. Aquí tienes un desglose realista de presupuestos diarios, del mochilero al cómodo.",
+        "intro": [
+          "Turquía es uno de los grandes destinos con mejor relación calidad-precio de la región: lugares de talla mundial, comida excelente y hoteles cómodos suelen costar mucho menos que en Europa occidental. Pero «¿cuánto cuesta un viaje a Turquía?» no tiene una única respuesta: oscila mucho con la temporada, tu estilo de viaje y los grandes extras estrella como el globo de Capadocia.",
+          "Esta guía ofrece un <strong>desglose realista de los costes diarios</strong> —alojamiento, comida, transporte, visitas y tours— a través de tres presupuestos amplios, además de los grandes gastos puntuales que hay que prever. Los precios en Turquía cambian con la inflación y los tipos de cambio, así que tómalos como una orientación proporcional más que como cifras fijas, y comprueba siempre los precios vigentes antes de reservar."
+        ],
+        "sections": [
+          {
+            "heading": "Tres presupuestos diarios: qué esperar",
+            "paragraphs": [
+              "A grandes rasgos, un <strong>viajero de presupuesto ajustado</strong> que se aloja en albergues o pensiones sencillas, come comida callejera y en lokantas y usa el transporte público puede viajar cómodamente con una suma diaria modesta. Un <strong>viajero de gama media</strong> en un buen hotel de tres o cuatro estrellas, que come en restaurantes en condiciones y hace algún tour privado ocasional, debería presupuestar bastante más al día.",
+              "Un <strong>viajero de confort o de lujo</strong> en hoteles boutique y suites-cueva, con guías privados y traslados durante todo el viaje, gastará aún más, pero a menudo sigue siendo menos que un viaje equivalente en Europa occidental. La cuestión es que Turquía se adapta de maravilla: es realmente gratificante con un presupuesto ajustado y una auténtica ganga en la gama alta."
+            ]
+          },
+          {
+            "heading": "Alojamiento, comida y transporte",
+            "paragraphs": [
+              "El <strong>alojamiento</strong> es donde brilla Turquía. Los albergues y las pensiones sencillas son baratos, los hoteles de gama media ofrecen una gran relación calidad-precio, e incluso los famosos hoteles-cueva de Capadocia resultan asequibles frente al lujo de otros lugares. Los precios se disparan en pleno verano en la costa y en torno al Año Nuevo, así que reserva con antelación para esas fechas.",
+              "La <strong>comida</strong> puede costar muy poco si comes como un local —un simit y té para desayunar, un almuerzo en una lokanta, tentempiés callejeros— o más en los restaurantes orientados al turista junto a los grandes monumentos. El <strong>transporte</strong> es una ganga: los tranvías, ferris y autobuses urbanos son baratos con una tarjeta de transporte, y los autocares interurbanos de larga distancia y los vuelos nacionales (de Estambul a Capadocia o a la costa) son muy razonables si se reservan con antelación."
+            ]
+          },
+          {
+            "heading": "Visitas, tours y guías",
+            "paragraphs": [
+              "Las entradas a los grandes lugares —Santa Sofía es gratuita, mientras que Topkapí, Éfeso y otros cobran— se suman a lo largo del viaje, y un <strong>Museum Pass</strong> puede ahorrar dinero si visitas muchos sitios estatales. Presupuéstalos al planificar tus días.",
+              "Los <strong>tours guiados</strong> varían mucho: un gran tour de grupo en autocar es lo más barato por cabeza, mientras que un guía privado titulado cuesta más pero moldea todo el día en torno a ti y se salta las colas. En VibeGuide siempre ves el precio exacto antes de reservar, sin cargos ocultos, y unirte a un tour de grupo VibeSquad es la forma más económica de contar con un guía titulado. A menudo vale la pena pagar por un guía en los sitios donde más importa, como Éfeso."
+            ]
+          },
+          {
+            "heading": "Los grandes extras: el globo de Capadocia y más",
+            "paragraphs": [
+              "Algunas experiencias quedan fuera de un presupuesto diario normal y conviene preverlas. El <strong>globo aerostático de Capadocia</strong> es el capricho clásico: un coste puntual importante, con precio y billete aparte que fijan las empresas de globos, que sube con la temporada y la demanda. Para la mayoría de los viajeros es un momento único en la vida que vale su precio; reserva con antelación, porque los vuelos se agotan.",
+              "Otros extras de mayor coste incluyen cruceros en goleta por la costa, una experiencia de hammam, vuelos nacionales para ahorrar tiempo y excursiones especiales de un día con transporte privado. Incluir algunos de estos en tu presupuesto desde el principio evita sorpresas, y te permite decir que sí a las experiencias que hacen el viaje."
+            ]
+          },
+          {
+            "heading": "Cómo ahorrar dinero en Turquía",
+            "paragraphs": [
+              "El mayor ahorro viene de <strong>viajar en temporada media o baja</strong> (primavera, otoño o invierno), cuando los hoteles y vuelos son mucho más baratos que en pleno verano. Comer donde comen los locales, usar el transporte público con una tarjeta y reservar los desplazamientos interurbanos con antelación estiran tu presupuesto de forma notable.",
+              "Paga en liras turcas en lugar de aceptar cargos con tarjeta en tu moneda de origen, lleva algo de efectivo para pequeños vendedores y mercados, y regatea con educación en los bazares. Y recuerda que el valor no es solo la opción más barata: un guía local titulado para uno o dos días clave a menudo te ahorra dinero al evitar trampas turísticas y tiempo perdido, además de mejorar todo el viaje."
+            ]
+          }
+        ],
+        "faqHeading": "Preguntas frecuentes",
+        "faqs": [
+          {
+            "q": "¿Es Turquía un país caro para visitar?",
+            "a": "No: Turquía es uno de los grandes destinos con mejor relación calidad-precio, con lugares, comida y hoteles de talla mundial que suelen costar mucho menos que en Europa occidental. Los costes suben en pleno verano en la costa y para los extras estrella como el globo de Capadocia, pero en conjunto ofrece un gran valor en cualquier nivel de presupuesto."
+          },
+          {
+            "q": "¿Cuánto dinero necesito al día en Turquía?",
+            "a": "Depende de tu estilo. Los viajeros de presupuesto ajustado con albergues, comida callejera y transporte público pueden viajar con una suma diaria modesta; los de gama media en buenos hoteles con algún tour privado necesitan bastante más; y los de confort con guías privados y estancias boutique aún más, aunque a menudo sigue siendo menos que viajes equivalentes en Europa occidental."
+          },
+          {
+            "q": "¿Cuánto cuesta el paseo en globo de Capadocia?",
+            "a": "El globo aerostático es un gasto puntual importante, con precio y billete aparte que fijan las empresas de globos, y sube con la temporada y la demanda. Queda fuera de un presupuesto diario normal, así que prevélo y reserva con antelación, ya que los populares vuelos al amanecer se agotan enseguida."
+          },
+          {
+            "q": "¿Cuál es la época más barata para viajar a Turquía?",
+            "a": "El invierno (excepto el periodo de Año Nuevo) y las temporadas medias de primavera y otoño son las más baratas para vuelos y hoteles, muy por debajo del pico costero de pleno verano. Viajar fuera de temporada es la mayor forma de recortar el coste de un viaje a Turquía."
+          },
+          {
+            "q": "¿Cómo puedo ahorrar dinero al viajar por Turquía?",
+            "a": "Viaja en temporada media o baja, come donde comen los locales, usa una tarjeta de transporte para el barato transporte urbano, reserva autocares interurbanos y vuelos con antelación, paga en liras turcas y regatea en los bazares. Un guía titulado para un día clave también puede ahorrar dinero al ayudarte a evitar trampas turísticas y tiempo perdido."
+          }
+        ],
+        "relatedHeading": "Planifica tu presupuesto para Turquía",
+        "ctaTitle": "Gran valor, guiado por locales",
+        "ctaSub": "Ve el precio exacto antes de reservar, sin cargos ocultos. Encuentra guías titulados y tours de grupo por toda Turquía en VibeGuide."
+      },
+      "fr": {
+        "title": "Combien coûte un voyage en Turquie ? Un guide budget",
+        "metaTitle": "Combien coûte un voyage en Turquie ? — Guide budget",
+        "metaDescription": "Combien coûte un voyage en Turquie ? Un guide budget pratique des coûts quotidiens : hébergement, repas, transport, visites et vol en montgolfière — pour tous les budgets.",
+        "excerpt": "La Turquie offre un excellent rapport qualité-prix, mais les coûts varient beaucoup selon la saison et le style. Voici une ventilation réaliste des budgets quotidiens, du routard au confortable.",
+        "intro": [
+          "La Turquie est l'une des grandes destinations offrant le meilleur rapport qualité-prix de la région : des sites de classe mondiale, une cuisine superbe et des hôtels confortables coûtent souvent bien moins qu'en Europe de l'Ouest. Mais «combien coûte un voyage en Turquie ?» n'a pas de réponse unique — cela varie beaucoup selon la saison, votre style de voyage et les grands extras phares comme la montgolfière de Cappadoce.",
+          "Ce guide propose une <strong>ventilation réaliste des coûts quotidiens</strong> — hébergement, repas, transport, visites et circuits — sur trois grands budgets, ainsi que les grandes dépenses ponctuelles à prévoir. Les prix en Turquie évoluent avec l'inflation et les taux de change : considérez-les donc comme une indication proportionnelle plutôt que comme des chiffres fixes, et vérifiez toujours les prix en vigueur avant de réserver."
+        ],
+        "sections": [
+          {
+            "heading": "Trois budgets quotidiens : à quoi s'attendre",
+            "paragraphs": [
+              "En gros, un <strong>voyageur à petit budget</strong> logeant en auberges ou pensions simples, mangeant street food et lokantas et prenant les transports en commun peut voyager confortablement avec une somme quotidienne modeste. Un <strong>voyageur de milieu de gamme</strong> dans un bon hôtel trois ou quatre étoiles, mangeant dans de vrais restaurants et s'offrant l'occasionnel circuit privé, devrait prévoir sensiblement plus par jour.",
+              "Un <strong>voyageur confort ou luxe</strong> en hôtels de charme et suites troglodytes, avec guides privés et transferts tout au long, dépensera encore davantage — mais souvent toujours moins qu'un voyage équivalent en Europe de l'Ouest. L'idée, c'est que la Turquie s'adapte merveilleusement : elle est vraiment gratifiante avec un budget serré et une véritable aubaine dans le haut de gamme."
+            ]
+          },
+          {
+            "heading": "Hébergement, repas et transport",
+            "paragraphs": [
+              "L'<strong>hébergement</strong> est le point fort de la Turquie. Auberges et pensions simples sont bon marché, les hôtels de milieu de gamme offrent un excellent rapport qualité-prix, et même les célèbres hôtels troglodytes de Cappadoce restent abordables comparés au luxe ailleurs. Les prix flambent en plein été sur la côte et autour du Nouvel An : réservez à l'avance pour ces périodes.",
+              "Les <strong>repas</strong> peuvent coûter très peu si vous mangez comme un local — un simit et un thé au petit-déjeuner, un déjeuner en lokanta, des en-cas de rue — ou davantage dans les restaurants tournés vers les touristes près des grands sites. Le <strong>transport</strong> est une aubaine : tramways, ferries et bus urbains sont bon marché avec une carte de transport, et les autocars interurbains longue distance et les vols intérieurs (d'Istanbul à la Cappadoce ou à la côte) sont très raisonnables réservés à l'avance."
+            ]
+          },
+          {
+            "heading": "Visites, circuits et guides",
+            "paragraphs": [
+              "Les droits d'entrée des grands sites — Sainte-Sophie est gratuite, tandis que Topkapı, Éphèse et d'autres sont payants — s'additionnent au fil d'un voyage, et un <strong>Museum Pass</strong> peut faire économiser si vous visitez de nombreux sites publics. Prévoyez-les au budget en planifiant vos journées.",
+              "Les <strong>visites guidées</strong> varient beaucoup : un grand circuit de groupe en autocar est le moins cher par personne, tandis qu'un guide privé agréé coûte plus mais façonne toute la journée autour de vous et évite les files. Sur VibeGuide, vous voyez toujours le prix exact avant de réserver, sans frais cachés, et rejoindre un circuit de groupe VibeSquad est la façon la plus économique d'avoir un guide agréé. Il vaut souvent la peine de payer un guide là où cela compte le plus, comme à Éphèse."
+            ]
+          },
+          {
+            "heading": "Les grands extras : la montgolfière de Cappadoce et plus",
+            "paragraphs": [
+              "Certaines expériences sortent d'un budget quotidien normal et méritent d'être prévues. La <strong>montgolfière de Cappadoce</strong> est la folie classique — un coût ponctuel important, tarifé et billeté séparément par les compagnies de montgolfières, qui grimpe avec la saison et la demande. Pour la plupart des voyageurs, c'est un moment unique dans une vie qui vaut son prix ; réservez à l'avance car les vols se remplissent vite.",
+              "Parmi les autres extras plus coûteux figurent les croisières en goélette sur la côte, une expérience de hammam, les vols intérieurs pour gagner du temps, et les excursions spéciales d'une journée avec transport privé. Intégrer quelques-uns de ces postes à votre budget dès le départ évite les surprises — et vous permet de dire oui aux expériences qui font le voyage."
+            ]
+          },
+          {
+            "heading": "Comment économiser en Turquie",
+            "paragraphs": [
+              "Les plus grosses économies viennent d'un <strong>voyage en moyenne ou basse saison</strong> (printemps, automne ou hiver), lorsque hôtels et vols sont bien moins chers qu'en plein été. Manger là où mangent les locaux, prendre les transports en commun avec une carte, et réserver les trajets interurbains à l'avance étirent tous nettement votre budget.",
+              "Payez en livres turques plutôt que d'accepter des frais de carte dans votre devise d'origine, gardez un peu d'espèces pour les petits vendeurs et les marchés, et marchandez poliment dans les bazars. Et rappelez-vous que la valeur ne se résume pas à l'option la moins chère — un guide local agréé pour un ou deux jours clés vous fait souvent économiser en évitant pièges à touristes et temps perdu, tout en rendant l'ensemble du voyage meilleur."
+            ]
+          }
+        ],
+        "faqHeading": "Questions fréquentes",
+        "faqs": [
+          {
+            "q": "La Turquie est-elle un pays cher à visiter ?",
+            "a": "Non — la Turquie est l'une des grandes destinations offrant le meilleur rapport qualité-prix, avec des sites, une cuisine et des hôtels de classe mondiale coûtant généralement bien moins qu'en Europe de l'Ouest. Les coûts augmentent en plein été sur la côte et pour les extras phares comme la montgolfière de Cappadoce, mais dans l'ensemble elle offre un excellent rapport qualité-prix à tous les niveaux de budget."
+          },
+          {
+            "q": "De combien d'argent ai-je besoin par jour en Turquie ?",
+            "a": "Cela dépend de votre style. Les voyageurs à petit budget en auberges, street food et transports en commun peuvent voyager avec une somme quotidienne modeste ; ceux de milieu de gamme dans de bons hôtels avec l'occasionnel circuit privé ont besoin de sensiblement plus ; et les voyageurs confort avec guides privés et séjours de charme encore davantage, bien que ce soit souvent toujours moins que des voyages équivalents en Europe de l'Ouest."
+          },
+          {
+            "q": "Combien coûte le vol en montgolfière de Cappadoce ?",
+            "a": "La montgolfière est une dépense ponctuelle importante, tarifée et billetée séparément par les compagnies de montgolfières, et elle grimpe avec la saison et la demande. Elle sort d'un budget quotidien normal : prévoyez-la et réservez à l'avance, car les vols au lever du soleil, très prisés, se remplissent vite."
+          },
+          {
+            "q": "Quelle est la période la moins chère pour voyager en Turquie ?",
+            "a": "L'hiver (hors période du Nouvel An) et les moyennes saisons du printemps et de l'automne sont les moins chers pour les vols et les hôtels, bien en dessous du pic côtier de plein été. Voyager hors saison est le meilleur moyen de réduire le coût d'un voyage en Turquie."
+          },
+          {
+            "q": "Comment économiser en voyageant en Turquie ?",
+            "a": "Voyagez en moyenne ou basse saison, mangez là où mangent les locaux, utilisez une carte de transport pour les déplacements urbains bon marché, réservez autocars interurbains et vols à l'avance, payez en livres turques et marchandez dans les bazars. Un guide agréé pour un jour clé peut aussi faire économiser en vous aidant à éviter pièges à touristes et temps perdu."
+          }
+        ],
+        "relatedHeading": "Planifiez votre budget Turquie",
+        "ctaTitle": "Un excellent rapport qualité-prix, guidé par des locaux",
+        "ctaSub": "Voyez le prix exact avant de réserver, sans frais cachés. Trouvez des guides agréés et des circuits de groupe partout en Turquie sur VibeGuide."
+      },
+      "it": {
+        "title": "Quanto costa un viaggio in Turchia? Una guida al budget",
+        "metaTitle": "Quanto costa un viaggio in Turchia? — Guida al budget",
+        "metaDescription": "Quanto costa viaggiare in Turchia? Una guida pratica ai costi giornalieri per alloggio, cibo, trasporti, tour e il volo in mongolfiera — per ogni budget.",
+        "excerpt": "La Turchia offre un ottimo rapporto qualità-prezzo — ma i costi variano molto per stagione e stile. Ecco una ripartizione realistica dei budget giornalieri, dal backpacker al comfort.",
+        "intro": [
+          "La Turchia è una delle grandi destinazioni con il miglior rapporto qualità-prezzo della regione: luoghi di livello mondiale, cibo superbo e hotel confortevoli costano spesso molto meno che nell'Europa occidentale. Ma «quanto costa un viaggio in Turchia?» non ha una risposta unica — oscilla molto con la stagione, il tuo stile di viaggio e i grandi extra come la mongolfiera in Cappadocia.",
+          "Questa guida offre una <strong>ripartizione realistica dei costi giornalieri</strong> — alloggio, cibo, trasporti, visite e tour — su tre ampi budget, oltre alle grandi spese una tantum da mettere in conto. I prezzi in Turchia cambiano con l'inflazione e i tassi di cambio, quindi trattali come indicazioni proporzionali più che cifre fisse, e controlla sempre i prezzi attuali prima di prenotare."
+        ],
+        "sections": [
+          {
+            "heading": "Tre budget giornalieri: cosa aspettarsi",
+            "paragraphs": [
+              "Come indicazione di massima, un <strong>viaggiatore economico</strong> che alloggia in ostelli o semplici pensioni, mangia street food e lokanta, e usa i mezzi pubblici può viaggiare comodamente con una modesta somma giornaliera. Un <strong>viaggiatore di fascia media</strong> in un buon hotel a tre o quattro stelle, che mangia in ristoranti veri e fa qualche tour privato, dovrebbe mettere in conto sensibilmente di più al giorno.",
+              "Un <strong>viaggiatore comfort o lusso</strong> in hotel boutique e cave suite, con guide private e transfer per tutto il viaggio, spenderà di più ancora — ma spesso comunque meno di un viaggio equivalente nell'Europa occidentale. Il punto è che la Turchia si adatta magnificamente: è genuinamente appagante con un budget ristretto e un vero affare nella fascia alta."
+            ]
+          },
+          {
+            "heading": "Alloggio, cibo e trasporti",
+            "paragraphs": [
+              "L'<strong>alloggio</strong> è dove la Turchia brilla. Ostelli e semplici pensioni sono economici, gli hotel di fascia media offrono un ottimo rapporto qualità-prezzo, e persino i famosi cave hotel della Cappadocia sono accessibili rispetto al lusso altrove. I prezzi salgono in piena estate sulla costa e attorno al Capodanno, quindi prenota in anticipo per quei periodi.",
+              "Il <strong>cibo</strong> può costare pochissimo se mangi da locale — un simit e un tè a colazione, un pranzo in lokanta, spuntini di street food — o di più nei ristoranti rivolti ai turisti vicino ai grandi monumenti. I <strong>trasporti</strong> sono un affare: tram, traghetti e autobus cittadini sono economici con una tessera di trasporto, e i pullman intercity a lunga percorrenza e i voli interni (da Istanbul alla Cappadocia o alla costa) sono molto convenienti se prenotati in anticipo."
+            ]
+          },
+          {
+            "heading": "Visite, tour e guide",
+            "paragraphs": [
+              "Le tariffe d'ingresso per i grandi monumenti — la Santa Sofia è gratuita, mentre Topkapı, Efeso e altri fanno pagare — si sommano nel corso di un viaggio, e un <strong>Museum Pass</strong> può far risparmiare se visiti molti siti statali. Mettili in conto quando pianifichi le giornate.",
+              "I <strong>tour guidati</strong> variano molto: un grande tour di gruppo in pullman è il più economico a testa, mentre una guida privata abilitata costa di più ma modella l'intera giornata su di te e salta le code. Su VibeGuide vedi sempre il prezzo esatto prima di prenotare, senza costi nascosti, e unirsi a un tour di gruppo VibeSquad è il modo più economico per avere una guida abilitata. Spesso vale la pena pagare per una guida nei siti dove conta di più, come Efeso."
+            ]
+          },
+          {
+            "heading": "I grandi extra: la mongolfiera in Cappadocia e altro",
+            "paragraphs": [
+              "Alcune esperienze stanno fuori da un normale budget giornaliero e vale la pena metterle in conto. La <strong>mongolfiera in Cappadocia</strong> è lo sfizio classico — un costo una tantum significativo, con prezzo e biglietto separati dalle compagnie di mongolfiere, che sale con la stagione e la domanda. Per la maggior parte dei viaggiatori è un'esperienza irripetibile che vale i soldi; prenota in anticipo perché i voli si esauriscono.",
+              "Altri extra più costosi includono le crociere in caicco gület sulla costa, un'esperienza in hammam, i voli interni per risparmiare tempo, e le gite speciali con trasporto privato. Mettere in conto alcuni di questi fin da subito previene le sorprese — e ti permette di dire sì alle esperienze che rendono il viaggio."
+            ]
+          },
+          {
+            "heading": "Come risparmiare in Turchia",
+            "paragraphs": [
+              "I maggiori risparmi vengono dal <strong>viaggiare in bassa o media stagione</strong> (primavera, autunno o inverno), quando hotel e voli sono molto più economici che in piena estate. Mangiare dove mangiano i locali, usare i mezzi pubblici con una tessera di trasporto, e prenotare in anticipo i viaggi intercity allungano tutti sensibilmente il budget.",
+              "Paga in lire turche invece di accettare gli addebiti sulla carta nella tua valuta, porta un po' di contanti per piccoli venditori e mercati, e contratta con garbo nei bazar. E ricorda che il valore non riguarda solo l'opzione più economica — una guida locale abilitata per una o due giornate chiave spesso ti fa risparmiare su trappole per turisti evitate e tempo sprecato, migliorando l'intero viaggio."
+            ]
+          }
+        ],
+        "faqHeading": "Domande frequenti",
+        "faqs": [
+          {
+            "q": "La Turchia è un paese costoso da visitare?",
+            "a": "No — la Turchia è una delle grandi destinazioni con il miglior rapporto qualità-prezzo, con luoghi, cibo e hotel di livello mondiale che di solito costano molto meno che nell'Europa occidentale. I costi salgono in piena estate sulla costa e per i grandi extra come la mongolfiera in Cappadocia, ma nel complesso offre un ottimo valore a ogni livello di budget."
+          },
+          {
+            "q": "Quanti soldi mi servono al giorno in Turchia?",
+            "a": "Dipende dal tuo stile. I viaggiatori economici che usano ostelli, street food e mezzi pubblici possono viaggiare con una modesta somma giornaliera; i viaggiatori di fascia media in buoni hotel con qualche tour privato hanno bisogno di sensibilmente di più; e i viaggiatori comfort con guide private e soggiorni boutique di più ancora, anche se spesso comunque meno di viaggi equivalenti nell'Europa occidentale."
+          },
+          {
+            "q": "Quanto costa il volo in mongolfiera in Cappadocia?",
+            "a": "La mongolfiera è una spesa una tantum significativa, con prezzo e biglietto separati dalle compagnie di mongolfiere, e sale con la stagione e la domanda. Sta fuori da un normale budget giornaliero, quindi mettila in conto e prenota in anticipo, perché i popolari voli all'alba si esauriscono in fretta."
+          },
+          {
+            "q": "Qual è il periodo più economico per viaggiare in Turchia?",
+            "a": "L'inverno (escluso il periodo di Capodanno) e le mezze stagioni di primavera e autunno sono i più economici per voli e hotel, ben al di sotto del picco costiero di piena estate. Viaggiare fuori stagione è il modo più efficace in assoluto per tagliare il costo di un viaggio in Turchia."
+          },
+          {
+            "q": "Come posso risparmiare viaggiando in Turchia?",
+            "a": "Viaggia in bassa o media stagione, mangia dove mangiano i locali, usa una tessera di trasporto per i mezzi cittadini economici, prenota in anticipo pullman intercity e voli, paga in lire turche, e contratta nei bazar. Anche una guida abilitata per una giornata chiave può far risparmiare aiutandoti a evitare trappole per turisti e tempo sprecato."
+          }
+        ],
+        "relatedHeading": "Pianifica il budget del tuo viaggio in Turchia",
+        "ctaTitle": "Ottimo valore, guidato dai locali",
+        "ctaSub": "Vedi il prezzo esatto prima di prenotare, senza costi nascosti. Trova guide abilitate e tour di gruppo in tutta la Turchia su VibeGuide."
+      },
+      "ar": {
+        "title": "كم تكلّف رحلة إلى تركيا؟ دليل الميزانية",
+        "metaTitle": "كم تكلّف رحلة إلى تركيا؟ — دليل الميزانية",
+        "metaDescription": "كم يكلّف السفر في تركيا؟ دليل عملي للتكاليف اليومية للإقامة والطعام والنقل والجولات ورحلة المنطاد — لكل ميزانية.",
+        "excerpt": "تقدّم تركيا قيمة كبيرة مقابل المال — لكن التكاليف تتفاوت كثيراً حسب الموسم والأسلوب. إليك تفصيلاً واقعياً للميزانيات اليومية، من الرحّالة المقتصد إلى المسافر المرتاح.",
+        "intro": [
+          "تركيا من أفضل الوجهات الكبرى قيمةً في المنطقة: معالم عالمية المستوى، وطعام رائع، وفنادق مريحة غالباً بتكلفة أقل بكثير من غرب أوروبا. لكن سؤال «كم تكلّف رحلة إلى تركيا؟» ليس له جواب واحد — فهو يتأرجح كثيراً مع الموسم وأسلوب سفرك والإضافات البارزة مثل منطاد كابادوكيا.",
+          "يقدّم هذا الدليل <strong>تفصيلاً واقعياً للتكاليف اليومية</strong> — الإقامة والطعام والنقل والمعالم والجولات — عبر ثلاث ميزانيات عامة، إضافةً إلى النفقات الكبيرة لمرة واحدة التي يجب التخطيط لها. تتغيّر الأسعار في تركيا مع التضخم وأسعار الصرف، فتعامل معها كإرشاد نسبي لا كأرقام ثابتة، وتحقّق دائماً من الأسعار الحالية قبل الحجز."
+        ],
+        "sections": [
+          {
+            "heading": "ثلاث ميزانيات يومية: ماذا تتوقّع",
+            "paragraphs": [
+              "كإرشاد تقريبي، يستطيع <strong>الرحّالة المقتصد</strong> المقيم في بيوت الشباب أو النُزُل البسيطة، الذي يأكل طعام الشارع واللوكانتات ويستخدم النقل العام، أن يسافر بارتياح بمبلغ يومي متواضع. أما <strong>المسافر متوسط الفئة</strong> في فندق جيد من ثلاث أو أربع نجوم، الذي يأكل في مطاعم حقيقية ويأخذ جولة خاصة بين حين وآخر، فعليه أن يرصد أكثر بوضوح لليوم.",
+              "أما <strong>مسافر الراحة أو الفخامة</strong> في فنادق بوتيك وأجنحة الكهوف، مع مرشدين خاصين ونقل طوال الوقت، فسينفق أكثر مجدداً — لكن غالباً أقل من رحلة مماثلة في غرب أوروبا. الفكرة أن تركيا تتدرّج ببراعة: مجزية حقاً بميزانية ضيّقة وصفقة رابحة في الفئة العليا."
+            ]
+          },
+          {
+            "heading": "الإقامة والطعام والنقل",
+            "paragraphs": [
+              "<strong>الإقامة</strong> هي حيث تتألّق تركيا. بيوت الشباب والنُزُل البسيطة رخيصة، والفنادق متوسطة الفئة تقدّم قيمة قوية، وحتى فنادق الكهوف الشهيرة في كابادوكيا معقولة مقارنةً بالفخامة في أماكن أخرى. ترتفع الأسعار في ذروة الصيف على الساحل وحول رأس السنة، فاحجز مسبقاً لتلك الفترات.",
+              "<strong>الطعام</strong> قد يكلّف القليل جداً إن أكلت كأهل البلد — سميت وشاي للفطور، وغداء لوكانتا، ووجبات شارع خفيفة — أو أكثر في المطاعم الموجّهة للسياح قرب المعالم الكبرى. <strong>النقل</strong> صفقة رابحة: الترام والعبّارات والحافلات في المدن رخيصة ببطاقة نقل، والحافلات بين المدن والرحلات الداخلية (من إسطنبول إلى كابادوكيا أو الساحل) معقولة جداً إن حُجزت مسبقاً."
+            ]
+          },
+          {
+            "heading": "المعالم والجولات والمرشدون",
+            "paragraphs": [
+              "رسوم دخول المعالم الكبرى — آيا صوفيا مجانية، بينما توبكابي وأفسس وغيرها تفرض رسوماً — تتراكم عبر الرحلة، ويمكن لـ<strong>Museum Pass</strong> أن يوفّر المال إن كنت تزور كثيراً من المواقع الحكومية. ارصد لهذه عند تخطيط أيامك.",
+              "<strong>الجولات المرشدة</strong> تتفاوت كثيراً: جولة حافلة كبيرة هي الأرخص للفرد، بينما مرشد خاص مرخّص يكلّف أكثر لكنه يصوغ اليوم كله حولك ويتخطّى الطوابير. على VibeGuide ترى دائماً السعر الدقيق قبل الحجز، دون رسوم خفية، والانضمام إلى جولة جماعية VibeSquad هو الطريقة الأكثر اقتصاداً للحصول على مرشد مرخّص. وغالباً يستحق الدفع لمرشد في المواقع التي يهم فيها أكثر، مثل أفسس."
+            ]
+          },
+          {
+            "heading": "الإضافات الكبرى: منطاد كابادوكيا والمزيد",
+            "paragraphs": [
+              "بعض التجارب تقع خارج الميزانية اليومية العادية وتستحق التخطيط لها. <strong>منطاد كابادوكيا للهواء الساخن</strong> هو الترف الكلاسيكي — تكلفة كبيرة لمرة واحدة، تسعّرها وتصدر تذاكرها شركات المناطيد بشكل منفصل، وترتفع مع الموسم والطلب. لمعظم المسافرين هو ذروة العمر تستحق المال؛ احجز مسبقاً فالرحلات تنفد.",
+              "من الإضافات الأكبر الأخرى رحلات قوارب الغولِت على الساحل، وتجربة حمّام، ورحلات داخلية لتوفير الوقت، ورحلات يومية خاصة بنقل خاص. إدراج بعضها في ميزانيتك مسبقاً يمنع المفاجآت — ويتيح لك أن تقول نعم للتجارب التي تصنع الرحلة."
+            ]
+          },
+          {
+            "heading": "كيف توفّر المال في تركيا",
+            "paragraphs": [
+              "أكبر التوفيرات تأتي من <strong>السفر في الموسم الكتفي أو المنخفض</strong> (الربيع أو الخريف أو الشتاء)، حين تكون الفنادق والرحلات أرخص بكثير من ذروة الصيف. الأكل حيث يأكل أهل البلد، واستخدام النقل العام ببطاقة، وحجز السفر بين المدن مسبقاً — كلها تمدّ ميزانيتك بشكل كبير.",
+              "ادفع بالليرة التركية بدل قبول رسوم البطاقة بعملتك المحلية، واحمل بعض النقد للباعة الصغار والأسواق، وساوم بأدب في البازارات. وتذكّر أن القيمة ليست فقط في الخيار الأرخص — فمرشد محلي مرخّص ليوم أو يومين رئيسيين غالباً يوفّر عليك المال بتجنّب مصائد السياح والوقت الضائع، بينما يجعل الرحلة كلها أفضل."
+            ]
+          }
+        ],
+        "faqHeading": "الأسئلة الشائعة",
+        "faqs": [
+          {
+            "q": "هل تركيا بلد مكلّف للزيارة؟",
+            "a": "لا — تركيا من أفضل الوجهات الكبرى قيمةً، بمعالم وطعام وفنادق عالمية المستوى تكلّف عادةً أقل بكثير من غرب أوروبا. ترتفع التكاليف في ذروة الصيف على الساحل ومع إضافات بارزة مثل منطاد كابادوكيا، لكنها إجمالاً تقدّم قيمة قوية عند كل مستوى ميزانية."
+          },
+          {
+            "q": "كم من المال أحتاج يومياً في تركيا؟",
+            "a": "يعتمد على أسلوبك. يستطيع الرحّالة المقتصد ببيوت الشباب وطعام الشارع والنقل العام السفر بمبلغ يومي متواضع؛ ويحتاج المسافر متوسط الفئة في فنادق جيدة مع جولة خاصة أحياناً إلى أكثر بوضوح؛ ومسافر الراحة بمرشدين خاصين وإقامات بوتيك أكثر مجدداً، وإن كان غالباً أقل من رحلات غرب أوروبا المماثلة."
+          },
+          {
+            "q": "كم تكلّف رحلة منطاد كابادوكيا؟",
+            "a": "منطاد الهواء الساخن نفقة كبيرة لمرة واحدة، تسعّرها وتصدر تذاكرها شركات المناطيد بشكل منفصل، وترتفع مع الموسم والطلب. تقع خارج الميزانية اليومية العادية، فخطّط لها واحجز مسبقاً، فرحلات الشروق الشهيرة تنفد بسرعة."
+          },
+          {
+            "q": "ما أرخص وقت للسفر في تركيا؟",
+            "a": "الشتاء (باستثناء فترة رأس السنة) والموسمان الكتفيان في الربيع والخريف هما الأرخص للرحلات والفنادق، أدنى بكثير من ذروة الصيف الساحلية. السفر خارج الموسم هو أكبر طريقة منفردة لخفض تكلفة رحلة تركيا."
+          },
+          {
+            "q": "كيف أوفّر المال عند السفر في تركيا؟",
+            "a": "سافر في الموسم الكتفي أو المنخفض، وكُل حيث يأكل أهل البلد، واستخدم بطاقة نقل للتنقّل الرخيص في المدن، واحجز الحافلات بين المدن والرحلات مسبقاً، وادفع بالليرة التركية، وساوم في البازارات. مرشد مرخّص ليوم رئيسي يمكن أيضاً أن يوفّر المال بمساعدتك على تجنّب مصائد السياح والوقت الضائع."
+          }
+        ],
+        "relatedHeading": "خطّط لميزانية رحلتك إلى تركيا",
+        "ctaTitle": "قيمة رائعة، بإرشاد محليين",
+        "ctaSub": "شاهد السعر الدقيق قبل الحجز، دون رسوم خفية. اعثر على مرشدين مرخّصين وجولات جماعية في جميع أنحاء تركيا على VibeGuide."
+      },
+      "ru": {
+        "title": "Сколько стоит поездка в Турцию? Гид по бюджету",
+        "metaTitle": "Сколько стоит поездка в Турцию? — Гид по бюджету",
+        "metaDescription": "Сколько стоит путешествие по Турции? Практический гид по ежедневным расходам на жильё, еду, транспорт, туры и полёт на шаре — для любого бюджета.",
+        "excerpt": "Турция даёт отличное соотношение цены и качества — но расходы сильно зависят от сезона и стиля. Вот реалистичная раскладка дневных бюджетов, от бэкпекера до комфорта.",
+        "intro": [
+          "Турция — одно из лучших по соотношению цены и качества крупных направлений региона: достопримечательности мирового уровня, превосходная еда и комфортные отели часто стоят гораздо меньше, чем в Западной Европе. Но у вопроса «сколько стоит поездка в Турцию?» нет одного ответа — он сильно колеблется с сезоном, вашим стилем поездки и крупными расходами вроде полёта на шаре в Каппадокии.",
+          "Этот гид даёт <strong>реалистичную раскладку дневных расходов</strong> — жильё, еда, транспорт, осмотр и туры — по трём широким бюджетам, плюс крупные разовые траты, которые стоит запланировать. Цены в Турции меняются с инфляцией и курсами валют, поэтому воспринимайте их как пропорциональный ориентир, а не фиксированные цифры, и всегда проверяйте актуальные цены перед бронированием."
+        ],
+        "sections": [
+          {
+            "heading": "Три дневных бюджета: чего ожидать",
+            "paragraphs": [
+              "Грубо говоря, <strong>бюджетный путешественник</strong>, живущий в хостелах или простых гостевых домах, питающийся уличной едой и в локантах и пользующийся общественным транспортом, может комфортно путешествовать на скромную дневную сумму. <strong>Путешественнику среднего уровня</strong> в хорошем трёх- или четырёхзвёздочном отеле, питающемуся в настоящих ресторанах и берущему изредка частный тур, стоит закладывать заметно больше в день.",
+              "<strong>Путешественник комфорт- или люкс-класса</strong> в бутик-отелях и пещерных сьютах, с частными гидами и трансферами на протяжении поездки, потратит ещё больше — но всё равно часто меньше, чем на эквивалентную поездку в Западной Европе. Суть в том, что Турция прекрасно масштабируется: она по-настоящему благодарна при скромном бюджете и настоящая выгода в верхнем сегменте."
+            ]
+          },
+          {
+            "heading": "Жильё, еда и транспорт",
+            "paragraphs": [
+              "<strong>Жильё</strong> — там, где Турция блистает. Хостелы и простые гостевые дома дёшевы, отели среднего уровня дают отличное соотношение цены и качества, и даже знаменитые пещерные отели Каппадокии доступны по сравнению с люксом в других местах. Цены взлетают в разгар лета на побережье и вокруг Нового года, поэтому бронируйте заранее на эти периоды.",
+              "<strong>Еда</strong> может стоить совсем немного, если есть по-местному — симит и чай на завтрак, обед в локанте, уличные закуски — или дороже в ориентированных на туристов ресторанах у крупных достопримечательностей. <strong>Транспорт</strong> — выгода: городские трамваи, паромы и автобусы дёшевы с транспортной картой, а междугородние автобусы дальнего следования и внутренние рейсы (из Стамбула в Каппадокию или на побережье) очень разумны при заблаговременном бронировании."
+            ]
+          },
+          {
+            "heading": "Осмотр, туры и гиды",
+            "paragraphs": [
+              "Плата за вход на крупные достопримечательности — Айя-София бесплатна, а Топкапы, Эфес и другие берут плату — накапливается за поездку, и <strong>Museum Pass</strong> может сэкономить, если вы посещаете много государственных объектов. Закладывайте это при планировании дней.",
+              "<strong>Экскурсии с гидом</strong> сильно различаются: большой групповой автобусный тур дешевле всего на человека, тогда как частный лицензированный гид стоит дороже, но выстраивает весь день вокруг вас и минует очереди. На VibeGuide вы всегда видите точную цену до бронирования, без скрытых комиссий, а присоединение к групповому туру VibeSquad — самый экономный способ получить лицензированного гида. Часто стоит заплатить за гида на объектах, где это важнее всего, вроде Эфеса."
+            ]
+          },
+          {
+            "heading": "Крупные extras: полёт на шаре в Каппадокии и другое",
+            "paragraphs": [
+              "Некоторые впечатления выходят за рамки обычного дневного бюджета, и их стоит запланировать. <strong>Полёт на воздушном шаре в Каппадокии</strong> — классическая роскошь: значительная разовая трата, с ценой и билетами отдельно от компаний-операторов шаров, которая растёт с сезоном и спросом. Для большинства путешественников это изюминка раз в жизни, стоящая своих денег; бронируйте заранее, так как полёты раскупаются.",
+              "Другие более дорогие extras включают круизы на гулетах на побережье, опыт хаммама, внутренние рейсы для экономии времени и особые поездки с частным транспортом. Заложив пару из них в бюджет заранее, вы избежите сюрпризов — и сможете сказать «да» впечатлениям, которые делают поездку."
+            ]
+          },
+          {
+            "heading": "Как экономить в Турции",
+            "paragraphs": [
+              "Наибольшая экономия — от <strong>поездки в межсезонье или низкий сезон</strong> (весна, осень или зима), когда отели и рейсы гораздо дешевле, чем в разгар лета. Есть там, где едят местные, пользоваться общественным транспортом с транспортной картой и бронировать междугородние поездки заранее — всё это существенно растягивает бюджет.",
+              "Платите в турецких лирах, а не соглашайтесь на списание с карты в вашей валюте, носите немного наличных для мелких торговцев и рынков и торгуйтесь вежливо на базарах. И помните, что ценность — не только в самом дешёвом варианте: лицензированный местный гид на один-два ключевых дня часто экономит деньги на избежании туристических ловушек и потерянного времени, делая всю поездку лучше."
+            ]
+          }
+        ],
+        "faqHeading": "Часто задаваемые вопросы",
+        "faqs": [
+          {
+            "q": "Дорогая ли Турция для посещения страна?",
+            "a": "Нет — Турция одно из лучших по соотношению цены и качества крупных направлений, где достопримечательности, еда и отели мирового уровня обычно стоят гораздо меньше, чем в Западной Европе. Расходы растут в разгар лета на побережье и на крупные extras вроде шара в Каппадокии, но в целом она даёт отличную ценность при любом уровне бюджета."
+          },
+          {
+            "q": "Сколько денег мне нужно в день в Турции?",
+            "a": "Это зависит от вашего стиля. Бюджетные путешественники, использующие хостелы, уличную еду и общественный транспорт, могут путешествовать на скромную дневную сумму; путешественникам среднего уровня в хороших отелях с изредка частным туром нужно заметно больше; а путешественникам комфорт-класса с частными гидами и бутик-проживанием ещё больше, хотя часто всё равно меньше, чем эквивалентные поездки в Западной Европе."
+          },
+          {
+            "q": "Сколько стоит полёт на шаре в Каппадокии?",
+            "a": "Полёт на воздушном шаре — значительная разовая трата, с ценой и билетами отдельно от компаний-операторов шаров, и она растёт с сезоном и спросом. Она выходит за рамки обычного дневного бюджета, поэтому запланируйте её и бронируйте заранее, так как популярные рассветные полёты быстро раскупаются."
+          },
+          {
+            "q": "Какое время самое дешёвое для поездки в Турцию?",
+            "a": "Зима (кроме новогоднего периода) и межсезонье весны и осени самые дешёвые для рейсов и отелей, значительно ниже летнего пика на побережье. Поездка вне сезона — самый эффективный способ сократить стоимость поездки в Турцию."
+          },
+          {
+            "q": "Как сэкономить деньги, путешествуя по Турции?",
+            "a": "Путешествуйте в межсезонье или низкий сезон, ешьте там, где едят местные, используйте транспортную карту для дешёвого городского транспорта, бронируйте междугородние автобусы и рейсы заранее, платите в турецких лирах и торгуйтесь на базарах. Лицензированный гид на один ключевой день также может сэкономить деньги, помогая избежать туристических ловушек и потерянного времени."
+          }
+        ],
+        "relatedHeading": "Спланируйте бюджет поездки в Турцию",
+        "ctaTitle": "Отличная ценность, с местными гидами",
+        "ctaSub": "Смотрите точную цену до бронирования, без скрытых комиссий. Найдите лицензированных гидов и групповые туры по всей Турции на VibeGuide."
+      },
+      "tr": {
+        "title": "Türkiye Gezisi Ne Kadar Tutar? Bir Bütçe Rehberi",
+        "metaTitle": "Türkiye Gezisi Ne Kadar Tutar? — Bütçe Rehberi",
+        "metaDescription": "Türkiye'de gezmek ne kadara mal olur? Konaklama, yemek, ulaşım, turlar ve balon turu için günlük masraflara dair pratik bir bütçe rehberi — her bütçeye.",
+        "excerpt": "Türkiye paranızın karşılığını fazlasıyla veriyor — ama masraflar mevsime ve tarza göre çok değişiyor. İşte sırt çantalıdan konforluya, günlük bütçelerin gerçekçi bir dökümü.",
+        "intro": [
+          "Türkiye, bölgenin fiyat-performansı en iyi büyük destinasyonlarından biri: dünya çapında görülecek yerler, enfes yemekler ve konforlu oteller çoğu zaman Batı Avrupa'dakinden çok daha ucuza mal olur. Ama «Türkiye gezisi ne kadar tutar?» sorusunun tek bir yanıtı yok — mevsime, seyahat tarzınıza ve Kapadokya balonu gibi göz alıcı ekstralara göre büyük ölçüde oynar.",
+          "Bu rehber; konaklama, yemek, ulaşım, gezme ve turlar için <strong>günlük masrafların gerçekçi bir dökümünü</strong> üç geniş bütçe üzerinden veriyor; ayrıca planlanması gereken büyük tek seferlik giderleri de. Türkiye'deki fiyatlar enflasyon ve döviz kurlarıyla değiştiği için bunları sabit rakamlar değil, oransal bir yol gösterici olarak görün ve rezervasyon yapmadan önce her zaman güncel fiyatları kontrol edin."
+        ],
+        "sections": [
+          {
+            "heading": "Üç günlük bütçe: ne beklemeli",
+            "paragraphs": [
+              "Kabaca bir rehber olarak; hostel ya da sade pansiyonlarda kalan, sokak yemeği ve lokantalarda yiyen ve toplu taşıma kullanan bir <strong>ekonomik gezgin</strong>, mütevazı bir günlük tutarla rahatça gezebilir. İyi bir üç ya da dört yıldızlı otelde kalan, düzgün restoranlarda yiyen ve arada bir özel tur alan bir <strong>orta segment gezgin</strong> ise günde belirgin biçimde daha fazla bütçe ayırmalı.",
+              "Butik otellerde ve mağara süitlerinde kalan, baştan sona özel rehber ve transferle gezen bir <strong>konfor ya da lüks gezgin</strong> daha da fazla harcar — ama yine de çoğu zaman Batı Avrupa'daki eşdeğer bir geziden daha az. Mesele şu ki Türkiye çok güzel ölçekleniyor: kısıtlı bütçede gerçekten doyurucu, üst segmentte ise gerçek bir kelepir."
+            ]
+          },
+          {
+            "heading": "Konaklama, yemek ve ulaşım",
+            "paragraphs": [
+              "Türkiye'nin parladığı yer <strong>konaklama</strong>dır. Hosteller ve sade pansiyonlar ucuz, orta segment oteller güçlü bir değer sunar ve hatta Kapadokya'nın ünlü mağara otelleri bile başka yerdeki lükse kıyasla uygun fiyatlıdır. Fiyatlar yaz zirvesinde kıyıda ve yılbaşı civarında fırlar, o yüzden bu dönemler için önceden ayırtın.",
+              "<strong>Yemek</strong>, yerli gibi yerseniz çok az tutabilir — kahvaltıda bir simit ve çay, bir lokanta öğle yemeği, sokak atıştırmalıkları — ya da büyük mekânların yanındaki turiste dönük restoranlarda daha fazla. <strong>Ulaşım</strong> bir kelepir: şehir içi tramvay, vapur ve otobüsler bir ulaşım kartıyla ucuz; şehirlerarası otobüsler ve iç hat uçuşlar (İstanbul'dan Kapadokya'ya ya da kıyıya) önceden alınırsa çok makul."
+            ]
+          },
+          {
+            "heading": "Gezme, turlar ve rehberler",
+            "paragraphs": [
+              "Büyük mekânların giriş ücretleri — Ayasofya ücretsiz, Topkapı, Efes ve diğerleri ise ücretli — bir gezi boyunca birikir ve çok sayıda devlet mekânı geziyorsanız bir <strong>Museum Pass</strong> para tasarrufu sağlayabilir. Günlerinizi planlarken bunlara bütçe ayırın.",
+              "<strong>Rehberli turlar</strong> geniş bir yelpazede: büyük bir otobüs grubu turu kişi başı en ucuzu iken ruhsatlı bir özel rehber daha pahalıdır ama tüm günü size göre şekillendirir ve kuyrukları atlar. VibeGuide'da rezervasyon yapmadan önce her zaman kesin fiyatı, gizli ücret olmadan görürsünüz; bir VibeSquad grup turuna katılmak da ruhsatlı bir rehbere sahip olmanın en ekonomik yoludur. Efes gibi en çok fark yaratan yerlerde bir rehbere para ödemek çoğu zaman buna değer."
+            ]
+          },
+          {
+            "heading": "Büyük ekstralar: Kapadokya balonu ve dahası",
+            "paragraphs": [
+              "Bazı deneyimler normal bir günlük bütçenin dışında kalır ve planlanmaya değer. <strong>Kapadokya sıcak hava balonu</strong> klasik lükstür — balon şirketlerince ayrı fiyatlanan ve biletlenen, mevsime ve talebe göre yükselen, kayda değer tek seferlik bir masraf. Çoğu gezgin için parasına değen, ömürde bir kez yaşanacak bir zirvedir; uçuşlar tükendiği için önceden ayırtın.",
+              "Diğer daha pahalı ekstralar arasında kıyıda gulet tekne turları, bir hamam deneyimi, zamandan tasarruf için iç hat uçuşlar ve özel ulaşımlı özel günübirlik geziler var. Bunlardan birkaçını baştan bütçenize katmak sürprizleri önler — ve geziyi asıl gezi yapan deneyimlere evet demenizi sağlar."
+            ]
+          },
+          {
+            "heading": "Türkiye'de nasıl para tasarruf edilir",
+            "paragraphs": [
+              "En büyük tasarruf, otel ve uçuşların yaz zirvesindekinden çok daha ucuz olduğu <strong>ara ya da düşük sezonda seyahat etmekten</strong> (ilkbahar, sonbahar ya da kış) gelir. Yerlilerin yediği yerde yemek, bir ulaşım kartıyla toplu taşıma kullanmak ve şehirlerarası seyahati önceden ayırtmak, bütçenizi ciddi biçimde uzatır.",
+              "Kendi para biriminizde kart masrafını kabul etmek yerine Türk lirasıyla ödeyin, küçük satıcılar ve pazarlar için biraz nakit taşıyın ve çarşılarda kibarca pazarlık edin. Ve unutmayın ki değer yalnızca en ucuz seçenekle ilgili değildir — önemli bir ya da iki gün için ruhsatlı bir yerel rehber, atlatılan turist tuzakları ve boşa harcanan zaman üzerinden çoğu zaman size para kazandırır ve bu arada tüm geziyi daha iyi hâle getirir."
+            ]
+          }
+        ],
+        "faqHeading": "Sıkça sorulan sorular",
+        "faqs": [
+          {
+            "q": "Türkiye ziyaret etmesi pahalı bir ülke mi?",
+            "a": "Hayır — Türkiye fiyat-performansı en iyi büyük destinasyonlardan biri; dünya çapında görülecek yerleri, yemeği ve otelleri genellikle Batı Avrupa'dakinden çok daha ucuza mal olur. Masraflar yaz zirvesinde kıyıda ve Kapadokya balonu gibi göz alıcı ekstralarda artar, ama genel olarak her bütçe düzeyinde güçlü bir değer sunar."
+          },
+          {
+            "q": "Türkiye'de günde ne kadar paraya ihtiyacım var?",
+            "a": "Tarzınıza bağlı. Hostel, sokak yemeği ve toplu taşıma kullanan ekonomik gezginler mütevazı bir günlük tutarla gezebilir; arada bir özel turla iyi otellerde kalan orta segment gezginlerin belirgin biçimde daha fazlasına ihtiyacı olur; özel rehberler ve butik konaklamalarla gezen konfor gezginleri ise daha da fazla, yine de çoğu zaman eşdeğer Batı Avrupa gezilerinden az."
+          },
+          {
+            "q": "Kapadokya balon turu ne kadar tutar?",
+            "a": "Sıcak hava balonu, balon şirketlerince ayrı fiyatlanan ve biletlenen, mevsime ve talebe göre yükselen, kayda değer tek seferlik bir masraftır. Normal bir günlük bütçenin dışında kalır, o yüzden buna göre planlayın ve önceden ayırtın; çünkü popüler gün doğumu uçuşları hızla tükenir."
+          },
+          {
+            "q": "Türkiye'de seyahat için en ucuz zaman ne zaman?",
+            "a": "Kış (yılbaşı dönemi hariç) ile ilkbahar ve sonbaharın ara sezonları, yaz kıyı zirvesinin epey altında, uçuş ve oteller için en ucuz dönemlerdir. Sezon dışında seyahat etmek, bir Türkiye gezisinin maliyetini düşürmenin açık ara en büyük yoludur."
+          },
+          {
+            "q": "Türkiye'de seyahat ederken nasıl para tasarruf edebilirim?",
+            "a": "Ara ya da düşük sezonda seyahat edin, yerlilerin yediği yerde yiyin, ucuz şehir içi ulaşım için bir ulaşım kartı kullanın, şehirlerarası otobüs ve uçuşları önceden ayırtın, Türk lirasıyla ödeyin ve çarşılarda pazarlık edin. Önemli bir gün için ruhsatlı bir rehber de turist tuzaklarından ve boşa harcanan zamandan kaçınmanıza yardımcı olarak para kazandırabilir."
+          }
+        ],
+        "relatedHeading": "Türkiye bütçenizi planlayın",
+        "ctaTitle": "Uygun fiyat, yerlilerin rehberliğinde",
+        "ctaSub": "Rezervasyon yapmadan önce kesin fiyatı, gizli ücret olmadan görün. Türkiye genelinde ruhsatlı rehberleri ve grup turlarını VibeGuide'da bulun."
+      },
+      "pl": {
+        "title": "Ile kosztuje podróż do Turcji? Przewodnik po budżecie",
+        "metaTitle": "Ile kosztuje podróż do Turcji? — Przewodnik budżetowy",
+        "metaDescription": "Ile kosztuje podróżowanie po Turcji? Praktyczny przewodnik po dziennych kosztach noclegu, jedzenia, transportu, wycieczek i lotu balonem — dla każdego budżetu.",
+        "excerpt": "Turcja oferuje świetny stosunek jakości do ceny — ale koszty bardzo się różnią zależnie od sezonu i stylu. Oto realistyczny rozkład dziennych budżetów, od backpackera po komfort.",
+        "intro": [
+          "Turcja to jeden z najlepszych pod względem stosunku jakości do ceny wielkich kierunków w regionie: atrakcje światowej klasy, znakomite jedzenie i wygodne hotele często kosztują znacznie mniej niż w Europie Zachodniej. Ale «ile kosztuje podróż do Turcji?» nie ma jednej odpowiedzi — waha się mocno zależnie od sezonu, twojego stylu podróży i głównych dodatków, jak balon w Kapadocji.",
+          "Ten przewodnik daje <strong>realistyczny rozkład dziennych kosztów</strong> — nocleg, jedzenie, transport, zwiedzanie i wycieczki — w trzech szerokich budżetach, plus duże jednorazowe wydatki, które warto zaplanować. Ceny w Turcji zmieniają się z inflacją i kursami walut, więc traktuj je jako wskazówkę proporcjonalną, a nie stałe kwoty, i zawsze sprawdzaj aktualne ceny przed rezerwacją."
+        ],
+        "sections": [
+          {
+            "heading": "Trzy dzienne budżety: czego się spodziewać",
+            "paragraphs": [
+              "Z grubsza, <strong>podróżnik budżetowy</strong> nocujący w hostelach lub prostych pensjonatach, jedzący street food i w lokantach oraz korzystający z transportu publicznego może wygodnie podróżować za skromną dzienną sumę. <strong>Podróżnik ze średniej półki</strong> w dobrym hotelu trzy- lub czterogwiazdkowym, jedzący w porządnych restauracjach i biorący od czasu do czasu prywatną wycieczkę, powinien założyć zauważalnie więcej dziennie.",
+              "<strong>Podróżnik komfortowy lub luksusowy</strong> w hotelach butikowych i apartamentach w jaskiniach, z prywatnymi przewodnikami i transferami przez całą podróż, wyda jeszcze więcej — ale często i tak mniej niż na równoważną podróż w Europie Zachodniej. Rzecz w tym, że Turcja pięknie się skaluje: jest naprawdę satysfakcjonująca przy napiętym budżecie i prawdziwą okazją na górnej półce."
+            ]
+          },
+          {
+            "heading": "Nocleg, jedzenie i transport",
+            "paragraphs": [
+              "<strong>Nocleg</strong> to obszar, w którym Turcja błyszczy. Hostele i proste pensjonaty są tanie, hotele ze średniej półki oferują świetny stosunek jakości do ceny, a nawet słynne hotele w jaskiniach w Kapadocji są przystępne w porównaniu z luksusem gdzie indziej. Ceny skaczą w pełni lata na wybrzeżu i wokół Nowego Roku, więc rezerwuj z wyprzedzeniem na te okresy.",
+              "<strong>Jedzenie</strong> może kosztować bardzo mało, jeśli jesz jak miejscowy — simit i herbata na śniadanie, lunch w lokancie, uliczne przekąski — lub więcej w restauracjach dla turystów przy wielkich zabytkach. <strong>Transport</strong> to okazja: miejskie tramwaje, promy i autobusy są tanie z kartą transportową, a dalekobieżne autokary międzymiastowe i loty krajowe (ze Stambułu do Kapadocji lub na wybrzeże) są bardzo rozsądne przy rezerwacji z wyprzedzeniem."
+            ]
+          },
+          {
+            "heading": "Zwiedzanie, wycieczki i przewodnicy",
+            "paragraphs": [
+              "Opłaty za wstęp do wielkich zabytków — Hagia Sophia jest darmowa, podczas gdy Topkapı, Efez i inne pobierają opłaty — sumują się w trakcie podróży, a <strong>Museum Pass</strong> może zaoszczędzić pieniądze, jeśli zwiedzasz wiele obiektów państwowych. Uwzględnij je przy planowaniu dni.",
+              "<strong>Wycieczki z przewodnikiem</strong> różnią się mocno: duża grupowa wycieczka autokarowa jest najtańsza na osobę, podczas gdy prywatny licencjonowany przewodnik kosztuje więcej, ale kształtuje cały dzień wokół ciebie i omija kolejki. Na VibeGuide zawsze widzisz dokładną cenę przed rezerwacją, bez ukrytych opłat, a dołączenie do grupowej wycieczki VibeSquad to najbardziej ekonomiczny sposób, by mieć licencjonowanego przewodnika. Często warto zapłacić za przewodnika w miejscach, gdzie liczy się to najbardziej, jak Efez."
+            ]
+          },
+          {
+            "heading": "Duże dodatki: balon w Kapadocji i więcej",
+            "paragraphs": [
+              "Niektóre przeżycia wykraczają poza normalny dzienny budżet i warto je zaplanować. <strong>Lot balonem w Kapadocji</strong> to klasyczny wydatek na szaleństwo — znaczący jednorazowy koszt, wyceniany i biletowany osobno przez firmy balonowe, który rośnie z sezonem i popytem. Dla większości podróżnych to atrakcja raz w życiu warta swojej ceny; rezerwuj z wyprzedzeniem, bo loty się wyprzedają.",
+              "Inne droższe dodatki to rejsy łodziami gület na wybrzeżu, doświadczenie hammamu, loty krajowe dla oszczędności czasu i specjalne wycieczki z prywatnym transportem. Uwzględnienie kilku z nich w budżecie z góry zapobiega niespodziankom — i pozwala powiedzieć „tak” przeżyciom, które czynią podróż."
+            ]
+          },
+          {
+            "heading": "Jak oszczędzać pieniądze w Turcji",
+            "paragraphs": [
+              "Największe oszczędności pochodzą z <strong>podróżowania w sezonie przejściowym lub niskim</strong> (wiosna, jesień lub zima), gdy hotele i loty są znacznie tańsze niż w pełni lata. Jedzenie tam, gdzie jedzą miejscowi, korzystanie z transportu publicznego z kartą transportową i rezerwacja podróży międzymiastowych z wyprzedzeniem — wszystko to znacząco rozciąga budżet.",
+              "Płać w lirach tureckich, zamiast akceptować obciążenia kartą w swojej walucie, noś trochę gotówki na drobnych sprzedawców i targi oraz targuj się uprzejmie na bazarach. I pamiętaj, że wartość to nie tylko najtańsza opcja — licencjonowany lokalny przewodnik na jeden lub dwa kluczowe dni często oszczędza pieniądze na uniknięciu pułapek na turystów i zmarnowanego czasu, czyniąc całą podróż lepszą."
+            ]
+          }
+        ],
+        "faqHeading": "Najczęściej zadawane pytania",
+        "faqs": [
+          {
+            "q": "Czy Turcja to drogi kraj do odwiedzenia?",
+            "a": "Nie — Turcja to jeden z najlepszych pod względem stosunku jakości do ceny wielkich kierunków, gdzie atrakcje, jedzenie i hotele światowej klasy zwykle kosztują znacznie mniej niż w Europie Zachodniej. Koszty rosną w pełni lata na wybrzeżu i przy głównych dodatkach jak balon w Kapadocji, ale ogólnie oferuje świetną wartość na każdym poziomie budżetu."
+          },
+          {
+            "q": "Ile pieniędzy potrzebuję dziennie w Turcji?",
+            "a": "To zależy od twojego stylu. Podróżnicy budżetowi korzystający z hosteli, street foodu i transportu publicznego mogą podróżować za skromną dzienną sumę; podróżnicy ze średniej półki w dobrych hotelach z okazjonalną prywatną wycieczką potrzebują zauważalnie więcej; a podróżnicy komfortowi z prywatnymi przewodnikami i butikowymi noclegami jeszcze więcej, choć często i tak mniej niż równoważne podróże w Europie Zachodniej."
+          },
+          {
+            "q": "Ile kosztuje lot balonem w Kapadocji?",
+            "a": "Lot balonem to znaczący jednorazowy wydatek, wyceniany i biletowany osobno przez firmy balonowe, i rośnie z sezonem oraz popytem. Wykracza poza normalny dzienny budżet, więc zaplanuj go i rezerwuj z wyprzedzeniem, bo popularne loty o wschodzie słońca szybko się wyprzedają."
+          },
+          {
+            "q": "Kiedy jest najtaniej podróżować po Turcji?",
+            "a": "Zima (z wyłączeniem okresu Nowego Roku) oraz sezony przejściowe wiosny i jesieni są najtańsze dla lotów i hoteli, znacznie poniżej letniego szczytu na wybrzeżu. Podróżowanie poza sezonem to najskuteczniejszy sposób, by obniżyć koszt podróży do Turcji."
+          },
+          {
+            "q": "Jak zaoszczędzić pieniądze podczas podróży po Turcji?",
+            "a": "Podróżuj w sezonie przejściowym lub niskim, jedz tam, gdzie jedzą miejscowi, używaj karty transportowej do taniego transportu miejskiego, rezerwuj autokary międzymiastowe i loty z wyprzedzeniem, płać w lirach tureckich i targuj się na bazarach. Licencjonowany przewodnik na jeden kluczowy dzień również może zaoszczędzić pieniądze, pomagając uniknąć pułapek na turystów i zmarnowanego czasu."
+          }
+        ],
+        "relatedHeading": "Zaplanuj budżet podróży do Turcji",
+        "ctaTitle": "Świetna wartość, prowadzona przez miejscowych",
+        "ctaSub": "Zobacz dokładną cenę przed rezerwacją, bez ukrytych opłat. Znajdź licencjonowanych przewodników i wycieczki grupowe w całej Turcji na VibeGuide."
+      },
+      "nl": {
+        "title": "Hoeveel kost een reis naar Turkije? Een budgetgids",
+        "metaTitle": "Hoeveel kost een reis naar Turkije? — Budgetgids",
+        "metaDescription": "Hoeveel kost reizen in Turkije? Een praktische budgetgids voor dagelijkse kosten voor accommodatie, eten, vervoer, tours en de ballonvaart — voor elk budget.",
+        "excerpt": "Turkije biedt veel waar voor je geld — maar de kosten variëren sterk per seizoen en stijl. Hier is een realistische uitsplitsing van dagbudgetten, van backpacker tot comfortabel.",
+        "intro": [
+          "Turkije is een van de grote bestemmingen in de regio met de beste prijs-kwaliteitverhouding: bezienswaardigheden van wereldklasse, voortreffelijk eten en comfortabele hotels kosten vaak veel minder dan in West-Europa. Maar «hoeveel kost een reis naar Turkije?» heeft geen enkel antwoord — het schommelt sterk met het seizoen, je reisstijl, en opvallende extra's zoals de Cappadocië-ballon.",
+          "Deze gids geeft een <strong>realistische uitsplitsing van dagelijkse kosten</strong> — accommodatie, eten, vervoer, bezichtigingen en tours — over drie brede budgetten, plus de grote eenmalige uitgaven om voor te plannen. Prijzen in Turkije verschuiven met inflatie en wisselkoersen, dus behandel deze als verhoudingsgewijze richtlijn in plaats van vaste cijfers, en controleer altijd de actuele prijzen voordat je boekt."
+        ],
+        "sections": [
+          {
+            "heading": "Drie dagbudgetten: wat te verwachten",
+            "paragraphs": [
+              "Als ruwe richtlijn kan een <strong>budgetreiziger</strong> die in hostels of eenvoudige pensions verblijft, streetfood en lokanta's eet, en openbaar vervoer gebruikt, comfortabel reizen op een bescheiden dagbedrag. Een <strong>middenklasse-reiziger</strong> in een goed drie- of viersterrenhotel, die in echte restaurants eet en af en toe een privétour neemt, moet merkbaar meer per dag budgetteren.",
+              "Een <strong>comfort- of luxereiziger</strong> in boetiekhotels en grotsuites, met privégidsen en transfers doorheen, geeft nog meer uit — maar vaak nog steeds minder dan een gelijkwaardige reis in West-Europa. Het punt is dat Turkije prachtig schaalt: het is echt lonend op een krap budget en een echt koopje aan de bovenkant."
+            ]
+          },
+          {
+            "heading": "Accommodatie, eten en vervoer",
+            "paragraphs": [
+              "<strong>Accommodatie</strong> is waar Turkije uitblinkt. Hostels en eenvoudige pensions zijn goedkoop, middenklassehotels bieden sterke waarde, en zelfs de beroemde grothotels van Cappadocië zijn betaalbaar vergeleken met luxe elders. Prijzen pieken in de hoge zomer aan de kust en rond Nieuwjaar, dus boek voor die periodes vooruit.",
+              "<strong>Eten</strong> kan heel weinig kosten als je eet als een local — een simit en thee als ontbijt, een lokanta-lunch, streetfood-snacks — of meer in toeristische restaurants bij de grote bezienswaardigheden. <strong>Vervoer</strong> is een koopje: stadstrams, veerboten en bussen zijn goedkoop met een vervoerskaart, en langeafstands-intercitybussen en binnenlandse vluchten (Istanbul naar Cappadocië of de kust) zijn heel redelijk als je vooruit boekt."
+            ]
+          },
+          {
+            "heading": "Bezichtigingen, tours en gidsen",
+            "paragraphs": [
+              "Toegangsgelden voor de grote bezienswaardigheden — de Hagia Sophia is gratis, terwijl Topkapı, Efeze en andere entree vragen — tellen op over een reis, en een <strong>Museum Pass</strong> kan geld besparen als je veel staatssites bezoekt. Budgetteer hiervoor bij het plannen van je dagen.",
+              "<strong>Rondleidingen</strong> variëren sterk: een grote bustour in groep is per persoon het goedkoopst, terwijl een erkende privégids meer kost maar de hele dag rond jou vormgeeft en de wachtrijen overslaat. Op VibeGuide zie je altijd de exacte prijs voordat je boekt, zonder verborgen kosten, en meedoen aan een VibeSquad-groepstour is de meest economische manier om een erkende gids te hebben. Het is vaak de moeite waard om voor een gids te betalen op de plekken waar het het meest telt, zoals Efeze."
+            ]
+          },
+          {
+            "heading": "De grote extra's: de Cappadocië-ballon en meer",
+            "paragraphs": [
+              "Sommige ervaringen vallen buiten een normaal dagbudget en zijn het waard om voor te plannen. De <strong>heteluchtballon van Cappadocië</strong> is de klassieke uitspatting — een aanzienlijke eenmalige kost, apart geprijsd en geticket door de ballonbedrijven, die stijgt met seizoen en vraag. Voor de meeste reizigers is het een once-in-a-lifetime hoogtepunt dat het geld waard is; boek vooruit want de vluchten raken uitverkocht.",
+              "Andere duurdere extra's zijn gület-boottochten aan de kust, een hammam-ervaring, binnenlandse vluchten om tijd te besparen, en speciale dagtrips met privévervoer. Een paar hiervan vooraf in je budget opnemen voorkomt verrassingen — en laat je ja zeggen tegen de ervaringen die de reis maken."
+            ]
+          },
+          {
+            "heading": "Hoe je geld bespaart in Turkije",
+            "paragraphs": [
+              "De grootste besparingen komen van <strong>reizen in het tussen- of laagseizoen</strong> (lente, herfst of winter), wanneer hotels en vluchten veel goedkoper zijn dan in de hoge zomer. Eten waar locals eten, openbaar vervoer met een vervoerskaart gebruiken, en intercityreizen vooruit boeken rekken je budget aanzienlijk.",
+              "Betaal in Turkse lira in plaats van kaartkosten in je eigen valuta te accepteren, draag wat contant geld voor kleine verkopers en markten, en ding beleefd af in de bazaars. En onthoud dat waarde niet alleen over de goedkoopste optie gaat — een erkende lokale gids voor een belangrijke dag of twee bespaart je vaak geld op vermeden toeristenvallen en verspilde tijd, terwijl het de hele reis beter maakt."
+            ]
+          }
+        ],
+        "faqHeading": "Veelgestelde vragen",
+        "faqs": [
+          {
+            "q": "Is Turkije een duur land om te bezoeken?",
+            "a": "Nee — Turkije is een van de grote bestemmingen met de beste prijs-kwaliteitverhouding, met bezienswaardigheden, eten en hotels van wereldklasse die doorgaans veel minder kosten dan in West-Europa. De kosten stijgen in de hoge zomer aan de kust en voor opvallende extra's zoals de Cappadocië-ballon, maar over het geheel biedt het sterke waarde op elk budgetniveau."
+          },
+          {
+            "q": "Hoeveel geld heb ik per dag nodig in Turkije?",
+            "a": "Het hangt af van je stijl. Budgetreizigers die hostels, streetfood en openbaar vervoer gebruiken kunnen reizen op een bescheiden dagbedrag; middenklasse-reizigers in goede hotels met af en toe een privétour hebben merkbaar meer nodig; en comfortreizigers met privégidsen en boetiekverblijven nog meer, al vaak nog steeds minder dan gelijkwaardige West-Europese reizen."
+          },
+          {
+            "q": "Hoeveel kost de ballonvaart in Cappadocië?",
+            "a": "De heteluchtballon is een aanzienlijke eenmalige uitgave, apart geprijsd en geticket door de ballonbedrijven, en die stijgt met seizoen en vraag. Het valt buiten een normaal dagbudget, dus plan ervoor en boek vooruit, want populaire zonsopgangvluchten raken snel uitverkocht."
+          },
+          {
+            "q": "Wat is de goedkoopste tijd om in Turkije te reizen?",
+            "a": "De winter (behalve de Nieuwjaarsperiode) en de tussenseizoenen lente en herfst zijn het goedkoopst voor vluchten en hotels, ruim onder de kustpiek van de hoge zomer. Buiten het seizoen reizen is de allergrootste manier om de kosten van een Turkije-reis te drukken."
+          },
+          {
+            "q": "Hoe kan ik geld besparen tijdens het reizen in Turkije?",
+            "a": "Reis in het tussen- of laagseizoen, eet waar locals eten, gebruik een vervoerskaart voor goedkoop stadsvervoer, boek intercitybussen en vluchten vooruit, betaal in Turkse lira, en ding af in de bazaars. Een erkende gids voor een belangrijke dag kan ook geld besparen door je te helpen toeristenvallen en verspilde tijd te vermijden."
+          }
+        ],
+        "relatedHeading": "Plan je Turkije-budget",
+        "ctaTitle": "Veel waar voor je geld, begeleid door locals",
+        "ctaSub": "Zie de exacte prijs voordat je boekt, zonder verborgen kosten. Vind erkende gidsen en groepstours in heel Turkije op VibeGuide."
+      },
+      "pt": {
+        "title": "Quanto custa uma viagem à Turquia? Um guia de orçamento",
+        "metaTitle": "Quanto custa uma viagem à Turquia? — Guia de orçamento",
+        "metaDescription": "Quanto custa viajar na Turquia? Um guia prático de orçamento para os custos diários de alojamento, comida, transporte, passeios e o voo de balão — para todos os orçamentos.",
+        "excerpt": "A Turquia oferece uma ótima relação qualidade-preço — mas os custos variam muito com a época e o estilo. Aqui fica uma repartição realista de orçamentos diários, de mochileiro a confortável.",
+        "intro": [
+          "A Turquia é um dos grandes destinos da região com melhor relação qualidade-preço: pontos de interesse de nível mundial, comida soberba e hotéis confortáveis custam muitas vezes bem menos do que na Europa Ocidental. Mas «quanto custa uma viagem à Turquia?» não tem uma resposta única — oscila muito com a época, o seu estilo de viagem e extras de destaque como o balão da Capadócia.",
+          "Este guia dá uma <strong>repartição realista dos custos diários</strong> — alojamento, comida, transporte, visitas e passeios — em três orçamentos amplos, além das grandes despesas pontuais a planear. Os preços na Turquia mudam com a inflação e as taxas de câmbio, por isso trate-os como orientação proporcional e não como valores fixos, e verifique sempre os preços atuais antes de reservar."
+        ],
+        "sections": [
+          {
+            "heading": "Três orçamentos diários: o que esperar",
+            "paragraphs": [
+              "Como orientação geral, um <strong>viajante económico</strong> que fica em hostels ou pensões simples, come comida de rua e em lokantas, e usa transportes públicos, pode viajar confortavelmente com uma quantia diária modesta. Um <strong>viajante de gama média</strong> num bom hotel de três ou quatro estrelas, a comer em restaurantes a sério e a fazer um passeio privado de vez em quando, deve orçamentar bastante mais por dia.",
+              "Um <strong>viajante de conforto ou luxo</strong> em hotéis boutique e suítes em grutas, com guias e transfers privados de ponta a ponta, gasta ainda mais — mas ainda assim, muitas vezes, menos do que uma viagem equivalente na Europa Ocidental. A questão é que a Turquia adapta-se lindamente: é genuinamente compensadora com um orçamento apertado e uma verdadeira pechincha no topo de gama."
+            ]
+          },
+          {
+            "heading": "Alojamento, comida e transporte",
+            "paragraphs": [
+              "É no <strong>alojamento</strong> que a Turquia brilha. Hostels e pensões simples são baratos, os hotéis de gama média oferecem grande valor, e até os famosos hotéis-gruta da Capadócia são acessíveis face ao luxo noutros sítios. Os preços disparam no pico do verão na costa e por altura do Ano Novo, por isso reserve com antecedência para esses períodos.",
+              "A <strong>comida</strong> pode custar muito pouco se comer como um local — um simit e chá ao pequeno-almoço, um almoço numa lokanta, petiscos de rua — ou mais em restaurantes virados para turistas junto aos grandes monumentos. O <strong>transporte</strong> é uma pechincha: elétricos urbanos, ferries e autocarros são baratos com um passe de transportes, e os autocarros intercidades de longa distância e os voos domésticos (Istambul para a Capadócia ou para a costa) são muito razoáveis se reservados com antecedência."
+            ]
+          },
+          {
+            "heading": "Visitas, passeios e guias",
+            "paragraphs": [
+              "As entradas para os grandes pontos de interesse — a Santa Sofia é gratuita, enquanto Topkapı, Éfeso e outros cobram — vão-se somando ao longo de uma viagem, e um <strong>Museum Pass</strong> pode poupar dinheiro se visitar muitos sítios estatais. Inclua isto no orçamento ao planear os seus dias.",
+              "As <strong>visitas guiadas</strong> variam muito: uma grande excursão de autocarro em grupo é a mais barata por pessoa, ao passo que um guia privado licenciado custa mais mas molda o dia inteiro em torno de si e salta as filas. Na VibeGuide vê sempre o preço exato antes de reservar, sem taxas escondidas, e juntar-se a um passeio de grupo VibeSquad é a forma mais económica de ter um guia licenciado. Muitas vezes vale a pena pagar por um guia nos locais onde mais importa, como Éfeso."
+            ]
+          },
+          {
+            "heading": "Os grandes extras: o balão da Capadócia e mais",
+            "paragraphs": [
+              "Algumas experiências ficam fora de um orçamento diário normal e vale a pena planeá-las. O <strong>balão de ar quente da Capadócia</strong> é o clássico luxo — um custo pontual significativo, com preço e bilhete à parte pelas empresas de balões, que sobe com a época e a procura. Para a maioria dos viajantes é um ponto alto único na vida que vale o dinheiro; reserve com antecedência, pois os voos esgotam.",
+              "Outros extras de maior valor incluem cruzeiros de barco gület na costa, uma experiência de hammam, voos domésticos para poupar tempo, e excursões especiais com transporte privado. Contar com alguns destes no orçamento à partida evita surpresas — e permite-lhe dizer que sim às experiências que fazem a viagem."
+            ]
+          },
+          {
+            "heading": "Como poupar dinheiro na Turquia",
+            "paragraphs": [
+              "As maiores poupanças vêm de <strong>viajar na época baixa ou intermédia</strong> (primavera, outono ou inverno), quando os hotéis e os voos são muito mais baratos do que no pico do verão. Comer onde os locais comem, usar transportes públicos com um passe, e reservar as viagens intercidades com antecedência esticam bastante o orçamento.",
+              "Pague em liras turcas em vez de aceitar cobranças no cartão na sua moeda, leve algum dinheiro para pequenos vendedores e mercados, e regateie com educação nos bazares. E lembre-se de que o valor não é só a opção mais barata — um guia local licenciado num ou dois dias-chave poupa-lhe muitas vezes dinheiro em armadilhas para turistas evitadas e tempo desperdiçado, ao mesmo tempo que torna toda a viagem melhor."
+            ]
+          }
+        ],
+        "faqHeading": "Perguntas frequentes",
+        "faqs": [
+          {
+            "q": "A Turquia é um país caro para visitar?",
+            "a": "Não — a Turquia é um dos grandes destinos com melhor relação qualidade-preço, com pontos de interesse, comida e hotéis de nível mundial que costumam custar bem menos do que na Europa Ocidental. Os custos sobem no pico do verão na costa e em extras de destaque como o balão da Capadócia, mas, no geral, oferece grande valor em qualquer nível de orçamento."
+          },
+          {
+            "q": "De quanto dinheiro preciso por dia na Turquia?",
+            "a": "Depende do seu estilo. Viajantes económicos que usam hostels, comida de rua e transportes públicos podem viajar com uma quantia diária modesta; viajantes de gama média em bons hotéis com um passeio privado ocasional precisam de bastante mais; e viajantes de conforto com guias privados e estadias boutique ainda mais, embora muitas vezes ainda menos do que viagens equivalentes na Europa Ocidental."
+          },
+          {
+            "q": "Quanto custa o passeio de balão na Capadócia?",
+            "a": "O balão de ar quente é uma despesa pontual significativa, com preço e bilhete à parte pelas empresas de balões, e sobe com a época e a procura. Fica fora de um orçamento diário normal, por isso planeie-o e reserve com antecedência, pois os populares voos ao nascer do sol esgotam depressa."
+          },
+          {
+            "q": "Qual é a época mais barata para viajar na Turquia?",
+            "a": "O inverno (excluindo o período do Ano Novo) e as épocas intermédias de primavera e outono são as mais baratas para voos e hotéis, bem abaixo do pico costeiro do verão. Viajar fora de época é a maior forma de reduzir o custo de uma viagem à Turquia."
+          },
+          {
+            "q": "Como posso poupar dinheiro a viajar na Turquia?",
+            "a": "Viaje na época baixa ou intermédia, coma onde os locais comem, use um passe de transportes para transporte urbano barato, reserve autocarros intercidades e voos com antecedência, pague em liras turcas e regateie nos bazares. Um guia licenciado num dia-chave também pode poupar dinheiro ao ajudá-lo a evitar armadilhas para turistas e tempo desperdiçado."
+          }
+        ],
+        "relatedHeading": "Planeie o seu orçamento para a Turquia",
+        "ctaTitle": "Ótima relação qualidade-preço, guiado por locais",
+        "ctaSub": "Veja o preço exato antes de reservar, sem taxas escondidas. Encontre guias licenciados e passeios de grupo por toda a Turquia na VibeGuide."
+      },
+      "ja": {
+        "title": "トルコ旅行の費用はいくら？予算ガイド",
+        "metaTitle": "トルコ旅行の費用はいくら？ — 予算ガイド",
+        "metaDescription": "トルコを旅する費用はいくら？宿泊、食事、交通、ツアー、気球体験の一日あたりの費用を、あらゆる予算向けに解説する実用的な予算ガイド。",
+        "excerpt": "トルコはコストパフォーマンスに優れます — けれど費用は季節とスタイルで大きく変わります。バックパッカーから快適派まで、一日あたりの予算を現実的に分解します。",
+        "intro": [
+          "トルコはこの地域で最もコストパフォーマンスの高い主要な渡航先の一つです：世界水準の見どころ、素晴らしい食事、快適なホテルが、西ヨーロッパよりずっと安く手に入ることがよくあります。けれど「トルコ旅行の費用はいくら？」という問いに唯一の答えはありません — 季節、旅のスタイル、そしてカッパドキアの気球のような目玉の追加費用によって大きく変わるのです。",
+          "このガイドは、宿泊、食事、交通、観光、ツアーの<strong>一日あたりの費用を現実的に分解</strong>し、三つの大まかな予算にわたって示すとともに、計画に入れておくべき大きな一度きりの出費も扱います。トルコの物価はインフレと為替で動くので、固定の数字ではなく比率の目安として捉え、予約前に必ず現在の価格を確認してください。"
+        ],
+        "sections": [
+          {
+            "heading": "三つの一日予算：何を見込むか",
+            "paragraphs": [
+              "おおまかな目安として、ホステルや簡素なゲストハウスに泊まり、屋台や lokanta で食べ、公共交通を使う<strong>バックパッカー</strong>は、控えめな一日の額で快適に旅できます。良質な三つ星や四つ星ホテルに泊まり、きちんとしたレストランで食べ、時折専属ツアーに参加する<strong>ミドルレンジの旅行者</strong>は、一日あたりに目に見えて多く予算を組むべきです。",
+              "ブティックホテルや洞窟スイートに泊まり、終始専属ガイドと送迎を使う<strong>快適志向・ラグジュアリーの旅行者</strong>は、さらに多く使いますが — それでも西ヨーロッパの同等の旅行より安いことがよくあります。要は、トルコは見事に幅が利くということです：限られた予算でも本当に実りがあり、上のクラスでも掘り出し物なのです。"
+            ]
+          },
+          {
+            "heading": "宿泊、食事、交通",
+            "paragraphs": [
+              "<strong>宿泊</strong>こそトルコが輝くところです。ホステルや簡素なゲストハウスは安く、ミドルレンジのホテルは高い価値を提供し、カッパドキアの有名な洞窟ホテルでさえ、他所のラグジュアリーに比べれば手頃です。海岸では真夏、年末年始のころに価格が跳ね上がるので、その時期は前もって予約しましょう。",
+              "<strong>食事</strong>は、地元の人のように食べればとても安く済みます — 朝は simit と紅茶、昼は lokanta、屋台の軽食 — が、大きな見どころのそばの観光客向けレストランではもっとかかります。<strong>交通</strong>は掘り出し物です：市内のトラム、フェリー、バスは交通カードで安く、長距離の都市間バスや国内線（イスタンブールからカッパドキアや海岸へ）は前もって予約すればとても手頃です。"
+            ]
+          },
+          {
+            "heading": "観光、ツアー、ガイド",
+            "paragraphs": [
+              "主要な見どころの入場料 — アヤソフィアは無料ですが、トプカプ、エフェソスなどは有料 — は旅を通じて積み重なり、多くの国営施設を訪れるなら<strong>Museum Pass</strong>で節約できます。日程を計画する際にこれらを見込んでおきましょう。",
+              "<strong>ガイド付きツアー</strong>は幅広く、大型バスの団体ツアーは一人あたり最も安く、公認の専属ガイドはより高くつきますが一日全体をあなたに合わせて組み立て、行列を飛ばします。VibeGuideでは予約前に常に正確な料金が隠れた手数料なしで表示され、VibeSquadのグループツアーに参加するのが公認ガイドを付ける最も経済的な方法です。エフェソスのように最も重要な場所では、ガイドにお金を払う価値がしばしばあります。"
+            ]
+          },
+          {
+            "heading": "大きな追加費用：カッパドキアの気球など",
+            "paragraphs": [
+              "一部の体験は通常の一日予算の外にあり、計画に値します。<strong>カッパドキアの熱気球</strong>は定番のぜいたく — 気球会社が別途価格を設定しチケットを発行する、大きな一度きりの費用で、季節と需要とともに上がります。多くの旅行者にとっては一生に一度の見どころで、その価値はあります。便は売り切れるので前もって予約を。",
+              "その他の高額な追加には、海岸のグレット船クルーズ、ハマム体験、時間を節約する国内線、専用の送迎付き特別日帰り旅行があります。こうしたいくつかを前もって予算に織り込んでおけば、不意の出費を防ぎ — 旅を作り上げる体験に「はい」と言えるようになります。"
+            ]
+          },
+          {
+            "heading": "トルコでお金を節約する方法",
+            "paragraphs": [
+              "最大の節約は<strong>ショルダーシーズンかローシーズンに旅すること</strong>（春、秋、または冬）から生まれます。ホテルや航空券が真夏よりはるかに安くなるのです。地元の人が食べる場所で食べ、交通カードで公共交通を使い、都市間の移動を前もって予約すること — いずれも予算を大きく引き延ばします。",
+              "自国通貨でのカード請求を受け入れず、トルコリラで支払い、小さな売り手や市場のために現金をいくらか持ち、バザールでは礼儀正しく値引き交渉を。そして価値は最も安い選択肢だけの話ではないことを忘れずに — 重要な一日か二日に公認の地元ガイドを付けると、避けた観光客向けの罠と無駄な時間の分でしばしばお金を節約でき、旅全体をより良くしてくれます。"
+            ]
+          }
+        ],
+        "faqHeading": "よくある質問",
+        "faqs": [
+          {
+            "q": "トルコは訪れるのに高い国ですか？",
+            "a": "いいえ — トルコは最もコストパフォーマンスの高い主要な渡航先の一つで、世界水準の見どころ、食事、ホテルが通常は西ヨーロッパよりずっと安く済みます。海岸の真夏やカッパドキアの気球のような目玉の追加費用では高くなりますが、全体としてはどの予算帯でも高い価値を提供します。"
+          },
+          {
+            "q": "トルコで一日にいくら必要ですか？",
+            "a": "スタイルによります。ホステル、屋台、公共交通を使うバックパッカーは控えめな一日の額で旅でき、時折専属ツアーに参加する良質なホテルのミドルレンジの旅行者は目に見えて多く必要で、専属ガイドとブティック滞在の快適志向の旅行者はさらに多く — それでも同等の西ヨーロッパ旅行より安いことがよくあります。"
+          },
+          {
+            "q": "カッパドキアの気球体験はいくらかかりますか？",
+            "a": "熱気球は大きな一度きりの出費で、気球会社が別途価格を設定しチケットを発行し、季節と需要とともに上がります。通常の一日予算の外にあるので、見込んで前もって予約しましょう。人気の日の出の便はすぐに売り切れます。"
+          },
+          {
+            "q": "トルコを旅する最も安い時期はいつですか？",
+            "a": "冬（年末年始を除く）と、春・秋のショルダーシーズンが航空券とホテルに最も安く、真夏の海岸のピークをはるかに下回ります。オフシーズンに旅することが、トルコ旅行の費用を抑える最大の単一の方法です。"
+          },
+          {
+            "q": "トルコを旅するときにどうお金を節約できますか？",
+            "a": "ショルダーかローシーズンに旅し、地元の人が食べる場所で食べ、交通カードで市内の安い交通を使い、都市間バスと航空券を前もって予約し、トルコリラで支払い、バザールで値引き交渉を。重要な一日に公認ガイドを付けると、観光客向けの罠と無駄な時間を避ける手助けでお金を節約することもできます。"
+          }
+        ],
+        "relatedHeading": "トルコの予算を計画する",
+        "ctaTitle": "優れた価値を、地元の人の案内で",
+        "ctaSub": "予約前に正確な料金を、隠れた手数料なしで。VibeGuideでトルコ各地の公認ガイドとグループツアーを見つけましょう。"
+      },
+      "ko": {
+        "title": "터키 여행 비용은 얼마일까? 예산 가이드",
+        "metaTitle": "터키 여행 비용은 얼마일까? — 예산 가이드",
+        "metaDescription": "터키 여행 비용은 얼마일까요? 숙박, 식사, 교통, 투어, 열기구 체험의 하루 비용을 모든 예산에 맞춰 정리한 실용 예산 가이드.",
+        "excerpt": "터키는 가성비가 뛰어납니다 — 다만 비용은 계절과 스타일에 따라 크게 달라집니다. 배낭여행자부터 편안한 여행자까지, 하루 예산을 현실적으로 나눠봅니다.",
+        "intro": [
+          "터키는 이 지역에서 가성비가 가장 좋은 주요 여행지 중 하나입니다: 세계적 수준의 명소, 훌륭한 음식, 편안한 호텔이 서유럽보다 훨씬 저렴한 경우가 많습니다. 하지만 「터키 여행 비용은 얼마일까?」라는 질문에는 하나의 답이 없습니다 — 계절, 여행 스타일, 그리고 카파도키아 열기구 같은 대표적인 추가 비용에 따라 크게 흔들립니다.",
+          "이 가이드는 숙박, 식사, 교통, 관광, 투어의 <strong>하루 비용을 현실적으로 나눠</strong> 세 가지 넓은 예산에 걸쳐 보여주고, 계획에 넣어둘 큰 일회성 지출도 다룹니다. 터키 물가는 인플레이션과 환율에 따라 움직이니 고정된 수치가 아니라 비율의 안내로 받아들이고, 예약 전에 항상 현재 가격을 확인하세요."
+        ],
+        "sections": [
+          {
+            "heading": "세 가지 하루 예산: 무엇을 예상할까",
+            "paragraphs": [
+              "대략적인 안내로, 호스텔이나 소박한 게스트하우스에 묵고, 길거리 음식과 lokanta에서 먹으며, 대중교통을 이용하는 <strong>배낭여행자</strong>는 적당한 하루 금액으로 편안히 여행할 수 있습니다. 좋은 3성급이나 4성급 호텔에 묵고, 제대로 된 식당에서 먹으며, 이따금 개인 투어를 하는 <strong>중급 여행자</strong>는 하루에 눈에 띄게 더 예산을 잡아야 합니다.",
+              "부티크 호텔과 동굴 스위트에 묵고, 처음부터 끝까지 개인 가이드와 픽업을 이용하는 <strong>편안함·럭셔리 여행자</strong>는 다시 더 많이 쓰지만 — 그래도 서유럽의 동급 여행보다는 저렴한 경우가 많습니다. 요점은 터키가 아름답게 폭이 넓다는 것입니다: 빠듯한 예산에도 진정 보람 있고, 상위 등급에서도 정말 알뜰합니다."
+            ]
+          },
+          {
+            "heading": "숙박, 식사, 교통",
+            "paragraphs": [
+              "<strong>숙박</strong>이야말로 터키가 빛나는 부분입니다. 호스텔과 소박한 게스트하우스는 저렴하고, 중급 호텔은 훌륭한 가치를 제공하며, 카파도키아의 유명한 동굴 호텔조차 다른 곳의 럭셔리에 비하면 합리적입니다. 해안에서는 한여름과 연말연시 무렵 가격이 치솟으니 그 시기는 미리 예약하세요.",
+              "<strong>식사</strong>는 현지인처럼 먹으면 아주 적게 들 수 있습니다 — 아침은 simit과 홍차, 점심은 lokanta, 길거리 간식 — 반면 큰 명소 옆 관광객 대상 식당에서는 더 듭니다. <strong>교통</strong>은 알짜입니다: 도시의 트램, 페리, 버스는 교통카드로 저렴하고, 장거리 시외버스와 국내선(이스탄불에서 카파도키아나 해안으로)은 미리 예약하면 매우 합리적입니다."
+            ]
+          },
+          {
+            "heading": "관광, 투어, 가이드",
+            "paragraphs": [
+              "주요 명소 입장료 — 아야소피아는 무료지만 톱카프, 에페소스 등은 유료 — 는 여행 내내 쌓이며, 국영 유적을 많이 방문한다면 <strong>Museum Pass</strong>로 돈을 아낄 수 있습니다. 일정을 계획할 때 이를 예산에 넣으세요.",
+              "<strong>가이드 투어</strong>는 폭이 넓습니다: 대형 버스 단체 투어가 1인당 가장 싸고, 면허 있는 개인 가이드는 더 비싸지만 하루 전체를 당신에게 맞춰 짜고 줄을 건너뜁니다. VibeGuide에서는 예약 전에 항상 정확한 가격이 숨은 수수료 없이 표시되며, VibeSquad 그룹 투어에 참여하는 것이 면허 가이드를 두는 가장 경제적인 방법입니다. 에페소스처럼 가장 중요한 곳에서는 가이드에 돈을 쓸 만한 가치가 흔히 있습니다."
+            ]
+          },
+          {
+            "heading": "큰 추가 비용: 카파도키아 열기구 등",
+            "paragraphs": [
+              "어떤 체험은 평범한 하루 예산 밖에 있어 계획할 가치가 있습니다. <strong>카파도키아 열기구</strong>는 대표적인 사치입니다 — 열기구 회사가 별도로 가격을 매기고 티켓을 발행하는 큰 일회성 비용으로, 계절과 수요에 따라 오릅니다. 대부분의 여행자에게는 값어치를 하는 일생일대의 하이라이트입니다. 편이 매진되니 미리 예약하세요.",
+              "그 밖의 고가 추가로는 해안의 굴레트 보트 크루즈, 하맘 체험, 시간을 아끼는 국내선, 전용 픽업이 있는 특별 당일치기가 있습니다. 이 중 몇 가지를 미리 예산에 넣어두면 뜻밖의 지출을 막고 — 여행을 완성하는 체험에 「예」라고 말할 수 있게 됩니다."
+            ]
+          },
+          {
+            "heading": "터키에서 돈을 아끼는 법",
+            "paragraphs": [
+              "가장 큰 절약은 <strong>비수기나 준성수기에 여행하기</strong>(봄, 가을, 겨울)에서 나옵니다. 호텔과 항공권이 한여름보다 훨씬 저렴해집니다. 현지인이 먹는 곳에서 먹고, 교통카드로 대중교통을 이용하고, 시외 이동을 미리 예약하는 것 — 모두 예산을 크게 늘려줍니다.",
+              "자국 통화로 카드 청구를 받지 말고 터키 리라로 결제하고, 소규모 상인과 시장을 위해 현금을 조금 지니고, 바자르에서는 정중하게 흥정하세요. 그리고 가치가 가장 싼 선택지만의 문제가 아님을 기억하세요 — 중요한 하루나 이틀에 면허 있는 현지 가이드를 두면, 피한 관광 함정과 허비한 시간만큼 오히려 돈을 아끼면서 여행 전체를 더 낫게 만들어 줍니다."
+            ]
+          }
+        ],
+        "faqHeading": "자주 묻는 질문",
+        "faqs": [
+          {
+            "q": "터키는 방문하기에 비싼 나라인가요?",
+            "a": "아닙니다 — 터키는 가성비가 가장 좋은 주요 여행지 중 하나로, 세계적 수준의 명소, 음식, 호텔이 대개 서유럽보다 훨씬 저렴합니다. 해안의 한여름과 카파도키아 열기구 같은 대표 추가 비용에서는 오르지만, 전반적으로 모든 예산대에서 높은 가치를 제공합니다."
+          },
+          {
+            "q": "터키에서 하루에 얼마가 필요한가요?",
+            "a": "스타일에 따라 다릅니다. 호스텔, 길거리 음식, 대중교통을 이용하는 배낭여행자는 적당한 하루 금액으로 여행할 수 있고, 이따금 개인 투어를 하는 좋은 호텔의 중급 여행자는 눈에 띄게 더 필요하며, 개인 가이드와 부티크 숙소의 편안함 여행자는 다시 더 — 그래도 동급 서유럽 여행보다는 저렴한 경우가 많습니다."
+          },
+          {
+            "q": "카파도키아 열기구 체험은 얼마인가요?",
+            "a": "열기구는 큰 일회성 지출로, 열기구 회사가 별도로 가격을 매기고 티켓을 발행하며 계절과 수요에 따라 오릅니다. 평범한 하루 예산 밖에 있으니 미리 계획하고 예약하세요. 인기 있는 일출 편은 빠르게 매진됩니다."
+          },
+          {
+            "q": "터키를 여행하기 가장 저렴한 시기는 언제인가요?",
+            "a": "겨울(연말연시 제외)과 봄·가을의 준성수기가 항공권과 호텔에 가장 저렴하며, 한여름 해안 성수기보다 훨씬 낮습니다. 비수기 여행이 터키 여행 비용을 줄이는 가장 큰 단일 방법입니다."
+          },
+          {
+            "q": "터키를 여행할 때 어떻게 돈을 아낄 수 있나요?",
+            "a": "준성수기나 비수기에 여행하고, 현지인이 먹는 곳에서 먹고, 교통카드로 저렴한 도시 교통을 이용하고, 시외버스와 항공권을 미리 예약하고, 터키 리라로 결제하고, 바자르에서 흥정하세요. 중요한 하루에 면허 가이드를 두는 것도 관광 함정과 허비한 시간을 피하도록 도와 돈을 아낄 수 있습니다."
+          }
+        ],
+        "relatedHeading": "터키 예산을 계획하다",
+        "ctaTitle": "훌륭한 가치, 현지인의 안내로",
+        "ctaSub": "예약 전에 정확한 가격을, 숨은 수수료 없이. VibeGuide에서 터키 전역의 면허 가이드와 그룹 투어를 찾아보세요."
+      }
+    }
   }
 ];
