@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { serverFetch } from "@/lib/api";
 import { ATTRACTIONS, ATTRACTION_LANGS } from "@/lib/attractions";
 import { CITY_GUIDES, CITY_GUIDE_LANGS } from "@/lib/cityGuides";
+import { BLOG_POSTS, BLOG_LANGS } from "@/lib/blog";
 
 const SITE = "https://www.vibeguideapp.com";
 
@@ -91,5 +92,31 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }));
   });
 
-  return [...staticRoutes, ...cityGuideRoutes, ...tourRoutes, ...attractionHubRoutes, ...attractionRoutes];
+  // Blog hub pages — /blog/<lang> (every language + hreflang).
+  const blogHubLanguages: Record<string, string> = {};
+  for (const l of BLOG_LANGS) blogHubLanguages[l] = `${SITE}/blog/${l}`;
+  blogHubLanguages["x-default"] = `${SITE}/blog/en`;
+  const blogHubRoutes: MetadataRoute.Sitemap = BLOG_LANGS.map((l) => ({
+    url: `${SITE}/blog/${l}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+    alternates: { languages: blogHubLanguages },
+  }));
+
+  // Blog post pages — every post × every language, with hreflang alternates.
+  const blogPostRoutes: MetadataRoute.Sitemap = BLOG_POSTS.flatMap((p) => {
+    const languages: Record<string, string> = {};
+    for (const l of BLOG_LANGS) languages[l] = `${SITE}/blog/${l}/${p.slug}`;
+    languages["x-default"] = `${SITE}/blog/en/${p.slug}`;
+    return BLOG_LANGS.map((l) => ({
+      url: `${SITE}/blog/${l}/${p.slug}`,
+      lastModified: new Date(p.publishDate),
+      changeFrequency: "monthly" as const,
+      priority: 0.65,
+      alternates: { languages },
+    }));
+  });
+
+  return [...staticRoutes, ...cityGuideRoutes, ...tourRoutes, ...attractionHubRoutes, ...attractionRoutes, ...blogHubRoutes, ...blogPostRoutes];
 }

@@ -6,6 +6,7 @@ import { uiExtra } from "@/lib/ui-extra-i18n";
 import { navbarI18n } from "@/lib/navbar-i18n";
 import { DESTINATIONS, cityGuideHref } from "@/lib/destinations";
 import { ATTRACTION_LANGS, ATTR_HUB } from "@/lib/attractions";
+import { BLOG_HUB, isBlogLang } from "@/lib/blog";
 
 /**
  * Sitenin tek footer'ı — ana sayfa, legal/support, mod ve atraksiyon sayfalarının
@@ -87,6 +88,7 @@ export default function MainFooter() {
               <li><a href="/about" className="hover:text-black transition-colors">{t.footerLinks.aboutUs}</a></li>
               <li><a href="/contact" className="hover:text-black transition-colors">{t.footerLinks.contact}</a></li>
               <li><a href="/help" className="hover:text-black transition-colors">{t.footerLinks.helpCenter}</a></li>
+              <li><a href={`/blog/${isBlogLang(locale) ? locale : "en"}`} className="hover:text-black transition-colors">{BLOG_HUB[isBlogLang(locale) ? locale : "en"].h1}</a></li>
               <li><a href="/security" className="hover:text-black transition-colors">{ux.securityPayment}</a></li>
               <li><a href="/account-deletion" className="hover:text-black transition-colors">{t.footerLinks.accountDeletion}</a></li>
             </ul>
