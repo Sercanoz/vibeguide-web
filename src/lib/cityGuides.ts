@@ -18,6 +18,7 @@ export type CityGuideLang = (typeof CITY_GUIDE_LANGS)[number];
 export const OG_LOCALE: Record<string, string> = {
   en: "en_US", de: "de_DE", es: "es_ES", fr: "fr_FR", it: "it_IT",
   ar: "ar_AE", ru: "ru_RU", tr: "tr_TR", pl: "pl_PL", nl: "nl_NL", el: "el_GR",
+  pt: "pt_PT", ja: "ja_JP", ko: "ko_KR",
 };
 
 export const RTL_CITY_LANGS = new Set<CityGuideLang>(["ar"]);

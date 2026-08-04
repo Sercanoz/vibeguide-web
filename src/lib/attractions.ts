@@ -15,6 +15,9 @@ export const ATTRACTION_LANGS = [
   "it",
   "pl",
   "nl",
+  "pt",
+  "ja",
+  "ko",
 ] as const;
 export type AttractionLang = (typeof ATTRACTION_LANGS)[number];
 
@@ -32,6 +35,9 @@ export const ATTR_HEADINGS: Record<AttractionLang, { highlights: string; faq: st
   it: { highlights: "In evidenza", faq: "Domande frequenti", more: "Altro da esplorare" },
   pl: { highlights: "Najważniejsze", faq: "Najczęściej zadawane pytania", more: "Więcej do odkrycia" },
   nl: { highlights: "Hoogtepunten", faq: "Veelgestelde vragen", more: "Meer om te ontdekken" },
+  pt: { highlights: `Destaques`, faq: `Perguntas frequentes`, more: `Mais para explorar` },
+  ja: { highlights: `見どころ`, faq: `よくある質問`, more: `さらに探索する` },
+  ko: { highlights: `주요 볼거리`, faq: `자주 묻는 질문`, more: `더 둘러보기` },
 };
 
 export const RTL_LANGS: ReadonlySet<AttractionLang> = new Set(["ar"]);
@@ -49,6 +55,9 @@ export const ATTR_HUB: Record<AttractionLang, { metaTitle: string; metaDescripti
   it: { metaTitle: "Le Attrazioni Top della Turchia — Tour con Guide Locali", metaDescription: "Esplora i più grandi monumenti della Turchia — da Santa Sofia e la Cappadocia a Efeso, Pamukkale e Göbeklitepe — con una guida locale verificata.", h1: "Le Attrazioni Top della Turchia", intro: "Dalle moschee di Istanbul all'antica Efeso e al tempio più antico del mondo, scopri ogni luogo con una guida locale verificata." },
   pl: { metaTitle: "Najważniejsze Atrakcje Turcji — Wycieczki z Lokalnymi Przewodnikami", metaDescription: "Odkryj największe zabytki Turcji — od Hagii Sophii i Kapadocji po Efez, Pamukkale i Göbeklitepe — ze zweryfikowanym lokalnym przewodnikiem.", h1: "Najważniejsze Atrakcje Turcji", intro: "Od meczetów Stambułu po antyczny Efez i najstarszą świątynię świata — odkryj każde miejsce ze zweryfikowanym lokalnym przewodnikiem." },
   nl: { metaTitle: "De Topbezienswaardigheden van Turkije — Tours met Lokale Gidsen", metaDescription: "Ontdek de grootste monumenten van Turkije — van de Hagia Sophia en Cappadocië tot Efeze, Pamukkale en Göbeklitepe — met een geverifieerde lokale gids.", h1: "De Topbezienswaardigheden van Turkije", intro: "Van de moskeeën van Istanbul tot het antieke Efeze en de oudste tempel ter wereld — ontdek elke bezienswaardigheid met een geverifieerde lokale gids." },
+  pt: { metaTitle: `Principais Atrações da Turquia — Tours com Guias Locais`, metaDescription: `Descubra os maiores monumentos da Turquia — de Santa Sofia e da Capadócia a Éfeso, Pamukkale e Göbekli Tepe — com um guia local verificado.`, h1: `Principais Atrações da Turquia`, intro: `Das mesquitas de Istambul à antiga Éfeso e ao templo mais antigo do mundo, descubra cada monumento com um guia local verificado.` },
+  ja: { metaTitle: `トルコの人気観光スポット — 地元ガイドと巡るツアー`, metaDescription: `アヤソフィアやカッパドキアから、エフェソス、パムッカレ、ギョベクリ・テペまで — トルコを代表する名所を、認証済みの地元ガイドと巡りましょう。`, h1: `トルコの人気観光スポット`, intro: `イスタンブールのモスクから古代エフェソス、そして世界最古の神殿まで。すべての名所を認証済みの地元ガイドと巡りましょう。` },
+  ko: { metaTitle: `튀르키예 인기 명소 — 현지 가이드와 함께하는 투어`, metaDescription: `아야소피아와 카파도키아부터 에페소스, 파묵칼레, 괴베클리 테페까지 — 튀르키예를 대표하는 명소를 인증된 현지 가이드와 함께 둘러보세요.`, h1: `튀르키예 인기 명소`, intro: `이스탄불의 모스크에서 고대 도시 에페소스, 그리고 세계에서 가장 오래된 신전까지, 모든 명소를 인증된 현지 가이드와 함께 만나보세요.` },
 };
 
 export type AttractionContent = {
@@ -129,6 +138,9 @@ const IST: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
     toursHeading: "Tours door Istanbul met lokale gidsen",
     ctaSub: "Download VibeGuide gratis en vind een geverifieerde gids in Istanbul in 60 seconden.",
   },
+  pt: { toursHeading: `Tours em Istambul com guias locais`, ctaSub: `Descarregue o VibeGuide gratuitamente e encontre um guia verificado em Istambul em 60 segundos.` },
+  ja: { toursHeading: `地元ガイドと巡るイスタンブールツアー`, ctaSub: `VibeGuideを無料でダウンロードして、認証済みのイスタンブールガイドと60秒でマッチング。` },
+  ko: { toursHeading: `현지 가이드와 함께하는 이스탄불 투어`, ctaSub: `VibeGuide를 무료로 다운로드하고 인증된 이스탄불 가이드와 60초 만에 매칭하세요.` },
 };
 
 // Efes (İzmir / Selçuk) ortak metinleri.
@@ -144,6 +156,9 @@ const EPH: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   it: { toursHeading: "Tour di Efeso con guide locali", ctaSub: "Scarica VibeGuide gratis e trova una guida locale verificata per Efeso in 60 secondi." },
   pl: { toursHeading: "Wycieczki po Efezie z lokalnymi przewodnikami", ctaSub: "Pobierz VibeGuide za darmo i znajdź zweryfikowanego lokalnego przewodnika po Efezie w 60 sekund." },
   nl: { toursHeading: "Tours door Efeze met lokale gidsen", ctaSub: "Download VibeGuide gratis en vind een geverifieerde lokale gids voor Efeze in 60 seconden." },
+  pt: { toursHeading: `Tours em Éfeso com guias locais`, ctaSub: `Descarregue o VibeGuide gratuitamente e encontre um guia local verificado para Éfeso em 60 segundos.` },
+  ja: { toursHeading: `地元ガイドと巡るエフェソスツアー`, ctaSub: `VibeGuideを無料でダウンロードして、エフェソスの認証済み地元ガイドと60秒でマッチング。` },
+  ko: { toursHeading: `현지 가이드와 함께하는 에페소스 투어`, ctaSub: `VibeGuide를 무료로 다운로드하고 에페소스의 인증된 현지 가이드와 60초 만에 매칭하세요.` },
 };
 
 // Kapadokya (Nevşehir / Göreme) ortak metinleri.
@@ -159,6 +174,9 @@ const CAP: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   it: { toursHeading: "Tour della Cappadocia con guide locali", ctaSub: "Scarica VibeGuide gratis e trova una guida verificata in Cappadocia in 60 secondi." },
   pl: { toursHeading: "Wycieczki po Kapadocji z lokalnymi przewodnikami", ctaSub: "Pobierz VibeGuide za darmo i znajdź zweryfikowanego przewodnika w Kapadocji w 60 sekund." },
   nl: { toursHeading: "Tours door Cappadocië met lokale gidsen", ctaSub: "Download VibeGuide gratis en vind een geverifieerde gids in Cappadocië in 60 seconden." },
+  pt: { toursHeading: `Tours na Capadócia com guias locais`, ctaSub: `Descarregue o VibeGuide gratuitamente e encontre um guia verificado na Capadócia em 60 segundos.` },
+  ja: { toursHeading: `地元ガイドと巡るカッパドキアツアー`, ctaSub: `VibeGuideを無料でダウンロードして、認証済みのカッパドキアガイドと60秒でマッチング。` },
+  ko: { toursHeading: `현지 가이드와 함께하는 카파도키아 투어`, ctaSub: `VibeGuide를 무료로 다운로드하고 인증된 카파도키아 가이드와 60초 만에 매칭하세요.` },
 };
 
 // İzmir / Bergama (Pergamon) ortak metinleri.
@@ -174,6 +192,9 @@ const IZM: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   it: { toursHeading: "Tour di Smirne con guide locali", ctaSub: "Scarica VibeGuide gratis e trova una guida verificata a Smirne in 60 secondi." },
   pl: { toursHeading: "Wycieczki po Izmirze z lokalnymi przewodnikami", ctaSub: "Pobierz VibeGuide za darmo i znajdź zweryfikowanego przewodnika w Izmirze w 60 sekund." },
   nl: { toursHeading: "İzmir-tours met lokale gidsen", ctaSub: "Download VibeGuide gratis en vind een geverifieerde gids in İzmir in 60 seconden." },
+  pt: { toursHeading: `Tours em Esmirna com guias locais`, ctaSub: `Descarregue o VibeGuide gratuitamente e encontre um guia verificado em Esmirna em 60 segundos.` },
+  ja: { toursHeading: `地元ガイドと巡るイズミルツアー`, ctaSub: `VibeGuideを無料でダウンロードして、認証済みのイズミルガイドと60秒でマッチング。` },
+  ko: { toursHeading: `현지 가이드와 함께하는 이즈미르 투어`, ctaSub: `VibeGuide를 무료로 다운로드하고 인증된 이즈미르 가이드와 60초 만에 매칭하세요.` },
 };
 
 // Antalya (Aspendos / Kaleiçi) ortak metinleri.
@@ -189,6 +210,9 @@ const ANT: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   it: { toursHeading: "Tour di Antalya con guide locali", ctaSub: "Scarica VibeGuide gratis e trova una guida verificata ad Antalya in 60 secondi." },
   pl: { toursHeading: "Wycieczki po Antalyi z lokalnymi przewodnikami", ctaSub: "Pobierz VibeGuide za darmo i znajdź zweryfikowanego przewodnika w Antalyi w 60 sekund." },
   nl: { toursHeading: "Antalya-tours met lokale gidsen", ctaSub: "Download VibeGuide gratis en vind een geverifieerde gids in Antalya in 60 seconden." },
+  pt: { toursHeading: `Tours em Antalya com guias locais`, ctaSub: `Descarregue o VibeGuide gratuitamente e encontre um guia verificado em Antalya em 60 segundos.` },
+  ja: { toursHeading: `地元ガイドと巡るアンタルヤツアー`, ctaSub: `VibeGuideを無料でダウンロードして、認証済みのアンタルヤガイドと60秒でマッチング。` },
+  ko: { toursHeading: `현지 가이드와 함께하는 안탈리아 투어`, ctaSub: `VibeGuide를 무료로 다운로드하고 인증된 안탈리아 가이드와 60초 만에 매칭하세요.` },
 };
 
 // Pamukkale / Hierapolis (Denizli) ortak metinleri.
@@ -204,6 +228,9 @@ const PAM: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   it: { toursHeading: "Tour di Pamukkale con guide locali", ctaSub: "Scarica VibeGuide gratis e trova una guida verificata a Pamukkale in 60 secondi." },
   pl: { toursHeading: "Wycieczki po Pamukkale z lokalnymi przewodnikami", ctaSub: "Pobierz VibeGuide za darmo i znajdź zweryfikowanego przewodnika w Pamukkale w 60 sekund." },
   nl: { toursHeading: "Pamukkale-tours met lokale gidsen", ctaSub: "Download VibeGuide gratis en vind een geverifieerde gids in Pamukkale in 60 seconden." },
+  pt: { toursHeading: `Tours em Pamukkale com guias locais`, ctaSub: `Descarregue o VibeGuide gratuitamente e encontre um guia verificado em Pamukkale em 60 segundos.` },
+  ja: { toursHeading: `地元ガイドと巡るパムッカレツアー`, ctaSub: `VibeGuideを無料でダウンロードして、認証済みのパムッカレガイドと60秒でマッチング。` },
+  ko: { toursHeading: `현지 가이드와 함께하는 파묵칼레 투어`, ctaSub: `VibeGuide를 무료로 다운로드하고 인증된 파묵칼레 가이드와 60초 만에 매칭하세요.` },
 };
 
 // Bodrum (kale + antik Halikarnas) ortak metinleri.
@@ -219,6 +246,9 @@ const BOD: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   it: { toursHeading: "Tour di Bodrum con guide locali", ctaSub: "Scarica VibeGuide gratis e trova una guida verificata a Bodrum in 60 secondi." },
   pl: { toursHeading: "Wycieczki po Bodrum z lokalnymi przewodnikami", ctaSub: "Pobierz VibeGuide za darmo i znajdź zweryfikowanego przewodnika w Bodrum w 60 sekund." },
   nl: { toursHeading: "Bodrum-tours met lokale gidsen", ctaSub: "Download VibeGuide gratis en vind een geverifieerde gids in Bodrum in 60 seconden." },
+  pt: { toursHeading: `Tours em Bodrum com guias locais`, ctaSub: `Descarregue o VibeGuide gratuitamente e encontre um guia verificado em Bodrum em 60 segundos.` },
+  ja: { toursHeading: `地元ガイドと巡るボドルムツアー`, ctaSub: `VibeGuideを無料でダウンロードして、認証済みのボドルムガイドと60秒でマッチング。` },
+  ko: { toursHeading: `현지 가이드와 함께하는 보드룸 투어`, ctaSub: `VibeGuide를 무료로 다운로드하고 인증된 보드룸 가이드와 60초 만에 매칭하세요.` },
 };
 
 // Şanlıurfa / Göbeklitepe ortak metinleri.
@@ -234,6 +264,9 @@ const SAN: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   it: { toursHeading: "Tour di Şanlıurfa e Göbeklitepe con guide locali", ctaSub: "Scarica VibeGuide gratis e trova una guida locale verificata a Şanlıurfa in 60 secondi." },
   pl: { toursHeading: "Wycieczki po Şanlıurfie i Göbeklitepe z lokalnymi przewodnikami", ctaSub: "Pobierz VibeGuide za darmo i znajdź zweryfikowanego lokalnego przewodnika w Şanlıurfie w 60 sekund." },
   nl: { toursHeading: "Şanlıurfa- & Göbeklitepe-tours met lokale gidsen", ctaSub: "Download VibeGuide gratis en vind een geverifieerde lokale gids in Şanlıurfa in 60 seconden." },
+  pt: { toursHeading: `Tours em Şanlıurfa e Göbekli Tepe com guias locais`, ctaSub: `Descarregue o VibeGuide gratuitamente e encontre um guia local verificado em Şanlıurfa em 60 segundos.` },
+  ja: { toursHeading: `地元ガイドと巡るシャンルウルファ＆ギョベクリ・テペツアー`, ctaSub: `VibeGuideを無料でダウンロードして、シャンルウルファの認証済み地元ガイドと60秒でマッチング。` },
+  ko: { toursHeading: `현지 가이드와 함께하는 샨르우르파 & 괴베클리 테페 투어`, ctaSub: `VibeGuide를 무료로 다운로드하고 샨르우르파의 인증된 현지 가이드와 60초 만에 매칭하세요.` },
 };
 
 export const ATTRACTIONS: Attraction[] = [
@@ -555,6 +588,90 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: "Bezoek de Hagia Sophia met een local",
         ...IST.nl,
+      },
+      pt: {
+        name: `Santa Sofia`,
+        metaTitle: `Santa Sofia: Visitas Guiadas e Guias Locais`,
+        metaDescription:
+          `Explore a Santa Sofia em Istambul com um guia local verificado. Evite confusões e ouça 1500 anos de história bizantina e otomana de um verdadeiro especialista.`,
+        intro: [
+          `A Santa Sofia é a alma de Istambul — uma catedral bizantina, uma mesquita otomana e um monumento que vela pela cidade há quase 1500 anos. A sua cúpula imensa, os mosaicos dourados e a história em camadas recompensam quem compreende o que está a ver.`,
+          `Com um especialista local da VibeGuide dispensa as adivinhas. Ouça as histórias por trás dos mosaicos, dos grafitos vikings e do edifício que redefiniu a arquitetura — ao seu ritmo e na sua língua.`,
+        ],
+        highlights: [
+          { title: `A Grande Cúpula`, desc: `55 metros de altura e, durante 1000 anos, a maior do mundo.` },
+          { title: `Mosaicos Bizantinos`, desc: `Imagens em folha de ouro de imperadores e santos, ocultas durante séculos.` },
+          { title: `História em Camadas`, desc: `Catedral, mesquita, museu e de novo mesquita — cada era deixou a sua marca.` },
+        ],
+        faqs: [
+          { q: `Preciso de guia para a Santa Sofia?`, a: `Está aberta a todos, mas a história é invisível sem contexto. Um guia local transforma uma bela sala em 1500 anos de histórias — e ajuda-o a evitar as horas de maior movimento.` },
+          { q: `A entrada na Santa Sofia é gratuita?`, a: `As regras de entrada mudam ao longo do tempo. Um guia da VibeGuide informa-o da situação atual e da melhor altura para ir antes de reservar.` },
+          { q: `Quanto tempo demora a visita?`, a: `A maioria das visitas guiadas dura 1 a 2 horas, muitas vezes combinada com a Mesquita Azul e a praça de Sultanahmet, ali perto.` },
+        ],
+        planningHeading: `Planear a sua visita`,
+        planningParagraphs: [
+          `A Santa Sofia fica no coração de Sultanahmet, a cidade velha, e não podia ser mais fácil de alcançar. Apanhe o elétrico T1 até à paragem Sultanahmet e está a poucos passos da entrada. Ergue-se mesmo em frente à Mesquita Azul, do outro lado da praça, com o Palácio de Topkapı e a Cisterna da Basílica a poucos minutos a pé, pelo que se encaixa naturalmente num dia a explorar a península histórica.`,
+          `Vá de manhã cedo, se puder. A luz suave que entra pelas janelas superiores é mais bela logo após a abertura, e a vasta sala de oração fica bem mais tranquila antes de chegarem os grupos do meio-dia. A primavera e o outono oferecem o clima mais agradável e menos gente do que o pico do verão. Lembre-se de que é hoje uma mesquita em funcionamento, pelo que encerra aos turistas durante as cinco orações diárias.`,
+          `A entrada é gratuita, mas trata-se de um local de culto, por isso vista-se com discrição, cobrindo ombros e joelhos, e as senhoras devem levar um lenço para a cabeça. Lá dentro, é fácil sentir-se perdido sob a cúpula imensa sem saber o que está a ver. Um guia local licenciado da VibeGuide organiza os horários em torno das orações, ajuda-o a evitar as horas de maior movimento e dá vida aos mosaicos bizantinos e a séculos de história em camadas.`,
+        ],
+        ctaTitle: `Conheça a Santa Sofia com um local`,
+        ...IST.pt,
+      },
+      ja: {
+        name: `アヤソフィア`,
+        metaTitle: `アヤソフィア観光ツアーと地元ガイド`,
+        metaDescription:
+          `認定された地元ガイドとイスタンブールのアヤソフィアを巡りましょう。迷うことなく、1500年に及ぶビザンツとオスマンの歴史を本物の専門家から。`,
+        intro: [
+          `アヤソフィアはイスタンブールの魂です。ビザンツの大聖堂であり、オスマンのモスクであり、およそ1500年にわたり街を見守ってきた記念碑でもあります。巨大なドーム、黄金のモザイク、そして幾層にも重なる歴史は、その意味を理解する人にこそ深く応えてくれます。`,
+          `VibeGuideの地元エキスパートがいれば、あれこれ推測する必要はありません。モザイクの背後にある物語、ヴァイキングの落書き、建築を塗り替えた建物の逸話を、あなたのペースで、あなたの言語で聞くことができます。`,
+        ],
+        highlights: [
+          { title: `大ドーム`, desc: `高さ55メートル、1000年もの間、世界最大を誇りました。` },
+          { title: `ビザンツのモザイク`, desc: `皇帝や聖人を描いた金箔の図像で、何世紀も隠されていました。` },
+          { title: `重なり合う歴史`, desc: `大聖堂、モスク、博物館、そして再びモスクへ。どの時代も痕跡を残しています。` },
+        ],
+        faqs: [
+          { q: `アヤソフィアにガイドは必要ですか？`, a: `誰でも入れますが、背景知識がなければその歴史は目に見えません。地元ガイドは美しい空間を1500年の物語へと変え、混雑する時間帯を避ける手助けもします。` },
+          { q: `アヤソフィアの入場は無料ですか？`, a: `入場のルールは時期によって変わります。VibeGuideのガイドが、予約前に現在の状況とおすすめの訪問時間をお伝えします。` },
+          { q: `見学にはどれくらいかかりますか？`, a: `ガイド付き見学はたいてい1〜2時間で、近くのブルーモスクやスルタンアフメット広場と組み合わせることが多いです。` },
+        ],
+        planningHeading: `訪問の計画`,
+        planningParagraphs: [
+          `アヤソフィアは旧市街スルタンアフメットの中心にあり、この上なく行きやすい場所です。トラムT1に乗ってスルタンアフメット駅で降りれば、入口まで歩いてすぐです。広場を挟んでブルーモスクの真向かいに建ち、トプカプ宮殿や地下宮殿（バシリカ・シスタン）もいずれも徒歩数分なので、歴史地区を巡る一日に自然に組み込めます。`,
+          `できれば早朝に訪れてください。上部の窓から差し込むやわらかな光は開館直後がもっとも美しく、広大な礼拝室は昼前の団体客が来る前のほうがずっと静かです。春と秋は気候が快適で、真夏よりも人出が少なめです。現在は現役のモスクなので、一日五回の礼拝の間は観光客の入場が停止される点にご注意ください。`,
+          `入場は無料ですが、ここは礼拝の場ですので、肩とひざを覆う控えめな服装で訪れ、女性は頭を覆うスカーフをご用意ください。中に入ると、何を見ているのか分からないまま巨大なドームの下で途方に暮れがちです。VibeGuideの認定地元ガイドが礼拝の時間に合わせて予定を調整し、混雑する時間帯を避ける手助けをし、ビザンツのモザイクと幾層もの歴史を生き生きと語ります。`,
+        ],
+        ctaTitle: `地元ガイドとアヤソフィアへ`,
+        ...IST.ja,
+      },
+      ko: {
+        name: `아야소피아`,
+        metaTitle: `아야소피아 투어와 현지 가이드`,
+        metaDescription:
+          `검증된 현지 가이드와 함께 이스탄불의 아야소피아를 둘러보세요. 헤매지 않고 1500년에 걸친 비잔틴과 오스만의 역사를 진짜 전문가에게 들어보세요.`,
+        intro: [
+          `아야소피아는 이스탄불의 영혼입니다. 비잔틴의 대성당이자 오스만의 모스크였으며, 거의 1500년 동안 이 도시를 지켜본 기념비입니다. 거대한 돔과 황금 모자이크, 켜켜이 쌓인 역사는 무엇을 보고 있는지 이해하는 이에게 큰 감동을 안겨줍니다.`,
+          `VibeGuide의 현지 전문가와 함께라면 짐작에 기댈 필요가 없습니다. 모자이크 뒤에 숨은 이야기, 바이킹의 낙서, 건축의 역사를 다시 쓴 이 건물의 사연을 당신의 속도로, 당신의 언어로 들을 수 있습니다.`,
+        ],
+        highlights: [
+          { title: `거대한 돔`, desc: `높이 55미터로, 1000년 동안 세계에서 가장 컸습니다.` },
+          { title: `비잔틴 모자이크`, desc: `황제와 성인을 그린 금박 이미지로, 수 세기 동안 감춰져 있었습니다.` },
+          { title: `켜켜이 쌓인 역사`, desc: `대성당, 모스크, 박물관, 그리고 다시 모스크. 모든 시대가 흔적을 남겼습니다.` },
+        ],
+        faqs: [
+          { q: `아야소피아에 가이드가 필요한가요?`, a: `누구에게나 열려 있지만 배경 설명이 없으면 그 역사는 눈에 보이지 않습니다. 현지 가이드는 아름다운 공간을 1500년의 이야기로 바꾸고, 가장 붐비는 시간을 피하도록 도와줍니다.` },
+          { q: `아야소피아는 무료로 입장할 수 있나요?`, a: `입장 규정은 시기에 따라 달라집니다. VibeGuide 가이드가 예약 전에 현재 상황과 방문하기 좋은 시간을 알려드립니다.` },
+          { q: `관람에는 얼마나 걸리나요?`, a: `가이드 투어는 보통 1~2시간이며, 가까운 블루 모스크와 술탄아흐메트 광장과 함께 둘러보는 경우가 많습니다.` },
+        ],
+        planningHeading: `방문 계획 세우기`,
+        planningParagraphs: [
+          `아야소피아는 옛 시가지 술탄아흐메트의 중심에 있어 찾아가기가 더없이 쉽습니다. T1 트램을 타고 술탄아흐메트 정류장에서 내리면 입구까지 걸어서 금방입니다. 광장을 사이에 두고 블루 모스크 바로 맞은편에 있으며, 톱카프 궁전과 예레바탄 지하 저수지도 모두 도보 몇 분 거리라 역사 반도를 둘러보는 하루 일정에 자연스럽게 들어맞습니다.`,
+          `가능하다면 이른 아침에 방문하세요. 위쪽 창으로 쏟아지는 부드러운 빛은 개장 직후가 가장 아름답고, 넓은 예배실은 정오의 단체 관광객이 오기 전이 훨씬 한적합니다. 봄과 가을은 날씨가 가장 쾌적하고 한여름보다 사람이 적습니다. 현재는 실제로 예배가 이뤄지는 모스크이므로 하루 다섯 번의 예배 시간에는 관광객 입장이 중단된다는 점을 기억하세요.`,
+          `입장은 무료이지만 예배의 공간이므로 어깨와 무릎을 가리는 단정한 복장을 갖추고, 여성은 머리를 덮을 스카프를 준비하세요. 안으로 들어가면 무엇을 보고 있는지 모른 채 거대한 돔 아래에서 길을 잃기 쉽습니다. VibeGuide의 인증 현지 가이드가 예배 일정에 맞춰 방문 시간을 조율하고, 가장 붐비는 시간을 피하도록 도우며, 비잔틴 모자이크와 켜켜이 쌓인 역사를 생생하게 들려줍니다.`,
+        ],
+        ctaTitle: `현지 가이드와 아야소피아 둘러보기`,
+        ...IST.ko,
       },
 
     },
@@ -879,6 +996,90 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: "Wandel door Topkapı met een local",
         ...IST.nl,
       },
+      pt: {
+        name: `Palácio de Topkapı`,
+        metaTitle: `Palácio de Topkapı: Visitas e Guias Locais`,
+        metaDescription:
+          `Descubra o Palácio de Topkapı, o coração do Império Otomano, com um guia de Istambul verificado. Harém, tesouro, relíquias sagradas e vistas do Bósforo explicados.`,
+        intro: [
+          `Durante 400 anos, o Palácio de Topkapı foi a residência dos sultões otomanos e o centro de um império. Hoje, os seus pátios, o Harém, o Tesouro e as relíquias sagradas contam a história de uma dinastia que governou três continentes.`,
+          `Um local da VibeGuide dá sentido a toda esta vastidão — onde residia o poder, o que significava cada portão e as histórias humanas por trás das joias — para que saia a compreender, e não apenas a fotografar.`,
+        ],
+        highlights: [
+          { title: `O Harém`, desc: `O mundo privado da família do sultão — azulejado, secreto e inesquecível.` },
+          { title: `Tesouro Imperial`, desc: `O Punhal de Topkapı e o Diamante do Colhereiro, de 86 quilates.` },
+          { title: `Terraços do Bósforo`, desc: `Onde os sultões contemplavam o mar onde a Europa encontra a Ásia.` },
+        ],
+        faqs: [
+          { q: `O Harém está incluído no bilhete?`, a: `O Harém costuma exigir um bilhete separado. O seu guia da VibeGuide explica-lhe se vale a pena e organiza o percurso por si.` },
+          { q: `De quanto tempo preciso?`, a: `Conte com 2 a 3 horas. O palácio é grande; um guia mantém-no nos pontos altos, sem o cansaço.` },
+          { q: `Fica perto da Santa Sofia?`, a: `Sim — Topkapı, a Santa Sofia e a Mesquita Azul ficam a poucos passos, em Sultanahmet.` },
+        ],
+        planningHeading: `Planear a sua visita`,
+        planningParagraphs: [
+          `O Palácio de Topkapı coroa a Ponta do Serralho, em Sultanahmet, na extremidade da cidade velha onde o Bósforo se encontra com o Corno de Ouro. Apanhe o elétrico T1 até à paragem Sultanahmet e siga o caminho por trás da Santa Sofia; o portão fica a uma subida curta e agradável. Como está mesmo ao lado da Santa Sofia e da Mesquita Azul, o palácio encaixa-se facilmente no mesmo dia a explorar a península histórica.`,
+          `Chegue mesmo à hora de abertura para percorrer os pátios antes de os grupos os encherem. As manhãs oferecem a atmosfera mais calma e a melhor luz sobre os terraços do Bósforo, e os jardins do palácio são especialmente belos na primavera e no outono. Reserve duas a três horas para lhe fazer justiça, ou mais se se demorar no Tesouro. Confirme o dia de encerramento semanal antes de ir, pois o palácio fecha um dia a meio da semana.`,
+          `É um local com bilhete, e o Harém exige um bilhete separado que compensa bem pelas suas câmaras azulejadas e salas imperiais. O complexo estende-se por quatro pátios, com pavilhões, cozinhas e coleções fáceis de passar à pressa sem conhecer as suas histórias. Um guia local licenciado da VibeGuide trata dos bilhetes e dos horários, conduz-no numa ordem sensata e revela as camadas da vida da corte otomana por trás das muralhas.`,
+        ],
+        ctaTitle: `Percorra o Topkapı com um local`,
+        ...IST.pt,
+      },
+      ja: {
+        name: `トプカプ宮殿`,
+        metaTitle: `トプカプ宮殿ツアーと地元ガイド`,
+        metaDescription:
+          `認定されたイスタンブールのガイドと、オスマン帝国の中心トプカプ宮殿を巡りましょう。ハレム、宝物館、聖遺物、ボスポラスの眺めを分かりやすく解説します。`,
+        intro: [
+          `400年にわたり、トプカプ宮殿はオスマン帝国の歴代スルタンの住まいであり、帝国の中枢でした。今日、その中庭、ハレム、宝物館、そして聖遺物は、三大陸を治めた王朝の物語を語りかけてきます。`,
+          `VibeGuideの地元ガイドは、この広大な宮殿を読み解きます。権力がどこに宿っていたのか、どの門が何を意味したのか、宝石の背後にある人間の物語まで。だからこそ、写真を撮るだけでなく、理解して帰ることができます。`,
+        ],
+        highlights: [
+          { title: `ハレム`, desc: `スルタンの家族だけの私的な世界。タイルに彩られ、秘めやかで、忘れがたい空間です。` },
+          { title: `帝国の宝物館`, desc: `トプカプの短剣と、86カラットの「スプーン職人のダイヤモンド」。` },
+          { title: `ボスポラスのテラス`, desc: `スルタンたちがヨーロッパとアジアの接する海を眺めた場所です。` },
+        ],
+        faqs: [
+          { q: `ハレムは入場券に含まれますか？`, a: `ハレムはたいてい別料金の入場券が必要です。VibeGuideのガイドが、その価値をお伝えし、見学ルートを整えます。` },
+          { q: `どれくらいの時間が必要ですか？`, a: `2〜3時間を見ておいてください。宮殿は広いので、ガイドが疲れさせずに見どころへ案内します。` },
+          { q: `アヤソフィアの近くですか？`, a: `はい。トプカプ、アヤソフィア、ブルーモスクはスルタンアフメット地区で徒歩圏内に並んでいます。` },
+        ],
+        planningHeading: `訪問の計画`,
+        planningParagraphs: [
+          `トプカプ宮殿は、ボスポラスと金角湾が出会う旧市街の先端、スルタンアフメットのサラーイ岬に構えています。トラムT1でスルタンアフメット駅まで行き、アヤソフィアの裏手の道をたどってください。門までは短くて気持ちのよい上り坂です。アヤソフィアやブルーモスクのすぐそばにあるため、歴史地区を巡る同じ一日に無理なく組み込めます。`,
+          `開館と同時に到着し、団体客が押し寄せる前に中庭を歩きましょう。朝はもっとも静かな雰囲気に包まれ、ボスポラスのテラスに射す光も最良です。宮殿の庭は春と秋がとりわけ美しく感じられます。じっくり味わうには2〜3時間、宝物館でゆっくりするならさらに時間を取ってください。宮殿は週の半ばに一日休館するので、出かける前に定休日を確認しておきましょう。`,
+          `ここは入場券が必要な施設で、ハレムは別料金の入場券が要りますが、タイル張りの部屋や帝国の間を見る価値は十分にあります。宮殿は四つの中庭に広がり、あずまや、厨房、収蔵品が並び、物語を知らないまま素通りしがちです。VibeGuideの認定地元ガイドが入場券と時間の手配を行い、理にかなった順路で案内し、城壁の内に息づいたオスマン宮廷の暮らしを幾重にも明かします。`,
+        ],
+        ctaTitle: `地元ガイドとトプカプ宮殿へ`,
+        ...IST.ja,
+      },
+      ko: {
+        name: `톱카프 궁전`,
+        metaTitle: `톱카프 궁전 투어와 현지 가이드`,
+        metaDescription:
+          `검증된 이스탄불 가이드와 함께 오스만 제국의 심장 톱카프 궁전을 만나보세요. 하렘, 보물관, 성물, 보스포루스 전망을 알기 쉽게 설명해 드립니다.`,
+        intro: [
+          `400년 동안 톱카프 궁전은 오스만 술탄들의 거처이자 제국의 중심이었습니다. 오늘날 그 안뜰과 하렘, 보물관, 성물들은 세 대륙을 다스린 왕조의 이야기를 들려줍니다.`,
+          `VibeGuide의 현지 가이드는 이 광활한 궁전을 풀어냅니다. 권력이 어디에 자리했는지, 어느 문이 무엇을 뜻했는지, 보석 뒤에 담긴 사람들의 이야기까지. 그래서 사진만 남기는 것이 아니라 이해하고 돌아가게 됩니다.`,
+        ],
+        highlights: [
+          { title: `하렘`, desc: `술탄 가족만의 사적인 세계. 타일로 장식되고 은밀하며 잊을 수 없는 공간입니다.` },
+          { title: `제국의 보물관`, desc: `톱카프 단검과 86캐럿의 스푼 세공사 다이아몬드.` },
+          { title: `보스포루스 테라스`, desc: `술탄들이 유럽과 아시아가 맞닿는 바다를 바라보던 곳입니다.` },
+        ],
+        faqs: [
+          { q: `하렘은 입장권에 포함되나요?`, a: `하렘은 보통 별도의 입장권이 필요합니다. VibeGuide 가이드가 그 가치를 알려드리고 동선을 대신 짜드립니다.` },
+          { q: `시간이 얼마나 필요한가요?`, a: `2~3시간을 잡으세요. 궁전이 넓어서 가이드가 지치지 않게 핵심만 안내해 드립니다.` },
+          { q: `아야소피아와 가깝나요?`, a: `네. 톱카프와 아야소피아, 블루 모스크는 술탄아흐메트에서 걸어서 금방인 거리에 모여 있습니다.` },
+        ],
+        planningHeading: `방문 계획 세우기`,
+        planningParagraphs: [
+          `톱카프 궁전은 보스포루스와 금각만이 만나는 옛 시가지 끝자락, 술탄아흐메트의 사라이 곶 위에 자리합니다. T1 트램을 타고 술탄아흐메트 정류장에서 내려 아야소피아 뒤편 길을 따라가세요. 문까지는 짧고 기분 좋은 오르막입니다. 아야소피아와 블루 모스크 바로 옆에 있어 역사 반도를 둘러보는 같은 하루 일정에 손쉽게 넣을 수 있습니다.`,
+          `개장 시간에 맞춰 도착해 단체 관광객이 몰리기 전에 안뜰을 거니세요. 아침은 가장 고요한 분위기와 보스포루스 테라스로 비치는 가장 좋은 빛을 선사하며, 궁전 정원은 봄과 가을에 특히 아름답습니다. 제대로 둘러보려면 두세 시간을, 보물관에 머물 생각이라면 그 이상을 잡으세요. 궁전은 주중 하루 문을 닫으니 가기 전에 휴관일을 확인하세요.`,
+          `이곳은 입장권이 필요한 명소이며, 하렘은 별도의 입장권이 필요하지만 타일로 꾸민 방들과 제국의 공간을 볼 값어치가 충분합니다. 궁전은 네 개의 안뜰에 걸쳐 정자와 주방, 수집품이 펼쳐져 있어 사연을 모르면 서둘러 지나치기 쉽습니다. VibeGuide의 인증 현지 가이드가 입장권과 시간을 준비하고 합리적인 순서로 안내하며, 성벽 안에 깃든 오스만 궁정 생활의 여러 겹을 드러내 보여줍니다.`,
+        ],
+        ctaTitle: `현지 가이드와 톱카프 궁전 걷기`,
+        ...IST.ko,
+      },
 
     },
   },
@@ -1201,6 +1402,90 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: "Verken de cisterne met een local",
         ...IST.nl,
+      },
+      pt: {
+        name: `Cisterna da Basílica`,
+        metaTitle: `Cisterna da Basílica (Yerebatan): Visitas e Guias`,
+        metaDescription:
+          `Desça à Cisterna da Basílica, o palácio subterrâneo de água de Istambul. Veja as cabeças de Medusa e as 336 colunas com um guia local verificado.`,
+        intro: [
+          `Sob as ruas de Sultanahmet estende-se a Cisterna da Basílica — um reservatório subterrâneo de 1500 anos, com 336 colunas de mármore, luz difusa e ecos de gotas a cair. Os bizantinos construíram-na para abastecer o Grande Palácio; hoje é um dos espaços mais atmosféricos de Istambul.`,
+          `Um local da VibeGuide explica as cabeças de Medusa ao contrário, porque foram reaproveitadas colunas de templos mais antigos e as lendas que cresceram na escuridão — transformando uma visita curta numa verdadeira história.`,
+        ],
+        highlights: [
+          { title: `As Cabeças de Medusa`, desc: `Dois rostos antigos de Medusa, colocados de lado e de cabeça para baixo — ninguém sabe bem porquê.` },
+          { title: `336 Colunas`, desc: `Reaproveitadas de ruínas romanas mais antigas, cada uma ligeiramente diferente.` },
+          { title: `A Atmosfera`, desc: `Fresca, penumbrosa e cheia de ecos — um cenário de cinema ganho vida sob a cidade.` },
+        ],
+        faqs: [
+          { q: `Vale a pena visitar a Cisterna da Basílica?`, a: `Sem dúvida — é curta mas inesquecível, e a história torna-a muito mais rica. Um guia aponta pormenores que a maioria dos visitantes deixa passar.` },
+          { q: `Quanto tempo dura a visita?`, a: `Normalmente 30 a 45 minutos, fácil de combinar com a Santa Sofia e a Mesquita Azul, ali ao lado.` },
+          { q: `É acessível?`, a: `Há passadiços por cima da água, mas com alguns degraus. O seu guia diz-lhe antecipadamente o que esperar.` },
+        ],
+        planningHeading: `Planear a sua visita`,
+        planningParagraphs: [
+          `A Cisterna da Basílica fica no coração de Sultanahmet, a menos de um minuto a pé da Santa Sofia e da Mesquita Azul. A forma mais fácil de chegar é o elétrico T1 até à paragem Sultanahmet, de onde a entrada fica a uma caminhada curta e plana. Se já estiver a explorar a praça principal da cidade velha, basta passear de um ponto ao seguinte.`,
+          `A cisterna mantém-se fresca e em penumbra faça o tempo que fizer, o que a torna um refúgio bem-vindo nas tardes quentes de verão. Ainda assim, o meio do dia traz a maior afluência, pelo que chegar cedo ou já ao fim da tarde lhe garante passadiços mais tranquilos. A iluminação restaurada fica impressionante a qualquer hora, e não há má estação para descer a este mundo subterrâneo.`,
+          `A entrada é com bilhete e percorre-se por passadiços elevados sobre a água, passando por centenas de colunas até às famosas cabeças de Medusa ao fundo. Conte com um espaço atmosférico e cheio de ecos, que recompensa a exploração pausada. Um guia local licenciado da VibeGuide pode tratar do seu bilhete, escolher a melhor hora para evitar a multidão e dar vida à história bizantina enquanto avança por entre as sombras.`,
+        ],
+        ctaTitle: `Explore a Cisterna com um local`,
+        ...IST.pt,
+      },
+      ja: {
+        name: `地下宮殿（バシリカ・シスタン）`,
+        metaTitle: `地下宮殿（イェレバタン）ツアーと地元ガイド`,
+        metaDescription:
+          `イスタンブールの地下水の宮殿、地下宮殿（バシリカ・シスタン）へ降りてみましょう。メドゥーサの頭部と336本の円柱を認定地元ガイドと巡ります。`,
+        intro: [
+          `スルタンアフメットの街路の下には、地下宮殿（バシリカ・シスタン）が広がっています。336本の大理石円柱、ほの暗い光、滴る水のこだまが響く、1500年前の地下貯水池です。ビザンツ人が大宮殿に水を供給するために築いたこの空間は、今やイスタンブール屈指の幻想的な場所です。`,
+          `VibeGuideの地元ガイドが、逆さまのメドゥーサの頭部や、より古い神殿から円柱が再利用された理由、闇の中で育まれた伝説を解き明かします。短い見学が、確かな物語へと変わります。`,
+        ],
+        highlights: [
+          { title: `メドゥーサの頭部`, desc: `二つの古代のメドゥーサの顔が、横向きと逆さまに置かれています。その理由は誰にも完全には分かりません。` },
+          { title: `336本の円柱`, desc: `より古いローマの遺跡から再利用され、一本ずつわずかに異なります。` },
+          { title: `空気感`, desc: `ひんやりと薄暗く、こだまが響く。街の下によみがえった映画のセットのようです。` },
+        ],
+        faqs: [
+          { q: `地下宮殿は訪れる価値がありますか？`, a: `もちろんです。短いながら忘れがたく、歴史を知ればいっそう味わい深くなります。ガイドは多くの人が見過ごす細部を指し示してくれます。` },
+          { q: `見学時間はどれくらいですか？`, a: `たいてい30〜45分ほどで、すぐ隣のアヤソフィアやブルーモスクと組み合わせやすいです。` },
+          { q: `バリアフリーですか？`, a: `水面の上に通路が設けられていますが、段差もいくつかあります。ガイドが事前に状況をお伝えします。` },
+        ],
+        planningHeading: `訪問の計画`,
+        planningParagraphs: [
+          `地下宮殿はスルタンアフメットの中心にあり、アヤソフィアやブルーモスクから徒歩わずか1分ほどです。もっとも行きやすいのはトラムT1でスルタンアフメット駅まで行く方法で、そこから入口までは平坦な道を少し歩くだけです。すでに旧市街の中央広場を巡っているなら、ひとつの見どころから次へと歩いて移るだけで着きます。`,
+          `地下宮殿は天候にかかわらずひんやりと薄暗く保たれるため、夏の暑い午後にはうれしい避難所になります。とはいえ日中は最も混み合うので、早朝か午後遅めに訪れると通路をより静かに歩けます。修復された照明はどの時間帯も見事で、この地下世界へ降りるのに悪い季節はありません。`,
+          `入場は入場券が必要で、水面の上に架けられた通路をたどり、何百本もの円柱を過ぎて奥にある名高いメドゥーサの頭部へと進みます。こだまの響く幻想的な空間は、ゆっくり歩くほど応えてくれます。VibeGuideの認定地元ガイドが入場券を手配し、混雑を避ける時間を選び、影の中を進みながらビザンツの歴史を生き生きと語ってくれます。`,
+        ],
+        ctaTitle: `地元ガイドと地下宮殿へ`,
+        ...IST.ja,
+      },
+      ko: {
+        name: `예레바탄 지하 저수지`,
+        metaTitle: `예레바탄 지하 저수지 투어와 현지 가이드`,
+        metaDescription:
+          `이스탄불의 지하 물의 궁전, 예레바탄 지하 저수지로 내려가 보세요. 메두사 머리와 336개의 기둥을 검증된 현지 가이드와 함께 만나보세요.`,
+        intro: [
+          `술탄아흐메트의 거리 아래에는 예레바탄 지하 저수지가 펼쳐져 있습니다. 336개의 대리석 기둥과 은은한 빛, 물방울이 떨어지는 메아리로 가득한 1500년 된 지하 저수조입니다. 비잔틴인들이 대궁전에 물을 대기 위해 지은 이곳은 오늘날 이스탄불에서 가장 분위기 있는 공간 중 하나입니다.`,
+          `VibeGuide의 현지 가이드가 거꾸로 놓인 메두사 머리, 더 오래된 신전에서 기둥을 재사용한 이유, 어둠 속에서 자라난 전설들을 풀어냅니다. 짧은 관람이 진짜 이야기로 바뀝니다.`,
+        ],
+        highlights: [
+          { title: `메두사 머리`, desc: `고대 메두사의 두 얼굴이 옆으로, 그리고 거꾸로 놓여 있습니다. 그 이유는 아무도 온전히 알지 못합니다.` },
+          { title: `336개의 기둥`, desc: `더 오래된 로마 유적에서 재사용해 하나하나 조금씩 다릅니다.` },
+          { title: `분위기`, desc: `서늘하고 어둑하며 메아리가 울립니다. 도시 아래 되살아난 영화 세트 같습니다.` },
+        ],
+        faqs: [
+          { q: `예레바탄 지하 저수지는 가볼 만한가요?`, a: `물론입니다. 짧지만 잊을 수 없고, 역사를 알면 훨씬 풍성해집니다. 가이드가 대부분의 방문객이 지나치는 세부를 짚어줍니다.` },
+          { q: `관람 시간은 얼마나 걸리나요?`, a: `보통 30~45분이며, 바로 옆의 아야소피아와 블루 모스크와 함께 둘러보기 좋습니다.` },
+          { q: `이동이 편한가요?`, a: `물 위로 통로가 나 있지만 계단도 일부 있습니다. 가이드가 무엇을 예상하면 되는지 미리 알려드립니다.` },
+        ],
+        planningHeading: `방문 계획 세우기`,
+        planningParagraphs: [
+          `예레바탄 지하 저수지는 술탄아흐메트의 중심에 있어 아야소피아와 블루 모스크에서 걸어서 채 1분이 안 됩니다. 가장 쉬운 방법은 T1 트램을 타고 술탄아흐메트 정류장에서 내리는 것으로, 거기서 입구까지 평탄한 길을 조금만 걸으면 됩니다. 이미 옛 시가지의 중앙 광장을 둘러보고 있다면 한 명소에서 다음 명소로 걸어가기만 하면 됩니다.`,
+          `저수지는 날씨와 상관없이 서늘하고 어둑하게 유지되어 무더운 여름 오후에 반가운 피난처가 됩니다. 그래도 한낮에는 가장 붐비므로 이른 아침이나 늦은 오후에 가면 통로를 더 한적하게 걸을 수 있습니다. 복원된 조명은 어느 시간에나 인상적이며, 이 지하 세계로 내려가기에 나쁜 계절은 없습니다.`,
+          `입장은 입장권이 필요하며, 물 위로 놓인 통로를 따라 수백 개의 기둥을 지나 안쪽 끝의 유명한 메두사 머리까지 걸어갑니다. 메아리가 울리는 분위기 있는 공간은 천천히 둘러볼수록 값집니다. VibeGuide의 인증 현지 가이드가 입장권을 준비하고 붐비지 않는 시간을 골라주며, 그림자 속을 지나는 동안 비잔틴의 역사를 생생하게 들려줍니다.`,
+        ],
+        ctaTitle: `현지 가이드와 지하 저수지 둘러보기`,
+        ...IST.ko,
       },
 
     },
@@ -1525,6 +1810,90 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: "Bezoek de Blauwe Moskee met een local",
         ...IST.nl,
       },
+      pt: {
+        name: `Mesquita Azul`,
+        metaTitle: `Mesquita Azul (Sultanahmet): Visitas e Guias`,
+        metaDescription:
+          `Visite a Mesquita Azul em Istambul com um guia local verificado. Seis minaretes, 20 000 azulejos de İznik e uma mesquita em atividade — visitada com respeito.`,
+        intro: [
+          `A Mesquita Azul — a Mesquita de Sultanahmet — encara a Santa Sofia do outro lado de uma praça ajardinada, com seis minaretes a erguerem-se sobre a cidade velha. Lá dentro, mais de 20 000 azulejos de İznik pintados à mão dão à sala de oração o seu famoso brilho azul.`,
+          `É uma mesquita viva, não um museu. Um local da VibeGuide ajuda-o a visitá-la com respeito — horários em torno das orações, vestuário, etiqueta — e revela a rivalidade e a ambição por trás da sua construção.`,
+        ],
+        highlights: [
+          { title: `Seis Minaretes`, desc: `Uma escolha ousada em 1616, que chegou a rivalizar com a própria Meca.` },
+          { title: `20 000 Azulejos de İznik`, desc: `Azuis e verdes pintados à mão que dão o nome à mesquita.` },
+          { title: `Cúpulas em Cascata`, desc: `Uma pirâmide de meias-cúpulas que define a silhueta de Istambul.` },
+        ],
+        faqs: [
+          { q: `Os turistas podem entrar na Mesquita Azul?`, a: `Sim, fora das horas de oração e com traje discreto. Um guia trata dos horários e da etiqueta para que a sua visita seja tranquila e respeitosa.` },
+          { q: `Preciso de cobrir a cabeça?`, a: `As mulheres cobrem o cabelo lá dentro; costuma haver lenços disponíveis. O seu guia diz-lhe exatamente o que levar.` },
+          { q: `Fica perto da Santa Sofia?`, a: `Ficam frente a frente, na praça de Sultanahmet — a dois minutos a pé uma da outra.` },
+        ],
+        planningHeading: `Planear a sua visita`,
+        planningParagraphs: [
+          `A Mesquita Azul ergue-se em Sultanahmet, frente à Santa Sofia do outro lado de uma praça ajardinada, e chegar até ela não podia ser mais simples. Apanhe o elétrico T1 até à paragem Sultanahmet e caminhe uns dois minutos até à praça. Com a Santa Sofia, o Palácio de Topkapı, o Hipódromo e a Cisterna da Basílica todos a curta distância a pé, a mesquita encaixa-se na perfeição num passeio pelo bairro mais famoso da cidade velha.`,
+          `Procure ir de manhã cedo ou ao fim da tarde, quando a luz é suave e os azulejos de İznik lá dentro brilham com um azul mais delicado. Estas horas são também mais calmas, evitando o aperto do meio-dia. A primavera e o outono trazem o clima mais agradável e menos gente do que o pico do verão. Sendo um local de culto em atividade, a mesquita encerra aos visitantes durante as cinco orações diárias, por isso planeie a sua chegada entre orações.`,
+          `A entrada é gratuita, mas trata-se de uma mesquita viva, com um código de vestuário rigoroso: cubra ombros e joelhos, descalce-se à porta e as mulheres cobrem o cabelo, havendo lenços à disposição na entrada. Lá dentro, a escala imensa e as dezenas de milhares de azulejos podem ser avassaladoras sem contexto. Um guia local licenciado da VibeGuide programa a sua visita em torno das orações, trata da etiqueta e explica em pormenor vivo os seis minaretes, as cúpulas e os azulejos.`,
+        ],
+        ctaTitle: `Visite a Mesquita Azul com um local`,
+        ...IST.pt,
+      },
+      ja: {
+        name: `ブルーモスク`,
+        metaTitle: `ブルーモスク（スルタンアフメット）ツアーと地元ガイド`,
+        metaDescription:
+          `認定された地元ガイドとイスタンブールのブルーモスクを訪ねましょう。六本のミナレット、2万枚のイズニックタイル、現役のモスクを敬意をもって巡り解説します。`,
+        intro: [
+          `ブルーモスク——スルタンアフメット・モスク——は、庭のある広場を挟んでアヤソフィアと向かい合い、六本のミナレットが旧市街の上にそびえます。内部では2万枚を超える手描きのイズニックタイルが、礼拝室に名高い青い輝きを与えています。`,
+          `ここは博物館ではなく、生きたモスクです。VibeGuideの地元ガイドが、礼拝の時間、服装、作法に配慮した敬意ある訪問を助け、その建設の背後にある対抗心と野心を解き明かします。`,
+        ],
+        highlights: [
+          { title: `六本のミナレット`, desc: `1616年の大胆な選択で、かつてはメッカそのものに並ぶほどでした。` },
+          { title: `2万枚のイズニックタイル`, desc: `手描きの青と緑が、このモスクの名の由来です。` },
+          { title: `連なるドーム`, desc: `半ドームが積み重なるピラミッドが、イスタンブールの空を彩ります。` },
+        ],
+        faqs: [
+          { q: `観光客はブルーモスクに入れますか？`, a: `はい、礼拝の時間を外し、控えめな服装であれば入れます。ガイドが時間と作法を整えるので、円滑で敬意ある訪問になります。` },
+          { q: `頭を覆う必要はありますか？`, a: `女性は室内で髪を覆います。スカーフはたいてい用意されています。何を持参すべきか、ガイドが正確にお伝えします。` },
+          { q: `アヤソフィアの近くですか？`, a: `スルタンアフメット広場を挟んで向かい合っており、徒歩2分ほどの距離です。` },
+        ],
+        planningHeading: `訪問の計画`,
+        planningParagraphs: [
+          `ブルーモスクはスルタンアフメットに建ち、庭のある広場を挟んでアヤソフィアと向かい合っています。行き方はいたって簡単です。トラムT1でスルタンアフメット駅まで行き、数分歩けば広場に出ます。アヤソフィア、トプカプ宮殿、ヒッポドローム、地下宮殿がいずれも歩いてすぐの距離にあるため、旧市街でもっとも名高い一角を巡る散策にぴったり収まります。`,
+          `早朝か夕方遅めを狙いましょう。光がやわらかく、内部のイズニックタイルがより穏やかな青に輝きます。この時間帯は人も少なめで、昼の混雑を避けられます。春と秋は気候がもっとも心地よく、真夏より人出も控えめです。現役の礼拝の場であるため、一日五回の礼拝の間は見学者の入場が停止されます。礼拝と礼拝の合間に到着するよう計画してください。`,
+          `入場は無料ですが、ここは生きたモスクで服装の決まりが厳しく、肩とひざを覆い、入口で靴を脱ぎ、女性は髪を覆います。スカーフは入口で用意されています。中に入ると、その圧倒的な大きさと数万枚のタイルは、背景を知らなければ気後れするほどです。VibeGuideの認定地元ガイドが礼拝に合わせて訪問時間を調整し、作法を取り仕切り、六本のミナレット、ドーム、タイル細工を鮮やかに解説します。`,
+        ],
+        ctaTitle: `地元ガイドとブルーモスクへ`,
+        ...IST.ja,
+      },
+      ko: {
+        name: `블루 모스크`,
+        metaTitle: `블루 모스크(술탄아흐메트) 투어와 현지 가이드`,
+        metaDescription:
+          `검증된 현지 가이드와 함께 이스탄불의 블루 모스크를 방문하세요. 여섯 개의 미너렛, 2만 장의 이즈니크 타일, 현역 모스크를 예의 있게 둘러보며 설명해 드립니다.`,
+        intro: [
+          `블루 모스크, 곧 술탄아흐메트 모스크는 정원 광장을 사이에 두고 아야소피아와 마주 보며, 여섯 개의 미너렛이 옛 시가지 위로 솟아 있습니다. 내부에서는 손으로 그린 2만 장이 넘는 이즈니크 타일이 예배실에 그 유명한 푸른 빛을 드리웁니다.`,
+          `이곳은 박물관이 아니라 살아 있는 모스크입니다. VibeGuide의 현지 가이드가 예배 시간과 복장, 예절에 맞춰 예의 있게 방문하도록 돕고, 그 건설 뒤에 담긴 경쟁심과 야망을 풀어냅니다.`,
+        ],
+        highlights: [
+          { title: `여섯 개의 미너렛`, desc: `1616년의 과감한 선택으로, 한때 메카에 견줄 정도였습니다.` },
+          { title: `2만 장의 이즈니크 타일`, desc: `손으로 그린 푸른색과 초록색이 이 모스크의 이름이 되었습니다.` },
+          { title: `겹겹이 흐르는 돔`, desc: `반돔이 쌓인 피라미드가 이스탄불의 스카이라인을 그려냅니다.` },
+        ],
+        faqs: [
+          { q: `관광객이 블루 모스크에 들어갈 수 있나요?`, a: `네, 예배 시간을 피하고 단정한 복장을 갖추면 됩니다. 가이드가 시간과 예절을 챙겨 매끄럽고 예의 있는 방문이 되도록 해드립니다.` },
+          { q: `머리를 가려야 하나요?`, a: `여성은 실내에서 머리를 가립니다. 스카프는 보통 비치되어 있습니다. 무엇을 준비하면 되는지 가이드가 정확히 알려드립니다.` },
+          { q: `아야소피아와 가깝나요?`, a: `술탄아흐메트 광장을 사이에 두고 마주 보며, 걸어서 2분 거리입니다.` },
+        ],
+        planningHeading: `방문 계획 세우기`,
+        planningParagraphs: [
+          `블루 모스크는 술탄아흐메트에 자리해 정원 광장을 사이에 두고 아야소피아와 마주 보며, 찾아가기가 더없이 수월합니다. T1 트램을 타고 술탄아흐메트 정류장에서 내려 2분쯤 걸으면 광장에 이릅니다. 아야소피아, 톱카프 궁전, 히포드롬, 예레바탄 지하 저수지가 모두 걸어서 닿는 거리에 있어, 옛 시가지에서 가장 유명한 구역을 걷는 일정에 완벽하게 어울립니다.`,
+          `이른 아침이나 늦은 오후를 노리세요. 빛이 부드럽고 내부의 이즈니크 타일이 한결 은은한 푸른빛으로 빛납니다. 이 시간대는 한낮의 혼잡을 피할 수 있어 더 한적하기도 합니다. 봄과 가을은 날씨가 가장 좋고 한여름보다 사람이 적습니다. 실제로 예배가 이뤄지는 곳이라 하루 다섯 번의 예배 시간에는 방문객 입장이 중단되니, 예배와 예배 사이에 도착하도록 계획하세요.`,
+          `입장은 무료이지만 이곳은 살아 있는 모스크로 복장 규정이 엄격합니다. 어깨와 무릎을 가리고 문 앞에서 신발을 벗으며, 여성은 머리를 가립니다. 스카프는 입구에서 제공됩니다. 안으로 들어가면 압도적인 규모와 수만 장의 타일이 배경 설명 없이는 벅차게 느껴질 수 있습니다. VibeGuide의 인증 현지 가이드가 예배에 맞춰 방문 시간을 조율하고 예절을 챙기며, 여섯 개의 미너렛과 돔, 타일 세공을 생생하게 설명해 드립니다.`,
+        ],
+        ctaTitle: `현지 가이드와 블루 모스크 방문하기`,
+        ...IST.ko,
+      },
 
     },
   },
@@ -1847,6 +2216,90 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: "Wandel door Efeze met een local",
         ...EPH.nl,
+      },
+      pt: {
+        name: `Éfeso`,
+        metaTitle: `Éfeso: Visitas Guiadas e Guias Locais`,
+        metaDescription:
+          `Percorra a antiga Éfeso, perto de Selçuk (İzmir), com um guia local verificado. A Biblioteca de Celso, o Grande Teatro e as ruas de mármore ganham vida.`,
+        intro: [
+          `Éfeso foi uma das maiores cidades do mundo antigo — uma metrópole romana de um quarto de milhão de pessoas, por onde passou Marco António e onde pregou São Paulo. As suas ruas de mármore, a imponente Biblioteca de Celso e um teatro para 25 000 pessoas ainda se erguem perto de Selçuk.`,
+          `Um local da VibeGuide transforma as ruínas numa cidade viva — quem aqui viveu, onde tomavam banho, faziam compras e rezavam — para que as pedras contem a sua história em vez de permanecerem em silêncio.`,
+        ],
+        highlights: [
+          { title: `Biblioteca de Celso`, desc: `Uma fachada de mármore de dois pisos que já guardou 12 000 rolos.` },
+          { title: `Grande Teatro`, desc: `Lugares para 25 000 pessoas — ainda hoje usado para espetáculos.` },
+          { title: `Casas em Terraço`, desc: `Casas com pisos de mosaico da elite romana, protegidas por uma cobertura.` },
+        ],
+        faqs: [
+          { q: `Onde fica Éfeso?`, a: `Perto de Selçuk, no distrito de İzmir, a cerca de uma hora da cidade de İzmir e junto ao porto de Kuşadası.` },
+          { q: `De quanto tempo preciso?`, a: `Conte com 2 a 3 horas no local; um guia mantém-no à sombra e longe das multidões.` },
+          { q: `É bom para passageiros de cruzeiro?`, a: `Sim — é uma excursão clássica a partir de Kuşadası. Um guia local aproveita ao máximo o tempo limitado.` },
+        ],
+        planningHeading: `Planear a sua visita`,
+        planningParagraphs: [
+          `Éfeso fica perto da vila de Selçuk, no distrito de İzmir, na costa egeia do oeste da Turquia. É notavelmente fácil de alcançar: cerca de 20 minutos de carro do porto de cruzeiros de Kuşadası e aproximadamente uma hora de İzmir, com a própria Selçuk a poucos minutos de táxi ou de dolmuş, a carrinha de transporte partilhado. O sítio tem duas entradas, um portão superior e outro inferior, e muitos visitantes descem a pé de um para o outro.`,
+          `Éfeso é vasta e oferece muito pouca sombra, por isso a hora conta tanto como tudo o resto. Procure ir de manhã cedo, logo após a abertura, ou ao fim da tarde, quando a luz suaviza e o mármore arrefece; evite as horas duras do meio-dia, sobretudo no verão. A primavera e o outono são as estações mais confortáveis. Seja qual for a altura, leve água, um chapéu e calçado resistente, e reserve duas a três horas para a ver como deve ser.`,
+          `É um sítio arqueológico com bilhete, e as Casas em Terraço, lindamente preservadas, exigem um bilhete separado que bem vale a pena. Há muito para absorver, da Biblioteca de Celso ao grande teatro, e, por lei, só um guia licenciado o pode conduzir pelas ruínas. Um guia local licenciado da VibeGuide trata dos bilhetes e dos horários, encontra os recantos sombreados e transforma pedras dispersas numa cidade viva e vibrante.`,
+        ],
+        ctaTitle: `Percorra Éfeso com um local`,
+        ...EPH.pt,
+      },
+      ja: {
+        name: `エフェソス`,
+        metaTitle: `エフェソス遺跡ツアーと地元ガイド`,
+        metaDescription:
+          `認定された地元ガイドと、イズミルのセルチュク近郊にある古代エフェソスを歩きましょう。ケルソス図書館、大劇場、大理石の街路がよみがえります。`,
+        intro: [
+          `エフェソスは古代世界で最も偉大な都市のひとつでした。25万の人々が暮らしたローマの大都市で、マルクス・アントニウスが歩き、聖パウロが説教した地です。大理石の街路、そびえ立つケルソス図書館、2万5千人を収める劇場が、今もセルチュクの近くに残されています。`,
+          `VibeGuideの地元ガイドは、遺跡を生きた都市へと変えます。誰がここに暮らし、どこで湯浴みし、買い物をし、祈ったのか。だからこそ石は沈黙するのではなく、その物語を語り始めます。`,
+        ],
+        highlights: [
+          { title: `ケルソス図書館`, desc: `二層の大理石のファサードで、かつて1万2千巻の巻物を収めていました。` },
+          { title: `大劇場`, desc: `2万5千人を収容し、今も催しに使われています。` },
+          { title: `テラスハウス`, desc: `モザイクの床をもつローマ上流階級の邸宅で、屋根に覆われています。` },
+        ],
+        faqs: [
+          { q: `エフェソスはどこにありますか？`, a: `イズミル県のセルチュク近郊で、イズミル市内から約1時間、クシャダスの港からも近い場所です。` },
+          { q: `どれくらい時間が必要ですか？`, a: `現地で2〜3時間を見ておいてください。ガイドが日陰を選び、混雑を避けて案内します。` },
+          { q: `クルーズ客にも向いていますか？`, a: `はい。クシャダスからの定番の寄港地観光です。地元ガイドが限られた時間を最大限に生かします。` },
+        ],
+        planningHeading: `訪問の計画`,
+        planningParagraphs: [
+          `エフェソスはトルコ西部エーゲ海沿岸、イズミル県のセルチュクの町の近くにあります。行きやすさは格別で、クシャダスのクルーズ港から車でおよそ20分、イズミルから約1時間、セルチュクの町自体はタクシーやドルムシュ（乗合ミニバス）でほんの数分です。遺跡には上下ふたつの入口があり、多くの人は上の門から下の門へと坂を下りながら歩きます。`,
+          `エフェソスは広大で日陰がほとんどないため、何よりも時間帯が肝心です。開門直後の早朝か、光がやわらぎ大理石が冷める夕方遅めを狙い、とりわけ夏は日中の厳しい時間帯を避けてください。春と秋がもっとも快適な季節です。いつ訪れるにしても、水、帽子、しっかりした靴を持参し、じっくり見るために2〜3時間を確保しましょう。`,
+          `ここは入場券が必要な考古遺跡で、見事に保存されたテラスハウスは別料金の入場券が要りますが、その価値は十分にあります。ケルソス図書館から壮大な劇場まで見どころは尽きず、法律により認定ガイドだけが遺跡内を案内できます。VibeGuideの認定地元ガイドが入場券と時間を手配し、日陰の一角を見つけ、散らばった石を鮮やかに息づく都市へと変えてくれます。`,
+        ],
+        ctaTitle: `地元ガイドとエフェソスを歩く`,
+        ...EPH.ja,
+      },
+      ko: {
+        name: `에페소스`,
+        metaTitle: `에페소스 투어와 현지 가이드`,
+        metaDescription:
+          `검증된 현지 가이드와 함께 이즈미르 셀추크 인근의 고대 에페소스를 걸어보세요. 켈수스 도서관, 대극장, 대리석 거리가 되살아납니다.`,
+        intro: [
+          `에페소스는 고대 세계에서 가장 위대한 도시 가운데 하나였습니다. 25만 명이 살던 로마의 대도시로, 마르쿠스 안토니우스가 거닐고 사도 바울이 설교한 곳입니다. 대리석 거리와 우뚝 솟은 켈수스 도서관, 2만 5천 명을 수용하는 극장이 지금도 셀추크 인근에 남아 있습니다.`,
+          `VibeGuide의 현지 가이드는 유적을 살아 있는 도시로 바꿔냅니다. 누가 이곳에 살았고, 어디서 목욕하고 물건을 사고 기도했는지. 그래서 돌들은 침묵하지 않고 저마다의 이야기를 들려주기 시작합니다.`,
+        ],
+        highlights: [
+          { title: `켈수스 도서관`, desc: `2층 대리석 파사드로, 한때 1만 2천 개의 두루마리를 보관했습니다.` },
+          { title: `대극장`, desc: `2만 5천 명을 수용하며 지금도 공연에 쓰입니다.` },
+          { title: `테라스 하우스`, desc: `로마 상류층의 모자이크 바닥 저택으로, 지붕으로 보호되어 있습니다.` },
+        ],
+        faqs: [
+          { q: `에페소스는 어디에 있나요?`, a: `이즈미르주 셀추크 인근으로, 이즈미르 시내에서 약 한 시간 거리이며 쿠샤다스 항구와 가깝습니다.` },
+          { q: `시간이 얼마나 필요한가요?`, a: `현지에서 2~3시간을 잡으세요. 가이드가 그늘을 골라주고 붐비는 곳을 피해 안내합니다.` },
+          { q: `크루즈 승객에게도 좋은가요?`, a: `네. 쿠샤다스에서 출발하는 대표적인 기항지 관광입니다. 현지 가이드가 제한된 시간을 최대한 활용해 드립니다.` },
+        ],
+        planningHeading: `방문 계획 세우기`,
+        planningParagraphs: [
+          `에페소스는 튀르키예 서부 에게해 연안, 이즈미르주 셀추크 마을 인근에 있습니다. 찾아가기가 무척 쉬워서 쿠샤다스 크루즈 항구에서 차로 약 20분, 이즈미르에서 약 한 시간 거리이며 셀추크 마을 자체는 택시나 돌무쉬(합승 미니버스)로 몇 분이면 닿습니다. 유적에는 위쪽과 아래쪽 두 개의 문이 있으며, 많은 방문객이 그 사이를 내리막으로 걸어 이동합니다.`,
+          `에페소스는 광활하고 그늘이 거의 없어 무엇보다 시간대가 중요합니다. 개장 직후의 이른 아침이나, 빛이 부드러워지고 대리석이 식는 늦은 오후를 노리고, 특히 여름에는 한낮의 혹독한 시간을 피하세요. 봄과 가을이 가장 쾌적한 계절입니다. 언제 오든 물과 모자, 튼튼한 신발을 챙기고, 제대로 둘러보려면 두세 시간을 잡으세요.`,
+          `이곳은 입장권이 필요한 고고 유적지이며, 아름답게 보존된 테라스 하우스는 별도의 입장권이 필요하지만 그만한 값어치가 충분합니다. 켈수스 도서관부터 웅장한 극장까지 볼 것이 많으며, 법에 따라 인증 가이드만이 유적을 안내할 수 있습니다. VibeGuide의 인증 현지 가이드가 입장권과 시간을 챙기고 그늘진 구석을 찾아주며, 흩어진 돌들을 생생히 살아 숨 쉬는 도시로 되살려 냅니다.`,
+        ],
+        ctaTitle: `현지 가이드와 에페소스 걷기`,
+        ...EPH.ko,
       },
 
     },
@@ -2172,6 +2625,90 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: "Ontdek Cappadocië met een local",
         ...CAP.nl,
       },
+      pt: {
+        name: `Capadócia`,
+        metaTitle: `Tours na Capadócia e Guias Locais`,
+        metaDescription:
+          `Explore a Capadócia com um guia local verificado. Balões de ar quente, chaminés de fada, igrejas rupestres e cidades subterrâneas em Göreme e arredores.`,
+        intro: [
+          `A Capadócia é uma paisagem saída de um sonho — vales de «chaminés de fada», igrejas escavadas na rocha e pintadas há mil anos, e cidades inteiras talhadas debaixo do solo. Ao amanhecer, centenas de balões de ar quente elevam-se sobre Göreme, num dos grandes espetáculos do mundo.`,
+          `Um local da VibeGuide sabe qual o vale que apanha a melhor luz, qual a igreja rupestre que sobreviveu e onde não estão as multidões — transformando uma fotografia famosa numa verdadeira compreensão do lugar.`,
+        ],
+        highlights: [
+          { title: `Balões de Ar Quente`, desc: `Voos ao amanhecer sobre os vales — a imagem que define a Capadócia.` },
+          { title: `Museu ao Ar Livre de Göreme`, desc: `Igrejas rupestres bizantinas com frescos talhados na rocha.` },
+          { title: `Cidades Subterrâneas`, desc: `Derinkuyu e Kaymaklı — povoações inteiras escondidas sob o solo.` },
+        ],
+        faqs: [
+          { q: `Onde fica a Capadócia?`, a: `Na Anatólia central, em torno de Göreme e Nevşehir, com acesso por voo para Kayseri ou Nevşehir.` },
+          { q: `Os voos de balão estão garantidos?`, a: `Dependem do tempo e reservam-se à parte. Um guia ajuda-o a planear o resto da visita em torno deles.` },
+          { q: `De quantos dias preciso?`, a: `Dois dias cobrem os pontos altos com folga; um guia local faz valer a pena mesmo apenas um dia.` },
+        ],
+        planningHeading: `Planear a sua visita`,
+        planningParagraphs: [
+          `A Capadócia situa-se na Anatólia Central, na província de Nevşehir, tendo a pequena vila de Göreme no seu coração. A maioria dos viajantes chega de avião a Nevşehir (NAV) ou ao maior aeroporto de Kayseri (ASR) e continua depois de shuttle ou carro no troço final. A região é compacta o suficiente para ser explorada a partir de uma única base, e os seus vales sobrenaturais de chaminés de fada começam quase no momento em que se chega.`,
+          `A primavera e o outono são ideais, com dias amenos e uma luz suave que favorece a paisagem rochosa. O verão traz calor e mais multidões, enquanto o inverno cobre as chaminés de fada de neve, criando um cenário mais tranquilo e mágico. As primeiras horas da manhã são douradas aqui, sobretudo ao amanhecer, quando os balões de ar quente se elevam sobre os vales, se o tempo o permitir. Reserve cerca de dois dias para ver os pontos altos sem pressas.`,
+          `Atrações principais como o Museu ao Ar Livre de Göreme e as cidades subterrâneas têm bilhete, e os voos de balão reservam-se à parte e dependem do tempo. Um guia local licenciado da VibeGuide ajuda-o a acertar o momento da experiência de balão, a encontrar os melhores vales para caminhar e fotografar, e a compreender as igrejas com frescos e as habitações rupestres por que passaria sem reparar.`,
+        ],
+        ctaTitle: `Descubra a Capadócia com um local`,
+        ...CAP.pt,
+      },
+      ja: {
+        name: `カッパドキア`,
+        metaTitle: `カッパドキアツアーと現地ガイド`,
+        metaDescription:
+          `認証済みの現地ガイドとカッパドキアを巡る旅。ギョレメ一帯の熱気球、妖精の煙突、洞窟教会、地下都市を体験しましょう。`,
+        intro: [
+          `カッパドキアは夢のような風景です。「妖精の煙突」が並ぶ谷、千年前に描かれた岩窟教会、そして地下深くに掘られた都市の数々。夜明けには数百もの熱気球がギョレメの空に浮かび上がり、世界屈指の絶景をつくり出します。`,
+          `VibeGuideの現地ガイドは、どの谷が最も美しい光を捉えるか、どの洞窟教会が今も残っているか、そして人混みを避けられる場所を知り尽くしています。有名な一枚の写真を、その土地への本物の理解へと変えてくれます。`,
+        ],
+        highlights: [
+          { title: `熱気球`, desc: `夜明けに谷の上を飛ぶフライト。カッパドキアを象徴する光景です。` },
+          { title: `ギョレメ野外博物館`, desc: `岩を掘り抜いてフレスコ画を描いたビザンティンの洞窟教会。` },
+          { title: `地下都市`, desc: `デリンクユとカイマクル。地下に隠された町がまるごと広がります。` },
+        ],
+        faqs: [
+          { q: `カッパドキアはどこにありますか?`, a: `中央アナトリアのギョレメ、ネヴシェヒル周辺にあり、カイセリまたはネヴシェヒルへの空路で行けます。` },
+          { q: `熱気球のフライトは保証されていますか?`, a: `天候に左右され、別途予約が必要です。ガイドが気球を軸に他の予定を組み立てるお手伝いをします。` },
+          { q: `何日必要ですか?`, a: `2日あれば主要スポットをゆったり回れます。現地ガイドがいれば、1日でも充実した旅になります。` },
+        ],
+        planningHeading: `旅の計画`,
+        planningParagraphs: [
+          `カッパドキアは中央アナトリアのネヴシェヒル県にあり、その中心には小さな町ギョレメがあります。多くの旅行者はネヴシェヒル(NAV)、あるいはより大きなカイセリ(ASR)空港へ空路で入り、そこからシャトルや車で最後の区間を進みます。地域は一つの拠点から巡れるほどコンパクトで、この世のものとは思えない妖精の煙突の谷が、到着してすぐに広がり始めます。`,
+          `春と秋が最適で、穏やかな日差しと岩の風景を引き立てる柔らかな光に恵まれます。夏は暑さと混雑が増し、冬は妖精の煙突が雪をまとって、より静かで幻想的な光景となります。ここでは早朝が黄金の時間で、とりわけ天候が許せば夜明けに熱気球が谷の上へ舞い上がります。主要スポットを慌てずに見るなら、2日ほどを見込んでおきましょう。`,
+          `ギョレメ野外博物館や地下都市などの主要スポットは有料で、熱気球のフライトは別途予約が必要なうえ天候に左右されます。VibeGuideの公認現地ガイドが、気球体験のタイミング調整、散策や撮影に最適な谷選び、そして見過ごしがちなフレスコ画の教会や洞窟住居の理解をお手伝いします。`,
+        ],
+        ctaTitle: `現地ガイドとカッパドキアを巡ろう`,
+        ...CAP.ja,
+      },
+      ko: {
+        name: `카파도키아`,
+        metaTitle: `카파도키아 투어 및 현지 가이드`,
+        metaDescription:
+          `인증된 현지 가이드와 함께 카파도키아를 탐험하세요. 괴레메 일대의 열기구, 요정의 굴뚝, 동굴 교회, 지하 도시를 만나보세요.`,
+        intro: [
+          `카파도키아는 꿈속에서 나온 듯한 풍경입니다. 「요정의 굴뚝」이 늘어선 계곡, 천 년 전에 그려진 암굴 교회, 그리고 땅속 깊이 파낸 도시들이 펼쳐집니다. 새벽이면 수백 개의 열기구가 괴레메 상공으로 떠올라 세계적인 절경을 만들어 냅니다.`,
+          `VibeGuide 현지 가이드는 어느 계곡이 가장 아름다운 빛을 담는지, 어느 동굴 교회가 지금까지 남아 있는지, 그리고 인파를 피할 수 있는 곳이 어디인지 훤히 알고 있습니다. 유명한 사진 한 장을 그 땅에 대한 진정한 이해로 바꿔 드립니다.`,
+        ],
+        highlights: [
+          { title: `열기구`, desc: `새벽 계곡 위를 나는 비행. 카파도키아를 상징하는 장면입니다.` },
+          { title: `괴레메 야외 박물관`, desc: `바위를 깎아 프레스코화를 그린 비잔틴 동굴 교회들.` },
+          { title: `지하 도시`, desc: `데린쿠유와 카이마클르. 땅속에 통째로 숨겨진 마을들.` },
+        ],
+        faqs: [
+          { q: `카파도키아는 어디에 있나요?`, a: `중앙 아나톨리아의 괴레메와 네브셰히르 일대에 있으며, 카이세리 또는 네브셰히르행 항공편으로 갈 수 있습니다.` },
+          { q: `열기구 비행은 보장되나요?`, a: `날씨에 따라 달라지며 별도로 예약합니다. 가이드가 열기구를 중심으로 나머지 일정을 계획하도록 도와드립니다.` },
+          { q: `며칠이 필요한가요?`, a: `이틀이면 주요 명소를 여유롭게 둘러볼 수 있고, 현지 가이드가 있으면 하루도 알차게 보낼 수 있습니다.` },
+        ],
+        planningHeading: `방문 계획 세우기`,
+        planningParagraphs: [
+          `카파도키아는 중앙 아나톨리아의 네브셰히르주에 있으며, 그 중심에는 작은 마을 괴레메가 자리합니다. 대부분의 여행자는 네브셰히르(NAV)나 더 큰 카이세리(ASR) 공항으로 비행기를 타고 온 뒤, 셔틀이나 차량으로 마지막 구간을 이동합니다. 이 지역은 하나의 거점에서 둘러볼 수 있을 만큼 아담하며, 도착하는 순간부터 요정의 굴뚝이 만드는 초현실적인 계곡이 펼쳐지기 시작합니다.`,
+          `봄과 가을이 가장 좋으며, 온화한 날씨와 바위 풍경을 돋보이게 하는 부드러운 빛을 즐길 수 있습니다. 여름에는 더위와 인파가 늘고, 겨울에는 요정의 굴뚝이 눈을 덮어 더 고요하고 신비로운 풍경이 됩니다. 이곳의 이른 아침은 황금빛으로 물들며, 특히 날씨가 허락하면 새벽에 열기구가 계곡 위로 떠오릅니다. 서두르지 않고 주요 명소를 보려면 이틀 정도를 잡으세요.`,
+          `괴레메 야외 박물관과 지하 도시 같은 주요 명소는 입장권이 필요하며, 열기구 비행은 별도로 예약하고 날씨에 좌우됩니다. VibeGuide의 공인 현지 가이드가 열기구 체험의 타이밍을 맞추고, 산책과 사진 촬영에 좋은 계곡을 찾고, 무심코 지나칠 수 있는 프레스코 교회와 동굴 주거지를 이해하도록 도와드립니다.`,
+        ],
+        ctaTitle: `현지 가이드와 카파도키아를 만나보세요`,
+        ...CAP.ko,
+      },
 
     },
   },
@@ -2493,6 +3030,90 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: "Bekijk Dolmabahçe met een local",
         ...IST.nl,
       },
+      pt: {
+        name: `Palácio de Dolmabahçe`,
+        metaTitle: `Tours ao Palácio de Dolmabahçe e Guias`,
+        metaDescription:
+          `Visite o Palácio de Dolmabahçe no Bósforo com um guia verificado de Istambul. Tetos dourados, o maior lustre de cristal do mundo e a sala onde Atatürk morreu.`,
+        intro: [
+          `O Palácio de Dolmabahçe é o capítulo mais opulento da história otomana tardia. Construído entre 1843 e 1856 para o sultão Abdülmecid I pelos arquitetos Balyan, substituiu o medieval Topkapı como residência imperial — uma afirmação deliberadamente europeia em estilo barroco, rococó e neoclássico, com 285 quartos, 46 salões e 6 hammams ao longo da margem europeia do Bósforo.`,
+          `Com um especialista local da VibeGuide, todo aquele excesso ganha sentido. A entrada segue um percurso guiado, por isso um guia a sério faz a diferença entre um corredor de salas douradas e a verdadeira história — 14 toneladas de ouro, um lustre de 4,5 toneladas e o minuto exato em que uma nação parou os seus relógios.`,
+        ],
+        highlights: [
+          { title: `O Salão Cerimonial`, desc: `Abriga um lustre de cristal da Boémia de 4,5 toneladas com 750 lâmpadas — uma oferta da Rainha Vitória e o maior do seu género no mundo.` },
+          { title: `A Escadaria de Cristal`, desc: `Corrimãos talhados inteiramente em cristal Baccarat, sob tetos dourados com 14 toneladas de ouro.` },
+          { title: `A Sala de Atatürk`, desc: `O fundador da Turquia moderna morreu aqui a 10 de novembro de 1938, às 09:05 — os relógios do palácio continuam parados nesse momento.` },
+        ],
+        faqs: [
+          { q: `Preciso de um guia para o Palácio de Dolmabahçe?`, a: `A entrada faz-se por percurso guiado, e o Selamlık, o Harém e o Salão Cerimonial escondem histórias por que passaria sem reparar. Um local da VibeGuide transforma o dourado numa narrativa e ajuda-o a evitar as filas mais longas.` },
+          { q: `Porque estão todos os relógios parados nas 09:05?`, a: `Atatürk morreu no palácio às 09:05 de 10 de novembro de 1938. Muitos dos relógios de Dolmabahçe são tradicionalmente mantidos nessa hora em sua memória.` },
+          { q: `Quanto tempo demora a visita?`, a: `A maioria das visitas guiadas dura 1 a 2 horas entre o Selamlık, o Harém e os jardins à beira-mar, e combina lindamente com um cruzeiro no Bósforo a seguir.` },
+        ],
+        planningHeading: `Planear a sua visita`,
+        planningParagraphs: [
+          `O Palácio de Dolmabahçe estende-se ao longo da margem do Bósforo em Beşiktaş, no lado europeu. A forma mais simples de chegar é o elétrico T1 até à sua paragem final, Kabataş, seguido de um curto passeio junto à água até aos portões ornamentados. Autocarros e ferries também servem a zona, e o cenário à beira-mar torna a aproximação final bastante agradável.`,
+          `O palácio abre a visitas segundo um horário fixo, e as manhãs são o momento mais calmo para explorar antes de os grupos encherem os salões. Historicamente encerra um dia por semana, por isso confirme o dia de encerramento semanal antes de ir. A primavera e o outono trazem um clima ameno, ideal para conjugar o interior com os jardins e as vistas do Bósforo lá fora.`,
+          `A entrada é paga e a visita segue um percurso guiado por salas ricamente decoradas. O Selamlık e o Harém são secções separadas com bilhetes separados, por isso decida com antecedência quanto quer ver. Um guia local licenciado da VibeGuide pode tratar dos seus bilhetes, ajudá-lo a escolher entre as secções e explicar a história otomana por trás do cristal, do ouro e das grandes escadarias.`,
+        ],
+        ctaTitle: `Conheça Dolmabahçe com um local`,
+        ...IST.pt,
+      },
+      ja: {
+        name: `ドルマバフチェ宮殿`,
+        metaTitle: `ドルマバフチェ宮殿ツアーと現地ガイド`,
+        metaDescription:
+          `認証済みのイスタンブール現地ガイドと、ボスポラス海峡沿いのドルマバフチェ宮殿へ。黄金の天井、世界最大級のクリスタルシャンデリア、アタテュルクが息を引き取った部屋を巡ります。`,
+        intro: [
+          `ドルマバフチェ宮殿は、オスマン帝国末期の最も華麗な一章です。1843年から1856年にかけて、バルヤン家の建築家たちによってアブデュルメジト1世のために建てられ、中世のトプカプに代わる皇室の居城となりました。バロック、ロココ、新古典主義の様式による意図的に「ヨーロッパ的」な宣言であり、285の部屋、46の広間、6つのハマムがボスポラス海峡のヨーロッパ岸に沿って連なります。`,
+          `VibeGuideの現地エキスパートがいれば、その過剰な豪華さにも意味が見えてきます。入場はガイド付きのルートに沿って進むため、本物のガイドがいるかどうかが、金ぴかの部屋が並ぶ廊下と真の物語との違いを生みます。14トンの金、4.5トンのシャンデリア、そして一つの国が時計を止めたまさにその瞬間を語ります。`,
+        ],
+        highlights: [
+          { title: `儀式の間`, desc: `750の灯を持つ4.5トンのボヘミアン・クリスタルシャンデリアを擁します。ヴィクトリア女王からの贈り物で、地上最大級のものです。` },
+          { title: `クリスタルの階段`, desc: `手すりはすべてバカラのクリスタルで削り出され、14トンの金で装飾された天井の下に広がります。` },
+          { title: `アタテュルクの部屋`, desc: `近代トルコの建国者は1938年11月10日9時5分にここで世を去りました。宮殿の時計は今もその時刻を指しています。` },
+        ],
+        faqs: [
+          { q: `ドルマバフチェ宮殿にガイドは必要ですか?`, a: `入場はガイド付きルートで進み、セラムルク、ハレム、儀式の間にはそれぞれ見過ごしがちな物語が隠れています。VibeGuideの現地ガイドが金の装飾を物語へと変え、最も長い行列を避けるお手伝いをします。` },
+          { q: `なぜすべての時計が9時5分で止まっているのですか?`, a: `アタテュルクは1938年11月10日9時5分にこの宮殿で亡くなりました。ドルマバフチェの多くの時計は、彼を偲んで伝統的にその時刻に保たれています。` },
+          { q: `見学にはどのくらいかかりますか?`, a: `多くのガイド付き見学はセラムルク、ハレム、海辺の庭園を巡って1〜2時間ほどで、その後のボスポラス・クルーズと見事に組み合わせられます。` },
+        ],
+        planningHeading: `旅の計画`,
+        planningParagraphs: [
+          `ドルマバフチェ宮殿は、ヨーロッパ側のベシクタシュにあるボスポラス海峡沿いに広がっています。最もわかりやすい行き方はT1トラムで終点のカバタシュまで行き、そこから水辺を少し歩いて豪華な門へと向かうルートです。バスやフェリーもこの一帯に通っており、海沿いの景色が最後のアプローチを心地よいものにしてくれます。`,
+          `宮殿は決められた時間割で公開され、団体ツアーが広間を埋める前の午前中が最も静かに見学できる時間帯です。歴史的に週に一度休館日があるため、出かける前に週の休館日を確認しておきましょう。春と秋は穏やかな気候で、内部の見学と庭園やボスポラスの眺めを組み合わせるのに最適です。`,
+          `入場は有料で、見学は豪華に装飾された部屋をガイド付きのルートで巡ります。セラムルクとハレムは別々の区画で別々のチケットが必要なため、どこまで見たいかを事前に決めておきましょう。VibeGuideの公認現地ガイドがチケットの手配、区画選びのアドバイス、そしてクリスタルや金、壮麗な階段の背後にあるオスマン帝国の歴史の解説をお手伝いします。`,
+        ],
+        ctaTitle: `現地ガイドとドルマバフチェへ`,
+        ...IST.ja,
+      },
+      ko: {
+        name: `돌마바흐체 궁전`,
+        metaTitle: `돌마바흐체 궁전 투어 및 현지 가이드`,
+        metaDescription:
+          `인증된 이스탄불 현지 가이드와 함께 보스포루스 해협의 돌마바흐체 궁전을 방문하세요. 황금 천장, 세계 최대급 크리스털 샹들리에, 아타튀르크가 숨을 거둔 방을 만나보세요.`,
+        intro: [
+          `돌마바흐체 궁전은 오스만 제국 말기의 가장 화려한 한 장입니다. 1843년부터 1856년까지 발리안 가문의 건축가들이 술탄 압둘메지트 1세를 위해 지었으며, 중세의 톱카프를 대신하는 황실 거처가 되었습니다. 바로크, 로코코, 신고전주의 양식으로 지어진 의도적으로 「유럽적인」 선언으로, 285개의 방과 46개의 홀, 6개의 하맘이 보스포루스 해협의 유럽 쪽 기슭을 따라 이어집니다.`,
+          `VibeGuide 현지 전문가와 함께라면 그 과함에도 의미가 보입니다. 입장은 가이드 동반 경로를 따라 진행되므로, 진짜 가이드의 유무가 도금된 방이 늘어선 복도와 진정한 이야기 사이의 차이를 만듭니다. 14톤의 금, 4.5톤의 샹들리에, 그리고 한 나라가 시계를 멈춘 바로 그 순간을 들려드립니다.`,
+        ],
+        highlights: [
+          { title: `의전 홀`, desc: `750개의 등을 단 4.5톤의 보헤미안 크리스털 샹들리에가 걸려 있습니다. 빅토리아 여왕이 선물한 것으로, 세계 최대급입니다.` },
+          { title: `크리스털 계단`, desc: `난간을 전부 바카라 크리스털로 깎아 만들었으며, 14톤의 금으로 도금한 천장 아래 펼쳐집니다.` },
+          { title: `아타튀르크의 방`, desc: `근대 터키의 건국자는 1938년 11월 10일 오전 9시 5분에 이곳에서 세상을 떠났습니다. 궁전의 시계는 지금도 그 시각에 맞춰져 있습니다.` },
+        ],
+        faqs: [
+          { q: `돌마바흐체 궁전에 가이드가 필요한가요?`, a: `입장은 가이드 동반 경로로 이루어지며, 셀람륵과 하렘, 의전 홀에는 저마다 무심코 지나칠 이야기가 숨어 있습니다. VibeGuide 현지 가이드가 도금 장식을 하나의 이야기로 바꾸고 가장 긴 줄을 피하도록 도와드립니다.` },
+          { q: `왜 모든 시계가 9시 5분에 멈춰 있나요?`, a: `아타튀르크는 1938년 11월 10일 오전 9시 5분에 이 궁전에서 별세했습니다. 돌마바흐체의 많은 시계는 그를 기리기 위해 전통적으로 그 시각에 맞춰져 있습니다.` },
+          { q: `관람에는 얼마나 걸리나요?`, a: `대부분의 가이드 관람은 셀람륵과 하렘, 해변 정원을 둘러보며 1~2시간 정도 소요되며, 관람 후 보스포루스 크루즈와도 훌륭하게 어울립니다.` },
+        ],
+        planningHeading: `방문 계획 세우기`,
+        planningParagraphs: [
+          `돌마바흐체 궁전은 유럽 쪽 베식타시의 보스포루스 해협 기슭을 따라 펼쳐져 있습니다. 가장 간단한 도착 방법은 T1 트램을 타고 종점인 카바타시까지 간 뒤, 물가를 따라 조금 걸어 화려한 정문으로 향하는 것입니다. 버스와 페리도 이 일대를 지나며, 바닷가 풍경이 마지막 접근길을 기분 좋게 만들어 줍니다.`,
+          `궁전은 정해진 일정에 따라 개방되며, 단체 관광객이 홀을 채우기 전인 오전이 가장 한적하게 둘러볼 수 있는 시간입니다. 전통적으로 주 1회 휴관하므로 방문 전 주간 휴관일을 확인하세요. 봄과 가을에는 날씨가 온화해 내부 관람과 정원, 바깥의 보스포루스 전망을 함께 즐기기에 좋습니다.`,
+          `입장은 유료이며, 관람은 화려하게 장식된 방들을 가이드 동반 경로로 둘러봅니다. 셀람륵과 하렘은 별도의 구역으로 별도의 입장권이 필요하므로, 어디까지 볼지 미리 정해 두세요. VibeGuide의 공인 현지 가이드가 입장권을 준비하고, 구역 선택을 돕고, 크리스털과 금, 웅장한 계단 뒤에 담긴 오스만의 역사를 설명해 드립니다.`,
+        ],
+        ctaTitle: `현지 가이드와 돌마바흐체를 만나보세요`,
+        ...IST.ko,
+      },
     },
   },
   {
@@ -2812,6 +3433,90 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: "Bezoek de Galatatoren met een local",
         ...IST.nl,
+      },
+      pt: {
+        name: `Torre de Gálata`,
+        metaTitle: `Tours à Torre de Gálata e Guias Locais`,
+        metaDescription:
+          `Suba à Torre de Gálata em Istambul com um guia local verificado. Evite as filas, apanhe o pôr do sol e ouça a história da torre genovesa sobre o Corno de Ouro.`,
+        intro: [
+          `A Torre de Gálata coroa o horizonte de Beyoğlu desde 1348, quando os genoveses a ergueram como a «Christea Turris» — a Torre de Cristo — no topo da sua colónia amuralhada. Quase 67 metros de pedra medieval elevam-se por nove andares até uma galeria superior com uma vista de 360° completa sobre o Corno de Ouro, a península histórica e o Bósforo mais ao fundo.`,
+          `É um lugar envolto em lenda: no século XVII, diz-se que Hezarfen Ahmed Çelebi terá calçado umas asas e planado da torre atravessando todo o Bósforo até Üsküdar. Com um local da VibeGuide, acerta a hora da subida para escapar às piores filas, chega para a hora dourada e ouve as histórias que só a vista não consegue contar.`,
+        ],
+        highlights: [
+          { title: `Panorama de 360°`, desc: `Da galeria superior, a cidade inteira desdobra-se — Corno de Ouro, cidade antiga e ambas as margens do Bósforo.` },
+          { title: `Marco Genovês`, desc: `Construída em 1348 como a «Torre de Cristo», vela sobre Gálata há quase sete séculos.` },
+          { title: `A Lenda do Voo`, desc: `Diz-se que Hezarfen Ahmed Çelebi voou daqui, atravessando o estreito, com asas de fabrico próprio.` },
+        ],
+        faqs: [
+          { q: `Há fila para a Torre de Gálata?`, a: `Muitas vezes, sobretudo ao pôr do sol. Um guia local ajuda-o a escolher a hora certa e trata do timing, para que espere menos e aproveite mais a vista.` },
+          { q: `Qual a melhor hora para subir?`, a: `O fim da tarde até ao pôr do sol é mágico, quando a luz se torna dourada sobre a água. O seu guia pode planear o dia em torno disso.` },
+          { q: `Quanto tempo demora a visita?`, a: `A subida e a vista levam cerca de 45 minutos a uma hora, facilmente combinadas com um passeio por Gálata e Karaköy ali perto.` },
+        ],
+        planningHeading: `Planear a sua visita`,
+        planningParagraphs: [
+          `A Torre de Gálata ergue-se sobre o bairro de Karaköy e Gálata, em Beyoğlu, no lado norte do Corno de Ouro. Muitos visitantes chegam a Karaköy de elétrico ou metro e sobem depois a pé pelas ruas íngremes e cheias de carácter. Para uma subida mais fácil, o histórico funicular Tünel leva-o colina acima, deixando apenas um curto trajeto a pé até à torre.`,
+          `A torre é famosa pelas suas vistas panorâmicas, e a fila é mais longa na hora que antecede o pôr do sol, quando todos esperam a mesma fotografia dourada. Chegar mais cedo no dia significa filas mais curtas e uma luz mais suave para fotografar. As ruelas em redor, cheias de cafés e oficinas, valem a exploração seja qual for a hora da visita.`,
+          `A entrada é paga, e um elevador leva-o quase até ao topo antes de um último lanço de escadas alcançar a galeria panorâmica que rodeia o cimo. Conte com uma passagem estreita e vistas amplas sobre a cidade antiga, o Bósforo e o Corno de Ouro. Um guia local licenciado da VibeGuide pode garantir o seu bilhete, afastá-lo do aperto do pôr do sol e apontar-lhe os marcos que se estendem lá em baixo.`,
+        ],
+        ctaTitle: `Conheça a Torre de Gálata com um local`,
+        ...IST.pt,
+      },
+      ja: {
+        name: `ガラタ塔`,
+        metaTitle: `ガラタ塔ツアーと現地ガイド`,
+        metaDescription:
+          `認証済みの現地ガイドとイスタンブールのガラタ塔へ。行列を避け、夕日を捉え、金角湾を見下ろすジェノヴァの塔の物語に耳を傾けましょう。`,
+        intro: [
+          `ガラタ塔は1348年以来、ベイオール地区のスカイラインを飾ってきました。ジェノヴァ人が城壁に囲まれた植民地の頂に「クリステア・トゥリス」、すなわちキリストの塔として築いたものです。中世の石造りの塔は約67メートル、9層を重ねて最上階のギャラリーに至り、そこからは金角湾、歴史地区、そしてその先のボスポラス海峡までを360度見渡せます。`,
+          `ここは伝説に包まれた場所でもあります。17世紀、ヘザルフェン・アフメト・チェレビが翼を身につけ、塔からボスポラス海峡を越えてはるかウスキュダルまで滑空したと伝えられています。VibeGuideの現地ガイドがいれば、最悪の行列を避ける時間に登り、ゴールデンアワーに合わせて到着し、眺めだけでは語れない物語を聞くことができます。`,
+        ],
+        highlights: [
+          { title: `360度のパノラマ`, desc: `最上階のギャラリーから街全体が広がります。金角湾、旧市街、そしてボスポラス海峡の両岸まで。` },
+          { title: `ジェノヴァの名所`, desc: `1348年に「キリストの塔」として建てられ、約七世紀にわたってガラタを見守ってきました。` },
+          { title: `飛行の伝説`, desc: `ヘザルフェン・アフメト・チェレビが手作りの翼でここから海峡を越えて飛んだと伝えられています。` },
+        ],
+        faqs: [
+          { q: `ガラタ塔に行列はありますか?`, a: `特に夕暮れ時にはよく並びます。現地ガイドが最適な時間帯を選び、タイミングを調整してくれるので、待つ時間を減らし、眺めをより楽しめます。` },
+          { q: `登るのに最適な時間帯は?`, a: `夕方から日没にかけてが幻想的で、光が水面の上で黄金色に変わります。ガイドがそれに合わせて一日を組み立ててくれます。` },
+          { q: `見学にはどのくらいかかりますか?`, a: `登って眺めるのに45分から1時間ほどで、近くのガラタやカラキョイの散策と手軽に組み合わせられます。` },
+        ],
+        planningHeading: `旅の計画`,
+        planningParagraphs: [
+          `ガラタ塔は、金角湾の北側、ベイオールのカラキョイ・ガラタ地区にそびえています。多くの人はトラムやメトロでカラキョイまで来て、そこから趣のある急な坂道を歩いて登ります。もっと楽に登りたいなら、歴史あるテュネル・ケーブルカーが丘の上まで運んでくれ、塔まではほんの少し歩くだけで済みます。`,
+          `この塔はパノラマの眺めで有名で、行列が最も長くなるのは日没前の一時間、誰もが同じ黄金の一枚を狙う時間帯です。日中の早い時間に着けば、列は短く、写真撮影にも柔らかな光が得られます。周囲の路地はカフェや工房であふれ、いつ訪れても散策する価値があります。`,
+          `入場は有料で、エレベーターがほぼ最上部まで運んでくれ、最後の階段を上ると頂を一周するパノラマ・ギャラリーに着きます。旧市街、ボスポラス海峡、金角湾を一望する狭い回廊が待っています。VibeGuideの公認現地ガイドがチケットを確保し、夕暮れの混雑を避けるよう導き、眼下に広がる名所を指し示してくれます。`,
+        ],
+        ctaTitle: `現地ガイドとガラタ塔へ`,
+        ...IST.ja,
+      },
+      ko: {
+        name: `갈라타 탑`,
+        metaTitle: `갈라타 탑 투어 및 현지 가이드`,
+        metaDescription:
+          `인증된 현지 가이드와 함께 이스탄불의 갈라타 탑에 오르세요. 줄을 피하고 일몰을 담으며 금각만을 굽어보는 제노바 탑의 이야기를 들어보세요.`,
+        intro: [
+          `갈라타 탑은 1348년 이래 베이올루 지구의 스카이라인을 장식해 왔습니다. 제노바인들이 성벽으로 둘러싼 식민지 꼭대기에 「크리스테아 투리스」, 곧 그리스도의 탑으로 세운 것입니다. 약 67미터의 중세 석조 탑은 아홉 개 층을 쌓아 올려 최상층 갤러리에 이르며, 그곳에서는 금각만과 역사 반도, 그리고 그 너머 보스포루스 해협까지 360도로 펼쳐집니다.`,
+          `이곳은 전설에 둘러싸인 장소이기도 합니다. 17세기에 헤자르펜 아흐메트 첼레비가 날개를 달고 탑에서 보스포루스 해협을 건너 멀리 위스퀴다르까지 활공했다고 전해집니다. VibeGuide 현지 가이드와 함께라면 가장 붐비는 줄을 피할 시간에 오르고, 황금빛 시간에 맞춰 도착하며, 전망만으로는 알 수 없는 이야기를 들을 수 있습니다.`,
+        ],
+        highlights: [
+          { title: `360도 파노라마`, desc: `최상층 갤러리에서 도시 전체가 펼쳐집니다. 금각만, 구시가지, 그리고 보스포루스 해협 양쪽 기슭까지.` },
+          { title: `제노바의 명소`, desc: `1348년 「그리스도의 탑」으로 지어져 약 700년간 갈라타를 지켜봐 왔습니다.` },
+          { title: `비행의 전설`, desc: `헤자르펜 아흐메트 첼레비가 손수 만든 날개로 이곳에서 해협을 건너 날았다고 전해집니다.` },
+        ],
+        faqs: [
+          { q: `갈라타 탑에 줄이 있나요?`, a: `특히 일몰 무렵에 자주 붐빕니다. 현지 가이드가 알맞은 시간을 고르고 타이밍을 챙겨 드려, 기다리는 시간은 줄이고 전망은 더 즐길 수 있습니다.` },
+          { q: `오르기에 가장 좋은 때는 언제인가요?`, a: `늦은 오후부터 일몰까지가 환상적이며, 이때 빛이 물 위에서 황금빛으로 물듭니다. 가이드가 그에 맞춰 하루 일정을 짜 드립니다.` },
+          { q: `관람에는 얼마나 걸리나요?`, a: `올라가서 전망을 보는 데 45분에서 1시간 정도 걸리며, 근처 갈라타와 카라쾨이 산책과 손쉽게 이어집니다.` },
+        ],
+        planningHeading: `방문 계획 세우기`,
+        planningParagraphs: [
+          `갈라타 탑은 금각만 북쪽, 베이올루의 카라쾨이와 갈라타 지구 위로 솟아 있습니다. 많은 방문객이 트램이나 메트로로 카라쾨이까지 온 뒤, 개성 넘치는 가파른 골목을 걸어 오릅니다. 더 수월하게 오르고 싶다면 역사적인 튀넬 케이블카가 언덕 위까지 태워 주어, 탑까지 잠깐만 걸으면 됩니다.`,
+          `이 탑은 파노라마 전망으로 유명하며, 줄이 가장 긴 때는 모두가 같은 황금빛 사진을 바라는 일몰 직전 한 시간입니다. 낮 이른 시간에 도착하면 줄이 짧고 사진 찍기에 부드러운 빛을 만날 수 있습니다. 주변의 골목은 카페와 공방으로 가득해 언제 방문하든 둘러볼 만합니다.`,
+          `입장은 유료이며, 엘리베이터가 거의 꼭대기까지 데려다주고 마지막 계단을 오르면 정상을 한 바퀴 도는 파노라마 갤러리에 이릅니다. 구시가지와 보스포루스 해협, 금각만을 두루 굽어보는 좁은 통로가 기다립니다. VibeGuide의 공인 현지 가이드가 입장권을 확보하고, 일몰 인파를 피하도록 안내하며, 발아래 펼쳐진 명소들을 짚어 드립니다.`,
+        ],
+        ctaTitle: `현지 가이드와 갈라타 탑을 만나보세요`,
+        ...IST.ko,
       },
     },
   },
@@ -3133,6 +3838,90 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: "Verken de Grote Bazaar met een local",
         ...IST.nl,
       },
+      pt: {
+        name: `Grande Bazar`,
+        metaTitle: `Tours ao Grande Bazar e Guias Locais`,
+        metaDescription:
+          `Explore o Grande Bazar de Istambul com um guia local verificado. Navegue por 4000 lojas, regateie com confiança e encontre artesãos honestos em vez de armadilhas para turistas.`,
+        intro: [
+          `O Grande Bazar é um dos mercados cobertos mais antigos e maiores do mundo — um labirinto iniciado sob Maomé, o Conquistador, entre 1455 e 1461, que cresceu ao longo dos séculos até mais de sessenta ruas cobertas e cerca de 4000 lojas. Tapetes e kilims, ouro e joias, cerâmica, especiarias, lanternas e couro transbordam de cada porta sob as suas abóbadas pintadas.`,
+          `Regatear aqui é esperado — faz parte da graça — mas o labirinto engole os recém-chegados por inteiro. Um local da VibeGuide leva-o pelas ruelas certas, mantém-no longe dos preços de armadilha para turistas, apresenta-lhe artesãos honestos e traduz tanto a língua como o ritual da pechincha.`,
+        ],
+        highlights: [
+          { title: `4000 Lojas`, desc: `Mais de sessenta ruas cobertas de tapetes, ouro, cerâmica, especiarias, lanternas e couro.` },
+          { title: `A Arte do Regateio`, desc: `Regatear é esperado e faz parte da diversão — um guia mantém o preço honesto.` },
+          { title: `História Viva`, desc: `Um mercado coberto iniciado na década de 1450 sob Maomé, o Conquistador, e que ainda hoje negoceia.` },
+        ],
+        faqs: [
+          { q: `Preciso de um guia para o Grande Bazar?`, a: `Não vai ficar perdido para sempre, mas pode pagar a mais. Um guia local conhece os artesãos honestos, o preço justo e os atalhos pelo labirinto.` },
+          { q: `Regatear é mesmo esperado?`, a: `Sim — faz parte da cultura. Comece baixo, mantenha-se simpático e deixe o seu guia mostrar-lhe onde acaba o ritual e começa um bom negócio.` },
+          { q: `Quanto tempo devo planear?`, a: `A maioria das visitas guiadas dura 1 a 2 horas e combina naturalmente com o vizinho Bazar das Especiarias e as ruas de Fatih.` },
+        ],
+        planningHeading: `Planear a sua visita`,
+        planningParagraphs: [
+          `O Grande Bazar (Kapalıçarşı) fica no bairro de Fatih, na cidade antiga, mesmo ao lado de Beyazıt. A forma mais fácil de chegar é o elétrico T1 até à paragem «Beyazıt-Kapalıçarşı», que o deixa junto a um dos portões principais. Faz-se um passeio fácil e plano desde Sultanahmet e a Mesquita Azul, por isso muitos visitantes vão até lá simplesmente a pé depois de ver os monumentos próximos.`,
+          `A entrada é gratuita e o mercado abre todos os dias exceto aos domingos. Está mais movimentado por volta do meio-dia, quando os grupos de turistas e os passageiros de cruzeiro enchem as ruelas, por isso chegar logo após a abertura garante corredores mais calmos e lojistas mais pacientes. Como todo o bazar é coberto, mantém-se confortável em qualquer estação, sendo uma escolha certa tanto nas tardes quentes de verão como nos dias chuvosos de inverno.`,
+          `Sendo um dos mercados cobertos mais antigos e maiores do mundo, com cerca de 4000 lojas ao longo de mais de 60 ruas, o bazar recompensa quem leva o seu tempo. Regatear é esperado e faz parte da diversão, mas os primeiros preços podem ser elevados para os recém-chegados. Um guia local licenciado da VibeGuide ajuda-o a navegar pelo labirinto, a afastar-se das bancas armadilha para turistas e a chegar a lojas honestas onde tanto a qualidade como o preço são justos.`,
+        ],
+        ctaTitle: `Explore o Grande Bazar com um local`,
+        ...IST.pt,
+      },
+      ja: {
+        name: `グランドバザール`,
+        metaTitle: `グランドバザールツアーと現地ガイド`,
+        metaDescription:
+          `認証済みの現地ガイドとイスタンブールのグランドバザールを巡る旅。4000軒の店を歩き、自信を持って値切り、観光客向けのぼったくりではなく誠実な職人に出会いましょう。`,
+        intro: [
+          `グランドバザールは、世界で最も古く最も大きな屋根付き市場の一つです。1455年から1461年にかけて征服王メフメトのもとで始まった迷宮は、幾世紀もかけて六十を超える屋根付きの通りと約4000軒の店へと広がりました。絨毯やキリム、金や宝飾品、陶器、香辛料、ランプ、革製品が、彩色された天井の下、どの店先からもあふれ出しています。`,
+          `ここでは値切りが当たり前で、それも楽しみの半分です。とはいえ、この迷宮は初めての人をまるごと飲み込んでしまいます。VibeGuideの現地ガイドが正しい路地へと案内し、観光客向けのぼったくり価格から遠ざけ、誠実な職人を紹介し、言葉と値切りの作法の両方を通訳してくれます。`,
+        ],
+        highlights: [
+          { title: `4000軒の店`, desc: `絨毯、金、陶器、香辛料、ランプ、革製品が並ぶ六十を超える屋根付きの通り。` },
+          { title: `値切りの技`, desc: `値切りは当たり前で楽しみの一部。ガイドが価格を誠実に保ってくれます。` },
+          { title: `生きた歴史`, desc: `1450年代に征服王メフメトのもとで始まった屋根付き市場が、今も商いを続けています。` },
+        ],
+        faqs: [
+          { q: `グランドバザールにガイドは必要ですか?`, a: `ずっと迷い続けることはありませんが、払いすぎてしまうかもしれません。現地ガイドは誠実な職人、適正な価格、そして迷宮の近道を知っています。` },
+          { q: `値切りは本当に当たり前なのですか?`, a: `はい、文化の一部です。低めから始め、笑顔を忘れず、作法が終わって公正な取引が始まる境目をガイドに教えてもらいましょう。` },
+          { q: `どのくらい時間をみておくべきですか?`, a: `多くのガイド付き見学は1〜2時間ほどで、近くのエジプシャンバザール(香辛料市場)やファティフの街並みと自然に組み合わせられます。` },
+        ],
+        planningHeading: `旅の計画`,
+        planningParagraphs: [
+          `グランドバザール(カパルチャルシュ)は、旧市街のファティフ地区、ベヤズットのすぐ隣にあります。最も簡単な行き方はT1トラムで「ベヤズット・カパルチャルシュ」駅まで行くルートで、主要な門の一つのそばで降りられます。スルタンアフメトやブルーモスクからは平坦で歩きやすいので、近くの名所を見たあとにそのまま歩いて向かう人も多くいます。`,
+          `入場は無料で、市場は日曜以外は毎日開いています。最も混み合うのは正午前後、団体客やクルーズ客が路地を埋める時間帯なので、開場直後に着けば通路も静かで、店主もより辛抱強く応対してくれます。バザール全体が屋根に覆われているため、どの季節でも快適で、夏の暑い午後にも冬の雨の日にも頼れる選択肢です。`,
+          `世界で最も古く最も大きな屋根付き市場の一つで、60を超える通りに約4000軒の店が並ぶこのバザールは、時間をかける人に報いてくれます。値切りは当たり前で楽しみの一部ですが、初めての人には最初の言い値が高いこともあります。VibeGuideの公認現地ガイドが迷宮の歩き方を案内し、観光客向けのぼったくり店を避け、品質も価格も公正な誠実な店へと導いてくれます。`,
+        ],
+        ctaTitle: `現地ガイドとグランドバザールへ`,
+        ...IST.ja,
+      },
+      ko: {
+        name: `그랜드 바자르`,
+        metaTitle: `그랜드 바자르 투어 및 현지 가이드`,
+        metaDescription:
+          `인증된 현지 가이드와 함께 이스탄불의 그랜드 바자르를 탐험하세요. 4,000개의 상점을 누비고 자신 있게 흥정하며 관광객 함정 대신 정직한 장인을 만나보세요.`,
+        intro: [
+          `그랜드 바자르는 지상에서 가장 오래되고 큰 지붕 덮인 시장 중 하나입니다. 1455년부터 1461년까지 정복자 메흐메트 시대에 시작된 미로는 수 세기에 걸쳐 예순 개가 넘는 지붕 덮인 거리와 약 4,000개의 상점으로 자라났습니다. 카펫과 킬림, 금과 보석, 도자기, 향신료, 등불, 가죽 제품이 채색된 둥근 천장 아래 모든 문간에서 넘쳐흐릅니다.`,
+          `이곳에서 흥정은 당연한 일이며, 그 자체가 재미의 절반입니다. 하지만 이 미로는 처음 온 사람을 통째로 삼켜 버립니다. VibeGuide 현지 가이드가 알맞은 골목으로 안내하고, 관광객을 노린 함정 가격에서 멀어지게 하며, 정직한 장인을 소개하고, 언어와 흥정의 예법을 함께 통역해 드립니다.`,
+        ],
+        highlights: [
+          { title: `4,000개의 상점`, desc: `카펫, 금, 도자기, 향신료, 등불, 가죽 제품이 늘어선 예순 개가 넘는 지붕 덮인 거리.` },
+          { title: `흥정의 기술`, desc: `흥정은 당연한 일이자 재미의 일부입니다. 가이드가 가격을 정직하게 지켜 드립니다.` },
+          { title: `살아 있는 역사`, desc: `1450년대 정복자 메흐메트 시대에 시작된 지붕 덮인 시장이 오늘날에도 여전히 장사를 이어 갑니다.` },
+        ],
+        faqs: [
+          { q: `그랜드 바자르에 가이드가 필요한가요?`, a: `영영 길을 잃지는 않겠지만, 값을 더 치를 수는 있습니다. 현지 가이드는 정직한 장인과 공정한 가격, 그리고 미로를 가로지르는 지름길을 알고 있습니다.` },
+          { q: `흥정은 정말 당연한 건가요?`, a: `네, 문화의 일부입니다. 낮게 시작하고 친근함을 잃지 마세요. 예법이 끝나고 공정한 거래가 시작되는 지점을 가이드가 알려 드립니다.` },
+          { q: `얼마나 시간을 잡아야 하나요?`, a: `대부분의 가이드 관람은 1~2시간 정도이며, 인근의 이집트 시장(향신료 시장)과 파티흐의 거리와 자연스럽게 이어집니다.` },
+        ],
+        planningHeading: `방문 계획 세우기`,
+        planningParagraphs: [
+          `그랜드 바자르(카팔르차르시)는 구시가지의 파티흐 지구, 베야즈트 바로 옆에 자리합니다. 가장 쉬운 도착 방법은 T1 트램을 타고 「베야즈트-카팔르차르시」 정류장에서 내리는 것으로, 주요 정문 중 하나 앞에 서게 됩니다. 술탄아흐메트와 블루 모스크에서 평탄하고 걷기 쉬운 거리라, 많은 방문객이 인근 명소를 본 뒤 그대로 걸어서 옵니다.`,
+          `입장은 무료이며 시장은 일요일을 제외하고 매일 엽니다. 단체 관광객과 크루즈 승객이 골목을 채우는 정오 무렵이 가장 붐비므로, 개장 직후에 도착하면 더 한적한 통로와 더 여유로운 상인을 만날 수 있습니다. 바자르 전체가 지붕으로 덮여 있어 어느 계절에도 쾌적하며, 무더운 여름 오후에도 비 오는 겨울날에도 믿음직한 선택입니다.`,
+          `60개가 넘는 거리에 약 4,000개의 상점이 늘어선, 세계에서 가장 오래되고 큰 지붕 덮인 시장 중 하나인 이곳은 시간을 들이는 사람에게 보답합니다. 흥정은 당연하고 재미의 일부이지만, 처음 온 사람에게는 첫 부르는 값이 비쌀 수 있습니다. VibeGuide의 공인 현지 가이드가 미로를 헤쳐 나가도록 돕고, 관광객을 노린 함정 가판을 피하게 하며, 품질과 가격이 모두 공정한 정직한 상점으로 이끌어 드립니다.`,
+        ],
+        ctaTitle: `현지 가이드와 그랜드 바자르를 탐험하세요`,
+        ...IST.ko,
+      },
     },
   },
   {
@@ -3452,6 +4241,90 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: "Vaar over de Bosporus met een local",
         ...IST.nl,
+      },
+      pt: {
+        name: `O Bósforo`,
+        metaTitle: `Cruzeiros no Bósforo e Guias Locais`,
+        metaDescription:
+          `Navegue pelo Bósforo em Istambul com um guia local verificado. Deslize junto a palácios otomanos, yalıs à beira-mar e a Torre da Donzela, e ouça a história de cada margem.`,
+        intro: [
+          `O Bósforo é o estreito que separa um continente — o canal sinuoso que divide a Europa da Ásia e liga o Mar Negro ao Mar de Mármara. Um passeio de barco clássico desliza junto a palácios otomanos como Dolmabahçe, Beylerbeyi e Çırağan, às graciosas mansões de madeira à beira-mar conhecidas como yalıs, à Torre da Donzela no seu ilhéu, à Fortaleza de Rumeli e sob as grandes pontes suspensas.`,
+          `O cruzeiro ao pôr do sol é uma das experiências icónicas de Istambul, mas, da água, é difícil distinguir um palácio do seguinte. Com um local da VibeGuide a bordo, aprende qual é qual, a que margem pertence cada história e porque é que esta fita de água moldou um império.`,
+        ],
+        highlights: [
+          { title: `Palácios a partir da Água`, desc: `Dolmabahçe, Beylerbeyi e Çırağan alinham-se pelas margens em esplendor otomano.` },
+          { title: `Dois Continentes`, desc: `A Europa numa margem, a Ásia na outra, unidas pelas grandes pontes suspensas.` },
+          { title: `Yalıs e a Torre da Donzela`, desc: `Históricas mansões de madeira à beira-mar e a pequena torre que guarda o estreito.` },
+        ],
+        faqs: [
+          { q: `Vale a pena um cruzeiro no Bósforo com guia?`, a: `Da água, os palácios confundem-se uns com os outros. Um guia local nomeia cada um, conta a sua história e aponta os detalhes por que, de outro modo, passaria a navegar.` },
+          { q: `Qual a melhor hora para o cruzeiro?`, a: `O pôr do sol é icónico, quando a luz brilha sobre os palácios e as pontes. O seu guia pode ajudá-lo a escolher a hora e o tipo de barco certo.` },
+          { q: `Quanto dura um cruzeiro típico?`, a: `Os passeios variam entre cerca de 1,5 e 3 horas, consoante o quão longe sobe pelo estreito, facilmente combinados com um passeio pela marginal.` },
+        ],
+        planningHeading: `Planear a sua visita`,
+        planningParagraphs: [
+          `O Bósforo é o lendário estreito que divide Istambul entre a Europa e a Ásia, por isso é da água que melhor o vive. Os passeios de barco partem de vários pontos à beira-mar, os mais convenientes Eminönü, Kabataş e Beşiktaş, todos alcançáveis de elétrico, ferry ou num curto passeio a pé desde a cidade antiga. A partir destes cais, pode juntar-se a um cruzeiro com horário ou embarcar num barco privado poucos minutos depois de chegar.`,
+          `Há um barco para cada hora do dia, mas a luz dourada do fim da tarde e do pôr do sol é o momento mais icónico para estar no convés. O verão traz noites quentes e animadas, enquanto a primavera e o outono oferecem ar mais límpido e menos multidões. Seja qual for a estação, o estreito é ventoso e mais fresco do que a margem, por isso leve uma camada leve e vista-se para o vento, mesmo em dias de sol.`,
+          `Os ferries públicos são baratos, frequentes e maravilhosamente panorâmicos, enquanto os barcos privados ou guiados dão-lhe flexibilidade de rota e horário. Ao longo do caminho, desliza junto a palácios otomanos, elegantes mansões yalı à beira-mar, à Fortaleza de Rumeli e às grandes pontes suspensas. Um guia local licenciado da VibeGuide ajuda-o a escolher o barco certo para o seu grupo e dá vida à margem com as histórias por trás de cada palácio, fortaleza e bairro por que passa.`,
+        ],
+        ctaTitle: `Navegue pelo Bósforo com um local`,
+        ...IST.pt,
+      },
+      ja: {
+        name: `ボスポラス海峡`,
+        metaTitle: `ボスポラス海峡クルーズと現地ガイド`,
+        metaDescription:
+          `認証済みの現地ガイドとイスタンブールのボスポラス海峡をクルーズ。オスマンの宮殿や水辺のヤル、乙女の塔のそばを進み、それぞれの岸の物語に耳を傾けましょう。`,
+        intro: [
+          `ボスポラス海峡は、一つの大陸を分かつ海峡です。ヨーロッパとアジアを隔て、黒海とマルマラ海をつなぐ、曲がりくねった水路です。定番のボートツアーは、ドルマバフチェ、ベイレルベイ、チュラーンといったオスマンの宮殿、ヤルと呼ばれる優美な木造の水辺の邸宅、小島に立つ乙女の塔、ルメリ要塞、そして雄大な吊り橋の下を滑るように進みます。`,
+          `夕暮れのクルーズはイスタンブールを象徴する体験の一つですが、水上からは一つの宮殿を次の宮殿と見分けるのは難しいものです。VibeGuideの現地ガイドが乗り合わせれば、どれがどれか、どの物語がどの岸のものか、そしてなぜこの一筋の水が一つの帝国を形づくったのかが見えてきます。`,
+        ],
+        highlights: [
+          { title: `水上から望む宮殿`, desc: `ドルマバフチェ、ベイレルベイ、チュラーンがオスマンの華やかさで両岸に連なります。` },
+          { title: `二つの大陸`, desc: `一方の岸にヨーロッパ、もう一方にアジア。雄大な吊り橋がそれらを結びます。` },
+          { title: `ヤルと乙女の塔`, desc: `歴史ある木造の水辺の邸宅と、海峡を守る小さな塔。` },
+        ],
+        faqs: [
+          { q: `ボスポラス・クルーズはガイド付きの価値がありますか?`, a: `水上からは宮殿が一つに溶け合って見えます。現地ガイドがそれぞれの名を挙げ、物語を語り、そうでなければ通り過ぎてしまう細部を指し示してくれます。` },
+          { q: `クルーズに最適な時間帯は?`, a: `光が宮殿や橋を照らす日没が象徴的です。ガイドが時間帯やふさわしい船の種類選びを手伝ってくれます。` },
+          { q: `一般的なクルーズの所要時間は?`, a: `海峡をどこまで進むかによって約1.5〜3時間で、水辺の散策と手軽に組み合わせられます。` },
+        ],
+        planningHeading: `旅の計画`,
+        planningParagraphs: [
+          `ボスポラス海峡は、イスタンブールをヨーロッパとアジアに分かつ物語に満ちた海峡で、その魅力は水上から最もよく味わえます。ボートツアーはいくつかの水辺の拠点から出発し、最も便利なのはエミノニュ、カバタシュ、ベシクタシュで、いずれも旧市街からトラムやフェリー、あるいは少し歩いて行けます。これらの桟橋から、時刻の決まったクルーズに参加することも、到着から数分でプライベートボートに乗り込むこともできます。`,
+          `一日のどの時間帯にも船はありますが、デッキに立つのに最も象徴的なのは、午後遅くから日没にかけての黄金の光の時間です。夏は暖かくにぎやかな夜が訪れ、春と秋は澄んだ空気と少ない人出に恵まれます。どの季節でも海峡は風が強く岸辺より涼しいので、羽織るものを一枚持ち、晴れた日でも風に備えた服装を心がけましょう。`,
+          `公共フェリーは安く、本数も多く、素晴らしい眺めが楽しめます。一方、プライベートやガイド付きの船なら、ルートや時間を自由に選べます。道すがら、オスマンの宮殿、優美な水辺のヤル邸宅、ルメリ要塞、そして雄大な吊り橋のそばを滑るように進みます。VibeGuideの公認現地ガイドがあなたのグループに合った船選びを手伝い、通り過ぎる宮殿や要塞、街並みの一つひとつに秘められた物語で岸辺を生き生きとよみがえらせてくれます。`,
+        ],
+        ctaTitle: `現地ガイドとボスポラス海峡をクルーズ`,
+        ...IST.ja,
+      },
+      ko: {
+        name: `보스포루스 해협`,
+        metaTitle: `보스포루스 크루즈 투어 및 현지 가이드`,
+        metaDescription:
+          `인증된 현지 가이드와 함께 이스탄불의 보스포루스 해협을 크루즈하세요. 오스만 궁전과 물가의 얄르, 처녀의 탑 곁을 지나며 양쪽 기슭의 이야기를 들어보세요.`,
+        intro: [
+          `보스포루스 해협은 하나의 대륙을 가르는 해협입니다. 유럽과 아시아를 나누고 흑해와 마르마라해를 잇는 구불구불한 물길이지요. 대표적인 보트 투어는 돌마바흐체, 베일레르베이, 츠라안 같은 오스만 궁전과 얄르라 불리는 우아한 목조 물가 저택, 작은 섬에 선 처녀의 탑, 루멜리 요새, 그리고 거대한 현수교 아래를 미끄러지듯 지나갑니다.`,
+          `일몰 크루즈는 이스탄불을 상징하는 경험 중 하나이지만, 물 위에서는 한 궁전과 다음 궁전을 구별하기가 어렵습니다. VibeGuide 현지 가이드가 함께 타면 어느 것이 무엇인지, 어떤 이야기가 어느 기슭의 것인지, 그리고 왜 이 한 줄기 물길이 한 제국을 빚어냈는지 알게 됩니다.`,
+        ],
+        highlights: [
+          { title: `물 위에서 보는 궁전`, desc: `돌마바흐체, 베일레르베이, 츠라안이 오스만의 화려함으로 양쪽 기슭에 늘어섭니다.` },
+          { title: `두 대륙`, desc: `한쪽 기슭에는 유럽, 다른 쪽에는 아시아. 거대한 현수교가 둘을 잇습니다.` },
+          { title: `얄르와 처녀의 탑`, desc: `역사 깊은 목조 물가 저택과 해협을 지키는 작은 탑.` },
+        ],
+        faqs: [
+          { q: `보스포루스 크루즈는 가이드와 함께할 가치가 있나요?`, a: `물 위에서는 궁전들이 하나로 뒤섞여 보입니다. 현지 가이드가 하나하나 이름을 대고 그 이야기를 들려주며, 그렇지 않으면 스쳐 지나갈 세부를 짚어 줍니다.` },
+          { q: `크루즈에 가장 좋은 때는 언제인가요?`, a: `빛이 궁전과 다리를 물들이는 일몰이 상징적입니다. 가이드가 시간대와 알맞은 배의 종류를 고르도록 도와드립니다.` },
+          { q: `일반적인 크루즈는 얼마나 걸리나요?`, a: `해협을 얼마나 거슬러 올라가느냐에 따라 약 1.5시간에서 3시간까지이며, 물가 산책과 손쉽게 이어집니다.` },
+        ],
+        planningHeading: `방문 계획 세우기`,
+        planningParagraphs: [
+          `보스포루스 해협은 이스탄불을 유럽과 아시아로 나누는 이야기 가득한 해협으로, 그 매력은 물 위에서 가장 잘 느낄 수 있습니다. 보트 투어는 여러 물가 거점에서 출발하며, 가장 편리한 곳은 에미뇌뉘와 카바타시, 베식타시로, 모두 구시가지에서 트램이나 페리, 또는 짧은 도보로 갈 수 있습니다. 이 선착장에서 정해진 시간의 크루즈에 합류하거나, 도착 몇 분 만에 개인 보트에 오를 수 있습니다.`,
+          `하루 어느 시간에도 배가 있지만, 갑판에 서기에 가장 상징적인 때는 늦은 오후부터 일몰까지 이어지는 황금빛 시간입니다. 여름에는 따뜻하고 활기찬 저녁이 찾아오고, 봄과 가을에는 맑은 공기와 덜 붐비는 인파를 만날 수 있습니다. 어느 계절이든 해협은 바람이 불고 기슭보다 서늘하므로, 겉옷을 한 겹 챙기고 맑은 날에도 바람에 대비해 옷을 입으세요.`,
+          `공공 페리는 저렴하고 자주 다니며 경치가 훌륭한 반면, 개인 보트나 가이드 보트는 경로와 시간을 자유롭게 정할 수 있게 해 줍니다. 가는 길에 오스만 궁전과 우아한 물가의 얄르 저택, 루멜리 요새, 그리고 거대한 현수교 곁을 미끄러지듯 지납니다. VibeGuide의 공인 현지 가이드가 일행에게 알맞은 배를 고르도록 돕고, 지나치는 궁전과 요새, 동네 하나하나에 담긴 이야기로 기슭을 생생하게 되살려 줍니다.`,
+        ],
+        ctaTitle: `현지 가이드와 보스포루스 해협을 크루즈하세요`,
+        ...IST.ko,
       },
     },
   },
@@ -3773,6 +4646,90 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: "Bezoek Aspendos met een local",
         ...ANT.nl,
       },
+      pt: {
+        name: `Aspendos`,
+        metaTitle: `Aspendos: Teatro Romano com Guias Locais`,
+        metaDescription:
+          `Visite Aspendos, perto de Antália, com um guia local verificado. Descubra o teatro romano mais bem preservado do mundo e a sua acústica intacta ao fim de 1800 anos.`,
+        intro: [
+          `Aspendos é o teatro romano mais bem preservado do mundo — construído no século II d.C. sob Marco Aurélio pelo arquiteto Zenão e ainda capaz de acolher cerca de 15 000 a 20 000 pessoas. Sussurre no palco e a última fila ouve-o: a sua acústica continua espantosa passados quase 1800 anos.`,
+          `Com um especialista local da VibeGuide não fica apenas a olhar para pedras antigas. Aprende como o teatro funcionava, por que sobreviveu intacto e o que reparar no aqueduto romano ao lado — ao seu ritmo, na sua língua, a cerca de 45 km a leste de Antália, junto a Serik.`,
+        ],
+        highlights: [
+          { title: `Acústica Perfeita`, desc: `Uma palavra dita no palco chega ainda à fila mais alta, sem qualquer microfone.` },
+          { title: `Arquitetura Romana Intacta`, desc: `A cena e as bancadas sobrevivem quase completas — algo raro em todo o mundo.` },
+          { title: `Festival de Ópera e Ballet`, desc: `Todos os verões o teatro antigo enche-se de novo para o Festival Internacional de Aspendos.` },
+        ],
+        faqs: [
+          { q: `Porque é Aspendos tão famoso?`, a: `É o teatro romano mais bem preservado que existe e a sua acústica ainda funciona — um guia mostra-lhe exatamente onde se colocar para a testar.` },
+          { q: `A que distância fica Aspendos de Antália?`, a: `Cerca de 45 km a leste, junto a Serik — uma excursão de um dia fácil que o seu guia VibeGuide o ajuda a planear em torno das multidões e do calor.` },
+          { q: `Há mais para ver nas redondezas?`, a: `Sim — há um aqueduto romano ali perto, e um guia pode acrescentá-lo, e aos sítios em redor, à sua visita.` },
+        ],
+        planningHeading: `Planeie a sua visita`,
+        planningParagraphs: [
+          `Aspendos situa-se a cerca de 45 quilómetros a leste de Antália, no sul da Turquia, junto à localidade de Serik. A maioria dos visitantes chega de carro ou numa excursão organizada a partir de Antália, tornando-a um passeio fácil de meio-dia ao longo da costa mediterrânica. O sítio é sobretudo conhecido pelo seu teatro romano, que se ergue acima da planície e se alcança com uma curta caminhada desde o parque de estacionamento.`,
+          `Os meios-dias aqui são quentes, sobretudo no verão, pelo que as manhãs são a melhor altura para explorar com relativo conforto e uma luz mais suave. A primavera e o outono trazem temperaturas agradáveis e menos gente, enquanto as noites de verão ganham vida durante o festival de ópera e ballet do sítio. Vá quando for, leve água e proteção solar, pois há pouca sombra entre as pedras antigas.`,
+          `O teatro tem bilhete e é celebrado como o mais bem preservado do mundo, com a cena e as bancadas notavelmente intactas. Um guia local licenciado da VibeGuide dá vida à sua acústica e história e pode combinar a sua visita com sítios antigos próximos como Side e Perge, ajudando-o a compreender como estas cidades se ligavam pela planície da Panfília e a aproveitar ao máximo um único dia.`,
+        ],
+        ctaTitle: `Conheça Aspendos com um local`,
+        ...ANT.pt,
+      },
+      ja: {
+        name: `アスペンドス`,
+        metaTitle: `アスペンドス ローマ劇場ツアー・現地ガイド`,
+        metaDescription:
+          `認定現地ガイドと巡るアンタルヤ近郊のアスペンドス。世界で最も保存状態の良いローマ劇場に立ち、1800年を経ても生きる音響の秘密を体感しましょう。`,
+        intro: [
+          `アスペンドスは世界で最も保存状態の良いローマ劇場です。2世紀、マルクス・アウレリウス帝の治世に建築家ゼノンが築き、今なお1万5千から2万人を収容できます。舞台でささやけば最後列まで届く——ほぼ1800年を経てもその音響は驚くほど健在です。`,
+          `VibeGuideの現地エキスパートとなら、ただ古い石を眺めるだけではありません。劇場がどう機能したのか、なぜ無傷で残ったのか、近くのローマ水道橋の見どころを、あなたのペースで、あなたの言葉で学べます。アンタルヤの東約45km、セリク近郊にあります。`,
+        ],
+        highlights: [
+          { title: `完璧な音響`, desc: `舞台で発した一言が最上段まで届く。マイクは一切要りません。` },
+          { title: `無傷のローマ建築`, desc: `舞台建築も客席もほぼ完全な姿で残る——世界でも稀な光景です。` },
+          { title: `オペラ・バレエ祭`, desc: `毎夏、古代劇場はアスペンドス国際フェスティバルで再び満席になります。` },
+        ],
+        faqs: [
+          { q: `アスペンドスはなぜ有名なのですか？`, a: `現存する中で最も保存状態の良いローマ劇場で、音響も今なお生きています。ガイドが音響を試す絶好の場所を正確に案内します。` },
+          { q: `アンタルヤからどのくらいの距離ですか？`, a: `東へ約45km、セリク近郊です。日帰りに最適で、混雑や暑さを避けた計画をVibeGuideのガイドがお手伝いします。` },
+          { q: `近くに他の見どころはありますか？`, a: `はい。すぐ近くにローマ水道橋があり、ガイドがそれや周辺の遺跡を訪問に加えられます。` },
+        ],
+        planningHeading: `訪問の計画`,
+        planningParagraphs: [
+          `アスペンドスはトルコ南部、アンタルヤの東約45キロ、セリクの町の近くにあります。多くの人は車かアンタルヤ発の団体ツアーで訪れ、地中海沿岸の半日観光として気軽に楽しめます。この遺跡は平野の上にそびえるローマ劇場で知られ、駐車場から短い徒歩でたどり着けます。`,
+          `ここの日中、とりわけ夏は暑いため、比較的快適で柔らかな光の中で歩ける朝が最適です。春と秋は心地よい気候と少ない人出をもたらし、夏の夜はオペラ・バレエ祭で活気づきます。いつ訪れるにせよ、古い石の周りには日陰がほとんどないので、水と日焼け対策を忘れずに。`,
+          `劇場は有料で、世界で最も保存状態の良いローマ劇場として名高く、舞台建築も客席も見事なまでに無傷です。VibeGuideの認定現地ガイドはその音響と歴史を生き生きと伝え、シデやペルゲといった近隣の古代遺跡と組み合わせて、これらの都市がパンフィリア平野を越えてどうつながっていたかを解き明かし、一日を最大限に活かします。`,
+        ],
+        ctaTitle: `現地ガイドとアスペンドスへ`,
+        ...ANT.ja,
+      },
+      ko: {
+        name: `아스펜도스`,
+        metaTitle: `아스펜도스 로마 극장 투어·현지 가이드`,
+        metaDescription:
+          `인증된 현지 가이드와 함께 안탈리아 인근 아스펜도스를 방문하세요. 세계에서 가장 잘 보존된 로마 극장에서 1800년이 지나도 살아 있는 음향을 직접 느껴보세요.`,
+        intro: [
+          `아스펜도스는 세계에서 가장 잘 보존된 로마 극장입니다. 2세기 마르쿠스 아우렐리우스 치세에 건축가 제논이 세웠으며, 지금도 약 1만 5천에서 2만 명을 수용할 수 있습니다. 무대에서 속삭이면 맨 뒷줄까지 들립니다. 거의 1800년이 지난 지금도 그 음향은 놀랍도록 생생합니다.`,
+          `VibeGuide 현지 전문가와 함께라면 그저 오래된 돌을 바라보는 것에 그치지 않습니다. 극장이 어떻게 작동했는지, 왜 온전히 남았는지, 인근 로마 수도교에서 무엇을 눈여겨봐야 하는지를 당신의 속도로, 당신의 언어로 배웁니다. 안탈리아 동쪽 약 45km, 세리크 인근에 있습니다.`,
+        ],
+        highlights: [
+          { title: `완벽한 음향`, desc: `무대에서 말한 한마디가 맨 윗줄까지 닿습니다. 마이크는 전혀 필요 없습니다.` },
+          { title: `온전한 로마 건축`, desc: `무대 건물과 객석이 거의 완전한 모습으로 남았습니다. 세계 어디서도 보기 드문 일입니다.` },
+          { title: `오페라·발레 축제`, desc: `매년 여름 고대 극장은 아스펜도스 국제 페스티벌로 다시 가득 찹니다.` },
+        ],
+        faqs: [
+          { q: `아스펜도스는 왜 그렇게 유명한가요?`, a: `현존하는 가장 잘 보존된 로마 극장이며 음향도 여전히 살아 있습니다. 가이드가 음향을 시험해 볼 정확한 자리를 안내해 드립니다.` },
+          { q: `안탈리아에서 아스펜도스까지 얼마나 먼가요?`, a: `동쪽으로 약 45km, 세리크 인근입니다. 당일치기로 편하며, VibeGuide 가이드가 인파와 더위를 피한 일정을 도와드립니다.` },
+          { q: `근처에 더 볼 만한 곳이 있나요?`, a: `네. 바로 가까이에 로마 수도교가 있으며, 가이드가 이곳과 주변 유적을 방문 일정에 더해 드릴 수 있습니다.` },
+        ],
+        planningHeading: `방문 계획하기`,
+        planningParagraphs: [
+          `아스펜도스는 튀르키예 남부, 안탈리아 동쪽 약 45km 지점, 세리크 마을 인근에 있습니다. 대부분의 방문객은 자동차나 안탈리아발 단체 투어로 도착하며, 지중해 연안을 따라가는 편안한 반나절 나들이가 됩니다. 이 유적은 평원 위로 솟은 로마 극장으로 유명하며, 주차장에서 잠깐 걸으면 닿습니다.`,
+          `이곳의 한낮은, 특히 여름에는 덥기 때문에 비교적 쾌적하고 빛이 부드러운 아침이 둘러보기에 가장 좋습니다. 봄과 가을은 쾌적한 기온과 적은 인파를 선사하고, 여름 저녁에는 오페라·발레 축제로 활기가 넘칩니다. 언제 가든 고대 돌 주변에는 그늘이 거의 없으니 물과 자외선 차단을 챙기세요.`,
+          `극장은 입장료가 있으며, 세계에서 가장 잘 보존된 로마 극장으로 손꼽히고 무대 건물과 객석이 놀라울 만큼 온전합니다. VibeGuide 인증 현지 가이드는 그 음향과 역사를 생생하게 되살리고, 시데와 페르게 같은 인근 고대 유적과 방문을 엮어 이 도시들이 팜필리아 평원을 가로질러 어떻게 이어졌는지 이해하도록 도우며 하루를 알차게 만들어 줍니다.`,
+        ],
+        ctaTitle: `현지 가이드와 아스펜도스를`,
+        ...ANT.ko,
+      },
     },
   },
   {
@@ -4092,6 +5049,90 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: "Verken Kaleiçi met een local",
         ...ANT.nl,
+      },
+      pt: {
+        name: `Kaleiçi (Cidade Velha de Antália)`,
+        metaTitle: `Kaleiçi: Cidade Velha de Antália com Guias`,
+        metaDescription:
+          `Percorra Kaleiçi, a cidade velha de Antália, com um guia local verificado. Ruelas otomanas empedradas, a Porta de Adriano e um porto romano — as histórias de cada esquina.`,
+        intro: [
+          `Kaleiçi é a atmosférica cidade velha de Antália — um labirinto de ruelas empedradas ladeadas de casas otomano-gregas restauradas, hotéis de charme e cafés, tudo em torno de um porto de época romana. É o tipo de lugar onde cada arco esconde uma história.`,
+          `Com um especialista local da VibeGuide não anda apenas à sorte. Atravesse a Porta de Adriano, admire o Minarete Estriado de Yivli, veja o pôr do sol da Torre de Hıdırlık e termine com um passeio de barco a partir da velha marina — ao seu ritmo, na sua língua.`,
+        ],
+        highlights: [
+          { title: `Porta de Adriano`, desc: `Um triplo arco de mármore erguido em 130 d.C. para a visita do imperador Adriano à cidade.` },
+          { title: `Minarete de Yivli`, desc: `O minarete estriado de tijolo que se tornou o símbolo do horizonte de Antália.` },
+          { title: `O Porto Romano`, desc: `A velha marina sob as muralhas — ideal para um passeio de barco ao pôr do sol.` },
+        ],
+        faqs: [
+          { q: `O que há para fazer em Kaleiçi?`, a: `Percorrer as ruelas otomanas, ver a Porta de Adriano e a Torre de Hıdırlık, e depois fazer um passeio de barco no porto — um guia local liga tudo num percurso simples.` },
+          { q: `Kaleiçi percorre-se a pé?`, a: `Sim, é compacta e explora-se melhor a pé; um guia mantém-no longe das ruas para turistas e leva-o pelas mais bonitas.` },
+          { q: `Qual é a melhor altura para visitar?`, a: `O fim de tarde até ao pôr do sol é mágico, sobretudo da Torre de Hıdırlık — o seu guia VibeGuide sabe cronometrá-lo na perfeição.` },
+        ],
+        planningHeading: `Planeie a sua visita`,
+        planningParagraphs: [
+          `Kaleiçi é a cidade velha histórica de Antália, encaixada entre a cidade moderna e o mar. A forma mais fácil de chegar é o elétrico Antray, saindo nas paragens de İsmetpaşa ou Kaleiçi, ou simplesmente descendo a pé desde o centro. Assim que passa a Porta de Adriano, as ruas tornam-se empedradas e os carros desaparecem, pelo que todo o bairro se explora melhor devagar e a pé.`,
+          `A cidade velha recompensa uma visita sem pressa ao fim da tarde, quando a luz se suaviza sobre o porto romano e as ruelas brilham douradas. O pôr do sol da Torre de Hıdırlık ou da muralha do porto é um dos favoritos dos locais. Os meios-dias de verão podem ser quentes e movimentados, por isso as manhãs e as noites são mais amenas; a primavera e o outono trazem temperaturas mais suaves e menos gente ao longo do dia.`,
+          `Passear pelas ruelas empedradas de Kaleiçi é gratuito e não há uma única porta ou bilhete para entrar no bairro. Pode passar pelo Minarete de Yivli, pelo velho porto e pelas casas otomanas ao seu ritmo, e um passeio de barco a partir da marina é um belo complemento. Um guia local licenciado da VibeGuide dá vida aos pátios escondidos e às ruas traseiras com as histórias por detrás deles.`,
+        ],
+        ctaTitle: `Descubra Kaleiçi com um local`,
+        ...ANT.pt,
+      },
+      ja: {
+        name: `カレイチ（アンタルヤ旧市街）`,
+        metaTitle: `カレイチ アンタルヤ旧市街ツアー・現地ガイド`,
+        metaDescription:
+          `認定現地ガイドと歩くアンタルヤ旧市街カレイチ。石畳のオスマン通り、ハドリアヌス門、ローマ時代の港——街角ごとに宿る物語を巡ります。`,
+        intro: [
+          `カレイチは情緒あふれるアンタルヤの旧市街です。修復されたオスマン・ギリシャ様式の家々、ブティックホテル、カフェが並ぶ石畳の路地が迷路のように広がり、そのすべてがローマ時代の港を囲みます。どのアーチにも物語が隠れている、そんな場所です。`,
+          `VibeGuideの現地エキスパートとなら、当てずっぽうに歩き回る必要はありません。ハドリアヌス門をくぐり、溝彫りのユヴリ・ミナレットを見上げ、フドゥルルック塔から夕陽を眺め、旧マリーナからのボート遊覧で締めくくる——あなたのペースで、あなたの言葉で。`,
+        ],
+        highlights: [
+          { title: `ハドリアヌス門`, desc: `130年、ハドリアヌス帝の来訪を記念して築かれた三連の大理石アーチ。` },
+          { title: `ユヴリ・ミナレット`, desc: `アンタルヤの空を象徴する存在となった、溝彫りレンガのミナレット。` },
+          { title: `ローマ時代の港`, desc: `城壁の下に広がる旧マリーナ——夕暮れのボート遊覧に最適です。` },
+        ],
+        faqs: [
+          { q: `カレイチでは何ができますか？`, a: `オスマンの路地を歩き、ハドリアヌス門とフドゥルルック塔を見て、港からボートに乗る——現地ガイドがそのすべてを一つの気軽なルートにまとめます。` },
+          { q: `カレイチは徒歩で回れますか？`, a: `はい。こぢんまりとして徒歩観光に最適で、ガイドが観光客向けの通りを避け、美しい道へと案内します。` },
+          { q: `訪問に最適な時間帯は？`, a: `夕方から日没にかけてが幻想的で、とりわけフドゥルルック塔からが格別です。VibeGuideのガイドが完璧なタイミングを計ってくれます。` },
+        ],
+        planningHeading: `訪問の計画`,
+        planningParagraphs: [
+          `カレイチはアンタルヤの歴史ある旧市街で、近代的な市街と海の間に佇みます。最も便利な行き方はアントライ・トラムで、イスメトパシャ駅かカレイチ駅で下車するか、中心部から歩いて下るだけです。ハドリアヌス門をくぐると通りは石畳に変わり車が消えるため、地区全体をゆっくり徒歩で巡るのが一番です。`,
+          `旧市街は、光がローマ時代の港に柔らかく差し路地が黄金色に輝く夕方の、ゆったりとした訪問に応えてくれます。フドゥルルック塔や港の城壁から見る夕陽は地元の人にも人気です。夏の日中は暑く混雑しがちなので朝夕がおすすめ。春と秋は一日を通して穏やかな気候と少ない人出をもたらします。`,
+          `カレイチの石畳の路地を歩くのは無料で、地区に入るための門や入場券はありません。ユヴリ・ミナレット、旧港、オスマンの家々を自分のペースで見て回れ、マリーナからのボート遊覧を加えるのも素敵です。VibeGuideの認定現地ガイドが、隠れた中庭や裏通りをその背後の物語とともに生き生きと伝えます。`,
+        ],
+        ctaTitle: `現地ガイドとカレイチへ`,
+        ...ANT.ja,
+      },
+      ko: {
+        name: `칼레이치(안탈리아 구시가지)`,
+        metaTitle: `칼레이치 안탈리아 구시가지 투어·현지 가이드`,
+        metaDescription:
+          `인증된 현지 가이드와 안탈리아 구시가지 칼레이치를 거니세요. 자갈길 오스만 골목, 하드리아누스 문, 로마 시대 항구—골목마다 담긴 이야기를 만나보세요.`,
+        intro: [
+          `칼레이치는 정취 가득한 안탈리아 구시가지입니다. 복원된 오스만-그리스 양식 가옥과 부티크 호텔, 카페가 늘어선 자갈길이 미로처럼 이어지고, 그 모두가 로마 시대 항구를 감쌉니다. 아치마다 이야기가 숨어 있는 그런 곳입니다.`,
+          `VibeGuide 현지 전문가와 함께라면 무작정 헤매지 않아도 됩니다. 하드리아누스 문을 지나 홈이 새겨진 이블리 미나레트를 올려다보고, 흐드를륵 탑에서 노을을 바라본 뒤 옛 마리나에서 보트 유람으로 마무리하세요—당신의 속도로, 당신의 언어로.`,
+        ],
+        highlights: [
+          { title: `하드리아누스 문`, desc: `130년 하드리아누스 황제의 도시 방문을 기려 세운 삼중 대리석 아치.` },
+          { title: `이블리 미나레트`, desc: `안탈리아 스카이라인의 상징이 된 홈이 새겨진 벽돌 미나레트.` },
+          { title: `로마 시대 항구`, desc: `성벽 아래 자리한 옛 마리나—노을 무렵 보트 유람에 안성맞춤입니다.` },
+        ],
+        faqs: [
+          { q: `칼레이치에서 무엇을 할 수 있나요?`, a: `오스만 골목을 걷고 하드리아누스 문과 흐드를륵 탑을 본 뒤 항구에서 보트를 타세요. 현지 가이드가 이 모두를 하나의 편안한 동선으로 엮어 줍니다.` },
+          { q: `칼레이치는 걸어서 다닐 만한가요?`, a: `네. 아담해서 도보로 둘러보기 가장 좋으며, 가이드가 관광객용 거리를 피해 아름다운 골목으로 안내합니다.` },
+          { q: `언제 방문하는 것이 가장 좋나요?`, a: `늦은 오후부터 노을까지가 환상적이며, 특히 흐드를륵 탑에서 그렇습니다. VibeGuide 가이드가 완벽한 시간을 맞춰 드립니다.` },
+        ],
+        planningHeading: `방문 계획하기`,
+        planningParagraphs: [
+          `칼레이치는 현대적인 시가지와 바다 사이에 자리한 안탈리아의 역사적 구시가지입니다. 가장 편한 방법은 안트라이 트램으로 이스메트파샤 또는 칼레이치 정거장에서 내리거나, 그저 중심부에서 걸어 내려오는 것입니다. 하드리아누스 문을 지나면 거리가 자갈길로 바뀌고 차가 사라지므로, 구역 전체를 천천히 걸어서 둘러보는 것이 가장 좋습니다.`,
+          `구시가지는 로마 항구 위로 빛이 부드러워지고 골목이 황금빛으로 물드는 늦은 오후의 느긋한 방문에 보답합니다. 흐드를륵 탑이나 항구 성벽에서 보는 노을은 현지인이 즐겨 찾는 명소입니다. 여름 한낮은 덥고 붐빌 수 있어 아침과 저녁이 더 좋으며, 봄과 가을은 하루 종일 온화한 기온과 적은 인파를 선사합니다.`,
+          `칼레이치의 자갈길을 거니는 것은 무료이며, 구역에 들어가는 단일 관문이나 입장권은 없습니다. 이블리 미나레트, 옛 항구, 오스만 가옥을 당신의 속도로 지나칠 수 있고, 마리나에서의 보트 유람은 멋진 추가 코스가 됩니다. VibeGuide 인증 현지 가이드가 숨은 안뜰과 뒷골목을 그 뒤에 얽힌 이야기와 함께 생생하게 되살려 줍니다.`,
+        ],
+        ctaTitle: `현지 가이드와 칼레이치를`,
+        ...ANT.ko,
       },
     },
   },
@@ -4413,6 +5454,90 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: "Bezoek Pergamon met een local",
         ...IZM.nl,
       },
+      pt: {
+        name: `Pérgamo`,
+        metaTitle: `Pérgamo (Bergama): Cidade Antiga com Guias`,
+        metaDescription:
+          `Explore Pérgamo, cidade antiga Património Mundial da UNESCO perto de Esmirna, com um guia local verificado. O teatro mais íngreme da Antiguidade, uma lendária biblioteca e o Asclépion.`,
+        intro: [
+          `Pérgamo — hoje Bergama — foi uma das grandes cidades do mundo antigo, primeiro grega e depois romana, e é agora Património Mundial da UNESCO. A sua Acrópole coroa uma colina íngreme acima da planície, com o Templo de Trajano, o altar de Zeus e o teatro mais íngreme do mundo antigo, dramaticamente talhado na encosta para cerca de 10 000 espectadores.`,
+          `Com um especialista local da VibeGuide, as ruínas ganham vida. Descubra como a Biblioteca de Pérgamo rivalizava com Alexandria e nos deu o pergaminho, e depois desça até ao centro de cura do Asclépion e à imensa Basílica Vermelha (Kızıl Avlu) — ao seu ritmo, na sua língua, a cerca de uma hora de Kuşadası ou Esmirna.`,
+        ],
+        highlights: [
+          { title: `O Teatro Íngreme`, desc: `O teatro mais íngreme do mundo antigo, escavado na encosta para cerca de 10 000 espectadores.` },
+          { title: `A Grande Biblioteca`, desc: `Segunda apenas à de Alexandria — foi aqui que se aperfeiçoou o pergaminho (charta pergamena).` },
+          { title: `O Asclépion`, desc: `Um dos mais famosos centros de cura da Antiguidade, na planície abaixo da acrópole.` },
+        ],
+        faqs: [
+          { q: `Onde fica Pérgamo?`, a: `Na cidade de Bergama, província de Esmirna — a cerca de uma hora de Kuşadası ou Esmirna, e uma excursão de um dia fácil que um guia local lhe pode planear.` },
+          { q: `De quanto tempo preciso?`, a: `A Acrópole, o Asclépion e a Basílica Vermelha merecem tempo cada um; meio dia com um guia cobre os destaques com folga.` },
+          { q: `Vale a pena um guia em Pérgamo?`, a: `Sem dúvida — a biblioteca, o altar de Zeus e os rituais de cura são histórias, não placas; um guia devolve a vida às ruínas vazias.` },
+        ],
+        planningHeading: `Planeie a sua visita`,
+        planningParagraphs: [
+          `Pérgamo situa-se na cidade de Bergama, na província de Esmirna, a cerca de uma hora de Kuşadası ou Esmirna e de fácil acesso de carro ou autocarro. A antiga Acrópole coroa uma colina íngreme acima da cidade, que pode alcançar pelo teleférico da Acrópole (teleferik) ou por estrada. O santuário de cura do Asclépion e a Basílica Vermelha são paragens separadas na própria Bergama, um acréscimo fácil ao dia.`,
+          `As manhãs são o momento ideal aqui: o ar é mais fresco, a luz é clara sobre as ruínas do topo da colina e as multidões ainda são escassas antes de chegarem os grupos. O terreno é íngreme e exposto ao sol, pelo que as tardes de verão podem ser cansativas, enquanto a primavera e o outono oferecem o clima mais agradável para caminhar. Vá quando for, sapatos cómodos e resistentes e água tornam a subida muito mais agradável.`,
+          `Pérgamo é um sítio Património Mundial da UNESCO com bilhete, e vale a pena entrar na Acrópole, no Asclépion e na Basílica Vermelha. Espere terraços grandiosos, um teatro íngreme e vistas amplas sobre a planície. Um guia local licenciado da VibeGuide reúne as ruínas dispersas numa só história, da acrópole e da subida de teleférico ao Asclépion, para que as pedras façam sentido em vez de se confundirem umas com as outras.`,
+        ],
+        ctaTitle: `Conheça Pérgamo com um local`,
+        ...IZM.pt,
+      },
+      ja: {
+        name: `ペルガモン`,
+        metaTitle: `ペルガモン(ベルガマ)古代都市ツアー・現地ガイド`,
+        metaDescription:
+          `認定現地ガイドと巡るイズミル近郊の世界遺産ペルガモン。古代最急勾配の劇場、伝説の図書館、そして治療の聖地アスクレピオンを訪ねます。`,
+        intro: [
+          `ペルガモン——現在のベルガマ——は古代世界屈指の都市で、初めはギリシャ、のちにローマの都市となり、いまは世界遺産です。急峻な丘の上にアクロポリスがそびえ、トラヤヌス神殿、ゼウスの大祭壇、そして斜面に劇的に刻まれた約1万人収容の古代最急勾配の劇場を擁します。`,
+          `VibeGuideの現地エキスパートとなら遺跡が息づきます。ペルガモン図書館がアレクサンドリアに肩を並べ羊皮紙を生んだ物語を聞き、治療の聖地アスクレピオンと壮大な赤いバシリカ(クズル・アヴル)へと下ります——あなたのペースで、あなたの言葉で。クシャダスやイズミルから約1時間です。`,
+        ],
+        highlights: [
+          { title: `急勾配の劇場`, desc: `斜面に刻まれた約1万人収容の、古代世界で最も急勾配の劇場。` },
+          { title: `大図書館`, desc: `アレクサンドリアに次ぐ規模——ここで羊皮紙(charta pergamena)が完成されました。` },
+          { title: `アスクレピオン`, desc: `アクロポリス下の平野に広がる、古代屈指の名高い治療の聖地。` },
+        ],
+        faqs: [
+          { q: `ペルガモンはどこにありますか？`, a: `イズミル県ベルガマの町にあります。クシャダスやイズミルから約1時間で、現地ガイドが計画できる気軽な日帰り先です。` },
+          { q: `どのくらい時間が必要ですか？`, a: `アクロポリス、アスクレピオン、赤いバシリカはそれぞれ時間をかける価値があります。ガイドと半日あれば見どころをゆったり巡れます。` },
+          { q: `ペルガモンでガイドは必要ですか？`, a: `ぜひとも。図書館、ゼウスの祭壇、治療の儀式は看板ではなく物語です。ガイドが空の遺跡に命を吹き込みます。` },
+        ],
+        planningHeading: `訪問の計画`,
+        planningParagraphs: [
+          `ペルガモンはイズミル県ベルガマの町にあり、クシャダスやイズミルから約1時間、車やバスで手軽に行けます。古代アクロポリスは町を見下ろす急峻な丘に立ち、アクロポリス・ロープウェイ(テレフェリク)か道路で登れます。治療の聖地アスクレピオンと赤いバシリカはベルガマの町中にある別の見学地で、一日の行程に無理なく加えられます。`,
+          `ここでは朝が絶好の時間帯です。空気は涼しく、丘上の遺跡に澄んだ光が差し、ツアー団体が来る前で人出もまだ少なめです。地形は急で日差しを遮るものがないため夏の午後は疲れやすく、春と秋が最も快適に歩ける気候です。いつ訪れるにせよ、丈夫で履き心地の良い靴と水があれば登りがずっと楽しくなります。`,
+          `ペルガモンは有料の世界遺産で、アクロポリス、アスクレピオン、赤いバシリカのいずれも入場する価値があります。壮大なテラス、急勾配の劇場、平野を見渡す広い眺めが待っています。VibeGuideの認定現地ガイドが、アクロポリスとロープウェイでの登りからアスクレピオンまで、散在する遺跡を一つの物語につなぎ、石が漠然とではなく意味を持って見えてきます。`,
+        ],
+        ctaTitle: `現地ガイドとペルガモンへ`,
+        ...IZM.ja,
+      },
+      ko: {
+        name: `페르가몬`,
+        metaTitle: `페르가몬(베르가마) 고대 도시 투어·현지 가이드`,
+        metaDescription:
+          `인증된 현지 가이드와 이즈미르 인근 유네스코 세계유산 페르가몬을 탐험하세요. 고대에서 가장 가파른 극장, 전설의 도서관, 치유의 성소 아스클레피온을 만납니다.`,
+        intro: [
+          `페르가몬—오늘날의 베르가마—은 처음엔 그리스, 이후엔 로마의 도시였던 고대 세계의 위대한 도시 중 하나이며 지금은 유네스코 세계유산입니다. 평원 위 가파른 언덕에 아크로폴리스가 우뚝 솟아 트라야누스 신전, 제우스 제단, 그리고 약 1만 명을 위해 비탈에 극적으로 새겨진 고대 세계에서 가장 가파른 극장을 품고 있습니다.`,
+          `VibeGuide 현지 전문가와 함께라면 유적이 살아납니다. 페르가몬 도서관이 알렉산드리아에 견주며 양피지를 낳은 이야기를 듣고, 치유의 성소 아스클레피온과 거대한 붉은 바실리카(크즐 아블루)로 내려가세요—당신의 속도로, 당신의 언어로. 쿠샤다스나 이즈미르에서 약 한 시간 거리입니다.`,
+        ],
+        highlights: [
+          { title: `가파른 극장`, desc: `비탈에 새겨진 약 1만 명 규모의, 고대 세계에서 가장 가파른 극장.` },
+          { title: `대도서관`, desc: `알렉산드리아 다음가는 규모—이곳에서 양피지(charta pergamena)가 완성되었습니다.` },
+          { title: `아스클레피온`, desc: `아크로폴리스 아래 평원에 자리한, 고대에서 가장 이름난 치유의 성소 중 하나.` },
+        ],
+        faqs: [
+          { q: `페르가몬은 어디에 있나요?`, a: `이즈미르주 베르가마 마을에 있습니다. 쿠샤다스나 이즈미르에서 약 한 시간 거리로, 현지 가이드가 짜 줄 수 있는 편안한 당일 여행지입니다.` },
+          { q: `시간이 얼마나 필요한가요?`, a: `아크로폴리스, 아스클레피온, 붉은 바실리카 모두 각각 시간을 들일 가치가 있습니다. 가이드와 반나절이면 하이라이트를 여유 있게 돌아봅니다.` },
+          { q: `페르가몬에서 가이드가 필요한가요?`, a: `물론입니다. 도서관, 제우스 제단, 치유 의식은 안내판이 아니라 이야기입니다. 가이드가 텅 빈 유적에 생명을 되살립니다.` },
+        ],
+        planningHeading: `방문 계획하기`,
+        planningParagraphs: [
+          `페르가몬은 이즈미르주 베르가마 마을에 있으며, 쿠샤다스나 이즈미르에서 약 한 시간 거리로 자동차나 버스로 쉽게 갈 수 있습니다. 고대 아크로폴리스는 마을을 내려다보는 가파른 언덕에 솟아 있으며, 아크로폴리스 케이블카(텔레페리크)나 도로로 오를 수 있습니다. 치유 성소 아스클레피온과 붉은 바실리카는 베르가마 시내에 있는 별개의 방문지로, 하루 일정에 손쉽게 더할 수 있습니다.`,
+          `이곳은 아침이 최적입니다. 공기가 서늘하고 언덕 위 유적에 맑은 빛이 들며, 단체 관광객이 오기 전이라 인파도 아직 적습니다. 지형이 가파르고 햇볕에 노출되어 여름 오후는 지치기 쉬우며, 봄과 가을이 걷기에 가장 쾌적합니다. 언제 오든 튼튼하고 편안한 신발과 물이 있으면 오르막이 훨씬 즐거워집니다.`,
+          `페르가몬은 입장료가 있는 유네스코 세계유산으로, 아크로폴리스, 아스클레피온, 붉은 바실리카 모두 들어가 볼 가치가 있습니다. 웅장한 테라스, 가파른 극장, 평원을 굽어보는 드넓은 전망이 기다립니다. VibeGuide 인증 현지 가이드가 아크로폴리스와 케이블카 등정에서 아스클레피온까지 흩어진 유적을 하나의 이야기로 엮어, 돌들이 뒤섞여 보이지 않고 저마다 의미를 갖도록 해 줍니다.`,
+        ],
+        ctaTitle: `현지 가이드와 페르가몬을`,
+        ...IZM.ko,
+      },
     },
   },
   {
@@ -4732,6 +5857,90 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: "Bezoek Pamukkale met een local",
         ...PAM.nl,
+      },
+      pt: {
+        name: `Pamukkale`,
+        metaTitle: `Pamukkale e Hierápolis: Tours com Guias Locais`,
+        metaDescription:
+          `Descubra Pamukkale, o «Castelo de Algodão» da UNESCO, com um guia local verificado. Pise os travertinos brancos, explore a antiga Hierápolis e nade na Piscina de Cleópatra.`,
+        intro: [
+          `Pamukkale — o «Castelo de Algodão» — é uma das paisagens mais surreais da Turquia: uma encosta de deslumbrantes terraços brancos de travertino, esculpidos ao longo de milénios por água termal rica em cálcio que cai e se petrifica em piscinas parecidas com algodão gelado. É Património Mundial da UNESCO, em Denizli, e percorre-se descalço, com água mineral morna pelos tornozelos.`,
+          `Logo acima dos terraços ergue-se Hierápolis, uma cidade termal greco-romana com um grande teatro, uma das maiores necrópoles da Anatólia e a Piscina Antiga termal, onde se nada entre colunas romanas tombadas. Com um local da VibeGuide acerta no horário, compreende o que está a ver e faz com que a longa viagem valha mesmo a pena.`,
+        ],
+        highlights: [
+          { title: `Terraços Brancos de Travertino`, desc: `Piscinas de cálcio de um branco ofuscante a descer a encosta — percorra-as descalço em água termal morna.` },
+          { title: `Antiga Hierápolis`, desc: `Uma cidade termal greco-romana acima dos terraços: teatro, vasta necrópole, Templo de Apolo e o sagrado Plutónio.` },
+          { title: `Piscina Antiga de Cleópatra`, desc: `Nade em água termal morna entre colunas romanas antigas derrubadas por um sismo.` },
+        ],
+        faqs: [
+          { q: `Preciso de guia para Pamukkale?`, a: `Pode andar por sua conta, mas Pamukkale e Hierápolis são dois sítios num só — geologia termal e uma cidade romana. Um guia local liga-os, cronometra a visita em torno das multidões e do brilho, e faz fluir uma longa excursão.` },
+          { q: `Qual é a melhor altura para visitar Pamukkale?`, a: `De manhã cedo ou ao fim da tarde. O sol do meio-dia torna os terraços brancos ofuscantes e a multidão atinge o pico; o pôr do sol sobre as piscinas é espetacular. Um guia planeia o dia em função disto.` },
+          { q: `A que distância fica Pamukkale da costa?`, a: `Fica a cerca de 19 km de Denizli e é uma longa excursão de um dia a partir de Antália, Bodrum, Kuşadası ou Marmaris. Um guia trata da distância e do horário para que a viagem compense.` },
+        ],
+        planningHeading: `Planeie a sua visita`,
+        planningParagraphs: [
+          `Pamukkale situa-se na província de Denizli, no sudoeste da Turquia, a cerca de 19 quilómetros da cidade de Denizli. Pode voar para Denizli (DNZ) ou chegar numa excursão de um dia a partir da costa, e muitos visitantes combinam-na com uma visita mais alargada à região. Os deslumbrantes terraços brancos assentam numa encosta acima da planície, visíveis à distância e de fácil acesso de carro ou transfer organizado.`,
+          `O meio-dia pode ser ofuscante e quente, com os travertinos brancos a refletir o sol, pelo que o início da manhã ou o fim da tarde é muito mais confortável e gratificante. Essas horas trazem também uma luz mais suave para fotografias e menos gente nos terraços. É uma longa mas memorável excursão de um dia a partir de Antália, Bodrum, Kuşadası ou Esmirna, por isso comece cedo para desfrutar do sítio no seu momento mais calmo.`,
+          `Os travertinos brancos e a antiga cidade de Hierápolis partilham um único bilhete, e percorre-se os terraços descalço para os proteger, enquanto a Piscina Antiga de Cleópatra tem uma entrada à parte. Um guia local licenciado da VibeGuide ajuda-o a compreender os terraços e as vastas ruínas de Hierápolis, do seu teatro à sua necrópole, e indica-lhe os melhores locais e horários para as piscinas minerais.`,
+        ],
+        ctaTitle: `Conheça Pamukkale com um local`,
+        ...PAM.pt,
+      },
+      ja: {
+        name: `パムッカレ`,
+        metaTitle: `パムッカレ&ヒエラポリス 現地ガイドツアー`,
+        metaDescription:
+          `認定現地ガイドと巡る世界遺産パムッカレ「綿の城」。真っ白な石灰棚を歩き、古代都市ヒエラポリスを訪ね、クレオパトラのプールで泳ぎましょう。`,
+        intro: [
+          `パムッカレ——「綿の城」——はトルコ屈指の幻想的な光景です。カルシウムを豊富に含む温泉水が幾千年もかけて流れ落ち石化してできた、凍った綿のような棚田状の眩い白亜の石灰棚が丘一面に広がります。デニズリにある世界遺産で、温かいミネラル水にくるぶしまで浸かりながら裸足で歩きます。`,
+          `棚のすぐ上には、壮大な劇場、アナトリア屈指の広大なネクロポリス、そして倒れたローマ柱の間で泳げる温泉「アンティークプール」を擁するギリシャ・ローマ様式の温泉都市ヒエラポリスが立ちます。VibeGuideの現地ガイドとなら、時間の見計らいも完璧で、見ているものを理解し、長い道のりを本当に価値あるものにできます。`,
+        ],
+        highlights: [
+          { title: `白い石灰棚`, desc: `丘を流れ落ちる目もくらむ白さのカルシウムの棚——温かい温泉水の中を裸足で歩けます。` },
+          { title: `古代ヒエラポリス`, desc: `棚の上に広がるギリシャ・ローマ様式の温泉都市。劇場、広大なネクロポリス、アポロ神殿、聖なるプルトニオン。` },
+          { title: `クレオパトラのアンティークプール`, desc: `地震で倒れた古代ローマの柱の間で、温かい温泉に浸かって泳げます。` },
+        ],
+        faqs: [
+          { q: `パムッカレにガイドは必要ですか？`, a: `一人でも歩けますが、パムッカレとヒエラポリスは温泉地質と古代ローマ都市、二つで一つの場所です。現地ガイドが両者を結び、混雑と眩しさを避けて時間を計り、長い日帰り旅をスムーズにします。` },
+          { q: `訪問に最適な時期は？`, a: `早朝か夕方です。日中の陽射しは白い棚を眩しくし混雑もピークに達します。プールに沈む夕陽は圧巻。ガイドがこれに合わせて一日を組み立てます。` },
+          { q: `海岸からどのくらいの距離ですか？`, a: `デニズリから約19kmで、アンタルヤ、ボドルム、クシャダス、マルマリスからは長い日帰り旅になります。ガイドが距離と時間を管理し、その道のりを価値あるものにします。` },
+        ],
+        planningHeading: `訪問の計画`,
+        planningParagraphs: [
+          `パムッカレはトルコ南西部デニズリ県、デニズリ市街から約19キロのところにあります。デニズリ(DNZ)へ空路で入るか、海岸からの日帰りで訪れることができ、多くの人が地域を巡る広めのツアーと組み合わせます。眩い白亜の棚は平野を見下ろす丘の上にあり、遠くからも見え、車や手配送迎で楽に行けます。`,
+          `日中は白い石灰棚が陽を反射して眩しく暑くなりがちなので、早朝か夕方のほうがずっと快適で実りある時間です。その時間帯は写真向けの柔らかな光と、棚上の少ない人出ももたらします。アンタルヤ、ボドルム、クシャダス、イズミルからは長くも忘れがたい日帰り旅になるので、最も静かな遺跡を楽しむには早めの出発を。`,
+          `白い石灰棚と古代都市ヒエラポリスは一枚の入場券で共通で、棚を守るため裸足で歩きます。一方クレオパトラのアンティークプールは別料金です。VibeGuideの認定現地ガイドが、石灰棚と広大なヒエラポリス遺跡を劇場からネクロポリスまで読み解き、ミネラルプールに最適な場所と時間を教えてくれます。`,
+        ],
+        ctaTitle: `現地ガイドとパムッカレへ`,
+        ...PAM.ja,
+      },
+      ko: {
+        name: `파묵칼레`,
+        metaTitle: `파묵칼레&히에라폴리스 현지 가이드 투어`,
+        metaDescription:
+          `인증된 현지 가이드와 유네스코 「목화의 성」 파묵칼레를 만나보세요. 새하얀 석회붕을 걷고 고대 히에라폴리스를 탐험하며 클레오파트라 풀에서 수영하세요.`,
+        intro: [
+          `파묵칼레—「목화의 성」—는 튀르키예에서 가장 초현실적인 풍경 중 하나입니다. 칼슘이 풍부한 온천수가 수천 년에 걸쳐 흘러내리며 석화되어 얼어붙은 목화 같은 웅덩이를 이룬, 눈부시게 하얀 석회화 계단이 언덕을 뒤덮습니다. 데니즐리에 있는 유네스코 세계유산이며, 따뜻한 미네랄 물에 발목까지 잠긴 채 맨발로 걷습니다.`,
+          `계단 바로 위에는 웅장한 극장, 아나톨리아 최대급 네크로폴리스, 그리고 쓰러진 로마 기둥 사이에서 헤엄칠 수 있는 온천 「고대 풀」을 갖춘 그리스-로마 온천 도시 히에라폴리스가 서 있습니다. VibeGuide 현지 가이드와 함께라면 시간을 제대로 맞추고, 보고 있는 것을 이해하며, 긴 여정을 진정 값지게 만들 수 있습니다.`,
+        ],
+        highlights: [
+          { title: `새하얀 석회화 계단`, desc: `언덕을 흘러내리는 눈부시게 하얀 칼슘 웅덩이—따뜻한 온천수 속을 맨발로 걸어보세요.` },
+          { title: `고대 히에라폴리스`, desc: `계단 위에 자리한 그리스-로마 온천 도시. 극장, 광대한 네크로폴리스, 아폴로 신전, 성스러운 플루토니움.` },
+          { title: `클레오파트라의 고대 풀`, desc: `지진으로 쓰러진 고대 로마 기둥 사이에서 따뜻한 온천물에 몸을 담그고 헤엄쳐 보세요.` },
+        ],
+        faqs: [
+          { q: `파묵칼레에 가이드가 필요한가요?`, a: `혼자 둘러볼 수도 있지만, 파묵칼레와 히에라폴리스는 온천 지질과 로마 도시, 둘이 하나인 곳입니다. 현지 가이드가 둘을 잇고 인파와 눈부심을 피해 시간을 맞춰 긴 당일 여행을 매끄럽게 만들어 줍니다.` },
+          { q: `파묵칼레는 언제 방문하는 것이 가장 좋나요?`, a: `이른 아침이나 늦은 오후입니다. 한낮의 태양은 하얀 계단을 눈부시게 하고 인파도 절정에 이릅니다. 웅덩이 위로 지는 노을은 장관입니다. 가이드가 이에 맞춰 하루를 계획합니다.` },
+          { q: `파묵칼레는 해안에서 얼마나 먼가요?`, a: `데니즐리에서 약 19km이며, 안탈리아, 보드룸, 쿠샤다스, 마르마리스에서는 긴 당일 여행이 됩니다. 가이드가 거리와 시간을 챙겨 그 여정이 값지도록 해 줍니다.` },
+        ],
+        planningHeading: `방문 계획하기`,
+        planningParagraphs: [
+          `파묵칼레는 튀르키예 남서부 데니즐리주, 데니즐리시에서 약 19킬로미터 떨어진 곳에 있습니다. 데니즐리(DNZ)로 비행기를 타고 오거나 해안에서 당일 여행으로 닿을 수 있으며, 많은 방문객이 지역을 아우르는 넓은 투어와 함께 묶습니다. 눈부신 하얀 계단은 평원을 굽어보는 언덕에 자리해 멀리서도 보이고 자동차나 예약 이동편으로 쉽게 갈 수 있습니다.`,
+          `한낮에는 하얀 석회화가 햇빛을 반사해 눈부시고 더울 수 있으므로, 이른 아침이나 늦은 오후가 훨씬 쾌적하고 만족스럽습니다. 그 시간대는 사진에 알맞은 부드러운 빛과 계단 위 적은 인파도 선사합니다. 안탈리아, 보드룸, 쿠샤다스, 이즈미르에서 길지만 기억에 남는 당일 여행이 되니, 가장 고요한 유적을 즐기려면 일찍 출발하세요.`,
+          `하얀 석회화와 고대 도시 히에라폴리스는 하나의 입장권을 공유하며, 계단을 보호하기 위해 맨발로 걷습니다. 반면 클레오파트라의 고대 풀은 별도 요금이 있습니다. VibeGuide 인증 현지 가이드가 극장에서 네크로폴리스까지 석회화 계단과 광대한 히에라폴리스 유적을 이해하도록 돕고, 미네랄 풀에 가장 좋은 장소와 시간을 알려 줍니다.`,
+        ],
+        ctaTitle: `현지 가이드와 파묵칼레를`,
+        ...PAM.ko,
       },
     },
   },
@@ -5064,6 +6273,93 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: "Bekijk Süleymaniye met een local",
         ...IST.nl,
       },
+      pt: {
+        name: `Mesquita de Solimão (Süleymaniye)`,
+        metaTitle: `Mesquita de Solimão (Süleymaniye) com Guias`,
+        metaDescription:
+          `Visite a Mesquita de Solimão com um guia de Istambul verificado. A obra-prima de Mimar Sinan na Terceira Colina, os túmulos de Solimão e Hürrem e um terraço sobre o Corno de Ouro.`,
+        intro: [
+          `A Mesquita de Solimão coroa a Terceira Colina de Istambul, acima do Corno de Ouro, a obra-prima imperial de Mimar Sinan. Construída entre 1550 e 1557 para o sultão Solimão, o Magnífico, equilibra uma vasta cúpula central sobre quatro minaretes e uma serena sala de oração inundada de luz — o coração seguro da arquitetura otomana clássica no auge do poder do império.`,
+          `Com um especialista local da VibeGuide, o complexo lê-se como uma história e não como um mero monumento. Um verdadeiro guia liga a cúpula e o pátio ao sultão que a mandou erguer e ao arquiteto que desafiou a gravidade, e depois conduz-o aos túmulos no jardim de Solimão e da sua mulher Hürrem — e a um terraço com uma das mais belas vistas gratuitas da cidade.`,
+        ],
+        highlights: [
+          { title: `A grande cúpula de Sinan`, desc: `Uma cúpula central que se ergue a quase 53 metros, concebida para que a luz e o som fluam pela sala — o momento que selou o génio de Mimar Sinan.` },
+          { title: `Os túmulos imperiais`, desc: `No jardim atrás da mesquita erguem-se os túmulos abobadados de Solimão, o Magnífico, e da sua mulher Hürrem Sultan (Roxelana), ricamente azulejados por dentro.` },
+          { title: `O terraço panorâmico`, desc: `O terraço exterior da mesquita abre-se sobre uma ampla vista do Corno de Ouro e das cúpulas da cidade velha — e não custa nada.` },
+        ],
+        faqs: [
+          { q: `Preciso de bilhete para a Mesquita de Solimão?`, a: `Não. É uma mesquita em funcionamento e a entrada é gratuita. Os visitantes são bem-vindos fora das cinco orações diárias, e um local da VibeGuide pode planear a sua chegada para que a mesquita esteja aberta e calma.` },
+          { q: `O que devo vestir lá dentro?`, a: `Vista-se com recato, ombros e joelhos cobertos; as mulheres cobrem o cabelo com um lenço e todos descalçam os sapatos à entrada. Costuma haver lenços para emprestar à porta, caso precise.` },
+          { q: `É melhor do que a Mesquita Azul?`, a: `É a obra-prima de Mimar Sinan e costuma estar muito menos cheia, com um terraço panorâmico que a Mesquita Azul não tem. Muitos guias consideram-na o edifício mais belo — um local da VibeGuide pode mostrar-lhe porquê.` },
+          { q: `Quanto tempo demora a visita?`, a: `A maioria das visitas dura de 45 minutos a uma hora entre a sala de oração, os túmulos e o terraço, e combina-se naturalmente com o vizinho Grande Bazar ou uma descida ao Corno de Ouro.` },
+        ],
+        planningHeading: `Planeie a sua visita`,
+        planningParagraphs: [
+          `A Mesquita de Solimão fica acima do bairro do Grande Bazar, na Terceira Colina. O acesso mais fácil é o elétrico T1 até Beyazıt ou Laleli, seguido de uma curta subida a pé pela zona universitária; os ferries até Eminönü e uma subida a partir do Corno de Ouro são uma alternativa cénica. As ruelas em redor da mesquita estão cheias de tradicionais casas de feijão e jardins de chá.`,
+          `Como mesquita em funcionamento, acolhe visitantes fora das cinco orações diárias, encerrando aos turistas por breves períodos durante cada oração e por mais tempo à sexta-feira ao meio-dia. O início da manhã e o fim da tarde são os mais calmos, e o terraço é inesquecível perto do pôr do sol. Mesmo em época alta, mantém-se muito menos cheia do que a Mesquita Azul.`,
+          `A entrada é gratuita e não há bilhete a comprar. Vista-se com recato — ombros e joelhos cobertos e um véu para as mulheres; descalça os sapatos e leva-os num saco. Um guia local licenciado da VibeGuide cronometra a sua visita em função do horário das orações, explica a etiqueta para que se sinta à vontade e desvenda a história por detrás da cúpula de Sinan e dos túmulos imperiais.`,
+        ],
+        ctaTitle: `Conheça a Süleymaniye com um local`,
+        ...IST.pt,
+      },
+      ja: {
+        name: `スレイマニエ・モスク`,
+        metaTitle: `スレイマニエ・モスク ツアー・現地ガイド`,
+        metaDescription:
+          `認定イスタンブールガイドと巡るスレイマニエ・モスク。第三の丘に立つミマール・スィナンの傑作、スレイマンとヒュッレムの霊廟、金角湾を望むテラスへ。`,
+        intro: [
+          `スレイマニエ・モスクは金角湾を見下ろすイスタンブール第三の丘に立つ、ミマール・スィナンの帝国的傑作です。1550年から1557年にかけてスレイマン大帝のために建てられ、四本のミナレットの上に巨大な中央ドームと、光に満ちた静謐な礼拝ホールを均衡させます——帝国の絶頂期、古典オスマン建築の揺るぎない中心です。`,
+          `VibeGuideの現地エキスパートとなら、この建築群は単なる記念物ではなく一つの物語として読み解けます。本物のガイドが、ドームと中庭を、これを建てた皇帝と重力に挑んだ建築家に結びつけ、庭園に佇むスレイマンと妃ヒュッレムの霊廟へ、そして市内屈指の無料絶景テラスへと導きます。`,
+        ],
+        highlights: [
+          { title: `スィナンの大ドーム`, desc: `高さ約53メートルにそびえる中央ドーム。光と音がホールを流れるよう設計され、ミマール・スィナンの天才を決定づけた瞬間です。` },
+          { title: `帝国の霊廟`, desc: `モスク裏の庭園に立つ、スレイマン大帝と妃ヒュッレム・スルタン(ロクセラーナ)のドーム型霊廟。内部は豪奢なタイルに彩られています。` },
+          { title: `パノラマ・テラス`, desc: `モスク外側のテラスは金角湾と旧市街のドーム群を一望する眺めへと開けます——しかも無料です。` },
+        ],
+        faqs: [
+          { q: `スレイマニエ・モスクに入場券は必要ですか？`, a: `いいえ。現役のモスクで入場は無料です。一日五回の礼拝時間以外は歓迎され、VibeGuideの現地ガイドがモスクが開いていて静かな時間に着けるよう計画します。` },
+          { q: `中では何を着るべきですか？`, a: `肩と膝を覆う控えめな服装で、女性はスカーフで髪を覆い、全員が入口で靴を脱ぎます。必要なら入口で借りられるスカーフが通常用意されています。` },
+          { q: `ブルーモスクより良いですか？`, a: `ミマール・スィナンの傑作で、たいていずっと空いており、ブルーモスクにはないパノラマテラスがあります。より優れた建築だと考えるガイドも多く、VibeGuideの現地ガイドがその理由を示します。` },
+          { q: `見学にどのくらいかかりますか？`, a: `多くは礼拝ホール、霊廟、テラスを合わせて45分から1時間ほどで、近くのグランドバザールや金角湾への散歩と自然に組み合わせられます。` },
+        ],
+        planningHeading: `訪問の計画`,
+        planningParagraphs: [
+          `スレイマニエ・モスクは第三の丘、グランドバザール地区の上に立ちます。最も便利な行き方はT1トラムでベヤズットかラレリまで行き、大学地区を少し登ることです。エミノニュへのフェリーと金角湾からの登りも景色の良い代替ルートです。モスク周辺の路地は伝統的な豆料理店やチャイガーデンで賑わっています。`,
+          `現役のモスクとして一日五回の礼拝時間以外は参拝客を迎え、各礼拝の間は短く、金曜正午にはより長く観光客向けに閉じられます。早朝と夕方が最も静かで、テラスは日没近くが忘れがたい美しさです。ハイシーズンでもブルーモスクよりずっと空いています。`,
+          `入場は無料で、購入する券はありません。控えめな装いを——肩と膝を覆い、女性はスカーフを。靴は脱いで袋に入れて持ち歩きます。VibeGuideの認定現地ガイドが礼拝時間に合わせて訪問を計り、作法を説明して安心させ、スィナンのドームと帝国の霊廟にまつわる歴史を解き明かします。`,
+        ],
+        ctaTitle: `現地ガイドとスレイマニエへ`,
+        ...IST.ja,
+      },
+      ko: {
+        name: `쉴레이마니예 모스크`,
+        metaTitle: `쉴레이마니예 모스크 투어·현지 가이드`,
+        metaDescription:
+          `인증된 이스탄불 가이드와 쉴레이마니예 모스크를 방문하세요. 셋째 언덕에 선 미마르 시난의 걸작, 쉴레이만과 휘렘의 영묘, 금각만을 굽어보는 테라스를 만납니다.`,
+        intro: [
+          `쉴레이마니예 모스크는 금각만을 굽어보는 이스탄불 셋째 언덕에 우뚝 선, 미마르 시난의 제국적 걸작입니다. 술탄 쉴레이만 대제를 위해 1550년에서 1557년 사이에 지어졌으며, 네 개의 미나레트 위에 거대한 중앙 돔과 고요하고 빛으로 가득 찬 예배당을 균형 있게 얹었습니다—제국의 절정기, 고전 오스만 건축의 당당한 심장입니다.`,
+          `VibeGuide 현지 전문가와 함께라면 이 복합 건축물은 한낱 기념물이 아니라 하나의 이야기로 읽힙니다. 진짜 가이드가 돔과 안뜰을 이를 세운 술탄과 중력에 맞선 건축가에게 이어 주고, 정원에 자리한 쉴레이만과 그의 아내 휘렘의 영묘로, 그리고 도시에서 가장 아름다운 무료 전망 중 하나를 품은 테라스로 안내합니다.`,
+        ],
+        highlights: [
+          { title: `시난의 대돔`, desc: `높이 약 53미터로 솟은 중앙 돔. 빛과 소리가 예배당을 흐르도록 설계되어, 미마르 시난의 천재성을 확정 지은 순간입니다.` },
+          { title: `제국의 영묘`, desc: `모스크 뒤 정원에는 쉴레이만 대제와 그의 아내 휘렘 술탄(록셀라나)의 돔형 영묘가 서 있으며, 내부는 화려한 타일로 장식되어 있습니다.` },
+          { title: `파노라마 테라스`, desc: `모스크 바깥 테라스는 금각만과 구시가지의 돔들을 두루 굽어보는 전망으로 열립니다—그것도 무료입니다.` },
+        ],
+        faqs: [
+          { q: `쉴레이마니예 모스크에 입장권이 필요한가요?`, a: `아니요. 현재도 운영 중인 모스크로 입장은 무료입니다. 하루 다섯 번의 예배 시간 외에는 방문객을 환영하며, VibeGuide 현지 가이드가 모스크가 열려 있고 고요한 시간에 도착하도록 계획해 드립니다.` },
+          { q: `안에서는 무엇을 입어야 하나요?`, a: `어깨와 무릎을 가린 단정한 복장이어야 하며, 여성은 스카프로 머리를 가리고 모두 입구에서 신발을 벗습니다. 필요하면 입구에서 빌릴 수 있는 스카프가 대개 준비되어 있습니다.` },
+          { q: `블루 모스크보다 나은가요?`, a: `미마르 시난의 걸작이며 대개 훨씬 덜 붐비고, 블루 모스크에 없는 파노라마 테라스가 있습니다. 많은 가이드가 더 뛰어난 건축물로 여기며, VibeGuide 현지 가이드가 그 이유를 보여 드립니다.` },
+          { q: `관람에 얼마나 걸리나요?`, a: `대부분 예배당, 영묘, 테라스를 합쳐 45분에서 한 시간 정도 걸리며, 인근 그랜드 바자르나 금각만으로의 산책과 자연스럽게 어우러집니다.` },
+        ],
+        planningHeading: `방문 계획하기`,
+        planningParagraphs: [
+          `쉴레이마니예 모스크는 셋째 언덕의 그랜드 바자르 구역 위에 자리합니다. 가장 편한 방법은 T1 트램으로 베야즈트나 랄렐리까지 간 뒤 대학가를 지나 잠깐 오르막을 걷는 것이며, 에미뇌뉘행 페리와 금각만에서의 등정은 경치 좋은 대안입니다. 모스크 주변 골목은 전통 콩 요릿집과 차 정원으로 가득합니다.`,
+          `운영 중인 모스크로서 하루 다섯 번의 예배 시간 외에는 방문객을 맞이하며, 각 예배 동안 잠시, 금요일 정오에는 더 오래 관광객에게 닫힙니다. 이른 아침과 늦은 오후가 가장 고요하고, 테라스는 해 질 무렵이 잊지 못할 만큼 아름답습니다. 성수기에도 블루 모스크보다 훨씬 덜 붐빕니다.`,
+          `입장은 무료이며 구입할 표가 없습니다. 단정하게 입으세요—어깨와 무릎을 가리고 여성은 머릿수건을 두르며, 신발을 벗어 봉투에 넣어 들고 다닙니다. VibeGuide 인증 현지 가이드가 예배 일정에 맞춰 방문 시간을 잡고, 편안하도록 예법을 설명하며, 시난의 돔과 제국 영묘에 얽힌 역사를 풀어 줍니다.`,
+        ],
+        ctaTitle: `현지 가이드와 쉴레이마니예를`,
+        ...IST.ko,
+      },
     },
   },
   {
@@ -5394,6 +6690,93 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: "Bekijk de Egyptische Bazaar met een local",
         ...IST.nl,
+      },
+      pt: {
+        name: `Bazar das Especiarias`,
+        metaTitle: `Bazar das Especiarias (Egípcio): Visitas e Guias Locais`,
+        metaDescription:
+          `Descubra o Bazar das Especiarias de Istambul com um guia local verificado. Especiarias, açafrão, delícias turcas e chás num mercado coberto do século XVII em Eminönü.`,
+        intro: [
+          `O Bazar das Especiarias — o Mısır Çarşısı, ou Bazar Egípcio — é o mercado mais perfumado de Istambul, um pavilhão em forma de L do século XVII com arcadas abobadadas no coração de Eminönü. Erguido na década de 1660 como parte do complexo da Nova Mesquita, foi financiado pelo comércio com o Egito otomano, e até hoje as suas bancas transbordam de pirâmides de especiarias, açafrão, frutos secos, nozes e chá.`,
+          `Com um especialista local da VibeGuide, a multidão e a cor ganham sentido. Um guia autêntico leva-o para além das armadilhas turísticas até vendedores honestos e de longa data, diz-lhe quanto devem custar o açafrão verdadeiro e as delícias turcas puras, e deixa-o provar antes de comprar — transformando um corredor caótico numa manhã tranquila de sabores e histórias.`,
+        ],
+        highlights: [
+          { title: `Montanhas de especiarias`, desc: `Cones de paprica, sumagre, cominhos e canela erguem-se ao lado de frascos de açafrão vermelho intenso — os aromas que deram ao bazar o seu nome e a sua fama.` },
+          { title: `Delícias turcas e doces`, desc: `Tabuleiros de lokum de todos os sabores, da romã e pistácio à rosa, ao lado de damascos secos, figos e nozes com mel — a maioria das bancas oferece uma prova.` },
+          { title: `Chás e a Nova Mesquita`, desc: `Chá de maçã, misturas de ervas e café enchem o ar, e a grande Yeni Cami de cúpula ergue-se mesmo ao lado do portão principal do bazar.` },
+        ],
+        faqs: [
+          { q: `A entrada no Bazar das Especiarias é gratuita?`, a: `Sim, a entrada é totalmente gratuita e não é preciso reservar. Um local da VibeGuide pode encontrar-se consigo à porta e conduzi-lo aos vendedores mais fiáveis lá dentro.` },
+          { q: `Devo regatear no Bazar das Especiarias?`, a: `Os preços raramente são fixos, por isso um regateio simpático é normal e esperado. Um guia local conhece o preço justo do açafrão, do lokum e do chá e negoceia por si para que não pague a mais.` },
+          { q: `Em que difere do Grande Bazar?`, a: `O Bazar das Especiarias é mais pequeno, mais perfumado e focado na comida — especiarias, doces, chás e nozes — enquanto o Grande Bazar é um vasto labirinto de joias, tapetes e artesanato. Muitos visitantes fazem ambos no mesmo dia.` },
+          { q: `Qual é a melhor altura para ir?`, a: `As manhãs são as mais calmas, antes de os grupos turísticos e os compradores encherem os corredores. Os dias de semana são mais tranquilos que os fins de semana, e um local da VibeGuide pode marcar a sua visita para a melhor experiência.` },
+        ],
+        planningHeading: `Planear a sua visita`,
+        planningParagraphs: [
+          `O Bazar das Especiarias fica em Eminönü, mesmo ao lado da Nova Mesquita e a dois minutos a pé da Ponte de Gálata e dos cais dos ferries do Bósforo. A chegada mais fácil é o elétrico T1 até à paragem de Eminönü, ou um ferry pelo Corno de Ouro; a localização junto à água torna-o fácil de incluir num dia ao longo da margem da cidade antiga.`,
+          `O bazar está mais movimentado a meio do dia, por isso uma visita de manhã cedo é mais tranquila e permite conversar com os vendedores antes de chegarem as multidões. Funciona todos os dias e fica especialmente animado ao fim de semana. A primavera e o outono são agradáveis, mas o pavilhão coberto mantém-se acolhedor com qualquer tempo.`,
+          `A entrada é gratuita e não há nada para reservar — basta entrar. Os preços raramente são fixos, por isso espera-se um regateio simpático, e a qualidade varia de banca para banca. Um guia local licenciado da VibeGuide encaminha-o para vendedores de confiança, ajuda-o a distinguir açafrão verdadeiro do tingido e negoceia preços justos enquanto prova o que o mercado tem para oferecer.`,
+        ],
+        ctaTitle: `Conheça o Bazar das Especiarias com um local`,
+        ...IST.pt,
+      },
+      ja: {
+        name: `エジプシャンバザール（スパイスバザール）`,
+        metaTitle: `スパイスバザール（エジプシャンバザール）観光と地元ガイド`,
+        metaDescription:
+          `認定された地元ガイドとイスタンブールのスパイスバザールを巡ろう。エミノニュの新モスク隣、17世紀の屋根付き市場で香辛料、サフラン、トルコ菓子、お茶が並ぶ。`,
+        intro: [
+          `スパイスバザール（ムスル・チャルシュ、すなわちエジプシャンバザール）は、イスタンブールで最も香り高い市場です。エミノニュの中心にある、ヴォールト天井のアーケードが並ぶ17世紀のL字型ホールです。1660年代に新モスク複合施設の一部として建てられ、オスマン帝国下のエジプトとの交易で資金がまかなわれました。今日でもその店先には、山と積まれた香辛料、サフラン、ドライフルーツ、ナッツ、お茶があふれています。`,
+          `VibeGuideの地元専門家がいれば、この雑踏と彩りに意味が生まれます。本物のガイドは観光客向けの罠を避け、誠実で歴史ある店へと案内し、本物のサフランや純正のトルコ菓子の適正価格を教え、買う前に試食させてくれます。混沌とした通路が、味と物語に満ちたゆったりとした朝へと変わります。`,
+        ],
+        highlights: [
+          { title: `山と積まれた香辛料`, desc: `パプリカ、スマック、クミン、シナモンが円錐状に盛られ、その隣には深紅のサフランの瓶が並びます。このバザールに名と名声を与えた香りです。` },
+          { title: `トルコ菓子と甘味`, desc: `ザクロやピスタチオ、バラなど、あらゆる味のロクムが盛られた盆が、干しアプリコット、イチジク、蜜がけナッツと並びます。ほとんどの店で試食ができます。` },
+          { title: `お茶と新モスク`, desc: `アップルティー、ハーブブレンド、コーヒーの香りが漂い、大きなドームを持つイェニ・ジャミがバザールの正門のすぐ隣にそびえます。` },
+        ],
+        faqs: [
+          { q: `スパイスバザールの入場は無料ですか？`, a: `はい、入場は完全に無料で、予約も不要です。VibeGuideの地元ガイドが門で待ち合わせ、中で最も信頼できる店へご案内します。` },
+          { q: `スパイスバザールで値切るべきですか？`, a: `価格が固定されていることはめったにないため、丁寧な値切りは普通で、むしろ期待されています。地元ガイドはサフラン、ロクム、お茶の適正価格を知っており、払い過ぎないよう代わりに交渉します。` },
+          { q: `グランドバザールとはどう違いますか？`, a: `スパイスバザールはより小さく、香り高く、香辛料や甘味、お茶、ナッツといった食に特化しています。一方グランドバザールは宝飾品、絨毯、工芸品が広がる巨大な迷宮です。多くの旅行者は一日で両方を巡ります。` },
+          { q: `訪れるのに最適な時間は？`, a: `午前中が最も静かで、ツアー客や買い物客が通路を埋める前です。平日は週末より空いており、VibeGuideの地元ガイドが最良の体験になるよう時間を調整できます。` },
+        ],
+        planningHeading: `訪問の計画`,
+        planningParagraphs: [
+          `スパイスバザールはエミノニュにあり、新モスクのすぐ隣、ガラタ橋やボスポラス海峡のフェリー乗り場から徒歩2分です。最も簡単な行き方はT1トラムでエミノニュ停留所まで、あるいは金角湾を渡るフェリーです。海辺の立地なので、旧市街の岸辺を巡る一日に組み込みやすいでしょう。`,
+          `バザールは日中が最も混雑するため、早朝の訪問はより静かで、人混みが来る前に店主と話せます。毎日営業しており、週末は特に賑わいます。春と秋は快適ですが、屋根付きのホールはどんな天気でも心地よく迎えてくれます。`,
+          `入場は無料で予約も不要、そのまま入るだけです。価格が固定されていることはまれなので、ちょっとした和やかな値切りが期待され、品質は店ごとに異なります。VibeGuideの認定地元ガイドが信頼できる店へ案内し、本物のサフランと染色されたものを見分ける手助けをし、あなたが市場を味わう間、公正な価格を交渉します。`,
+        ],
+        ctaTitle: `地元ガイドとスパイスバザールを巡ろう`,
+        ...IST.ja,
+      },
+      ko: {
+        name: `이집션 바자르(향신료 시장)`,
+        metaTitle: `이집션 바자르(향신료 시장) 투어와 현지 가이드`,
+        metaDescription:
+          `검증된 현지 가이드와 이스탄불 향신료 시장을 둘러보세요. 에미뇌뉘 뉴 모스크 옆 17세기 실내 시장에서 향신료, 사프란, 터키시 딜라이트, 차를 만나요.`,
+        intro: [
+          `향신료 시장(므스르 차르시, 즉 이집션 바자르)은 이스탄불에서 가장 향기로운 시장으로, 에미뇌뉘 중심부에 자리한 17세기 L자형 볼트 아케이드 홀입니다. 1660년대에 뉴 모스크 복합단지의 일부로 지어졌으며, 오스만 제국 시대 이집트와의 교역으로 자금이 마련되었습니다. 오늘날까지도 그 매대에는 향신료, 사프란, 말린 과일, 견과류, 차가 산처럼 쌓여 넘쳐납니다.`,
+          `VibeGuide 현지 전문가와 함께라면 이 인파와 색채가 비로소 이해됩니다. 진짜 가이드는 관광객용 함정을 지나 정직하고 오랜 전통의 상인에게 안내하고, 진짜 사프란과 순수한 터키시 딜라이트의 적정 가격을 알려주며, 사기 전에 맛보게 해줍니다. 혼잡한 통로가 맛과 이야기로 가득한 여유로운 아침으로 바뀝니다.`,
+        ],
+        highlights: [
+          { title: `산처럼 쌓인 향신료`, desc: `파프리카, 수막, 커민, 계피가 원뿔로 쌓이고 그 옆에는 짙은 붉은빛 사프란 병이 놓여 있습니다. 이 시장에 이름과 명성을 안겨준 향기입니다.` },
+          { title: `터키시 딜라이트와 단것`, desc: `석류와 피스타치오부터 장미까지 온갖 맛의 로쿰이 담긴 쟁반이 말린 살구, 무화과, 꿀에 절인 견과류와 나란히 놓여 있습니다. 대부분의 매대에서 시식을 제공합니다.` },
+          { title: `차와 뉴 모스크`, desc: `사과차, 허브 블렌드, 커피 향이 공기를 채우고, 웅장한 돔의 예니 자미가 시장 정문 바로 옆에 우뚝 솟아 있습니다.` },
+        ],
+        faqs: [
+          { q: `향신료 시장은 입장이 무료인가요?`, a: `네, 입장은 완전히 무료이며 예약할 것도 없습니다. VibeGuide 현지 가이드가 정문에서 만나 안에서 가장 믿을 만한 상인에게 안내해 드립니다.` },
+          { q: `향신료 시장에서 흥정해야 하나요?`, a: `가격이 정해진 경우는 드물어서 정중한 흥정은 자연스럽고 오히려 기대됩니다. 현지 가이드는 사프란, 로쿰, 차의 적정 가격을 알고 있어 바가지를 쓰지 않도록 대신 협상해 줍니다.` },
+          { q: `그랜드 바자르와는 어떻게 다른가요?`, a: `향신료 시장은 더 작고 향기로우며 향신료, 단것, 차, 견과류 등 먹거리에 집중되어 있습니다. 반면 그랜드 바자르는 보석, 카펫, 공예품이 펼쳐진 거대한 미로입니다. 많은 방문객이 하루에 두 곳을 모두 둘러봅니다.` },
+          { q: `언제 가는 것이 가장 좋나요?`, a: `오전이 가장 한산하며, 단체 관광객과 쇼핑객이 통로를 채우기 전입니다. 평일은 주말보다 조용하고, VibeGuide 현지 가이드가 최고의 경험이 되도록 방문 시간을 맞춰 드립니다.` },
+        ],
+        planningHeading: `방문 계획하기`,
+        planningParagraphs: [
+          `향신료 시장은 에미뇌뉘에 있으며 뉴 모스크 바로 옆, 갈라타 다리와 보스포루스 페리 선착장에서 도보 2분 거리입니다. 가장 쉬운 방법은 T1 트램을 타고 에미뇌뉘 정류장까지 가거나 골든 혼을 건너는 페리를 이용하는 것입니다. 물가에 자리한 덕분에 구시가지 해안을 따라 하루 일정에 넣기 좋습니다.`,
+          `시장은 한낮에 가장 붐비므로 이른 아침 방문이 더 한산하고 인파가 몰리기 전에 상인과 이야기할 수 있습니다. 매일 운영되며 주말에는 특히 활기가 넘칩니다. 봄과 가을이 쾌적하지만, 실내 홀은 어떤 날씨에도 따뜻하게 맞아줍니다.`,
+          `입장은 무료이고 예약할 것도 없이 그냥 들어가면 됩니다. 가격이 고정된 경우는 드물어 가벼운 흥정이 기대되며, 품질은 매대마다 다릅니다. VibeGuide 인증 현지 가이드가 믿을 만한 상인에게 안내하고, 진짜 사프란과 염색된 것을 구별하도록 도우며, 당신이 시장을 맛보는 동안 공정한 가격을 협상해 줍니다.`,
+        ],
+        ctaTitle: `현지 가이드와 향신료 시장을 둘러보세요`,
+        ...IST.ko,
       },
     },
   },
@@ -5726,6 +7109,93 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: "Bekijk de Meisjestoren met een local",
         ...IST.nl,
       },
+      pt: {
+        name: `Torre da Donzela`,
+        metaTitle: `Torre da Donzela (Kız Kulesi): Visitas e Guias Locais`,
+        metaDescription:
+          `Visite a Torre da Donzela no seu ilhéu do Bósforo com um guia de Istambul verificado. Lendas antigas, um curto passeio de barco desde Üsküdar e um pôr do sol inesquecível.`,
+        intro: [
+          `A Torre da Donzela ergue-se solitária num pequeno ilhéu do Bósforo, ao largo da margem de Üsküdar no lado asiático, onde o estreito se abre para o Mar de Mármara. Pequena, branca e incrivelmente fotogénica, vigia esta via de água há séculos, tendo sido farol, posto alfandegário e estação de quarentena — e hoje, após um cuidadoso restauro, acolhe de novo os visitantes.`,
+          `O que torna a torre inesquecível não é o seu tamanho, mas as suas histórias. A lenda turca fala de uma princesa aqui aprisionada para escapar a uma profecia de picada de serpente; o conto grego de Hero e Leandro coloca a sua tragédia nestas mesmas águas. Com um especialista local da VibeGuide, as lendas, a história e o horizonte encaixam-se, transformando um curto passeio de barco num dos programas mais românticos de Istambul.`,
+        ],
+        highlights: [
+          { title: `O ilhéu e a torre`, desc: `Um pequeno rochedo no meio do Bósforo coroado por uma esbelta torre branca — uma das silhuetas mais reconhecíveis de toda Istambul.` },
+          { title: `Lendas sobre a água`, desc: `A princesa turca e a serpente da profecia, e a história grega de Leandro a atravessar o estreito a nado por amor — dois contos ligados a este mesmo lugar.` },
+          { title: `Café e miradouro`, desc: `Um café e um terraço panorâmico convidam-no a demorar-se com uma vista de 360 graus sobre a cidade antiga, a margem asiática e os navios que passam.` },
+        ],
+        faqs: [
+          { q: `Como chego à Torre da Donzela?`, a: `Com um curto passeio de barco a partir da marginal de Üsküdar no lado asiático, ou de Kabataş no lado europeu. Não há ponte — o barco faz parte da experiência, e ambos os cais são fáceis de alcançar por ferry, elétrico ou Marmaray.` },
+          { q: `Quais são as lendas da torre?`, a: `Uma lenda turca fala de uma princesa aqui colocada para escapar à profecia de que morreria de uma picada de serpente, e o conto grego de Hero e Leandro situa a sua tragédia amorosa nestas águas. Um guia local conta ambas e explica como a torre ganhou o seu nome.` },
+          { q: `Vale a pena visitar a torre após o restauro?`, a: `Sim. Após um recente e cuidadoso restauro, a torre reabriu aos visitantes, com café e terraço panorâmico, pelo que pode agora entrar e apreciar a vista, em vez de a admirar apenas da margem.` },
+          { q: `Qual é a melhor altura para ir?`, a: `O pôr do sol é o mais memorável, com a cidade antiga a brilhar por trás da torre, enquanto as manhãs são as mais tranquilas para fotografias. Dias calmos no fim da primavera ou início do outono tornam a travessia de barco especialmente agradável.` },
+        ],
+        planningHeading: `Planear a sua visita`,
+        planningParagraphs: [
+          `A Torre da Donzela fica no seu próprio ilhéu, por isso cada visita começa com um curto passeio de barco. O principal ponto de partida é a marginal de Üsküdar, no lado asiático, com barcos adicionais a partir de Kabataş, no lado europeu. Ambos são fáceis de alcançar por ferry, elétrico ou pela linha Marmaray, e a própria travessia oferece-lhe a torre emoldurada contra a água desde o momento em que parte.`,
+          `A torre está aberta ao longo do dia e é mais mágica ao pôr do sol, quando a luz se torna dourada e o horizonte da cidade antiga brilha atrás dela. O fim da primavera e o início do outono trazem tempo calmo e ameno, ideal para a travessia; em dias de vento ou tempestade os horários dos barcos podem mudar, pelo que vale a pena manter os planos flexíveis. As manhãs tendem a ser as mais tranquilas para fotografias no ilhéu.`,
+          `Tanto a travessia de barco como a entrada na torre são pagas, e o espaço na pequena ilha é limitado, por isso é melhor planear com antecedência. Um guia local licenciado da VibeGuide pode organizar a travessia, marcar a sua visita para a melhor luz e dar vida às lendas e à história do Bósforo — indicando exatamente onde se colocar para aquela fotografia clássica do horizonte.`,
+        ],
+        ctaTitle: `Conheça a Torre da Donzela com um local`,
+        ...IST.pt,
+      },
+      ja: {
+        name: `乙女の塔`,
+        metaTitle: `乙女の塔（クズ・クレスィ）観光と地元ガイド`,
+        metaDescription:
+          `検証済みのイスタンブールガイドと、ボスポラス海峡の小島に建つ乙女の塔を訪ねよう。古い伝説、ウスキュダルからの短い船旅、忘れられない夕暮れのスカイライン。`,
+        intro: [
+          `乙女の塔は、ボスポラス海峡の小さな島にひとつだけ建っています。アジア側のウスキュダル沿岸のすぐ沖、海峡がマルマラ海へと開ける地点です。小さく、白く、信じがたいほど絵になるこの塔は、灯台として、税関として、検疫所として、何世紀にもわたって水路を見守ってきました。そして今日、丁寧な修復を経て、再び訪問者を迎えています。`,
+          `この塔を忘れがたいものにしているのは、その大きさではなく物語です。トルコの伝説は、蛇に噛まれるという予言から逃れるためにここに閉じ込められた王女を語ります。ギリシャのヘロとレアンドロスの物語は、その悲劇をこの同じ水面に置きます。VibeGuideの地元専門家がいれば、伝説も歴史もスカイラインもすべて腑に落ち、短い船旅がイスタンブールで最もロマンチックな外出のひとつになります。`,
+        ],
+        highlights: [
+          { title: `小島と塔`, desc: `ボスポラス海峡の真ん中にある小さな岩の上に、ほっそりとした白い塔がそびえます。イスタンブール全体でも最も見分けやすいシルエットのひとつです。` },
+          { title: `水上の伝説`, desc: `トルコの王女と予言の蛇、そして愛のために海峡を泳いで渡ったギリシャのレアンドロスの物語。この一点に結びついた二つの物語です。` },
+          { title: `カフェと展望台`, desc: `カフェと展望テラスで、旧市街、アジア側の岸辺、行き交う船を360度見渡すパノラマを楽しみながらゆっくり過ごせます。` },
+        ],
+        faqs: [
+          { q: `乙女の塔へはどう行きますか？`, a: `アジア側のウスキュダル沿岸から、あるいはヨーロッパ側のカバタシュから短い船旅で向かいます。橋はありません。船そのものが体験の一部であり、どちらの桟橋もフェリー、トラム、マルマライで簡単に行けます。` },
+          { q: `塔の伝説とは何ですか？`, a: `トルコの伝説は、蛇に噛まれて死ぬという予言から逃れるためにここに置かれた王女を語り、ギリシャのヘロとレアンドロスの物語はその愛の悲劇をこの海に置きます。地元ガイドが両方を語り、塔がどのようにその名を得たかを説明します。` },
+          { q: `修復後の塔は訪れる価値がありますか？`, a: `はい。最近の丁寧な修復を経て、塔はカフェと展望テラスとともに訪問者に再開されました。今では岸から眺めるだけでなく、中に入ってパノラマを楽しめます。` },
+          { q: `訪れるのに最適な時間は？`, a: `旧市街が塔の背後で輝く夕暮れが最も印象的で、午前中は写真に最も静かです。晩春や初秋の穏やかな日は、船での渡航が特に快適です。` },
+        ],
+        planningHeading: `訪問の計画`,
+        planningParagraphs: [
+          `乙女の塔は独立した小島に建っているため、どの訪問も短い船旅から始まります。主な出発地はアジア側のウスキュダル沿岸で、ヨーロッパ側のカバタシュからも船が出ています。どちらもフェリー、トラム、マルマライ線で簡単に行け、渡航そのものが、出発の瞬間から水面を背にした塔を額縁のように見せてくれます。`,
+          `塔は日中を通して開いており、光が黄金色に変わり旧市街のスカイラインが背後で輝く夕暮れ時が最も幻想的です。晩春と初秋は穏やかで温暖な天候をもたらし、渡航に理想的です。風の強い日や荒天時には船の時刻が変わることがあるので、予定に余裕を持たせる価値があります。午前中は小島での写真撮影に最も静かな傾向があります。`,
+          `船での送迎も塔への入場も有料で、小さな島の収容人数には限りがあるため、事前に計画するのが最善です。VibeGuideの認定地元ガイドが渡航を手配し、最良の光に合わせて訪問時間を調整し、伝説とボスポラスの歴史を生き生きと語ります。そして、あの定番のスカイライン写真をどこに立って撮ればよいかも正確に教えてくれます。`,
+        ],
+        ctaTitle: `地元ガイドと乙女の塔を訪ねよう`,
+        ...IST.ja,
+      },
+      ko: {
+        name: `처녀의 탑`,
+        metaTitle: `처녀의 탑(크즈 쿨레시) 투어와 현지 가이드`,
+        metaDescription:
+          `검증된 이스탄불 가이드와 보스포루스 작은 섬 위의 처녀의 탑을 방문하세요. 오래된 전설, 위스퀴다르에서의 짧은 뱃길, 잊지 못할 노을 스카이라인.`,
+        intro: [
+          `처녀의 탑은 보스포루스 해협의 작은 섬 위에 홀로 서 있습니다. 아시아 쪽 위스퀴다르 해안 바로 앞, 해협이 마르마라해로 열리는 지점입니다. 작고 하얗고 믿기 힘들 만큼 사진이 잘 나오는 이 탑은 등대로, 세관으로, 검역소로 수 세기 동안 이 물길을 지켜봤습니다. 그리고 오늘날 세심한 복원을 거쳐 다시 방문객을 맞이합니다.`,
+          `이 탑을 잊을 수 없게 만드는 것은 크기가 아니라 이야기입니다. 터키 전설은 뱀에 물릴 것이라는 예언을 피하려 이곳에 갇힌 공주를 전하고, 그리스의 헤로와 레안드로스 이야기는 그 비극을 바로 이 물 위에 둡니다. VibeGuide 현지 전문가와 함께라면 전설도 역사도 스카이라인도 모두 제자리를 찾아, 짧은 뱃길이 이스탄불에서 가장 낭만적인 나들이 중 하나가 됩니다.`,
+        ],
+        highlights: [
+          { title: `작은 섬과 탑`, desc: `보스포루스 한가운데 작은 바위 위에 날렵한 흰 탑이 솟아 있습니다. 이스탄불 전체에서 가장 알아보기 쉬운 실루엣 중 하나입니다.` },
+          { title: `물 위의 전설`, desc: `터키 공주와 예언의 뱀, 그리고 사랑을 위해 해협을 헤엄쳐 건넌 그리스 레안드로스의 이야기. 이 한 곳에 얽힌 두 전설입니다.` },
+          { title: `카페와 전망대`, desc: `카페와 전망 테라스에서 구시가지, 아시아 쪽 해안, 지나가는 배들을 360도 파노라마로 바라보며 머물 수 있습니다.` },
+        ],
+        faqs: [
+          { q: `처녀의 탑에는 어떻게 가나요?`, a: `아시아 쪽 위스퀴다르 해안에서, 또는 유럽 쪽 카바타쉬에서 짧은 뱃길로 갑니다. 다리는 없습니다. 배 자체가 경험의 일부이며, 두 선착장 모두 페리, 트램, 마르마라이로 쉽게 갈 수 있습니다.` },
+          { q: `탑의 전설은 무엇인가요?`, a: `터키 전설은 뱀에 물려 죽을 것이라는 예언을 피하려 이곳에 놓인 공주를 전하고, 그리스의 헤로와 레안드로스 이야기는 그 사랑의 비극을 이 물 위에 둡니다. 현지 가이드가 두 이야기를 모두 들려주고 탑이 어떻게 그 이름을 얻었는지 설명합니다.` },
+          { q: `복원 후 탑은 방문할 가치가 있나요?`, a: `네. 최근의 세심한 복원을 거쳐 탑은 카페와 전망 테라스와 함께 방문객에게 다시 개방되었습니다. 이제 해안에서 바라보기만 하는 것이 아니라 안으로 들어가 파노라마를 즐길 수 있습니다.` },
+          { q: `언제 가는 것이 가장 좋나요?`, a: `구시가지가 탑 뒤로 빛나는 노을이 가장 인상적이고, 오전은 사진 찍기에 가장 한산합니다. 늦봄이나 초가을의 잔잔한 날에는 뱃길이 특히 쾌적합니다.` },
+        ],
+        planningHeading: `방문 계획하기`,
+        planningParagraphs: [
+          `처녀의 탑은 독립된 작은 섬 위에 있어 모든 방문은 짧은 뱃길로 시작됩니다. 주요 출발지는 아시아 쪽 위스퀴다르 해안이며, 유럽 쪽 카바타쉬에서도 배가 있습니다. 두 곳 모두 페리, 트램, 마르마라이 노선으로 쉽게 갈 수 있고, 뱃길 자체가 출발 순간부터 물을 배경으로 액자에 담긴 듯한 탑을 보여줍니다.`,
+          `탑은 하루 종일 개방되며, 빛이 황금빛으로 물들고 구시가지 스카이라인이 뒤로 빛나는 노을 무렵이 가장 환상적입니다. 늦봄과 초가을은 잔잔하고 온화한 날씨를 선사해 뱃길에 이상적입니다. 바람이 많거나 폭풍우가 치는 날에는 배 시간표가 바뀔 수 있으니 일정을 유연하게 두는 것이 좋습니다. 섬에서의 사진 촬영은 오전이 가장 한산한 편입니다.`,
+          `뱃길 이동과 탑 입장 모두 티켓이 필요하고 작은 섬의 수용 공간이 제한적이라 미리 계획하는 것이 좋습니다. VibeGuide 인증 현지 가이드가 뱃길을 준비하고 최고의 빛에 맞춰 방문 시간을 잡으며 전설과 보스포루스의 역사를 생생하게 전합니다. 그리고 그 상징적인 스카이라인 사진을 찍기에 정확히 어디에 서야 하는지도 알려줍니다.`,
+        ],
+        ctaTitle: `현지 가이드와 처녀의 탑을 방문하세요`,
+        ...IST.ko,
+      },
     },
   },
   {
@@ -6056,6 +7526,93 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: "Bekijk de Tempel van Artemis met een local",
         ...EPH.nl,
+      },
+      pt: {
+        name: `Templo de Ártemis`,
+        metaTitle: `Templo de Ártemis em Éfeso: Visitas e Guias Locais`,
+        metaDescription:
+          `Visite o Templo de Ártemis em Selçuk com um guia local verificado. Uma das Sete Maravilhas do Mundo Antigo, hoje uma única coluna erguida entre cegonhas e pântano, junto a Éfeso.`,
+        intro: [
+          `O Templo de Ártemis em Selçuk, a poucos minutos de Éfeso, foi outrora uma das Sete Maravilhas do Mundo Antigo — um templo de mármore tão vasto que era quatro vezes maior do que o Pártenon de Atenas. Os viajantes antigos escreviam que tinham visto muitas maravilhas, mas nada que rivalizasse com a casa de Ártemis, erguendo-se até às nuvens.`,
+          `Hoje o sítio é humilde: uma única coluna reerguida sobe das fundações pantanosas, muitas vezes com um ninho de cegonha no topo e as aves a chapinhar entre os juncos. E, no entanto, estar aqui, onde reis competiram para erguer o mais grandioso santuário do mundo antigo, é uma das lições mais silenciosas e comoventes da história. Um especialista local da VibeGuide reconstrói o templo na sua imaginação, com colunas, multidões e tudo o resto.`,
+        ],
+        highlights: [
+          { title: `Uma Maravilha desaparecida`, desc: `Uma das Sete Maravilhas do Mundo Antigo, outrora quatro vezes o tamanho do Pártenon, hoje reduzida às fundações e a uma única coluna de pé.` },
+          { title: `A coluna solitária e as suas cegonhas`, desc: `Uma solitária coluna de mármore reerguida sobe do pântano, muitas vezes coroada por um ninho de cegonha — uma imagem inesquecível de grandeza devolvida à natureza.` },
+          { title: `O conjunto da colina de Selçuk`, desc: `O templo combina-se naturalmente com a Basílica de São João e a Mesquita de İsa Bey, que coroam a colina logo acima, e com Éfeso ali perto.` },
+        ],
+        faqs: [
+          { q: `Resta muito do Templo de Ártemis?`, a: `Muito pouco permanece hoje — sobretudo as fundações pantanosas e uma coluna reerguida, muitas vezes encimada por um ninho de cegonha. A sua força está no que foi outrora: um guia devolve a vida à Maravilha desaparecida onde as ruínas por si só não conseguem.` },
+          { q: `Qual é a relação com Éfeso?`, a: `O templo fica em Selçuk, a apenas minutos do sítio principal de Éfeso, e os dois são naturalmente visitados juntos, a par da Basílica de São João e da Mesquita de İsa Bey na colina logo acima.` },
+          { q: `Preciso de bilhete para o Templo de Ártemis?`, a: `O templo é um sítio aberto e a entrada é geralmente gratuita, ao contrário das ruínas pagas de Éfeso ali perto. Um guia local pode organizar um itinerário combinado por Selçuk que flui suavemente entre os sítios.` },
+          { q: `Qual é a melhor altura para visitar?`, a: `A luz da manhã ou do fim da tarde favorece melhor a coluna solitária, e a primavera e o outono são as estações mais confortáveis. Os verões aqui são quentes, por isso leve água e proteção solar.` },
+        ],
+        planningHeading: `Planear a sua visita`,
+        planningParagraphs: [
+          `O Templo de Ártemis fica na orla da vila de Selçuk, a apenas alguns minutos de carro ou a um agradável passeio a pé da entrada principal de Éfeso, pelo que os dois são quase sempre visitados em conjunto. Selçuk situa-se na linha ferroviária İzmir–Aydın e é fácil de alcançar de comboio, autocarro ou num curto trajeto de carro desde İzmir e as estâncias costeiras, e o próprio sítio fica mesmo junto à estrada, abaixo da colina do castelo.`,
+          `O templo é um sítio aberto e de terreno baixo, geralmente de entrada gratuita, melhor apreciado na luz mais suave da manhã ou do fim da tarde, quando a coluna solitária capta o sol e as cegonhas estão ativas. A primavera e o outono são as estações mais agradáveis; o verão em redor de Éfeso pode ser muito quente, por isso leve água e proteção solar seja qual for a época do ano.`,
+          `Porque tão pouco permanece de pé hoje, o Templo de Ártemis recompensa mais a imaginação do que a mera observação, e é exatamente aqui que um guia local licenciado da VibeGuide faz a diferença. Um guia consegue entrelaçar o templo, Éfeso, a Basílica de São João e a Mesquita de İsa Bey num só itinerário por Selçuk, e reconstruir a Maravilha desaparecida na sua mente, de modo que uma única coluna se torne o maior templo do mundo antigo.`,
+        ],
+        ctaTitle: `Conheça o Templo de Ártemis com um local`,
+        ...EPH.pt,
+      },
+      ja: {
+        name: `アルテミス神殿`,
+        metaTitle: `エフェソスのアルテミス神殿観光と地元ガイド`,
+        metaDescription:
+          `検証済みの地元ガイドとセルチュクのアルテミス神殿を訪ねよう。古代世界の七不思議のひとつ、今はエフェソス隣の湿地にコウノトリと共に立つ一本の柱。`,
+        intro: [
+          `エフェソスからわずか数分のセルチュクにあるアルテミス神殿は、かつて古代世界の七不思議のひとつでした。アテネのパルテノン神殿の4倍もの大きさを誇る大理石の神殿だったのです。古代の旅人たちは、多くの驚異を見てきたが、雲まで届くアルテミスの館に並ぶものはなかったと記しています。`,
+          `今日、この場所は慎ましいものです。湿った基礎から一本の再建された柱が立ち上がり、その頂にはしばしばコウノトリの巣があり、下の葦の中では鳥たちが歩き回っています。それでも、かつて王たちが古代世界で最も壮大な聖域を建てようと競い合ったこの地に立つことは、歴史が教える最も静かで心を打つ教訓のひとつです。VibeGuideの地元専門家が、柱も群衆もすべて、あなたの想像の中に神殿を蘇らせます。`,
+        ],
+        highlights: [
+          { title: `消えた七不思議`, desc: `古代世界の七不思議のひとつで、かつてはパルテノン神殿の4倍の大きさでしたが、今は基礎と一本の立つ柱を残すのみです。` },
+          { title: `孤高の柱とコウノトリ`, desc: `再建された一本の大理石の柱が湿地から立ち上がり、しばしばコウノトリの巣を頂きます。自然へと還った壮大さの、忘れがたい光景です。` },
+          { title: `セルチュクの丘の遺跡群`, desc: `神殿は、すぐ上の丘を戴く聖ヨハネ聖堂とイサ・ベイ・モスク、そして近くのエフェソスと自然に組み合わさります。` },
+        ],
+        faqs: [
+          { q: `アルテミス神殿は今どのくらい残っていますか？`, a: `今日残っているのはごくわずかで、主に湿った基礎と、しばしばコウノトリの巣を頂く再建された一本の柱です。その力はかつての姿にあります。ガイドは、遺跡だけでは伝わらない消えた七不思議を蘇らせます。` },
+          { q: `エフェソスとの関係は？`, a: `神殿はセルチュクにあり、エフェソスの主要遺跡からわずか数分の距離です。すぐ上の丘にある聖ヨハネ聖堂やイサ・ベイ・モスクとともに、両者は自然に一緒に訪れられます。` },
+          { q: `アルテミス神殿にチケットは必要ですか？`, a: `神殿は開かれた場所で、近くの有料のエフェソス遺跡とは異なり、通常は入場無料です。地元ガイドが、各所を滑らかに巡るセルチュクの組み合わせ行程を手配できます。` },
+          { q: `訪れるのに最適な時期は？`, a: `朝や夕方遅くの光が孤高の柱を最もよく引き立て、春と秋が最も快適な季節です。ここの夏は暑いので、水と日焼け対策を持参してください。` },
+        ],
+        planningHeading: `訪問の計画`,
+        planningParagraphs: [
+          `アルテミス神殿はセルチュクの町のはずれにあり、エフェソスの主入口から車で数分、あるいは気持ちのよい徒歩圏内です。そのため両者はほぼ必ず一緒に訪れられます。セルチュクはイズミル–アイドゥン鉄道線上にあり、イズミルや沿岸のリゾートから列車、バス、短い車の移動で簡単に行けます。遺跡そのものは城の丘の下、道路のすぐ脇にあります。`,
+          `神殿は開けた低地の場所で通常は入場無料、孤高の柱が陽光を受けコウノトリが活動する、朝や夕方遅くの柔らかな光の中で最もよく味わえます。春と秋が最も快適な季節です。エフェソス周辺の夏は非常に暑くなることがあるので、時期を問わず水と日焼け対策を持参してください。`,
+          `今日ほとんど何も残っていないからこそ、アルテミス神殿は観光以上に想像力に報います。そしてまさにここで、VibeGuideの認定地元ガイドが違いを生みます。ガイドは神殿、エフェソス、聖ヨハネ聖堂、イサ・ベイ・モスクをひとつのセルチュク行程に織り込み、消えた七不思議をあなたの心の中に再建します。一本の柱が、古代世界最大の神殿へと変わるのです。`,
+        ],
+        ctaTitle: `地元ガイドとアルテミス神殿を訪ねよう`,
+        ...EPH.ja,
+      },
+      ko: {
+        name: `아르테미스 신전`,
+        metaTitle: `에페소스 아르테미스 신전 투어와 현지 가이드`,
+        metaDescription:
+          `검증된 현지 가이드와 셀추크의 아르테미스 신전을 방문하세요. 고대 세계 7대 불가사의 중 하나, 지금은 에페소스 옆 습지에 황새와 함께 선 기둥 하나.`,
+        intro: [
+          `에페소스에서 불과 몇 분 거리인 셀추크의 아르테미스 신전은 한때 고대 세계 7대 불가사의 중 하나였습니다. 아테네의 파르테논보다 네 배나 큰 대리석 신전이었지요. 고대의 여행자들은 수많은 불가사의를 보았지만 구름까지 닿는 아르테미스의 집에 견줄 만한 것은 없었다고 적었습니다.`,
+          `오늘날 이곳은 소박합니다. 습한 기초 위로 다시 세운 기둥 하나가 솟아 있고, 그 꼭대기에는 흔히 황새 둥지가 얹혀 있으며 아래 갈대밭에서는 새들이 거닙니다. 그럼에도 한때 왕들이 고대 세계에서 가장 웅장한 성소를 세우려 다투던 이 자리에 선다는 것은, 역사가 주는 가장 조용하고 뭉클한 교훈 중 하나입니다. VibeGuide 현지 전문가가 기둥도 인파도 모두, 당신의 상상 속에 신전을 되살려 줍니다.`,
+        ],
+        highlights: [
+          { title: `사라진 불가사의`, desc: `고대 세계 7대 불가사의 중 하나로 한때 파르테논의 네 배 크기였지만, 지금은 기초와 서 있는 기둥 하나로 줄었습니다.` },
+          { title: `홀로 선 기둥과 황새`, desc: `다시 세운 대리석 기둥 하나가 습지에서 솟아오르며 흔히 황새 둥지를 이고 있습니다. 자연으로 돌아간 웅장함의 잊지 못할 장면입니다.` },
+          { title: `셀추크 언덕 유적군`, desc: `신전은 바로 위 언덕을 장식하는 성 요한 성당과 이사 베이 모스크, 그리고 가까운 에페소스와 자연스럽게 어우러집니다.` },
+        ],
+        faqs: [
+          { q: `아르테미스 신전은 지금 얼마나 남아 있나요?`, a: `오늘날 남은 것은 극히 적어 주로 습한 기초와 다시 세운 기둥 하나이며, 흔히 황새 둥지가 그 위에 얹혀 있습니다. 그 힘은 한때의 모습에 있습니다. 가이드는 유적만으로는 전할 수 없는 사라진 불가사의를 되살립니다.` },
+          { q: `에페소스와는 어떤 관계인가요?`, a: `신전은 셀추크에 있으며 에페소스 주요 유적에서 불과 몇 분 거리입니다. 바로 위 언덕의 성 요한 성당, 이사 베이 모스크와 함께 두 곳은 자연스럽게 같이 방문됩니다.` },
+          { q: `아르테미스 신전에 입장권이 필요한가요?`, a: `신전은 개방된 유적으로 근처의 유료 에페소스 유적과 달리 대개 입장이 무료입니다. 현지 가이드가 각 유적을 매끄럽게 잇는 셀추크 통합 일정을 준비해 드립니다.` },
+          { q: `언제 방문하는 것이 가장 좋나요?`, a: `아침이나 늦은 오후의 빛이 홀로 선 기둥을 가장 돋보이게 하고, 봄과 가을이 가장 쾌적한 계절입니다. 이곳의 여름은 더우니 물과 자외선 차단 용품을 챙기세요.` },
+        ],
+        planningHeading: `방문 계획하기`,
+        planningParagraphs: [
+          `아르테미스 신전은 셀추크 마을 가장자리에 있어 에페소스 주 입구에서 차로 몇 분, 혹은 기분 좋은 도보 거리입니다. 그래서 두 곳은 거의 항상 함께 방문됩니다. 셀추크는 이즈미르–아이든 철도 노선에 있어 이즈미르와 해안 리조트에서 기차, 버스, 짧은 차량 이동으로 쉽게 갈 수 있으며, 유적 자체는 성 언덕 아래 도로 바로 옆에 있습니다.`,
+          `신전은 개방된 저지대 유적으로 대개 입장이 무료이며, 홀로 선 기둥이 햇빛을 받고 황새가 활동하는 아침이나 늦은 오후의 부드러운 빛에서 가장 잘 감상됩니다. 봄과 가을이 가장 쾌적한 계절입니다. 에페소스 일대의 여름은 매우 더울 수 있으니 계절에 상관없이 물과 자외선 차단 용품을 챙기세요.`,
+          `오늘날 서 있는 것이 워낙 적기에 아르테미스 신전은 단순한 관람보다 상상에 보답합니다. 바로 이 지점에서 VibeGuide 인증 현지 가이드가 차이를 만듭니다. 가이드는 신전, 에페소스, 성 요한 성당, 이사 베이 모스크를 하나의 셀추크 일정으로 엮고, 사라진 불가사의를 당신의 마음속에 다시 세워 기둥 하나를 고대 세계 최대의 신전으로 되살립니다.`,
+        ],
+        ctaTitle: `현지 가이드와 아르테미스 신전을 방문하세요`,
+        ...EPH.ko,
       },
     },
   },
@@ -6388,6 +7945,93 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: "Bekijk het Kasteel van Bodrum met een local",
         ...BOD.nl,
       },
+      pt: {
+        name: `Castelo de Bodrum`,
+        metaTitle: `Castelo de Bodrum e Museu Subaquático: Visitas Guiadas`,
+        metaDescription:
+          `Explore o Castelo de Bodrum, a fortaleza dos Cavaleiros Hospitalários sobre o porto, com um guia local licenciado. Torres cruzadas, o Museu de Arqueologia Subaquática e o naufrágio de Uluburun.`,
+        intro: [
+          `O Castelo de Bodrum, o Castelo de São Pedro, guarda o porto turquesa da cidade como uma coroa de pedra. Os Cavaleiros Hospitalários começaram a erguê-lo no início do século XV, arrastando blocos do arruinado Mausoléu de Halicarnasso — uma das Sete Maravilhas do Mundo Antigo — de modo que fragmentos do túmulo de um rei antigo estão entretecidos nas muralhas de uma fortaleza cruzada.`,
+          `As suas torres ainda ostentam os nomes das nações que as construíram — inglesa, francesa, italiana, alemã e a Torre da Serpente — e cada uma se ergue sobre a marina com amplas vistas sobre o Egeu. No interior, o castelo alberga o célebre Museu de Arqueologia Subaquática, onde antigos naufrágios, ânforas e os tesouros do navio de Uluburun, da Idade do Bronze, contam a história do mar. Com um especialista local da VibeGuide, as camadas de história cruzada, otomana e antiga encaixam-se.`,
+        ],
+        highlights: [
+          { title: `As Torres dos Cavaleiros`, desc: `As torres inglesa, francesa, italiana, alemã e da Serpente erguem-se cada uma sobre o porto, construídas pelas diferentes línguas da ordem Hospitalária no século XV.` },
+          { title: `Museu de Arqueologia Subaquática`, desc: `Um dos melhores do seu género, exibindo antigos naufrágios, ânforas e vidro recuperados do fundo do Egeu.` },
+          { title: `O Naufrágio de Uluburun`, desc: `Achados de um navio mercante do século XIV a.C. — cobre, lingotes, ouro e carga exótica — revelam o comércio da Idade do Bronze por todo o Mediterrâneo oriental.` },
+        ],
+        faqs: [
+          { q: `Vale a pena visitar o Castelo de Bodrum?`, a: `Sem dúvida. É um dos castelos cruzados mais bem preservados do Mediterrâneo e alberga também um Museu de Arqueologia Subaquática de nível mundial, tudo envolto nalgumas das melhores vistas de porto da costa do Egeu.` },
+          { q: `O que há dentro do Castelo de Bodrum?`, a: `O castelo abriga o Museu de Arqueologia Subaquática, com antigos naufrágios, milhares de ânforas, vidro e os tesouros do navio de Uluburun da Idade do Bronze, a par das históricas torres inglesa, francesa, italiana, alemã e da Serpente.` },
+          { q: `O Castelo de Bodrum está ligado ao Mausoléu de Halicarnasso?`, a: `Sim. Os Cavaleiros Hospitalários reutilizaram pedras do arruinado Mausoléu — uma das Sete Maravilhas do Mundo Antigo — para construir o castelo. O próprio sítio do Mausoléu fica a um curto passeio a pé, subindo na cidade, e combina na perfeição com uma visita ao castelo.` },
+          { q: `Preciso de um guia para o Castelo de Bodrum?`, a: `Pode passear sozinho, mas o castelo mistura história cruzada, otomana e marítima antiga que é fácil de deixar escapar. Um guia local licenciado da VibeGuide liga as torres, os naufrágios e o Mausoléu numa só história clara.` },
+        ],
+        planningHeading: `Planear a sua visita`,
+        planningParagraphs: [
+          `O Castelo de Bodrum fica mesmo na península entre as duas baías da cidade, por isso, de quase qualquer ponto do centro, é um curto e cénico passeio a pé ao longo da marina. A maioria dos visitantes chega a Bodrum por estrada a partir do Aeroporto de Milas–Bodrum, ou de ferry desde a costa envolvente e as ilhas gregas próximas, e o castelo é impossível de não ver no horizonte acima do porto.`,
+          `O verão no Egeu é quente e movimentado, por isso as alturas mais amenas e tranquilas para subir às muralhas são o fim da primavera e o início do outono. As manhãs trazem a luz mais suave para fotografias sobre a marina, e as brisas do mar tornam os terraços abertos agradáveis mesmo em época alta. Use calçado resistente — o castelo assenta sobre rocha, com degraus, rampas e piso irregular por toda a parte.`,
+          `A entrada no castelo e no seu Museu de Arqueologia Subaquática é paga, e o sítio reúne uma fortaleza, várias torres e salas de museu numa só visita. Um guia local licenciado da VibeGuide pode ajudá-lo a dar sentido a tudo — ligando as torres cruzadas às cargas afundadas lá em baixo, e acrescentando o curto passeio a subir até aos vestígios do Mausoléu de Halicarnasso, a maravilha antiga cujas pedras ajudaram a construir as muralhas.`,
+        ],
+        ctaTitle: `Conheça o Castelo de Bodrum com um local`,
+        ...BOD.pt,
+      },
+      ja: {
+        name: `ボドルム城`,
+        metaTitle: `ボドルム城と水中考古学博物館の地元ガイドツアー`,
+        metaDescription:
+          `認定地元ガイドと、港を見下ろす聖ヨハネ騎士団の要塞ボドルム城を巡ろう。十字軍の塔、水中考古学博物館、そしてウルブルン沈没船。`,
+        intro: [
+          `ボドルム城、聖ペテロ城は、石の冠のように町のターコイズ色の港を見守っています。聖ヨハネ騎士団は15世紀初頭にこれを築き始め、廃墟となったハリカルナッソスのマウソロス霊廟——古代世界の七不思議のひとつ——から石材を運び上げました。こうして古代の王の墓の断片が、十字軍の要塞の壁に織り込まれているのです。`,
+          `その塔は今も、建てた国々の名を冠しています——イングランド、フランス、イタリア、ドイツ、そして蛇の塔——それぞれがマリーナの上にそびえ、エーゲ海を一望します。城内には名高い水中考古学博物館があり、古代の沈没船、アンフォラ、そして青銅器時代のウルブルン沈没船の宝物が海の物語を語ります。VibeGuideの地元専門家がいれば、十字軍、オスマン、古代の歴史の層がすべて腑に落ちます。`,
+        ],
+        highlights: [
+          { title: `騎士団の塔`, desc: `イングランド、フランス、イタリア、ドイツ、蛇の各塔がそれぞれ港の上にそびえ、15世紀にホスピタル騎士団の異なる言語圏によって築かれました。` },
+          { title: `水中考古学博物館`, desc: `この種のものとして最も優れた博物館のひとつで、エーゲ海の海底から引き上げられた古代の沈没船、アンフォラ、ガラスを展示しています。` },
+          { title: `ウルブルン沈没船`, desc: `紀元前14世紀の商船からの出土品——銅、インゴット、金、異国の積荷——が、東地中海全域にわたる青銅器時代の交易を明らかにします。` },
+        ],
+        faqs: [
+          { q: `ボドルム城は訪れる価値がありますか？`, a: `大いにあります。地中海で最もよく保存された十字軍の城のひとつであり、世界に誇る水中考古学博物館も擁し、そのすべてがエーゲ海沿岸でも屈指の港の眺めに包まれています。` },
+          { q: `ボドルム城の中には何がありますか？`, a: `城内には水中考古学博物館があり、古代の沈没船、数千のアンフォラ、ガラス、青銅器時代のウルブルン沈没船の宝物が、歴史あるイングランド、フランス、イタリア、ドイツ、蛇の各塔とともに収められています。` },
+          { q: `ボドルム城はハリカルナッソスのマウソロス霊廟と関係がありますか？`, a: `はい。聖ヨハネ騎士団は、廃墟となった霊廟——古代世界の七不思議のひとつ——の石材を再利用して城を築きました。霊廟の跡地そのものは町を少し上った徒歩圏にあり、城の見学と完璧に組み合わさります。` },
+          { q: `ボドルム城にガイドは必要ですか？`, a: `一人でも散策できますが、この城は見落としやすい十字軍、オスマン、古代の海洋の歴史が混ざり合っています。VibeGuideの認定地元ガイドが、塔と沈没船と霊廟をひとつの明快な物語に結びつけます。` },
+        ],
+        planningHeading: `訪問の計画`,
+        planningParagraphs: [
+          `ボドルム城は町の二つの湾の間の半島の上にあり、中心部のほぼどこからでも、マリーナ沿いを歩く短く景色のよい散歩で行けます。ほとんどの訪問者は、ミラス–ボドルム空港から陸路で、あるいは周辺の沿岸や近くのギリシャの島々からフェリーでボドルムに到着します。城は港の上のスカイラインで見逃しようがありません。`,
+          `エーゲ海の夏は暑く混雑するため、城壁を登るのに最も穏やかで静かな時期は晩春と初秋です。午前中はマリーナ越しの写真に最も柔らかな光をもたらし、海風のおかげで開けたテラスはハイシーズンでも快適です。城は岩の上に築かれ、至る所に階段、スロープ、でこぼこした地面があるので、しっかりした靴を履いてください。`,
+          `城とその水中考古学博物館への入場は有料で、この場所は要塞、複数の塔、博物館の展示室を一度の見学にまとめています。VibeGuideの認定地元ガイドが、そのすべてを理解する手助けをします——十字軍の塔を眼下の沈んだ積荷に結びつけ、さらに、その石材が壁を築くのに使われた古代の驚異、ハリカルナッソスのマウソロス霊廟の遺構まで、坂を少し上る短い散歩を加えてくれます。`,
+        ],
+        ctaTitle: `地元ガイドとボドルム城を巡ろう`,
+        ...BOD.ja,
+      },
+      ko: {
+        name: `보드룸 성`,
+        metaTitle: `보드룸 성과 수중 고고학 박물관 현지 가이드 투어`,
+        metaDescription:
+          `인증 현지 가이드와 항구를 굽어보는 구호기사단 요새 보드룸 성을 둘러보세요. 십자군 탑, 수중 고고학 박물관, 그리고 울루부룬 난파선.`,
+        intro: [
+          `보드룸 성, 즉 성 베드로 성은 돌로 된 왕관처럼 도시의 청록빛 항구를 지킵니다. 구호기사단은 15세기 초에 이 성을 짓기 시작하며 폐허가 된 할리카르나소스의 마우솔로스 영묘——고대 세계 7대 불가사의 중 하나——에서 석재를 끌어올렸습니다. 그리하여 고대 왕의 무덤 조각들이 십자군 요새의 성벽에 짜여 들어가 있습니다.`,
+          `그 탑들은 지금도 세운 나라들의 이름을 지니고 있습니다——잉글랜드, 프랑스, 이탈리아, 독일, 그리고 뱀의 탑——각 탑이 마리나 위로 솟아 에게해를 한눈에 담습니다. 성 안에는 이름난 수중 고고학 박물관이 자리해, 고대 난파선과 암포라, 청동기 시대 울루부룬 난파선의 보물이 바다의 이야기를 전합니다. VibeGuide 현지 전문가와 함께라면 십자군, 오스만, 고대 역사의 층위가 모두 제자리를 찾습니다.`,
+        ],
+        highlights: [
+          { title: `기사단의 탑들`, desc: `잉글랜드, 프랑스, 이탈리아, 독일, 뱀의 탑이 각각 항구 위로 솟아 있으며, 15세기에 구호기사단의 서로 다른 언어권이 세웠습니다.` },
+          { title: `수중 고고학 박물관`, desc: `동종 최고 수준의 하나로, 에게해 바닥에서 건져 올린 고대 난파선, 암포라, 유리를 전시합니다.` },
+          { title: `울루부룬 난파선`, desc: `기원전 14세기 상선에서 나온 유물——구리, 주괴, 금, 이국적 화물——이 동지중해 전역에 걸친 청동기 시대 교역을 드러냅니다.` },
+        ],
+        faqs: [
+          { q: `보드룸 성은 방문할 가치가 있나요?`, a: `매우 그렇습니다. 지중해에서 가장 잘 보존된 십자군 성 중 하나이자 세계적 수준의 수중 고고학 박물관을 품고 있으며, 이 모두가 에게해 연안에서 손꼽히는 항구 전망에 둘러싸여 있습니다.` },
+          { q: `보드룸 성 안에는 무엇이 있나요?`, a: `성에는 수중 고고학 박물관이 있어 고대 난파선, 수천 점의 암포라, 유리, 청동기 시대 울루부룬 난파선의 보물이 역사적인 잉글랜드, 프랑스, 이탈리아, 독일, 뱀의 탑과 함께 자리합니다.` },
+          { q: `보드룸 성은 할리카르나소스 영묘와 관련이 있나요?`, a: `네. 구호기사단은 폐허가 된 영묘——고대 세계 7대 불가사의 중 하나——의 석재를 재사용해 성을 지었습니다. 영묘 유적 자체는 도시에서 언덕을 조금 오른 도보 거리에 있어 성 방문과 완벽하게 어울립니다.` },
+          { q: `보드룸 성에 가이드가 필요한가요?`, a: `혼자 둘러볼 수도 있지만 이 성은 놓치기 쉬운 십자군, 오스만, 고대 해양의 역사가 뒤섞여 있습니다. VibeGuide 인증 현지 가이드가 탑과 난파선과 영묘를 하나의 명료한 이야기로 엮어 줍니다.` },
+        ],
+        planningHeading: `방문 계획하기`,
+        planningParagraphs: [
+          `보드룸 성은 도시의 두 만 사이 반도 위에 바로 자리해, 중심가 거의 어디서든 마리나를 따라 짧고 경치 좋은 도보로 갈 수 있습니다. 대부분의 방문객은 밀라스–보드룸 공항에서 육로로, 또는 주변 해안과 인근 그리스 섬들에서 페리로 보드룸에 도착하며, 성은 항구 위 스카이라인에서 놓칠 수 없습니다.`,
+          `에게해의 여름은 덥고 붐비므로 성벽에 오르기에 가장 온화하고 한산한 시기는 늦봄과 초가을입니다. 오전은 마리나 너머 사진에 가장 부드러운 빛을 주고, 바닷바람 덕분에 트인 테라스는 성수기에도 쾌적합니다. 성은 바위 위에 지어져 곳곳에 계단, 경사로, 고르지 않은 바닥이 있으니 튼튼한 신발을 신으세요.`,
+          `성과 수중 고고학 박물관 입장은 유료이며, 이곳은 요새와 여러 탑, 박물관 전시실을 한 번의 방문에 담습니다. VibeGuide 인증 현지 가이드가 이 모든 것을 이해하도록 도와줍니다——십자군 탑을 발아래 가라앉은 화물과 잇고, 그 석재가 성벽을 짓는 데 쓰인 고대 불가사의, 할리카르나소스 영묘 유적까지 언덕을 조금 오르는 짧은 산책을 더해 줍니다.`,
+        ],
+        ctaTitle: `현지 가이드와 보드룸 성을 둘러보세요`,
+        ...BOD.ko,
+      },
     },
   },
   {
@@ -6718,6 +8362,93 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: "Bekijk Göbeklitepe met een local",
         ...SAN.nl,
+      },
+      pt: {
+        name: `Göbekli Tepe`,
+        metaTitle: `Göbekli Tepe (Templo Mais Antigo do Mundo): Visitas Guiadas`,
+        metaDescription:
+          `Visite Göbekli Tepe, perto de Şanlıurfa, com um guia local licenciado — o mais antigo templo conhecido do mundo, erguido por volta de 9600 a.C., 6000 anos antes de Stonehenge. Património Mundial da UNESCO.`,
+        intro: [
+          `Göbekli Tepe é o mais antigo santuário monumental conhecido na Terra, erguido por volta de 9600 a.C. — cerca de 6000 anos antes de Stonehenge e das pirâmides de Gizé. Num cerro nu perto de Şanlıurfa, no sudeste da Turquia, caçadores-recoletores que ainda não tinham inventado a cerâmica, a escrita ou a agricultura extraíram, esculpiram e ergueram, de algum modo, grandes círculos de pilares de calcário em forma de T. É uma descoberta que reescreveu a história da civilização: aqui, o templo pode ter vindo antes da cidade.`,
+          `Os pilares chegam a vários metros de altura e estão esculpidos em relevo com raposas, javalis, serpentes, escorpiões e grous — um bestiário de pedra da aurora da fé. Hoje, um moderno passadiço coberto abriga os recintos e permite-lhe olhar para dentro deles sem tocar neste lugar frágil. Como tanto é invisível ao olhar não treinado, um guia local licenciado da VibeGuide é essencial para ler os símbolos e explicar por que Göbekli Tepe mudou tudo.`,
+        ],
+        highlights: [
+          { title: `O primeiro templo do mundo`, desc: `Erguido por volta de 9600 a.C. por povos neolíticos pré-cerâmica — cerca de 6000 anos mais antigo do que Stonehenge — e inscrito como Património Mundial da UNESCO.` },
+          { title: `Os pilares em T esculpidos`, desc: `Grandes pilares de calcário dispostos em círculos, esculpidos em relevo com raposas, javalis, serpentes, escorpiões e grous, da aurora da religião.` },
+          { title: `O Homem de Urfa em Şanlıurfa`, desc: `Combine o sítio com o Museu de Arqueologia de Şanlıurfa, que guarda pilares originais e o Homem de Urfa, com 11 000 anos, a mais antiga estátua humana em tamanho real conhecida.` },
+        ],
+        faqs: [
+          { q: `Que idade tem Göbekli Tepe?`, a: `Göbekli Tepe foi erguido por volta de 9600 a.C., o que lhe dá cerca de 11 000 anos — aproximadamente 6000 anos mais antigo do que Stonehenge e as pirâmides egípcias, e o mais antigo templo monumental conhecido do mundo.` },
+          { q: `Porque é Göbekli Tepe tão importante?`, a: `Foi erguido por caçadores-recoletores antes da cerâmica, da escrita ou da agricultura, o que sugere que a religião organizada e a construção monumental podem ter surgido antes da vida sedentária em aldeia — invertendo a antiga ideia de que a agricultura veio primeiro. É Património Mundial da UNESCO.` },
+          { q: `Como chego a Göbekli Tepe?`, a: `O sítio fica a cerca de 20 km de Şanlıurfa, no sudeste da Turquia. A maioria dos visitantes voa até Şanlıurfa e chega a Göbekli Tepe de carro, táxi ou excursão organizada, havendo um centro de visitantes, transfer e passadiço coberto no local.` },
+          { q: `Preciso de um guia para Göbekli Tepe?`, a: `Fortemente recomendado. Grande parte do significado do sítio é invisível sem contexto, e um guia local licenciado da VibeGuide explica os pilares em T, os relevos de animais e por que a descoberta reescreveu a história humana — ligando-a depois ao Homem de Urfa no museu da cidade.` },
+        ],
+        planningHeading: `Planear a sua visita`,
+        planningParagraphs: [
+          `Göbekli Tepe fica a cerca de 20 km do centro de Şanlıurfa, a cidade mais próxima e a base natural para uma visita. A maioria dos viajantes voa para Şanlıurfa e chega ao sítio de carro, táxi ou excursão organizada, por uma estrada curta e bem sinalizada que termina no centro de visitantes, de onde um transfer e um passadiço levam aos recintos. Há pouco mais nas redondezas, por isso é melhor combiná-lo com a própria cidade.`,
+          `O cerro é aberto e exposto, quase sem sombra, pelo que o sol de verão do sudeste da Turquia pode ser intenso. Aponte para o início da manhã ou o fim da tarde, e leve água, chapéu e proteção solar; a primavera e o outono são, no geral, as estações mais confortáveis. O passadiço coberto mantém-no acima dos recintos, por isso use calçado confortável para o suave passeio.`,
+          `A entrada é paga, e o que torna Göbekli Tepe inesquecível é compreender o que se está a ver — de outro modo, os pilares podem parecer simples pedras num cerro. Um guia local licenciado da VibeGuide dá vida aos recintos, decifra os relevos de animais e liga o sítio ao Museu de Arqueologia de Şanlıurfa, onde os pilares originais e o assombroso Homem de Urfa completam a história.`,
+        ],
+        ctaTitle: `Conheça Göbekli Tepe com um local`,
+        ...SAN.pt,
+      },
+      ja: {
+        name: `ギョベクリ・テペ`,
+        metaTitle: `ギョベクリ・テペ観光（世界最古の神殿）と地元ガイド`,
+        metaDescription:
+          `認定地元ガイドと、シャンルウルファ近郊のギョベクリ・テペを訪ねよう。紀元前9600年頃に築かれた世界最古の神殿で、ストーンヘンジより6000年前。ユネスコ世界遺産。`,
+        intro: [
+          `ギョベクリ・テペは、地上で知られる最古の記念碑的聖域で、紀元前9600年頃に築かれました——ストーンヘンジやギザのピラミッドより、およそ6000年前です。トルコ南東部のシャンルウルファ近くの裸の丘の上で、まだ土器も文字も農耕も発明していなかった狩猟採集民が、どういうわけかT字型の巨大な石灰岩の柱の環を切り出し、彫り、立てました。これは文明の物語を書き換えた発見です。ここでは、神殿が町より先にあったのかもしれません。`,
+          `柱は高さ数メートルに達し、キツネ、イノシシ、ヘビ、サソリ、ツルが浮き彫りにされています——信仰の黎明期の、石の動物寓意集です。今日、近代的な屋根付きの遊歩道が囲いを守り、この壊れやすい場所に触れることなく中を見下ろせるようになっています。訓練を受けていない目には多くが見えないため、象徴を読み解き、なぜギョベクリ・テペがすべてを変えたのかを説明するには、VibeGuideの認定地元ガイドが欠かせません。`,
+        ],
+        highlights: [
+          { title: `世界最初の神殿`, desc: `紀元前9600年頃に先土器新石器時代の人々によって築かれ——ストーンヘンジより約6000年古く——ユネスコ世界遺産に登録されています。` },
+          { title: `彫刻されたT字柱`, desc: `環状に配された巨大な石灰岩の柱に、宗教の黎明期のキツネ、イノシシ、ヘビ、サソリ、ツルが浮き彫りにされています。` },
+          { title: `シャンルウルファのウルファ・マン`, desc: `この遺跡を、オリジナルの柱と、知られる限り最古の等身大人像である1万1000年前のウルファ・マンを収めるシャンルウルファ考古学博物館と組み合わせましょう。` },
+        ],
+        faqs: [
+          { q: `ギョベクリ・テペはどのくらい古いですか？`, a: `ギョベクリ・テペは紀元前9600年頃に築かれ、約1万1000年前のものです——ストーンヘンジやエジプトのピラミッドより約6000年古く、世界で知られる最古の記念碑的神殿です。` },
+          { q: `ギョベクリ・テペはなぜそれほど重要なのですか？`, a: `土器も文字も農耕もない時代に狩猟採集民によって築かれました。これは、組織化された宗教や記念碑的建造が定住的な村の生活より先に生まれた可能性を示し、農耕が先だったという古い考えを覆します。ユネスコ世界遺産です。` },
+          { q: `ギョベクリ・テペへはどう行きますか？`, a: `遺跡はトルコ南東部のシャンルウルファから約20kmのところにあります。ほとんどの訪問者はシャンルウルファへ空路で入り、車、タクシー、あるいは手配ツアーでギョベクリ・テペに向かいます。現地には来訪者センター、シャトル、屋根付き遊歩道があります。` },
+          { q: `ギョベクリ・テペにガイドは必要ですか？`, a: `強くお勧めします。この遺跡の意味の多くは文脈なしには見えません。VibeGuideの認定地元ガイドがT字柱、動物の浮き彫り、そしてなぜこの発見が人類の歴史を書き換えたのかを説明し、街の博物館のウルファ・マンへと結びつけます。` },
+        ],
+        planningHeading: `訪問の計画`,
+        planningParagraphs: [
+          `ギョベクリ・テペは、最寄りの都市であり訪問の自然な拠点となるシャンルウルファの中心部から約20kmのところにあります。ほとんどの旅行者はシャンルウルファへ空路で入り、来訪者センターで終わる短く標識のよく整った道を通って、車、タクシー、あるいは手配ツアーで遺跡に到着します。そこからシャトルと遊歩道が囲いへと導きます。近くには他にほとんど何もないので、街そのものと組み合わせるのが最善です。`,
+          `丘の上は開けて日ざらしで、日陰がほとんどないため、トルコ南東部の夏の日差しは厳しくなり得ます。早朝か夕方遅くを狙い、水、帽子、日焼け対策を持参してください。春と秋が全体として最も快適な季節です。屋根付きの遊歩道が囲いの上を通るので、ゆるやかな歩きに備えて履きやすい靴を。`,
+          `入場は有料で、ギョベクリ・テペを忘れがたいものにするのは、自分が何を見ているのかを理解することです——さもなければ、柱は丘の上のただの石のように見えかねません。VibeGuideの認定地元ガイドが囲いを生き生きとよみがえらせ、動物の浮き彫りを読み解き、この遺跡を、オリジナルの柱と驚くべきウルファ・マンが物語を完成させるシャンルウルファ考古学博物館へと結びつけます。`,
+        ],
+        ctaTitle: `地元ガイドとギョベクリ・テペを訪ねよう`,
+        ...SAN.ja,
+      },
+      ko: {
+        name: `괴베클리 테페`,
+        metaTitle: `괴베클리 테페 투어(세계 최고 신전)와 현지 가이드`,
+        metaDescription:
+          `인증 현지 가이드와 샨르우르파 인근 괴베클리 테페를 방문하세요 — 기원전 9600년경 세워진 세계에서 가장 오래된 신전으로, 스톤헨지보다 6000년 앞섭니다. 유네스코 세계유산.`,
+        intro: [
+          `괴베클리 테페는 지구상에서 알려진 가장 오래된 기념비적 성소로, 기원전 9600년경에 세워졌습니다 — 스톤헨지와 기자의 피라미드보다 대략 6000년 앞섭니다. 튀르키예 남동부 샨르우르파 인근의 헐벗은 언덕 위에서, 아직 토기도 문자도 농경도 발명하지 못한 수렵채집민이 어떻게든 T자형 석회암 기둥의 거대한 둥근 열을 캐내고 새기고 세웠습니다. 이는 문명의 이야기를 다시 쓴 발견입니다. 이곳에서는 신전이 도시보다 먼저 왔을지도 모릅니다.`,
+          `기둥은 높이가 수 미터에 이르며 여우, 멧돼지, 뱀, 전갈, 두루미가 부조로 새겨져 있습니다 — 신앙이 동트던 시기의 돌 동물지입니다. 오늘날 현대식 지붕 덮인 보행로가 유구를 보호하며, 이 연약한 장소를 건드리지 않고 그 안을 내려다보게 해 줍니다. 훈련되지 않은 눈에는 많은 것이 보이지 않으므로, 상징을 읽어내고 왜 괴베클리 테페가 모든 것을 바꾸었는지 설명하는 데에는 VibeGuide 인증 현지 가이드가 필수입니다.`,
+        ],
+        highlights: [
+          { title: `세계 최초의 신전`, desc: `기원전 9600년경 선토기 신석기인들이 세웠으며 — 스톤헨지보다 약 6000년 오래되었고 — 유네스코 세계유산으로 등재되었습니다.` },
+          { title: `새겨진 T자 기둥`, desc: `둥근 열로 배치된 거대한 석회암 기둥에 종교가 동트던 시기의 여우, 멧돼지, 뱀, 전갈, 두루미가 부조로 새겨져 있습니다.` },
+          { title: `샨르우르파의 우르파 맨`, desc: `이 유적을 원본 기둥과, 알려진 가장 오래된 실물 크기 인물상인 1만 1000년 된 우르파 맨을 소장한 샨르우르파 고고학 박물관과 함께 묶어 보세요.` },
+        ],
+        faqs: [
+          { q: `괴베클리 테페는 얼마나 오래되었나요?`, a: `괴베클리 테페는 기원전 9600년경에 세워져 약 1만 1000년 되었습니다 — 스톤헨지와 이집트 피라미드보다 약 6000년 오래되었으며, 세계에서 알려진 가장 오래된 기념비적 신전입니다.` },
+          { q: `괴베클리 테페는 왜 그렇게 중요한가요?`, a: `토기도 문자도 농경도 없던 시기에 수렵채집민이 세웠는데, 이는 조직화된 종교와 기념비적 건축이 정착한 마을 생활보다 먼저 생겼을 수 있음을 시사하며 농경이 먼저였다는 오랜 통념을 뒤집습니다. 유네스코 세계유산입니다.` },
+          { q: `괴베클리 테페에는 어떻게 가나요?`, a: `유적은 튀르키예 남동부 샨르우르파에서 약 20km 떨어져 있습니다. 대부분의 방문객은 샨르우르파로 비행기를 타고 와 차, 택시, 혹은 단체 투어로 괴베클리 테페에 도착하며, 현장에는 방문자 센터, 셔틀, 지붕 덮인 보행로가 있습니다.` },
+          { q: `괴베클리 테페에 가이드가 필요한가요?`, a: `강력히 권합니다. 이 유적의 의미 상당 부분은 맥락 없이는 보이지 않으며, VibeGuide 인증 현지 가이드가 T자 기둥, 동물 부조, 그리고 왜 이 발견이 인류 역사를 다시 썼는지 설명한 뒤 도시 박물관의 우르파 맨으로 이어 줍니다.` },
+        ],
+        planningHeading: `방문 계획하기`,
+        planningParagraphs: [
+          `괴베클리 테페는 가장 가까운 도시이자 방문의 자연스러운 거점인 샨르우르파 중심부에서 약 20km 떨어져 있습니다. 대부분의 여행자는 샨르우르파로 비행기를 타고 와, 방문자 센터에서 끝나는 짧고 표지가 잘 된 도로를 따라 차, 택시, 혹은 단체 투어로 유적에 도착합니다. 그곳에서 셔틀과 보행로가 유구로 이어집니다. 인근에 다른 볼거리가 거의 없으니 도시 자체와 묶는 것이 가장 좋습니다.`,
+          `언덕 위는 트여 있고 그늘이 거의 없어 튀르키예 남동부의 여름 햇살은 매서울 수 있습니다. 이른 아침이나 늦은 오후를 노리고 물, 모자, 자외선 차단 용품을 챙기세요. 봄과 가을이 전반적으로 가장 쾌적한 계절입니다. 지붕 덮인 보행로가 유구 위를 지나가니 완만한 산책을 위해 편한 신발을 신으세요.`,
+          `입장은 유료이며, 괴베클리 테페를 잊지 못하게 만드는 것은 자신이 보는 것을 이해하는 일입니다 — 그렇지 않으면 기둥이 언덕 위 평범한 돌처럼 보일 수 있습니다. VibeGuide 인증 현지 가이드가 유구를 생생하게 되살리고 동물 부조를 해독하며, 원본 기둥과 놀라운 우르파 맨이 이야기를 완성하는 샨르우르파 고고학 박물관으로 이 유적을 이어 줍니다.`,
+        ],
+        ctaTitle: `현지 가이드와 괴베클리 테페를 방문하세요`,
+        ...SAN.ko,
       },
     },
   },
