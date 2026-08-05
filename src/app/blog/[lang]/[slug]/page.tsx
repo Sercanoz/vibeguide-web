@@ -100,8 +100,10 @@ export default async function BlogPostPage({ params }: Props) {
       datePublished: post.publishDate,
       dateModified: post.publishDate,
       inLanguage: lang,
-      author: { "@type": "Organization", name: "VibeGuide" },
-      publisher: { "@type": "Organization", name: "VibeGuide", url: SITE },
+      // Global #org node (JsonLd.tsx, her sayfada render) logo taşır — publisher'ı
+      // ona bağla ki BlogPosting Article rich-result için "logo" alanını sağlasın.
+      author: { "@id": `${SITE}/#org` },
+      publisher: { "@id": `${SITE}/#org` },
       mainEntityOfPage: postUrl(slug, lang),
     },
     {

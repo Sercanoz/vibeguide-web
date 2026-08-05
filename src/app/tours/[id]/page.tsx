@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import { serverFetch } from "@/lib/api";
 import TourDetailClient, { type TourDetail } from "./TourDetailClient";
 
@@ -25,5 +26,9 @@ export default async function TourDetailPage({
 }) {
   const { id } = await params;
   const initialTour = await getTour(id);
+  // Geçersiz/silinmiş tur ID'si gerçek 404 dönmeli — aksi hâlde Google "Tur
+  // bulunamadı" iskeletini 200 OK olarak indeksler (soft-404). Not: backend
+  // geçici erişilemezse de null döner; ISR + client fallback bunu telafi eder.
+  if (!initialTour) notFound();
   return <TourDetailClient id={id} initialTour={initialTour} />;
 }

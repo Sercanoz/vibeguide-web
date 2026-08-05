@@ -9,6 +9,7 @@ import CookieBanner from "@/components/CookieBanner";
 import EmailCaptureGate from "@/components/EmailCaptureGate";
 import { CITY_GUIDE_LANGS } from "@/lib/cityGuides";
 import { ATTRACTION_LANGS } from "@/lib/attractions";
+import { BLOG_LANGS } from "@/lib/blog";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -25,6 +26,8 @@ const CITY_LANG_PREFIXES = new Set<string>(
   CITY_GUIDE_LANGS.filter((l) => l !== "en"),
 );
 const ATTRACTION_LANG_CODES = new Set<string>(ATTRACTION_LANGS);
+// Blog dilleri /blog/<lang>[/<slug>] altında sunulur (EN dâhil — /blog/en).
+const BLOG_LANG_CODES = new Set<string>(BLOG_LANGS);
 const TURKISH_ROOT_PAGES = new Set([
   "kvkk", "cerez-politikasi", "mesafeli-satis", "on-bilgilendirme",
 ]);
@@ -32,6 +35,10 @@ const TURKISH_ROOT_PAGES = new Set([
 function langFromPathname(pathname: string): string {
   const seg = pathname.split("/").filter(Boolean);
   if (seg[0] === "attractions" && seg[1] && ATTRACTION_LANG_CODES.has(seg[1])) {
+    return seg[1];
+  }
+  // /blog/<lang> ve /blog/<lang>/<slug> — 21 dilli blog html lang'i doğru versin.
+  if (seg[0] === "blog" && seg[1] && BLOG_LANG_CODES.has(seg[1])) {
     return seg[1];
   }
   if (seg[0] && CITY_LANG_PREFIXES.has(seg[0])) return seg[0];

@@ -22,6 +22,7 @@ export const BLOG_OG_LOCALE: Record<string, string> = {
   en: "en_US", de: "de_DE", es: "es_ES", fr: "fr_FR", it: "it_IT",
   ar: "ar_AE", ru: "ru_RU", tr: "tr_TR", pl: "pl_PL", nl: "nl_NL",
   pt: "pt_PT", ja: "ja_JP", ko: "ko_KR", el: "el_GR",
+  uk: "uk_UA", ro: "ro_RO", bg: "bg_BG", sr: "sr_RS", hr: "hr_HR", zh: "zh_CN", id: "id_ID",
 };
 
 export type BlogCategory = "when-to-go" | "itineraries" | "practical" | "guides";
