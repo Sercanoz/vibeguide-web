@@ -104,10 +104,12 @@ export default function HomeClient({
               </span>
             </h1>
 
-            {/* SEO keyword line — crawlable, describes the offering in plain terms */}
-            <p className="mt-6 text-base md:text-lg font-medium text-white/90 max-w-2xl mx-auto drop-shadow-[0_1px_8px_rgba(0,0,0,0.5)]">
+            {/* SEO keyword line — rendered as an H2 so the crawlable, keyword-rich
+               description (licensed local guides + tours in Turkey, key cities) carries
+               heading weight without touching the brand H1 above. Styled like body text. */}
+            <h2 className="mt-6 text-base md:text-lg font-medium text-white/90 max-w-2xl mx-auto drop-shadow-[0_1px_8px_rgba(0,0,0,0.5)]">
               {t.hero.seoLine}
-            </p>
+            </h2>
           </div>
 
           {/* Mode cards — quick links to /vibenow /vibesquad /vibeask */}
