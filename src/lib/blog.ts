@@ -104,6 +104,10 @@ export type BlogPost = {
   // localizes the /attractions/<lang>/… and /<lang>/…-tour-guide segments.
   relatedCityGuides: string[]; // city-guide slugs, e.g. "istanbul-tour-guide"
   relatedAttractions: string[]; // attraction slugs, e.g. "hagia-sophia"
+  // Horizontal blog-to-blog links (silo). Language-independent post slugs; the
+  // renderer resolves each post's localized title. Clarifies intent between
+  // overlapping Istanbul posts and stops link-equity dead-ending.
+  relatedPosts?: string[]; // blog post slugs
   i18n: Record<BlogLang, BlogContent>;
 };
 
@@ -1658,7 +1662,12 @@ export const BLOG_POSTS: BlogPost[] = [
         "ctaTitle": "Siap merencanakan perjalanan Turki Anda?",
         "ctaSub": "Temukan pasangan pemandu lokal terverifikasi di Istanbul, Kapadokia atau pesisir — seketika atau direncanakan lebih awal."
       }
-    }
+    },
+    "relatedPosts": [
+      "turkey-itinerary-7-10-days",
+      "turkey-trip-cost-budget-guide",
+      "cappadocia-hot-air-balloon-guide"
+    ]
   },
   {
     "slug": "turkey-itinerary-7-10-days",
@@ -3126,7 +3135,12 @@ export const BLOG_POSTS: BlogPost[] = [
         "ctaTitle": "Siap menyusun perjalanan Turki Anda?",
         "ctaSub": "Temukan pasangan pemandu lokal terverifikasi di setiap kota pada rute Anda — seketika atau direncanakan lebih awal."
       }
-    }
+    },
+    "relatedPosts": [
+      "best-time-to-visit-turkey",
+      "istanbul-3-day-itinerary",
+      "turkey-trip-cost-budget-guide"
+    ]
   },
   {
     "slug": "is-turkey-safe-travel-tips",
@@ -4674,7 +4688,12 @@ export const BLOG_POSTS: BlogPost[] = [
         "ctaTitle": "Jelajahi Turki dengan percaya diri",
         "ctaSub": "Temukan pasangan pemandu lokal berlisensi dan terverifikasi identitasnya — tanpa jebakan wisatawan, tanpa tekanan, hanya warga lokal sungguhan yang menunjukkan kotanya."
       }
-    }
+    },
+    "relatedPosts": [
+      "turkey-visa-entry-requirements",
+      "turkey-trip-cost-budget-guide",
+      "best-time-to-visit-turkey"
+    ]
   },
   {
     "slug": "cappadocia-hot-air-balloon-guide",
@@ -6221,7 +6240,12 @@ export const BLOG_POSTS: BlogPost[] = [
         "ctaTitle": "Siap merasakan Kapadokia?",
         "ctaSub": "Temukan pasangan pemandu lokal terverifikasi untuk merencanakan hari-hari Anda di sekitar balon dan menemukan lembah-lembah yang terlewat oleh keramaian."
       }
-    }
+    },
+    "relatedPosts": [
+      "best-time-to-visit-turkey",
+      "turkey-itinerary-7-10-days",
+      "top-things-to-do-in-istanbul"
+    ]
   },
   {
     "slug": "istanbul-3-day-itinerary",
@@ -7772,7 +7796,12 @@ export const BLOG_POSTS: BlogPost[] = [
         "ctaTitle": "Lihat Istanbul bersama pemandu lokal berlisensi",
         "ctaSub": "Lewati antrean dan temukan lingkungan yang dilewatkan sebagian besar pengunjung. Pesan pemandu Istanbul terverifikasi di VibeGuide — Anda akan melihat harganya di awal."
       }
-    }
+    },
+    "relatedPosts": [
+      "top-things-to-do-in-istanbul",
+      "turkey-itinerary-7-10-days",
+      "turkish-food-guide-what-to-eat"
+    ]
   },
   {
     "slug": "turkey-visa-entry-requirements",
@@ -9319,7 +9348,12 @@ export const BLOG_POSTS: BlogPost[] = [
         "ctaTitle": "Siap menjelajahi Turki?",
         "ctaSub": "Setelah urusan masuk beres, maksimalkan setiap hari bersama pemandu lokal berlisensi. Temukan pemandu terverifikasi di seluruh Turki di VibeGuide."
       }
-    }
+    },
+    "relatedPosts": [
+      "is-turkey-safe-travel-tips",
+      "turkey-trip-cost-budget-guide",
+      "best-time-to-visit-turkey"
+    ]
   },
   {
     "slug": "turkish-food-guide-what-to-eat",
@@ -10868,7 +10902,12 @@ export const BLOG_POSTS: BlogPost[] = [
         "ctaTitle": "Temukan makanan Turki bersama pemandu lokal",
         "ctaSub": "Santapan terbaik ada di tempat warga lokal makan. Pesan pemandu terverifikasi di VibeGuide dan ikuti indra penciuman Anda melalui pasar dan gang-gang Turki."
       }
-    }
+    },
+    "relatedPosts": [
+      "top-things-to-do-in-istanbul",
+      "istanbul-3-day-itinerary",
+      "best-time-to-visit-turkey"
+    ]
   },
   {
     "slug": "ephesus-day-trip-from-kusadasi",
@@ -12418,7 +12457,12 @@ export const BLOG_POSTS: BlogPost[] = [
         "ctaTitle": "Lihat Efesus bersama pemandu berlisensi",
         "ctaSub": "Hanya pemandu berlisensi yang bisa memimpin Anda ke dalam kota kuno — dan pengaturan waktu kapal pesiar itu segalanya. Pesan pemandu Efesus terverifikasi di VibeGuide."
       }
-    }
+    },
+    "relatedPosts": [
+      "turkey-itinerary-7-10-days",
+      "best-time-to-visit-turkey",
+      "top-things-to-do-in-istanbul"
+    ]
   },
   {
     "slug": "top-things-to-do-in-istanbul",
@@ -13970,7 +14014,12 @@ export const BLOG_POSTS: BlogPost[] = [
         "ctaTitle": "Rasakan yang terbaik dari Istanbul",
         "ctaSub": "Lihat ikon-ikon dan sudut-sudut tersembunyi bersama seseorang yang mengenal kotanya. Pesan pemandu Istanbul terverifikasi di VibeGuide — harga ditampilkan di awal."
       }
-    }
+    },
+    "relatedPosts": [
+      "istanbul-3-day-itinerary",
+      "turkish-food-guide-what-to-eat",
+      "turkey-itinerary-7-10-days"
+    ]
   },
   {
     "slug": "turkey-trip-cost-budget-guide",
@@ -15519,6 +15568,11 @@ export const BLOG_POSTS: BlogPost[] = [
         "ctaTitle": "Nilai bagus, dipandu warga lokal",
         "ctaSub": "Lihat harga persis sebelum memesan, tanpa biaya tersembunyi. Temukan pemandu berlisensi dan tur kelompok di seluruh Turki di VibeGuide."
       }
-    }
+    },
+    "relatedPosts": [
+      "turkey-itinerary-7-10-days",
+      "best-time-to-visit-turkey",
+      "turkey-visa-entry-requirements"
+    ]
   }
 ];

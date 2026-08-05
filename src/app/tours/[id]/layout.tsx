@@ -84,6 +84,8 @@ export default async function TourLayout({
               "@type": "AggregateRating",
               ratingValue: tour.rating,
               reviewCount: tour.reviewCount,
+              bestRating: 5,
+              worstRating: 1,
             },
           }
         : {}),

@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     template: "%s · VibeGuide",
   },
   description:
-    "Discover Istanbul, Cappadocia and Ephesus with verified local guides. Instant guides, social group experiences and private tours in Turkey — without tourist traps, confusion or boring scripts.",
+    "Book verified local guides in Turkey — Istanbul, Cappadocia, Ephesus and more. Instant matches, group experiences and private tours, without the tourist traps.",
   // Odaklı liste — hashtag/keyword-stuffing kaldırıldı (Google keywords meta'yı
   // yok sayar; spam sinyali olmasın). 8 şehir + öz niyetler.
   keywords: [

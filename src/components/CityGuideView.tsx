@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import MainFooter from "@/components/MainFooter";
 import CityTours from "@/components/CityTours";
 import type { CityGuide, CityGuideLang } from "@/lib/cityGuides";
-import { RTL_CITY_LANGS } from "@/lib/cityGuides";
+import { RTL_CITY_LANGS, CITY_GUIDES } from "@/lib/cityGuides";
 import JsonLdScript from "@/components/JsonLdScript";
 
 const SITE = "https://www.vibeguideapp.com";
@@ -34,7 +34,7 @@ export default function CityGuideView({
     {
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "VibeGuide", item: SITE },
+        { "@type": "ListItem", position: 1, name: "VibeGuide", item: `${SITE}/` },
         { "@type": "ListItem", position: 2, name: c.h1, item: url },
       ],
     },
@@ -283,6 +283,25 @@ export default function CityGuideView({
                 </div>
               </Link>
             ))}
+          </div>
+
+          {/* Tüm diğer şehir rehberlerine otomatik iç link — editoryal otherCities'i
+             (2 link) tamamlar, tarihi üçgeni sahile ve Fethiye/Side'ye bağlar.
+             İsimler her guide'ın kendi lokalize h1'inden gelir (çeviri gerektirmez). */}
+          <div className="mt-4 flex flex-wrap gap-2">
+            {CITY_GUIDES.filter((g) => g.slug !== guide.slug).map((g) => {
+              const gc = g.i18n[lang] ?? g.i18n.en;
+              const href = `${langPrefix(lang)}/${g.slug}`;
+              return (
+                <Link
+                  key={g.slug}
+                  href={href}
+                  className="rounded-full border border-black/[0.08] bg-white px-4 py-2 text-sm font-semibold text-neutral-700 hover:border-[#6C4CF1]/40 hover:text-[#6C4CF1] transition-colors"
+                >
+                  {gc.h1}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>

@@ -14,6 +14,7 @@ import {
   isAttractionLang,
   allAttractionParams,
   ATTR_HEADINGS,
+  ATTR_HUB,
   type AttractionLang,
 } from "@/lib/attractions";
 import { getCityGuide, isCityGuideLang, OG_LOCALE } from "@/lib/cityGuides";
@@ -89,6 +90,12 @@ export default async function AttractionPage({ params }: Props) {
     : null;
   // Breadcrumb'ta gösterilecek şehir adı (guide varsa onun lokalize h1'i, yoksa attraction.city).
   const cityCrumbName = cityGuide?.i18n[cgLang]?.h1 ?? attraction.city;
+  // Ara breadcrumb seviyesi: şehir guide'ı varsa ona bağla; yoksa (Pamukkale,
+  // Göbeklitepe, Sümela, Nemrut, Troy gibi guide'sız mekanlar) Attractions
+  // hub'ına bağla — parent hep gerçek ve alakalı olsun (null bırakma).
+  const parentCrumb = cityGuideHref
+    ? { name: cityCrumbName, href: cityGuideHref }
+    : { name: ATTR_HUB[lang].h1, href: `/attractions/${lang}` };
 
   // Yapısal veri — TouristAttraction + FAQPage + BreadcrumbList.
   const jsonLd = {
@@ -121,15 +128,13 @@ export default async function AttractionPage({ params }: Props) {
       },
       {
         "@type": "BreadcrumbList",
-        // Görünür breadcrumb ile eşleşir: şehir guide'ı varsa 3 seviye.
+        // 3 seviye: VibeGuide › (şehir guide'ı VEYA Attractions hub'ı) › Mekan.
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "VibeGuide", item: SITE },
-          ...(cityGuideHref
-            ? [{ "@type": "ListItem", position: 2, name: cityCrumbName, item: `${SITE}${cityGuideHref}` }]
-            : []),
+          { "@type": "ListItem", position: 1, name: "VibeGuide", item: `${SITE}/` },
+          { "@type": "ListItem", position: 2, name: parentCrumb.name, item: `${SITE}${parentCrumb.href}` },
           {
             "@type": "ListItem",
-            position: cityGuideHref ? 3 : 2,
+            position: 3,
             name: c.name,
             item: `${SITE}/attractions/${lang}/${slug}`,
           },
@@ -165,12 +170,8 @@ export default async function AttractionPage({ params }: Props) {
               <nav aria-label="Breadcrumb" className="mb-3 text-xs text-white/70">
                 <Link href="/" className="hover:text-white transition-colors">VibeGuide</Link>
                 <span className="mx-1.5" aria-hidden="true">›</span>
-                {cityGuideHref && (
-                  <>
-                    <Link href={cityGuideHref} className="hover:text-white transition-colors">{cityCrumbName}</Link>
-                    <span className="mx-1.5" aria-hidden="true">›</span>
-                  </>
-                )}
+                <Link href={parentCrumb.href} className="hover:text-white transition-colors">{parentCrumb.name}</Link>
+                <span className="mx-1.5" aria-hidden="true">›</span>
                 <span className="text-white/90">{c.name}</span>
               </nav>
               <span className="text-4xl">{attraction.emoji}</span>
@@ -273,9 +274,14 @@ export default async function AttractionPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Other landmarks — internal linking (same language) */}
+      {/* Other landmarks — internal linking (same language).
+          Aynı şehirdeki mekanları önceliklendir, sonra diğerleriyle ~6'ya
+          tamamla — 27 linklik ayrımsız dökümü yerine alakalı, odaklı bir set. */}
       {(() => {
-        const others = ATTRACTIONS.filter((a) => a.slug !== slug);
+        const rest = ATTRACTIONS.filter((a) => a.slug !== slug);
+        const sameCity = rest.filter((a) => a.citySlug === attraction.citySlug);
+        const otherCity = rest.filter((a) => a.citySlug !== attraction.citySlug);
+        const others = [...sameCity, ...otherCity].slice(0, 6);
         if (others.length === 0) return null;
         return (
           <section className="pb-4">
@@ -291,8 +297,11 @@ export default async function AttractionPage({ params }: Props) {
                     className="group flex items-center gap-4 rounded-2xl bg-white border border-black/[0.06] p-5 hover:border-[#6C4CF1]/30 transition-colors"
                   >
                     <span className="text-3xl">{o.emoji}</span>
-                    <span className="font-black text-[#0A0A0F] group-hover:text-[#6C4CF1] transition-colors">
-                      {o.i18n[lang].name}
+                    <span className="min-w-0">
+                      <span className="block font-black text-[#0A0A0F] group-hover:text-[#6C4CF1] transition-colors truncate">
+                        {o.i18n[lang].name}
+                      </span>
+                      <span className="block text-xs text-neutral-500 truncate">{o.city}</span>
                     </span>
                   </Link>
                 ))}

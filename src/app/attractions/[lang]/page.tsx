@@ -13,7 +13,7 @@ import {
   isAttractionLang,
   type AttractionLang,
 } from "@/lib/attractions";
-import { getCityGuide, isCityGuideLang } from "@/lib/cityGuides";
+import { getCityGuide, isCityGuideLang, OG_LOCALE } from "@/lib/cityGuides";
 
 const SITE = "https://www.vibeguideapp.com";
 const DEFAULT_LANG: AttractionLang = "en";
@@ -33,10 +33,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   for (const l of ATTRACTION_LANGS) languages[l] = `${SITE}/attractions/${l}`;
   languages["x-default"] = `${SITE}/attractions/${DEFAULT_LANG}`;
   return {
-    title: t.metaTitle,
+    // absolute: ATTR_HUB.metaTitle zaten tam başlık — root template'in
+    // "· VibeGuide" ekini ekletme (bazı dillerde 60 karakteri aşıyordu).
+    title: { absolute: t.metaTitle },
     description: t.metaDescription,
     alternates: { canonical: `${SITE}/attractions/${lang}`, languages },
-    openGraph: { title: t.metaTitle, description: t.metaDescription, url: `${SITE}/attractions/${lang}`, siteName: "VibeGuide", type: "website" },
+    openGraph: { title: t.metaTitle, description: t.metaDescription, url: `${SITE}/attractions/${lang}`, siteName: "VibeGuide", type: "website", locale: OG_LOCALE[lang] ?? "en_US" },
   };
 }
 
@@ -83,7 +85,7 @@ export default async function AttractionsHubPage({ params }: Props) {
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "VibeGuide", item: SITE },
+          { "@type": "ListItem", position: 1, name: "VibeGuide", item: `${SITE}/` },
           { "@type": "ListItem", position: 2, name: t.h1, item: `${SITE}/attractions/${lang}` },
         ],
       },

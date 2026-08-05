@@ -1,5 +1,17 @@
+import type { Metadata } from "next";
 import { serverFetch } from "@/lib/api";
 import HomeClient, { type PopularTour, type Testimonial } from "./HomeClient";
+
+const SITE = "https://www.vibeguideapp.com";
+
+// Anasayfa self-referencing canonical + hreflang. Homepage tek dilli (EN); tüm
+// derin sayfalar tam hreflang cluster taşıyor, anasayfa da en/x-default versin.
+export const metadata: Metadata = {
+  alternates: {
+    canonical: `${SITE}/`,
+    languages: { en: `${SITE}/`, "x-default": `${SITE}/` },
+  },
+};
 
 // SSR: pre-fetch popular tours + featured reviews on the server so they land in
 // the initial HTML (crawlable / faster indexing). HomeClient falls back to a

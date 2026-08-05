@@ -38,7 +38,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   for (const l of BLOG_LANGS) languages[l] = hubUrl(l);
   languages["x-default"] = hubUrl(DEFAULT_LANG);
   return {
-    title: t.metaTitle,
+    // absolute: BLOG_HUB.metaTitle zaten tam başlık — "· VibeGuide" ekletme.
+    title: { absolute: t.metaTitle },
     description: t.metaDescription,
     alternates: { canonical: hubUrl(lang), languages },
     openGraph: {
@@ -79,7 +80,7 @@ export default async function BlogHubPage({ params }: Props) {
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "VibeGuide", item: SITE },
+          { "@type": "ListItem", position: 1, name: "VibeGuide", item: `${SITE}/` },
           { "@type": "ListItem", position: 2, name: t.h1, item: hubUrl(lang) },
         ],
       },

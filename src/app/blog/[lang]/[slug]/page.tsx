@@ -89,6 +89,14 @@ export default async function BlogPostPage({ params }: Props) {
     ...post.relatedAttractions.map((s) => attractionLink(s, lang)),
   ].filter((x): x is { href: string; label: string } => x !== null);
 
+  // Blog-to-blog (silo) links — each related post's own localized title.
+  const relatedReads = (post.relatedPosts ?? [])
+    .map((s) => {
+      const rp = BLOG_POSTS.find((p) => p.slug === s);
+      return rp ? { href: `/blog/${lang}/${rp.slug}`, label: rp.i18n[lang].title } : null;
+    })
+    .filter((x): x is { href: string; label: string } => x !== null);
+
   const blogHubHref = `/blog/${lang}`;
 
   const graph: object[] = [
@@ -109,7 +117,7 @@ export default async function BlogPostPage({ params }: Props) {
     {
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "VibeGuide", item: SITE },
+        { "@type": "ListItem", position: 1, name: "VibeGuide", item: `${SITE}/` },
         { "@type": "ListItem", position: 2, name: hub.h1, item: `${SITE}/blog/${lang}` },
         { "@type": "ListItem", position: 3, name: c.title, item: postUrl(slug, lang) },
       ],
@@ -194,6 +202,25 @@ export default async function BlogPostPage({ params }: Props) {
                     key={r.href}
                     href={r.href}
                     className="rounded-full border border-black/10 px-4 py-2 text-sm font-semibold text-[#0A0A0F] hover:border-[#6C4CF1] hover:text-[#6C4CF1] transition-colors"
+                  >
+                    {r.label}
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* Related reads — blog-to-blog silo links (clarifies intent between
+             overlapping posts, keeps link equity flowing horizontally). */}
+          {relatedReads.length > 0 && (
+            <section className="mt-14">
+              <h2 className="text-xl font-black tracking-tight">{hub.h1}</h2>
+              <div className="mt-5 grid sm:grid-cols-3 gap-4">
+                {relatedReads.map((r) => (
+                  <Link
+                    key={r.href}
+                    href={r.href}
+                    className="rounded-2xl border border-black/[0.08] bg-white p-5 text-sm font-semibold leading-6 text-[#0A0A0F] hover:border-[#6C4CF1]/40 hover:text-[#6C4CF1] transition-colors"
                   >
                     {r.label}
                   </Link>
