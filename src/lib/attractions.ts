@@ -19,6 +19,7 @@ export const ATTRACTION_LANGS = [
   "ja",
   "ko",
   "uk",
+  "ro",
 ] as const;
 export type AttractionLang = (typeof ATTRACTION_LANGS)[number];
 
@@ -40,6 +41,7 @@ export const ATTR_HEADINGS: Record<AttractionLang, { highlights: string; faq: st
   ja: { highlights: `見どころ`, faq: `よくある質問`, more: `さらに探索する` },
   ko: { highlights: `주요 볼거리`, faq: `자주 묻는 질문`, more: `더 둘러보기` },
   uk: { highlights: `Основні пам'ятки`, faq: `Часті запитання`, more: `Більше для дослідження` },
+  ro: { highlights: `Puncte de atracție`, faq: `Întrebări frecvente`, more: `Mai multe de explorat` },
 };
 
 export const RTL_LANGS: ReadonlySet<AttractionLang> = new Set(["ar"]);
@@ -61,6 +63,7 @@ export const ATTR_HUB: Record<AttractionLang, { metaTitle: string; metaDescripti
   ja: { metaTitle: `トルコの人気観光スポット — 地元ガイドと巡るツアー`, metaDescription: `アヤソフィアやカッパドキアから、エフェソス、パムッカレ、ギョベクリ・テペまで — トルコを代表する名所を、認証済みの地元ガイドと巡りましょう。`, h1: `トルコの人気観光スポット`, intro: `イスタンブールのモスクから古代エフェソス、そして世界最古の神殿まで。すべての名所を認証済みの地元ガイドと巡りましょう。` },
   ko: { metaTitle: `튀르키예 인기 명소 — 현지 가이드와 함께하는 투어`, metaDescription: `아야소피아와 카파도키아부터 에페소스, 파묵칼레, 괴베클리 테페까지 — 튀르키예를 대표하는 명소를 인증된 현지 가이드와 함께 둘러보세요.`, h1: `튀르키예 인기 명소`, intro: `이스탄불의 모스크에서 고대 도시 에페소스, 그리고 세계에서 가장 오래된 신전까지, 모든 명소를 인증된 현지 가이드와 함께 만나보세요.` },
   uk: { metaTitle: `Найкращі пам'ятки Туреччини — тури з місцевими гідами`, metaDescription: `Дослідіть найвеличніші пам'ятки Туреччини — від Собору Святої Софії та Каппадокії до Ефеса, Памуккале та Гебеклі-Тепе — з перевіреним місцевим гідом.`, h1: `Найкращі пам'ятки Туреччини`, intro: `Від стамбульських мечетей до стародавнього Ефеса та найстарішого храму світу — відкрийте кожну пам'ятку з перевіреним місцевим гідом.` },
+  ro: { metaTitle: `Cele mai importante atracții ale Turciei — tururi cu ghizi locali`, metaDescription: `Explorează cele mai mărețe repere ale Turciei — de la Hagia Sophia și Capadocia la Efes, Pamukkale și Göbekli Tepe — cu un ghid local verificat.`, h1: `Cele mai importante atracții ale Turciei`, intro: `De la moscheile Istanbulului la anticul Efes și cel mai vechi templu din lume, descoperă fiecare reper cu un ghid local verificat.` },
 };
 
 export type AttractionContent = {
@@ -145,6 +148,7 @@ const IST: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   ja: { toursHeading: `地元ガイドと巡るイスタンブールツアー`, ctaSub: `VibeGuideを無料でダウンロードして、認証済みのイスタンブールガイドと60秒でマッチング。` },
   ko: { toursHeading: `현지 가이드와 함께하는 이스탄불 투어`, ctaSub: `VibeGuide를 무료로 다운로드하고 인증된 이스탄불 가이드와 60초 만에 매칭하세요.` },
   uk: { toursHeading: `Тури Стамбулом із місцевими гідами`, ctaSub: `Завантажте VibeGuide безкоштовно та знайдіть перевіреного гіда в Стамбулі за 60 секунд.` },
+  ro: { toursHeading: `Tururi în Istanbul cu ghizi locali`, ctaSub: `Descarcă VibeGuide gratuit și găsește un ghid din Istanbul verificat în 60 de secunde.` },
 };
 
 // Efes (İzmir / Selçuk) ortak metinleri.
@@ -164,6 +168,7 @@ const EPH: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   ja: { toursHeading: `地元ガイドと巡るエフェソスツアー`, ctaSub: `VibeGuideを無料でダウンロードして、エフェソスの認証済み地元ガイドと60秒でマッチング。` },
   ko: { toursHeading: `현지 가이드와 함께하는 에페소스 투어`, ctaSub: `VibeGuide를 무료로 다운로드하고 에페소스의 인증된 현지 가이드와 60초 만에 매칭하세요.` },
   uk: { toursHeading: `Тури Ефесом із місцевими гідами`, ctaSub: `Завантажте VibeGuide безкоштовно та знайдіть перевіреного місцевого гіда для Ефеса за 60 секунд.` },
+  ro: { toursHeading: `Tururi în Efes cu ghizi locali`, ctaSub: `Descarcă VibeGuide gratuit și găsește un ghid local verificat pentru Efes în 60 de secunde.` },
 };
 
 // Kapadokya (Nevşehir / Göreme) ortak metinleri.
@@ -183,6 +188,7 @@ const CAP: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   ja: { toursHeading: `地元ガイドと巡るカッパドキアツアー`, ctaSub: `VibeGuideを無料でダウンロードして、認証済みのカッパドキアガイドと60秒でマッチング。` },
   ko: { toursHeading: `현지 가이드와 함께하는 카파도키아 투어`, ctaSub: `VibeGuide를 무료로 다운로드하고 인증된 카파도키아 가이드와 60초 만에 매칭하세요.` },
   uk: { toursHeading: `Тури Каппадокією з місцевими гідами`, ctaSub: `Завантажте VibeGuide безкоштовно та знайдіть перевіреного гіда в Каппадокії за 60 секунд.` },
+  ro: { toursHeading: `Tururi în Capadocia cu ghizi locali`, ctaSub: `Descarcă VibeGuide gratuit și găsește un ghid din Capadocia verificat în 60 de secunde.` },
 };
 
 // İzmir / Bergama (Pergamon) ortak metinleri.
@@ -202,6 +208,7 @@ const IZM: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   ja: { toursHeading: `地元ガイドと巡るイズミルツアー`, ctaSub: `VibeGuideを無料でダウンロードして、認証済みのイズミルガイドと60秒でマッチング。` },
   ko: { toursHeading: `현지 가이드와 함께하는 이즈미르 투어`, ctaSub: `VibeGuide를 무료로 다운로드하고 인증된 이즈미르 가이드와 60초 만에 매칭하세요.` },
   uk: { toursHeading: `Тури Ізміром із місцевими гідами`, ctaSub: `Завантажте VibeGuide безкоштовно та знайдіть перевіреного гіда в Ізмірі за 60 секунд.` },
+  ro: { toursHeading: `Tururi în İzmir cu ghizi locali`, ctaSub: `Descarcă VibeGuide gratuit și găsește un ghid din İzmir verificat în 60 de secunde.` },
 };
 
 // Antalya (Aspendos / Kaleiçi) ortak metinleri.
@@ -221,6 +228,7 @@ const ANT: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   ja: { toursHeading: `地元ガイドと巡るアンタルヤツアー`, ctaSub: `VibeGuideを無料でダウンロードして、認証済みのアンタルヤガイドと60秒でマッチング。` },
   ko: { toursHeading: `현지 가이드와 함께하는 안탈리아 투어`, ctaSub: `VibeGuide를 무료로 다운로드하고 인증된 안탈리아 가이드와 60초 만에 매칭하세요.` },
   uk: { toursHeading: `Тури Анталією з місцевими гідами`, ctaSub: `Завантажте VibeGuide безкоштовно та знайдіть перевіреного гіда в Анталії за 60 секунд.` },
+  ro: { toursHeading: `Tururi în Antalya cu ghizi locali`, ctaSub: `Descarcă VibeGuide gratuit și găsește un ghid din Antalya verificat în 60 de secunde.` },
 };
 
 // Pamukkale / Hierapolis (Denizli) ortak metinleri.
@@ -240,6 +248,7 @@ const PAM: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   ja: { toursHeading: `地元ガイドと巡るパムッカレツアー`, ctaSub: `VibeGuideを無料でダウンロードして、認証済みのパムッカレガイドと60秒でマッチング。` },
   ko: { toursHeading: `현지 가이드와 함께하는 파묵칼레 투어`, ctaSub: `VibeGuide를 무료로 다운로드하고 인증된 파묵칼레 가이드와 60초 만에 매칭하세요.` },
   uk: { toursHeading: `Тури Памуккале з місцевими гідами`, ctaSub: `Завантажте VibeGuide безкоштовно та знайдіть перевіреного гіда в Памуккале за 60 секунд.` },
+  ro: { toursHeading: `Tururi în Pamukkale cu ghizi locali`, ctaSub: `Descarcă VibeGuide gratuit și găsește un ghid din Pamukkale verificat în 60 de secunde.` },
 };
 
 // Bodrum (kale + antik Halikarnas) ortak metinleri.
@@ -259,6 +268,7 @@ const BOD: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   ja: { toursHeading: `地元ガイドと巡るボドルムツアー`, ctaSub: `VibeGuideを無料でダウンロードして、認証済みのボドルムガイドと60秒でマッチング。` },
   ko: { toursHeading: `현지 가이드와 함께하는 보드룸 투어`, ctaSub: `VibeGuide를 무료로 다운로드하고 인증된 보드룸 가이드와 60초 만에 매칭하세요.` },
   uk: { toursHeading: `Тури Бодрумом із місцевими гідами`, ctaSub: `Завантажте VibeGuide безкоштовно та знайдіть перевіреного гіда в Бодрумі за 60 секунд.` },
+  ro: { toursHeading: `Tururi în Bodrum cu ghizi locali`, ctaSub: `Descarcă VibeGuide gratuit și găsește un ghid din Bodrum verificat în 60 de secunde.` },
 };
 
 // Şanlıurfa / Göbeklitepe ortak metinleri.
@@ -278,6 +288,7 @@ const SAN: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   ja: { toursHeading: `地元ガイドと巡るシャンルウルファ＆ギョベクリ・テペツアー`, ctaSub: `VibeGuideを無料でダウンロードして、シャンルウルファの認証済み地元ガイドと60秒でマッチング。` },
   ko: { toursHeading: `현지 가이드와 함께하는 샨르우르파 & 괴베클리 테페 투어`, ctaSub: `VibeGuide를 무료로 다운로드하고 샨르우르파의 인증된 현지 가이드와 60초 만에 매칭하세요.` },
   uk: { toursHeading: `Тури Шанлиурфою та Гебеклі-Тепе з місцевими гідами`, ctaSub: `Завантажте VibeGuide безкоштовно та знайдіть перевіреного місцевого гіда в Шанлиурфі за 60 секунд.` },
+  ro: { toursHeading: `Tururi în Şanlıurfa și Göbekli Tepe cu ghizi locali`, ctaSub: `Descarcă VibeGuide gratuit și găsește un ghid local verificat în Şanlıurfa în 60 de secunde.` },
 };
 
 // Trabzon (Sümela) ortak metinleri.
@@ -297,6 +308,7 @@ const TZN: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   ja: { toursHeading: `現地ガイドと巡るトラブゾンのツアー`, ctaSub: `VibeGuideを無料でダウンロードし、認証済みのトラブゾンのガイドと60秒でマッチングしましょう。` },
   ko: { toursHeading: `현지 가이드와 함께하는 트라브존 투어`, ctaSub: `VibeGuide를 무료로 내려받고 인증된 트라브존 가이드와 60초 만에 매칭하세요.` },
   uk: { toursHeading: `Тури Трабзоном із місцевими гідами`, ctaSub: `Завантажте VibeGuide безкоштовно та знайдіть перевіреного гіда в Трабзоні за 60 секунд.` },
+  ro: { toursHeading: `Tururi în Trabzon cu ghizi locali`, ctaSub: `Descarcă VibeGuide gratuit și găsește un ghid din Trabzon verificat în 60 de secunde.` },
 };
 
 // Çanakkale (Truva) ortak metinleri.
@@ -316,6 +328,7 @@ const CKL: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   ja: { toursHeading: `現地ガイドと巡るチャナッカレのツアー`, ctaSub: `VibeGuideを無料でダウンロードし、認証済みのチャナッカレのガイドと60秒でマッチングしましょう。` },
   ko: { toursHeading: `현지 가이드와 함께하는 차낙칼레 투어`, ctaSub: `VibeGuide를 무료로 내려받고 인증된 차낙칼레 가이드와 60초 만에 매칭하세요.` },
   uk: { toursHeading: `Тури Чанаккале з місцевими гідами`, ctaSub: `Завантажте VibeGuide безкоштовно та знайдіть перевіреного гіда в Чанаккале за 60 секунд.` },
+  ro: { toursHeading: `Tururi în Çanakkale cu ghizi locali`, ctaSub: `Descarcă VibeGuide gratuit și găsește un ghid din Çanakkale verificat în 60 de secunde.` },
 };
 
 // Adıyaman / Nemrut ortak metinleri.
@@ -335,6 +348,7 @@ const NMR: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   ja: { toursHeading: `現地ガイドと巡るアドゥヤマン＆ネムルトのツアー`, ctaSub: `VibeGuideを無料でダウンロードし、アドゥヤマンの認証済み現地ガイドと60秒でマッチングしましょう。` },
   ko: { toursHeading: `현지 가이드와 함께하는 아드야만·넴루트 투어`, ctaSub: `VibeGuide를 무료로 내려받고 아드야만의 인증된 현지 가이드와 60초 만에 매칭하세요.` },
   uk: { toursHeading: `Тури Адияманом і Немрутом із місцевими гідами`, ctaSub: `Завантажте VibeGuide безкоштовно та знайдіть перевіреного місцевого гіда в Адиямані за 60 секунд.` },
+  ro: { toursHeading: `Tururi în Adıyaman și Nemrut cu ghizi locali`, ctaSub: `Descarcă VibeGuide gratuit și găsește un ghid local verificat în Adıyaman în 60 de secunde.` },
 };
 
 
@@ -771,6 +785,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Побачте Собор Святої Софії з місцевим гідом`,
         ...IST.uk,
       },
+      ro: {
+        name: `Hagia Sophia`,
+        metaTitle: `Tururi Hagia Sophia și ghizi locali`,
+        metaDescription:
+          `Explorează Hagia Sophia din Istanbul cu un ghid local verificat. Lasă confuzia deoparte și ascultă 1.500 de ani de istorie bizantină și otomană de la un expert.`,
+        intro: [
+          `Hagia Sophia este sufletul Istanbulului — o catedrală bizantină, o moschee otomană și un monument care veghează asupra orașului de aproape 1.500 de ani. Cupola sa imensă, mozaicurile aurii și istoria în straturi îi răsplătesc pe cei care înțeleg ce privesc.`,
+          `Cu un expert local VibeGuide renunți la ghicit. Ascultă poveștile din spatele mozaicurilor, graffiti-ul vikingilor și clădirea care a redefinit arhitectura — în ritmul tău, în limba ta.`,
+        ],
+        highlights: [
+          { title: `Marea cupolă`, desc: `Înaltă de 55 de metri și, timp de 1.000 de ani, cea mai mare din lume.` },
+          { title: `Mozaicuri bizantine`, desc: `Imagini din foiță de aur cu împărați și sfinți, ascunse secole întregi.` },
+          { title: `Istorie în straturi`, desc: `Catedrală, moschee, muzeu, din nou moschee — fiecare epocă și-a lăsat amprenta.` },
+        ],
+        faqs: [
+          { q: `Am nevoie de un ghid pentru Hagia Sophia?`, a: `Este deschisă tuturor, dar istoria rămâne invizibilă fără context. Un ghid local transformă o sală frumoasă în 1.500 de ani de povești — și te ajută să eviți orele aglomerate.` },
+          { q: `Este gratuită vizitarea Hagia Sophia?`, a: `Regulile de intrare se schimbă în timp. Un ghid VibeGuide îți spune situația actuală și cel mai bun moment pentru vizită înainte să rezervi.` },
+          { q: `Cât durează o vizită?`, a: `Majoritatea vizitelor ghidate durează 1–2 ore, adesea combinate cu Moscheea Albastră și piața Sultanahmet din apropiere.` },
+        ],
+        planningHeading: `Planifică-ți vizita`,
+        planningParagraphs: [
+          `Hagia Sophia se află în inima cartierului Sultanahmet, orașul vechi, și nu poate fi mai ușor de ajuns. Ia tramvaiul T1 până la stația Sultanahmet și te afli la doar câțiva pași de intrare. Se ridică exact peste piață, față în față cu Moscheea Albastră, iar Palatul Topkapi și Cisterna Basilica sunt la câteva minute de mers pe jos, așa că se integrează firesc într-o zi de explorat peninsula istorică.`,
+          `Vino dimineața devreme dacă poți. Lumina blândă care se revarsă prin ferestrele superioare este la cea mai frumoasă imediat după deschidere, iar imensa sală de rugăciune este mult mai liniștită înainte de sosirea grupurilor de la prânz. Primăvara și toamna oferă vremea cea mai plăcută și mulțimi mai puține decât plina vară. Ține minte că acum este o moschee în funcțiune, deci se închide pentru turiști în timpul celor cinci rugăciuni zilnice.`,
+          `Intrarea este gratuită, dar este un loc de cult, așa că îmbracă-te modest, cu umerii și genunchii acoperiți, iar femeile ar trebui să aibă o eșarfă. Odată ajuns înăuntru este ușor să te simți pierdut sub cupola imensă fără să știi ce privești. Un ghid local autorizat VibeGuide îți organizează programul în jurul orarului rugăciunilor, te ajută să eviți orele aglomerate și aduce la viață mozaicurile bizantine și secolele de istorie în straturi.`,
+        ],
+        ctaTitle: `Vezi Hagia Sophia cu un localnic`,
+        ...IST.ro,
+      },
     },
   },
 
@@ -1205,6 +1247,34 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `Пройдіться палацом Топкапи з місцевим гідом`,
         ...IST.uk,
+      },
+      ro: {
+        name: `Palatul Topkapi`,
+        metaTitle: `Tururi Palatul Topkapi și ghizi locali`,
+        metaDescription:
+          `Descoperă Palatul Topkapi, inima Imperiului Otoman, cu un ghid din Istanbul verificat. Haremul, tezaurul, moaștele sacre și priveliștile Bosforului, explicate.`,
+        intro: [
+          `Timp de 400 de ani, Palatul Topkapi a fost reședința sultanilor otomani și centrul unui imperiu. Astăzi curțile sale, Haremul, Tezaurul și moaștele sacre spun povestea unei dinastii care a condus trei continente.`,
+          `Un localnic VibeGuide dă sens întinderii — unde se afla puterea, ce însemna fiecare poartă și poveștile umane din spatele bijuteriilor — ca să pleci înțelegând, nu doar fotografiind.`,
+        ],
+        highlights: [
+          { title: `Haremul`, desc: `Lumea privată a familiei sultanului — placată cu faianță, secretă, de neuitat.` },
+          { title: `Tezaurul imperial`, desc: `Pumnalul Topkapi și Diamantul Lingurarului de 86 de carate.` },
+          { title: `Terasele Bosforului`, desc: `Locul de unde sultanii priveau marea unde Europa se întâlnește cu Asia.` },
+        ],
+        faqs: [
+          { q: `Este Haremul inclus în bilet?`, a: `Haremul necesită de obicei un bilet separat. Ghidul tău VibeGuide îți explică ce merită și îți organizează traseul.` },
+          { q: `De cât timp am nevoie?`, a: `Planifică 2–3 ore. Palatul este mare; un ghid te ține pe punctele principale fără oboseală.` },
+          { q: `Este aproape de Hagia Sophia?`, a: `Da — Topkapi, Hagia Sophia și Moscheea Albastră se află la o scurtă plimbare în Sultanahmet.` },
+        ],
+        planningHeading: `Planifică-ți vizita`,
+        planningParagraphs: [
+          `Palatul Topkapi încununează promontoriul Seraglio din Sultanahmet, la vârful orașului vechi, unde Bosforul se întâlnește cu Cornul de Aur. Ia tramvaiul T1 până la stația Sultanahmet și urmează poteca din spatele Hagia Sophia; poarta este la o scurtă și plăcută plimbare în urcuș. Deoarece se află chiar lângă Hagia Sophia și Moscheea Albastră, palatul se integrează ușor în aceeași zi de explorat peninsula istorică.`,
+          `Ajunge chiar la deschidere ca să străbați curțile înainte să le umple grupurile de turiști. Diminețile oferă atmosfera cea mai liniștită și cea mai bună lumină peste terasele Bosforului, iar grădinile palatului sunt deosebit de frumoase primăvara și toamna. Acordă-ți două-trei ore ca să-i faci dreptate, mai mult dacă zăbovești în Tezaur. Verifică ziua de închidere săptămânală înainte să mergi, fiindcă palatul este închis o zi la mijlocul săptămânii.`,
+          `Acesta este un obiectiv cu bilet, iar Haremul necesită un bilet separat care merită din plin adăugat pentru camerele sale placate cu faianță și încăperile imperiale. Complexul se întinde pe patru curți cu pavilioane, bucătării și colecții pe lângă care e ușor să treci grăbit fără să le cunoști poveștile. Un ghid local autorizat VibeGuide îți organizează biletele și programul, te conduce într-o ordine logică și dezvăluie straturile vieții de curte otomane din spatele zidurilor.`,
+        ],
+        ctaTitle: `Plimbă-te prin Topkapi cu un localnic`,
+        ...IST.ro,
       },
     },
   },
@@ -1641,6 +1711,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Дослідіть Цистерну з місцевим гідом`,
         ...IST.uk,
       },
+      ro: {
+        name: `Cisterna Basilica`,
+        metaTitle: `Tururi Cisterna Basilica (Yerebatan) și ghizi locali`,
+        metaDescription:
+          `Coboară în Cisterna Basilica, palatul subteran de apă al Istanbulului. Vezi capetele Medusei și cele 336 de coloane cu un ghid local verificat.`,
+        intro: [
+          `Sub străzile din Sultanahmet se află Cisterna Basilica — un rezervor subteran vechi de 1.500 de ani, cu 336 de coloane de marmură, lumină slabă și ecouri picurânde. Bizantinii au construit-o pentru a alimenta cu apă Marele Palat; astăzi este unul dintre cele mai atmosferice spații ale Istanbulului.`,
+          `Un localnic VibeGuide îți explică capetele Medusei întoarse invers, de ce coloanele au fost refolosite din temple mai vechi și legendele care au crescut în întuneric — transformând o vizită scurtă într-o poveste reală.`,
+        ],
+        highlights: [
+          { title: `Capetele Medusei`, desc: `Două chipuri antice ale Medusei, așezate lateral și cu susul în jos — nimeni nu știe pe deplin de ce.` },
+          { title: `336 de coloane`, desc: `Refolosite din ruine romane mai vechi, fiecare ușor diferită.` },
+          { title: `Atmosfera`, desc: `Răcoroasă, întunecată și cu ecou — un platou de film adus la viață sub oraș.` },
+        ],
+        faqs: [
+          { q: `Merită vizitată Cisterna Basilica?`, a: `Cu siguranță — este scurtă, dar de neuitat, iar istoria o face mult mai bogată. Un ghid îți arată detalii pe lângă care majoritatea vizitatorilor trec.` },
+          { q: `Cât durează vizita?`, a: `De obicei 30–45 de minute, ușor de combinat cu Hagia Sophia și Moscheea Albastră de alături.` },
+          { q: `Este accesibilă?`, a: `Există pasarele deasupra apei, dar și câteva trepte. Ghidul tău îți spune la ce să te aștepți din timp.` },
+        ],
+        planningHeading: `Planifică-ți vizita`,
+        planningParagraphs: [
+          `Cisterna Basilica se află în inima cartierului Sultanahmet, la abia un minut de mers pe jos de Hagia Sophia și Moscheea Albastră. Cea mai simplă cale de acces este tramvaiul T1 până la stația Sultanahmet, de unde intrarea este la o scurtă plimbare pe teren plat. Dacă explorezi deja piața principală a orașului vechi, poți pur și simplu să te plimbi de la o atracție la alta.`,
+          `Cisterna rămâne răcoroasă și întunecată indiferent de vreme, ceea ce o face o evadare binevenită în după-amiezile fierbinți de vară. Cu toate acestea, mijlocul zilei aduce cele mai mari mulțimi, așa că sosirea devreme sau spre seară îți oferă pasarele mai liniștite. Iluminatul său restaurat arată impresionant la orice oră și nu există un sezon nepotrivit pentru a coborî în această lume subterană.`,
+          `Intrarea se face cu bilet, iar tu urmezi pasarele ridicate deasupra apei printre sute de coloane până la faimoasele capete ale Medusei de la capăt. Așteaptă-te la un spațiu atmosferic, cu ecou, care răsplătește explorarea lentă. Un ghid local autorizat VibeGuide îți poate organiza biletul, îți poate programa vizita în afara mulțimilor și aduce la viață istoria bizantină pe măsură ce înaintezi prin umbre.`,
+        ],
+        ctaTitle: `Explorează Cisterna cu un localnic`,
+        ...IST.ro,
+      },
     },
   },
 
@@ -2076,6 +2174,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Відвідайте Блакитну мечеть із місцевим гідом`,
         ...IST.uk,
       },
+      ro: {
+        name: `Moscheea Albastră`,
+        metaTitle: `Tururi Moscheea Albastră (Sultanahmet) și ghizi locali`,
+        metaDescription:
+          `Vizitează Moscheea Albastră din Istanbul cu un ghid local verificat. Șase minarete, 20.000 de faianțe İznik și o moschee în funcțiune — vizitată cu respect și explicată.`,
+        intro: [
+          `Moscheea Albastră — Moscheea Sultanahmet — stă față în față cu Hagia Sophia peste o piață cu grădină, cu șase minarete înălțându-se peste orașul vechi. Înăuntru, peste 20.000 de faianțe İznik pictate manual dau sălii de rugăciune faimoasa strălucire albastră.`,
+          `Este o moschee vie, nu un muzeu. Un localnic VibeGuide te ajută să o vizitezi cu respect — programând în jurul rugăciunilor, îmbrăcăminte, eticheta — și dezvăluie rivalitatea și ambiția din spatele construcției sale.`,
+        ],
+        highlights: [
+          { title: `Șase minarete`, desc: `O alegere îndrăzneață în 1616, care odinioară rivaliza cu Mecca însăși.` },
+          { title: `20.000 de faianțe İznik`, desc: `Nuanțe de albastru și verde pictate manual, care dau numele moscheii.` },
+          { title: `Cupole în cascadă`, desc: `O piramidă de semicupole care definește silueta Istanbulului.` },
+        ],
+        faqs: [
+          { q: `Pot intra turiștii în Moscheea Albastră?`, a: `Da, în afara orelor de rugăciune, cu ținută modestă. Un ghid se ocupă de program și de etichetă, ca vizita ta să fie lină și respectuoasă.` },
+          { q: `Trebuie să-mi acopăr capul?`, a: `Femeile își acoperă părul înăuntru; de obicei sunt disponibile eșarfe. Ghidul tău îți spune exact ce să aduci.` },
+          { q: `Este aproape de Hagia Sophia?`, a: `Stau față în față peste piața Sultanahmet — la două minute de mers pe jos una de cealaltă.` },
+        ],
+        planningHeading: `Planifică-ți vizita`,
+        planningParagraphs: [
+          `Moscheea Albastră se află în Sultanahmet, față în față cu Hagia Sophia peste o piață cu grădină, iar accesul este fără efort. Ia tramvaiul T1 până la stația Sultanahmet și mergi câteva minute pe jos în piață. Cu Hagia Sophia, Palatul Topkapi, Hipodromul și Cisterna Basilica toate la o scurtă plimbare, moscheea se potrivește perfect într-o plimbare prin cel mai faimos cartier al orașului vechi.`,
+          `Țintește dimineața devreme sau după-amiaza târziu, când lumina este blândă, iar faianțele İznik dinăuntru strălucesc cu un albastru mai catifelat. Aceste ore sunt și mai liniștite, evitând aglomerația de la prânz. Primăvara și toamna aduc vremea cea mai plăcută și mulțimi mai mici decât plina vară. Fiind un loc de cult activ, moscheea se închide pentru vizitatori în timpul celor cinci rugăciuni zilnice, așa că planifică-ți sosirea între orele de rugăciune.`,
+          `Intrarea este gratuită, dar este o moschee vie cu un cod vestimentar strict: acoperă umerii și genunchii, scoate-ți pantofii la ușă, iar femeile își acoperă părul, cu eșarfe puse la dispoziție la intrare. Înăuntru, dimensiunea pură și zecile de mii de faianțe pot fi copleșitoare fără context. Un ghid local autorizat VibeGuide îți programează vizita în jurul rugăciunilor, se ocupă de etichetă și îți explică în detaliu viu cele șase minarete, cupolele și decorul de faianță.`,
+        ],
+        ctaTitle: `Vizitează Moscheea Albastră cu un localnic`,
+        ...IST.ro,
+      },
     },
   },
 
@@ -2510,6 +2636,34 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `Пройдіться Ефесом із місцевим гідом`,
         ...EPH.uk,
+      },
+      ro: {
+        name: `Efes`,
+        metaTitle: `Tururi Efes și ghizi locali`,
+        metaDescription:
+          `Străbate anticul Efes lângă Selçuk, İzmir cu un ghid local verificat. Biblioteca lui Celsus, Marele Teatru și străzile de marmură — aduse la viață.`,
+        intro: [
+          `Efes a fost unul dintre cele mai mari orașe ale lumii antice — o metropolă romană de un sfert de milion de oameni, unde a pășit Marc Antoniu și a predicat Sfântul Pavel. Străzile sale de marmură, impunătoarea Bibliotecă a lui Celsus și un teatru pentru 25.000 de spectatori încă se înalță lângă Selçuk.`,
+          `Un localnic VibeGuide transformă ruinele într-un oraș viu — cine a locuit aici, unde se scăldau, făceau cumpărături și se rugau — ca pietrele să-și spună povestea în loc să tacă.`,
+        ],
+        highlights: [
+          { title: `Biblioteca lui Celsus`, desc: `O fațadă de marmură pe două niveluri, care adăpostea odinioară 12.000 de suluri.` },
+          { title: `Marele Teatru`, desc: `Cu locuri pentru 25.000 de spectatori — folosit și astăzi pentru evenimente.` },
+          { title: `Casele cu terase`, desc: `Locuințe cu podele de mozaic ale elitei romane, adăpostite.` },
+        ],
+        faqs: [
+          { q: `Unde se află Efes?`, a: `Lângă Selçuk, în provincia İzmir, la aproximativ o oră de orașul İzmir și aproape de portul Kuşadası.` },
+          { q: `De cât timp am nevoie?`, a: `Planifică 2–3 ore la fața locului; un ghid te ține la umbră și departe de mulțimi.` },
+          { q: `Este potrivit pentru pasagerii de croazieră?`, a: `Da — este o excursie clasică de la țărm din Kuşadası. Un ghid local profită la maximum de timpul limitat.` },
+        ],
+        planningHeading: `Planifică-ți vizita`,
+        planningParagraphs: [
+          `Efes se află lângă orașul Selçuk, în provincia İzmir, pe coasta egeeană a Turciei de vest. Este remarcabil de ușor de ajuns: aproximativ 20 de minute cu mașina de la portul de croazieră Kuşadası și cam o oră de la İzmir, cu Selçuk însuși la doar câteva minute cu taxiul sau dolmuș-ul. Situl are două intrări, o poartă superioară și una inferioară, iar mulți vizitatori merg la vale între ele.`,
+          `Efes este vast și oferă foarte puțină umbră, așa că sincronizarea contează la fel de mult ca orice. Țintește dimineața devreme, imediat după deschidere, sau după-amiaza târziu, când lumina se îmblânzește și marmura se răcorește; evită orele aspre de la prânz, mai ales vara. Primăvara și toamna sunt cele mai plăcute anotimpuri. Oricând ai veni, adu apă, o pălărie și pantofi rezistenți și acordă-ți două-trei ore ca să-l vezi cum se cuvine.`,
+          `Acesta este un sit arheologic cu bilet, iar Casele cu terase frumos conservate necesită un bilet separat care merită din plin. Sunt multe de cuprins, de la Biblioteca lui Celsus la marele teatru, și prin lege doar un ghid autorizat te poate conduce prin ruine. Un ghid local autorizat VibeGuide se ocupă de bilete și program, găsește colțurile umbrite și transformă pietrele împrăștiate într-un oraș viu și palpitant.`,
+        ],
+        ctaTitle: `Străbate Efesul cu un localnic`,
+        ...EPH.ro,
       },
     },
   },
@@ -2947,6 +3101,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Відкрийте Каппадокію з місцевим гідом`,
         ...CAP.uk,
       },
+      ro: {
+        name: `Capadocia`,
+        metaTitle: `Tururi Capadocia și ghizi locali`,
+        metaDescription:
+          `Explorează Capadocia cu un ghid local verificat. Baloane cu aer cald, coșuri de zâne, biserici rupestre și orașe subterane în Göreme și dincolo de el.`,
+        intro: [
+          `Capadocia este un peisaj de vis — văi de „coșuri de zâne”, biserici săpate în stâncă și pictate acum o mie de ani și orașe întregi cioplite sub pământ. În zori, sute de baloane cu aer cald se ridică peste Göreme, într-una dintre marile priveliști ale lumii.`,
+          `Un localnic VibeGuide știe care vale prinde cea mai bună lumină, care biserică rupestră a supraviețuit și unde nu sunt mulțimi — transformând o fotografie faimoasă într-o adevărată înțelegere a locului.`,
+        ],
+        highlights: [
+          { title: `Baloane cu aer cald`, desc: `Zboruri în zori peste văi — imaginea care definește Capadocia.` },
+          { title: `Muzeul în aer liber Göreme`, desc: `Biserici rupestre bizantine cu fresce săpate în stâncă.` },
+          { title: `Orașe subterane`, desc: `Derinkuyu și Kaymaklı — orașe întregi ascunse sub pământ.` },
+        ],
+        faqs: [
+          { q: `Unde se află Capadocia?`, a: `În Anatolia centrală, în jurul localităților Göreme și Nevşehir, accesibilă cu avionul până la Kayseri sau Nevşehir.` },
+          { q: `Sunt garantate zborurile cu balonul?`, a: `Depind de vreme și se rezervă separat. Un ghid te ajută să-ți planifici restul în jurul lor.` },
+          { q: `De câte zile am nevoie?`, a: `Două zile acoperă comod atracțiile principale; un ghid local face să conteze chiar și o singură zi.` },
+        ],
+        planningHeading: `Planifică-ți vizita`,
+        planningParagraphs: [
+          `Capadocia se află în Anatolia centrală, în provincia Nevsehir, cu orășelul Goreme în inima sa. Majoritatea călătorilor sosesc cu avionul la Nevsehir (NAV) sau la aeroportul mai mare Kayseri (ASR), apoi continuă cu naveta sau mașina ultima parte a drumului. Regiunea este suficient de compactă pentru a fi explorată dintr-o singură bază, iar văile sale de coșuri de zâne, parcă de pe altă lume, încep aproape din clipa în care ajungi.`,
+          `Primăvara și toamna sunt ideale, cu zile blânde și lumină catifelată care flatează peisajul de stâncă. Vara aduce căldură și mulțimi mai mari, în timp ce iarna acoperă coșurile de zâne cu zăpadă, pentru o scenă mai liniștită și magică. Diminețile devreme sunt aurii aici, mai ales în zori, când baloanele cu aer cald se ridică peste văi, dacă vremea permite. Planifică în jur de două zile ca să vezi atracțiile principale fără grabă.`,
+          `Obiective importante precum Muzeul în aer liber Göreme și orașele subterane se vizitează cu bilet, iar zborurile cu balonul se rezervă separat și depind de vreme. Un ghid local autorizat VibeGuide te ajută să programezi experiența cu balonul, să găsești cele mai bune văi pentru plimbări și fotografii și să înțelegi bisericile cu fresce și locuințele rupestre pe lângă care altfel ai putea trece direct.`,
+        ],
+        ctaTitle: `Descoperă Capadocia cu un localnic`,
+        ...CAP.ro,
+      },
     },
   },
   {
@@ -3378,6 +3560,34 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `Побачте Долмабахче з місцевим гідом`,
         ...IST.uk,
+      },
+      ro: {
+        name: `Palatul Dolmabahçe`,
+        metaTitle: `Tururi Palatul Dolmabahçe și ghizi locali`,
+        metaDescription:
+          `Vizitează Palatul Dolmabahçe pe Bosfor cu un ghid din Istanbul verificat. Tavane aurite, cel mai mare candelabru de cristal din lume și camera unde a murit Atatürk.`,
+        intro: [
+          `Palatul Dolmabahçe este cel mai opulent capitol al poveștii otomane târzii. Construit între 1843 și 1856 pentru sultanul Abdülmecid I de către arhitecții Balyan, a înlocuit medievalul Topkapı ca reședință imperială — o declarație deliberat europeană în stil baroc, rococo și neoclasic, cu 285 de camere, 46 de săli și 6 hammamuri întinse de-a lungul țărmului european al Bosforului.`,
+          `Cu un expert local VibeGuide, excesul capătă sens. Intrarea urmează un traseu ghidat, așa că un ghid adevărat face diferența dintre un coridor de camere aurite și povestea reală — 14 tone de aur, un candelabru de 4,5 tone și minutul exact în care o națiune și-a oprit ceasurile.`,
+        ],
+        highlights: [
+          { title: `Sala ceremoniilor`, desc: `Adăpostește un candelabru de cristal boemian de 4,5 tone cu 750 de lumini — un dar de la regina Victoria și cel mai mare de acest fel de pe Pământ.` },
+          { title: `Scara de cristal`, desc: `Balustrade tăiate în întregime din cristal Baccarat, sub tavane aurite cu 14 tone de aur.` },
+          { title: `Camera lui Atatürk`, desc: `Fondatorul Turciei moderne a murit aici pe 10 noiembrie 1938, la ora 09:05 — ceasurile palatului sunt încă fixate la acel moment.` },
+        ],
+        faqs: [
+          { q: `Am nevoie de un ghid pentru Palatul Dolmabahçe?`, a: `Intrarea se face pe un traseu ghidat, iar Selamlık, Haremul și Sala ceremoniilor ascund fiecare povești pe lângă care ai trece direct. Un localnic VibeGuide transformă aurirea într-o narațiune și te ajută să eviți cele mai lungi cozi.` },
+          { q: `De ce sunt toate ceasurile fixate la 09:05?`, a: `Atatürk a murit în palat la ora 09:05, pe 10 noiembrie 1938. Multe dintre ceasurile de la Dolmabahçe sunt păstrate în mod tradițional la acea oră, în memoria sa.` },
+          { q: `Cât durează o vizită?`, a: `Majoritatea vizitelor ghidate durează 1–2 ore între Selamlık, Harem și grădinile de la malul apei și se îmbină minunat cu o croazieră pe Bosfor după aceea.` },
+        ],
+        planningHeading: `Planifică-ți vizita`,
+        planningParagraphs: [
+          `Palatul Dolmabahçe se întinde de-a lungul țărmului Bosforului în Beşiktaş, pe partea europeană. Cea mai simplă cale de a ajunge este tramvaiul T1 până la ultima sa stație, Kabataş, urmată de o scurtă plimbare pe malul apei până la porțile ornate. Autobuzele și feriboturile deservesc de asemenea zona, iar cadrul de pe faleză face ultima parte a drumului una plăcută.`,
+          `Palatul se deschide vizitatorilor după un orar fix, iar diminețile sunt cel mai liniștit moment pentru explorare, înainte ca grupurile de turiști să umple sălile. În mod tradițional se închide o zi pe săptămână, așa că verifică ziua de închidere săptămânală înainte să mergi. Primăvara și toamna aduc vreme blândă, ideală pentru a combina interiorul cu grădinile și priveliștile Bosforului de afară.`,
+          `Intrarea se face cu bilet, iar vizita urmează un traseu ghidat prin camere bogat decorate. Selamlık și Haremul sunt secțiuni separate, cu bilete separate, așa că decide din timp cât de mult vrei să vezi. Un ghid local autorizat VibeGuide îți poate organiza biletele, te poate ajuta să alegi între secțiuni și îți poate explica istoria otomană din spatele cristalului, aurului și scărilor grandioase.`,
+        ],
+        ctaTitle: `Vezi Dolmabahçe cu un localnic`,
+        ...IST.ro,
       },
     },
   },
@@ -3811,6 +4021,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Побачте Галатську вежу з місцевим гідом`,
         ...IST.uk,
       },
+      ro: {
+        name: `Turnul Galata`,
+        metaTitle: `Tururi Turnul Galata și ghizi locali`,
+        metaDescription:
+          `Urcă în Turnul Galata din Istanbul cu un ghid local verificat. Evită cozile, prinde apusul și ascultă povestea turnului genovez de deasupra Cornului de Aur.`,
+        intro: [
+          `Turnul Galata încununează silueta cartierului Beyoğlu încă din 1348, când genovezii l-au ridicat ca „Christea Turris” — Turnul lui Hristos — în vârful coloniei lor fortificate. Aproape 67 de metri de piatră medievală se înalță pe nouă etaje până la o galerie superioară cu o panoramă completă de 360° peste Cornul de Aur, peninsula istorică și Bosforul de dincolo.`,
+          `Este un loc învăluit în legende: în secolul al XVII-lea se spune că Hezarfen Ahmed Çelebi și-a legat niște aripi și a planat de la turn peste tot Bosforul, până la Üsküdar. Cu un localnic VibeGuide îți programezi urcarea ca să eviți cele mai rele cozi, ajungi la ora de aur și asculți poveștile pe care priveliștea singură nu le poate spune.`,
+        ],
+        highlights: [
+          { title: `Panoramă de 360°`, desc: `De pe galeria superioară întregul oraș se desfășoară — Cornul de Aur, orașul vechi și ambele maluri ale Bosforului.` },
+          { title: `Reper genovez`, desc: `Construit în 1348 ca „Turnul lui Hristos”, veghează asupra cartierului Galata de aproape șapte secole.` },
+          { title: `Legenda zborului`, desc: `Se spune că Hezarfen Ahmed Çelebi a zburat de aici peste strâmtoare cu aripi făcute de mână.` },
+        ],
+        faqs: [
+          { q: `Există coadă la Turnul Galata?`, a: `Adesea, mai ales la apus. Un ghid local te ajută să alegi ora potrivită și se ocupă de program, ca să petreci mai puțin timp așteptând și mai mult bucurându-te de priveliște.` },
+          { q: `Care este cel mai bun moment pentru a urca?`, a: `După-amiaza târziu spre apus este magic, când lumina devine aurie peste apă. Ghidul tău poate planifica ziua în jurul acestui moment.` },
+          { q: `Cât durează o vizită?`, a: `Urcarea și priveliștea durează în jur de 45 de minute până la o oră, ușor de combinat cu o plimbare prin Galata și Karaköy din apropiere.` },
+        ],
+        planningHeading: `Planifică-ți vizita`,
+        planningParagraphs: [
+          `Turnul Galata se înalță deasupra cartierului Karaköy și Galata din Beyoğlu, pe partea de nord a Cornului de Aur. Mulți vizitatori ajung la Karaköy cu tramvaiul sau metroul și apoi urcă pe jos străzile abrupte și pline de caracter. Pentru un urcuș mai ușor, funicularul istoric Tünel te duce în vârful dealului, lăsându-te la doar o scurtă plimbare de turn.`,
+          `Turnul este faimos pentru priveliștile sale panoramice, iar coada este cea mai lungă în ora dinaintea apusului, când toată lumea speră la aceeași fotografie aurie. Sosirea mai devreme în cursul zilei înseamnă cozi mai scurte și lumină mai blândă pentru fotografii. Străduțele din jur, pline de cafenele și ateliere, merită explorate oricând ai vizita.`,
+          `Intrarea se face cu bilet, iar un lift te duce aproape până sus, înainte de un ultim rând de trepte care ajunge la galeria panoramică ce înconjoară vârful. Așteaptă-te la o pasarelă îngustă cu priveliști ample peste orașul vechi, Bosfor și Cornul de Aur. Un ghid local autorizat VibeGuide îți poate asigura biletul, te poate feri de îmbulzeala de la apus și îți poate arăta reperele răspândite dedesubt.`,
+        ],
+        ctaTitle: `Vezi Turnul Galata cu un localnic`,
+        ...IST.ro,
+      },
     },
   },
   {
@@ -4242,6 +4480,34 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `Дослідіть Гранд-базар із місцевим гідом`,
         ...IST.uk,
+      },
+      ro: {
+        name: `Marele Bazar`,
+        metaTitle: `Tururi Marele Bazar și ghizi locali`,
+        metaDescription:
+          `Explorează Marele Bazar din Istanbul cu un ghid local verificat. Navighează printre 4.000 de magazine, negociază cu încredere și găsește meșteșugari cinstiți, nu capcane pentru turiști.`,
+        intro: [
+          `Marele Bazar este una dintre cele mai vechi și mai mari piețe acoperite de pe Pământ — un labirint început sub Mehmed Cuceritorul între 1455 și 1461, crescut de-a lungul secolelor în peste șaizeci de străzi acoperite și aproximativ 4.000 de magazine. Covoare și kilimuri, aur și bijuterii, ceramică, mirodenii, felinare și piele se revarsă din fiecare prag, sub bolțile sale pictate.`,
+          `Negocierea aici este așteptată — este jumătate din distracție — dar labirintul îi înghite pe nou-veniți cu totul. Un localnic VibeGuide te ghidează pe străduțele potrivite, te ține departe de prețurile-capcană pentru turiști, te prezintă unor meșteșugari cinstiți și traduce atât limba, cât și ritualul târguielii.`,
+        ],
+        highlights: [
+          { title: `4.000 de magazine`, desc: `Peste șaizeci de străzi acoperite cu covoare, aur, ceramică, mirodenii, felinare și piele.` },
+          { title: `Arta târguielii`, desc: `Negocierea este așteptată și face parte din distracție — un ghid menține prețul cinstit.` },
+          { title: `Istorie vie`, desc: `O piață acoperită începută în anii 1450 sub Mehmed Cuceritorul, care încă face comerț și astăzi.` },
+        ],
+        faqs: [
+          { q: `Am nevoie de un ghid pentru Marele Bazar?`, a: `Nu te vei pierde pe veci, dar s-ar putea să plătești prea mult. Un ghid local cunoaște meșteșugarii cinstiți, prețul corect și scurtăturile prin labirint.` },
+          { q: `Chiar se așteaptă să negociezi?`, a: `Da — face parte din cultură. Începe de jos, rămâi prietenos și lasă-l pe ghidul tău să-ți arate unde se termină ritualul și începe un preț corect.` },
+          { q: `Cât timp ar trebui să planific?`, a: `Majoritatea vizitelor ghidate durează 1–2 ore și se îmbină firesc cu Bazarul de Mirodenii din apropiere și străzile din Fatih.` },
+        ],
+        planningHeading: `Planifică-ți vizita`,
+        planningParagraphs: [
+          `Marele Bazar (Kapalıçarşı) se află în cartierul Fatih al orașului vechi, chiar lângă Beyazıt. Cea mai ușoară cale de a ajunge este tramvaiul T1 până la stația „Beyazıt-Kapalıçarşı”, care te lasă la una dintre porțile principale. Este o plimbare ușoară și plană de la Sultanahmet și Moscheea Albastră, așa că mulți vizitatori pur și simplu vin pe jos după ce văd monumentele din apropiere.`,
+          `Intrarea este gratuită, iar piața este deschisă în fiecare zi, cu excepția duminicilor. Este cea mai aglomerată în jurul prânzului, când grupurile de turiști și pasagerii de croazieră umplu străduțele, așa că sosirea imediat după deschidere îți oferă culoare mai liniștite și negustori mai răbdători. Fiindcă întregul bazar este acoperit, rămâne plăcut în orice anotimp, ceea ce îl face o alegere sigură deopotrivă în după-amiezile fierbinți de vară și în zilele ploioase de iarnă.`,
+          `Ca una dintre cele mai vechi și mai mari piețe acoperite din lume, cu aproximativ 4.000 de magazine de-a lungul a peste 60 de străzi, bazarul îi răsplătește pe cei care își iau timp. Negocierea este așteptată și face parte din distracție, dar primele prețuri pot fi mari pentru nou-veniți. Un ghid local autorizat VibeGuide te ajută să navighezi prin labirint, să eviți tarabele-capcană pentru turiști și să ajungi la magazine cinstite, unde calitatea și prețul sunt amândouă corecte.`,
+        ],
+        ctaTitle: `Explorează Marele Bazar cu un localnic`,
+        ...IST.ro,
       },
     },
   },
@@ -4675,6 +4941,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Здійсніть круїз Босфором із місцевим гідом`,
         ...IST.uk,
       },
+      ro: {
+        name: `Bosforul`,
+        metaTitle: `Tururi croazieră pe Bosfor și ghizi locali`,
+        metaDescription:
+          `Navighează pe Bosfor în Istanbul cu un ghid local verificat. Alunecă pe lângă palate otomane, vile de pe malul apei și Turnul Fecioarei și ascultă povestea fiecărui țărm.`,
+        intro: [
+          `Bosforul este strâmtoarea care desparte un continent — canalul șerpuitor ce separă Europa de Asia și leagă Marea Neagră de Marea Marmara. Un tur clasic cu barca alunecă pe lângă palate otomane precum Dolmabahçe, Beylerbeyi și Çırağan, grațioasele conace de lemn de pe malul apei cunoscute sub numele de yalı, Turnul Fecioarei pe insulița sa, Fortăreața Rumeli și pe sub marile poduri suspendate.`,
+          `Croaziera la apus este una dintre experiențele emblematice ale Istanbulului, dar de pe apă este greu să deosebești un palat de altul. Cu un localnic VibeGuide la bord, afli care este care, a cui poveste aparține fiecărui țărm și de ce această panglică de apă a modelat un imperiu.`,
+        ],
+        highlights: [
+          { title: `Palate de pe apă`, desc: `Dolmabahçe, Beylerbeyi și Çırağan mărginesc țărmurile în splendoare otomană.` },
+          { title: `Două continente`, desc: `Europa pe un mal, Asia pe celălalt, unite de marile poduri suspendate.` },
+          { title: `Vilele yalı și Turnul Fecioarei`, desc: `Conace istorice de lemn pe malul apei și micul turn care păzește strâmtoarea.` },
+        ],
+        faqs: [
+          { q: `Merită o croazieră pe Bosfor cu un ghid?`, a: `De pe apă palatele se contopesc între ele. Un ghid local le numește pe fiecare, îi spune povestea și îți arată detaliile pe lângă care altfel ai naviga direct.` },
+          { q: `Care este cel mai bun moment pentru croazieră?`, a: `Apusul este emblematic, când lumina strălucește pe palate și poduri. Ghidul tău te poate ajuta să alegi ora și tipul potrivit de barcă.` },
+          { q: `Cât durează o croazieră tipică?`, a: `Tururile variază de la aproximativ 1,5 la 3 ore, în funcție de cât de departe pe strâmtoare mergi, ușor de combinat cu o plimbare pe faleză.` },
+        ],
+        planningHeading: `Planifică-ți vizita`,
+        planningParagraphs: [
+          `Bosforul este legendara strâmtoare care împarte Istanbulul între Europa și Asia, așa că îl experimentezi cel mai bine de pe apă. Tururile cu barca pleacă din mai multe puncte de pe faleză, cel mai convenabil Eminönü, Kabataş și Beşiktaş, toate accesibile cu tramvaiul, feribotul sau la o scurtă plimbare de orașul vechi. Din aceste debarcadere te poți alătura unei croaziere programate sau poți urca la bordul unei bărci private la câteva minute după sosire.`,
+          `Există o barcă pentru fiecare oră a zilei, dar lumina aurie a după-amiezii târzii și a apusului este cel mai emblematic moment pentru a fi pe punte. Vara aduce seri calde și pline de viață, în timp ce primăvara și toamna oferă aer mai limpede și mulțimi mai mici. Indiferent de anotimp, strâmtoarea este vântoasă și mai răcoroasă decât țărmul, așa că adu un strat ușor de îmbrăcăminte și îmbracă-te pentru vânt chiar și în zilele însorite.`,
+          `Feriboturile publice sunt ieftine, frecvente și minunat de pitorești, în timp ce bărcile private sau ghidate îți oferă flexibilitate asupra traseului și programului. Pe drum aluneci pe lângă palate otomane, elegante conace yalı de pe malul apei, Fortăreața Rumeli și marile poduri suspendate. Un ghid local autorizat VibeGuide te ajută să alegi barca potrivită pentru grupul tău și aduce la viață țărmul cu poveștile din spatele fiecărui palat, fortăreață și cartier pe lângă care treci.`,
+        ],
+        ctaTitle: `Navighează pe Bosfor cu un localnic`,
+        ...IST.ro,
+      },
     },
   },
   {
@@ -5106,6 +5400,34 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `Побачте Аспендос із місцевим гідом`,
         ...ANT.uk,
+      },
+      ro: {
+        name: `Aspendos`,
+        metaTitle: `Tururi Teatrul Roman Aspendos și ghizi locali`,
+        metaDescription:
+          `Vizitează Aspendos lângă Antalya cu un ghid local verificat. Pășește în cel mai bine conservat teatru roman din lume și află cum îi funcționează acustica după 1.800 de ani.`,
+        intro: [
+          `Aspendos este cel mai bine conservat teatru roman din lume — construit în secolul al II-lea d.Hr. sub Marcus Aurelius de către arhitectul Zenon și încă în stare să găzduiască vreo 15.000 până la 20.000 de oameni. Șoptește pe scenă și ultimul rând te aude: acustica sa rămâne uimitoare după aproape 1.800 de ani.`,
+          `Cu un expert local VibeGuide nu doar privești piatra veche. Afli cum funcționa teatrul, de ce a supraviețuit intact și la ce să te uiți la apeductul roman din apropiere — în ritmul tău, în limba ta, la aproximativ 45 km est de Antalya, lângă Serik.`,
+        ],
+        highlights: [
+          { title: `Acustică perfectă`, desc: `Un cuvânt rostit pe scenă ajunge încă la cel mai înalt nivel, fără microfon.` },
+          { title: `Design roman intact`, desc: `Clădirea scenei și gradenele au supraviețuit aproape complet — o raritate oriunde în lume.` },
+          { title: `Festivalul de operă și balet`, desc: `În fiecare vară teatrul antic se umple din nou pentru Festivalul Internațional Aspendos.` },
+        ],
+        faqs: [
+          { q: `De ce este Aspendos atât de faimos?`, a: `Este cel mai bine conservat teatru roman de oriunde, iar acustica sa încă funcționează — un ghid îți arată exact unde să stai ca să o testezi.` },
+          { q: `Cât de departe este Aspendos de Antalya?`, a: `Aproximativ 45 km est, lângă Serik — o excursie de o zi ușoară pe care ghidul tău VibeGuide te poate ajuta să o planifici în jurul mulțimilor și al căldurii.` },
+          { q: `Mai este ceva de văzut în apropiere?`, a: `Da — un apeduct roman se află în apropiere, iar un ghid îl poate adăuga vizitei tale, împreună cu siturile din jur.` },
+        ],
+        planningHeading: `Planifică-ți vizita`,
+        planningParagraphs: [
+          `Aspendos se află la aproximativ 45 de kilometri est de Antalya, în sudul Turciei, lângă orașul Serik. Majoritatea vizitatorilor sosesc cu mașina sau într-un tur organizat de la Antalya, ceea ce îl face o ieșire ușoară de o jumătate de zi de-a lungul coastei mediteraneene. Situl este cunoscut mai ales pentru teatrul său roman, care se înalță deasupra câmpiei din jur și se ajunge la el la o scurtă plimbare din parcare.`,
+          `Amiezile de aici sunt fierbinți, mai ales vara, așa că diminețile sunt cel mai bun moment de explorat, în confort relativ și lumină mai blândă. Primăvara și toamna aduc temperaturi plăcute și mulțimi mai mici, în timp ce serile de vară prind viață în timpul festivalului de operă și balet al sitului. Oricând ai merge, adu apă și protecție solară, fiindcă e puțină umbră în jurul pietrelor antice.`,
+          `Teatrul se vizitează cu bilet și este celebrat drept cel mai bine conservat teatru roman din lume, cu clădirea scenei și gradenele remarcabil de intacte. Un ghid local autorizat VibeGuide aduce la viață acustica și istoria sa și îți poate combina vizita cu situri antice din apropiere precum Side și Perge, ajutându-te să înțelegi cum se legau aceste orașe de-a lungul câmpiei pamfiliene și profitând la maximum de o singură zi.`,
+        ],
+        ctaTitle: `Vezi Aspendos cu un localnic`,
+        ...ANT.ro,
       },
     },
   },
@@ -5539,6 +5861,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Дослідіть Калеїчі з місцевим гідом`,
         ...ANT.uk,
       },
+      ro: {
+        name: `Kaleiçi (Orașul Vechi)`,
+        metaTitle: `Tururi Kaleiçi, orașul vechi al Antalyei, și ghizi locali`,
+        metaDescription:
+          `Rătăcește prin Kaleiçi, orașul vechi al Antalyei, cu un ghid local verificat. Străduțe otomane pavate, Poarta lui Hadrian și un port roman — poveștile din spatele fiecărui colț.`,
+        intro: [
+          `Kaleiçi este atmosfericul oraș vechi al Antalyei — un labirint de străduțe pavate mărginite de case otomano-grecești restaurate, hoteluri de tip boutique și cafenele, toate strânse în jurul unui port din epoca romană. Este genul de loc unde fiecare arcadă ascunde o poveste.`,
+          `Cu un expert local VibeGuide nu doar rătăcești sperând. Treci prin Poarta lui Hadrian, privește în sus la Minaretul Yivli canelat, urmărește apusul de la Turnul Hıdırlık și încheie cu o plimbare cu barca din vechea marină — în ritmul tău, în limba ta.`,
+        ],
+        highlights: [
+          { title: `Poarta lui Hadrian`, desc: `O arcadă triplă de marmură construită în anul 130 d.Hr. pentru vizita împăratului Hadrian în oraș.` },
+          { title: `Minaretul Yivli`, desc: `Minaretul canelat de cărămidă care a devenit simbolul siluetei Antalyei.` },
+          { title: `Portul roman`, desc: `Vechea marină de sub ziduri — perfectă pentru o plimbare cu barca la apus.` },
+        ],
+        faqs: [
+          { q: `Ce se poate face în Kaleiçi?`, a: `Plimbă-te pe străduțele otomane, vezi Poarta lui Hadrian și Turnul Hıdırlık, apoi fă o plimbare cu barca din port — un ghid local leagă totul într-un traseu ușor.` },
+          { q: `Se poate umbla pe jos prin Kaleiçi?`, a: `Da, este compact și cel mai bine explorat pe jos; un ghid te ține departe de străzile-capcană pentru turiști și pe cele frumoase.` },
+          { q: `Când este cel mai bun moment pentru vizită?`, a: `După-amiaza târziu spre apus este magic, mai ales de la Turnul Hıdırlık — ghidul tău VibeGuide îl poate programa perfect.` },
+        ],
+        planningHeading: `Planifică-ți vizita`,
+        planningParagraphs: [
+          `Kaleici este orașul vechi istoric al Antalyei, ascuns între orașul modern și mare. Cea mai ușoară cale de acces este tramvaiul Antray, coborând la stațiile Ismetpasa sau Kaleici, ori pur și simplu mergând pe jos în jos din centru. Odată ce treci prin Poarta lui Hadrian, străzile se transformă în caldarâm și mașinile dispar, așa că întregul cartier este cel mai bine explorat încet, pe jos.`,
+          `Orașul vechi răsplătește o vizită fără grabă în după-amiaza târzie, când lumina se îmblânzește peste portul roman, iar străduțele strălucesc aurii. Apusul de la Turnul Hıdırlık sau de pe zidul portului este un preferat al localnicilor. Amiezile de vară pot fi fierbinți și aglomerate, așa că diminețile și serile sunt mai blânde; primăvara și toamna aduc temperaturi mai plăcute și mulțimi mai mici pe tot parcursul zilei.`,
+          `Rătăcitul prin străduțele pavate din Kaleici este gratuit și nu există o poartă sau un bilet unic pentru a intra în cartier. Poți să te plimbi pe lângă Minaretul Yivli, vechiul port și casele otomane în ritmul tău, iar o plimbare cu barca din marină este o completare încântătoare. Un ghid local autorizat VibeGuide aduce la viață curțile ascunse și străduțele lăturalnice cu poveștile din spatele lor.`,
+        ],
+        ctaTitle: `Explorează Kaleiçi cu un localnic`,
+        ...ANT.ro,
+      },
     },
   },
   {
@@ -5971,6 +6321,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Побачте Пергам із місцевим гідом`,
         ...IZM.uk,
       },
+      ro: {
+        name: `Pergam`,
+        metaTitle: `Tururi orașul antic Pergam (Bergama) și ghizi locali`,
+        metaDescription:
+          `Explorează Pergam, oraș antic din patrimoniul mondial UNESCO lângă İzmir, cu un ghid local verificat. Cel mai abrupt teatru al antichității, o bibliotecă legendară și centrul de vindecare Asklepion.`,
+        intro: [
+          `Pergam — Bergama de astăzi — a fost unul dintre marile orașe ale lumii antice, mai întâi grecesc și apoi roman, iar acum sit din patrimoniul mondial UNESCO. Acropola sa încununează un deal abrupt deasupra câmpiei, adăpostind Templul lui Traian, altarul lui Zeus și cel mai abrupt teatru al lumii antice, săpat dramatic în pantă pentru vreo 10.000 de spectatori.`,
+          `Cu un expert local VibeGuide, ruinele prind viață. Află cum Biblioteca din Pergam rivaliza cu Alexandria și ne-a dat pergamentul, apoi coboară la centrul de vindecare Asklepion și la vasta Bazilică Roșie (Kızıl Avlu) — în ritmul tău, în limba ta, la aproximativ o oră de Kuşadası sau İzmir.`,
+        ],
+        highlights: [
+          { title: `Teatrul abrupt`, desc: `Cel mai abrupt teatru al lumii antice, săpat în coasta dealului pentru vreo 10.000 de spectatori.` },
+          { title: `Marea Bibliotecă`, desc: `A doua doar după Alexandria — aici a fost perfecționat pergamentul (charta pergamena).` },
+          { title: `Asklepionul`, desc: `Unul dintre cele mai faimoase centre de vindecare ale antichității, pe câmpia de sub acropolă.` },
+        ],
+        faqs: [
+          { q: `Unde se află Pergam?`, a: `În orașul Bergama, provincia İzmir — la aproximativ o oră de Kuşadası sau İzmir și o excursie de o zi ușoară pe care un ghid local ți-o poate planifica.` },
+          { q: `De cât timp am nevoie?`, a: `Acropola, Asklepionul și Bazilica Roșie merită fiecare timp; o jumătate de zi cu un ghid acoperă comod atracțiile principale.` },
+          { q: `Merită un ghid la Pergam?`, a: `Cu siguranță — biblioteca, altarul lui Zeus și ritualurile de vindecare sunt povești, nu panouri; un ghid readuce la viață ruinele pustii.` },
+        ],
+        planningHeading: `Planifică-ți vizita`,
+        planningParagraphs: [
+          `Pergam se află în orașul Bergama, în provincia Izmir, la aproximativ o oră de Kusadasi sau Izmir și ușor de ajuns cu mașina sau autocarul. Acropola antică încununează un deal abrupt deasupra orașului, la care poți ajunge cu telecabina Akropolis (teleferik) sau pe șosea. Sanctuarul de vindecare Asklepion și Bazilica Roșie sunt opriri separate jos, în Bergama, o adăugare ușoară la program.`,
+          `Diminețile sunt momentul ideal aici: aerul este mai răcoros, lumina este limpede peste ruinele de pe deal, iar mulțimile sunt încă rare înainte de sosirea grupurilor de turiști. Terenul este abrupt și expus la soare, așa că după-amiezile de vară pot fi obositoare, în timp ce primăvara și toamna oferă vremea cea mai plăcută de mers. Oricând ai veni, pantofii comozi și rezistenți și apa fac urcușul mult mai plăcut.`,
+          `Pergam este un sit din patrimoniul mondial UNESCO cu bilet, unde Acropola, Asklepionul și Bazilica Roșie merită fiecare vizitate. Așteaptă-te la terase grandioase, un teatru abrupt și priveliști ample peste câmpie. Un ghid local autorizat VibeGuide leagă ruinele împrăștiate într-o singură poveste, de la acropolă și urcarea cu telecabina până la Asklepion, ca pietrele să capete sens în loc să se contopească.`,
+        ],
+        ctaTitle: `Vezi Pergam cu un localnic`,
+        ...IZM.ro,
+      },
     },
   },
   {
@@ -6402,6 +6780,34 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `Побачте Памуккале з місцевим гідом`,
         ...PAM.uk,
+      },
+      ro: {
+        name: `Pamukkale`,
+        metaTitle: `Tururi Pamukkale și Hierapolis cu ghizi locali`,
+        metaDescription:
+          `Descoperă Pamukkale, „Castelul de Bumbac” din patrimoniul UNESCO, cu un ghid local verificat. Străbate travertinele albe, explorează anticul Hierapolis și înoată în Bazinul Cleopatrei.`,
+        intro: [
+          `Pamukkale — „Castelul de Bumbac” — este una dintre cele mai suprarealiste priveliști ale Turciei: o coastă de deal cu terase de travertin alb strălucitor, sculptate de-a lungul mileniilor de apa termală bogată în calciu care se prelinge la vale și se pietrifică în bazine ce par bumbac înghețat. Este un sit din patrimoniul mondial UNESCO în Denizli, iar tu îl străbați desculț, cu apă termală caldă până la glezne.`,
+          `Chiar deasupra teraselor se află Hierapolis, un oraș balnear greco-roman cu un teatru grandios, una dintre cele mai mari necropole din Anatolia și termalul Bazin Antic, unde înoți printre coloane romane răsturnate. Cu un localnic VibeGuide alegi momentul potrivit, înțelegi ce vezi și faci ca drumul lung să merite cu adevărat.`,
+        ],
+        highlights: [
+          { title: `Terase de travertin alb`, desc: `Bazine de calciu alb-orbitor care cad în cascadă pe deal — străbate-le desculț prin apa termală caldă.` },
+          { title: `Anticul Hierapolis`, desc: `Un oraș balnear greco-roman deasupra teraselor: teatru, vastă necropolă, Templul lui Apollo și sacrul Plutonium.` },
+          { title: `Bazinul Antic al Cleopatrei`, desc: `Înoată în apă termală caldă printre coloane romane antice răsturnate de un cutremur.` },
+        ],
+        faqs: [
+          { q: `Am nevoie de un ghid pentru Pamukkale?`, a: `Poți rătăci singur, dar Pamukkale și Hierapolis sunt două situri într-unul — geologie termală și un oraș roman. Un ghid local le leagă, îți programează vizita în jurul mulțimilor și al strălucirii soarelui și face ca o excursie lungă de o zi să curgă.` },
+          { q: `Când este cel mai bun moment pentru a vizita Pamukkale?`, a: `Dimineața devreme sau după-amiaza târziu. Soarele de la prânz face terasele albe orbitoare, iar mulțimile ajung la vârf; apusul peste bazine este spectaculos. Un ghid planifică ziua în jurul acestui aspect.` },
+          { q: `Cât de departe este Pamukkale de coastă?`, a: `Este la aproximativ 19 km de Denizli și o excursie lungă de o zi din Antalya, Bodrum, Kuşadası sau Marmaris. Un ghid se ocupă de distanță și de program, ca drumul să merite.` },
+        ],
+        planningHeading: `Planifică-ți vizita`,
+        planningParagraphs: [
+          `Pamukkale se află în provincia Denizli, în sud-vestul Turciei, la aproximativ 19 kilometri de orașul Denizli. Poți zbura la Denizli (DNZ) sau poți ajunge acolo într-o excursie de o zi de pe coastă, iar mulți vizitatori îl combină cu un tur mai amplu al regiunii. Terasele albe strălucitoare se află pe o coastă de deal deasupra câmpiei, vizibile de la distanță și ușor de ajuns cu mașina sau cu transferul organizat.`,
+          `Prânzul poate fi orbitor și fierbinte, cu travertinele albe reflectând soarele, așa că dimineața devreme sau după-amiaza târziu este mult mai confortabilă și răsplătitoare. Aceste ore aduc și lumină mai blândă pentru fotografii și mulțimi mai mici pe terase. Este o excursie de o zi lungă, dar memorabilă din Antalya, Bodrum, Kusadasi sau Izmir, așa că pornește devreme ca să te bucuri de sit la cea mai liniștită oră a sa.`,
+          `Travertinele albe și orașul antic Hierapolis împart un singur bilet, iar tu mergi desculț pe terase ca să le protejezi, în timp ce Bazinul Antic al Cleopatrei are o taxă separată. Un ghid local autorizat VibeGuide te ajută să înțelegi terasele și ruinele întinse ale Hierapolisului, de la teatru la necropolă, și îți arată cele mai bune locuri și momente pentru bazinele minerale.`,
+        ],
+        ctaTitle: `Vezi Pamukkale cu un localnic`,
+        ...PAM.ro,
       },
     },
   },
@@ -6850,6 +7256,35 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Побачте Сулейманіє з місцевим гідом`,
         ...IST.uk,
       },
+      ro: {
+        name: `Moscheea Süleymaniye`,
+        metaTitle: `Tururi Moscheea Süleymaniye și ghizi locali`,
+        metaDescription:
+          `Vizitează Moscheea Süleymaniye cu un ghid din Istanbul verificat. Capodopera lui Mimar Sinan pe Al Treilea Deal, mormintele lui Süleyman și Hürrem și o terasă panoramică peste Cornul de Aur.`,
+        intro: [
+          `Moscheea Süleymaniye încununează Al Treilea Deal al Istanbulului, deasupra Cornului de Aur, capodopera imperială a lui Mimar Sinan. Construită între 1550 și 1557 pentru sultanul Süleyman Magnificul, echilibrează o vastă cupolă centrală pe patru minarete și o sală de rugăciune senină, plină de lumină — inima încrezătoare a arhitecturii otomane clasice, la apogeul puterii imperiului.`,
+          `Cu un expert local VibeGuide, complexul se citește ca o poveste, nu ca un monument. Un ghid adevărat leagă cupola și curtea de sultanul care a construit-o și de arhitectul care a sfidat gravitația, apoi te conduce la mormintele din grădină ale lui Süleyman și ale soției sale Hürrem — și la o terasă cu una dintre cele mai frumoase priveliști gratuite din oraș.`,
+        ],
+        highlights: [
+          { title: `Marea cupolă a lui Sinan`, desc: `O cupolă centrală înaltă de aproape 53 de metri, proiectată astfel încât lumina și sunetul să curgă prin sală — momentul care a pecetluit geniul lui Mimar Sinan.` },
+          { title: `Mormintele imperiale`, desc: `În grădina din spatele moscheii se află mormintele cu cupolă ale lui Süleyman Magnificul și ale soției sale Hürrem Sultan (Roxelana), bogat placate cu faianță în interior.` },
+          { title: `Terasa panoramică`, desc: `Terasa exterioară a moscheii se deschide spre o priveliște amplă peste Cornul de Aur și cupolele orașului vechi — și nu costă nimic.` },
+        ],
+        faqs: [
+          { q: `Am nevoie de bilet pentru Moscheea Süleymaniye?`, a: `Nu. Este o moschee în funcțiune, iar intrarea este gratuită. Vizitatorii sunt bineveniți în afara celor cinci ore de rugăciune zilnică, iar un localnic VibeGuide îți poate planifica sosirea astfel încât moscheea să fie deschisă și liniștită.` },
+          { q: `Cu ce ar trebui să mă îmbrac înăuntru?`, a: `Îmbracă-te modest, cu umerii și genunchii acoperiți; femeile își acoperă părul cu o eșarfă, iar toată lumea își scoate pantofii la ușă. De obicei sunt eșarfe disponibile de împrumutat la intrare dacă ai nevoie.` },
+          { q: `Este mai bună decât Moscheea Albastră?`, a: `Este capodopera lui Mimar Sinan și de obicei mult mai puțin aglomerată, cu o terasă panoramică pe care Moscheea Albastră nu o are. Mulți ghizi o consideră clădirea mai reușită — un localnic VibeGuide îți poate arăta de ce.` },
+          { q: `Cât durează o vizită?`, a: `Majoritatea vizitelor durează între 45 de minute și o oră, între sala de rugăciune, morminte și terasă, și se îmbină firesc cu Marele Bazar din apropiere sau cu o plimbare până la Cornul de Aur.` },
+        ],
+        planningHeading: `Planifică-ți vizita`,
+        planningParagraphs: [
+          `Moscheea Süleymaniye se află deasupra cartierului Marelui Bazar, pe Al Treilea Deal. Cea mai ușoară cale de acces este tramvaiul T1 până la Beyazıt sau Laleli, urmată de o scurtă plimbare în urcuș prin cartierul universitar; feriboturile spre Eminönü și un urcuș de la Cornul de Aur sunt o alternativă pitorească. Străduțele din jurul moscheii sunt pline de restaurante tradiționale cu fasole și grădini de ceai.`,
+          `Fiind o moschee în funcțiune, primește vizitatori în afara celor cinci rugăciuni zilnice și se închide pentru turiști pentru scurt timp în timpul fiecărei rugăciuni și mai mult la prânzul de vineri. Dimineața devreme și după-amiaza târziu sunt cele mai liniștite, iar terasa este de neuitat aproape de apus. Chiar și în plin sezon rămâne mult mai puțin aglomerată decât Moscheea Albastră.`,
+          `Intrarea este gratuită și nu există bilet de cumpărat. Îmbracă-te modest — cu umerii și genunchii acoperiți și o acoperitoare pentru cap la femei; îți scoți pantofii și îi porți într-o pungă. Un ghid local autorizat VibeGuide îți programează vizita în jurul orarului rugăciunilor, îți explică eticheta ca să te simți în largul tău și dezvăluie istoria din spatele cupolei lui Sinan și a mormintelor imperiale.`,
+        ],
+        ctaTitle: `Vezi Süleymaniye cu un localnic`,
+        ...IST.ro,
+      },
     },
   },
   {
@@ -7296,6 +7731,35 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `Побачте Єгипетський базар із місцевим гідом`,
         ...IST.uk,
+      },
+      ro: {
+        name: `Bazarul de Mirodenii`,
+        metaTitle: `Tururi Bazarul de Mirodenii (Bazarul Egiptean) și ghizi locali`,
+        metaDescription:
+          `Explorează Bazarul de Mirodenii din Istanbul cu un ghid local verificat. Mirodenii în grămezi, șofran, rahat turcesc și ceaiuri într-o piață acoperită din secolul al XVII-lea lângă Moscheea Nouă, în Eminönü.`,
+        intro: [
+          `Bazarul de Mirodenii — Mısır Çarşısı, sau Bazarul Egiptean — este cea mai parfumată piață a Istanbulului, o sală în formă de L din secolul al XVII-lea cu galerii boltite, în inima cartierului Eminönü. Construit în anii 1660 ca parte a complexului Moscheii Noi, a fost finanțat din comerțul cu Egiptul otoman, iar până astăzi tarabele sale se revarsă de piramide de mirodenii, șofran, fructe uscate, nuci și ceai.`,
+          `Cu un expert local VibeGuide, mulțimea și culoarea capătă sens. Un ghid adevărat te ghidează pe lângă capcanele pentru turiști spre vânzători cinstiți și cu vechime, îți spune cât ar trebui să coste șofranul adevărat și rahatul turcesc pur și te lasă să guști înainte să cumperi — transformând o culoare haotică într-o dimineață relaxată de arome și povești.`,
+        ],
+        highlights: [
+          { title: `Munți de mirodenii`, desc: `Conuri de paprika, sumac, chimion și scorțișoară se ridică lângă borcane cu șofran de un roșu adânc — aromele care au dat bazarului numele și faima.` },
+          { title: `Rahat turcesc și dulciuri`, desc: `Tăvi de lokum de toate aromele, de la rodie și fistic la trandafir, stau lângă caise uscate, smochine și nuci în miere — majoritatea tarabelor oferă o degustare.` },
+          { title: `Ceaiuri și Moscheea Nouă`, desc: `Ceaiul de măr, amestecurile de plante și cafeaua umplu aerul, iar marea Yeni Cami cu cupolă se ridică chiar lângă poarta principală a bazarului.` },
+        ],
+        faqs: [
+          { q: `Este gratuită intrarea în Bazarul de Mirodenii?`, a: `Da, intrarea este complet gratuită și nu ai nimic de rezervat. Un localnic VibeGuide te poate întâmpina la poartă și te poate îndruma spre cei mai de încredere vânzători din interior.` },
+          { q: `Ar trebui să negociez la Bazarul de Mirodenii?`, a: `Prețurile sunt rareori fixe, așa că târguiala politicoasă este normală și așteptată. Un ghid local cunoaște prețul corect pentru șofran, lokum și ceai și negociază pentru tine ca să nu plătești prea mult.` },
+          { q: `Prin ce se deosebește de Marele Bazar?`, a: `Bazarul de Mirodenii este mai mic, mai parfumat și axat pe mâncare — mirodenii, dulciuri, ceaiuri și nuci — în timp ce Marele Bazar este un vast labirint de bijuterii, covoare și artizanat. Mulți vizitatori le fac pe ambele într-o singură zi.` },
+          { q: `Când este cel mai bun moment pentru a merge?`, a: `Diminețile sunt cele mai liniștite, înainte ca grupurile de turiști și cumpărătorii să umple culoarele. Zilele lucrătoare sunt mai liniștite decât weekendurile, iar un localnic VibeGuide îți poate programa vizita pentru cea mai bună experiență.` },
+        ],
+        planningHeading: `Planifică-ți vizita`,
+        planningParagraphs: [
+          `Bazarul de Mirodenii se află în Eminönü, chiar lângă Moscheea Nouă și la două minute de mers pe jos de Podul Galata și de debarcaderele feribotului de pe Bosfor. Cea mai ușoară sosire este tramvaiul T1 până la stația Eminönü sau un feribot peste Cornul de Aur; cadrul de pe faleză îl face ușor de inclus într-o zi de-a lungul țărmului orașului vechi.`,
+          `Bazarul este cel mai aglomerat la mijlocul zilei, așa că o vizită dimineața devreme este mai liniștită și îți permite să vorbești cu vânzătorii înainte de sosirea mulțimilor. Funcționează după un orar zilnic și devine deosebit de animat în weekend. Primăvara și toamna sunt plăcute, dar sala acoperită rămâne primitoare în orice vreme.`,
+          `Intrarea este gratuită și nu ai nimic de rezervat — pur și simplu intri. Prețurile sunt rareori fixe, așa că o mică târguială prietenoasă este așteptată, iar calitatea variază de la o tarabă la alta. Un ghid local autorizat VibeGuide te îndrumă spre vânzători de încredere, te ajută să deosebești șofranul adevărat de cel vopsit și negociază prețuri corecte în timp ce guști prin piață.`,
+        ],
+        ctaTitle: `Vezi Bazarul de Mirodenii cu un localnic`,
+        ...IST.ro,
       },
     },
   },
@@ -7744,6 +8208,35 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Побачте Дівочу вежу з місцевим гідом`,
         ...IST.uk,
       },
+      ro: {
+        name: `Turnul Fecioarei`,
+        metaTitle: `Tururi Turnul Fecioarei (Kız Kulesi) și ghizi locali`,
+        metaDescription:
+          `Vizitează Turnul Fecioarei pe insulița sa minusculă din Bosfor cu un ghid din Istanbul verificat. Legende antice, o scurtă plimbare cu barca din Üsküdar și un apus de neuitat.`,
+        intro: [
+          `Turnul Fecioarei se ridică singur pe o insuliță mică din Bosfor, chiar în largul țărmului Üsküdar de pe partea asiatică, unde strâmtoarea se deschide spre Marea Marmara. Mic, alb și incredibil de fotogenic, veghează asupra căii de apă de secole ca far, punct vamal și stație de carantină — iar astăzi, după o restaurare atentă, primește din nou vizitatori.`,
+          `Ceea ce face turnul de neuitat nu este mărimea sa, ci poveștile sale. Legenda turcă vorbește despre o prințesă închisă aici pentru a scăpa de o mușcătură de șarpe prezisă; povestea greacă a lui Hero și Leandru își plasează tragedia pe aceleași ape. Cu un expert local VibeGuide, legendele, istoria și silueta orașului se așază toate la locul lor, transformând o scurtă plimbare cu barca într-una dintre cele mai romantice ieșiri din Istanbul.`,
+        ],
+        highlights: [
+          { title: `Insulița și turnul`, desc: `O stâncă minusculă în mijlocul Bosforului încununată de un turn alb și zvelt — una dintre cele mai recognoscibile siluete din tot Istanbulul.` },
+          { title: `Legende pe apă`, desc: `Prințesa turcă și șarpele prezis, și povestea greacă a lui Leandru înotând strâmtoarea din dragoste — două legende legate de acest singur loc.` },
+          { title: `Cafenea și punct de belvedere`, desc: `O cafenea și o terasă de belvedere te lasă să zăbovești cu o panoramă de 360 de grade peste orașul vechi, țărmul asiatic și corăbiile care trec.` },
+        ],
+        faqs: [
+          { q: `Cum ajung la Turnul Fecioarei?`, a: `Printr-o scurtă plimbare cu barca de la faleza Üsküdar de pe partea asiatică sau din Kabataş de pe partea europeană. Nu există pod — barca face parte din experiență, iar ambele debarcadere sunt ușor de ajuns cu feribotul, tramvaiul sau Marmaray.` },
+          { q: `Care sunt legendele turnului?`, a: `O legendă turcă vorbește despre o prințesă așezată aici pentru a scăpa de o profeție că va muri de o mușcătură de șarpe, iar povestea greacă a lui Hero și Leandru își plasează tragedia de dragoste pe aceste ape. Un ghid local le poate spune pe amândouă și poate explica cum și-a câștigat turnul numele.` },
+          { q: `Merită vizitat turnul după restaurarea sa?`, a: `Da. După o restaurare atentă și recentă, turnul s-a redeschis vizitatorilor, cu o cafenea și o terasă de belvedere, așa că acum poți păși înăuntru și te poți bucura de panoramă, nu doar să-l admiri de pe țărm.` },
+          { q: `Când este cel mai bun moment pentru a merge?`, a: `Apusul este cel mai memorabil, cu orașul vechi strălucind în spatele turnului, în timp ce diminețile sunt cele mai liniștite pentru fotografii. Zilele calme de la sfârșitul primăverii sau începutul toamnei fac traversarea cu barca deosebit de plăcută.` },
+        ],
+        planningHeading: `Planifică-ți vizita`,
+        planningParagraphs: [
+          `Turnul Fecioarei se află pe propria insuliță, așa că fiecare vizită începe cu o scurtă plimbare cu barca. Principalul punct de plecare este faleza Üsküdar de pe partea asiatică, cu bărci suplimentare din Kabataş de pe partea europeană. Ambele sunt ușor de ajuns cu feribotul, tramvaiul sau linia Marmaray, iar traversarea în sine îți oferă turnul încadrat pe apă din clipa în care pornești.`,
+          `Turnul este deschis pe parcursul zilei și este la cel mai magic în jurul apusului, când lumina devine aurie, iar silueta orașului vechi strălucește în spatele lui. Sfârșitul primăverii și începutul toamnei aduc vreme calmă și blândă, ideală pentru traversare; în zilele cu vânt sau furtună orarul bărcilor se poate schimba, așa că merită să-ți păstrezi planurile flexibile. Diminețile tind să fie cele mai liniștite pentru fotografii pe insuliță.`,
+          `Atât transferul cu barca, cât și intrarea în turn se fac cu bilet, iar spațiul de pe mica insulă este limitat, așa că e cel mai bine să planifici din timp. Un ghid local autorizat VibeGuide îți poate organiza traversarea, îți poate programa vizita pentru cea mai bună lumină și poate aduce la viață legendele și istoria Bosforului — arătându-ți exact unde să stai pentru acea fotografie clasică a siluetei orașului.`,
+        ],
+        ctaTitle: `Vezi Turnul Fecioarei cu un localnic`,
+        ...IST.ro,
+      },
     },
   },
   {
@@ -8190,6 +8683,35 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `Побачте храм Артеміди з місцевим гідом`,
         ...EPH.uk,
+      },
+      ro: {
+        name: `Templul lui Artemis`,
+        metaTitle: `Tururi Templul lui Artemis din Efes și ghizi locali`,
+        metaDescription:
+          `Vizitează Templul lui Artemis din Selçuk cu un ghid local verificat. Una dintre cele Șapte Minuni ale Lumii Antice, acum o singură coloană ce se înalță dintre berze și mlaștină lângă Efes.`,
+        intro: [
+          `Templul lui Artemis din Selçuk, la doar câteva minute de Efes, a fost odinioară una dintre cele Șapte Minuni ale Lumii Antice — un templu de marmură atât de vast încât era de patru ori mai mare decât Partenonul din Atena. Călătorii antici scriau că văzuseră multe minuni, dar nimic care să rivalizeze cu casa Artemisei ce se înălța până la nori.`,
+          `Astăzi situl este modest: o singură coloană reînălțată se ridică din fundațiile mlăștinoase, adesea cu un cuib de barză cocoțat deasupra și cu păsările vânturând prin trestiile de dedesubt. Totuși, a sta aici, unde regi se întreceau odinioară să ridice cel mai grandios sanctuar al lumii antice, este una dintre cele mai tăcute și mișcătoare lecții ale istoriei. Un expert local VibeGuide reface templul în imaginația ta, cu coloane, cu mulțimi și cu tot.`,
+        ],
+        highlights: [
+          { title: `O Minune dispărută`, desc: `Una dintre cele Șapte Minuni ale Lumii Antice, odinioară de patru ori mai mare decât Partenonul, redusă acum la fundații și o singură coloană în picioare.` },
+          { title: `Coloana solitară și berzele ei`, desc: `O singură coloană de marmură reînălțată se ridică din mlaștină, adesea încununată de un cuib de barză — o imagine de neuitat a grandorii întoarse la natură.` },
+          { title: `Grupul de pe dealul Selçuk`, desc: `Templul se îmbină firesc cu Bazilica Sfântului Ioan și Moscheea İsa Bey ce încununează dealul chiar deasupra, și cu Efesul din apropiere.` },
+        ],
+        faqs: [
+          { q: `A mai rămas mult din Templul lui Artemis?`, a: `Foarte puțin mai stă în picioare astăzi — în principal fundațiile mlăștinoase și o singură coloană reînălțată, adesea încununată de un cuib de barză. Puterea sa stă în ceea ce a fost cândva: un ghid readuce la viață Minunea dispărută acolo unde ruinele singure nu pot.` },
+          { q: `Cum se leagă de Efes?`, a: `Templul se află la Selçuk, la doar câteva minute de situl principal al Efesului, iar cele două sunt vizitate firesc împreună, alături de Bazilica Sfântului Ioan și Moscheea İsa Bey de pe dealul chiar deasupra.` },
+          { q: `Am nevoie de bilet pentru Templul lui Artemis?`, a: `Templul este un sit deschis și de obicei gratuit la intrare, spre deosebire de ruinele cu bilet ale Efesului din apropiere. Un ghid local poate organiza un itinerar combinat prin Selçuk care curge lin între situri.` },
+          { q: `Când este cel mai bun moment pentru vizită?`, a: `Lumina dimineții sau a după-amiezii târzii se potrivește cel mai bine coloanei solitare, iar primăvara și toamna sunt cele mai plăcute anotimpuri. Verile de aici sunt fierbinți, așa că poartă apă și protecție solară.` },
+        ],
+        planningHeading: `Planifică-ți vizita`,
+        planningParagraphs: [
+          `Templul lui Artemis se află la marginea orașului Selçuk, la doar câteva minute cu mașina sau la o plimbare plăcută de intrarea principală a Efesului, așa că cele două sunt aproape întotdeauna vizitate împreună. Selçuk se află pe linia feroviară İzmir–Aydın și este ușor de ajuns cu trenul, autobuzul sau la o scurtă distanță cu mașina de İzmir și de stațiunile de pe coastă, iar situl însuși este chiar lângă șosea, sub dealul cetății.`,
+          `Templul este un sit deschis, jos în teren și de obicei gratuit la intrare, cel mai bine apreciat în lumina mai blândă a dimineții sau a după-amiezii târzii, când coloana solitară prinde soarele, iar berzele sunt active. Primăvara și toamna sunt cele mai plăcute anotimpuri; vara în jurul Efesului poate fi foarte fierbinte, așa că adu apă și protecție solară indiferent de perioada anului.`,
+          `Fiindcă atât de puțin mai stă în picioare astăzi, Templul lui Artemis răsplătește imaginația mai mult decât simpla vizitare, și tocmai aici un ghid local autorizat VibeGuide face diferența. Un ghid poate țese templul, Efesul, Bazilica Sfântului Ioan și Moscheea İsa Bey într-un singur itinerar prin Selçuk și poate reconstrui Minunea dispărută în mintea ta, așa încât o singură coloană devine cel mai mare templu al lumii antice.`,
+        ],
+        ctaTitle: `Vezi Templul lui Artemis cu un localnic`,
+        ...EPH.ro,
       },
     },
   },
@@ -8638,6 +9160,35 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Побачте замок Бодрума з місцевим гідом`,
         ...BOD.uk,
       },
+      ro: {
+        name: `Castelul Bodrum`,
+        metaTitle: `Tururi Castelul Bodrum și Muzeul Subacvatic cu ghizi locali`,
+        metaDescription:
+          `Explorează Castelul Bodrum, fortăreața Cavalerilor Ospitalieri de deasupra portului, cu un ghid local autorizat. Turnuri cruciate, Muzeul de Arheologie Subacvatică și epava de la Uluburun.`,
+        intro: [
+          `Castelul Bodrum, Castelul Sfântului Petru, veghează asupra portului turcoaz al orașului ca o coroană de piatră. Cavalerii Ospitalieri au început să-l ridice la începutul secolului al XV-lea, cărând blocuri din Mausoleul ruinat de la Halicarnas — una dintre cele Șapte Minuni ale Lumii Antice — astfel încât fragmente din mormântul unui rege antic sunt împletite în zidurile unei fortărețe cruciate.`,
+          `Turnurile sale poartă și astăzi numele națiunilor care le-au construit — englez, francez, italian, german și Turnul Șarpelui — și fiecare se înalță deasupra marinei cu priveliști ample peste Marea Egee. Înăuntru, castelul găzduiește celebrul Muzeu de Arheologie Subacvatică, unde epave antice, amfore și comorile epavei de la Uluburun din Epoca Bronzului spun povestea mării. Cu un expert local VibeGuide, straturile de istorie cruciată, otomană și antică se așază la locul lor.`,
+        ],
+        highlights: [
+          { title: `Turnurile Cavalerilor`, desc: `Turnurile englez, francez, italian, german și al Șarpelui se înalță fiecare deasupra portului, construite de diferitele limbi ale ordinului Ospitalier în secolul al XV-lea.` },
+          { title: `Muzeul de Arheologie Subacvatică`, desc: `Unul dintre cele mai bune de acest fel, expunând epave antice, amfore și sticlă recuperate de pe fundul Mării Egee.` },
+          { title: `Epava de la Uluburun`, desc: `Descoperiri de la o corabie comercială din secolul al XIV-lea î.Hr. — cupru, lingouri, aur și mărfuri exotice — dezvăluie comerțul din Epoca Bronzului pe tot cuprinsul Mediteranei de est.` },
+        ],
+        faqs: [
+          { q: `Merită vizitat Castelul Bodrum?`, a: `Foarte mult. Este unul dintre cele mai bine conservate castele cruciate din Mediterana și găzduiește totodată un Muzeu de Arheologie Subacvatică de clasă mondială, totul învăluit în unele dintre cele mai frumoase priveliști de port de pe coasta egeeană.` },
+          { q: `Ce se află în interiorul Castelului Bodrum?`, a: `Castelul adăpostește Muzeul de Arheologie Subacvatică, cu epave antice, mii de amfore, sticlă și comorile epavei de la Uluburun din Epoca Bronzului, alături de istoricele turnuri englez, francez, italian, german și al Șarpelui.` },
+          { q: `Este Castelul Bodrum legat de Mausoleul de la Halicarnas?`, a: `Da. Cavalerii Ospitalieri au refolosit pietre din Mausoleul ruinat — una dintre cele Șapte Minuni ale Lumii Antice — pentru a construi castelul. Situl Mausoleului însuși se află la o scurtă plimbare în urcuș prin oraș și se îmbină perfect cu o vizită la castel.` },
+          { q: `Am nevoie de un ghid pentru Castelul Bodrum?`, a: `Poți rătăci singur, dar castelul îmbină istorie cruciată, otomană și maritimă antică ușor de ratat. Un ghid local autorizat VibeGuide leagă turnurile, epavele și Mausoleul într-o singură poveste clară.` },
+        ],
+        planningHeading: `Planifică-ți vizita`,
+        planningParagraphs: [
+          `Castelul Bodrum se află chiar pe peninsula dintre cele două golfuri ale orașului, așa că din aproape orice punct al centrului este o scurtă plimbare pitorească de-a lungul marinei. Majoritatea vizitatorilor sosesc la Bodrum pe șosea de la Aeroportul Milas–Bodrum sau cu feribotul de pe coasta din jur și de pe insulele grecești din apropiere, iar castelul este imposibil de ratat pe siluetă, deasupra portului.`,
+          `Vara pe Marea Egee este fierbinte și aglomerată, așa că cele mai blânde și liniștite momente pentru a urca pe metereze sunt sfârșitul primăverii și începutul toamnei. Diminețile aduc cea mai blândă lumină pentru fotografii peste marină, iar brizele mării fac terasele deschise plăcute chiar și în plin sezon. Poartă pantofi rezistenți — castelul este construit pe stâncă, cu trepte, rampe și teren denivelat peste tot.`,
+          `Intrarea în castel și în Muzeul său de Arheologie Subacvatică se face cu bilet, iar situl combină o fortăreață, mai multe turnuri și săli de muzeu într-o singură vizită. Un ghid local autorizat VibeGuide te poate ajuta să înțelegi totul — legând turnurile cruciate de încărcăturile scufundate de dedesubt și adăugând scurta plimbare în urcuș până la rămășițele Mausoleului de la Halicarnas, minunea antică ale cărei pietre au ajutat la construirea zidurilor.`,
+        ],
+        ctaTitle: `Vezi Castelul Bodrum cu un localnic`,
+        ...BOD.ro,
+      },
     },
   },
   {
@@ -9085,6 +9636,35 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Побачте Гебеклі-Тепе з місцевим гідом`,
         ...SAN.uk,
       },
+      ro: {
+        name: `Göbekli Tepe`,
+        metaTitle: `Tururi Göbekli Tepe (cel mai vechi templu din lume) cu ghizi locali`,
+        metaDescription:
+          `Vizitează Göbekli Tepe lângă Şanlıurfa cu un ghid local autorizat — cel mai vechi templu cunoscut din lume, construit în jurul anului 9600 î.Hr., cu 6.000 de ani înainte de Stonehenge. Sit din patrimoniul mondial UNESCO.`,
+        intro: [
+          `Göbekli Tepe este cel mai vechi sanctuar monumental cunoscut de pe Pământ, ridicat în jurul anului 9600 î.Hr. — cu aproximativ 6.000 de ani înaintea Stonehenge-ului și a piramidelor de la Giza. Pe un vârf de deal pustiu lângă Şanlıurfa, în sud-estul Turciei, vânători-culegători care nu inventaseră încă ceramica, scrisul sau agricultura au reușit cumva să extragă, să cioplească și să ridice mari cercuri de piloni de calcar în formă de T. Este o descoperire care a rescris povestea civilizației: aici templul e posibil să fi apărut înaintea orașului.`,
+          `Pilonii ating câțiva metri înălțime și sunt sculptați în relief cu vulpi, mistreți, șerpi, scorpioni și cocori — un bestiar de piatră de la începuturile credinței. Astăzi o pasarelă modernă acoperită adăpostește incintele și îți permite să privești în jos în ele fără a atinge acest loc fragil. Fiindcă atât de mult este invizibil pentru ochiul neinstruit, un ghid local autorizat VibeGuide este esențial pentru a citi simbolurile și a explica de ce Göbekli Tepe a schimbat totul.`,
+        ],
+        highlights: [
+          { title: `Primul templu din lume`, desc: `Construit în jurul anului 9600 î.Hr. de oameni neolitici pre-ceramici — cu aproximativ 6.000 de ani mai vechi decât Stonehenge — și înscris ca sit din patrimoniul mondial UNESCO.` },
+          { title: `Pilonii în formă de T sculptați`, desc: `Mari piloni de calcar dispuși în cercuri, sculptați în relief cu vulpi, mistreți, șerpi, scorpioni și cocori de la începuturile religiei.` },
+          { title: `Omul din Urfa la Şanlıurfa`, desc: `Îmbină situl cu Muzeul de Arheologie din Şanlıurfa, care găzduiește pilonii originali și Omul din Urfa de 11.000 de ani, cea mai veche statuie umană în mărime naturală cunoscută.` },
+        ],
+        faqs: [
+          { q: `Cât de vechi este Göbekli Tepe?`, a: `Göbekli Tepe a fost construit în jurul anului 9600 î.Hr., ceea ce îl face vechi de aproximativ 11.000 de ani — cu vreo 6.000 de ani mai vechi decât Stonehenge și piramidele egiptene, și cel mai vechi templu monumental cunoscut din lume.` },
+          { q: `De ce este Göbekli Tepe atât de important?`, a: `A fost ridicat de vânători-culegători înainte de ceramică, scris sau agricultură, ceea ce sugerează că religia organizată și construcția monumentală ar fi putut apărea înaintea vieții sedentare în sate — răsturnând vechea idee că agricultura a venit prima. Este sit din patrimoniul mondial UNESCO.` },
+          { q: `Cum ajung la Göbekli Tepe?`, a: `Situl se află la aproximativ 20 km de Şanlıurfa, în sud-estul Turciei. Majoritatea vizitatorilor zboară la Şanlıurfa și ajung la Göbekli Tepe cu mașina, taxiul sau într-un tur organizat, cu un centru de vizitare, o navetă și o pasarelă acoperită la sit.` },
+          { q: `Am nevoie de un ghid pentru Göbekli Tepe?`, a: `Puternic recomandat. Mare parte din sensul sitului este invizibil fără context, iar un ghid local autorizat VibeGuide explică pilonii în formă de T, sculpturile cu animale și de ce descoperirea a rescris istoria umană — apoi îl leagă de Omul din Urfa de la muzeul orașului.` },
+        ],
+        planningHeading: `Planifică-ți vizita`,
+        planningParagraphs: [
+          `Göbekli Tepe se află la aproximativ 20 km de centrul orașului Şanlıurfa, cel mai apropiat oraș și baza firească pentru o vizită. Majoritatea călătorilor zboară la Şanlıurfa și ajung la sit cu mașina, taxiul sau într-un tur organizat, de-a lungul unei șosele scurte și bine semnalizate care se termină la centrul de vizitare, de unde o navetă și o pasarelă duc la incinte. Nu este mare lucru altceva în apropiere, așa că e cel mai bine combinat cu orașul însuși.`,
+          `Vârful de deal este deschis și expus, aproape fără umbră, așa că soarele de vară din sud-estul Turciei poate fi necruțător. Țintește dimineața devreme sau după-amiaza târziu și adu apă, o pălărie și protecție solară; primăvara și toamna sunt cele mai plăcute anotimpuri în ansamblu. Pasarela acoperită te ține deasupra incintelor, așa că poartă pantofi comozi pentru plimbarea ușoară.`,
+          `Intrarea se face cu bilet, iar ceea ce face din Göbekli Tepe un loc de neuitat este să înțelegi ce vezi — altfel pilonii pot părea niște pietre obișnuite pe un deal. Un ghid local autorizat VibeGuide aduce la viață incintele, descifrează reliefurile cu animale și leagă situl de Muzeul de Arheologie din Şanlıurfa, unde pilonii originali și uimitorul Om din Urfa completează povestea.`,
+        ],
+        ctaTitle: `Vezi Göbekli Tepe cu un localnic`,
+        ...SAN.ro,
+      },
     },
   },
   {
@@ -9502,6 +10082,34 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `Побачте монастир Сумела з місцевим гідом`,
         ...TZN.uk,
+      },
+      ro: {
+        name: `Mănăstirea Sumela`,
+        metaTitle: `Tururi Mănăstirea Sumela și ghizi locali`,
+        metaDescription:
+          `Vizitează Mănăstirea Sumela lângă Trabzon cu un ghid local verificat — o mănăstire ortodoxă greacă agățată de o stâncă abruptă, la 300 m deasupra unei văi împădurite și cețoase.`,
+        intro: [
+          `Mănăstirea Sumela este una dintre cele mai impresionante priveliști ale Turciei — o mănăstire ortodoxă greacă construită într-o stâncă abruptă, la 300 de metri deasupra unei văi verzi, învăluite în ceață, în munții de la sud de Trabzon. Întemeiată în secolul al IV-lea și reconstruită de-a lungul a peste o mie de ani, capelele sale cu fresce par să crească direct din stâncă.`,
+          `Cu un expert local VibeGuide, urcarea prin pădurea de pini devine o poveste — călugării bizantini, icoana miraculoasă a Fecioarei, biserica săpată în stâncă și secolele de pelerini care au făcut drumul până aici. Vei înțelege ce privești, în ritmul tău și în limba ta.`,
+        ],
+        highlights: [
+          { title: `Cadrul din stâncă`, desc: `O mănăstire agățată de un perete vertical de stâncă, la 300 m deasupra văii Altındere — o primă priveliște de neuitat.` },
+          { title: `Fresce bizantine`, desc: `Scene pictate viu acoperind Biserica din Stâncă, suprapuse de-a lungul secolelor de viață ale mănăstirii.` },
+          { title: `Drumul prin pădure`, desc: `O plimbare în sus prin păduri răcoroase de pini și ceață de munte până la poarta mănăstirii.` },
+        ],
+        faqs: [
+          { q: `Cum ajungi la Mănăstirea Sumela?`, a: `Sumela se află în valea Altındere, la aproximativ 45 km sud de Trabzon, cam la o oră pe șosea. Majoritatea vizitatorilor conduc, iau un taxi sau se alătură unui tur din Trabzon, apoi parcurg pe jos ultima potecă prin pădure până la intrarea mănăstirii.` },
+          { q: `Ai nevoie de un ghid pentru Mănăstirea Sumela?`, a: `Cadrul vorbește de la sine, dar frescele și lunga istorie bizantină a mănăstirii sunt invizibile fără context. Un ghid local VibeGuide aduce la viață icoanele, legendele și secolele de pelerinaj.` },
+          { q: `Se merge mult pe jos la Sumela?`, a: `Da — ajungerea la mănăstire presupune o urcare pe o potecă prin pădure, iar situl în sine are trepte și suprafețe denivelate. Poartă pantofi comozi și ține minte că poate fi răcoros și umed chiar și vara.` },
+        ],
+        planningHeading: `Planifică-ți vizita`,
+        planningParagraphs: [
+          `Sumela se află în Parcul Național Valea Altındere, la aproximativ 45 km sud de Trabzon, pe coasta Mării Negre a Turciei, cam la o oră cu mașina în interior, spre munți. Majoritatea vizitatorilor își fac baza în Trabzon — care are un aeroport cu zboruri interne — și ajung la mănăstire cu mașina, taxiul sau într-un tur organizat. Din parcarea din vale, o navetă și o potecă duc în sus prin pădure până la intrare.`,
+          `Vino la sfârșitul primăverii, vara sau începutul toamnei: șoseaua de munte se poate închide iarna din cauza zăpezii, iar valea este adesea învăluită în ceață și ploaie. Diminețile sunt cele mai bune pentru priveliști mai limpezi înainte să se adune norii. Chiar și vara rămâne răcoros și umed la altitudine, așa că adu un strat de îmbrăcăminte și o jachetă de ploaie și așteaptă-te la o urcare pe trepte și poteci de pădure — pantofii rezistenți contează.`,
+          `Mănăstirea a trecut printr-o restaurare majoră, așa că verifică programul de deschidere actual înainte să mergi. Mare parte din sensul mănăstirii Sumela — frescele bizantine, izvorul sacru, capelele săpate în stâncă și povestea icoanei miraculoase — este ușor de ratat fără context. Un ghid local autorizat VibeGuide îți planifică programul în funcție de vreme și de mulțimi și transformă o priveliște uluitoare în o mie de ani de istorie vie.`,
+        ],
+        ctaTitle: `Vezi Mănăstirea Sumela cu un localnic`,
+        ...TZN.ro,
       },
     },
   },
@@ -9921,6 +10529,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Побачте Трою з місцевим гідом`,
         ...CKL.uk,
       },
+      ro: {
+        name: `Troia (Truva)`,
+        metaTitle: `Tururi orașul antic Troia și ghizi locali`,
+        metaDescription:
+          `Explorează orașul antic Troia lângă Çanakkale cu un ghid local verificat — legendarul loc al Iliadei lui Homer, sit din patrimoniul mondial UNESCO cu nouă orașe suprapuse.`,
+        intro: [
+          `Troia este cel mai legendar sit arheologic din lume — orașul Iliadei lui Homer, al lui Ahile, al lui Hector și al calului de lemn. Pe o movilă joasă lângă Çanakkale, cu vedere spre câmpie către Dardanele, nouă orașe au fost construite unul peste altul de-a lungul a peste 3.000 de ani, din Epoca Bronzului până în vremurile romane.`,
+          `Ruinele îi răsplătesc pe cei care cunosc povestea. Cu un expert local VibeGuide, zidurile, rampele și fundațiile în straturi prind viață — unde mitul întâlnește arheologia, cum a săpat Schliemann aici și ce s-a întâmplat cu adevărat pe această câmpie bătută de vânt. Un cal de lemn replică marchează locul, dar magia adevărată este să înțelegi straturile de sub picioarele tale.`,
+        ],
+        highlights: [
+          { title: `Orașul legendar al lui Homer`, desc: `Cadrul Iliadei și al Războiului Troian — mit și istorie împletite pe o singură movilă antică.` },
+          { title: `Nouă orașe într-unul`, desc: `Strat după strat de așezare din Epoca Bronzului până la Roma, dezvăluite în zidurile și tranșeele excavate.` },
+          { title: `Patrimoniul mondial UNESCO`, desc: `Un sit de valoare universală remarcabilă, cu un muzeu modern care expune cele mai frumoase descoperiri ale sale în apropiere.` },
+        ],
+        faqs: [
+          { q: `Unde se află Troia și cum ajungi acolo?`, a: `Troia se află la aproximativ 30 km sud-vest de Çanakkale, în nord-vestul Turciei, lângă Dardanele. Majoritatea vizitatorilor își fac baza în Çanakkale și ajung la sit cu mașina, taxiul sau într-un tur; se îmbină bine și cu o vizită la Gallipoli.` },
+          { q: `Este ceva de văzut la Troia sau doar ruine?`, a: `Troia este un sit arheologic de ziduri, fundații și straturi de excavare, mai degrabă decât temple în picioare, așa că contextul este totul. Un ghid dezvăluie cele nouă orașe, mitul și istoria — iar excelentul Muzeu Troia din apropiere expune cele mai frumoase artefacte.` },
+          { q: `Ai nevoie de un ghid pentru Troia?`, a: `Puternic recomandat. Mare parte din semnificația Troiei este invizibilă pentru ochiul neinstruit. Un ghid local VibeGuide aduce la viață epopeea lui Homer, orașele suprapuse și excavările lui Schliemann, așa încât situl capătă sens.` },
+        ],
+        planningHeading: `Planifică-ți vizita`,
+        planningParagraphs: [
+          `Troia se află la aproximativ 30 km sud-vest de Çanakkale, în nord-vestul Turciei, aproape de coasta egeeană și de strâmtoarea Dardanele. Majoritatea vizitatorilor își fac baza în Çanakkale — accesibil cu autobuzul sau cu un zbor scurt și un feribot — și conduc, iau un taxi sau merg într-un tur până la sit. Troia se îmbină firesc cu câmpurile de luptă de la Gallipoli de peste strâmtoare, iar remarcabilul Muzeu Troia se află lângă ruine.`,
+          `Primăvara și toamna oferă vremea cea mai plăcută; vara pe movila expusă este fierbinte, cu puțină umbră. Acordă-ți câteva ore pentru sit și mai mult pentru muzeu. Adu o pălărie, apă și pantofi comozi pentru potecile arheologice denivelate și pornește mai devreme în cursul zilei ca să eviți deopotrivă căldura și mulțimile de autocare.`,
+          `Troia este un sit unde povestea contează mai mult decât orice zid rămas în picioare — fără ea, ruinele pot părea o grămadă derutantă de piatră. Un ghid local autorizat VibeGuide descâlcește cele nouă orașe suprapuse, spune povestea Iliadei și a Calului Troian, explică săpăturile controversate ale lui Heinrich Schliemann și leagă ruinele de comorile din Muzeul Troia pentru o zi care face legenda în sfârșit reală.`,
+        ],
+        ctaTitle: `Vezi Troia cu un localnic`,
+        ...CKL.ro,
+      },
     },
   },
   {
@@ -10339,6 +10975,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Побачте гору Немрут із місцевим гідом`,
         ...NMR.uk,
       },
+      ro: {
+        name: `Muntele Nemrut`,
+        metaTitle: `Tururi Muntele Nemrut și ghizi locali`,
+        metaDescription:
+          `Vizitează Muntele Nemrut cu un ghid local verificat — capete colosale de piatră ale zeilor și regilor, vechi de 2.000 de ani, ce încununează un vârf de 2.150 m, un răsărit UNESCO fără egal.`,
+        intro: [
+          `Muntele Nemrut este una dintre cele mai extraordinare priveliști din Turcia — un sanctuar de vârf de munte la 2.150 de metri, unde capete colosale de piatră ale zeilor, regilor și vulturilor privesc peste piscuri. Construit în secolul I î.Hr. ca sanctuar-mormânt al regelui Antioh I al Comagenei, statuile sale uriașe s-au prăbușit de pe trupuri și stau acum împrăștiate pe terasele vârfului.`,
+          `Călătorii urcă înainte de zori ca să privească soarele răsărind peste capete — o experiență de neuitat, aproape de pe altă lume. Cu un expert local VibeGuide, ciudata contopire de zei greci și persani, regatul pierdut al Comagenei și misterul mormântului ascuns al lui Antioh se limpezesc, în ritmul tău și în limba ta.`,
+        ],
+        highlights: [
+          { title: `Capetele colosale`, desc: `Capete uriașe sculptate ale zeilor și regilor, prăbușite de pe tronurile lor și împrăștiate pe terasele vârfului.` },
+          { title: `Răsăritul pe vârf`, desc: `Experiența clasică: privirea zorilor izbucnind peste statui la 2.150 de metri, în aerul rece de munte.` },
+          { title: `Regatul pierdut al Comagenei`, desc: `Un sanctuar-mormânt din secolul I î.Hr. ce îmbină zei greci și persani — un sit din patrimoniul mondial UNESCO.` },
+        ],
+        faqs: [
+          { q: `Cum ajungi la Muntele Nemrut?`, a: `La Nemrut se ajunge din Adıyaman sau Kahta, în sud-estul Turciei, de obicei cu mașina, taxiul sau într-un tur organizat, urmat de o urcare scurtă, dar abruptă până la terasele vârfului. Mulți vizitatori zboară la Adıyaman sau Malatya și continuă pe șosea.` },
+          { q: `Merită să urci pentru răsărit la Nemrut?`, a: `Pentru mulți, răsăritul peste capetele uriașe este momentul culminant al întregii călătorii — dar înseamnă un start foarte matinal și rece. Apusul este o alternativă mai blândă. Un ghid local te ajută să alegi și planifică sincronizarea și urcarea.` },
+          { q: `Ai nevoie de un ghid pentru Muntele Nemrut?`, a: `Puternic recomandat. Statuile sunt uimitoare, dar povestea Comagenei și a regelui Antioh este invizibilă fără context. Un ghid local VibeGuide explică zeii, mormântul și regatul și se ocupă de sincronizarea pentru răsărit sau apus.` },
+        ],
+        planningHeading: `Planifică-ți vizita`,
+        planningParagraphs: [
+          `Muntele Nemrut se înalță în sud-estul Turciei, la care se ajunge cel mai frecvent din orașele Adıyaman sau Kahta. Mulți călători zboară la Adıyaman sau Malatya și continuă cu mașina, taxiul sau într-un tur organizat pe șoseaua de munte, care se termină la o parcare sub vârf. De acolo, o urcare scurtă, dar abruptă pe teren accidentat duce la terasele de est și de vest unde stau statuile.`,
+          `Momentul clasic pentru vizită este răsăritul sau apusul, când lumina joasă face capetele colosale să strălucească — răsăritul este cel mai faimos, dar înseamnă un start rece, dinaintea zorilor. Vârful este accesibil doar în lunile mai calde, cam de la sfârșitul primăverii până la începutul toamnei, fiindcă zăpada închide șoseaua iarna. Chiar și vara este rece și vântos la 2.150 de metri, așa că adu straturi calde și poartă pantofi rezistenți pentru urcare.`,
+          `Capetele răsturnate de la Nemrut sunt de neuitat, dar sensul din spatele lor — regatul dispărut al Comagenei, pretenția regelui Antioh la descendență divină, contopirea zeilor greci și persani și mormântul încă nedescoperit de sub vârful artificial — trebuie povestit. Un ghid local autorizat VibeGuide planifică sincronizarea pentru răsărit sau apus, ghidează urcarea și transformă o risipă de chipuri uriașe de piatră într-una dintre cele mai stranii și mai mișcătoare povești ale lumii antice.`,
+        ],
+        ctaTitle: `Vezi Muntele Nemrut cu un localnic`,
+        ...NMR.ro,
+      },
     },
   },
   {
@@ -10756,6 +11420,34 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `Побачте стародавнє Сіде з місцевим гідом`,
         ...ANT.uk,
+      },
+      ro: {
+        name: `Orașul Antic Side`,
+        metaTitle: `Tururi orașul antic Side și ghizi locali`,
+        metaDescription:
+          `Explorează anticul Side lângă Antalya cu un ghid local verificat — un oraș-port greco-roman unde Templul lui Apollo stă chiar pe țărmul Mediteranei.`,
+        intro: [
+          `Side este unul dintre cele mai frumoase situri antice ale Coastei Turcoaz — un oraș-port greco-roman așezat pe o mică peninsulă, unde ruinele de marmură coboară chiar până la Mediterana. Templul său de la malul mării, dedicat lui Apollo, ale cărui coloane strălucesc la apus deasupra apei, este una dintre cele mai fotografiate priveliști de pe toată coasta.`,
+          `Odinioară un port important și, notoriu, un centru de comerț cu sclavi și de pirați, Side îmbină astăzi un oraș antic bine conservat cu o vibrantă localitate de la malul mării. Cu un expert local VibeGuide, marele teatru, străzile cu coloane și templul de la mare prind viață — negustorii romani, comerțul din port și straturile de istorie de sub stațiune.`,
+        ],
+        highlights: [
+          { title: `Templul lui Apollo`, desc: `Coloane de marmură care stau chiar pe țărm, strălucind auriu la apus deasupra Mediteranei — imaginea emblematică a Side.` },
+          { title: `Marele Teatru`, desc: `Unul dintre cele mai mari teatre romane din regiune, care găzduia odinioară în jur de 15.000 de spectatori.` },
+          { title: `Oraș antic la malul mării`, desc: `Străzi cu coloane, o agora și porți monumentale țesute printr-o localitate vie de la malul mării.` },
+        ],
+        faqs: [
+          { q: `Unde se află Side și cum ajungi acolo?`, a: `Side se află pe coasta mediteraneană, la aproximativ 75 km est de Antalya, lângă Manavgat. Majoritatea vizitatorilor ajung acolo cu mașina, taxiul sau într-un tur din Antalya sau din stațiunile din jur; este o excursie de o zi ușoară și populară.` },
+          { q: `Ai nevoie de un ghid pentru Side?`, a: `Ruinele sunt țesute printr-un oraș modern, așa că este ușor să ratezi ce privești. Un ghid local VibeGuide dezvăluie Templul lui Apollo, teatrul și agora și spune povestea portului, comerțului și trecutului de pirați ale Side.` },
+          { q: `Care este cel mai bun moment pentru a vizita Side?`, a: `Primăvara și toamna oferă vreme caldă, plăcută și mulțimi mai mici. Vara, vizitează ruinele dis-de-dimineață sau seara ca să eviți căldura de la prânz — și programează Templul lui Apollo pentru apus, când este la cel mai frumos.` },
+        ],
+        planningHeading: `Planifică-ți vizita`,
+        planningParagraphs: [
+          `Side se află pe o mică peninsulă de pe coasta mediteraneană, la aproximativ 75 km est de Antalya, lângă orașul Manavgat. Este o excursie de o zi ușoară din Antalya și din stațiunile din jur, cu mașina, taxiul sau într-un tur organizat, iar aeroportul din Antalya face întreaga zonă simplu de ajuns. Orașul antic este țesut chiar prin localitatea turistică modernă, așa că rătăcești printre ruine, magazine și cafenele pe măsură ce înaintezi.`,
+          `Primăvara și toamna aduc vremea cea mai plăcută pentru explorarea ruinelor deschise, în timp ce vara este fierbinte — vizitează siturile expuse dis-de-dimineață sau seara. Păstrează Templul lui Apollo de la malul mării pentru apus, când coloanele sale devin aurii deasupra apei, iar mulțimile se subțiază. Poartă o pălărie, cremă de protecție solară și pantofi comozi și adu apă, fiindcă mare parte din sit este neumbrită.`,
+          `Fiindcă ruinele din Side sunt încâlcite într-un oraș de vacanță aglomerat, este ușor să treci pe lângă două mii de ani de istorie fără să observi. Un ghid local autorizat VibeGuide leagă piesele împrăștiate — Templul lui Apollo, marele teatru, agora și portul — și spune povestea comerțului portului, a trecutului său de pirați și de piață de sclavi și a vieții cotidiene romane, transformând o plimbare frumoasă la malul mării într-un adevărat oraș antic.`,
+        ],
+        ctaTitle: `Vezi anticul Side cu un localnic`,
+        ...ANT.ro,
       },
     },
   },

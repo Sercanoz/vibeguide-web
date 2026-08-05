@@ -7,7 +7,7 @@
 // language-independent; only text lives under i18n[lang].
 
 export const BLOG_LANGS = [
-  "en", "de", "es", "fr", "it", "ar", "ru", "tr", "pl", "nl", "pt", "ja", "ko", "el", "uk",
+  "en", "de", "es", "fr", "it", "ar", "ru", "tr", "pl", "nl", "pt", "ja", "ko", "el", "uk", "ro",
 ] as const;
 export type BlogLang = (typeof BLOG_LANGS)[number];
 
@@ -43,6 +43,7 @@ export const BLOG_CATEGORY_LABELS: Record<BlogLang, Record<BlogCategory, string>
   ko: { "when-to-go": "가기 좋은 시기", itineraries: "여행 일정", practical: "실용 팁", guides: "심층 가이드" },
   el: { "when-to-go": "Πότε να πάτε", itineraries: "Δρομολόγια", practical: "Πρακτικές συμβουλές", guides: "Αναλυτικοί οδηγοί" },
   uk: { "when-to-go": "Коли їхати", itineraries: "Маршрути", practical: "Практичні поради", guides: "Докладні путівники" },
+  ro: { "when-to-go": "Când să mergi", itineraries: "Itinerarii", practical: "Sfaturi practice", guides: "Ghiduri detaliate" },
 };
 
 // /blog hub page copy per language.
@@ -62,6 +63,7 @@ export const BLOG_HUB: Record<BlogLang, { metaTitle: string; metaDescription: st
   ko: { metaTitle: "튀르키예 여행 블로그 — 가이드, 팁, 일정", metaDescription: "현지 가이드의 전문 지식으로 튀르키예 여행을 계획하세요: 가기 좋은 시기, 바로 쓰는 일정, 실용 팁, 그리고 이스탄불·카파도키아 심층 가이드.", h1: "튀르키예 여행 블로그", intro: "현지 가이드와 함께 쓴 여행 계획 조언 — 언제 갈지, 무엇을 볼지, 어떻게 다닐지, 그리고 튀르키예 최고 명소 뒤에 담긴 이야기.", readMore: "더 읽기" },
   el: { metaTitle: "Ταξιδιωτικό Blog Τουρκίας — Οδηγοί, Συμβουλές & Δρομολόγια", metaDescription: "Σχεδιάστε το ταξίδι σας στην Τουρκία με την εμπειρία ντόπιων ξεναγών: η καλύτερη εποχή, έτοιμα δρομολόγια, πρακτικές συμβουλές και αναλυτικοί οδηγοί για Κωνσταντινούπολη, Καππαδοκία και όχι μόνο.", h1: "Ταξιδιωτικό Blog Τουρκίας", intro: "Συμβουλές οργάνωσης ταξιδιού γραμμένες με ντόπιους ξεναγούς — πότε να πάτε, τι να δείτε, πώς να μετακινηθείτε και οι ιστορίες πίσω από τα σπουδαιότερα μέρη της Τουρκίας.", readMore: "Διαβάστε περισσότερα" },
   uk: { metaTitle: "Блог про подорожі Туреччиною — поради та маршрути", metaDescription: "Плануйте подорож до Туреччини з досвідом місцевих гідів: найкращий час для візиту, готові маршрути, практичні поради та докладні путівники Стамбулом, Каппадокією та не тільки.", h1: "Блог про подорожі Туреччиною", intro: "Поради з планування подорожі, написані разом із місцевими гідами — коли їхати, що подивитися, як пересуватися й історії за найвеличнішими місцями Туреччини.", readMore: "Читати далі" },
+  ro: { metaTitle: "Blog de călătorie Turcia — Ghiduri, sfaturi, itinerarii", metaDescription: "Planifică-ți călătoria în Turcia cu expertiza ghizilor locali: cel mai bun moment pentru vizită, itinerarii gata făcute, sfaturi practice și ghiduri detaliate pentru Istanbul, Capadocia și nu numai.", h1: "Blog de călătorie Turcia", intro: "Sfaturi pentru planificarea călătoriei, scrise împreună cu ghizi locali — când să mergi, ce să vezi, cum să te deplasezi și poveștile din spatele celor mai frumoase locuri din Turcia.", readMore: "Citește mai mult" },
 };
 
 export type BlogSection = { heading: string; paragraphs: string[] }; // paragraphs may contain <strong>
@@ -1206,6 +1208,79 @@ export const BLOG_POSTS: BlogPost[] = [
         "relatedHeading": "Плануйте подорож із місцевим гідом",
         "ctaTitle": "Готові спланувати поїздку до Туреччини?",
         "ctaSub": "Знайдіть перевіреного місцевого гіда в Стамбулі, Каппадокії чи на узбережжі — миттєво або заздалегідь."
+      },
+      "ro": {
+        "title": "Cel mai bun moment pentru a vizita Turcia: un ghid lună cu lună",
+        "metaTitle": "Cel mai bun moment pentru Turcia — ghid lună cu lună",
+        "metaDescription": "Când este cel mai bun moment să vizitezi Turcia? O analiză de la ghizi locali despre vreme, aglomerație și prețuri, pe anotimpuri și regiuni — de la Istanbul și Capadocia la Coasta Turcoaz.",
+        "excerpt": "Primăvara și toamna sunt momentul ideal — dar luna potrivită depinde dacă urmărești baloanele din Capadocia, plajele Mării Egee sau ruine fără aglomerație. Iată cum să alegi.",
+        "intro": [
+          "Turcia este o țară cu multe climate, așa că nu există o singură lună „cea mai bună” — momentul potrivit depinde de unde mergi și de ce vrei să faci. Istanbulul și coasta, podișul înalt al Capadociei și ruinele pârjolite de soare ale Mării Egee au fiecare propriul ritm de vreme, aglomerație și prețuri.",
+          "Ca regulă generală, <strong>primăvara (aprilie–mai)</strong> și <strong>toamna (septembrie–octombrie)</strong> sunt momentul ideal pentru majoritatea călătorilor: zile calde, seri blânde, mai puțină aglomerație și condiții confortabile pentru vizitat obiective. Dar vara, iarna și săptămânile de tranziție au fiecare recompensele lor. Iată cum să alegi, lună cu lună și regiune cu regiune."
+        ],
+        "sections": [
+          {
+            "heading": "Primăvara (aprilie–mai): cel mai bun moment în general",
+            "paragraphs": [
+              "Primăvara este răspunsul clasic la întrebarea „când ar trebui să merg în Turcia?” și pe bună dreptate. Temperaturile sunt plăcute în aproape toată țara, florile de câmp acoperă peisajul, iar marile obiective — Hagia Sophia, Efes, ruinele din jurul Mării Egee — pot fi vizitate pe jos confortabil, fără căldura zdrobitoare sau mulțimile venite cu autocarele vara.",
+              "La <strong>Istanbul</strong>, aprilie și mai aduc zile de 15–22°C, perfecte pentru plimbări prin Sultanahmet, croaziere pe Bosfor și hoinăreală prin Balat. În <strong>Capadocia</strong>, cerul de primăvară este de obicei suficient de senin pentru ca baloanele cu aer cald să poată zbura în zori, iar văile sunt verzi. Pe <strong>coastele Mării Egee și Mediterane</strong> marea este încă răcoroasă pentru înot devreme în sezon, dar siturile antice de la Efes, Pergam și Aspendos sunt la cele mai plăcute condiții. Rezervă cazarea din timp în jurul sărbătorilor naționale de la sfârșitul lunii aprilie."
+            ]
+          },
+          {
+            "heading": "Vara (iunie–august): plaje, căldură și aglomerație",
+            "paragraphs": [
+              "Vara este sezonul de vârf pe coastă. Dacă vacanța ta este construită în jurul <strong>Coastei Turcoaz</strong> — Antalya, Bodrum, Marmaris, Kuşadası și croazierele cu goeleta gület — atunci marea este caldă, porturile de agrement freamătă, iar viața de noapte atinge apogeul. Așteaptă-te la zile fierbinți și uscate și seri animate, dar și la cele mai mari prețuri și cele mai aglomerate plaje.",
+              "În interior, vara poate fi intensă. Istanbulul este cald și umed, iar ruinele expuse ale Mării Egee și podișul fără copaci al Capadociei pot fi epuizante la amiază — un ghid local te va porni devreme ca să eviți căldura. Göbeklitepe și sud-estul sunt foarte fierbinți în iulie și august. Dacă vii vara, planifică vizitatul obiectivelor pentru dimineața devreme și după-amiaza târziu și păstrează mijlocul zilei pentru mare, o cafenea umbrită sau un muzeu."
+            ]
+          },
+          {
+            "heading": "Toamna (septembrie–octombrie): alegerea cunoscătorilor",
+            "paragraphs": [
+              "Mulți călători experimentați consideră toamna cel mai bun moment pentru a vizita Turcia. Căldura verii se domolește, marea rămâne suficient de caldă pentru înot până bine în octombrie, iar mulțimile se răresc după vacanțele școlare. Lumina devine aurie — superbă pentru fotografie în Capadocia și de-a lungul coastei.",
+              "Septembrie și octombrie sunt ideale pentru a combina coasta și cultura: înoată dimineața la Bodrum sau Kuşadası, explorează Efes în confort, apoi pornește spre interior către Capadocia, când văile strălucesc. Zborurile cu balonul sunt în general fiabile, iar prețurile încep să scadă de la vârful lor din august. Este momentul ideal pentru un începător care încearcă să vadă câte puțin din toate."
+            ]
+          },
+          {
+            "heading": "Iarna (noiembrie–martie): liniștită, ieftină și plină de atmosferă",
+            "paragraphs": [
+              "Iarna este sezonul mort al Turciei și tocmai asta o face atrăgătoare pentru unii călători. <strong>Istanbulul</strong> iarna este răcoros și uneori ploios, dar marile moschei și muzeele sunt minunat de liniștite, prețurile scad, iar un strat subțire de zăpadă pe Hagia Sophia este de neuitat. <strong>Capadocia</strong> sub zăpadă este cu adevărat magică — coșurile zânelor devin albe, iar baloanele încă zboară în zilele senine, cu mult mai puțini oameni.",
+              "Coasta se închide în mare parte pe iarnă, multe hoteluri sezoniere și tururi cu barca fiind închise, așa că nu este sezonul pentru o vacanță la plajă. Dar pentru o escapadă urbană, o călătorie culturală sau o aventură în Capadocia înzăpezită, iarna oferă cele mai mici prețuri și cele mai goale situri din an. Ia haine călduroase în straturi și verifică programul de vizitare, deoarece unele situri mai mici au orare mai scurte iarna."
+            ]
+          },
+          {
+            "heading": "Deci când ar trebui să mergi? Un rezumat rapid",
+            "paragraphs": [
+              "Pentru o <strong>primă călătorie care cuprinde Istanbul, Capadocia și coasta</strong>, țintește sfârșitul lunii aprilie până la începutul lunii iunie sau septembrie până la mijlocul lunii octombrie — cel mai bun echilibru între vreme, situri deschise și aglomerație gestionabilă. Pentru o <strong>vacanță la plajă și cu barca</strong>, iunie până în septembrie este perioada de vârf. Pentru <strong>buget și liniște</strong>, vino iarna și concentrează-te pe orașe și Capadocia. Pentru <strong>baloanele din Capadocia</strong>, primăvara și toamna oferă cea mai fiabilă vreme de zbor, deși baloanele decolează tot anul când cerul este senin.",
+              "Indiferent de luna aleasă, un ghid local autorizat face o diferență reală — cunoaște orele cele mai liniștite la fiecare sit, cum schimbă sezonul ce este deschis și cum să construiască un traseu în funcție de vreme. Acea cunoaștere locală transformă o călătorie bună într-una excepțională."
+            ]
+          }
+        ],
+        "faqHeading": "Întrebări frecvente",
+        "faqs": [
+          {
+            "q": "Care este, în general, cea mai bună lună pentru a vizita Turcia?",
+            "a": "Mai și septembrie sunt adesea citate drept cele mai bune două luni: calde, dar nu toride, cu situri deschise, zboruri fiabile cu balonul în Capadocia și mai puțină aglomerație decât în toiul verii. Aprilie și octombrie urmează îndeaproape și sunt puțin mai ieftine."
+          },
+          {
+            "q": "Când este cea mai ieftină perioadă pentru a vizita Turcia?",
+            "a": "Iarna (noiembrie până în martie, cu excepția perioadei de Anul Nou) este sezonul mort, cu cele mai mici prețuri la zboruri și hoteluri — cel mai potrivit pentru escapade urbane și o Capadocie înzăpezită, mai degrabă decât pentru o vacanță la plajă."
+          },
+          {
+            "q": "Când se pot vedea baloanele cu aer cald în Capadocia?",
+            "a": "Baloanele zboară tot anul, dacă vremea permite, dar primăvara și toamna oferă cele mai constante dimineți senine și calme. Zborurile se anulează în vânt puternic sau vreme rea, așa că prevede o dimineață de rezervă în itinerarul tău."
+          },
+          {
+            "q": "Este vara prea caldă pentru a vizita Turcia?",
+            "a": "Vara este ideală pentru coastă, dar poate fi foarte caldă în interior și la siturile antice expuse. Dacă vizitezi în iulie sau august, vizitează obiectivele dimineața devreme și după-amiaza târziu și păstrează amiaza pentru mare, muzee sau umbră."
+          },
+          {
+            "q": "Care este cel mai bun moment pentru a vizita coasta turcească pentru înot?",
+            "a": "Marea este cea mai caldă și mai primitoare din iunie până la începutul lunii octombrie. Septembrie și începutul lunii octombrie sunt deosebit de plăcute — apă caldă cu mai puțină aglomerație decât în vârful din iulie–august."
+          }
+        ],
+        "relatedHeading": "Planifică-ți călătoria cu un ghid local",
+        "ctaTitle": "Ești gata să-ți planifici călătoria în Turcia?",
+        "ctaSub": "Găsește un ghid local verificat în Istanbul, Capadocia sau pe coastă — instant sau planificat din timp."
       }
     }
   },
@@ -2260,6 +2335,75 @@ export const BLOG_POSTS: BlogPost[] = [
         "relatedHeading": "Дослідіть кожну зупинку докладніше",
         "ctaTitle": "Готові збудувати свою поїздку до Туреччини?",
         "ctaSub": "Знайдіть перевірених місцевих гідів у кожному місті вашого маршруту — миттєво або заздалегідь."
+      },
+      "ro": {
+        "title": "Itinerarul perfect pentru Turcia: 7 până la 10 zile",
+        "metaTitle": "Itinerar Turcia: 7–10 zile (Istanbul, Capadocia și coasta)",
+        "metaDescription": "Un itinerar gata făcut pentru Turcia, de 7 până la 10 zile, cuprinzând Istanbul, Capadocia, Efes și Pamukkale — cu trasee zi cu zi, timpi de deplasare și sfaturi de la ghizi locali.",
+        "excerpt": "O săptămână este suficientă pentru trio-ul clasic — Istanbul, Capadocia și Marea Egee. Iată un traseu zi cu zi pe care îl poți urma, plus cum să-l extinzi la zece zile.",
+        "intro": [
+          "Cu <strong>șapte până la zece zile</strong> poți vedea confortabil cele trei atracții principale care definesc o primă călătorie în Turcia: imperialul <strong>Istanbul</strong>, suprarealista <strong>Capadocia</strong> și Marea Egee antică din jurul <strong>Efesului</strong>. Zborurile interne sunt ieftine și frecvente, așa că poți acoperi mult teren fără condus nesfârșit.",
+          "Acest itinerar este construit în jurul unei bucle logice care minimizează deplasările inutile. Ia-l ca pe un cadru flexibil, mai degrabă decât ca pe un program rigid — un ghid local poate ajusta ritmul, poate adăuga o excursie de o zi sau poate încetini ritmul oriunde vrei să zăbovești."
+        ],
+        "sections": [
+          {
+            "heading": "Zilele 1–3: Istanbul",
+            "paragraphs": [
+              "Începe la Istanbul, singurul oraș din lume situat pe două continente. <strong>Ziua 1</strong>: peninsula istorică Sultanahmet — Hagia Sophia, Moscheea Albastră, Palatul Topkapı și Cisterna Bazilica, toate la distanță de mers pe jos. <strong>Ziua 2</strong>: traversează Cornul de Aur către Galata și Karaköy, urcă în Turnul Galata, apoi pierde-te în Marele Bazar și Bazarul Egiptean al Mirodeniilor. <strong>Ziua 3</strong>: o croazieră pe Bosfor între Europa și Asia și străduțele colorate din Balat și Fener.",
+              "Trei zile sunt suficiente pentru atracțiile principale, dar Istanbulul răsplătește mai mult timp. Un ghid autorizat te ajută să eviți cele mai proaste cozi, să eviți restaurantele-capcană pentru turiști și să înțelegi istoria stratificată romană, bizantină și otomană pe lângă care majoritatea vizitatorilor trec fără s-o observe."
+            ]
+          },
+          {
+            "heading": "Zilele 4–5: Capadocia",
+            "paragraphs": [
+              "Zboară de la Istanbul la Capadocia (aproximativ 1,5 ore până la Nevşehir sau Kayseri) pentru cel mai suprarealist peisaj din Turcia. <strong>Ziua 4</strong>: Muzeul în aer liber Göreme cu bisericile bizantine săpate în stâncă, punctele de belvedere ale Cetății Uçhisar și o plimbare prin Valea Trandafirilor și Valea Roșie la ora aurie. <strong>Ziua 5</strong>: coboară într-un oraș subteran precum Derinkuyu sau Kaymaklı, vizitează orașul olăritului Avanos și explorează văile cu coșuri ale zânelor.",
+              "Experiența emblematică este un <strong>zbor cu balonul cu aer cald</strong> în zori deasupra văilor — rezervă-l din timp pentru una dintre diminețile tale în Capadocia, deoarece zborurile se epuizează și depind de vreme. Un ghid local îți organizează zilele în jurul balonului și găsește colțurile liniștite pe care mulțimile le ratează."
+            ]
+          },
+          {
+            "heading": "Zilele 6–7: Efes și Marea Egee",
+            "paragraphs": [
+              "Zboară de la Capadocia la İzmir (printr-o conexiune rapidă) și stabilește-ți baza lângă Selçuk sau Kuşadası pentru Marea Egee antică. <strong>Ziua 6</strong>: Efes, unul dintre cele mai bine conservate orașe antice din lume — Biblioteca lui Celsus, Marele Teatru și Casele-terasă — plus Templul Artemisei și Casa Fecioarei Maria de pe deal. <strong>Ziua 7</strong>: satul viticol Şirince sau o excursie de o zi la terasele albe de travertin de la Pamukkale și anticul Hierapolis.",
+              "Doar un ghid autorizat poate conduce tururi în interiorul Efesului, iar situl prinde cu adevărat viață alături de unul — ruinele sunt piatră tăcută fără poveștile împăraților, negustorilor și sfinților care le-au umplut."
+            ]
+          },
+          {
+            "heading": "Extinderea la 10 zile",
+            "paragraphs": [
+              "Cu trei zile în plus ai spațiu să respiri și să adaugi un final pe coastă. Opțiunea unu: adaugă o înnoptare la <strong>Pamukkale și Hierapolis</strong> în loc să te grăbești cu ele într-o excursie de o zi. Opțiunea doi: încheie pe <strong>Coasta Turcoaz</strong> — câteva nopți la Bodrum, Marmaris sau Antalya pentru cetate, plaje și o croazieră cu goeleta gület între golfuri turcoaz.",
+              "Zece zile îți permit, de asemenea, să încetinești ritmul la Istanbul sau Capadocia, în loc să te muți la fiecare două nopți. Dacă preferi să mergi mai în profunzime decât mai în lărgime, petrece timpul suplimentar pe partea asiatică a Istanbulului, în satele din jurul Capadociei sau pe o barcă de-a lungul coastei — ghidul tău poate adapta echilibrul la stilul tău."
+            ]
+          },
+          {
+            "heading": "Sfaturi practice pentru acest traseu",
+            "paragraphs": [
+              "<strong>Cum să te deplasezi:</strong> zborurile interne (Turkish Airlines, Pegasus, AJet) leagă Istanbul, Capadocia și İzmir ieftin și rapid — mult mai bine decât drumurile lungi cu mașina pentru această buclă. Rezervă-le din timp pentru cele mai bune tarife. <strong>Unde să-ți stabilești baza:</strong> Sultanahmet sau Beyoğlu la Istanbul; Göreme sau Ürgüp în Capadocia; Selçuk sau Kuşadası pentru Efes.",
+              "<strong>Cum să-ți dozezi ritmul:</strong> acesta este un itinerar plin, așa că include ici-colo o dimineață mai lentă. Rezervarea unui ghid local autorizat pentru zilele-cheie — orașul vechi al Istanbulului, văile Capadociei și Efesul — este cel mai bun mod de a vedea mai mult, a sta mai puțin la cozi și a înțelege cu adevărat ce privești."
+            ]
+          }
+        ],
+        "faqHeading": "Întrebări frecvente",
+        "faqs": [
+          {
+            "q": "Sunt 7 zile suficiente pentru Turcia?",
+            "a": "Șapte zile sunt suficiente pentru trio-ul clasic — Istanbul, Capadocia și Efes — folosind zboruri interne ieftine ca să economisești timp. Zece zile îți permit să adaugi Pamukkale sau câteva nopți pe Coasta Turcoaz fără să te grăbești."
+          },
+          {
+            "q": "Care este cea mai bună ordine pentru a vizita Istanbul, Capadocia și Efes?",
+            "a": "O buclă frecventă este mai întâi Istanbul, apoi zbor la Capadocia, apoi zbor la İzmir pentru Efes. Minimizează deplasările inutile și se termină aproape de coastă, de unde poți zbura acasă sau poți continua către o stațiune de pe litoral."
+          },
+          {
+            "q": "Cum te deplasezi între Istanbul, Capadocia și Efes?",
+            "a": "Zborurile interne sunt cea mai rapidă și, de obicei, cea mai ieftină opțiune: Istanbul–Capadocia (Nevşehir sau Kayseri) durează aproximativ 1,5 ore, iar Capadocia–İzmir este un zbor scurt, adesea via Istanbul sau Ankara."
+          },
+          {
+            "q": "Ar trebui să rezerv un ghid pentru acest itinerar?",
+            "a": "Pentru zilele-cheie — peninsula istorică a Istanbulului, văile și orașele subterane ale Capadociei și Efesul — un ghid local autorizat îmbunătățește dramatic experiența, ajutându-te să eviți cozile și capcanele pentru turiști și să înțelegi istoria. Poți rezerva ghizi zi cu zi, nu pentru toată călătoria."
+          }
+        ],
+        "relatedHeading": "Explorează fiecare oprire în detaliu",
+        "ctaTitle": "Ești gata să-ți construiești călătoria în Turcia?",
+        "ctaSub": "Găsește ghizi locali verificați în fiecare oraș de pe traseul tău — instant sau planificat din timp."
       }
     }
   },
@@ -3370,6 +3514,79 @@ export const BLOG_POSTS: BlogPost[] = [
         "relatedHeading": "Досліджуйте Туреччину з перевіреним місцевим",
         "ctaTitle": "Мандруйте Туреччиною впевнено",
         "ctaSub": "Знайдіть ліцензованого місцевого гіда з підтвердженою особою — без туристичних пасток, без тиску, лише справжній місцевий, який показує своє місто."
+      },
+      "ro": {
+        "title": "Este Turcia sigură? Sfaturi practice de călătorie pentru începători",
+        "metaTitle": "Este Turcia sigură de vizitat? Sfaturi practice de călătorie",
+        "metaDescription": "Este Turcia sigură pentru turiști? Sfaturi practice despre siguranță, bani, transport, etichetă și evitarea escrocheriilor — tot ce trebuie să știe un vizitator la prima călătorie în Turcia.",
+        "excerpt": "Turcia este o destinație primitoare și bine bătătorită de milioane de vizitatori pe an. Iată sfaturi sincere și practice despre siguranță, bani, etichetă și evitarea capcanelor obișnuite pentru turiști.",
+        "intro": [
+          "Turcia este una dintre cele mai vizitate țări din lume, primind zeci de milioane de călători în fiecare an, iar marea majoritate au o călătorie lină, caldă și memorabilă. Ca în orice destinație mare, este bine să călătorești informat — dar realitatea de la fața locului în Istanbul, Capadocia și stațiunile de pe coastă este cea a unei țări ospitaliere și pregătite pentru turism.",
+          "Acest ghid acoperă întrebările practice pe care le pun cel mai des vizitatorii la prima călătorie: siguranța generală, banii și plățile, deplasarea, eticheta culturală și cum să eviți capcanele clasice pentru turiști. Este sincer, nu alarmist — scopul este să te ajute să te relaxezi și să te bucuri de călătorie."
+        ],
+        "sections": [
+          {
+            "heading": "Este Turcia sigură pentru turiști?",
+            "paragraphs": [
+              "Pentru principalele regiuni turistice — <strong>Istanbul, Capadocia și coastele Mării Egee și Mediterane</strong> — Turcia este în general la fel de sigură ca orice destinație europeană populară. Infracțiunile violente împotriva turiștilor sunt rare; problemele mai frecvente sunt furturile mărunte în zonele aglomerate și obișnuitele escrocherii cu supraîncărcarea prețului, ambele ușor de evitat cu puțină atenție.",
+              "Ca peste tot, ai grijă de lucrurile tale în locurile aglomerate precum Marele Bazar, Bulevardul İstiklal și transportul public și folosește seiful hotelului pentru obiectele de valoare. Călătorii singuri, inclusiv femeile care călătoresc singure, vizitează Turcia în număr mare; îmbrăcatul cu puțină modestie departe de plajă și cazarea în cartiere cu recenzii bune ajută mult. Verifică întotdeauna recomandările de călătorie actuale ale guvernului tău înainte de a rezerva, în special cele privind zonele de frontieră din extremul sud-est."
+            ]
+          },
+          {
+            "heading": "Bani, prețuri și plăți",
+            "paragraphs": [
+              "Moneda este <strong>lira turcească (TRY)</strong>. Plățile cu cardul sunt acceptate pe scară largă în orașe, restaurante și magazine, dar poartă și ceva numerar pentru piețe, taxiuri, cafenele mici și bacșișuri. Bancomatele sunt peste tot; retrage de la aparatele cu siglă de bancă și refuză oferta de „conversie” pentru a fi taxat în lire, ceea ce oferă de obicei un curs mai bun.",
+              "Prețurile din zonele turistice sunt adesea mai mari și, în bazaruri, negociabile. <strong>Tocmeala este de așteptat</strong> în Marele Bazar și în Bazarul Mirodeniilor — începe mult sub prețul cerut, rămâi prietenos și fii gata să pleci. În restaurante, verifică dacă aperitivele (meze) sau pâinea necomandate au un cost și confirmă prețurile înainte de a comanda pește, care uneori se vinde la kilogram."
+            ]
+          },
+          {
+            "heading": "Cum să te deplasezi",
+            "paragraphs": [
+              "Turcia are transport excelent și accesibil. La <strong>Istanbul</strong>, procură-ți un Istanbulkart pentru tramvaie, metrou, feriboturi și autobuze — tramvaiul T1 leagă majoritatea obiectivelor din orașul vechi. Taxiurile oficiale sunt galbene; insistă pe aparatul de taxare sau folosește o aplicație de transport care afișează tariful dinainte pentru a evita disputele. <strong>Zborurile interne</strong> sunt ieftine și modul inteligent de a acoperi distanțele mari între Istanbul, Capadocia și coastă.",
+              "Autobuzele interurbane sunt confortabile și ieftine, iar o rețea feroviară de mare viteză în creștere leagă mai multe orașe. Pentru excursii de o zi la siturile antice împrăștiate — Efes, Aspendos, văile Capadociei — un ghid-șofer sau un tur organizat scutește multă bătaie de cap în comparație cu combinarea transportului local."
+            ]
+          },
+          {
+            "heading": "Cultură și etichetă",
+            "paragraphs": [
+              "Turcii sunt renumiți pentru ospitalitatea lor, iar puțină conștientizare culturală este primită cu căldură. Când vizitezi <strong>moschei</strong>, îmbracă-te modest — umeri și genunchi acoperiți și o basma pentru femei — scoate-ți pantofii și evită vizitele în timpul celor cinci rugăciuni zilnice. Multe moschei oferă basmale la intrare.",
+              "Ceaiul (çay) este o ofertă constantă de ospitalitate; acceptarea unui pahar este un gest frumos și rareori te obligă să cumperi ceva. Bacșișul este apreciat, dar modest — rotunjirea sumei sau în jur de 5–10% în restaurante este normal. Învățarea câtorva cuvinte — merhaba (bună), teşekkürler (mulțumesc) — ajută mult și aduce mereu un zâmbet."
+            ]
+          },
+          {
+            "heading": "Evitarea capcanelor obișnuite pentru turiști",
+            "paragraphs": [
+              "Capcanele clasice sunt ușor de evitat odată ce le cunoști. Ai grijă la străinii exagerat de prietenoși care te îndrumă către un anumit magazin, comerciant de covoare sau bar — un scenariu frecvent în cartierele turistice. Convine tarifele de taxi sau insistă pe aparatul de taxare înainte de plecare. În bazaruri, primul preț este rareori prețul real. Iar „ghizii” neautorizați care te abordează la siturile importante deseori nu au cunoștințele și acreditările unuia adevărat.",
+              "Cea mai simplă protecție este să rezervi un <strong>ghid local autorizat</strong>. Fiecare ghid din siturile antice ale Turciei trebuie să fie autorizat oficial de Ministerul Culturii și Turismului, iar un ghid verificat se ocupă de bilete, planificare și recomandări cinstite — fără comisioane, fără presiune, fără capcane. Transformă părțile din călătorie care provoacă stres în părțile de care te bucuri cel mai mult."
+            ]
+          }
+        ],
+        "faqHeading": "Întrebări frecvente",
+        "faqs": [
+          {
+            "q": "Este Turcia sigură pentru turiști în prezent?",
+            "a": "Principalele regiuni turistice — Istanbul, Capadocia și coastele — sunt în general sigure și primesc milioane de vizitatori pe an. Furturile mărunte și supraîncărcarea prețului sunt cele mai frecvente probleme și sunt ușor de evitat. Verifică întotdeauna recomandările de călătorie actuale ale guvernului tău înainte de a pleca, în special pentru zonele de frontieră din extremul sud-est."
+          },
+          {
+            "q": "Este Turcia sigură pentru femeile care călătoresc singure?",
+            "a": "Multe femei călătoresc singure în Turcia fără probleme. Îmbrăcatul modest departe de plajă, cazarea în cartiere cu recenzii bune, folosirea taxiurilor oficiale sau prin aplicație și încrederea în instinctele tale ajută toate. Turcii sunt în general foarte ospitalieri cu vizitatorii."
+          },
+          {
+            "q": "Am nevoie de numerar sau se acceptă cardurile în Turcia?",
+            "a": "Cardurile sunt acceptate pe scară largă în orașe, hoteluri, restaurante și magazine. Poartă ceva lire turcești în numerar pentru piețe, taxiuri, cafenele mici și bacșișuri. Când plătești cu cardul sau la bancomate, alege să fii taxat în lire pentru un curs de schimb mai bun."
+          },
+          {
+            "q": "Se poate bea apă de la robinet în Turcia?",
+            "a": "Apa de la robinet este clorinată și folosită pentru spălat și gătit, dar majoritatea localnicilor și vizitatorilor beau apă îmbuteliată, care este ieftină și disponibilă peste tot. Rămâi la apă îmbuteliată sau filtrată ca să fii în siguranță."
+          },
+          {
+            "q": "Cum evit escrocheriile în Turcia?",
+            "a": "Insistă pe aparatul de taxare al taxiului sau folosește o aplicație care afișează tariful, tocmește-te în bazaruri și așteaptă-te ca primul preț să fie mare, fii precaut cu străinii care te îndrumă către un anumit magazin și rezervă ghizi autorizați în loc să-i accepți pe cei neautorizați la situri. Un ghid local verificat este cea mai simplă protecție împotriva capcanelor obișnuite."
+          }
+        ],
+        "relatedHeading": "Explorează Turcia cu un localnic verificat",
+        "ctaTitle": "Călătorește în Turcia cu încredere",
+        "ctaSub": "Găsește un ghid local autorizat și verificat prin identitate — fără capcane pentru turiști, fără presiune, doar un localnic adevărat care îți arată orașul său."
       }
     }
   },
@@ -4479,6 +4696,79 @@ export const BLOG_POSTS: BlogPost[] = [
         "relatedHeading": "Дослідіть Каппадокію докладніше",
         "ctaTitle": "Готові пережити Каппадокію?",
         "ctaSub": "Знайдіть перевіреного місцевого гіда, щоб спланувати дні навколо кулі й відкрити долини, які натовпи проминають."
+      },
+      "ro": {
+        "title": "Ghid pentru balonul cu aer cald în Capadocia: tot ce trebuie să știi",
+        "metaTitle": "Ghid balon Capadocia — sfaturi, cost și cel mai bun moment",
+        "metaDescription": "Un ghid complet al experienței cu balonul cu aer cald în Capadocia: cum funcționează, cea mai bună perioadă a anului, cât costă, cum se rezervă și la ce să te aștepți în dimineața zborului.",
+        "excerpt": "Plutirea deasupra coșurilor zânelor în zori este cea mai emblematică experiență din Turcia. Iată cum funcționează zborurile, când să mergi, cât costă și cum să te asiguri că ajungi să zbori cu adevărat.",
+        "intro": [
+          "Priveliștea a sute de baloane care se ridică deasupra văilor Capadociei la răsărit este una dintre cele mai fotografiate imagini de pe pământ — iar trăirea ei este chiar mai bună decât pozele. Dacă un zbor cu balonul este pe lista ta de dorințe pentru Turcia, acest ghid acoperă tot ce ai nevoie pentru a-l planifica bine: cum funcționează, cel mai bun moment să mergi, cât costă și cum să-ți oferi cele mai bune șanse de a decola cu adevărat.",
+          "Capadocia este una dintre cele mai importante destinații de zbor cu balonul din lume, pe bună dreptate: vânturile blânde ale dimineții, peisajul dramatic de stâncă și numărul pur și simplu impresionant de baloane pe cer se combină în ceva cu adevărat de neuitat."
+        ],
+        "sections": [
+          {
+            "heading": "Cum funcționează experiența cu balonul",
+            "paragraphs": [
+              "Zborurile decolează în <strong>zori</strong>, când aerul este cel mai calm și mai răcoros. Vei fi preluat de la hotel pe întuneric, adesea în jurul orei 4:30–5:30 dimineața, în funcție de sezon, și dus la câmpul de lansare, unde poți privi baloanele fiind umflate — un spectacol în sine. După un briefing de siguranță, urci în coș și, pe măsură ce soarele răsare, plutești în tăcere deasupra coșurilor zânelor, văilor și viilor.",
+              "Un zbor tipic durează aproximativ <strong>o oră</strong>, alunecând de la puțin deasupra formațiunilor de stâncă până la câteva sute de metri pentru priveliști panoramice. Aterizările sunt line, iar mulți operatori încheie cu o mică sărbătoare — un certificat și un toast — înainte de a te duce înapoi la hotel. Întreaga experiență, de la ușă la ușă, durează aproximativ trei până la patru ore."
+            ]
+          },
+          {
+            "heading": "Cea mai bună perioadă a anului pentru a zbura",
+            "paragraphs": [
+              "Baloanele zboară <strong>tot anul</strong> în Capadocia, dacă vremea permite, dar cele mai fiabile condiții apar <strong>primăvara (aprilie–iunie)</strong> și <strong>toamna (septembrie–octombrie)</strong>, când diminețile tind să fie senine și calme. Zborurile de vară sunt și ele populare și decolează devreme pentru a evita căldura, în timp ce iarna oferă priveliștea magică a baloanelor deasupra coșurilor zânelor pudrate cu zăpadă — deși zborurile se anulează mai des din cauza vremii.",
+              "Indiferent de sezon, zborurile au loc doar când vântul și vizibilitatea sunt sigure, iar autoritatea aviației civile poate ține toate baloanele la sol într-o anumită dimineață. Acesta este cel mai important lucru în jurul căruia să planifici: nu-ți rezerva niciodată zborul cu balonul pentru ultima ta dimineață în Capadocia. Oferă-ți cel puțin două dimineți, astfel încât o anulare din cauza vremii să nu însemne ratarea completă a experienței."
+            ]
+          },
+          {
+            "heading": "Cât costă și cum se rezervă",
+            "paragraphs": [
+              "Zborurile cu balonul sunt o experiență premium, iar prețurile variază cu sezonul, cererea și tipul de zbor — coșurile standard de grup sunt cele mai accesibile, în timp ce coșurile mai mici „comfort” sau „deluxe”, cu mai puțini pasageri, costă mai mult. Prețurile cresc în sezonul de vârf și când cererea este mare, așa că merită să <strong>rezervi din timp</strong> în loc să speri la un loc la sosire.",
+              "Alege un operator de renume, autorizat corespunzător, cu un bun istoric de siguranță, în loc de cea mai ieftină ofertă pe care o găsești — acesta este un zbor, iar siguranța și experiența contează. Un ghid local poate recomanda operatori de încredere și te poate ajuta să programezi zborul în itinerarul tău, dar reține că plimbarea cu balonul în sine este întotdeauna operată și emisă cu bilet separat de compania de baloane, nu de ghidul tău."
+            ]
+          },
+          {
+            "heading": "Ce să porți și ce să iei în dimineața zborului",
+            "paragraphs": [
+              "Zorii în Capadocia sunt reci, chiar și vara, așa că îmbracă-te în <strong>straturi călduroase</strong> pe care le poți da jos pe măsură ce ziua se încălzește — arzătorul de deasupra ta degajă o căldură surprinzătoare, dar câmpul dinaintea zorilor este răcoros. Poartă pantofi închiși și fără toc, potriviți pentru urcatul și coborâtul din coș, și prinde-ți părul lung.",
+              "Ia-ți aparatul foto sau telefonul cu o curea sau o prindere sigură — nu vei vrea să-l scapi peste bord — și o baterie complet încărcată. Lasă gențile mari acasă; coșurile sunt compacte. Și pur și simplu ia-ți o clipă, între poze, ca să privești în sus și în jur: tăcerea și marea de baloane la răsărit sunt partea pe care nicio poză nu o surprinde cu adevărat."
+            ]
+          },
+          {
+            "heading": "Cum să profiți la maximum de călătoria ta în Capadocia",
+            "paragraphs": [
+              "Balonul este punctul culminant, dar este o parte scurtă a unei destinații bogate. Combină-l cu bisericile săpate în stâncă ale Muzeului în aer liber Göreme, orașele subterane Derinkuyu și Kaymaklı, punctele de belvedere din Uçhisar și plimbări la ora aurie prin Valea Trandafirilor și Valea Roșie. Două zile îți permit să te bucuri de regiune cum se cuvine în jurul unei dimineți cu balonul devreme.",
+              "Un ghid local autorizat leagă totul — organizându-ți zilele în jurul zborului, găsind văile liniștite pe care mulțimile le ratează și dând viață bisericilor-peșteră cu fresce și lumilor subterane. Acea combinație, un zbor în zori plus un localnic bine informat la sol, este Capadocia în cea mai bună formă a sa."
+            ]
+          }
+        ],
+        "faqHeading": "Întrebări frecvente",
+        "faqs": [
+          {
+            "q": "Cât costă o plimbare cu balonul cu aer cald în Capadocia?",
+            "a": "Prețurile variază cu sezonul, cererea și tipul de coș. Zborurile standard cu coș comun sunt cea mai accesibilă opțiune, în timp ce coșurile deluxe mai mici, cu mai puțini pasageri, costă mai mult. Prețurile cresc în sezonul de vârf, așa că merită să rezervi din timp. Zborul cu balonul este întotdeauna emis cu bilet separat de compania de baloane."
+          },
+          {
+            "q": "La ce oră decolează baloanele din Capadocia?",
+            "a": "Zborurile decolează în zori, când aerul este cel mai calm. Preluarea de la hotel are loc de obicei în jurul orei 4:30–5:30 dimineața, în funcție de sezon, zborul în sine durând aproximativ o oră, iar întreaga experiență trei până la patru ore de la ușă la ușă."
+          },
+          {
+            "q": "Ce se întâmplă dacă zborul meu cu balonul este anulat?",
+            "a": "Zborurile au loc doar în condiții sigure de vânt și vizibilitate și pot fi ținute la sol de autoritatea aviației. Dacă al tău este anulat, ești în mod normal rambursat sau reprogramat — motiv pentru care nu ar trebui să programezi niciodată balonul pentru ultima ta dimineață. Prevede cel puțin două dimineți în Capadocia ca marjă de siguranță."
+          },
+          {
+            "q": "Este sigură plimbarea cu balonul în Capadocia?",
+            "a": "Zborul cu balonul în Capadocia este bine consolidat și puternic reglementat, iar zborurile au loc doar în condiții sigure. Alege un operator de renume, autorizat corespunzător, cu un istoric solid de siguranță, în loc de cea mai ieftină opțiune, și respectă briefingul de siguranță al echipajului."
+          },
+          {
+            "q": "Care este cea mai bună perioadă a anului pentru baloanele din Capadocia?",
+            "a": "Baloanele zboară tot anul când vremea permite, dar primăvara (aprilie–iunie) și toamna (septembrie–octombrie) oferă cele mai fiabile dimineți senine și calme. Iarna aduce peisaje înzăpezite magice, dar anulări mai frecvente din cauza vremii."
+          }
+        ],
+        "relatedHeading": "Explorează Capadocia în detaliu",
+        "ctaTitle": "Ești gata să trăiești Capadocia?",
+        "ctaSub": "Găsește un ghid local verificat care să-ți planifice zilele în jurul balonului și să descoperi văile pe care mulțimile le ratează."
       }
     }
   },
@@ -5592,6 +5882,79 @@ export const BLOG_POSTS: BlogPost[] = [
         "relatedHeading": "Сплануйте поїздку до Стамбула",
         "ctaTitle": "Погляньте на Стамбул із ліцензованим місцевим гідом",
         "ctaSub": "Оминіть черги й відкрийте райони, які більшість відвідувачів проминає. Замовте перевіреного гіда Стамбула на VibeGuide — ціну ви побачите наперед."
+      },
+      "ro": {
+        "title": "3 zile în Istanbul: itinerarul perfect pentru începători",
+        "metaTitle": "3 zile în Istanbul — itinerar perfect pentru începători",
+        "metaDescription": "Cum să petreci 3 zile în Istanbul: un itinerar zi cu zi cuprinzând Sultanahmet, Bosforul și bazarurile, cu sfaturi de la ghizi locali despre evitarea cozilor și a aglomerației.",
+        "excerpt": "Trei zile sunt exact cât trebuie pentru a te îndrăgosti de Istanbul. Iată un plan zi cu zi pe două continente — marile monumente, Bosforul și străduțele pe care majoritatea vizitatorilor le ratează.",
+        "intro": [
+          "Istanbulul este uriaș, stratificat și imposibil de „văzut” pe deplin în trei zile — dar trei zile sunt suficiente ca să te îndrăgostești de el. Așezat călare peste Europa și Asia de-a lungul Bosforului, orașul îngrămădește catedrale bizantine, palate otomane, bazaruri zumzăitoare și cartiere de deal într-una dintre cele mai răsplătitoare escapade urbane de oriunde.",
+          "Acest <strong>itinerar de 3 zile la Istanbul</strong> este creat pentru un începător care vrea esențialul fără să se grăbească: marile monumente din Sultanahmet în prima zi, Bosforul și bazarurile în a doua zi, iar partea locală, mai puțin turistică, a orașului în a treia zi. Un ghid local autorizat poate comprima cozile și mersul pe jos în zilele aglomerate — dar planul funcționează și de unul singur."
+        ],
+        "sections": [
+          {
+            "heading": "Ziua 1: Sultanahmet — inima istorică",
+            "paragraphs": [
+              "Începe în <strong>Sultanahmet</strong>, peninsula istorică unde cele mai mari obiective se află la o scurtă plimbare unele de altele. Începe devreme la <strong>Hagia Sophia</strong>, fosta catedrală și moschee veche de 1.500 de ani, apoi traversează piața către <strong>Moscheea Albastră</strong> cu cascada ei de cupole și șase minarete. Ambele au intrarea gratuită, dar devin foarte aglomerate — sosirea la ora deschiderii face o diferență reală.",
+              "După-amiază, vizitează <strong>Palatul Topkapı</strong>, întinsul sediu al sultanilor otomani, și treci pe la <strong>Cisterna Bazilica</strong> subterană din apropiere. Dacă mai ai energie, <strong>Marele Bazar</strong> este la o scurtă plimbare pentru o primă hoinăreală. Aceasta este ziua cu cele mai multe monumente și cea în care un ghid se dovedește cel mai util — evitând cozile la bilete la Topkapı și explicând straturile de istorie pe lângă care altfel ai trece direct."
+            ]
+          },
+          {
+            "heading": "Ziua 2: Bosforul și bazarurile",
+            "paragraphs": [
+              "Dedică ziua a doua apei și piețelor. O <strong>croazieră pe Bosfor</strong> dimineața este modul clasic de a înțelege geografia Istanbulului — palate, conace de lemn pe malul apei și cele două continente alunecând de o parte și de alta. Feriboturile publice sunt ieftine și la fel de pitorești ca bărcile turistice.",
+              "Înapoi pe uscat, cufundă-te în <strong>Marele Bazar</strong> și în aromaticul <strong>Bazar al Mirodeniilor</strong> pentru covoare, lămpi, ceai și rahat turcesc — tocmeala este de așteptat și face parte din distracție. După-amiază, traversează Podul Galata către <strong>Karaköy</strong> și urcă în <strong>Turnul Galata</strong> pentru o priveliște de apus peste orașul vechi, apoi explorează cafenelele și buticurile cartierelor Galata și Beyoğlu pe măsură ce seara prinde viață."
+            ]
+          },
+          {
+            "heading": "Ziua 3: cartiere locale și partea asiatică",
+            "paragraphs": [
+              "Folosește ultima zi ca să vezi Istanbulul pe care îl iubesc localnicii. Petrece dimineața în <strong>Balat și Fener</strong>, fotogenicele cartiere vechi grecești și evreiești cu case în culorile curcubeului, magazine de antichități și biserici pe deal — o lume întreagă departe de mulțimile de la monumente. Este unul dintre cele mai răsplătitoare cartiere ale orașului pentru o hoinăreală lentă.",
+              "După-amiază, ia un feribot către <strong>partea asiatică</strong> și străzile animate din Kadıköy, cu piața ei de produse, mâncarea de stradă și cafenelele relaxate. Încheierea călătoriei pe un continent diferit, privind feriboturile care brăzdează Bosforul în amurg, este nota perfectă cu care să părăsești Istanbulul — și o reamintire a cât de multe mai sunt de descoperit la o revenire."
+            ]
+          },
+          {
+            "heading": "Sfaturi practice pentru 3 zile la Istanbul",
+            "paragraphs": [
+              "Procură-ți un card de călătorie <strong>Istanbulkart</strong> la sosire — funcționează pe feriboturi, tramvaie, autobuze și metrou și face săritul între cele două părți fără efort și ieftin. Stabilește-ți baza în sau lângă Sultanahmet pentru prima zi sau în Galata/Beyoğlu dacă preferi restaurante și viață de noapte la distanță de mers pe jos.",
+              "Poartă pantofi confortabili — Istanbulul are dealuri și caldarâm — și îmbracă-te modest pentru moschei, cu o basma pentru femei ca să-și acopere părul. Marile obiective din Sultanahmet sunt cele mai aglomerate la mijlocul zilei, așa că mergi devreme sau târziu. Trei zile trec repede, așa că un ghid local autorizat măcar pentru prima zi este cel mai bun mod de a vedea mai mult cu mai puțin stres."
+            ]
+          },
+          {
+            "heading": "Extinderea călătoriei dincolo de 3 zile",
+            "paragraphs": [
+              "Dacă poți adăuga o a patra sau a cincea zi, Istanbulul o răsplătește. O excursie de o zi la <strong>Insulele Prinților</strong> îți oferă o evadare fără mașini, cu păduri de pini și conace Belle Époque, ajunsă printr-un feribot pitoresc. Ca alternativă, adaugă o jumătate de zi mai lentă la <strong>Moscheea Süleymaniye</strong> și pe străduțele pline de atmosferă din jurul ei sau o experiență de hammam într-o baie otomană istorică.",
+              "Mulți călători folosesc Istanbulul ca actul de deschidere al unei călătorii mai lungi în Turcia, zburând mai departe către Capadocia pentru baloane sau coborând către Marea Egee pentru Efes și coastă. Trei zile la Istanbul sunt fundația perfectă — suficient ca să înțelegi orașul și suficient ca să știi că vei vrea să te întorci."
+            ]
+          }
+        ],
+        "faqHeading": "Întrebări frecvente",
+        "faqs": [
+          {
+            "q": "Sunt 3 zile suficiente pentru Istanbul?",
+            "a": "Trei zile sunt suficiente pentru a acoperi confortabil esențialul — monumentele din Sultanahmet, o croazieră pe Bosfor, bazarurile și un cartier local precum Balat. Nu vei vedea totul, dar vei simți cu adevărat orașul. Patru sau cinci zile îți permit să adaugi Insulele Prinților sau partea asiatică într-un ritm mai lent."
+          },
+          {
+            "q": "Care este cea mai bună zonă de cazare în Istanbul pentru o primă vizită?",
+            "a": "Sultanahmet te plasează la distanță de mers pe jos de Hagia Sophia, Moscheea Albastră și Topkapı, ideal pentru o primă călătorie scurtă. Galata și Beyoğlu sunt mai bune dacă vrei restaurante, baruri și viață de noapte la ușă, cu un tramvai sau feribot facil către orașul vechi."
+          },
+          {
+            "q": "Am nevoie de un ghid pentru Istanbul sau îl pot vizita pe cont propriu?",
+            "a": "Poți naviga Istanbulul pe cont propriu cu un card de transport și o hartă, dar un ghid local autorizat este de neprețuit în prima zi, cu multe monumente — evitând cozile la bilete la Topkapı, explicând istoria și ajungând în cartiere pe care majoritatea vizitatorilor le ratează. Mulți oameni iau ghid în prima zi și explorează singuri după aceea."
+          },
+          {
+            "q": "Cum mă deplasez prin Istanbul în 3 zile?",
+            "a": "Procură-ți un card Istanbulkart, care funcționează pe tramvaie, feriboturi, autobuze și metrou. Tramvaiul acoperă Sultanahmet și Galata, iar feriboturile publice ieftine traversează Bosforul și ajung pe partea asiatică. Traficul este intens, așa că tramvaiele și feriboturile sunt de obicei mai rapide decât taxiurile."
+          },
+          {
+            "q": "Cu ce ar trebui să mă îmbrac pentru a vizita moscheile din Istanbul?",
+            "a": "Îmbracă-te modest: umeri și genunchi acoperiți pentru toată lumea și o basma pentru femei ca să-și acopere părul în interiorul moscheilor. Îți vei scoate pantofii la intrare, așa că încălțămintea comodă ajută. Basmalele sunt adesea disponibile de împrumutat la ușă dacă ai uitat una."
+          }
+        ],
+        "relatedHeading": "Planifică-ți călătoria la Istanbul",
+        "ctaTitle": "Vezi Istanbulul cu un ghid local autorizat",
+        "ctaSub": "Evită cozile și descoperă cartierele pe care majoritatea vizitatorilor le ratează. Rezervă un ghid verificat din Istanbul pe VibeGuide — vei vedea prețul dinainte."
       }
     }
   },
@@ -6701,6 +7064,79 @@ export const BLOG_POSTS: BlogPost[] = [
         "relatedHeading": "Сплануйте поїздку до Туреччини",
         "ctaTitle": "Готові досліджувати Туреччину?",
         "ctaSub": "Щойно з в'їздом усе владнано, отримайте максимум від кожного дня з ліцензованим місцевим гідом. Відкрийте перевірених гідів по всій Туреччині на VibeGuide."
+      },
+      "ro": {
+        "title": "Viza și cerințele de intrare în Turcia: un ghid simplu",
+        "metaTitle": "Viza și cerințele de intrare în Turcia — ghid simplu 2026",
+        "metaDescription": "Ai nevoie de viză pentru Turcia? Un ghid clar despre e-Visa pentru Turcia, cine este scutit, regulile de valabilitate a pașaportului și ce să ai pregătit la aeroport înainte de a călători.",
+        "excerpt": "Majoritatea vizitatorilor fie călătoresc fără viză, fie obțin rapid o e-Visa online. Iată cine are nevoie de ce, cum funcționează e-Visa și regulile de pașaport care îi încurcă pe oameni la aeroport.",
+        "intro": [
+          "Turcia este una dintre cele mai ușor de accesat destinații majore, dar regulile depind în întregime de naționalitatea ta — unii călători sosesc complet fără viză, alții au nevoie de o rapidă <strong>e-Visa</strong> online, iar câțiva trebuie să depună cerere la o ambasadă. Rezolvarea corectă înainte de a zbura evită stresul la aeroport.",
+          "Acest ghid explică principalele rute de intrare în termeni simpli: cine este scutit de viză, cum funcționează e-Visa, regula de valabilitate a pașaportului care îi prinde pe oameni pe picior greșit și ce să ai pregătit la sosire. <strong>Confirmă întotdeauna regulile actuale pentru propriul pașaport pe site-ul oficial de e-Visa al guvernului turc înainte de a rezerva</strong>, deoarece cerințele se pot schimba."
+        ],
+        "sections": [
+          {
+            "heading": "Ai nevoie de viză pentru Turcia?",
+            "paragraphs": [
+              "Depinde de naționalitatea ta. Cetățenii multor țări — inclusiv ai majorității UE, ai Regatului Unit și ai altora — pot intra <strong>fără viză</strong> pentru turism un anumit număr de zile (frecvent 90 de zile într-o perioadă de 180 de zile). Călătorii din unele țări, inclusiv Statele Unite, Canada și Australia, au nevoie de obicei de o <strong>e-Visa</strong>, care se obține rapid și ieftin online.",
+              "Un număr mai mic de naționalități trebuie să depună cerere de viză în avans printr-o ambasadă sau un consulat turc. Deoarece listele se schimbă, singurul mod fiabil de a-ți cunoaște categoria este să verifici <strong>site-ul oficial de e-Visa (evisa.gov.tr)</strong> cu pașaportul tău specific înainte de a călători. Nu te baza pe postări vechi de forum sau pe site-uri terțe."
+            ]
+          },
+          {
+            "heading": "Cum funcționează e-Visa pentru Turcia",
+            "paragraphs": [
+              "Dacă ai nevoie de o e-Visa, procesul este simplu și se face în întregime online, de obicei în câteva minute. Introduci datele pașaportului, datele călătoriei și plata pe site-ul oficial, iar e-Visa aprobată sosește prin e-mail sub formă de PDF. Majoritatea e-Vizelor turistice de o singură intrare permit o ședere de până la 30 sau 90 de zile, în funcție de naționalitate, și sunt valabile 180 de zile de la data emiterii.",
+              "Două avertismente importante. În primul rând, <strong>folosește doar site-ul oficial al guvernului, evisa.gov.tr</strong> — multe site-uri terțe care imită oficialul percep taxe umflate pentru același document. În al doilea rând, depune cererea cu cel puțin câteva zile înainte de călătorie și poartă atât o copie tipărită, cât și e-mailul. Deși aprobarea este de obicei instantanee, nu este garantată, așa că nu o lăsa pentru aeroport."
+            ]
+          },
+          {
+            "heading": "Valabilitatea pașaportului și regulile de intrare",
+            "paragraphs": [
+              "Regula care îi prinde pe călători cel mai des este <strong>valabilitatea pașaportului</strong>. Turcia cere în general ca pașaportul tău să fie valabil cel puțin <strong>150 de zile (aproximativ cinci luni) după data intrării</strong> și să aibă cel puțin o pagină liberă pentru ștampile. Dacă pașaportul tău este aproape de expirare, reînnoiește-l cu mult înainte de a călători — ofițerii de frontieră chiar aplică această regulă.",
+              "La controlul pașapoartelor s-ar putea să fii întrebat despre călătoria ta ulterioară sau de întoarcere și despre unde stai, așa că ține la îndemână biletul de întoarcere și rezervarea la primul hotel. Intrarea este în mod normal rapidă și prietenoasă. Păstrează în siguranță e-Visa sau ștampila de intrare, deoarece s-ar putea să trebuiască să o arăți la plecare."
+            ]
+          },
+          {
+            "heading": "La aeroport și după ce sosești",
+            "paragraphs": [
+              "Principalele porți de acces ale Turciei — Aeroportul Istanbul (IST), Sabiha Gökçen (SAW) pe partea asiatică și aeroporturile de pe coastă de la Antalya, İzmir, Bodrum și Dalaman — sunt moderne și obișnuite cu sosirile internaționale. Urmează indicatoarele pentru intrarea cu e-Visa sau fără viză, ține pregătite pașaportul și eventuala e-Visa tipărită și așteaptă-te la o simplă ștampilare pentru majoritatea turiștilor.",
+              "Odată trecut, taxiurile oficiale de aeroport, navetele de aeroport Havaist/Havabus și legăturile de metrou te duc în oraș. Convine tarifele de taxi sau insistă pe aparatul de taxare și ia în calcul un transfer rezervat în avans pentru sosirile târzii. Dacă îți începi călătoria cu un tur, un ghid local te poate întâmpina și îți poate netezi prima zi, cu jet lag."
+            ]
+          },
+          {
+            "heading": "Alte sfaturi practice de intrare",
+            "paragraphs": [
+              "<strong>Asigurarea de călătorie</strong> nu este formal obligatorie pentru majoritatea turiștilor, dar este recomandată cu tărie, în special o acoperire care include îngrijirea medicală și orice activități active precum zborul cu balonul sau excursiile cu barca. Păstrează o copie digitală și una pe hârtie a poliței, alături de pașaport și e-Visa.",
+              "Turcia nu are cerințe generale de vaccinare la intrare pentru majoritatea călătorilor, dar verifică recomandările de sănătate în călătorie actuale ale guvernului tău înainte de a pleca. Și reține că regulile de viză guvernează cât timp poți sta — depășirea duratei duce la amenzi și interdicții de intrare, așa că notează-ți zilele permise și nu le depăși. La orice îndoială, site-ul oficial de e-Visa este întotdeauna ultimul cuvânt."
+            ]
+          }
+        ],
+        "faqHeading": "Întrebări frecvente",
+        "faqs": [
+          {
+            "q": "Am nevoie de viză pentru a vizita Turcia?",
+            "a": "Depinde de naționalitatea ta. Mulți călători, inclusiv majoritatea cetățenilor UE și ai Regatului Unit, intră fără viză pentru turism, în timp ce alții (precum posesorii de pașapoarte din SUA, Canada și Australia) au nevoie de o rapidă e-Visa online. Verifică întotdeauna site-ul oficial evisa.gov.tr pentru pașaportul tău specific înainte de a rezerva."
+          },
+          {
+            "q": "Cum obțin o e-Visa pentru Turcia?",
+            "a": "Depune cererea pe site-ul oficial al guvernului, evisa.gov.tr. Introdu datele pașaportului, datele și plata, iar e-Visa aprobată sosește prin e-mail sub formă de PDF, de obicei în câteva minute. Evită site-urile terțe care percep taxe umflate și tipărește o copie ca s-o porți cu tine."
+          },
+          {
+            "q": "Cât timp pot sta în Turcia ca turist?",
+            "a": "Majoritatea turiștilor pot sta până la 90 de zile în orice perioadă de 180 de zile, deși limita exactă depinde de naționalitatea și tipul de viză. Depășirea duratei duce la amenzi și posibile interdicții de intrare, așa că verifică-ți durata permisă și nu o depăși."
+          },
+          {
+            "q": "Câte luni trebuie să fie valabil pașaportul pentru a intra în Turcia?",
+            "a": "Turcia cere în general ca pașaportul tău să fie valabil cel puțin 150 de zile (aproximativ cinci luni) după data intrării, cu o pagină liberă pentru ștampile. Dacă pașaportul tău este aproape de expirare, reînnoiește-l înainte de a călători, deoarece această regulă este aplicată la frontieră."
+          },
+          {
+            "q": "Este e-Visa pentru Turcia același lucru cu viza la sosire?",
+            "a": "Nu. E-Visa se obține online înainte de a călători și este ruta standard pentru naționalitățile care au nevoie de viză. Turcia a eliminat în mare parte viza la sosire, așa că aranjează-ți e-Visa în avans, în loc să te bazezi pe obținerea uneia la aeroport."
+          }
+        ],
+        "relatedHeading": "Planifică-ți călătoria în Turcia",
+        "ctaTitle": "Ești gata să explorezi Turcia?",
+        "ctaSub": "Odată ce intrarea este rezolvată, profită la maximum de fiecare zi cu un ghid local autorizat. Descoperă ghizi verificați din toată Turcia pe VibeGuide."
       }
     }
   },
@@ -7812,6 +8248,79 @@ export const BLOG_POSTS: BlogPost[] = [
         "relatedHeading": "Скуштуйте Туреччину з місцевим",
         "ctaTitle": "Відкрийте турецьку кухню з місцевим гідом",
         "ctaSub": "Найкращі трапези там, де їдять місцеві. Замовте перевіреного гіда на VibeGuide й ідіть за запахом крізь ринки й провулки Туреччини."
+      },
+      "ro": {
+        "title": "Ghid al mâncării turcești: ce să mănânci în Turcia",
+        "metaTitle": "Ghid al mâncării turcești — ce să mănânci și să bei în Turcia",
+        "metaDescription": "Un ghid local al mâncării turcești: preparatele de neratat, mâncarea de stradă, micul dejun, dulciurile și băuturile — de la kebab și meze la baklava, simit și ceaiul și cafeaua turcească.",
+        "excerpt": "Bucătăria turcească este una dintre marile tradiții culinare ale lumii. Iată preparatele, gustările de stradă și băuturile de căutat — și cum să mănânci ca un localnic, nu ca un turist.",
+        "intro": [
+          "Bucătăria turcească este una dintre marile culturi culinare ale lumii — o răscruce de arome mediteraneene, orientale, central-asiatice și balcanice, construită pe produse superbe, carne la grătar, legume proaspete și o gamă nesfârșită de meze. Să mănânci bine este una dintre cele mai mari bucurii ale oricărei călătorii în Turcia și este ușor de făcut cu orice buget.",
+          "Acest ghid trece în revistă <strong>preparatele și băuturile de căutat</strong>, de la un adevărat mic dejun turcesc la gustări de stradă, kebab la grătar, fructe de mare pe coastă și dulciurile și băuturile calde care încheie fiecare masă. Evită restaurantele-capcană pentru turiști din apropierea marilor obiective — cea mai bună mâncare este acolo unde mănâncă localnicii, iar un ghid te poate duce direct la ea."
+        ],
+        "sections": [
+          {
+            "heading": "Micul dejun turcesc: un festin cu care să începi ziua",
+            "paragraphs": [
+              "Un <strong>mic dejun turcesc tradițional (kahvaltı)</strong> este o desfășurare, nu o farfurie: brânză albă și kaşar maturat, măsline, roșii și castraveți, miere cu smântână groasă (bal-kaymak), gemuri, ouă fierte și pâine caldă, toate savurate încet peste pahare nesfârșite de ceai. În weekend, turcii zăbovesc ore întregi asupra lui.",
+              "Fii atent la <strong>menemen</strong>, ouă moi omletate cu roșii, ardei și condimente, și la <strong>simit</strong>, inelul de pâine acoperit cu susan, vândut de la cărucioarele de stradă de peste tot. Un mic dejun tihnit este un adevărat punct culminant al culturii culinare turcești, iar multe locuri servesc un serpme kahvaltı — o desfășurare de tip mănânci-cât-vrei — perfect pentru împărțit."
+            ]
+          },
+          {
+            "heading": "Kebab, meze și felul principal",
+            "paragraphs": [
+              "Carnea la grătar din Turcia depășește cu mult binecunoscutul döner. Caută <strong>kebab Adana și Urfa</strong> (frigărui de miel tocat, picante și blânde), <strong>şiş</strong> (carne la grătar în cuburi), <strong>İskender</strong> (döner feliat peste pâine cu sos de roșii și iaurt) și tocănițele gătite lent din sud-est. Fiecare regiune are propria specialitate care merită încercată.",
+              "La fel de important este <strong>meze</strong> — parada de aperitive mici, reci și calde, care deschide o masă adevărată: vinete afumate, foi de viță umplute, dip-uri de iaurt, salicornie, ezme picant și multe altele. Comandă o desfășurare de meze de împărțit și nu rata <strong>pide</strong> (lipie turcească în formă de barcă) și <strong>lahmacun</strong>, „pizza turcească” subțire și crocantă, cu tocătură condimentată deasupra."
+            ]
+          },
+          {
+            "heading": "Mâncare de stradă și fructe de mare de pe coastă",
+            "paragraphs": [
+              "Mâncarea de stradă din Turcia este superbă și ieftină. La Istanbul, încearcă un <strong>balık ekmek</strong> (sandviș cu pește la grătar) lângă apă la Eminönü, castane și porumb copt de la cărucioare, <strong>kokoreç</strong> pentru cei aventuroși și <strong>midye dolma</strong> (midii umplute) cu un strop de lămâie. Gözleme — lipie subțire umplută, gătită pe plită — este un prânz rapid perfect.",
+              "Pe <strong>coastele Mării Egee și Mediterane</strong> — İzmir, Bodrum, Kuşadası, Antalya — accentul se mută pe fructe de mare proaspete și preparate din legume cu ulei de măsline. O masă de pește la grătar, meze și un pahar de rakı, băutura de anason care devine lăptoasă cu apă, lângă port la apus, este o experiență chintesențială a coastei turcești."
+            ]
+          },
+          {
+            "heading": "Dulciuri, ceai și cafea turcească",
+            "paragraphs": [
+              "Lasă loc de desert. <strong>Baklavaua</strong> — foietaj cu fistic sau nucă și sirop — este vedeta, cea mai bună dintr-un magazin specializat, mai ales cele din Gaziantep. Încearcă și <strong>künefe</strong> (aluat mărunțit cald cu brânză topită și sirop), <strong>lokum</strong> (rahat turcesc) și budinci de lapte precum sütlaç.",
+              "Băuturile sunt un ritual. <strong>Çay (ceaiul)</strong> se servește toată ziua în pahare în formă de lalea și se oferă peste tot ca ospitalitate. <strong>Cafeaua turcească</strong>, groasă și nefiltrată, se prepară lent și se soarbe cu un pahar de apă și adesea o bucată de lokum — iar prin tradiție, zațul rămas în ceașcă poate fi citit pentru a-ți ghici viitorul. Refuzul unui pahar de ceai de la un comerciant este aproape imposibil, iar asta face parte din farmec."
+            ]
+          },
+          {
+            "heading": "Cum să mănânci ca un localnic",
+            "paragraphs": [
+              "Cel mai bun sfat: <strong>mănâncă acolo unde mănâncă localnicii</strong>. Evită restaurantele cu racoleri insistenți și meniuri cu poze în mai multe limbi, chiar lângă monumentele importante — ele mizează pe locație, nu pe calitate. Mergi câteva străzi mai încolo, caută locuri pline de familii turcești și vei mânca mai bine cu mai puțini bani.",
+              "O <strong>lokanta</strong> (o cârciumă simplă cu tăvi de preparate ca acasă, pe care le arăți cu degetul) este un prânz cu un raport calitate-preț excelent. Încearcă specialitatea locală a fiecărei regiuni, în loc de același döner peste tot. Iar dacă vrei să sari peste ghicit, o plimbare axată pe mâncare cu un ghid local este unul dintre cele mai răsplătitoare moduri de a înțelege un oraș turcesc — urmându-ți nasul prin piețe, brutării și localuri ascunse pe care nu le-ai găsi niciodată singur."
+            ]
+          }
+        ],
+        "faqHeading": "Întrebări frecvente",
+        "faqs": [
+          {
+            "q": "Cu ce mâncare este Turcia cea mai renumită?",
+            "a": "Turcia este renumită pentru kebab (Adana, Urfa, İskender și döner), aperitivele meze, lipiile pide și lahmacun și dulciuri precum baklavaua și rahatul turcesc. Un mic dejun bogat cu multe preparate și ritualurile ceaiului și ale cafelei turcești sunt la fel de centrale culturii culinare."
+          },
+          {
+            "q": "Ce ar trebui să mănânc la micul dejun în Turcia?",
+            "a": "Un mic dejun turcesc tradițional este o desfășurare de împărțit, cu brânzeturi, măsline, roșii, castraveți, miere cu smântână groasă, gemuri, ouă și pâine caldă, cu ceai nesfârșit. Caută menemen (ouă cu roșii și ardei) și simit, inelul de pâine cu susan vândut pe stradă."
+          },
+          {
+            "q": "Este mâncarea turcească bună pentru vegetarieni?",
+            "a": "Da. Deși Turcia este cunoscută pentru carnea la grătar, preparatele ei de meze și de legume sunt excelente pentru vegetarieni — foi de viță umplute, preparate din vinete, fasole în ulei de măsline, supă de linte, salate și pide cu brânză. Confirmă doar că zemurile și umpluturile sunt fără carne când comanzi."
+          },
+          {
+            "q": "Cum evit restaurantele-capcană pentru turiști în Turcia?",
+            "a": "Evită locurile cu racoleri afară și meniuri plastifiate cu poze, chiar lângă marile obiective. Mergi câteva străzi mai încolo, alege locuri pline de localnici și încearcă o lokanta care servește tăvi de preparate ca acasă. Un ghid local axat pe mâncare este cel mai sigur mod de a găsi locuri autentice, cu un bun raport calitate-preț."
+          },
+          {
+            "q": "Care este băutura națională a Turciei?",
+            "a": "Ceaiul (çay), servit în pahare mici în formă de lalea, este băutura națională de zi cu zi și un gest de ospitalitate oferit peste tot. Cafeaua turcească, groasă și preparată lent, este cafeaua tradițională, în timp ce rakı, o băutură de anason, este băutura clasică alături de meze și fructe de mare."
+          }
+        ],
+        "relatedHeading": "Gustă Turcia cu un localnic",
+        "ctaTitle": "Descoperă mâncarea turcească cu un ghid local",
+        "ctaSub": "Cele mai bune mese sunt acolo unde mănâncă localnicii. Rezervă un ghid verificat pe VibeGuide și urmează-ți nasul prin piețele și străduțele Turciei."
       }
     }
   },
@@ -8924,6 +9433,79 @@ export const BLOG_POSTS: BlogPost[] = [
         "relatedHeading": "Дослідіть Ефес і Егейське море",
         "ctaTitle": "Погляньте на Ефес із ліцензованим гідом",
         "ctaSub": "Лише ліцензовані гіди можуть провести вас усередині давнього міста — а розрахунок круїзного часу вирішальний. Замовте перевіреного гіда Ефеса на VibeGuide."
+      },
+      "ro": {
+        "title": "Excursie de o zi la Efes din Kuşadası: ghidul complet",
+        "metaTitle": "Excursie de o zi la Efes din Kuşadası — ghid complet pentru croaziere",
+        "metaDescription": "Tot ce ai nevoie pentru o excursie de o zi la Efes din Kuşadası: distanța, planificarea pentru pasagerii de croazieră, ce să vezi, sfaturi despre bilete și de ce este necesar un ghid autorizat în interiorul sitului.",
+        "excerpt": "Efesul este la doar 20 de minute de portul de croazieră Kuşadası — excursia perfectă de coborâre de pe vapor. Iată cum să o planifici, ce să vezi și de ce doar un ghid autorizat te poate conduce înăuntru.",
+        "intro": [
+          "Efesul este vedeta excursiilor de o zi de pe coasta egeeană a Turciei, iar Kuşadası — unul dintre cele mai aglomerate porturi de croazieră ale țării — este punctul său ideal de plecare. La doar 20 de minute distanță pe șosea, vastul oraș greco-roman face o excursie perfectă de o jumătate de zi sau de o zi întreagă, fie că ești într-o escală de croazieră, fie că stai pe coastă câteva nopți.",
+          "Acest ghid acoperă tot ce ține de o <strong>excursie de o zi la Efes din Kuşadası</strong>: cât de departe este, cum să o programezi în funcție de plecarea vaporului de croazieră, ce să vezi în interiorul ruinelor, particularitățile de bilete precum Casele-terasă și de ce — în mod unic la Efes — ai nevoie de un <strong>ghid autorizat</strong> ca să fii condus prin situl antic. Făcută corect, este una dintre cele mai memorabile zile din Turcia."
+        ],
+        "sections": [
+          {
+            "heading": "Cât de departe este Efesul de Kuşadası?",
+            "paragraphs": [
+              "Efesul se află la aproximativ <strong>18 km — cam 20 de minute pe șosea</strong> — de portul de croazieră Kuşadası, lângă orașul Selçuk. Exact această distanță scurtă îl face excursia numărul unu din Kuşadası: poți păși pe străzi de marmură vechi de 2.000 de ani la doar o jumătate de oră după ce ai coborât de pe vapor.",
+              "Fiindcă este atât de aproape, un ghid autorizat poate combina confortabil Efesul cu două situri din apropiere — <strong>Casa Fecioarei Maria</strong> de pe dealurile de deasupra și singura coloană rămasă în picioare a <strong>Templului Artemisei</strong>, una dintre cele Șapte Minuni ale Lumii Antice — într-o singură ieșire, fără grabă."
+            ]
+          },
+          {
+            "heading": "Pentru pasagerii de croazieră: cum să o programezi corect",
+            "paragraphs": [
+              "Dacă sosești cu un vapor de croazieră având doar câteva ore pe uscat, Efesul este suficient de aproape pentru o excursie relaxată de o jumătate de zi direct de la terminal. Cheia este planificarea: un ghid local bun organizează întreaga ieșire în funcție de ora de îmbarcare a vaporului, se ocupă de transport și bilete și include întotdeauna o marjă de siguranță, astfel încât să te întorci confortabil înainte de plecare.",
+              "Aici rezervarea unui ghid privat autorizat bate un tur uriaș cu autocarul — te deplasezi mai repede, eviți turma, vezi atracțiile eficient și nu riști niciodată ca vaporul să plece fără tine. VibeNow te poate chiar potrivi cu un ghid disponibil în aproximativ 60 de secunde din momentul în care acostezi, dacă preferi să aranjezi totul pe loc."
+            ]
+          },
+          {
+            "heading": "Ce să vezi în interiorul Efesului",
+            "paragraphs": [
+              "Efesul este remarcabil de complet. Piesa de rezistență este <strong>Biblioteca lui Celsus</strong>, cu fațada ei restaurată pe două niveluri, una dintre cele mai fotografiate priveliști din Turcia. Coboară pe strada de marmură <strong>Curetes</strong> pe lângă temple, fântâni și fațade de prăvălii până la <strong>Marele Teatru</strong>, care cândva avea 25.000 de locuri și încă găzduiește evenimente astăzi.",
+              "Cu un bilet suplimentar, <strong>Casele-terasă</strong> — ruinele acoperite ale unor locuințe romane bogate, cu mozaicuri și fresce uimitoare — sunt bijuteria ascunsă a sitului și merită din plin. Un ghid dă viață străzilor ruinate, explicând viața romană de zi cu zi, portul dispărut și straturile de istorie greacă, romană și paleocreștină pe lângă care majoritatea vizitatorilor trec direct."
+            ]
+          },
+          {
+            "heading": "Bilete, autorizare și sfaturi practice",
+            "paragraphs": [
+              "Două note despre bilete: situl principal are un bilet de intrare, iar <strong>Casele-terasă necesită un bilet separat</strong> pe lângă acesta. Și mai important, Efesul este unul dintre siturile unde <strong>doar un ghid autorizat oficial are voie să conducă tururi în interiorul orașului antic</strong> — fiecare ghid de pe VibeGuide deține acea autorizație a Ministerului Culturii și Turismului, așa că rezervarea prin platformă te ține pe deplin acoperit.",
+              "Practic: poartă o pălărie, cremă de protecție solară și pantofi confortabili și ia apă cu tine — străzile de marmură sunt expuse, cu puțină umbră, și devin foarte fierbinți vara. Mergi devreme sau târziu în zi ca să eviți atât căldura de la amiază, cât și vârful mulțimilor de la croaziere. Există două intrări (superioară și inferioară); un ghid poate planifica traseul la vale, astfel încât să termini aproape de ieșire."
+            ]
+          },
+          {
+            "heading": "Combinarea Efesului cu mai mult din regiune",
+            "paragraphs": [
+              "Dacă ai o zi întreagă în loc de o escală de croazieră, combină Efesul cu fermecătorul sat de deal <strong>Şirince</strong>, cunoscut pentru vinurile lui de fructe și casele vechi greco-otomane, pentru o după-amiază relaxată de degustare după ruine. Casa Fecioarei Maria și Templul Artemisei se încadrează cu ușurință în aceeași excursie.",
+              "Cu mai mult timp, Kuşadası este o rampă de lansare către orașele ioniene antice Priene, Milet și Didyma, travertinele albe de la Pamukkale și golfulețele Parcului Național Peninsula Dilek. Dar Efesul singur justifică excursia — iar cu un ghid local autorizat care să-i deblocheze istoria, este o zi de neuitat plecată din Kuşadası."
+            ]
+          }
+        ],
+        "faqHeading": "Întrebări frecvente",
+        "faqs": [
+          {
+            "q": "Cât de departe este Efesul de portul Kuşadası?",
+            "a": "Efesul este la aproximativ 18 km — cam 20 de minute cu mașina — de portul de croazieră Kuşadası, lângă orașul Selçuk. Apropierea îl face excursia de o zi de top din Kuşadası și o ușoară excursie de o jumătate de zi pentru pasagerii de croazieră."
+          },
+          {
+            "q": "Pot vizita Efesul într-o escală de croazieră din Kuşadası?",
+            "a": "Da. Efesul este suficient de aproape pentru o excursie relaxată de o jumătate de zi. Un ghid autorizat planifică programul în funcție de ora de îmbarcare a vaporului, se ocupă de transport și bilete și include o marjă, astfel încât să te întorci confortabil înainte de plecare. Un ghid privat este mai rapid și mai sigur decât un tur mare cu autocarul."
+          },
+          {
+            "q": "Ai nevoie de un ghid autorizat pentru Efes?",
+            "a": "Doar ghizii autorizați oficial au voie să conducă tururi în interiorul orașului antic Efes. Fiecare ghid de pe VibeGuide deține autorizația Ministerului Culturii și Turismului din Turcia, așa că rezervarea prin platformă te ține pe deplin în regulă și acoperit."
+          },
+          {
+            "q": "Casele-terasă din Efes necesită un bilet separat?",
+            "a": "Da. Situl principal Efes are un bilet de intrare, iar Casele-terasă — locuințele romane frumos conservate, cu mozaicuri și fresce — necesită un bilet suplimentar pe lângă acesta. Sunt un punct culminant și merită din plin costul în plus."
+          },
+          {
+            "q": "Ce altceva pot combina cu o excursie de o zi la Efes?",
+            "a": "Un ghid autorizat poate combina cu ușurință Efesul cu Casa Fecioarei Maria, Templul Artemisei și satul viticol Şirince într-o singură ieșire. Cu o zi întreagă, Priene, Milet, Didyma sau Pamukkale sunt de asemenea accesibile din Kuşadası."
+          }
+        ],
+        "relatedHeading": "Explorează Efesul și Marea Egee",
+        "ctaTitle": "Vezi Efesul cu un ghid autorizat",
+        "ctaSub": "Doar ghizii autorizați te pot conduce în interiorul orașului antic — iar programarea de croazieră este totul. Rezervă un ghid verificat pentru Efes pe VibeGuide."
       }
     }
   },
@@ -10038,6 +10620,79 @@ export const BLOG_POSTS: BlogPost[] = [
         "relatedHeading": "Робіть більше в Стамбулі",
         "ctaTitle": "Переживіть найкраще в Стамбулі",
         "ctaSub": "Погляньте на ікони й приховані куточки з тим, хто знає місто. Замовте перевіреного гіда Стамбула на VibeGuide — ціна показана наперед."
+      },
+      "ro": {
+        "title": "Cele mai bune lucruri de făcut în Istanbul: atracțiile alese de un localnic",
+        "metaTitle": "Cele mai bune lucruri de făcut în Istanbul — alegerile unui ghid local",
+        "metaDescription": "Cele mai bune lucruri de făcut în Istanbul, alese de ghizi locali: marile monumente, o croazieră pe Bosfor, bazarurile, cartierele ascunse, un hammam și partea asiatică.",
+        "excerpt": "De la Hagia Sophia la un apus pe Bosfor, de la un hammam la străduțele din Balat — experiențele care fac Istanbulul de neuitat, alese de oamenii care trăiesc acolo.",
+        "intro": [
+          "Puține orașe oferă atât cât Istanbulul. Întins pe două continente și stratificat cu istorie bizantină și otomană, el răsplătește deopotrivă vânătorul de monumente și hoinarul, gurmandul și cumpărătorul. Provocarea nu este să găsești lucruri de făcut — ci să alegi între ele.",
+          "Aceasta este lista scurtă a unui ghid local cu <strong>cele mai bune lucruri de făcut în Istanbul</strong>: monumentele de neratat, experiențele care surprind spiritul orașului și câteva lucruri pe care majoritatea începătorilor le trec cu vederea. Amestecă marile obiective cu micile plăceri — un ceai lângă apă, o plimbare printr-un cartier de deal — și vei înțelege de ce Istanbulul intră sub pielea oamenilor."
+        ],
+        "sections": [
+          {
+            "heading": "Stai în interiorul marilor monumente",
+            "paragraphs": [
+              "Începe cu emblemele din <strong>Sultanahmet</strong>. <strong>Hagia Sophia</strong>, veche de 1.500 de ani și stratificată cu istorie de catedrală și moschee, este una dintre cele mai extraordinare clădiri de pe pământ. Peste piață, <strong>Moscheea Albastră</strong> uimește cu cascada ei de cupole și plăci de faianță İznik albastre, în timp ce <strong>Palatul Topkapı</strong> desfășoară lumea opulentă a sultanilor otomani prin curți, harem și trezorerie.",
+              "Nu rata <strong>Cisterna Bazilica</strong> subterană, plină de atmosferă, o pădure de coloane romane ridicându-se din apă liniștită. Aceste obiective au intrarea gratuită sau ieftină, dar sunt extrem de aglomerate — sosește la ora deschiderii și ia în calcul un ghid autorizat ca să eviți cozile la bilete la Topkapı și să înțelegi istoria în care te afli."
+            ]
+          },
+          {
+            "heading": "Fă o croazieră pe Bosfor",
+            "paragraphs": [
+              "Nicio vizită nu este completă fără a ieși pe <strong>Bosfor</strong>, strâmtoarea care desparte Europa de Asia. O croazieră — fie un feribot public ieftin, fie o barcă de tur dedicată — dezvăluie geografia Istanbulului ca nimic altceva: palate otomane, conace de lemn pe malul apei (yalı), fortărețe și poduri alunecând pe lângă tine pe ambele continente.",
+              "Programeaz-o pentru după-amiaza târzie și vei privi lumina devenind aurie peste cupole și minarete. Pentru o variantă la scară mai mică, ia feribotul de navetiști către partea asiatică și înapoi — este una dintre marile plăceri ieftine ale orașului, cu un pahar de ceai în mână, în timp ce pescărușii se rotesc deasupra."
+            ]
+          },
+          {
+            "heading": "Pierde-te în bazaruri",
+            "paragraphs": [
+              "<strong>Marele Bazar</strong> este una dintre cele mai vechi și mai mari piețe acoperite din lume — un labirint de peste 4.000 de magazine care vând covoare, lămpi, bijuterii, ceramică și piele. Tocmeala este de așteptat și face parte din spectacol; chiar dacă nu cumperi nimic, atmosfera este de neuitat.",
+              "În apropiere, <strong>Bazarul Mirodeniilor</strong> asaltează simțurile cu grămezi de condimente, fructe uscate, rahat turcesc și ceaiuri. Dincolo de tarabele turistice, explorează străzile din jur și hanurile (vechi curți comerciale) unde localnicii încă fac cumpărături. Un ghid te poate îndruma către vânzători cinstiți și departe de capcanele turistice supraevaluate care se adună lângă intrări."
+            ]
+          },
+          {
+            "heading": "Hoinărește prin cartiere și traversează în Asia",
+            "paragraphs": [
+              "Istanbulul pe care îl iubesc localnicii se află în cartierele lui. Urcă <strong>Turnul Galata</strong> pentru o panoramă, apoi explorează cafenelele și buticurile din <strong>Galata și Beyoğlu</strong> și toată lungimea Bulevardului İstiklal. Fotografiază casele în culorile curcubeului și magazinele de antichități din <strong>Balat și Fener</strong>, vechile cartiere grecești și evreiești pe care majoritatea grupurilor de turiști le sar cu totul.",
+              "Apoi ia un feribot către <strong>partea asiatică</strong> și străzile animate din Kadıköy, cu piața ei de mâncare, gustările de stradă și cafenelele relaxate — un ritm diferit, mai local, față de nucleul turistic. Încheierea unei după-amiezi pe un continent diferit, privind feriboturile care brăzdează apa, este chintesențial Istanbul."
+            ]
+          },
+          {
+            "heading": "Trăiește o baie turcească și mâncarea",
+            "paragraphs": [
+              "Pentru ceva de neuitat, vizitează un <strong>hammam (baie turcească)</strong> istoric — mai multe datează din vremurile otomane, cu interioare de marmură și un ritual de aburi, exfoliere și masaj cu spumă care te lasă strălucind. Este o tradiție veche de secole și un mod minunat de a te relaxa după zile de mers pe jos.",
+              "Mai presus de toate, mănâncă. Savurează un mic dejun turcesc îndelungat, încearcă un sandviș cu pește balık ekmek lângă apă, comandă o desfășurare de meze și încheie cu baklava și cafea turcească. Mâncarea Istanbulului este un punct culminant în sine, iar o plimbare axată pe mâncare cu un ghid local — prin piețe, brutării și lokanta de familie — este unul dintre cele mai răsplătitoare lucruri pe care le poți face în oraș."
+            ]
+          }
+        ],
+        "faqHeading": "Întrebări frecvente",
+        "faqs": [
+          {
+            "q": "Care sunt cele mai bune lucruri de făcut în Istanbul?",
+            "a": "Esențialele sunt Hagia Sophia, Moscheea Albastră și Palatul Topkapı din Sultanahmet, o croazieră pe Bosfor, Marele Bazar și Bazarul Mirodeniilor, Turnul Galata, cartierul Balat, un feribot către partea asiatică și un hammam istoric. Amestecarea marilor monumente cu cartierele locale și mâncarea oferă cea mai completă experiență."
+          },
+          {
+            "q": "Care este atracția numărul unu din Istanbul?",
+            "a": "Hagia Sophia este cea mai emblematică atracție individuală a Istanbulului — o fostă catedrală și moschee veche de 1.500 de ani, de o amploare și o istorie extraordinare. Este de obicei asociată cu Moscheea Albastră vecină și Palatul Topkapı, toate la o scurtă plimbare în Sultanahmet."
+          },
+          {
+            "q": "Merită o croazieră pe Bosfor în Istanbul?",
+            "a": "Da. O croazieră pe Bosfor este unul dintre cele mai bune lucruri de făcut în Istanbul, dezvăluind geografia orașului pe două continente, palatele și conacele de pe malul apei. Feriboturile publice ieftine sunt la fel de pitorești ca bărcile turistice, mai ales în lumina aurie a după-amiezii târzii."
+          },
+          {
+            "q": "Ce poți face în Istanbul departe de mulțimile de turiști?",
+            "a": "Explorează casele în culorile curcubeului și magazinele de antichități din Balat și Fener, traversează către străzile locale din Kadıköy pe partea asiatică, ia un feribot de navetiști cu un pahar de ceai și mănâncă unde o fac localnicii, câteva străzi mai încolo de monumente. Un ghid local poate dezvălui aceste colțuri mai puțin cunoscute."
+          },
+          {
+            "q": "Ar trebui să fac o baie turcească în Istanbul?",
+            "a": "Un hammam este o experiență memorabilă, veche de secole — aburi, o exfoliere și un masaj cu spumă într-o baie otomană de marmură. Mai multe hammamuri istorice primesc vizitatori și este un mod minunat de a te relaxa după zile lungi de vizitat pe jos."
+          }
+        ],
+        "relatedHeading": "Fă mai multe în Istanbul",
+        "ctaTitle": "Trăiește tot ce are mai bun Istanbulul",
+        "ctaSub": "Vezi emblemele și colțurile ascunse cu cineva care cunoaște orașul. Rezervă un ghid verificat din Istanbul pe VibeGuide — prețul afișat dinainte."
       }
     }
   },
@@ -11149,6 +11804,79 @@ export const BLOG_POSTS: BlogPost[] = [
         "relatedHeading": "Сплануйте бюджет поїздки до Туреччини",
         "ctaTitle": "Велика цінність під проводом місцевих",
         "ctaSub": "Побачте точну ціну до бронювання, без прихованих зборів. Знайдіть ліцензованих гідів і групові тури по всій Туреччині на VibeGuide."
+      },
+      "ro": {
+        "title": "Cât costă o călătorie în Turcia? Un ghid de buget",
+        "metaTitle": "Cât costă o călătorie în Turcia? — ghid de buget",
+        "metaDescription": "Cât costă să călătorești în Turcia? Un ghid practic de buget pentru costurile zilnice de cazare, mâncare, transport, tururi și plimbarea cu balonul — pentru orice buget.",
+        "excerpt": "Turcia oferă un raport calitate-preț excelent — dar costurile variază mult în funcție de sezon și stil. Iată o defalcare realistă a bugetelor zilnice, de la backpacker la confortabil.",
+        "intro": [
+          "Turcia este una dintre cele mai bune destinații majore ca raport calitate-preț din regiune: obiective de talie mondială, mâncare superbă și hoteluri confortabile costă adesea mult mai puțin decât în Europa de Vest. Dar „cât costă o călătorie în Turcia?” nu are un singur răspuns — variază mult în funcție de sezon, stilul tău de călătorie și extrele importante precum balonul din Capadocia.",
+          "Acest ghid oferă o <strong>defalcare realistă a costurilor zilnice</strong> — cazare, mâncare, transport, vizitat obiective și tururi — pe trei bugete generale, plus marile cheltuieli unice de planificat. Prețurile în Turcia se schimbă cu inflația și cursul de schimb, așa că tratează-le ca pe o îndrumare proporțională, mai degrabă decât ca pe cifre fixe, și verifică întotdeauna prețurile actuale înainte de a rezerva."
+        ],
+        "sections": [
+          {
+            "heading": "Trei bugete zilnice: la ce să te aștepți",
+            "paragraphs": [
+              "Ca îndrumare aproximativă, un <strong>călător cu buget redus</strong> care stă în hosteluri sau pensiuni simple, mănâncă mâncare de stradă și la lokanta și folosește transportul public poate călători confortabil cu o sumă zilnică modestă. Un <strong>călător de nivel mediu</strong> într-un hotel bun de trei sau patru stele, mâncând în restaurante ca lumea și făcând din când în când un tur privat, ar trebui să bugeteze considerabil mai mult pe zi.",
+              "Un <strong>călător de confort sau lux</strong> în hoteluri boutique și suite-peșteră, cu ghizi și transferuri private pe tot parcursul, va cheltui din nou mai mult — dar tot adesea mai puțin decât o călătorie echivalentă în Europa de Vest. Ideea este că Turcia se adaptează superb: este cu adevărat răsplătitoare cu un buget strâns și un adevărat chilipir la capătul de sus."
+            ]
+          },
+          {
+            "heading": "Cazare, mâncare și transport",
+            "paragraphs": [
+              "<strong>Cazarea</strong> este locul unde Turcia strălucește. Hostelurile și pensiunile simple sunt ieftine, hotelurile de nivel mediu oferă un raport calitate-preț puternic, iar chiar și faimoasele hoteluri-peșteră din Capadocia sunt accesibile în comparație cu luxul de altundeva. Prețurile cresc brusc în plină vară pe coastă și în jurul Anului Nou, așa că rezervă din timp pentru acele perioade.",
+              "<strong>Mâncarea</strong> poate costa foarte puțin dacă mănânci ca un localnic — un simit și ceai la micul dejun, un prânz la lokanta, gustări de stradă — sau mai mult în restaurantele pentru turiști de lângă marile obiective. <strong>Transportul</strong> este un chilipir: tramvaiele, feriboturile și autobuzele orașului sunt ieftine cu un card de transport, iar autocarele interurbane pe distanțe lungi și zborurile interne (Istanbul spre Capadocia sau coastă) sunt foarte rezonabile dacă sunt rezervate din timp."
+            ]
+          },
+          {
+            "heading": "Vizitat obiective, tururi și ghizi",
+            "paragraphs": [
+              "Taxele de intrare la marile obiective — Hagia Sophia este gratuită, în timp ce Topkapı, Efes și altele taxează — se adună de-a lungul unei călătorii, iar un <strong>Museum Pass</strong> poate economisi bani dacă vizitezi multe situri de stat. Bugetează pentru acestea când îți planifici zilele.",
+              "<strong>Tururile ghidate</strong> variază mult: un tur mare de grup cu autocarul este cel mai ieftin de persoană, în timp ce un ghid privat autorizat costă mai mult, dar modelează întreaga zi în jurul tău și evită cozile. Pe VibeGuide vezi întotdeauna prețul exact înainte de a rezerva, fără taxe ascunse, iar alăturarea unui tur de grup VibeSquad este cel mai economic mod de a avea un ghid autorizat. Adesea merită să plătești pentru un ghid la siturile unde contează cel mai mult, precum Efes."
+            ]
+          },
+          {
+            "heading": "Marile extre: balonul din Capadocia și altele",
+            "paragraphs": [
+              "Unele experiențe se situează în afara unui buget zilnic normal și merită planificate. <strong>Balonul cu aer cald din Capadocia</strong> este risipa clasică — un cost unic semnificativ, cu preț și bilet stabilite separat de companiile de baloane, care crește cu sezonul și cererea. Pentru majoritatea călătorilor este un punct culminant unic în viață care merită banii; rezervă din timp, deoarece zborurile se epuizează.",
+              "Alte extre mai scumpe includ croazierele cu goeleta gület pe coastă, o experiență de hammam, zborurile interne pentru a economisi timp și excursii speciale de o zi cu transport privat. Includerea câtorva dintre acestea în bugetul tău de la început previne surprizele — și îți permite să spui da experiențelor care fac călătoria."
+            ]
+          },
+          {
+            "heading": "Cum să economisești bani în Turcia",
+            "paragraphs": [
+              "Cele mai mari economii vin din <strong>călătoritul în sezonul de tranziție sau mort</strong> (primăvara, toamna sau iarna), când hotelurile și zborurile sunt mult mai ieftine decât în plină vară. Mâncatul unde mănâncă localnicii, folosirea transportului public cu un card de transport și rezervarea din timp a călătoriilor interurbane îți întind bugetul semnificativ.",
+              "Plătește în lire turcești în loc să accepți taxarea cu cardul în moneda ta, poartă ceva numerar pentru vânzătorii mici și piețe și tocmește-te politicos în bazaruri. Și ține minte că valoarea nu ține doar de cea mai ieftină opțiune — un ghid local autorizat pentru o zi-cheie sau două îți economisește adesea bani prin capcanele turistice evitate și timpul irosit, făcând în același timp toată călătoria mai bună."
+            ]
+          }
+        ],
+        "faqHeading": "Întrebări frecvente",
+        "faqs": [
+          {
+            "q": "Este Turcia o țară scumpă de vizitat?",
+            "a": "Nu — Turcia este una dintre cele mai bune destinații majore ca raport calitate-preț, cu obiective, mâncare și hoteluri de talie mondială care costă de obicei mult mai puțin decât în Europa de Vest. Costurile cresc în plină vară pe coastă și pentru extrele importante precum balonul din Capadocia, dar per total oferă o valoare puternică la orice nivel de buget."
+          },
+          {
+            "q": "De câți bani am nevoie pe zi în Turcia?",
+            "a": "Depinde de stilul tău. Călătorii cu buget redus care folosesc hosteluri, mâncare de stradă și transport public pot călători cu o sumă zilnică modestă; călătorii de nivel mediu în hoteluri bune cu vreun tur privat au nevoie de considerabil mai mult; iar călătorii de confort cu ghizi privați și cazări boutique din nou mai mult, deși tot adesea mai puțin decât călătoriile echivalente din Europa de Vest."
+          },
+          {
+            "q": "Cât costă plimbarea cu balonul în Capadocia?",
+            "a": "Balonul cu aer cald este o cheltuială unică semnificativă, cu preț și bilet stabilite separat de companiile de baloane, și crește cu sezonul și cererea. Se situează în afara unui buget zilnic normal, așa că planifică pentru el și rezervă din timp, deoarece popularele zboruri de la răsărit se epuizează rapid."
+          },
+          {
+            "q": "Care este cea mai ieftină perioadă pentru a călători în Turcia?",
+            "a": "Iarna (cu excepția perioadei de Anul Nou) și sezoanele de tranziție ale primăverii și toamnei sunt cele mai ieftine pentru zboruri și hoteluri, mult sub vârful de pe coastă din plină vară. Călătoritul în afara sezonului este cel mai mare mod de a reduce costul unei călătorii în Turcia."
+          },
+          {
+            "q": "Cum pot economisi bani când călătoresc în Turcia?",
+            "a": "Călătorește în sezonul de tranziție sau mort, mănâncă unde mănâncă localnicii, folosește un card de transport pentru transportul urban ieftin, rezervă din timp autocarele interurbane și zborurile, plătește în lire turcești și tocmește-te în bazaruri. Un ghid autorizat pentru o zi-cheie poate de asemenea economisi bani, ajutându-te să eviți capcanele turistice și timpul irosit."
+          }
+        ],
+        "relatedHeading": "Planifică-ți bugetul pentru Turcia",
+        "ctaTitle": "Valoare excelentă, ghidată de localnici",
+        "ctaSub": "Vezi prețul exact înainte de a rezerva, fără taxe ascunse. Găsește ghizi autorizați și tururi de grup din toată Turcia pe VibeGuide."
       }
     }
   }
