@@ -7,7 +7,7 @@
 // language-independent; only text lives under i18n[lang].
 
 export const BLOG_LANGS = [
-  "en", "de", "es", "fr", "it", "ar", "ru", "tr", "pl", "nl", "pt", "ja", "ko", "el", "uk", "ro", "bg",
+  "en", "de", "es", "fr", "it", "ar", "ru", "tr", "pl", "nl", "pt", "ja", "ko", "el", "uk", "ro", "bg", "sr",
 ] as const;
 export type BlogLang = (typeof BLOG_LANGS)[number];
 
@@ -45,6 +45,7 @@ export const BLOG_CATEGORY_LABELS: Record<BlogLang, Record<BlogCategory, string>
   uk: { "when-to-go": "Коли їхати", itineraries: "Маршрути", practical: "Практичні поради", guides: "Докладні путівники" },
   ro: { "when-to-go": "Când să mergi", itineraries: "Itinerarii", practical: "Sfaturi practice", guides: "Ghiduri detaliate" },
   bg: { "when-to-go": "Кога да отидете", itineraries: "Маршрути", practical: "Практични съвети", guides: "Задълбочени пътеводители" },
+  sr: { "when-to-go": "Kada putovati", itineraries: "Itinereri", practical: "Praktični saveti", guides: "Detaljni vodiči" },
 };
 
 // /blog hub page copy per language.
@@ -66,6 +67,7 @@ export const BLOG_HUB: Record<BlogLang, { metaTitle: string; metaDescription: st
   uk: { metaTitle: "Блог про подорожі Туреччиною — поради та маршрути", metaDescription: "Плануйте подорож до Туреччини з досвідом місцевих гідів: найкращий час для візиту, готові маршрути, практичні поради та докладні путівники Стамбулом, Каппадокією та не тільки.", h1: "Блог про подорожі Туреччиною", intro: "Поради з планування подорожі, написані разом із місцевими гідами — коли їхати, що подивитися, як пересуватися й історії за найвеличнішими місцями Туреччини.", readMore: "Читати далі" },
   ro: { metaTitle: "Blog de călătorie Turcia — Ghiduri, sfaturi, itinerarii", metaDescription: "Planifică-ți călătoria în Turcia cu expertiza ghizilor locali: cel mai bun moment pentru vizită, itinerarii gata făcute, sfaturi practice și ghiduri detaliate pentru Istanbul, Capadocia și nu numai.", h1: "Blog de călătorie Turcia", intro: "Sfaturi pentru planificarea călătoriei, scrise împreună cu ghizi locali — când să mergi, ce să vezi, cum să te deplasezi și poveștile din spatele celor mai frumoase locuri din Turcia.", readMore: "Citește mai mult" },
   bg: { metaTitle: "Блог за пътувания в Турция — пътеводители и маршрути", metaDescription: "Планирайте пътуването си до Турция с експертиза на местни водачи: най-доброто време за посещение, готови маршрути, практични съвети и задълбочени пътеводители за Истанбул, Кападокия и още.", h1: "Блог за пътувания в Турция", intro: "Съвети за планиране на пътуване, писани заедно с местни водачи — кога да отидете, какво да видите, как да се придвижвате и историите зад най-великите места в Турция.", readMore: "Прочети още" },
+  sr: { metaTitle: "Blog o putovanjima u Tursku — vodiči i saveti", metaDescription: "Isplanirajte putovanje u Tursku uz znanje lokalnih vodiča: najbolje vreme za posetu, gotovi itinereri, praktični saveti i detaljni vodiči kroz Istanbul, Kapadokiju i dalje.", h1: "Blog o putovanjima u Tursku", intro: "Saveti za planiranje putovanja napisani zajedno sa lokalnim vodičima — kada putovati, šta videti, kako se kretati i priče koje stoje iza najlepših mesta u Turskoj.", readMore: "Pročitaj više" },
 };
 
 export type BlogSection = { heading: string; paragraphs: string[] }; // paragraphs may contain <strong>
@@ -1356,6 +1358,79 @@ export const BLOG_POSTS: BlogPost[] = [
         "relatedHeading": "Планирайте пътуването си с местен водач",
         "ctaTitle": "Готови ли сте да планирате пътуването си до Турция?",
         "ctaSub": "Свържете се с проверен местен водач в Истанбул, Кападокия или на брега — незабавно или планирано предварително."
+      },
+      "sr": {
+        "title": "Najbolje vreme za posetu Turskoj: vodič mesec po mesec",
+        "metaTitle": "Najbolje vreme za posetu Turskoj — mesec po mesec",
+        "metaDescription": "Kada je najbolje vreme za posetu Turskoj? Pregled lokalnog vodiča o vremenu, gužvama i cenama po sezoni i regionu — od Istanbula i Kapadokije do Tirkizne obale.",
+        "excerpt": "Proleće i jesen su idealan izbor — ali pravi mesec zavisi od toga da li jurite balone Kapadokije, egejske plaže ili ruševine bez gužve. Evo kako da izaberete.",
+        "intro": [
+          "Turska je zemlja mnogih klima, pa ne postoji jedinstven „najbolji“ mesec — pravo vreme zavisi od toga kuda idete i šta želite da radite. Istanbul i obala, visoravan Kapadokije i suncem obasjane ruševine Egeja imaju svaki svoj ritam vremena, gužvi i cena.",
+          "Po pravilu, <strong>proleće (april–maj)</strong> i <strong>jesen (septembar–oktobar)</strong> su idealan izbor za većinu putnika: topli dani, blage večeri, manje gužve i prijatni uslovi za razgledanje. Ali leto, zima i prelazne nedelje imaju svaka svoje čari. Evo kako da izaberete, mesec po mesec i region po region."
+        ],
+        "sections": [
+          {
+            "heading": "Proleće (april–maj): najbolje vreme za sve",
+            "paragraphs": [
+              "Proleće je klasičan odgovor na pitanje „kada da idem u Tursku?“ i to s razlogom. Temperature su prijatne u gotovo celoj zemlji, poljsko cveće prekriva predele, a velike znamenitosti — Aja Sofija, Efes, ruševine oko Egeja — prijatne su za obilazak bez nesnosne vrućine i letnjih autobuskih gužvi.",
+              "U <strong>Istanbulu</strong>, april i maj donose dane od 15–22°C, savršene za šetnju Sultanahmetom, krstarenje Bosforom i lutanje Balatom. U <strong>Kapadokiji</strong> je prolećno nebo obično dovoljno vedro da baloni na vazduh mogu da polete u zoru, a doline su zelene. Na <strong>egejskoj i mediteranskoj obali</strong> more je još hladno za kupanje na početku sezone, ali antička nalazišta Efesa, Pergamona i Aspendosa u najprijatnijem su stanju. Rezervišite smeštaj unapred oko državnih praznika krajem aprila."
+            ]
+          },
+          {
+            "heading": "Leto (jun–avgust): plaže, vrućina i gužve",
+            "paragraphs": [
+              "Leto je vrhunac sezone na obali. Ako je vaše putovanje osmišljeno oko <strong>Tirkizne obale</strong> — Antalija, Bodrum, Marmaris, Kušadasi i krstarenja guletima — tada je more toplo, marine su žive, a noćni život na vrhuncu. Očekujte vruće, suve dane i živahne večeri, ali i najviše cene i najprometnije plaže.",
+              "U unutrašnjosti leto ume da bude naporno. Istanbul je vruć i vlažan, a otvorene ruševine Egeja i bezdrvna visoravan Kapadokije mogu da iscrpe u podne — lokalni vodič će vas povesti rano da izbegnete vrućinu. Gebeklitepe i jugoistok su veoma vrući u julu i avgustu. Ako dolazite leti, planirajte razgledanje za rano jutro i kasno popodne, a sredinu dana ostavite za more, hladovinu kafića ili muzej."
+            ]
+          },
+          {
+            "heading": "Jesen (septembar–oktobar): izbor poznavalaca",
+            "paragraphs": [
+              "Mnogi iskusni putnici ocenjuju jesen kao najbolje vreme za posetu Turskoj. Letnja vrućina popušta, more ostaje dovoljno toplo za kupanje sve do oktobra, a gužve se prorede posle školskih raspusta. Svetlost postaje zlatna — prelepa za fotografisanje u Kapadokiji i duž obale.",
+              "Septembar i oktobar su idealni za spajanje obale i kulture: kupanje u Bodrumu ili Kušadasiju ujutru, opušteno razgledanje Efesa, pa u unutrašnjost ka Kapadokiji dok doline blistaju. Letovi balonima uglavnom su pouzdani, a cene počinju da padaju sa avgustovskog vrhunca. To je idealan izbor za onoga ko prvi put dolazi i želi da vidi po malo od svega."
+            ]
+          },
+          {
+            "heading": "Zima (novembar–mart): tiho, jeftino i puno atmosfere",
+            "paragraphs": [
+              "Zima je u Turskoj niska sezona, i upravo je to njena draž za neke putnike. <strong>Istanbul</strong> je zimi svež i ponekad kišovit, ali velike džamije i muzeji blaženo su tihi, cene padaju, a pahulje snega na Aji Sofiji su nezaboravne. <strong>Kapadokija</strong> pod snegom je zaista čarobna — vilinski dimnjaci pobele, a baloni i dalje lete vedrih dana, uz mnogo manje ljudi.",
+              "Obala se zimi uglavnom smiruje, jer su mnogi sezonski hoteli i izleti brodom zatvoreni, pa to nije sezona za odmor na plaži. Ali za gradski predah, kulturno putovanje ili snežnu avanturu u Kapadokiji, zima nudi najniže cene i najpraznija nalazišta u godini. Ponesite topao veš u slojevima i proverite radno vreme, jer neka manja nalazišta imaju kraći zimski raspored."
+            ]
+          },
+          {
+            "heading": "Pa kada treba da idete? Kratak pregled",
+            "paragraphs": [
+              "Za <strong>prvo putovanje koje obuhvata Istanbul, Kapadokiju i obalu</strong>, ciljajte na kraj aprila do početka juna ili septembar do sredine oktobra — najbolji balans vremena, otvorenih nalazišta i podnošljivih gužvi. Za <strong>odmor na plaži i brodom</strong>, jun do septembar su najbolji. Za <strong>uštedu i mir</strong>, dođite zimi i usredsredite se na gradove i Kapadokiju. Za <strong>balone Kapadokije</strong>, proleće i jesen nude najpouzdanije vreme za letenje, iako baloni poleću tokom cele godine kada je nebo vedro.",
+              "Koji god mesec izabrali, licencirani lokalni vodič čini pravu razliku — zna najmirnije sate na svakom nalazištu, kako sezona menja ono što je otvoreno i kako da izgradi rutu prilagođenu vremenu. To lokalno znanje pretvara dobro putovanje u sjajno."
+            ]
+          }
+        ],
+        "faqHeading": "Često postavljana pitanja",
+        "faqs": [
+          {
+            "q": "Koji je uopšteno najbolji mesec za posetu Turskoj?",
+            "a": "Maj i septembar se često navode kao dva najbolja meseca: topli ali ne prevrući, sa otvorenim nalazištima, pouzdanim letovima balona u Kapadokiji i manjim gužvama nego usred leta. April i oktobar su odmah iza njih i nešto jeftiniji."
+          },
+          {
+            "q": "Kada je najjeftinije vreme za posetu Turskoj?",
+            "a": "Zima (od novembra do marta, izuzimajući novogodišnji period) je niska sezona, sa najnižim cenama avio-karata i hotela — najbolja za gradske predahe i snežnu Kapadokiju, a ne za odmor na plaži."
+          },
+          {
+            "q": "Kada se mogu videti baloni na topli vazduh u Kapadokiji?",
+            "a": "Baloni lete tokom cele godine, ako vreme dozvoli, ali proleće i jesen nude najdoslednije vedra i mirna jutra. Letovi se otkazuju po jakom vetru ili lošem vremenu, pa ostavite jedno rezervno jutro u itinereru."
+          },
+          {
+            "q": "Da li je leto previše vruće za posetu Turskoj?",
+            "a": "Leto je idealno za obalu, ali ume da bude veoma vruće u unutrašnjosti i na otvorenim antičkim nalazištima. Ako dolazite u julu ili avgustu, razgledajte rano ujutru i kasno popodne, a podne ostavite za more, muzeje ili hladovinu."
+          },
+          {
+            "q": "Koje je najbolje vreme za posetu turskoj obali radi kupanja?",
+            "a": "More je najtoplije i najprijatnije od juna do početka oktobra. Septembar i početak oktobra su posebno prijatni — topla voda uz manje gužve nego u julsko-avgustovskom vrhuncu."
+          }
+        ],
+        "relatedHeading": "Isplanirajte putovanje uz lokalnog vodiča",
+        "ctaTitle": "Spremni da isplanirate putovanje u Tursku?",
+        "ctaSub": "Povežite se sa proverenim lokalnim vodičem u Istanbulu, Kapadokiji ili na obali — odmah ili planirano unapred."
       }
     }
   },
@@ -2548,6 +2623,75 @@ export const BLOG_POSTS: BlogPost[] = [
         "relatedHeading": "Разгледайте всяка спирка задълбочено",
         "ctaTitle": "Готови ли сте да изградите пътуването си до Турция?",
         "ctaSub": "Свържете се с проверени местни водачи във всеки град по маршрута ви — незабавно или планирано предварително."
+      },
+      "sr": {
+        "title": "Savršen itinerer za Tursku: 7 do 10 dana",
+        "metaTitle": "Itinerer za Tursku: 7–10 dana (Istanbul, Kapadokija i obala)",
+        "metaDescription": "Gotov itinerer za Tursku od 7 do 10 dana koji obuhvata Istanbul, Kapadokiju, Efes i Pamukale — sa rutama iz dana u dan, vremenima putovanja i savetima vodiča.",
+        "excerpt": "Nedelja dana je dovoljna za klasičan trojac — Istanbul, Kapadokiju i Egej. Evo rute iz dana u dan koju možete pratiti, plus kako da je produžite na deset dana.",
+        "intro": [
+          "Sa <strong>sedam do deset dana</strong> udobno možete videti tri glavna bisera koja obeležavaju prvo putovanje u Tursku: carski <strong>Istanbul</strong>, nezemaljsku <strong>Kapadokiju</strong> i antički Egej oko <strong>Efesa</strong>. Domaći letovi su jeftini i česti, pa možete prevaliti veliku razdaljinu bez beskrajne vožnje.",
+          "Ovaj itinerer je izgrađen oko logične kružne rute koja smanjuje vraćanje unazad. Shvatite ga kao fleksibilan okvir, a ne kao krut raspored — lokalni vodič može prilagoditi tempo, ubaciti jednodnevni izlet ili usporiti tamo gde želite da se zadržite."
+        ],
+        "sections": [
+          {
+            "heading": "Dani 1–3: Istanbul",
+            "paragraphs": [
+              "Počnite u Istanbulu, jedinom gradu na svetu na dva kontinenta. <strong>Dan 1</strong>: istorijsko poluostrvo Sultanahmet — Aja Sofija, Plava džamija, palata Topkapi i Bazilika-cisterna, sve u dometu šetnje. <strong>Dan 2</strong>: pređite Zlatni rog do Galate i Karakeja, popnite se na Galata kulu, pa se izgubite u Velikom bazaru i Egipatskom bazaru. <strong>Dan 3</strong>: krstarenje Bosforom između Evrope i Azije i šarene sokake Balata i Fenera.",
+              "Tri dana su dovoljna za glavne znamenitosti, ali Istanbul nagrađuje više vremena. Licencirani vodič vam pomaže da preskočite najgore redove, izbegnete restorane-zamke za turiste i shvatite naslojenu rimsku, vizantijsku i osmansku istoriju pored koje većina posetilaca prođe ne primetivši je."
+            ]
+          },
+          {
+            "heading": "Dani 4–5: Kapadokija",
+            "paragraphs": [
+              "Letite iz Istanbula u Kapadokiju (oko 1,5 sat do Nevšehira ili Kajserija) do najnadrealnijeg predela u Turskoj. <strong>Dan 4</strong>: muzej na otvorenom Gereme sa svojim vizantijskim crkvama isklesanim u steni, vidikovci tvrđave Učhisar i šetnja kroz Ružičastu i Crvenu dolinu u zlatnom satu. <strong>Dan 5</strong>: siđite u podzemni grad poput Derinkujua ili Kajmaklija, posetite grnčarski grad Avanos i istražite doline vilinskih dimnjaka.",
+              "Prepoznatljivo iskustvo je zorski <strong>let balonom na topli vazduh</strong> iznad dolina — rezervišite ga unapred za jedno od jutara u Kapadokiji, jer se letovi rasprodaju i zavise od vremena. Lokalni vodič raspoređuje vaše dane oko balona i pronalazi mirne kutke koje gužve promaše."
+            ]
+          },
+          {
+            "heading": "Dani 6–7: Efes i Egej",
+            "paragraphs": [
+              "Letite iz Kapadokije za Izmir (uz brzu vezu) i smestite se blizu Selčuka ili Kušadasija radi antičkog Egeja. <strong>Dan 6</strong>: Efes, jedan od najbolje očuvanih antičkih gradova na svetu — Kelsusova biblioteka, Veliko pozorište i Terasaste kuće — plus Artemidin hram i Kuća Device Marije na brdu. <strong>Dan 7</strong>: vinsko selo Širince ili jednodnevni izlet do belih travertinskih terasa Pamukala i antičkog Hijerapolisa.",
+              "Samo licencirani vodič sme da vodi obilaske unutar Efesa, i nalazište zaista oživi uz njega — ruševine su nemi kamen bez priča o carevima, trgovcima i svecima koji su ih ispunjavali."
+            ]
+          },
+          {
+            "heading": "Produženje na 10 dana",
+            "paragraphs": [
+              "Sa tri dodatna dana imate prostora da odahnete i dodate obalski finale. Opcija prva: dodajte noćenje u <strong>Pamukalu i Hijerapolisu</strong> umesto da to jurite kao jednodnevni izlet. Opcija druga: završite na <strong>Tirkiznoj obali</strong> — nekoliko noćenja u Bodrumu, Marmarisu ili Antaliji radi tvrđave, plaža i krstarenja guletom između tirkiznih uvala.",
+              "Deset dana vam takođe omogućava da usporite u Istanbulu ili Kapadokiji umesto da se selite svake dve noći. Ako biste radije išli dublje nego šire, provedite dodatno vreme na azijskoj strani Istanbula, u selima oko Kapadokije ili na brodu duž obale — vaš vodič može prilagoditi balans vašem stilu."
+            ]
+          },
+          {
+            "heading": "Praktični saveti za ovu rutu",
+            "paragraphs": [
+              "<strong>Kretanje:</strong> domaći letovi (Turkish Airlines, Pegasus, AJet) povezuju Istanbul, Kapadokiju i Izmir jeftino i brzo — daleko bolje od dugih vožnji za ovu kružnu rutu. Rezervišite ih rano za najbolje cene. <strong>Gde odsesti:</strong> Sultanahmet ili Bejoglu u Istanbulu; Gereme ili Ürgüp u Kapadokiji; Selčuk ili Kušadasi za Efes.",
+              "<strong>Kako rasporediti tempo:</strong> ovo je pun itinerer, pa ubacite tu i tamo sporije jutro. Rezervisanje licenciranog lokalnog vodiča za ključne dane — istanbulski stari grad, doline Kapadokije i Efes — najbolji je jedinstveni način da vidite više, manje čekate u redovima i zaista razumete ono što gledate."
+            ]
+          }
+        ],
+        "faqHeading": "Često postavljana pitanja",
+        "faqs": [
+          {
+            "q": "Da li je 7 dana dovoljno za Tursku?",
+            "a": "Sedam dana je dovoljno za klasičan trojac — Istanbul, Kapadokiju i Efes — uz jeftine domaće letove radi uštede vremena. Deset dana vam omogućava da dodate Pamukale ili nekoliko noćenja na Tirkiznoj obali bez žurbe."
+          },
+          {
+            "q": "Koji je najbolji redosled za posetu Istanbulu, Kapadokiji i Efesu?",
+            "a": "Uobičajena kružna ruta je prvo Istanbul, pa let za Kapadokiju, pa let za Izmir radi Efesa. Ona smanjuje vraćanje unazad i završava blizu obale, odakle možete da odletite kući ili nastavite do letovališta na plaži."
+          },
+          {
+            "q": "Kako se putuje između Istanbula, Kapadokije i Efesa?",
+            "a": "Domaći letovi su najbrža i obično najjeftinija opcija: od Istanbula do Kapadokije (Nevšehir ili Kajseri) traje oko 1,5 sat, a od Kapadokije do Izmira je kratak let, često preko Istanbula ili Ankare."
+          },
+          {
+            "q": "Da li treba da rezervišem vodiča za ovaj itinerer?",
+            "a": "Za ključne dane — istanbulsko istorijsko poluostrvo, doline i podzemne gradove Kapadokije i Efes — licencirani lokalni vodič dramatično poboljšava iskustvo, pomažući vam da preskočite redove, izbegnete zamke za turiste i razumete istoriju. Vodiče možete rezervisati iz dana u dan, a ne za celo putovanje."
+          }
+        ],
+        "relatedHeading": "Istražite svaku stanicu do detalja",
+        "ctaTitle": "Spremni da izgradite svoje putovanje u Tursku?",
+        "ctaSub": "Povežite se sa proverenim lokalnim vodičima u svakom gradu na svojoj ruti — odmah ili planirano unapred."
       }
     }
   },
@@ -3804,6 +3948,79 @@ export const BLOG_POSTS: BlogPost[] = [
         "relatedHeading": "Разгледайте Турция с проверен местен жител",
         "ctaTitle": "Пътувайте из Турция с увереност",
         "ctaSub": "Свържете се с лицензиран, проверен по самоличност местен водач — без туристически капани, без натиск, просто истински местен жител, който ви показва своя град."
+      },
+      "sr": {
+        "title": "Da li je Turska bezbedna? Praktični saveti za prvi put",
+        "metaTitle": "Da li je Turska bezbedna za posetu? Praktični saveti",
+        "metaDescription": "Da li je Turska bezbedna za turiste? Praktični saveti o bezbednosti, novcu, prevozu, običajima i izbegavanju prevara — sve što putnik prvi put mora da zna.",
+        "excerpt": "Turska je gostoljubiva, dobro poznata destinacija za milione posetilaca godišnje. Evo iskrenih, praktičnih saveta o bezbednosti, novcu, običajima i izbegavanju uobičajenih zamki za turiste.",
+        "intro": [
+          "Turska je jedna od najposećenijih zemalja na svetu, koja svake godine dočekuje desetine miliona putnika, a velika većina ima ugodno, toplo i nezaboravno putovanje. Kao i u svakoj velikoj destinaciji, isplati se putovati informisan — ali stvarnost na terenu u Istanbulu, Kapadokiji i primorskim letovalištima jeste gostoljubiva, za turizam spremna zemlja.",
+          "Ovaj vodič pokriva praktična pitanja koja posetioci prvi put najčešće postavljaju: opštu bezbednost, novac i plaćanja, kretanje, kulturne običaje i kako da zaobiđete klasične zamke za turiste. Iskren je, a ne alarmantan — cilj je da vam pomogne da se opustite i uživate u putovanju."
+        ],
+        "sections": [
+          {
+            "heading": "Da li je Turska bezbedna za turiste?",
+            "paragraphs": [
+              "Za glavne turističke regione — <strong>Istanbul, Kapadokiju i egejsku i mediteransku obalu</strong> — Turska je uopšteno bezbedna kao i bilo koja popularna evropska destinacija. Nasilni zločin protiv turista je redak; češći problemi su sitne krađe u prometnim delovima i uobičajene prevare precenjivanjem, oboje se lako izbegava uz malo opreza.",
+              "Kao i svugde, pazite na svoje stvari na prometnim mestima poput Velikog bazara, avenije Istiklal i u javnom prevozu, i koristite hotelski sef za dragocenosti. Solo putnici, uključujući žene koje putuju same, dolaze u Tursku u velikom broju; skromnije oblačenje van plaže i boravak u dobro ocenjenim kvartovima mnogo znače. Uvek proverite aktuelne savete svoje vlade za putovanje pre rezervacije, posebno u vezi sa pograničnim područjima na krajnjem jugoistoku."
+            ]
+          },
+          {
+            "heading": "Novac, cene i plaćanja",
+            "paragraphs": [
+              "Valuta je <strong>turska lira (TRY)</strong>. Plaćanje karticom je široko prihvaćeno u gradovima, restoranima i prodavnicama, ali nosite nešto gotovine za pijace, taksije, male kafiće i napojnice. Bankomati su svuda; podižite novac sa mašina bankarskih brendova i odbijte ponudu za „konverziju“ da vam naplate u liri, što obično daje bolji kurs.",
+              "Cene u turističkim zonama često su više i, na bazarima, pogodljive. <strong>Cenkanje se očekuje</strong> u Velikom bazaru i Egipatskom bazaru — počnite znatno ispod tražene cene, ostanite prijatni i budite spremni da odete. U restoranima proverite da li se nenaručeni predjelo (meze) ili hleb naplaćuju, i potvrdite cene pre nego što naručite ribu, koja se ponekad prodaje po težini."
+            ]
+          },
+          {
+            "heading": "Kretanje",
+            "paragraphs": [
+              "Turska ima odličan, pristupačan prevoz. U <strong>Istanbulu</strong> nabavite Istanbulkart za tramvaje, metro, trajekte i autobuse — tramvaj T1 povezuje većinu znamenitosti starog grada. Zvanični taksiji su žuti; insistirajte na taksimetru ili koristite aplikaciju za prevoz koja unapred prikazuje cenu da biste izbegli sporove. <strong>Domaći letovi</strong> su jeftini i pametan način da se pređu velike razdaljine između Istanbula, Kapadokije i obale.",
+              "Međugradski autobusi su udobni i jeftini, a sve razvijenija mreža brzih pruga povezuje nekoliko gradova. Za jednodnevne izlete do razbacanih antičkih nalazišta — Efes, Aspendos, doline Kapadokije — vozač-vodič ili organizovana tura štedi mnogo muke u poređenju sa sastavljanjem lokalnog prevoza."
+            ]
+          },
+          {
+            "heading": "Kultura i običaji",
+            "paragraphs": [
+              "Turci su čuveni po gostoljubivosti, i malo kulturne svesnosti se toplo prima. Kada posećujete <strong>džamije</strong>, oblačite se skromno — pokrivena ramena i kolena, i marama za žene — izujte cipele i izbegavajte posete tokom pet dnevnih molitvi. Mnoge džamije obezbeđuju marame na ulazu.",
+              "Čaj (çay) je stalna ponuda gostoljubivosti; prihvatiti čašu je lep gest i retko vas obavezuje da bilo šta kupite. Napojnica se ceni ali je skromna — zaokruživanje ili oko 5–10% u restoranima je uobičajeno. Naučiti nekoliko reči — merhaba (zdravo), teşekkürler (hvala) — mnogo znači i uvek izmami osmeh."
+            ]
+          },
+          {
+            "heading": "Izbegavanje uobičajenih zamki za turiste",
+            "paragraphs": [
+              "Klasične zamke se lako zaobilaze čim ih upoznate. Budite oprezni prema previše ljubaznim strancima koji vas usmeravaju ka određenoj prodavnici, prodavcu tepiha ili baru — čest scenario u turističkim delovima. Dogovorite cenu taksija ili insistirajte na taksimetru pre polaska. Na bazarima prva cena retko je prava. A nelicencirani „vodiči“ koji vam prilaze na velikim nalazištima često nemaju znanje ni akreditacije pravog vodiča.",
+              "Najjednostavnija zaštita je da rezervišete <strong>licenciranog lokalnog vodiča</strong>. Svaki vodič na antičkim nalazištima u Turskoj mora biti zvanično licenciran od Ministarstva kulture i turizma, a provereni vodič se stara o ulaznicama, terminima i iskrenim preporukama — bez provizija, bez pritiska, bez zamki. To pretvara delove putovanja koji izazivaju stres u one u kojima najviše uživate."
+            ]
+          }
+        ],
+        "faqHeading": "Često postavljana pitanja",
+        "faqs": [
+          {
+            "q": "Da li je Turska bezbedna za turiste trenutno?",
+            "a": "Glavni turistički regioni — Istanbul, Kapadokija i obale — uopšteno su bezbedni i dočekuju milione posetilaca godišnje. Sitne krađe i precenjivanje su najčešći problemi i lako se izbegavaju. Uvek proverite aktuelne savete svoje vlade za putovanje pre polaska, posebno za granična područja krajnjeg jugoistoka."
+          },
+          {
+            "q": "Da li je Turska bezbedna za žene koje putuju same?",
+            "a": "Mnoge žene putuju Turskom same bez problema. Skromno oblačenje van plaže, boravak u dobro ocenjenim kvartovima, korišćenje zvaničnih ili aplikacijskih taksija i verovanje sopstvenim instinktima — sve to pomaže. Turci su uopšteno veoma gostoljubivi prema posetiocima."
+          },
+          {
+            "q": "Da li mi treba gotovina ili se u Turskoj prihvataju kartice?",
+            "a": "Kartice su široko prihvaćene u gradovima, hotelima, restoranima i prodavnicama. Nosite nešto turskih lira u gotovini za pijace, taksije, male kafiće i napojnice. Kada plaćate karticom ili na bankomatu, izaberite da vam se naplati u liri radi boljeg kursa."
+          },
+          {
+            "q": "Da li je bezbedno piti vodu iz česme u Turskoj?",
+            "a": "Voda iz česme je hlorisana i koristi se za pranje i kuvanje, ali većina meštana i posetilaca pije flaširanu vodu, koja je jeftina i dostupna svuda. Držite se flaširane ili filtrirane vode za svaki slučaj."
+          },
+          {
+            "q": "Kako da izbegnem prevare u Turskoj?",
+            "a": "Insistirajte na taksimetru ili koristite aplikaciju koja prikazuje cenu, cenkajte se na bazarima i očekujte da prva cena bude visoka, budite oprezni prema strancima koji vas usmeravaju ka određenoj prodavnici i rezervišite licencirane vodiče umesto da prihvatate nelicencirane na nalazištima. Provereni lokalni vodič je najjednostavnija zaštita od uobičajenih zamki."
+          }
+        ],
+        "relatedHeading": "Istražite Tursku uz proverenog meštanina",
+        "ctaTitle": "Putujte Turskom s pouzdanjem",
+        "ctaSub": "Povežite se sa licenciranim, identitetski proverenim lokalnim vodičem — bez zamki za turiste, bez pritiska, samo pravi meštanin koji vam pokazuje svoj grad."
       }
     }
   },
@@ -5059,6 +5276,79 @@ export const BLOG_POSTS: BlogPost[] = [
         "relatedHeading": "Разгледайте Кападокия задълбочено",
         "ctaTitle": "Готови ли сте да изживеете Кападокия?",
         "ctaSub": "Свържете се с проверен местен водач, за да планирате дните си около балона и да откриете долините, които тълпите пропускат."
+      },
+      "sr": {
+        "title": "Vodič za balone u Kapadokiji: sve što treba da znate",
+        "metaTitle": "Vodič za balone u Kapadokiji — saveti, cena i vreme",
+        "metaDescription": "Potpun vodič za doživljaj balona na topli vazduh u Kapadokiji: kako funkcioniše, najbolje doba godine, koliko košta, kako se rezerviše i šta očekivati na jutro leta.",
+        "excerpt": "Klizanje iznad vilinskih dimnjaka u zoru je najprepoznatljivije iskustvo u Turskoj. Evo kako letovi funkcionišu, kada ići, koliko košta i kako da osigurate da zaista poletite.",
+        "intro": [
+          "Posmatranje stotina balona kako se dižu iznad dolina Kapadokije u zoru jedan je od najfotografisanijih prizora na zemlji — a doživeti ga je još bolje nego na slikama. Ako je let balonom na vašoj listi želja za Tursku, ovaj vodič pokriva sve što vam treba da ga dobro isplanirate: kako funkcioniše, najbolje vreme za polazak, koliko košta i kako da sebi pružite najbolju šansu da zaista poletite.",
+          "Kapadokija je jedna od vodećih svetskih destinacija za letenje balonom s dobrim razlogom: blagi jutarnji vetrovi, dramatičan stenoviti predeo i sam broj balona na nebu spajaju se u nešto istinski nezaboravno."
+        ],
+        "sections": [
+          {
+            "heading": "Kako funkcioniše doživljaj balona",
+            "paragraphs": [
+              "Letovi poleću u <strong>zoru</strong>, kada je vazduh najmirniji i najhladniji. Pokupiće vas iz hotela po mraku, često oko 4:30–5:30 ujutru u zavisnosti od sezone, i odvesti na polje za poletanje gde možete da posmatrate naduvavanje balona — prizor sam po sebi. Posle bezbednosnog uputstva penjete se u korpu i, dok sunce izlazi, tiho klizite iznad vilinskih dimnjaka, dolina i vinograda.",
+              "Tipičan let traje oko <strong>sat vremena</strong>, klizeći od tik iznad stenovitih formacija do nekoliko stotina metara radi panoramskih pogleda. Sletanja su blaga, a mnogi operateri završavaju malom proslavom — sertifikatom i zdravicom — pre nego što vas odvezu nazad u hotel. Ceo doživljaj, od vrata do vrata, traje otprilike tri do četiri sata."
+            ]
+          },
+          {
+            "heading": "Najbolje doba godine za let",
+            "paragraphs": [
+              "Baloni lete <strong>tokom cele godine</strong> u Kapadokiji, ako vreme dozvoli, ali najpouzdaniji uslovi su u <strong>proleće (april–jun)</strong> i <strong>jesen (septembar–oktobar)</strong>, kada su jutra obično vedra i mirna. Letnji letovi su takođe popularni i poleću rano da izbegnu vrućinu, dok zima nudi čaroban prizor balona iznad snegom posutih vilinskih dimnjaka — mada se letovi tada češće otkazuju zbog vremena.",
+              "Bez obzira na sezonu, letovi se odvijaju samo kada su vetar i vidljivost bezbedni, a organ civilnog vazduhoplovstva može zabraniti sve balone za dato jutro. Ovo je najvažnija stvar oko koje treba planirati: nikada ne rezervišite let balonom za poslednje jutro u Kapadokiji. Ostavite sebi bar dva jutra kako otkazivanje zbog vremena ne bi značilo da potpuno propustite doživljaj."
+            ]
+          },
+          {
+            "heading": "Koliko košta i kako se rezerviše",
+            "paragraphs": [
+              "Letovi balonom su premium doživljaj, a cene variraju sa sezonom, potražnjom i tipom leta — standardne grupne korpe su najpristupačnije, dok manje „comfort“ ili „deluxe“ korpe sa manje putnika koštaju više. Cene rastu u špicu sezone i kada je potražnja visoka, pa se isplati <strong>rezervisati unapred</strong> umesto nadati se slobodnom mestu po dolasku.",
+              "Izaberite uglednog, propisno licenciranog operatera sa dobrom bezbednosnom reputacijom umesto najjeftinije ponude koju nađete — ovo je let, i bezbednost i iskustvo su bitni. Lokalni vodič može preporučiti pouzdane operatere i pomoći vam da uklopite let u itinerer, ali imajte na umu da samu vožnju balonom uvek organizuje i naplaćuje odvojeno balonska kompanija, a ne vaš vodič."
+            ]
+          },
+          {
+            "heading": "Šta obući i poneti na jutro leta",
+            "paragraphs": [
+              "Zora u Kapadokiji je hladna, čak i leti, pa se obucite u <strong>tople slojeve</strong> koje možete skidati kako dan zagreva — gorionik iznad vas isijava iznenađujuću toplotu, ali predzorno polje je hladno. Nosite zatvorene, ravne cipele pogodne za penjanje u korpu i iz nje, i vežite dugu kosu.",
+              "Ponesite fotoaparat ili telefon sa trakom ili sigurnim hvatom — nećete želeti da vam ispadne preko ivice — i potpuno napunjenu bateriju. Ostavite velike torbe; korpe su skučene. I jednostavno odvojite trenutak, između fotografija, da pogledate gore i oko sebe: tišinu i more balona u zoru nijedna slika ne uspeva sasvim da uhvati."
+            ]
+          },
+          {
+            "heading": "Iskoristite maksimum od putovanja u Kapadokiju",
+            "paragraphs": [
+              "Balon je vrhunac, ali je kratak deo bogate destinacije. Uparite ga sa crkvama isklesanim u steni muzeja na otvorenom Gereme, podzemnim gradovima Derinkuju i Kajmakli, vidikovcima Učhisara i šetnjama u zlatnom satu kroz Ružičastu i Crvenu dolinu. Dva dana vam omogućavaju da uživate u regionu kako treba, oko ranog jutra sa balonom.",
+              "Licencirani lokalni vodič sve to povezuje — raspoređuje vaše dane oko leta, pronalazi mirne doline koje gužve promaše i oživljava freskama oslikane pećinske crkve i podzemne svetove. Ta kombinacija, zorski let plus obavešten meštanin na terenu, jeste Kapadokija u svom najboljem izdanju."
+            ]
+          }
+        ],
+        "faqHeading": "Često postavljana pitanja",
+        "faqs": [
+          {
+            "q": "Koliko košta vožnja balonom na topli vazduh u Kapadokiji?",
+            "a": "Cene variraju sa sezonom, potražnjom i tipom korpe. Standardni letovi sa deljenom korpom su najpristupačnija opcija, dok manje deluks korpe sa manje putnika koštaju više. Cene rastu u špicu sezone, pa se rezervacija unapred isplati. Let balonom uvek naplaćuje odvojeno balonska kompanija."
+          },
+          {
+            "q": "U koje vreme poleću baloni u Kapadokiji?",
+            "a": "Letovi poleću u zoru, kada je vazduh najmirniji. Preuzimanje iz hotela je obično oko 4:30–5:30 ujutru u zavisnosti od sezone, dok sam let traje oko sat vremena, a ceo doživljaj tri do četiri sata od vrata do vrata."
+          },
+          {
+            "q": "Šta ako se moj let balonom otkaže?",
+            "a": "Letovi se odvijaju samo pri bezbednom vetru i vidljivosti i mogu biti zabranjeni od strane vazduhoplovnog organa. Ako se vaš otkaže, obično dobijate povraćaj novca ili nov termin — zbog čega nikada ne treba da zakažete balon za poslednje jutro. Ostavite bar dva jutra u Kapadokiji kao rezervu."
+          },
+          {
+            "q": "Da li je vožnja balonom u Kapadokiji bezbedna?",
+            "a": "Letenje balonom u Kapadokiji je dobro ustanovljeno i strogo regulisano, a letovi se odvijaju samo u bezbednim uslovima. Izaberite uglednog, propisno licenciranog operatera sa snažnom bezbednosnom reputacijom umesto najjeftinije opcije, i pratite bezbednosno uputstvo posade."
+          },
+          {
+            "q": "Koje je najbolje doba godine za balone u Kapadokiji?",
+            "a": "Baloni lete tokom cele godine kada vreme dozvoli, ali proleće (april–jun) i jesen (septembar–oktobar) nude najpouzdanije vedra, mirna jutra. Zima donosi čarobne snežne prizore ali češća otkazivanja zbog vremena."
+          }
+        ],
+        "relatedHeading": "Istražite Kapadokiju do detalja",
+        "ctaTitle": "Spremni da doživite Kapadokiju?",
+        "ctaSub": "Povežite se sa proverenim lokalnim vodičem da isplanirate dane oko balona i otkrijete doline koje gužve promaše."
       }
     }
   },
@@ -6318,6 +6608,79 @@ export const BLOG_POSTS: BlogPost[] = [
         "relatedHeading": "Планирайте пътуването си до Истанбул",
         "ctaTitle": "Вижте Истанбул с лицензиран местен водач",
         "ctaSub": "Прескочете опашките и открийте кварталите, които повечето посетители пропускат. Резервирайте проверен водач за Истанбул във VibeGuide — ще видите цената предварително."
+      },
+      "sr": {
+        "title": "3 dana u Istanbulu: savršen itinerer za prvi put",
+        "metaTitle": "3 dana u Istanbulu — savršen itinerer za prvi put",
+        "metaDescription": "Kako provesti 3 dana u Istanbulu: itinerer iz dana u dan koji obuhvata Sultanahmet, Bosfor i bazare, sa savetima vodiča o savladavanju redova i gužvi.",
+        "excerpt": "Tri dana su taman dovoljna da se zaljubite u Istanbul. Evo plana iz dana u dan preko dva kontinenta — veliki spomenici, Bosfor i sokaci koje većina posetilaca promaši.",
+        "intro": [
+          "Istanbul je ogroman, naslojen i nemoguć da se u potpunosti „vidi“ za tri dana — ali tri dana su sasvim dovoljna da se u njega zaljubite. Raspet između Evrope i Azije preko Bosfora, grad slaže vizantijske katedrale, osmanske palate, žamorne bazare i brdovite kvartove u jedan od najispunjenijih gradskih predaha bilo gde.",
+          "Ovaj <strong>trodnevni itinerer za Istanbul</strong> osmišljen je za onoga ko prvi put dolazi i želi suštinu bez žurbe: veliki spomenici Sultanahmeta prvog dana, Bosfor i bazari drugog dana i lokalna, manje turistička strana grada trećeg dana. Licencirani lokalni vodič može sažeti redove i pešačenje u prometnim danima — ali plan funkcioniše i sam."
+        ],
+        "sections": [
+          {
+            "heading": "Dan 1: Sultanahmet — istorijsko srce",
+            "paragraphs": [
+              "Počnite u <strong>Sultanahmetu</strong>, istorijskom poluostrvu gde najveće znamenitosti stoje na kratkoj šetnji jedna od druge. Krenite rano ka <strong>Aji Sofiji</strong>, 1.500 godina staroj nekadašnjoj katedrali i džamiji, pa pređite trg do <strong>Plave džamije</strong> sa njenom kaskadom kupola i šest minareta. U obe je ulaz besplatan, ali su veoma prometne — dolazak u vreme otvaranja pravi pravu razliku.",
+              "Popodne obiđite <strong>palatu Topkapi</strong>, prostrano sedište osmanskih sultana, i svratite u obližnju podzemnu <strong>Baziliku-cisternu</strong>. Ako vam ostane energije, <strong>Veliki bazar</strong> je na kratkoj šetnji za prvo razgledanje. Ovo je dan najbogatiji spomenicima i tu se vodič najviše isplati — preskakanje redova za ulaznice u Topkapiju i objašnjavanje slojeva istorije pored kojih biste inače prošli ne primetivši ih."
+            ]
+          },
+          {
+            "heading": "Dan 2: Bosfor i bazari",
+            "paragraphs": [
+              "Drugi dan posvetite vodi i pijacama. Jutarnje <strong>krstarenje Bosforom</strong> je klasičan način da shvatite geografiju Istanbula — palate, drvene primorske vile i dva kontinenta koji promiču s obe strane. Javni trajekti su jeftini i jednako slikoviti kao turistički brodovi.",
+              "Nazad na kopnu, uronite u <strong>Veliki bazar</strong> i mirišljavi <strong>Egipatski bazar</strong> radi tepiha, lampi, čaja i turskog lokuma — cenkanje se očekuje i deo je zabave. Popodne pređite Galata most do <strong>Karakeja</strong> i uz <strong>Galata kulu</strong> radi pogleda na zalazak sunca nad starim gradom, pa istražite kafiće i butike kvartova Galata i Bejoglu dok veče oživljava."
+            ]
+          },
+          {
+            "heading": "Dan 3: Lokalni kvartovi i azijska strana",
+            "paragraphs": [
+              "Iskoristite poslednji dan da vidite Istanbul koji meštani vole. Provedite jutro u <strong>Balatu i Feneru</strong>, fotogeničnim starim grčkim i jevrejskim četvrtima sa dugom-šarenim kućama, antikvarnicama i crkvama na vrhovima brda — svetu daleko od gužvi kod spomenika. To je jedan od najispunjenijih kvartova grada za polagano lutanje.",
+              "Popodne uzmite trajekt do <strong>azijske strane</strong> i žamornih ulica Kadikeja, sa njegovom pijacom, uličnom hranom i opuštenim kafićima. Završiti putovanje na drugom kontinentu, gledajući kako trajekti presecaju Bosfor u sumrak, savršen je način da napustite Istanbul — i podsetnik koliko toga još ima zbog čega treba da se vratite."
+            ]
+          },
+          {
+            "heading": "Praktični saveti za 3 dana u Istanbulu",
+            "paragraphs": [
+              "Po dolasku nabavite <strong>Istanbulkart</strong> putnu karticu — radi na trajektima, tramvajima, autobusima i metrou, i čini presedanje između dve strane lakim i jeftinim. Smestite se u Sultanahmetu ili blizu njega za prvi dan, ili u Galati/Bejogluu ako više volite restorane i noćni život u dometu šetnje.",
+              "Nosite udobne cipele — Istanbul je brdovit i kaldrmisan — i oblačite se skromno za džamije, uz maramu za žene da pokriju kosu. Velike znamenitosti Sultanahmeta su najprometnije sredinom dana, pa idite rano ili kasno. Tri dana prolaze brzo, pa je licencirani lokalni vodič bar za prvi dan najbolji jedinstveni način da vidite više uz manje stresa."
+            ]
+          },
+          {
+            "heading": "Produžetak putovanja preko 3 dana",
+            "paragraphs": [
+              "Ako možete da dodate četvrti ili peti dan, Istanbul to nagrađuje. Jednodnevni izlet do <strong>Prinčevskih ostrva</strong> pruža vam bekstvo bez automobila kroz borove šume i vile iz Bel epoka, do kojih se stiže slikovitim trajektom. Alternativno, dodajte sporije pola dana u <strong>Sulejmanijinoj džamiji</strong> i atmosferičnim sokacima oko nje, ili doživljaj hamama u istorijskom osmanskom kupatilu.",
+              "Mnogi putnici koriste Istanbul kao uvodni čin dužeg putovanja Turskom, leteći dalje ka Kapadokiji radi balona ili niz Egej radi Efesa i obale. Tri dana u Istanbulu su savršen temelj — dovoljno da razumete grad, i dovoljno da znate da ćete poželeti da se vratite."
+            ]
+          }
+        ],
+        "faqHeading": "Često postavljana pitanja",
+        "faqs": [
+          {
+            "q": "Da li je 3 dana dovoljno za Istanbul?",
+            "a": "Tri dana su dovoljna da udobno pokrijete suštinu — spomenike Sultanahmeta, krstarenje Bosforom, bazare i lokalni kvart poput Balata. Nećete videti sve, ali ćete osetiti pravi duh grada. Četiri ili pet dana vam omogućavaju da dodate Prinčevska ostrva ili azijsku stranu sporijim tempom."
+          },
+          {
+            "q": "Koja je najbolja oblast za odsedanje u Istanbulu za prvu posetu?",
+            "a": "Sultanahmet vas stavlja u domet šetnje od Aje Sofije, Plave džamije i Topkapija, idealno za kratko prvo putovanje. Galata i Bejoglu su bolji ako želite restorane, barove i noćni život na pragu, uz lak tramvaj ili trajekt do starog grada."
+          },
+          {
+            "q": "Da li mi treba vodič za Istanbul ili mogu sam?",
+            "a": "Istanbulom možete da se snađete sami uz prevoznu karticu i mapu, ali licencirani lokalni vodič je neprocenjiv u spomenicima bogatom prvom danu — preskakanje redova za ulaznice u Topkapiju, objašnjavanje istorije i dolazak do kvartova koje većina posetilaca promaši. Mnogi uzmu vodiča za prvi dan pa potom istražuju sami."
+          },
+          {
+            "q": "Kako da se krećem Istanbulom za 3 dana?",
+            "a": "Nabavite Istanbulkart karticu, koja radi na tramvajima, trajektima, autobusima i metrou. Tramvaj pokriva Sultanahmet i Galatu, a jeftini javni trajekti prelaze Bosfor i stižu do azijske strane. Saobraćaj je gust, pa su tramvaji i trajekti obično brži od taksija."
+          },
+          {
+            "q": "Šta da obučem za posetu džamijama u Istanbulu?",
+            "a": "Oblačite se skromno: pokrivena ramena i kolena za svakoga, i marama za žene da pokriju kosu unutar džamija. Cipele izuvate na ulazu, pa laka obuća pomaže. Marame se često mogu pozajmiti na vratima ako je zaboravite."
+          }
+        ],
+        "relatedHeading": "Isplanirajte putovanje u Istanbul",
+        "ctaTitle": "Upoznajte Istanbul uz licenciranog lokalnog vodiča",
+        "ctaSub": "Preskočite redove i otkrijte kvartove koje većina posetilaca promaši. Rezervišite proverenog istanbulskog vodiča na VibeGuide — cenu vidite unapred."
       }
     }
   },
@@ -7573,6 +7936,79 @@ export const BLOG_POSTS: BlogPost[] = [
         "relatedHeading": "Планирайте пътуването си до Турция",
         "ctaTitle": "Готови ли сте да разгледате Турция?",
         "ctaSub": "След като влизането ви е уредено, извлечете максимума от всеки ден с лицензиран местен водач. Открийте проверени водачи из цяла Турция във VibeGuide."
+      },
+      "sr": {
+        "title": "Viza i uslovi ulaska u Tursku: jednostavan vodič",
+        "metaTitle": "Viza i uslovi ulaska u Tursku — vodič za 2026",
+        "metaDescription": "Da li vam treba viza za Tursku? Jasan vodič o turskoj e-Visi, ko je izuzet, pravila o važenju pasoša i šta pripremiti na aerodromu pre polaska.",
+        "excerpt": "Većina posetilaca putuje ili bez vize ili dobija brzu onlajn e-Visu. Evo kome šta treba, kako funkcioniše e-Visa i pravila o pasošu koja ljude spotiču na aerodromu.",
+        "intro": [
+          "Turska je jedna od lakših velikih destinacija za ulazak, ali pravila u potpunosti zavise od vaše nacionalnosti — neki putnici stižu potpuno bez vize, drugima treba brza onlajn <strong>e-Visa</strong>, a nekolicina mora da podnese zahtev u ambasadi. Da to obavite kako treba pre poletanja izbegava stres na aerodromu.",
+          "Ovaj vodič objašnjava glavne puteve ulaska jednostavnim rečima: ko je izuzet od vize, kako funkcioniše e-Visa, pravilo o važenju pasoša koje ljude iznenadi i šta pripremiti po dolasku. <strong>Uvek potvrdite aktuelna pravila za sopstveni pasoš na zvaničnom sajtu turske vlade za e-Visu pre rezervacije</strong>, jer se uslovi mogu promeniti."
+        ],
+        "sections": [
+          {
+            "heading": "Da li vam treba viza za Tursku?",
+            "paragraphs": [
+              "Zavisi od vaše nacionalnosti. Državljani mnogih zemalja — uključujući većinu EU, Ujedinjeno Kraljevstvo i druge — mogu da uđu <strong>bez vize</strong> radi turizma za određeni broj dana (obično 90 dana u periodu od 180 dana). Putnicima iz nekih zemalja, uključujući Sjedinjene Države, Kanadu i Australiju, obično treba <strong>e-Visa</strong>, koja se brzo i jeftino pribavlja na internetu.",
+              "Manji broj nacionalnosti mora da podnese zahtev za vizu unapred preko turske ambasade ili konzulata. Pošto se liste menjaju, jedini pouzdan način da saznate svoju kategoriju jeste da proverite <strong>zvanični sajt za e-Visu (evisa.gov.tr)</strong> sa svojim konkretnim pasošem pre polaska. Ne oslanjajte se na stare objave sa foruma ili sajtove trećih strana."
+            ]
+          },
+          {
+            "heading": "Kako funkcioniše turska e-Visa",
+            "paragraphs": [
+              "Ako vam treba e-Visa, postupak je jednostavan i obavlja se u potpunosti na internetu, obično za nekoliko minuta. Unesete podatke iz pasoša, datume putovanja i plaćanje na zvaničnom sajtu, a odobrena e-Visa stiže mejlom kao PDF. Većina turističkih e-Visa za jedan ulazak dozvoljava boravak do 30 ili 90 dana u zavisnosti od nacionalnosti, i važe 180 dana od datuma izdavanja.",
+              "Dva važna upozorenja. Prvo, <strong>koristite samo zvanični državni sajt, evisa.gov.tr</strong> — mnogi slični sajtovi trećih strana naplaćuju naduvane naknade za isti dokument. Drugo, podnesite zahtev bar nekoliko dana pre putovanja i nosite odštampanu kopiju uz mejl. Iako je odobrenje obično trenutno, nije zagarantovano, pa ne ostavljajte to za aerodrom."
+            ]
+          },
+          {
+            "heading": "Važenje pasoša i pravila ulaska",
+            "paragraphs": [
+              "Pravilo koje putnike najčešće spotiče jeste <strong>važenje pasoša</strong>. Turska uopšteno zahteva da vaš pasoš važi najmanje <strong>150 dana (oko pet meseci) posle datuma ulaska</strong>, i da ima bar jednu praznu stranu za pečate. Ako je vaš pasoš pred istekom, obnovite ga na vreme pre putovanja — granični službenici ovo zaista sprovode.",
+              "Na pasoškoj kontroli mogu vas pitati o daljem ili povratnom putovanju i gde odsedate, pa imajte pri ruci povratnu kartu i rezervaciju prvog hotela. Ulazak je obično brz i prijatan. Čuvajte svoju e-Visu ili ulazni pečat, jer ćete ih možda morati pokazati pri izlasku."
+            ]
+          },
+          {
+            "heading": "Na aerodromu i nakon dolaska",
+            "paragraphs": [
+              "Glavne turske kapije — Istanbulski aerodrom (IST), Sabiha Gekčen (SAW) na azijskoj strani i primorski aerodromi u Antaliji, Izmiru, Bodrumu i Dalamanu — moderni su i naviknuti na međunarodne dolaske. Pratite oznake za e-Visu ili bezvizni ulazak, imajte pasoš i svaku odštampanu e-Visu spremne, i za većinu turista očekujte jednostavan pečat i prolaz.",
+              "Kada prođete, zvanični aerodromski taksiji, aerodromski autobusi Havaist/Havabus i metro veze odvedu vas u grad. Dogovorite cenu taksija ili insistirajte na taksimetru, i razmotrite unapred rezervisan transfer za kasne dolaske. Ako putovanje počinjete turom, lokalni vodič vas može dočekati i olakšati prvi dan pod džetlegom."
+            ]
+          },
+          {
+            "heading": "Ostali praktični saveti za ulazak",
+            "paragraphs": [
+              "<strong>Putno osiguranje</strong> formalno nije obavezno za većinu turista, ali se snažno preporučuje, posebno pokriće koje uključuje medicinsku negu i aktivnosti poput letenja balonom ili izleta brodom. Čuvajte digitalnu i papirnu kopiju polise uz pasoš i e-Visu.",
+              "Turska nema opšte uslove vakcinacije za ulazak za većinu putnika, ali proverite aktuelne zdravstveno-putne savete svoje vlade pre polaska. I upamtite da pravila o vizi određuju koliko dugo možete ostati — prekoračenje boravka vodi ka novčanim kaznama i zabranama ulaska, pa zabeležite dozvoljene dane i ne prekoračujte ih. Kada ste u nedoumici, zvanični sajt za e-Visu je uvek konačna reč."
+            ]
+          }
+        ],
+        "faqHeading": "Često postavljana pitanja",
+        "faqs": [
+          {
+            "q": "Da li mi treba viza za posetu Turskoj?",
+            "a": "Zavisi od vaše nacionalnosti. Mnogi putnici, uključujući većinu državljana EU i Ujedinjenog Kraljevstva, ulaze bez vize radi turizma, dok drugima (poput imalaca američkih, kanadskih i australijskih pasoša) treba brza onlajn e-Visa. Uvek proverite zvanični sajt evisa.gov.tr za svoj konkretan pasoš pre rezervacije."
+          },
+          {
+            "q": "Kako da dobijem tursku e-Visu?",
+            "a": "Podnesite zahtev na zvaničnom državnom sajtu evisa.gov.tr. Unesite podatke iz pasoša, datume i plaćanje, a odobrena e-Visa stiže mejlom kao PDF, obično u roku od nekoliko minuta. Izbegavajte sajtove trećih strana koji naplaćuju naduvane naknade, i odštampajte kopiju da je nosite sa sobom."
+          },
+          {
+            "q": "Koliko dugo mogu da ostanem u Turskoj kao turista?",
+            "a": "Većina turista može da ostane do 90 dana u bilo kom periodu od 180 dana, mada tačna granica zavisi od vaše nacionalnosti i tipa vize. Prekoračenje boravka rezultira novčanim kaznama i mogućim zabranama ulaska, pa proverite dozvoljeno trajanje i ne prekoračujte ga."
+          },
+          {
+            "q": "Koliko meseci mora da važi moj pasoš da bih ušao u Tursku?",
+            "a": "Turska uopšteno zahteva da vaš pasoš važi najmanje 150 dana (oko pet meseci) posle datuma ulaska, uz praznu stranu za pečate. Ako je vaš pasoš pred istekom, obnovite ga pre putovanja, jer se ovo pravilo sprovodi na granici."
+          },
+          {
+            "q": "Da li je turska e-Visa isto što i viza po dolasku?",
+            "a": "Ne. E-Visa se pribavlja na internetu pre putovanja i standardni je put za nacionalnosti kojima treba viza. Turska je uglavnom ukinula vizu po dolasku, pa obezbedite e-Visu unapred umesto da se oslanjate na to da ćete je dobiti na aerodromu."
+          }
+        ],
+        "relatedHeading": "Isplanirajte putovanje u Tursku",
+        "ctaTitle": "Spremni da istražite Tursku?",
+        "ctaSub": "Kada je ulazak sređen, iskoristite maksimum svakog dana uz licenciranog lokalnog vodiča. Otkrijte proverene vodiče širom Turske na VibeGuide."
       }
     }
   },
@@ -8830,6 +9266,79 @@ export const BLOG_POSTS: BlogPost[] = [
         "relatedHeading": "Вкусете Турция с местен жител",
         "ctaTitle": "Открийте турската кухня с местен водач",
         "ctaSub": "Най-добрите ястия са там, където ядат местните. Резервирайте проверен водач във VibeGuide и следвайте носа си през пазарите и уличките на Турция."
+      },
+      "sr": {
+        "title": "Vodič kroz tursku kuhinju: šta jesti u Turskoj",
+        "metaTitle": "Vodič kroz tursku kuhinju — šta jesti i piti u Turskoj",
+        "metaDescription": "Lokalni vodič kroz tursku hranu: obavezna jela, ulična hrana, doručak, slatkiši i pića — od kebaba i mezea do baklave, simita i turskog čaja i kafe.",
+        "excerpt": "Turska kuhinja je jedna od velikih svetskih gastronomskih tradicija. Evo jela, uličnih zalogaja i pića koje treba potražiti — i kako da jedete kao meštanin, a ne kao turista.",
+        "intro": [
+          "Turska kuhinja je jedna od velikih svetskih gastronomskih kultura — raskršće mediteranskih, bliskoistočnih, centralnoazijskih i balkanskih ukusa izgrađeno na vrhunskim namirnicama, mesu s roštilja, svežem povrću i beskrajnom nizu mezea. Dobra hrana je jedna od najvećih radosti svakog putovanja u Tursku, i pristupačna je za svaki budžet.",
+          "Ovaj vodič prolazi kroz <strong>jela i pića koja treba potražiti</strong>, od pravog turskog doručka do uličnih zalogaja, kebaba s roštilja, morskih plodova na obali i slatkiša i toplih napitaka koji zaokružuju svaki obrok. Preskočite restorane-zamke za turiste blizu velikih znamenitosti — najbolja hrana je tamo gde meštani jedu, a vodič vas može odvesti pravo do nje."
+        ],
+        "sections": [
+          {
+            "heading": "Turski doručak: gozba za početak dana",
+            "paragraphs": [
+              "Tradicionalan <strong>turski doručak (kahvaltı)</strong> je trpeza, a ne tanjir: beli sir i zreli kašar, masline, paradajz i krastavci, med sa kajmakom (bal-kaymak), džemovi, kuvana jaja i topao hleb, sve polagano nabrajano uz beskrajne čaše čaja. Vikendom Turci nad njim zastaju satima.",
+              "Potražite <strong>menemen</strong>, meka kajgana sa paradajzom, paprikom i začinima, i <strong>simit</strong>, susamom oblepljen krug hleba koji se prodaje sa uličnih kolica svuda. Ležeran doručak je istinski vrhunac turske gastronomske kulture, a mnoga mesta služe serpme kahvaltı — trpezu po sistemu koliko možeš da pojedeš — savršenu za deljenje."
+            ]
+          },
+          {
+            "heading": "Kebabi, meze i glavni događaj",
+            "paragraphs": [
+              "Tursko meso s roštilja daleko prevazilazi poznati döner. Potražite <strong>adana i urfa kebab</strong> (ljuti i blagi ražnjići od mlevene jagnjetine), <strong>şiš</strong> (meso u kockama s roštilja), <strong>İskender</strong> (isečeni döner preko hleba sa sosom od paradajza i jogurtom) i sporo kuvane paprikaše jugoistoka. Svaki region ima svoj specijalitet vredan probe.",
+              "Jednako je važno <strong>meze</strong> — parada malih hladnih i toplih predjela koja otvara pravi obrok: dimljeni patlidžan, punjeni vinovi listovi, jogurt umaci, morska bobika, ljuti ezme i još mnogo toga. Naručite trpezu mezea za deljenje, i ne propustite <strong>pide</strong> (turski hleb u obliku čamca) i <strong>lahmacun</strong>, tanku, hrskavu „tursku picu“ prelivenu začinjenim mlevenim mesom."
+            ]
+          },
+          {
+            "heading": "Ulična hrana i morski plodovi s obale",
+            "paragraphs": [
+              "Turska ulična hrana je izvrsna i jeftina. U Istanbulu probajte <strong>balık ekmek</strong> (sendvič sa ribom s roštilja) kraj vode u Eminenuu, pečene kestene i kukuruz sa kolica, <strong>kokoreč</strong> za avanturiste i <strong>midye dolma</strong> (punjene dagnje) sa cediljkom limuna. Gözleme — tanak punjen hleb pečen na saču — savršen je brz ručak.",
+              "Na <strong>egejskoj i mediteranskoj obali</strong> — Izmir, Bodrum, Kušadasi, Antalija — naglasak se pomera ka svežim morskim plodovima i povrću u maslinovom ulju. Obrok od ribe s roštilja, mezea i čaše rakija, anisovog žestokog pića koje s vodom postaje mlečno, u luci pri zalasku sunca jeste kvintesencijalni doživljaj turske obale."
+            ]
+          },
+          {
+            "heading": "Slatkiši, čaj i turska kafa",
+            "paragraphs": [
+              "Ostavite mesta za dezert. <strong>Baklava</strong> — slojeviti kore sa pistaćima ili orasima i sirupom — je zvezda, najbolja iz specijalizovane radnje, posebno one iz Gazijantepa. Probajte i <strong>künefe</strong> (toplo iseckano testo sa istopljenim sirom i sirupom), <strong>lokum</strong> (turski lokum) i mlečne pudinge poput sütlača.",
+              "Pića su ritual. <strong>Çay (čaj)</strong> se služi ceo dan u čašama u obliku lale i nudi svuda kao gostoljubivost. <strong>Turska kafa</strong>, gusta i neceđena, sporo se kuva i pijucka uz čašu vode i često komad lokuma — a po tradiciji, talog ostavljen u šoljici može se čitati za sudbinu. Odbiti čašu čaja od trgovca je gotovo nemoguće, i to je deo šarma."
+            ]
+          },
+          {
+            "heading": "Kako da jedete kao meštanin",
+            "paragraphs": [
+              "Najbolji savet: <strong>jedite tamo gde meštani jedu</strong>. Izbegavajte restorane sa nametljivim mamcima i višejezičnim menijima sa slikama tik uz velike spomenike — oni trguju lokacijom, a ne kvalitetom. Prošetajte nekoliko ulica unazad, potražite mesta puna turskih porodica i ješćete bolje za manje.",
+              "<strong>Lokanta</strong> (opušteno mesto sa poslužavnicima domaćih jela na koja pokazujete) sjajan je ručak za novac. Probajte lokalni specijalitet svakog regiona umesto istog dönera svuda. A ako želite da preskočite nagađanje, šetnja fokusirana na hranu sa lokalnim vodičem jedan je od najispunjenijih načina da razumete turski grad — prateći nos kroz pijace, pekare i skrivena mesta koja sami nikada ne biste našli."
+            ]
+          }
+        ],
+        "faqHeading": "Često postavljana pitanja",
+        "faqs": [
+          {
+            "q": "Po kojoj hrani je Turska najpoznatija?",
+            "a": "Turska je poznata po kebabima (adana, urfa, İskender i döner), meze predjelima, pide i lahmacun hlebovima i slatkišima poput baklave i turskog lokuma. Raskošan doručak sa mnogo jela i rituali čaja i turske kafe podjednako su u središtu gastronomske kulture."
+          },
+          {
+            "q": "Šta da jedem za doručak u Turskoj?",
+            "a": "Tradicionalan turski doručak je deljena trpeza sireva, maslina, paradajza, krastavaca, meda sa kajmakom, džemova, jaja i toplog hleba, uz beskrajni čaj. Potražite menemen (jaja sa paradajzom i paprikom) i simit, susamom oblepljen krug hleba koji se prodaje na ulici."
+          },
+          {
+            "q": "Da li je turska hrana dobra za vegetarijance?",
+            "a": "Da. Iako je Turska poznata po mesu s roštilja, njeni meze i jela od povrća su odlični za vegetarijance — punjeni vinovi listovi, jela od patlidžana, pasulj u maslinovom ulju, čorba od sočiva, salate i pide sa sirom. Samo potvrdite da su čorbe i nadevi bez mesa pri naručivanju."
+          },
+          {
+            "q": "Kako da izbegnem restorane-zamke za turiste u Turskoj?",
+            "a": "Izbegavajte mesta sa mamcima ispred i laminiranim menijima sa slikama tik pored velikih znamenitosti. Prošetajte nekoliko ulica dalje, birajte mesta puna meštana i probajte lokantu sa poslužavnicima domaćih jela. Lokalni vodič za hranu je najsigurniji način da nađete autentična mesta dobre vrednosti."
+          },
+          {
+            "q": "Koje je nacionalno piće Turske?",
+            "a": "Čaj (çay), služen u malim čašama u obliku lale, svakodnevno je nacionalno piće i gest gostoljubivosti koji se nudi svuda. Turska kafa, gusta i sporo kuvana, je tradicionalna kafa, dok je rakı, anisovo žestoko piće, klasično piće uz meze i morske plodove."
+          }
+        ],
+        "relatedHeading": "Okusite Tursku uz meštanina",
+        "ctaTitle": "Otkrijte tursku hranu uz lokalnog vodiča",
+        "ctaSub": "Najbolji obroci su tamo gde meštani jedu. Rezervišite proverenog vodiča na VibeGuide i pratite nos kroz turske pijace i sokake."
       }
     }
   },
@@ -10088,6 +10597,79 @@ export const BLOG_POSTS: BlogPost[] = [
         "relatedHeading": "Разгледайте Ефес и Егея",
         "ctaTitle": "Вижте Ефес с лицензиран водач",
         "ctaSub": "Само лицензирани водачи могат да ви разведат из античния град — а времето при круиз е всичко. Резервирайте проверен водач за Ефес във VibeGuide."
+      },
+      "sr": {
+        "title": "Jednodnevni izlet u Efes iz Kušadasija: potpun vodič",
+        "metaTitle": "Jednodnevni izlet u Efes iz Kušadasija — vodič za brod",
+        "metaDescription": "Sve za jednodnevni izlet u Efes iz Kušadasija: razdaljina, tajming za putnike sa krstarenja, šta videti, saveti za ulaznice i zašto je licencirani vodič obavezan.",
+        "excerpt": "Efes je samo 20 minuta od kruzerske luke Kušadasija — savršen izlet sa broda. Evo kako da ga isplanirate, šta da vidite i zašto vas samo licencirani vodič sme voditi unutra.",
+        "intro": [
+          "Efes je zvezda među jednodnevnim izletima na egejskoj obali Turske, a Kušadasi — jedna od najprometnijih kruzerskih luka zemlje — njegova je idealna polazna tačka. Samo 20 minuta drumom, prostrani grčko-rimski grad čini savršen poludnevni ili celodnevni izlet, bilo da ste na kruzerskom zaustavljanju ili smešteni na obali nekoliko noći.",
+          "Ovaj vodič pokriva sve za <strong>jednodnevni izlet u Efes iz Kušadasija</strong>: koliko je udaljen, kako ga uklopiti u vreme polaska kruzera, šta videti unutar ruševina, osobenosti oko ulaznica poput Terasastih kuća i zašto vam je — jedinstveno u Efesu — potreban <strong>licencirani vodič</strong> da vas provede kroz antičko nalazište. Uradite to kako treba i to je jedan od najnezaboravnijih dana u Turskoj."
+        ],
+        "sections": [
+          {
+            "heading": "Koliko je Efes udaljen od Kušadasija?",
+            "paragraphs": [
+              "Efes leži oko <strong>18 km — otprilike 20 minuta drumom</strong> — od kruzerske luke Kušadasija, kraj grada Selčuka. Upravo je ta kratka razdaljina razlog zašto je to izlet broj jedan iz Kušadasija: možete hodati među 2.000 godina starim mermernim ulicama jedva pola sata nakon što siđete s broda.",
+              "Pošto je tako blizu, licencirani vodič može udobno da spoji Efes sa dva obližnja nalazišta — <strong>Kućom Device Marije</strong> u brdima iznad i usamljenim stubom <strong>Artemidinog hrama</strong>, jednog od Sedam svetskih čuda antike — u jedan jedini, neužurbani izlet."
+            ]
+          },
+          {
+            "heading": "Za putnike sa krstarenja: ispravan tajming",
+            "paragraphs": [
+              "Ako stižete kruzerom sa samo nekoliko sati na kopnu, Efes je dovoljno blizu za opušten poludnevni izlet s broda pravo sa terminala. Ključ je tajming: dobar lokalni vodič planira ceo izlet oko vremena povratka na brod, brine se o prevozu i ulaznicama, i uvek ugradi sigurnosnu rezervu tako da se udobno vratite pre polaska.",
+              "Tu privatni licencirani vodič nadmašuje ogromnu autobusku turu — krećete se brže, izbegavate gomilu, efikasno vidite glavne znamenitosti i nikada ne rizikujete da brod krene bez vas. VibeNow vas može čak povezati sa dostupnim vodičem za oko 60 sekundi čim pristanete, ako biste radije da to organizujete na licu mesta."
+            ]
+          },
+          {
+            "heading": "Šta videti unutar Efesa",
+            "paragraphs": [
+              "Efes je izuzetno celovit. Glavna atrakcija je <strong>Kelsusova biblioteka</strong>, čija je obnovljena dvospratna fasada jedan od najfotografisanijih prizora u Turskoj. Prošetajte mermernom <strong>Kuretskom ulicom</strong> pored hramova, česmi i izloga do <strong>Velikog pozorišta</strong>, koje je nekada primalo 25.000 ljudi i danas i dalje ugošćava događaje.",
+              "Uz dodatnu ulaznicu, <strong>Terasaste kuće</strong> — natkriveni ostaci bogatih rimskih domova sa zapanjujućim mozaicima i freskama — skriveni su dragulj nalazišta i itekako vrede. Vodič oživljava ruševne ulice, objašnjavajući svakodnevni rimski život, iščezlu luku i slojeve grčke, rimske i ranohrišćanske istorije pored kojih većina posetilaca prođe ne primetivši ih."
+            ]
+          },
+          {
+            "heading": "Ulaznice, licenciranje i praktični saveti",
+            "paragraphs": [
+              "Dve napomene o ulaznicama: glavno nalazište ima jednu ulaznicu, a <strong>Terasaste kuće zahtevaju posebnu ulaznicu</strong> povrh nje. Još važnije, Efes je jedno od nalazišta gde <strong>samo zvanično licencirani vodič sme da vodi obilaske unutar antičkog grada</strong> — svaki vodič na VibeGuide poseduje tu licencu Ministarstva kulture i turizma, pa vas rezervacija preko platforme drži potpuno pokrivenim.",
+              "Praktično: nosite šešir, kremu za sunčanje i udobne cipele, i ponesite vodu — mermerne ulice su izložene, sa malo hlada i postaju veoma vruće leti. Idite rano ili kasno tokom dana da izbegnete i podnevnu vrućinu i vrhunac gužve sa kruzera. Postoje dva ulaza (gornji i donji); vodič može isplanirati šetnju nizbrdo tako da završite blizu izlaza."
+            ]
+          },
+          {
+            "heading": "Spajanje Efesa sa još regiona",
+            "paragraphs": [
+              "Ako imate ceo dan umesto kruzerskog zaustavljanja, uparite Efes sa šarmantnim brdskim selom <strong>Širince</strong>, poznatim po voćnim vinima i starim grčko-osmanskim kućama, za opušteno popodne degustacije posle ruševina. Kuća Device Marije i Artemidin hram se lako uklapaju u isti izlet.",
+              "Uz više vremena, Kušadasi je odskočna daska za antičke jonske gradove Prijenu, Milet i Didimu, bele travertine Pamukala i uvale Nacionalnog parka poluostrva Dilek. Ali sam Efes opravdava izlet — i uz licenciranog lokalnog vodiča koji otključava njegovu istoriju, to je nezaboravan dan van Kušadasija."
+            ]
+          }
+        ],
+        "faqHeading": "Često postavljana pitanja",
+        "faqs": [
+          {
+            "q": "Koliko je Efes udaljen od luke Kušadasi?",
+            "a": "Efes je oko 18 km — otprilike 20 minuta vožnje — od kruzerske luke Kušadasija, blizu grada Selčuka. Njegova blizina ga čini glavnim jednodnevnim izletom iz Kušadasija i lakim poludnevnim izletom s broda za putnike sa krstarenja."
+          },
+          {
+            "q": "Mogu li da posetim Efes tokom kruzerskog zaustavljanja iz Kušadasija?",
+            "a": "Da. Efes je dovoljno blizu za opušten poludnevni izlet s broda. Licencirani vodič planira tajming oko vremena povratka na brod, brine se o prevozu i ulaznicama, i ugradi rezervu tako da se udobno vratite pre polaska. Privatni vodič je brži i sigurniji od velike autobuske ture."
+          },
+          {
+            "q": "Da li vam treba licencirani vodič za Efes?",
+            "a": "Samo zvanično licencirani vodiči smeju da vode obilaske unutar antičkog grada Efesa. Svaki vodič na VibeGuide poseduje licencu turskog Ministarstva kulture i turizma, pa vas rezervacija preko platforme drži potpuno usklađenim i pokrivenim."
+          },
+          {
+            "q": "Da li Terasaste kuće u Efesu zahtevaju posebnu ulaznicu?",
+            "a": "Da. Glavno nalazište Efesa ima jednu ulaznicu, a Terasaste kuće — prelepo očuvani rimski domovi sa mozaicima i freskama — zahtevaju dodatnu ulaznicu povrh toga. One su vrhunac i itekako vrede dodatnog troška."
+          },
+          {
+            "q": "Šta još mogu da spojim sa jednodnevnim izletom u Efes?",
+            "a": "Licencirani vodič može lako da spoji Efes sa Kućom Device Marije, Artemidinim hramom i vinskim selom Širince u jednom izletu. Uz ceo dan, Prijena, Milet, Didima ili Pamukale takođe su dostupni iz Kušadasija."
+          }
+        ],
+        "relatedHeading": "Istražite Efes i Egej",
+        "ctaTitle": "Upoznajte Efes uz licenciranog vodiča",
+        "ctaSub": "Samo licencirani vodiči vas smeju voditi unutar antičkog grada — a kruzerski tajming je sve. Rezervišite proverenog efeskog vodiča na VibeGuide."
       }
     }
   },
@@ -11348,6 +11930,79 @@ export const BLOG_POSTS: BlogPost[] = [
         "relatedHeading": "Направете повече в Истанбул",
         "ctaTitle": "Изживейте най-доброто от Истанбул",
         "ctaSub": "Вижте иконите и скритите кътчета с някого, който познава града. Резервирайте проверен водач за Истанбул във VibeGuide — цената е показана предварително."
+      },
+      "sr": {
+        "title": "Najbolje stvari za raditi u Istanbulu: izbor meštanina",
+        "metaTitle": "Najbolje stvari za raditi u Istanbulu — izbor vodiča",
+        "metaDescription": "Najbolje stvari za raditi u Istanbulu, po izboru lokalnih vodiča: veliki spomenici, krstarenje Bosforom, bazari, skriveni kvartovi, hamam i azijska strana.",
+        "excerpt": "Od Aje Sofije do zalaska sunca na Bosforu, od hamama do sokaka Balata — doživljaji koji čine Istanbul nezaboravnim, po izboru onih koji tu žive.",
+        "intro": [
+          "Malo gradova nudi koliko Istanbul. Rasprostrt preko dva kontinenta i naslojen vizantijskom i osmanskom istorijom, nagrađuje i lovca na spomenike i lutalicu, gurmana i kupca. Izazov nije naći šta raditi — već birati između svega.",
+          "Ovo je uži izbor lokalnog vodiča <strong>najboljih stvari za raditi u Istanbulu</strong>: nezaobilazni spomenici, doživljaji koji hvataju duh grada i nekoliko stvari koje većina onih koji dolaze prvi put previdi. Pomešajte velike znamenitosti sa malim zadovoljstvima — čaj kraj vode, šetnja kroz brdski kvart — i shvatićete zašto se Istanbul uvuče ljudima pod kožu."
+        ],
+        "sections": [
+          {
+            "heading": "Stanite unutar velikih spomenika",
+            "paragraphs": [
+              "Počnite sa ikonama <strong>Sultanahmeta</strong>. <strong>Aja Sofija</strong>, 1.500 godina stara i naslojena istorijom katedrale i džamije, jedna je od najizuzetnijih građevina na zemlji. Preko trga, <strong>Plava džamija</strong> zaslepljuje kaskadom kupola i plavim İznik pločicama, dok <strong>palata Topkapi</strong> otkriva raskošni svet osmanskih sultana kroz dvorišta, harem i riznicu.",
+              "Ne propustite atmosferičnu <strong>Baziliku-cisternu</strong> pod zemljom, šumu rimskih stubova koji se dižu iz mirne vode. Ove znamenitosti su besplatne ili jeftine za ulaz ali izuzetno prometne — dođite u vreme otvaranja, i razmislite o licenciranom vodiču da preskočite redove za ulaznice u Topkapiju i razumete istoriju u kojoj stojite."
+            ]
+          },
+          {
+            "heading": "Krstarite Bosforom",
+            "paragraphs": [
+              "Nijedna poseta nije potpuna bez izlaska na <strong>Bosfor</strong>, moreuz koji deli Evropu i Aziju. Krstarenje — bilo jeftinim javnim trajektom ili namenskim turističkim brodom — otkriva geografiju Istanbula kao ništa drugo: osmanske palate, drvene primorske vile (yalı), tvrđave i mostove koji promiču na oba kontinenta.",
+              "Uklopite ga u kasno popodne i gledaćete kako svetlost postaje zlatna nad kupolama i minaretima. Za verziju manjih razmera, uzmite putnički trajekt do azijske strane i nazad — to je jedno od velikih jeftinih zadovoljstava grada, čaša čaja u ruci dok galebovi kruže iznad glave."
+            ]
+          },
+          {
+            "heading": "Izgubite se u bazarima",
+            "paragraphs": [
+              "<strong>Veliki bazar</strong> je jedna od najstarijih i najvećih natkrivenih pijaca na svetu — lavirint od preko 4.000 radnji koje prodaju tepihe, lampe, nakit, keramiku i kožu. Cenkanje se očekuje i deo je predstave; čak i ako ništa ne kupite, atmosfera je nezaboravna.",
+              "U blizini, <strong>Egipatski bazar</strong> napada čula gomilama začina, sušenog voća, turskog lokuma i čajeva. Iza turističkih tezgi, istražite okolne ulice i hanove (stara trgovačka dvorišta) gde meštani i dalje kupuju. Vodič vas može usmeriti ka poštenim prodavcima i dalje od precenjenih zamki za turiste koje se gomilaju blizu ulaza."
+            ]
+          },
+          {
+            "heading": "Lutajte kvartovima i pređite u Aziju",
+            "paragraphs": [
+              "Istanbul koji meštani vole je u njegovim kvartovima. Popnite se na <strong>Galata kulu</strong> radi panorame, pa istražite kafiće i butike <strong>Galate i Bejoglua</strong> i celu dužinu avenije Istiklal. Fotografišite dugom-šarene kuće i antikvarnice <strong>Balata i Fenera</strong>, starih grčkih i jevrejskih četvrti koje većina turističkih grupa u potpunosti preskoči.",
+              "Zatim uzmite trajekt do <strong>azijske strane</strong> i živahnih ulica Kadikeja, sa njegovom pijacom hrane, uličnim zalogajima i opuštenim kafićima — drugačiji, više lokalni ritam od turističkog jezgra. Završiti popodne na drugom kontinentu, gledajući kako trajekti presecaju vodu, kvintesencijalno je istanbulsko."
+            ]
+          },
+          {
+            "heading": "Doživite tursko kupatilo i hranu",
+            "paragraphs": [
+              "Za nešto nezaboravno, posetite istorijski <strong>hamam (tursko kupatilo)</strong> — nekoliko njih potiče iz osmanskih vremena, sa mermernim enterijerima i ritualom pare, pilinga i masaže penom koji vas ostavlja blistavim. To je vekovima stara tradicija i divan način da se opustite posle dana pešačenja.",
+              "Iznad svega, jedite. Nabrajajte dug turski doručak, probajte balık ekmek sendvič sa ribom kraj vode, naručite trpezu mezea i završite baklavom i turskom kafom. Istanbulska hrana je vrhunac sama po sebi, a šetnja fokusirana na hranu sa lokalnim vodičem — kroz pijace, pekare i porodične lokante — jedna je od najispunjenijih stvari koje možete raditi u gradu."
+            ]
+          }
+        ],
+        "faqHeading": "Često postavljana pitanja",
+        "faqs": [
+          {
+            "q": "Koje su najbolje stvari za raditi u Istanbulu?",
+            "a": "Suština su Aja Sofija, Plava džamija i palata Topkapi u Sultanahmetu, krstarenje Bosforom, Veliki i Egipatski bazar, Galata kula, kvart Balat, trajekt do azijske strane i istorijski hamam. Mešanje velikih spomenika sa lokalnim kvartovima i hranom pruža najpotpuniji doživljaj."
+          },
+          {
+            "q": "Koja je atrakcija broj jedan u Istanbulu?",
+            "a": "Aja Sofija je najprepoznatljivija pojedinačna znamenitost Istanbula — 1.500 godina stara nekadašnja katedrala i džamija izuzetnih razmera i istorije. Obično se uparuje sa susednom Plavom džamijom i palatom Topkapi, sve u dometu kratke šetnje u Sultanahmetu."
+          },
+          {
+            "q": "Da li se krstarenje Bosforom isplati u Istanbulu?",
+            "a": "Da. Krstarenje Bosforom je jedna od najboljih stvari za raditi u Istanbulu, otkriva dvokontinentalnu geografiju grada, palate i primorske vile. Jeftini javni trajekti su jednako slikoviti kao turistički brodovi, posebno u zlatnom svetlu kasnog popodneva."
+          },
+          {
+            "q": "Šta se može raditi u Istanbulu daleko od turističkih gužvi?",
+            "a": "Istražite dugom-šarene kuće i antikvarnice Balata i Fenera, pređite u lokalne ulice Kadikeja na azijskoj strani, provozajte se putničkim trajektom uz čašu čaja i jedite tamo gde meštani jedu nekoliko ulica iza spomenika. Lokalni vodič vam može otkriti ove manje poznate kutke."
+          },
+          {
+            "q": "Da li treba da odem u tursko kupatilo u Istanbulu?",
+            "a": "Hamam je nezaboravan, vekovima star doživljaj — para, piling koji čisti kožu i masaža penom u mermernom osmanskom kupatilu. Nekoliko istorijskih hamama dočekuje posetioce, i to je divan način da se opustite posle dugih dana pešačenja i razgledanja."
+          }
+        ],
+        "relatedHeading": "Uradite više u Istanbulu",
+        "ctaTitle": "Doživite najbolje od Istanbula",
+        "ctaSub": "Vidite ikone i skrivene kutke sa nekim ko poznaje grad. Rezervišite proverenog istanbulskog vodiča na VibeGuide — cena prikazana unapred."
       }
     }
   },
@@ -12605,6 +13260,79 @@ export const BLOG_POSTS: BlogPost[] = [
         "relatedHeading": "Планирайте бюджета си за Турция",
         "ctaTitle": "Голяма стойност, водени от местни жители",
         "ctaSub": "Вижте точната цена преди да резервирате, без скрити такси. Намерете лицензирани водачи и групови турове из цяла Турция във VibeGuide."
+      },
+      "sr": {
+        "title": "Koliko košta putovanje u Tursku? Vodič kroz budžet",
+        "metaTitle": "Koliko košta putovanje u Tursku? — Vodič kroz budžet",
+        "metaDescription": "Koliko košta putovanje po Turskoj? Praktičan vodič kroz dnevne troškove za smeštaj, hranu, prevoz, ture i vožnju balonom — za svaki budžet.",
+        "excerpt": "Turska nudi veliku vrednost za novac — ali troškovi se znatno razlikuju po sezoni i stilu. Evo realnog pregleda dnevnih budžeta, od bekpekera do udobnog.",
+        "intro": [
+          "Turska je jedna od velikih destinacija sa najboljim odnosom cene i vrednosti u regionu: svetske znamenitosti, izvrsna hrana i udobni hoteli često koštaju daleko manje nego u Zapadnoj Evropi. Ali „koliko košta putovanje u Tursku?“ nema jedinstven odgovor — znatno se menja sa sezonom, vašim stilom putovanja i glavnim dodacima poput balona u Kapadokiji.",
+          "Ovaj vodič daje <strong>realan pregled dnevnih troškova</strong> — smeštaj, hrana, prevoz, razgledanje i ture — kroz tri široka budžeta, plus velike jednokratne troškove za koje treba planirati. Cene u Turskoj se pomeraju sa inflacijom i kursevima, pa ih shvatite kao proporcionalnu smernicu, a ne kao fiksne cifre, i uvek proverite aktuelne cene pre rezervacije."
+        ],
+        "sections": [
+          {
+            "heading": "Tri dnevna budžeta: šta očekivati",
+            "paragraphs": [
+              "Kao gruba smernica, <strong>putnik sa budžetom</strong> koji odseda u hostelima ili jednostavnim gostinskim kućama, jede uličnu hranu i u lokantama, i koristi javni prevoz može udobno putovati sa skromnim dnevnim iznosom. <strong>Putnik srednjeg ranga</strong> u dobrom hotelu sa tri ili četiri zvezdice, koji jede u pravim restoranima i povremeno uzima privatnu turu, treba da planira osetno više po danu.",
+              "<strong>Putnik koji traži udobnost ili luksuz</strong> u butik hotelima i pećinskim apartmanima, sa privatnim vodičima i transferima celim putem, potrošiće opet više — ali i dalje često manje nego za ekvivalentno putovanje u Zapadnoj Evropi. Poenta je da se Turska divno prilagođava: istinski je nagrađujuća uz tesan budžet i prava pogodba na vrhu."
+            ]
+          },
+          {
+            "heading": "Smeštaj, hrana i prevoz",
+            "paragraphs": [
+              "<strong>Smeštaj</strong> je tamo gde Turska blista. Hosteli i jednostavne gostinske kuće su jeftini, hoteli srednjeg ranga nude snažnu vrednost, a čak su i čuveni pećinski hoteli Kapadokije pristupačni u poređenju sa luksuzom drugde. Cene skaču usred leta na obali i oko Nove godine, pa rezervišite unapred za te periode.",
+              "<strong>Hrana</strong> može da košta veoma malo ako jedete kao meštanin — simit i čaj za doručak, ručak u lokanti, ulični zalogaji — ili više u restoranima okrenutim turistima kraj velikih znamenitosti. <strong>Prevoz</strong> je pogodba: gradski tramvaji, trajekti i autobusi su jeftini uz prevoznu karticu, a međugradski autobusi i domaći letovi (Istanbul do Kapadokije ili obale) su veoma razumni ako se rezervišu unapred."
+            ]
+          },
+          {
+            "heading": "Razgledanje, ture i vodiči",
+            "paragraphs": [
+              "Ulaznice za velike znamenitosti — Aja Sofija je besplatna, dok Topkapi, Efes i drugi naplaćuju — sabiraju se tokom putovanja, a <strong>Museum Pass</strong> može da uštedi novac ako obilazite mnoga državna nalazišta. Predvidite ih u budžetu pri planiranju dana.",
+              "<strong>Vođene ture</strong> se znatno razlikuju: velika autobuska grupna tura je najjeftinija po glavi, dok privatni licencirani vodič košta više ali oblikuje ceo dan oko vas i preskače redove. Na VibeGuide uvek vidite tačnu cenu pre rezervacije, bez skrivenih naknada, a pridruživanje VibeSquad grupnoj turi najekonomičniji je način da imate licenciranog vodiča. Često se isplati platiti vodiča na nalazištima gde je najbitniji, poput Efesa."
+            ]
+          },
+          {
+            "heading": "Veliki dodaci: balon u Kapadokiji i više",
+            "paragraphs": [
+              "Neki doživljaji su izvan uobičajenog dnevnog budžeta i vredni su planiranja. <strong>Balon na topli vazduh u Kapadokiji</strong> je klasičan izdatak — značajan jednokratni trošak, koji odvojeno naplaćuju balonske kompanije, a raste sa sezonom i potražnjom. Za većinu putnika to je vrhunac jednom u životu koji vredi novca; rezervišite unapred jer se letovi rasprodaju.",
+              "Ostali skuplji dodaci uključuju krstarenja guletom na obali, doživljaj hamama, domaće letove radi uštede vremena i posebne jednodnevne izlete sa privatnim prevozom. Uračunavanje nekoliko ovih u budžet unapred sprečava iznenađenja — i omogućava vam da kažete da doživljajima koji čine putovanje."
+            ]
+          },
+          {
+            "heading": "Kako uštedeti novac u Turskoj",
+            "paragraphs": [
+              "Najveće uštede dolaze od <strong>putovanja u prelaznoj ili niskoj sezoni</strong> (proleće, jesen ili zima), kada su hoteli i letovi daleko jeftiniji nego usred leta. Jedenje tamo gde meštani jedu, korišćenje javnog prevoza uz prevoznu karticu i rezervisanje međugradskog putovanja unapred — sve to znatno rasteže budžet.",
+              "Plaćajte u turskim lirama umesto da prihvatate naplatu karticom u svojoj domaćoj valuti, nosite nešto gotovine za male prodavce i pijace, i cenkajte se učtivo na bazarima. I upamtite da vrednost nije samo u najjeftinijoj opciji — licencirani lokalni vodič za ključni dan ili dva često vam uštedi novac na izbegnutim zamkama za turiste i izgubljenom vremenu, dok celo putovanje čini boljim."
+            ]
+          }
+        ],
+        "faqHeading": "Često postavljana pitanja",
+        "faqs": [
+          {
+            "q": "Da li je Turska skupa zemlja za posetu?",
+            "a": "Ne — Turska je jedna od velikih destinacija sa najboljim odnosom cene i vrednosti, sa svetskim znamenitostima, hranom i hotelima koji obično koštaju daleko manje nego u Zapadnoj Evropi. Troškovi rastu usred leta na obali i za glavne dodatke poput balona u Kapadokiji, ali u celini nudi snažnu vrednost na svakom nivou budžeta."
+          },
+          {
+            "q": "Koliko novca mi treba po danu u Turskoj?",
+            "a": "Zavisi od vašeg stila. Putnici sa budžetom koji koriste hostele, uličnu hranu i javni prevoz mogu putovati sa skromnim dnevnim iznosom; putnicima srednjeg ranga u dobrim hotelima sa povremenom privatnom turom treba osetno više; a putnicima koji traže udobnost sa privatnim vodičima i butik smeštajem opet više, mada i dalje često manje nego za ekvivalentna zapadnoevropska putovanja."
+          },
+          {
+            "q": "Koliko košta vožnja balonom u Kapadokiji?",
+            "a": "Balon na topli vazduh je značajan jednokratni trošak, koji odvojeno naplaćuju balonske kompanije, i raste sa sezonom i potražnjom. Nalazi se izvan uobičajenog dnevnog budžeta, pa planirajte za njega i rezervišite unapred, jer se popularni zorski letovi brzo rasprodaju."
+          },
+          {
+            "q": "Koje je najjeftinije vreme za putovanje po Turskoj?",
+            "a": "Zima (izuzimajući novogodišnji period) i prelazne sezone proleća i jeseni su najjeftinije za letove i hotele, znatno ispod visokoletnjeg primorskog vrhunca. Putovanje van sezone najveći je pojedinačni način da se smanji trošak putovanja u Tursku."
+          },
+          {
+            "q": "Kako mogu da uštedim novac pri putovanju po Turskoj?",
+            "a": "Putujte u prelaznoj ili niskoj sezoni, jedite tamo gde meštani jedu, koristite prevoznu karticu za jeftin gradski prevoz, rezervišite međugradske autobuse i letove unapred, plaćajte u turskim lirama i cenkajte se na bazarima. Licencirani vodič za ključni dan takođe može uštedeti novac pomažući vam da izbegnete zamke za turiste i izgubljeno vreme."
+          }
+        ],
+        "relatedHeading": "Isplanirajte budžet za Tursku",
+        "ctaTitle": "Velika vrednost, uz vođstvo meštana",
+        "ctaSub": "Vidite tačnu cenu pre rezervacije, bez skrivenih naknada. Nađite licencirane vodiče i grupne ture širom Turske na VibeGuide."
       }
     }
   }

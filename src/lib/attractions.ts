@@ -21,6 +21,7 @@ export const ATTRACTION_LANGS = [
   "uk",
   "ro",
   "bg",
+  "sr",
 ] as const;
 export type AttractionLang = (typeof ATTRACTION_LANGS)[number];
 
@@ -44,6 +45,7 @@ export const ATTR_HEADINGS: Record<AttractionLang, { highlights: string; faq: st
   uk: { highlights: `Основні пам'ятки`, faq: `Часті запитання`, more: `Більше для дослідження` },
   ro: { highlights: `Puncte de atracție`, faq: `Întrebări frecvente`, more: `Mai multe de explorat` },
   bg: { highlights: `Акценти`, faq: `Често задавани въпроси`, more: `Още за разглеждане` },
+  sr: { highlights: `Najvažnije`, faq: `Često postavljana pitanja`, more: `Još za istraživanje` },
 };
 
 export const RTL_LANGS: ReadonlySet<AttractionLang> = new Set(["ar"]);
@@ -67,6 +69,7 @@ export const ATTR_HUB: Record<AttractionLang, { metaTitle: string; metaDescripti
   uk: { metaTitle: `Найкращі пам'ятки Туреччини — тури з місцевими гідами`, metaDescription: `Дослідіть найвеличніші пам'ятки Туреччини — від Собору Святої Софії та Каппадокії до Ефеса, Памуккале та Гебеклі-Тепе — з перевіреним місцевим гідом.`, h1: `Найкращі пам'ятки Туреччини`, intro: `Від стамбульських мечетей до стародавнього Ефеса та найстарішого храму світу — відкрийте кожну пам'ятку з перевіреним місцевим гідом.` },
   ro: { metaTitle: `Cele mai importante atracții ale Turciei — tururi cu ghizi locali`, metaDescription: `Explorează cele mai mărețe repere ale Turciei — de la Hagia Sophia și Capadocia la Efes, Pamukkale și Göbekli Tepe — cu un ghid local verificat.`, h1: `Cele mai importante atracții ale Turciei`, intro: `De la moscheile Istanbulului la anticul Efes și cel mai vechi templu din lume, descoperă fiecare reper cu un ghid local verificat.` },
   bg: { metaTitle: `Топ забележителности на Турция — обиколки с местни гидове`, metaDescription: `Разгледайте най-великите забележителности на Турция — от Света София и Кападокия до Ефес, Памуккале и Гьобекли Тепе — с проверен местен гид.`, h1: `Топ забележителности на Турция`, intro: `От джамиите на Истанбул до античния Ефес и най-стария храм в света, открийте всяка забележителност с проверен местен гид.` },
+  sr: { metaTitle: `Najznačajnije znamenitosti Turske — ture sa lokalnim vodičima`, metaDescription: `Istražite najveće znamenitosti Turske — od Aje Sofije i Kapadokije do Efesa, Pamukala i Gebekli Tepea — uz proverenog lokalnog vodiča.`, h1: `Najznačajnije znamenitosti Turske`, intro: `Od istanbulskih džamija do drevnog Efesa i najstarijeg hrama na svetu, otkrijte svaku znamenitost uz proverenog lokalnog vodiča.` },
 };
 
 export type AttractionContent = {
@@ -153,6 +156,7 @@ const IST: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   uk: { toursHeading: `Тури Стамбулом із місцевими гідами`, ctaSub: `Завантажте VibeGuide безкоштовно та знайдіть перевіреного гіда в Стамбулі за 60 секунд.` },
   ro: { toursHeading: `Tururi în Istanbul cu ghizi locali`, ctaSub: `Descarcă VibeGuide gratuit și găsește un ghid din Istanbul verificat în 60 de secunde.` },
   bg: { toursHeading: `Обиколки на Истанбул с местни гидове`, ctaSub: `Изтеглете VibeGuide безплатно и се свържете с проверен гид за Истанбул за секунди.` },
+  sr: { toursHeading: `Ture Istanbula sa lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i spojite se sa proverenim istanbulskim vodičem za 60 sekundi.` },
 };
 
 // Efes (İzmir / Selçuk) ortak metinleri.
@@ -174,6 +178,7 @@ const EPH: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   uk: { toursHeading: `Тури Ефесом із місцевими гідами`, ctaSub: `Завантажте VibeGuide безкоштовно та знайдіть перевіреного місцевого гіда для Ефеса за 60 секунд.` },
   ro: { toursHeading: `Tururi în Efes cu ghizi locali`, ctaSub: `Descarcă VibeGuide gratuit și găsește un ghid local verificat pentru Efes în 60 de secunde.` },
   bg: { toursHeading: `Обиколки на Ефес с местни гидове`, ctaSub: `Изтеглете VibeGuide безплатно и се свържете с проверен местен гид за Ефес за секунди.` },
+  sr: { toursHeading: `Ture Efesa sa lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i spojite se sa proverenim lokalnim vodičem za Efes za 60 sekundi.` },
 };
 
 // Kapadokya (Nevşehir / Göreme) ortak metinleri.
@@ -195,6 +200,7 @@ const CAP: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   uk: { toursHeading: `Тури Каппадокією з місцевими гідами`, ctaSub: `Завантажте VibeGuide безкоштовно та знайдіть перевіреного гіда в Каппадокії за 60 секунд.` },
   ro: { toursHeading: `Tururi în Capadocia cu ghizi locali`, ctaSub: `Descarcă VibeGuide gratuit și găsește un ghid din Capadocia verificat în 60 de secunde.` },
   bg: { toursHeading: `Обиколки на Кападокия с местни гидове`, ctaSub: `Изтеглете VibeGuide безплатно и се свържете с проверен гид за Кападокия за секунди.` },
+  sr: { toursHeading: `Ture Kapadokije sa lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i spojite se sa proverenim vodičem za Kapadokiju za 60 sekundi.` },
 };
 
 // İzmir / Bergama (Pergamon) ortak metinleri.
@@ -216,6 +222,7 @@ const IZM: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   uk: { toursHeading: `Тури Ізміром із місцевими гідами`, ctaSub: `Завантажте VibeGuide безкоштовно та знайдіть перевіреного гіда в Ізмірі за 60 секунд.` },
   ro: { toursHeading: `Tururi în İzmir cu ghizi locali`, ctaSub: `Descarcă VibeGuide gratuit și găsește un ghid din İzmir verificat în 60 de secunde.` },
   bg: { toursHeading: `Обиколки на Измир с местни гидове`, ctaSub: `Изтеглете VibeGuide безплатно и се свържете с проверен гид за Измир за секунди.` },
+  sr: { toursHeading: `Ture Izmira sa lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i spojite se sa proverenim izmirskim vodičem za 60 sekundi.` },
 };
 
 // Antalya (Aspendos / Kaleiçi) ortak metinleri.
@@ -237,6 +244,7 @@ const ANT: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   uk: { toursHeading: `Тури Анталією з місцевими гідами`, ctaSub: `Завантажте VibeGuide безкоштовно та знайдіть перевіреного гіда в Анталії за 60 секунд.` },
   ro: { toursHeading: `Tururi în Antalya cu ghizi locali`, ctaSub: `Descarcă VibeGuide gratuit și găsește un ghid din Antalya verificat în 60 de secunde.` },
   bg: { toursHeading: `Обиколки на Анталия с местни гидове`, ctaSub: `Изтеглете VibeGuide безплатно и се свържете с проверен гид за Анталия за секунди.` },
+  sr: { toursHeading: `Ture Antalije sa lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i spojite se sa proverenim antalijskim vodičem za 60 sekundi.` },
 };
 
 // Pamukkale / Hierapolis (Denizli) ortak metinleri.
@@ -258,6 +266,7 @@ const PAM: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   uk: { toursHeading: `Тури Памуккале з місцевими гідами`, ctaSub: `Завантажте VibeGuide безкоштовно та знайдіть перевіреного гіда в Памуккале за 60 секунд.` },
   ro: { toursHeading: `Tururi în Pamukkale cu ghizi locali`, ctaSub: `Descarcă VibeGuide gratuit și găsește un ghid din Pamukkale verificat în 60 de secunde.` },
   bg: { toursHeading: `Обиколки на Памуккале с местни гидове`, ctaSub: `Изтеглете VibeGuide безплатно и се свържете с проверен гид за Памуккале за секунди.` },
+  sr: { toursHeading: `Ture Pamukala sa lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i spojite se sa proverenim vodičem za Pamukale za 60 sekundi.` },
 };
 
 // Bodrum (kale + antik Halikarnas) ortak metinleri.
@@ -279,6 +288,7 @@ const BOD: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   uk: { toursHeading: `Тури Бодрумом із місцевими гідами`, ctaSub: `Завантажте VibeGuide безкоштовно та знайдіть перевіреного гіда в Бодрумі за 60 секунд.` },
   ro: { toursHeading: `Tururi în Bodrum cu ghizi locali`, ctaSub: `Descarcă VibeGuide gratuit și găsește un ghid din Bodrum verificat în 60 de secunde.` },
   bg: { toursHeading: `Обиколки на Бодрум с местни гидове`, ctaSub: `Изтеглете VibeGuide безплатно и се свържете с проверен гид за Бодрум за секунди.` },
+  sr: { toursHeading: `Ture Bodruma sa lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i spojite se sa proverenim bodrumskim vodičem za 60 sekundi.` },
 };
 
 // Şanlıurfa / Göbeklitepe ortak metinleri.
@@ -300,6 +310,7 @@ const SAN: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   uk: { toursHeading: `Тури Шанлиурфою та Гебеклі-Тепе з місцевими гідами`, ctaSub: `Завантажте VibeGuide безкоштовно та знайдіть перевіреного місцевого гіда в Шанлиурфі за 60 секунд.` },
   ro: { toursHeading: `Tururi în Şanlıurfa și Göbekli Tepe cu ghizi locali`, ctaSub: `Descarcă VibeGuide gratuit și găsește un ghid local verificat în Şanlıurfa în 60 de secunde.` },
   bg: { toursHeading: `Обиколки на Шанлъурфа и Гьобекли Тепе с местни гидове`, ctaSub: `Изтеглете VibeGuide безплатно и се свържете с проверен местен гид в Шанлъурфа за секунди.` },
+  sr: { toursHeading: `Ture Šanliurfe i Gebekli Tepea sa lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i spojite se sa proverenim lokalnim vodičem u Šanliurfi za 60 sekundi.` },
 };
 
 // Trabzon (Sümela) ortak metinleri.
@@ -321,6 +332,7 @@ const TZN: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   uk: { toursHeading: `Тури Трабзоном із місцевими гідами`, ctaSub: `Завантажте VibeGuide безкоштовно та знайдіть перевіреного гіда в Трабзоні за 60 секунд.` },
   ro: { toursHeading: `Tururi în Trabzon cu ghizi locali`, ctaSub: `Descarcă VibeGuide gratuit și găsește un ghid din Trabzon verificat în 60 de secunde.` },
   bg: { toursHeading: `Обиколки на Трабзон с местни гидове`, ctaSub: `Изтеглете VibeGuide безплатно и се свържете с проверен гид за Трабзон за секунди.` },
+  sr: { toursHeading: `Ture Trabzona sa lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i spojite se sa proverenim trabzonskim vodičem za 60 sekundi.` },
 };
 
 // Çanakkale (Truva) ortak metinleri.
@@ -342,6 +354,7 @@ const CKL: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   uk: { toursHeading: `Тури Чанаккале з місцевими гідами`, ctaSub: `Завантажте VibeGuide безкоштовно та знайдіть перевіреного гіда в Чанаккале за 60 секунд.` },
   ro: { toursHeading: `Tururi în Çanakkale cu ghizi locali`, ctaSub: `Descarcă VibeGuide gratuit și găsește un ghid din Çanakkale verificat în 60 de secunde.` },
   bg: { toursHeading: `Обиколки на Чанаккале с местни гидове`, ctaSub: `Изтеглете VibeGuide безплатно и се свържете с проверен гид за Чанаккале за секунди.` },
+  sr: { toursHeading: `Ture Čanakalea sa lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i spojite se sa proverenim čanakaleškim vodičem za 60 sekundi.` },
 };
 
 // Adıyaman / Nemrut ortak metinleri.
@@ -363,6 +376,7 @@ const NMR: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   uk: { toursHeading: `Тури Адияманом і Немрутом із місцевими гідами`, ctaSub: `Завантажте VibeGuide безкоштовно та знайдіть перевіреного місцевого гіда в Адиямані за 60 секунд.` },
   ro: { toursHeading: `Tururi în Adıyaman și Nemrut cu ghizi locali`, ctaSub: `Descarcă VibeGuide gratuit și găsește un ghid local verificat în Adıyaman în 60 de secunde.` },
   bg: { toursHeading: `Обиколки на Адъяман и Немрут с местни гидове`, ctaSub: `Изтеглете VibeGuide безплатно и се свържете с проверен местен гид в Адъяман за секунди.` },
+  sr: { toursHeading: `Ture Adijamana i Nemruta sa lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i spojite se sa proverenim lokalnim vodičem u Adijamanu za 60 sekundi.` },
 };
 
 
@@ -855,6 +869,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Разгледайте Света София с местен гид`,
         ...IST.bg,
       },
+      sr: {
+        name: `Aja Sofija`,
+        metaTitle: `Aja Sofija — ture i lokalni vodiči`,
+        metaDescription:
+          `Istražite Aju Sofiju u Istanbulu uz proverenog lokalnog vodiča. Preskočite zbrku i saznajte 1.500 godina vizantijske i osmanske istorije od pravog stručnjaka.`,
+        intro: [
+          `Aja Sofija je duša Istanbula — vizantijska katedrala, osmanska džamija i spomenik koji bdi nad gradom skoro 1.500 godina. Njena ogromna kupola, zlatni mozaici i slojevita istorija nagrađuju one koji razumeju šta gledaju.`,
+          `Uz lokalnog stručnjaka VibeGuide preskačete nagađanje. Čujte priče iza mozaika, vikinške grafite i građevinu koja je redefinisala arhitekturu — svojim tempom, na svom jeziku.`,
+        ],
+        highlights: [
+          { title: `Velika kupola`, desc: `Visoka 55 metara i, čitavih 1.000 godina, najveća na svetu.` },
+          { title: `Vizantijski mozaici`, desc: `Prikazi careva i svetaca u zlatnom listu, skriveni vekovima.` },
+          { title: `Slojevita istorija`, desc: `Katedrala, džamija, muzej, pa opet džamija — svaka epoha ostavila je trag.` },
+        ],
+        faqs: [
+          { q: `Da li mi je potreban vodič za Aju Sofiju?`, a: `Otvorena je za sve, ali je istorija nevidljiva bez konteksta. Lokalni vodič pretvara prelepu dvoranu u 1.500 godina priča — i pomaže vam da izbegnete najposećenije sate.` },
+          { q: `Da li je ulaz u Aju Sofiju besplatan?`, a: `Pravila ulaska se menjaju tokom vremena. VibeGuide vodič vam pre rezervacije kaže trenutnu situaciju i najbolje vreme za posetu.` },
+          { q: `Koliko traje poseta?`, a: `Većina vođenih poseta traje 1–2 sata, često u kombinaciji sa obližnjom Plavom džamijom i trgom Sultanahmet.` },
+        ],
+        planningHeading: `Planiranje posete`,
+        planningParagraphs: [
+          `Aja Sofija se nalazi u srcu Sultanahmeta, starog grada, i lakše ne može biti stići do nje. Uzmite tramvaj T1 do stanice Sultanahmet i tada ste tek na kratkoj šetnji od ulaza. Stoji tačno preko trga od Plave džamije, dok su palata Topkapi i Cisterna Bazilika svega nekoliko minuta hoda, pa se prirodno uklapa u dan istraživanja istorijskog poluostrva.`,
+          `Dođite rano ujutru ako možete. Meka svetlost koja se sliva kroz gornje prozore najlepša je odmah nakon otvaranja, a ogromna molitvena dvorana mnogo je mirnija pre nego što stignu podnevne turističke grupe. Proleće i jesen nude najprijatnije vreme i ređe gužve nego jara leta. Imajte na umu da je sada džamija u funkciji, pa se za turiste zatvara tokom pet dnevnih molitvi.`,
+          `Ulaz je besplatan, ali ovo je mesto bogosluženja, pa se obucite skromno sa pokrivenim ramenima i kolenima, a žene treba da ponesu maramu za glavu. Kada uđete, lako je osetiti se izgubljeno pod ogromnom kupolom bez znanja o tome šta gledate. Licencirani lokalni vodič VibeGuide organizuje vaše vreme oko rasporeda molitvi, pomaže vam da izbegnete najposećenije sate i oživljava vizantijske mozaike i vekove slojevite istorije.`,
+        ],
+        ctaTitle: `Upoznajte Aju Sofiju uz lokalca`,
+        ...IST.sr,
+      },
     },
   },
 
@@ -1345,6 +1387,34 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `Обиколете Топкапъ с местен гид`,
         ...IST.bg,
+      },
+      sr: {
+        name: `Palata Topkapi`,
+        metaTitle: `Palata Topkapi — ture i lokalni vodiči`,
+        metaDescription:
+          `Otkrijte palatu Topkapi, srce Osmanskog carstva, uz proverenog istanbulskog vodiča. Harem, riznica, svete relikvije i pogledi na Bosfor objašnjeni.`,
+        intro: [
+          `Palata Topkapi je 400 godina bila rezidencija osmanskih sultana i središte carstva. Danas njena dvorišta, Harem, Riznica i svete relikvije pričaju priču o dinastiji koja je vladala trima kontinentima.`,
+          `Lokalni vodič VibeGuide daje smisao ovom prostranstvu — gde je počivala moć, šta je koja kapija značila i ljudske priče iza dragulja — pa odlazite sa razumevanjem, a ne samo fotografijama.`,
+        ],
+        highlights: [
+          { title: `Harem`, desc: `Privatni svet sultanove porodice — obložen pločicama, tajanstven, nezaboravan.` },
+          { title: `Carska riznica`, desc: `Bodež Topkapi i dijamant Kašikara od 86 karata.` },
+          { title: `Terase nad Bosforom`, desc: `Odakle su sultani gledali more gde se Evropa susreće sa Azijom.` },
+        ],
+        faqs: [
+          { q: `Da li je Harem uključen u kartu?`, a: `Za Harem obično treba posebna karta. Vaš VibeGuide vodič objašnjava šta se isplati i organizuje vam rutu.` },
+          { q: `Koliko vremena mi treba?`, a: `Planirajte 2–3 sata. Palata je velika; vodič vas drži na najvažnijim tačkama bez zamora.` },
+          { q: `Da li je blizu Aje Sofije?`, a: `Da — Topkapi, Aja Sofija i Plava džamija nalaze se na kratkoj šetnji u Sultanahmetu.` },
+        ],
+        planningHeading: `Planiranje posete`,
+        planningParagraphs: [
+          `Palata Topkapi kruniše rt Seraglio u Sultanahmetu, na vrhu starog grada gde se Bosfor susreće sa Zlatnim rogom. Uzmite tramvaj T1 do stanice Sultanahmet i pratite stazu iza Aje Sofije; kapija je na kratkoj, prijatnoj šetnji uzbrdo. Pošto se nalazi tik uz Aju Sofiju i Plavu džamiju, palata se lako uklapa u isti dan istraživanja istorijskog poluostrva.`,
+          `Stignite tačno na otvaranje da prošetate dvorištima pre nego što ih ispune turističke grupe. Jutra nude najmirniju atmosferu i najbolju svetlost nad terasama Bosfora, a dvorište palate posebno je lepo u proleće i jesen. Ostavite sebi dva do tri sata da joj se posvetite, više ako se zadržite u Riznici. Proverite sedmični dan zatvaranja pre polaska, jer se palata jednom u toku sedmice zatvara.`,
+          `Ovo je lokalitet sa kartom, a Harem zahteva posebnu kartu koju vredi dodati zbog njegovih odaja obloženih pločicama i carskih soba. Kompleks se prostire kroz četiri dvorišta sa paviljonima, kuhinjama i zbirkama koje je lako prebrzo proći bez poznavanja njihovih priča. Licencirani lokalni vodič VibeGuide organizuje vam karte i vreme, vodi vas razumnim redosledom i otkriva slojeve osmanskog dvorskog života iza zidina.`,
+        ],
+        ctaTitle: `Prošetajte Topkapijem uz lokalca`,
+        ...IST.sr,
       },
     },
   },
@@ -1837,6 +1907,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Разгледайте Цистерната с местен гид`,
         ...IST.bg,
       },
+      sr: {
+        name: `Cisterna Bazilika`,
+        metaTitle: `Cisterna Bazilika (Jerebatan) — ture i lokalni vodiči`,
+        metaDescription:
+          `Spustite se u Cisternu Baziliku, istanbulsku podzemnu palatu vode. Vidite glave Meduze i 336 stubova uz proverenog lokalnog vodiča.`,
+        intro: [
+          `Ispod ulica Sultanahmeta leži Cisterna Bazilika — 1.500 godina staro podzemno vodojedno sa 336 mermernih stubova, prigušenim svetlom i kapajućom jekom. Vizantinci su je sagradili da napaja Veliku palatu; danas je jedno od najatmosferičnijih mesta u Istanbulu.`,
+          `Lokalac VibeGuide objašnjava naopako postavljene glave Meduze, zašto su stubovi recikliran iz starijih hramova i legende koje su rasle u mraku — pretvarajući kratku posetu u pravu priču.`,
+        ],
+        highlights: [
+          { title: `Glave Meduze`, desc: `Dva drevna lica Meduze, postavljena bočno i naopako — niko sasvim ne zna zašto.` },
+          { title: `336 stubova`, desc: `Reciklirani iz starijih rimskih ruševina, svaki pomalo drugačiji.` },
+          { title: `Atmosfera`, desc: `Sveža, prigušena i odzvanjajuća — filmski set oživljen ispod grada.` },
+        ],
+        faqs: [
+          { q: `Da li se Cisterna Bazilika isplati?`, a: `Apsolutno — kratka je ali nezaboravna, a istorija je čini mnogo bogatijom. Vodič ukazuje na detalje pored kojih većina posetilaca prođe.` },
+          { q: `Koliko traje poseta?`, a: `Obično 30–45 minuta, lako se kombinuje sa Ajom Sofijom i Plavom džamijom u blizini.` },
+          { q: `Da li je pristupačna?`, a: `Postoje staze iznad vode, ali ima i stepenika. Vaš vodič vam unapred kaže šta da očekujete.` },
+        ],
+        planningHeading: `Planiranje posete`,
+        planningParagraphs: [
+          `Cisterna Bazilika nalazi se u srcu Sultanahmeta, jedva na minut hoda od Aje Sofije i Plave džamije. Najlakši pristup je tramvajem T1 do stanice Sultanahmet, odakle je ulaz na kratkoj, ravnoj šetnji. Ako već istražujete glavni trg starog grada, jednostavno možete prošetati od jedne znamenitosti do druge.`,
+          `Cisterna ostaje sveža i prigušena bez obzira na vreme, što je čini dobrodošlim skloništem u vrele letnje popodneve. Ipak, sredina dana donosi najveće gužve, pa vam dolazak rano ili kasnije popodne omogućava mirnije staze. Njeno obnovljeno osvetljenje deluje upečatljivo u svaki sat, i nema loše sezone za silazak u ovaj podzemni svet.`,
+          `Ulaz je sa kartom, a vi pratite uzdignute staze iznad vode pored stotina stubova do čuvenih glava Meduze na kraju. Očekujte atmosferičan, odzvanjajući prostor koji nagrađuje polagano istraživanje. Licencirani lokalni vodič VibeGuide može da vam sredi kartu, uskladi posetu sa gužvama i oživi vizantijsku istoriju dok se krećete kroz senke.`,
+        ],
+        ctaTitle: `Istražite Cisternu uz lokalca`,
+        ...IST.sr,
+      },
     },
   },
 
@@ -2328,6 +2426,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Посетете Синята джамия с местен гид`,
         ...IST.bg,
       },
+      sr: {
+        name: `Plava džamija`,
+        metaTitle: `Plava džamija (Sultanahmet) — ture i lokalni vodiči`,
+        metaDescription:
+          `Posetite Plavu džamiju u Istanbulu uz proverenog lokalnog vodiča. Šest minareta, 20.000 iznik pločica i džamija u funkciji — obiđena s poštovanjem i objašnjena.`,
+        intro: [
+          `Plava džamija — Sultanahmet džamija — gleda preko baštovanskog trga u Aju Sofiju, sa šest minareta koji se uzdižu nad starim gradom. Unutra, više od 20.000 ručno oslikanih iznik pločica daje molitvenoj dvorani njen čuveni plavi sjaj.`,
+          `Ovo je živa džamija, a ne muzej. Lokalac VibeGuide pomaže vam da posetite s poštovanjem — vreme oko molitvi, odevanje, bonton — i otkriva rivalstvo i ambiciju iza njene izgradnje.`,
+        ],
+        highlights: [
+          { title: `Šest minareta`, desc: `Smeo izbor iz 1616. koji je nekad rivalirao samoj Meki.` },
+          { title: `20.000 iznik pločica`, desc: `Ručno oslikane plave i zelene nijanse koje su dale ime džamiji.` },
+          { title: `Kaskadne kupole`, desc: `Piramida polukupola koja definiše siluetu Istanbula.` },
+        ],
+        faqs: [
+          { q: `Mogu li turisti da uđu u Plavu džamiju?`, a: `Da, van vremena molitve i u skromnoj odeći. Vodič se stara o vremenu i bontonu da vaša poseta bude glatka i puna poštovanja.` },
+          { q: `Da li moram da pokrijem glavu?`, a: `Žene pokrivaju kosu unutra; marame su obično dostupne. Vaš vodič vam tačno kaže šta da ponesete.` },
+          { q: `Da li je blizu Aje Sofije?`, a: `Gledaju jedna u drugu preko trga Sultanahmet — na dva minuta hoda.` },
+        ],
+        planningHeading: `Planiranje posete`,
+        planningParagraphs: [
+          `Plava džamija stoji u Sultanahmetu, gledajući preko baštovanskog trga u Aju Sofiju, a dolazak do nje ne zahteva trud. Uzmite tramvaj T1 do stanice Sultanahmet i prošetajte nekoliko minuta do trga. Sa Ajom Sofijom, palatom Topkapi, Hipodromom i Cisternom Bazilikom u lakom dometu šetnje, džamija se savršeno uklapa u obilazak najčuvenijeg kraja starog grada.`,
+          `Ciljajte na rano jutro ili kasno popodne, kada je svetlost blaga i iznik pločice unutra sijaju mekšim plavetnilom. Ovi sati su ujedno i mirniji, izbegavajući podnevnu navalu. Proleće i jesen donose najprijatnije vreme i ređe gužve nego jara leta. Kao mesto aktivnog bogosluženja, džamija se za posetioce zatvara tokom pet dnevnih molitvi, pa planirajte dolazak između molitvi.`,
+          `Ulaz je besplatan, ali ovo je živa džamija sa strogim kodeksom odevanja: pokrijte ramena i kolena, izujte cipele na vratima, a žene pokrivaju kosu, sa maramama koje se dobijaju na ulazu. Unutra, sama razmera i desetine hiljada pločica mogu delovati preplavljujuće bez konteksta. Licencirani lokalni vodič VibeGuide usklađuje vašu posetu sa molitvama, brine se o bontonu i živopisno objašnjava šest minareta, kupole i rad u pločicama.`,
+        ],
+        ctaTitle: `Posetite Plavu džamiju uz lokalca`,
+        ...IST.sr,
+      },
     },
   },
 
@@ -2818,6 +2944,34 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `Разходете се из Ефес с местен гид`,
         ...EPH.bg,
+      },
+      sr: {
+        name: `Efes`,
+        metaTitle: `Efes — ture i lokalni vodiči`,
+        metaDescription:
+          `Prošetajte drevnim Efesom kod Selčuka, Izmir, uz proverenog lokalnog vodiča. Kelsova biblioteka, Veliko pozorište i mermerne ulice — oživljeni.`,
+        intro: [
+          `Efes je bio jedan od najvećih gradova drevnog sveta — rimska metropola sa četvrt miliona stanovnika, kojom su hodali Marko Antonije i propovedao sveti Pavle. Njegove mermerne ulice, visoka Kelsova biblioteka i pozorište za 25.000 ljudi i danas stoje kod Selčuka.`,
+          `Lokalac VibeGuide pretvara ruševine u živi grad — ko je ovde živeo, gde se kupao, kupovao i molio — pa kamenje priča svoju priču umesto da ostane nemo.`,
+        ],
+        highlights: [
+          { title: `Kelsova biblioteka`, desc: `Dvospratna mermerna fasada, nekad dom za 12.000 svitaka.` },
+          { title: `Veliko pozorište`, desc: `Mesta za 25.000 gledalaca — i danas se koristi za događaje.` },
+          { title: `Terasne kuće`, desc: `Domovi rimske elite sa mozaičkim podovima, natkriveni.` },
+        ],
+        faqs: [
+          { q: `Gde se nalazi Efes?`, a: `Kod Selčuka u pokrajini Izmir, oko sat vremena od grada Izmira i blizu luke Kušadasi.` },
+          { q: `Koliko vremena mi treba?`, a: `Planirajte 2–3 sata na lokalitetu; vodič vas drži u hladu i van gužvi.` },
+          { q: `Da li je dobro za putnike sa kruzera?`, a: `Da — to je klasičan kopneni izlet iz Kušadasija. Lokalni vodič maksimalno iskoristi ograničeno vreme.` },
+        ],
+        planningHeading: `Planiranje posete`,
+        planningParagraphs: [
+          `Efes leži kod gradića Selčuk u pokrajini Izmir, na egejskoj obali zapadne Turske. Izuzetno je lako doći do njega: otprilike 20 minuta vožnje od luke za kruzere Kušadasi i oko sat vremena od Izmira, a sam Selčuk je svega nekoliko minuta taksijem ili dolmuš minibusom. Lokalitet ima dva ulaza, gornju i donju kapiju, a mnogi posetioci hodaju nizbrdo između njih.`,
+          `Efes je ogroman i pruža vrlo malo hlada, pa je vreme dolaska važno koliko i bilo šta drugo. Ciljajte na rano jutro ubrzo nakon otvaranja ili kasno popodne, kada svetlost omekša a mermer se ohladi; izbegavajte oštre podnevne sate, naročito leti. Proleće i jesen su najprijatnije sezone. Kad god dolazite, ponesite vodu, šešir i čvrste cipele, i ostavite dva do tri sata da ga valjano vidite.`,
+          `Ovo je arheološki lokalitet sa kartom, a prelepo očuvane Terasne kuće zahtevaju posebnu kartu koja se itekako isplati. Ima mnogo toga da se upije, od Kelsove biblioteke do velikog pozorišta, a po zakonu vas kroz ruševine sme voditi samo licencirani vodič. Licencirani lokalni vodič VibeGuide brine se o kartama i vremenu, pronalazi zasenčene kutke i pretvara razbacano kamenje u živopisan, živi grad.`,
+        ],
+        ctaTitle: `Prošetajte Efesom uz lokalca`,
+        ...EPH.sr,
       },
     },
   },
@@ -3311,6 +3465,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Открийте Кападокия с местен гид`,
         ...CAP.bg,
       },
+      sr: {
+        name: `Kapadokija`,
+        metaTitle: `Kapadokija — ture i lokalni vodiči`,
+        metaDescription:
+          `Istražite Kapadokiju uz proverenog lokalnog vodiča. Baloni na topli vazduh, vilinski dimnjaci, pećinske crkve i podzemni gradovi u Geremeu i šire.`,
+        intro: [
+          `Kapadokija je predeo iz sna — doline „vilinskih dimnjaka”, crkve isklesane u steni oslikane pre hiljadu godina i čitavi gradovi urezani pod zemljom. U zoru, stotine balona na topli vazduh uzdižu se nad Geremeom, u jednom od najvećih prizora sveta.`,
+          `Lokalac VibeGuide zna koja dolina hvata najbolju svetlost, koja je pećinska crkva preživela i gde nema gužve — pretvarajući poznatu fotografiju u pravo razumevanje mesta.`,
+        ],
+        highlights: [
+          { title: `Baloni na topli vazduh`, desc: `Letovi u zoru nad dolinama — slika koja definiše Kapadokiju.` },
+          { title: `Muzej na otvorenom Gereme`, desc: `Vizantijske pećinske crkve sa freskama uklesanim u stenu.` },
+          { title: `Podzemni gradovi`, desc: `Derinkuju i Kajmakli — čitavi gradovi skriveni ispod zemlje.` },
+        ],
+        faqs: [
+          { q: `Gde se nalazi Kapadokija?`, a: `U centralnoj Anadoliji, oko Geremea i Nevšehira, dostupna letom do Kajserija ili Nevšehira.` },
+          { q: `Da li su letovi balonom zagarantovani?`, a: `Zavise od vremenskih uslova i rezervišu se posebno. Vodič vam pomaže da isplanirate ostatak oko njih.` },
+          { q: `Koliko dana mi treba?`, a: `Dva dana ugodno pokrivaju najvažnije; lokalni vodič čini da se isplati i jedan dan.` },
+        ],
+        planningHeading: `Planiranje posete`,
+        planningParagraphs: [
+          `Kapadokija se nalazi u centralnoj Anadoliji, u pokrajini Nevšehir, sa gradićem Geremeom u svom srcu. Većina putnika sleće u Nevšehir (NAV) ili veći aerodrom Kajseri (ASR), a zatim nastavlja šatlom ili automobilom do kraja puta. Region je dovoljno kompaktan da se istražuje iz jedne baze, a njegove ovozemaljski čudesne doline vilinskih dimnjaka počinju gotovo istog trenutka kada stignete.`,
+          `Proleće i jesen su idealni, sa blagim danima i mekom svetlošću koja ulepšava stenoviti predeo. Leto donosi vrućinu i veće gužve, dok zima ogrće vilinske dimnjake snegom za mirniji, čaroban prizor. Rana jutra su ovde zlatna, naročito u zoru kada se baloni na topli vazduh uzdižu nad dolinama, ako vreme dozvoli. Planirajte oko dva dana da vidite najvažnije bez žurbe.`,
+          `Glavne znamenitosti poput Muzeja na otvorenom Gereme i podzemnih gradova imaju kartu, a letovi balonom rezervišu se posebno i zavise od vremena. Licencirani lokalni vodič VibeGuide pomaže vam da uskladite doživljaj balonom, pronađete najbolje doline za šetnju i fotografije i razumete oslikane crkve i pećinska staništa pored kojih biste inače prošli pravo.`,
+        ],
+        ctaTitle: `Otkrijte Kapadokiju uz lokalca`,
+        ...CAP.sr,
+      },
     },
   },
   {
@@ -3798,6 +3980,34 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `Разгледайте Долмабахче с местен гид`,
         ...IST.bg,
+      },
+      sr: {
+        name: `Palata Dolmabahče`,
+        metaTitle: `Palata Dolmabahče — ture i lokalni vodiči`,
+        metaDescription:
+          `Posetite palatu Dolmabahče na Bosforu uz proverenog istanbulskog vodiča. Zlatni plafoni, najveći kristalni luster na svetu i soba u kojoj je Ataturk umro.`,
+        intro: [
+          `Palata Dolmabahče najraskošnije je poglavlje kasne osmanske priče. Sagrađena između 1843. i 1856. za sultana Abdulmedžida I od arhitekata Baljan, zamenila je srednjovekovni Topkapi kao carsku rezidenciju — namerno evropski iskaz u baroknom, rokoko i neoklasičnom stilu, sa 285 soba, 46 dvorana i 6 hamama duž evropske obale Bosfora.`,
+          `Uz lokalnog stručnjaka VibeGuide raskoš dobija smisao. Ulaz prati vođenu rutu, pa je pravi vodič razlika između hodnika pozlaćenih soba i istinske priče — 14 tona zlata, luster od 4,5 tone i tačan minut u kojem je jedna nacija zaustavila svoje satove.`,
+        ],
+        highlights: [
+          { title: `Ceremonijalna dvorana`, desc: `Dom bohemskog kristalnog lustera od 4,5 tone sa 750 sijalica — dar kraljice Viktorije i najveći te vrste na Zemlji.` },
+          { title: `Kristalno stepenište`, desc: `Ograde isklesane u potpunosti od bakara kristala, ispod plafona pozlaćenih sa 14 tona zlata.` },
+          { title: `Ataturkova soba`, desc: `Osnivač moderne Turske ovde je umro 10. novembra 1938. u 09:05 — satovi palate i dalje su podešeni na taj trenutak.` },
+        ],
+        faqs: [
+          { q: `Da li mi je potreban vodič za palatu Dolmabahče?`, a: `Ulaz je po vođenoj ruti, a Selamlik, Harem i Ceremonijalna dvorana kriju priče pored kojih biste prošli pravo. Lokalac VibeGuide pretvara pozlatu u pripovest i pomaže vam da preskočite najduže redove.` },
+          { q: `Zašto su svi satovi podešeni na 09:05?`, a: `Ataturk je u palati umro u 09:05, 10. novembra 1938. Mnogi satovi Dolmabahčea tradicionalno se drže na tom vremenu u njegovu spomen.` },
+          { q: `Koliko traje poseta?`, a: `Većina vođenih poseta traje 1–2 sata između Selamlika, Harema i priobalnih bašta, i lepo se uparuje sa krstarenjem Bosforom potom.` },
+        ],
+        planningHeading: `Planiranje posete`,
+        planningParagraphs: [
+          `Palata Dolmabahče proteže se duž obale Bosfora u Bešiktašu, na evropskoj strani. Najjednostavniji dolazak je tramvajem T1 do njegove poslednje stanice u Kabatašu, a zatim kratkom šetnjom uz vodu do raskošnih kapija. Autobusi i trajekti takođe opslužuju područje, a priobalni ambijent čini konačni prilaz prijatnim.`,
+          `Palata se za posetioce otvara po utvrđenom rasporedu, a jutra su najmirnije vreme za obilazak pre nego što turističke grupe ispune dvorane. Istorijski se zatvara jednom sedmično, pa proverite sedmični dan zatvaranja pre polaska. Proleće i jesen donose blago vreme, idealno za kombinovanje enterijera sa baštama i pogledima na Bosfor napolju.`,
+          `Ulaz je sa kartom, a poseta prati vođenu rutu kroz bogato ukrašene sobe. Selamlik i Harem su odvojene celine sa odvojenim kartama, pa unapred odlučite koliko želite da vidite. Licencirani lokalni vodič VibeGuide može da vam sredi karte, pomogne da izaberete između celina i objasni osmansku istoriju iza kristala, zlata i velelepnih stepeništa.`,
+        ],
+        ctaTitle: `Upoznajte Dolmabahče uz lokalca`,
+        ...IST.sr,
       },
     },
   },
@@ -4287,6 +4497,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Разгледайте кулата Галата с местен гид`,
         ...IST.bg,
       },
+      sr: {
+        name: `Galata kula`,
+        metaTitle: `Galata kula — ture i lokalni vodiči`,
+        metaDescription:
+          `Popnite se na Galata kulu u Istanbulu uz proverenog lokalnog vodiča. Preskočite redove, uhvatite zalazak sunca i čujte priču o đenovljanskoj kuli nad Zlatnim rogom.`,
+        intro: [
+          `Galata kula kruniše siluetu Bejoglua od 1348. godine, kada su je Đenovljani podigli kao „Christea Turris” — Hristovu kulu — na vrhu svoje utvrđene kolonije. Skoro 67 metara srednjovekovnog kamena uzdiže se kroz devet spratova do gornje galerije sa punim krugom od 360° preko Zlatnog roga, istorijskog poluostrva i Bosfora u daljini.`,
+          `To je mesto obavijeno legendom: u 17. veku Hezarfen Ahmed Čelebi je, priča se, pričvrstio krila i preleteo od kule preko Bosfora sve do Iskudara. Uz lokalca VibeGuide usklađujete uspon da izbegnete najgore redove, stižete za zlatni sat i čujete priče koje sam pogled ne može da ispriča.`,
+        ],
+        highlights: [
+          { title: `Panorama 360°`, desc: `Sa gornje galerije čitav grad se razotkriva — Zlatni rog, stari grad i obe obale Bosfora.` },
+          { title: `Đenovljanska znamenitost`, desc: `Sagrađena 1348. kao „Hristova kula”, bdi nad Galatom skoro sedam vekova.` },
+          { title: `Legenda o letu`, desc: `Priča se da je Hezarfen Ahmed Čelebi odavde preleteo moreuz na krilima domaće izrade.` },
+        ],
+        faqs: [
+          { q: `Da li ima reda za Galata kulu?`, a: `Često, naročito o zalasku sunca. Lokalni vodič vam pomaže da izaberete pravi sat i vodi računa o vremenu, pa manje čekate a više uživate u pogledu.` },
+          { q: `Kada je najbolje vreme za uspon?`, a: `Kasno popodne do zalaska sunca je čarobno, kada svetlost postaje zlatna nad vodom. Vaš vodič može da isplanira dan oko toga.` },
+          { q: `Koliko traje poseta?`, a: `Uspon i pogled traju oko 45 minuta do sat vremena, lako se kombinuje sa šetnjom kroz Galatu i obližnji Karaköj.` },
+        ],
+        planningHeading: `Planiranje posete`,
+        planningParagraphs: [
+          `Galata kula uzdiže se nad kvartom Karaköj i Galata u Bejogluu, na severnoj strani Zlatnog roga. Mnogi posetioci stižu do Karakoja tramvajem ili metroom, a zatim se penju strmim, karakterističnim ulicama pešice. Za lakši uspon, istorijski uspinjač Tunel vas nosi uz brdo, ostavljajući samo kratku šetnju do kule.`,
+          `Kula je čuvena po panoramskim pogledima, a red je najduži u satu pred zalazak sunca kada se svi nadaju istoj zlatnoj fotografiji. Dolazak ranije u toku dana znači kraće redove i blažu svetlost za fotografisanje. Okolne uličice, pune kafića i radionica, vredi istražiti kad god dođete.`,
+          `Ulaz je sa kartom, a lift vas nosi najveći deo puta pre nego što poslednji niz stepenika dosegne panoramsku galeriju koja opasuje vrh. Očekujte uzanu stazu sa nadaleko pruženim pogledima na stari grad, Bosfor i Zlatni rog. Licencirani lokalni vodič VibeGuide može da vam obezbedi kartu, izbegne gužvu o zalasku sunca i ukaže na znamenitosti razastrte ispod.`,
+        ],
+        ctaTitle: `Upoznajte Galata kulu uz lokalca`,
+        ...IST.sr,
+      },
     },
   },
   {
@@ -4774,6 +5012,34 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `Разгледайте Гранд базар с местен гид`,
         ...IST.bg,
+      },
+      sr: {
+        name: `Veliki bazar`,
+        metaTitle: `Veliki bazar — ture i lokalni vodiči`,
+        metaDescription:
+          `Istražite istanbulski Veliki bazar uz proverenog lokalnog vodiča. Snađite se u 4.000 radnji, pregovarajte sa sigurnošću i pronađite poštene zanatlije umesto turističkih zamki.`,
+        intro: [
+          `Veliki bazar jedna je od najstarijih i najvećih natkrivenih pijaca na svetu — lavirint započet pod Mehmedom Osvajačem između 1455. i 1461, koji je kroz vekove izrastao u više od šezdeset natkrivenih ulica i oko 4.000 radnji. Tepisi i ćilimi, zlato i nakit, keramika, začini, fenjeri i koža prelivaju se iz svakog dovratka pod oslikanim svodovima.`,
+          `Cenkanje se ovde očekuje — to je pola zabave — ali lavirint proguta pridošlice u celosti. Lokalac VibeGuide vodi vas pravim uličicama, drži vas dalje od turističkih cena, upoznaje vas sa poštenim zanatlijama i prevodi i jezik i ritual pogađanja.`,
+        ],
+        highlights: [
+          { title: `4.000 radnji`, desc: `Preko šezdeset natkrivenih ulica tepiha, zlata, keramike, začina, fenjera i kože.` },
+          { title: `Umeće cenkanja`, desc: `Pogađanje se očekuje i deo je zabave — vodič drži cenu poštenom.` },
+          { title: `Živa istorija`, desc: `Natkrivena pijaca započeta 1450-ih pod Mehmedom Osvajačem, i danas u trgovini.` },
+        ],
+        faqs: [
+          { q: `Da li mi je potreban vodič za Veliki bazar?`, a: `Nećete se zauvek izgubiti, ali biste mogli preplatiti. Lokalni vodič poznaje poštene zanatlije, pravednu cenu i prečice kroz lavirint.` },
+          { q: `Da li se cenkanje zaista očekuje?`, a: `Da — deo je kulture. Počnite nisko, ostanite ljubazni i pustite vodiča da vam pokaže gde se ritual završava a poštena pogodba počinje.` },
+          { q: `Koliko vremena da planiram?`, a: `Većina vođenih poseta traje 1–2 sata i prirodno se uparuje sa obližnjim Bazarom začina i ulicama Fatiha.` },
+        ],
+        planningHeading: `Planiranje posete`,
+        planningParagraphs: [
+          `Veliki bazar (Kapalčaršija) nalazi se u kvartu Fatih starog grada, tik uz Bejazit. Najlakši dolazak je tramvajem T1 do stanice „Bejazit-Kapalčaršija”, koja vas ostavlja kod jedne od glavnih kapija. To je laka, ravna šetnja od Sultanahmeta i Plave džamije, pa mnogi posetioci jednostavno prošetaju do njega nakon obilaska obližnjih spomenika.`,
+          `Ulaz je besplatan i pijaca je otvorena svakog dana osim nedelje. Najgužvovitija je oko podneva, kada turističke grupe i putnici sa kruzera ispune uličice, pa vam dolazak ubrzo nakon otvaranja daje mirnije prolaze i strpljivije trgovce. Pošto je čitav bazar natkriven, ostaje udoban u svakoj sezoni, čineći ga pouzdanim izborom u vrele letnje popodneve ili kišne zimske dane podjednako.`,
+          `Kao jedna od najstarijih i najvećih natkrivenih pijaca na svetu, sa oko 4.000 radnji duž više od 60 ulica, bazar nagrađuje one koji ne žure. Cenkanje se očekuje i deo je zabave, ali prve cene mogu biti visoke za pridošlice. Licencirani lokalni vodič VibeGuide pomaže vam da se snađete u lavirintu, izbegnete turističke tezge i stignete do poštenih radnji gde su i kvalitet i cena pravedni.`,
+        ],
+        ctaTitle: `Istražite Veliki bazar uz lokalca`,
+        ...IST.sr,
       },
     },
   },
@@ -5263,6 +5529,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Плавайте по Босфора с местен гид`,
         ...IST.bg,
       },
+      sr: {
+        name: `Bosfor`,
+        metaTitle: `Krstarenje Bosforom — ture i lokalni vodiči`,
+        metaDescription:
+          `Krstarite Bosforom u Istanbulu uz proverenog lokalnog vodiča. Klizite pored osmanskih palata, priobalnih jalija i Devojačke kule i čujte priču svake obale.`,
+        intro: [
+          `Bosfor je moreuz koji cepa kontinent — vijugavi kanal koji deli Evropu od Azije i povezuje Crno more sa Mramornim morem. Klasična brodska tura klizi pored osmanskih palata poput Dolmabahčea, Bejlerbejija i Čiragana, ljupkih drvenih priobalnih vila poznatih kao jaliji, Devojačke kule na ostrvcetu, tvrđave Rumeli i ispod velikih visećih mostova.`,
+          `Krstarenje o zalasku sunca jedan je od kultnih istanbulskih doživljaja, ali sa vode je teško razlikovati jednu palatu od druge. Uz lokalca VibeGuide na palubi saznajete koja je koja, čija priča pripada kojoj obali i zašto je ova traka vode oblikovala carstvo.`,
+        ],
+        highlights: [
+          { title: `Palate s vode`, desc: `Dolmabahče, Bejlerbeji i Čiragan uokviruju obale u osmanskoj raskoši.` },
+          { title: `Dva kontinenta`, desc: `Evropa na jednoj obali, Azija na drugoj, spojene velikim visećim mostovima.` },
+          { title: `Jaliji i Devojačka kula`, desc: `Istorijske drvene priobalne vile i mala kula koja čuva moreuz.` },
+        ],
+        faqs: [
+          { q: `Da li se krstarenje Bosforom isplati uz vodiča?`, a: `Sa vode se palate stapaju. Lokalni vodič imenuje svaku, priča njenu priču i ukazuje na detalje pored kojih biste inače proplovili.` },
+          { q: `Kada je najbolje vreme za krstarenje?`, a: `Zalazak sunca je kultan, kada svetlost blista na palatama i mostovima. Vaš vodič vam pomaže da izaberete sat i pravu vrstu broda.` },
+          { q: `Koliko traje tipično krstarenje?`, a: `Ture traju od oko 1,5 do 3 sata, u zavisnosti od toga koliko odete uz moreuz, lako se uparuje sa šetnjom uz obalu.` },
+        ],
+        planningHeading: `Planiranje posete`,
+        planningParagraphs: [
+          `Bosfor je slavni moreuz koji deli Istanbul između Evrope i Azije, pa ga najbolje doživljavate sa vode. Brodske ture polaze iz nekoliko priobalnih čvorišta, najzgodnije iz Eminonua, Kabataša i Bešiktaša, do svih se stiže tramvajem, trajektom ili kratkom šetnjom iz starog grada. Sa ovih pristana možete se pridružiti redovnom krstarenju ili se ukrcati na privatni brod u roku od nekoliko minuta po dolasku.`,
+          `Postoji brod za svaki sat dana, ali je zlatna svetlost kasnog popodneva i zalaska sunca najkultnije vreme za boravak na palubi. Leto donosi tople, žive večeri, dok proleće i jesen nude bistriji vazduh i ređe gužve. U svakoj sezoni je na moreuzu vetrovito i svežije nego na obali, pa ponesite lagani sloj odeće i obucite se za vetar čak i po sunčanim danima.`,
+          `Javni trajekti su jeftini, česti i divno slikoviti, dok vam privatni ili vođeni brodovi daju slobodu oko rute i vremena. Usput klizite pored osmanskih palata, elegantnih priobalnih jaliji vila, tvrđave Rumeli i velikih visećih mostova. Licencirani lokalni vodič VibeGuide pomaže vam da izaberete pravi brod za svoju grupu i oživljava obalu pričama iza svake palate, tvrđave i naselja pored kojih prolazite.`,
+        ],
+        ctaTitle: `Krstarite Bosforom uz lokalca`,
+        ...IST.sr,
+      },
     },
   },
   {
@@ -5750,6 +6044,34 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `Разгледайте Аспендос с местен гид`,
         ...ANT.bg,
+      },
+      sr: {
+        name: `Aspendos`,
+        metaTitle: `Rimsko pozorište Aspendos — ture i lokalni vodiči`,
+        metaDescription:
+          `Posetite Aspendos kod Antalije uz proverenog lokalnog vodiča. Stanite u najbolje očuvano rimsko pozorište na svetu i čujte kako akustika radi i posle 1.800 godina.`,
+        intro: [
+          `Aspendos je najbolje očuvano rimsko pozorište na svetu — sagrađeno u 2. veku n. e. pod Markom Aurelijem od arhitekte Zenona, i još uvek može da primi oko 15.000 do 20.000 ljudi. Šapnite na sceni i poslednji red vas čuje: njegova akustika ostaje zapanjujuća nakon skoro 1.800 godina.`,
+          `Uz lokalnog stručnjaka VibeGuide ne gledate samo staro kamenje. Saznajete kako je pozorište radilo, zašto je preživelo netaknuto i na šta da obratite pažnju kod obližnjeg rimskog akvedukta — svojim tempom, na svom jeziku, oko 45 km istočno od Antalije kod Serika.`,
+        ],
+        highlights: [
+          { title: `Savršena akustika`, desc: `Reč izgovorena na sceni i dalje stiže do najvišeg reda, bez potrebe za mikrofonom.` },
+          { title: `Netaknut rimski dizajn`, desc: `Scenska zgrada i sedišta sačuvani su gotovo u celosti — retkost bilo gde u svetu.` },
+          { title: `Festival opere i baleta`, desc: `Svakog leta drevno pozorište opet se puni za Međunarodni festival Aspendos.` },
+        ],
+        faqs: [
+          { q: `Zašto je Aspendos toliko čuven?`, a: `To je najbolje očuvano rimsko pozorište bilo gde, a akustika i dalje radi — vodič vam pokazuje tačno gde da stanete da je isprobate.` },
+          { q: `Koliko je Aspendos daleko od Antalije?`, a: `Oko 45 km istočno, kod Serika — lak jednodnevni izlet koji vaš VibeGuide vodič može da isplanira oko gužvi i vrućine.` },
+          { q: `Ima li još nešto da se vidi u blizini?`, a: `Da — u blizini stoji rimski akvedukt, a vodič ga može dodati vašoj poseti zajedno sa okolnim lokalitetima.` },
+        ],
+        planningHeading: `Planiranje posete`,
+        planningParagraphs: [
+          `Aspendos leži oko 45 kilometara istočno od Antalije u južnoj Turskoj, kod gradića Serik. Većina posetilaca stiže automobilom ili na organizovanoj turi iz Antalije, što ga čini lakim poludnevnim izletom duž mediteranske obale. Lokalitet je najpoznatiji po svom rimskom pozorištu, koje se uzdiže nad okolnom ravnicom i do njega se stiže kratkom šetnjom sa parkinga.`,
+          `Podneva su ovde vrela, naročito leti, pa su jutra najbolje vreme za obilazak u relativnom komforu i mekšoj svetlosti. Proleće i jesen donose prijatne temperature i ređe gužve, dok letnje večeri ožive tokom festivala opere i baleta. Kad god dođete, ponesite vodu i zaštitu od sunca, jer oko drevnog kamenja ima malo hlada.`,
+          `Pozorište je sa kartom i slavno kao najbolje očuvano rimsko pozorište na svetu, sa scenskom zgradom i sedištima izuzetno netaknutim. Licencirani lokalni vodič VibeGuide oživljava njegovu akustiku i istoriju i može upariti vašu posetu sa obližnjim drevnim lokalitetima poput Sidea i Pergea, pomažući vam da razumete kako su ti gradovi bili povezani preko pamfilijske ravnice i maksimalno iskoristite jedan dan.`,
+        ],
+        ctaTitle: `Upoznajte Aspendos uz lokalca`,
+        ...ANT.sr,
       },
     },
   },
@@ -6239,6 +6561,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Разгледайте Калеичи с местен гид`,
         ...ANT.bg,
       },
+      sr: {
+        name: `Kaleiči (Stari grad)`,
+        metaTitle: `Kaleiči, stari grad Antalije — ture i lokalni vodiči`,
+        metaDescription:
+          `Prošetajte Kaleičijem, starim gradom Antalije, uz proverenog lokalnog vodiča. Kaldrmisane osmanske uličice, Hadrijanova kapija i rimska luka — priče iza svakog ugla.`,
+        intro: [
+          `Kaleiči je atmosferičan stari grad Antalije — lavirint kaldrmisanih uličica obrubljenih obnovljenim osmansko-grčkim kućama, butik hotelima i kafićima, sve omotano oko luke iz rimskog doba. To je mesto gde svaki svod krije priču.`,
+          `Uz lokalnog stručnjaka VibeGuide ne samo da lutate i nadate se. Prođite kroz Hadrijanovu kapiju, pogledajte gore ka žlebljenom minaretu Jivli, gledajte zalazak sunca sa kule Hidirlik i završite izletom brodom iz stare marine — svojim tempom, na svom jeziku.`,
+        ],
+        highlights: [
+          { title: `Hadrijanova kapija`, desc: `Trostruki mermerni luk sagrađen 130. n. e. za posetu cara Hadrijana gradu.` },
+          { title: `Minaret Jivli`, desc: `Žlebljeni ciglani minaret koji je postao simbol siluete Antalije.` },
+          { title: `Rimska luka`, desc: `Stara marina ispod zidina — savršena za izlet brodom o zalasku sunca.` },
+        ],
+        faqs: [
+          { q: `Šta se može raditi u Kaleičiju?`, a: `Prošetajte osmanskim uličicama, vidite Hadrijanovu kapiju i kulu Hidirlik, pa se otisnite na izlet brodom iz luke — lokalni vodič sve to poveže u jednu laku rutu.` },
+          { q: `Da li je Kaleiči pogodan za šetnju?`, a: `Da, kompaktan je i najbolje se istražuje peške; vodič vas drži van turističkih ulica i vodi na one lepe.` },
+          { q: `Kada je najbolje vreme za posetu?`, a: `Kasno popodne do zalaska sunca je čarobno, naročito sa kule Hidirlik — vaš VibeGuide vodič to može savršeno uskladiti.` },
+        ],
+        planningHeading: `Planiranje posete`,
+        planningParagraphs: [
+          `Kaleiči je istorijski stari grad Antalije, ušuškan između modernog grada i mora. Najlakši ulaz je tramvajem Antraj, uz izlazak na stanicama Ismetpaša ili Kaleiči, ili prostim silaskom iz centra. Kada prođete kroz Hadrijanovu kapiju, ulice postaju kaldrma a automobili nestaju, pa se čitav kvart najbolje istražuje polako, peške.`,
+          `Stari grad nagrađuje ležernu posetu u kasno popodne, kada svetlost omekša nad rimskom lukom a uličice zasijaju zlatno. Zalazak sunca sa kule Hidirlik ili sa zida luke je omiljen kod meštana. Letnja podneva mogu biti vrela i gužvovita, pa su jutra i večeri blaži; proleće i jesen donose nežnije temperature i ređe gužve tokom celog dana.`,
+          `Lutanje kaldrmisanim uličicama Kaleičija je besplatno, i nema jedne kapije ili karte za ulazak u sam kvart. Možete prošetati pored minareta Jivli, stare luke i osmanskih kuća svojim tempom, a izlet brodom iz marine je divan dodatak. Licencirani lokalni vodič VibeGuide oživljava skrivena dvorišta i sporedne ulice pričama iza njih.`,
+        ],
+        ctaTitle: `Istražite Kaleiči uz lokalca`,
+        ...ANT.sr,
+      },
     },
   },
   {
@@ -6727,6 +7077,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Разгледайте Пергам с местен гид`,
         ...IZM.bg,
       },
+      sr: {
+        name: `Pergam`,
+        metaTitle: `Drevni grad Pergam (Bergama) — ture i lokalni vodiči`,
+        metaDescription:
+          `Istražite Pergam, drevni grad na UNESKO listi svetske baštine kod Izmira, uz proverenog lokalnog vodiča. Najstrmije pozorište antike, legendarna biblioteka i lečilište Asklepion.`,
+        intro: [
+          `Pergam — danas Bergama — bio je jedan od velikih gradova drevnog sveta, prvo grčki pa rimski, a sada lokalitet svetske baštine UNESKO. Njegov Akropolj kruniše strmo brdo iznad ravnice, dom hramu Trajana, oltaru Zevsa i najstrmijem pozorištu drevnog sveta, dramatično usečenom u padinu za oko 10.000 gledalaca.`,
+          `Uz lokalnog stručnjaka VibeGuide ruševine ožive. Čujte kako je Biblioteka Pergama rivalirala Aleksandriji i dala nam pergament, pa se spustite do lečilišta Asklepion i ogromne Crvene bazilike (Kizil Avlu) — svojim tempom, na svom jeziku, oko sat vremena od Kušadasija ili Izmira.`,
+        ],
+        highlights: [
+          { title: `Strmo pozorište`, desc: `Najstrmije pozorište drevnog sveta, usečeno u padinu za oko 10.000 gledalaca.` },
+          { title: `Velika biblioteka`, desc: `Druga odmah iza Aleksandrije — ovde je usavršen pergament (charta pergamena).` },
+          { title: `Asklepion`, desc: `Jedno od najčuvenijih lečilišta antike, u ravnici ispod akropolja.` },
+        ],
+        faqs: [
+          { q: `Gde se nalazi Pergam?`, a: `U gradu Bergama, pokrajina Izmir — oko sat vremena od Kušadasija ili Izmira, i lak jednodnevni izlet koji lokalni vodič može da isplanira za vas.` },
+          { q: `Koliko vremena mi treba?`, a: `Akropolj, Asklepion i Crvena bazilika zaslužuju vreme; pola dana sa vodičem ugodno pokriva najvažnije.` },
+          { q: `Da li se vodič isplati u Pergamu?`, a: `Apsolutno — biblioteka, oltar Zevsa i rituali lečenja su priče, a ne table; vodič oživljava prazne ruševine.` },
+        ],
+        planningHeading: `Planiranje posete`,
+        planningParagraphs: [
+          `Pergam leži u gradu Bergama u pokrajini Izmir, otprilike sat vremena od Kušadasija ili Izmira i lako dostupan automobilom ili autobusom. Drevni Akropolj kruniše strmo brdo iznad grada, do kojeg možete stići žičarom Akropolis (teleferik) ili putem. Lečilište Asklepion i Crvena bazilika su odvojene stanice dole u samoj Bergami, lak dodatak danu.`,
+          `Jutra su ovde najbolje doba: vazduh je svežiji, svetlost bistra nad ruševinama na vrhu brda, a gužve su još retke pre nego što stignu turističke grupe. Teren je strm i izložen suncu, pa letnja popodneva mogu biti zamarajuća, dok proleće i jesen nude najprijatnije vreme za šetnju. Kad god dođete, čvrste udobne cipele i voda čine uspon mnogo prijatnijim.`,
+          `Pergam je lokalitet svetske baštine UNESKO sa kartom, gde Akropolj, Asklepion i Crvena bazilika svaki vrede posete. Očekujte velelepne terase, strmo pozorište i široke poglede na ravnicu. Licencirani lokalni vodič VibeGuide povezuje razbacane ruševine u jednu priču, od akropolja i pristupa žičarom do Asklepiona, pa kamenje dobije smisao umesto da se stapa.`,
+        ],
+        ctaTitle: `Upoznajte Pergam uz lokalca`,
+        ...IZM.sr,
+      },
     },
   },
   {
@@ -7214,6 +7592,34 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `Разгледайте Памуккале с местен гид`,
         ...PAM.bg,
+      },
+      sr: {
+        name: `Pamukale`,
+        metaTitle: `Pamukale i Hijerapolis — ture sa lokalnim vodičima`,
+        metaDescription:
+          `Otkrijte Pamukale, UNESKO „Pamučnu tvrđavu”, uz proverenog lokalnog vodiča. Prošetajte belim travertinima, istražite drevni Hijerapolis i plivajte u Kleopatrinom bazenu.`,
+        intro: [
+          `Pamukale — „Pamučna tvrđava” — jedan je od najnadrealnijih prizora Turske: obronak zaslepljujuće belih travertinskih terasa, isklesan kroz milenijume termalnom vodom bogatom kalcijumom koja se sliva i skamenjuje u bazene nalik smrznutom pamuku. To je lokalitet svetske baštine UNESKO u Denizliju, a hodate ga bosi, do članaka u toploj mineralnoj vodi.`,
+          `Tik iznad terasa stoji Hijerapolis, grčko-rimski banjski grad sa velelepnim pozorištem, jednom od najvećih anadolskih nekropola i termalnim Antičkim bazenom u kojem plivate među oborenim rimskim stubovima. Uz lokalca VibeGuide pogađate pravo vreme, razumete šta gledate i činite da se dugo putovanje zaista isplati.`,
+        ],
+        highlights: [
+          { title: `Bele travertinske terase`, desc: `Zaslepljujuće beli kalcijumski bazeni koji se slivaju niz brdo — hodajte ih bosi u toploj izvorskoj vodi.` },
+          { title: `Drevni Hijerapolis`, desc: `Grčko-rimski banjski grad iznad terasa: pozorište, ogromna nekropola, hram Apolona i sveti Plutonijum.` },
+          { title: `Kleopatrin antički bazen`, desc: `Plivajte u toploj termalnoj vodi među drevnim rimskim stubovima oborenim zemljotresom.` },
+        ],
+        faqs: [
+          { q: `Da li mi je potreban vodič za Pamukale?`, a: `Možete lutati sami, ali Pamukale i Hijerapolis su dva lokaliteta u jednom — termalna geologija i rimski grad. Lokalni vodič ih povezuje, usklađuje posetu oko gužvi i bleštavila i čini da dug jednodnevni izlet teče glatko.` },
+          { q: `Kada je najbolje vreme za posetu Pamukalu?`, a: `Rano ujutru ili kasno popodne. Podnevno sunce čini bele terase zaslepljujućim a gužve vrhunskim; zalazak sunca nad bazenima je spektakularan. Vodič planira dan oko toga.` },
+          { q: `Koliko je Pamukale daleko od obale?`, a: `Oko 19 km od Denizlija i dug jednodnevni izlet iz Antalije, Bodruma, Kušadasija ili Marmarisa. Vodič se stara o razdaljini i vremenu, pa se vožnja isplati.` },
+        ],
+        planningHeading: `Planiranje posete`,
+        planningParagraphs: [
+          `Pamukale leži u pokrajini Denizli u jugozapadnoj Turskoj, oko 19 kilometara od grada Denizlija. Možete doleteti u Denizli (DNZ) ili do njega stići kao jednodnevni izlet sa obale, a mnogi posetioci ga kombinuju sa širom turom regiona. Zaslepljujuće bele terase nalaze se na obronku iznad ravnice, vidljive iz daljine i lako dostupne automobilom ili organizovanim prevozom.`,
+          `Podne može biti zaslepljujuće i vrelo, jer beli travertini odbijaju sunce, pa su rano jutro ili kasno popodne mnogo udobniji i vredniji. Ti sati ujedno donose mekšu svetlost za fotografije i ređe gužve na terasama. To je dug ali nezaboravan jednodnevni izlet iz Antalije, Bodruma, Kušadasija ili Izmira, pa krenite rano da uživate u lokalitetu kada je najmirniji.`,
+          `Beli travertini i drevni grad Hijerapolis dele jednu kartu, a vi hodate bosi duž terasa da ih zaštitite, dok Kleopatrin antički bazen nosi posebnu naplatu. Licencirani lokalni vodič VibeGuide pomaže vam da razumete terase i prostrane ruševine Hijerapolisa, od pozorišta do nekropole, i upućuje vas na najbolja mesta i vreme za mineralne bazene.`,
+        ],
+        ctaTitle: `Upoznajte Pamukale uz lokalca`,
+        ...PAM.sr,
       },
     },
   },
@@ -7720,6 +8126,35 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Разгледайте Сюлеймание с местен гид`,
         ...IST.bg,
       },
+      sr: {
+        name: `Sulejmanija džamija`,
+        metaTitle: `Sulejmanija džamija — ture i lokalni vodiči`,
+        metaDescription:
+          `Posetite Sulejmaniju džamiju uz proverenog istanbulskog vodiča. Remek-delo Mimara Sinana na Trećem brdu, grobnice Sulejmana i Hurem i panoramska terasa nad Zlatnim rogom.`,
+        intro: [
+          `Sulejmanija džamija kruniše istanbulsko Treće brdo iznad Zlatnog roga, carsko remek-delo Mimara Sinana. Sagrađena između 1550. i 1557. za sultana Sulejmana Veličanstvenog, ona balansira ogromnu centralnu kupolu na četiri minareta i vedru, svetlošću ispunjenu molitvenu dvoranu — samouvereno srce klasične osmanske arhitekture na vrhuncu moći carstva.`,
+          `Uz lokalnog stručnjaka VibeGuide kompleks se čita kao priča a ne kao spomenik. Pravi vodič povezuje kupolu i dvorište sa sultanom koji ju je sagradio i arhitektom koji je prkosio gravitaciji, pa vas vodi do baštovanskih grobnica Sulejmana i njegove supruge Hurem — i do terase sa jednim od najlepših besplatnih pogleda u gradu.`,
+        ],
+        highlights: [
+          { title: `Sinanova velika kupola`, desc: `Uzvišena centralna kupola visoka skoro 53 metra, projektovana tako da svetlost i zvuk teku kroz dvoranu — trenutak koji je zapečatio genijalnost Mimara Sinana.` },
+          { title: `Carske grobnice`, desc: `U bašti iza džamije stoje kupolaste grobnice Sulejmana Veličanstvenog i njegove supruge Hurem Sultanije (Roksolane), iznutra bogato obložene pločicama.` },
+          { title: `Panoramska terasa`, desc: `Spoljna terasa džamije otvara se na širok pogled preko Zlatnog roga i kupola starog grada — a ništa ne košta.` },
+        ],
+        faqs: [
+          { q: `Da li mi je potrebna karta za Sulejmaniju džamiju?`, a: `Ne. To je džamija u funkciji i ulaz je besplatan. Posetioci su dobrodošli van pet dnevnih molitvi, a lokalac VibeGuide može isplanirati vaš dolazak tako da je džamija otvorena i mirna.` },
+          { q: `Šta da nosim unutra?`, a: `Obucite se skromno sa pokrivenim ramenima i kolenima; žene pokrivaju kosu maramom, a svi izuvaju cipele na vratima. Marame se obično mogu pozajmiti na ulazu ako vam zatrebaju.` },
+          { q: `Da li je bolja od Plave džamije?`, a: `To je remek-delo Mimara Sinana i obično mnogo manje gužvovita, sa panoramskom terasom koju Plava džamija nema. Mnogi vodiči je smatraju lepšom građevinom — lokalac VibeGuide vam može pokazati zašto.` },
+          { q: `Koliko traje poseta?`, a: `Većina poseta traje 45 minuta do sat vremena između molitvene dvorane, grobnica i terase, i prirodno se uparuje sa obližnjim Velikim bazarom ili šetnjom do Zlatnog roga.` },
+        ],
+        planningHeading: `Planiranje posete`,
+        planningParagraphs: [
+          `Sulejmanija džamija nalazi se iznad kvarta Velikog bazara na Trećem brdu. Najlakši pristup je tramvajem T1 do Bejazita ili Lalelija, a zatim kratkom šetnjom uzbrdo kroz univerzitetski kraj; trajekti do Eminonua i uspon sa Zlatnog roga su slikovita alternativa. Uličice oko džamije pune su tradicionalnih restorana pasulja i čajdžinica.`,
+          `Kao džamija u funkciji, dočekuje posetioce van pet dnevnih molitvi, a za turiste se zatvara nakratko tokom svake molitve i duže petkom u podne. Rano jutro i kasno popodne su najmirniji, a terasa je nezaboravna pred zalazak sunca. Čak i u vrhuncu sezone ostaje mnogo manje gužvovita nego Plava džamija.`,
+          `Ulaz je besplatan i nema karte za kupovinu. Obucite se skromno — pokrivena ramena i kolena i pokrivalo za glavu za žene; izujete cipele i nosite ih u kesi. Licencirani lokalni vodič VibeGuide usklađuje vašu posetu sa rasporedom molitvi, objašnjava bonton da se osećate opušteno i rasvetljava istoriju iza Sinanove kupole i carskih grobnica.`,
+        ],
+        ctaTitle: `Upoznajte Sulejmaniju uz lokalca`,
+        ...IST.sr,
+      },
     },
   },
   {
@@ -8224,6 +8659,35 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `Разгледайте Пазара за подправки с местен гид`,
         ...IST.bg,
+      },
+      sr: {
+        name: `Bazar začina`,
+        metaTitle: `Bazar začina (Egipatski bazar) — ture i lokalni vodiči`,
+        metaDescription:
+          `Istražite istanbulski Bazar začina uz proverenog lokalnog vodiča. Gomile začina, šafran, ratluk i čajevi u natkrivenoj pijaci iz 17. veka pored Nove džamije u Eminonuu.`,
+        intro: [
+          `Bazar začina — Misir Čaršija, ili Egipatski bazar — najmirisnija je istanbulska pijaca, hala u obliku slova L iz 17. veka sa svođenim arkadama u srcu Eminonua. Sagrađena 1660-ih kao deo kompleksa Nove džamije, finansirana je trgovinom sa osmanskim Egiptom, i do danas njene tezge prelivaju piramide začina, šafrana, suvog voća, oraha i čaja.`,
+          `Uz lokalnog stručnjaka VibeGuide gužva i boja dobijaju smisao. Pravi vodič vas provodi pored turističkih zamki do poštenih, dugotrajnih prodavaca, kaže vam koliko treba da koštaju pravi šafran i čist ratluk i pušta vas da probate pre nego što kupite — pretvarajući haotičan prolaz u opušteno jutro ukusa i priča.`,
+        ],
+        highlights: [
+          { title: `Planine začina`, desc: `Kupe paprike, ruja, kima i cimeta uzdižu se pored tegli tamnocrvenog šafrana — mirisi koji su bazaru dali ime i slavu.` },
+          { title: `Ratluk i slatkiši`, desc: `Poslužavnici lokuma svakog ukusa, od nara i pistaća do ruže, stoje pored suvih kajsija, smokava i medenih oraha — većina tezgi nudi degustaciju.` },
+          { title: `Čajevi i Nova džamija`, desc: `Čaj od jabuke, biljne mešavine i kafa ispunjavaju vazduh, a velika kupolasta Jeni Cami uzdiže se tik uz glavnu kapiju bazara.` },
+        ],
+        faqs: [
+          { q: `Da li je ulaz u Bazar začina besplatan?`, a: `Da, ulaz je potpuno besplatan i nema šta da se rezerviše. Lokalac VibeGuide vas može dočekati na kapiji i odvesti do najpouzdanijih prodavaca unutra.` },
+          { q: `Da li treba da se cenkam u Bazaru začina?`, a: `Cene su retko fiksne, pa je učtivo pogađanje normalno i očekivano. Lokalni vodič zna poštenu cenu za šafran, lokum i čaj i pregovara umesto vas da ne preplatite.` },
+          { q: `Po čemu se razlikuje od Velikog bazara?`, a: `Bazar začina je manji, mirisniji i usmeren na hranu — začine, slatkiše, čajeve i orahe — dok je Veliki bazar ogroman lavirint nakita, tepiha i rukotvorina. Mnogi posetioci obiđu oba u jednom danu.` },
+          { q: `Kada je najbolje vreme za posetu?`, a: `Jutra su najmirnija, pre nego što turističke grupe i kupci ispune prolaze. Radni dani su mirniji od vikenda, a lokalac VibeGuide može uskladiti vašu posetu za najbolji doživljaj.` },
+        ],
+        planningHeading: `Planiranje posete`,
+        planningParagraphs: [
+          `Bazar začina nalazi se u Eminonuu, tik uz Novu džamiju i na dva minuta hoda od mosta Galata i trajektnih pristana Bosfora. Najlakši dolazak je tramvajem T1 do stanice Eminonu, ili trajektom preko Zlatnog roga; priobalni ambijent olakšava uklapanje u dan duž obale starog grada.`,
+          `Bazar je najgužvovitiji sredinom dana, pa je poseta rano ujutru mirnija i omogućava vam da razgovarate sa prodavcima pre nego što stignu gužve. Radi po dnevnom rasporedu i posebno je živ vikendom. Proleće i jesen su prijatni, ali natkrivena hala ostaje gostoljubiva po svakom vremenu.`,
+          `Ulaz je besplatan i nema šta da se rezerviše — jednostavno uđete. Cene su retko fiksne, pa se malo ljubaznog cenkanja očekuje, a kvalitet varira od tezge do tezge. Licencirani lokalni vodič VibeGuide vodi vas do proverenih prodavaca, pomaže vam da razlikujete pravi šafran od bojenog i pregovara poštene cene dok probate put kroz pijacu.`,
+        ],
+        ctaTitle: `Upoznajte Bazar začina uz lokalca`,
+        ...IST.sr,
       },
     },
   },
@@ -8730,6 +9194,35 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Разгледайте Моминската кула с местен гид`,
         ...IST.bg,
       },
+      sr: {
+        name: `Devojačka kula`,
+        metaTitle: `Devojačka kula (Kiz Kulesi) — ture i lokalni vodiči`,
+        metaDescription:
+          `Posetite Devojačku kulu na malenom ostrvcetu Bosfora uz proverenog istanbulskog vodiča. Drevne legende, kratka vožnja brodom iz Iskudara i nezaboravna silueta o zalasku sunca.`,
+        intro: [
+          `Devojačka kula stoji sama na malenom ostrvcetu u Bosforu, tik uz obalu Iskudara na azijskoj strani, gde se moreuz otvara ka Mramornom moru. Mala, bela i nemoguće fotogenična, vekovima bdi nad plovnim putem kao svetionik, carinska tačka i karantinska stanica — a danas, posle pažljive obnove, ponovo dočekuje posetioce.`,
+          `Ono što kulu čini nezaboravnom nije njena veličina već njene priče. Turska legenda govori o princezi zatočenoj ovde da izbegne proreknuti ujed zmije; grčka priča o Herou i Leandru smešta svoju tragediju na ove iste vode. Uz lokalnog stručnjaka VibeGuide legende, istorija i silueta sve dolaze na svoje mesto, pretvarajući kratak izlet brodom u jedan od najromantičnijih izleta Istanbula.`,
+        ],
+        highlights: [
+          { title: `Ostrvce i kula`, desc: `Sićušna stena usred Bosfora okrunjena vitkom belom kulom — jedna od najprepoznatljivijih silueta u čitavom Istanbulu.` },
+          { title: `Legende na vodi`, desc: `Turska princeza i proreknuta zmija, i grčka priča o Leandru koji preplivava moreuz zbog ljubavi — dve priče vezane za ovo jedno mesto.` },
+          { title: `Kafić i vidikovac`, desc: `Kafić i terasa za razgledanje puštaju vas da se zadržite uz panoramu od 360 stepeni na stari grad, azijsku obalu i brodove u prolazu.` },
+        ],
+        faqs: [
+          { q: `Kako da stignem do Devojačke kule?`, a: `Kratkom vožnjom brodom sa obale Iskudara na azijskoj strani, ili iz Kabataša na evropskoj strani. Nema mosta — brod je deo doživljaja, a do oba pristana se lako stiže trajektom, tramvajem ili Marmarajem.` },
+          { q: `Koje su legende kule?`, a: `Turska legenda govori o princezi smeštenoj ovde da izbegne proročanstvo da će umreti od ujeda zmije, a grčka priča o Herou i Leandru smešta svoju ljubavnu tragediju na ove vode. Lokalni vodič može ispričati obe i objasniti kako je kula dobila ime.` },
+          { q: `Da li kula vredi posete posle obnove?`, a: `Da. Posle nedavne pažljive obnove kula je ponovo otvorena za posetioce, sa kafićem i terasom za razgledanje, pa sada možete zakoračiti unutra i uživati u panorami umesto da joj se divite samo sa obale.` },
+          { q: `Kada je najbolje vreme za posetu?`, a: `Zalazak sunca je najupečatljiviji, sa starim gradom koji blista iza kule, dok su jutra najmirnija za fotografije. Mirni dani u kasno proleće ili ranu jesen čine prelaz brodom naročito prijatnim.` },
+        ],
+        planningHeading: `Planiranje posete`,
+        planningParagraphs: [
+          `Devojačka kula nalazi se na sopstvenom ostrvcetu, pa svaka poseta počinje kratkom vožnjom brodom. Glavna tačka polaska je obala Iskudara na azijskoj strani, uz dodatne brodove iz Kabataša na evropskoj strani. Do oba se lako stiže trajektom, tramvajem ili linijom Marmaraj, a sam prelaz vam pruža kulu uokvirenu naspram vode od trenutka polaska.`,
+          `Kula je otvorena tokom dana i najčarobnija je oko zalaska sunca, kada svetlost postaje zlatna a silueta starog grada blista iza nje. Kasno proleće i rana jesen donose mirno, blago vreme idealno za prelaz; po vetrovitim ili olujnim danima raspored brodova može se promeniti, pa vredi držati planove fleksibilnim. Jutra su obično najmirnija za fotografije na ostrvcetu.`,
+          `I prevoz brodom i ulaz u kulu su sa kartom, a prostor na malom ostrvu je ograničen, pa je najbolje planirati unapred. Licencirani lokalni vodič VibeGuide može da organizuje prelaz, uskladi vašu posetu za najbolju svetlost i oživi legende i istoriju Bosfora — uz to vam pokazuje tačno gde da stanete za onu klasičnu fotografiju siluete.`,
+        ],
+        ctaTitle: `Upoznajte Devojačku kulu uz lokalca`,
+        ...IST.sr,
+      },
     },
   },
   {
@@ -9234,6 +9727,35 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `Разгледайте храма на Артемида с местен гид`,
         ...EPH.bg,
+      },
+      sr: {
+        name: `Artemidin hram`,
+        metaTitle: `Artemidin hram u Efesu — ture i lokalni vodiči`,
+        metaDescription:
+          `Posetite Artemidin hram u Selčuku uz proverenog lokalnog vodiča. Jedno od Sedam svetskih čuda antike, sada jedan stub koji se uzdiže iz roda i močvare pored Efesa.`,
+        intro: [
+          `Artemidin hram u Selčuku, svega nekoliko minuta od Efesa, nekada je bio jedno od Sedam svetskih čuda antike — mermerni hram toliko ogroman da je bio četiri puta veći od Partenona u Atini. Drevni putnici pisali su da su videli mnoga čuda, ali ništa što bi se merilo sa domom Artemide koji dopire do oblaka.`,
+          `Danas je lokalitet skroman: jedan ponovo podignut stub uzdiže se iz močvarnih temelja, često sa gnezdom rode na vrhu i pticama koje gaze u trsci ispod. Ipak, stajati ovde, gde su se nekada kraljevi nadmetali da podignu najveličanstvenije svetilište drevnog sveta, jedna je od najtiših i najdirljivijih pouka istorije. Lokalni stručnjak VibeGuide obnavlja hram u vašoj mašti, sa stubovima, gomilama i svime.`,
+        ],
+        highlights: [
+          { title: `Iščezlo čudo`, desc: `Jedno od Sedam svetskih čuda antike, nekad četiri puta veće od Partenona, svedeno sada na temelje i jedan stub koji stoji.` },
+          { title: `Usamljeni stub i njegove rode`, desc: `Usamljeni ponovo podignut mermerni stub uzdiže se iz močvare, često okrunjen gnezdom rode — nezaboravna slika veličanstvenosti vraćene prirodi.` },
+          { title: `Grupa znamenitosti na brdu Selčuka`, desc: `Hram se prirodno uparuje sa Bazilikom svetog Jovana i džamijom Isa Bej koje krune brdo tik iznad njega, i sa Efesom u blizini.` },
+        ],
+        faqs: [
+          { q: `Da li je mnogo ostalo od Artemidinog hrama?`, a: `Vrlo malo stoji danas — uglavnom močvarni temelji i jedan ponovo podignut stub, često sa gnezdom rode na vrhu. Njegova moć leži u onome što je nekad bio: vodič oživljava iščezlo čudo tamo gde same ruševine ne mogu.` },
+          { q: `Kako je povezan sa Efesom?`, a: `Hram je u Selčuku, svega nekoliko minuta od glavnog lokaliteta Efesa, i ta dva se prirodno posećuju zajedno uz Baziliku svetog Jovana i džamiju Isa Bej na brdu tik iznad.` },
+          { q: `Da li mi je potrebna karta za Artemidin hram?`, a: `Hram je otvoren lokalitet i obično je besplatan za ulazak, za razliku od obližnjih ruševina Efesa za koje se plaća karta. Lokalni vodič može organizovati kombinovan itinerer Selčuka koji glatko teče između lokaliteta.` },
+          { q: `Kada je najbolje vreme za posetu?`, a: `Svetlost jutra ili kasnog popodneva najviše odgovara usamljenom stubu, a proleće i jesen su najprijatnije sezone. Leta su ovde vrela, pa nosite vodu i zaštitu od sunca.` },
+        ],
+        planningHeading: `Planiranje posete`,
+        planningParagraphs: [
+          `Artemidin hram leži na obodu gradića Selčuk, svega nekoliko minuta automobilom ili prijatnom šetnjom od glavnog ulaza u Efes, pa se ta dva gotovo uvek posećuju zajedno. Selčuk se nalazi na železničkoj liniji Izmir–Ajdin i lako je dostupan vozom, autobusom ili kratkom vožnjom iz Izmira i priobalnih letovališta, a sam lokalitet je tik uz put ispod brda sa tvrđavom.`,
+          `Hram je otvoren, nizak lokalitet i obično besplatan za ulazak, najbolje se ceni u mekšoj svetlosti jutra ili kasnog popodneva kada usamljeni stub hvata sunce a rode su aktivne. Proleće i jesen su najprijatnije sezone; leto oko Efesa može biti vrlo vrelo, pa ponesite vodu i zaštitu od sunca u svako doba godine.`,
+          `Pošto danas tako malo stoji, Artemidin hram nagrađuje maštu više od razgledanja, i upravo tu licencirani lokalni vodič VibeGuide čini razliku. Vodič može utkati hram, Efes, Baziliku svetog Jovana i džamiju Isa Bej u jedan itinerer Selčuka i ponovo izgraditi iščezlo čudo u vašem umu, pa jedan stub postane najveći hram drevnog sveta.`,
+        ],
+        ctaTitle: `Upoznajte Artemidin hram uz lokalca`,
+        ...EPH.sr,
       },
     },
   },
@@ -9740,6 +10262,35 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Разгледайте крепостта Бодрум с местен гид`,
         ...BOD.bg,
       },
+      sr: {
+        name: `Bodrum tvrđava`,
+        metaTitle: `Bodrum tvrđava i podvodni muzej — ture sa lokalnim vodičima`,
+        metaDescription:
+          `Istražite Bodrum tvrđavu, tvrđavu vitezova hospitalaca nad lukom, uz licenciranog lokalnog vodiča. Krstaške kule, Muzej podvodne arheologije i olupina Uluburun.`,
+        intro: [
+          `Bodrum tvrđava, tvrđava svetog Petra, stoji na straži nad tirkiznom lukom grada poput kamene krune. Vitezovi hospitalci počeli su da je podižu početkom 15. veka, doteglivši blokove iz porušenog Mauzoleja u Halikarnasu — jednog od Sedam svetskih čuda antike — pa su delovi grobnice drevnog kralja utkani u zidine krstaške tvrđave.`,
+          `Njene kule i dalje nose imena naroda koji su ih sagradili — engleska, francuska, italijanska, nemačka i Zmijska kula — i svaka se uzdiže nad marinom sa širokim pogledima na Egej. Unutra, tvrđava sadrži čuveni Muzej podvodne arheologije, gde drevne olupine brodova, amfore i blaga bronzanodobne olupine Uluburun pričaju priču o moru. Uz lokalnog stručnjaka VibeGuide slojevi krstaške, osmanske i drevne istorije dolaze na svoje mesto.`,
+        ],
+        highlights: [
+          { title: `Kule vitezova`, desc: `Engleska, francuska, italijanska, nemačka i Zmijska kula uzdižu se nad lukom, sagrađene različitim jezicima reda hospitalaca u 15. veku.` },
+          { title: `Muzej podvodne arheologije`, desc: `Jedan od najboljih te vrste, izlaže drevne olupine brodova, amfore i staklo izvučene sa dna Egeja.` },
+          { title: `Olupina Uluburun`, desc: `Nalazi sa trgovačkog broda iz 14. veka p. n. e. — bakar, poluge, zlato i egzotičan teret — otkrivaju bronzanodobnu trgovinu preko celog istočnog Sredozemlja.` },
+        ],
+        faqs: [
+          { q: `Da li Bodrum tvrđava vredi posete?`, a: `Itekako. To je jedna od najbolje očuvanih krstaških tvrđava na Sredozemlju i takođe dom svetski priznatog Muzeja podvodne arheologije, sve uokvireno nekim od najlepših pogleda na luku egejske obale.` },
+          { q: `Šta se nalazi unutar Bodrum tvrđave?`, a: `Tvrđava sadrži Muzej podvodne arheologije, sa drevnim olupinama brodova, hiljadama amfora, staklom i blagom bronzanodobne olupine Uluburun, uz istorijske engleske, francuske, italijanske, nemačke i Zmijsku kulu.` },
+          { q: `Da li je Bodrum tvrđava povezana sa Mauzolejom u Halikarnasu?`, a: `Da. Vitezovi hospitalci ponovo su iskoristili kamenje iz porušenog Mauzoleja — jednog od Sedam svetskih čuda antike — da sagrade tvrđavu. Sam lokalitet Mauzoleja leži na kratkoj šetnji uzbrdo u gradu i savršeno se uparuje sa posetom tvrđavi.` },
+          { q: `Da li mi je potreban vodič za Bodrum tvrđavu?`, a: `Možete lutati sami, ali tvrđava spaja krstašku, osmansku i drevnu pomorsku istoriju koju je lako promašiti. Licencirani lokalni vodič VibeGuide povezuje kule, olupine i Mauzolej u jednu jasnu priču.` },
+        ],
+        planningHeading: `Planiranje posete`,
+        planningParagraphs: [
+          `Bodrum tvrđava nalazi se tačno na poluostrvu između dva gradska zaliva, pa je gotovo odasvud u centru kratka, slikovita šetnja duž marine. Većina posetilaca stiže u Bodrum putem sa aerodroma Milas–Bodrum, ili trajektom sa okolne obale i obližnjih grčkih ostrva, a tvrđavu je nemoguće promašiti na silueti iznad luke.`,
+          `Leto na Egeju je vrelo i gužvovito, pa su najblaža, najmirnija vremena za uspon na bedeme kasno proleće i rana jesen. Jutra donose najmekšu svetlost za fotografije nad marinom, a morski povetarci čine otvorene terase prijatnim čak i u vrhuncu sezone. Nosite čvrste cipele — tvrđava je sagrađena na steni, sa stepenicama, rampama i neravnim tlom svuda.`,
+          `Ulaz u tvrđavu i njen Muzej podvodne arheologije je sa kartom, a lokalitet spaja tvrđavu, nekoliko kula i muzejske dvorane u jednu posetu. Licencirani lokalni vodič VibeGuide može vam pomoći da sve to razumete — povezujući krstaške kule sa potopljenim teretom ispod, i dodajući kratak uspon do ostataka Mauzoleja u Halikarnasu, drevnog čuda čije je kamenje pomoglo da se sagrade zidine.`,
+        ],
+        ctaTitle: `Upoznajte Bodrum tvrđavu uz lokalca`,
+        ...BOD.sr,
+      },
     },
   },
   {
@@ -10245,6 +10796,35 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Разгледайте Гьобекли Тепе с местен гид`,
         ...SAN.bg,
       },
+      sr: {
+        name: `Gebekli Tepe`,
+        metaTitle: `Ture Gebekli Tepe (najstariji hram na svetu) sa lokalnim vodičima`,
+        metaDescription:
+          `Posetite Gebekli Tepe kod Šanliurfe uz licenciranog lokalnog vodiča — najstariji poznati hram na svetu, sagrađen oko 9600. p. n. e, 6.000 godina pre Stounhendža. Baština UNESKO.`,
+        intro: [
+          `Gebekli Tepe je najstarije poznato monumentalno svetilište na Zemlji, podignuto oko 9600. p. n. e — otprilike 6.000 godina pre Stounhendža i piramida u Gizi. Na golom vrhu brda kod Šanliurfe u jugoistočnoj Turskoj, lovci-sakupljači koji još nisu izmislili grnčariju, pismo ni zemljoradnju nekako su vadili iz kamenoloma, klesali i podizali velike prstenove stubova od krečnjaka u obliku slova T. To je otkriće koje je izmenilo priču o civilizaciji: ovde je hram možda došao pre grada.`,
+          `Stubovi stoje i do nekoliko metara visoki i isklesani su u reljefu sa lisicama, veprovima, zmijama, škorpijama i ždralovima — kameni bestijarij sa osvita verovanja. Danas moderna natkrivena staza štiti ograde i pušta vas da gledate dole u njih bez dodirivanja ovog krhkog mesta. Pošto je toliko toga nevidljivo neuvežbanom oku, licencirani lokalni vodič VibeGuide je neophodan da pročita simbole i objasni zašto je Gebekli Tepe sve promenio.`,
+        ],
+        highlights: [
+          { title: `Prvi hram na svetu`, desc: `Sagrađen oko 9600. p. n. e. od neolitskih ljudi pre grnčarije — oko 6.000 godina stariji od Stounhendža — i upisan kao baština UNESKO.` },
+          { title: `Isklesani T-stubovi`, desc: `Veliki krečnjački stubovi raspoređeni u prstenove, isklesani u reljefu sa lisicama, veprovima, zmijama, škorpijama i ždralovima sa osvita religije.` },
+          { title: `Urfa čovek u Šanliurfi`, desc: `Uparite lokalitet sa Arheološkim muzejom Šanliurfe, domom originalnih stubova i 11.000 godina starog Urfa čoveka, najstarije poznate statue čoveka u prirodnoj veličini.` },
+        ],
+        faqs: [
+          { q: `Koliko je star Gebekli Tepe?`, a: `Gebekli Tepe je sagrađen oko 9600. p. n. e, što ga čini starim otprilike 11.000 godina — oko 6.000 godina starijim od Stounhendža i egipatskih piramida, i najstarijim poznatim monumentalnim hramom na svetu.` },
+          { q: `Zašto je Gebekli Tepe toliko važan?`, a: `Podigli su ga lovci-sakupljači pre grnčarije, pisma ili zemljoradnje, što sugeriše da su organizovana religija i monumentalna gradnja možda došle pre naseljenog seoskog života — obarajući staru zamisao da je zemljoradnja bila prva. To je baština UNESKO.` },
+          { q: `Kako da stignem do Gebekli Tepea?`, a: `Lokalitet je oko 20 km od Šanliurfe u jugoistočnoj Turskoj. Većina posetilaca sleće u Šanliurfu i do Gebekli Tepea stiže automobilom, taksijem ili organizovanom turom, uz posetiteljski centar, šatl i natkrivenu stazu na lokalitetu.` },
+          { q: `Da li mi je potreban vodič za Gebekli Tepe?`, a: `Snažno se preporučuje. Veliki deo značenja lokaliteta nevidljiv je bez konteksta, a licencirani lokalni vodič VibeGuide objašnjava T-stubove, rezbarije životinja i zašto je otkriće izmenilo ljudsku istoriju — pa to povezuje sa Urfa čovekom u gradskom muzeju.` },
+        ],
+        planningHeading: `Planiranje posete`,
+        planningParagraphs: [
+          `Gebekli Tepe leži oko 20 km od centra Šanliurfe, najbližeg grada i prirodne baze za posetu. Većina putnika sleće u Šanliurfu i do lokaliteta stiže automobilom, taksijem ili organizovanom turom kratkim, dobro obeleženim putem koji se završava kod posetiteljskog centra, odakle šatl i staza vode do ograda. U blizini nema mnogo drugog, pa je najbolje kombinovati ga sa samim gradom.`,
+          `Vrh brda je otvoren i izložen, sa gotovo nimalo hlada, pa letnje sunce jugoistočne Turske može biti nemilosrdno. Ciljajte na rano jutro ili kasno popodne i ponesite vodu, šešir i zaštitu od sunca; proleće i jesen su najprijatnije sezone sveukupno. Natkrivena staza vas drži iznad ograda, pa nosite udobne cipele za blagu šetnju.`,
+          `Ulaz je sa kartom, a ono što Gebekli Tepe čini nezaboravnim jeste razumevanje onoga što gledate — inače stubovi mogu izgledati kao obično kamenje na brdu. Licencirani lokalni vodič VibeGuide oživljava ograde, dešifruje reljefe životinja i povezuje lokalitet sa Arheološkim muzejom Šanliurfe, gde originalni stubovi i zapanjujući Urfa čovek dovršavaju priču.`,
+        ],
+        ctaTitle: `Upoznajte Gebekli Tepe uz lokalca`,
+        ...SAN.sr,
+      },
     },
   },
   {
@@ -10718,6 +11298,34 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `Разгледайте Сумелския манастир с местен гид`,
         ...TZN.bg,
+      },
+      sr: {
+        name: `Manastir Sumela`,
+        metaTitle: `Manastir Sumela — ture i lokalni vodiči`,
+        metaDescription:
+          `Posetite manastir Sumela kod Trabzona uz proverenog lokalnog vodiča — grčki pravoslavni manastir na litici koji se drži uz okomitu stenu 300 m iznad maglovite šumske doline.`,
+        intro: [
+          `Manastir Sumela jedan je od najimpozantnijih prizora Turske — grčki pravoslavni manastir uzidan u okomitu liticu 300 metara iznad zelene, maglom obavijene doline u planinama južno od Trabzona. Osnovan u 4. veku i obnavljan tokom više od hiljadu godina, njegove oslikane kapele kao da izrastaju pravo iz stene.`,
+          `Uz lokalnog stručnjaka VibeGuide uspon kroz borovu šumu postaje priča — vizantijski monasi, čudotvorna ikona Bogorodice, u steni isklesana crkva i vekovi hodočasnika koji su putovali ovamo. Razumećete šta gledate, svojim tempom i na svom jeziku.`,
+        ],
+        highlights: [
+          { title: `Ambijent na litici`, desc: `Manastir koji se drži uz okomiti zid stene 300 m iznad doline Altindere — nezaboravan prvi prizor.` },
+          { title: `Vizantijske freske`, desc: `Živopisne oslikane scene koje prekrivaju Crkvu u steni, naslagane kroz vekove života manastira.` },
+          { title: `Pristup kroz šumu`, desc: `Šetnja uzbrdo kroz sveže borove šume i planinsku maglu do kapije manastira.` },
+        ],
+        faqs: [
+          { q: `Kako se stiže do manastira Sumela?`, a: `Sumela se nalazi u dolini Altindere oko 45 km južno od Trabzona, otprilike sat vremena putem. Većina posetilaca vozi, uzima taksi ili se pridružuje turi iz Trabzona, pa hoda poslednju šumsku stazu do ulaza u manastir.` },
+          { q: `Da li vam je potreban vodič za manastir Sumela?`, a: `Ambijent govori sam za sebe, ali su freske i duga vizantijska istorija manastira nevidljive bez konteksta. Lokalni vodič VibeGuide oživljava ikone, legende i vekove hodočašća.` },
+          { q: `Da li se u Sumeli mnogo hoda?`, a: `Da — dolazak do manastira uključuje šetnju uz šumsku stazu, a sam lokalitet ima stepenike i neravne površine. Nosite udobne cipele i imajte na umu da može biti sveže i vlažno čak i leti.` },
+        ],
+        planningHeading: `Planiranje posete`,
+        planningParagraphs: [
+          `Sumela leži u nacionalnom parku Dolina Altindere, oko 45 km južno od Trabzona na crnomorskoj obali Turske, otprilike sat vremena vožnje u unutrašnjost, u planine. Većina posetilaca odsedne u Trabzonu — koji ima aerodrom sa domaćim letovima — i do manastira stiže automobilom, taksijem ili organizovanom turom. Sa parkinga u dolini šatl i pešačka staza vode uzbrdo kroz šumu do ulaza.`,
+          `Dođite u kasno proleće, leto ili ranu jesen: planinski put se može zatvoriti zbog zimskog snega, a dolina je često obavijena maglom i kišom. Jutra su najbolja za bistrije poglede pre nego što se skupe oblaci. Čak i leti ostaje sveže i vlažno na visini, pa ponesite sloj odeće i kišnu jaknu, i očekujte uspon po stepenicima i šumskim stazama — čvrste cipele su važne.`,
+          `Manastir je prošao kroz veliku obnovu, pa proverite trenutni status otvaranja pre polaska. Veliki deo značenja Sumele — vizantijske freske, sveti izvor, u steni isklesane kapele i priča o čudotvornoj ikoni — lako je promašiti bez konteksta. Licencirani lokalni vodič VibeGuide planira vaše vreme oko vremenskih uslova i gužvi i pretvara zadivljujući pogled u hiljadu godina žive istorije.`,
+        ],
+        ctaTitle: `Upoznajte manastir Sumela uz lokalca`,
+        ...TZN.sr,
       },
     },
   },
@@ -11193,6 +11801,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Разгледайте Троя с местен гид`,
         ...CKL.bg,
       },
+      sr: {
+        name: `Troja (Truva)`,
+        metaTitle: `Drevni grad Troja — ture i lokalni vodiči`,
+        metaDescription:
+          `Istražite drevni grad Troju kod Čanakalea uz proverenog lokalnog vodiča — legendarno mesto Homerove Ilijade, baština UNESKO sa devet naslaganih gradova.`,
+        intro: [
+          `Troja je najlegendarniji arheološki lokalitet na svetu — grad Homerove Ilijade, Ahileja, Hektora i drvenog konja. Na niskom brežuljku kod Čanakalea, sa pogledom na ravnicu ka Dardanelima, devet gradova sagrađeno je jedan povrh drugog kroz više od 3.000 godina, od bronzanog doba do rimskih vremena.`,
+          `Ruševine nagrađuju one koji znaju priču. Uz lokalnog stručnjaka VibeGuide, naslagani zidovi, rampe i temelji ožive — gde se mit susreće sa arheologijom, kako je Šliman ovde kopao i šta se zaista dogodilo na ovoj vetrom šibanoj ravnici. Replika drvenog konja obeležava mesto, ali je prava čar razumeti slojeve pod svojim nogama.`,
+        ],
+        highlights: [
+          { title: `Homerov legendarni grad`, desc: `Poprište Ilijade i Trojanskog rata — mit i istorija isprepleteni na jednom drevnom brežuljku.` },
+          { title: `Devet gradova u jednom`, desc: `Sloj na sloj naselja od bronzanog doba do Rima, otkriveni u iskopanim zidovima i rovovima.` },
+          { title: `Baština UNESKO`, desc: `Lokalitet izuzetne univerzalne vrednosti, sa modernim muzejom u blizini koji izlaže njegove najlepše nalaze.` },
+        ],
+        faqs: [
+          { q: `Gde je Troja i kako se stiže do nje?`, a: `Troja leži oko 30 km jugozapadno od Čanakalea u severozapadnoj Turskoj, blizu Dardanela. Većina posetilaca odsedne u Čanakaleu i do lokaliteta stiže automobilom, taksijem ili turom; dobro se uparuje i sa posetom Galipolju.` },
+          { q: `Ima li šta da se vidi u Troji, ili samo ruševine?`, a: `Troja je arheološki lokalitet zidova, temelja i slojeva iskopavanja, a ne hramova koji stoje, pa je kontekst sve. Vodič otkriva devet gradova, mit i istoriju — a odličan Muzej Troje u blizini izlaže najlepše predmete.` },
+          { q: `Da li vam je potreban vodič za Troju?`, a: `Snažno se preporučuje. Veliki deo značaja Troje nevidljiv je neuvežbanom oku. Lokalni vodič VibeGuide oživljava Homerov ep, naslagane gradove i Šlimanova iskopavanja da lokalitet dobije smisao.` },
+        ],
+        planningHeading: `Planiranje posete`,
+        planningParagraphs: [
+          `Troja se nalazi oko 30 km jugozapadno od Čanakalea u severozapadnoj Turskoj, blizu egejske obale i moreuza Dardaneli. Većina posetilaca odsedne u Čanakaleu — dostupnom autobusom ili kratkim letom i trajektom — i vozi, uzima taksi ili ide na turu do lokaliteta. Troja se prirodno uparuje sa galipoljskim bojištima preko moreuza, a izvanredan Muzej Troje nalazi se pored ruševina.`,
+          `Proleće i jesen nude najprijatnije vreme; leto na izloženom brežuljku je vrelo sa malo hlada. Ostavite par sati za lokalitet i više za muzej. Ponesite šešir, vodu i udobne cipele za neravne arheološke staze, i krenite ranije u toku dana da izbegnete i vrućinu i gužve turističkih autobusa.`,
+          `Troja je lokalitet gde priča znači više od bilo kog pojedinačnog zida koji stoji — bez nje, ruševine mogu delovati kao zbunjujuća gomila kamenja. Licencirani lokalni vodič VibeGuide raspetljava devet naslaganih gradova, priča priču o Ilijadi i Trojanskom konju, objašnjava sporna iskopavanja Hajnriha Šlimana i povezuje ruševine sa blagom u Muzeju Troje za dan koji legendu konačno čini stvarnom.`,
+        ],
+        ctaTitle: `Upoznajte Troju uz lokalca`,
+        ...CKL.sr,
+      },
     },
   },
   {
@@ -11667,6 +12303,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Разгледайте връх Немрут с местен гид`,
         ...NMR.bg,
       },
+      sr: {
+        name: `Planina Nemrut`,
+        metaTitle: `Planina Nemrut — ture i lokalni vodiči`,
+        metaDescription:
+          `Posetite planinu Nemrut uz proverenog lokalnog vodiča — kolosalne kamene glave bogova i kraljeva stare 2.000 godina krune vrh na 2.150 m, izlazak sunca baštine UNESKO kakvog nema.`,
+        intro: [
+          `Planina Nemrut jedan je od najneobičnijih prizora u Turskoj — svetilište na vrhu planine na 2.150 metara gde kolosalne kamene glave bogova, kraljeva i orlova gledaju preko vrhova. Sagrađeno u 1. veku p. n. e. kao grobnica-svetilište kralja Antioha I od Komagene, njegove džinovske statue skotrljale su se sa svojih tela i sada sede razbacane po terasama na vrhu.`,
+          `Putnici se penju pre zore da gledaju izlazak sunca nad glavama — nezaboravan, gotovo ovozemaljski doživljaj. Uz lokalnog stručnjaka VibeGuide, čudno stapanje grčkih i persijskih bogova, izgubljeno kraljevstvo Komagene i tajna Antiohove skrivene grobnice sve dolaze u fokus, svojim tempom i na svom jeziku.`,
+        ],
+        highlights: [
+          { title: `Kolosalne glave`, desc: `Džinovske isklesane glave bogova i kraljeva, skotrljane sa svojih prestola i razbacane po terasama na vrhu.` },
+          { title: `Izlazak sunca na vrhu`, desc: `Klasičan doživljaj: posmatranje svitanja nad statuama na 2.150 metara, u hladnom planinskom vazduhu.` },
+          { title: `Izgubljeno kraljevstvo Komagene`, desc: `Grobnica-svetilište iz 1. veka p. n. e. koje spaja grčke i persijske bogove — baština UNESKO.` },
+        ],
+        faqs: [
+          { q: `Kako se stiže do planine Nemrut?`, a: `Do Nemruta se stiže iz Adijamana ili Kahte u jugoistočnoj Turskoj, obično automobilom, taksijem ili organizovanom turom, a zatim kratkom ali strmom šetnjom do terasa na vrhu. Mnogi posetioci lete u Adijaman ili Malatju i nastavljaju putem.` },
+          { q: `Da li se isplati penjanje za izlazak sunca na Nemrutu?`, a: `Za mnoge je izlazak sunca nad džinovskim glavama vrhunac celog putovanja — ali znači vrlo rani, hladan polazak. Zalazak sunca je blaža alternativa. Lokalni vodič vam pomaže da izaberete i planira vreme i uspon.` },
+          { q: `Da li vam je potreban vodič za planinu Nemrut?`, a: `Snažno se preporučuje. Statue su zapanjujuće, ali je priča o Komageni i kralju Antiohu nevidljiva bez konteksta. Lokalni vodič VibeGuide objašnjava bogove, grobnicu i kraljevstvo i stara se o vremenu za izlazak ili zalazak sunca.` },
+        ],
+        planningHeading: `Planiranje posete`,
+        planningParagraphs: [
+          `Planina Nemrut uzdiže se u jugoistočnoj Turskoj, najčešće se do nje stiže iz gradova Adijaman ili Kahta. Mnogi putnici lete u Adijaman ili Malatju i nastavljaju automobilom, taksijem ili organizovanom turom uz planinski put, koji se završava na parkingu ispod vrha. Odatle kratka ali strma šetnja po neravnom tlu vodi do istočne i zapadne terase gde stoje statue.`,
+          `Klasično vreme za posetu je izlazak ili zalazak sunca, kada niska svetlost obasjava kolosalne glave — izlazak sunca je najčuveniji, ali znači hladan polazak pre zore. Vrh je dostupan samo u toplijim mesecima, otprilike od kasnog proleća do rane jeseni, jer sneg zatvara put zimi. Čak i leti je hladno i vetrovito na 2.150 metara, pa ponesite tople slojeve odeće i nosite čvrste cipele za uspon.`,
+          `Nemrutove skotrljane glave su nezaboravne, ali značenje iza njih — iščezlo kraljevstvo Komagene, Antiohovo polaganje prava na božansko poreklo, stapanje grčkih i persijskih bogova i još neotkrivena grobnica ispod veštačkog vrha — treba ispričati. Licencirani lokalni vodič VibeGuide planira vreme za izlazak ili zalazak sunca, vodi uspon i pretvara mnoštvo džinovskih kamenih lica u jednu od najčudnijih i najdirljivijih priča drevnog sveta.`,
+        ],
+        ctaTitle: `Upoznajte planinu Nemrut uz lokalca`,
+        ...NMR.sr,
+      },
     },
   },
   {
@@ -12140,6 +12804,34 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `Разгледайте античния Сиде с местен гид`,
         ...ANT.bg,
+      },
+      sr: {
+        name: `Drevni grad Side`,
+        metaTitle: `Drevni grad Side — ture i lokalni vodiči`,
+        metaDescription:
+          `Istražite drevni Side kod Antalije uz proverenog lokalnog vodiča — grčko-rimski lučki grad gde hram Apolona stoji tačno na obali Sredozemlja.`,
+        intro: [
+          `Side je jedan od najlepših drevnih lokaliteta Tirkizne obale — grčko-rimski lučki grad smešten na malom poluostrvu, gde se mermerne ruševine prelivaju pravo do Sredozemnog mora. Njegov priobalni hram Apolona, čiji stubovi blistaju o zalasku sunca iznad vode, jedan je od najfotografisanijih prizora na čitavoj obali.`,
+          `Nekad velika luka i, ozloglašeno, središte trgovine robljem i piraterije, Side danas spaja dobro očuvan drevni grad sa živahnim primorskim mestom. Uz lokalnog stručnjaka VibeGuide, veliko pozorište, ulice sa kolonadama i hram pored mora ožive — rimski trgovci, lučka trgovina i slojevi istorije ispod letovališta.`,
+        ],
+        highlights: [
+          { title: `Hram Apolona`, desc: `Mermerni stubovi koji stoje tačno na obali, blistajući zlatno o zalasku sunca iznad Sredozemlja — prepoznatljiva slika Sidea.` },
+          { title: `Veliko pozorište`, desc: `Jedno od najvećih rimskih pozorišta u regionu, nekad sa mestima za oko 15.000 gledalaca.` },
+          { title: `Drevni grad pored mora`, desc: `Ulice sa kolonadama, agora i monumentalne kapije utkane kroz živo primorsko mesto.` },
+        ],
+        faqs: [
+          { q: `Gde je Side i kako se stiže do njega?`, a: `Side leži na mediteranskoj obali oko 75 km istočno od Antalije, kod Manavgata. Većina posetilaca stiže automobilom, taksijem ili turom iz Antalije ili okolnih letovališta; to je lak i popularan jednodnevni izlet.` },
+          { q: `Da li vam je potreban vodič za Side?`, a: `Ruševine su utkane kroz moderno mesto, pa je lako promašiti šta gledate. Lokalni vodič VibeGuide otkriva hram Apolona, pozorište i agoru i priča priču o luci Sidea, trgovini i piratskoj prošlosti.` },
+          { q: `Koje je najbolje vreme za posetu Sideu?`, a: `Proleće i jesen nude toplo, udobno vreme i ređe gužve. Leti obiđite ruševine rano ili kasno da izbegnete podnevnu vrućinu — i uskladite hram Apolona sa zalaskom sunca, kada je najlepši.` },
+        ],
+        planningHeading: `Planiranje posete`,
+        planningParagraphs: [
+          `Side se nalazi na malom poluostrvu na mediteranskoj obali, oko 75 km istočno od Antalije, kod gradića Manavgata. To je lak jednodnevni izlet iz Antalije i okolnih letovališta automobilom, taksijem ili organizovanom turom, a aerodrom Antalije čini čitavo područje jednostavnim za dolazak. Drevni grad je utkan pravo kroz moderno letovalište, pa lutate među ruševinama, radnjama i kafićima dok idete.`,
+          `Proleće i jesen donose najudobnije vreme za istraživanje otvorenih ruševina, dok je leto vrelo — izložene lokalitete obiđite rano ili kasno u toku dana. Sačuvajte priobalni hram Apolona za zalazak sunca, kada mu stubovi postaju zlatni iznad vode a gužve se prorede. Nosite šešir, kremu za sunčanje i udobne cipele, i ponesite vodu, jer je veliki deo lokaliteta bez hlada.`,
+          `Pošto su ruševine Sidea isprepletene sa prometnim odmaralištem, lako je proći pored dve hiljade godina istorije a da ne primetite. Licencirani lokalni vodič VibeGuide povezuje razbacane delove — hram Apolona, veliko pozorište, agoru i luku — i priča priču o trgovini luke, njenoj piratskoj i robovlasničkoj prošlosti i svakodnevnom rimskom životu, pretvarajući lepu primorsku šetnju u pravi drevni grad.`,
+        ],
+        ctaTitle: `Upoznajte drevni Side uz lokalca`,
+        ...ANT.sr,
       },
     },
   },
