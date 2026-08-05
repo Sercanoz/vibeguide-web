@@ -23,6 +23,7 @@ export const ATTRACTION_LANGS = [
   "bg",
   "sr",
   "hr",
+  "zh",
 ] as const;
 export type AttractionLang = (typeof ATTRACTION_LANGS)[number];
 
@@ -48,6 +49,7 @@ export const ATTR_HEADINGS: Record<AttractionLang, { highlights: string; faq: st
   bg: { highlights: `Акценти`, faq: `Често задавани въпроси`, more: `Още за разглеждане` },
   sr: { highlights: `Najvažnije`, faq: `Često postavljana pitanja`, more: `Još za istraživanje` },
   hr: { highlights: `Vrhunci`, faq: `Često postavljana pitanja`, more: `Više za istražiti` },
+  zh: { highlights: `亮点`, faq: `常见问题`, more: `更多探索` },
 };
 
 export const RTL_LANGS: ReadonlySet<AttractionLang> = new Set(["ar"]);
@@ -73,6 +75,7 @@ export const ATTR_HUB: Record<AttractionLang, { metaTitle: string; metaDescripti
   bg: { metaTitle: `Топ забележителности на Турция — обиколки с местни гидове`, metaDescription: `Разгледайте най-великите забележителности на Турция — от Света София и Кападокия до Ефес, Памуккале и Гьобекли Тепе — с проверен местен гид.`, h1: `Топ забележителности на Турция`, intro: `От джамиите на Истанбул до античния Ефес и най-стария храм в света, открийте всяка забележителност с проверен местен гид.` },
   sr: { metaTitle: `Najznačajnije znamenitosti Turske — ture sa lokalnim vodičima`, metaDescription: `Istražite najveće znamenitosti Turske — od Aje Sofije i Kapadokije do Efesa, Pamukala i Gebekli Tepea — uz proverenog lokalnog vodiča.`, h1: `Najznačajnije znamenitosti Turske`, intro: `Od istanbulskih džamija do drevnog Efesa i najstarijeg hrama na svetu, otkrijte svaku znamenitost uz proverenog lokalnog vodiča.` },
   hr: { metaTitle: `Najbolje znamenitosti Turske — ture s lokalnim vodičima`, metaDescription: `Istražite najveće turske znamenitosti — od Aje Sofije i Kapadokije do Efeza, Pamukkalea i Göbekli Tepea — s provjerenim lokalnim vodičem.`, h1: `Najbolje znamenitosti Turske`, intro: `Od istanbulskih džamija do antičkog Efeza i najstarijeg hrama na svijetu, otkrijte svaku znamenitost s provjerenim lokalnim vodičem.` },
+  zh: { metaTitle: `土耳其顶级景点——当地向导之旅`, metaDescription: `在认证当地向导的带领下探索土耳其最伟大的地标——从圣索菲亚大教堂、卡帕多奇亚到以弗所、棉花堡和哥贝克力石阵。`, h1: `土耳其顶级景点`, intro: `从伊斯坦布尔的清真寺到古城以弗所，再到世界上最古老的神庙，在认证当地向导的带领下发现每一处地标。` },
 };
 
 export type AttractionContent = {
@@ -161,6 +164,7 @@ const IST: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   bg: { toursHeading: `Обиколки на Истанбул с местни гидове`, ctaSub: `Изтеглете VibeGuide безплатно и се свържете с проверен гид за Истанбул за секунди.` },
   sr: { toursHeading: `Ture Istanbula sa lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i spojite se sa proverenim istanbulskim vodičem za 60 sekundi.` },
   hr: { toursHeading: `Ture Istanbulom s lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i povežite se s provjerenim istanbulskim vodičem za 60 sekundi.` },
+  zh: { toursHeading: `伊斯坦布尔当地向导之旅`, ctaSub: `免费下载VibeGuide，60秒内匹配一位认证的伊斯坦布尔向导。` },
 };
 
 // Efes (İzmir / Selçuk) ortak metinleri.
@@ -184,6 +188,7 @@ const EPH: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   bg: { toursHeading: `Обиколки на Ефес с местни гидове`, ctaSub: `Изтеглете VibeGuide безплатно и се свържете с проверен местен гид за Ефес за секунди.` },
   sr: { toursHeading: `Ture Efesa sa lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i spojite se sa proverenim lokalnim vodičem za Efes za 60 sekundi.` },
   hr: { toursHeading: `Ture Efezom s lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i povežite se s provjerenim lokalnim vodičem za Efez za 60 sekundi.` },
+  zh: { toursHeading: `以弗所当地向导之旅`, ctaSub: `免费下载VibeGuide，60秒内匹配一位认证的以弗所当地向导。` },
 };
 
 // Kapadokya (Nevşehir / Göreme) ortak metinleri.
@@ -207,6 +212,7 @@ const CAP: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   bg: { toursHeading: `Обиколки на Кападокия с местни гидове`, ctaSub: `Изтеглете VibeGuide безплатно и се свържете с проверен гид за Кападокия за секунди.` },
   sr: { toursHeading: `Ture Kapadokije sa lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i spojite se sa proverenim vodičem za Kapadokiju za 60 sekundi.` },
   hr: { toursHeading: `Ture Kapadokijom s lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i povežite se s provjerenim kapadokijskim vodičem za 60 sekundi.` },
+  zh: { toursHeading: `卡帕多奇亚当地向导之旅`, ctaSub: `免费下载VibeGuide，60秒内匹配一位认证的卡帕多奇亚向导。` },
 };
 
 // İzmir / Bergama (Pergamon) ortak metinleri.
@@ -230,6 +236,7 @@ const IZM: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   bg: { toursHeading: `Обиколки на Измир с местни гидове`, ctaSub: `Изтеглете VibeGuide безплатно и се свържете с проверен гид за Измир за секунди.` },
   sr: { toursHeading: `Ture Izmira sa lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i spojite se sa proverenim izmirskim vodičem za 60 sekundi.` },
   hr: { toursHeading: `Ture Izmirom s lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i povežite se s provjerenim izmirskim vodičem za 60 sekundi.` },
+  zh: { toursHeading: `伊兹密尔当地向导之旅`, ctaSub: `免费下载VibeGuide，60秒内匹配一位认证的伊兹密尔向导。` },
 };
 
 // Antalya (Aspendos / Kaleiçi) ortak metinleri.
@@ -253,6 +260,7 @@ const ANT: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   bg: { toursHeading: `Обиколки на Анталия с местни гидове`, ctaSub: `Изтеглете VibeGuide безплатно и се свържете с проверен гид за Анталия за секунди.` },
   sr: { toursHeading: `Ture Antalije sa lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i spojite se sa proverenim antalijskim vodičem za 60 sekundi.` },
   hr: { toursHeading: `Ture Antalijom s lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i povežite se s provjerenim antalijskim vodičem za 60 sekundi.` },
+  zh: { toursHeading: `安塔利亚当地向导之旅`, ctaSub: `免费下载VibeGuide，60秒内匹配一位认证的安塔利亚向导。` },
 };
 
 // Pamukkale / Hierapolis (Denizli) ortak metinleri.
@@ -276,6 +284,7 @@ const PAM: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   bg: { toursHeading: `Обиколки на Памуккале с местни гидове`, ctaSub: `Изтеглете VibeGuide безплатно и се свържете с проверен гид за Памуккале за секунди.` },
   sr: { toursHeading: `Ture Pamukala sa lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i spojite se sa proverenim vodičem za Pamukale za 60 sekundi.` },
   hr: { toursHeading: `Ture Pamukkaleom s lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i povežite se s provjerenim pamukkaleskim vodičem za 60 sekundi.` },
+  zh: { toursHeading: `棉花堡当地向导之旅`, ctaSub: `免费下载VibeGuide，60秒内匹配一位认证的棉花堡向导。` },
 };
 
 // Bodrum (kale + antik Halikarnas) ortak metinleri.
@@ -299,6 +308,7 @@ const BOD: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   bg: { toursHeading: `Обиколки на Бодрум с местни гидове`, ctaSub: `Изтеглете VibeGuide безплатно и се свържете с проверен гид за Бодрум за секунди.` },
   sr: { toursHeading: `Ture Bodruma sa lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i spojite se sa proverenim bodrumskim vodičem za 60 sekundi.` },
   hr: { toursHeading: `Ture Bodrumom s lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i povežite se s provjerenim bodrumskim vodičem za 60 sekundi.` },
+  zh: { toursHeading: `博德鲁姆当地向导之旅`, ctaSub: `免费下载VibeGuide，60秒内匹配一位认证的博德鲁姆向导。` },
 };
 
 // Şanlıurfa / Göbeklitepe ortak metinleri.
@@ -322,6 +332,7 @@ const SAN: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   bg: { toursHeading: `Обиколки на Шанлъурфа и Гьобекли Тепе с местни гидове`, ctaSub: `Изтеглете VibeGuide безплатно и се свържете с проверен местен гид в Шанлъурфа за секунди.` },
   sr: { toursHeading: `Ture Šanliurfe i Gebekli Tepea sa lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i spojite se sa proverenim lokalnim vodičem u Šanliurfi za 60 sekundi.` },
   hr: { toursHeading: `Ture Şanlıurfom i Göbekli Tepeom s lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i povežite se s provjerenim lokalnim vodičem u Şanlıurfi za 60 sekundi.` },
+  zh: { toursHeading: `尚勒乌尔法与哥贝克力石阵当地向导之旅`, ctaSub: `免费下载VibeGuide，60秒内匹配一位认证的尚勒乌尔法当地向导。` },
 };
 
 // Trabzon (Sümela) ortak metinleri.
@@ -345,6 +356,7 @@ const TZN: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   bg: { toursHeading: `Обиколки на Трабзон с местни гидове`, ctaSub: `Изтеглете VibeGuide безплатно и се свържете с проверен гид за Трабзон за секунди.` },
   sr: { toursHeading: `Ture Trabzona sa lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i spojite se sa proverenim trabzonskim vodičem za 60 sekundi.` },
   hr: { toursHeading: `Ture Trabzonom s lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i povežite se s provjerenim trabzonskim vodičem za 60 sekundi.` },
+  zh: { toursHeading: `特拉布宗当地向导之旅`, ctaSub: `免费下载VibeGuide，60秒内匹配一位认证的特拉布宗向导。` },
 };
 
 // Çanakkale (Truva) ortak metinleri.
@@ -368,6 +380,7 @@ const CKL: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   bg: { toursHeading: `Обиколки на Чанаккале с местни гидове`, ctaSub: `Изтеглете VibeGuide безплатно и се свържете с проверен гид за Чанаккале за секунди.` },
   sr: { toursHeading: `Ture Čanakalea sa lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i spojite se sa proverenim čanakaleškim vodičem za 60 sekundi.` },
   hr: { toursHeading: `Ture Çanakkaleom s lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i povežite se s provjerenim çanakkaleskim vodičem za 60 sekundi.` },
+  zh: { toursHeading: `恰纳卡莱当地向导之旅`, ctaSub: `免费下载VibeGuide，60秒内匹配一位认证的恰纳卡莱向导。` },
 };
 
 // Adıyaman / Nemrut ortak metinleri.
@@ -391,6 +404,7 @@ const NMR: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   bg: { toursHeading: `Обиколки на Адъяман и Немрут с местни гидове`, ctaSub: `Изтеглете VibeGuide безплатно и се свържете с проверен местен гид в Адъяман за секунди.` },
   sr: { toursHeading: `Ture Adijamana i Nemruta sa lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i spojite se sa proverenim lokalnim vodičem u Adijamanu za 60 sekundi.` },
   hr: { toursHeading: `Ture Adıyamanom i Nemrutom s lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i povežite se s provjerenim lokalnim vodičem u Adıyamanu za 60 sekundi.` },
+  zh: { toursHeading: `阿德亚曼与内姆鲁特当地向导之旅`, ctaSub: `免费下载VibeGuide，60秒内匹配一位认证的阿德亚曼当地向导。` },
 };
 
 
@@ -939,6 +953,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Pogledajte Aju Sofiju s lokalnim vodičem`,
         ...IST.hr,
       },
+      zh: {
+        name: `圣索菲亚大教堂`,
+        metaTitle: `圣索菲亚大教堂之旅与当地向导`,
+        metaDescription:
+          `在认证当地向导的带领下探索伊斯坦布尔的圣索菲亚大教堂。省去困惑，从真正的专家口中聆听1500年的拜占庭与奥斯曼历史。`,
+        intro: [
+          `圣索菲亚大教堂是伊斯坦布尔的灵魂——它曾是拜占庭的大教堂、奥斯曼的清真寺，也是守望这座城市近1500年的丰碑。它宏伟的穹顶、金色的马赛克和层层叠叠的历史，只会回馈那些真正读懂眼前之物的人。`,
+          `有了VibeGuide的当地专家，你无需再靠猜测。以自己的节奏、用自己的语言，聆听马赛克背后的故事、维京人的涂鸦，以及这座重新定义了建筑的殿堂。`,
+        ],
+        highlights: [
+          { title: `宏伟的大穹顶`, desc: `高55米，在长达1000年间一直是世界上最大的穹顶。` },
+          { title: `拜占庭马赛克`, desc: `描绘皇帝与圣徒的金箔画像，隐匿了数百年。` },
+          { title: `层叠的历史`, desc: `大教堂、清真寺、博物馆、再度成为清真寺——每个时代都留下了印记。` },
+        ],
+        faqs: [
+          { q: `参观圣索菲亚大教堂需要向导吗？`, a: `它对所有人开放，但若没有背景解读，历史便无从可见。当地向导能把一座美丽的殿堂化作1500年的故事，还能帮你避开最拥挤的时段。` },
+          { q: `参观圣索菲亚大教堂免费吗？`, a: `入场规则会随时间变化。VibeGuide向导会在你预订前告诉你当前的情况和最佳前往时间。` },
+          { q: `参观需要多长时间？`, a: `大多数导览参观为1到2小时，通常会与附近的蓝色清真寺和苏丹艾哈迈德广场一同游览。` },
+        ],
+        planningHeading: `规划你的行程`,
+        planningParagraphs: [
+          `圣索菲亚大教堂坐落在老城苏丹艾哈迈德区的中心，前往极为便捷。乘坐T1有轨电车到苏丹艾哈迈德站，步行片刻即可抵达入口。它正对着广场对面的蓝色清真寺，托普卡帕宫和地下水宫殿都在步行几分钟之内，因此非常适合纳入探索历史半岛的一天行程。`,
+          `如果可以，请一早前来。刚开门后，透过上层窗户洒落的柔和光线最为动人，而在正午旅行团到来之前，宏大的礼拜殿也要安静得多。春秋两季气候最为宜人，人流也比盛夏时少。请记住它如今是一座正在使用的清真寺，因此在每日五次礼拜期间会对游客关闭。`,
+          `入场免费，但这是一处礼拜场所，请着装得体，遮住肩膀和膝盖，女士需备一条头巾。进入殿内后，若不了解眼前之物，很容易在巨大穹顶下感到茫然。持证的VibeGuide当地向导会根据礼拜时间安排你的行程，帮你避开最拥挤的时段，让拜占庭马赛克和数百年层叠的历史鲜活起来。`,
+        ],
+        ctaTitle: `与当地人一同参观圣索菲亚大教堂`,
+        ...IST.zh,
+      },
     },
   },
 
@@ -1485,6 +1527,34 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `Prošećite Topkapijem s lokalnim vodičem`,
         ...IST.hr,
+      },
+      zh: {
+        name: `托普卡帕宫`,
+        metaTitle: `托普卡帕宫之旅与当地向导`,
+        metaDescription:
+          `在认证伊斯坦布尔向导的带领下探索奥斯曼帝国的心脏托普卡帕宫。后宫、珍宝库、圣物与博斯普鲁斯海峡的景致，一一为你讲解。`,
+        intro: [
+          `在400年间，托普卡帕宫一直是奥斯曼苏丹的居所，也是一个帝国的中心。如今，它的庭院、后宫、珍宝库和圣物，讲述着一个统治三大洲的王朝的故事。`,
+          `VibeGuide当地向导会为你理清这片庞大的宫殿群——权力所在之处、每道宫门的含义，以及珠宝背后的人间故事——让你带走的是理解，而不仅是照片。`,
+        ],
+        highlights: [
+          { title: `后宫`, desc: `苏丹家族的私密世界——瓷砖装点、神秘幽深、令人难忘。` },
+          { title: `帝国珍宝库`, desc: `托普卡帕匕首和重达86克拉的匙商钻石。` },
+          { title: `博斯普鲁斯露台`, desc: `苏丹曾在此眺望欧亚交汇的海域。` },
+        ],
+        faqs: [
+          { q: `门票包含后宫吗？`, a: `后宫通常需要单独购票。你的VibeGuide向导会告诉你哪些值得一看，并为你安排路线。` },
+          { q: `我需要多少时间？`, a: `请预留2到3小时。宫殿很大；向导会带你游览精华之处而不至于疲惫。` },
+          { q: `它离圣索菲亚大教堂近吗？`, a: `是的——托普卡帕宫、圣索菲亚大教堂和蓝色清真寺都在苏丹艾哈迈德区，步行片刻即达。` },
+        ],
+        planningHeading: `规划你的行程`,
+        planningParagraphs: [
+          `托普卡帕宫矗立在苏丹艾哈迈德区的皇宫岬顶端，位于老城尽头、博斯普鲁斯海峡与金角湾交汇之处。乘坐T1有轨电车到苏丹艾哈迈德站，沿圣索菲亚大教堂后方的小径前行；宫门就在一段愉快的上坡步行之后。由于它紧邻圣索菲亚大教堂和蓝色清真寺，宫殿很容易被纳入探索历史半岛的同一天行程。`,
+          `请在开门时准时抵达，趁旅行团尚未涌入之前走过庭院。清晨氛围最为宁静，博斯普鲁斯露台的光线也最美，宫殿园林在春秋两季尤为怡人。请给自己两到三小时细细品味，若你流连于珍宝库则需更久。出发前请查好每周闭馆日，宫殿在工作日中有一天不开放。`,
+          `这是一处需购票的景点，后宫需另购一张门票，为其瓷砖厅堂和帝王居室，这张票非常值得。整座建筑群横跨四座庭院，遍布亭阁、厨房和藏品，若不了解其故事很容易匆匆错过。持证的VibeGuide当地向导会为你安排门票和时间，按合理顺序带你游览，揭示这些高墙背后层层叠叠的奥斯曼宫廷生活。`,
+        ],
+        ctaTitle: `与当地人一同漫步托普卡帕宫`,
+        ...IST.zh,
       },
     },
   },
@@ -2033,6 +2103,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Istražite Cisternu s lokalnim vodičem`,
         ...IST.hr,
       },
+      zh: {
+        name: `地下水宫殿`,
+        metaTitle: `地下水宫殿之旅与当地向导`,
+        metaDescription:
+          `步入伊斯坦布尔的地下水宫殿，这座地下水之宫。在认证当地向导的带领下观赏美杜莎头像与336根石柱。`,
+        intro: [
+          `在苏丹艾哈迈德的街道之下，藏着地下水宫殿——一座拥有1500年历史的地下蓄水池，336根大理石柱、幽暗的光线和滴水的回声交织其中。拜占庭人建造它是为了给大皇宫供水；如今它是伊斯坦布尔最富氛围的空间之一。`,
+          `VibeGuide当地向导会为你讲解那些倒置的美杜莎头像、石柱为何取自更古老的神庙，以及在黑暗中滋生的种种传说——把一次短暂的参观化作一个真正的故事。`,
+        ],
+        highlights: [
+          { title: `美杜莎头像`, desc: `两尊古老的美杜莎面孔，一尊侧放、一尊倒置——无人能完全解释缘由。` },
+          { title: `336根石柱`, desc: `取自更古老的罗马遗迹，每一根都略有不同。` },
+          { title: `独特氛围`, desc: `清凉、幽暗、回声阵阵——宛如一处在城市之下鲜活起来的电影布景。` },
+        ],
+        faqs: [
+          { q: `地下水宫殿值得一去吗？`, a: `绝对值得——它虽短暂却令人难忘，历史更让它意蕴丰厚。向导会为你指出大多数游客擦身而过的细节。` },
+          { q: `参观需要多长时间？`, a: `通常为30到45分钟，很容易与隔壁的圣索菲亚大教堂和蓝色清真寺一同游览。` },
+          { q: `它便于无障碍通行吗？`, a: `水面之上设有步道，但也有一些台阶。你的向导会提前告诉你会遇到什么。` },
+        ],
+        planningHeading: `规划你的行程`,
+        planningParagraphs: [
+          `地下水宫殿坐落在苏丹艾哈迈德的中心，距圣索菲亚大教堂和蓝色清真寺仅一分钟步行之遥。最便捷的方式是乘坐T1有轨电车到苏丹艾哈迈德站，从那里平坦步行片刻即达入口。若你已在探索老城的主广场，只需从一处景点信步走到下一处即可。`,
+          `无论天气如何，水宫内始终清凉幽暗，因此在炎热的夏日午后是个宜人的避暑之所。即便如此，正午时分人流最多，所以提早或在午后稍晚前来能让步道更为清静。经过修复的灯光在任何时刻都别具韵味，任何季节步入这个地下世界都不会失望。`,
+          `入场需购票，你将沿水面之上的架高步道走过数百根石柱，直至尽头著名的美杜莎头像。这里氛围浓郁、回声悠远，适合慢慢探索。持证的VibeGuide当地向导可为你安排门票，避开人潮安排参观时间，并在你穿行于暗影之间时让拜占庭历史鲜活起来。`,
+        ],
+        ctaTitle: `与当地人一同探索地下水宫殿`,
+        ...IST.zh,
+      },
     },
   },
 
@@ -2580,6 +2678,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Posjetite Plavu džamiju s lokalnim vodičem`,
         ...IST.hr,
       },
+      zh: {
+        name: `蓝色清真寺`,
+        metaTitle: `蓝色清真寺之旅与当地向导`,
+        metaDescription:
+          `在认证当地向导的带领下参观伊斯坦布尔的蓝色清真寺。六座宣礼塔、两万块伊兹尼克瓷砖和一座正在使用的清真寺——以敬重之心游览并聆听讲解。`,
+        intro: [
+          `蓝色清真寺——苏丹艾哈迈德清真寺——隔着一座花园广场与圣索菲亚大教堂相望，六座宣礼塔高耸于老城之上。殿内两万多块手绘伊兹尼克瓷砖，让礼拜殿散发出著名的蓝色光晕。`,
+          `它是一座活着的清真寺，而非博物馆。VibeGuide当地向导会帮你以敬重之心前来——避开礼拜时间、注意着装与礼仪——并揭示它兴建背后的竞争与雄心。`,
+        ],
+        highlights: [
+          { title: `六座宣礼塔`, desc: `这是1616年的大胆之举，一度可与麦加相媲美。` },
+          { title: `两万块伊兹尼克瓷砖`, desc: `手绘的蓝色与绿色，也正是这座清真寺名字的由来。` },
+          { title: `层层叠落的穹顶`, desc: `一座由半穹顶构成的金字塔，勾勒出伊斯坦布尔的天际线。` },
+        ],
+        faqs: [
+          { q: `游客可以进入蓝色清真寺吗？`, a: `可以，在礼拜时间之外，着装得体即可。向导会为你安排好时间和礼仪，让你的参观顺畅而不失敬重。` },
+          { q: `我需要遮盖头部吗？`, a: `女士在殿内需遮盖头发；入口处通常备有头巾。你的向导会明确告诉你需要携带什么。` },
+          { q: `它离圣索菲亚大教堂近吗？`, a: `它们隔着苏丹艾哈迈德广场相望——步行两分钟即可到达。` },
+        ],
+        planningHeading: `规划你的行程`,
+        planningParagraphs: [
+          `蓝色清真寺矗立在苏丹艾哈迈德区，隔着一座花园广场与圣索菲亚大教堂相对，前往毫不费力。乘坐T1有轨电车到苏丹艾哈迈德站，步行几分钟便可走进广场。圣索菲亚大教堂、托普卡帕宫、赛马场和地下水宫殿都在轻松步行的范围之内，因此这座清真寺完美契合一次穿行老城最著名街区的漫步。`,
+          `请选在清晨或傍晚前来，那时光线柔和，殿内的伊兹尼克瓷砖会泛出更柔美的蓝色。这些时段也更为清静，可以避开正午的人流高峰。春秋两季气候最为宜人，人流也比盛夏时少。作为一座正在使用的礼拜场所，清真寺在每日五次礼拜期间对游客关闭，因此请将抵达时间安排在礼拜间隙。`,
+          `入场免费，但这是一座活着的清真寺，着装要求严格：需遮住肩膀和膝盖，在门口脱鞋，女士需遮盖头发，入口处提供头巾。殿内那庞大的规模和数万块瓷砖，若无背景解读会令人应接不暇。持证的VibeGuide当地向导会根据礼拜时间安排参观，处理好礼仪细节，并生动讲解六座宣礼塔、穹顶和瓷砖工艺。`,
+        ],
+        ctaTitle: `与当地人一同参观蓝色清真寺`,
+        ...IST.zh,
+      },
     },
   },
 
@@ -3126,6 +3252,34 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `Prošećite Efezom s lokalnim vodičem`,
         ...EPH.hr,
+      },
+      zh: {
+        name: `以弗所`,
+        metaTitle: `以弗所之旅与当地向导`,
+        metaDescription:
+          `在认证当地向导的带领下漫步伊兹密尔塞尔丘克附近的古城以弗所。塞尔苏斯图书馆、大剧场与大理石街道——一一为你重现。`,
+        intro: [
+          `以弗所曾是古代世界最伟大的城市之一——一座拥有二十五万人口的罗马大都市，马克·安东尼曾在此漫步，圣保罗曾在此传道。它的大理石街道、高耸的塞尔苏斯图书馆和可容纳两万五千人的剧场，至今仍矗立在塞尔丘克附近。`,
+          `VibeGuide当地向导会把废墟化作一座鲜活的城市——谁曾在此生活，他们在何处沐浴、购物、礼拜——让沉默的石头开口讲述自己的故事。`,
+        ],
+        highlights: [
+          { title: `塞尔苏斯图书馆`, desc: `两层楼高的大理石立面，曾藏有一万两千卷手稿。` },
+          { title: `大剧场`, desc: `可容纳两万五千人——如今仍用于各类活动。` },
+          { title: `山坡别墅`, desc: `罗马权贵的马赛克地面宅邸，如今有顶棚遮蔽。` },
+        ],
+        faqs: [
+          { q: `以弗所在哪里？`, a: `位于伊兹密尔省塞尔丘克附近，距伊兹密尔市约一小时车程，靠近库萨达斯港。` },
+          { q: `我需要多少时间？`, a: `请预留2到3小时游览遗址；向导会带你走在阴凉处并避开人潮。` },
+          { q: `它适合邮轮乘客吗？`, a: `适合——它是从库萨达斯出发的经典岸上游。当地向导会帮你充分利用有限的时间。` },
+        ],
+        planningHeading: `规划你的行程`,
+        planningParagraphs: [
+          `以弗所位于土耳其西部爱琴海沿岸伊兹密尔省塞尔丘克镇附近。前往极为便捷：距库萨达斯邮轮港约20分钟车程，距伊兹密尔约一小时，塞尔丘克本身乘出租车或多姆什小巴仅需几分钟。遗址有两个入口，一上一下，许多游客会在两者之间沿下坡步行。`,
+          `以弗所面积广阔，且几乎没有遮荫，因此时机与其他一切同样重要。请选在开门后不久的清晨，或午后稍晚时分前来，那时光线柔和、大理石转凉；请避开正午酷热的时段，尤其是在夏季。春秋两季最为舒适。无论何时前来，都请携带饮水、帽子和结实的鞋子，并预留两到三小时以妥善游览。`,
+          `这是一处需购票的考古遗址，保存精美的山坡别墅需另购一张非常值得的门票。这里值得细看的地方极多，从塞尔苏斯图书馆到宏伟的剧场，而依照法律，只有持证向导才能带你穿行废墟。持证的VibeGuide当地向导会处理门票和时间，找到阴凉的角落，并把零散的石头化作一座生机勃勃的城市。`,
+        ],
+        ctaTitle: `与当地人一同漫步以弗所`,
+        ...EPH.zh,
       },
     },
   },
@@ -3675,6 +3829,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Otkrijte Kapadokiju s lokalnim vodičem`,
         ...CAP.hr,
       },
+      zh: {
+        name: `卡帕多奇亚`,
+        metaTitle: `卡帕多奇亚之旅与当地向导`,
+        metaDescription:
+          `在认证当地向导的带领下探索卡帕多奇亚。热气球、精灵烟囱、洞穴教堂与地下城，尽在格雷梅及其周边。`,
+        intro: [
+          `卡帕多奇亚是一片如梦似幻的土地——遍布「精灵烟囱」的山谷、千年前绘制的岩凿教堂，以及整座整座在地下开凿而成的城市。破晓时分，数百只热气球升起在格雷梅上空，构成世界上最壮丽的景象之一。`,
+          `VibeGuide当地向导深知哪座山谷能捕捉到最佳光线、哪座洞穴教堂得以留存，以及人群尚未涉足之处——把一张著名的照片，化作对这片土地的真正理解。`,
+        ],
+        highlights: [
+          { title: `热气球`, desc: `破晓时分飞越山谷——这正是定义卡帕多奇亚的画面。` },
+          { title: `格雷梅露天博物馆`, desc: `凿入岩石、绘有壁画的拜占庭洞穴教堂。` },
+          { title: `地下城`, desc: `代林库尤和卡伊马克勒——整座整座隐匿于地下的城镇。` },
+        ],
+        faqs: [
+          { q: `卡帕多奇亚在哪里？`, a: `位于安纳托利亚中部，围绕格雷梅和内夫谢希尔，可乘飞机抵达开塞利或内夫谢希尔。` },
+          { q: `热气球飞行有保证吗？`, a: `飞行取决于天气，且需单独预订。向导会帮你围绕它安排其余行程。` },
+          { q: `我需要几天时间？`, a: `两天足以从容游览精华；当地向导能让哪怕一天也充实无比。` },
+        ],
+        planningHeading: `规划你的行程`,
+        planningParagraphs: [
+          `卡帕多奇亚位于安纳托利亚中部的内夫谢希尔省，以小镇格雷梅为核心。大多数旅客会飞抵内夫谢希尔（NAV）或较大的开塞利（ASR）机场，再乘接驳车或自驾走完最后一段路。整个地区足够紧凑，可从单一落脚地探索，那些超凡脱俗的精灵烟囱山谷几乎在你抵达的那一刻便映入眼帘。`,
+          `春秋两季最为理想，日间温和，柔美的光线为岩石景观增色。夏季炎热且人潮更多，而冬季则为精灵烟囱披上白雪，呈现更宁静、更梦幻的景致。这里的清晨如金子般美好，尤其是破晓时分热气球升起在山谷之上（视天气而定）。请预留大约两天时间，从容游览精华之处。`,
+          `格雷梅露天博物馆和地下城等主要景点需购票，热气球飞行需单独预订且取决于天气。持证的VibeGuide当地向导会帮你安排热气球体验的时间，找到最适合徒步和拍照的山谷，并让你读懂那些否则可能擦身而过的壁画教堂与洞穴居所。`,
+        ],
+        ctaTitle: `与当地人一同发现卡帕多奇亚`,
+        ...CAP.zh,
+      },
     },
   },
   {
@@ -4218,6 +4400,34 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `Pogledajte Dolmabahçe s lokalnim vodičem`,
         ...IST.hr,
+      },
+      zh: {
+        name: `多尔玛巴赫切宫`,
+        metaTitle: `多尔玛巴赫切宫之旅与当地向导`,
+        metaDescription:
+          `在认证伊斯坦布尔向导的带领下参观博斯普鲁斯海峡畔的多尔玛巴赫切宫。金色天花板、世界最大的水晶吊灯，以及阿塔图尔克辞世的房间。`,
+        intro: [
+          `多尔玛巴赫切宫是奥斯曼晚期最为奢华的一章。它由巴利安家族建筑师于1843年至1856年间为苏丹阿卜杜勒-迈吉德一世建造，取代了中世纪的托普卡帕宫成为帝国居所——这是一次刻意为之的欧洲式宣言，融合巴洛克、洛可可与新古典风格，285间房、46座厅堂和6座土耳其浴室，沿博斯普鲁斯海峡欧洲一侧的岸边绵延展开。`,
+          `有了VibeGuide当地专家，这份奢华便有了意义。参观须循导览路线，因此一位真正的向导，能让你不再只看到一条镀金房间构成的走廊，而是读懂真正的故事——14吨黄金、一盏4.5吨重的吊灯，以及一个国家让时钟停摆的那一刻。`,
+        ],
+        highlights: [
+          { title: `典礼大厅`, desc: `这里悬挂着一盏重达4.5吨、拥有750盏灯的波希米亚水晶吊灯——维多利亚女王的赠礼，也是地球上同类中最大的一盏。` },
+          { title: `水晶楼梯`, desc: `栏杆完全由巴卡拉水晶雕成，天花板则以14吨黄金镀饰。` },
+          { title: `阿塔图尔克的房间`, desc: `现代土耳其的缔造者于1938年11月10日9时5分在此辞世——宫内的时钟至今仍停留在那一刻。` },
+        ],
+        faqs: [
+          { q: `参观多尔玛巴赫切宫需要向导吗？`, a: `参观须循导览路线，而男宾区、后宫和典礼大厅各自藏着你会径直错过的故事。VibeGuide当地向导会把镀金装饰化作叙事，还能帮你跳过最长的队伍。` },
+          { q: `为什么所有时钟都停在9时5分？`, a: `阿塔图尔克于1938年11月10日9时5分在宫中辞世。多尔玛巴赫切宫的许多时钟按传统一直停留在那个时刻，以志纪念。` },
+          { q: `参观需要多长时间？`, a: `大多数导览参观在男宾区、后宫和滨水花园之间进行，耗时1到2小时，之后搭配一次博斯普鲁斯海峡游船绝妙无比。` },
+        ],
+        planningHeading: `规划你的行程`,
+        planningParagraphs: [
+          `多尔玛巴赫切宫沿博斯普鲁斯海峡欧洲一侧的贝西克塔什岸边绵延展开。最简便的方式是乘坐T1有轨电车到终点站卡巴塔什，再沿水边步行片刻即达华美的宫门。公交和渡轮也可抵达此地，海滨的环境让最后一段路程颇为惬意。`,
+          `宫殿按固定时间对游客开放，清晨是趁旅行团尚未涌入厅堂之前探访的最宁静时段。它历来每周闭馆一天，出发前请查好每周闭馆日。春秋两季气候温和，最适合将室内参观与花园和外面的博斯普鲁斯海峡景致结合起来。`,
+          `入场需购票，参观须循导览路线穿行于装饰华丽的房间之间。男宾区和后宫是两个独立区域，各自单独购票，因此请提前决定你想看多少。持证的VibeGuide当地向导可为你安排门票，帮你在各区域间取舍，并讲解水晶、黄金与宏伟楼梯背后的奥斯曼历史。`,
+        ],
+        ctaTitle: `与当地人一同参观多尔玛巴赫切宫`,
+        ...IST.zh,
       },
     },
   },
@@ -4763,6 +4973,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Pogledajte Galata kulu s lokalnim vodičem`,
         ...IST.hr,
       },
+      zh: {
+        name: `加拉塔石塔`,
+        metaTitle: `加拉塔石塔之旅与当地向导`,
+        metaDescription:
+          `在认证当地向导的带领下登上伊斯坦布尔的加拉塔石塔。避开排队、赶上日落，聆听这座俯瞰金角湾的热那亚石塔的故事。`,
+        intro: [
+          `自1348年热那亚人将其建为「基督之塔」并立于其城郭殖民地的顶端以来，加拉塔石塔便一直点缀着贝伊奥卢的天际线。近67米高的中世纪石塔共九层，直上顶层观景廊，可360度尽览金角湾、历史半岛和远处的博斯普鲁斯海峡。`,
+          `这里笼罩着传说：据说17世纪的赫扎尔芬·艾哈迈德·切莱比曾绑上双翼，从塔上滑翔越过博斯普鲁斯海峡直抵于斯屈达尔。有了VibeGuide当地向导，你可以安排登塔时间以避开最糟的排队，赶上黄金时刻，并聆听那些单凭景色无法诉说的故事。`,
+        ],
+        highlights: [
+          { title: `360度全景`, desc: `从顶层观景廊俯瞰，整座城市尽收眼底——金角湾、老城和博斯普鲁斯海峡两岸。` },
+          { title: `热那亚地标`, desc: `建于1348年，作为「基督之塔」，它守望加拉塔已近七个世纪。` },
+          { title: `飞行传说`, desc: `据说赫扎尔芬·艾哈迈德·切莱比曾靠自制双翼从这里飞越海峡。` },
+        ],
+        faqs: [
+          { q: `加拉塔石塔需要排队吗？`, a: `经常需要，尤其在日落时分。当地向导会帮你挑选合适的时段并安排好时间，让你少花时间等待，多花时间欣赏美景。` },
+          { q: `什么时候登塔最好？`, a: `午后至日落时分最为迷人，那时光线将水面染成金色。你的向导可以围绕它规划一天。` },
+          { q: `参观需要多长时间？`, a: `登塔和观景约需45分钟到一小时，很容易与漫步附近的加拉塔和卡拉柯伊结合起来。` },
+        ],
+        planningHeading: `规划你的行程`,
+        planningParagraphs: [
+          `加拉塔石塔耸立在贝伊奥卢的卡拉柯伊和加拉塔街区之上，位于金角湾北岸。许多游客乘有轨电车或地铁抵达卡拉柯伊，再徒步爬上那些陡峭而别具特色的街道。若想轻松登高，历史悠久的图内尔缆车可载你上山，之后只需步行片刻即达石塔。`,
+          `这座塔以全景视野闻名，而在日落前的那一小时排队最长，因为人人都盼着拍下同一张金色照片。当天早些时候前来意味着更短的队伍和更柔和的摄影光线。四周布满咖啡馆和工坊的小巷，无论何时来访都值得探索。`,
+          `入场需购票，一部电梯会载你上升大半路程，再登上最后一段楼梯即达环绕塔顶的全景观景廊。这里是一条紧凑的走道，可饱览老城、博斯普鲁斯海峡和金角湾。持证的VibeGuide当地向导可为你订票，帮你避开日落时的拥挤，并为你指出脚下铺展开来的各处地标。`,
+        ],
+        ctaTitle: `与当地人一同参观加拉塔石塔`,
+        ...IST.zh,
+      },
     },
   },
   {
@@ -5306,6 +5544,34 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `Istražite Veliki bazar s lokalnim vodičem`,
         ...IST.hr,
+      },
+      zh: {
+        name: `大巴扎`,
+        metaTitle: `大巴扎之旅与当地向导`,
+        metaDescription:
+          `在认证当地向导的带领下探索伊斯坦布尔的大巴扎。穿行4000家店铺，自信地讨价还价，找到诚实的手艺人而非旅游陷阱。`,
+        intro: [
+          `大巴扎是地球上最古老、最大的有顶市场之一——一座始建于1455年至1461年间征服者穆罕默德治下的迷宫，历经数百年发展，如今拥有六十多条有顶街道和约4000家店铺。地毯与基利姆、黄金与珠宝、陶器、香料、灯饰和皮具，从彩绘拱顶下的每一扇门内涌出。`,
+          `在这里讨价还价是意料之中的事——这是乐趣的一半——但这座迷宫会把新手整个吞没。VibeGuide当地向导会带你穿行正确的巷道，让你远离旅游陷阱般的价格，为你引荐诚实的手艺人，并为你翻译语言和这场议价的仪式。`,
+        ],
+        highlights: [
+          { title: `4000家店铺`, desc: `六十多条有顶街道，遍布地毯、黄金、陶器、香料、灯饰和皮具。` },
+          { title: `讨价还价的艺术`, desc: `议价是意料之中的事，也是乐趣的一部分——向导会让价格保持公道。` },
+          { title: `活着的历史`, desc: `这座有顶市场始建于15世纪50年代征服者穆罕默德治下，如今仍在交易。` },
+        ],
+        faqs: [
+          { q: `逛大巴扎需要向导吗？`, a: `你不会永远迷路，但可能会多花钱。当地向导知道哪些是诚实的手艺人、什么是公道的价格，以及穿越迷宫的捷径。` },
+          { q: `真的需要讨价还价吗？`, a: `是的——这是文化的一部分。开价要低、态度要友善，让你的向导告诉你仪式在哪里结束、公道的交易从哪里开始。` },
+          { q: `我该安排多久？`, a: `大多数导览参观为1到2小时，很自然地会与附近的香料市场和法提赫的街道搭配游览。` },
+        ],
+        planningHeading: `规划你的行程`,
+        planningParagraphs: [
+          `大巴扎（Kapalıçarşı）坐落在老城的法提赫区，紧邻贝亚泽特。最便捷的到达方式是乘坐T1有轨电车到「贝亚泽特-大巴扎」站，下车即在主门之一。从苏丹艾哈迈德和蓝色清真寺过去是一段平坦轻松的步行，因此许多游客看完附近的古迹后便信步而来。`,
+          `入场免费，市场除周日外每天开放。它在正午前后最为繁忙，那时旅行团和邮轮乘客挤满巷道，因此开门后不久前来能让过道更清静、店主更耐心。由于整座巴扎都有顶棚，任何季节都很舒适，无论是炎热的夏日午后还是多雨的冬日，都是可靠的选择。`,
+          `作为世界上最古老、最大的有顶市场之一，拥有约4000家店铺和60多条街道，这座巴扎会回馈那些愿意慢慢逛的人。讨价还价是意料之中的事，也是乐趣的一部分，但对新手而言最初的开价可能偏高。持证的VibeGuide当地向导会帮你穿越迷宫，避开旅游陷阱般的摊位，找到质量与价格都公道的诚实店铺。`,
+        ],
+        ctaTitle: `与当地人一同探索大巴扎`,
+        ...IST.zh,
       },
     },
   },
@@ -5851,6 +6117,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Krstarite Bosporom s lokalnim vodičem`,
         ...IST.hr,
       },
+      zh: {
+        name: `博斯普鲁斯海峡`,
+        metaTitle: `博斯普鲁斯海峡游船之旅与当地向导`,
+        metaDescription:
+          `在认证当地向导的带领下畅游伊斯坦布尔的博斯普鲁斯海峡。滑过奥斯曼宫殿、滨水木屋和少女塔，聆听两岸各自的故事。`,
+        intro: [
+          `博斯普鲁斯海峡是一条分割大陆的海峡——这条蜿蜒的水道将欧洲与亚洲分开，并把黑海与马尔马拉海相连。一次经典的游船之旅会滑过多尔玛巴赫切、贝伊莱尔贝伊和奇拉昂等奥斯曼宫殿，掠过被称为yalı的优雅滨水木屋、立于小岛上的少女塔和鲁梅利堡垒，并穿行于宏伟的悬索桥之下。`,
+          `日落游船是伊斯坦布尔的标志性体验之一，但从水上很难分辨一座座宫殿。有了VibeGuide当地向导随行，你会分清哪座是哪座、哪岸属于谁的故事，以及这条水带为何塑造了一个帝国。`,
+        ],
+        highlights: [
+          { title: `水上眺望宫殿`, desc: `多尔玛巴赫切、贝伊莱尔贝伊和奇拉昂以奥斯曼式华美排列在两岸。` },
+          { title: `两大洲`, desc: `一岸是欧洲，另一岸是亚洲，由宏伟的悬索桥相连。` },
+          { title: `滨水木屋与少女塔`, desc: `历史悠久的滨水木屋和那座守护海峡的小塔。` },
+        ],
+        faqs: [
+          { q: `有向导陪同的博斯普鲁斯游船值得吗？`, a: `从水上看，一座座宫殿会模糊成一片。当地向导会为你逐一点名、讲述它的故事，并指出你原本会径直驶过的细节。` },
+          { q: `什么时候游船最好？`, a: `日落最具标志性，那时光线在宫殿和桥梁上流转生辉。你的向导可以帮你挑选时段和合适的船型。` },
+          { q: `一次典型的游船需要多久？`, a: `根据你沿海峡上行多远，游船耗时约1.5到3小时，很容易与沿岸漫步结合起来。` },
+        ],
+        planningHeading: `规划你的行程`,
+        planningParagraphs: [
+          `博斯普鲁斯海峡是那条将伊斯坦布尔分隔于欧亚之间的著名海峡，因此从水上体验它最佳。游船从多个滨水枢纽出发，最便利的是埃米诺努、卡巴塔什和贝西克塔什，都可乘有轨电车、渡轮或从老城步行片刻抵达。从这些码头，你可以在抵达后几分钟内加入定时游船或登上私人游船。`,
+          `一天中的每个时段都有船可乘，但午后至日落的金色光线是甲板上最具标志性的时刻。夏季带来温暖热闹的夜晚，而春秋两季则空气更清澈、人流更稀疏。无论哪个季节，海峡上都清风习习，比岸上凉爽，因此请带一件薄外套，即便晴天也要为海风备好衣物。`,
+          `公共渡轮便宜、班次频繁且风景绝佳，而私人或有向导陪同的游船则让你在路线和时间上更为灵活。沿途你会滑过奥斯曼宫殿、优雅的滨水木屋、鲁梅利堡垒和宏伟的悬索桥。持证的VibeGuide当地向导会帮你为团队挑选合适的船，并用你所经过的每座宫殿、堡垒和街区背后的故事，让沿岸风光鲜活起来。`,
+        ],
+        ctaTitle: `与当地人一同畅游博斯普鲁斯海峡`,
+        ...IST.zh,
+      },
     },
   },
   {
@@ -6394,6 +6688,34 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `Pogledajte Aspendos s lokalnim vodičem`,
         ...ANT.hr,
+      },
+      zh: {
+        name: `阿斯潘多斯`,
+        metaTitle: `阿斯潘多斯罗马剧场之旅与当地向导`,
+        metaDescription:
+          `在认证当地向导的带领下参观安塔利亚附近的阿斯潘多斯。置身世界上保存最完好的罗马剧场，聆听它历经1800年仍完好的声学奇迹。`,
+        intro: [
+          `阿斯潘多斯是世界上保存最完好的罗马剧场——由建筑师泽农在公元2世纪马可·奥勒留治下建造，如今仍能容纳约一万五千至两万名观众。在舞台上低语，最后一排也能听见：历经近1800年，它的声学效果依然令人惊叹。`,
+          `有了VibeGuide当地专家，你不只是看着古老的石头。你会了解这座剧场如何运作、它为何得以完整留存，以及在附近的罗马引水渠中应留意些什么——以你自己的节奏、用你自己的语言，地点就在安塔利亚以东约45公里、塞里克附近。`,
+        ],
+        highlights: [
+          { title: `完美的声学效果`, desc: `在舞台上说出的一个字仍能传到最高一层，无需麦克风。` },
+          { title: `完好的罗马设计`, desc: `舞台建筑和座席近乎完整地保存下来——在世界任何地方都极为罕见。` },
+          { title: `歌剧与芭蕾节`, desc: `每年夏天，这座古剧场都会为阿斯潘多斯国际艺术节再度座无虚席。` },
+        ],
+        faqs: [
+          { q: `阿斯潘多斯为何如此著名？`, a: `它是世界上保存最完好的罗马剧场，声学效果至今仍然奏效——向导会带你到正确的位置亲身验证。` },
+          { q: `阿斯潘多斯距安塔利亚有多远？`, a: `在东面约45公里、塞里克附近——是一次轻松的一日游，你的VibeGuide向导可帮你避开人潮和酷热来规划。` },
+          { q: `附近还有更多可看的吗？`, a: `有——附近就矗立着一座罗马引水渠，向导可以把它和周边遗址一并纳入你的行程。` },
+        ],
+        planningHeading: `规划你的行程`,
+        planningParagraphs: [
+          `阿斯潘多斯位于土耳其南部安塔利亚以东约45公里、塞里克镇附近。大多数游客自驾或参加从安塔利亚出发的组团游前来，使它成为地中海沿岸一次轻松的半日出行。遗址最著名的是它的罗马剧场，剧场高踞于四周平原之上，从停车场步行片刻即达。`,
+          `这里正午酷热，尤其在夏季，因此清晨是在相对舒适和柔和光线下游览的最佳时段。春秋两季气温宜人、人流稀疏，而夏日夜晚则因遗址的歌剧与芭蕾节而生机盎然。无论何时前来，都请携带饮水和防晒用品，因为古老石块四周几乎没有遮荫。`,
+          `剧场需购票，它以世界上保存最完好的罗马剧场著称，舞台建筑和座席保存得极为完整。持证的VibeGuide当地向导会让它的声学和历史鲜活起来，并可将你的参观与西戴、佩尔格等附近古迹搭配，帮你理解这些城市如何在潘菲利亚平原上彼此相连，并让一天的行程物尽其用。`,
+        ],
+        ctaTitle: `与当地人一同参观阿斯潘多斯`,
+        ...ANT.zh,
       },
     },
   },
@@ -6939,6 +7261,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Istražite Kaleiçi s lokalnim vodičem`,
         ...ANT.hr,
       },
+      zh: {
+        name: `卡莱伊奇（老城）`,
+        metaTitle: `安塔利亚卡莱伊奇老城之旅与当地向导`,
+        metaDescription:
+          `在认证当地向导的带领下漫游安塔利亚的老城卡莱伊奇。奥斯曼鹅卵石小巷、哈德良门与一座罗马时代的港口——每个角落背后的故事。`,
+        intro: [
+          `卡莱伊奇是安塔利亚充满韵味的老城——一座由鹅卵石小巷交织而成的迷宫，两旁是修复过的奥斯曼-希腊风格房屋、精品酒店和咖啡馆，全都环绕着一座罗马时代的港口。在这样的地方，每一道拱门都藏着一个故事。`,
+          `有了VibeGuide当地专家，你不必只是漫无目的地游荡碰运气。以你自己的节奏、用你自己的语言，穿过哈德良门，仰望带凹槽的伊夫利宣礼塔，从赫德尔勒克塔眺望日落，最后从古老的码头乘船出游。`,
+        ],
+        highlights: [
+          { title: `哈德良门`, desc: `一座三重大理石拱门，建于公元130年，为迎接哈德良皇帝到访这座城市而建。` },
+          { title: `伊夫利宣礼塔`, desc: `这座带凹槽的砖砌宣礼塔已成为安塔利亚天际线的象征。` },
+          { title: `罗马港口`, desc: `城墙下方的古老码头——最适合来一次日落游船。` },
+        ],
+        faqs: [
+          { q: `卡莱伊奇有什么可玩的？`, a: `漫步奥斯曼小巷，看哈德良门和赫德尔勒克塔，再来一次港口游船——当地向导会把这一切串成一条轻松的路线。` },
+          { q: `卡莱伊奇适合步行吗？`, a: `适合，它十分紧凑，最宜徒步探索；向导会带你避开旅游陷阱般的街道，走上那些美丽的巷弄。` },
+          { q: `什么时候来访最好？`, a: `午后至日落时分最为迷人，尤其是从赫德尔勒克塔眺望——你的VibeGuide向导可以把时间掐得恰到好处。` },
+        ],
+        planningHeading: `规划你的行程`,
+        planningParagraphs: [
+          `卡莱伊奇是安塔利亚的历史老城，夹在现代城市与大海之间。最便捷的进入方式是乘坐Antray有轨电车，在Ismetpasa或Kaleici站下车，或干脆从市中心步行下来。一旦穿过哈德良门，街道便化作鹅卵石，车辆渐渐消失，因此整个街区最宜慢慢徒步探索。`,
+          `老城会回馈那些在午后从容来访的人，那时光线在罗马港口上方变得柔和，巷弄泛起金光。从赫德尔勒克塔或港口城墙眺望日落是当地人的心头好。夏日正午可能炎热而拥挤，因此清晨和傍晚更为宜人；春秋两季全天气温温和、人流稀疏。`,
+          `漫游卡莱伊奇的鹅卵石小巷是免费的，进入这个街区本身没有单一的门或门票。你可以按自己的节奏走过伊夫利宣礼塔、古老的港口和奥斯曼房屋，而从码头出发的一次游船是绝妙的加分项。持证的VibeGuide当地向导会用背后的故事，让那些隐蔽的庭院和后街鲜活起来。`,
+        ],
+        ctaTitle: `与当地人一同探索卡莱伊奇`,
+        ...ANT.zh,
+      },
     },
   },
   {
@@ -7483,6 +7833,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Pogledajte Pergam s lokalnim vodičem`,
         ...IZM.hr,
       },
+      zh: {
+        name: `帕加马`,
+        metaTitle: `帕加马（贝尔加马）古城之旅与当地向导`,
+        metaDescription:
+          `在认证当地向导的带领下探索伊兹密尔附近的联合国教科文组织世界遗产古城帕加马。古代最陡峭的剧场、传奇的图书馆和阿斯克勒庇俄斯疗养中心。`,
+        intro: [
+          `帕加马——今日的贝尔加马——曾是古代世界的伟大城市之一，先属希腊后归罗马，如今是联合国教科文组织世界遗产。它的卫城高踞于平原之上的陡峭山丘，坐拥图拉真神庙、宙斯祭坛和古代世界最陡峭的剧场，剧场戏剧性地凿入山坡，可容纳约一万名观众。`,
+          `有了VibeGuide当地专家，废墟便鲜活起来。聆听帕加马图书馆如何与亚历山大图书馆相媲美并为我们带来羊皮纸，然后下行至阿斯克勒庇俄斯疗养中心和宏大的红色巴西利卡（Kızıl Avlu）——以你自己的节奏、用你自己的语言，地点距库萨达斯或伊兹密尔约一小时。`,
+        ],
+        highlights: [
+          { title: `陡峭的剧场`, desc: `古代世界最陡峭的剧场，凿入山坡，可容纳约一万名观众。` },
+          { title: `宏伟的图书馆`, desc: `仅次于亚历山大图书馆——羊皮纸（charta pergamena）正是在此臻于完善。` },
+          { title: `阿斯克勒庇俄斯疗养所`, desc: `古代最著名的疗养中心之一，位于卫城下方的平原上。` },
+        ],
+        faqs: [
+          { q: `帕加马在哪里？`, a: `位于伊兹密尔省贝尔加马镇——距库萨达斯或伊兹密尔约一小时，是一次轻松的一日游，当地向导可为你规划。` },
+          { q: `我需要多少时间？`, a: `卫城、阿斯克勒庇俄斯疗养所和红色巴西利卡各值得花时间；有向导陪同的半天足以从容游览精华。` },
+          { q: `在帕加马请向导值得吗？`, a: `绝对值得——图书馆、宙斯祭坛和疗愈仪式都是故事，而非指示牌；向导会让空荡的废墟重焕生机。` },
+        ],
+        planningHeading: `规划你的行程`,
+        planningParagraphs: [
+          `帕加马位于伊兹密尔省贝尔加马镇，距库萨达斯或伊兹密尔约一小时，自驾或乘大巴皆易抵达。古老的卫城高踞于城镇上方的陡峭山丘，你可乘卫城缆车（teleferik）或走公路上去。阿斯克勒庇俄斯疗养圣所和红色巴西利卡是位于贝尔加马镇内的独立站点，很容易纳入当天行程。`,
+          `清晨是这里的黄金时段：空气更凉爽，山顶废墟上光线清澈，而在旅行团到来之前人流仍然稀疏。地势陡峭且暴露在阳光下，因此夏日午后可能令人疲惫，而春秋两季的徒步天气最为宜人。无论何时前来，一双结实舒适的鞋和饮水都会让攀登愉快得多。`,
+          `帕加马是需购票的联合国教科文组织世界遗产，卫城、阿斯克勒庇俄斯疗养所和红色巴西利卡都值得入内。这里有宏大的台地、陡峭的剧场和俯瞰平原的开阔视野。持证的VibeGuide当地向导会把零散的废墟串成一个完整的故事，从卫城和缆车登临之路到阿斯克勒庇俄斯疗养所，让石头言之有物，而非模糊成一片。`,
+        ],
+        ctaTitle: `与当地人一同参观帕加马`,
+        ...IZM.zh,
+      },
     },
   },
   {
@@ -8026,6 +8404,34 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `Pogledajte Pamukkale s lokalnim vodičem`,
         ...PAM.hr,
+      },
+      zh: {
+        name: `棉花堡`,
+        metaTitle: `棉花堡与希拉波利斯之旅与当地向导`,
+        metaDescription:
+          `在认证当地向导的带领下探索联合国教科文组织世界遗产「棉花堡」。漫步洁白的钙华梯田，探索古城希拉波利斯，并在克利奥帕特拉温泉池中畅游。`,
+        intro: [
+          `棉花堡——「棉花城堡」——是土耳其最超现实的景观之一：一整片山坡上炫目洁白的钙华梯田，由富含钙质的温泉水历经千万年层层倾泻、石化而成，形成一个个宛如凝固棉花般的水池。它是代尼兹利的联合国教科文组织世界遗产，你会赤脚踏入其中，脚踝浸在温暖的矿泉水里。`,
+          `梯田上方矗立着希拉波利斯，一座希腊-罗马温泉城，拥有一座宏伟的剧场、安纳托利亚最大的墓地之一，以及那座你能在倾倒的罗马石柱间畅游的温泉古池。有了VibeGuide当地向导，你会把握好时机、读懂眼前之物，让这趟长途跋涉真正物有所值。`,
+        ],
+        highlights: [
+          { title: `洁白的钙华梯田`, desc: `炫目洁白的钙质水池顺山坡层层倾泻——在温暖的泉水中赤脚漫步。` },
+          { title: `古城希拉波利斯`, desc: `梯田上方的希腊-罗马温泉城：剧场、宏大的墓地、阿波罗神庙和神圣的普鲁托尼翁。` },
+          { title: `克利奥帕特拉温泉古池`, desc: `在温暖的温泉水中，于被地震震倒的古罗马石柱间畅游。` },
+        ],
+        faqs: [
+          { q: `参观棉花堡需要向导吗？`, a: `你可以独自漫游，但棉花堡和希拉波利斯是二合一的景点——温泉地质与一座罗马城。当地向导会把二者串联起来，避开人潮和眩光安排参观时间，让漫长的一日游行云流水。` },
+          { q: `什么时候参观棉花堡最好？`, a: `清晨或午后稍晚。正午的阳光会让洁白的梯田刺眼，人流也达到高峰；日落时分水池上方的景致美不胜收。向导会围绕这一点规划一天。` },
+          { q: `棉花堡距海岸有多远？`, a: `距代尼兹利约19公里，从安塔利亚、博德鲁姆、库萨达斯或马尔马里斯出发是一次漫长的一日游。向导会处理好距离和时间，让长途车程物有所值。` },
+        ],
+        planningHeading: `规划你的行程`,
+        planningParagraphs: [
+          `棉花堡位于土耳其西南部代尼兹利省，距代尼兹利市约19公里。你可以飞抵代尼兹利（DNZ），或从海岸出发来一次一日游，许多游客会将它与该地区更广的行程结合起来。那炫目洁白的梯田坐落在平原之上的山坡上，远远便可望见，自驾或组团接送都很容易抵达。`,
+          `正午时分可能刺眼又炎热，洁白的钙华会反射阳光，因此清晨或午后稍晚要舒适、值当得多。那些时段也为摄影带来更柔和的光线，梯田上人流更稀疏。从安塔利亚、博德鲁姆、库萨达斯或伊兹密尔出发都是一次漫长却难忘的一日游，因此请早点出发，在最宁静的时刻欣赏这处景观。`,
+          `洁白的钙华和古城希拉波利斯共用一张门票，为保护梯田你需赤脚沿其行走，而克利奥帕特拉温泉古池则另收费用。持证的VibeGuide当地向导会帮你读懂梯田和希拉波利斯绵延的废墟，从剧场到墓地，并为你指出观赏矿泉池的最佳地点与时段。`,
+        ],
+        ctaTitle: `与当地人一同参观棉花堡`,
+        ...PAM.zh,
       },
     },
   },
@@ -8590,6 +8996,35 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Pogledajte Süleymaniju s lokalnim vodičem`,
         ...IST.hr,
       },
+      zh: {
+        name: `苏莱曼尼耶清真寺`,
+        metaTitle: `苏莱曼尼耶清真寺之旅与当地向导`,
+        metaDescription:
+          `在认证伊斯坦布尔向导的带领下参观苏莱曼尼耶清真寺。第三山丘上米马尔·希南的杰作、苏莱曼与许蕾姆的陵墓，以及一座俯瞰金角湾的全景露台。`,
+        intro: [
+          `苏莱曼尼耶清真寺高踞于金角湾之上伊斯坦布尔的第三山丘，是米马尔·希南的帝国杰作。它于1550年至1557年间为苏丹苏莱曼大帝建造，将一座宏大的中央穹顶稳立于四座宣礼塔之上，配以宁静而充满光线的礼拜殿——这是帝国鼎盛时期古典奥斯曼建筑自信的核心。`,
+          `有了VibeGuide当地专家，这片建筑群读来更像一个故事，而非一座丰碑。一位真正的向导会把穹顶和庭院与建造它的苏丹、以及那位挑战重力的建筑师联系起来，再带你走向花园里苏莱曼及其妻子许蕾姆的陵墓——以及一座拥有城中最佳免费景致之一的露台。`,
+        ],
+        highlights: [
+          { title: `希南的宏伟穹顶`, desc: `一座近53米高的高耸中央穹顶，经过精心设计，让光与声在殿内流动——正是这一刻奠定了米马尔·希南的天才之名。` },
+          { title: `帝王陵墓`, desc: `在清真寺后方的花园里，矗立着苏莱曼大帝及其妻子许蕾姆苏丹（罗克塞拉娜）的圆顶陵墓，内部瓷砖华美。` },
+          { title: `全景露台`, desc: `清真寺的外露台俯瞰金角湾和老城的座座穹顶——而且分文不取。` },
+        ],
+        faqs: [
+          { q: `参观苏莱曼尼耶清真寺需要门票吗？`, a: `不需要。它是一座正在使用的清真寺，入场免费。游客可在每日五次礼拜时间之外前来，VibeGuide当地向导可安排你的抵达时间，让清真寺既开放又宁静。` },
+          { q: `殿内该穿什么？`, a: `请着装得体，遮住肩膀和膝盖；女士以头巾遮盖头发，所有人在门口脱鞋。入口处通常备有可借用的头巾，供你需要时使用。` },
+          { q: `它比蓝色清真寺更好吗？`, a: `它是米马尔·希南的杰作，通常也清静得多，还拥有蓝色清真寺所没有的全景露台。许多向导认为它是更精妙的建筑——VibeGuide当地向导可为你解释缘由。` },
+          { q: `参观需要多长时间？`, a: `大多数参观在礼拜殿、陵墓和露台之间进行，耗时45分钟到一小时，很自然地会与附近的大巴扎或步行下至金角湾的行程搭配。` },
+        ],
+        planningHeading: `规划你的行程`,
+        planningParagraphs: [
+          `苏莱曼尼耶清真寺矗立在第三山丘上、大巴扎街区之上。最便捷的方式是乘坐T1有轨电车到贝亚泽特或拉莱利，再穿过大学区上坡步行片刻；渡轮到埃米诺努再从金角湾攀登而上是一条风景优美的替代路线。清真寺四周的巷弄里满是传统的炖豆餐馆和茶园。`,
+          `作为一座正在使用的清真寺，它在每日五次礼拜之外欢迎游客，每次礼拜期间会短暂对游客关闭，周五正午则关闭更久。清晨和午后稍晚最为宁静，露台在接近日落时令人难忘。即便在旺季，它也远比蓝色清真寺清静得多。`,
+          `入场免费，无需购票。请着装得体——遮住肩膀和膝盖，女士需备头巾；你需脱鞋并装入袋中随身携带。持证的VibeGuide当地向导会根据礼拜时间安排参观，讲解礼仪让你安心自在，并为你揭开希南的穹顶和帝王陵墓背后的历史。`,
+        ],
+        ctaTitle: `与当地人一同参观苏莱曼尼耶清真寺`,
+        ...IST.zh,
+      },
     },
   },
   {
@@ -9152,6 +9587,35 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `Pogledajte Bazar začina s lokalnim vodičem`,
         ...IST.hr,
+      },
+      zh: {
+        name: `香料市场`,
+        metaTitle: `香料市场（埃及市场）之旅与当地向导`,
+        metaDescription:
+          `在认证当地向导的带领下探索伊斯坦布尔的香料市场。堆叠成山的香料、藏红花、土耳其软糖和各式茶叶，尽在埃米诺努新清真寺旁一座17世纪的有顶市场中。`,
+        intro: [
+          `香料市场——Mısır Çarşısı，即埃及市场——是伊斯坦布尔最芬芳的市场，一座17世纪的L形拱廊大厅，坐落在埃米诺努的中心。它在17世纪60年代作为新清真寺建筑群的一部分建成，由与奥斯曼埃及的贸易资助，时至今日，它的摊位上仍堆满金字塔般的香料、藏红花、干果、坚果和茶叶。`,
+          `有了VibeGuide当地专家，喧闹与缤纷便有了意义。一位真正的向导会带你越过旅游陷阱，走向诚实而历史悠久的商贩，告诉你真正的藏红花和纯正的土耳其软糖该值多少钱，并让你先尝后买——把一条混乱的过道化作一个满是风味与故事的悠闲上午。`,
+        ],
+        highlights: [
+          { title: `香料堆成山`, desc: `红椒粉、漆树粉、孜然和肉桂堆成锥形，旁边是一罐罐深红色的藏红花——正是这些香气赋予了市场名字与声誉。` },
+          { title: `土耳其软糖与甜点`, desc: `一盘盘各种口味的软糖，从石榴、开心果到玫瑰，旁边摆着杏干、无花果干和蜜渍坚果——大多数摊位都可试吃。` },
+          { title: `茶叶与新清真寺`, desc: `苹果茶、花草茶和咖啡的香气弥漫空中，而宏伟的圆顶新清真寺（Yeni Cami）就矗立在市场主门旁。` },
+        ],
+        faqs: [
+          { q: `香料市场入场免费吗？`, a: `是的，入场完全免费，也无需预订。VibeGuide当地向导可在门口与你会合，带你走向里面最值得信赖的商贩。` },
+          { q: `在香料市场该讨价还价吗？`, a: `价格很少固定，因此礼貌的议价既正常又是意料之中的事。当地向导知道藏红花、软糖和茶叶的公道价格，会替你议价，让你不会多花钱。` },
+          { q: `它和大巴扎有何不同？`, a: `香料市场更小、更芬芳，专注于食品——香料、甜点、茶叶和坚果——而大巴扎则是一座满是珠宝、地毯和手工艺品的庞大迷宫。许多游客会在一天内两处都逛。` },
+          { q: `什么时候去最好？`, a: `清晨最为宁静，趁旅行团和购物者尚未挤满过道之前。工作日比周末清静，VibeGuide当地向导可为你安排最佳的参观时间。` },
+        ],
+        planningHeading: `规划你的行程`,
+        planningParagraphs: [
+          `香料市场坐落在埃米诺努，紧邻新清真寺，距加拉塔桥和博斯普鲁斯渡轮码头仅两分钟步行之遥。最便捷的抵达方式是乘坐T1有轨电车到埃米诺努站，或乘渡轮横渡金角湾；滨水的位置让它很容易纳入沿老城海岸的一天行程。`,
+          `市场在正午时分最为繁忙，因此清晨来访更为清静，能让你在人潮到来之前与商贩交谈。它按每日时间开放，周末尤为热闹。春秋两季怡人，但这座有顶大厅在任何天气下都宜人可亲。`,
+          `入场免费，无需预订——你径直走进去即可。价格很少固定，因此少许友善的讨价还价是意料之中的事，各摊位的质量也参差不齐。持证的VibeGuide当地向导会带你走向可信的商贩，帮你分辨真藏红花与染色货，并在你一路品尝时为你议出公道的价格。`,
+        ],
+        ctaTitle: `与当地人一同参观香料市场`,
+        ...IST.zh,
       },
     },
   },
@@ -9716,6 +10180,35 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Pogledajte Djevojačku kulu s lokalnim vodičem`,
         ...IST.hr,
       },
+      zh: {
+        name: `少女塔`,
+        metaTitle: `少女塔（Kız Kulesi）之旅与当地向导`,
+        metaDescription:
+          `在认证伊斯坦布尔向导的带领下参观矗立于博斯普鲁斯海峡小岛上的少女塔。古老的传说、从于斯屈达尔出发的短途乘船，以及一场难忘的日落天际线。`,
+        intro: [
+          `少女塔独自矗立在博斯普鲁斯海峡的一座小岛上，就在亚洲一侧于斯屈达尔岸边不远处，海峡在此向马尔马拉海敞开。它小巧、洁白、上镜得不可思议，数百年来作为灯塔、海关点和检疫站守望着这条水道——如今，经过精心修复，它再次向游客敞开。`,
+          `让这座塔难忘的不是它的大小，而是它的故事。土耳其传说讲述一位公主被囚禁于此以躲避预言中的蛇咬；希腊的希罗与勒安得耳的故事则把悲剧设定在同一片水域。有了VibeGuide当地专家，传说、历史与天际线便全都各归其位，把一次短途乘船化作伊斯坦布尔最浪漫的出行之一。`,
+        ],
+        highlights: [
+          { title: `小岛与塔`, desc: `一块位于博斯普鲁斯海峡中央的小小礁石，其上矗立着一座纤细的白塔——是全伊斯坦布尔最易辨认的剪影之一。` },
+          { title: `水上的传说`, desc: `土耳其公主与预言之蛇，以及希腊故事中为爱泳渡海峡的勒安得耳——两段传说都系于这一处。` },
+          { title: `咖啡馆与观景点`, desc: `一座咖啡馆和观景露台让你得以流连，360度尽览老城、亚洲海岸和往来的船只。` },
+        ],
+        faqs: [
+          { q: `我该如何前往少女塔？`, a: `从亚洲一侧的于斯屈达尔滨水区，或欧洲一侧的卡巴塔什乘一趟短途船即可。这里没有桥——乘船本身就是体验的一部分，两处码头都可乘渡轮、有轨电车或马尔马拉线轻松抵达。` },
+          { q: `这座塔有哪些传说？`, a: `一则土耳其传说讲述一位公主被安置于此，以躲避她会死于蛇咬的预言；而希腊的希罗与勒安得耳的故事，则把爱情悲剧设定在这片水域。当地向导两则都能讲，并解释这座塔如何得名。` },
+          { q: `修复之后这座塔值得一去吗？`, a: `值得。经过近期精心修复，塔已重新向游客开放，设有咖啡馆和观景露台，因此你如今可以走进塔内欣赏全景，而不再只是从岸上远观。` },
+          { q: `什么时候去最好？`, a: `日落最令人难忘，老城在塔后泛起光辉，而清晨拍照最为清静。晚春或初秋平静的日子会让渡海格外惬意。` },
+        ],
+        planningHeading: `规划你的行程`,
+        planningParagraphs: [
+          `少女塔坐落在自己的小岛上，因此每次参观都从一次短途乘船开始。主要出发点是亚洲一侧的于斯屈达尔滨水区，欧洲一侧的卡巴塔什也有船只前往。两处都可乘渡轮、有轨电车或马尔马拉线轻松抵达，而这段航程本身就让塔从你出发的那一刻起，便映衬在水面之上。`,
+          `塔全天开放，在日落前后最为迷人，那时光线转为金色，老城的天际线在它身后泛起光辉。晚春和初秋气候平静温和，最适合渡海；在有风或有暴风的日子里船班可能变动，因此值得让计划保持灵活。清晨往往是在岛上拍照最清静的时段。`,
+          `乘船往返和进入塔内都需购票，而小岛上的空间有限，因此最好提前规划。持证的VibeGuide当地向导可为你安排渡海，把参观时间掐在最佳光线，并让传说和博斯普鲁斯的历史鲜活起来——同时为你精确指出拍下那张经典天际线照片该站在何处。`,
+        ],
+        ctaTitle: `与当地人一同参观少女塔`,
+        ...IST.zh,
+      },
     },
   },
   {
@@ -10278,6 +10771,35 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `Pogledajte Artemidin hram s lokalnim vodičem`,
         ...EPH.hr,
+      },
+      zh: {
+        name: `阿尔忒弥斯神庙`,
+        metaTitle: `以弗所阿尔忒弥斯神庙之旅与当地向导`,
+        metaDescription:
+          `在认证当地向导的带领下参观塞尔丘克的阿尔忒弥斯神庙。它曾是古代世界七大奇迹之一，如今只剩一根石柱，矗立在以弗所旁的白鹳与沼泽之间。`,
+        intro: [
+          `塞尔丘克的阿尔忒弥斯神庙距以弗所仅几分钟路程，曾是古代世界七大奇迹之一——一座宏大的大理石神庙，规模足足是雅典帕特农神庙的四倍。古代旅人写道，他们见过许多奇迹，却没有一样能与那直入云霄的阿尔忒弥斯之殿相媲美。`,
+          `如今这处遗址朴素无华：一根重新竖起的石柱从沼泽般的地基中升起，顶端常有白鹳筑巢，鸟儿在下方的芦苇间涉水。然而，站在这片曾有列王竞相营建古代世界最宏伟圣所之地，正是历史中最静默、最动人的一课。VibeGuide当地专家会在你的想象中重建这座神庙，连同它的石柱与人群。`,
+        ],
+        highlights: [
+          { title: `消逝的奇迹`, desc: `古代世界七大奇迹之一，曾是帕特农神庙的四倍大，如今只剩地基和一根屹立的石柱。` },
+          { title: `孤柱与白鹳`, desc: `一根重新竖起的孤零大理石柱从沼泽中升起，顶端常有白鹳巢——一幅宏伟归于自然的难忘画面。` },
+          { title: `塞尔丘克山丘群`, desc: `神庙与其正上方山丘上的圣约翰大教堂和伊萨贝清真寺自然成组，并与近旁的以弗所相邻。` },
+        ],
+        faqs: [
+          { q: `阿尔忒弥斯神庙还留下多少？`, a: `今日留存甚少——主要是沼泽般的地基和一根重新竖起的石柱，顶端常有白鹳巢。它的力量在于它昔日的模样：在废墟本身无能为力之处，向导会让这消逝的奇迹重焕生机。` },
+          { q: `它与以弗所有何关联？`, a: `神庙位于塞尔丘克，距以弗所主遗址仅几分钟，两者自然会与正上方山丘上的圣约翰大教堂和伊萨贝清真寺一同游览。` },
+          { q: `参观阿尔忒弥斯神庙需要门票吗？`, a: `神庙是一处开阔遗址，通常免费入场，与附近需购票的以弗所废墟不同。当地向导可安排一条在各遗址间流畅衔接的塞尔丘克组合行程。` },
+          { q: `什么时候来访最好？`, a: `清晨或午后稍晚的光线最衬这根孤柱，春秋两季也最为舒适。这里的夏季炎热，因此请携带饮水和防晒用品。` },
+        ],
+        planningHeading: `规划你的行程`,
+        planningParagraphs: [
+          `阿尔忒弥斯神庙位于塞尔丘克镇的边缘，距以弗所主入口仅几分钟车程或一段惬意步行，因此两者几乎总是一同游览。塞尔丘克位于伊兹密尔至艾登的铁路线上，乘火车、大巴或从伊兹密尔和沿海度假区短途驾车都很容易抵达，遗址本身就在城堡山下的路边。`,
+          `神庙是一处开阔低洼的遗址，通常免费入场，在清晨或午后稍晚柔和的光线下最宜欣赏，那时孤柱沐浴阳光，白鹳也活跃起来。春秋两季最为舒适；以弗所一带的夏季可能极为炎热，因此无论一年中的哪个时节，都请携带饮水和防晒用品。`,
+          `由于今日留存甚少，阿尔忒弥斯神庙回馈想象力更胜于观光，而这恰恰是持证VibeGuide当地向导发挥作用之处。向导可以把神庙、以弗所、圣约翰大教堂和伊萨贝清真寺编织成一条塞尔丘克行程，并在你脑海中重建那消逝的奇迹，让一根孤柱化作古代世界最伟大的神庙。`,
+        ],
+        ctaTitle: `与当地人一同参观阿尔忒弥斯神庙`,
+        ...EPH.zh,
       },
     },
   },
@@ -10842,6 +11364,35 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Pogledajte Bodrumski dvorac s lokalnim vodičem`,
         ...BOD.hr,
       },
+      zh: {
+        name: `博德鲁姆城堡`,
+        metaTitle: `博德鲁姆城堡与水下考古博物馆之旅与当地向导`,
+        metaDescription:
+          `在持证当地向导的带领下探索博德鲁姆城堡，这座俯瞰港口的医院骑士团堡垒。十字军塔楼、水下考古博物馆与乌鲁布伦沉船。`,
+        intro: [
+          `博德鲁姆城堡，即圣彼得城堡，宛如一顶石冠守护着小镇碧蓝的港口。医院骑士团于15世纪初开始兴建它，从毁坏的哈利卡纳苏斯陵墓——古代世界七大奇迹之一——搬运石块上山，于是一位古代君王陵墓的残片，便被砌进了一座十字军堡垒的高墙之中。`,
+          `它的塔楼至今仍以建造它们的各国之名命名——英格兰塔、法兰西塔、意大利塔、德意志塔和蛇塔——每一座都高耸于码头之上，饱览爱琴海的辽阔景致。城堡内设有著名的水下考古博物馆，古代沉船、双耳陶罐和青铜时代乌鲁布伦沉船的珍宝在此讲述着大海的故事。有了VibeGuide当地专家，十字军、奥斯曼与古代历史的层层脉络便一一分明。`,
+        ],
+        highlights: [
+          { title: `骑士团的塔楼`, desc: `英格兰塔、法兰西塔、意大利塔、德意志塔和蛇塔各自高耸于港口之上，由医院骑士团中不同语言的骑士于15世纪建造。` },
+          { title: `水下考古博物馆`, desc: `同类中最出色的博物馆之一，陈列着从爱琴海海底打捞的古代沉船、双耳陶罐和玻璃器。` },
+          { title: `乌鲁布伦沉船`, desc: `来自一艘公元前14世纪商船的发现——铜、金锭、黄金和异域货物——揭示了青铜时代横跨整个东地中海的贸易。` },
+        ],
+        faqs: [
+          { q: `博德鲁姆城堡值得一去吗？`, a: `非常值得。它是地中海保存最完好的十字军城堡之一，也是一座世界级水下考古博物馆的所在，全都环绕着爱琴海沿岸最佳的港口景致。` },
+          { q: `博德鲁姆城堡内有什么？`, a: `城堡内设有水下考古博物馆，陈列古代沉船、成千上万的双耳陶罐、玻璃器和青铜时代乌鲁布伦沉船的珍宝，还有历史悠久的英格兰塔、法兰西塔、意大利塔、德意志塔和蛇塔。` },
+          { q: `博德鲁姆城堡与哈利卡纳苏斯陵墓有关联吗？`, a: `有。医院骑士团重新利用了毁坏的哈利卡纳苏斯陵墓——古代世界七大奇迹之一——的石块来建造城堡。陵墓遗址本身就在镇上上坡步行片刻之处，与城堡参观完美搭配。` },
+          { q: `参观博德鲁姆城堡需要向导吗？`, a: `你可以独自漫游，但城堡融合了十字军、奥斯曼与古代海事历史，很容易被忽略。持证的VibeGuide当地向导会把塔楼、沉船和陵墓串成一个清晰的故事。` },
+        ],
+        planningHeading: `规划你的行程`,
+        planningParagraphs: [
+          `博德鲁姆城堡就矗立在小镇两处海湾之间的半岛上，因此从市中心几乎任何地方沿码头都是一段短暂而风景优美的步行。大多数游客从米拉斯-博德鲁姆机场经陆路抵达博德鲁姆，或从周边海岸和邻近的希腊岛屿乘渡轮前来，而城堡在港口上方的天际线上绝不会被错过。`,
+          `爱琴海的夏季炎热而繁忙，因此登临城墙最温和、最清静的时段是晚春和初秋。清晨为俯瞰码头的摄影带来最柔和的光线，而海风让开阔的露台即便在旺季也舒适宜人。请穿结实的鞋——城堡建在岩石上，处处是台阶、坡道和不平整的地面。`,
+          `进入城堡及其水下考古博物馆需购票，遗址在一次参观中融合了一座堡垒、数座塔楼和数间博物馆展厅。持证的VibeGuide当地向导可帮你理清这一切——把十字军塔楼与下方沉没的货物联系起来，并加入一小段上坡步行，前往哈利卡纳苏斯陵墓的遗迹，正是这座古代奇迹的石块助建了城堡的高墙。`,
+        ],
+        ctaTitle: `与当地人一同参观博德鲁姆城堡`,
+        ...BOD.zh,
+      },
     },
   },
   {
@@ -11405,6 +11956,35 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Pogledajte Göbekli Tepe s lokalnim vodičem`,
         ...SAN.hr,
       },
+      zh: {
+        name: `哥贝克力石阵`,
+        metaTitle: `哥贝克力石阵之旅（世界最古老的神庙）与当地向导`,
+        metaDescription:
+          `在持证当地向导的带领下参观尚勒乌尔法附近的哥贝克力石阵——世界上已知最古老的神庙，建于约公元前9600年，比巨石阵早6000年。联合国教科文组织世界遗产。`,
+        intro: [
+          `哥贝克力石阵是地球上已知最古老的巨石圣所，建于约公元前9600年——比巨石阵和吉萨金字塔约早6000年。在土耳其东南部尚勒乌尔法附近一处光秃的山顶，尚未发明陶器、文字或农业的狩猎采集者，竟以某种方式采凿、雕刻并竖起了一圈圈巨大的T形石灰岩柱。这一发现改写了文明的故事：在这里，神庙或许先于城镇而生。`,
+          `石柱高达数米，浮雕刻画着狐狸、野猪、蛇、蝎子和鹤——一部来自信仰之初的石头动物志。如今一条现代的有顶步道遮蔽着这些围场，让你俯视其中而不必触碰这处脆弱之地。由于许多细节对未经训练的双眼是不可见的，持证的VibeGuide当地向导必不可少，能解读这些符号，并说明哥贝克力石阵为何改变了一切。`,
+        ],
+        highlights: [
+          { title: `世界上第一座神庙`, desc: `由前陶器新石器时代的人们建于约公元前9600年——比巨石阵约早6000年——并被列入联合国教科文组织世界遗产。` },
+          { title: `雕刻的T形石柱`, desc: `巨大的石灰岩柱排成一圈圈，浮雕刻画着来自宗教之初的狐狸、野猪、蛇、蝎子和鹤。` },
+          { title: `尚勒乌尔法的乌尔法人像`, desc: `将遗址与尚勒乌尔法考古博物馆搭配游览，馆内藏有原始石柱和拥有11000年历史的乌尔法人像，这是已知最古老的真人大小人像。` },
+        ],
+        faqs: [
+          { q: `哥贝克力石阵有多古老？`, a: `哥贝克力石阵建于约公元前9600年，距今约11000年——比巨石阵和埃及金字塔约早6000年，是世界上已知最古老的巨石神庙。` },
+          { q: `哥贝克力石阵为何如此重要？`, a: `它由尚无陶器、文字或农业的狩猎采集者建成，这表明有组织的宗教和巨石建造，或许先于定居的村落生活——推翻了农业先行的旧观念。它是联合国教科文组织世界遗产。` },
+          { q: `我该如何前往哥贝克力石阵？`, a: `遗址位于土耳其东南部，距尚勒乌尔法约20公里。大多数游客飞抵尚勒乌尔法，再自驾、乘出租车或组团前往哥贝克力石阵，遗址设有游客中心、接驳车和有顶步道。` },
+          { q: `参观哥贝克力石阵需要向导吗？`, a: `强烈建议。遗址的许多意义若无背景解读便不可见，而持证的VibeGuide当地向导会讲解T形石柱、动物雕刻，以及这一发现为何改写了人类历史——再把它与城市博物馆里的乌尔法人像联系起来。` },
+        ],
+        planningHeading: `规划你的行程`,
+        planningParagraphs: [
+          `哥贝克力石阵距最近的城市尚勒乌尔法市中心约20公里，尚勒乌尔法是探访的天然落脚地。大多数旅客飞抵尚勒乌尔法，沿一条标识清晰的短途公路自驾、乘出租车或组团抵达遗址，公路尽头是游客中心，从那里有接驳车和步道通往围场。附近别无他物，因此最好与城市本身一同游览。`,
+          `这处山顶开阔而暴露，几乎没有遮荫，因此土耳其东南部夏季的烈日会十分炽烈。请选在清晨或午后稍晚前来，并携带饮水、帽子和防晒用品；总体而言春秋两季最为舒适。有顶步道让你行走在围场上方，因此请穿舒适的鞋以应对这段平缓的步行。`,
+          `入场需购票，而让哥贝克力石阵难忘的，是读懂你所见之物——否则那些石柱看上去只是山上普通的石头。持证的VibeGuide当地向导会让围场鲜活起来，解读动物浮雕，并把遗址与尚勒乌尔法考古博物馆联系起来，馆内的原始石柱和令人惊叹的乌尔法人像让整个故事完整无缺。`,
+        ],
+        ctaTitle: `与当地人一同参观哥贝克力石阵`,
+        ...SAN.zh,
+      },
     },
   },
   {
@@ -11934,6 +12514,34 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `Pogledajte samostan Sumela s lokalnim vodičem`,
         ...TZN.hr,
+      },
+      zh: {
+        name: `苏梅拉修道院`,
+        metaTitle: `苏梅拉修道院之旅与当地向导`,
+        metaDescription:
+          `在认证当地向导的带领下参观特拉布宗附近的苏梅拉修道院——一座希腊东正教悬崖修道院，紧贴陡峭岩壁，高悬于雾气弥漫的森林山谷上方300米处。`,
+        intro: [
+          `苏梅拉修道院是土耳其最令人叹为观止的景观之一——一座希腊东正教修道院嵌入陡峭的岩壁，高悬于特拉布宗以南群山中一座青翠、雾气缭绕的山谷上方300米处。它始建于4世纪，在此后一千多年间不断重建，其绘有壁画的礼拜堂仿佛直接从岩石中生长出来。`,
+          `有了VibeGuide当地专家，穿越松林向上攀登的旅程便化作一个故事——拜占庭修士、圣母的神迹圣像、岩凿教堂，以及数百年来跋涉至此的朝圣者。你会以自己的节奏、用自己的语言，读懂眼前的一切。`,
+        ],
+        highlights: [
+          { title: `悬崖峭壁的景致`, desc: `一座紧贴垂直岩壁的修道院，高悬于阿尔滕代雷山谷上方300米处——令人难忘的第一眼。` },
+          { title: `拜占庭壁画`, desc: `覆盖岩石教堂的生动绘制场景，层层叠加于修道院数百年的岁月之中。` },
+          { title: `森林中的攀登`, desc: `穿越清凉的松林和山间雾气向上步行，抵达修道院大门。` },
+        ],
+        faqs: [
+          { q: `如何前往苏梅拉修道院？`, a: `苏梅拉位于阿尔滕代雷山谷，距特拉布宗以南约45公里，陆路约一小时。大多数游客从特拉布宗自驾、乘出租车或参加组团，再沿最后一段森林小径步行至修道院入口。` },
+          { q: `参观苏梅拉修道院需要向导吗？`, a: `景色本身已不言而喻，但壁画和修道院悠久的拜占庭历史若无背景解读便不可见。VibeGuide当地向导会让圣像、传说和数百年的朝圣鲜活起来。` },
+          { q: `在苏梅拉需要走很多路吗？`, a: `是的——抵达修道院需沿森林小径向上步行，遗址本身也有台阶和不平整的路面。请穿舒适的鞋，并注意即便在夏季，这里也可能凉爽而潮湿。` },
+        ],
+        planningHeading: `规划你的行程`,
+        planningParagraphs: [
+          `苏梅拉位于阿尔滕代雷山谷国家公园内，距土耳其黑海沿岸的特拉布宗以南约45公里，向内陆入山约一小时车程。大多数游客以特拉布宗为落脚地——那里有开通国内航班的机场——再自驾、乘出租车或组团前往修道院。从山谷停车场，有接驳车和步道穿越森林向上通往入口。`,
+          `请在晚春、夏季或初秋前来：山路可能因冬雪封闭，山谷也常被雾气和雨水笼罩。清晨最宜欣赏较为清晰的景色，趁云雾尚未聚拢之前。即便在夏季，高海拔处也依旧凉爽潮湿，因此请带一件外套和雨衣，并预留沿台阶和森林小径的一段攀登——一双结实的鞋很重要。`,
+          `修道院已经历大规模修复，因此出发前请查好当前的开放状况。苏梅拉的许多意义——拜占庭壁画、圣泉、岩凿礼拜堂和神迹圣像的故事——若无背景解读便很容易被忽略。持证的VibeGuide当地向导会围绕天气和人潮规划你的时间，把一处绝美的景色化作一千年鲜活的历史。`,
+        ],
+        ctaTitle: `与当地人一同参观苏梅拉修道院`,
+        ...TZN.zh,
       },
     },
   },
@@ -12465,6 +13073,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Pogledajte Troju s lokalnim vodičem`,
         ...CKL.hr,
       },
+      zh: {
+        name: `特洛伊（Truva）`,
+        metaTitle: `特洛伊古城之旅与当地向导`,
+        metaDescription:
+          `在认证当地向导的带领下探索恰纳卡莱附近的古城特洛伊——荷马《伊利亚特》的传奇之地，一处拥有九座层叠城池的联合国教科文组织世界遗产。`,
+        intro: [
+          `特洛伊是世界上最富传奇色彩的考古遗址——荷马《伊利亚特》之城，阿喀琉斯、赫克托耳和木马的故乡。在恰纳卡莱附近一座低矮的土丘上，眺望着通往达达尼尔海峡的平原，从青铜时代到罗马时代的3000多年间，九座城池一层叠一层地建起。`,
+          `废墟会回馈那些知晓故事的人。有了VibeGuide当地专家，层叠的城墙、坡道和地基便鲜活起来——神话与考古在此交汇、施里曼如何在此发掘，以及在这片多风的平原上究竟发生了什么。一匹复制的木马标记着遗址所在，但真正的魔力，在于读懂你脚下层层叠叠的岁月。`,
+        ],
+        highlights: [
+          { title: `荷马的传奇之城`, desc: `《伊利亚特》和特洛伊战争的舞台——神话与历史在同一座古老土丘上交织。` },
+          { title: `九城合一`, desc: `从青铜时代到罗马时代一层叠一层的聚落，在发掘出的城墙和探沟中显现。` },
+          { title: `联合国教科文组织世界遗产`, desc: `一处具有杰出普世价值的遗址，附近有一座现代博物馆陈列其最精美的出土文物。` },
+        ],
+        faqs: [
+          { q: `特洛伊在哪里，如何前往？`, a: `特洛伊位于土耳其西北部恰纳卡莱西南约30公里、达达尼尔海峡附近。大多数游客以恰纳卡莱为落脚地，自驾、乘出租车或组团前往；它也很适合与加里波利之行搭配。` },
+          { q: `特洛伊除了废墟还有别的可看吗？`, a: `特洛伊是一处由城墙、地基和发掘层构成的考古遗址，而非屹立的神庙，因此背景解读至关重要。向导会为你揭示九座城池、神话与历史——附近出色的特洛伊博物馆则陈列着最精美的文物。` },
+          { q: `参观特洛伊需要向导吗？`, a: `强烈建议。特洛伊的许多意义对未经训练的双眼是不可见的。VibeGuide当地向导会让荷马的史诗、层叠的城池和施里曼的发掘鲜活起来，让遗址言之有物。` },
+        ],
+        planningHeading: `规划你的行程`,
+        planningParagraphs: [
+          `特洛伊位于土耳其西北部恰纳卡莱西南约30公里，靠近爱琴海岸和达达尼尔海峡。大多数游客以恰纳卡莱为落脚地——乘大巴或短途航班加渡轮即可抵达——再自驾、乘出租车或组团前往遗址。特洛伊很自然地会与海峡对岸的加里波利战场搭配游览，而出色的特洛伊博物馆就在废墟旁。`,
+          `春秋两季气候最为舒适；夏季这座暴露的土丘炎热而少有遮荫。请为遗址预留几个小时，为博物馆预留更多。请携带帽子、饮水和舒适的鞋以应对不平整的考古步道，并在一天中早些时候出发，以避开酷热和旅游大巴的人潮。`,
+          `特洛伊是一处故事比任何单独一堵屹立城墙都更重要的遗址——若没有故事，废墟读来只会是一堆令人困惑的乱石。持证的VibeGuide当地向导会理清九座层叠的城池，讲述《伊利亚特》和特洛伊木马的故事，解释海因里希·施里曼备受争议的发掘，并把废墟与特洛伊博物馆中的珍宝联系起来，让这一天终于把传奇变为真实。`,
+        ],
+        ctaTitle: `与当地人一同参观特洛伊`,
+        ...CKL.zh,
+      },
     },
   },
   {
@@ -12995,6 +13631,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `Pogledajte planinu Nemrut s lokalnim vodičem`,
         ...NMR.hr,
       },
+      zh: {
+        name: `内姆鲁特山`,
+        metaTitle: `内姆鲁特山之旅与当地向导`,
+        metaDescription:
+          `在认证当地向导的带领下参观内姆鲁特山——拥有2000年历史的巨型神祇与国王石雕头像，加冕于海拔2150米的峰顶，一场无与伦比的联合国教科文组织世界遗产日出。`,
+        intro: [
+          `内姆鲁特山是土耳其最非凡的景观之一——一座海拔2150米的山顶圣所，巨型的神祇、国王和雄鹰石雕头像在此眺望群峰。它建于公元前1世纪，作为科马基尼国王安条克一世的陵墓圣所，其巨型雕像已从躯体上倾倒，如今散落在峰顶的台地之上。`,
+          `旅人们会在破晓前攀登而上，观赏太阳在这些头像上方升起——一场难忘而近乎超凡脱俗的体验。有了VibeGuide当地专家，希腊与波斯神祇的奇异交融、消逝的科马基尼王国，以及安条克隐秘陵墓之谜，全都清晰起来，就在你自己的节奏里、用你自己的语言。`,
+        ],
+        highlights: [
+          { title: `巨型头像`, desc: `神祇与国王的巨型雕刻头像，从各自的宝座上倾倒，散落于峰顶台地之上。` },
+          { title: `峰顶日出`, desc: `经典体验：在海拔2150米、清冷的山间空气中，观赏黎明在雕像上方破晓。` },
+          { title: `消逝的科马基尼王国`, desc: `一座公元前1世纪的陵墓圣所，融合希腊与波斯神祇——联合国教科文组织世界遗产。` },
+        ],
+        faqs: [
+          { q: `如何前往内姆鲁特山？`, a: `内姆鲁特可从土耳其东南部的阿德亚曼或卡赫塔前往，通常自驾、乘出租车或组团，之后再来一段短而陡峭的步行至峰顶台地。许多游客飞抵阿德亚曼或马拉蒂亚，再经陆路继续前行。` },
+          { q: `为看日出登上内姆鲁特值得吗？`, a: `对许多人而言，巨型头像上方的日出是整趟旅程的亮点——但这意味着极早且寒冷的出发。日落是较为温和的替代选择。当地向导会帮你抉择，并规划好时间与攀登。` },
+          { q: `参观内姆鲁特山需要向导吗？`, a: `强烈建议。雕像令人惊叹，但科马基尼和安条克国王的故事若无背景解读便不可见。VibeGuide当地向导会讲解神祇、陵墓和王国，并为日出或日落安排好时间。` },
+        ],
+        planningHeading: `规划你的行程`,
+        planningParagraphs: [
+          `内姆鲁特山耸立在土耳其东南部，最常见的方式是从阿德亚曼或卡赫塔两镇前往。许多旅客飞抵阿德亚曼或马拉蒂亚，再自驾、乘出租车或组团沿山路上山，山路尽头是峰顶下方的停车场。从那里，一段短而陡峭、路面崎岖的步行通往雕像所在的东、西两处台地。`,
+          `经典的参观时段是日出或日落，那时低角度的光线让巨型头像熠熠生辉——日出最为著名，但意味着一个寒冷的黎明前出发。峰顶仅在较温暖的月份可达，大致从晚春到初秋，因为冬雪会封闭山路。即便在夏季，海拔2150米处也寒冷多风，因此请带上保暖衣物，并穿结实的鞋以应对攀登。`,
+          `内姆鲁特倾倒的头像令人难忘，但其背后的意义——消逝的科马基尼王国、安条克国王对神圣血统的宣称、希腊与波斯神祇的交融，以及那座人工峰顶下仍未被发现的陵墓——需要有人讲述。持证的VibeGuide当地向导会安排好日出或日落的时间，引领这段攀登，把一堆散落的巨型石脸化作古代世界最奇异、最动人的故事之一。`,
+        ],
+        ctaTitle: `与当地人一同参观内姆鲁特山`,
+        ...NMR.zh,
+      },
     },
   },
   {
@@ -13524,6 +14188,34 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `Pogledajte antičku Side s lokalnim vodičem`,
         ...ANT.hr,
+      },
+      zh: {
+        name: `西戴古城`,
+        metaTitle: `西戴古城之旅与当地向导`,
+        metaDescription:
+          `在认证当地向导的带领下探索安塔利亚附近的古城西戴——一座希腊-罗马港口城市，阿波罗神庙就矗立在地中海岸边。`,
+        intro: [
+          `西戴是绿松石海岸最美丽的古迹之一——一座希腊-罗马港口城市，坐落在一座小半岛上，大理石废墟一路铺陈直抵地中海。它临海的阿波罗神庙，那些在日落时分于水上方泛起金光的石柱，是整段海岸最上镜的景象之一。`,
+          `西戴昔日曾是一座重要港口，也是臭名昭著的奴隶交易与海盗据点，如今它把一座保存完好的古城与一座热闹的海滨小镇融为一体。有了VibeGuide当地专家，宏伟的剧场、列柱街道和海边的神庙便鲜活起来——罗马商人、港口贸易，以及度假胜地之下层层叠叠的历史。`,
+        ],
+        highlights: [
+          { title: `阿波罗神庙`, desc: `大理石石柱就矗立在岸边，在地中海上方的日落中泛起金光——西戴的标志性画面。` },
+          { title: `宏伟的剧场`, desc: `该地区最大的罗马剧场之一，曾可容纳约一万五千名观众。` },
+          { title: `海边古城`, desc: `列柱街道、一座集市广场和纪念性大门，交织在一座活着的海滨小镇之中。` },
+        ],
+        faqs: [
+          { q: `西戴在哪里，如何前往？`, a: `西戴位于地中海沿岸、安塔利亚以东约75公里、马纳夫加特附近。大多数游客从安塔利亚或周边度假区自驾、乘出租车或组团抵达；这是一次轻松而热门的一日游。` },
+          { q: `参观西戴需要向导吗？`, a: `废墟交织在一座现代小镇之中，因此很容易看不懂眼前之物。VibeGuide当地向导会为你揭示阿波罗神庙、剧场和集市广场，并讲述西戴的港口、贸易和海盗往事。` },
+          { q: `参观西戴的最佳时间是什么时候？`, a: `春秋两季气候温暖宜人、人流稀疏。夏季请趁清晨或傍晚游览废墟以避开正午酷热——并把阿波罗神庙安排在日落时分，那时它最为美丽。` },
+        ],
+        planningHeading: `规划你的行程`,
+        planningParagraphs: [
+          `西戴坐落在地中海沿岸的一座小半岛上，距安塔利亚以东约75公里、马纳夫加特镇附近。从安塔利亚和周边度假区自驾、乘出租车或组团都是一次轻松的一日游，而安塔利亚机场让整个区域都便于抵达。这座古城径直交织在现代度假小镇之中，因此你会一边前行，一边穿行于废墟、店铺和咖啡馆之间。`,
+          `春秋两季为探索开阔的废墟带来最舒适的天气，而夏季炎热——请趁清晨或傍晚游览这些暴露的遗址。请把临海的阿波罗神庙留到日落，那时它的石柱在水面上方转为金色，人潮也渐渐散去。请戴帽子、涂防晒、穿舒适的鞋并携带饮水，因为遗址大部分没有遮荫。`,
+          `由于西戴的废墟缠绕在一座繁忙的度假小镇之中，你很容易在两千年的历史旁擦身而过却浑然不觉。持证的VibeGuide当地向导会把散落的片段连接起来——阿波罗神庙、宏伟的剧场、集市广场和港口——并讲述这座港口的贸易、它的海盗与奴隶市场往事，以及罗马人的日常生活，把一次美丽的海滨漫步，化作一座真正的古城。`,
+        ],
+        ctaTitle: `与当地人一同参观古城西戴`,
+        ...ANT.zh,
       },
     },
   },
