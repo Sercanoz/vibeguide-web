@@ -24,6 +24,7 @@ export const ATTRACTION_LANGS = [
   "sr",
   "hr",
   "zh",
+  "id",
 ] as const;
 export type AttractionLang = (typeof ATTRACTION_LANGS)[number];
 
@@ -50,6 +51,7 @@ export const ATTR_HEADINGS: Record<AttractionLang, { highlights: string; faq: st
   sr: { highlights: `Najvažnije`, faq: `Često postavljana pitanja`, more: `Još za istraživanje` },
   hr: { highlights: `Vrhunci`, faq: `Često postavljana pitanja`, more: `Više za istražiti` },
   zh: { highlights: `亮点`, faq: `常见问题`, more: `更多探索` },
+  id: { highlights: `Sorotan Utama`, faq: `Pertanyaan yang sering diajukan`, more: `Lebih banyak untuk dijelajahi` },
 };
 
 export const RTL_LANGS: ReadonlySet<AttractionLang> = new Set(["ar"]);
@@ -76,6 +78,7 @@ export const ATTR_HUB: Record<AttractionLang, { metaTitle: string; metaDescripti
   sr: { metaTitle: `Najznačajnije znamenitosti Turske — ture sa lokalnim vodičima`, metaDescription: `Istražite najveće znamenitosti Turske — od Aje Sofije i Kapadokije do Efesa, Pamukala i Gebekli Tepea — uz proverenog lokalnog vodiča.`, h1: `Najznačajnije znamenitosti Turske`, intro: `Od istanbulskih džamija do drevnog Efesa i najstarijeg hrama na svetu, otkrijte svaku znamenitost uz proverenog lokalnog vodiča.` },
   hr: { metaTitle: `Najbolje znamenitosti Turske — ture s lokalnim vodičima`, metaDescription: `Istražite najveće turske znamenitosti — od Aje Sofije i Kapadokije do Efeza, Pamukkalea i Göbekli Tepea — s provjerenim lokalnim vodičem.`, h1: `Najbolje znamenitosti Turske`, intro: `Od istanbulskih džamija do antičkog Efeza i najstarijeg hrama na svijetu, otkrijte svaku znamenitost s provjerenim lokalnim vodičem.` },
   zh: { metaTitle: `土耳其顶级景点——当地向导之旅`, metaDescription: `在认证当地向导的带领下探索土耳其最伟大的地标——从圣索菲亚大教堂、卡帕多奇亚到以弗所、棉花堡和哥贝克力石阵。`, h1: `土耳其顶级景点`, intro: `从伊斯坦布尔的清真寺到古城以弗所，再到世界上最古老的神庙，在认证当地向导的带领下发现每一处地标。` },
+  id: { metaTitle: `Atraksi Terbaik Turki — Tur bersama Pemandu Lokal`, metaDescription: `Jelajahi tetenger terhebat Turki — dari Hagia Sophia dan Kapadokia hingga Efesus, Pamukkale, dan Göbekli Tepe — bersama pemandu lokal terverifikasi.`, h1: `Atraksi Terbaik Turki`, intro: `Dari masjid-masjid Istanbul hingga Efesus kuno dan kuil tertua di dunia, temukan setiap tetenger bersama pemandu lokal terverifikasi.` },
 };
 
 export type AttractionContent = {
@@ -165,6 +168,7 @@ const IST: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   sr: { toursHeading: `Ture Istanbula sa lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i spojite se sa proverenim istanbulskim vodičem za 60 sekundi.` },
   hr: { toursHeading: `Ture Istanbulom s lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i povežite se s provjerenim istanbulskim vodičem za 60 sekundi.` },
   zh: { toursHeading: `伊斯坦布尔当地向导之旅`, ctaSub: `免费下载VibeGuide，60秒内匹配一位认证的伊斯坦布尔向导。` },
+  id: { toursHeading: `Tur Istanbul bersama pemandu lokal`, ctaSub: `Unduh VibeGuide gratis dan temukan pemandu Istanbul terverifikasi dalam 60 detik.` },
 };
 
 // Efes (İzmir / Selçuk) ortak metinleri.
@@ -189,6 +193,7 @@ const EPH: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   sr: { toursHeading: `Ture Efesa sa lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i spojite se sa proverenim lokalnim vodičem za Efes za 60 sekundi.` },
   hr: { toursHeading: `Ture Efezom s lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i povežite se s provjerenim lokalnim vodičem za Efez za 60 sekundi.` },
   zh: { toursHeading: `以弗所当地向导之旅`, ctaSub: `免费下载VibeGuide，60秒内匹配一位认证的以弗所当地向导。` },
+  id: { toursHeading: `Tur Efesus bersama pemandu lokal`, ctaSub: `Unduh VibeGuide gratis dan temukan pemandu lokal terverifikasi untuk Efesus dalam 60 detik.` },
 };
 
 // Kapadokya (Nevşehir / Göreme) ortak metinleri.
@@ -213,6 +218,7 @@ const CAP: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   sr: { toursHeading: `Ture Kapadokije sa lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i spojite se sa proverenim vodičem za Kapadokiju za 60 sekundi.` },
   hr: { toursHeading: `Ture Kapadokijom s lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i povežite se s provjerenim kapadokijskim vodičem za 60 sekundi.` },
   zh: { toursHeading: `卡帕多奇亚当地向导之旅`, ctaSub: `免费下载VibeGuide，60秒内匹配一位认证的卡帕多奇亚向导。` },
+  id: { toursHeading: `Tur Kapadokia bersama pemandu lokal`, ctaSub: `Unduh VibeGuide gratis dan temukan pemandu Kapadokia terverifikasi dalam 60 detik.` },
 };
 
 // İzmir / Bergama (Pergamon) ortak metinleri.
@@ -237,6 +243,7 @@ const IZM: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   sr: { toursHeading: `Ture Izmira sa lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i spojite se sa proverenim izmirskim vodičem za 60 sekundi.` },
   hr: { toursHeading: `Ture Izmirom s lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i povežite se s provjerenim izmirskim vodičem za 60 sekundi.` },
   zh: { toursHeading: `伊兹密尔当地向导之旅`, ctaSub: `免费下载VibeGuide，60秒内匹配一位认证的伊兹密尔向导。` },
+  id: { toursHeading: `Tur İzmir bersama pemandu lokal`, ctaSub: `Unduh VibeGuide gratis dan temukan pemandu İzmir terverifikasi dalam 60 detik.` },
 };
 
 // Antalya (Aspendos / Kaleiçi) ortak metinleri.
@@ -261,6 +268,7 @@ const ANT: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   sr: { toursHeading: `Ture Antalije sa lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i spojite se sa proverenim antalijskim vodičem za 60 sekundi.` },
   hr: { toursHeading: `Ture Antalijom s lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i povežite se s provjerenim antalijskim vodičem za 60 sekundi.` },
   zh: { toursHeading: `安塔利亚当地向导之旅`, ctaSub: `免费下载VibeGuide，60秒内匹配一位认证的安塔利亚向导。` },
+  id: { toursHeading: `Tur Antalya bersama pemandu lokal`, ctaSub: `Unduh VibeGuide gratis dan temukan pemandu Antalya terverifikasi dalam 60 detik.` },
 };
 
 // Pamukkale / Hierapolis (Denizli) ortak metinleri.
@@ -285,6 +293,7 @@ const PAM: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   sr: { toursHeading: `Ture Pamukala sa lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i spojite se sa proverenim vodičem za Pamukale za 60 sekundi.` },
   hr: { toursHeading: `Ture Pamukkaleom s lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i povežite se s provjerenim pamukkaleskim vodičem za 60 sekundi.` },
   zh: { toursHeading: `棉花堡当地向导之旅`, ctaSub: `免费下载VibeGuide，60秒内匹配一位认证的棉花堡向导。` },
+  id: { toursHeading: `Tur Pamukkale bersama pemandu lokal`, ctaSub: `Unduh VibeGuide gratis dan temukan pemandu Pamukkale terverifikasi dalam 60 detik.` },
 };
 
 // Bodrum (kale + antik Halikarnas) ortak metinleri.
@@ -309,6 +318,7 @@ const BOD: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   sr: { toursHeading: `Ture Bodruma sa lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i spojite se sa proverenim bodrumskim vodičem za 60 sekundi.` },
   hr: { toursHeading: `Ture Bodrumom s lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i povežite se s provjerenim bodrumskim vodičem za 60 sekundi.` },
   zh: { toursHeading: `博德鲁姆当地向导之旅`, ctaSub: `免费下载VibeGuide，60秒内匹配一位认证的博德鲁姆向导。` },
+  id: { toursHeading: `Tur Bodrum bersama pemandu lokal`, ctaSub: `Unduh VibeGuide gratis dan temukan pemandu Bodrum terverifikasi dalam 60 detik.` },
 };
 
 // Şanlıurfa / Göbeklitepe ortak metinleri.
@@ -333,6 +343,7 @@ const SAN: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   sr: { toursHeading: `Ture Šanliurfe i Gebekli Tepea sa lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i spojite se sa proverenim lokalnim vodičem u Šanliurfi za 60 sekundi.` },
   hr: { toursHeading: `Ture Şanlıurfom i Göbekli Tepeom s lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i povežite se s provjerenim lokalnim vodičem u Şanlıurfi za 60 sekundi.` },
   zh: { toursHeading: `尚勒乌尔法与哥贝克力石阵当地向导之旅`, ctaSub: `免费下载VibeGuide，60秒内匹配一位认证的尚勒乌尔法当地向导。` },
+  id: { toursHeading: `Tur Şanlıurfa & Göbekli Tepe bersama pemandu lokal`, ctaSub: `Unduh VibeGuide gratis dan temukan pemandu lokal terverifikasi di Şanlıurfa dalam 60 detik.` },
 };
 
 // Trabzon (Sümela) ortak metinleri.
@@ -357,6 +368,7 @@ const TZN: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   sr: { toursHeading: `Ture Trabzona sa lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i spojite se sa proverenim trabzonskim vodičem za 60 sekundi.` },
   hr: { toursHeading: `Ture Trabzonom s lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i povežite se s provjerenim trabzonskim vodičem za 60 sekundi.` },
   zh: { toursHeading: `特拉布宗当地向导之旅`, ctaSub: `免费下载VibeGuide，60秒内匹配一位认证的特拉布宗向导。` },
+  id: { toursHeading: `Tur Trabzon bersama pemandu lokal`, ctaSub: `Unduh VibeGuide gratis dan temukan pemandu Trabzon terverifikasi dalam 60 detik.` },
 };
 
 // Çanakkale (Truva) ortak metinleri.
@@ -381,6 +393,7 @@ const CKL: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   sr: { toursHeading: `Ture Čanakalea sa lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i spojite se sa proverenim čanakaleškim vodičem za 60 sekundi.` },
   hr: { toursHeading: `Ture Çanakkaleom s lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i povežite se s provjerenim çanakkaleskim vodičem za 60 sekundi.` },
   zh: { toursHeading: `恰纳卡莱当地向导之旅`, ctaSub: `免费下载VibeGuide，60秒内匹配一位认证的恰纳卡莱向导。` },
+  id: { toursHeading: `Tur Çanakkale bersama pemandu lokal`, ctaSub: `Unduh VibeGuide gratis dan temukan pemandu Çanakkale terverifikasi dalam 60 detik.` },
 };
 
 // Adıyaman / Nemrut ortak metinleri.
@@ -405,6 +418,7 @@ const NMR: Record<AttractionLang, { toursHeading: string; ctaSub: string }> = {
   sr: { toursHeading: `Ture Adijamana i Nemruta sa lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i spojite se sa proverenim lokalnim vodičem u Adijamanu za 60 sekundi.` },
   hr: { toursHeading: `Ture Adıyamanom i Nemrutom s lokalnim vodičima`, ctaSub: `Preuzmite VibeGuide besplatno i povežite se s provjerenim lokalnim vodičem u Adıyamanu za 60 sekundi.` },
   zh: { toursHeading: `阿德亚曼与内姆鲁特当地向导之旅`, ctaSub: `免费下载VibeGuide，60秒内匹配一位认证的阿德亚曼当地向导。` },
+  id: { toursHeading: `Tur Adıyaman & Nemrut bersama pemandu lokal`, ctaSub: `Unduh VibeGuide gratis dan temukan pemandu lokal terverifikasi di Adıyaman dalam 60 detik.` },
 };
 
 
@@ -981,6 +995,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `与当地人一同参观圣索菲亚大教堂`,
         ...IST.zh,
       },
+      id: {
+        name: `Hagia Sophia`,
+        metaTitle: `Tur Hagia Sophia & Pemandu Lokal`,
+        metaDescription:
+          `Jelajahi Hagia Sophia di Istanbul bersama pemandu lokal terverifikasi. Tinggalkan kebingungan, dengarkan 1.500 tahun sejarah Bizantium dan Utsmaniyah dari pakar sejati.`,
+        intro: [
+          `Hagia Sophia adalah jiwa Istanbul — katedral Bizantium, masjid Utsmaniyah, dan monumen yang telah menjaga kota ini selama hampir 1.500 tahun. Kubahnya yang megah, mosaik emasnya, dan sejarahnya yang berlapis akan memberi makna bagi mereka yang memahami apa yang mereka lihat.`,
+          `Bersama pakar lokal VibeGuide, Anda tak perlu menebak-nebak. Dengarkan kisah di balik mosaik, grafiti Viking, dan bangunan yang mendefinisikan ulang arsitektur — sesuai ritme Anda, dalam bahasa Anda.`,
+        ],
+        highlights: [
+          { title: `Kubah Agung`, desc: `Setinggi 55 meter dan, selama 1.000 tahun, yang terbesar di dunia.` },
+          { title: `Mosaik Bizantium`, desc: `Citra kaisar dan orang suci berlapis emas, tersembunyi berabad-abad lamanya.` },
+          { title: `Sejarah Berlapis`, desc: `Katedral, masjid, museum, lalu masjid lagi — setiap era meninggalkan jejaknya.` },
+        ],
+        faqs: [
+          { q: `Apakah saya perlu pemandu untuk Hagia Sophia?`, a: `Tempat ini terbuka untuk semua, tetapi sejarahnya tak tampak tanpa konteks. Pemandu lokal mengubah ruangan indah menjadi 1.500 tahun kisah — dan membantu Anda menghindari jam-jam tersibuk.` },
+          { q: `Apakah masuk Hagia Sophia gratis?`, a: `Aturan masuk berubah dari waktu ke waktu. Pemandu VibeGuide memberi tahu situasi terkini dan waktu terbaik untuk berkunjung sebelum Anda memesan.` },
+          { q: `Berapa lama kunjungannya?`, a: `Sebagian besar kunjungan berpemandu berlangsung 1–2 jam, sering dipadukan dengan Blue Mosque dan alun-alun Sultanahmet di dekatnya.` },
+        ],
+        planningHeading: `Merencanakan kunjungan Anda`,
+        planningParagraphs: [
+          `Hagia Sophia terletak di jantung Sultanahmet, kota tua, dan sangat mudah dijangkau. Naik trem T1 ke perhentian Sultanahmet, dan Anda hanya berjarak beberapa langkah dari pintu masuk. Bangunan ini berdiri tepat di seberang alun-alun dari Blue Mosque, dengan Istana Topkapi dan Basilica Cistern semuanya dalam beberapa menit berjalan kaki, sehingga cocok masuk secara alami dalam sehari menjelajahi semenanjung bersejarah.`,
+          `Datanglah pagi-pagi bila Anda bisa. Cahaya lembut yang menerobos jendela atas paling indah tepat setelah pintu dibuka, dan ruang salat yang luas jauh lebih sepi sebelum rombongan turis siang hari tiba. Musim semi dan gugur menawarkan cuaca paling nyaman dan keramaian lebih tipis dibanding puncak musim panas. Ingat, sekarang ini adalah masjid yang aktif digunakan, jadi tutup bagi turis selama lima waktu salat harian.`,
+          `Masuk gratis, tetapi ini tempat ibadah, jadi berpakaianlah sopan dengan bahu dan lutut tertutup, dan perempuan sebaiknya membawa kerudung. Begitu berada di dalam, mudah merasa kehilangan arah di bawah kubah raksasa tanpa memahami apa yang Anda lihat. Pemandu lokal VibeGuide berlisensi mengatur waktu kunjungan Anda sesuai jadwal salat, membantu Anda menghindari jam-jam tersibuk, dan menghidupkan mosaik Bizantium serta sejarah berlapis berabad-abad.`,
+        ],
+        ctaTitle: `Lihat Hagia Sophia bersama warga lokal`,
+        ...IST.id,
+      },
     },
   },
 
@@ -1555,6 +1597,34 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `与当地人一同漫步托普卡帕宫`,
         ...IST.zh,
+      },
+      id: {
+        name: `Istana Topkapi`,
+        metaTitle: `Tur Istana Topkapi & Pemandu Lokal`,
+        metaDescription:
+          `Temukan Istana Topkapi, jantung Kekaisaran Utsmaniyah, bersama pemandu Istanbul terverifikasi. Harem, ruang harta, relik suci, dan pemandangan Bosforus dijelaskan.`,
+        intro: [
+          `Selama 400 tahun Istana Topkapi menjadi kediaman para sultan Utsmaniyah dan pusat sebuah kekaisaran. Kini halaman-halamannya, Harem, Ruang Harta, dan relik-relik suci menceritakan kisah dinasti yang memerintah tiga benua.`,
+          `Warga lokal VibeGuide memberi makna pada kompleks yang luas ini — di mana kekuasaan bersemayam, apa arti tiap gerbang, dan kisah manusiawi di balik permata — sehingga Anda pulang dengan pemahaman, bukan sekadar foto.`,
+        ],
+        highlights: [
+          { title: `Harem`, desc: `Dunia pribadi keluarga sultan — berhias ubin, penuh rahasia, tak terlupakan.` },
+          { title: `Ruang Harta Kerajaan`, desc: `Belati Topkapi dan Berlian Spoonmaker seberat 86 karat.` },
+          { title: `Teras Bosforus`, desc: `Tempat para sultan memandang laut di titik Eropa bertemu Asia.` },
+        ],
+        faqs: [
+          { q: `Apakah Harem termasuk dalam tiket?`, a: `Harem biasanya memerlukan tiket terpisah. Pemandu VibeGuide Anda menjelaskan apa yang layak dikunjungi dan mengatur rutenya untuk Anda.` },
+          { q: `Berapa banyak waktu yang saya butuhkan?`, a: `Rencanakan 2–3 jam. Istana ini luas; pemandu menjaga Anda tetap pada sorotan utama tanpa kelelahan.` },
+          { q: `Apakah dekat dengan Hagia Sophia?`, a: `Ya — Topkapi, Hagia Sophia, dan Blue Mosque berada dalam jarak jalan kaki singkat di Sultanahmet.` },
+        ],
+        planningHeading: `Merencanakan kunjungan Anda`,
+        planningParagraphs: [
+          `Istana Topkapi memahkotai Seraglio Point di Sultanahmet, di ujung kota tua tempat Bosforus bertemu Golden Horn. Naik trem T1 ke perhentian Sultanahmet dan ikuti jalan setapak di belakang Hagia Sophia; gerbangnya berjarak jalan kaki singkat dan menyenangkan mendaki. Karena letaknya tepat di sebelah Hagia Sophia dan Blue Mosque, istana ini mudah masuk dalam hari yang sama menjelajahi semenanjung bersejarah.`,
+          `Tibalah tepat saat pintu dibuka untuk menyusuri halaman-halaman sebelum rombongan turis memenuhinya. Pagi hari menawarkan suasana paling tenang dan cahaya terbaik di atas teras Bosforus, dan area istana sangat memikat di musim semi dan gugur. Berikan waktu dua hingga tiga jam untuk menikmatinya sepenuhnya, lebih lama lagi bila Anda berlama-lama di Ruang Harta. Periksa hari tutup mingguan sebelum berangkat, karena istana tutup satu hari di tengah pekan.`,
+          `Ini adalah situs bertiket, dan Harem memerlukan tiket terpisah yang sangat layak ditambahkan demi kamar-kamar berubinnya dan ruang kekaisarannya. Kompleks ini terbentang di empat halaman dengan paviliun, dapur, dan koleksi yang mudah terlewat begitu saja tanpa mengetahui kisahnya. Pemandu lokal VibeGuide berlisensi mengatur tiket dan waktu Anda, memandu Anda dalam urutan yang masuk akal, dan mengungkap lapisan kehidupan istana Utsmaniyah di balik tembok.`,
+        ],
+        ctaTitle: `Jelajahi Topkapi bersama warga lokal`,
+        ...IST.id,
       },
     },
   },
@@ -2131,6 +2201,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `与当地人一同探索地下水宫殿`,
         ...IST.zh,
       },
+      id: {
+        name: `Basilica Cistern`,
+        metaTitle: `Tur Basilica Cistern (Yerebatan) & Pemandu Lokal`,
+        metaDescription:
+          `Turunlah ke Basilica Cistern, istana air bawah tanah Istanbul. Lihat kepala Medusa dan 336 pilar bersama pemandu lokal terverifikasi.`,
+        intro: [
+          `Di bawah jalanan Sultanahmet terletak Basilica Cistern — waduk bawah tanah berusia 1.500 tahun dengan 336 pilar marmer, cahaya redup, dan gema tetesan air. Bangsa Bizantium membangunnya untuk mengairi Istana Agung; kini tempat ini menjadi salah satu ruang paling beratmosfer di Istanbul.`,
+          `Warga lokal VibeGuide menjelaskan kepala Medusa yang terbalik, mengapa pilar-pilar didaur ulang dari kuil-kuil lebih tua, dan legenda yang tumbuh dalam kegelapan — mengubah kunjungan singkat menjadi kisah yang sesungguhnya.`,
+        ],
+        highlights: [
+          { title: `Kepala Medusa`, desc: `Dua wajah Medusa kuno, diletakkan menyamping dan terbalik — tak seorang pun sepenuhnya tahu mengapa.` },
+          { title: `336 Pilar`, desc: `Didaur ulang dari reruntuhan Romawi yang lebih tua, masing-masing sedikit berbeda.` },
+          { title: `Atmosfernya`, desc: `Sejuk, redup, dan bergema — set film yang menjelma nyata di bawah kota.` },
+        ],
+        faqs: [
+          { q: `Apakah Basilica Cistern layak dikunjungi?`, a: `Tentu saja — singkat namun tak terlupakan, dan sejarahnya membuatnya jauh lebih kaya. Pemandu menunjukkan detail yang dilewati sebagian besar pengunjung.` },
+          { q: `Berapa lama kunjungannya?`, a: `Biasanya 30–45 menit, mudah dipadukan dengan Hagia Sophia dan Blue Mosque di sebelahnya.` },
+          { q: `Apakah ramah akses?`, a: `Ada jalur pejalan kaki di atas air, tetapi terdapat beberapa anak tangga. Pemandu Anda memberi tahu apa yang bisa diharapkan sebelumnya.` },
+        ],
+        planningHeading: `Merencanakan kunjungan Anda`,
+        planningParagraphs: [
+          `Basilica Cistern terletak di jantung Sultanahmet, hanya sekitar semenit berjalan kaki dari Hagia Sophia dan Blue Mosque. Cara termudah adalah naik trem T1 ke perhentian Sultanahmet, dari sana pintu masuk hanya berjarak jalan kaki singkat dan datar. Bila Anda sudah menjelajahi alun-alun utama kota tua, Anda cukup berjalan santai dari satu objek ke objek berikutnya.`,
+          `Cistern tetap sejuk dan redup apa pun cuacanya, sehingga menjadi pelarian yang disambut baik di siang panas musim panas. Meski begitu, tengah hari membawa keramaian terbesar, jadi tiba lebih awal atau lebih sore memberi Anda jalur yang lebih tenang. Pencahayaannya yang telah dipugar tampak memukau di setiap jam, dan tak ada musim buruk untuk turun ke dunia bawah tanah ini.`,
+          `Masuk bertiket, dan Anda menyusuri jalur setapak yang ditinggikan di atas air melewati ratusan pilar menuju kepala Medusa terkenal di ujung. Harapkan ruang yang beratmosfer dan bergema yang layak dijelajahi perlahan. Pemandu lokal VibeGuide berlisensi dapat mengatur tiket Anda, mengatur waktu kunjungan agar terhindar dari keramaian, dan menghidupkan sejarah Bizantium saat Anda bergerak menembus bayang-bayang.`,
+        ],
+        ctaTitle: `Jelajahi Cistern bersama warga lokal`,
+        ...IST.id,
+      },
     },
   },
 
@@ -2706,6 +2804,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `与当地人一同参观蓝色清真寺`,
         ...IST.zh,
       },
+      id: {
+        name: `Blue Mosque`,
+        metaTitle: `Tur Blue Mosque (Sultanahmet) & Pemandu Lokal`,
+        metaDescription:
+          `Kunjungi Blue Mosque di Istanbul bersama pemandu lokal terverifikasi. Enam menara, 20.000 ubin İznik, dan masjid aktif — dikunjungi dengan hormat dan dijelaskan.`,
+        intro: [
+          `Blue Mosque — Masjid Sultanahmet — menghadap Hagia Sophia melintasi alun-alun bertaman, dengan enam menara menjulang di atas kota tua. Di dalam, lebih dari 20.000 ubin İznik yang dilukis tangan memberi ruang salat kilau biru yang termasyhur.`,
+          `Ini masjid yang hidup, bukan museum. Warga lokal VibeGuide membantu Anda berkunjung dengan hormat — mengatur waktu di antara salat, busana, tata krama — dan mengungkap persaingan serta ambisi di balik pembangunannya.`,
+        ],
+        highlights: [
+          { title: `Enam Menara`, desc: `Pilihan berani pada 1616 yang dulu menyaingi Mekah sendiri.` },
+          { title: `20.000 Ubin İznik`, desc: `Nuansa biru dan hijau lukisan tangan yang menamai masjid ini.` },
+          { title: `Kubah Bertingkat`, desc: `Piramida kubah setengah yang mendefinisikan cakrawala Istanbul.` },
+        ],
+        faqs: [
+          { q: `Bisakah turis masuk ke Blue Mosque?`, a: `Ya, di luar waktu salat, dengan busana sopan. Pemandu mengatur waktu dan tata krama agar kunjungan Anda lancar dan penuh hormat.` },
+          { q: `Apakah saya perlu menutup kepala?`, a: `Perempuan menutup rambut di dalam; kerudung biasanya tersedia. Pemandu Anda memberi tahu persis apa yang perlu dibawa.` },
+          { q: `Apakah dekat dengan Hagia Sophia?`, a: `Keduanya saling berhadapan melintasi alun-alun Sultanahmet — hanya dua menit berjalan kaki.` },
+        ],
+        planningHeading: `Merencanakan kunjungan Anda`,
+        planningParagraphs: [
+          `Blue Mosque berdiri di Sultanahmet, menghadap Hagia Sophia melintasi alun-alun bertaman, dan mencapainya sangat mudah. Naik trem T1 ke perhentian Sultanahmet dan berjalanlah beberapa menit ke alun-alun. Dengan Hagia Sophia, Istana Topkapi, Hippodrome, dan Basilica Cistern semuanya dalam jarak jalan santai, masjid ini pas sekali untuk jalan-jalan menembus kawasan paling termasyhur di kota tua.`,
+          `Incarlah pagi hari atau sore menjelang senja, saat cahaya lembut dan ubin İznik di dalam bersinar dengan biru yang lebih halus. Jam-jam ini juga lebih tenang, menghindari kesibukan tengah hari. Musim semi dan gugur membawa cuaca paling menyenangkan dan keramaian lebih tipis dibanding puncak musim panas. Sebagai tempat ibadah yang aktif, masjid tutup bagi pengunjung selama lima waktu salat harian, jadi rencanakan kedatangan Anda di antara waktu salat.`,
+          `Masuk gratis, tetapi ini masjid yang hidup dengan aturan busana yang ketat: tutup bahu dan lutut, lepaskan alas kaki di pintu, dan perempuan menutup rambut, dengan kerudung disediakan di pintu masuk. Di dalam, kemegahan dan puluhan ribu ubinnya bisa terasa mengejutkan tanpa konteks. Pemandu lokal VibeGuide berlisensi mengatur waktu kunjungan Anda di antara salat, menangani tata krama, dan menjelaskan enam menara, kubah, serta karya ubinnya secara rinci dan hidup.`,
+        ],
+        ctaTitle: `Kunjungi Blue Mosque bersama warga lokal`,
+        ...IST.id,
+      },
     },
   },
 
@@ -3280,6 +3406,34 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `与当地人一同漫步以弗所`,
         ...EPH.zh,
+      },
+      id: {
+        name: `Efesus`,
+        metaTitle: `Tur Efesus & Pemandu Lokal`,
+        metaDescription:
+          `Susuri Efesus kuno dekat Selçuk, İzmir bersama pemandu lokal terverifikasi. Perpustakaan Celsus, Teater Agung, dan jalan-jalan marmer — dihidupkan kembali.`,
+        intro: [
+          `Efesus adalah salah satu kota terbesar dunia kuno — metropolis Romawi berpenduduk seperempat juta jiwa, tempat Mark Antony melangkah dan Santo Paulus berkhotbah. Jalan-jalan marmernya, Perpustakaan Celsus yang menjulang, dan teater untuk 25.000 orang masih berdiri dekat Selçuk.`,
+          `Warga lokal VibeGuide mengubah reruntuhan menjadi kota yang hidup — siapa yang tinggal di sini, di mana mereka mandi, berbelanja, dan beribadah — sehingga bebatuan menceritakan kisahnya alih-alih membisu.`,
+        ],
+        highlights: [
+          { title: `Perpustakaan Celsus`, desc: `Fasad marmer dua lantai, dulu menyimpan 12.000 gulungan naskah.` },
+          { title: `Teater Agung`, desc: `Berkapasitas 25.000 kursi — masih dipakai untuk acara hingga kini.` },
+          { title: `Rumah Teras`, desc: `Hunian berlantai mosaik milik elite Romawi, terlindung atap.` },
+        ],
+        faqs: [
+          { q: `Di mana Efesus?`, a: `Dekat Selçuk di provinsi İzmir, sekitar sejam dari kota İzmir dan dekat pelabuhan Kuşadası.` },
+          { q: `Berapa lama waktu yang saya butuhkan?`, a: `Rencanakan 2–3 jam di lokasi; pemandu menjaga Anda tetap di tempat teduh dan jauh dari keramaian.` },
+          { q: `Apakah cocok untuk penumpang kapal pesiar?`, a: `Ya — ini ekskursi darat klasik dari Kuşadası. Pemandu lokal memaksimalkan waktu yang terbatas.` },
+        ],
+        planningHeading: `Merencanakan kunjungan Anda`,
+        planningParagraphs: [
+          `Efesus terletak dekat kota Selçuk di provinsi İzmir, di pesisir Aegea Turki bagian barat. Sangat mudah dijangkau: sekitar 20 menit berkendara dari pelabuhan kapal pesiar Kuşadası dan sekitar sejam dari İzmir, dengan Selçuk sendiri hanya beberapa menit dengan taksi atau minibus dolmuş. Situs ini memiliki dua pintu masuk, gerbang atas dan bawah, dan banyak pengunjung berjalan menurun di antara keduanya.`,
+          `Efesus sangat luas dan menawarkan sedikit sekali tempat teduh, jadi pengaturan waktu sama pentingnya dengan hal lainnya. Incarlah pagi hari segera setelah pintu dibuka atau sore hari, saat cahaya melembut dan marmer mendingin; hindari jam-jam terik tengah hari, terutama di musim panas. Musim semi dan gugur adalah musim paling nyaman. Kapan pun Anda datang, bawalah air, topi, dan sepatu yang kokoh, serta sisihkan dua hingga tiga jam untuk menikmatinya dengan layak.`,
+          `Ini situs arkeologi bertiket, dan Rumah Teras yang terpelihara indah memerlukan tiket terpisah yang sangat sepadan. Ada banyak hal untuk diserap, dari Perpustakaan Celsus hingga teater megah, dan menurut hukum hanya pemandu berlisensi yang boleh membimbing Anda menembus reruntuhan. Pemandu lokal VibeGuide berlisensi mengurus tiket dan waktu, menemukan sudut-sudut teduh, dan mengubah bebatuan yang berserakan menjadi kota yang hidup dan penuh warna.`,
+        ],
+        ctaTitle: `Susuri Efesus bersama warga lokal`,
+        ...EPH.id,
       },
     },
   },
@@ -3857,6 +4011,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `与当地人一同发现卡帕多奇亚`,
         ...CAP.zh,
       },
+      id: {
+        name: `Kapadokia`,
+        metaTitle: `Tur Kapadokia & Pemandu Lokal`,
+        metaDescription:
+          `Jelajahi Kapadokia bersama pemandu lokal terverifikasi. Balon udara panas, cerobong peri, gereja gua, dan kota bawah tanah di Göreme dan sekitarnya.`,
+        intro: [
+          `Kapadokia adalah lanskap dari mimpi — lembah 'cerobong peri', gereja pahat batu yang dilukis seribu tahun lalu, dan seluruh kota yang diukir di bawah tanah. Saat fajar, ratusan balon udara panas naik di atas Göreme dalam salah satu pemandangan terhebat dunia.`,
+          `Warga lokal VibeGuide tahu lembah mana yang menangkap cahaya terbaik, gereja gua mana yang bertahan, dan di mana keramaian tak menumpuk — mengubah foto termasyhur menjadi pemahaman nyata tentang tempat ini.`,
+        ],
+        highlights: [
+          { title: `Balon Udara Panas`, desc: `Penerbangan fajar di atas lembah — citra yang mendefinisikan Kapadokia.` },
+          { title: `Museum Terbuka Göreme`, desc: `Gereja gua Bizantium dengan fresko yang diukir ke dalam batu.` },
+          { title: `Kota Bawah Tanah`, desc: `Derinkuyu dan Kaymaklı — seluruh kota tersembunyi di bawah tanah.` },
+        ],
+        faqs: [
+          { q: `Di mana Kapadokia?`, a: `Di Anatolia tengah, di sekitar Göreme dan Nevşehir, dapat dijangkau dengan penerbangan ke Kayseri atau Nevşehir.` },
+          { q: `Apakah penerbangan balon dijamin?`, a: `Bergantung pada cuaca dan dipesan terpisah. Pemandu membantu Anda merencanakan sisa kegiatan di sekitarnya.` },
+          { q: `Berapa hari yang saya butuhkan?`, a: `Dua hari cukup untuk menikmati sorotan utama dengan nyaman; pemandu lokal membuat sehari pun terasa berarti.` },
+        ],
+        planningHeading: `Merencanakan kunjungan Anda`,
+        planningParagraphs: [
+          `Kapadokia terletak di Anatolia Tengah, di provinsi Nevsehir, dengan kota kecil Goreme di jantungnya. Sebagian besar pelancong terbang ke Nevsehir (NAV) atau bandara Kayseri (ASR) yang lebih besar, lalu melanjutkan dengan shuttle atau mobil untuk perjalanan akhir. Wilayah ini cukup ringkas untuk dijelajahi dari satu basis, dan lembah-lembah cerobong perinya yang seolah dari dunia lain mulai muncul hampir seketika saat Anda tiba.`,
+          `Musim semi dan gugur ideal, dengan hari yang sejuk dan cahaya lembut yang mempercantik lanskap batu. Musim panas membawa panas dan keramaian lebih besar, sementara musim dingin menyelimuti cerobong peri dengan salju untuk pemandangan yang lebih tenang dan ajaib. Pagi hari begitu keemasan di sini, terutama saat fajar ketika balon udara panas naik di atas lembah, bila cuaca mengizinkan. Rencanakan sekitar dua hari untuk melihat sorotan utama tanpa terburu-buru.`,
+          `Objek utama seperti Museum Terbuka Goreme dan kota bawah tanah bertiket, dan penerbangan balon dipesan terpisah serta bergantung pada cuaca. Pemandu lokal VibeGuide berlisensi membantu Anda mengatur waktu pengalaman balon, menemukan lembah terbaik untuk berjalan kaki dan berfoto, serta memahami gereja berfresko dan hunian gua yang mungkin akan Anda lewati begitu saja.`,
+        ],
+        ctaTitle: `Temukan Kapadokia bersama warga lokal`,
+        ...CAP.id,
+      },
     },
   },
   {
@@ -4428,6 +4610,34 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `与当地人一同参观多尔玛巴赫切宫`,
         ...IST.zh,
+      },
+      id: {
+        name: `Istana Dolmabahçe`,
+        metaTitle: `Tur Istana Dolmabahçe & Pemandu Lokal`,
+        metaDescription:
+          `Kunjungi Istana Dolmabahçe di Bosforus bersama pemandu Istanbul terverifikasi. Langit-langit emas, lampu kristal terbesar di dunia, dan ruang wafatnya Atatürk.`,
+        intro: [
+          `Istana Dolmabahçe adalah babak paling mewah dari kisah akhir Utsmaniyah. Dibangun antara 1843 dan 1856 untuk Sultan Abdülmecid I oleh para arsitek Balyan, istana ini menggantikan Topkapı yang abad pertengahan sebagai kediaman kekaisaran — sebuah pernyataan Eropa yang disengaja dalam gaya Barok, Rococo, dan Neoklasik, dengan 285 kamar, 46 aula, dan 6 hammam terbentang di sepanjang pesisir Eropa Bosforus.`,
+          `Bersama pakar lokal VibeGuide, kemewahan ini menjadi bermakna. Kunjungan mengikuti rute berpemandu, jadi pemandu sejati adalah pembeda antara sekadar koridor kamar berlapis emas dan kisah yang sesungguhnya — 14 ton emas, lampu kristal 4,5 ton, dan menit persis ketika sebuah bangsa menghentikan jam-jamnya.`,
+        ],
+        highlights: [
+          { title: `Aula Upacara`, desc: `Menaungi lampu kristal Bohemia seberat 4,5 ton dengan 750 titik lampu — hadiah dari Ratu Victoria dan yang terbesar dari jenisnya di Bumi.` },
+          { title: `Tangga Kristal`, desc: `Pegangan tangga yang seluruhnya dipahat dari kristal Baccarat, di bawah langit-langit berlapis 14 ton emas.` },
+          { title: `Ruang Atatürk`, desc: `Pendiri Turki modern wafat di sini pada 10 November 1938 pukul 09:05 — jam-jam istana masih diatur pada saat itu.` },
+        ],
+        faqs: [
+          { q: `Apakah saya perlu pemandu untuk Istana Dolmabahçe?`, a: `Kunjungan mengikuti rute berpemandu, dan Selamlık, Harem, serta Aula Upacara masing-masing menyimpan kisah yang akan Anda lewati begitu saja. Warga lokal VibeGuide mengubah kemewahan emasnya menjadi narasi dan membantu Anda melewati antrean terpanjang.` },
+          { q: `Mengapa semua jam diatur pada pukul 09:05?`, a: `Atatürk wafat di istana pada pukul 09:05, 10 November 1938. Banyak jam Dolmabahçe secara tradisional dipertahankan pada waktu itu untuk mengenangnya.` },
+          { q: `Berapa lama kunjungannya?`, a: `Sebagian besar kunjungan berpemandu berlangsung 1–2 jam antara Selamlık, Harem, dan taman tepi laut, serta berpadu indah dengan pesiar Bosforus setelahnya.` },
+        ],
+        planningHeading: `Merencanakan kunjungan Anda`,
+        planningParagraphs: [
+          `Istana Dolmabahçe terbentang di sepanjang pesisir Bosforus di Beşiktaş, di sisi Eropa. Cara paling sederhana untuk tiba adalah trem T1 ke perhentian terakhirnya di Kabataş, dilanjutkan berjalan kaki singkat di sepanjang tepi air menuju gerbangnya yang berornamen. Bus dan feri juga melayani area ini, dan latar tepi laut membuat perjalanan akhirnya terasa menyenangkan.`,
+          `Istana dibuka untuk pengunjung pada jadwal tertentu, dan pagi hari adalah waktu paling tenang untuk menjelajah sebelum rombongan turis memenuhi aula-aula. Secara historis tutup satu hari dalam sepekan, jadi periksa hari tutup mingguan sebelum berangkat. Musim semi dan gugur membawa cuaca sejuk yang ideal untuk memadukan interior dengan taman dan pemandangan Bosforus di luar.`,
+          `Masuk bertiket dan kunjungan mengikuti rute berpemandu menembus ruang-ruang berhias mewah. Selamlık dan Harem adalah bagian terpisah dengan tiket terpisah, jadi tentukan sebelumnya seberapa banyak yang ingin Anda lihat. Pemandu lokal VibeGuide berlisensi dapat mengatur tiket Anda, membantu memilih di antara bagian-bagiannya, dan menjelaskan sejarah Utsmaniyah di balik kristal, emas, dan tangga megahnya.`,
+        ],
+        ctaTitle: `Lihat Dolmabahçe bersama warga lokal`,
+        ...IST.id,
       },
     },
   },
@@ -5001,6 +5211,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `与当地人一同参观加拉塔石塔`,
         ...IST.zh,
       },
+      id: {
+        name: `Menara Galata`,
+        metaTitle: `Tur Menara Galata & Pemandu Lokal`,
+        metaDescription:
+          `Naiki Menara Galata di Istanbul bersama pemandu lokal terverifikasi. Hindari antrean, saksikan matahari terbenam, dan dengarkan kisah menara Genoa di atas Golden Horn.`,
+        intro: [
+          `Menara Galata telah memahkotai cakrawala Beyoğlu sejak 1348, ketika bangsa Genoa mendirikannya sebagai 'Christea Turris' — Menara Kristus — di puncak koloni bertembok mereka. Hampir 67 meter batu abad pertengahan menjulang melalui sembilan lantai menuju galeri puncak dengan panorama 360° penuh melintasi Golden Horn, semenanjung bersejarah, dan Bosforus di kejauhan.`,
+          `Ini tempat yang diselimuti legenda: pada abad ke-17 Hezarfen Ahmed Çelebi konon mengikat sepasang sayap dan meluncur dari menara ini sampai menyeberangi Bosforus ke Üsküdar. Bersama warga lokal VibeGuide, Anda mengatur waktu pendakian untuk menghindari antrean terburuk, tiba saat golden hour, dan mendengar kisah yang tak bisa diceritakan oleh pemandangan saja.`,
+        ],
+        highlights: [
+          { title: `Panorama 360°`, desc: `Dari galeri puncak seluruh kota terbentang — Golden Horn, kota tua, dan kedua pesisir Bosforus.` },
+          { title: `Tetenger Genoa`, desc: `Dibangun pada 1348 sebagai 'Menara Kristus', menjaga Galata selama hampir tujuh abad.` },
+          { title: `Legenda Penerbangan`, desc: `Hezarfen Ahmed Çelebi konon terbang dari sini menyeberangi selat dengan sayap buatan sendiri.` },
+        ],
+        faqs: [
+          { q: `Apakah ada antrean untuk Menara Galata?`, a: `Sering, terutama saat matahari terbenam. Pemandu lokal membantu Anda memilih jam yang tepat dan mengatur waktu agar Anda lebih sedikit menunggu dan lebih banyak menikmati pemandangan.` },
+          { q: `Kapan waktu terbaik untuk naik?`, a: `Sore menjelang senja itu ajaib, saat cahaya berubah keemasan di atas air. Pemandu Anda dapat merencanakan hari di sekitar momen itu.` },
+          { q: `Berapa lama kunjungannya?`, a: `Pendakian dan pemandangannya memakan waktu sekitar 45 menit hingga sejam, mudah dipadukan dengan jalan-jalan menembus Galata dan Karaköy di dekatnya.` },
+        ],
+        planningHeading: `Merencanakan kunjungan Anda`,
+        planningParagraphs: [
+          `Menara Galata menjulang di atas kawasan Karaköy dan Galata di Beyoğlu, di sisi utara Golden Horn. Banyak pengunjung mencapai Karaköy dengan trem atau metro lalu mendaki jalan-jalan curam yang penuh karakter dengan berjalan kaki. Untuk pendakian yang lebih mudah, funikular bersejarah Tünel membawa Anda naik bukit, menyisakan hanya jalan kaki singkat ke menara.`,
+          `Menara ini termasyhur akan pemandangan panoramanya, dan antrean terpanjang pada satu jam sebelum matahari terbenam ketika semua orang berharap mendapat foto keemasan yang sama. Tiba lebih awal berarti antrean lebih pendek dan cahaya lebih lembut untuk berfoto. Lorong-lorong di sekitarnya, penuh kafe dan bengkel kerja, layak dijelajahi kapan pun Anda berkunjung.`,
+          `Masuk bertiket, dan lift membawa Anda hampir sampai ke atas sebelum satu anak tangga terakhir mencapai galeri panorama yang melingkari puncak. Harapkan jalur setapak yang ringkas dengan pemandangan luas ke kota tua, Bosforus, dan Golden Horn. Pemandu lokal VibeGuide berlisensi dapat mengamankan tiket Anda, mengarahkan Anda menjauh dari kepadatan senja, dan menunjukkan tetenger-tetenger yang terbentang di bawah.`,
+        ],
+        ctaTitle: `Lihat Menara Galata bersama warga lokal`,
+        ...IST.id,
+      },
     },
   },
   {
@@ -5572,6 +5810,34 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `与当地人一同探索大巴扎`,
         ...IST.zh,
+      },
+      id: {
+        name: `Grand Bazaar`,
+        metaTitle: `Tur Grand Bazaar & Pemandu Lokal`,
+        metaDescription:
+          `Jelajahi Grand Bazaar Istanbul bersama pemandu lokal terverifikasi. Susuri 4.000 toko, tawar-menawar dengan percaya diri, dan temukan pengrajin jujur, bukan jebakan turis.`,
+        intro: [
+          `Grand Bazaar adalah salah satu pasar tertutup tertua dan terbesar di bumi — labirin yang dimulai di bawah Mehmed Sang Penakluk antara 1455 dan 1461, tumbuh selama berabad-abad menjadi lebih dari enam puluh jalan tertutup dan sekitar 4.000 toko. Karpet dan kilim, emas dan perhiasan, keramik, rempah, lentera, dan kulit meluap dari setiap ambang pintu di bawah kubah-kubahnya yang berlukis.`,
+          `Tawar-menawar di sini sudah lazim — itu setengah dari keseruannya — tetapi labirinnya menelan pendatang baru bulat-bulat. Warga lokal VibeGuide membawa Anda menyusuri lorong yang tepat, menjauhkan Anda dari harga jebakan turis, memperkenalkan Anda pada pengrajin jujur, serta menerjemahkan baik bahasa maupun ritual tawar-menawarnya.`,
+        ],
+        highlights: [
+          { title: `4.000 Toko`, desc: `Lebih dari enam puluh jalan tertutup berisi karpet, emas, keramik, rempah, lentera, dan kulit.` },
+          { title: `Seni Tawar-Menawar`, desc: `Menawar sudah lazim dan bagian dari keseruan — pemandu menjaga harga tetap jujur.` },
+          { title: `Sejarah yang Hidup`, desc: `Pasar tertutup yang dimulai pada 1450-an di bawah Mehmed Sang Penakluk, masih berdagang hingga kini.` },
+        ],
+        faqs: [
+          { q: `Apakah saya perlu pemandu untuk Grand Bazaar?`, a: `Anda tak akan tersesat selamanya, tetapi mungkin membayar terlalu mahal. Pemandu lokal tahu para pengrajin jujur, harga yang wajar, dan jalan pintas menembus labirin.` },
+          { q: `Apakah tawar-menawar benar-benar lazim?`, a: `Ya — itu bagian dari budaya. Mulailah rendah, tetap ramah, dan biarkan pemandu Anda menunjukkan di mana ritual berakhir dan kesepakatan yang adil dimulai.` },
+          { q: `Berapa lama sebaiknya saya rencanakan?`, a: `Sebagian besar kunjungan berpemandu berlangsung 1–2 jam dan berpadu alami dengan Spice Bazaar dan jalan-jalan Fatih di dekatnya.` },
+        ],
+        planningHeading: `Merencanakan kunjungan Anda`,
+        planningParagraphs: [
+          `Grand Bazaar (Kapalıçarşı) terletak di distrik Fatih kota tua, tepat di sebelah Beyazıt. Cara termudah untuk tiba adalah trem T1 ke perhentian 'Beyazıt-Kapalıçarşı', yang menurunkan Anda di salah satu gerbang utama. Ini jalan kaki yang mudah dan datar dari Sultanahmet dan Blue Mosque, jadi banyak pengunjung sekadar berjalan santai ke sini setelah melihat monumen di dekatnya.`,
+          `Masuk gratis dan pasar buka setiap hari kecuali Minggu. Paling ramai sekitar tengah hari, saat rombongan turis dan penumpang kapal pesiar memenuhi lorong-lorong, jadi tiba segera setelah pintu dibuka memberi Anda gang-gang yang lebih tenang dan pedagang yang lebih sabar. Karena seluruh bazaar tertutup atap, tetap nyaman di segala musim, menjadikannya pilihan andal di siang panas musim panas maupun hari dingin yang hujan.`,
+          `Sebagai salah satu pasar tertutup tertua dan terbesar di dunia, dengan sekitar 4.000 toko di sepanjang lebih dari 60 jalan, bazaar ini memberi imbalan bagi mereka yang meluangkan waktu. Tawar-menawar sudah lazim dan bagian dari keseruan, tetapi harga awal bisa mahal bagi pendatang baru. Pemandu lokal VibeGuide berlisensi membantu Anda menavigasi labirin, menjauh dari kios jebakan turis, dan mencapai toko-toko jujur tempat kualitas dan harga sama-sama wajar.`,
+        ],
+        ctaTitle: `Jelajahi Grand Bazaar bersama warga lokal`,
+        ...IST.id,
       },
     },
   },
@@ -6145,6 +6411,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `与当地人一同畅游博斯普鲁斯海峡`,
         ...IST.zh,
       },
+      id: {
+        name: `Bosforus`,
+        metaTitle: `Tur Pesiar Bosforus & Pemandu Lokal`,
+        metaDescription:
+          `Berlayarlah di Bosforus Istanbul bersama pemandu lokal terverifikasi. Meluncur melewati istana Utsmaniyah, yalı tepi air, dan Menara Gadis, serta dengarkan kisah tiap pesisir.`,
+        intro: [
+          `Bosforus adalah selat yang membelah sebuah benua — kanal berkelok yang memisahkan Eropa dari Asia dan menghubungkan Laut Hitam ke Laut Marmara. Tur perahu klasik meluncur melewati istana Utsmaniyah seperti Dolmabahçe, Beylerbeyi, dan Çırağan, rumah kayu tepi air anggun yang dikenal sebagai yalı, Menara Gadis di pulau kecilnya, Benteng Rumeli, dan di bawah jembatan gantung raksasa.`,
+          `Pesiar matahari terbenam adalah salah satu pengalaman ikonis Istanbul, tetapi dari atas air sulit membedakan satu istana dari yang berikutnya. Dengan warga lokal VibeGuide di atas kapal, Anda mengetahui mana yang mana, kisah siapa milik pesisir yang mana, dan mengapa pita air ini membentuk sebuah kekaisaran.`,
+        ],
+        highlights: [
+          { title: `Istana dari Atas Air`, desc: `Dolmabahçe, Beylerbeyi, dan Çırağan menghiasi pesisir dalam kemegahan Utsmaniyah.` },
+          { title: `Dua Benua`, desc: `Eropa di satu tepi, Asia di tepi lain, disatukan oleh jembatan gantung raksasa.` },
+          { title: `Yalı & Menara Gadis`, desc: `Rumah kayu tepi air bersejarah dan menara kecil yang menjaga selat.` },
+        ],
+        faqs: [
+          { q: `Apakah pesiar Bosforus layak dilakukan bersama pemandu?`, a: `Dari atas air istana-istana tampak menyatu. Pemandu lokal menyebutkan tiap satunya, menceritakan kisahnya, dan menunjukkan detail yang jika tidak akan Anda lewati begitu saja.` },
+          { q: `Kapan waktu terbaik untuk berpesiar?`, a: `Matahari terbenam itu ikonis, saat cahaya bercahaya di atas istana dan jembatan. Pemandu Anda dapat membantu memilih jam dan jenis perahu yang tepat.` },
+          { q: `Berapa lama pesiar pada umumnya?`, a: `Tur berkisar sekitar 1,5 hingga 3 jam tergantung seberapa jauh Anda menyusuri selat, mudah dipadukan dengan jalan-jalan di sepanjang tepi air.` },
+        ],
+        planningHeading: `Merencanakan kunjungan Anda`,
+        planningParagraphs: [
+          `Bosforus adalah selat termasyhur yang membelah Istanbul antara Eropa dan Asia, jadi Anda paling menikmatinya dari atas air. Tur perahu berangkat dari beberapa pusat tepi air, paling praktis Eminönü, Kabataş, dan Beşiktaş, semuanya dapat dijangkau dengan trem, feri, atau jalan kaki singkat dari kota tua. Dari dermaga ini Anda bisa mengikuti pesiar terjadwal atau naik perahu pribadi dalam beberapa menit setibanya.`,
+          `Ada perahu untuk setiap jam sepanjang hari, tetapi cahaya keemasan sore menjelang senja adalah waktu paling ikonis untuk berada di geladak. Musim panas membawa malam yang hangat dan hidup, sementara musim semi dan gugur menawarkan udara lebih jernih dan keramaian lebih tipis. Apa pun musimnya, selat ini berangin dan lebih sejuk daripada pesisir, jadi bawalah lapisan tipis dan berpakaianlah untuk menahan angin bahkan di hari cerah.`,
+          `Feri umum murah, sering, dan sangat indah pemandangannya, sementara perahu pribadi atau berpemandu memberi Anda keleluasaan atas rute dan waktu. Di sepanjang jalan Anda meluncur melewati istana Utsmaniyah, rumah tepi air yalı yang anggun, Benteng Rumeli, dan jembatan gantung raksasa. Pemandu lokal VibeGuide berlisensi membantu Anda memilih perahu yang tepat untuk rombongan dan menghidupkan garis pantai dengan kisah di balik setiap istana, benteng, dan kawasan yang Anda lewati.`,
+        ],
+        ctaTitle: `Berpesiar di Bosforus bersama warga lokal`,
+        ...IST.id,
+      },
     },
   },
   {
@@ -6716,6 +7010,34 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `与当地人一同参观阿斯潘多斯`,
         ...ANT.zh,
+      },
+      id: {
+        name: `Aspendos`,
+        metaTitle: `Tur Teater Romawi Aspendos & Pemandu Lokal`,
+        metaDescription:
+          `Kunjungi Aspendos dekat Antalya bersama pemandu lokal terverifikasi. Berdirilah di teater Romawi paling terawat di dunia dan dengar akustiknya yang masih bekerja setelah 1.800 tahun.`,
+        intro: [
+          `Aspendos adalah teater Romawi paling terawat di dunia — dibangun pada abad ke-2 M di bawah Marcus Aurelius oleh arsitek Zenon, dan masih mampu menampung sekitar 15.000 hingga 20.000 orang. Berbisiklah di panggung dan barisan belakang mendengar Anda: akustiknya tetap menakjubkan setelah hampir 1.800 tahun.`,
+          `Bersama pakar lokal VibeGuide, Anda tak sekadar memandang batu tua. Anda mempelajari bagaimana teater ini bekerja, mengapa ia bertahan utuh, dan apa yang perlu diperhatikan di akuaduk Romawi di dekatnya — sesuai ritme Anda, dalam bahasa Anda, sekitar 45 km timur Antalya dekat Serik.`,
+        ],
+        highlights: [
+          { title: `Akustik Sempurna`, desc: `Sepatah kata yang diucapkan di panggung masih terdengar hingga jenjang teratas, tanpa mikrofon.` },
+          { title: `Rancangan Romawi Utuh`, desc: `Bangunan panggung dan tempat duduk bertahan hampir lengkap — langka di mana pun di dunia.` },
+          { title: `Festival Opera & Balet`, desc: `Setiap musim panas teater kuno ini kembali penuh untuk Festival Internasional Aspendos.` },
+        ],
+        faqs: [
+          { q: `Mengapa Aspendos begitu termasyhur?`, a: `Ini teater Romawi paling terawat di mana pun, dan akustiknya masih bekerja — pemandu menunjukkan persis di mana Anda harus berdiri untuk mengujinya.` },
+          { q: `Seberapa jauh Aspendos dari Antalya?`, a: `Sekitar 45 km ke timur, dekat Serik — perjalanan sehari yang mudah, yang pemandu VibeGuide Anda dapat bantu rencanakan menghindari keramaian dan panas.` },
+          { q: `Apakah ada hal lain untuk dilihat di dekatnya?`, a: `Ya — sebuah akuaduk Romawi berdiri di dekatnya, dan pemandu dapat menambahkannya beserta situs sekitarnya ke kunjungan Anda.` },
+        ],
+        planningHeading: `Merencanakan kunjungan Anda`,
+        planningParagraphs: [
+          `Aspendos terletak sekitar 45 kilometer timur Antalya di Turki bagian selatan, dekat kota Serik. Sebagian besar pengunjung tiba dengan mobil atau tur terorganisir dari Antalya, menjadikannya perjalanan setengah hari yang mudah di sepanjang pesisir Mediterania. Situs ini paling terkenal karena teater Romawinya, yang menjulang di atas dataran sekitarnya dan dijangkau dengan jalan kaki singkat dari tempat parkir.`,
+          `Tengah hari di sini panas, terutama di musim panas, jadi pagi hari adalah waktu terbaik untuk menjelajah dalam kenyamanan relatif dan cahaya yang lebih lembut. Musim semi dan gugur membawa suhu menyenangkan dan keramaian lebih tipis, sementara malam musim panas menjadi hidup selama festival opera dan balet situs ini. Kapan pun Anda pergi, bawalah air dan pelindung matahari, karena hanya ada sedikit tempat teduh di sekitar bebatuan kuno.`,
+          `Teater ini bertiket dan termasyhur sebagai teater Romawi paling terawat di dunia, dengan bangunan panggung dan tempat duduknya yang luar biasa utuh. Pemandu lokal VibeGuide berlisensi menghidupkan akustik dan sejarahnya serta dapat memadukan kunjungan Anda dengan situs kuno di dekatnya seperti Side dan Perge, membantu Anda memahami bagaimana kota-kota ini terhubung di seluruh dataran Pamfilia dan memaksimalkan satu hari.`,
+        ],
+        ctaTitle: `Lihat Aspendos bersama warga lokal`,
+        ...ANT.id,
       },
     },
   },
@@ -7289,6 +7611,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `与当地人一同探索卡莱伊奇`,
         ...ANT.zh,
       },
+      id: {
+        name: `Kaleiçi (Kota Tua)`,
+        metaTitle: `Tur Kota Tua Kaleiçi Antalya & Pemandu Lokal`,
+        metaDescription:
+          `Susuri Kaleiçi, kota tua Antalya, bersama pemandu lokal terverifikasi. Lorong Utsmaniyah berbatu, Gerbang Hadrian, dan pelabuhan Romawi — kisah di balik setiap sudut.`,
+        intro: [
+          `Kaleiçi adalah kota tua Antalya yang penuh atmosfer — labirin lorong berbatu yang dipenuhi rumah Utsmaniyah-Yunani yang telah dipugar, hotel butik, dan kafe, semuanya melingkupi pelabuhan era Romawi. Ini tempat di mana setiap lengkungan menyimpan sebuah kisah.`,
+          `Bersama pakar lokal VibeGuide, Anda tak sekadar berkeliaran sambil berharap. Berjalanlah menembus Gerbang Hadrian, pandanglah Menara Yivli yang beralur, saksikan matahari terbenam dari Menara Hıdırlık, dan akhiri dengan pesiar perahu dari marina tua — sesuai ritme Anda, dalam bahasa Anda.`,
+        ],
+        highlights: [
+          { title: `Gerbang Hadrian`, desc: `Lengkungan marmer tiga bukaan yang dibangun pada 130 M untuk kunjungan Kaisar Hadrian ke kota ini.` },
+          { title: `Menara Yivli`, desc: `Menara bata beralur yang menjadi lambang cakrawala Antalya.` },
+          { title: `Pelabuhan Romawi`, desc: `Marina tua di bawah tembok — sempurna untuk pesiar perahu saat senja.` },
+        ],
+        faqs: [
+          { q: `Apa saja yang bisa dilakukan di Kaleiçi?`, a: `Susuri lorong Utsmaniyah, lihat Gerbang Hadrian dan Menara Hıdırlık, lalu ikuti pesiar perahu pelabuhan — pemandu lokal merangkai semuanya menjadi satu rute yang mudah.` },
+          { q: `Apakah Kaleiçi bisa dijelajahi dengan berjalan kaki?`, a: `Ya, kawasan ini ringkas dan paling nikmat dijelajahi dengan berjalan kaki; pemandu menjauhkan Anda dari jalan jebakan turis dan mengarahkan ke jalan yang indah.` },
+          { q: `Kapan waktu terbaik untuk berkunjung?`, a: `Sore menjelang senja itu ajaib, terutama dari Menara Hıdırlık — pemandu VibeGuide Anda dapat mengatur waktunya dengan sempurna.` },
+        ],
+        planningHeading: `Merencanakan kunjungan Anda`,
+        planningParagraphs: [
+          `Kaleici adalah kota tua bersejarah Antalya, terselip di antara kota modern dan laut. Cara termudah masuk adalah trem Antray, turun di perhentian Ismetpasa atau Kaleici, atau sekadar berjalan turun dari pusat kota. Begitu Anda melewati Gerbang Hadrian, jalanan berubah menjadi berbatu dan kendaraan menghilang, jadi seluruh kawasan paling nikmat dijelajahi perlahan dengan berjalan kaki.`,
+          `Kota tua ini memberi imbalan bagi kunjungan santai di sore hari, saat cahaya melembut di atas pelabuhan Romawi dan lorong-lorong bersinar keemasan. Matahari terbenam dari Menara Hidirlik atau tembok pelabuhan adalah favorit warga lokal. Tengah hari musim panas bisa panas dan ramai, jadi pagi dan malam lebih bersahabat; musim semi dan gugur membawa suhu lebih lembut dan keramaian lebih tipis sepanjang hari.`,
+          `Berkeliaran di lorong berbatu Kaleici gratis, dan tak ada satu gerbang atau tiket untuk memasuki kawasan itu sendiri. Anda bisa berjalan santai melewati Menara Yivli, pelabuhan tua, dan rumah-rumah Utsmaniyah sesuai ritme Anda, dan pesiar perahu dari marina menjadi tambahan yang menyenangkan. Pemandu lokal VibeGuide berlisensi menghidupkan halaman tersembunyi dan gang belakang dengan kisah-kisah di baliknya.`,
+        ],
+        ctaTitle: `Jelajahi Kaleiçi bersama warga lokal`,
+        ...ANT.id,
+      },
     },
   },
   {
@@ -7861,6 +8211,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `与当地人一同参观帕加马`,
         ...IZM.zh,
       },
+      id: {
+        name: `Pergamon`,
+        metaTitle: `Tur Kota Kuno Pergamon (Bergama) & Pemandu Lokal`,
+        metaDescription:
+          `Jelajahi Pergamon, kota kuno Warisan Dunia UNESCO dekat İzmir, bersama pemandu lokal terverifikasi. Teater terjal masa antik, perpustakaan legendaris, dan pusat penyembuhan Asklepion.`,
+        intro: [
+          `Pergamon — kini Bergama — adalah salah satu kota besar dunia kuno, mula-mula Yunani lalu Romawi, dan kini Situs Warisan Dunia UNESCO. Akropolisnya memahkotai bukit terjal di atas dataran, menjadi rumah bagi Kuil Trajan, altar Zeus, dan teater paling terjal masa antik, dipahat dramatis ke lereng untuk sekitar 10.000 penonton.`,
+          `Bersama pakar lokal VibeGuide, reruntuhan menjadi hidup. Dengarkan bagaimana Perpustakaan Pergamon menyaingi Aleksandria dan memberi kita perkamen, lalu turunlah ke pusat penyembuhan Asklepion dan Basilika Merah yang luas (Kızıl Avlu) — sesuai ritme Anda, dalam bahasa Anda, sekitar sejam dari Kuşadası atau İzmir.`,
+        ],
+        highlights: [
+          { title: `Teater Terjal`, desc: `Teater paling terjal masa antik, dipahat ke lereng bukit untuk sekitar 10.000 penonton.` },
+          { title: `Perpustakaan Agung`, desc: `Nomor dua setelah Aleksandria — di sini perkamen (charta pergamena) disempurnakan.` },
+          { title: `Asklepion`, desc: `Salah satu pusat penyembuhan paling termasyhur masa antik, di dataran di bawah akropolis.` },
+        ],
+        faqs: [
+          { q: `Di mana Pergamon?`, a: `Di kota Bergama, provinsi İzmir — sekitar sejam dari Kuşadası atau İzmir, dan perjalanan sehari yang mudah yang pemandu lokal dapat rencanakan untuk Anda.` },
+          { q: `Berapa banyak waktu yang saya butuhkan?`, a: `Akropolis, Asklepion, dan Basilika Merah masing-masing layak diberi waktu; setengah hari bersama pemandu mencakup sorotan utama dengan nyaman.` },
+          { q: `Apakah pemandu layak di Pergamon?`, a: `Tentu saja — perpustakaan, altar Zeus, dan ritual penyembuhan adalah kisah, bukan papan tanda; pemandu menghidupkan kembali reruntuhan yang kosong.` },
+        ],
+        planningHeading: `Merencanakan kunjungan Anda`,
+        planningParagraphs: [
+          `Pergamon terletak di kota Bergama di provinsi Izmir, sekitar sejam dari Kusadasi atau Izmir dan mudah dijangkau dengan mobil atau bus. Akropolis kuno memahkotai bukit terjal di atas kota, yang bisa Anda capai dengan kereta gantung Akropolis (teleferik) atau lewat jalan darat. Sanktuari penyembuhan Asklepion dan Basilika Merah adalah pemberhentian terpisah di bawah di Bergama sendiri, tambahan mudah untuk hari itu.`,
+          `Pagi hari adalah waktu ideal di sini: udara lebih sejuk, cahaya jernih di atas reruntuhan puncak bukit, dan keramaian masih tipis sebelum rombongan turis tiba. Medannya terjal dan terpapar matahari, jadi siang musim panas bisa melelahkan, sementara musim semi dan gugur menawarkan cuaca berjalan kaki paling nyaman. Kapan pun Anda datang, sepatu yang kokoh dan nyaman serta air membuat pendakian jauh lebih menyenangkan.`,
+          `Pergamon adalah Situs Warisan Dunia UNESCO bertiket, dengan Akropolis, Asklepion, dan Basilika Merah masing-masing layak dimasuki. Harapkan teras megah, teater terjal, dan pemandangan luas ke dataran. Pemandu lokal VibeGuide berlisensi merangkai reruntuhan yang tersebar menjadi satu kisah, dari akropolis dan pendakian kereta gantung hingga Asklepion, sehingga bebatuan menjadi bermakna alih-alih menyatu tak jelas.`,
+        ],
+        ctaTitle: `Lihat Pergamon bersama warga lokal`,
+        ...IZM.id,
+      },
     },
   },
   {
@@ -8432,6 +8810,34 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `与当地人一同参观棉花堡`,
         ...PAM.zh,
+      },
+      id: {
+        name: `Pamukkale`,
+        metaTitle: `Tur Pamukkale & Hierapolis bersama Pemandu Lokal`,
+        metaDescription:
+          `Temukan Pamukkale, 'Kastil Kapas' UNESCO, bersama pemandu lokal terverifikasi. Susuri travertin putih, jelajahi Hierapolis kuno, dan berenang di Kolam Cleopatra.`,
+        intro: [
+          `Pamukkale — 'Kastil Kapas' — adalah salah satu pemandangan paling surealis di Turki: lereng bukit berundak travertin putih menyilaukan, terpahat selama ribuan tahun oleh air termal kaya kalsium yang mengalir turun dan mengeras menjadi kolam yang tampak seperti kapas beku. Ini Situs Warisan Dunia UNESCO di Denizli, dan Anda menyusurinya tanpa alas kaki, air mineral hangat setinggi mata kaki.`,
+          `Tepat di atas undakan berdiri Hierapolis, kota spa Yunani-Romawi dengan teater megah, salah satu nekropolis terbesar di Anatolia, dan Kolam Antik termal tempat Anda berenang di antara pilar Romawi yang tumbang. Bersama warga lokal VibeGuide, Anda mengatur waktu dengan tepat, memahami apa yang Anda lihat, dan membuat perjalanan jauh ini benar-benar sepadan.`,
+        ],
+        highlights: [
+          { title: `Undakan Travertin Putih`, desc: `Kolam kalsium putih menyilaukan mengalir turun di lereng bukit — susuri tanpa alas kaki di air termal hangat.` },
+          { title: `Hierapolis Kuno`, desc: `Kota spa Yunani-Romawi di atas undakan: teater, nekropolis luas, Kuil Apollo, dan Plutonium yang keramat.` },
+          { title: `Kolam Antik Cleopatra`, desc: `Berenang di air termal hangat di antara pilar Romawi kuno yang tumbang oleh gempa bumi.` },
+        ],
+        faqs: [
+          { q: `Apakah saya perlu pemandu untuk Pamukkale?`, a: `Anda bisa berkeliaran sendiri, tetapi Pamukkale dan Hierapolis adalah dua situs dalam satu — geologi termal dan kota Romawi. Pemandu lokal menghubungkan keduanya, mengatur waktu kunjungan menghindari keramaian dan silau, serta membuat perjalanan sehari yang panjang mengalir mulus.` },
+          { q: `Kapan waktu terbaik untuk mengunjungi Pamukkale?`, a: `Pagi hari atau sore menjelang senja. Matahari tengah hari membuat undakan putih menyilaukan dan keramaian memuncak; matahari terbenam di atas kolam sungguh spektakuler. Pemandu merencanakan hari di sekitar ini.` },
+          { q: `Seberapa jauh Pamukkale dari pesisir?`, a: `Sekitar 19 km dari Denizli dan perjalanan sehari yang panjang dari Antalya, Bodrum, Kuşadası, atau Marmaris. Pemandu menangani jarak dan waktu agar perjalanannya sepadan.` },
+        ],
+        planningHeading: `Merencanakan kunjungan Anda`,
+        planningParagraphs: [
+          `Pamukkale terletak di provinsi Denizli di Turki barat daya, sekitar 19 kilometer dari kota Denizli. Anda bisa terbang ke Denizli (DNZ) atau menjangkaunya sebagai perjalanan sehari dari pesisir, dan banyak pengunjung memadukannya dengan tur wilayah yang lebih luas. Undakan putih menyilaukan itu terletak di lereng bukit di atas dataran, terlihat dari kejauhan dan mudah dijangkau dengan mobil atau transfer terorganisir.`,
+          `Tengah hari bisa menyilaukan dan panas, dengan travertin putih memantulkan matahari, jadi pagi hari atau sore menjelang senja jauh lebih nyaman dan memuaskan. Jam-jam itu juga membawa cahaya lebih lembut untuk berfoto dan keramaian lebih tipis di undakan. Ini menjadi perjalanan sehari yang panjang namun berkesan dari Antalya, Bodrum, Kusadasi, atau Izmir, jadi mulailah pagi-pagi untuk menikmati situs saat paling tenang.`,
+          `Travertin putih dan kota kuno Hierapolis berbagi satu tiket, dan Anda menyusuri undakan tanpa alas kaki untuk melindunginya, sementara Kolam Antik Cleopatra dikenai biaya terpisah. Pemandu lokal VibeGuide berlisensi membantu Anda memahami undakan dan reruntuhan Hierapolis yang terbentang luas, dari teater hingga nekropolisnya, dan menunjukkan tempat serta waktu terbaik untuk kolam mineralnya.`,
+        ],
+        ctaTitle: `Lihat Pamukkale bersama warga lokal`,
+        ...PAM.id,
       },
     },
   },
@@ -9025,6 +9431,35 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `与当地人一同参观苏莱曼尼耶清真寺`,
         ...IST.zh,
       },
+      id: {
+        name: `Masjid Süleymaniye`,
+        metaTitle: `Tur Masjid Süleymaniye & Pemandu Lokal`,
+        metaDescription:
+          `Kunjungi Masjid Süleymaniye bersama pemandu Istanbul terverifikasi. Mahakarya Mimar Sinan di Bukit Ketiga, makam Süleyman dan Hürrem, serta teras panorama di atas Golden Horn.`,
+        intro: [
+          `Masjid Süleymaniye memahkotai Bukit Ketiga Istanbul di atas Golden Horn, mahakarya kekaisaran Mimar Sinan. Dibangun antara 1550 dan 1557 untuk Sultan Süleyman yang Agung, masjid ini menyeimbangkan kubah pusat yang luas di atas empat menara dan ruang salat yang tenang serta penuh cahaya — jantung yang percaya diri dari arsitektur klasik Utsmaniyah di puncak kejayaan kekaisaran.`,
+          `Bersama pakar lokal VibeGuide, kompleks ini terbaca seperti kisah, bukan sekadar monumen. Pemandu sejati menghubungkan kubah dan halaman dengan sultan yang membangunnya dan arsitek yang menantang gravitasi, lalu membawa Anda ke makam taman Süleyman dan istrinya Hürrem — dan ke teras dengan salah satu pemandangan gratis terindah di kota ini.`,
+        ],
+        highlights: [
+          { title: `Kubah agung Sinan`, desc: `Kubah pusat menjulang hampir 53 meter, dirancang agar cahaya dan suara mengalir menembus ruangan — momen yang meneguhkan kejeniusan Mimar Sinan.` },
+          { title: `Makam kekaisaran`, desc: `Di taman belakang masjid berdiri makam berkubah Süleyman yang Agung dan istrinya Hürrem Sultan (Roxelana), berhias ubin mewah di dalamnya.` },
+          { title: `Teras panorama`, desc: `Teras luar masjid terbuka ke pemandangan luas di atas Golden Horn dan kubah-kubah kota tua — dan tanpa biaya.` },
+        ],
+        faqs: [
+          { q: `Apakah saya perlu tiket untuk Masjid Süleymaniye?`, a: `Tidak. Ini masjid yang aktif digunakan dan masuk gratis. Pengunjung disambut di luar lima waktu salat harian, dan warga lokal VibeGuide dapat merencanakan kedatangan Anda agar masjid terbuka dan tenang.` },
+          { q: `Apa yang harus saya kenakan di dalam?`, a: `Berpakaianlah sopan dengan bahu dan lutut tertutup; perempuan menutup rambut dengan kerudung, dan semua orang melepas alas kaki di pintu. Kerudung biasanya tersedia untuk dipinjam di pintu masuk bila Anda membutuhkannya.` },
+          { q: `Apakah lebih baik dari Blue Mosque?`, a: `Ini mahakarya Mimar Sinan dan biasanya jauh lebih sepi, dengan teras panorama yang tak dimiliki Blue Mosque. Banyak pemandu menganggapnya bangunan yang lebih indah — warga lokal VibeGuide dapat menunjukkan alasannya.` },
+          { q: `Berapa lama kunjungannya?`, a: `Sebagian besar kunjungan berlangsung 45 menit hingga sejam antara ruang salat, makam, dan teras, serta berpadu alami dengan Grand Bazaar di dekatnya atau jalan-jalan turun ke Golden Horn.` },
+        ],
+        planningHeading: `Merencanakan kunjungan Anda`,
+        planningParagraphs: [
+          `Masjid Süleymaniye terletak di atas kawasan Grand Bazaar di Bukit Ketiga. Cara termudah adalah trem T1 ke Beyazıt atau Laleli, dilanjutkan jalan kaki singkat mendaki menembus distrik universitas; feri ke Eminönü dan pendakian dari Golden Horn adalah alternatif yang indah. Lorong-lorong di sekitar masjid penuh dengan restoran kacang tradisional dan taman teh.`,
+          `Sebagai masjid yang aktif digunakan, tempat ini menyambut pengunjung di luar lima waktu salat harian, dan tutup bagi turis untuk waktu singkat selama tiap salat serta lebih lama saat tengah hari Jumat. Pagi hari dan sore menjelang senja adalah waktu paling tenang, dan terasnya tak terlupakan menjelang matahari terbenam. Bahkan di puncak musim, tempat ini tetap jauh lebih sepi daripada Blue Mosque.`,
+          `Masuk gratis dan tak ada tiket yang perlu dibeli. Berpakaianlah sopan — bahu dan lutut tertutup, dan penutup kepala untuk perempuan; Anda melepas alas kaki dan membawanya dalam kantong. Pemandu lokal VibeGuide berlisensi mengatur waktu kunjungan Anda sesuai jadwal salat, menjelaskan tata krama agar Anda merasa nyaman, dan mengurai sejarah di balik kubah Sinan dan makam kekaisaran.`,
+        ],
+        ctaTitle: `Lihat Süleymaniye bersama warga lokal`,
+        ...IST.id,
+      },
     },
   },
   {
@@ -9616,6 +10051,35 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `与当地人一同参观香料市场`,
         ...IST.zh,
+      },
+      id: {
+        name: `Spice Bazaar`,
+        metaTitle: `Tur Spice Bazaar (Bazaar Mesir) & Pemandu Lokal`,
+        metaDescription:
+          `Jelajahi Spice Bazaar Istanbul bersama pemandu lokal terverifikasi. Tumpukan rempah, safron, Turkish delight, dan teh di pasar tertutup abad ke-17 dekat New Mosque di Eminönü.`,
+        intro: [
+          `Spice Bazaar — Mısır Çarşısı, atau Bazaar Mesir — adalah pasar paling harum di Istanbul, aula berbentuk L abad ke-17 dengan arkade berkubah di jantung Eminönü. Dibangun pada 1660-an sebagai bagian dari kompleks New Mosque, pasar ini didanai perdagangan dengan Mesir Utsmaniyah, dan hingga kini kios-kiosnya melimpah dengan piramida rempah, safron, buah kering, kacang, dan teh.`,
+          `Bersama pakar lokal VibeGuide, keramaian dan warnanya menjadi bermakna. Pemandu sejati membawa Anda melewati jebakan turis menuju pedagang jujur yang telah lama berdiri, memberi tahu berapa seharusnya harga safron asli dan Turkish delight murni, dan membiarkan Anda mencicipi sebelum membeli — mengubah gang yang riuh menjadi pagi yang santai penuh cita rasa dan kisah.`,
+        ],
+        highlights: [
+          { title: `Gunung rempah`, desc: `Kerucut paprika, sumac, jintan, dan kayu manis menjulang di samping toples safron merah tua — aroma yang memberi bazaar ini nama dan kemasyhurannya.` },
+          { title: `Turkish delight & manisan`, desc: `Nampan lokum dalam segala rasa, dari delima dan pistachio hingga mawar, berjejer di samping aprikot kering, buah tin, dan kacang bermadu — sebagian besar kios menawarkan cicipan.` },
+          { title: `Teh & New Mosque`, desc: `Teh apel, ramuan herbal, dan kopi memenuhi udara, dan Yeni Cami berkubah besar menjulang tepat di sebelah gerbang utama bazaar.` },
+        ],
+        faqs: [
+          { q: `Apakah masuk Spice Bazaar gratis?`, a: `Ya, masuk sepenuhnya gratis dan tak ada yang perlu dipesan. Warga lokal VibeGuide dapat menemui Anda di gerbang dan memandu Anda ke pedagang paling tepercaya di dalam.` },
+          { q: `Apakah saya harus menawar di Spice Bazaar?`, a: `Harga jarang tetap, jadi tawar-menawar yang sopan normal dan lazim. Pemandu lokal tahu tarif wajar untuk safron, lokum, dan teh serta menegosiasikannya untuk Anda agar tak membayar terlalu mahal.` },
+          { q: `Apa bedanya dengan Grand Bazaar?`, a: `Spice Bazaar lebih kecil, lebih harum, dan berfokus pada makanan — rempah, manisan, teh, dan kacang — sementara Grand Bazaar adalah labirin luas berisi perhiasan, karpet, dan kerajinan. Banyak pengunjung menyambangi keduanya dalam sehari.` },
+          { q: `Kapan waktu terbaik untuk pergi?`, a: `Pagi hari paling tenang, sebelum rombongan turis dan pembelanja memenuhi gang. Hari kerja lebih sepi daripada akhir pekan, dan warga lokal VibeGuide dapat mengatur waktu kunjungan Anda untuk pengalaman terbaik.` },
+        ],
+        planningHeading: `Merencanakan kunjungan Anda`,
+        planningParagraphs: [
+          `Spice Bazaar terletak di Eminönü, tepat di sebelah New Mosque dan dua menit berjalan kaki dari Jembatan Galata serta dermaga feri Bosforus. Kedatangan termudah adalah trem T1 ke perhentian Eminönü, atau feri menyeberangi Golden Horn; latar tepi lautnya membuatnya mudah dipadukan dalam sehari di sepanjang pesisir kota tua.`,
+          `Bazaar paling ramai di tengah hari, jadi kunjungan pagi-pagi lebih tenang dan memungkinkan Anda berbincang dengan pedagang sebelum keramaian tiba. Buka dengan jadwal harian dan menjadi sangat hidup di akhir pekan. Musim semi dan gugur menyenangkan, tetapi aula tertutup ini tetap ramah di segala cuaca.`,
+          `Masuk gratis dan tak ada yang perlu dipesan — Anda cukup masuk. Harga jarang tetap, jadi sedikit tawar-menawar yang ramah sudah lazim, dan kualitas berbeda-beda dari kios ke kios. Pemandu lokal VibeGuide berlisensi mengarahkan Anda ke pedagang tepercaya, membantu Anda membedakan safron asli dari yang diwarnai, dan menegosiasikan harga wajar sementara Anda mencicipi berbagai isi pasar.`,
+        ],
+        ctaTitle: `Lihat Spice Bazaar bersama warga lokal`,
+        ...IST.id,
       },
     },
   },
@@ -10209,6 +10673,35 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `与当地人一同参观少女塔`,
         ...IST.zh,
       },
+      id: {
+        name: `Menara Gadis`,
+        metaTitle: `Tur Menara Gadis (Kız Kulesi) & Pemandu Lokal`,
+        metaDescription:
+          `Kunjungi Menara Gadis di pulau kecilnya di Bosforus bersama pemandu Istanbul terverifikasi. Legenda kuno, pelayaran singkat dari Üsküdar, dan cakrawala senja tak terlupakan.`,
+        intro: [
+          `Menara Gadis berdiri sendiri di sebuah pulau kecil di Bosforus, tepat di lepas pesisir Üsküdar di sisi Asia, tempat selat membuka ke arah Laut Marmara. Kecil, putih, dan sangat fotogenik, menara ini telah menjaga jalur air selama berabad-abad sebagai mercusuar, titik bea cukai, dan stasiun karantina — dan kini, setelah pemugaran cermat, ia kembali menyambut pengunjung.`,
+          `Yang membuat menara ini tak terlupakan bukan ukurannya, melainkan kisahnya. Legenda Turki menceritakan seorang putri yang dikurung di sini untuk lolos dari gigitan ular yang diramalkan; kisah Yunani tentang Hero dan Leander menempatkan tragedinya di perairan yang sama ini. Bersama pakar lokal VibeGuide, legenda, sejarah, dan cakrawala semuanya menyatu dengan pas, mengubah pelayaran singkat menjadi salah satu tamasya paling romantis di Istanbul.`,
+        ],
+        highlights: [
+          { title: `Pulau dan menara`, desc: `Sebongkah batu kecil di tengah Bosforus yang dimahkotai menara putih ramping — salah satu siluet paling dikenali di seluruh Istanbul.` },
+          { title: `Legenda di atas air`, desc: `Putri Turki dan ular yang diramalkan, serta kisah Yunani tentang Leander yang berenang menyeberangi selat demi cinta — dua kisah yang terikat pada satu titik ini.` },
+          { title: `Kafe dan titik pandang`, desc: `Kafe dan teras pandang memungkinkan Anda berlama-lama dengan panorama 360 derajat kota tua, pesisir Asia, dan kapal yang berlalu.` },
+        ],
+        faqs: [
+          { q: `Bagaimana cara saya ke Menara Gadis?`, a: `Dengan pelayaran singkat dari tepi laut Üsküdar di sisi Asia, atau dari Kabataş di sisi Eropa. Tak ada jembatan — perahu itu bagian dari pengalaman, dan kedua dermaga mudah dijangkau dengan feri, trem, atau Marmaray.` },
+          { q: `Apa saja legenda menara ini?`, a: `Legenda Turki menceritakan seorang putri yang ditempatkan di sini untuk lolos dari ramalan bahwa ia akan mati oleh gigitan ular, dan kisah Yunani tentang Hero dan Leander menempatkan tragedi cintanya di perairan ini. Pemandu lokal dapat menceritakan keduanya, dan menjelaskan bagaimana menara ini memperoleh namanya.` },
+          { q: `Apakah menara ini layak dikunjungi setelah pemugarannya?`, a: `Ya. Setelah pemugaran cermat baru-baru ini, menara ini dibuka kembali untuk pengunjung, dengan kafe dan teras pandang, sehingga Anda kini bisa masuk dan menikmati panorama, bukan hanya mengaguminya dari pantai.` },
+          { q: `Kapan waktu terbaik untuk pergi?`, a: `Matahari terbenam paling berkesan, dengan kota tua bercahaya di belakang menara, sementara pagi hari paling sepi untuk berfoto. Hari-hari tenang di akhir musim semi atau awal musim gugur membuat penyeberangan perahu sangat menyenangkan.` },
+        ],
+        planningHeading: `Merencanakan kunjungan Anda`,
+        planningParagraphs: [
+          `Menara Gadis terletak di pulaunya sendiri, jadi setiap kunjungan diawali dengan pelayaran singkat. Titik keberangkatan utama adalah tepi laut Üsküdar di sisi Asia, dengan perahu tambahan dari Kabataş di sisi Eropa. Keduanya mudah dijangkau dengan feri, trem, atau jalur Marmaray, dan penyeberangan itu sendiri memberi Anda menara yang membingkai di atas air sejak Anda berangkat.`,
+          `Menara ini buka sepanjang hari dan paling ajaib menjelang matahari terbenam, saat cahaya berubah keemasan dan cakrawala kota tua bercahaya di belakangnya. Akhir musim semi dan awal musim gugur membawa cuaca tenang dan sejuk yang ideal untuk penyeberangan; pada hari berangin atau berbadai jadwal perahu bisa berubah, jadi ada baiknya menjaga rencana Anda tetap fleksibel. Pagi hari cenderung paling sepi untuk berfoto di pulau.`,
+          `Baik transfer perahu maupun tiket masuk menara bertiket, dan ruang di pulau kecil ini terbatas, jadi sebaiknya rencanakan lebih awal. Pemandu lokal VibeGuide berlisensi dapat mengatur penyeberangan, mengatur waktu kunjungan Anda untuk cahaya terbaik, dan menghidupkan legenda serta sejarah Bosforus — sambil menunjukkan persis di mana harus berdiri untuk foto cakrawala klasik itu.`,
+        ],
+        ctaTitle: `Lihat Menara Gadis bersama warga lokal`,
+        ...IST.id,
+      },
     },
   },
   {
@@ -10800,6 +11293,35 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `与当地人一同参观阿尔忒弥斯神庙`,
         ...EPH.zh,
+      },
+      id: {
+        name: `Kuil Artemis`,
+        metaTitle: `Tur Kuil Artemis di Efesus & Pemandu Lokal`,
+        metaDescription:
+          `Kunjungi Kuil Artemis di Selçuk bersama pemandu lokal terverifikasi. Salah satu Tujuh Keajaiban Dunia Kuno, kini satu pilar yang menjulang di antara bangau dan rawa dekat Efesus.`,
+        intro: [
+          `Kuil Artemis di Selçuk, hanya beberapa menit dari Efesus, dulunya salah satu Tujuh Keajaiban Dunia Kuno — kuil marmer sebegitu megahnya hingga berdiri empat kali lebih besar daripada Parthenon di Athena. Para pelancong kuno menulis bahwa mereka telah melihat banyak keajaiban, tetapi tak ada yang menyaingi rumah Artemis yang menjulang ke awan.`,
+          `Kini situs ini bersahaja: satu pilar yang didirikan kembali menjulang dari fondasi berawa, sering dengan sarang bangau bertengger di atasnya dan burung-burung mengarung di antara buluh di bawahnya. Namun berdiri di sini, tempat para raja dulu bersaing mendirikan sanktuari termegah di dunia kuno, adalah salah satu pelajaran sejarah paling hening dan mengharukan. Pakar lokal VibeGuide memulihkan kuil ini dalam imajinasi Anda, lengkap dengan pilar dan keramaiannya.`,
+        ],
+        highlights: [
+          { title: `Keajaiban yang lenyap`, desc: `Salah satu Tujuh Keajaiban Dunia Kuno, dulu empat kali ukuran Parthenon, kini menyusut menjadi fondasi dan satu pilar berdiri.` },
+          { title: `Pilar tunggal dan bangaunya`, desc: `Satu pilar marmer yang didirikan kembali menjulang dari rawa, sering dimahkotai sarang bangau — citra tak terlupakan tentang kemegahan yang kembali ke alam.` },
+          { title: `Klaster bukit Selçuk`, desc: `Kuil ini berpadu alami dengan Basilika Santo Yohanes dan Masjid İsa Bey yang memahkotai bukit tepat di atasnya, serta dengan Efesus di dekatnya.` },
+        ],
+        faqs: [
+          { q: `Apakah masih banyak yang tersisa dari Kuil Artemis?`, a: `Sangat sedikit yang berdiri kini — terutama fondasi berawa dan satu pilar yang didirikan kembali, sering dimahkotai sarang bangau. Kekuatannya terletak pada apa yang dulu ia miliki: pemandu menghidupkan kembali Keajaiban yang lenyap di tempat reruntuhan saja tak mampu.` },
+          { q: `Bagaimana kaitannya dengan Efesus?`, a: `Kuil ini berada di Selçuk, hanya beberapa menit dari situs utama Efesus, dan keduanya secara alami dikunjungi bersama dengan Basilika Santo Yohanes dan Masjid İsa Bey di bukit tepat di atasnya.` },
+          { q: `Apakah saya perlu tiket untuk Kuil Artemis?`, a: `Kuil ini adalah situs terbuka dan biasanya gratis untuk masuk, berbeda dari reruntuhan Efesus bertiket di dekatnya. Pemandu lokal dapat mengatur itinerari Selçuk gabungan yang mengalir mulus di antara situs-situs.` },
+          { q: `Kapan waktu terbaik untuk berkunjung?`, a: `Cahaya pagi atau sore paling cocok untuk pilar tunggal ini, dan musim semi serta gugur adalah musim paling nyaman. Musim panas di sini panas, jadi bawalah air dan pelindung matahari.` },
+        ],
+        planningHeading: `Merencanakan kunjungan Anda`,
+        planningParagraphs: [
+          `Kuil Artemis terletak di tepi kota Selçuk, hanya beberapa menit dengan mobil atau jalan kaki yang menyenangkan dari pintu masuk utama Efesus, sehingga keduanya hampir selalu dikunjungi bersama. Selçuk berada di jalur kereta İzmir–Aydın dan mudah dijangkau dengan kereta, bus, atau berkendara singkat dari İzmir dan resor pesisir, dan situsnya sendiri tepat di sebelah jalan di bawah bukit benteng.`,
+          `Kuil ini adalah situs terbuka yang rendah dan biasanya gratis untuk masuk, paling nikmat dinikmati dalam cahaya lembut pagi atau sore saat pilar tunggalnya menangkap matahari dan bangau-bangau aktif. Musim semi dan gugur adalah musim paling nyaman; musim panas di sekitar Efesus bisa sangat panas, jadi bawalah air dan pelindung matahari kapan pun sepanjang tahun.`,
+          `Karena begitu sedikit yang tersisa berdiri kini, Kuil Artemis memberi imbalan lebih pada imajinasi daripada sekadar wisata, dan di sinilah persis pemandu lokal VibeGuide berlisensi membuat perbedaan. Pemandu dapat merangkai kuil, Efesus, Basilika Santo Yohanes, dan Masjid İsa Bey menjadi satu itinerari Selçuk, serta membangun kembali Keajaiban yang lenyap itu dalam benak Anda sehingga satu pilar menjadi kuil terhebat dunia kuno.`,
+        ],
+        ctaTitle: `Lihat Kuil Artemis bersama warga lokal`,
+        ...EPH.id,
       },
     },
   },
@@ -11393,6 +11915,35 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `与当地人一同参观博德鲁姆城堡`,
         ...BOD.zh,
       },
+      id: {
+        name: `Kastil Bodrum`,
+        metaTitle: `Tur Kastil Bodrum & Museum Bawah Air bersama Pemandu Lokal`,
+        metaDescription:
+          `Jelajahi Kastil Bodrum, benteng Ksatria Hospitaller di atas pelabuhan, bersama pemandu lokal berlisensi. Menara Tentara Salib, Museum Arkeologi Bawah Air, dan bangkai kapal Uluburun.`,
+        intro: [
+          `Kastil Bodrum, Kastil Santo Petrus, menjaga pelabuhan pirus kota bagai mahkota batu. Ksatria Hospitaller mulai mendirikannya pada awal abad ke-15, mengangkut balok-balok dari reruntuhan Mausoleum di Halikarnassus — salah satu Tujuh Keajaiban Dunia Kuno — sehingga serpihan makam raja kuno teranyam ke dalam tembok benteng Tentara Salib.`,
+          `Menaranya masih membawa nama bangsa-bangsa yang membangunnya — Inggris, Prancis, Italia, Jerman, dan Menara Ular — dan masing-masing menjulang di atas marina dengan pemandangan Aegea yang luas. Di dalam, kastil menampung Museum Arkeologi Bawah Air yang termasyhur, tempat bangkai kapal kuno, amfora, dan harta bangkai Uluburun dari Zaman Perunggu menceritakan kisah laut. Bersama pakar lokal VibeGuide, lapisan sejarah Tentara Salib, Utsmaniyah, dan kuno tersusun dengan pas.`,
+        ],
+        highlights: [
+          { title: `Menara Para Ksatria`, desc: `Menara Inggris, Prancis, Italia, Jerman, dan Ular masing-masing menjulang di atas pelabuhan, dibangun oleh berbagai bangsa ordo Hospitaller pada abad ke-15.` },
+          { title: `Museum Arkeologi Bawah Air`, desc: `Salah satu yang terbaik dari jenisnya, memamerkan bangkai kapal kuno, amfora, dan kaca yang diangkat dari dasar Aegea.` },
+          { title: `Bangkai Kapal Uluburun`, desc: `Temuan dari kapal dagang abad ke-14 SM — tembaga, ingot, emas, dan muatan eksotis — mengungkap perdagangan Zaman Perunggu di seluruh Mediterania timur.` },
+        ],
+        faqs: [
+          { q: `Apakah Kastil Bodrum layak dikunjungi?`, a: `Sangat layak. Ini salah satu kastil Tentara Salib paling terawat di Mediterania dan juga rumah bagi Museum Arkeologi Bawah Air kelas dunia, semuanya berbalut sebagian pemandangan pelabuhan terindah di pesisir Aegea.` },
+          { q: `Apa yang ada di dalam Kastil Bodrum?`, a: `Kastil ini menampung Museum Arkeologi Bawah Air, dengan bangkai kapal kuno, ribuan amfora, kaca, dan harta bangkai Uluburun dari Zaman Perunggu, di samping menara bersejarah Inggris, Prancis, Italia, Jerman, dan Ular.` },
+          { q: `Apakah Kastil Bodrum terkait dengan Mausoleum di Halikarnassus?`, a: `Ya. Ksatria Hospitaller memakai kembali batu dari reruntuhan Mausoleum — salah satu Tujuh Keajaiban Dunia Kuno — untuk membangun kastil. Situs Mausoleum sendiri terletak jalan kaki singkat mendaki di kota dan berpadu sempurna dengan kunjungan kastil.` },
+          { q: `Apakah saya perlu pemandu untuk Kastil Bodrum?`, a: `Anda bisa berkeliaran sendiri, tetapi kastil ini memadukan sejarah Tentara Salib, Utsmaniyah, dan maritim kuno yang mudah terlewat. Pemandu lokal VibeGuide berlisensi merangkai menara, bangkai kapal, dan Mausoleum menjadi satu kisah yang jelas.` },
+        ],
+        planningHeading: `Merencanakan kunjungan Anda`,
+        planningParagraphs: [
+          `Kastil Bodrum terletak tepat di semenanjung antara dua teluk kota, jadi dari hampir mana pun di pusat kota ia hanya berjarak jalan kaki singkat dan indah di sepanjang marina. Sebagian besar pengunjung tiba di Bodrum lewat jalan darat dari Bandara Milas–Bodrum, atau dengan feri dari pesisir sekitar dan pulau-pulau Yunani terdekat, dan kastil ini mustahil terlewat di cakrawala di atas pelabuhan.`,
+          `Musim panas di Aegea panas dan ramai, jadi waktu paling sejuk dan tenang untuk mendaki benteng adalah akhir musim semi dan awal musim gugur. Pagi hari membawa cahaya paling lembut untuk berfoto di atas marina, dan angin laut membuat teras terbuka menyenangkan bahkan di puncak musim. Kenakan sepatu yang kokoh — kastil dibangun di atas batu, dengan anak tangga, landaian, dan permukaan tak rata di sepanjangnya.`,
+          `Masuk ke kastil dan Museum Arkeologi Bawah Airnya bertiket, dan situs ini memadukan benteng, beberapa menara, dan aula museum dalam satu kunjungan. Pemandu lokal VibeGuide berlisensi dapat membantu Anda memahami semuanya — menghubungkan menara Tentara Salib dengan muatan tenggelam di bawahnya, dan menambahkan jalan kaki mendaki singkat ke sisa Mausoleum di Halikarnassus, keajaiban kuno yang bebatuannya turut membangun tembok.`,
+        ],
+        ctaTitle: `Lihat Kastil Bodrum bersama warga lokal`,
+        ...BOD.id,
+      },
     },
   },
   {
@@ -11985,6 +12536,35 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `与当地人一同参观哥贝克力石阵`,
         ...SAN.zh,
       },
+      id: {
+        name: `Göbekli Tepe`,
+        metaTitle: `Tur Göbekli Tepe (Kuil Tertua Dunia) bersama Pemandu Lokal`,
+        metaDescription:
+          `Kunjungi Göbekli Tepe dekat Şanlıurfa bersama pemandu lokal berlisensi — kuil tertua yang diketahui di dunia, dibangun sekitar 9600 SM, 6.000 tahun sebelum Stonehenge. Situs Warisan Dunia UNESCO.`,
+        intro: [
+          `Göbekli Tepe adalah sanktuari monumental tertua yang diketahui di Bumi, didirikan sekitar 9600 SM — kira-kira 6.000 tahun sebelum Stonehenge dan piramida Giza. Di puncak bukit gundul dekat Şanlıurfa di Turki tenggara, para pemburu-pengumpul yang belum menemukan tembikar, tulisan, atau pertanian entah bagaimana menambang, memahat, dan mendirikan lingkaran besar pilar batu gamping berbentuk T. Ini penemuan yang menulis ulang kisah peradaban: di sini kuil mungkin hadir sebelum kota.`,
+          `Pilar-pilar itu berdiri setinggi beberapa meter dan dipahat dalam relief bergambar rubah, babi hutan, ular, kalajengking, dan burung bangau — bestiari batu dari fajar keyakinan. Kini jalur setapak beratap modern menaungi lingkaran-lingkaran itu dan memungkinkan Anda memandang ke dalamnya tanpa menyentuh tempat rapuh ini. Karena begitu banyak yang tak tampak oleh mata awam, pemandu lokal VibeGuide berlisensi sangat penting untuk membaca simbol dan menjelaskan mengapa Göbekli Tepe mengubah segalanya.`,
+        ],
+        highlights: [
+          { title: `Kuil pertama di dunia`, desc: `Dibangun sekitar 9600 SM oleh manusia Neolitikum pra-tembikar — sekitar 6.000 tahun lebih tua dari Stonehenge — dan tercatat sebagai Situs Warisan Dunia UNESCO.` },
+          { title: `Pilar T berukir`, desc: `Pilar batu gamping besar tersusun dalam lingkaran, dipahat relief bergambar rubah, babi hutan, ular, kalajengking, dan bangau dari fajar agama.` },
+          { title: `Manusia Urfa di Şanlıurfa`, desc: `Padukan situs ini dengan Museum Arkeologi Şanlıurfa, rumah bagi pilar-pilar asli dan Manusia Urfa berusia 11.000 tahun, patung manusia seukuran hidup tertua yang diketahui.` },
+        ],
+        faqs: [
+          { q: `Berapa usia Göbekli Tepe?`, a: `Göbekli Tepe dibangun sekitar 9600 SM, menjadikannya kira-kira berusia 11.000 tahun — sekitar 6.000 tahun lebih tua dari Stonehenge dan piramida Mesir, serta kuil monumental tertua yang diketahui di dunia.` },
+          { q: `Mengapa Göbekli Tepe begitu penting?`, a: `Situs ini didirikan oleh pemburu-pengumpul sebelum tembikar, tulisan, atau pertanian, yang menunjukkan bahwa agama terorganisir dan pembangunan monumental mungkin hadir sebelum kehidupan desa menetap — menjungkirbalikkan gagasan lama bahwa pertanian datang lebih dulu. Ini Situs Warisan Dunia UNESCO.` },
+          { q: `Bagaimana cara saya ke Göbekli Tepe?`, a: `Situs ini sekitar 20 km dari Şanlıurfa di Turki tenggara. Sebagian besar pengunjung terbang ke Şanlıurfa dan menjangkau Göbekli Tepe dengan mobil, taksi, atau tur terorganisir, dengan pusat pengunjung, shuttle, dan jalur setapak beratap di situs.` },
+          { q: `Apakah saya perlu pemandu untuk Göbekli Tepe?`, a: `Sangat dianjurkan. Sebagian besar makna situs tak tampak tanpa konteks, dan pemandu lokal VibeGuide berlisensi menjelaskan pilar T, ukiran hewan, dan mengapa penemuan ini menulis ulang sejarah manusia — lalu menghubungkannya dengan Manusia Urfa di museum kota.` },
+        ],
+        planningHeading: `Merencanakan kunjungan Anda`,
+        planningParagraphs: [
+          `Göbekli Tepe terletak sekitar 20 km dari pusat Şanlıurfa, kota terdekat dan basis alami untuk sebuah kunjungan. Sebagian besar pelancong terbang ke Şanlıurfa dan menjangkau situs dengan mobil, taksi, atau tur terorganisir di sepanjang jalan singkat berpapan tanda jelas yang berakhir di pusat pengunjung, dari sana shuttle dan jalur setapak menuntun ke lingkaran-lingkaran itu. Hanya ada sedikit hal lain di dekatnya, jadi paling baik dipadukan dengan kota itu sendiri.`,
+          `Puncak bukit ini terbuka dan terpapar, dengan hampir tanpa tempat teduh, jadi matahari musim panas Turki tenggara bisa amat terik. Incarlah pagi hari atau sore, dan bawalah air, topi, serta pelindung matahari; musim semi dan gugur adalah musim paling nyaman secara keseluruhan. Jalur setapak beratap menjaga Anda di atas lingkaran-lingkaran itu, jadi kenakan sepatu nyaman untuk jalan kaki ringan.`,
+          `Masuk bertiket, dan yang membuat Göbekli Tepe tak terlupakan adalah memahami apa yang Anda lihat — jika tidak, pilar-pilar itu bisa tampak seperti batu biasa di bukit. Pemandu lokal VibeGuide berlisensi menghidupkan lingkaran-lingkaran itu, mengurai relief hewan, dan menghubungkan situs dengan Museum Arkeologi Şanlıurfa, tempat pilar asli dan Manusia Urfa yang menakjubkan melengkapi kisahnya.`,
+        ],
+        ctaTitle: `Lihat Göbekli Tepe bersama warga lokal`,
+        ...SAN.id,
+      },
     },
   },
   {
@@ -12542,6 +13122,34 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `与当地人一同参观苏梅拉修道院`,
         ...TZN.zh,
+      },
+      id: {
+        name: `Biara Sumela`,
+        metaTitle: `Tur Biara Sumela & Pemandu Lokal`,
+        metaDescription:
+          `Kunjungi Biara Sumela dekat Trabzon bersama pemandu lokal terverifikasi — biara tebing Ortodoks Yunani yang menempel di dinding batu terjal 300m di atas lembah hutan berkabut.`,
+        intro: [
+          `Biara Sumela adalah salah satu pemandangan paling memukau di Turki — biara Ortodoks Yunani yang dibangun ke dalam dinding tebing terjal 300 meter di atas lembah hijau berselimut kabut di pegunungan selatan Trabzon. Didirikan pada abad ke-4 dan dibangun kembali selama lebih dari seribu tahun, kapel-kapel berfreskonya seolah tumbuh langsung dari batu.`,
+          `Bersama pakar lokal VibeGuide, pendakian menembus hutan pinus menjadi sebuah kisah — para biarawan Bizantium, ikon ajaib Sang Perawan, gereja pahat batu, dan berabad-abad peziarah yang menempuh perjalanan ke sini. Anda akan memahami apa yang Anda lihat, sesuai ritme Anda dan dalam bahasa Anda.`,
+        ],
+        highlights: [
+          { title: `Latar Dinding Tebing`, desc: `Biara yang menempel di dinding batu vertikal 300m di atas lembah Altındere — pemandangan pertama yang tak terlupakan.` },
+          { title: `Fresko Bizantium`, desc: `Adegan lukisan hidup menutupi Gereja Batu, berlapis melintasi berabad-abad kehidupan biara.` },
+          { title: `Pendekatan Lewat Hutan`, desc: `Berjalan naik menembus hutan pinus sejuk dan kabut gunung untuk mencapai gerbang biara.` },
+        ],
+        faqs: [
+          { q: `Bagaimana cara ke Biara Sumela?`, a: `Sumela terletak di lembah Altındere sekitar 45 km selatan Trabzon, kira-kira sejam lewat jalan darat. Sebagian besar pengunjung berkendara, naik taksi, atau mengikuti tur dari Trabzon, lalu menyusuri jalur hutan terakhir naik ke pintu masuk biara.` },
+          { q: `Apakah Anda perlu pemandu untuk Biara Sumela?`, a: `Latarnya berbicara sendiri, tetapi fresko dan sejarah Bizantium panjang biara ini tak tampak tanpa konteks. Pemandu lokal VibeGuide menghidupkan ikon, legenda, dan berabad-abad ziarah.` },
+          { q: `Apakah banyak berjalan kaki di Sumela?`, a: `Ya — mencapai biara melibatkan pendakian jalur hutan, dan situsnya sendiri memiliki anak tangga dan permukaan tak rata. Kenakan sepatu nyaman, dan perhatikan bahwa bisa sejuk dan lembap bahkan di musim panas.` },
+        ],
+        planningHeading: `Merencanakan kunjungan Anda`,
+        planningParagraphs: [
+          `Sumela terletak di Taman Nasional Lembah Altındere, sekitar 45 km selatan Trabzon di pesisir Laut Hitam Turki, kira-kira sejam berkendara ke pedalaman pegunungan. Sebagian besar pengunjung menjadikan Trabzon sebagai basis — yang memiliki bandara dengan penerbangan domestik — dan menjangkau biara dengan mobil, taksi, atau tur terorganisir. Dari tempat parkir lembah, shuttle dan jalur pejalan kaki menuntun naik menembus hutan menuju pintu masuk.`,
+          `Datanglah di akhir musim semi, musim panas, atau awal musim gugur: jalan gunung bisa tertutup salju musim dingin, dan lembah sering berselimut kabut dan hujan. Pagi hari terbaik untuk pemandangan lebih jernih sebelum awan menebal. Bahkan di musim panas tetap sejuk dan lembap di ketinggian, jadi bawalah lapisan tambahan dan jaket hujan, serta harapkan pendakian di anak tangga dan jalur hutan — sepatu kokoh penting.`,
+          `Biara ini telah menjalani pemugaran besar, jadi periksa status buka terkini sebelum berangkat. Sebagian besar makna Sumela — fresko Bizantium, mata air suci, kapel pahat batu, dan kisah ikon ajaib — mudah terlewat tanpa konteks. Pemandu lokal VibeGuide berlisensi merencanakan waktu Anda di sekitar cuaca dan keramaian serta mengubah pemandangan menakjubkan menjadi sejarah hidup seribu tahun.`,
+        ],
+        ctaTitle: `Lihat Biara Sumela bersama warga lokal`,
+        ...TZN.id,
       },
     },
   },
@@ -13101,6 +13709,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `与当地人一同参观特洛伊`,
         ...CKL.zh,
       },
+      id: {
+        name: `Troya (Truva)`,
+        metaTitle: `Tur Kota Kuno Troya & Pemandu Lokal`,
+        metaDescription:
+          `Jelajahi kota kuno Troya dekat Çanakkale bersama pemandu lokal terverifikasi — situs legendaris Iliad karya Homer, Situs Warisan Dunia UNESCO dengan sembilan kota berlapis.`,
+        intro: [
+          `Troya adalah situs arkeologi paling legendaris di dunia — kota dari Iliad karya Homer, kota Achilles, Hector, dan kuda kayu. Di atas gundukan rendah dekat Çanakkale, menghadap dataran ke arah Dardanella, sembilan kota dibangun satu di atas yang lain selama lebih dari 3.000 tahun, dari Zaman Perunggu hingga masa Romawi.`,
+          `Reruntuhan ini memberi imbalan bagi mereka yang tahu kisahnya. Bersama pakar lokal VibeGuide, tembok berlapis, landaian, dan fondasi menjadi hidup — di mana mitos bertemu arkeologi, bagaimana Schliemann menggali di sini, dan apa yang sungguh terjadi di dataran berangin ini. Replika kuda kayu menandai tempatnya, tetapi keajaiban sesungguhnya adalah memahami lapisan-lapisan di bawah kaki Anda.`,
+        ],
+        highlights: [
+          { title: `Kota Legendaris Homer`, desc: `Latar Iliad dan Perang Troya — mitos dan sejarah terjalin di satu gundukan kuno.` },
+          { title: `Sembilan Kota dalam Satu`, desc: `Lapis demi lapis permukiman dari Zaman Perunggu hingga Romawi, terungkap dalam tembok dan parit galian.` },
+          { title: `Warisan Dunia UNESCO`, desc: `Situs bernilai universal luar biasa, dengan museum modern yang memamerkan temuan-temuan terbaiknya di dekatnya.` },
+        ],
+        faqs: [
+          { q: `Di mana Troya dan bagaimana cara ke sana?`, a: `Troya terletak sekitar 30 km barat daya Çanakkale di Turki barat laut, dekat Dardanella. Sebagian besar pengunjung berbasis di Çanakkale dan menjangkau situs dengan mobil, taksi, atau tur; berpadu baik pula dengan kunjungan Gallipoli.` },
+          { q: `Apakah ada yang bisa dilihat di Troya, atau sekadar reruntuhan?`, a: `Troya adalah situs arkeologi berupa tembok, fondasi, dan lapisan galian, bukan kuil yang berdiri, jadi konteks adalah segalanya. Pemandu mengungkap sembilan kota, mitos, dan sejarah — dan Museum Troya yang mengagumkan di dekatnya memamerkan artefak terbaiknya.` },
+          { q: `Apakah Anda perlu pemandu untuk Troya?`, a: `Sangat dianjurkan. Sebagian besar makna Troya tak tampak oleh mata awam. Pemandu lokal VibeGuide menghidupkan epik Homer, kota-kota berlapis, dan penggalian Schliemann sehingga situs menjadi bermakna.` },
+        ],
+        planningHeading: `Merencanakan kunjungan Anda`,
+        planningParagraphs: [
+          `Troya terletak sekitar 30 km barat daya Çanakkale di Turki barat laut, dekat pesisir Aegea dan selat Dardanella. Sebagian besar pengunjung berbasis di Çanakkale — dapat dijangkau dengan bus atau penerbangan singkat dan feri — dan berkendara, naik taksi, atau mengikuti tur ke situs. Troya berpadu alami dengan medan perang Gallipoli di seberang selat, dan Museum Troya yang mengagumkan terletak di sebelah reruntuhan.`,
+          `Musim semi dan gugur menawarkan cuaca paling nyaman; musim panas di gundukan terbuka panas dengan sedikit tempat teduh. Sisihkan beberapa jam untuk situs dan lebih banyak untuk museum. Bawalah topi, air, dan sepatu nyaman untuk jalur arkeologi yang tak rata, dan mulailah lebih awal untuk mengalahkan panas sekaligus keramaian bus wisata.`,
+          `Troya adalah situs di mana kisahnya lebih berarti daripada tembok mana pun yang berdiri — tanpanya, reruntuhan bisa terbaca sebagai tumpukan batu yang membingungkan. Pemandu lokal VibeGuide berlisensi mengurai sembilan kota berlapis, menceritakan kisah Iliad dan Kuda Troya, menjelaskan penggalian kontroversial Heinrich Schliemann, dan menghubungkan reruntuhan dengan harta di Museum Troya untuk sebuah hari yang akhirnya membuat legenda ini nyata.`,
+        ],
+        ctaTitle: `Lihat Troya bersama warga lokal`,
+        ...CKL.id,
+      },
     },
   },
   {
@@ -13659,6 +14295,34 @@ export const ATTRACTIONS: Attraction[] = [
         ctaTitle: `与当地人一同参观内姆鲁特山`,
         ...NMR.zh,
       },
+      id: {
+        name: `Gunung Nemrut`,
+        metaTitle: `Tur Gunung Nemrut & Pemandu Lokal`,
+        metaDescription:
+          `Kunjungi Gunung Nemrut bersama pemandu lokal terverifikasi — kepala batu raksasa dewa dan raja berusia 2.000 tahun memahkotai puncak 2.150m, matahari terbit Warisan Dunia UNESCO tiada tara.`,
+        intro: [
+          `Gunung Nemrut adalah salah satu pemandangan paling luar biasa di Turki — sanktuari puncak gunung pada 2.150 meter tempat kepala batu raksasa dewa, raja, dan elang menatap ke seluruh puncak. Dibangun pada abad ke-1 SM sebagai makam-sanktuari Raja Antiochus I dari Commagene, patung-patung raksasanya telah runtuh dari tubuhnya dan kini berserakan di teras-teras puncak.`,
+          `Para pelancong mendaki sebelum fajar untuk menyaksikan matahari terbit di atas kepala-kepala itu — pengalaman tak terlupakan yang nyaris seperti dari dunia lain. Bersama pakar lokal VibeGuide, perpaduan aneh dewa-dewa Yunani dan Persia, kerajaan Commagene yang hilang, dan misteri makam tersembunyi Antiochus semuanya menjadi jelas, sesuai ritme Anda dan dalam bahasa Anda.`,
+        ],
+        highlights: [
+          { title: `Kepala Raksasa`, desc: `Kepala pahat raksasa dewa dan raja, runtuh dari singgasananya dan berserakan di teras-teras puncak.` },
+          { title: `Matahari Terbit di Puncak`, desc: `Pengalaman klasik: menyaksikan fajar merekah di atas patung pada 2.150 meter, dalam udara gunung yang dingin.` },
+          { title: `Kerajaan Commagene yang Hilang`, desc: `Makam-sanktuari abad ke-1 SM yang memadukan dewa Yunani dan Persia — Situs Warisan Dunia UNESCO.` },
+        ],
+        faqs: [
+          { q: `Bagaimana cara ke Gunung Nemrut?`, a: `Nemrut dijangkau dari Adıyaman atau Kahta di Turki tenggara, biasanya dengan mobil, taksi, atau tur terorganisir, diikuti pendakian singkat namun terjal ke teras-teras puncak. Banyak pengunjung terbang ke Adıyaman atau Malatya dan melanjutkan lewat jalan darat.` },
+          { q: `Apakah layak naik untuk matahari terbit di Nemrut?`, a: `Bagi banyak orang, matahari terbit di atas kepala-kepala raksasa adalah sorotan seluruh perjalanan — tetapi itu berarti awal yang sangat pagi dan dingin. Matahari terbenam adalah alternatif yang lebih ringan. Pemandu lokal membantu Anda memilih serta merencanakan waktu dan pendakiannya.` },
+          { q: `Apakah Anda perlu pemandu untuk Gunung Nemrut?`, a: `Sangat dianjurkan. Patung-patung itu menakjubkan, tetapi kisah Commagene dan Raja Antiochus tak tampak tanpa konteks. Pemandu lokal VibeGuide menjelaskan dewa-dewa, makam, dan kerajaan, serta menangani waktu untuk matahari terbit atau terbenam.` },
+        ],
+        planningHeading: `Merencanakan kunjungan Anda`,
+        planningParagraphs: [
+          `Gunung Nemrut menjulang di Turki tenggara, paling umum dijangkau dari kota Adıyaman atau Kahta. Banyak pelancong terbang ke Adıyaman atau Malatya dan melanjutkan dengan mobil, taksi, atau tur terorganisir naik jalan gunung, yang berakhir di tempat parkir di bawah puncak. Dari sana pendakian singkat namun terjal di tanah kasar menuntun ke teras timur dan barat tempat patung-patung berdiri.`,
+          `Waktu klasik untuk berkunjung adalah matahari terbit atau terbenam, saat cahaya rendah membuat kepala-kepala raksasa bersinar — matahari terbit paling termasyhur, tetapi itu berarti awal yang dingin dan pra-fajar. Puncak hanya dapat diakses di bulan-bulan lebih hangat, kira-kira akhir musim semi hingga awal musim gugur, karena salju menutup jalan di musim dingin. Bahkan di musim panas dingin dan berangin pada 2.150 meter, jadi bawalah lapisan hangat, dan kenakan sepatu kokoh untuk pendakian.`,
+          `Kepala-kepala Nemrut yang runtuh tak terlupakan, tetapi makna di baliknya — kerajaan Commagene yang lenyap, klaim Raja Antiochus atas keturunan ilahi, perpaduan dewa Yunani dan Persia, serta makam yang masih belum ditemukan di bawah puncak buatan — perlu diceritakan. Pemandu lokal VibeGuide berlisensi merencanakan waktu matahari terbit atau terbenam, memandu pendakian, dan mengubah serakan wajah batu raksasa menjadi salah satu kisah paling aneh dan mengharukan dari dunia kuno.`,
+        ],
+        ctaTitle: `Lihat Gunung Nemrut bersama warga lokal`,
+        ...NMR.id,
+      },
     },
   },
   {
@@ -14216,6 +14880,34 @@ export const ATTRACTIONS: Attraction[] = [
         ],
         ctaTitle: `与当地人一同参观古城西戴`,
         ...ANT.zh,
+      },
+      id: {
+        name: `Kota Kuno Side`,
+        metaTitle: `Tur Kota Kuno Side & Pemandu Lokal`,
+        metaDescription:
+          `Jelajahi Side kuno dekat Antalya bersama pemandu lokal terverifikasi — kota pelabuhan Yunani-Romawi tempat Kuil Apollo berdiri tepat di tepi Mediterania.`,
+        intro: [
+          `Side adalah salah satu situs kuno paling indah di Pesisir Pirus — kota pelabuhan Yunani-Romawi yang terletak di semenanjung kecil, tempat reruntuhan marmer meluruh langsung ke Mediterania. Kuil Apollo tepi lautnya, yang pilar-pilarnya bercahaya saat senja di atas air, adalah salah satu pemandangan paling banyak difoto di seluruh pesisir.`,
+          `Dulu pelabuhan besar dan, secara termasyhur, pusat perdagangan budak dan bajak laut, Side kini memadukan kota kuno yang terawat baik dengan kota tepi laut yang hidup. Bersama pakar lokal VibeGuide, teater megah, jalan berpilar, dan kuil di tepi laut menjadi hidup — para pedagang Romawi, perdagangan pelabuhan, dan lapisan sejarah di bawah resor.`,
+        ],
+        highlights: [
+          { title: `Kuil Apollo`, desc: `Pilar marmer berdiri tepat di tepi pantai, bercahaya keemasan saat senja di atas Mediterania — citra khas Side.` },
+          { title: `Teater Agung`, desc: `Salah satu teater Romawi terbesar di kawasan, dulu berkapasitas sekitar 15.000 penonton.` },
+          { title: `Kota Kuno di Tepi Laut`, desc: `Jalan berpilar, agora, dan gerbang monumental teranyam di sebuah kota tepi laut yang hidup.` },
+        ],
+        faqs: [
+          { q: `Di mana Side dan bagaimana cara ke sana?`, a: `Side terletak di pesisir Mediterania sekitar 75 km timur Antalya, dekat Manavgat. Sebagian besar pengunjung menjangkaunya dengan mobil, taksi, atau tur dari Antalya atau resor sekitar; ini perjalanan sehari yang mudah dan populer.` },
+          { q: `Apakah Anda perlu pemandu untuk Side?`, a: `Reruntuhan teranyam di kota modern, jadi mudah untuk tak menyadari apa yang Anda lihat. Pemandu lokal VibeGuide mengungkap Kuil Apollo, teater, dan agora, serta menceritakan kisah pelabuhan, perdagangan, dan masa lalu bajak laut Side.` },
+          { q: `Kapan waktu terbaik untuk mengunjungi Side?`, a: `Musim semi dan gugur menawarkan cuaca hangat dan nyaman serta keramaian lebih tipis. Di musim panas, kunjungi reruntuhan pagi-pagi atau menjelang malam untuk menghindari panas tengah hari — dan atur waktu Kuil Apollo untuk matahari terbenam, saat ia paling indah.` },
+        ],
+        planningHeading: `Merencanakan kunjungan Anda`,
+        planningParagraphs: [
+          `Side terletak di semenanjung kecil di pesisir Mediterania, sekitar 75 km timur Antalya dekat kota Manavgat. Ini perjalanan sehari yang mudah dari Antalya dan resor sekitarnya dengan mobil, taksi, atau tur terorganisir, dan bandara Antalya membuat seluruh area mudah dijangkau. Kota kuno ini teranyam langsung menembus kota resor modern, jadi Anda berjalan di antara reruntuhan, toko, dan kafe sambil melangkah.`,
+          `Musim semi dan gugur membawa cuaca paling nyaman untuk menjelajahi reruntuhan terbuka, sementara musim panas panas — kunjungi situs terpapar pagi-pagi atau menjelang malam. Simpan Kuil Apollo tepi laut untuk matahari terbenam, saat pilar-pilarnya berubah keemasan di atas air dan keramaian menipis. Kenakan topi, tabir surya, dan sepatu nyaman, serta bawalah air, karena sebagian besar situs tak terteduhi.`,
+          `Karena reruntuhan Side terjalin ke dalam kota liburan yang sibuk, mudah untuk berjalan melewati dua ribu tahun sejarah tanpa menyadarinya. Pemandu lokal VibeGuide berlisensi menghubungkan potongan-potongan yang berserakan — Kuil Apollo, teater megah, agora, dan pelabuhan — serta menceritakan kisah perdagangan pelabuhan, masa lalu bajak laut dan pasar budaknya, dan kehidupan Romawi sehari-hari, mengubah jalan santai tepi laut yang cantik menjadi kota kuno yang sesungguhnya.`,
+        ],
+        ctaTitle: `Lihat Side kuno bersama warga lokal`,
+        ...ANT.id,
       },
     },
   },
