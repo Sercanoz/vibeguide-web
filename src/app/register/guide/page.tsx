@@ -56,6 +56,7 @@ export default function RegisterGuidePage() {
   const [badgeBackPreview, setBadgeBackPreview] = useState<string | null>(null);
 
   const [uploadProgress, setUploadProgress] = useState<string | null>(null);
+  const [consent, setConsent] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -117,6 +118,7 @@ export default function RegisterGuidePage() {
     setError(null);
     if (password !== password2) { setError("Passwords do not match."); return; }
     if (password.length < 6) { setError("Password must be at least 6 characters."); return; }
+    if (!consent) { setError("Please accept the Terms, Privacy Policy and KVKK notice to continue."); return; }
     if (!badgeFront || !badgeBack) { setError("Please upload both sides of your guide badge."); return; }
     setLoading(true);
     try {
@@ -366,13 +368,30 @@ export default function RegisterGuidePage() {
                 placeholder="Repeat password" />
             </div>
 
+            {/* KVKK/GDPR — kimlik/KYC verisi işlemeden önce açık rıza (zorunlu). */}
+            <label className="flex items-start gap-2.5 text-xs leading-5 text-neutral-700">
+              <input
+                type="checkbox"
+                checked={consent}
+                onChange={(e) => setConsent(e.target.checked)}
+                className="mt-0.5 h-4 w-4 shrink-0 accent-[#6C4CF1]"
+              />
+              <span>
+                I agree to the{" "}
+                <a href="/terms" target="_blank" className="text-[#6C4CF1] font-semibold hover:underline">Terms</a>,{" "}
+                <a href="/privacy" target="_blank" className="text-[#6C4CF1] font-semibold hover:underline">Privacy Policy</a>{" "}
+                and{" "}
+                <a href="/kvkk" target="_blank" className="text-[#6C4CF1] font-semibold hover:underline">KVKK notice</a>, including the processing of my verification documents.
+              </span>
+            </label>
+
             {error && (
               <div className="rounded-2xl bg-red-50 border border-red-100 px-4 py-3 text-sm text-red-600 font-medium">
                 {error}
               </div>
             )}
 
-            <button type="submit" disabled={loading}
+            <button type="submit" disabled={loading || !consent}
               className="w-full rounded-2xl bg-[#6C4CF1] text-white font-bold py-3 text-sm hover:bg-[#5a3dd4] transition-colors disabled:opacity-50"
               style={{ boxShadow: "0 4px 16px rgba(108,76,241,0.25)" }}>
               {loading ? "Please wait…" : "Submit application →"}

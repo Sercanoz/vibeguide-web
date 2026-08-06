@@ -15,6 +15,7 @@ export default function RegisterTouristPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
+  const [consent, setConsent] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -52,6 +53,7 @@ export default function RegisterTouristPage() {
     setError(null);
     if (password !== password2) { setError("Passwords do not match."); return; }
     if (password.length < 6) { setError("Password must be at least 6 characters."); return; }
+    if (!consent) { setError("Please accept the Terms, Privacy Policy and KVKK notice to continue."); return; }
     setLoading(true);
     try {
       await registerWithEmail(email, password);
@@ -220,6 +222,23 @@ export default function RegisterTouristPage() {
               />
             </div>
 
+            {/* KVKK/GDPR — kişisel veri işlemeden önce açık rıza (zorunlu). */}
+            <label className="flex items-start gap-2.5 text-xs leading-5 text-neutral-700">
+              <input
+                type="checkbox"
+                checked={consent}
+                onChange={(e) => setConsent(e.target.checked)}
+                className="mt-0.5 h-4 w-4 shrink-0 accent-[#6C4CF1]"
+              />
+              <span>
+                I agree to the{" "}
+                <a href="/terms" target="_blank" className="text-[#6C4CF1] font-semibold hover:underline">Terms</a>,{" "}
+                <a href="/privacy" target="_blank" className="text-[#6C4CF1] font-semibold hover:underline">Privacy Policy</a>{" "}
+                and{" "}
+                <a href="/kvkk" target="_blank" className="text-[#6C4CF1] font-semibold hover:underline">KVKK notice</a>.
+              </span>
+            </label>
+
             {error && (
               <div className="rounded-2xl bg-red-50 border border-red-100 px-4 py-3 text-sm text-red-600 font-medium">
                 {error}
@@ -227,7 +246,7 @@ export default function RegisterTouristPage() {
             )}
 
             <button
-              type="submit" disabled={loading}
+              type="submit" disabled={loading || !consent}
               className="w-full rounded-2xl bg-[#6C4CF1] text-white font-bold py-3 text-sm hover:bg-[#5a3dd4] transition-colors disabled:opacity-50"
               style={{ boxShadow: "0 4px 16px rgba(108,76,241,0.25)" }}
             >

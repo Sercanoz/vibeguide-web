@@ -1422,6 +1422,7 @@ export type ToursPageDict = {
   coBack: string;
   coFillAll: string;
   coRedirectNote: string;
+  coComingSoon: string;
   coAgreeText: string;
   coDistanceContract: string;
   coAndPreInfo: string;
@@ -1503,6 +1504,7 @@ const toursPageBase: Record<string, ToursPageDict> = {
     coBack: "Back to tour",
     coFillAll: "Please fill in all fields.",
     coRedirectNote: "You'll be securely redirected to complete your payment.",
+    coComingSoon: "Online payment is coming soon to the web — for now, complete your booking in the VibeGuide app.",
     coAgreeText: "I have read and accept the",
     coDistanceContract: "Distance Sales Agreement",
     coAndPreInfo: "and the Pre-Information Form",
@@ -1582,6 +1584,7 @@ const toursPageBase: Record<string, ToursPageDict> = {
     coBack: "Tura dön",
     coFillAll: "Lütfen tüm alanları doldur.",
     coRedirectNote: "Ödemeni tamamlamak için güvenli ödeme sayfasına yönlendirileceksin.",
+    coComingSoon: "Web'de online ödeme çok yakında — şimdilik rezervasyonunu VibeGuide uygulamasından tamamla.",
     coAgreeText: "Okudum ve kabul ediyorum:",
     coDistanceContract: "Mesafeli Satış Sözleşmesi",
     coAndPreInfo: "ve Ön Bilgilendirme Formu",
@@ -1661,6 +1664,7 @@ const toursPageBase: Record<string, ToursPageDict> = {
     coBack: "Zurück zur Tour",
     coFillAll: "Bitte fülle alle Felder aus.",
     coRedirectNote: "Du wirst zur sicheren Zahlung weitergeleitet.",
+    coComingSoon: "Online payment is coming soon to the web — for now, complete your booking in the VibeGuide app.",
     coAgreeText: "Ich habe Folgendes gelesen und akzeptiere:",
     coDistanceContract: "den Fernabsatzvertrag",
     coAndPreInfo: "und das Vorabinformationsformular",
@@ -1740,6 +1744,7 @@ const toursPageBase: Record<string, ToursPageDict> = {
     coBack: "Retour à la visite",
     coFillAll: "Remplis tous les champs.",
     coRedirectNote: "Tu seras redirigé en toute sécurité pour finaliser ton paiement.",
+    coComingSoon: "Online payment is coming soon to the web — for now, complete your booking in the VibeGuide app.",
     coAgreeText: "J'ai lu et j'accepte",
     coDistanceContract: "le Contrat de vente à distance",
     coAndPreInfo: "et le Formulaire d'information préalable",
@@ -1819,6 +1824,7 @@ const toursPageBase: Record<string, ToursPageDict> = {
     coBack: "Назад к туру",
     coFillAll: "Заполни все поля.",
     coRedirectNote: "Ты будешь безопасно перенаправлен для завершения оплаты.",
+    coComingSoon: "Online payment is coming soon to the web — for now, complete your booking in the VibeGuide app.",
     coAgreeText: "Я прочитал(а) и принимаю",
     coDistanceContract: "Договор дистанционной продажи",
     coAndPreInfo: "и Форму предварительной информации",
@@ -1898,6 +1904,7 @@ const toursPageBase: Record<string, ToursPageDict> = {
     coBack: "返回行程",
     coFillAll: "请填写所有字段。",
     coRedirectNote: "您将被安全地跳转以完成付款。",
+    coComingSoon: "Online payment is coming soon to the web — for now, complete your booking in the VibeGuide app.",
     coAgreeText: "我已阅读并接受",
     coDistanceContract: "《远程销售协议》",
     coAndPreInfo: "和《预先信息表》",
@@ -1977,6 +1984,7 @@ const toursPageBase: Record<string, ToursPageDict> = {
     coBack: "Volver al tour",
     coFillAll: "Rellena todos los campos.",
     coRedirectNote: "Se te redirigirá de forma segura para completar el pago.",
+    coComingSoon: "Online payment is coming soon to the web — for now, complete your booking in the VibeGuide app.",
     coAgreeText: "He leído y acepto",
     coDistanceContract: "el Contrato de Venta a Distancia",
     coAndPreInfo: "y el Formulario de Información Previa",
@@ -2056,6 +2064,7 @@ const toursPageBase: Record<string, ToursPageDict> = {
     coBack: "Torna al tour",
     coFillAll: "Compila tutti i campi.",
     coRedirectNote: "Verrai reindirizzato in modo sicuro per completare il pagamento.",
+    coComingSoon: "Online payment is coming soon to the web — for now, complete your booking in the VibeGuide app.",
     coAgreeText: "Ho letto e accetto",
     coDistanceContract: "il Contratto di Vendita a Distanza",
     coAndPreInfo: "e il Modulo di Informazione Preliminare",
@@ -2135,6 +2144,7 @@ const toursPageBase: Record<string, ToursPageDict> = {
     coBack: "투어로 돌아가기",
     coFillAll: "모든 항목을 입력하세요.",
     coRedirectNote: "결제를 완료하기 위해 안전한 결제 페이지로 이동합니다.",
+    coComingSoon: "Online payment is coming soon to the web — for now, complete your booking in the VibeGuide app.",
     coAgreeText: "다음을 읽었으며 이에 동의합니다:",
     coDistanceContract: "원거리 판매 계약서",
     coAndPreInfo: "및 사전 안내서",
@@ -2214,6 +2224,7 @@ const toursPageBase: Record<string, ToursPageDict> = {
     coBack: "ツアーに戻る",
     coFillAll: "すべての項目を入力してください。",
     coRedirectNote: "支払いを完了するため、安全な決済ページへリダイレクトされます。",
+    coComingSoon: "Online payment is coming soon to the web — for now, complete your booking in the VibeGuide app.",
     coAgreeText: "以下を読み、同意します：",
     coDistanceContract: "遠隔販売契約",
     coAndPreInfo: "および事前情報フォーム",

@@ -85,6 +85,11 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
     forgotSent: tr ? "Bu e-postaya ait bir hesap varsa, sıfırlama bağlantısı yolda." : "If an account exists for that email, a reset link is on its way.",
     forgotInvalid: tr ? "Bu geçerli bir e-posta gibi görünmüyor." : "That doesn't look like a valid email.",
     tooManyRequests: tr ? "Çok fazla deneme. Lütfen daha sonra tekrar dene." : "Too many attempts. Please try again later.",
+    consentRequired: tr ? "Devam etmek için Şartlar, Gizlilik ve KVKK metnini kabul edin." : "Please accept the Terms, Privacy Policy and KVKK notice to continue.",
+    consentAgree: tr ? "Şunları kabul ediyorum:" : "I agree to the",
+    consentTerms: tr ? "Şartlar" : "Terms",
+    consentPrivacy: tr ? "Gizlilik" : "Privacy Policy",
+    consentKvkk: tr ? "KVKK metni" : "KVKK notice",
   };
   const [mode, setMode] = useState<Mode>(initialMode);
   const [step, setStep] = useState<Step>(initialMode === "register" ? "role" : "form");
@@ -97,6 +102,7 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [resetMsg, setResetMsg] = useState<string | null>(null);
+  const [consent, setConsent] = useState(false);
 
   async function onForgotPassword() {
     setError(null);
@@ -254,6 +260,7 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
       router.push("/register/guide");
       return;
     }
+    if (!consent) { setError(am.consentRequired); return; }
     setLoading(true);
     try {
       await registerWithEmail(email, password);
@@ -447,8 +454,18 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
                     <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} className={inputCls} placeholder={am.phEmail} />
                     <input type="password" required value={password} onChange={(e) => setPassword(e.target.value)} className={inputCls} placeholder={am.phPassMin} />
                     <input type="password" required value={password2} onChange={(e) => setPassword2(e.target.value)} className={inputCls} placeholder={am.phPassConfirm} />
+                    {/* KVKK/GDPR — açık rıza (guide, KYC sayfasına yönlendiği için orada da doğrulanır) */}
+                    <label className="flex items-start gap-2.5 text-xs leading-5 text-neutral-700">
+                      <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} className="mt-0.5 h-4 w-4 shrink-0 accent-[#6C4CF1]" />
+                      <span>
+                        {am.consentAgree}{" "}
+                        <a href="/terms" target="_blank" className="text-[#6C4CF1] font-semibold hover:underline">{am.consentTerms}</a>,{" "}
+                        <a href="/privacy" target="_blank" className="text-[#6C4CF1] font-semibold hover:underline">{am.consentPrivacy}</a>,{" "}
+                        <a href="/kvkk" target="_blank" className="text-[#6C4CF1] font-semibold hover:underline">{am.consentKvkk}</a>.
+                      </span>
+                    </label>
                     {error && <div className="rounded-2xl bg-red-50 border border-red-100 px-4 py-3 text-sm text-red-600">{error}</div>}
-                    <button type="submit" disabled={loading}
+                    <button type="submit" disabled={loading || (role === "tourist" && !consent)}
                       className="w-full rounded-2xl bg-[#6C4CF1] text-white font-bold py-3 text-sm hover:bg-[#5a3dd4] transition-colors disabled:opacity-50"
                       style={{ boxShadow: "0 4px 16px rgba(108,76,241,0.25)" }}>
                       {loading ? am.pleaseWait : am.createAccountBtn}

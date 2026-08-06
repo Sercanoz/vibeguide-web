@@ -84,9 +84,11 @@ export default function CheckoutPage() {
       setNotice(tt.coAgreeErr);
       return;
     }
-    // Ödeme sağlayıcı API anahtarı geldiğinde burada gerçek ödeme oturumu açılacak
-    // (ödeme sağlayıcısına güvenli yönlendirme).
-    setNotice(tt.coRedirectNote);
+    // Web ödeme sağlayıcısı henüz canlı değil (PayTR/İyzico başvuru sürecinde).
+    // Sahte "yönlendiriliyorsunuz" mesajı yerine DÜRÜST durum: web'de ödeme
+    // yakında; şimdilik rezervasyon uygulamadan tamamlanır. Sağlayıcı gelince
+    // burada gerçek ödeme oturumu açılacak.
+    setNotice(tt.coComingSoon);
   }
 
   const inputCls =
