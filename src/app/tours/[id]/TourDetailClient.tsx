@@ -780,13 +780,14 @@ function Lightbox({
       {/* Top bar */}
       <div className="flex items-center justify-between px-4 py-3 flex-shrink-0" onClick={(e) => e.stopPropagation()}>
         <span className="text-white/60 text-sm font-semibold">{index + 1} / {photos.length}</span>
-        <button onClick={onClose} className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-lg transition-colors">✕</button>
+        <button onClick={onClose} aria-label="Close photo viewer" className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-lg transition-colors">✕</button>
       </div>
 
       {/* Main image */}
       <div className="flex-1 flex items-center justify-center relative px-4 min-h-0" onClick={(e) => e.stopPropagation()}>
         <button
           onClick={onPrev}
+          aria-label="Previous photo"
           className="absolute left-2 md:left-6 w-11 h-11 rounded-full bg-white/10 hover:bg-white/25 text-white flex items-center justify-center text-2xl transition-colors z-10"
         >‹</button>
 
@@ -801,6 +802,7 @@ function Lightbox({
 
         <button
           onClick={onNext}
+          aria-label="Next photo"
           className="absolute right-2 md:right-6 w-11 h-11 rounded-full bg-white/10 hover:bg-white/25 text-white flex items-center justify-center text-2xl transition-colors z-10"
         >›</button>
       </div>

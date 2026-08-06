@@ -437,9 +437,8 @@ function PopularTours({ initialTours }: { initialTours: PopularTour[] }) {
                     {/* Photo */}
                     <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-neutral-100">
                       {tour.coverPhotoUrl ? (
-                        // eslint-disable-next-line @next/next/no-img-element
-                        <img src={tour.coverPhotoUrl} alt={tour.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <Image src={tour.coverPhotoUrl} alt={tour.title} fill sizes="300px"
+                          className="object-cover group-hover:scale-105 transition-transform duration-500" />
                       ) : (
                         <div className="w-full h-full bg-gradient-to-br from-[#6C4CF1]/15 to-[#8B5CF6]/15 flex items-center justify-center text-4xl">🗺️</div>
                       )}

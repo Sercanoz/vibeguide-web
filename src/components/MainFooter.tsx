@@ -100,6 +100,15 @@ export default function MainFooter() {
               <li><a href="/on-bilgilendirme" className="hover:text-black transition-colors">{ux.preInfo}</a></li>
               <li><a href="/kvkk" className="hover:text-black transition-colors">{ux.kvkk}</a></li>
               <li><a href="/cerez-politikasi" className="hover:text-black transition-colors">{ux.cookies}</a></li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => window.dispatchEvent(new Event("vg:open-cookie-settings"))}
+                  className="hover:text-black transition-colors text-left"
+                >
+                  {locale === "tr" ? "Çerez ayarları" : "Cookie settings"}
+                </button>
+              </li>
             </ul>
           </div>
         </div>

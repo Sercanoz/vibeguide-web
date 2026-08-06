@@ -38,6 +38,11 @@ export default function CookieBanner() {
       setConsent(stored);
       if (stored === "accepted") enableAnalytics();
     }
+    // Footer'daki "Cookie settings" kontrolü bu event'i fırlatır → banner'ı
+    // yeniden aç, kullanıcı tercihini değiştirebilsin (KVKK: geri alınabilirlik).
+    const reopen = () => { setConsent(null); setVisible(true); };
+    window.addEventListener("vg:open-cookie-settings", reopen);
+    return () => window.removeEventListener("vg:open-cookie-settings", reopen);
   }, []);
 
   function enableAnalytics() {
@@ -59,6 +64,11 @@ export default function CookieBanner() {
     localStorage.setItem("vg_cookie_consent", "declined");
     setConsent("declined");
     setVisible(false);
+    // Reddedince analytics'i açıkça kapat (önceden accept edilmiş olabilir).
+    const w = window as unknown as { gtag?: (...a: unknown[]) => void };
+    if (typeof window !== "undefined" && w.gtag) {
+      w.gtag("consent", "update", { analytics_storage: "denied", ad_storage: "denied" });
+    }
   }
 
   if (!visible || consent !== null) return null;
