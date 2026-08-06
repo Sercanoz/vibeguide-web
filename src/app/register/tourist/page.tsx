@@ -95,6 +95,8 @@ export default function RegisterTouristPage() {
 
   async function onGoogle() {
     setError(null);
+    // V4: Google ile kayıtta da KVKK/GDPR rızası şart.
+    if (!consent) { setError("Please accept the Terms, Privacy Policy and KVKK notice to continue."); return; }
     setLoading(true);
     try {
       await signInWithGoogle();

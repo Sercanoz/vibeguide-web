@@ -220,7 +220,14 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
   }
 
   async function onGoogleSignIn() {
-    setError(null); setLoading(true);
+    setError(null);
+    // V4: Google ile KAYIT'ta da KVKK/GDPR rızası şart (tourist). Guide zaten
+    // /register/guide'a yönlendiği için orada checkbox'la doğrulanır.
+    if (mode === "register" && role === "tourist" && !consent) {
+      setError(am.consentRequired);
+      return;
+    }
+    setLoading(true);
     try {
       await signInWithGoogle();
       if (mode === "register" && role === "tourist") {

@@ -181,6 +181,8 @@ export default function RegisterGuidePage() {
   async function onGoogle() {
     setError(null);
     if (!badgeFront || !badgeBack) { setError("Please upload both sides of your guide badge first."); return; }
+    // V4: Google ile kayıtta da KVKK/GDPR + KYC belge rızası şart.
+    if (!consent) { setError("Please accept the Terms, Privacy Policy and KVKK notice to continue."); return; }
     setLoading(true);
     try {
       await signInWithGoogle();
