@@ -81,6 +81,10 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
     signingIn: tr ? "Giriş yapılıyor…" : "Signing in…",
     signinBtn: tr ? "Giriş yap →" : "Sign in →",
     forgotPass: tr ? "Şifremi unuttum?" : "Forgot password?",
+    forgotNeedEmail: tr ? "Önce yukarıya e-postanı gir, sonra Şifremi unuttum'a dokun." : "Enter your email above first, then tap Forgot password.",
+    forgotSent: tr ? "Bu e-postaya ait bir hesap varsa, sıfırlama bağlantısı yolda." : "If an account exists for that email, a reset link is on its way.",
+    forgotInvalid: tr ? "Bu geçerli bir e-posta gibi görünmüyor." : "That doesn't look like a valid email.",
+    tooManyRequests: tr ? "Çok fazla deneme. Lütfen daha sonra tekrar dene." : "Too many attempts. Please try again later.",
   };
   const [mode, setMode] = useState<Mode>(initialMode);
   const [step, setStep] = useState<Step>(initialMode === "register" ? "role" : "form");
@@ -92,6 +96,23 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
   const [fullName, setFullName] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const [resetMsg, setResetMsg] = useState<string | null>(null);
+
+  async function onForgotPassword() {
+    setError(null);
+    setResetMsg(null);
+    if (!email.trim()) { setError(am.forgotNeedEmail); return; }
+    try {
+      const { sendPasswordResetEmail } = await import("firebase/auth");
+      await sendPasswordResetEmail(fbAuth(), email.trim());
+      setResetMsg(am.forgotSent);
+    } catch (err: unknown) {
+      const code = (err as { code?: string }).code ?? "";
+      if (code === "auth/invalid-email") setError(am.forgotInvalid);
+      else if (code === "auth/too-many-requests") setError(am.tooManyRequests ?? am.forgotSent);
+      else setResetMsg(am.forgotSent); // enumeration önleme: hata olsa da nötr mesaj
+    }
+  }
 
   const overlayRef = useRef<HTMLDivElement>(null);
 
@@ -461,8 +482,9 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
                 </button>
               </form>
               <p className="mt-3 text-center text-xs text-neutral-800">
-                <button className="text-[#6C4CF1] font-semibold hover:underline">{am.forgotPass}</button>
+                <button type="button" onClick={onForgotPassword} className="text-[#6C4CF1] font-semibold hover:underline">{am.forgotPass}</button>
               </p>
+              {resetMsg && <p className="mt-2 text-center text-xs text-emerald-700">{resetMsg}</p>}
             </>
           )}
         </div>

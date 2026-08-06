@@ -13,6 +13,27 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const [resetMsg, setResetMsg] = useState<string | null>(null);
+
+  async function onForgotPassword() {
+    setError(null);
+    setResetMsg(null);
+    if (!email.trim()) {
+      setError("Enter your email above first, then tap Forgot password.");
+      return;
+    }
+    try {
+      const { sendPasswordResetEmail } = await import("firebase/auth");
+      await sendPasswordResetEmail(fbAuth(), email.trim());
+      // Kullanıcı numaralandırmasını önlemek için hesap var/yok ayrımı yapma.
+      setResetMsg("If an account exists for that email, a reset link is on its way.");
+    } catch (err: unknown) {
+      const code = (err as { code?: string }).code ?? "";
+      if (code === "auth/invalid-email") setError("That doesn't look like a valid email.");
+      else if (code === "auth/too-many-requests") setError("Too many attempts. Please try again later.");
+      else setResetMsg("If an account exists for that email, a reset link is on its way.");
+    }
+  }
 
   async function handleAfterLogin() {
     const user = fbAuth().currentUser;
@@ -157,8 +178,11 @@ export default function LoginPage() {
           </form>
 
           <p className="mt-4 text-center text-xs text-neutral-800">
-            <a href="#" className="text-[#6C4CF1] font-semibold hover:underline">Forgot password?</a>
+            <button type="button" onClick={onForgotPassword} className="text-[#6C4CF1] font-semibold hover:underline">Forgot password?</button>
           </p>
+          {resetMsg && (
+            <p className="mt-2 text-center text-xs text-emerald-700">{resetMsg}</p>
+          )}
         </div>
 
         <p className="mt-5 text-center text-sm text-neutral-800">

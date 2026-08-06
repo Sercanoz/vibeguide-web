@@ -33,24 +33,21 @@ export default function MainFooter() {
               VibeGuide
             </h3>
             <p className="mt-3 max-w-xs text-sm leading-6 text-neutral-800">{t.footer.tagline}</p>
-            <div className="mt-6 flex gap-2">
-              {["Instagram", "TikTok", "YouTube"].map((s) => (
-                <a key={s} href="#" className="h-9 w-9 flex items-center justify-center rounded-xl bg-white border border-black/8 text-xs font-bold text-neutral-800 hover:text-black hover:border-black/20 transition-colors">
-                  {s[0]}
-                </a>
-              ))}
-            </div>
-            {/* App mağaza rozetleri — ikisi de kenardan kenara dolu SVG, aynı yükseklik
-               (eşit görünür boyut). Google PNG yerine padding'siz Wikimedia SVG kullanıldı. */}
-            <div className="mt-6 flex flex-col items-start gap-3">
-              <a href="#" aria-label="Download on the App Store" className="block transition-opacity hover:opacity-80">
+            {/* Sosyal hesaplar açılınca gerçek URL'lerle geri eklenecek — boş
+               href="#" ikonlar (ölü link) kaldırıldı. */}
+            {/* App mağaza rozetleri — uygulama henüz store'da olmadığı için "yakında"
+               durumunda: tıklanabilir ölü link yerine bilgilendirici, id="download"
+               ile CTA'ların (/#download) indiği gerçek bir hedef. */}
+            <div id="download" className="mt-6 flex flex-col items-start gap-3 scroll-mt-24">
+              <p className="text-xs font-bold uppercase tracking-wide text-neutral-500">
+                {locale === "tr" ? "Yakında App Store & Google Play" : "Coming soon to App Store & Google Play"}
+              </p>
+              <div className="flex flex-col items-start gap-3 opacity-60">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/app-store-badge.svg" alt="Download on the App Store" className="h-[52px] w-auto" />
-              </a>
-              <a href="#" aria-label="Get it on Google Play" className="block transition-opacity hover:opacity-80">
+                <img src="/app-store-badge.svg" alt="Coming soon on the App Store" className="h-[52px] w-auto" />
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/google-play-badge.svg" alt="Get it on Google Play" className="h-[52px] w-auto" />
-              </a>
+                <img src="/google-play-badge.svg" alt="Coming soon on Google Play" className="h-[52px] w-auto" />
+              </div>
             </div>
           </div>
           <div>
