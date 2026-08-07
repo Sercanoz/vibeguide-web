@@ -65,8 +65,38 @@ export default function ProfilePage() {
   const router = useRouter();
   const [me, setMe] = useState<Me | null>(null);
   const [bookings, setBookings] = useState<Booking[]>([]);
+  const [guideRequests, setGuideRequests] = useState<Booking[]>([]);
   const [payout, setPayout] = useState<PayoutSummary | null>(null);
   const [loading, setLoading] = useState(true);
+  const [actingId, setActingId] = useState<number | null>(null);
+
+  // Rehberin gelen (kendisinin GuideId olduğu) Pending taleplerini tazele.
+  async function loadGuideRequests() {
+    const headers = await buildAuthHeaders();
+    const res = await fetch(`${API_BASE_URL}/api/bookings/my?role=guide`, { headers });
+    if (res.ok) {
+      const all: Booking[] = await res.json();
+      setGuideRequests(all.filter((b) => b.status === "Pending"));
+    }
+  }
+
+  // Rehber bir talebi kabul/red eder → backend accept/reject → listeyi tazele.
+  async function actOnRequest(bookingId: number, action: "accept" | "reject") {
+    setActingId(bookingId);
+    try {
+      const headers = await buildAuthHeaders({ extra: { "Content-Type": "application/json" } });
+      const res = await fetch(`${API_BASE_URL}/api/bookings/${bookingId}/${action}`, {
+        method: "POST",
+        headers,
+        body: action === "reject" ? JSON.stringify({ reason: "" }) : undefined,
+      });
+      if (res.ok) {
+        await loadGuideRequests();
+      }
+    } finally {
+      setActingId(null);
+    }
+  }
 
   useEffect(() => {
     const unsub = fbAuth().onAuthStateChanged(async (user) => {
@@ -90,6 +120,7 @@ export default function ProfilePage() {
       if (meData.role === "Guide") {
         const payoutRes = await fetch(`${API_BASE_URL}/api/payouts/me/summary`, { headers });
         if (payoutRes.ok) setPayout(await payoutRes.json());
+        await loadGuideRequests();
       }
 
       setLoading(false);
@@ -200,6 +231,48 @@ export default function ProfilePage() {
               <p className="text-xs text-neutral-800 mt-4 pt-4 border-t border-black/[0.06]">
                 Next payout: <span className="font-semibold text-neutral-800">{new Date(payout.nextPayoutAt).toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" })}</span>
               </p>
+            </div>
+          )}
+
+          {/* Guide: gelen rezervasyon talepleri (Pending) — kabul/red */}
+          {me.role === "Guide" && guideRequests.length > 0 && (
+            <div className="bg-white rounded-3xl border border-amber-200 shadow-sm overflow-hidden">
+              <div className="px-6 py-4 border-b border-black/[0.06] bg-amber-50/50">
+                <p className="text-sm font-black text-amber-800">
+                  Reservation requests ({guideRequests.length})
+                </p>
+                <p className="text-xs text-amber-600 mt-0.5">Tourists waiting for your response.</p>
+              </div>
+              {guideRequests.map((b) => (
+                <div key={b.id} className="px-6 py-4 border-b border-black/[0.04] last:border-0">
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="min-w-0">
+                      <p className="font-bold text-[#0A0A0F] truncate">{b.tourTitle ?? `Tour #${b.id}`}</p>
+                      <p className="text-xs text-neutral-600 mt-0.5">
+                        {b.touristName ? `${b.touristName} · ` : ""}
+                        {new Date(b.scheduledAt).toLocaleString("en-GB", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}
+                        {" · "}{b.price} {b.currency}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex gap-2 mt-3">
+                    <button
+                      onClick={() => actOnRequest(b.id, "accept")}
+                      disabled={actingId !== null}
+                      className="flex-1 rounded-full bg-[#6C4CF1] text-white font-bold py-2 text-sm hover:bg-[#5a3dd4] transition-colors disabled:opacity-50"
+                    >
+                      {actingId === b.id ? "…" : "Accept"}
+                    </button>
+                    <button
+                      onClick={() => actOnRequest(b.id, "reject")}
+                      disabled={actingId !== null}
+                      className="flex-1 rounded-full border border-black/10 font-bold py-2 text-sm text-neutral-700 hover:border-red-200 hover:text-red-500 transition-colors disabled:opacity-50"
+                    >
+                      Decline
+                    </button>
+                  </div>
+                </div>
+              ))}
             </div>
           )}
 
