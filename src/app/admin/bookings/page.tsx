@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { authedFetch } from "@/lib/admin-api";
+import { authedFetch, adminApi, type AdminUser } from "@/lib/admin-api";
 
 type Booking = {
   id: number; tourId: number; touristId: number; guideId: number;
@@ -10,10 +10,79 @@ type Booking = {
   createdAt: string; tourTitle: string; touristName: string; guideName: string;
 };
 
-function BookingModal({ booking, onClose }: { booking: Booking; onClose: () => void }) {
+// Rehber atama — yalnız ödeme yapılmamış booking'lerde (backend de doğruluyor).
+function AssignGuideSection({ booking, onAssigned }: { booking: Booking; onAssigned: () => void }) {
+  const [q, setQ] = useState("");
+  const [guides, setGuides] = useState<AdminUser[]>([]);
+  const [searching, setSearching] = useState(false);
+  const [assigning, setAssigning] = useState<number | null>(null);
+  const [err, setErr] = useState<string | null>(null);
+
+  const assignable = booking.status === "Pending" || booking.status === "Confirmed";
+
+  useEffect(() => {
+    if (!assignable) return;
+    let live = true;
+    setSearching(true);
+    const t = setTimeout(async () => {
+      const r = await adminApi.listUsers({ role: "Guide", q: q.trim(), limit: 20 });
+      if (live && r.ok) setGuides(r.data);
+      if (live) setSearching(false);
+    }, 300);
+    return () => { live = false; clearTimeout(t); };
+  }, [q, assignable]);
+
+  if (!assignable) return null;
+
+  async function assign(guideId: number) {
+    setAssigning(guideId);
+    setErr(null);
+    const r = await adminApi.assignBookingGuide(booking.id, guideId, true);
+    setAssigning(null);
+    if (r.ok) { onAssigned(); return; }
+    setErr(typeof r.error === "string" ? r.error : "Assign failed");
+  }
+
+  return (
+    <div className="mt-5 pt-5 border-t border-black/[0.08]">
+      <p className="text-xs font-black text-neutral-500 uppercase tracking-wide mb-2">Assign guide</p>
+      <input
+        value={q}
+        onChange={(e) => setQ(e.target.value)}
+        placeholder="Search guides by name or email…"
+        className="w-full border border-black/10 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-[#6C4CF1] mb-2"
+      />
+      {err && <p className="text-xs text-red-600 mb-2">{err}</p>}
+      <div className="max-h-48 overflow-y-auto space-y-1">
+        {searching && <p className="text-xs text-neutral-400 py-2">…</p>}
+        {!searching && guides.length === 0 && <p className="text-xs text-neutral-400 py-2">No guides found</p>}
+        {guides.map((g) => (
+          <div key={g.id} className="flex items-center justify-between gap-2 px-3 py-2 rounded-lg hover:bg-neutral-50">
+            <div className="min-w-0">
+              <p className="text-sm font-semibold text-[#0A0A0F] truncate">{g.fullName}</p>
+              <p className="text-xs text-neutral-400 truncate">{g.email}</p>
+            </div>
+            <button
+              onClick={() => assign(g.id)}
+              disabled={assigning !== null || g.id === booking.guideId}
+              className="shrink-0 text-xs font-bold rounded-full px-3 py-1.5 bg-[#6C4CF1] text-white hover:bg-[#5a3dd4] disabled:opacity-40 transition-colors"
+            >
+              {g.id === booking.guideId ? "Current" : assigning === g.id ? "…" : "Assign"}
+            </button>
+          </div>
+        ))}
+      </div>
+      <p className="mt-2 text-[11px] text-neutral-400">
+        Assigning sets the booking to <b>Confirmed</b> so the tourist can pay.
+      </p>
+    </div>
+  );
+}
+
+function BookingModal({ booking, onClose, onAssigned }: { booking: Booking; onClose: () => void; onAssigned: () => void }) {
   return (
     <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4" onClick={onClose}>
-      <div className="bg-white rounded-3xl shadow-2xl w-full max-w-md p-6" onClick={(e) => e.stopPropagation()}>
+      <div className="bg-white rounded-3xl shadow-2xl w-full max-w-md p-6 max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
         <div className="flex items-center justify-between mb-5">
           <h2 className="text-lg font-black text-[#0A0A0F]">Booking #{booking.id}</h2>
           <button onClick={onClose} className="w-8 h-8 rounded-full bg-neutral-100 flex items-center justify-center text-neutral-500 hover:bg-neutral-200 transition-colors">✕</button>
@@ -46,6 +115,7 @@ function BookingModal({ booking, onClose }: { booking: Booking; onClose: () => v
             }`}>{booking.status}</span>
           </div>
         </div>
+        <AssignGuideSection booking={booking} onAssigned={onAssigned} />
       </div>
     </div>
   );
@@ -83,7 +153,13 @@ export default function AdminBookingsPage() {
 
   return (
     <div className="p-8">
-      {selected && <BookingModal booking={selected} onClose={() => setSelected(null)} />}
+      {selected && (
+        <BookingModal
+          booking={selected}
+          onClose={() => setSelected(null)}
+          onAssigned={() => { setSelected(null); load(tab, offset); }}
+        />
+      )}
       <h1 className="text-2xl font-black text-[#0A0A0F] mb-6">Bookings</h1>
 
       {/* Tabs */}

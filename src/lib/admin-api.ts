@@ -493,6 +493,13 @@ export const adminApi = {
       body: JSON.stringify({ role }),
     }),
 
+  // Booking'e manuel rehber ata (yalnız Pending/Confirmed). autoConfirm=true → Confirmed'a çeker.
+  assignBookingGuide: (bookingId: number, guideId: number, autoConfirm = true) =>
+    authedFetch<{ id: number; guideId: number; status: string }>(
+      `/api/admin/bookings/${bookingId}/guide`,
+      { method: "PUT", body: JSON.stringify({ guideId, autoConfirm }) }
+    ),
+
   deleteUser: (id: number) =>
     authedFetch<{ ok: true }>(`/api/admin/users/${id}`, { method: "DELETE" }),
 

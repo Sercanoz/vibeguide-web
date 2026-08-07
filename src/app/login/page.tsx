@@ -12,8 +12,11 @@ export default function LoginPage() {
   // Booking gibi akışlardan gelen dönüş hedefi. Yalnız iç yollara izin ver
   // (açık yönlendirme / open-redirect engeli: mutlaka "/" ile başlamalı, "//" olmamalı).
   const rawNext = searchParams.get("next") ?? "";
-  const nextUrl =
-    rawNext.startsWith("/") && !rawNext.startsWith("//") ? rawNext : "";
+  // Open-redirect guard: yalnız iç yollar. "/" ile başlamalı AMA ikinci karakter
+  // "/" veya "\" OLMAMALI — çünkü tarayıcı "/\evil.com" → "//evil.com" (protokol-göreli
+  // dış URL) normalize eder. /^\/[^/\\]/ tek karakterlik "/"yi de kapsamaz; onu da ele.
+  const isSafeNext = /^\/($|[^/\\])/.test(rawNext);
+  const nextUrl = isSafeNext ? rawNext : "";
   // Login'e zaten girmiş kullanıcı varsa next varsa oraya, yoksa profile'a.
   const checking = useRedirectIfAuthed(nextUrl || "/profile");
   const [email, setEmail] = useState("");
