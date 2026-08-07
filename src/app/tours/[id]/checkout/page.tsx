@@ -35,13 +35,18 @@ type BookingStatus =
   | "rejected"
   | "cancelled";
 
-function perPersonForCount(tour: CheckoutTour, count: number): number {
-  const tiers = (tour.pricingTiers ?? []).filter(
-    (t) => t.participantCount > 0 && t.guideAmount > 0
-  );
-  const exact = tiers.find((t) => t.participantCount === count);
-  if (exact) return Math.round((exact.guideAmount / exact.participantCount) * 100) / 100;
-  return tour.basePrice;
+// Grup toplam fiyatı — backend TourTest.ResolveGuideAmount ile AYNI mantık:
+// guideAmount tier'da grup TOPLAMI; count'a ≤ olan en yüksek tier kazanır,
+// count en küçük tier'dan da küçükse en küçük tier. Tier yoksa basePrice.
+// (Eski per-person×count yaklaşımı non-exact count'ta backend'le uyuşmuyordu.)
+function groupPriceForCount(tour: CheckoutTour, count: number): number {
+  const tiers = (tour.pricingTiers ?? [])
+    .filter((t) => t.participantCount > 0 && t.guideAmount > 0)
+    .sort((a, b) => a.participantCount - b.participantCount);
+  if (tiers.length === 0) return tour.basePrice;
+  const atOrBelow = tiers.filter((t) => t.participantCount <= count);
+  const chosen = atOrBelow.length > 0 ? atOrBelow[atOrBelow.length - 1] : tiers[0];
+  return chosen.guideAmount;
 }
 
 export default function CheckoutPage() {
@@ -64,6 +69,7 @@ export default function CheckoutPage() {
   // Booking durumu: guideId yoksa rehber seçimine geri gönder.
   const [bookingId, setBookingId] = useState<number | null>(null);
   const [status, setStatus] = useState<BookingStatus | null>(null);
+  const [bookingPrice, setBookingPrice] = useState<number | null>(null);
   const [authReady, setAuthReady] = useState(false);
 
   // Tur verisi
@@ -129,8 +135,11 @@ export default function CheckoutPage() {
     );
   }
 
-  const perPerson = perPersonForCount(tour, people);
-  const total = perPerson * people;
+  // Grup toplam fiyat (backend'le aynı mantık). Booking oluşunca backend'in döndürdüğü
+  // authoritative fiyat kullanılır (bookingPrice); öncesinde tahmin gösterilir.
+  const estimatedTotal = groupPriceForCount(tour, people);
+  const total = bookingPrice ?? estimatedTotal;
+  const perPerson = Math.round((total / people) * 100) / 100;
 
   // 1) Rezervasyon talebi oluştur (booking Pending → rehbere gider).
   async function createBooking() {
@@ -147,6 +156,7 @@ export default function CheckoutPage() {
           tourId: Number(id),
           guideId,
           scheduledAt: new Date(date).toISOString(),
+          guestCount: people,
           meetingType: "live",
         }),
       });
@@ -158,6 +168,8 @@ export default function CheckoutPage() {
       const b = await res.json();
       setBookingId(b.id);
       setStatus((b.status as BookingStatus) ?? "pending");
+      // Backend authoritative fiyat — turist tam olarak bunu öder.
+      if (typeof b.price === "number") setBookingPrice(b.price);
     } catch {
       setNotice(tt.errMsg);
     } finally {
