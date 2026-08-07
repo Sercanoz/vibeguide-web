@@ -3,12 +3,16 @@
 import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
+import { useT } from "@/components/LanguageProvider";
+import { getToursT } from "@/lib/i18n";
 import Navbar from "@/components/Navbar";
 import MainFooter from "@/components/MainFooter";
 
 function SuccessInner() {
   const search = useSearchParams();
   const bookingId = search.get("bookingId");
+  const { locale } = useT();
+  const tt = getToursT(locale);
 
   return (
     <main className="min-h-screen bg-[#FAFAFB] text-[#0A0A0F]">
@@ -19,19 +23,19 @@ function SuccessInner() {
             <polyline points="20 6 9 17 4 12" />
           </svg>
         </div>
-        <h1 className="text-3xl font-black">Payment complete 🎉</h1>
+        <h1 className="text-3xl font-black">{tt.paySuccessTitle}</h1>
         <p className="mt-3 text-neutral-700">
-          Your tour is booked and confirmed. You&apos;ll find all the details in your reservations.
+          {tt.paySuccessSub}
         </p>
         <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
           <Link href="/profile" className="rounded-full bg-[#6C4CF1] text-white font-bold px-6 py-3 text-sm hover:bg-[#5a3dd4] transition-colors">
-            My reservations
+            {tt.coMyReservations}
           </Link>
           <Link href="/tours" className="rounded-full border border-black/10 font-bold px-6 py-3 text-sm hover:bg-neutral-50 transition-colors">
-            Explore more tours
+            {tt.payExplore}
           </Link>
         </div>
-        {bookingId && <p className="mt-6 text-xs text-neutral-500">Reservation #{bookingId}</p>}
+        {bookingId && <p className="mt-6 text-xs text-neutral-500">#{bookingId}</p>}
       </div>
       <MainFooter />
     </main>

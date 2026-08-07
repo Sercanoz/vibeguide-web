@@ -77,9 +77,9 @@ export default function GuideSelectionPage() {
         <Link href={`/tours/${id}`} className="text-sm font-semibold text-[#6C4CF1] hover:underline">
           ← {tt.coBack}
         </Link>
-        <h1 className="mt-3 text-3xl md:text-4xl font-black">Choose your guide</h1>
+        <h1 className="mt-3 text-3xl md:text-4xl font-black">{tt.gsTitle}</h1>
         <p className="mt-2 text-sm text-neutral-700">
-          {date ? `${date} · ` : ""}{people} {people === 1 ? "traveler" : "travelers"}
+          {date ? `${date} · ` : ""}{people} {people === 1 ? tt.gsTraveler : tt.gsTravelers}
         </p>
 
         {guides === "loading" && (
@@ -94,8 +94,8 @@ export default function GuideSelectionPage() {
 
         {Array.isArray(guides) && guides.length === 0 && (
           <div className="mt-10 rounded-2xl bg-white border border-black/[0.06] px-6 py-8 text-center">
-            <p className="font-semibold text-neutral-800">No guides available for this date.</p>
-            <p className="mt-1 text-sm text-neutral-600">Try another date or check back soon.</p>
+            <p className="font-semibold text-neutral-800">{tt.gsNone}</p>
+            <p className="mt-1 text-sm text-neutral-600">{tt.gsNoneSub}</p>
             <Link href={`/tours/${id}`} className="mt-4 inline-block text-sm font-bold text-[#6C4CF1] hover:underline">
               ← {tt.coBack}
             </Link>
@@ -125,7 +125,7 @@ export default function GuideSelectionPage() {
                     <p className="font-black truncate">{g.fullName}</p>
                     {g.specializationMatch && (
                       <span className="text-[10px] font-bold uppercase tracking-wide text-[#6C4CF1] bg-[#6C4CF1]/10 rounded-full px-2 py-0.5">
-                        Specialist
+                        {tt.gsSpecialist}
                       </span>
                     )}
                   </div>
@@ -136,7 +136,7 @@ export default function GuideSelectionPage() {
                   </div>
                   {g.bio && <p className="mt-1 text-xs text-neutral-600 line-clamp-2">{g.bio}</p>}
                 </div>
-                <span className="text-[#6C4CF1] font-bold shrink-0">Select →</span>
+                <span className="text-[#6C4CF1] font-bold shrink-0">{tt.gsSelect} →</span>
               </button>
             ))}
           </div>

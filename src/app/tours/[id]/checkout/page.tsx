@@ -230,9 +230,9 @@ export default function CheckoutPage() {
               {/* Aşama A — henüz talep yok: sözleşme + rezervasyon talebi */}
               {!bookingId && (
                 <>
-                  <h2 className="text-lg font-black mb-3">Confirm your reservation</h2>
+                  <h2 className="text-lg font-black mb-3">{tt.coConfirmTitle}</h2>
                   <p className="text-sm text-neutral-700 mb-4">
-                    We&apos;ll send your request to the guide. Once they accept, you can pay securely.
+                    {tt.coConfirmSub}
                   </p>
                   <label className="mb-4 flex items-start gap-2.5 cursor-pointer select-none">
                     <input
@@ -256,7 +256,7 @@ export default function CheckoutPage() {
                     disabled={busy || !agreed}
                     className="w-full rounded-full bg-[#6C4CF1] text-white font-bold py-3.5 hover:bg-[#5a3dd4] transition-colors disabled:opacity-50"
                   >
-                    {busy ? "…" : "Send reservation request"}
+                    {busy ? "…" : tt.coSendRequest}
                   </button>
                 </>
               )}
@@ -265,19 +265,19 @@ export default function CheckoutPage() {
               {bookingId && status === "pending" && (
                 <div className="text-center py-4">
                   <div className="w-12 h-12 rounded-full border-2 border-[#6C4CF1] border-t-transparent animate-spin mx-auto mb-4" />
-                  <h2 className="text-lg font-black">Waiting for guide approval</h2>
+                  <h2 className="text-lg font-black">{tt.coWaitTitle}</h2>
                   <p className="mt-1 text-sm text-neutral-700">
-                    Your request was sent. This page updates automatically when the guide accepts.
+                    {tt.coWaitSub}
                   </p>
                   <button
                     onClick={() => bookingId && refreshBooking(bookingId)}
                     className="mt-4 text-sm font-bold text-[#6C4CF1] hover:underline"
                   >
-                    Check now
+                    {tt.coCheckNow}
                   </button>
                   <p className="mt-4 text-xs text-neutral-500">
                     You can also track it in{" "}
-                    <Link href="/profile" className="font-semibold text-[#6C4CF1] hover:underline">My reservations</Link>.
+                    <Link href="/profile" className="font-semibold text-[#6C4CF1] hover:underline">{tt.coMyReservations}</Link>.
                   </p>
                 </div>
               )}
@@ -286,7 +286,7 @@ export default function CheckoutPage() {
               {bookingId && status === "confirmed" && (
                 <>
                   <div className="mb-4 rounded-xl bg-green-50 border border-green-100 px-4 py-3 text-sm text-green-700 font-medium">
-                    Your guide accepted! Complete your payment to confirm the tour.
+                    {tt.coGuideAccepted}
                   </div>
                   <div className="flex items-center justify-between mb-3">
                     <h2 className="text-lg font-black">{tt.coPayWith}</h2>
@@ -308,8 +308,8 @@ export default function CheckoutPage() {
               {/* Aşama D — Paid */}
               {bookingId && status === "paid" && (
                 <div className="text-center py-4">
-                  <h2 className="text-lg font-black text-green-700">Payment complete 🎉</h2>
-                  <p className="mt-1 text-sm text-neutral-700">Your tour is booked. See details in your reservations.</p>
+                  <h2 className="text-lg font-black text-green-700">{tt.coPaidTitle}</h2>
+                  <p className="mt-1 text-sm text-neutral-700">{tt.coPaidSub}</p>
                   <Link href="/profile" className="mt-4 inline-block rounded-full bg-[#6C4CF1] text-white font-bold px-6 py-2.5 text-sm">
                     My reservations
                   </Link>
@@ -320,14 +320,14 @@ export default function CheckoutPage() {
               {bookingId && (status === "rejected" || status === "cancelled") && (
                 <div className="text-center py-4">
                   <h2 className="text-lg font-black text-neutral-800">
-                    {status === "rejected" ? "Guide couldn't accept" : "Reservation cancelled"}
+                    {status === "rejected" ? tt.coRejected : tt.coCancelled}
                   </h2>
-                  <p className="mt-1 text-sm text-neutral-700">Try another guide or date — no charge was made.</p>
+                  <p className="mt-1 text-sm text-neutral-700">{tt.coRejectedSub}</p>
                   <Link
                     href={`/tours/${id}/guides?date=${date}&people=${people}`}
                     className="mt-4 inline-block text-sm font-bold text-[#6C4CF1] hover:underline"
                   >
-                    Choose another guide
+                    {tt.coChooseAnother}
                   </Link>
                 </div>
               )}
