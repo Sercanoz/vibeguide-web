@@ -69,6 +69,10 @@ export default function ProfilePage() {
   const [payout, setPayout] = useState<PayoutSummary | null>(null);
   const [loading, setLoading] = useState(true);
   const [actingId, setActingId] = useState<number | null>(null);
+  // İptal akışı: önce cancel-preview (iade %), sonra onay → /cancel.
+  const [cancelFor, setCancelFor] = useState<Booking | null>(null);
+  const [cancelPreview, setCancelPreview] = useState<{ refundPct: number; refundAmount: number; currency: string; allowed: boolean } | null>(null);
+  const [cancelBusy, setCancelBusy] = useState(false);
 
   // Rehberin gelen (kendisinin GuideId olduğu) Pending taleplerini tazele.
   async function loadGuideRequests() {
@@ -95,6 +99,44 @@ export default function ProfilePage() {
       }
     } finally {
       setActingId(null);
+    }
+  }
+
+  async function reloadBookings() {
+    const headers = await buildAuthHeaders();
+    const res = await fetch(`${API_BASE_URL}/api/bookings/my`, { headers });
+    if (res.ok) setBookings(await res.json());
+  }
+
+  // İptal: önce preview (iade %) al, modal aç.
+  async function openCancel(b: Booking) {
+    setCancelFor(b);
+    setCancelPreview(null);
+    try {
+      const headers = await buildAuthHeaders();
+      const res = await fetch(`${API_BASE_URL}/api/bookings/${b.id}/cancel-preview`, { headers });
+      if (res.ok) setCancelPreview(await res.json());
+    } catch { /* modal yine de açık, preview olmadan onaylayabilir */ }
+  }
+
+  // İptali onayla → /cancel → listeleri tazele.
+  async function confirmCancel() {
+    if (!cancelFor) return;
+    setCancelBusy(true);
+    try {
+      const headers = await buildAuthHeaders({ extra: { "Content-Type": "application/json" } });
+      const res = await fetch(`${API_BASE_URL}/api/bookings/${cancelFor.id}/cancel`, {
+        method: "POST",
+        headers,
+        body: JSON.stringify({ reason: "" }),
+      });
+      if (res.ok) {
+        setCancelFor(null);
+        setCancelPreview(null);
+        await reloadBookings();
+      }
+    } finally {
+      setCancelBusy(false);
     }
   }
 
@@ -296,9 +338,57 @@ export default function ProfilePage() {
                   <div className="flex items-center gap-2 shrink-0">
                     <span className="text-sm font-bold text-[#6C4CF1]">{b.price} {b.currency}</span>
                     <span className={`px-2 py-0.5 rounded-full text-xs font-bold ${STATUS_COLOR[b.status] ?? "bg-neutral-100 text-neutral-700"}`}>{b.status}</span>
+                    <button
+                      onClick={() => openCancel(b)}
+                      className="text-xs font-semibold text-neutral-400 hover:text-red-500 transition-colors px-2 py-1"
+                    >
+                      Cancel
+                    </button>
                   </div>
                 </div>
               ))}
+            </div>
+          )}
+
+          {/* İptal onay modalı */}
+          {cancelFor && (
+            <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4" onClick={() => !cancelBusy && setCancelFor(null)}>
+              <div className="bg-white rounded-3xl shadow-2xl w-full max-w-sm p-6" onClick={(e) => e.stopPropagation()}>
+                <h2 className="text-lg font-black text-[#0A0A0F]">Cancel reservation?</h2>
+                <p className="mt-1 text-sm text-neutral-600">{cancelFor.tourTitle ?? `Booking #${cancelFor.id}`}</p>
+                {cancelPreview ? (
+                  cancelPreview.allowed ? (
+                    <div className="mt-4 rounded-2xl bg-[#6C4CF1]/[0.06] border border-[#6C4CF1]/20 px-4 py-3">
+                      <p className="text-sm text-neutral-700">
+                        Refund: <b className="text-[#6C4CF1]">{cancelPreview.refundAmount} {cancelPreview.currency}</b>
+                        {" "}({cancelPreview.refundPct}%)
+                      </p>
+                    </div>
+                  ) : (
+                    <div className="mt-4 rounded-2xl bg-red-50 border border-red-100 px-4 py-3 text-sm text-red-600">
+                      This reservation can no longer be cancelled.
+                    </div>
+                  )
+                ) : (
+                  <p className="mt-4 text-sm text-neutral-400">…</p>
+                )}
+                <div className="flex gap-2 mt-5">
+                  <button
+                    onClick={() => setCancelFor(null)}
+                    disabled={cancelBusy}
+                    className="flex-1 rounded-full border border-black/10 font-bold py-2.5 text-sm text-neutral-700 hover:bg-neutral-50 disabled:opacity-50"
+                  >
+                    Keep it
+                  </button>
+                  <button
+                    onClick={confirmCancel}
+                    disabled={cancelBusy || (cancelPreview !== null && !cancelPreview.allowed)}
+                    className="flex-1 rounded-full bg-red-500 text-white font-bold py-2.5 text-sm hover:bg-red-600 transition-colors disabled:opacity-50"
+                  >
+                    {cancelBusy ? "…" : "Cancel reservation"}
+                  </button>
+                </div>
+              </div>
             </div>
           )}
 
