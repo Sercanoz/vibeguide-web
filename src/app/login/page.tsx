@@ -1,14 +1,21 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { signInWithEmail, signInWithGoogle, fbAuth, buildAuthHeaders } from "@/lib/firebase-client";
 import { API_BASE_URL } from "@/lib/api";
 import { useRedirectIfAuthed } from "@/hooks/useRedirectIfAuthed";
 
 export default function LoginPage() {
   const router = useRouter();
-  const checking = useRedirectIfAuthed();
+  const searchParams = useSearchParams();
+  // Booking gibi akışlardan gelen dönüş hedefi. Yalnız iç yollara izin ver
+  // (açık yönlendirme / open-redirect engeli: mutlaka "/" ile başlamalı, "//" olmamalı).
+  const rawNext = searchParams.get("next") ?? "";
+  const nextUrl =
+    rawNext.startsWith("/") && !rawNext.startsWith("//") ? rawNext : "";
+  // Login'e zaten girmiş kullanıcı varsa next varsa oraya, yoksa profile'a.
+  const checking = useRedirectIfAuthed(nextUrl || "/profile");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -50,10 +57,11 @@ export default function LoginPage() {
       const me = await res.json();
       if (me.role === "Admin") router.push("/admin/tours");
       else if (me.role === "PendingGuide") router.push("/guide/pending");
-      else router.push("/");
+      // next varsa (booking akışı) oraya dön; yoksa ana sayfa.
+      else router.push(nextUrl || "/");
       return;
     }
-    router.push("/");
+    router.push(nextUrl || "/");
   }
 
   async function onEmailLogin(e: React.FormEvent) {

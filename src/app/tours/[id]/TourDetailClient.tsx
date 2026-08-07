@@ -694,7 +694,7 @@ export default function TourDetailClient({
           <button
             onClick={() => {
               if (!bkDate) { alert(tt.bkSelectDate); return; }
-              router.push(`/tours/${tour.id}/checkout?date=${bkDate}&people=${bkPeople}`);
+              router.push(`/tours/${tour.id}/guides?date=${bkDate}&people=${bkPeople}`);
             }}
             className="block w-full text-center rounded-full bg-[#6C4CF1] text-white font-bold py-3.5 hover:bg-[#5a3dd4] transition-colors shadow-sm hover:shadow-[0_0_20px_rgba(108,76,241,0.35)]"
           >
@@ -722,7 +722,7 @@ export default function TourDetailClient({
         <button
           onClick={() => {
             const d = bkDate || new Date().toISOString().split("T")[0];
-            router.push(`/tours/${tour.id}/checkout?date=${d}&people=${bkPeople}`);
+            router.push(`/tours/${tour.id}/guides?date=${d}&people=${bkPeople}`);
           }}
           className="rounded-full bg-[#6C4CF1] text-white font-bold px-6 py-3 text-sm hover:bg-[#5a3dd4] transition-colors"
         >
