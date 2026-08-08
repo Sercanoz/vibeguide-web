@@ -11,6 +11,8 @@ export const DESTINATIONS: { slug: string; name: string; emoji: string }[] = [
   { slug: "bodrum-tour-guide", name: "Bodrum", emoji: "⛵" },
   { slug: "kusadasi-tour-guide", name: "Kuşadası", emoji: "⚓" },
   { slug: "marmaris-tour-guide", name: "Marmaris", emoji: "🐢" },
+  { slug: "fethiye-tour-guide", name: "Fethiye", emoji: "🪂" },
+  { slug: "side-tour-guide", name: "Side", emoji: "🏺" },
 ];
 
 // Şehir rehberi sayfası sadece CITY_GUIDE_LANGS dillerinde var; başka dilde

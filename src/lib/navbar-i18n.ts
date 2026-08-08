@@ -7,6 +7,9 @@ export type NavbarStrings = {
   becomeGuide: string;
   howItWorks: string;
   destinations: string;
+  // SEO iç-link nav öğeleri — opsiyonel (eksik dilde İngilizce fallback).
+  attractions?: string;
+  blog?: string;
   startExploring: string;
   signIn: string;
   signUp: string;
@@ -25,8 +28,8 @@ export type NavbarStrings = {
 };
 
 export const navbarI18n: Record<Locale, NavbarStrings> = {
-  en: { tours: "Tours", guides: "Guides", becomeGuide: "Become a guide", howItWorks: "How it works", destinations: "Destinations", startExploring: "Start exploring", signIn: "Sign in", signUp: "Register", signOut: "Sign out", myProfile: "My profile", browseTours: "Browse tours", seeAllTours: "See all tours", getApp: "Get the app", browseByInterest: "Browse by interest", catHistory: "History", catFood: "Food & Drink", catNature: "Nature", catCulture: "Culture", catAdventure: "Adventure", catArt: "Art" },
-  tr: { tours: "Turlar", guides: "Rehberler", becomeGuide: "Rehber ol", howItWorks: "Nasıl çalışır", destinations: "Yerler", startExploring: "Keşfetmeye başla", signIn: "Giriş yap", signUp: "Kayıt ol", signOut: "Çıkış yap", myProfile: "Profilim", browseTours: "Turlara göz at", seeAllTours: "Tüm turları gör", getApp: "Uygulamayı indir", browseByInterest: "İlgi alanına göre", catHistory: "Tarih", catFood: "Yeme & İçme", catNature: "Doğa", catCulture: "Kültür", catAdventure: "Macera", catArt: "Sanat" },
+  en: { tours: "Tours", guides: "Guides", becomeGuide: "Become a guide", howItWorks: "How it works", destinations: "Destinations", startExploring: "Start exploring", signIn: "Sign in", signUp: "Register", signOut: "Sign out", myProfile: "My profile", browseTours: "Browse tours", seeAllTours: "See all tours", getApp: "Get the app", browseByInterest: "Browse by interest", catHistory: "History", catFood: "Food & Drink", catNature: "Nature", catCulture: "Culture", catAdventure: "Adventure", catArt: "Art", attractions: "Attractions", blog: "Blog" },
+  tr: { tours: "Turlar", guides: "Rehberler", becomeGuide: "Rehber ol", howItWorks: "Nasıl çalışır", destinations: "Yerler", startExploring: "Keşfetmeye başla", signIn: "Giriş yap", signUp: "Kayıt ol", signOut: "Çıkış yap", myProfile: "Profilim", browseTours: "Turlara göz at", seeAllTours: "Tüm turları gör", getApp: "Uygulamayı indir", browseByInterest: "İlgi alanına göre", catHistory: "Tarih", catFood: "Yeme & İçme", catNature: "Doğa", catCulture: "Kültür", catAdventure: "Macera", catArt: "Sanat", attractions: "Gezilecek Yerler", blog: "Blog" },
   de: { tours: "Touren", guides: "Guides", becomeGuide: "Guide werden", howItWorks: "So funktioniert's", destinations: "Reiseziele", startExploring: "Jetzt entdecken", signIn: "Anmelden", signUp: "Registrieren", signOut: "Abmelden", myProfile: "Mein Profil", browseTours: "Touren ansehen", seeAllTours: "Alle Touren ansehen", getApp: "App holen", browseByInterest: "Nach Interesse", catHistory: "Geschichte", catFood: "Essen & Trinken", catNature: "Natur", catCulture: "Kultur", catAdventure: "Abenteuer", catArt: "Kunst" },
   fr: { tours: "Visites", guides: "Guides", becomeGuide: "Devenir guide", howItWorks: "Comment ça marche", destinations: "Destinations", startExploring: "Explorer", signIn: "Se connecter", signUp: "S'inscrire", signOut: "Se déconnecter", myProfile: "Mon profil", browseTours: "Voir les visites", seeAllTours: "Voir toutes les visites", getApp: "Obtenir l’app", browseByInterest: "Par centre d'intérêt", catHistory: "Histoire", catFood: "Gastronomie", catNature: "Nature", catCulture: "Culture", catAdventure: "Aventure", catArt: "Art" },
   hr: { tours: "Ture", guides: "Vodiči", becomeGuide: "Postani vodič", howItWorks: "Kako funkcionira", destinations: "Odredišta", startExploring: "Istraži", signIn: "Prijava", signUp: "Registracija", signOut: "Odjava", myProfile: "Moj profil", browseTours: "Pregledaj ture", seeAllTours: "Prikaži sve ture", getApp: "Preuzmi aplikaciju", browseByInterest: "Po interesu", catHistory: "Povijest", catFood: "Hrana i piće", catNature: "Priroda", catCulture: "Kultura", catAdventure: "Avantura", catArt: "Umjetnost" },

@@ -184,6 +184,18 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
                 </div>
               )}
             </div>
+
+            {/* Attractions — site-wide iç link (SEO: attraction sayfaları için) */}
+            <a href={locale === "en" ? "/attractions/en" : `/attractions/${locale}`}
+              className="px-3.5 py-2 rounded-xl font-medium text-neutral-800 hover:text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.06] transition-all">
+              {nb.attractions ?? "Attractions"}
+            </a>
+
+            {/* Blog — site-wide iç link (SEO: blog postları için) */}
+            <a href={locale === "en" ? "/blog/en" : `/blog/${locale}`}
+              className="px-3.5 py-2 rounded-xl font-medium text-neutral-800 hover:text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.06] transition-all">
+              {nb.blog ?? "Blog"}
+            </a>
           </div>
 
           {/* Right side — md+ ekranda SABİT genişlik + sağa yaslı: auth durumu

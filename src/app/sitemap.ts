@@ -58,6 +58,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     languages["x-default"] = `${SITE}/attractions/en/${a.slug}`;
     return ATTRACTION_LANGS.map((l) => ({
       url: `${SITE}/attractions/${l}/${a.slug}`,
+      lastModified: now,
       changeFrequency: "weekly" as const,
       priority: 0.7,
       alternates: { languages },
@@ -86,6 +87,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     languages["x-default"] = cityUrl(g.slug, "en");
     return CITY_GUIDE_LANGS.map((l) => ({
       url: cityUrl(g.slug, l),
+      lastModified: now,
       changeFrequency: "weekly" as const,
       priority: l === "en" ? 0.9 : 0.8,
       alternates: { languages },
@@ -112,8 +114,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     return BLOG_LANGS.map((l) => ({
       url: `${SITE}/blog/${l}/${p.slug}`,
       lastModified: new Date(p.publishDate),
-      changeFrequency: "monthly" as const,
-      priority: 0.65,
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
       alternates: { languages },
     }));
   });
