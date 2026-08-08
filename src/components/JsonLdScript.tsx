@@ -1,29 +1,19 @@
-import { headers } from "next/headers";
 import { jsonLdScript } from "@/lib/jsonld";
 
 /**
- * JSON-LD'yi güvenli (escape'li) ve CSP-nonce'lu olarak render eden server
- * component. Nonce'u middleware'in set ettiği `x-nonce` header'ından okur,
- * böylece CSP script-src nonce kuralını ihlal etmez.
+ * JSON-LD'yi güvenli (escape'li) render eden server component.
  *
- * type="application/ld+json" script'leri tarayıcıda çalışmaz (sadece veridir),
- * ama <script> etiketi olduğu için CSP'ye tabidir → nonce gerekir.
+ * type="application/ld+json" script'leri tarayıcıda ÇALIŞMAZ (sadece veridir),
+ * bu yüzden CSP script-src'yi ihlal etmez → nonce GEREKMEZ.
  *
- * Client component'lerden (örn. "use client") headers() çağrılamaz; bu durumda
- * nonce'u server parent'tan `nonce` prop'u ile geçir.
+ * SEO: nonce için headers() okuması KALDIRILDI — o okuma, bu component'i kullanan
+ * TÜM SEO sayfalarını (blog/attraction/city-guide) dinamik SSR'a zorluyordu.
+ * Artık statik render ediliyorlar (CDN cache → hızlı crawl → indeksleme).
  */
-export default async function JsonLdScript({
-  data,
-  nonce: nonceProp,
-}: {
-  data: unknown;
-  nonce?: string;
-}) {
-  const nonce = nonceProp ?? (await headers()).get("x-nonce") ?? undefined;
+export default function JsonLdScript({ data }: { data: unknown }) {
   return (
     <script
       type="application/ld+json"
-      nonce={nonce}
       dangerouslySetInnerHTML={{ __html: jsonLdScript(data) }}
     />
   );

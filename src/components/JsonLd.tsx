@@ -4,7 +4,7 @@
  */
 import { jsonLdScript } from "@/lib/jsonld";
 
-export default function JsonLd({ nonce }: { nonce?: string }) {
+export default function JsonLd() {
   const data = {
     "@context": "https://schema.org",
     "@graph": [
@@ -86,7 +86,6 @@ export default function JsonLd({ nonce }: { nonce?: string }) {
   return (
     <script
       type="application/ld+json"
-      nonce={nonce}
       dangerouslySetInnerHTML={{ __html: jsonLdScript(data) }}
     />
   );

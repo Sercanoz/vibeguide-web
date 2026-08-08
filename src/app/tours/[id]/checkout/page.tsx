@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, Suspense } from "react";
 import { useParams, useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { clientFetch, API_BASE_URL } from "@/lib/api";
@@ -50,6 +50,14 @@ function groupPriceForCount(tour: CheckoutTour, count: number): number {
 }
 
 export default function CheckoutPage() {
+  return (
+    <Suspense fallback={<main className="min-h-screen bg-[#FAFAFB]" />}>
+      <CheckoutInner />
+    </Suspense>
+  );
+}
+
+function CheckoutInner() {
   const params = useParams();
   const search = useSearchParams();
   const router = useRouter();

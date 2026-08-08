@@ -1,12 +1,21 @@
 "use client";
 
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { signInWithEmail, signInWithGoogle, fbAuth, buildAuthHeaders } from "@/lib/firebase-client";
 import { API_BASE_URL } from "@/lib/api";
 import { useRedirectIfAuthed } from "@/hooks/useRedirectIfAuthed";
 
+// useSearchParams (next param) statik prerender'da Suspense sınırı ister.
 export default function LoginPage() {
+  return (
+    <Suspense fallback={<main className="min-h-screen bg-white" />}>
+      <LoginInner />
+    </Suspense>
+  );
+}
+
+function LoginInner() {
   const router = useRouter();
   const searchParams = useSearchParams();
   // Booking gibi akışlardan gelen dönüş hedefi. Yalnız iç yollara izin ver

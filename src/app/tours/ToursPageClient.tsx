@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { clientFetch } from "@/lib/api";
 import { useT } from "@/components/LanguageProvider";
 import { getToursT } from "@/lib/i18n";
@@ -101,7 +101,9 @@ export default function ToursPageClient({ initialTours }: { initialTours: Tour[]
             </a>
           </div>
         ) : (
-          <TourFilters tours={tours} />
+          <Suspense fallback={<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">{[...Array(6)].map((_, i) => (<div key={i} className="rounded-3xl bg-neutral-100 animate-pulse h-80" />))}</div>}>
+            <TourFilters tours={tours} />
+          </Suspense>
         )}
       </section>
 

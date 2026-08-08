@@ -11,19 +11,16 @@ import { NextRequest, NextResponse } from "next/server";
  * Not: CSP statik header'dan buraya taşındı çünkü nonce request başına değişir.
  */
 
-function buildCsp(nonce: string): string {
+function buildCsp(): string {
   return [
     "default-src 'self'",
-    // nonce + domain allowlist. NOT: 'strict-dynamic' KULLANILMIYOR çünkü
-    // App Check reCAPTCHA v3 (www.google.com/recaptcha + www.gstatic.com) dinamik
-    // yükleniyor ve nonce alamıyor → strict-dynamic onu bloklar (recaptcha-error).
-    // 'unsafe-eval' yok; reCAPTCHA + gtag için gerekli kaynaklar açıkça izinli.
-    // 'unsafe-inline' KALDIRILDI — tüm kendi inline script'lerimiz nonce taşıyor
-    // (JsonLd, gtag init). Nonce varken 'unsafe-inline'ı zaten nonce-aware
-    // tarayıcılar yok sayıyordu; kaldırmak eski/fallback tarayıcılarda da inline
-    // script enjeksiyonunu kapatır. Harici script'ler (recaptcha/gtag) host
-    // allowlist'inden yükleniyor, nonce gerektirmez.
-    `script-src 'self' 'nonce-${nonce}' https://www.google.com https://www.gstatic.com https://apis.google.com https://www.googletagmanager.com https://www.google-analytics.com`,
+    // SEO: nonce KALDIRILDI (nonce request-başına değişip layout'u dinamik SSR'a
+    // zorluyordu → tüm site cache'lenmiyordu). Artık inline script YOK — gtag/consent
+    // + auth-flash /vg-init.js'e (self-host) taşındı, JSON-LD zaten çalıştırılabilir
+    // kod değil (data). script-src 'self' + host allowlist yeterli; 'unsafe-inline'
+    // YOK. Bu sayede CSP statik → middleware yalnız /admin için çalışıyor, sayfa
+    // render'ı statikleşiyor.
+    "script-src 'self' https://www.google.com https://www.gstatic.com https://apis.google.com https://www.googletagmanager.com https://www.google-analytics.com",
     "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net",
     "img-src 'self' data: blob: https://images.unsplash.com https://static.independent.co.uk https://encrypted-tbn0.gstatic.com https://flagcdn.com https://haritaapitest-production.up.railway.app https://firebasestorage.googleapis.com https://www.google-analytics.com https://www.googletagmanager.com",
     "connect-src 'self' https://*.firebaseio.com https://*.googleapis.com https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://firebaseappcheck.googleapis.com https://content-firebaseappcheck.googleapis.com https://haritaapitest-production.up.railway.app wss://haritaapitest-production.up.railway.app https://www.google-analytics.com https://region1.google-analytics.com https://open.er-api.com https://www.google.com https://www.gstatic.com",
@@ -39,18 +36,11 @@ function buildCsp(nonce: string): string {
 }
 
 export function middleware(request: NextRequest) {
-  // Request başına rastgele nonce (base64). crypto, edge runtime'da global.
-  const nonce = Buffer.from(crypto.randomUUID()).toString("base64");
-
-  // Nonce'u downstream'e (layout, RSC) header ile aktar.
-  const requestHeaders = new Headers(request.headers);
-  requestHeaders.set("x-nonce", nonce);
-  // Root layout <html lang> için pathname — dilli sayfalar (/de/..., /attractions/ru/...)
-  // doğru lang attribute'u alsın (önceden her sayfa lang="en" idi).
-  requestHeaders.set("x-pathname", request.nextUrl.pathname);
-
-  const response = NextResponse.next({ request: { headers: requestHeaders } });
-  response.headers.set("Content-Security-Policy", buildCsp(nonce));
+  // Nonce/x-pathname üretimi KALDIRILDI (SEO: layout artık headers() okumuyor,
+  // statik render ediliyor). Middleware yalnız CSP header + /admin koruması yapıyor —
+  // bu response-header işlemi sayfa render'ını dinamikleştirmez.
+  const response = NextResponse.next();
+  response.headers.set("Content-Security-Policy", buildCsp());
 
   // /admin/* → indexlenmesin, cache'lenmesin (defansif).
   if (request.nextUrl.pathname.startsWith("/admin")) {

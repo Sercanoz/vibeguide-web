@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useParams, useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { fbAuth, buildAuthHeaders } from "@/lib/firebase-client";
@@ -23,6 +23,14 @@ interface AvailableGuide {
 }
 
 export default function GuideSelectionPage() {
+  return (
+    <Suspense fallback={<main className="min-h-screen bg-[#FAFAFB]" />}>
+      <GuideSelectionInner />
+    </Suspense>
+  );
+}
+
+function GuideSelectionInner() {
   const params = useParams();
   const search = useSearchParams();
   const router = useRouter();

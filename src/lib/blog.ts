@@ -15576,3 +15576,10 @@ export const BLOG_POSTS: BlogPost[] = [
     ]
   }
 ];
+
+// SEO iç-link: bir city-guide slug'ına ilgili blog yazılarını döner (relatedCityGuides
+// ters haritası). City-guide sayfalarından blog'a geri-link köprüsü için — blog eskiden
+// tek yönlü besleniyordu (blog→city ama city→blog yoktu).
+export function blogPostsForCity(citySlug: string, limit = 3): BlogPost[] {
+  return BLOG_POSTS.filter((p) => p.relatedCityGuides?.includes(citySlug)).slice(0, limit);
+}

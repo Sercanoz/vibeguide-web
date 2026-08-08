@@ -318,9 +318,12 @@ export default function HomeClient({
               </a>
             ))}
           </div>
-          <div className="mt-6 text-center">
+          <div className="mt-6 flex items-center justify-center gap-6">
             <a href={`/attractions/${hubLang}`} className="text-sm font-bold text-[#6C4CF1] hover:underline">
               {ATTR_HUB[hubLang].h1} →
+            </a>
+            <a href={`/blog/${hubLang}`} className="text-sm font-bold text-[#6C4CF1] hover:underline">
+              Blog →
             </a>
           </div>
         </div>

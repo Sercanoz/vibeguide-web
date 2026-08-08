@@ -5,6 +5,8 @@ import MainFooter from "@/components/MainFooter";
 import CityTours from "@/components/CityTours";
 import type { CityGuide, CityGuideLang } from "@/lib/cityGuides";
 import { RTL_CITY_LANGS, CITY_GUIDES } from "@/lib/cityGuides";
+import { blogPostsForCity, BLOG_LANGS } from "@/lib/blog";
+import type { BlogLang } from "@/lib/blog";
 import JsonLdScript from "@/components/JsonLdScript";
 
 const SITE = "https://www.vibeguideapp.com";
@@ -29,6 +31,30 @@ export default function CityGuideView({
   const c = guide.i18n[lang];
   const rtl = RTL_CITY_LANGS.has(lang);
   const url = `${SITE}${langPrefix(lang)}/${guide.slug}`;
+
+  // SEO iç-link: bazı diller (el/uk/ro/bg/sr/hr/zh/id) landmarks taşımıyor →
+  // o dillerde attraction'lara iç link kopuyor. EN landmarks'ı fallback ver,
+  // href'lerin locale'ini bu dile çevir (attraction sayfaları her dilde var).
+  const enC = guide.i18n.en;
+  const landmarks =
+    c.landmarks && c.landmarks.length > 0
+      ? c.landmarks
+      : (enC?.landmarks ?? []).map((l) => ({
+          ...l,
+          href: l.href.replace(/^\/attractions\/en\//, `/attractions/${lang}/`),
+        }));
+  const landmarksHeading = c.landmarksHeading ?? enC?.landmarksHeading;
+  const landmarksSub = c.landmarksSub ?? enC?.landmarksSub;
+
+  // SEO geri-link: bu şehre ilgili blog yazıları (blog eskiden tek yönlü besleniyordu).
+  const blogLang: BlogLang = (BLOG_LANGS as readonly string[]).includes(lang)
+    ? (lang as BlogLang)
+    : "en";
+  const relatedBlog = blogPostsForCity(guide.slug, 3).map((p) => ({
+    slug: p.slug,
+    title: (p.i18n[blogLang] ?? p.i18n.en).title,
+    href: `/blog/${blogLang}/${p.slug}`,
+  }));
 
   const graph: object[] = [
     {
@@ -234,16 +260,16 @@ export default function CityGuideView({
         </section>
       )}
 
-      {/* Landmark hub (optional) */}
-      {c.landmarks && c.landmarks.length > 0 && (
+      {/* Landmark hub — attraction iç linkleri (eksik dilde EN fallback) */}
+      {landmarks.length > 0 && (
         <section className="py-16 bg-white">
           <div className="mx-auto max-w-5xl px-6">
-            <h2 className="text-3xl font-black mb-2 tracking-tight">{c.landmarksHeading}</h2>
-            {c.landmarksSub && (
-              <p className="text-sm text-neutral-800 mb-8">{c.landmarksSub}</p>
+            <h2 className="text-3xl font-black mb-2 tracking-tight">{landmarksHeading}</h2>
+            {landmarksSub && (
+              <p className="text-sm text-neutral-800 mb-8">{landmarksSub}</p>
             )}
             <div className="grid sm:grid-cols-2 gap-4">
-              {c.landmarks.map((l) => (
+              {landmarks.map((l) => (
                 <Link
                   key={l.href}
                   href={l.href}
@@ -256,6 +282,31 @@ export default function CityGuideView({
                     </p>
                     <p className="text-sm text-neutral-800">{l.desc}</p>
                   </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Related reads — blog geri-link (SEO iç link) */}
+      {relatedBlog.length > 0 && (
+        <section className="py-16 bg-white border-t border-black/[0.05]">
+          <div className="mx-auto max-w-5xl px-6">
+            <h2 className="text-2xl font-black mb-6 tracking-tight">
+              {landmarksHeading ? `${guide.cityName} — Travel guides` : "Travel guides"}
+            </h2>
+            <div className="grid sm:grid-cols-3 gap-4">
+              {relatedBlog.map((b) => (
+                <Link
+                  key={b.slug}
+                  href={b.href}
+                  className="group rounded-2xl bg-[#F7F7FB] border border-black/[0.06] p-5 hover:border-[#6C4CF1]/30 transition-colors"
+                >
+                  <p className="text-xs font-black uppercase tracking-wide text-[#6C4CF1] mb-2">Blog</p>
+                  <p className="font-bold text-[#0A0A0F] group-hover:text-[#6C4CF1] transition-colors leading-snug">
+                    {b.title}
+                  </p>
                 </Link>
               ))}
             </div>
