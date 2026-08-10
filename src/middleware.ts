@@ -14,13 +14,14 @@ import { NextRequest, NextResponse } from "next/server";
 function buildCsp(): string {
   return [
     "default-src 'self'",
-    // SEO: nonce KALDIRILDI (nonce request-başına değişip layout'u dinamik SSR'a
-    // zorluyordu → tüm site cache'lenmiyordu). Artık inline script YOK — gtag/consent
-    // + auth-flash /vg-init.js'e (self-host) taşındı, JSON-LD zaten çalıştırılabilir
-    // kod değil (data). script-src 'self' + host allowlist yeterli; 'unsafe-inline'
-    // YOK. Bu sayede CSP statik → middleware yalnız /admin için çalışıyor, sayfa
-    // render'ı statikleşiyor.
-    "script-src 'self' https://www.google.com https://www.gstatic.com https://apis.google.com https://www.googletagmanager.com https://www.google-analytics.com",
+    // SEO: nonce KALDIRILDI (request-başına değişip layout'u dinamik SSR'a zorluyordu).
+    // ANCAK: Next.js App Router hydration/streaming için nonce'suz INLINE script kullanıyor
+    // (<script>self.__next_f.push(...)</script>). Nonce yokken bunların çalışması için
+    // 'unsafe-inline' ŞART — aksi halde CSP bu script'leri bloklar → React hydrate olamaz
+    // → tüm client JS ölür (menü/buton çalışmaz). Statik render korunuyor, karşılığında
+    // script-src'de 'unsafe-inline' (kendi inline script'imiz zaten yok, hepsi self-host;
+    // bu yalnız Next.js'in kendi hydration inline'ları için).
+    "script-src 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://apis.google.com https://www.googletagmanager.com https://www.google-analytics.com",
     "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net",
     "img-src 'self' data: blob: https://images.unsplash.com https://static.independent.co.uk https://encrypted-tbn0.gstatic.com https://flagcdn.com https://haritaapitest-production.up.railway.app https://firebasestorage.googleapis.com https://www.google-analytics.com https://www.googletagmanager.com",
     "connect-src 'self' https://*.firebaseio.com https://*.googleapis.com https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://firebaseappcheck.googleapis.com https://content-firebaseappcheck.googleapis.com https://haritaapitest-production.up.railway.app wss://haritaapitest-production.up.railway.app https://www.google-analytics.com https://region1.google-analytics.com https://open.er-api.com https://www.google.com https://www.gstatic.com",
