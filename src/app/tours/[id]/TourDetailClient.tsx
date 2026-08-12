@@ -731,8 +731,14 @@ export default function TourDetailClient({
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/visamastercard.jpg" alt="Visa · Mastercard · Amex · Troy" className="h-6 w-auto mx-auto opacity-90" />
 
-          <p className="text-xs text-neutral-800 text-center leading-5">
-            {tt.bookNote}
+          <p className="text-xs text-neutral-800 text-center leading-5 flex items-start justify-center gap-1.5">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+              className="shrink-0 mt-0.5 text-neutral-500" aria-hidden="true">
+              <rect x="3" y="11" width="18" height="11" rx="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+            <span>{tt.bookNote}</span>
           </p>
         </aside>
       </div>
