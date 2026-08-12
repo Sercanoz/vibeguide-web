@@ -84,15 +84,31 @@ export interface TourDetail {
   importantInfo?: TourImportantInfo[];
 }
 
-// Kişi sayısına göre kişi-başı fiyat: tam eşleşen tier varsa onu (guideAmount/count),
-// yoksa basePrice. Toplam = perPerson * kişi.
+// Grup TOPLAM fiyatı — backend TourTest.ResolveGuideAmount ile BİREBİR aynı:
+// guideAmount tier'da grup toplamıdır; count'a ≤ olan en yüksek tier kazanır,
+// count en küçük tier'dan da küçükse en küçük tier. Geçerli tier yoksa basePrice.
+//
+// Bu fonksiyon checkout'taki groupPriceForCount ile aynı olmak ZORUNDA: tur
+// detayında basePrice (ör. 1000), checkout'ta tier (ör. 700) gösterilince
+// kullanıcı iki farklı fiyat görüyordu.
+function groupPriceForCount(tour: TourDetail, count: number): number {
+  const n = Math.max(1, count);
+  const tiers = (tour.pricingTiers ?? [])
+    .filter((t) => t.participantCount > 0 && t.guideAmount > 0)
+    .sort((a, b) => a.participantCount - b.participantCount);
+  if (tiers.length === 0) return tour.basePrice * n;
+  const atOrBelow = tiers.filter((t) => t.participantCount <= n);
+  // Tier kapsamı dışındaki küçük gruplarda (tier'lar 2 kişiden başlıyor)
+  // tier toplamı uygulanamaz → basePrice × kişi.
+  if (atOrBelow.length === 0) return tour.basePrice * n;
+  return atOrBelow[atOrBelow.length - 1].guideAmount;
+}
+
+// Kişi-başı gösterim için: grup toplamı / kişi sayısı.
 function perPersonForCount(tour: TourDetail, count: number): number {
-  const tiers = (tour.pricingTiers ?? []).filter(
-    (t) => t.participantCount > 0 && t.guideAmount > 0
-  );
-  const exact = tiers.find((t) => t.participantCount === count);
-  if (exact) return Math.round((exact.guideAmount / exact.participantCount) * 100) / 100;
-  return tour.basePrice;
+  const total = groupPriceForCount(tour, count);
+  const n = Math.max(1, count);
+  return Math.round((total / n) * 100) / 100;
 }
 
 function formatDuration(minutes: number): string {
@@ -631,10 +647,18 @@ export default function TourDetailClient({
                 </span>
               )}
               <span className="text-3xl font-black text-[#6C4CF1]">
-                <Price amount={tour.basePrice} currency={tour.currency} />
+                {/* Seçili kişi sayısının gerçek kişi-başı fiyatı — ham basePrice
+                    gösterilince checkout'taki tutardan farklı çıkıyordu. */}
+                <Price amount={perPersonForCount(tour, bkPeople)} currency={tour.currency} />
               </span>
             </div>
             <p className="text-xs text-neutral-800 mt-0.5">{tt.perPerson}</p>
+            {bkPeople > 1 && (
+              <p className="text-xs text-neutral-500 mt-1">
+                <Price amount={groupPriceForCount(tour, bkPeople)} currency={tour.currency} />
+                {" "}total for {bkPeople}
+              </p>
+            )}
           </div>
 
           <div className="flex items-center gap-3 rounded-xl bg-[#F7F7FB] px-4 py-3">
@@ -686,7 +710,9 @@ export default function TourDetailClient({
             <div className="flex items-center justify-between pt-1">
               <span className="text-sm font-semibold text-neutral-800">{tt.bkTotal}</span>
               <span className="text-2xl font-black text-[#6C4CF1]">
-                <Price amount={perPersonForCount(tour, bkPeople) * bkPeople} currency={tour.currency} />
+                {/* Grup toplamı doğrudan — kişi-başı × kişi yuvarlama sapması
+                    üretiyordu (700/3 × 3 ≠ 700) ve checkout'la tutmuyordu. */}
+                <Price amount={groupPriceForCount(tour, bkPeople)} currency={tour.currency} />
               </span>
             </div>
           </div>
@@ -716,7 +742,9 @@ export default function TourDetailClient({
         <div className="flex-1">
           <p className="text-xs text-neutral-800">{tt.startingFrom}</p>
           <p className="font-black text-lg text-[#6C4CF1]">
-            <Price amount={tour.basePrice} currency={tour.currency} />
+            {/* Seçili kişi sayısının gerçek kişi-başı fiyatı (basePrice değil) —
+                checkout'la aynı rakamı göstersin. */}
+            <Price amount={perPersonForCount(tour, bkPeople)} currency={tour.currency} />
           </p>
         </div>
         <button

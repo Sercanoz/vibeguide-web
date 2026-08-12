@@ -41,13 +41,17 @@ type BookingStatus =
 // count en küçük tier'dan da küçükse en küçük tier. Tier yoksa basePrice.
 // (Eski per-person×count yaklaşımı non-exact count'ta backend'le uyuşmuyordu.)
 function groupPriceForCount(tour: CheckoutTour, count: number): number {
+  const n = Math.max(1, count);
   const tiers = (tour.pricingTiers ?? [])
     .filter((t) => t.participantCount > 0 && t.guideAmount > 0)
     .sort((a, b) => a.participantCount - b.participantCount);
-  if (tiers.length === 0) return tour.basePrice;
-  const atOrBelow = tiers.filter((t) => t.participantCount <= count);
-  const chosen = atOrBelow.length > 0 ? atOrBelow[atOrBelow.length - 1] : tiers[0];
-  return chosen.guideAmount;
+  if (tiers.length === 0) return tour.basePrice * n;
+  const atOrBelow = tiers.filter((t) => t.participantCount <= n);
+  // Tier kapsamı dışındaki küçük gruplarda (tier'lar 2 kişiden başlıyor)
+  // tier toplamı uygulanamaz → basePrice × kişi. Eskiden en küçük tier'ın
+  // GRUP toplamı 1 kişiye uygulanıyordu (1000 TL tur 700 TL'ye düşüyordu).
+  if (atOrBelow.length === 0) return tour.basePrice * n;
+  return atOrBelow[atOrBelow.length - 1].guideAmount;
 }
 
 export default function CheckoutPage() {
