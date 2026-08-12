@@ -53,20 +53,28 @@ function buildCsp(): string {
   ].join("; ");
 }
 
-// 3DS ara sayfası için CSP. form-action/frame-src serbest (banka zinciri
-// önceden bilinemez), ama diğer kısıtlar korunur: dış script yüklenemez,
-// object/embed yasak, sayfa iframe'lenemez (clickjacking).
+// 3DS ara sayfası için CSP.
+//
+// Bu sayfa bankanın kendi HTML'ini taşır; sayfa üzerinde kontrolümüz yok:
+// banka scripti kendi CDN'inden yükleyebilir, kullanıcıyı ACS'ine POST eder,
+// bazı bankalar araya kendi iframe'ini koyar. Hangi domain zincirinin
+// kullanılacağı karta göre değiştiği için allowlist tutulamaz → script/form/
+// frame https: serbest.
+//
+// frame-ancestors YOK: banka onayı sonrası callback bizim success sayfamıza
+// dönüyor ve bazı akışlarda bu dönüş banka çerçevesi içinde gerçekleşiyor;
+// 'none' koyunca "bağlanmayı reddetti" ile ödeme sonrası ekran kilitleniyordu.
+// Riski sınırlı: sayfa tek kullanımlık, üzerinde form/kullanıcı verisi yok.
 const THREE_DS_CSP = [
-  "default-src 'self'",
-  "script-src 'self' 'unsafe-inline'",
-  "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: https:",
+  "default-src 'self' https:",
+  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https:",
+  "style-src 'self' 'unsafe-inline' https:",
+  "img-src 'self' data: blob: https:",
   "connect-src 'self' https:",
-  "form-action https:",
-  "frame-src https:",
+  "form-action 'self' https:",
+  "frame-src 'self' https:",
   "object-src 'none'",
   "base-uri 'self'",
-  "frame-ancestors 'none'",
 ].join("; ");
 
 export function middleware(request: NextRequest) {
@@ -81,7 +89,12 @@ export function middleware(request: NextRequest) {
   // acquirer zinciri), bu yüzden allowlist pratikte tutulamaz — form-action
   // burada serbest bırakılır. Sayfada bizim uygulama JS'imiz koşmaz, kullanıcı
   // verisi tutulmaz; kart doğrulaması bankanın kendi sayfasında yapılır.
-  if (request.nextUrl.pathname.startsWith("/payment/3ds")) {
+  // /payment/3ds, /payment/success, /payment/failed — 3DS akışının sayfaları.
+  // success/failed'ın da gevşek CSP alması ŞART: banka onayı sonrası callback
+  // bu sayfalara döner ve dönüş bazı bankalarda kendi çerçeveleri içinde olur;
+  // ana CSP'nin frame-ancestors 'none' kuralı bu dönüşü "bağlanmayı reddetti"
+  // ile blokluyor ve kullanıcı ödeme çekildiği halde sonuç ekranını göremiyordu.
+  if (request.nextUrl.pathname.startsWith("/payment/")) {
     response.headers.set("Content-Security-Policy", THREE_DS_CSP);
     response.headers.set("X-Robots-Tag", "noindex, nofollow");
     response.headers.set("Cache-Control", "no-store, max-age=0");

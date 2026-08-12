@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { useT } from "@/components/LanguageProvider";
@@ -25,6 +25,13 @@ function FailedInner() {
   const { locale } = useT();
   const tt = getToursT(locale);
   const msg = REASON_TEXT[reason] ?? tt.coRejectedSub;
+
+  // 3DS dönüşü banka çerçevesi içinde gelirse sonuç ekranını üst pencereye taşı.
+  useEffect(() => {
+    if (window.top && window.top !== window.self) {
+      window.top.location.href = window.location.href;
+    }
+  }, []);
 
   return (
     <main className="min-h-screen bg-[#FAFAFB] text-[#0A0A0F]">

@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { useT } from "@/components/LanguageProvider";
@@ -13,6 +13,14 @@ function SuccessInner() {
   const bookingId = search.get("bookingId");
   const { locale } = useT();
   const tt = getToursT(locale);
+
+  // Bazı bankalar 3DS dönüşünü kendi çerçeveleri içinde yapıyor; sonuç ekranı
+  // o çerçevenin içinde sıkışmasın (kullanıcı navbar'sız dar bir kutu görür).
+  useEffect(() => {
+    if (window.top && window.top !== window.self) {
+      window.top.location.href = window.location.href;
+    }
+  }, []);
 
   return (
     <main className="min-h-screen bg-[#FAFAFB] text-[#0A0A0F]">
