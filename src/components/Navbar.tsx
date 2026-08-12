@@ -305,6 +305,23 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
                   {l.label}
                 </a>
               ))}
+
+              {/* Attractions + Blog — masaüstünde vardı, mobilde yoktu.
+                  Hem kullanıcı erişimi hem SEO iç linklemesi için burada da. */}
+              <a
+                href={locale === "en" ? "/attractions/en" : `/attractions/${locale}`}
+                onClick={() => setMenuOpen(false)}
+                className="flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-semibold text-neutral-800 hover:bg-neutral-50 hover:text-black transition-colors"
+              >
+                {nb.attractions ?? "Attractions"}
+              </a>
+              <a
+                href={locale === "en" ? "/blog/en" : `/blog/${locale}`}
+                onClick={() => setMenuOpen(false)}
+                className="flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-semibold text-neutral-800 hover:bg-neutral-50 hover:text-black transition-colors"
+              >
+                {nb.blog ?? "Blog"}
+              </a>
             </div>
             <div className="border-t border-black/[0.06] px-4 py-3 sm:hidden flex items-center justify-between shrink-0 bg-white">
               <span className="text-xs font-bold text-neutral-800 uppercase tracking-wider">{locale === "tr" ? "Para Birimi" : "Currency"}</span>
