@@ -43,7 +43,13 @@ function SuccessInner() {
             {tt.payExplore}
           </Link>
         </div>
-        {bookingId && <p className="mt-6 text-xs text-neutral-500">#{bookingId}</p>}
+        {/* Destek/iletişim için referans — çıplak "#52" ne olduğu anlaşılmıyordu.
+            Etiket şimdilik EN (ödeme akışı i18n'i ayrı iş olarak bekliyor). */}
+        {bookingId && (
+          <p className="mt-6 text-xs text-neutral-500">
+            Reservation reference: <span className="font-semibold">#{bookingId}</span>
+          </p>
+        )}
       </div>
       <MainFooter />
     </main>
