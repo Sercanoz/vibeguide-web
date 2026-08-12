@@ -231,17 +231,17 @@ function CheckoutInner() {
   async function payNow() {
     if (!bookingId) return;
     const digits = cardNumber.replace(/\D/g, "");
-    if (digits.length < 15) { setNotice("Kart numarasını kontrol et."); return; }
+    if (digits.length < 15) { setNotice(tt.payErrCardNumber); return; }
     if (!/^\d{2}$/.test(expMonth) || Number(expMonth) < 1 || Number(expMonth) > 12) {
-      setNotice("Son kullanma ayı geçersiz (AA)."); return;
+      setNotice(tt.payErrExpMonth); return;
     }
-    if (!/^\d{2,4}$/.test(expYear)) { setNotice("Son kullanma yılı geçersiz (YY veya YYYY)."); return; }
-    if (!/^\d{3,4}$/.test(cvv)) { setNotice("CVV geçersiz."); return; }
+    if (!/^\d{2,4}$/.test(expYear)) { setNotice(tt.payErrExpYear); return; }
+    if (!/^\d{3,4}$/.test(cvv)) { setNotice(tt.payErrCvv); return; }
 
     // Telefon: profilde yoksa formdan zorunlu (TAMİ alıcı bilgisinde şart).
     const phoneDigits = phone.replace(/\D/g, "");
     if (phoneOnProfile === false && !/^5\d{9}$/.test(phoneDigits)) {
-      setNotice("Cep telefonu numaranı kontrol et (5XX XXX XX XX)."); return;
+      setNotice(tt.payErrPhone); return;
     }
 
     setBusy(true);
@@ -384,7 +384,7 @@ function CheckoutInner() {
                   {/* Kart formu — 3D Secure. Kart bilgisi saklanmaz, bankaya iletilir. */}
                   <div className="space-y-3 mb-4">
                     <div>
-                      <label className="block text-xs font-bold text-neutral-800 mb-1">Kart numarası</label>
+                      <label className="block text-xs font-bold text-neutral-800 mb-1">{tt.payCardNumber}</label>
                       <input
                         inputMode="numeric" autoComplete="cc-number" placeholder="0000 0000 0000 0000"
                         value={cardNumber}
@@ -396,9 +396,9 @@ function CheckoutInner() {
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-bold text-neutral-800 mb-1">Kart üzerindeki isim</label>
+                      <label className="block text-xs font-bold text-neutral-800 mb-1">{tt.payCardHolder}</label>
                       <input
-                        autoComplete="cc-name" placeholder="AD SOYAD"
+                        autoComplete="cc-name" placeholder={tt.payCardHolderPh}
                         value={holderName}
                         onChange={(e) => setHolderName(e.target.value.toUpperCase())}
                         className={inputCls}
@@ -409,10 +409,10 @@ function CheckoutInner() {
                     {phoneOnProfile === false && (
                       <div>
                         <label className="block text-xs font-bold text-neutral-800 mb-1">
-                          Cep telefonu
+                          {tt.payPhone}
                         </label>
                         <input
-                          inputMode="tel" autoComplete="tel" placeholder="5XX XXX XX XX" maxLength={13}
+                          inputMode="tel" autoComplete="tel" placeholder={tt.payPhonePh} maxLength={13}
                           value={phone}
                           onChange={(e) => {
                             const d = e.target.value.replace(/\D/g, "").slice(0, 10);
@@ -423,27 +423,27 @@ function CheckoutInner() {
                           className={inputCls}
                         />
                         <p className="mt-1 text-[11px] text-neutral-500">
-                          Ödeme onayı ve rezervasyon bilgilendirmesi için gerekli.
+                          {tt.payPhoneHint}
                         </p>
                       </div>
                     )}
                     <div className="grid grid-cols-3 gap-3">
                       <div>
-                        <label className="block text-xs font-bold text-neutral-800 mb-1">Ay</label>
+                        <label className="block text-xs font-bold text-neutral-800 mb-1">{tt.payExpMonth}</label>
                         <input inputMode="numeric" autoComplete="cc-exp-month" placeholder="AA" maxLength={2}
                           value={expMonth}
                           onChange={(e) => setExpMonth(e.target.value.replace(/\D/g, "").slice(0, 2))}
                           className={inputCls} />
                       </div>
                       <div>
-                        <label className="block text-xs font-bold text-neutral-800 mb-1">Yıl</label>
+                        <label className="block text-xs font-bold text-neutral-800 mb-1">{tt.payExpYear}</label>
                         <input inputMode="numeric" autoComplete="cc-exp-year" placeholder="YYYY" maxLength={4}
                           value={expYear}
                           onChange={(e) => setExpYear(e.target.value.replace(/\D/g, "").slice(0, 4))}
                           className={inputCls} />
                       </div>
                       <div>
-                        <label className="block text-xs font-bold text-neutral-800 mb-1">CVV</label>
+                        <label className="block text-xs font-bold text-neutral-800 mb-1">{tt.payCvv}</label>
                         <input inputMode="numeric" autoComplete="cc-csc" placeholder="123" maxLength={4}
                           value={cvv}
                           onChange={(e) => setCvv(e.target.value.replace(/\D/g, "").slice(0, 4))}
@@ -451,7 +451,7 @@ function CheckoutInner() {
                       </div>
                     </div>
                     <p className="text-[11px] text-neutral-500 leading-relaxed">
-                      🔒 Ödeme TAMİ (Garanti BBVA) altyapısı ile 3D Secure üzerinden alınır.
+                      {tt.paySecureNote}
                       Kart bilgileriniz saklanmaz.
                     </p>
                   </div>
