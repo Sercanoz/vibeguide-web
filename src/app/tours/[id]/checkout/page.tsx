@@ -79,6 +79,14 @@ function CheckoutInner() {
   const [status, setStatus] = useState<BookingStatus | null>(null);
   const [bookingPrice, setBookingPrice] = useState<number | null>(null);
   const [authReady, setAuthReady] = useState(false);
+  // Kart formu (3DS Direct) — değerler SAKLANMAZ, yalnız ödeme isteğinde iletilir.
+  const inputCls =
+    "w-full rounded-xl border border-black/10 px-3.5 py-2.5 text-sm focus:outline-none focus:border-[#6C4CF1] focus:ring-2 focus:ring-[#6C4CF1]/10 transition-all";
+  const [cardNumber, setCardNumber] = useState("");
+  const [holderName, setHolderName] = useState("");
+  const [expMonth, setExpMonth] = useState("");
+  const [expYear, setExpYear] = useState("");
+  const [cvv, setCvv] = useState("");
 
   // Tur verisi
   useEffect(() => {
@@ -185,24 +193,47 @@ function CheckoutInner() {
     }
   }
 
-  // 2) Rehber kabul etti (Confirmed) → TAMİ ödemesini başlat.
+  // 2) Rehber kabul etti (Confirmed) → TAMİ 3DS ödemesi.
+  // Kart bilgisi backend'e → TAMİ payment/auth → bankanın 3DS sayfası (base64 HTML)
+  // döner → aynı sekmede yazılır, kullanıcı SMS onayı yapar → banka callback'e POST atar.
+  // Kart bilgisi bizde SAKLANMAZ (sadece iletilir).
   async function payNow() {
     if (!bookingId) return;
+    const digits = cardNumber.replace(/\D/g, "");
+    if (digits.length < 15) { setNotice("Kart numarasını kontrol et."); return; }
+    if (!/^\d{2}$/.test(expMonth) || Number(expMonth) < 1 || Number(expMonth) > 12) {
+      setNotice("Son kullanma ayı geçersiz (AA)."); return;
+    }
+    if (!/^\d{2,4}$/.test(expYear)) { setNotice("Son kullanma yılı geçersiz (YY veya YYYY)."); return; }
+    if (!/^\d{3,4}$/.test(cvv)) { setNotice("CVV geçersiz."); return; }
+
     setBusy(true);
     setNotice(null);
     try {
       const headers = await buildAuthHeaders({ extra: { "Content-Type": "application/json" } });
-      const res = await fetch(`${API_BASE_URL}/api/payments/tami/initiate`, {
+      const res = await fetch(`${API_BASE_URL}/api/payments/tami/pay-3ds`, {
         method: "POST",
         headers,
-        body: JSON.stringify({ bookingId }),
+        body: JSON.stringify({
+          bookingId,
+          cardNumber: digits,
+          holderName: holderName.trim(),
+          cvv,
+          expireMonth: expMonth,
+          expireYear: expYear.length === 2 ? `20${expYear}` : expYear,
+        }),
       });
       const d = await res.json().catch(() => ({}));
-      if (res.ok && d.redirectUrl) {
-        // TAMİ Ortak Ödeme Sayfası'na yönlen (kart bilgisi orada girilir).
-        window.location.href = d.redirectUrl;
+      if (res.ok && d.threeDsHtml) {
+        // Bankanın 3DS sayfasını aç (base64 → HTML). Aynı sekmede yazılır;
+        // banka onay sonrası backend callback'e POST atıp success/fail sayfasına döner.
+        const html = decodeURIComponent(escape(window.atob(d.threeDsHtml)));
+        document.open();
+        document.write(html);
+        document.close();
         return;
       }
+      if (res.ok && d.alreadyPaid) { setStatus("paid"); return; }
       if (res.status === 503) { setNotice(tt.coComingSoon); return; }
       setNotice(d.message ?? d.error ?? tt.errMsg);
     } catch {
@@ -301,6 +332,59 @@ function CheckoutInner() {
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src="/visamastercard.jpg" alt="Visa · Mastercard · Amex · Troy" className="h-6 w-auto opacity-90" />
                   </div>
+
+                  {/* Kart formu — 3D Secure. Kart bilgisi saklanmaz, bankaya iletilir. */}
+                  <div className="space-y-3 mb-4">
+                    <div>
+                      <label className="block text-xs font-bold text-neutral-800 mb-1">Kart numarası</label>
+                      <input
+                        inputMode="numeric" autoComplete="cc-number" placeholder="0000 0000 0000 0000"
+                        value={cardNumber}
+                        onChange={(e) => {
+                          const d = e.target.value.replace(/\D/g, "").slice(0, 19);
+                          setCardNumber(d.replace(/(.{4})/g, "$1 ").trim());
+                        }}
+                        className={inputCls}
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-bold text-neutral-800 mb-1">Kart üzerindeki isim</label>
+                      <input
+                        autoComplete="cc-name" placeholder="AD SOYAD"
+                        value={holderName}
+                        onChange={(e) => setHolderName(e.target.value.toUpperCase())}
+                        className={inputCls}
+                      />
+                    </div>
+                    <div className="grid grid-cols-3 gap-3">
+                      <div>
+                        <label className="block text-xs font-bold text-neutral-800 mb-1">Ay</label>
+                        <input inputMode="numeric" autoComplete="cc-exp-month" placeholder="AA" maxLength={2}
+                          value={expMonth}
+                          onChange={(e) => setExpMonth(e.target.value.replace(/\D/g, "").slice(0, 2))}
+                          className={inputCls} />
+                      </div>
+                      <div>
+                        <label className="block text-xs font-bold text-neutral-800 mb-1">Yıl</label>
+                        <input inputMode="numeric" autoComplete="cc-exp-year" placeholder="YYYY" maxLength={4}
+                          value={expYear}
+                          onChange={(e) => setExpYear(e.target.value.replace(/\D/g, "").slice(0, 4))}
+                          className={inputCls} />
+                      </div>
+                      <div>
+                        <label className="block text-xs font-bold text-neutral-800 mb-1">CVV</label>
+                        <input inputMode="numeric" autoComplete="cc-csc" placeholder="123" maxLength={4}
+                          value={cvv}
+                          onChange={(e) => setCvv(e.target.value.replace(/\D/g, "").slice(0, 4))}
+                          className={inputCls} />
+                      </div>
+                    </div>
+                    <p className="text-[11px] text-neutral-500 leading-relaxed">
+                      🔒 Ödeme TAMİ (Garanti BBVA) altyapısı ile 3D Secure üzerinden alınır.
+                      Kart bilgileriniz saklanmaz.
+                    </p>
+                  </div>
+
                   <button
                     onClick={payNow}
                     disabled={busy}
