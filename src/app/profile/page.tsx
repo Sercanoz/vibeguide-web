@@ -225,9 +225,16 @@ export default function ProfilePage() {
                 <span className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold ${roleMeta.color}`}>
                   {roleMeta.icon} {roleMeta.label}
                 </span>
-                <span className="text-xs text-neutral-800">
-                  Member since {new Date(me.createdAtUtc).toLocaleDateString("en-GB", { month: "long", year: "numeric" })}
-                </span>
+                {/* Tarih yoksa/bozuksa satırı hiç gösterme — "Invalid Date" yazıyordu. */}
+                {(() => {
+                  const d = me.createdAtUtc ? new Date(me.createdAtUtc) : null;
+                  if (!d || isNaN(d.getTime())) return null;
+                  return (
+                    <span className="text-xs text-neutral-800">
+                      Member since {d.toLocaleDateString("en-GB", { month: "long", year: "numeric" })}
+                    </span>
+                  );
+                })()}
               </div>
               {me.guideProfile?.languages && (
                 <p className="mt-2 text-xs text-neutral-800">

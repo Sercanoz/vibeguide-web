@@ -288,9 +288,13 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
         </div>
 
         {/* Mobile drawer — bottom sheet style */}
-        <div className={`md:hidden transition-all duration-300 ease-in-out ${menuOpen ? "max-h-[32rem] opacity-100" : "max-h-0 opacity-0"} overflow-hidden`}>
-          <div className="mx-4 mb-4 bg-white rounded-3xl border border-black/[0.06] shadow-xl overflow-hidden">
-            <div className="px-2 py-2 space-y-0.5">
+        {/* Yükseklik ekrana göre: 1 Tours + 12 şehir linki sabit max-h-[32rem]'i
+            aşıyordu ve overflow-hidden en alttaki Sign in / My profile
+            butonlarını tamamen kırpıyordu (mobilde menüde sadece turlar
+            görünüyordu). Link listesi kendi içinde kayar, auth bölümü hep görünür. */}
+        <div className={`md:hidden transition-all duration-300 ease-in-out ${menuOpen ? "max-h-[85vh] opacity-100" : "max-h-0 opacity-0"} overflow-hidden`}>
+          <div className="mx-4 mb-4 bg-white rounded-3xl border border-black/[0.06] shadow-xl overflow-hidden flex flex-col max-h-[calc(85vh-1rem)]">
+            <div className="px-2 py-2 space-y-0.5 overflow-y-auto overscroll-contain flex-1 min-h-0">
               {navLinks.map((l) => (
                 <a key={l.href} href={l.href} onClick={() => setMenuOpen(false)}
                   className={`flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-semibold transition-colors ${
@@ -302,11 +306,12 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
                 </a>
               ))}
             </div>
-            <div className="border-t border-black/[0.06] px-4 py-3 sm:hidden flex items-center justify-between">
+            <div className="border-t border-black/[0.06] px-4 py-3 sm:hidden flex items-center justify-between shrink-0 bg-white">
               <span className="text-xs font-bold text-neutral-800 uppercase tracking-wider">{locale === "tr" ? "Para Birimi" : "Currency"}</span>
               <CurrencySwitcher />
             </div>
-            <div className="border-t border-black/[0.06] px-3 py-3 space-y-2">
+            {/* shrink-0: liste uzun olsa da bu blok asla kırpılmasın. */}
+            <div className="border-t border-black/[0.06] px-3 py-3 space-y-2 shrink-0 bg-white">
               {isLoggedIn ? (
                 <>
                   <a href="/profile" onClick={() => setMenuOpen(false)}
