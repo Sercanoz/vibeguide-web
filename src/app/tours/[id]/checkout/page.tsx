@@ -51,7 +51,8 @@ function groupPriceForCount(tour: CheckoutTour, count: number): number {
   // tier toplamı uygulanamaz → basePrice × kişi. Eskiden en küçük tier'ın
   // GRUP toplamı 1 kişiye uygulanıyordu (1000 TL tur 700 TL'ye düşüyordu).
   if (atOrBelow.length === 0) return tour.basePrice * n;
-  return atOrBelow[atOrBelow.length - 1].guideAmount;
+  // Monotonluk: toplam tek kişilik fiyatın altına inemez (backend ile aynı).
+  return Math.max(atOrBelow[atOrBelow.length - 1].guideAmount, tour.basePrice);
 }
 
 export default function CheckoutPage() {

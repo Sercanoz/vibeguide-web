@@ -698,8 +698,13 @@ function PricingEditor({ id }: { id: number }) {
         <div>
           <label className="block text-sm font-semibold text-vg-ink mb-1">VibeSquad pricing (per-person % of base)</label>
           <p className="text-xs text-vg-muted mb-3">
-            Set what each person pays as a % of the base price, by group size. Bigger groups should pay a smaller %.
-            Base: {cur} {base}.
+            The % is what <strong>each person</strong> pays, as a share of the base price — the group
+            total is that × group size. Bigger groups get a lower %, but the{" "}
+            <strong>total must still grow</strong> with each extra traveler.
+            Base: {cur} {base} per person (1 traveler).
+          </p>
+          <p className="text-xs text-vg-muted mb-3">
+            Sensible starting point: 2p ≈ 75%, 3p ≈ 62%, 4p ≈ 55%, 6p ≈ 45%, 8p ≈ 40%.
           </p>
           <div className="space-y-2">
             {[2, 3, 4, 5, 6, 7, 8].map((count) => {
@@ -732,11 +737,23 @@ function PricingEditor({ id }: { id: number }) {
                     />
                     <span className="text-sm text-vg-muted">%</span>
                   </div>
-                  <span className="text-xs text-vg-muted w-32 text-right">
-                    {pctValue !== "" && base > 0
-                      ? `≈ ${((base * (pctValue as number)) / 100).toFixed(2)} ${cur}/person`
-                      : "—"}
-                  </span>
+                  {(() => {
+                    if (pctValue === "" || base <= 0) {
+                      return <span className="text-xs text-vg-muted w-44 text-right">—</span>;
+                    }
+                    const pp = (base * (pctValue as number)) / 100;
+                    const total = pp * count;
+                    // Grup toplamı tek kişilik fiyatın altına düşerse fiyat
+                    // bozulur (2 kişi tek kişiden ucuz olur). Backend bunu
+                    // taban ile engelliyor ama admin burada uyarılmalı.
+                    const belowFloor = total < base;
+                    return (
+                      <span className={`text-xs w-44 text-right ${belowFloor ? "text-red-600 font-semibold" : "text-vg-muted"}`}>
+                        {pp.toFixed(0)} {cur}/person · {total.toFixed(0)} {cur} total
+                        {belowFloor && <><br />⚠ below 1-person price</>}
+                      </span>
+                    );
+                  })()}
                 </div>
               );
             })}

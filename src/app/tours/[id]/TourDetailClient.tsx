@@ -101,7 +101,8 @@ function groupPriceForCount(tour: TourDetail, count: number): number {
   // Tier kapsamı dışındaki küçük gruplarda (tier'lar 2 kişiden başlıyor)
   // tier toplamı uygulanamaz → basePrice × kişi.
   if (atOrBelow.length === 0) return tour.basePrice * n;
-  return atOrBelow[atOrBelow.length - 1].guideAmount;
+  // Monotonluk: toplam tek kişilik fiyatın altına inemez (backend ile aynı).
+  return Math.max(atOrBelow[atOrBelow.length - 1].guideAmount, tour.basePrice);
 }
 
 // Kişi-başı gösterim için: grup toplamı / kişi sayısı.
