@@ -27,20 +27,67 @@ function buildCsp(): string {
     "connect-src 'self' https://*.firebaseio.com https://*.googleapis.com https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://firebaseappcheck.googleapis.com https://content-firebaseappcheck.googleapis.com https://haritaapitest-production.up.railway.app wss://haritaapitest-production.up.railway.app https://www.google-analytics.com https://region1.google-analytics.com https://open.er-api.com https://www.google.com https://www.gstatic.com",
     "font-src 'self' https://cdn.jsdelivr.net",
     // App Check reCAPTCHA v3 gizli bir google.com iframe açar — frame-src'de izin ver.
-    "frame-src https://vibeguide-2da83.firebaseapp.com https://accounts.google.com https://www.google.com https://www.gstatic.com https://recaptcha.google.com",
+    // 3DS ACS sayfaları kimi bankada iframe içinde açılır → form-action ile aynı hostlar.
+    "frame-src https://vibeguide-2da83.firebaseapp.com https://accounts.google.com https://www.google.com https://www.gstatic.com https://recaptcha.google.com https://*.tami.com.tr https://*.vakifbank.com.tr https://*.garanti.com.tr https://*.garantibbva.com.tr https://*.isbank.com.tr https://*.yapikredi.com.tr https://*.akbank.com https://*.ziraatbank.com.tr https://*.halkbank.com.tr https://*.qnbfinansbank.com https://*.denizbank.com https://*.teb.com.tr https://*.ingbank.com.tr https://*.kuveytturk.com.tr https://*.turkiyefinans.com.tr https://*.mastercard.com https://*.visa.com",
     "object-src 'none'",
     "base-uri 'self'",
-    "form-action 'self'",
+    // 3DS: TAMİ'den gelen banka formu kullanıcıyı bankanın 3D gateway'ine POST eder.
+    // Zincir tek domain değil (TAMİ → acquirer gateway → kartı çıkaran banka ACS →
+    // bizim callback). Bilinen host'lar + TR banka domain'leri açık olmalı, yoksa
+    // tarayıcı formu bloklar ve ödeme "Ödeme Adımına Geç"te takılır.
+    [
+      "form-action 'self'",
+      "https://paymentapi.tami.com.tr https://portal.tami.com.tr",
+      "https://haritaapitest-production.up.railway.app",
+      "https://inbound.apigateway.vakifbank.com.tr https://*.vakifbank.com.tr",
+      "https://*.garanti.com.tr https://*.garantibbva.com.tr",
+      "https://*.isbank.com.tr https://*.yapikredi.com.tr https://*.akbank.com",
+      "https://*.ziraatbank.com.tr https://*.halkbank.com.tr https://*.qnbfinansbank.com",
+      "https://*.denizbank.com https://*.teb.com.tr https://*.ingbank.com.tr",
+      "https://*.sekerbank.com.tr https://*.albarakaturk.com.tr https://*.kuveytturk.com.tr",
+      "https://*.vakifkatilim.com.tr https://*.ziraatkatilim.com.tr https://*.turkiyefinans.com.tr",
+      "https://*.mastercard.com https://*.visa.com https://*.troyodeme.com",
+    ].join(" "),
     "frame-ancestors 'none'",
     "upgrade-insecure-requests",
   ].join("; ");
 }
+
+// 3DS ara sayfası için CSP. form-action/frame-src serbest (banka zinciri
+// önceden bilinemez), ama diğer kısıtlar korunur: dış script yüklenemez,
+// object/embed yasak, sayfa iframe'lenemez (clickjacking).
+const THREE_DS_CSP = [
+  "default-src 'self'",
+  "script-src 'self' 'unsafe-inline'",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: https:",
+  "connect-src 'self' https:",
+  "form-action https:",
+  "frame-src https:",
+  "object-src 'none'",
+  "base-uri 'self'",
+  "frame-ancestors 'none'",
+].join("; ");
 
 export function middleware(request: NextRequest) {
   // Nonce/x-pathname üretimi KALDIRILDI (SEO: layout artık headers() okumuyor,
   // statik render ediliyor). Middleware yalnız CSP header + /admin koruması yapıyor —
   // bu response-header işlemi sayfa render'ını dinamikleştirmez.
   const response = NextResponse.next();
+
+  // /payment/3ds: bankanın 3DS HTML'ini taşıyan ara sayfa. İçerik tamamen
+  // banka/TAMİ tarafından üretilir ve kullanıcıyı bankanın ACS'ine POST eder;
+  // hangi banka domain'ine gideceği karta göre değişir (tüm TR bankaları +
+  // acquirer zinciri), bu yüzden allowlist pratikte tutulamaz — form-action
+  // burada serbest bırakılır. Sayfada bizim uygulama JS'imiz koşmaz, kullanıcı
+  // verisi tutulmaz; kart doğrulaması bankanın kendi sayfasında yapılır.
+  if (request.nextUrl.pathname.startsWith("/payment/3ds")) {
+    response.headers.set("Content-Security-Policy", THREE_DS_CSP);
+    response.headers.set("X-Robots-Tag", "noindex, nofollow");
+    response.headers.set("Cache-Control", "no-store, max-age=0");
+    return response;
+  }
+
   response.headers.set("Content-Security-Policy", buildCsp());
 
   // /admin/* → indexlenmesin, cache'lenmesin (defansif).

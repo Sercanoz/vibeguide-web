@@ -225,12 +225,17 @@ function CheckoutInner() {
       });
       const d = await res.json().catch(() => ({}));
       if (res.ok && d.threeDsHtml) {
-        // Bankanın 3DS sayfasını aç (base64 → HTML). Aynı sekmede yazılır;
-        // banka onay sonrası backend callback'e POST atıp success/fail sayfasına döner.
-        const html = decodeURIComponent(escape(window.atob(d.threeDsHtml)));
-        document.open();
-        document.write(html);
-        document.close();
+        // Bankanın 3DS sayfasını /payment/3ds üzerinden aç.
+        // document.write ile buraya yazmak bu sayfanın CSP'sini miras alıyor ve
+        // form-action bankaya POST'u blokluyordu; /payment/3ds için middleware
+        // ayrı bir CSP gönderiyor. HTML uzun olduğu için sessionStorage ile taşınır.
+        try {
+          sessionStorage.setItem("vg_3ds_html", d.threeDsHtml);
+        } catch {
+          setNotice(tt.errMsg);
+          return;
+        }
+        window.location.href = "/payment/3ds";
         return;
       }
       if (res.ok && d.alreadyPaid) { setStatus("paid"); return; }
