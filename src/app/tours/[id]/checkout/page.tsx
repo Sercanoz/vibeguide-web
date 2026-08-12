@@ -87,6 +87,11 @@ function CheckoutInner() {
   const [expMonth, setExpMonth] = useState("");
   const [expYear, setExpYear] = useState("");
   const [cvv, setCvv] = useState("");
+  // TAMİ alıcı bilgisinde telefon zorunlu. Kayıtta zorunlu olmadığı için
+  // profilde varsa oradan doldurulur (alan gizlenir), yoksa burada istenir
+  // ve ödeme sırasında profile de kaydedilir.
+  const [phone, setPhone] = useState("");
+  const [phoneOnProfile, setPhoneOnProfile] = useState<boolean | null>(null);
 
   // Tur verisi
   useEffect(() => {
@@ -111,6 +116,26 @@ function CheckoutInner() {
     });
     return () => unsub();
   }, [id, date, people, guideId, router]);
+
+  // Profil telefonu — varsa kart formunda telefon sorulmaz.
+  useEffect(() => {
+    if (!authReady) return;
+    let alive = true;
+    (async () => {
+      try {
+        const headers = await buildAuthHeaders();
+        const res = await fetch(`${API_BASE_URL}/api/auth/me`, { headers });
+        if (!alive) return;
+        if (!res.ok) { setPhoneOnProfile(false); return; }
+        const me = await res.json();
+        const digits = String(me?.phoneNumber ?? "").replace(/\D/g, "");
+        setPhoneOnProfile(digits.length >= 10);
+      } catch {
+        if (alive) setPhoneOnProfile(false);
+      }
+    })();
+    return () => { alive = false; };
+  }, [authReady]);
 
   // guideId yoksa rehber seçimine geri gönder (bu sayfaya doğrudan gelinemez).
   useEffect(() => {
@@ -207,6 +232,12 @@ function CheckoutInner() {
     if (!/^\d{2,4}$/.test(expYear)) { setNotice("Son kullanma yılı geçersiz (YY veya YYYY)."); return; }
     if (!/^\d{3,4}$/.test(cvv)) { setNotice("CVV geçersiz."); return; }
 
+    // Telefon: profilde yoksa formdan zorunlu (TAMİ alıcı bilgisinde şart).
+    const phoneDigits = phone.replace(/\D/g, "");
+    if (phoneOnProfile === false && !/^5\d{9}$/.test(phoneDigits)) {
+      setNotice("Cep telefonu numaranı kontrol et (5XX XXX XX XX)."); return;
+    }
+
     setBusy(true);
     setNotice(null);
     try {
@@ -221,6 +252,7 @@ function CheckoutInner() {
           cvv,
           expireMonth: expMonth,
           expireYear: expYear.length === 2 ? `20${expYear}` : expYear,
+          phone: phoneDigits || undefined,
         }),
       });
       const d = await res.json().catch(() => ({}));
@@ -361,6 +393,29 @@ function CheckoutInner() {
                         className={inputCls}
                       />
                     </div>
+                    {/* Telefon: profilde kayıtlıysa sorulmaz. Banka/ödeme kaydı için
+                        zorunlu; girilen numara profile de kaydedilir. */}
+                    {phoneOnProfile === false && (
+                      <div>
+                        <label className="block text-xs font-bold text-neutral-800 mb-1">
+                          Cep telefonu
+                        </label>
+                        <input
+                          inputMode="tel" autoComplete="tel" placeholder="5XX XXX XX XX" maxLength={13}
+                          value={phone}
+                          onChange={(e) => {
+                            const d = e.target.value.replace(/\D/g, "").slice(0, 10);
+                            const f = d.replace(/^(\d{3})(\d{0,3})(\d{0,2})(\d{0,2}).*/,
+                              (_m, a, b, c, e2) => [a, b, c, e2].filter(Boolean).join(" "));
+                            setPhone(f);
+                          }}
+                          className={inputCls}
+                        />
+                        <p className="mt-1 text-[11px] text-neutral-500">
+                          Ödeme onayı ve rezervasyon bilgilendirmesi için gerekli.
+                        </p>
+                      </div>
+                    )}
                     <div className="grid grid-cols-3 gap-3">
                       <div>
                         <label className="block text-xs font-bold text-neutral-800 mb-1">Ay</label>
