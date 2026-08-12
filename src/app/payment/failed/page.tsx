@@ -5,26 +5,19 @@ import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { useT } from "@/components/LanguageProvider";
 import { getToursT } from "@/lib/i18n";
+import { paymentErrorText } from "@/lib/paymentErrors";
 import Navbar from "@/components/Navbar";
 import MainFooter from "@/components/MainFooter";
-
-// Nadir teknik sebep açıklamaları — İngilizce (edge-case, çoğu kullanıcı görmez).
-const REASON_TEXT: Record<string, string> = {
-  declined: "Your card was declined. No charge was made — please try again or use another card.",
-  signature: "We couldn't verify the payment result. No charge was made.",
-  complete_failed: "The payment could not be completed. No charge was made.",
-  complete_error: "Something went wrong finalizing the payment. No charge was made.",
-  mismatch: "This payment didn't match your reservation. No charge was made.",
-  notfound: "We couldn't find your reservation. Please try again.",
-  orderid: "Invalid payment reference. Please try again.",
-};
 
 function FailedInner() {
   const search = useSearchParams();
   const reason = search.get("reason") ?? "";
+  // Banka ret kodu — "son kullanma tarihi hatalı" gibi kullanıcının kendi
+  // düzeltebileceği sebepleri açıkça söyleyebilmek için.
+  const code = search.get("code") ?? "";
   const { locale } = useT();
   const tt = getToursT(locale);
-  const msg = REASON_TEXT[reason] ?? tt.coRejectedSub;
+  const msg = paymentErrorText(reason, code, tt.coRejectedSub);
 
   // 3DS dönüşü banka çerçevesi içinde gelirse sonuç ekranını üst pencereye taşı.
   useEffect(() => {
@@ -45,12 +38,18 @@ function FailedInner() {
         </div>
         <h1 className="text-3xl font-black">{tt.payFailTitle}</h1>
         <p className="mt-3 text-neutral-700">{msg}</p>
+        <p className="mt-2 text-sm text-neutral-500">
+          Your reservation is still held — you can retry the payment from your reservations.
+        </p>
         <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+          {/* Birincil aksiyon rezervasyonlar: booking hâlâ Confirmed, oradan
+              tekrar ödenebilir. (Eskiden "try again" /tours'a gidiyordu —
+              kullanıcı akışa en baştan başlamak zorunda kalıyordu.) */}
           <Link href="/profile" className="rounded-full bg-[#6C4CF1] text-white font-bold px-6 py-3 text-sm hover:bg-[#5a3dd4] transition-colors">
-            {tt.coMyReservations}
+            {tt.payTryAgain}
           </Link>
           <Link href="/tours" className="rounded-full border border-black/10 font-bold px-6 py-3 text-sm hover:bg-neutral-50 transition-colors">
-            {tt.payTryAgain}
+            {tt.payExplore}
           </Link>
         </div>
       </div>

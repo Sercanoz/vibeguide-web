@@ -7,6 +7,7 @@ import { clientFetch, API_BASE_URL } from "@/lib/api";
 import { fbAuth, buildAuthHeaders } from "@/lib/firebase-client";
 import { useT } from "@/components/LanguageProvider";
 import { getToursT } from "@/lib/i18n";
+import { paymentErrorText } from "@/lib/paymentErrors";
 import Navbar from "@/components/Navbar";
 import MainFooter from "@/components/MainFooter";
 import Price from "@/components/Price";
@@ -272,7 +273,12 @@ function CheckoutInner() {
       }
       if (res.ok && d.alreadyPaid) { setStatus("paid"); return; }
       if (res.status === 503) { setNotice(tt.coComingSoon); return; }
-      setNotice(d.message ?? d.error ?? tt.errMsg);
+      // Banka ret kodunu okunur bir açıklamaya çevir ("expiry date looks
+      // incorrect", "security code is incorrect" ...) — kullanıcı neyi
+      // düzelteceğini bilsin. Kod yoksa backend'in mesajına düşer.
+      setNotice(
+        paymentErrorText(d.error, d.code, d.message ?? tt.errMsg)
+      );
     } catch {
       setNotice(tt.errMsg);
     } finally {
