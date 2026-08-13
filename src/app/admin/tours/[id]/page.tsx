@@ -29,6 +29,16 @@ const LOCALE_LABELS: Record<string, string> = {
   es: "🇪🇸 Español",
   ko: "🇰🇷 한국어",
   el: "🇬🇷 Ελληνικά",
+  ja: "🇯🇵 日本語",
+  bg: "🇧🇬 Български",
+  sr: "🇷🇸 Srpski",
+  it: "🇮🇹 Italiano",
+  ar: "🇸🇦 العربية",
+  nl: "🇳🇱 Nederlands",
+  pl: "🇵🇱 Polski",
+  uk: "🇺🇦 Українська",
+  id: "🇮🇩 Bahasa Indonesia",
+  pt: "🇵🇹 Português",
 };
 
 type Props = { params: Promise<{ id: string }> };
