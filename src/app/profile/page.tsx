@@ -61,6 +61,68 @@ const ROLE_META: Record<string, { label: string; color: string; icon: React.Reac
   },
 };
 
+/** Mobil profildeki `_GroupLabel` karşılığı — bölüm başlığı. */
+function GroupLabel({ children }: { children: React.ReactNode }) {
+  return (
+    <p className="px-2 pb-2 pt-1 text-xs font-black uppercase tracking-wide text-neutral-500">
+      {children}
+    </p>
+  );
+}
+
+/** Mobil profildeki `_SectionGroup` karşılığı — kartın içinde bölünmüş satır grubu. */
+function SectionGroup({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="bg-white rounded-3xl border border-black/[0.06] shadow-sm overflow-hidden divide-y divide-black/[0.04]">
+      {children}
+    </div>
+  );
+}
+
+/** Mobil profildeki `_MenuTile` karşılığı — ikon + başlık + alt metin + chevron. */
+function MenuTile({
+  icon, title, subtitle, href, external, onClick, danger,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  subtitle?: string;
+  href?: string;
+  external?: boolean;
+  onClick?: () => void;
+  danger?: boolean;
+}) {
+  const body = (
+    <div className="flex items-center gap-4 px-5 py-4 hover:bg-neutral-50 transition-colors w-full text-left">
+      <div className={`w-10 h-10 rounded-2xl flex items-center justify-center shrink-0 ${danger ? "bg-red-50" : "bg-[#6C4CF1]/8"}`}>
+        {icon}
+      </div>
+      <div className="flex-1 min-w-0">
+        <p className={`text-sm font-bold ${danger ? "text-red-600" : "text-[#0A0A0F]"}`}>{title}</p>
+        {subtitle && <p className="text-xs text-neutral-500 mt-0.5 leading-5">{subtitle}</p>}
+      </div>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
+        <polyline points="9 18 15 12 9 6" />
+      </svg>
+    </div>
+  );
+
+  if (href) {
+    return external ? (
+      <a href={href} target="_blank" rel="noopener noreferrer" className="block">{body}</a>
+    ) : (
+      <Link href={href} className="block">{body}</Link>
+    );
+  }
+  return <button onClick={onClick} className="block w-full">{body}</button>;
+}
+
+// Menü ikonları — mobildeki Material ikonlarının web karşılıkları.
+const ico = (path: React.ReactNode, color = "#6C4CF1") => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+    {path}
+  </svg>
+);
+
 export default function ProfilePage() {
   const router = useRouter();
   const [me, setMe] = useState<Me | null>(null);
@@ -68,6 +130,7 @@ export default function ProfilePage() {
   const [guideRequests, setGuideRequests] = useState<Booking[]>([]);
   const [payout, setPayout] = useState<PayoutSummary | null>(null);
   const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState<string | null>(null);
   const [actingId, setActingId] = useState<number | null>(null);
   // İptal akışı: önce cancel-preview (iade %), sonra onay → /cancel.
   const [cancelFor, setCancelFor] = useState<Booking | null>(null);
@@ -153,19 +216,34 @@ export default function ProfilePage() {
         fetch(`${API_BASE_URL}/api/bookings/my`, { headers }),
       ]);
 
-      if (!meRes.ok) { router.push("/"); return; }
-      const meData: Me = await meRes.json();
-      setMe(meData);
-
-      if (bookingsRes.ok) setBookings(await bookingsRes.json());
-
-      if (meData.role === "Guide") {
-        const payoutRes = await fetch(`${API_BASE_URL}/api/payouts/me/summary`, { headers });
-        if (payoutRes.ok) setPayout(await payoutRes.json());
-        await loadGuideRequests();
+      // /api/auth/me başarısızsa sayfa eskiden `!me → return null` ile TAMAMEN
+      // boş kalıyordu (Navbar bile yok). Artık hatayı sakla ve aşağıda göster.
+      if (!meRes.ok) {
+        setLoadError(
+          meRes.status === 401
+            ? "Your session has expired. Please sign in again."
+            : `Could not load your profile (error ${meRes.status}). Please try again.`,
+        );
+        setLoading(false);
+        return;
       }
 
-      setLoading(false);
+      try {
+        const meData: Me = await meRes.json();
+        setMe(meData);
+
+        if (bookingsRes.ok) setBookings(await bookingsRes.json());
+
+        if (meData.role === "Guide") {
+          const payoutRes = await fetch(`${API_BASE_URL}/api/payouts/me/summary`, { headers });
+          if (payoutRes.ok) setPayout(await payoutRes.json());
+          await loadGuideRequests();
+        }
+      } catch {
+        setLoadError("Could not load your profile. Please try again.");
+      } finally {
+        setLoading(false);
+      }
     });
     return () => unsub();
   }, [router]);
@@ -186,7 +264,42 @@ export default function ProfilePage() {
     );
   }
 
-  if (!me) return null;
+  // Eskiden burada `return null` vardı → profil yüklenemeyince BOMBOŞ BEYAZ EKRAN.
+  // Artık ne olduğunu söyleyip çıkış yolu veriyoruz.
+  if (!me) {
+    return (
+      <main className="min-h-screen bg-[#F7F7FB]">
+        <Navbar />
+        <div className="pt-24 pb-16 px-4">
+          <div className="mx-auto max-w-md bg-white rounded-3xl border border-black/[0.06] shadow-sm p-8 text-center">
+            <div className="w-14 h-14 rounded-2xl bg-amber-100 flex items-center justify-center mx-auto mb-4">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D97706" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" />
+              </svg>
+            </div>
+            <p className="text-base font-black text-[#0A0A0F]">Profile unavailable</p>
+            <p className="text-sm text-neutral-600 mt-1.5 leading-6">
+              {loadError ?? "We couldn't load your profile."}
+            </p>
+            <div className="flex gap-2 mt-6">
+              <button
+                onClick={() => window.location.reload()}
+                className="flex-1 rounded-2xl border border-black/10 font-bold py-2.5 text-sm text-neutral-700 hover:bg-neutral-50 transition-colors"
+              >
+                Try again
+              </button>
+              <button
+                onClick={onSignOut}
+                className="flex-1 rounded-2xl bg-[#6C4CF1] text-white font-bold py-2.5 text-sm hover:bg-[#5a3dd4] transition-colors"
+              >
+                Sign in again
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    );
+  }
 
   const roleMeta = ROLE_META[me.role] ?? ROLE_META.Tourist;
   const activeBookings = bookings.filter(b => ["Pending","Paid"].includes(b.status));
@@ -438,6 +551,115 @@ export default function ProfilePage() {
               </Link>
             </div>
           )}
+
+          {/* ===== MENÜ — mobil profil sayfasıyla aynı bölümler ===== */}
+
+          {/* Bookings / Guide */}
+          <div>
+            <GroupLabel>{me.role === "Guide" ? "Guide" : "Bookings"}</GroupLabel>
+            <SectionGroup>
+              <MenuTile
+                href="/tours"
+                icon={ico(<><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></>)}
+                title="Browse tours"
+                subtitle="Find and book a local guide"
+              />
+              <MenuTile
+                href="/vibenow"
+                icon={ico(<><circle cx="12" cy="12" r="10" /><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" /></>)}
+                title="VibeNow"
+                subtitle="Match with a guide right now"
+              />
+              <MenuTile
+                href="/vibesquad"
+                icon={ico(<><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /></>)}
+                title="VibeSquad"
+                subtitle="Join a group tour"
+              />
+            </SectionGroup>
+          </div>
+
+          {/* Settings */}
+          <div>
+            <GroupLabel>Settings</GroupLabel>
+            <SectionGroup>
+              <MenuTile
+                href="/account-deletion"
+                icon={ico(<><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></>)}
+                title="Account"
+                subtitle="Manage or delete your account"
+              />
+              <MenuTile
+                href="/security"
+                icon={ico(<><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></>)}
+                title="Security"
+                subtitle="How we protect your data"
+              />
+            </SectionGroup>
+          </div>
+
+          {/* Support */}
+          <div>
+            <GroupLabel>Support</GroupLabel>
+            <SectionGroup>
+              <MenuTile
+                href="/help"
+                icon={ico(<><circle cx="12" cy="12" r="10" /><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" /><line x1="12" y1="17" x2="12.01" y2="17" /></>)}
+                title="Help center"
+                subtitle="Answers to common questions"
+              />
+              <MenuTile
+                href="/contact"
+                icon={ico(<><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></>)}
+                title="Contact us"
+                subtitle="Get in touch with our team"
+              />
+              <MenuTile
+                href="/how-it-works"
+                icon={ico(<><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></>)}
+                title="How it works"
+                subtitle="Booking, meeting and payment"
+              />
+            </SectionGroup>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <GroupLabel>Legal</GroupLabel>
+            <SectionGroup>
+              <MenuTile
+                href="/terms"
+                icon={ico(<><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /></>)}
+                title="Terms of service"
+              />
+              <MenuTile
+                href="/privacy"
+                icon={ico(<><rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></>)}
+                title="Privacy policy"
+              />
+              <MenuTile
+                href="/cancellation-policy"
+                icon={ico(<><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></>)}
+                title="Cancellation policy"
+              />
+            </SectionGroup>
+          </div>
+
+          {/* Sign out + delete */}
+          <div className="pt-1 space-y-3">
+            <button
+              onClick={onSignOut}
+              className="w-full rounded-2xl border border-red-200 text-red-600 font-bold py-3.5 text-sm hover:bg-red-50 transition-colors"
+            >
+              Sign out
+            </button>
+            <Link
+              href="/account-deletion"
+              className="block text-center text-sm font-semibold text-red-500 underline underline-offset-4 hover:text-red-600 transition-colors py-2"
+            >
+              Delete account
+            </Link>
+          </div>
 
           {/* App download CTA */}
           <div className="bg-gradient-to-r from-[#6C4CF1] to-[#8B5CF6] rounded-3xl p-6 flex items-center gap-5">
