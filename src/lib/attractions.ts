@@ -5129,7 +5129,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       sr: {
         name: `Galata kula`,
-        metaTitle: `Galata kula — ture i lokalni vodiči`,
+        metaTitle: `Galata kula: radno vreme, ulaznice i pogled`,
         metaDescription:
           `Popnite se na Galata kulu u Istanbulu uz proverenog lokalnog vodiča. Preskočite redove, uhvatite zalazak sunca i čujte priču o đenovljanskoj kuli nad Zlatnim rogom.`,
         intro: [
@@ -5157,7 +5157,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       hr: {
         name: `Galata kula`,
-        metaTitle: `Galata kula — ture i lokalni vodiči`,
+        metaTitle: `Galata kula: radno vreme, ulaznice i pogled`,
         metaDescription:
           `Popnite se na Galata kulu u Istanbulu s provjerenim lokalnim vodičem. Izbjegnite redove, uhvatite zalazak sunca i čujte priču o đenoveškoj kuli nad Zlatnim rogom.`,
         intro: [
@@ -6621,9 +6621,9 @@ export const ATTRACTIONS: Attraction[] = [
       },
       el: {
         name: "Άσπενδος",
-        metaTitle: "Ξεναγήσεις στο Ρωμαϊκό Θέατρο της Ασπένδου με ντόπιους ξεναγούς",
+        metaTitle: "Άσπενδος: το αρχαίο θέατρο, ωράριο & πώς θα πας",
         metaDescription:
-          "Επισκέψου την Άσπενδο κοντά στην Αττάλεια με πιστοποιημένο ντόπιο ξεναγό. Στάσου στο καλύτερα διατηρημένο ρωμαϊκό θέατρο του κόσμου και άκου την ακουστική του να λειτουργεί μετά από 1.800 χρόνια.",
+          "Η Άσπενδος βρίσκεται 45 χλμ. ανατολικά της Αττάλειας: το καλύτερα διατηρημένο ρωμαϊκό θέατρο στον κόσμο, με ακουστική που λειτουργεί μετά από 1.800 χρόνια. Πρόσβαση, ωράριο, εισιτήρια και ξεναγήσεις.",
         intro: [
           "Η Άσπενδος είναι το καλύτερα διατηρημένο ρωμαϊκό θέατρο του κόσμου — χτισμένο τον 2ο αιώνα μ.Χ. επί Μάρκου Αυρηλίου από τον αρχιτέκτονα Ζήνωνα, και ακόμη χωρά περίπου 15.000 έως 20.000 θεατές. Ψιθύρισε στη σκηνή και σε ακούει η τελευταία σειρά: η ακουστική παραμένει εκπληκτική σχεδόν 1.800 χρόνια μετά.",
           "Με έναν ντόπιο ειδικό του VibeGuide δεν κοιτάς απλώς παλιές πέτρες. Μαθαίνεις πώς λειτουργούσε το θέατρο, γιατί σώθηκε ακέραιο και τι να προσέξεις στο κοντινό ρωμαϊκό υδραγωγείο — με τον δικό σου ρυθμό, στη γλώσσα σου, περίπου 45 χλμ. ανατολικά της Αττάλειας, κοντά στο Σέρικ.",
@@ -9346,7 +9346,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       sr: {
         name: `Sulejmanija džamija`,
-        metaTitle: `Sulejmanija džamija — ture i lokalni vodiči`,
+        metaTitle: `Sulejmanija džamija: šta videti i pravila ulaska`,
         metaDescription:
           `Posetite Sulejmaniju džamiju uz proverenog istanbulskog vodiča. Remek-delo Mimara Sinana na Trećem brdu, grobnice Sulejmana i Hurem i panoramska terasa nad Zlatnim rogom.`,
         intro: [
@@ -9619,9 +9619,9 @@ export const ATTRACTIONS: Attraction[] = [
       },
       fr: {
         name: "Bazar aux Épices",
-        metaTitle: "Visites du Bazar aux Épices (Bazar Égyptien) avec guides locaux",
+        metaTitle: "Bazar aux Épices d'Istanbul : horaires, accès & quoi acheter",
         metaDescription:
-          "Découvrez le Bazar aux Épices d'Istanbul avec un guide local vérifié. Montagnes d'épices, safran, loukoums et thés dans un marché couvert du XVIIe siècle près de la Nouvelle Mosquée à Eminönü.",
+          "Le Bazar aux Épices (Mısır Çarşısı) se trouve à Eminönü, près de la Nouvelle Mosquée : halle voûtée du XVIIe siècle, safran, loukoums et thés. Horaires, accès en tramway T1, prix et visites guidées.",
         intro: [
           "Le Bazar aux Épices — le Mısır Çarşısı, ou Bazar Égyptien — est le marché le plus parfumé d'Istanbul, une halle en L aux arcades voûtées du XVIIe siècle au cœur d'Eminönü. Bâti dans les années 1660 dans le cadre du complexe de la Nouvelle Mosquée, il fut financé par le commerce avec l'Égypte ottomane, et aujourd'hui encore ses étals débordent de pyramides d'épices, de safran, de fruits secs, de noix et de thé.",
           "Avec un expert local VibeGuide, la foule et les couleurs prennent tout leur sens. Un vrai guide vous conduit au-delà des pièges à touristes vers des marchands honnêtes de longue date, vous dit ce que devraient coûter le vrai safran et le loukoum pur, et vous fait goûter avant d'acheter — transformant une allée chaotique en une matinée paisible de saveurs et de récits.",
@@ -13246,8 +13246,8 @@ export const ATTRACTIONS: Attraction[] = [
       },
       ar: {
         name: `طروادة`,
-        metaTitle: `جولات مدينة طروادة الأثرية مع مرشدين محليين`,
-        metaDescription: `استكشف مدينة طروادة الأثرية قرب تشاناك قلعة برفقة مرشد محلي موثّق — الموقع الأسطوري لإلياذة هوميروس، موقع تراث عالمي لليونسكو بتسع مدن متراكبة.`,
+        metaTitle: `أين تقع طروادة؟ موقعها وما تبقّى منها اليوم`,
+        metaDescription: `تقع طروادة قرب تشاناق قلعة في تركيا: تسع مدن متراكبة عبر 3000 عام، موقع إلياذة هوميروس وتراث عالمي لليونسكو. كيف تصل إليها، وما الذي تبقّى، وجولات مع مرشدين محليين.`,
         intro: [
           `طروادة هي أشهر موقع أثري أسطوري في العالم — مدينة إلياذة هوميروس، مدينة أخيل وهكتور والحصان الخشبي. على تلّ منخفض قرب تشاناك قلعة، مطلّ على السهل باتجاه الدردنيل، بُنيت تسع مدن واحدة فوق الأخرى على مدى أكثر من 3000 عام، من العصر البرونزي حتى الزمن الروماني.`,
           `تكافئ الأطلال من يعرف الحكاية. مع خبير محلي من VibeGuide، تنبض الجدران والمنحدرات والأساسات المتراكبة بالحياة — حيث تلتقي الأسطورة بالآثار، وكيف نقّب شليمان هنا، وما الذي حدث فعلاً على هذا السهل الذي تعصف به الرياح. يمثّل حصان خشبي منسوخ المكان، لكن السحر الحقيقي هو فهم الطبقات تحت قدميك.`,
@@ -13327,8 +13327,8 @@ export const ATTRACTIONS: Attraction[] = [
       },
       el: {
         name: `Τροία (Truva)`,
-        metaTitle: `Αρχαία Τροία: Ξεναγήσεις & τοπικοί ξεναγοί`,
-        metaDescription: `Εξερευνήστε την αρχαία Τροία κοντά στο Τσανάκκαλε με πιστοποιημένο τοπικό ξεναγό — τον θρυλικό τόπο της Ιλιάδας του Ομήρου, Μνημείο Παγκόσμιας Κληρονομιάς με εννέα διαδοχικές πόλεις.`,
+        metaTitle: `Πού βρίσκεται η Τροία; Τοποθεσία & τι σώζεται σήμερα`,
+        metaDescription: `Η Τροία βρίσκεται κοντά στο Τσανάκκαλε της Τουρκίας: εννέα διαδοχικές πόλεις σε 3.000 χρόνια, ο τόπος της Ιλιάδας και Μνημείο Παγκόσμιας Κληρονομιάς UNESCO. Πρόσβαση, τι σώζεται και ξεναγήσεις.`,
         intro: [
           `Η Τροία είναι ο πιο θρυλικός αρχαιολογικός χώρος στον κόσμο — η πόλη της Ιλιάδας του Ομήρου, του Αχιλλέα, του Έκτορα και του ξύλινου αλόγου. Πάνω σε έναν χαμηλό λόφο κοντά στο Τσανάκκαλε, με θέα στην πεδιάδα προς τα Δαρδανέλια, χτίστηκαν εννέα πόλεις η μία πάνω στην άλλη σε διάστημα άνω των 3.000 ετών, από την Εποχή του Χαλκού έως τους ρωμαϊκούς χρόνους.`,
           `Τα ερείπια ανταμείβουν όσους γνωρίζουν την ιστορία. Με έναν τοπικό ειδικό της VibeGuide, τα διαδοχικά τείχη, οι ράμπες και τα θεμέλια ζωντανεύουν — εκεί όπου ο μύθος συναντά την αρχαιολογία, πώς έσκαψε εδώ ο Σλήμαν και τι πραγματικά συνέβη σε αυτή την ανεμοδαρμένη πεδιάδα. Ένα αντίγραφο του ξύλινου αλόγου σημαδεύει το σημείο, όμως η αληθινή μαγεία βρίσκεται στην κατανόηση των στρωμάτων κάτω από τα πόδια σας.`,
@@ -13381,8 +13381,8 @@ export const ATTRACTIONS: Attraction[] = [
       },
       it: {
         name: `Troia`,
-        metaTitle: `Antica città di Troia: tour e guide locali`,
-        metaDescription: `Esplora l'antica città di Troia vicino a Çanakkale con una guida locale verificata: il leggendario luogo dell'Iliade di Omero, patrimonio UNESCO con nove città sovrapposte.`,
+        metaTitle: `Antica città di Troia: dove si trova e cosa vedere`,
+        metaDescription: `Troia si trova vicino a Çanakkale, in Turchia: nove città sovrapposte in 3.000 anni, il luogo dell'Iliade di Omero e patrimonio UNESCO. Come arrivarci, cosa resta oggi e tour con guide locali.`,
         intro: [
           `Troia è il sito archeologico più leggendario del mondo: la città dell'Iliade di Omero, di Achille, Ettore e del cavallo di legno. Su una bassa collina vicino a Çanakkale, affacciata sulla pianura verso i Dardanelli, nove città furono costruite una sull'altra nell'arco di oltre 3.000 anni, dall'Età del Bronzo all'epoca romana.`,
           `Le rovine ricompensano chi conosce la storia. Con un esperto locale VibeGuide, le mura, le rampe e le fondamenta stratificate prendono vita — dove il mito incontra l'archeologia, come Schliemann scavò qui e cosa accadde davvero su questa pianura battuta dal vento. Una riproduzione del cavallo di legno ne segna il luogo, ma la vera magia è comprendere gli strati sotto i tuoi piedi.`,
@@ -13627,7 +13627,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       sr: {
         name: `Troja (Truva)`,
-        metaTitle: `Drevni grad Troja — ture i lokalni vodiči`,
+        metaTitle: `Gde se nalazi Troja? Lokacija i šta se danas vidi`,
         metaDescription:
           `Istražite drevni grad Troju kod Čanakalea uz proverenog lokalnog vodiča — legendarno mesto Homerove Ilijade, baština UNESKO sa devet naslaganih gradova.`,
         intro: [
@@ -14827,7 +14827,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       hr: {
         name: `Antički grad Side`,
-        metaTitle: `Antički grad Side — ture i lokalni vodiči`,
+        metaTitle: `Antički grad Side: šta videti i kako doći`,
         metaDescription:
           `Istražite antičku Side kraj Antalije s provjerenim lokalnim vodičem — grčko-rimski lučki grad gdje Apolonov hram stoji točno na mediteranskoj obali.`,
         intro: [
