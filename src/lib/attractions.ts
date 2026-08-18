@@ -6733,7 +6733,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       nl: {
         name: "Aspendos",
-        metaTitle: "Aspendos Romeins Theater-tours & lokale gidsen",
+        metaTitle: "Aspendos: Romeins theater, openingstijden & route",
         metaDescription:
           "Bezoek Aspendos bij Antalya met een geverifieerde lokale gids. Sta in het best bewaarde Romeinse theater ter wereld en hoor hoe de akoestiek na 1.800 jaar nog werkt.",
         intro: [
@@ -6929,7 +6929,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       sr: {
         name: `Aspendos`,
-        metaTitle: `Rimsko pozorište Aspendos — ture i lokalni vodiči`,
+        metaTitle: `Aspendos: rimsko pozorište, radno vreme i kako doći`,
         metaDescription:
           `Posetite Aspendos kod Antalije uz proverenog lokalnog vodiča. Stanite u najbolje očuvano rimsko pozorište na svetu i čujte kako akustika radi i posle 1.800 godina.`,
         intro: [
@@ -6957,7 +6957,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       hr: {
         name: `Aspendos`,
-        metaTitle: `Rimsko kazalište Aspendos — ture i lokalni vodiči`,
+        metaTitle: `Aspendos: rimsko kazalište, radno vrijeme i kako doći`,
         metaDescription:
           `Posjetite Aspendos kraj Antalije s provjerenim lokalnim vodičem. Stanite u najbolje očuvano rimsko kazalište na svijetu i čujte kako mu akustika radi i nakon 1.800 godina.`,
         intro: [
@@ -7709,7 +7709,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       ru: {
         name: "Пергам",
-        metaTitle: "Пергам (Бергама): экскурсии по древнему городу с местными гидами",
+        metaTitle: "Пергам (Бергама): что посмотреть и как добраться",
         metaDescription:
           "Осмотрите Пергам — древний город и объект ЮНЕСКО под Измиром — с проверенным местным гидом. Самый крутой театр античности, легендарная библиотека и лечебный Асклепион.",
         intro: [
@@ -8129,7 +8129,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       sr: {
         name: `Pergam`,
-        metaTitle: `Drevni grad Pergam (Bergama) — ture i lokalni vodiči`,
+        metaTitle: `Pergam (Bergama): šta videti i kako doći`,
         metaDescription:
           `Istražite Pergam, drevni grad na UNESKO listi svetske baštine kod Izmira, uz proverenog lokalnog vodiča. Najstrmije pozorište antike, legendarna biblioteka i lečilište Asklepion.`,
         intro: [
@@ -9590,7 +9590,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       es: {
         name: "Bazar de las Especias",
-        metaTitle: "Tours del Bazar de las Especias (Bazar Egipcio) con guías locales",
+        metaTitle: "Bazar de las Especias: horario, cómo llegar y qué comprar",
         metaDescription:
           "Descubre el Bazar de las Especias de Estambul con un guía local verificado. Montañas de especias, azafrán, delicias turcas y tés en un mercado cubierto del siglo XVII junto a la Mezquita Nueva en Eminönü.",
         intro: [
@@ -9909,7 +9909,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       ro: {
         name: `Bazarul de Mirodenii`,
-        metaTitle: `Tururi Bazarul de Mirodenii (Bazarul Egiptean) și ghizi locali`,
+        metaTitle: `Bazarul de Mirodenii: program, cum ajungi și ce cumperi`,
         metaDescription:
           `Explorează Bazarul de Mirodenii din Istanbul cu un ghid local verificat. Mirodenii în grămezi, șofran, rahat turcesc și ceaiuri într-o piață acoperită din secolul al XVII-lea lângă Moscheea Nouă, în Eminönü.`,
         intro: [
@@ -9967,7 +9967,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       sr: {
         name: `Bazar začina`,
-        metaTitle: `Bazar začina (Egipatski bazar) — ture i lokalni vodiči`,
+        metaTitle: `Bazar začina: radno vreme, kako doći i šta kupiti`,
         metaDescription:
           `Istražite istanbulski Bazar začina uz proverenog lokalnog vodiča. Gomile začina, šafran, ratluk i čajevi u natkrivenoj pijaci iz 17. veka pored Nove džamije u Eminonuu.`,
         intro: [
@@ -9996,7 +9996,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       hr: {
         name: `Bazar začina`,
-        metaTitle: `Bazar začina (Egipatski bazar) — ture i lokalni vodiči`,
+        metaTitle: `Bazar začina: radno vreme, kako doći i šta kupiti`,
         metaDescription:
           `Istražite istanbulski Bazar začina s provjerenim lokalnim vodičem. Hrpe začina, šafran, rahat-lokum i čajevi u natkrivenoj tržnici iz 17. stoljeća uz Novu džamiju u Eminönüu.`,
         intro: [
@@ -10356,7 +10356,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       pl: {
         name: "Wieża Leandra",
-        metaTitle: "Wieża Leandra (Kız Kulesi) — wycieczki z lokalnymi przewodnikami",
+        metaTitle: "Wieża Leandra (Kız Kulesi): bilety, godziny i dojazd",
         metaDescription:
           "Zwiedź Wieżę Leandra na jej maleńkiej wysepce na Bosforze z zweryfikowanym przewodnikiem w Stambule. Dawne legendy, krótki rejs z Üsküdaru i niezapomniany zachód słońca.",
         intro: [
@@ -11511,7 +11511,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       el: {
         name: "Κάστρο του Μπόντρουμ",
-        metaTitle: "Κάστρο του Μπόντρουμ & Μουσείο Υποβρύχιας Αρχαιολογίας με ντόπιους ξεναγούς",
+        metaTitle: "Κάστρο Μπόντρουμ: ωράριο, εισιτήρια & το μουσείο",
         metaDescription:
           "Εξερεύνησε το Κάστρο του Μπόντρουμ, το φρούριο των Ιπποτών του Αγίου Ιωάννη πάνω από το λιμάνι, με πιστοποιημένο ντόπιο ξεναγό. Πύργοι των σταυροφόρων, Μουσείο Υποβρύχιας Αρχαιολογίας και το ναυάγιο του Ουλουμπουρούν.",
         intro: [
@@ -11569,7 +11569,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       it: {
         name: "Castello di Bodrum",
-        metaTitle: "Castello di Bodrum e Museo di Archeologia Subacquea con guide locali",
+        metaTitle: "Castello di Bodrum: orari, biglietti e cosa vedere",
         metaDescription:
           "Esplora il Castello di Bodrum, la fortezza dei Cavalieri Ospitalieri sopra il porto, con una guida locale abilitata. Torri crociate, il Museo di Archeologia Subacquea e il relitto di Uluburun.",
         intro: [
@@ -13041,7 +13041,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       sr: {
         name: `Manastir Sumela`,
-        metaTitle: `Manastir Sumela — ture i lokalni vodiči`,
+        metaTitle: `Manastir Sumela: gde se nalazi i kako doći`,
         metaDescription:
           `Posetite manastir Sumela kod Trabzona uz proverenog lokalnog vodiča — grčki pravoslavni manastir na litici koji se drži uz okomitu stenu 300 m iznad maglovite šumske doline.`,
         intro: [
@@ -13192,7 +13192,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       de: {
         name: `Troja (Truva)`,
-        metaTitle: `Antike Stadt Troja: Touren & lokale Guides`,
+        metaTitle: `Antike Stadt Troja: Wo sie liegt & was zu sehen ist`,
         metaDescription: `Erkunden Sie die antike Stadt Troja bei Çanakkale mit einem geprüften lokalen Guide – der legendäre Schauplatz von Homers Ilias und UNESCO-Welterbe mit neun übereinanderliegenden Städten.`,
         intro: [
           `Troja ist die legendärste archäologische Stätte der Welt – die Stadt aus Homers Ilias, von Achilles, Hektor und dem hölzernen Pferd. Auf einem niedrigen Hügel bei Çanakkale, mit Blick über die Ebene zu den Dardanellen, wurden über mehr als 3.000 Jahre hinweg neun Städte übereinander errichtet, von der Bronzezeit bis in die römische Zeit.`,
@@ -13273,7 +13273,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       es: {
         name: `Troya (Truva)`,
-        metaTitle: `Ciudad antigua de Troya: tours y guías`,
+        metaTitle: `Ciudad antigua de Troya: dónde está y qué ver`,
         metaDescription: `Explora la ciudad antigua de Troya, cerca de Çanakkale, con un guía local verificado: el legendario escenario de la Ilíada de Homero, Patrimonio de la Humanidad con nueve ciudades superpuestas.`,
         intro: [
           `Troya es el yacimiento arqueológico más legendario del mundo: la ciudad de la Ilíada de Homero, de Aquiles, Héctor y el caballo de madera. Sobre una colina baja cerca de Çanakkale, con vistas a la llanura hacia los Dardanelos, se construyeron nueve ciudades una sobre otra a lo largo de más de 3.000 años, desde la Edad del Bronce hasta la época romana.`,
@@ -13300,7 +13300,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       fr: {
         name: `Troie (Truva)`,
-        metaTitle: `Cité antique de Troie : visites et guides`,
+        metaTitle: `Cité antique de Troie : où elle se trouve et que voir`,
         metaDescription: `Explorez la cité antique de Troie près de Çanakkale avec un guide local vérifié : le site légendaire de l'Iliade d'Homère, classé au patrimoine mondial de l'UNESCO, aux neuf villes superposées.`,
         intro: [
           `Troie est le site archéologique le plus légendaire au monde : la cité de l'Iliade d'Homère, d'Achille, d'Hector et du cheval de bois. Sur une colline basse près de Çanakkale, dominant la plaine vers les Dardanelles, neuf villes se sont bâties l'une sur l'autre pendant plus de 3 000 ans, de l'âge du bronze à l'époque romaine.`,
@@ -13354,7 +13354,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       tr: {
         name: `Truva (Troya)`,
-        metaTitle: `Truva Antik Kenti Turları ve Yerel Rehberler`,
+        metaTitle: `Truva Antik Kenti: nerede, nasıl gidilir, ne görülür`,
         metaDescription: `Çanakkale yakınlarındaki Truva Antik Kenti'ni doğrulanmış bir yerel rehberle gezin — Homeros'un İlyada'sının efsanevi mekânı, dokuz katmanlı UNESCO Dünya Mirası.`,
         intro: [
           `Truva, dünyanın en efsanevi arkeolojik alanıdır — Homeros'un İlyada'sının, Akhilleus'un, Hektor'un ve tahta atın şehri. Çanakkale yakınlarında, Çanakkale Boğazı'na uzanan ovaya bakan alçak bir tepede, Tunç Çağı'ndan Roma dönemine kadar 3.000 yılı aşkın süre boyunca dokuz şehir üst üste inşa edilmiştir.`,
@@ -13408,7 +13408,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       pl: {
         name: `Troja`,
-        metaTitle: `Starożytna Troja: wycieczki i lokalni przewodnicy`,
+        metaTitle: `Starożytna Troja: gdzie leży i co zobaczyć`,
         metaDescription: `Zwiedź starożytną Troję koło Çanakkale z zweryfikowanym lokalnym przewodnikiem — legendarne miejsce Iliady Homera, obiekt UNESCO z dziewięcioma warstwami miast.`,
         intro: [
           `Troja to najbardziej legendarne stanowisko archeologiczne na świecie — miasto Iliady Homera, Achillesa, Hektora i drewnianego konia. Na niskim wzgórzu koło Çanakkale, z widokiem na równinę w stronę Dardaneli, jedno na drugim wzniesiono dziewięć miast na przestrzeni ponad 3000 lat — od epoki brązu po czasy rzymskie.`,
@@ -13435,7 +13435,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       nl: {
         name: `Troje (Truva)`,
-        metaTitle: `Antieke stad Troje tours & lokale gidsen`,
+        metaTitle: `Antieke stad Troje: waar het ligt en wat te zien`,
         metaDescription: `Verken de antieke stad Troje bij Çanakkale met een geverifieerde lokale gids — de legendarische plek van Homerus' Ilias, UNESCO-werelderfgoed met negen gelaagde steden.`,
         intro: [
           `Troje is de meest legendarische archeologische vindplaats ter wereld — de stad van Homerus' Ilias, van Achilles, Hector en het houten paard. Op een lage heuvel bij Çanakkale, met uitzicht over de vlakte richting de Dardanellen, werden meer dan 3.000 jaar lang negen steden op elkaar gebouwd, van de bronstijd tot de Romeinse tijd.`,
@@ -13489,7 +13489,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       ja: {
         name: `トロイ（トルヴァ）`,
-        metaTitle: `トロイ古代都市ツアーと現地ガイド`,
+        metaTitle: `トロイ遺跡：場所・見どころ・行き方`,
         metaDescription: `認証済みの現地ガイドと巡るチャナッカレ近郊の古代都市トロイ。ホメロスの『イーリアス』の伝説の舞台であり、九層の都市が重なるユネスコ世界遺産です。`,
         intro: [
           `トロイは世界で最も伝説的な遺跡です。ホメロスの『イーリアス』の都市、アキレウスとヘクトル、そして木馬の物語の舞台。チャナッカレ近くの低い丘の上、ダーダネルス海峡へと続く平野を見晴らすこの地に、青銅器時代からローマ時代まで3,000年以上をかけて九つの都市が積み重なって築かれました。`,
@@ -13516,7 +13516,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       ko: {
         name: `트로이(트루바)`,
-        metaTitle: `트로이 고대 도시 투어와 현지 가이드`,
+        metaTitle: `트로이 유적: 위치와 볼거리, 가는 방법`,
         metaDescription: `인증된 현지 가이드와 함께 차낙칼레 인근 고대 도시 트로이를 둘러보세요. 호메로스 일리아스의 전설적 무대이자 아홉 겹 도시가 쌓인 유네스코 세계유산입니다.`,
         intro: [
           `트로이는 세계에서 가장 전설적인 고고학 유적입니다. 호메로스 일리아스의 도시, 아킬레우스와 헥토르, 그리고 목마의 무대이지요. 차낙칼레 인근의 나지막한 언덕 위, 다르다넬스 해협을 향한 평원을 굽어보는 이곳에는 청동기 시대부터 로마 시대까지 3,000년이 넘는 세월에 걸쳐 아홉 개의 도시가 켜켜이 쌓여 세워졌습니다.`,
@@ -13571,7 +13571,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       ro: {
         name: `Troia (Truva)`,
-        metaTitle: `Tururi orașul antic Troia și ghizi locali`,
+        metaTitle: `Orașul antic Troia: unde se află și ce se vede`,
         metaDescription:
           `Explorează orașul antic Troia lângă Çanakkale cu un ghid local verificat — legendarul loc al Iliadei lui Homer, sit din patrimoniul mondial UNESCO cu nouă orașe suprapuse.`,
         intro: [
@@ -13599,7 +13599,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       bg: {
         name: `Троя (Трува)`,
-        metaTitle: `Обиколки на античния град Троя и местни гидове`,
+        metaTitle: `Древният град Троя: къде се намира и какво се вижда`,
         metaDescription:
           `Разгледайте античния град Троя край Чанаккале с проверен местен гид — легендарното място на Илиадата на Омир, обект на Световното наследство на ЮНЕСКО с девет наслоени града.`,
         intro: [
@@ -13655,7 +13655,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       hr: {
         name: `Troja (Truva)`,
-        metaTitle: `Antički grad Troja — ture i lokalni vodiči`,
+        metaTitle: `Antički grad Troja: gdje se nalazi i što vidjeti`,
         metaDescription:
           `Istražite antički grad Troju kraj Çanakkalea s provjerenim lokalnim vodičem — legendarno mjesto Homerove Ilijade, mjesto svjetske baštine UNESCO-a s devet naslojenih gradova.`,
         intro: [
@@ -13711,7 +13711,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       id: {
         name: `Troya (Truva)`,
-        metaTitle: `Tur Kota Kuno Troya & Pemandu Lokal`,
+        metaTitle: `Kota Kuno Troya: lokasi dan apa yang bisa dilihat`,
         metaDescription:
           `Jelajahi kota kuno Troya dekat Çanakkale bersama pemandu lokal terverifikasi — situs legendaris Iliad karya Homer, Situs Warisan Dunia UNESCO dengan sembilan kota berlapis.`,
         intro: [
@@ -14607,7 +14607,7 @@ export const ATTRACTIONS: Attraction[] = [
       },
       nl: {
         name: `Side Antieke Stad`,
-        metaTitle: `Antieke stad Side tours & lokale gidsen`,
+        metaTitle: `Antieke stad Side: wat te zien en hoe er te komen`,
         metaDescription: `Verken het antieke Side bij Antalya met een geverifieerde lokale gids — een Grieks-Romeinse havenstad waar de Apollotempel pal aan de kust van de Middellandse Zee staat.`,
         intro: [
           `Side is een van de mooiste antieke plekken van de Turkse Rivièra — een Grieks-Romeinse havenstad op een klein schiereiland, waar marmeren ruïnes tot aan de Middellandse Zee reiken. De Apollotempel aan zee, waarvan de zuilen bij zonsondergang boven het water gloeien, is een van de meest gefotografeerde bezienswaardigheden van de hele kust.`,

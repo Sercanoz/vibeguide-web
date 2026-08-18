@@ -195,6 +195,30 @@ export default async function AttractionPage({ params }: Props) {
         </div>
       </section>
 
+      {/* Inline CTA — bilgi trafigini tura baglayan kopru.
+          GSC: attraction sayfalari 1.681 gosterim / 6 tiklama aliyor; gelen
+          kullanici "nerede/nedir" ariyor ve cevabini alip cikiyor. Sayfanin
+          EN ALTINDAKI CTA'ya kimse inmiyor — bu yuzden ilgi en yuksekken,
+          intro'nun hemen ardina koyuyoruz. Metinler mevcut ceviri
+          alanlarindan geliyor, 22 dilde hazir. */}
+      <section className="pb-10">
+        <div className="mx-auto max-w-3xl px-6">
+          <div className="rounded-2xl border border-[#6C4CF1]/20 bg-gradient-to-r from-[#6C4CF1]/[0.06] to-[#EC4899]/[0.04] p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center gap-4">
+            <span className="text-3xl shrink-0" aria-hidden="true">{attraction.emoji}</span>
+            <p className="flex-1 text-[15px] leading-7 font-bold text-[#0A0A0F]">
+              {c.ctaTitle}
+            </p>
+            <Link
+              href={cityGuideHref ?? "/tours"}
+              className="shrink-0 inline-flex items-center justify-center rounded-full bg-[#6C4CF1] px-6 py-3 text-sm font-bold text-white hover:bg-[#5a3dd4] transition-colors whitespace-nowrap"
+              style={{ boxShadow: "0 4px 16px rgba(108,76,241,0.28)" }}
+            >
+              {c.toursHeading} →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Highlights */}
       <section className="pb-6">
         <div className="mx-auto max-w-5xl px-6">
