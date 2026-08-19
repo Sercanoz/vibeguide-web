@@ -458,10 +458,21 @@ function PopularTours({ initialTours }: { initialTours: PopularTour[] }) {
                         {fmtDuration(tour.durationMinutes)}
                       </p>
                       <h3 className="mt-1 font-black text-[#0A0A0F] text-[15px] leading-snug line-clamp-2 group-hover:text-[#6C4CF1] transition-colors">{tour.title}</h3>
+                      {/* Yorumu olmayan turda "0.0" göstermek güven kırıyordu
+                          (sahte/başlangıç puanı izlenimi). Puan yalnızca gerçek
+                          değerlendirme varsa gösterilir; yoksa "New" rozeti. */}
                       <div className="mt-1.5 flex items-center gap-1 text-xs">
-                        <svg width="13" height="13" viewBox="0 0 24 24" fill="#F59E0B" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        <span className="font-bold text-[#0A0A0F]">{rating.toFixed(1)}</span>
-                        {count > 0 && <span className="text-neutral-800">({count})</span>}
+                        {count > 0 ? (
+                          <>
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="#F59E0B" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <span className="font-bold text-[#0A0A0F]">{rating.toFixed(1)}</span>
+                            <span className="text-neutral-800">({count})</span>
+                          </>
+                        ) : (
+                          <span className="rounded-full bg-[#6C4CF1]/10 px-2 py-0.5 font-bold text-[#6C4CF1]">
+                            New experience
+                          </span>
+                        )}
                       </div>
                       <div className="mt-2 flex items-baseline gap-1.5">
                         {hasDiscount && <span className="text-xs text-neutral-800 line-through"><Price amount={tour.compareAtPrice!} currency={tour.currency} /></span>}

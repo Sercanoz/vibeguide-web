@@ -3,8 +3,10 @@ import OnBilgilendirmeView from "./OnBilgilendirmeView";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/on-bilgilendirme" },
-  title: "Ön Bilgilendirme Formu",
-  description: "6502 Sayılı Tüketicinin Korunması Hakkında Kanun ve Mesafeli Sözleşmeler Yönetmeliği kapsamında ön bilgilendirme formu.",
+  // İçerik İngilizce — başlık/description da İngilizce olmalı.
+  title: "Pre-Information Form",
+  description:
+    "Pre-information form under Turkish Consumer Protection Law No. 6502 and the Distance Contracts Regulation.",
 };
 
 export default function OnBilgilendirmePage() {
