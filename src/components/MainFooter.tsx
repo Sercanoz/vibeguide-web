@@ -118,7 +118,20 @@ export default function MainFooter() {
           <div className="grid gap-2 md:grid-cols-2 text-xs text-neutral-800 leading-6">
             <div>
               <p className="text-[10px] font-bold uppercase tracking-wide text-neutral-500 mb-0.5">{locale === "tr" ? "Platform işletmecisi" : "Platform operator"}</p>
-              <p className="font-semibold text-neutral-700">{locale === "tr" ? "VibeCore Turizm Seyahat Acentası ve Dijital Hizmetler Ticaret Ltd. Şti." : "VibeCore Tourism Travel Agency and Digital Services Trade Co. Ltd."}</p>
+              {/* Resmî ticaret sicil unvanı — HER İKİ DİLDE DE ÇEVRİLMEDEN
+                  yazılır. Eskiden İngilizce'de "VibeCore Tourism Travel Agency
+                  and Digital Services Trade Co. Ltd." deniyordu; bu, unvanın
+                  çevirisi olmaktan çıkıp "biz seyahat acentesiyiz" iddiasına
+                  dönüşüyordu. TÜRSAB işletme belgesi VibeCore adına alınmadan
+                  bu sıfatı kullanmak riskli (belge Helliantus'ta — aşağıdaki
+                  "Travel operations" bloğuna bakın). */}
+              <p className="font-semibold text-neutral-700">VibeCore Turizm Seyahat Acentası ve Dijital Hizmetler Ticaret Ltd. Şti.</p>
+              {locale !== "tr" && (
+                <p className="text-[11px] text-neutral-500 leading-5">
+                  Registered company name (Turkish). VibeGuide is a technology and booking platform;
+                  licensed travel operations are organised and operated by the agency named below.
+                </p>
+              )}
               <p>{locale === "tr" ? "Vergi No" : "Tax No"}: 9251328389 · {locale === "tr" ? "Vergi Dairesi" : "Tax Office"}: {locale === "tr" ? "Marmaris V.D." : "Marmaris Tax Office"}</p>
               <p>{locale === "tr" ? "Ticaret Sicil No" : "Trade Registry No"}: 12686</p>
               <p>Beldibi Mah. Belmar Sk. No:9/1 İç Kapı No:4 Marmaris/Muğla, {locale === "tr" ? "Türkiye" : "Türkiye"}</p>
