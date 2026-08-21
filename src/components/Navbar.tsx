@@ -230,6 +230,8 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
                     {[
                       { href: "/profile", label: nb.myProfile, icon: <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>, icon2: <circle cx="12" cy="7" r="4"/> },
                       { href: "/tours", label: nb.browseTours, icon: <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>, icon2: <circle cx="12" cy="10" r="3"/> },
+                      // Grup turları — web'de pool özelliği yeni eklendi.
+                      { href: "/pools", label: "Group tours", icon: <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>, icon2: <circle cx="9" cy="7" r="4"/> },
                     ].map(({ href, label, icon, icon2 }) => (
                       <a key={href} href={href} onClick={() => setUserMenuOpen(false)}
                         className="flex items-center gap-3 px-4 py-2.5 text-sm font-semibold text-[#0A0A0F] hover:bg-neutral-50 transition-colors">
