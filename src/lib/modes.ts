@@ -46,12 +46,12 @@ export const MODES: Mode[] = [
     tagline: "Tap. Match. Go.",
     metaTitle: "VibeNow — Instant Local Tour Guides On Demand",
     metaDescription:
-      "VibeNow matches you with a verified local guide in about 60 seconds. No planning, no waiting — open the app, pick a spot and explore with a real local.",
+      "VibeNow matches you with a verified local guide in minutes. No planning, no waiting — open the app, pick a spot and explore with a real local.",
     heroSub:
-      "The fastest way to explore. Open the app, choose where you are, and match with a verified local guide nearby — usually in under a minute.",
+      "The fastest way to explore. Open the app, choose where you are, and match with a verified local guide nearby — usually within a few minutes.",
     steps: [
       { title: "Open the app", desc: "Choose VibeNow and share where you'd like to explore." },
-      { title: "Match in ~60s", desc: "A verified guide nearby accepts your request in real time." },
+      { title: "Match in minutes", desc: "A verified guide nearby accepts your request in real time." },
       { title: "Meet your local", desc: "See their location live and meet within minutes." },
       { title: "Explore & pay in-app", desc: "Walk the city with a real local. Pay securely, no cash." },
     ],
@@ -61,7 +61,7 @@ export const MODES: Mode[] = [
       { title: "Transparent price", desc: "See the price before you confirm. No tourist-trap surprises." },
     ],
     faqs: [
-      { q: "How fast is VibeNow really?", a: "Most matches happen in under a minute when guides are online nearby. The app shows who's available before you request." },
+      { q: "How fast is VibeNow really?", a: "Most matches happen within a few minutes when guides are online nearby. The app shows who's available before you request." },
       { q: "What if no guide is available?", a: "If nobody's free right now, the app tells you immediately and suggests a VibeSquad group or a Private tour instead." },
       { q: "How do I pay?", a: "Securely in the app — no cash needed, and you see the price up front." },
     ],

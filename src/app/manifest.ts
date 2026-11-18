@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "VibeGuide — Tour the world with a real local",
     short_name: "VibeGuide",
     description:
-      "Match a real local guide in 60 seconds. VibeNow ⚡ for solo, VibeSquad ✨ for groups.",
+      "Match a real local guide in minutes. VibeNow ⚡ for solo, VibeSquad ✨ for groups.",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",

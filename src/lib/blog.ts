@@ -10945,7 +10945,7 @@ export const BLOG_POSTS: BlogPost[] = [
             "heading": "For cruise passengers: timing it right",
             "paragraphs": [
               "If you're arriving by cruise ship with only a few hours ashore, Ephesus is close enough for a relaxed half-day shore excursion straight from the terminal. The key is timing: a good local guide plans the whole outing around your ship's all-aboard time, handles transport and tickets, and always builds in a safety margin so you're back comfortably before departure.",
-              "This is where booking a private licensed guide beats a huge coach tour — you move faster, skip the herd, see the highlights efficiently, and never risk the ship leaving without you. VibeNow can even match you with an available guide in about 60 seconds the moment you dock, if you'd rather arrange it on the spot."
+              "This is where booking a private licensed guide beats a huge coach tour — you move faster, skip the herd, see the highlights efficiently, and never risk the ship leaving without you. VibeNow can even match you with an available guide in minutes the moment you dock, if you'd rather arrange it on the spot."
             ]
           },
           {
@@ -11018,7 +11018,7 @@ export const BLOG_POSTS: BlogPost[] = [
             "heading": "Für Kreuzfahrtgäste: das richtige Timing",
             "paragraphs": [
               "Wenn Sie mit einem Kreuzfahrtschiff ankommen und nur wenige Stunden an Land haben, ist Ephesos nah genug für einen entspannten halbtägigen Landausflug direkt vom Terminal. Der Schlüssel ist das Timing: Ein guter lokaler Guide plant den ganzen Ausflug um die All-aboard-Zeit Ihres Schiffs, kümmert sich um Transport und Tickets und baut stets einen Sicherheitspuffer ein, damit Sie bequem vor der Abfahrt zurück sind.",
-              "Hier schlägt die Buchung eines privaten lizenzierten Guides die riesige Bustour — Sie sind schneller, umgehen die Herde, sehen die Höhepunkte effizient und riskieren nie, dass das Schiff ohne Sie ablegt. VibeNow kann Sie sogar in etwa 60 Sekunden mit einem verfügbaren Guide zusammenbringen, sobald Sie anlegen, falls Sie es lieber vor Ort arrangieren."
+              "Hier schlägt die Buchung eines privaten lizenzierten Guides die riesige Bustour — Sie sind schneller, umgehen die Herde, sehen die Höhepunkte effizient und riskieren nie, dass das Schiff ohne Sie ablegt. VibeNow kann Sie sogar in wenigen Minuten mit einem verfügbaren Guide zusammenbringen, sobald Sie anlegen, falls Sie es lieber vor Ort arrangieren."
             ]
           },
           {
@@ -11091,7 +11091,7 @@ export const BLOG_POSTS: BlogPost[] = [
             "heading": "Para cruceristas: acertar con los tiempos",
             "paragraphs": [
               "Si llegas en crucero con solo unas horas en tierra, Éfeso está lo bastante cerca para una relajada excursión de costa de medio día directa desde la terminal. La clave es el horario: un buen guía local planifica toda la salida en torno a la hora de embarque de tu barco, se encarga del transporte y las entradas, y siempre reserva un margen de seguridad para que vuelvas con tiempo antes de la partida.",
-              "Aquí es donde reservar un guía titulado privado supera a un enorme tour en autocar: te mueves más rápido, evitas el rebaño, ves lo esencial con eficacia y nunca corres el riesgo de que el barco zarpe sin ti. VibeNow incluso puede emparejarte con un guía disponible en unos 60 segundos en cuanto atracas, si prefieres organizarlo sobre la marcha."
+              "Aquí es donde reservar un guía titulado privado supera a un enorme tour en autocar: te mueves más rápido, evitas el rebaño, ves lo esencial con eficacia y nunca corres el riesgo de que el barco zarpe sin ti. VibeNow incluso puede emparejarte con un guía disponible en pocos minutos en cuanto atracas, si prefieres organizarlo sobre la marcha."
             ]
           },
           {
@@ -11237,7 +11237,7 @@ export const BLOG_POSTS: BlogPost[] = [
             "heading": "Per i passeggeri delle crociere: organizzare i tempi",
             "paragraphs": [
               "Se arrivi con una nave da crociera con solo poche ore a terra, Efeso è abbastanza vicina per una rilassata escursione di mezza giornata direttamente dal terminal. La chiave sono i tempi: una buona guida locale organizza l'intera gita attorno all'orario di rientro a bordo della nave, gestisce trasporto e biglietti, e prevede sempre un margine di sicurezza così sei di ritorno con comodo prima della partenza.",
-              "È qui che prenotare una guida privata abilitata batte un enorme tour in pullman — ti muovi più veloce, eviti la calca, vedi i punti salienti in modo efficiente, e non rischi mai che la nave parta senza di te. VibeNow può persino abbinarti a una guida disponibile in circa 60 secondi nel momento in cui attracchi, se preferisci organizzarti sul posto."
+              "È qui che prenotare una guida privata abilitata batte un enorme tour in pullman — ti muovi più veloce, eviti la calca, vedi i punti salienti in modo efficiente, e non rischi mai che la nave parta senza di te. VibeNow può persino abbinarti a una guida disponibile in pochi minuti nel momento in cui attracchi, se preferisci organizzarti sul posto."
             ]
           },
           {
@@ -11383,7 +11383,7 @@ export const BLOG_POSTS: BlogPost[] = [
             "heading": "Для круизных пассажиров: правильный тайминг",
             "paragraphs": [
               "Если вы прибываете на круизном лайнере всего с несколькими часами на берегу, Эфес достаточно близок для спокойной береговой экскурсии на полдня прямо от терминала. Ключ — тайминг: хороший местный гид планирует всю вылазку под время возвращения на борт вашего судна, берёт на себя транспорт и билеты и всегда закладывает запас, чтобы вы спокойно вернулись до отправления.",
-              "Именно здесь бронирование частного лицензированного гида превосходит огромный автобусный тур — вы движетесь быстрее, минуете толпу, эффективно осматриваете главное и никогда не рискуете, что судно уйдёт без вас. VibeNow может даже подобрать вам свободного гида примерно за 60 секунд в момент швартовки, если вы предпочитаете организовать всё на месте."
+              "Именно здесь бронирование частного лицензированного гида превосходит огромный автобусный тур — вы движетесь быстрее, минуете толпу, эффективно осматриваете главное и никогда не рискуете, что судно уйдёт без вас. VibeNow может даже подобрать вам свободного гида примерно за считанные минуты в момент швартовки, если вы предпочитаете организовать всё на месте."
             ]
           },
           {
@@ -11456,7 +11456,7 @@ export const BLOG_POSTS: BlogPost[] = [
             "heading": "Kruvaziyer yolcuları için: zamanlamayı tutturmak",
             "paragraphs": [
               "Karaya çıkmak için yalnızca birkaç saatiniz olan bir kruvaziyer gemisiyle geliyorsanız, Efes doğrudan terminalden rahat bir yarım günlük liman turu için yeterince yakın. İşin anahtarı zamanlama: iyi bir yerel rehber tüm geziyi geminizin kalkış saatine göre planlar, ulaşım ve biletleri halleder ve kalkıştan önce rahatça dönebilmeniz için her zaman bir güvenlik payı bırakır.",
-              "İşte tam da burada özel ruhsatlı bir rehber ayırtmak, kocaman bir otobüs turunu geride bırakır — daha hızlı hareket eder, sürüyü atlar, öne çıkanları verimli görür ve geminin sizi bırakıp gitme riskini asla almazsınız. Tercihen işi anında ayarlamak isterseniz, VibeNow siz limana yanaşır yanaşmaz sizi yaklaşık 60 saniyede müsait bir rehberle eşleştirebilir."
+              "İşte tam da burada özel ruhsatlı bir rehber ayırtmak, kocaman bir otobüs turunu geride bırakır — daha hızlı hareket eder, sürüyü atlar, öne çıkanları verimli görür ve geminin sizi bırakıp gitme riskini asla almazsınız. Tercihen işi anında ayarlamak isterseniz, VibeNow siz limana yanaşır yanaşmaz sizi birkaç dakika içinde müsait bir rehberle eşleştirebilir."
             ]
           },
           {
@@ -11529,7 +11529,7 @@ export const BLOG_POSTS: BlogPost[] = [
             "heading": "Dla pasażerów rejsów: właściwy czas",
             "paragraphs": [
               "Jeśli przybywasz statkiem rejsowym z zaledwie kilkoma godzinami na lądzie, Efez jest wystarczająco blisko na spokojną półdniową wycieczkę prosto z terminalu. Kluczem jest czas: dobry lokalny przewodnik planuje całą wyprawę wokół godziny powrotu na pokład twojego statku, zajmuje się transportem i biletami i zawsze wbudowuje margines bezpieczeństwa, byś wygodnie wrócił przed odpłynięciem.",
-              "To właśnie tu rezerwacja prywatnego licencjonowanego przewodnika bije ogromną wycieczkę autokarową — poruszasz się szybciej, omijasz tłum, sprawnie widzisz najważniejsze punkty i nigdy nie ryzykujesz, że statek odpłynie bez ciebie. VibeNow może nawet dopasować ci dostępnego przewodnika w około 60 sekund w chwili zacumowania, jeśli wolisz zorganizować to na miejscu."
+              "To właśnie tu rezerwacja prywatnego licencjonowanego przewodnika bije ogromną wycieczkę autokarową — poruszasz się szybciej, omijasz tłum, sprawnie widzisz najważniejsze punkty i nigdy nie ryzykujesz, że statek odpłynie bez ciebie. VibeNow może nawet dopasować ci dostępnego przewodnika w kilka minut w chwili zacumowania, jeśli wolisz zorganizować to na miejscu."
             ]
           },
           {
@@ -11602,7 +11602,7 @@ export const BLOG_POSTS: BlogPost[] = [
             "heading": "Voor cruisepassagiers: de juiste timing",
             "paragraphs": [
               "Als je met een cruiseschip aankomt met maar een paar uur aan wal, is Efeze dichtbij genoeg voor een ontspannen excursie van een halve dag rechtstreeks vanaf de terminal. De sleutel is timing: een goede lokale gids plant de hele uitstap rond de all-aboard-tijd van je schip, regelt vervoer en tickets, en bouwt altijd een veiligheidsmarge in zodat je comfortabel terug bent voor vertrek.",
-              "Dit is waar het boeken van een privé-erkende gids een enorme bustour verslaat — je gaat sneller, ontloopt de kudde, ziet de hoogtepunten efficiënt, en riskeert nooit dat het schip zonder je vertrekt. VibeNow kan je zelfs binnen ongeveer 60 seconden koppelen aan een beschikbare gids zodra je aanmeert, als je het liever ter plekke regelt."
+              "Dit is waar het boeken van een privé-erkende gids een enorme bustour verslaat — je gaat sneller, ontloopt de kudde, ziet de hoogtepunten efficiënt, en riskeert nooit dat het schip zonder je vertrekt. VibeNow kan je zelfs binnen enkele minuten koppelen aan een beschikbare gids zodra je aanmeert, als je het liever ter plekke regelt."
             ]
           },
           {
@@ -11675,7 +11675,7 @@ export const BLOG_POSTS: BlogPost[] = [
             "heading": "Para passageiros de cruzeiro: calcular bem o tempo",
             "paragraphs": [
               "Se chega de navio de cruzeiro com apenas algumas horas em terra, Éfeso fica perto o suficiente para uma tranquila excursão de meio-dia diretamente do terminal. A chave é o timing: um bom guia local planeia todo o passeio em torno da hora de embarque do seu navio, trata do transporte e dos bilhetes, e prevê sempre uma margem de segurança para regressar com folga antes da partida.",
-              "É aqui que reservar um guia licenciado privado supera uma enorme excursão de autocarro — anda mais depressa, foge do rebanho, vê os pontos altos de forma eficiente, e nunca corre o risco de o navio partir sem si. O VibeNow pode até encontrar-lhe um guia disponível em cerca de 60 segundos assim que atraca, se preferir tratar disso no momento."
+              "É aqui que reservar um guia licenciado privado supera uma enorme excursão de autocarro — anda mais depressa, foge do rebanho, vê os pontos altos de forma eficiente, e nunca corre o risco de o navio partir sem si. O VibeNow pode até encontrar-lhe um guia disponível em poucos minutos assim que atraca, se preferir tratar disso no momento."
             ]
           },
           {
@@ -11748,7 +11748,7 @@ export const BLOG_POSTS: BlogPost[] = [
             "heading": "クルーズ乗客へ：うまく時間を計る",
             "paragraphs": [
               "クルーズ船で到着し上陸できるのが数時間だけでも、エフェソスはターミナルからそのまま行けるゆとりある半日の寄港地観光に十分近い場所です。鍵は時間配分です：優れた地元ガイドは船の乗船締切時刻を軸に外出全体を計画し、交通とチケットを手配し、常に安全のための余裕を組み込んで、出航前に余裕をもって戻れるようにします。",
-              "ここで、公認の専属ガイドを予約することが大型バスツアーに勝ります — より速く動き、群れを避け、見どころを効率よく回り、船に置いていかれる心配もありません。その場で手配したければ、VibeNowは着岸したその瞬間に、約60秒で対応可能なガイドを見つけることさえできます。"
+              "ここで、公認の専属ガイドを予約することが大型バスツアーに勝ります — より速く動き、群れを避け、見どころを効率よく回り、船に置いていかれる心配もありません。その場で手配したければ、VibeNowは着岸したその瞬間に、数分で対応可能なガイドを見つけることさえできます。"
             ]
           },
           {
@@ -11821,7 +11821,7 @@ export const BLOG_POSTS: BlogPost[] = [
             "heading": "크루즈 승객을 위해: 시간 맞추기",
             "paragraphs": [
               "크루즈선으로 도착해 상륙 시간이 몇 시간뿐이라도, 에페소스는 터미널에서 바로 다녀오는 여유로운 반나절 기항지 관광에 충분히 가깝습니다. 핵심은 시간 배분입니다: 좋은 현지 가이드는 배의 최종 승선 시각을 중심으로 나들이 전체를 계획하고, 교통과 티켓을 처리하며, 출항 전에 여유롭게 돌아오도록 항상 안전 여유를 둡니다.",
-              "바로 여기서 면허 있는 개인 가이드 예약이 대형 버스 투어를 앞섭니다 — 더 빨리 움직이고, 무리를 피하며, 하이라이트를 효율적으로 보고, 배가 당신을 두고 떠날 위험이 결코 없습니다. 즉석에서 잡고 싶다면, VibeNow가 당신이 접안하는 순간 약 60초 만에 이용 가능한 가이드를 매칭해 줄 수도 있습니다."
+              "바로 여기서 면허 있는 개인 가이드 예약이 대형 버스 투어를 앞섭니다 — 더 빨리 움직이고, 무리를 피하며, 하이라이트를 효율적으로 보고, 배가 당신을 두고 떠날 위험이 결코 없습니다. 즉석에서 잡고 싶다면, VibeNow가 당신이 접안하는 순간 몇 분 만에 이용 가능한 가이드를 매칭해 줄 수도 있습니다."
             ]
           },
           {
@@ -11894,7 +11894,7 @@ export const BLOG_POSTS: BlogPost[] = [
             "heading": "Για επιβάτες κρουαζιέρας: σωστός χρονισμός",
             "paragraphs": [
               "Αν φτάνετε με κρουαζιερόπλοιο με μόνο λίγες ώρες στη στεριά, η Έφεσος είναι αρκετά κοντά για μια χαλαρή μισής ημέρας εξόρμηση κατευθείαν από τον τερματικό σταθμό. Το κλειδί είναι ο χρονισμός: ένας καλός ντόπιος ξεναγός σχεδιάζει όλη την εξόρμηση γύρω από την ώρα επιβίβασης του πλοίου σας, χειρίζεται τη μεταφορά και τα εισιτήρια, και προβλέπει πάντα ένα περιθώριο ασφαλείας ώστε να είστε πίσω άνετα πριν την αναχώρηση.",
-              "Εδώ είναι που το να κλείσετε έναν ιδιωτικό αδειούχο ξεναγό υπερτερεί μιας τεράστιας εκδρομής με λεωφορείο — κινείστε πιο γρήγορα, αποφεύγετε το κοπάδι, βλέπετε τα κυριότερα αποδοτικά, και δεν διακινδυνεύετε ποτέ να φύγει το πλοίο χωρίς εσάς. Το VibeNow μπορεί ακόμα και να σας βρει έναν διαθέσιμο ξεναγό σε περίπου 60 δευτερόλεπτα τη στιγμή που δένετε, αν προτιμάτε να το κανονίσετε επιτόπου."
+              "Εδώ είναι που το να κλείσετε έναν ιδιωτικό αδειούχο ξεναγό υπερτερεί μιας τεράστιας εκδρομής με λεωφορείο — κινείστε πιο γρήγορα, αποφεύγετε το κοπάδι, βλέπετε τα κυριότερα αποδοτικά, και δεν διακινδυνεύετε ποτέ να φύγει το πλοίο χωρίς εσάς. Το VibeNow μπορεί ακόμα και να σας βρει έναν διαθέσιμο ξεναγό σε λίγα λεπτά τη στιγμή που δένετε, αν προτιμάτε να το κανονίσετε επιτόπου."
             ]
           },
           {
@@ -11967,7 +11967,7 @@ export const BLOG_POSTS: BlogPost[] = [
             "heading": "Для круїзних пасажирів: правильний розрахунок часу",
             "paragraphs": [
               "Якщо ви прибуваєте круїзним лайнером лише на кілька годин на березі, Ефес достатньо близько для спокійної берегової екскурсії на пів дня просто з терміналу. Ключове — час: гарний місцевий гід планує весь вихід навколо часу повернення на борт, бере на себе транспорт і квитки й завжди закладає запас безпеки, щоб ви повернулися комфортно до відплиття.",
-              "Саме тут замовлення приватного ліцензованого гіда перевершує величезний автобусний тур — ви рухаєтеся швидше, оминаєте юрбу, ефективно бачите головне й ніколи не ризикуєте, що лайнер відпливе без вас. VibeNow навіть може підібрати вам вільного гіда приблизно за 60 секунд, щойно ви пришвартуєтеся, якщо волієте домовитися на місці."
+              "Саме тут замовлення приватного ліцензованого гіда перевершує величезний автобусний тур — ви рухаєтеся швидше, оминаєте юрбу, ефективно бачите головне й ніколи не ризикуєте, що лайнер відпливе без вас. VibeNow навіть може підібрати вам вільного гіда приблизно за лічені хвилини, щойно ви пришвартуєтеся, якщо волієте домовитися на місці."
             ]
           },
           {
@@ -12040,7 +12040,7 @@ export const BLOG_POSTS: BlogPost[] = [
             "heading": "Pentru pasagerii de croazieră: cum să o programezi corect",
             "paragraphs": [
               "Dacă sosești cu un vapor de croazieră având doar câteva ore pe uscat, Efesul este suficient de aproape pentru o excursie relaxată de o jumătate de zi direct de la terminal. Cheia este planificarea: un ghid local bun organizează întreaga ieșire în funcție de ora de îmbarcare a vaporului, se ocupă de transport și bilete și include întotdeauna o marjă de siguranță, astfel încât să te întorci confortabil înainte de plecare.",
-              "Aici rezervarea unui ghid privat autorizat bate un tur uriaș cu autocarul — te deplasezi mai repede, eviți turma, vezi atracțiile eficient și nu riști niciodată ca vaporul să plece fără tine. VibeNow te poate chiar potrivi cu un ghid disponibil în aproximativ 60 de secunde din momentul în care acostezi, dacă preferi să aranjezi totul pe loc."
+              "Aici rezervarea unui ghid privat autorizat bate un tur uriaș cu autocarul — te deplasezi mai repede, eviți turma, vezi atracțiile eficient și nu riști niciodată ca vaporul să plece fără tine. VibeNow te poate chiar potrivi cu un ghid disponibil în câteva minute din momentul în care acostezi, dacă preferi să aranjezi totul pe loc."
             ]
           },
           {
@@ -12113,7 +12113,7 @@ export const BLOG_POSTS: BlogPost[] = [
             "heading": "За круизни пътници: правилно разпределение на времето",
             "paragraphs": [
               "Ако пристигате с круизен кораб само с няколко часа на брега, Ефес е достатъчно близо за спокойна половиндневна брегова екскурзия направо от терминала. Ключът е времето: добър местен водач планира цялата екскурзия около часа за качване на вашия кораб, се грижи за транспорта и билетите, и винаги залага резерв за безопасност, така че да сте обратно спокойно преди отпътуване.",
-              "Точно тук резервирането на частен лицензиран водач бие огромния автобусен тур — движите се по-бързо, прескачате стадото, виждате акцентите ефективно и никога не рискувате корабът да тръгне без вас. VibeNow дори може да ви свърже с наличен водач за около 60 секунди в момента, в който акостирате, ако предпочитате да го уредите на място."
+              "Точно тук резервирането на частен лицензиран водач бие огромния автобусен тур — движите се по-бързо, прескачате стадото, виждате акцентите ефективно и никога не рискувате корабът да тръгне без вас. VibeNow дори може да ви свърже с наличен водач за считанные минутыи в момента, в който акостирате, ако предпочитате да го уредите на място."
             ]
           },
           {
@@ -12186,7 +12186,7 @@ export const BLOG_POSTS: BlogPost[] = [
             "heading": "Za putnike sa krstarenja: ispravan tajming",
             "paragraphs": [
               "Ako stižete kruzerom sa samo nekoliko sati na kopnu, Efes je dovoljno blizu za opušten poludnevni izlet s broda pravo sa terminala. Ključ je tajming: dobar lokalni vodič planira ceo izlet oko vremena povratka na brod, brine se o prevozu i ulaznicama, i uvek ugradi sigurnosnu rezervu tako da se udobno vratite pre polaska.",
-              "Tu privatni licencirani vodič nadmašuje ogromnu autobusku turu — krećete se brže, izbegavate gomilu, efikasno vidite glavne znamenitosti i nikada ne rizikujete da brod krene bez vas. VibeNow vas može čak povezati sa dostupnim vodičem za oko 60 sekundi čim pristanete, ako biste radije da to organizujete na licu mesta."
+              "Tu privatni licencirani vodič nadmašuje ogromnu autobusku turu — krećete se brže, izbegavate gomilu, efikasno vidite glavne znamenitosti i nikada ne rizikujete da brod krene bez vas. VibeNow vas može čak povezati sa dostupnim vodičem za nekoliko minuta čim pristanete, ako biste radije da to organizujete na licu mesta."
             ]
           },
           {
@@ -12259,7 +12259,7 @@ export const BLOG_POSTS: BlogPost[] = [
             "heading": "Za putnike s krstarenja: pravilno usklađivanje vremena",
             "paragraphs": [
               "Ako stižete brodom za krstarenje s tek nekoliko sati na kopnu, Efez je dovoljno blizu za opušten poludnevni izlet ravno iz terminala. Ključno je vrijeme: dobar lokalni vodič planira cijeli izlet oko vremena ukrcaja vašeg broda, brine o prijevozu i ulaznicama te uvijek ostavlja sigurnosnu rezervu kako biste se ugodno vratili prije polaska.",
-              "Tu privatni licencirani vodič nadmašuje golemu autobusnu turu — krećete se brže, izbjegavate krdo, učinkovito vidite vrhunce i nikada ne riskirate da brod ode bez vas. VibeNow vas čak može povezati s dostupnim vodičem za oko 60 sekundi u trenutku kada pristanete, ako to radije dogovorite na licu mjesta."
+              "Tu privatni licencirani vodič nadmašuje golemu autobusnu turu — krećete se brže, izbjegavate krdo, učinkovito vidite vrhunce i nikada ne riskirate da brod ode bez vas. VibeNow vas čak može povezati s dostupnim vodičem za nekoliko minuta u trenutku kada pristanete, ako to radije dogovorite na licu mjesta."
             ]
           },
           {
@@ -12332,7 +12332,7 @@ export const BLOG_POSTS: BlogPost[] = [
             "heading": "致邮轮乘客：把时间安排好",
             "paragraphs": [
               "如果你乘邮轮抵达、上岸只有几个小时，以弗所足够近，可以从码头直接来一趟轻松的半日岸上观光。关键在于时间：一位出色的本地向导会围绕你邮轮的最后登船时间来规划整个出游，处理交通和门票，并总会留出安全余量，让你从容地在启航前返回。",
-              "这正是预订一位私人持照向导胜过庞大大巴团的地方——你移动更快、避开人群、高效看完亮点，绝不会冒着船不等人就开走的风险。如果你更想到了当地再临时安排，VibeNow甚至能在你靠岸的那一刻，在约60秒内为你匹配一位可用的向导。"
+              "这正是预订一位私人持照向导胜过庞大大巴团的地方——你移动更快、避开人群、高效看完亮点，绝不会冒着船不等人就开走的风险。如果你更想到了当地再临时安排，VibeNow甚至能在你靠岸的那一刻，在几分钟内为你匹配一位可用的向导。"
             ]
           },
           {
@@ -12405,7 +12405,7 @@ export const BLOG_POSTS: BlogPost[] = [
             "heading": "Untuk penumpang kapal pesiar: mengatur waktu dengan tepat",
             "paragraphs": [
               "Jika Anda tiba dengan kapal pesiar dan hanya punya beberapa jam di darat, Efesus cukup dekat untuk tamasya pantai setengah hari yang santai langsung dari terminal. Kuncinya adalah pengaturan waktu: pemandu lokal yang baik merencanakan seluruh tamasya di sekitar waktu naik-kapal Anda, mengurus transportasi dan tiket, serta selalu menyediakan margin aman agar Anda kembali dengan nyaman sebelum keberangkatan.",
-              "Di sinilah memesan pemandu berlisensi privat mengalahkan tur bus besar — Anda bergerak lebih cepat, melewati rombongan, melihat sorotan utama secara efisien, dan tak pernah berisiko ditinggal kapal. VibeNow bahkan bisa mencocokkan Anda dengan pemandu yang tersedia dalam sekitar 60 detik begitu Anda berlabuh, jika Anda lebih suka mengaturnya di tempat."
+              "Di sinilah memesan pemandu berlisensi privat mengalahkan tur bus besar — Anda bergerak lebih cepat, melewati rombongan, melihat sorotan utama secara efisien, dan tak pernah berisiko ditinggal kapal. VibeNow bahkan bisa mencocokkan Anda dengan pemandu yang tersedia dalam hitungan menit begitu Anda berlabuh, jika Anda lebih suka mengaturnya di tempat."
             ]
           },
           {

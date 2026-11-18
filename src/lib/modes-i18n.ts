@@ -237,10 +237,10 @@ export const MODE_CONTENT_I18N: Record<string, Partial<Record<Locale, ModeConten
     en: {
       tagline: "Tap. Match. Go.",
       heroSub:
-        "The fastest way to explore. Open the app, choose where you are, and match with a verified local guide nearby — usually in under a minute.",
+        "The fastest way to explore. Open the app, choose where you are, and match with a verified local guide nearby — usually within a few minutes.",
       steps: [
         { title: "Open the app", desc: "Choose VibeNow and share where you'd like to explore." },
-        { title: "Match in ~60s", desc: "A verified guide nearby accepts your request in real time." },
+        { title: "Match in minutes", desc: "A verified guide nearby accepts your request in real time." },
         { title: "Meet your local", desc: "See their location live and meet within minutes." },
         { title: "Explore & pay in-app", desc: "Walk the city with a real local. Pay securely, no cash." },
       ],
@@ -250,7 +250,7 @@ export const MODE_CONTENT_I18N: Record<string, Partial<Record<Locale, ModeConten
         { title: "Transparent price", desc: "See the price before you confirm. No tourist-trap surprises." },
       ],
       faqs: [
-        { q: "How fast is VibeNow really?", a: "Most matches happen in under a minute when guides are online nearby. The app shows who's available before you request." },
+        { q: "How fast is VibeNow really?", a: "Most matches happen within a few minutes when guides are online nearby. The app shows who's available before you request." },
         { q: "What if no guide is available?", a: "If nobody's free right now, the app tells you immediately and suggests a VibeSquad group or a Private tour instead." },
         { q: "How do I pay?", a: "Securely in the app — no cash needed, and you see the price up front." },
       ],
@@ -259,10 +259,10 @@ export const MODE_CONTENT_I18N: Record<string, Partial<Record<Locale, ModeConten
     tr: {
       tagline: "Dokun. Eşleş. Keşfet.",
       heroSub:
-        "Keşfetmenin en hızlı yolu. Uygulamayı aç, nerede olduğunu seç ve yakınındaki doğrulanmış bir yerel rehberle eşleş — genellikle bir dakikadan kısa sürede.",
+        "Keşfetmenin en hızlı yolu. Uygulamayı aç, nerede olduğunu seç ve yakınındaki doğrulanmış bir yerel rehberle eşleş — genellikle birkaç dakika içinde.",
       steps: [
         { title: "Uygulamayı aç", desc: "VibeNow'u seç ve nerede keşfetmek istediğini paylaş." },
-        { title: "~60 sn'de eşleş", desc: "Yakınındaki doğrulanmış bir rehber talebini anında kabul eder." },
+        { title: "Dakikalar içinde eşleş", desc: "Yakınındaki doğrulanmış bir rehber talebini anında kabul eder." },
         { title: "Yerelinle buluş", desc: "Konumunu canlı gör ve dakikalar içinde buluş." },
         { title: "Keşfet, uygulamadan öde", desc: "Şehri gerçek bir yerelle gez. Güvenle öde, nakit yok." },
       ],
@@ -272,7 +272,7 @@ export const MODE_CONTENT_I18N: Record<string, Partial<Record<Locale, ModeConten
         { title: "Şeffaf fiyat", desc: "Onaylamadan önce fiyatı gör. Turist tuzağı sürprizi yok." },
       ],
       faqs: [
-        { q: "VibeNow gerçekten ne kadar hızlı?", a: "Yakında çevrimiçi rehber varsa çoğu eşleşme bir dakikadan kısa sürede olur. Uygulama, talep etmeden önce kimin müsait olduğunu gösterir." },
+        { q: "VibeNow gerçekten ne kadar hızlı?", a: "Yakında çevrimiçi rehber varsa çoğu eşleşme birkaç dakika içinde olur. Uygulama, talep etmeden önce kimin müsait olduğunu gösterir." },
         { q: "Hiç rehber müsait değilse?", a: "Şu an kimse boş değilse uygulama bunu anında söyler ve yerine VibeSquad grubu veya Özel tur önerir." },
         { q: "Nasıl öderim?", a: "Uygulamadan güvenle — nakit gerekmez ve fiyatı önceden görürsün." },
       ],
@@ -284,7 +284,7 @@ export const MODE_CONTENT_I18N: Record<string, Partial<Record<Locale, ModeConten
         "最快的探索方式。打开应用，选择你所在的位置，立即与附近经过验证的当地向导匹配——通常不到一分钟。",
       steps: [
         { title: "打开应用", desc: "选择 VibeNow，分享你想探索的地点。" },
-        { title: "约 60 秒内匹配", desc: "附近经过验证的向导会实时接受你的请求。" },
+        { title: "几分钟内匹配", desc: "附近经过验证的向导会实时接受你的请求。" },
         { title: "与当地人见面", desc: "实时查看他们的位置，几分钟内即可见面。" },
         { title: "边探索边在应用内付款", desc: "和真正的当地人漫步城市。安全付款，无需现金。" },
       ],
@@ -306,7 +306,7 @@ export const MODE_CONTENT_I18N: Record<string, Partial<Record<Locale, ModeConten
         "もっとも速い探索方法。アプリを開いて、今いる場所を選べば、近くの認証済み地元ガイドとマッチ——たいてい1分以内に。",
       steps: [
         { title: "アプリを開く", desc: "VibeNow を選び、探索したい場所を共有しましょう。" },
-        { title: "約60秒でマッチ", desc: "近くの認証済みガイドがリアルタイムであなたのリクエストを承認します。" },
+        { title: "数分でマッチ", desc: "近くの認証済みガイドがリアルタイムであなたのリクエストを承認します。" },
         { title: "地元ガイドと会う", desc: "位置情報をライブで確認し、数分以内に合流できます。" },
         { title: "探索してアプリ内で支払い", desc: "本物の地元の人と街を歩こう。安全に支払い、現金不要。" },
       ],
@@ -328,7 +328,7 @@ export const MODE_CONTENT_I18N: Record<string, Partial<Record<Locale, ModeConten
         "가장 빠른 탐험 방법. 앱을 열고, 지금 위치를 선택하면 근처의 인증된 현지 가이드와 매칭됩니다 — 보통 1분 이내에.",
       steps: [
         { title: "앱 열기", desc: "VibeNow를 선택하고 탐험하고 싶은 곳을 공유하세요." },
-        { title: "약 60초 내 매칭", desc: "근처의 인증된 가이드가 실시간으로 요청을 수락합니다." },
+        { title: "몇 분 내 매칭", desc: "근처의 인증된 가이드가 실시간으로 요청을 수락합니다." },
         { title: "현지인 만나기", desc: "위치를 실시간으로 확인하고 몇 분 안에 만나세요." },
         { title: "탐험하고 앱에서 결제", desc: "진짜 현지인과 도시를 거닐어 보세요. 현금 없이 안전하게 결제." },
       ],
@@ -350,7 +350,7 @@ export const MODE_CONTENT_I18N: Record<string, Partial<Record<Locale, ModeConten
         "أسرع طريقة للاستكشاف. افتح التطبيق، اختر مكانك، وطابِق مع مرشد محلي موثوق قريب منك — عادةً في أقل من دقيقة.",
       steps: [
         { title: "افتح التطبيق", desc: "اختر VibeNow وشارك المكان الذي تريد استكشافه." },
-        { title: "طابِق خلال ~60 ثانية", desc: "يقبل مرشد موثوق قريب طلبك في الوقت الفعلي." },
+        { title: "طابِق خلال دقائق", desc: "يقبل مرشد موثوق قريب طلبك في الوقت الفعلي." },
         { title: "قابِل مرشدك المحلي", desc: "شاهد موقعه مباشرةً وقابله خلال دقائق." },
         { title: "استكشف وادفع داخل التطبيق", desc: "تجوّل في المدينة مع شخص محلي حقيقي. ادفع بأمان دون نقود." },
       ],
@@ -372,7 +372,7 @@ export const MODE_CONTENT_I18N: Record<string, Partial<Record<Locale, ModeConten
         "Najbrži način za istraživanje. Otvori aplikaciju, odaberi gdje se nalaziš i spoji se s provjerenim lokalnim vodičem u blizini — obično za manje od minute.",
       steps: [
         { title: "Otvori aplikaciju", desc: "Odaberi VibeNow i podijeli gdje želiš istraživati." },
-        { title: "Spajanje za ~60 s", desc: "Provjereni vodič u blizini prihvaća tvoj zahtjev u stvarnom vremenu." },
+        { title: "Spajanje za nekoliko minuta", desc: "Provjereni vodič u blizini prihvaća tvoj zahtjev u stvarnom vremenu." },
         { title: "Upoznaj svog lokalca", desc: "Vidi njegovu lokaciju uživo i nađite se za nekoliko minuta." },
         { title: "Istraži i plati u aplikaciji", desc: "Prošeći gradom s pravim lokalcem. Plati sigurno, bez gotovine." },
       ],
@@ -394,7 +394,7 @@ export const MODE_CONTENT_I18N: Record<string, Partial<Record<Locale, ModeConten
         "Cara tercepat untuk menjelajah. Buka aplikasi, pilih lokasimu, dan cocokkan dengan pemandu lokal terverifikasi di dekatmu — biasanya dalam waktu kurang dari satu menit.",
       steps: [
         { title: "Buka aplikasi", desc: "Pilih VibeNow dan bagikan tempat yang ingin kamu jelajahi." },
-        { title: "Cocok dalam ~60 detik", desc: "Pemandu terverifikasi di dekatmu menerima permintaanmu secara langsung." },
+        { title: "Cocok dalam hitungan menit", desc: "Pemandu terverifikasi di dekatmu menerima permintaanmu secara langsung." },
         { title: "Temui pemandu lokalmu", desc: "Lihat lokasinya secara langsung dan bertemu dalam hitungan menit." },
         { title: "Jelajahi & bayar di aplikasi", desc: "Susuri kota dengan orang lokal sungguhan. Bayar dengan aman, tanpa tunai." },
       ],
@@ -416,7 +416,7 @@ export const MODE_CONTENT_I18N: Record<string, Partial<Record<Locale, ModeConten
         "Самый быстрый способ исследовать. Откройте приложение, выберите, где вы находитесь, и найдите проверенного местного гида поблизости — обычно меньше чем за минуту.",
       steps: [
         { title: "Откройте приложение", desc: "Выберите VibeNow и укажите, где хотите исследовать." },
-        { title: "Совпадение за ~60 с", desc: "Проверенный гид поблизости принимает ваш запрос в реальном времени." },
+        { title: "Подбор за считанные минуты", desc: "Проверенный гид поблизости принимает ваш запрос в реальном времени." },
         { title: "Встретьте своего местного", desc: "Смотрите его местоположение в реальном времени и встретьтесь за считаные минуты." },
         { title: "Исследуйте и платите в приложении", desc: "Гуляйте по городу с настоящим местным. Платите безопасно, без наличных." },
       ],
@@ -438,7 +438,7 @@ export const MODE_CONTENT_I18N: Record<string, Partial<Record<Locale, ModeConten
         "Найшвидший спосіб досліджувати. Відкрийте застосунок, виберіть, де ви перебуваєте, і знайдіть перевіреного місцевого гіда поблизу — зазвичай менш ніж за хвилину.",
       steps: [
         { title: "Відкрийте застосунок", desc: "Виберіть VibeNow і вкажіть, де хочете досліджувати." },
-        { title: "Збіг за ~60 с", desc: "Перевірений гід поблизу приймає ваш запит у реальному часі." },
+        { title: "Підбір за лічені хвилини", desc: "Перевірений гід поблизу приймає ваш запит у реальному часі." },
         { title: "Зустріньте свого місцевого", desc: "Дивіться його місцезнаходження наживо й зустріньтеся за лічені хвилини." },
         { title: "Досліджуйте та платіть у застосунку", desc: "Гуляйте містом зі справжнім місцевим. Платіть безпечно, без готівки." },
       ],
@@ -460,7 +460,7 @@ export const MODE_CONTENT_I18N: Record<string, Partial<Record<Locale, ModeConten
         "Най-бързият начин да изследваш. Отвори приложението, избери къде се намираш и се свържи с проверен местен гид наблизо — обикновено за по-малко от минута.",
       steps: [
         { title: "Отвори приложението", desc: "Избери VibeNow и сподели къде искаш да изследваш." },
-        { title: "Свързване за ~60 сек", desc: "Проверен гид наблизо приема заявката ти в реално време." },
+        { title: "Свързване за броени минути", desc: "Проверен гид наблизо приема заявката ти в реално време." },
         { title: "Срещни своя местен", desc: "Виж местоположението му на живо и се срещнете за минути." },
         { title: "Изследвай и плати в приложението", desc: "Разходи се из града с истински местен. Плати сигурно, без пари в брой." },
       ],
@@ -482,7 +482,7 @@ export const MODE_CONTENT_I18N: Record<string, Partial<Record<Locale, ModeConten
         "Najbrži način za istraživanje. Otvori aplikaciju, izaberi gde se nalaziš i spoji se sa proverenim lokalnim vodičem u blizini — obično za manje od minuta.",
       steps: [
         { title: "Otvori aplikaciju", desc: "Izaberi VibeNow i podeli gde želiš da istražuješ." },
-        { title: "Spajanje za ~60 s", desc: "Provereni vodič u blizini prihvata tvoj zahtev u realnom vremenu." },
+        { title: "Spajanje za nekoliko minuta", desc: "Provereni vodič u blizini prihvata tvoj zahtev u realnom vremenu." },
         { title: "Upoznaj svog lokalca", desc: "Vidi njegovu lokaciju uživo i nađite se za nekoliko minuta." },
         { title: "Istraži i plati u aplikaciji", desc: "Prošetaj gradom sa pravim lokalcem. Plati bezbedno, bez gotovine." },
       ],
@@ -504,7 +504,7 @@ export const MODE_CONTENT_I18N: Record<string, Partial<Record<Locale, ModeConten
         "Ο πιο γρήγορος τρόπος εξερεύνησης. Άνοιξε την εφαρμογή, διάλεξε πού βρίσκεσαι και ταίριαξε με έναν επαληθευμένο ντόπιο ξεναγό κοντά σου — συνήθως σε λιγότερο από ένα λεπτό.",
       steps: [
         { title: "Άνοιξε την εφαρμογή", desc: "Διάλεξε το VibeNow και μοιράσου πού θέλεις να εξερευνήσεις." },
-        { title: "Ταίριασμα σε ~60 δλ", desc: "Ένας επαληθευμένος ξεναγός κοντά σου αποδέχεται το αίτημά σου σε πραγματικό χρόνο." },
+        { title: "Ταίριασμα σε λίγα λεπτά", desc: "Ένας επαληθευμένος ξεναγός κοντά σου αποδέχεται το αίτημά σου σε πραγματικό χρόνο." },
         { title: "Συνάντησε τον ντόπιο σου", desc: "Δες την τοποθεσία του ζωντανά και συναντηθείτε μέσα σε λίγα λεπτά." },
         { title: "Εξερεύνησε & πλήρωσε στην εφαρμογή", desc: "Περπάτησε την πόλη με έναν πραγματικό ντόπιο. Πλήρωσε με ασφάλεια, χωρίς μετρητά." },
       ],
@@ -526,7 +526,7 @@ export const MODE_CONTENT_I18N: Record<string, Partial<Record<Locale, ModeConten
         "Cel mai rapid mod de a explora. Deschide aplicația, alege unde te afli și conectează-te cu un ghid local verificat din apropiere — de obicei în mai puțin de un minut.",
       steps: [
         { title: "Deschide aplicația", desc: "Alege VibeNow și spune unde vrei să explorezi." },
-        { title: "Potrivire în ~60 s", desc: "Un ghid verificat din apropiere îți acceptă cererea în timp real." },
+        { title: "Potrivire în câteva minute", desc: "Un ghid verificat din apropiere îți acceptă cererea în timp real." },
         { title: "Întâlnește-ți localnicul", desc: "Vezi-i locația în timp real și întâlniți-vă în câteva minute." },
         { title: "Explorează și plătește în aplicație", desc: "Plimbă-te prin oraș cu un localnic adevărat. Plătește în siguranță, fără numerar." },
       ],
@@ -545,10 +545,10 @@ export const MODE_CONTENT_I18N: Record<string, Partial<Record<Locale, ModeConten
     de: {
       tagline: "Tippen. Matchen. Los.",
       heroSub:
-        "Der schnellste Weg zu entdecken. Öffne die App, wähle, wo du bist, und matche mit einem verifizierten lokalen Guide in der Nähe — meist in unter einer Minute.",
+        "Der schnellste Weg zu entdecken. Öffne die App, wähle, wo du bist, und matche mit einem verifizierten lokalen Guide in der Nähe — meist in wenigen Minuten.",
       steps: [
         { title: "Öffne die App", desc: "Wähle VibeNow und teile mit, wo du erkunden möchtest." },
-        { title: "Match in ~60 Sek.", desc: "Ein verifizierter Guide in der Nähe nimmt deine Anfrage in Echtzeit an." },
+        { title: "Match in wenigen Minuten", desc: "Ein verifizierter Guide in der Nähe nimmt deine Anfrage in Echtzeit an." },
         { title: "Triff deinen Local", desc: "Sieh seinen Standort live und triff ihn in wenigen Minuten." },
         { title: "Entdecken & in der App zahlen", desc: "Erkunde die Stadt mit einem echten Local. Zahle sicher, kein Bargeld." },
       ],
@@ -558,7 +558,7 @@ export const MODE_CONTENT_I18N: Record<string, Partial<Record<Locale, ModeConten
         { title: "Transparenter Preis", desc: "Sieh den Preis, bevor du bestätigst. Keine Touristenfallen-Überraschungen." },
       ],
       faqs: [
-        { q: "Wie schnell ist VibeNow wirklich?", a: "Die meisten Matches passieren in unter einer Minute, wenn Guides in der Nähe online sind. Die App zeigt, wer verfügbar ist, bevor du anfragst." },
+        { q: "Wie schnell ist VibeNow wirklich?", a: "Die meisten Matches passieren in wenigen Minuten, wenn Guides in der Nähe online sind. Die App zeigt, wer verfügbar ist, bevor du anfragst." },
         { q: "Was, wenn kein Guide verfügbar ist?", a: "Wenn gerade niemand frei ist, sagt dir die App das sofort und schlägt stattdessen eine VibeSquad-Gruppe oder eine private Tour vor." },
         { q: "Wie bezahle ich?", a: "Sicher in der App — kein Bargeld nötig, und du siehst den Preis im Voraus." },
       ],
@@ -567,10 +567,10 @@ export const MODE_CONTENT_I18N: Record<string, Partial<Record<Locale, ModeConten
     fr: {
       tagline: "Touchez. Matchez. Partez.",
       heroSub:
-        "Le moyen le plus rapide d'explorer. Ouvrez l'application, choisissez où vous êtes et matchez avec un guide local vérifié à proximité — généralement en moins d'une minute.",
+        "Le moyen le plus rapide d'explorer. Ouvrez l'application, choisissez où vous êtes et matchez avec un guide local vérifié à proximité — généralement en quelques minutes.",
       steps: [
         { title: "Ouvrez l'application", desc: "Choisissez VibeNow et indiquez où vous souhaitez explorer." },
-        { title: "Match en ~60 s", desc: "Un guide vérifié à proximité accepte votre demande en temps réel." },
+        { title: "Match en quelques minutes", desc: "Un guide vérifié à proximité accepte votre demande en temps réel." },
         { title: "Rencontrez votre local", desc: "Voyez sa position en direct et rencontrez-le en quelques minutes." },
         { title: "Explorez et payez dans l'app", desc: "Parcourez la ville avec un vrai local. Payez en toute sécurité, sans espèces." },
       ],
@@ -580,7 +580,7 @@ export const MODE_CONTENT_I18N: Record<string, Partial<Record<Locale, ModeConten
         { title: "Prix transparent", desc: "Voyez le prix avant de confirmer. Aucune surprise de piège à touristes." },
       ],
       faqs: [
-        { q: "VibeNow est-il vraiment si rapide ?", a: "La plupart des matchs se font en moins d'une minute quand des guides sont en ligne à proximité. L'application montre qui est disponible avant que vous ne fassiez votre demande." },
+        { q: "VibeNow est-il vraiment si rapide ?", a: "La plupart des matchs se font en quelques minutes quand des guides sont en ligne à proximité. L'application montre qui est disponible avant que vous ne fassiez votre demande." },
         { q: "Et si aucun guide n'est disponible ?", a: "Si personne n'est libre pour le moment, l'application vous le dit immédiatement et propose plutôt un groupe VibeSquad ou une visite privée." },
         { q: "Comment payer ?", a: "En toute sécurité dans l'application — pas d'espèces nécessaires, et vous voyez le prix à l'avance." },
       ],
@@ -589,10 +589,10 @@ export const MODE_CONTENT_I18N: Record<string, Partial<Record<Locale, ModeConten
     es: {
       tagline: "Toca. Conecta. Vamos.",
       heroSub:
-        "La forma más rápida de explorar. Abre la app, elige dónde estás y conecta con un guía local verificado cerca — normalmente en menos de un minuto.",
+        "La forma más rápida de explorar. Abre la app, elige dónde estás y conecta con un guía local verificado cerca — normalmente en pocos minutos.",
       steps: [
         { title: "Abre la app", desc: "Elige VibeNow y comparte dónde quieres explorar." },
-        { title: "Conecta en ~60 s", desc: "Un guía verificado cerca acepta tu solicitud en tiempo real." },
+        { title: "Conecta en pocos minutos", desc: "Un guía verificado cerca acepta tu solicitud en tiempo real." },
         { title: "Conoce a tu local", desc: "Ve su ubicación en vivo y reúnete en minutos." },
         { title: "Explora y paga en la app", desc: "Recorre la ciudad con un local real. Paga de forma segura, sin efectivo." },
       ],
@@ -602,7 +602,7 @@ export const MODE_CONTENT_I18N: Record<string, Partial<Record<Locale, ModeConten
         { title: "Precio transparente", desc: "Ve el precio antes de confirmar. Sin sorpresas de trampas para turistas." },
       ],
       faqs: [
-        { q: "¿Qué tan rápido es VibeNow de verdad?", a: "La mayoría de las conexiones ocurren en menos de un minuto cuando hay guías en línea cerca. La app muestra quién está disponible antes de que lo solicites." },
+        { q: "¿Qué tan rápido es VibeNow de verdad?", a: "La mayoría de las conexiones ocurren en pocos minutos cuando hay guías en línea cerca. La app muestra quién está disponible antes de que lo solicites." },
         { q: "¿Y si no hay ningún guía disponible?", a: "Si nadie está libre ahora mismo, la app te lo dice de inmediato y sugiere un grupo VibeSquad o un tour privado en su lugar." },
         { q: "¿Cómo pago?", a: "De forma segura en la app — sin efectivo, y ves el precio por adelantado." },
       ],
@@ -611,10 +611,10 @@ export const MODE_CONTENT_I18N: Record<string, Partial<Record<Locale, ModeConten
     it: {
       tagline: "Tocca. Abbina. Vai.",
       heroSub:
-        "Il modo più veloce per esplorare. Apri l'app, scegli dove ti trovi e abbinati a una guida locale verificata nelle vicinanze — di solito in meno di un minuto.",
+        "Il modo più veloce per esplorare. Apri l'app, scegli dove ti trovi e abbinati a una guida locale verificata nelle vicinanze — di solito in pochi minuti.",
       steps: [
         { title: "Apri l'app", desc: "Scegli VibeNow e indica dove vorresti esplorare." },
-        { title: "Abbinati in ~60 s", desc: "Una guida verificata nelle vicinanze accetta la tua richiesta in tempo reale." },
+        { title: "Abbinati in pochi minuti", desc: "Una guida verificata nelle vicinanze accetta la tua richiesta in tempo reale." },
         { title: "Incontra il tuo local", desc: "Vedi la sua posizione in tempo reale e incontralo in pochi minuti." },
         { title: "Esplora e paga nell'app", desc: "Gira la città con un vero local. Paga in sicurezza, senza contanti." },
       ],
@@ -624,7 +624,7 @@ export const MODE_CONTENT_I18N: Record<string, Partial<Record<Locale, ModeConten
         { title: "Prezzo trasparente", desc: "Vedi il prezzo prima di confermare. Nessuna sorpresa da trappola per turisti." },
       ],
       faqs: [
-        { q: "Quanto è veloce VibeNow davvero?", a: "La maggior parte degli abbinamenti avviene in meno di un minuto quando ci sono guide online nelle vicinanze. L'app mostra chi è disponibile prima che tu faccia richiesta." },
+        { q: "Quanto è veloce VibeNow davvero?", a: "La maggior parte degli abbinamenti avviene in pochi minuti quando ci sono guide online nelle vicinanze. L'app mostra chi è disponibile prima che tu faccia richiesta." },
         { q: "E se nessuna guida è disponibile?", a: "Se al momento nessuno è libero, l'app te lo dice subito e suggerisce invece un gruppo VibeSquad o un tour privato." },
         { q: "Come pago?", a: "In sicurezza nell'app — niente contanti, e vedi il prezzo in anticipo." },
       ],
@@ -636,7 +636,7 @@ export const MODE_CONTENT_I18N: Record<string, Partial<Record<Locale, ModeConten
         "De snelste manier om te ontdekken. Open de app, kies waar je bent en match met een geverifieerde lokale gids in de buurt — meestal binnen een minuut.",
       steps: [
         { title: "Open de app", desc: "Kies VibeNow en deel waar je wilt ontdekken." },
-        { title: "Match in ~60 sec", desc: "Een geverifieerde gids in de buurt accepteert je verzoek in realtime." },
+        { title: "Match in minutes", desc: "Een geverifieerde gids in de buurt accepteert je verzoek in realtime." },
         { title: "Ontmoet je local", desc: "Zie zijn locatie live en ontmoet hem binnen enkele minuten." },
         { title: "Ontdek & betaal in de app", desc: "Verken de stad met een echte local. Betaal veilig, geen contant geld." },
       ],
@@ -658,7 +658,7 @@ export const MODE_CONTENT_I18N: Record<string, Partial<Record<Locale, ModeConten
         "A forma mais rápida de explorar. Abra a aplicação, escolha onde está e combine com um guia local verificado por perto — normalmente em menos de um minuto.",
       steps: [
         { title: "Abra a aplicação", desc: "Escolha o VibeNow e indique onde quer explorar." },
-        { title: "Combine em ~60 s", desc: "Um guia verificado por perto aceita o seu pedido em tempo real." },
+        { title: "Combine em poucos minutos", desc: "Um guia verificado por perto aceita o seu pedido em tempo real." },
         { title: "Conheça o seu local", desc: "Veja a localização dele ao vivo e encontre-o em minutos." },
         { title: "Explore e pague na app", desc: "Percorra a cidade com um local de verdade. Pague com segurança, sem dinheiro." },
       ],
@@ -680,7 +680,7 @@ export const MODE_CONTENT_I18N: Record<string, Partial<Record<Locale, ModeConten
         "Najszybszy sposób na zwiedzanie. Otwórz aplikację, wybierz, gdzie jesteś, i dopasuj się do zweryfikowanego lokalnego przewodnika w pobliżu — zwykle w niecałą minutę.",
       steps: [
         { title: "Otwórz aplikację", desc: "Wybierz VibeNow i wskaż, gdzie chcesz zwiedzać." },
-        { title: "Dopasowanie w ~60 s", desc: "Zweryfikowany przewodnik w pobliżu akceptuje Twoją prośbę w czasie rzeczywistym." },
+        { title: "Dopasowanie w kilka minut", desc: "Zweryfikowany przewodnik w pobliżu akceptuje Twoją prośbę w czasie rzeczywistym." },
         { title: "Spotkaj swojego przewodnika", desc: "Zobacz jego lokalizację na żywo i spotkaj się w ciągu kilku minut." },
         { title: "Zwiedzaj i płać w aplikacji", desc: "Zwiedzaj miasto z prawdziwym mieszkańcem. Płać bezpiecznie, bez gotówki." },
       ],
