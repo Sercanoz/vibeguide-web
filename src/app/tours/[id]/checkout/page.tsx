@@ -11,6 +11,7 @@ import { paymentErrorText } from "@/lib/paymentErrors";
 import Navbar from "@/components/Navbar";
 import MainFooter from "@/components/MainFooter";
 import Price from "@/components/Price";
+import CheckoutSteps from "@/components/CheckoutSteps";
 
 interface PricingTier {
   participantCount: number;
@@ -57,7 +58,7 @@ function groupPriceForCount(tour: CheckoutTour, count: number): number {
 
 export default function CheckoutPage() {
   return (
-    <Suspense fallback={<main className="min-h-screen bg-[#FAFAFB]" />}>
+    <Suspense fallback={<main className="min-h-screen bg-white" />}>
       <CheckoutInner />
     </Suspense>
   );
@@ -87,7 +88,7 @@ function CheckoutInner() {
   const [authReady, setAuthReady] = useState(false);
   // Kart formu (3DS Direct) — değerler SAKLANMAZ, yalnız ödeme isteğinde iletilir.
   const inputCls =
-    "w-full rounded-xl border border-black/10 px-3.5 py-2.5 text-sm focus:outline-none focus:border-[#6C4CF1] focus:ring-2 focus:ring-[#6C4CF1]/10 transition-all";
+    "h-12 w-full rounded-xl border border-neutral-300 bg-white px-4 text-base text-neutral-900 placeholder:text-neutral-400 transition-[border-color,box-shadow] focus:border-[#5B3FD9] focus:outline-none focus:ring-[3px] focus:ring-[#5B3FD9]/15";
   const [cardNumber, setCardNumber] = useState("");
   const [holderName, setHolderName] = useState("");
   const [expMonth, setExpMonth] = useState("");
@@ -174,9 +175,18 @@ function CheckoutInner() {
     return (
       <main className="min-h-screen bg-white">
         <Navbar />
-        <div className="mx-auto max-w-3xl px-6 pt-32 pb-20 text-center text-neutral-700">
-          {tour === "error" ? tt.errMsg : "…"}
-        </div>
+        {tour === "error" ? (
+          <div role="alert" className="mx-auto max-w-xl px-6 pb-20 pt-36 text-center text-neutral-700">{tt.errMsg}</div>
+        ) : (
+          <div className="mx-auto max-w-5xl animate-pulse px-4 pb-20 pt-28 md:px-6" aria-busy="true">
+            <div className="h-6 w-64 rounded bg-neutral-100" />
+            <div className="mt-6 h-10 w-1/2 rounded bg-neutral-100" />
+            <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_380px]">
+              <div className="h-80 rounded-2xl bg-neutral-100" />
+              <div className="h-64 rounded-2xl bg-neutral-100" />
+            </div>
+          </div>
+        )}
         <MainFooter />
       </main>
     );
@@ -239,8 +249,11 @@ function CheckoutInner() {
     if (!/^\d{3,4}$/.test(cvv)) { setNotice(tt.payErrCvv); return; }
 
     // Telefon: profilde yoksa formdan zorunlu (TAMİ alıcı bilgisinde şart).
-    const phoneDigits = phone.replace(/\D/g, "");
-    if (phoneOnProfile === false && !/^5\d{9}$/.test(phoneDigits)) {
+    // Uluslararası numara kabul (backend NormalizePhone ile aynı): TR cep
+    // (5XXXXXXXXX) ya da ülke kodlu 8-15 hane (E.164). Eskiden yalnız TR cep
+    // kabul ediliyordu → yabancı turist ödeme ekranını geçemiyordu.
+    const phoneDigits = phone.replace(/\D/g, "").replace(/^00/, "");
+    if (phoneOnProfile === false && !/^(5\d{9}|\d{8,15})$/.test(phoneDigits)) {
       setNotice(tt.payErrPhone); return;
     }
 
@@ -291,244 +304,219 @@ function CheckoutInner() {
     }
   }
 
+  const cc = CC[locale] ?? CC.en;
+  const step: 2 | 3 | 4 = status === "paid" ? 4 : status === "confirmed" ? 3 : 2;
+  const fmtDate = date
+    ? new Date(`${date}T00:00:00`).toLocaleDateString(locale === "tr" ? "tr-TR" : "en-GB", { weekday: "short", day: "numeric", month: "long", year: "numeric" })
+    : "";
+  const label = "mb-1.5 block text-sm font-medium text-neutral-900";
+  const primary = "flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-[#5B3FD9] px-5 text-[15px] font-semibold text-white transition-colors hover:bg-[#4A32B8] disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B3FD9] focus-visible:ring-offset-2";
+  const h2 = "font-display text-2xl font-normal tracking-[-0.01em] text-neutral-900";
+
   return (
-    <main className="min-h-screen bg-[#FAFAFB] text-[#0A0A0F]">
+    <main className="min-h-screen bg-white text-neutral-900">
       <Navbar />
 
-      <div className="mx-auto max-w-4xl px-6 pt-28 pb-20">
-        <Link
-          href={`/tours/${tour.id}/guides?date=${date}&people=${people}`}
-          className="text-sm font-semibold text-[#6C4CF1] hover:underline"
-        >
-          ← {tt.coBack}
-        </Link>
-        <h1 className="mt-3 text-3xl md:text-4xl font-black">{tt.coTitle}</h1>
+      <div className="mx-auto max-w-5xl px-4 pb-20 pt-24 md:px-6 md:pt-28">
+        <CheckoutSteps current={step} locale={locale} />
+        {!bookingId && (
+          <Link href={`/tours/${tour.id}/guides?date=${date}&people=${people}`}
+            className="mt-6 inline-flex items-center gap-1.5 text-sm text-neutral-600 hover:text-neutral-900">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7" /></svg>
+            {tt.coBack}
+          </Link>
+        )}
+        <h1 className="mt-3 font-display text-3xl font-normal tracking-[-0.01em] md:text-[40px]">{tt.coTitle}</h1>
 
-        <div className="mt-8 grid gap-6 md:grid-cols-[1fr_360px] items-start">
-          <div className="space-y-6">
-            <section className="rounded-2xl bg-white border border-black/[0.06] p-6">
-              {/* Durum makinesi: talep yok → onay bekleniyor → öde → red */}
-              {notice && (
-                <div className="mb-4 rounded-xl bg-[#6C4CF1]/[0.06] border border-[#6C4CF1]/20 px-4 py-3 text-sm text-[#4a37b8] font-medium">
-                  {notice}
-                </div>
+        <div className="mt-8 grid items-start gap-8 lg:grid-cols-[1fr_380px]">
+          {/* Sipariş özeti — mobilde üstte, masaüstünde sağda yapışkan */}
+          <aside className="rounded-2xl border border-neutral-200 p-5 lg:sticky lg:top-24 lg:order-2 lg:p-6">
+            <div className="flex gap-4">
+              {tour.coverPhotoUrl && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={tour.coverPhotoUrl} alt="" className="h-20 w-20 shrink-0 rounded-lg object-cover lg:h-24 lg:w-24" />
               )}
-
-              {/* Aşama A — henüz talep yok: sözleşme + rezervasyon talebi */}
-              {!bookingId && (
-                <>
-                  <h2 className="text-lg font-black mb-3">{tt.coConfirmTitle}</h2>
-                  <p className="text-sm text-neutral-700 mb-4">
-                    {tt.coConfirmSub}
-                  </p>
-                  <label className="mb-4 flex items-start gap-2.5 cursor-pointer select-none">
-                    <input
-                      type="checkbox"
-                      checked={agreed}
-                      onChange={(e) => setAgreed(e.target.checked)}
-                      className="mt-0.5 h-4 w-4 shrink-0 accent-[#6C4CF1]"
-                    />
-                    <span className="text-xs leading-relaxed text-neutral-700">
-                      {tt.coAgreeText}{" "}
-                      <Link href="/mesafeli-satis" target="_blank" className="font-semibold text-[#6C4CF1] hover:underline">
-                        {tt.coDistanceContract}
-                      </Link>{" "}
-                      <Link href="/on-bilgilendirme" target="_blank" className="font-semibold text-[#6C4CF1] hover:underline">
-                        {tt.coAndPreInfo}
-                      </Link>.
-                    </span>
-                  </label>
-                  <button
-                    onClick={createBooking}
-                    disabled={busy || !agreed}
-                    className="w-full rounded-full bg-[#6C4CF1] text-white font-bold py-3.5 hover:bg-[#5a3dd4] transition-colors disabled:opacity-50"
-                  >
-                    {busy ? "…" : tt.coSendRequest}
-                  </button>
-                </>
-              )}
-
-              {/* Aşama B — Pending: rehber onayı bekleniyor */}
-              {bookingId && status === "pending" && (
-                <div className="text-center py-4">
-                  <div className="w-12 h-12 rounded-full border-2 border-[#6C4CF1] border-t-transparent animate-spin mx-auto mb-4" />
-                  <h2 className="text-lg font-black">{tt.coWaitTitle}</h2>
-                  <p className="mt-1 text-sm text-neutral-700">
-                    {tt.coWaitSub}
-                  </p>
-                  <button
-                    onClick={() => bookingId && refreshBooking(bookingId)}
-                    className="mt-4 text-sm font-bold text-[#6C4CF1] hover:underline"
-                  >
-                    {tt.coCheckNow}
-                  </button>
-                  <p className="mt-4 text-xs text-neutral-500">
-                    You can also track it in{" "}
-                    <Link href="/profile" className="font-semibold text-[#6C4CF1] hover:underline">{tt.coMyReservations}</Link>.
-                  </p>
-                </div>
-              )}
-
-              {/* Aşama C — Confirmed: ödeme */}
-              {bookingId && status === "confirmed" && (
-                <>
-                  <div className="mb-4 rounded-xl bg-green-50 border border-green-100 px-4 py-3 text-sm text-green-700 font-medium">
-                    {tt.coGuideAccepted}
-                  </div>
-                  <div className="flex items-center justify-between mb-3">
-                    <h2 className="text-lg font-black">{tt.coPayWith}</h2>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/visamastercard.jpg" alt="Visa · Mastercard · Amex · Troy" className="h-6 w-auto opacity-90" />
-                  </div>
-
-                  {/* Kart formu — 3D Secure. Kart bilgisi saklanmaz, bankaya iletilir. */}
-                  <div className="space-y-3 mb-4">
-                    <div>
-                      <label className="block text-xs font-bold text-neutral-800 mb-1">{tt.payCardNumber}</label>
-                      <input
-                        inputMode="numeric" autoComplete="cc-number" placeholder="0000 0000 0000 0000"
-                        value={cardNumber}
-                        onChange={(e) => {
-                          const d = e.target.value.replace(/\D/g, "").slice(0, 19);
-                          setCardNumber(d.replace(/(.{4})/g, "$1 ").trim());
-                        }}
-                        className={inputCls}
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-bold text-neutral-800 mb-1">{tt.payCardHolder}</label>
-                      <input
-                        autoComplete="cc-name" placeholder={tt.payCardHolderPh}
-                        value={holderName}
-                        onChange={(e) => setHolderName(e.target.value.toUpperCase())}
-                        className={inputCls}
-                      />
-                    </div>
-                    {/* Telefon: profilde kayıtlıysa sorulmaz. Banka/ödeme kaydı için
-                        zorunlu; girilen numara profile de kaydedilir. */}
-                    {phoneOnProfile === false && (
-                      <div>
-                        <label className="block text-xs font-bold text-neutral-800 mb-1">
-                          {tt.payPhone}
-                        </label>
-                        <input
-                          inputMode="tel" autoComplete="tel" placeholder={tt.payPhonePh} maxLength={13}
-                          value={phone}
-                          onChange={(e) => {
-                            const d = e.target.value.replace(/\D/g, "").slice(0, 10);
-                            const f = d.replace(/^(\d{3})(\d{0,3})(\d{0,2})(\d{0,2}).*/,
-                              (_m, a, b, c, e2) => [a, b, c, e2].filter(Boolean).join(" "));
-                            setPhone(f);
-                          }}
-                          className={inputCls}
-                        />
-                        <p className="mt-1 text-[11px] text-neutral-500">
-                          {tt.payPhoneHint}
-                        </p>
-                      </div>
-                    )}
-                    <div className="grid grid-cols-3 gap-3">
-                      <div>
-                        <label className="block text-xs font-bold text-neutral-800 mb-1">{tt.payExpMonth}</label>
-                        <input inputMode="numeric" autoComplete="cc-exp-month" placeholder="AA" maxLength={2}
-                          value={expMonth}
-                          onChange={(e) => setExpMonth(e.target.value.replace(/\D/g, "").slice(0, 2))}
-                          className={inputCls} />
-                      </div>
-                      <div>
-                        <label className="block text-xs font-bold text-neutral-800 mb-1">{tt.payExpYear}</label>
-                        <input inputMode="numeric" autoComplete="cc-exp-year" placeholder="YYYY" maxLength={4}
-                          value={expYear}
-                          onChange={(e) => setExpYear(e.target.value.replace(/\D/g, "").slice(0, 4))}
-                          className={inputCls} />
-                      </div>
-                      <div>
-                        <label className="block text-xs font-bold text-neutral-800 mb-1">{tt.payCvv}</label>
-                        <input inputMode="numeric" autoComplete="cc-csc" placeholder="123" maxLength={4}
-                          value={cvv}
-                          onChange={(e) => setCvv(e.target.value.replace(/\D/g, "").slice(0, 4))}
-                          className={inputCls} />
-                      </div>
-                    </div>
-                    <p className="text-[11px] text-neutral-500 leading-relaxed">
-                      {tt.paySecureNote}
-                      Kart bilgileriniz saklanmaz.
-                    </p>
-                  </div>
-
-                  <button
-                    onClick={payNow}
-                    disabled={busy}
-                    className="w-full rounded-full bg-[#6C4CF1] text-white font-bold py-3.5 hover:bg-[#5a3dd4] transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
-                    style={{ boxShadow: "0 4px 20px rgba(108,76,241,0.3)" }}
-                  >
-                    {busy ? "…" : <>{tt.coPayNow} · <Price amount={total} currency={tour.currency} /></>}
-                  </button>
-                  <p className="mt-4 text-[11px] leading-relaxed text-neutral-500">{tt.coProvider}</p>
-                </>
-              )}
-
-              {/* Aşama D — Paid */}
-              {bookingId && status === "paid" && (
-                <div className="text-center py-4">
-                  <h2 className="text-lg font-black text-green-700">{tt.coPaidTitle}</h2>
-                  <p className="mt-1 text-sm text-neutral-700">{tt.coPaidSub}</p>
-                  <Link href="/profile" className="mt-4 inline-block rounded-full bg-[#6C4CF1] text-white font-bold px-6 py-2.5 text-sm">
-                    My reservations
-                  </Link>
-                </div>
-              )}
-
-              {/* Aşama E — Reddedildi / iptal */}
-              {bookingId && (status === "rejected" || status === "cancelled") && (
-                <div className="text-center py-4">
-                  <h2 className="text-lg font-black text-neutral-800">
-                    {status === "rejected" ? tt.coRejected : tt.coCancelled}
-                  </h2>
-                  <p className="mt-1 text-sm text-neutral-700">{tt.coRejectedSub}</p>
-                  <Link
-                    href={`/tours/${id}/guides?date=${date}&people=${people}`}
-                    className="mt-4 inline-block text-sm font-bold text-[#6C4CF1] hover:underline"
-                  >
-                    {tt.coChooseAnother}
-                  </Link>
-                </div>
-              )}
-            </section>
-          </div>
-
-          {/* Sağ: sipariş özeti */}
-          <aside className="rounded-2xl bg-white border border-black/[0.06] p-6 md:sticky md:top-24">
-            <h2 className="text-sm font-black uppercase tracking-wide text-neutral-800 mb-4">{tt.coSummary}</h2>
-            {tour.coverPhotoUrl && (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={tour.coverPhotoUrl} alt={tour.title} className="w-full h-32 object-cover rounded-xl mb-4" />
-            )}
-            <p className="font-black leading-snug">{tour.title}</p>
-            <p className="text-xs text-neutral-700 mb-4">{tour.provinceName || tour.city}</p>
-
-            <div className="space-y-2 text-sm border-t border-black/[0.06] pt-4">
+              <div className="min-w-0">
+                <p className="line-clamp-3 font-semibold leading-snug">{tour.title}</p>
+                <p className="mt-1 text-sm text-neutral-600">{tour.provinceName || tour.city}</p>
+              </div>
+            </div>
+            <dl className="mt-5 space-y-2.5 border-t border-neutral-200 pt-5 text-sm">
               {date && (
-                <div className="flex justify-between">
-                  <span className="text-neutral-700">{tt.bkDate}</span>
-                  <span className="font-semibold">{date}</span>
-                </div>
+                <div className="flex justify-between gap-4"><dt className="text-neutral-600">{tt.bkDate}</dt><dd className="text-right font-medium">{fmtDate}</dd></div>
               )}
-              <div className="flex justify-between">
-                <span className="text-neutral-700">{tt.bkTravelers}</span>
-                <span className="font-semibold">{people}</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-neutral-700">{tt.perPerson}</span>
-                <span className="font-semibold"><Price amount={perPerson} currency={tour.currency} /></span>
-              </div>
+              <div className="flex justify-between gap-4"><dt className="text-neutral-600">{tt.bkTravelers}</dt><dd className="font-medium">{people}</dd></div>
+              <div className="flex justify-between gap-4"><dt className="text-neutral-600">{tt.perPerson}</dt><dd className="font-medium"><Price amount={perPerson} currency={tour.currency} /></dd></div>
+            </dl>
+            <div className="mt-5 flex items-baseline justify-between border-t border-neutral-200 pt-5">
+              <span className="font-semibold">{tt.bkTotal}</span>
+              <span className="text-2xl font-semibold tracking-tight"><Price amount={total} currency={tour.currency} /></span>
             </div>
-
-            <div className="flex justify-between items-baseline border-t border-black/[0.06] mt-4 pt-4">
-              <span className="font-black">{tt.bkTotal}</span>
-              <span className="text-2xl font-black text-[#6C4CF1]"><Price amount={total} currency={tour.currency} /></span>
-            </div>
+            {!bookingPrice && <p className="mt-1 text-right text-xs text-neutral-500">{cc.estimate}</p>}
+            <ul className="mt-5 space-y-2 border-t border-neutral-200 pt-5 text-sm text-neutral-700">
+              <li className="flex gap-2.5">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" className="mt-px shrink-0 text-neutral-900" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+                {cc.noCharge}
+              </li>
+              <li className="flex gap-2.5">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" className="mt-px shrink-0 text-neutral-900" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
+                {cc.secure}
+              </li>
+            </ul>
           </aside>
+
+          <section className="rounded-2xl border border-neutral-200 p-5 md:p-7 lg:order-1">
+            {notice && (
+              <div role="alert" className="mb-5 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">{notice}</div>
+            )}
+
+            {/* Aşama A — henüz talep yok: sözleşme + rezervasyon talebi */}
+            {!bookingId && (
+              <>
+                <h2 className={h2}>{tt.coConfirmTitle}</h2>
+                <p className="mt-2 leading-7 text-neutral-600">{tt.coConfirmSub}</p>
+                <ol className="mt-6 space-y-4">
+                  {cc.how.map((s, i) => (
+                    <li key={i} className="flex gap-3 text-sm text-neutral-700">
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-neutral-100 text-xs font-semibold text-neutral-900">{i + 1}</span>
+                      <span className="pt-0.5 leading-6">{s}</span>
+                    </li>
+                  ))}
+                </ol>
+                <label className="mt-6 flex cursor-pointer select-none items-start gap-3 rounded-xl border border-neutral-200 p-4">
+                  <input type="checkbox" checked={agreed} onChange={(e) => setAgreed(e.target.checked)} className="mt-0.5 h-4 w-4 shrink-0 accent-[#5B3FD9]" />
+                  <span className="text-sm leading-6 text-neutral-700">
+                    {tt.coAgreeText}{" "}
+                    <Link href="/mesafeli-satis" target="_blank" className="font-medium text-neutral-900 underline underline-offset-2">{tt.coDistanceContract}</Link>{" "}
+                    <Link href="/on-bilgilendirme" target="_blank" className="font-medium text-neutral-900 underline underline-offset-2">{tt.coAndPreInfo}</Link>.
+                  </span>
+                </label>
+                <button onClick={createBooking} disabled={busy || !agreed} className={`${primary} mt-5`}>
+                  {busy ? <Spinner /> : tt.coSendRequest}
+                </button>
+              </>
+            )}
+
+            {/* Aşama B — Pending: rehber onayı bekleniyor */}
+            {bookingId && status === "pending" && (
+              <div className="py-6 text-center" aria-live="polite">
+                <div className="mx-auto mb-5 h-12 w-12 animate-spin rounded-full border-2 border-neutral-900 border-t-transparent" aria-hidden="true" />
+                <h2 className={h2}>{tt.coWaitTitle}</h2>
+                <p className="mx-auto mt-2 max-w-md leading-7 text-neutral-600">{tt.coWaitSub}</p>
+                <button onClick={() => bookingId && refreshBooking(bookingId)}
+                  className="mt-5 inline-flex h-10 items-center rounded-full border border-neutral-300 px-5 text-sm font-semibold hover:border-neutral-900">
+                  {tt.coCheckNow}
+                </button>
+                <p className="mt-5 text-sm text-neutral-500">
+                  {cc.trackIn}{" "}
+                  <Link href="/profile" className="font-medium text-neutral-900 underline underline-offset-2">{tt.coMyReservations}</Link>.
+                </p>
+              </div>
+            )}
+
+            {/* Aşama C — Confirmed: ödeme */}
+            {bookingId && status === "confirmed" && (
+              <>
+                <div className="mb-6 flex items-start gap-3 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-900">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mt-px shrink-0" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
+                  {tt.coGuideAccepted}
+                </div>
+                <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
+                  <h2 className={h2}>{tt.coPayWith}</h2>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/visamastercard.jpg" alt="Visa · Mastercard · Amex · Troy" className="h-5 w-auto opacity-80" />
+                </div>
+
+                {/* Kart formu — 3D Secure. Kart bilgisi saklanmaz, bankaya iletilir. */}
+                <form onSubmit={(e) => { e.preventDefault(); payNow(); }} className="space-y-4" autoComplete="on">
+                  <div>
+                    <label htmlFor="cc-number" className={label}>{tt.payCardNumber}</label>
+                    <input id="cc-number" inputMode="numeric" autoComplete="cc-number" placeholder="0000 0000 0000 0000"
+                      value={cardNumber}
+                      onChange={(e) => {
+                        const d = e.target.value.replace(/\D/g, "").slice(0, 19);
+                        setCardNumber(d.replace(/(.{4})/g, "$1 ").trim());
+                      }}
+                      className={`${inputCls} tracking-wide tabular-nums`} />
+                  </div>
+                  <div>
+                    <label htmlFor="cc-name" className={label}>{tt.payCardHolder}</label>
+                    <input id="cc-name" autoComplete="cc-name" placeholder={tt.payCardHolderPh}
+                      value={holderName}
+                      onChange={(e) => setHolderName(e.target.value.toUpperCase())}
+                      className={inputCls} />
+                  </div>
+                  <div className="grid grid-cols-3 gap-3">
+                    <div>
+                      <label htmlFor="cc-exp-m" className={label}>{tt.payExpMonth}</label>
+                      <input id="cc-exp-m" inputMode="numeric" autoComplete="cc-exp-month" placeholder="MM" maxLength={2}
+                        value={expMonth} onChange={(e) => setExpMonth(e.target.value.replace(/\D/g, "").slice(0, 2))}
+                        className={`${inputCls} tabular-nums`} />
+                    </div>
+                    <div>
+                      <label htmlFor="cc-exp-y" className={label}>{tt.payExpYear}</label>
+                      <input id="cc-exp-y" inputMode="numeric" autoComplete="cc-exp-year" placeholder="YYYY" maxLength={4}
+                        value={expYear} onChange={(e) => setExpYear(e.target.value.replace(/\D/g, "").slice(0, 4))}
+                        className={`${inputCls} tabular-nums`} />
+                    </div>
+                    <div>
+                      <label htmlFor="cc-csc" className={label}>{tt.payCvv}</label>
+                      <input id="cc-csc" inputMode="numeric" autoComplete="cc-csc" placeholder="123" maxLength={4}
+                        value={cvv} onChange={(e) => setCvv(e.target.value.replace(/\D/g, "").slice(0, 4))}
+                        className={`${inputCls} tabular-nums`} />
+                    </div>
+                  </div>
+                  {/* Telefon: profilde kayıtlıysa sorulmaz. Banka/ödeme kaydı için
+                      zorunlu; girilen numara profile de kaydedilir. */}
+                  {phoneOnProfile === false && (
+                    <div>
+                      <label htmlFor="cc-phone" className={label}>{tt.payPhone}</label>
+                      <input id="cc-phone" inputMode="tel" autoComplete="tel" placeholder={tt.payPhonePh} maxLength={20}
+                        value={phone}
+                        // Serbest biçim: yalnız rakam, boşluk, +, -, parantez (ülke kodu yazılabilsin).
+                        onChange={(e) => setPhone(e.target.value.replace(/[^\d+\s()-]/g, ""))}
+                        className={inputCls} />
+                      <p className="mt-1.5 text-xs text-neutral-500">{tt.payPhoneHint}</p>
+                    </div>
+                  )}
+                  <p className="flex gap-2 text-xs leading-5 text-neutral-500">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 shrink-0" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
+                    <span>{tt.paySecureNote.replace(/^🔒\s*/, "")} {cc.notStored}</span>
+                  </p>
+                  <button type="submit" disabled={busy} className={primary}>
+                    {busy ? <Spinner /> : <>{tt.coPayNow} · <Price amount={total} currency={tour.currency} /></>}
+                  </button>
+                </form>
+                <p className="mt-5 text-xs leading-5 text-neutral-500">{tt.coProvider}</p>
+              </>
+            )}
+
+            {/* Aşama D — Paid */}
+            {bookingId && status === "paid" && (
+              <div className="py-6 text-center">
+                <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-50 text-emerald-700">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
+                </div>
+                <h2 className={h2}>{tt.coPaidTitle}</h2>
+                <p className="mx-auto mt-2 max-w-md leading-7 text-neutral-600">{tt.coPaidSub}</p>
+                <Link href="/profile" className="mt-6 inline-flex h-12 items-center rounded-xl bg-[#5B3FD9] px-6 text-[15px] font-semibold text-white hover:bg-[#4A32B8]">
+                  {tt.coMyReservations}
+                </Link>
+              </div>
+            )}
+
+            {/* Aşama E — Reddedildi / iptal */}
+            {bookingId && (status === "rejected" || status === "cancelled") && (
+              <div className="py-6 text-center">
+                <h2 className={h2}>{status === "rejected" ? tt.coRejected : tt.coCancelled}</h2>
+                <p className="mx-auto mt-2 max-w-md leading-7 text-neutral-600">{tt.coRejectedSub}</p>
+                <Link href={`/tours/${id}/guides?date=${date}&people=${people}`}
+                  className="mt-6 inline-flex h-12 items-center rounded-xl bg-[#5B3FD9] px-6 text-[15px] font-semibold text-white hover:bg-[#4A32B8]">
+                  {tt.coChooseAnother}
+                </Link>
+              </div>
+            )}
+          </section>
         </div>
       </div>
 
@@ -536,3 +524,26 @@ function CheckoutInner() {
     </main>
   );
 }
+
+function Spinner() {
+  return <span className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent" aria-label="Loading" />;
+}
+
+const CC: Record<string, { estimate: string; noCharge: string; secure: string; how: string[]; trackIn: string; notStored: string }> = {
+  en: {
+    estimate: "Final price confirmed with your request",
+    noCharge: "No charge until your guide accepts",
+    secure: "3D Secure payment · card details are never stored",
+    how: ["We send your request to the guide you chose.", "The guide confirms availability — this page updates automatically.", "You pay securely here and get your confirmation."],
+    trackIn: "You can also track it in",
+    notStored: "Your card details are not stored.",
+  },
+  tr: {
+    estimate: "Kesin fiyat talep oluşunca netleşir",
+    noCharge: "Rehber kabul edene kadar ücret alınmaz",
+    secure: "3D Secure ödeme · kart bilgisi saklanmaz",
+    how: ["Talebini seçtiğin rehbere iletiriz.", "Rehber müsaitliğini onaylar — bu sayfa kendiliğinden güncellenir.", "Burada güvenle ödersin, onayın gelir."],
+    trackIn: "Durumu şuradan da takip edebilirsin:",
+    notStored: "Kart bilgileriniz saklanmaz.",
+  },
+};

@@ -81,7 +81,7 @@ export default function PoolsPage() {
 
   return (
     <div className="max-w-5xl mx-auto px-5 sm:px-8 py-10">
-      <h1 className="text-2xl font-black tracking-tight text-vg-ink">Pool Management</h1>
+      <h1 className="text-2xl font-display font-normal tracking-[-0.01em] text-vg-ink">Pool Management</h1>
       <p className="mt-1 text-sm text-vg-muted">Manage tour pools — lock or cancel them.</p>
 
       {flash && (

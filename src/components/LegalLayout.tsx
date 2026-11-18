@@ -22,7 +22,7 @@ export default function LegalLayout({
 
       {/* HERO */}
       <section className="mx-auto max-w-3xl px-6 pt-28 pb-6 md:pt-32">
-        <h1 className="text-4xl font-black tracking-tight leading-[1.05] md:text-5xl text-[#0A0A0F]">
+        <h1 className="text-4xl font-display font-normal tracking-[-0.01em] leading-[1.05] md:text-5xl text-[#0A0A0F]">
           {title}
         </h1>
         {lastUpdated && lastUpdatedLabel && (
@@ -76,7 +76,7 @@ export default function LegalLayout({
           font-size: 0.95rem;
         }
         .prose-vg a {
-          color: #6c4cf1;
+          color: #5B3FD9;
           font-weight: 600;
           text-decoration: underline;
         }

@@ -43,7 +43,7 @@ export default function AnalyticsPage() {
 
   return (
     <div className="p-8 max-w-6xl">
-      <h1 className="text-2xl font-black text-[#0A0A0F]">Analytics</h1>
+      <h1 className="text-2xl font-display font-normal text-[#0A0A0F]">Analytics</h1>
       <p className="mt-1 text-sm text-neutral-400 mb-6">Platform overview and performance statistics.</p>
 
       {/* User KPIs */}
@@ -125,7 +125,7 @@ export default function AnalyticsPage() {
                 .map((g) => (
                   <tr key={g.guideUserId} className="hover:bg-vg-bg-soft transition-colors">
                     <td className="px-5 py-3 font-semibold text-vg-ink">
-                      <Link href={`/admin/users/${g.guideUserId}`} className="hover:text-[#6C4CF1] transition-colors">{g.fullName}</Link>
+                      <Link href={`/admin/users/${g.guideUserId}`} className="hover:text-[#5B3FD9] transition-colors">{g.fullName}</Link>
                     </td>
                     <td className="px-5 py-3 text-vg-muted">{g.city ?? "—"}</td>
                     <td className="px-5 py-3 text-right">

@@ -115,7 +115,7 @@ export default function TripView({
 
         {/* Body */}
         <div className="p-6 md:p-8">
-          <h1 className="text-2xl md:text-3xl font-black tracking-tight text-vg-ink">
+          <h1 className="text-2xl md:text-3xl font-display font-normal tracking-[-0.01em] text-vg-ink">
             {tourStarted ? c.liveTitle : c.notStartedTitle}
           </h1>
           {tourStarted ? (
@@ -215,7 +215,7 @@ function BigCard({
       } shadow-xl`}
     >
       <div className="text-6xl mb-3">{icon}</div>
-      <h1 className="text-2xl md:text-3xl font-black tracking-tight text-vg-ink">
+      <h1 className="text-2xl md:text-3xl font-display font-normal tracking-[-0.01em] text-vg-ink">
         {title}
       </h1>
       <p className="mt-3 text-vg-muted leading-relaxed">{body}</p>

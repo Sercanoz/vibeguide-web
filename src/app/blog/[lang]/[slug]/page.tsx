@@ -150,10 +150,10 @@ export default async function BlogPostPage({ params }: Props) {
             <span className="text-neutral-800">{cat[post.category]}</span>
           </nav>
 
-          <span className="inline-block rounded-full bg-[#6C4CF1]/[0.08] px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-[#6C4CF1]">
+          <span className="inline-block rounded-full bg-[#5B3FD9]/[0.08] px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-[#5B3FD9]">
             {cat[post.category]}
           </span>
-          <h1 className="mt-4 text-3xl md:text-5xl font-black leading-[1.05] tracking-tight">{c.title}</h1>
+          <h1 className="mt-4 text-3xl md:text-5xl font-display font-normal leading-[1.05] tracking-[-0.01em]">{c.title}</h1>
 
           <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-3xl bg-neutral-100">
             <Image src={post.heroImage} alt={c.title} fill priority sizes="(max-width: 768px) 100vw, 768px" className="object-cover" />
@@ -184,7 +184,7 @@ export default async function BlogPostPage({ params }: Props) {
                   <details key={i} className="group py-4">
                     <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-bold">
                       {f.q}
-                      <span className="text-[#6C4CF1] transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+                      <span className="text-[#5B3FD9] transition-transform group-open:rotate-45" aria-hidden="true">+</span>
                     </summary>
                     <p className="mt-3 text-[16px] leading-7 text-neutral-700">{f.a}</p>
                   </details>
@@ -201,7 +201,7 @@ export default async function BlogPostPage({ params }: Props) {
                   <Link
                     key={r.href}
                     href={r.href}
-                    className="rounded-full border border-black/10 px-4 py-2 text-sm font-semibold text-[#0A0A0F] hover:border-[#6C4CF1] hover:text-[#6C4CF1] transition-colors"
+                    className="rounded-full border border-black/10 px-4 py-2 text-sm font-semibold text-[#0A0A0F] hover:border-[#5B3FD9] hover:text-[#5B3FD9] transition-colors"
                   >
                     {r.label}
                   </Link>
@@ -220,7 +220,7 @@ export default async function BlogPostPage({ params }: Props) {
                   <Link
                     key={r.href}
                     href={r.href}
-                    className="rounded-2xl border border-black/[0.08] bg-white p-5 text-sm font-semibold leading-6 text-[#0A0A0F] hover:border-[#6C4CF1]/40 hover:text-[#6C4CF1] transition-colors"
+                    className="rounded-2xl border border-black/[0.08] bg-white p-5 text-sm font-semibold leading-6 text-[#0A0A0F] hover:border-[#5B3FD9]/40 hover:text-[#5B3FD9] transition-colors"
                   >
                     {r.label}
                   </Link>

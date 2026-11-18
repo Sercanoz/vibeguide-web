@@ -21,7 +21,9 @@ function buildCsp(): string {
     // → tüm client JS ölür (menü/buton çalışmaz). Statik render korunuyor, karşılığında
     // script-src'de 'unsafe-inline' (kendi inline script'imiz zaten yok, hepsi self-host;
     // bu yalnız Next.js'in kendi hydration inline'ları için).
-    "script-src 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://apis.google.com https://www.googletagmanager.com https://www.google-analytics.com",
+    // 'unsafe-eval' YALNIZ development: React dev modu callstack için eval() kullanıyor
+    // (yoksa "eval() is not supported" konsol hatası). Production'da React eval kullanmaz.
+    `script-src 'self' 'unsafe-inline'${process.env.NODE_ENV === "development" ? " 'unsafe-eval'" : ""} https://www.google.com https://www.gstatic.com https://apis.google.com https://www.googletagmanager.com https://www.google-analytics.com`,
     "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net",
     "img-src 'self' data: blob: https://images.unsplash.com https://static.independent.co.uk https://encrypted-tbn0.gstatic.com https://flagcdn.com https://haritaapitest-production.up.railway.app https://firebasestorage.googleapis.com https://www.google-analytics.com https://www.googletagmanager.com",
     "connect-src 'self' https://*.firebaseio.com https://*.googleapis.com https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://firebaseappcheck.googleapis.com https://content-firebaseappcheck.googleapis.com https://haritaapitest-production.up.railway.app wss://haritaapitest-production.up.railway.app https://www.google-analytics.com https://region1.google-analytics.com https://open.er-api.com https://www.google.com https://www.gstatic.com",

@@ -87,7 +87,7 @@ export default function ApplicationsPage() {
         </div>
       )}
 
-      <h1 className="text-2xl font-black tracking-tight text-vg-ink">Guide Applications</h1>
+      <h1 className="text-2xl font-display font-normal tracking-[-0.01em] text-vg-ink">Guide Applications</h1>
       <p className="mt-1 text-sm text-vg-muted">Review KYC photos and approve or reject applications.</p>
 
       {flash && (

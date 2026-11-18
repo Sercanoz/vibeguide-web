@@ -46,7 +46,7 @@ const STATUS_COLOR: Record<string, string> = {
 const ROLE_META: Record<string, { label: string; color: string; icon: React.ReactNode }> = {
   Tourist: {
     label: "Tourist",
-    color: "bg-[#6C4CF1]/10 text-[#6C4CF1]",
+    color: "bg-[#5B3FD9]/10 text-[#5B3FD9]",
     icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>,
   },
   Guide: {
@@ -93,7 +93,7 @@ function MenuTile({
 }) {
   const body = (
     <div className="flex items-center gap-4 px-5 py-4 hover:bg-neutral-50 transition-colors w-full text-left">
-      <div className={`w-10 h-10 rounded-2xl flex items-center justify-center shrink-0 ${danger ? "bg-red-50" : "bg-[#6C4CF1]/8"}`}>
+      <div className={`w-10 h-10 rounded-2xl flex items-center justify-center shrink-0 ${danger ? "bg-red-50" : "bg-[#5B3FD9]/8"}`}>
         {icon}
       </div>
       <div className="flex-1 min-w-0">
@@ -117,7 +117,7 @@ function MenuTile({
 }
 
 // Menü ikonları — mobildeki Material ikonlarının web karşılıkları.
-const ico = (path: React.ReactNode, color = "#6C4CF1") => (
+const ico = (path: React.ReactNode, color = "#5B3FD9") => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
     {path}
   </svg>
@@ -258,7 +258,7 @@ export default function ProfilePage() {
       <main className="min-h-screen bg-white">
         <Navbar />
         <div className="pt-16 flex items-center justify-center h-screen">
-          <div className="w-8 h-8 rounded-full border-2 border-[#6C4CF1] border-t-transparent animate-spin" />
+          <div className="w-8 h-8 rounded-full border-2 border-[#5B3FD9] border-t-transparent animate-spin" />
         </div>
       </main>
     );
@@ -290,7 +290,7 @@ export default function ProfilePage() {
               </button>
               <button
                 onClick={onSignOut}
-                className="flex-1 rounded-2xl bg-[#6C4CF1] text-white font-bold py-2.5 text-sm hover:bg-[#5a3dd4] transition-colors"
+                className="flex-1 rounded-2xl bg-[#5B3FD9] text-white font-bold py-2.5 text-sm hover:bg-[#4A32B8] transition-colors"
               >
                 Sign in again
               </button>
@@ -315,11 +315,11 @@ export default function ProfilePage() {
           {/* Profile card */}
           <div className="bg-white rounded-3xl border border-black/[0.06] shadow-sm overflow-hidden">
             {/* Header gradient */}
-            <div className="h-20 bg-gradient-to-r from-[#6C4CF1]/10 via-[#8B5CF6]/8 to-[#EC4899]/5" />
+            <div className="h-20 bg-gradient-to-r from-[#5B3FD9]/10 via-[#8B5CF6]/8 to-[#EC4899]/5" />
             <div className="px-6 pb-6">
               {/* Avatar */}
               <div className="flex items-end justify-between -mt-10 mb-4">
-                <div className="w-20 h-20 rounded-3xl bg-gradient-to-br from-[#6C4CF1] to-[#8B5CF6] flex items-center justify-center text-2xl font-black text-white border-4 border-white shadow-lg">
+                <div className="w-20 h-20 rounded-3xl bg-gradient-to-br from-[#5B3FD9] to-[#8B5CF6] flex items-center justify-center text-2xl font-black text-white border-4 border-white shadow-lg">
                   {initials}
                 </div>
                 <button onClick={onSignOut}
@@ -332,7 +332,7 @@ export default function ProfilePage() {
                   Sign out
                 </button>
               </div>
-              <h1 className="text-xl font-black text-[#0A0A0F]">{me.fullName}</h1>
+              <h1 className="text-xl font-display font-normal text-[#0A0A0F]">{me.fullName}</h1>
               <p className="text-sm text-neutral-800">{me.email}</p>
               <div className="flex items-center gap-2 mt-3">
                 <span className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold ${roleMeta.color}`}>
@@ -378,7 +378,7 @@ export default function ProfilePage() {
               <p className="text-xs font-black uppercase tracking-wide text-neutral-800 mb-4">Earnings</p>
               <div className="grid grid-cols-3 gap-4">
                 <div>
-                  <p className="text-2xl font-black text-[#6C4CF1]">{payout.pendingThisWeek.toLocaleString()} <span className="text-sm font-bold">{payout.currency}</span></p>
+                  <p className="text-2xl font-black text-[#5B3FD9]">{payout.pendingThisWeek.toLocaleString()} <span className="text-sm font-bold">{payout.currency}</span></p>
                   <p className="text-xs text-neutral-800 mt-0.5">This week</p>
                 </div>
                 <div>
@@ -421,7 +421,7 @@ export default function ProfilePage() {
                     <button
                       onClick={() => actOnRequest(b.id, "accept")}
                       disabled={actingId !== null}
-                      className="flex-1 rounded-full bg-[#6C4CF1] text-white font-bold py-2 text-sm hover:bg-[#5a3dd4] transition-colors disabled:opacity-50"
+                      className="flex-1 rounded-full bg-[#5B3FD9] text-white font-bold py-2 text-sm hover:bg-[#4A32B8] transition-colors disabled:opacity-50"
                     >
                       {actingId === b.id ? "…" : "Accept"}
                     </button>
@@ -446,8 +446,8 @@ export default function ProfilePage() {
               </div>
               {activeBookings.map((b) => (
                 <div key={b.id} className="flex items-center gap-4 px-6 py-4 border-b border-black/[0.04] last:border-0 hover:bg-neutral-50 transition-colors">
-                  <div className="w-10 h-10 rounded-2xl bg-[#6C4CF1]/8 flex items-center justify-center shrink-0">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6C4CF1" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                  <div className="w-10 h-10 rounded-2xl bg-[#5B3FD9]/8 flex items-center justify-center shrink-0">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B3FD9" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
                     </svg>
                   </div>
@@ -456,7 +456,7 @@ export default function ProfilePage() {
                     <p className="text-xs text-neutral-800">{new Date(b.scheduledAt).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}</p>
                   </div>
                   <div className="flex items-center gap-2 shrink-0">
-                    <span className="text-sm font-bold text-[#6C4CF1]">{b.price} {b.currency}</span>
+                    <span className="text-sm font-bold text-[#5B3FD9]">{b.price} {b.currency}</span>
                     <span className={`px-2 py-0.5 rounded-full text-xs font-bold ${STATUS_COLOR[b.status] ?? "bg-neutral-100 text-neutral-700"}`}>{b.status}</span>
                     <button
                       onClick={() => openCancel(b)}
@@ -478,9 +478,9 @@ export default function ProfilePage() {
                 <p className="mt-1 text-sm text-neutral-600">{cancelFor.tourTitle ?? `Booking #${cancelFor.id}`}</p>
                 {cancelPreview ? (
                   cancelPreview.allowed ? (
-                    <div className="mt-4 rounded-2xl bg-[#6C4CF1]/[0.06] border border-[#6C4CF1]/20 px-4 py-3">
+                    <div className="mt-4 rounded-2xl bg-[#5B3FD9]/[0.06] border border-[#5B3FD9]/20 px-4 py-3">
                       <p className="text-sm text-neutral-700">
-                        Refund: <b className="text-[#6C4CF1]">{cancelPreview.refundAmount} {cancelPreview.currency}</b>
+                        Refund: <b className="text-[#5B3FD9]">{cancelPreview.refundAmount} {cancelPreview.currency}</b>
                         {" "}({cancelPreview.refundPct}%)
                       </p>
                     </div>
@@ -537,16 +537,16 @@ export default function ProfilePage() {
           {/* Empty state */}
           {bookings.length === 0 && (
             <div className="bg-white rounded-3xl border border-black/[0.06] shadow-sm p-10 text-center">
-              <div className="w-16 h-16 rounded-3xl bg-[#6C4CF1]/8 flex items-center justify-center mx-auto mb-4">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6C4CF1" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <div className="w-16 h-16 rounded-3xl bg-[#5B3FD9]/8 flex items-center justify-center mx-auto mb-4">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#5B3FD9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
                 </svg>
               </div>
               <p className="text-base font-black text-[#0A0A0F]">No tours yet</p>
               <p className="text-sm text-neutral-800 mt-1">Download the app to book your first tour</p>
               <Link href="/#download"
-                className="mt-5 inline-flex items-center gap-2 rounded-2xl bg-[#6C4CF1] text-white font-bold px-6 py-3 text-sm hover:bg-[#5a3dd4] transition-colors"
-                style={{ boxShadow: "0 4px 16px rgba(108,76,241,0.25)" }}>
+                className="mt-5 inline-flex items-center gap-2 rounded-2xl bg-[#5B3FD9] text-white font-bold px-6 py-3 text-sm hover:bg-[#4A32B8] transition-colors"
+                style={{ boxShadow: "0 4px 16px rgba(91,63,217,0.25)" }}>
                 Download app →
               </Link>
             </div>
@@ -662,13 +662,13 @@ export default function ProfilePage() {
           </div>
 
           {/* App download CTA */}
-          <div className="bg-gradient-to-r from-[#6C4CF1] to-[#8B5CF6] rounded-3xl p-6 flex items-center gap-5">
+          <div className="bg-gradient-to-r from-[#5B3FD9] to-[#8B5CF6] rounded-3xl p-6 flex items-center gap-5">
             <div className="flex-1">
               <p className="text-white font-black text-base">Get the full experience</p>
               <p className="text-white/70 text-xs mt-1 leading-5">Real-time guide matching, live tracking, in-app chat and more — only in the app.</p>
             </div>
             <Link href="/#download"
-              className="shrink-0 bg-white text-[#6C4CF1] font-black text-sm px-5 py-2.5 rounded-2xl hover:bg-white/90 transition-colors whitespace-nowrap">
+              className="shrink-0 bg-white text-[#5B3FD9] font-black text-sm px-5 py-2.5 rounded-2xl hover:bg-white/90 transition-colors whitespace-nowrap">
               Download →
             </Link>
           </div>

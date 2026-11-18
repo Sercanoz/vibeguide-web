@@ -118,7 +118,7 @@ export default function ModePageView({ mode: rawMode, nonce }: { mode: Mode; non
             >
               {mode.emoji} {mode.tagline}
             </span>
-            <h1 className="mt-5 text-5xl md:text-6xl font-black tracking-tight leading-[1.02]">
+            <h1 className="mt-5 text-5xl md:text-6xl font-display font-normal tracking-[-0.01em] leading-[1.02]">
               {mode.name}
             </h1>
             <p className="mt-5 text-lg leading-8 text-neutral-700 max-w-md">
@@ -232,7 +232,7 @@ export default function ModePageView({ mode: rawMode, nonce }: { mode: Mode; non
               >
                 <span className="text-3xl">{o.emoji}</span>
                 <span>
-                  <span className="block font-black text-[#0A0A0F] group-hover:text-[#6C4CF1] transition-colors">{o.name}</span>
+                  <span className="block font-black text-[#0A0A0F] group-hover:text-[#5B3FD9] transition-colors">{o.name}</span>
                   <span className="block text-sm text-neutral-800">{o.tagline}</span>
                 </span>
               </Link>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { serverFetch } from "@/lib/api";
-import HomeClient, { type PopularTour, type Testimonial } from "./HomeClient";
+import HomeClient, { type PopularTour, type Testimonial, type HomeStats } from "./HomeClient";
 
 const SITE = "https://www.vibeguideapp.com";
 
@@ -23,7 +23,7 @@ async function getPopularTours(): Promise<PopularTour[]> {
     const r = await serverFetch(`/api/tours?locale=en`, { next: { revalidate: 300 } });
     if (!r.ok) return [];
     const data = (await r.json()) as PopularTour[];
-    return Array.isArray(data) ? data.slice(0, 10) : [];
+    return Array.isArray(data) ? data : [];
   } catch {
     return [];
   }
@@ -41,10 +41,20 @@ async function getFeaturedReviews(): Promise<Testimonial[]> {
 }
 
 export default async function HomePage() {
-  const [initialTours, initialReviews] = await Promise.all([
+  const [allTours, initialReviews] = await Promise.all([
     getPopularTours(),
     getFeaturedReviews(),
   ]);
 
-  return <HomeClient initialTours={initialTours} initialReviews={initialReviews} />;
+  // Güven satırı rakamları — yalnız gerçek veriden (tur listesi). Uydurma sayı yok:
+  // backend boş/kapalıysa 0 döner ve HomeClient ilgili parçayı göstermez.
+  const reviewCount = allTours.reduce((n, t) => n + (t.reviewCount ?? 0), 0);
+  const ratingSum = allTours.reduce((n, t) => n + (t.reviewCount ? (t.rating ?? 0) * t.reviewCount : 0), 0);
+  const stats: HomeStats = {
+    tourCount: allTours.length,
+    reviewCount,
+    avgRating: reviewCount > 0 ? ratingSum / reviewCount : 0,
+  };
+
+  return <HomeClient initialTours={allTours.slice(0, 10)} initialReviews={initialReviews} stats={stats} />;
 }

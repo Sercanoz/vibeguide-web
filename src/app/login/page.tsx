@@ -112,7 +112,7 @@ function LoginInner() {
   if (checking) {
     return (
       <main className="min-h-screen bg-white flex items-center justify-center">
-        <div className="w-8 h-8 rounded-full border-2 border-[#6C4CF1] border-t-transparent animate-spin" />
+        <div className="w-8 h-8 rounded-full border-2 border-[#5B3FD9] border-t-transparent animate-spin" />
       </main>
     );
   }
@@ -120,7 +120,7 @@ function LoginInner() {
   return (
     <main className="min-h-screen bg-white flex items-center justify-center px-4">
       {/* Ambient */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#6C4CF1]/6 to-transparent rounded-full blur-[80px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#5B3FD9]/6 to-transparent rounded-full blur-[80px] pointer-events-none" />
 
       <div className="relative w-full max-w-md">
         {/* Logo */}
@@ -165,7 +165,7 @@ function LoginInner() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors"
+                className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#5B3FD9] transition-colors"
                 placeholder="you@example.com"
               />
             </div>
@@ -176,7 +176,7 @@ function LoginInner() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors"
+                className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#5B3FD9] transition-colors"
                 placeholder="••••••••"
               />
             </div>
@@ -190,15 +190,15 @@ function LoginInner() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full rounded-2xl bg-[#6C4CF1] text-white font-bold py-3 text-sm hover:bg-[#5a3dd4] transition-colors disabled:opacity-50"
-              style={{ boxShadow: "0 4px 16px rgba(108,76,241,0.25)" }}
+              className="w-full rounded-2xl bg-[#5B3FD9] text-white font-bold py-3 text-sm hover:bg-[#4A32B8] transition-colors disabled:opacity-50"
+              style={{ boxShadow: "0 4px 16px rgba(91,63,217,0.25)" }}
             >
               {loading ? "Signing in…" : "Sign in"}
             </button>
           </form>
 
           <p className="mt-4 text-center text-xs text-neutral-800">
-            <button type="button" onClick={onForgotPassword} className="text-[#6C4CF1] font-semibold hover:underline">Forgot password?</button>
+            <button type="button" onClick={onForgotPassword} className="text-[#5B3FD9] font-semibold hover:underline">Forgot password?</button>
           </p>
           {resetMsg && (
             <p className="mt-2 text-center text-xs text-emerald-700">{resetMsg}</p>
@@ -207,7 +207,7 @@ function LoginInner() {
 
         <p className="mt-5 text-center text-sm text-neutral-800">
           Don&apos;t have an account?{" "}
-          <a href="/register" className="text-[#6C4CF1] font-bold hover:underline">Create account</a>
+          <a href="/register" className="text-[#5B3FD9] font-bold hover:underline">Create account</a>
         </p>
       </div>
     </main>

@@ -31,7 +31,7 @@ export default function PhoneShowcase({
   return (
     <div className="relative">
       {/* ambient glow */}
-      <div className="absolute -inset-10 bg-[#6C4CF1]/25 blur-[70px] rounded-[50%] pointer-events-none" />
+      <div className="absolute -inset-10 bg-[#5B3FD9]/25 blur-[70px] rounded-[50%] pointer-events-none" />
 
       {/* ── Outer metallic rail (siyah titanyum) ── */}
       <div

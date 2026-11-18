@@ -1,10 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { useT } from "./LanguageProvider";
 import { navbarI18n } from "@/lib/navbar-i18n";
-import LanguageSwitcher from "./LanguageSwitcher";
-import CurrencySwitcher from "./CurrencySwitcher";
+import LocaleCurrencyMenu from "./LocaleCurrencyMenu";
 import AuthModal from "./AuthModal";
 import { fbAuth, signOut, buildAuthHeaders, type User } from "@/lib/firebase-client";
 import { API_BASE_URL } from "@/lib/api";
@@ -85,7 +85,7 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
     { href: "/tours", label: nb.tours, key: "tours" },
     ...DESTINATIONS.map((d) => ({
       href: cityGuideHref(d.slug, locale),
-      label: `${d.emoji}  ${d.name}`,
+      label: d.name,
     })),
   ];
 
@@ -106,20 +106,19 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
       <nav
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           scrolled
-            ? "bg-white/95 backdrop-blur-xl border-b border-black/[0.07] shadow-[0_2px_20px_rgba(0,0,0,0.06)]"
-            : "bg-gradient-to-b from-white via-white/95 to-white/80 backdrop-blur-xl border-b border-black/[0.04]"
+            ? "bg-white border-b border-black/[0.08] shadow-[0_1px_8px_rgba(0,0,0,0.04)]"
+            : "bg-white border-b border-black/[0.08]"
         }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 h-16">
 
           {/* Logo */}
-          <a href="/" className="group flex items-center gap-2.5 text-xl font-black tracking-tight text-[#0A0A0F] hover:text-[#6C4CF1] transition-colors duration-200">
+          <Link href="/" className="group flex items-center gap-2.5 text-xl font-bold tracking-tight text-[#0A0A0F]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/vibeguide-icon.png" alt="VibeGuide" width={32} height={32}
-              className="transition-transform duration-200 group-hover:scale-110"
               style={{ mixBlendMode: "multiply" }} />
             <span className="transition-colors duration-200">VibeGuide</span>
-          </a>
+          </Link>
 
           {/* Desktop links + mega menus */}
           <div className="hidden md:flex items-center gap-1 text-sm font-medium"
@@ -127,15 +126,15 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
 
             {/* Tours — mega menu */}
             <div className="relative" onMouseEnter={() => setOpenMenu("tours")}>
-              <a href="/tours"
-                className={`flex items-center gap-1 px-3.5 py-2 rounded-xl font-medium transition-all ${activePage === "tours" ? "text-[#6C4CF1] bg-[#6C4CF1]/8 font-semibold" : "text-neutral-800 hover:text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.06]"}`}>
+              <Link href="/tours"
+                className={`flex items-center gap-1 px-3.5 py-2 rounded-lg font-medium transition-all ${activePage === "tours" ? "text-black bg-black/[0.05] font-semibold" : "text-neutral-800 hover:text-black hover:bg-black/[0.04]"}`}>
                 {nb.tours}
                 <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={`transition-transform ${openMenu === "tours" ? "rotate-180" : ""}`}><path d="M6 9l6 6 6-6"/></svg>
-              </a>
+              </Link>
               {openMenu === "tours" && (
                 <div className="absolute left-0 top-full pt-2">
-                  <div className="w-[420px] bg-white rounded-2xl border border-black/[0.06] shadow-xl p-5 animate-[fadeSlideUp_0.15s_ease_both]">
-                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-neutral-800 mb-2">{nb.browseByInterest}</p>
+                  <div className="w-[420px] bg-white rounded-xl border border-black/[0.08] shadow-lg p-5 animate-[fadeSlideUp_0.15s_ease_both]">
+                    <p className="text-xs font-semibold text-neutral-500 mb-2 px-3">{nb.browseByInterest}</p>
                     <div className="grid grid-cols-2 gap-1">
                       {[
                         { key: "history", label: nb.catHistory, icon: "🏛️" },
@@ -145,15 +144,15 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
                         { key: "adventure", label: nb.catAdventure, icon: "⛰️" },
                         { key: "art", label: nb.catArt, icon: "🎨" },
                       ].map((c) => (
-                        <a key={c.key} href={`/tours?category=${c.key}`}
-                          className="flex items-center gap-2.5 px-3 py-2 rounded-xl hover:bg-[#F7F7FB] transition-colors text-sm font-semibold text-[#0A0A0F]">
-                          <span className="text-base">{c.icon}</span>{c.label}
-                        </a>
+                        <Link key={c.key} href={`/tours?category=${c.key}`}
+                          className="flex items-center gap-2.5 px-3 py-2 rounded-xl hover:bg-neutral-50 transition-colors text-sm font-medium text-[#0A0A0F]">
+                          {c.label}
+                        </Link>
                       ))}
                     </div>
-                    <a href="/tours" className="mt-3 flex items-center justify-center gap-1.5 rounded-xl bg-[#6C4CF1] text-white text-sm font-bold py-2.5 hover:bg-[#5a3dd4] transition-colors">
+                    <Link href="/tours" className="mt-3 flex items-center justify-center gap-1.5 rounded-lg border border-black/10 text-[#0A0A0F] text-sm font-semibold py-2.5 hover:bg-neutral-50 transition-colors">
                       {nb.seeAllTours} →
-                    </a>
+                    </Link>
                   </div>
                 </div>
               )}
@@ -161,58 +160,56 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
 
             {/* Destinations — dropdown */}
             <div className="relative" onMouseEnter={() => setOpenMenu("destinations")}>
-              <a href="/tours"
-                className="flex items-center gap-1 px-3.5 py-2 rounded-xl font-medium text-neutral-800 hover:text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.06] transition-all">
+              <Link href="/tours"
+                className="flex items-center gap-1 px-3.5 py-2 rounded-lg font-medium text-neutral-800 hover:text-black hover:bg-black/[0.04] transition-all">
                 {nb.destinations}
                 <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={`transition-transform ${openMenu === "destinations" ? "rotate-180" : ""}`}><path d="M6 9l6 6 6-6"/></svg>
-              </a>
+              </Link>
               {openMenu === "destinations" && (
                 <div className="absolute left-0 top-full pt-2">
-                  <div className="w-[260px] bg-white rounded-2xl border border-black/[0.06] shadow-xl p-3 animate-[fadeSlideUp_0.15s_ease_both]">
+                  <div className="w-[260px] bg-white rounded-xl border border-black/[0.08] shadow-lg p-3 animate-[fadeSlideUp_0.15s_ease_both]">
                     <div className="space-y-0.5">
                       {DESTINATIONS.map((d) => (
-                        <a key={d.slug} href={cityGuideHref(d.slug, locale)}
-                          className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-[#F7F7FB] transition-colors text-sm font-semibold text-[#0A0A0F]">
-                          <span className="text-lg">{d.emoji}</span>{d.name}
-                        </a>
+                        <Link key={d.slug} href={cityGuideHref(d.slug, locale)}
+                          className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-neutral-50 transition-colors text-sm font-medium text-[#0A0A0F]">
+                          {d.name}
+                        </Link>
                       ))}
                     </div>
-                    <a href="/tours" className="mt-2 flex items-center justify-center gap-1.5 rounded-xl bg-[#6C4CF1] text-white text-sm font-bold py-2.5 hover:bg-[#5a3dd4] transition-colors">
+                    <Link href="/tours" className="mt-2 flex items-center justify-center gap-1.5 rounded-lg border border-black/10 text-[#0A0A0F] text-sm font-semibold py-2.5 hover:bg-neutral-50 transition-colors">
                       {nb.seeAllTours} →
-                    </a>
+                    </Link>
                   </div>
                 </div>
               )}
             </div>
 
             {/* Attractions — site-wide iç link (SEO: attraction sayfaları için) */}
-            <a href={locale === "en" ? "/attractions/en" : `/attractions/${locale}`}
-              className="px-3.5 py-2 rounded-xl font-medium text-neutral-800 hover:text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.06] transition-all">
+            <Link href={locale === "en" ? "/attractions/en" : `/attractions/${locale}`}
+              className="px-3.5 py-2 rounded-lg font-medium text-neutral-800 hover:text-black hover:bg-black/[0.04] transition-all">
               {nb.attractions ?? "Attractions"}
-            </a>
-
-            {/* Blog — site-wide iç link (SEO: blog postları için) */}
-            <a href={locale === "en" ? "/blog/en" : `/blog/${locale}`}
-              className="px-3.5 py-2 rounded-xl font-medium text-neutral-800 hover:text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.06] transition-all">
-              {nb.blog ?? "Blog"}
-            </a>
+            </Link>
           </div>
 
           {/* Right side — md+ ekranda SABİT genişlik + sağa yaslı: auth durumu
              (loading / avatar / butonlar) ne olursa olsun blok genişliği hiç
              değişmez → orta linkler asla kaymaz (layout shift fix). */}
-          <div className="flex items-center gap-2 justify-end md:w-[300px]">
-            <LanguageSwitcher />
-            <div className="hidden sm:block"><CurrencySwitcher /></div>
+          <div className="flex items-center gap-1 justify-end md:w-[300px]">
+            {/* Arz tarafı: rehber başvurusu bar'da görünür (eskiden yalnız footer'daydı). */}
+            <Link href="/register/guide"
+              className="hidden lg:block whitespace-nowrap px-2.5 py-2 rounded-lg text-[13px] font-semibold text-neutral-800 hover:text-black hover:bg-black/[0.04] transition-colors">
+              {nb.becomeGuide}
+            </Link>
+            <LocaleCurrencyMenu />
 
             {isLoggedIn ? (
               /* Avatar dropdown */
               <div className="relative" ref={userMenuRef}>
                 <button
                   onClick={() => setUserMenuOpen(v => !v)}
-                  className="flex items-center gap-2 rounded-full border border-black/10 pl-1 pr-3 py-1 hover:border-[#6C4CF1]/30 hover:shadow-sm transition-all duration-200"
+                  className="flex items-center gap-2 rounded-full border border-black/10 pl-1 pr-3 py-1 hover:bg-neutral-50 transition-colors"
                 >
-                  <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#6C4CF1] to-[#8B5CF6] flex items-center justify-center text-[11px] font-black text-white">
+                  <div className="w-7 h-7 rounded-full bg-neutral-900 flex items-center justify-center text-[11px] font-semibold text-white">
                     {initials}
                   </div>
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
@@ -222,9 +219,9 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
                 </button>
 
                 {userMenuOpen && (
-                  <div className="absolute right-0 top-full mt-2 w-52 bg-white rounded-2xl border border-black/[0.06] shadow-xl overflow-hidden z-50 animate-[fadeSlideUp_0.15s_ease_both]">
+                  <div className="absolute right-0 top-full mt-2 w-52 bg-white rounded-xl border border-black/[0.08] shadow-lg overflow-hidden z-50 animate-[fadeSlideUp_0.15s_ease_both]">
                     <div className="px-4 py-3 border-b border-black/[0.06] bg-neutral-50/50">
-                      <p className="text-xs font-black text-[#0A0A0F] truncate">{(user as User).displayName ?? (user as User).email}</p>
+                      <p className="text-xs font-semibold text-[#0A0A0F] truncate">{(user as User).displayName ?? (user as User).email}</p>
                       <p className="text-[10px] text-neutral-800 truncate mt-0.5">{(user as User).email}</p>
                     </div>
                     {[
@@ -233,13 +230,13 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
                       // Grup turları — web'de pool özelliği yeni eklendi.
                       { href: "/pools", label: "Group tours", icon: <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>, icon2: <circle cx="9" cy="7" r="4"/> },
                     ].map(({ href, label, icon, icon2 }) => (
-                      <a key={href} href={href} onClick={() => setUserMenuOpen(false)}
+                      <Link key={href} href={href} onClick={() => setUserMenuOpen(false)}
                         className="flex items-center gap-3 px-4 py-2.5 text-sm font-semibold text-[#0A0A0F] hover:bg-neutral-50 transition-colors">
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" className="text-neutral-800">
                           {icon}{icon2 && icon2}
                         </svg>
                         {label}
-                      </a>
+                      </Link>
                     ))}
                     <div className="border-t border-black/[0.06]">
                       <button onClick={() => { signOut(); setUserMenuOpen(false); }}
@@ -260,17 +257,10 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
                  (data-authed) paint ÖNCESİ doğru olanı seçer → login'de "Sign in" flash yok. */
               <>
                 <span className="nav-auth-guest contents">
+                  {/* Tek giriş butonu — kayıt, AuthModal'daki "Kayıt ol" sekmesinde. */}
                   <button onClick={() => setAuthModal("signin")}
-                    className="hidden md:block whitespace-nowrap text-[13px] font-semibold text-neutral-700 hover:text-[#6C4CF1] px-2.5 py-1.5 rounded-lg hover:bg-[#6C4CF1]/[0.06] transition-all duration-150">
+                    className="hidden md:block ml-1 whitespace-nowrap rounded-full border border-black/15 px-4 py-2 text-[13px] font-semibold text-[#0A0A0F] hover:bg-neutral-50 hover:border-black/25 transition-colors">
                     {nb.signIn}
-                  </button>
-                  <button onClick={() => setAuthModal("register")}
-                    className="hidden md:flex items-center gap-1 whitespace-nowrap rounded-full bg-[#6C4CF1] px-3.5 py-1.5 text-[13px] font-semibold text-white hover:bg-[#5a3dd4] transition-all duration-150 hover:scale-[1.03]"
-                    style={{ boxShadow: "0 2px 12px rgba(108,76,241,0.3)" }}>
-                    {nb.startExploring}
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
                   </button>
                 </span>
                 <div className="nav-auth-skel w-9 h-9 rounded-full bg-neutral-100 animate-pulse" aria-hidden="true" />
@@ -298,45 +288,48 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
           <div className="mx-4 mb-4 bg-white rounded-3xl border border-black/[0.06] shadow-xl overflow-hidden flex flex-col max-h-[calc(85vh-1rem)]">
             <div className="px-2 py-2 space-y-0.5 overflow-y-auto overscroll-contain flex-1 min-h-0">
               {navLinks.map((l) => (
-                <a key={l.href} href={l.href} onClick={() => setMenuOpen(false)}
+                <Link key={l.href} href={l.href} onClick={() => setMenuOpen(false)}
                   className={`flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-semibold transition-colors ${
                     activePage === "tours" && "key" in l && l.key === "tours"
-                      ? "bg-[#6C4CF1]/8 text-[#6C4CF1]"
+                      ? "bg-black/[0.05] text-black"
                       : "text-neutral-800 hover:bg-neutral-50 hover:text-black"
                   }`}>
                   {l.label}
-                </a>
+                </Link>
               ))}
 
               {/* Attractions + Blog — masaüstünde vardı, mobilde yoktu.
                   Hem kullanıcı erişimi hem SEO iç linklemesi için burada da. */}
-              <a
+              <Link
                 href={locale === "en" ? "/attractions/en" : `/attractions/${locale}`}
                 onClick={() => setMenuOpen(false)}
                 className="flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-semibold text-neutral-800 hover:bg-neutral-50 hover:text-black transition-colors"
               >
                 {nb.attractions ?? "Attractions"}
-              </a>
-              <a
+              </Link>
+              <Link
                 href={locale === "en" ? "/blog/en" : `/blog/${locale}`}
                 onClick={() => setMenuOpen(false)}
                 className="flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-semibold text-neutral-800 hover:bg-neutral-50 hover:text-black transition-colors"
               >
                 {nb.blog ?? "Blog"}
-              </a>
-            </div>
-            <div className="border-t border-black/[0.06] px-4 py-3 sm:hidden flex items-center justify-between shrink-0 bg-white">
-              <span className="text-xs font-bold text-neutral-800 uppercase tracking-wider">{locale === "tr" ? "Para Birimi" : "Currency"}</span>
-              <CurrencySwitcher />
+              </Link>
+              <Link
+                href="/register/guide"
+                onClick={() => setMenuOpen(false)}
+                className="flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-semibold text-neutral-800 hover:bg-neutral-50 hover:text-black transition-colors"
+              >
+                {nb.becomeGuide}
+              </Link>
             </div>
             {/* shrink-0: liste uzun olsa da bu blok asla kırpılmasın. */}
             <div className="border-t border-black/[0.06] px-3 py-3 space-y-2 shrink-0 bg-white">
               {isLoggedIn ? (
                 <>
-                  <a href="/profile" onClick={() => setMenuOpen(false)}
+                  <Link href="/profile" onClick={() => setMenuOpen(false)}
                     className="flex items-center justify-center gap-2 rounded-2xl bg-neutral-50 border border-black/10 px-5 py-3 text-sm font-bold text-[#0A0A0F]">
                     {nb.myProfile}
-                  </a>
+                  </Link>
                   <button onClick={() => { signOut(); setMenuOpen(false); }}
                     className="w-full flex items-center justify-center rounded-2xl border border-red-100 bg-red-50 text-red-500 px-5 py-3 text-sm font-bold">
                     {nb.signOut}
@@ -345,16 +338,8 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
               ) : (
                 <>
                   <button onClick={() => { setMenuOpen(false); setAuthModal("signin"); }}
-                    className="w-full flex items-center justify-center rounded-2xl border border-black/10 px-5 py-3 text-sm font-bold text-[#0A0A0F] hover:bg-neutral-50 transition-colors">
+                    className="w-full flex items-center justify-center rounded-2xl bg-[#0A0A0F] px-5 py-3 text-sm font-semibold text-white hover:bg-black transition-colors">
                     {nb.signIn}
-                  </button>
-                  <button onClick={() => { setMenuOpen(false); setAuthModal("register"); }}
-                    className="w-full flex items-center justify-center gap-2 rounded-2xl bg-[#6C4CF1] px-5 py-3 text-sm font-bold text-white"
-                    style={{ boxShadow: "0 4px 12px rgba(108,76,241,0.3)" }}>
-                    {nb.startExploring}
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
                   </button>
                 </>
               )}

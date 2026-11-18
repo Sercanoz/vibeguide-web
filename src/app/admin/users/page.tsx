@@ -95,7 +95,7 @@ export default function UsersPage() {
 
   return (
     <div className="max-w-5xl mx-auto px-5 sm:px-8 py-10">
-      <h1 className="text-2xl font-black tracking-tight text-vg-ink">User Management</h1>
+      <h1 className="text-2xl font-display font-normal tracking-[-0.01em] text-vg-ink">User Management</h1>
       <p className="mt-1 text-sm text-vg-muted">Search users, change their roles or delete them.</p>
 
       {flash && (
@@ -155,7 +155,7 @@ export default function UsersPage() {
               {users.map((u) => (
                 <tr key={u.id} className="hover:bg-vg-bg-soft transition-colors">
                   <td className="px-4 py-3 font-semibold text-vg-ink whitespace-nowrap">
-                    <Link href={`/admin/users/${u.id}`} className="hover:text-[#6C4CF1] transition-colors">{u.fullName}</Link>
+                    <Link href={`/admin/users/${u.id}`} className="hover:text-[#5B3FD9] transition-colors">{u.fullName}</Link>
                   </td>
                   <td className="px-4 py-3 text-vg-muted hidden sm:table-cell">{u.email}</td>
                   <td className="px-4 py-3">

@@ -105,7 +105,7 @@ export default function DisputesPage() {
 
   return (
     <div className="max-w-5xl mx-auto px-5 sm:px-8 py-10">
-      <h1 className="text-2xl font-black tracking-tight text-vg-ink">Disputes</h1>
+      <h1 className="text-2xl font-display font-normal tracking-[-0.01em] text-vg-ink">Disputes</h1>
       <p className="mt-1 text-sm text-vg-muted">Resolve VibeNow booking and tour pool disputes.</p>
       {flash && (
         <div className="mt-3 rounded-xl bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-800 font-semibold">

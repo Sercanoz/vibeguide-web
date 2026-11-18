@@ -104,7 +104,7 @@ export default async function AttractionsHubPage({ params }: Props) {
             <span className="mx-1.5" aria-hidden="true">›</span>
             <span className="text-neutral-800">{t.h1}</span>
           </nav>
-          <h1 className="text-4xl md:text-5xl font-black tracking-tight">{t.h1}</h1>
+          <h1 className="text-4xl md:text-5xl font-display font-normal tracking-[-0.01em]">{t.h1}</h1>
           <p className="mt-4 max-w-2xl text-[17px] leading-8 text-neutral-700">{t.intro}</p>
         </div>
       </section>
@@ -116,7 +116,7 @@ export default async function AttractionsHubPage({ params }: Props) {
             <div className="mx-auto max-w-5xl px-6">
               <h2 className="text-xl font-black mb-5 tracking-tight">
                 {href ? (
-                  <Link href={href} className="hover:text-[#6C4CF1] transition-colors">{g.city}</Link>
+                  <Link href={href} className="hover:text-[#5B3FD9] transition-colors">{g.city}</Link>
                 ) : (
                   g.city
                 )}
@@ -126,12 +126,12 @@ export default async function AttractionsHubPage({ params }: Props) {
                   <Link
                     key={a.slug}
                     href={`/attractions/${lang}/${a.slug}`}
-                    className="group flex items-center gap-4 rounded-2xl bg-white border border-black/[0.06] p-4 hover:border-[#6C4CF1]/30 transition-colors"
+                    className="group flex items-center gap-4 rounded-2xl bg-white border border-black/[0.06] p-4 hover:border-[#5B3FD9]/30 transition-colors"
                   >
                     <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl">
                       <Image src={a.image} alt={a.i18n[lang].name} fill sizes="56px" className="object-cover" />
                     </div>
-                    <span className="font-black text-[#0A0A0F] group-hover:text-[#6C4CF1] transition-colors leading-tight">
+                    <span className="font-black text-[#0A0A0F] group-hover:text-[#5B3FD9] transition-colors leading-tight">
                       {a.i18n[lang].name}
                     </span>
                   </Link>

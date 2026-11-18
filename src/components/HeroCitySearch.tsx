@@ -34,7 +34,7 @@ function norm(s: string): string {
 }
 
 // Pin ikonu (bar + dropdown'da ortak kullanılıyor).
-function PinIcon({ size = 20, color = "#6C4CF1" }: { size?: number; color?: string }) {
+function PinIcon({ size = 20, color = "#5B3FD9" }: { size?: number; color?: string }) {
   return (
     <svg
       width={size}
@@ -56,7 +56,7 @@ function PinIcon({ size = 20, color = "#6C4CF1" }: { size?: number; color?: stri
 // Şehir baş harfiyle gradyan avatar — dropdown'da görsel ayrım için.
 function CityAvatar({ label }: { label: string }) {
   return (
-    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-[#6C4CF1] to-[#EC4899] text-sm font-black text-white shrink-0">
+    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-[#5B3FD9] to-[#EC4899] text-sm font-black text-white shrink-0">
       {label.charAt(0).toUpperCase()}
     </span>
   );
@@ -189,7 +189,7 @@ export default function HeroCitySearch({ onDark = false }: { onDark?: boolean } 
       <div
         className={`flex items-center gap-2 rounded-full border bg-white p-1.5 pl-5 transition-all ${
           open
-            ? "border-[#6C4CF1]/50 shadow-[0_8px_40px_rgba(108,76,241,0.18)]"
+            ? "border-[#5B3FD9]/50 shadow-[0_8px_40px_rgba(91,63,217,0.18)]"
             : onDark
               ? "border-white/30 shadow-[0_12px_50px_rgba(0,0,0,0.35)]"
               : "border-black/[0.08] shadow-[0_4px_24px_rgba(0,0,0,0.06)]"
@@ -214,8 +214,8 @@ export default function HeroCitySearch({ onDark = false }: { onDark?: boolean } 
         <button
           onClick={() => go()}
           aria-label={ux.explore}
-          className="shrink-0 flex h-12 w-12 items-center justify-center rounded-full bg-[#6C4CF1] text-white transition-transform hover:scale-[1.06] active:scale-95"
-          style={{ boxShadow: "0 4px 20px rgba(108,76,241,0.4)" }}
+          className="shrink-0 flex h-12 w-12 items-center justify-center rounded-full bg-[#5B3FD9] text-white transition-transform hover:scale-[1.06] active:scale-95"
+          style={{ boxShadow: "0 4px 20px rgba(91,63,217,0.4)" }}
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <circle cx="11" cy="11" r="7" />
@@ -249,7 +249,7 @@ export default function HeroCitySearch({ onDark = false }: { onDark?: boolean } 
               onMouseEnter={() => setActive(i)}
               onClick={() => go(d)}
               className={`flex w-full items-center justify-between gap-3 px-5 py-3 text-left transition-colors ${
-                i === active ? "bg-[#6C4CF1]/[0.06]" : "hover:bg-neutral-50"
+                i === active ? "bg-[#5B3FD9]/[0.06]" : "hover:bg-neutral-50"
               }`}
             >
               <span className="flex items-center gap-3">

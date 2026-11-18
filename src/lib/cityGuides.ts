@@ -76,7 +76,7 @@ export type CityGuide = {
 };
 
 // Shared mode accent colors (language-independent).
-const C = { now: "bg-[#6C4CF1]", squad: "bg-[#059669]", private: "bg-[#D97706]" };
+const C = { now: "bg-[#5B3FD9]", squad: "bg-[#059669]", private: "bg-[#D97706]" };
 
 // ─── ISTANBUL ────────────────────────────────────────────────────────────────
 const ISTANBUL: CityGuide = {

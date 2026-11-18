@@ -198,7 +198,7 @@ export default function RegisterGuidePage() {
   if (checking) {
     return (
       <main className="min-h-screen bg-white flex items-center justify-center">
-        <div className="w-8 h-8 rounded-full border-2 border-[#6C4CF1] border-t-transparent animate-spin" />
+        <div className="w-8 h-8 rounded-full border-2 border-[#5B3FD9] border-t-transparent animate-spin" />
       </main>
     );
   }
@@ -207,22 +207,22 @@ export default function RegisterGuidePage() {
   if (step === "pending") {
     return (
       <main className="min-h-screen bg-white flex items-center justify-center px-4">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#6C4CF1]/6 to-transparent rounded-full blur-[80px] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#5B3FD9]/6 to-transparent rounded-full blur-[80px] pointer-events-none" />
         <div className="relative w-full max-w-md text-center">
           <div className="w-16 h-16 rounded-full bg-amber-50 border border-amber-100 flex items-center justify-center mx-auto mb-6">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D97706" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
             </svg>
           </div>
-          <h1 className="text-2xl font-black text-[#0A0A0F]">Application submitted!</h1>
+          <h1 className="text-2xl font-display font-normal text-[#0A0A0F]">Application submitted!</h1>
           <p className="mt-3 text-sm text-neutral-800 leading-7 max-w-xs mx-auto">
             Your guide application is under review. Our team will verify your badge and approve your account within <strong className="text-[#0A0A0F]">1–2 business days</strong>.
           </p>
           <p className="mt-2 text-sm text-neutral-800">We&apos;ll email you at <strong className="text-[#0A0A0F]">{email}</strong> once approved.</p>
           <a
             href="/"
-            className="mt-8 inline-block rounded-2xl bg-[#6C4CF1] text-white font-bold py-3 px-8 text-sm hover:bg-[#5a3dd4] transition-colors"
-            style={{ boxShadow: "0 4px 16px rgba(108,76,241,0.25)" }}
+            className="mt-8 inline-block rounded-2xl bg-[#5B3FD9] text-white font-bold py-3 px-8 text-sm hover:bg-[#4A32B8] transition-colors"
+            style={{ boxShadow: "0 4px 16px rgba(91,63,217,0.25)" }}
           >
             Back to homepage
           </a>
@@ -235,20 +235,20 @@ export default function RegisterGuidePage() {
   if (step === "verify") {
     return (
       <main className="min-h-screen bg-white flex items-center justify-center px-4">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#6C4CF1]/6 to-transparent rounded-full blur-[80px] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#5B3FD9]/6 to-transparent rounded-full blur-[80px] pointer-events-none" />
         <div className="relative w-full max-w-md text-center">
-          <div className="w-16 h-16 rounded-full bg-[#6C4CF1]/10 flex items-center justify-center mx-auto mb-6">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6C4CF1" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+          <div className="w-16 h-16 rounded-full bg-[#5B3FD9]/10 flex items-center justify-center mx-auto mb-6">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#5B3FD9" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
               <polyline points="22,6 12,13 2,6"/>
             </svg>
           </div>
-          <h1 className="text-2xl font-black text-[#0A0A0F]">Verify your email</h1>
+          <h1 className="text-2xl font-display font-normal text-[#0A0A0F]">Verify your email</h1>
           <p className="mt-2 text-sm text-neutral-800 max-w-xs mx-auto leading-6">
             We sent a link to <strong className="text-[#0A0A0F]">{email}</strong>. Click it, then come back here to submit your application.
           </p>
           {uploadProgress && (
-            <p className="mt-4 text-sm font-semibold text-[#6C4CF1]">{uploadProgress}</p>
+            <p className="mt-4 text-sm font-semibold text-[#5B3FD9]">{uploadProgress}</p>
           )}
           {error && (
             <div className="mt-4 rounded-2xl bg-red-50 border border-red-100 px-4 py-3 text-sm text-red-600 font-medium">
@@ -258,8 +258,8 @@ export default function RegisterGuidePage() {
           <button
             onClick={onVerifyDone}
             disabled={loading}
-            className="mt-8 w-full rounded-2xl bg-[#6C4CF1] text-white font-bold py-3 text-sm hover:bg-[#5a3dd4] transition-colors disabled:opacity-50"
-            style={{ boxShadow: "0 4px 16px rgba(108,76,241,0.25)" }}
+            className="mt-8 w-full rounded-2xl bg-[#5B3FD9] text-white font-bold py-3 text-sm hover:bg-[#4A32B8] transition-colors disabled:opacity-50"
+            style={{ boxShadow: "0 4px 16px rgba(91,63,217,0.25)" }}
           >
             {loading ? (uploadProgress ?? "Processing…") : "I verified my email →"}
           </button>
@@ -271,7 +271,7 @@ export default function RegisterGuidePage() {
   /* ── FORM ── */
   return (
     <main className="min-h-screen bg-white flex items-center justify-center px-4 py-12">
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#6C4CF1]/6 to-transparent rounded-full blur-[80px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#5B3FD9]/6 to-transparent rounded-full blur-[80px] pointer-events-none" />
 
       <div className="relative w-full max-w-md">
         <div className="text-center mb-8">
@@ -310,7 +310,7 @@ export default function RegisterGuidePage() {
             <div>
               <label className="text-xs font-bold text-neutral-700 mb-1.5 block">Full name *</label>
               <input type="text" required value={fullName} onChange={(e) => setFullName(e.target.value)}
-                className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors"
+                className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#5B3FD9] transition-colors"
                 placeholder="John Doe" />
             </div>
 
@@ -327,13 +327,13 @@ export default function RegisterGuidePage() {
                       <input ref={inputRef} type="file" accept="image/*" className="hidden"
                         onChange={(e) => e.target.files?.[0] && pickFile(slot, e.target.files[0])} />
                       <button type="button" onClick={() => inputRef.current?.click()}
-                        className={`w-full aspect-[3/2] rounded-2xl border-2 border-dashed flex flex-col items-center justify-center gap-1.5 transition-all hover:border-[#6C4CF1]/50 overflow-hidden ${preview ? "border-[#6C4CF1]/40" : "border-black/10"}`}>
+                        className={`w-full aspect-[3/2] rounded-2xl border-2 border-dashed flex flex-col items-center justify-center gap-1.5 transition-all hover:border-[#5B3FD9]/50 overflow-hidden ${preview ? "border-[#5B3FD9]/40" : "border-black/10"}`}>
                         {preview ? (
                           // eslint-disable-next-line @next/next/no-img-element
                           <img src={preview} alt={label} className="w-full h-full object-cover" />
                         ) : (
                           <>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6C4CF1" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5B3FD9" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
                               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
                               <polyline points="17 8 12 3 7 8"/>
                               <line x1="12" y1="3" x2="12" y2="15"/>
@@ -352,21 +352,21 @@ export default function RegisterGuidePage() {
             <div>
               <label className="text-xs font-bold text-neutral-700 mb-1.5 block">Email *</label>
               <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)}
-                className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors"
+                className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#5B3FD9] transition-colors"
                 placeholder="guide@example.com" />
             </div>
 
             <div>
               <label className="text-xs font-bold text-neutral-700 mb-1.5 block">Password *</label>
               <input type="password" required value={password} onChange={(e) => setPassword(e.target.value)}
-                className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors"
+                className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#5B3FD9] transition-colors"
                 placeholder="Min. 6 characters" />
             </div>
 
             <div>
               <label className="text-xs font-bold text-neutral-700 mb-1.5 block">Confirm password *</label>
               <input type="password" required value={password2} onChange={(e) => setPassword2(e.target.value)}
-                className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors"
+                className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#5B3FD9] transition-colors"
                 placeholder="Repeat password" />
             </div>
 
@@ -376,14 +376,14 @@ export default function RegisterGuidePage() {
                 type="checkbox"
                 checked={consent}
                 onChange={(e) => setConsent(e.target.checked)}
-                className="mt-0.5 h-4 w-4 shrink-0 accent-[#6C4CF1]"
+                className="mt-0.5 h-4 w-4 shrink-0 accent-[#5B3FD9]"
               />
               <span>
                 I agree to the{" "}
-                <a href="/terms" target="_blank" className="text-[#6C4CF1] font-semibold hover:underline">Terms</a>,{" "}
-                <a href="/privacy" target="_blank" className="text-[#6C4CF1] font-semibold hover:underline">Privacy Policy</a>{" "}
+                <a href="/terms" target="_blank" className="text-[#5B3FD9] font-semibold hover:underline">Terms</a>,{" "}
+                <a href="/privacy" target="_blank" className="text-[#5B3FD9] font-semibold hover:underline">Privacy Policy</a>{" "}
                 and{" "}
-                <a href="/kvkk" target="_blank" className="text-[#6C4CF1] font-semibold hover:underline">KVKK notice</a>, including the processing of my verification documents.
+                <a href="/kvkk" target="_blank" className="text-[#5B3FD9] font-semibold hover:underline">KVKK notice</a>, including the processing of my verification documents.
               </span>
             </label>
 
@@ -394,8 +394,8 @@ export default function RegisterGuidePage() {
             )}
 
             <button type="submit" disabled={loading || !consent}
-              className="w-full rounded-2xl bg-[#6C4CF1] text-white font-bold py-3 text-sm hover:bg-[#5a3dd4] transition-colors disabled:opacity-50"
-              style={{ boxShadow: "0 4px 16px rgba(108,76,241,0.25)" }}>
+              className="w-full rounded-2xl bg-[#5B3FD9] text-white font-bold py-3 text-sm hover:bg-[#4A32B8] transition-colors disabled:opacity-50"
+              style={{ boxShadow: "0 4px 16px rgba(91,63,217,0.25)" }}>
               {loading ? "Please wait…" : "Submit application →"}
             </button>
           </form>
@@ -403,7 +403,7 @@ export default function RegisterGuidePage() {
 
         <p className="mt-5 text-center text-sm text-neutral-800">
           Already have an account?{" "}
-          <a href="/login" className="text-[#6C4CF1] font-bold hover:underline">Sign in</a>
+          <a href="/login" className="text-[#5B3FD9] font-bold hover:underline">Sign in</a>
         </p>
       </div>
     </main>

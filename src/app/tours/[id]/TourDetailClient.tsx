@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { clientFetch } from "@/lib/api";
 import { useT } from "@/components/LanguageProvider";
@@ -11,6 +12,7 @@ import MainFooter from "@/components/MainFooter";
 import ShareButton from "@/components/ShareButton";
 import Price from "@/components/Price";
 import { languageByCode } from "@/lib/languages";
+import { STAR_PATH } from "@/components/TourCard";
 
 interface Place {
   id: number;
@@ -119,17 +121,53 @@ function formatDuration(minutes: number): string {
   return m > 0 ? `${h}h ${m}m` : `${h} hour${h > 1 ? "s" : ""}`;
 }
 
-function categoryColor(cat: string): string {
-  const map: Record<string, string> = {
-    history: "bg-amber-100 text-amber-700",
-    food: "bg-orange-100 text-orange-700",
-    nature: "bg-emerald-100 text-emerald-700",
-    culture: "bg-purple-100 text-purple-700",
-    adventure: "bg-red-100 text-red-700",
-    art: "bg-pink-100 text-pink-700",
-  };
-  return map[cat?.toLowerCase()] ?? "bg-neutral-100 text-neutral-800";
+// ─── Sayfaya özel metinler (tt'de olmayanlar). Diğer diller EN'e düşer. ───
+const DC: Record<string, {
+  tours: string; photos: string; reviewsWord: string; newTour: string; languages: string; duration: string;
+  fromPerPerson: string; selectDateErr: string; travelers: (n: number) => string; total: string;
+  trustNoCharge: string; trustLicensed: string; trustSecure: string; freeCancel: string; seeOnMap: string;
+  selectDate: string; itineraryStop: string; perPersonShort: string; groupPricing: string; showAll: string; showLess: string;
+}> = {
+  en: {
+    tours: "Tours", photos: "photos", reviewsWord: "reviews", newTour: "New experience", languages: "Languages", duration: "Duration",
+    fromPerPerson: "/ person", selectDateErr: "Choose a date to see available guides.", travelers: (n) => `${n} ${n === 1 ? "traveler" : "travelers"}`,
+    total: "Total", trustNoCharge: "You're only charged after a guide accepts your request",
+    trustLicensed: "Licensed professional guides, verified by our team", trustSecure: "Secure 3D Secure card payment",
+    freeCancel: "Free cancellation", seeOnMap: "Open in Google Maps", selectDate: "Select date", itineraryStop: "Stop",
+    perPersonShort: "per person", groupPricing: "Group pricing", showAll: "Read more", showLess: "Show less",
+  },
+  tr: {
+    tours: "Turlar", photos: "fotoğraf", reviewsWord: "değerlendirme", newTour: "Yeni deneyim", languages: "Diller", duration: "Süre",
+    fromPerPerson: "/ kişi", selectDateErr: "Müsait rehberleri görmek için bir tarih seç.", travelers: (n) => `${n} kişi`,
+    total: "Toplam", trustNoCharge: "Ücret yalnız rehber talebini kabul ettikten sonra alınır",
+    trustLicensed: "Ekibimizce doğrulanmış lisanslı profesyonel rehberler", trustSecure: "3D Secure ile güvenli kart ödemesi",
+    freeCancel: "Ücretsiz iptal", seeOnMap: "Google Haritalar'da aç", selectDate: "Tarih seç", itineraryStop: "Durak",
+    perPersonShort: "kişi başı", groupPricing: "Grup fiyatları", showAll: "Devamını oku", showLess: "Daha az göster",
+  },
+};
+
+// Rozetler — tek renk ikon + metin (renkli hap/emoji yok).
+const FEATURE_META: Record<string, { en: string; tr: string; icon: React.ReactNode }> = {
+  free_cancellation:    { en: "Free cancellation", tr: "Ücretsiz iptal", icon: <path d="M20 6 9 17l-5-5" /> },
+  instant_confirmation: { en: "Instant confirmation", tr: "Anında onay", icon: <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" /> },
+  skip_the_line:        { en: "Skip the line", tr: "Sıra beklemeden", icon: <path d="M5 12h14M12 5l7 7-7 7" /> },
+  small_group:          { en: "Small group", tr: "Küçük grup", icon: <><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" /></> },
+  private_tour:         { en: "Private tour", tr: "Özel tur", icon: <><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></> },
+  live_guide:           { en: "Live guide", tr: "Canlı rehber", icon: <><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" /><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4" /></> },
+  pickup_included:      { en: "Pickup included", tr: "Otelden alış dahil", icon: <><rect x="1" y="3" width="15" height="13" rx="2" /><path d="M16 8h4l3 3v5h-7V8z" /><circle cx="5.5" cy="18.5" r="2.5" /><circle cx="18.5" cy="18.5" r="2.5" /></> },
+};
+
+function Icon({ children, size = 20, className = "" }: { children: React.ReactNode; size?: number; className?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75"
+      strokeLinecap="round" strokeLinejoin="round" className={`shrink-0 ${className}`} aria-hidden="true">{children}</svg>
+  );
 }
+
+const H2 = "font-display text-2xl md:text-[28px] font-normal leading-tight tracking-[-0.01em] text-neutral-900";
+const PRIMARY_BTN = "flex h-12 w-full items-center justify-center rounded-xl bg-[#5B3FD9] px-5 text-[15px] font-semibold text-white transition-colors hover:bg-[#4A32B8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B3FD9] focus-visible:ring-offset-2";
+
+interface ReviewsData { count: number; avgRating: number; reviews: PublicReview[] }
 
 /// Sunucudan gelen initialTour (EN) ile ilk HTML dolu render edilir —
 /// h1, açıklama, itinerary ve fiyat JS beklemeden crawl edilir. Kullanıcı
@@ -144,14 +182,22 @@ export default function TourDetailClient({
   const { locale } = useT();
   const router = useRouter();
   const tt = getToursT(locale);
-  const [tour, setTour] = useState<TourDetail | null | "loading" | "error">(initialTour);
+  const dc = DC[locale] ?? DC.en;
+  const isTr = locale === "tr";
+
+  // EN içerik sunucudan geldi; başka dilde o locale için client'ta çekilir.
+  // Türetilmiş durum: aktif locale'in verisi yoksa "yükleniyor".
+  const [localized, setLocalized] = useState<{ locale: string; tour: TourDetail | null | "error" } | null>(null);
+  const tour: TourDetail | null | "loading" | "error" =
+    locale === "en" ? initialTour : localized?.locale === locale ? localized.tour : "loading";
+
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
-  // Tur detay sekmeleri — uzun sayfayı bölümlere ayırır (GetYourGuide tarzı).
-  const [activeTab, setActiveTab] = useState<"overview" | "itinerary" | "included" | "info">("overview");
-  // Rezervasyon widget'ı: tarih + kişi sayısı (checkout'a taşınır).
+  // Rezervasyon: tarih + kişi sayısı (rehber seçimine → checkout'a taşınır).
   const [bkDate, setBkDate] = useState("");
   const [bkPeople, setBkPeople] = useState(1);
+  const [bkError, setBkError] = useState<string | null>(null);
+  const [reviews, setReviews] = useState<ReviewsData | null>(null);
 
   const openLightbox = useCallback((i: number) => { setLightboxIndex(i); setLightboxOpen(true); }, []);
   const closeLightbox = useCallback(() => setLightboxOpen(false), []);
@@ -159,639 +205,499 @@ export default function TourDetailClient({
   const lbNext = useCallback((total: number) => setLightboxIndex((i) => (i + 1) % total), []);
 
   useEffect(() => {
-    if (!id) return;
-    // EN içerik sunucudan zaten geldi — sadece farklı UI dillerinde yeniden çek.
-    if (locale === "en") {
-      setTour(initialTour);
-      return;
-    }
-    setTour("loading");
+    if (!id || locale === "en") return;
+    let alive = true;
     clientFetch(`/api/tours/${id}?locale=${locale}`, { cache: "no-store" })
       .then((r) => {
         if (r.status === 404) return null;
         if (!r.ok) return "error" as const;
         return r.json();
       })
-      .then((data) => setTour(data as TourDetail | null | "error"))
-      .catch(() => setTour("error"));
-  }, [id, locale, initialTour]);
+      .then((data) => { if (alive) setLocalized({ locale, tour: data as TourDetail | null | "error" }); })
+      .catch(() => { if (alive) setLocalized({ locale, tour: "error" }); });
+    return () => { alive = false; };
+  }, [id, locale]);
+
+  // Yorumlar başlıkta (puan özeti) ve alttaki bölümde kullanılır → tek istek.
+  const tourId = typeof tour === "object" && tour ? tour.id : null;
+  useEffect(() => {
+    if (!tourId) return;
+    let alive = true;
+    clientFetch(`/api/tours/${tourId}/public-reviews`)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => { if (alive && d) setReviews(d); })
+      .catch(() => {});
+    return () => { alive = false; };
+  }, [tourId]);
 
   if (tour === "loading") {
     return (
       <main className="min-h-screen bg-white antialiased">
         <Navbar activePage="tours" />
-        <div className="pt-16 animate-pulse">
-          <div className="h-[60vh] bg-neutral-100" />
-          <div className="max-w-7xl mx-auto px-6 py-12 space-y-4">
-            <div className="h-8 w-2/3 bg-neutral-100 rounded-xl" />
-            <div className="h-4 w-1/3 bg-neutral-100 rounded-xl" />
-            <div className="h-32 bg-neutral-100 rounded-xl" />
+        <div className="mx-auto max-w-7xl animate-pulse px-4 pt-24 md:px-6" aria-hidden="true">
+          <div className="h-3 w-40 rounded bg-neutral-100" />
+          <div className="mt-4 h-9 w-2/3 rounded bg-neutral-100" />
+          <div className="mt-3 h-4 w-1/3 rounded bg-neutral-100" />
+          <div className="mt-6 h-64 rounded-2xl bg-neutral-100 md:h-[440px]" />
+          <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_380px]">
+            <div className="space-y-3">
+              <div className="h-4 rounded bg-neutral-100" /><div className="h-4 rounded bg-neutral-100" /><div className="h-4 w-4/5 rounded bg-neutral-100" />
+            </div>
+            <div className="hidden h-80 rounded-2xl bg-neutral-100 lg:block" />
           </div>
         </div>
       </main>
     );
   }
 
-  if (tour === "error") {
+  if (tour === "error" || !tour) {
+    const notFound = !tour;
     return (
-      <main className="min-h-screen bg-white flex items-center justify-center">
-        <div className="text-center px-6">
-          <p className="text-6xl mb-4">⚠️</p>
-          <h1 className="text-2xl font-black text-[#0A0A0F] mb-2">{tt.errTitle}</h1>
-          <p className="text-neutral-800 mb-6">{tt.errMsg}</p>
-          <div className="flex gap-3 justify-center">
-            <button onClick={() => window.location.reload()} className="rounded-full bg-[#6C4CF1] text-white text-sm font-bold px-6 py-2.5 hover:bg-[#5a3dd4] transition-colors">
-              {tt.tryAgain}
-            </button>
-            <a href="/tours" className="rounded-full border border-black/10 text-neutral-800 text-sm font-bold px-6 py-2.5 hover:bg-neutral-50 transition-colors">
+      <main className="min-h-screen bg-white antialiased">
+        <Navbar activePage="tours" />
+        <div className="mx-auto flex max-w-xl flex-col items-center px-6 pb-24 pt-40 text-center">
+          <h1 className="font-display text-3xl font-normal text-neutral-900">{notFound ? tt.notFoundTitle : tt.errTitle}</h1>
+          <p className="mt-3 text-neutral-600">{notFound ? tt.notFoundMsg : tt.errMsg}</p>
+          <div className="mt-8 flex gap-3">
+            {!notFound && (
+              <button onClick={() => window.location.reload()} className="h-11 rounded-full bg-[#5B3FD9] px-6 text-sm font-semibold text-white hover:bg-[#4A32B8]">
+                {tt.tryAgain}
+              </button>
+            )}
+            <Link href="/tours" className={`inline-flex h-11 items-center rounded-full px-6 text-sm font-semibold ${notFound ? "bg-[#5B3FD9] text-white hover:bg-[#4A32B8]" : "border border-neutral-300 text-neutral-900 hover:bg-neutral-50"}`}>
               {tt.browseAllTours}
-            </a>
+            </Link>
           </div>
         </div>
       </main>
     );
   }
 
-  if (!tour) {
-    return (
-      <main className="min-h-screen bg-white flex items-center justify-center">
-        <div className="text-center px-6">
-          <p className="text-6xl mb-4">🗺️</p>
-          <h1 className="text-2xl font-black text-[#0A0A0F] mb-2">{tt.notFoundTitle}</h1>
-          <p className="text-neutral-800 mb-6">{tt.notFoundMsg}</p>
-          <a href="/tours" className="rounded-full bg-[#6C4CF1] text-white text-sm font-bold px-6 py-2.5 hover:bg-[#5a3dd4] transition-colors">
-            {tt.browseAllTours}
-          </a>
-        </div>
-      </main>
-    );
+  const t = tour;
+  const highlights = t.highlights ? t.highlights.split("\n").map((l) => l.trim()).filter(Boolean) : [];
+  const hasDiscount = t.compareAtPrice != null && t.compareAtPrice > t.basePrice;
+  const location = t.districtName && t.provinceName ? `${t.districtName}, ${t.provinceName}` : (t.provinceName || t.city);
+  const badgeKeys = (t.badges ?? "").split(",").map((s) => s.trim()).filter(Boolean);
+  const features = badgeKeys.filter((k) => FEATURE_META[k]);
+  const isBestseller = badgeKeys.includes("bestseller");
+  const langList = (t.languagePrices ?? []).map((lp) => languageByCode(lp.code));
+  const allPhotos: TourPhoto[] = t.photos && t.photos.length > 0
+    ? [...t.photos].sort((a, b) => a.ord - b.ord)
+    : t.coverPhotoUrl ? [{ id: 0, url: t.coverPhotoUrl, caption: null, ord: 0 }] : [];
+  const places = [...(t.places ?? [])].sort((a, b) => a.ord - b.ord);
+  const includes = [...(t.includes ?? [])].sort((a, b) => a.ord - b.ord);
+  const included = includes.filter((i) => i.isIncluded);
+  const notIncluded = includes.filter((i) => !i.isIncluded);
+  const info = [...(t.importantInfo ?? [])].sort((a, b) => a.ord - b.ord);
+  const today = new Date().toISOString().split("T")[0];
+
+  function proceed() {
+    if (!bkDate) {
+      setBkError(dc.selectDateErr);
+      // Mobilde rezervasyon kartı içerikte; oraya kaydır ve tarih alanına odaklan.
+      const el = document.querySelector<HTMLInputElement>(window.matchMedia("(min-width: 1024px)").matches ? "#bk-date-desktop" : "#bk-date-mobile");
+      el?.scrollIntoView({ behavior: "smooth", block: "center" });
+      el?.focus({ preventScroll: true });
+      return;
+    }
+    router.push(`/tours/${t.id}/guides?date=${bkDate}&people=${bkPeople}`);
   }
 
-  const highlights = tour.highlights
-    ? tour.highlights.split("\n").filter((l) => l.trim())
-    : [];
+  const bookingCard = (variant: "desktop" | "mobile") => (
+    <div className={`rounded-2xl border border-neutral-200 bg-white p-6 ${variant === "desktop" ? "shadow-[0_8px_30px_rgba(0,0,0,0.06)]" : ""}`}>
+      <div className="flex flex-wrap items-baseline gap-x-2">
+        <span className="text-sm text-neutral-600">{tt.startingFrom}</span>
+        {hasDiscount && (
+          <span className="text-sm text-neutral-500 line-through"><Price amount={t.compareAtPrice!} currency={t.currency} /></span>
+        )}
+      </div>
+      <p className="mt-0.5 flex items-baseline gap-1.5">
+        {/* Seçili kişi sayısının gerçek kişi-başı fiyatı — checkout'la aynı rakam. */}
+        <span className="text-[28px] font-semibold leading-none tracking-tight text-neutral-900">
+          <Price amount={perPersonForCount(t, bkPeople)} currency={t.currency} />
+        </span>
+        <span className="text-sm text-neutral-600">{dc.fromPerPerson}</span>
+      </p>
 
-  const hasDiscount =
-    tour.compareAtPrice != null && tour.compareAtPrice > tour.basePrice;
+      <div className="mt-5 overflow-hidden rounded-xl border border-neutral-300">
+        <label htmlFor={`bk-date-${variant}`} className="block border-b border-neutral-300 px-4 pb-2.5 pt-2 focus-within:bg-neutral-50">
+          <span className="block text-[11px] font-semibold uppercase tracking-wide text-neutral-600">{tt.bkDate}</span>
+          <input
+            id={`bk-date-${variant}`}
+            type="date"
+            value={bkDate}
+            min={today}
+            onChange={(e) => { setBkDate(e.target.value); setBkError(null); }}
+            className="mt-0.5 w-full bg-transparent text-base text-neutral-900 focus:outline-none"
+            aria-invalid={!!bkError}
+          />
+        </label>
+        <div className="flex items-center justify-between px-4 py-2">
+          <div>
+            <span className="block text-[11px] font-semibold uppercase tracking-wide text-neutral-600">{tt.bkTravelers}</span>
+            <span className="text-base text-neutral-900">{dc.travelers(bkPeople)}</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <button type="button" onClick={() => setBkPeople((p) => Math.max(1, p - 1))} disabled={bkPeople <= 1}
+              aria-label={isTr ? "Kişi azalt" : "Remove traveler"}
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-300 text-neutral-900 hover:border-neutral-900 disabled:opacity-30">
+              <Icon size={16}><path d="M5 12h14" /></Icon>
+            </button>
+            <span className="w-6 text-center text-base font-semibold tabular-nums" aria-live="polite">{bkPeople}</span>
+            <button type="button" onClick={() => setBkPeople((p) => Math.min(20, p + 1))} disabled={bkPeople >= 20}
+              aria-label={isTr ? "Kişi ekle" : "Add traveler"}
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-300 text-neutral-900 hover:border-neutral-900 disabled:opacity-30">
+              <Icon size={16}><path d="M12 5v14M5 12h14" /></Icon>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {bkError && <p role="alert" className="mt-2 text-sm text-red-700">{bkError}</p>}
+
+      <div className="mt-4 flex items-baseline justify-between">
+        <span className="text-sm text-neutral-600">{dc.total}</span>
+        <span className="text-lg font-semibold text-neutral-900">
+          {/* Grup toplamı doğrudan — kişi-başı × kişi yuvarlama sapması üretiyordu. */}
+          <Price amount={groupPriceForCount(t, bkPeople)} currency={t.currency} />
+        </span>
+      </div>
+
+      <button type="button" onClick={proceed} className={`${PRIMARY_BTN} mt-4`}>{tt.bkContinue}</button>
+
+      <ul className="mt-5 space-y-2.5 text-sm text-neutral-700">
+        <li className="flex gap-2.5"><Icon size={18} className="mt-px text-neutral-900"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></Icon>{dc.trustNoCharge}</li>
+        {features.includes("free_cancellation") && (
+          <li className="flex gap-2.5"><Icon size={18} className="mt-px text-neutral-900"><path d="M20 6 9 17l-5-5" /></Icon>
+            <Link href="/cancellation-policy" className="underline-offset-4 hover:underline">{dc.freeCancel}</Link>
+          </li>
+        )}
+        <li className="flex gap-2.5"><Icon size={18} className="mt-px text-neutral-900"><circle cx="12" cy="8" r="6" /><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11" /></Icon>{dc.trustLicensed}</li>
+        <li className="flex gap-2.5"><Icon size={18} className="mt-px text-neutral-900"><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></Icon>{dc.trustSecure}</li>
+      </ul>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/visamastercard.jpg" alt="Visa · Mastercard · Amex · Troy" className="mx-auto mt-5 h-5 w-auto opacity-80" />
+    </div>
+  );
 
   return (
-    <main className="min-h-screen bg-white text-[#0A0A0F] antialiased">
+    <main className="min-h-screen bg-white text-neutral-900 antialiased">
       <Navbar activePage="tours" />
 
-      {/* Photo gallery hero */}
-      {(() => {
-        const allPhotos = tour.photos && tour.photos.length > 0
-          ? tour.photos
-          : tour.coverPhotoUrl
-            ? [{ id: 0, url: tour.coverPhotoUrl, caption: null, ord: 0 }]
-            : [];
-        const main = allPhotos[0];
-        const thumbs = allPhotos.slice(1, 5);
-        const remaining = allPhotos.length - 5;
-
-        return (
-          <>
-            {/* Title bar — above gallery */}
-            <div className="pt-20 pb-4 px-6 max-w-7xl mx-auto">
-              <span className={`inline-block px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wide mb-3 ${categoryColor(tour.category)}`}>
-                {tour.category}
+      {/* ── Başlık ── */}
+      <div className="mx-auto max-w-7xl px-4 pt-20 md:px-6 md:pt-24">
+        <nav aria-label="Breadcrumb" className="text-sm text-neutral-500">
+          <ol className="flex flex-wrap items-center gap-1.5">
+            <li><Link href="/tours" className="hover:text-neutral-900 hover:underline">{dc.tours}</Link></li>
+            <li aria-hidden="true">/</li>
+            <li className="truncate text-neutral-700">{location}</li>
+          </ol>
+        </nav>
+        <div className="mt-3 flex items-start justify-between gap-4">
+          <div className="min-w-0">
+            {isBestseller && (
+              <span className="mb-2 inline-block rounded-md bg-neutral-900 px-2 py-0.5 text-xs font-semibold text-white">
+                {isTr ? "Çok satan" : "Bestseller"}
               </span>
-              <div className="flex items-start justify-between gap-4">
-                <h1 className="text-2xl md:text-4xl font-black text-[#0A0A0F] leading-tight">
-                  {tour.title}
-                </h1>
-                <div className="shrink-0 mt-1">
-                  <ShareButton title={tour.title} variant="icon" />
-                </div>
-              </div>
-              <p className="mt-2 text-neutral-800 flex items-center gap-3 text-sm">
-                <span>📍 {tour.districtName && tour.provinceName ? `${tour.districtName}, ${tour.provinceName}` : (tour.provinceName || tour.city)}</span>
-                <span>·</span>
-                <span>🕐 {formatDuration(tour.durationMinutes)}</span>
-              </p>
+            )}
+            <h1 className="font-display text-[30px] font-normal leading-[1.1] tracking-[-0.01em] text-neutral-900 md:text-[44px]">{t.title}</h1>
+            <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-neutral-700">
+              {reviews && reviews.count > 0 ? (
+                <a href="#reviews" className="inline-flex items-center gap-1 hover:underline">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="#0A0A0F" aria-hidden="true"><polygon points={STAR_PATH} /></svg>
+                  <span className="font-semibold text-neutral-900">{reviews.avgRating.toFixed(1)}</span>
+                  <span className="text-neutral-500">({reviews.count} {dc.reviewsWord})</span>
+                </a>
+              ) : (
+                <span className="font-medium">{dc.newTour}</span>
+              )}
+              <span aria-hidden="true" className="text-neutral-300">·</span>
+              <span className="capitalize">{t.category}</span>
+              <span aria-hidden="true" className="text-neutral-300">·</span>
+              <span>{location}</span>
             </div>
+          </div>
+          <div className="shrink-0"><ShareButton title={t.title} variant="icon" /></div>
+        </div>
+      </div>
 
-            {/* Gallery grid */}
-            {allPhotos.length > 0 && (
-              <div className="px-6 max-w-7xl mx-auto">
-                {/* Mobile: single photo + "See all X photos" button */}
-                <div className="md:hidden relative h-64 rounded-2xl overflow-hidden cursor-pointer" onClick={() => openLightbox(0)}>
-                  <Image src={main!.url} alt={main!.caption ?? tour.title} fill priority sizes="100vw" className="object-cover" />
-                  {allPhotos.length > 1 && (
-                    <button className="absolute bottom-3 right-3 bg-white/90 backdrop-blur-sm text-[#0A0A0F] text-xs font-black px-3 py-1.5 rounded-xl shadow-sm">
-                      🖼️ {tt.seeAllPhotos.replace("{n}", String(allPhotos.length))}
+      {/* ── Galeri ── */}
+      {allPhotos.length > 0 && (
+        <div className="mx-auto mt-6 max-w-7xl px-4 md:px-6">
+          <div className="relative">
+            {/* Mobil: tek foto */}
+            <button type="button" onClick={() => openLightbox(0)} className="relative block h-64 w-full overflow-hidden rounded-2xl sm:h-80 md:hidden">
+              <Image src={allPhotos[0].url} alt={allPhotos[0].caption ?? t.title} fill priority sizes="100vw" className="object-cover" />
+            </button>
+            {/* Masaüstü: büyük sol + 2x2 sağ */}
+            <div className={`hidden h-[440px] gap-2 overflow-hidden rounded-2xl md:grid ${allPhotos.length > 1 ? "grid-cols-[2fr_1fr]" : "grid-cols-1"}`}>
+              <button type="button" onClick={() => openLightbox(0)} className="group relative">
+                <Image src={allPhotos[0].url} alt={allPhotos[0].caption ?? t.title} fill priority sizes="(max-width: 1280px) 66vw, 850px" className="object-cover transition duration-300 group-hover:brightness-95" />
+              </button>
+              {allPhotos.length > 1 && (
+                <div className="grid grid-cols-2 grid-rows-2 gap-2">
+                  {allPhotos.slice(1, 5).map((photo, i) => (
+                    <button type="button" key={photo.id} onClick={() => openLightbox(i + 1)} className="group relative overflow-hidden">
+                      <Image src={photo.url} alt={photo.caption ?? ""} fill sizes="20vw" className="object-cover transition duration-300 group-hover:brightness-95" />
                     </button>
-                  )}
+                  ))}
+                  {Array.from({ length: Math.max(0, 4 - (allPhotos.length - 1)) }).map((_, i) => (
+                    <div key={`e-${i}`} className="bg-neutral-100" />
+                  ))}
                 </div>
-
-                {/* Desktop: GYG-style big left + grid right */}
-                <div className="hidden md:grid grid-cols-[2fr_1fr] gap-2 rounded-2xl overflow-hidden h-[420px]">
-                  {/* Main large photo */}
-                  <div className="relative cursor-pointer group" onClick={() => openLightbox(0)}>
-                    <Image src={main!.url} alt={main!.caption ?? tour.title} fill priority sizes="(max-width: 768px) 100vw, 66vw" className="object-cover group-hover:brightness-90 transition-all duration-200" />
-                  </div>
-
-                  {/* Right thumbnails 2x2 */}
-                  {thumbs.length > 0 && (
-                    <div className="grid grid-cols-2 grid-rows-2 gap-2">
-                      {thumbs.map((photo, i) => {
-                        const isLast = i === 3 && remaining > 0;
-                        return (
-                          <div
-                            key={photo.id}
-                            className="relative cursor-pointer group overflow-hidden"
-                            onClick={() => openLightbox(i + 1)}
-                          >
-                            <Image src={photo.url} alt={photo.caption ?? ""} fill sizes="17vw" className="object-cover group-hover:brightness-90 transition-all duration-200" />
-                            {isLast && (
-                              <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-                                <span className="text-white font-black text-sm">+{remaining + 1} photos</span>
-                              </div>
-                            )}
-                          </div>
-                        );
-                      })}
-                      {/* Fill empty slots if fewer than 4 thumbs */}
-                      {Array.from({ length: Math.max(0, 4 - thumbs.length) }).map((_, i) => (
-                        <div key={`empty-${i}`} className="bg-neutral-100" />
-                      ))}
-                    </div>
-                  )}
-                </div>
-
-                {/* "See all photos" button */}
-                {allPhotos.length > 1 && (
-                  <div className="hidden md:flex justify-end mt-2">
-                    <button
-                      onClick={() => openLightbox(0)}
-                      className="flex items-center gap-1.5 text-xs font-black text-[#0A0A0F] border border-black/15 bg-white px-4 py-2 rounded-xl hover:bg-neutral-50 transition-colors shadow-sm"
-                    >
-                      🖼️ {tt.seeAllPhotos.replace("{n}", String(allPhotos.length))}
-                    </button>
-                  </div>
-                )}
-              </div>
+              )}
+            </div>
+            {allPhotos.length > 1 && (
+              <button type="button" onClick={() => openLightbox(0)}
+                className="absolute bottom-3 right-3 inline-flex h-9 items-center gap-2 rounded-lg border border-neutral-900/10 bg-white px-3 text-sm font-medium text-neutral-900 shadow-sm hover:bg-neutral-50">
+                <Icon size={16}><rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /><rect x="14" y="14" width="7" height="7" /></Icon>
+                {tt.seeAllPhotos.replace("{n}", String(allPhotos.length))}
+              </button>
             )}
+          </div>
+        </div>
+      )}
 
-            {/* Lightbox */}
-            {lightboxOpen && (
-              <Lightbox
-                photos={allPhotos}
-                index={lightboxIndex}
-                onClose={closeLightbox}
-                onPrev={() => lbPrev(allPhotos.length)}
-                onNext={() => lbNext(allPhotos.length)}
-                onSelect={setLightboxIndex}
-              />
-            )}
-          </>
-        );
-      })()}
+      {lightboxOpen && (
+        <Lightbox photos={allPhotos} index={lightboxIndex} onClose={closeLightbox}
+          onPrev={() => lbPrev(allPhotos.length)} onNext={() => lbNext(allPhotos.length)} onSelect={setLightboxIndex} />
+      )}
 
-      {/* Body */}
-      <div className="mx-auto max-w-7xl px-6 py-12 grid md:grid-cols-[1fr_340px] gap-10 items-start">
-        <div className="space-y-10">
-
-          {/* Badges */}
-          {tour.badges && tour.badges.trim() && (() => {
-            const BADGE_META: Record<string, { label: string; color: string }> = {
-              skip_the_line:        { label: "⚡ Skip the line",        color: "bg-yellow-100 text-yellow-800 border-yellow-200" },
-              bestseller:           { label: "🏆 Bestseller",           color: "bg-orange-100 text-orange-700 border-orange-200" },
-              free_cancellation:    { label: "✓ Free cancellation",     color: "bg-emerald-100 text-emerald-700 border-emerald-200" },
-              small_group:          { label: "👥 Small group",          color: "bg-blue-100 text-blue-700 border-blue-200" },
-              private_tour:         { label: "🔒 Private tour",         color: "bg-purple-100 text-purple-700 border-purple-200" },
-              instant_confirmation: { label: "✅ Instant confirmation", color: "bg-teal-100 text-teal-700 border-teal-200" },
-              live_guide:           { label: "🎤 Live guide",           color: "bg-rose-100 text-rose-700 border-rose-200" },
-              pickup_included:      { label: "🚌 Pickup included",      color: "bg-indigo-100 text-indigo-700 border-indigo-200" },
-            };
-            const keys = tour.badges!.split(",").map(s => s.trim()).filter(Boolean);
-            return (
-              <div className="flex flex-wrap gap-2">
-                {keys.map((key) => {
-                  const m = BADGE_META[key];
-                  return m ? (
-                    <span key={key} className={`px-3 py-1.5 rounded-full text-xs font-bold border ${m.color}`}>
-                      {m.label}
-                    </span>
-                  ) : null;
-                })}
-              </div>
-            );
-          })()}
-
-          {tour.summary && (
-            <p className="text-lg leading-8 text-neutral-800 font-medium">{tour.summary}</p>
+      {/* ── Gövde ── */}
+      <div className="mx-auto grid max-w-7xl items-start gap-12 px-4 py-10 md:px-6 lg:grid-cols-[1fr_380px]">
+        <div className="min-w-0 space-y-10">
+          {t.isMachineTranslated && locale !== "en" && (
+            <TranslationBadgeNote locale={locale} />
           )}
 
-          {/* Hangi sekmelerin içeriği var? Boş olanları gizle. (VibeSquad sekme dışı.) */}
-          {(() => {
-            const hasOverview = !!tour.description || highlights.length > 0;
-            const hasItinerary = !!(tour.places && tour.places.length > 0);
-            const hasIncluded = !!(tour.includes && tour.includes.length > 0);
-            const hasInfo = !!(
-              (tour.importantInfo && tour.importantInfo.length > 0) ||
-              tour.meetingPointText ||
-              (tour.languagePrices && tour.languagePrices.length > 0)
-            );
-            const tabs = [
-              hasOverview && { key: "overview" as const, label: tt.tabOverview },
-              hasItinerary && { key: "itinerary" as const, label: tt.tabItinerary },
-              hasIncluded && { key: "included" as const, label: tt.tabIncluded },
-              hasInfo && { key: "info" as const, label: tt.tabInfo },
-            ].filter(Boolean) as { key: typeof activeTab; label: string }[];
-            // Aktif sekme boşsa ilk dolu sekmeye geç.
-            if (tabs.length > 0 && !tabs.some((t) => t.key === activeTab)) {
-              setTimeout(() => setActiveTab(tabs[0].key), 0);
-            }
-            if (tabs.length <= 1) return null; // tek/boş sekme → bar gösterme
-            return (
-              <div className="sticky top-16 z-10 -mx-1 flex gap-1 overflow-x-auto border-b border-black/[0.08] bg-white/95 backdrop-blur-sm py-1">
-                {tabs.map((tb) => (
-                  <button
-                    key={tb.key}
-                    onClick={() => setActiveTab(tb.key)}
-                    className={`shrink-0 cursor-pointer rounded-xl px-4 py-2 text-sm font-bold transition-all ${
-                      activeTab === tb.key
-                        ? "bg-[#6C4CF1] text-white"
-                        : "text-neutral-700 hover:text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.06]"
-                    }`}
-                  >
-                    {tb.label}
-                  </button>
-                ))}
-              </div>
-            );
-          })()}
+          {/* Hızlı bilgiler */}
+          <ul className="grid gap-4 border-b border-neutral-200 pb-8 sm:grid-cols-2">
+            <li className="flex gap-3">
+              <Icon className="mt-0.5 text-neutral-900"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></Icon>
+              <div><p className="font-semibold text-neutral-900">{dc.duration}</p><p className="text-sm text-neutral-600">{formatDuration(t.durationMinutes)}</p></div>
+            </li>
+            {langList.length > 0 && (
+              <li className="flex gap-3">
+                <Icon className="mt-0.5 text-neutral-900"><circle cx="12" cy="12" r="10" /><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></Icon>
+                <div><p className="font-semibold text-neutral-900">{dc.languages}</p><p className="text-sm text-neutral-600">{langList.map((l) => l.name).join(", ")}</p></div>
+              </li>
+            )}
+            {features.map((k) => (
+              <li key={k} className="flex gap-3">
+                <Icon className="mt-0.5 text-neutral-900">{FEATURE_META[k].icon}</Icon>
+                <p className="font-semibold text-neutral-900">{isTr ? FEATURE_META[k].tr : FEATURE_META[k].en}</p>
+              </li>
+            ))}
+          </ul>
 
-          {/* ── OVERVIEW: About + Highlights ── */}
-          {activeTab === "overview" && tour.description && (
-            <div>
-              <h2 className="text-2xl font-black mb-4">{tt.aboutTour}</h2>
-              <p className="text-neutral-800 leading-8 whitespace-pre-line">{tour.description}</p>
-            </div>
+          {/* Mobil rezervasyon kartı (masaüstünde sağ sütunda) */}
+          <div id="book" className="scroll-mt-24 lg:hidden">{bookingCard("mobile")}</div>
+
+          {t.summary && <p className="text-lg leading-8 text-neutral-800">{t.summary}</p>}
+
+          {t.description && (
+            <section>
+              <h2 className={H2}>{tt.aboutTour}</h2>
+              <ExpandableText text={t.description} more={dc.showAll} less={dc.showLess} />
+            </section>
           )}
 
-          {activeTab === "overview" && highlights.length > 0 && (
-            <div>
-              <h2 className="text-2xl font-black mb-5">{tt.highlights}</h2>
-              <ul className="space-y-3">
+          {highlights.length > 0 && (
+            <section>
+              <h2 className={H2}>{tt.highlights}</h2>
+              <ul className="mt-5 space-y-3">
                 {highlights.map((hl, i) => (
-                  <li key={i} className="flex items-start gap-3 text-neutral-800">
-                    <span className="mt-1 flex-shrink-0 h-5 w-5 rounded-full bg-[#6C4CF1]/10 text-[#6C4CF1] flex items-center justify-center text-xs font-black">✓</span>
-                    <span className="leading-6">{hl}</span>
+                  <li key={i} className="flex gap-3 text-neutral-800">
+                    <Icon size={18} className="mt-1 text-neutral-900"><path d="M20 6 9 17l-5-5" /></Icon>
+                    <span className="leading-7">{hl}</span>
                   </li>
                 ))}
               </ul>
-            </div>
+            </section>
           )}
 
-          {/* ── ITINERARY: What You'll See ── */}
-          {activeTab === "itinerary" && tour.places && tour.places.length > 0 && (
-            <div>
-              <h2 className="text-2xl font-black mb-5">{tt.whatYoullSee}</h2>
-              <ol className="space-y-4">
-                {[...tour.places]
-                  .sort((a, b) => a.ord - b.ord)
-                  .map((place, i) => (
-                    <li key={place.id} className="flex gap-4 group">
-                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#6C4CF1] text-white flex items-center justify-center text-sm font-black shadow-sm">
-                        {i + 1}
-                      </div>
-                      <div className="flex-1 min-w-0 pb-4 border-b border-black/5 last:border-0">
-                        <p className="font-black text-[#0A0A0F]">{place.name}</p>
-                        {place.description && (
-                          <p className="text-sm text-neutral-700 mt-1 leading-6">{place.description}</p>
-                        )}
-                      </div>
-                    </li>
-                  ))}
+          {places.length > 0 && (
+            <section>
+              <h2 className={H2}>{tt.whatYoullSee}</h2>
+              <ol className="mt-6">
+                {places.map((place, i) => (
+                  <li key={place.id} className="relative flex gap-4 pb-7 last:pb-0">
+                    {i < places.length - 1 && <span className="absolute left-[13px] top-8 bottom-0 w-px bg-neutral-300" aria-hidden="true" />}
+                    <span className="relative z-[1] flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-neutral-900 bg-white text-xs font-semibold text-neutral-900">
+                      {i + 1}
+                    </span>
+                    <div className="min-w-0 pt-0.5">
+                      <p className="font-semibold text-neutral-900">{place.name}</p>
+                      {place.description && <p className="mt-1 text-sm leading-6 text-neutral-600">{place.description}</p>}
+                    </div>
+                  </li>
+                ))}
               </ol>
-            </div>
+            </section>
           )}
 
-          {activeTab === "included" && tour.includes && tour.includes.length > 0 && (() => {
-            const sorted = [...tour.includes].sort((a, b) => a.ord - b.ord);
-            const included = sorted.filter((i) => i.isIncluded);
-            const notIncluded = sorted.filter((i) => !i.isIncluded);
-            return (
-              <div className="space-y-8">
-                {included.length > 0 && (
-                  <div>
-                    <h2 className="text-2xl font-black mb-5">{tt.whatsIncluded}</h2>
-                    <div className="grid sm:grid-cols-2 gap-2">
-                      {included.map((item) => (
-                        <div
-                          key={item.id}
-                          className="flex items-center gap-3 rounded-xl px-4 py-3 border text-sm font-medium bg-emerald-50 border-emerald-100 text-emerald-800"
-                        >
-                          <span className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-black bg-emerald-500 text-white">
-                            ✓
-                          </span>
-                          {item.label}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {notIncluded.length > 0 && (
-                  <div>
-                    <h2 className="text-2xl font-black mb-5">{tt.notIncluded}</h2>
-                    <div className="grid sm:grid-cols-2 gap-2">
-                      {notIncluded.map((item) => (
-                        <div
-                          key={item.id}
-                          className="flex items-center gap-3 rounded-xl px-4 py-3 border text-sm font-medium bg-red-50 border-red-100 text-red-700"
-                        >
-                          <span className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-black bg-red-400 text-white">
-                            ✗
-                          </span>
-                          {item.label}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-            );
-          })()}
-
-          {activeTab === "info" && tour.importantInfo && tour.importantInfo.length > 0 && (
-            <div>
-              <h2 className="text-2xl font-black mb-5">{tt.importantInfo}</h2>
-              <div className="space-y-2">
-                {[...tour.importantInfo]
-                  .sort((a, b) => a.ord - b.ord)
-                  .map((item) => (
-                    <div key={item.id} className="flex items-start gap-3 rounded-xl bg-amber-50 border border-amber-100 px-4 py-3 text-sm text-amber-900">
-                      <span className="mt-0.5 flex-shrink-0">⚠️</span>
-                      <span className="leading-6">{item.label}</span>
-                    </div>
-                  ))}
-              </div>
-            </div>
-          )}
-
-          {activeTab === "info" && tour.meetingPointText && (
-            <div>
-              <h2 className="text-2xl font-black mb-3">{tt.meetingPoint}</h2>
-              <div className="flex items-start gap-3 rounded-2xl bg-[#F7F7FB] border border-black/5 px-5 py-4">
-                <span className="text-2xl flex-shrink-0">📍</span>
+          {includes.length > 0 && (
+            <section className="grid gap-8 sm:grid-cols-2">
+              {included.length > 0 && (
                 <div>
-                  <p className="text-neutral-800 leading-6">{tour.meetingPointText}</p>
-                  {tour.meetingPointLat && tour.meetingPointLng && (
-                    <a
-                      href={`https://www.google.com/maps?q=${tour.meetingPointLat},${tour.meetingPointLng}`}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="mt-2 inline-flex items-center gap-1 text-xs font-bold text-[#6C4CF1] hover:underline"
-                    >
-                      Open in Google Maps ↗
+                  <h2 className={H2}>{tt.whatsIncluded}</h2>
+                  <ul className="mt-5 space-y-3">
+                    {included.map((item) => (
+                      <li key={item.id} className="flex gap-3 text-neutral-800">
+                        <Icon size={18} className="mt-0.5 text-emerald-700"><path d="M20 6 9 17l-5-5" /></Icon>{item.label}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {notIncluded.length > 0 && (
+                <div>
+                  <h2 className={H2}>{tt.notIncluded}</h2>
+                  <ul className="mt-5 space-y-3">
+                    {notIncluded.map((item) => (
+                      <li key={item.id} className="flex gap-3 text-neutral-800">
+                        <Icon size={18} className="mt-0.5 text-neutral-500"><path d="M18 6 6 18M6 6l12 12" /></Icon>{item.label}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </section>
+          )}
+
+          {t.meetingPointText && (
+            <section>
+              <h2 className={H2}>{tt.meetingPoint}</h2>
+              <div className="mt-5 flex gap-3">
+                <Icon className="mt-0.5 text-neutral-900"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></Icon>
+                <div>
+                  <p className="leading-7 text-neutral-800">{t.meetingPointText}</p>
+                  {t.meetingPointLat && t.meetingPointLng && (
+                    <a href={`https://www.google.com/maps?q=${t.meetingPointLat},${t.meetingPointLng}`} target="_blank" rel="noreferrer"
+                      className="mt-1 inline-block text-sm font-medium text-neutral-900 underline underline-offset-4 hover:text-[#5B3FD9]">
+                      {dc.seeOnMap}
                     </a>
                   )}
                 </div>
               </div>
-            </div>
+            </section>
           )}
 
-          {activeTab === "info" && tour.languagePrices && tour.languagePrices.length > 0 && (
-            <div>
-              <h2 className="text-2xl font-black mb-4">{tt.availableIn}</h2>
-              <div className="flex flex-wrap gap-2">
-                {tour.languagePrices.map((lp) => {
-                  const lang = languageByCode(lp.code);
-                  return (
-                    <span
-                      key={lp.code}
-                      title={lang.name}
-                      className="flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium bg-[#F7F7FB] border border-black/[0.06] text-neutral-800"
-                    >
-                      {lang.fi && (
-                        <span
-                          className={`fi fi-${lang.fi} rounded-sm`}
-                          style={{ width: 20, height: 15, display: "inline-block" }}
-                        />
-                      )}
-                      <span>{lang.name}</span>
-                    </span>
-                  );
-                })}
-              </div>
-            </div>
+          {info.length > 0 && (
+            <section>
+              <h2 className={H2}>{tt.importantInfo}</h2>
+              <ul className="mt-5 space-y-3">
+                {info.map((item) => (
+                  <li key={item.id} className="flex gap-3 text-neutral-800">
+                    <Icon size={18} className="mt-1 text-neutral-900"><circle cx="12" cy="12" r="10" /><path d="M12 16v-4M12 8h.01" /></Icon>
+                    <span className="leading-7">{item.label}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
           )}
 
-          {/* VibeSquad — sekme dışı, her zaman görünür ayrı bölüm.
-              Kişi başı fiyat = guideAmount(toplam) ÷ kişi; grup büyüdükçe düşer. */}
-          {tour.pricingTiers && tour.pricingTiers.length > 0 && (() => {
-            const tiers = [...tour.pricingTiers]
-              .filter((t) => t.participantCount > 0 && t.guideAmount > 0)
+          {/* VibeSquad grup fiyatları — kişi başı = guideAmount(toplam) ÷ kişi. */}
+          {(() => {
+            const tiers = [...(t.pricingTiers ?? [])]
+              .filter((x) => x.participantCount > 0 && x.guideAmount > 0)
               .sort((a, b) => a.participantCount - b.participantCount);
             if (tiers.length === 0) return null;
-            const perPerson = (t: PricingTier) =>
-              Math.round((t.guideAmount / t.participantCount) * 100) / 100;
+            const perPerson = (x: PricingTier) => Math.round((x.guideAmount / x.participantCount) * 100) / 100;
             const cheapest = Math.min(...tiers.map(perPerson));
             return (
-              <div className="pt-8 border-t border-black/[0.08]">
-                <h2 className="text-2xl font-black mb-1">{tt.squadTitle}</h2>
-                <p className="text-sm text-neutral-700 mb-4">
-                  {tt.squadSub}
-                </p>
-                <div className="rounded-2xl border border-black/[0.06] overflow-hidden">
+              <section>
+                <h2 className={H2}>{tt.squadTitle}</h2>
+                <p className="mt-2 text-sm text-neutral-600">{tt.squadSub}</p>
+                <div className="mt-5 overflow-hidden rounded-xl border border-neutral-200">
                   <table className="w-full text-sm">
-                    <thead className="bg-[#F7F7FB] border-b border-black/5">
+                    <thead className="bg-neutral-50 text-left">
                       <tr>
-                        <th className="text-left px-5 py-3 font-black text-[#0A0A0F]">{tt.groupSize}</th>
-                        <th className="text-right px-5 py-3 font-black text-[#0A0A0F]">{tt.pricePerPerson}</th>
+                        <th className="px-5 py-3 font-semibold text-neutral-900">{tt.groupSize}</th>
+                        <th className="px-5 py-3 text-right font-semibold text-neutral-900">{tt.pricePerPerson}</th>
                       </tr>
                     </thead>
                     <tbody>
-                      {tiers.map((t, i) => {
-                        const pp = perPerson(t);
-                        const isBest = pp === cheapest;
-                        return (
-                          <tr key={i} className="border-b border-black/5 last:border-0 hover:bg-[#F7F7FB]/60 transition-colors">
-                            <td className="px-5 py-3.5 text-neutral-800">
-                              {t.participantCount} {tt.peopleSuffix}
-                              {isBest && (
-                                <span className="ml-2 inline-block rounded-full bg-[#6C4CF1]/10 px-2 py-0.5 text-[10px] font-black text-[#6C4CF1] align-middle">
-                                  {tt.bestPrice}
-                                </span>
-                              )}
-                            </td>
-                            <td className="px-5 py-3.5 text-right font-black text-[#6C4CF1]">
-                              <Price amount={pp} currency={tour.currency} />
-                            </td>
-                          </tr>
-                        );
-                      })}
+                      {tiers.map((x, i) => (
+                        <tr key={i} className="border-t border-neutral-200">
+                          <td className="px-5 py-3.5 text-neutral-800">
+                            {x.participantCount} {tt.peopleSuffix}
+                            {perPerson(x) === cheapest && (
+                              <span className="ml-2 rounded-md bg-neutral-900 px-1.5 py-0.5 text-[11px] font-semibold text-white">{tt.bestPrice}</span>
+                            )}
+                          </td>
+                          <td className="px-5 py-3.5 text-right font-semibold text-neutral-900"><Price amount={perPerson(x)} currency={t.currency} /></td>
+                        </tr>
+                      ))}
                     </tbody>
                   </table>
                 </div>
-                <p className="text-xs text-neutral-800 mt-2">
-                  {tt.squadNote}
-                </p>
-              </div>
+                <p className="mt-2 text-xs text-neutral-500">{tt.squadNote}</p>
+              </section>
             );
           })()}
 
-          <ReviewsSection tourId={tour.id} />
+          <ReviewsSection tourId={t.id} data={reviews} />
         </div>
 
-        {/* Sticky booking sidebar */}
-        <aside className="sticky top-24 rounded-3xl bg-white border border-black/[0.08] shadow-lg p-6 space-y-5">
-          <div>
-            <p className="text-xs font-semibold text-neutral-800 uppercase tracking-wide">{tt.startingFrom}</p>
-            <div className="flex items-baseline gap-2 mt-1">
-              {hasDiscount && (
-                <span className="text-base text-neutral-800 line-through">
-                  <Price amount={tour.compareAtPrice!} currency={tour.currency} />
-                </span>
-              )}
-              <span className="text-3xl font-black text-[#6C4CF1]">
-                {/* Seçili kişi sayısının gerçek kişi-başı fiyatı — ham basePrice
-                    gösterilince checkout'taki tutardan farklı çıkıyordu. */}
-                <Price amount={perPersonForCount(tour, bkPeople)} currency={tour.currency} />
-              </span>
-            </div>
-            <p className="text-xs text-neutral-800 mt-0.5">{tt.perPerson}</p>
-            {bkPeople > 1 && (
-              <p className="text-xs text-neutral-500 mt-1">
-                <Price amount={groupPriceForCount(tour, bkPeople)} currency={tour.currency} />
-                {" "}total for {bkPeople}
-              </p>
-            )}
-          </div>
-
-          <div className="flex items-center gap-3 rounded-xl bg-[#F7F7FB] px-4 py-3">
-            <span className="text-xl">🕐</span>
-            <div>
-              <p className="text-xs text-neutral-800 font-medium">{tt.duration}</p>
-              <p className="font-black text-sm">{formatDuration(tour.durationMinutes)}</p>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-3 rounded-xl bg-[#F7F7FB] px-4 py-3">
-            <span className="text-xl">📍</span>
-            <div>
-              <p className="text-xs text-neutral-800 font-medium">{tt.location}</p>
-              <p className="font-black text-sm">{tour.districtName && tour.provinceName ? `${tour.districtName}, ${tour.provinceName}` : (tour.provinceName || tour.city)}</p>
-            </div>
-          </div>
-
-          {/* ── Rezervasyon: tarih + kişi sayısı + canlı toplam ── */}
-          <div className="space-y-3">
-            <div>
-              <label className="block text-xs font-bold text-neutral-800 mb-1">{tt.bkDate}</label>
-              <input
-                type="date"
-                value={bkDate}
-                min={new Date().toISOString().split("T")[0]}
-                onChange={(e) => setBkDate(e.target.value)}
-                className="w-full rounded-xl border border-black/10 px-3.5 py-2.5 text-sm focus:outline-none focus:border-[#6C4CF1] focus:ring-2 focus:ring-[#6C4CF1]/10 transition-all"
-              />
-            </div>
-            <div>
-              <label className="block text-xs font-bold text-neutral-800 mb-1">{tt.bkTravelers}</label>
-              <div className="flex items-center justify-between rounded-xl border border-black/10 px-3 py-1.5">
-                <button
-                  type="button"
-                  onClick={() => setBkPeople((p) => Math.max(1, p - 1))}
-                  className="w-8 h-8 rounded-lg bg-[#F7F7FB] text-[#6C4CF1] font-black text-lg hover:bg-[#6C4CF1]/10 transition-colors"
-                  aria-label="−"
-                >−</button>
-                <span className="font-black text-base">{bkPeople}</span>
-                <button
-                  type="button"
-                  onClick={() => setBkPeople((p) => Math.min(20, p + 1))}
-                  className="w-8 h-8 rounded-lg bg-[#F7F7FB] text-[#6C4CF1] font-black text-lg hover:bg-[#6C4CF1]/10 transition-colors"
-                  aria-label="+"
-                >+</button>
-              </div>
-            </div>
-            <div className="flex items-center justify-between pt-1">
-              <span className="text-sm font-semibold text-neutral-800">{tt.bkTotal}</span>
-              <span className="text-2xl font-black text-[#6C4CF1]">
-                {/* Grup toplamı doğrudan — kişi-başı × kişi yuvarlama sapması
-                    üretiyordu (700/3 × 3 ≠ 700) ve checkout'la tutmuyordu. */}
-                <Price amount={groupPriceForCount(tour, bkPeople)} currency={tour.currency} />
-              </span>
-            </div>
-          </div>
-
-          <button
-            onClick={() => {
-              if (!bkDate) { alert(tt.bkSelectDate); return; }
-              router.push(`/tours/${tour.id}/guides?date=${bkDate}&people=${bkPeople}`);
-            }}
-            className="block w-full text-center rounded-full bg-[#6C4CF1] text-white font-bold py-3.5 hover:bg-[#5a3dd4] transition-colors shadow-sm hover:shadow-[0_0_20px_rgba(108,76,241,0.35)]"
-          >
-            {tt.bkContinue}
-          </button>
-
-          {/* Ödeme güven rozeti */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/visamastercard.jpg" alt="Visa · Mastercard · Amex · Troy" className="h-6 w-auto mx-auto opacity-90" />
-
-          <p className="text-xs text-neutral-800 text-center leading-5 flex items-start justify-center gap-1.5">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
-              className="shrink-0 mt-0.5 text-neutral-500" aria-hidden="true">
-              <rect x="3" y="11" width="18" height="11" rx="2" />
-              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-            </svg>
-            <span>{tt.bookNote}</span>
-          </p>
-        </aside>
+        {/* Masaüstü yapışkan rezervasyon kartı */}
+        <aside className="sticky top-24 hidden lg:block">{bookingCard("desktop")}</aside>
       </div>
 
-      {/* Mobile sticky bottom bar */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-black/[0.08] px-4 py-3 flex items-center gap-3 shadow-lg">
-        <div className="flex-1">
-          <p className="text-xs text-neutral-800">{tt.startingFrom}</p>
-          <p className="font-black text-lg text-[#6C4CF1]">
-            {/* Seçili kişi sayısının gerçek kişi-başı fiyatı (basePrice değil) —
-                checkout'la aynı rakamı göstersin. */}
-            <Price amount={perPersonForCount(tour, bkPeople)} currency={tour.currency} />
+      {/* Mobil alt çubuk — tarih yoksa karta kaydırır (eskiden sessizce bugünü seçiyordu). */}
+      <div className="fixed inset-x-0 bottom-0 z-40 flex items-center gap-3 border-t border-neutral-200 bg-white px-4 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] lg:hidden">
+        <div className="min-w-0 flex-1">
+          <p className="text-xs text-neutral-600">{tt.startingFrom}</p>
+          <p className="truncate text-lg font-semibold leading-tight text-neutral-900">
+            <Price amount={perPersonForCount(t, bkPeople)} currency={t.currency} />
+            <span className="ml-1 text-sm font-normal text-neutral-600">{dc.fromPerPerson}</span>
           </p>
         </div>
-        <button
-          onClick={() => {
-            const d = bkDate || new Date().toISOString().split("T")[0];
-            router.push(`/tours/${tour.id}/guides?date=${d}&people=${bkPeople}`);
-          }}
-          className="rounded-full bg-[#6C4CF1] text-white font-bold px-6 py-3 text-sm hover:bg-[#5a3dd4] transition-colors"
-        >
-          {tt.bkContinue}
+        <button type="button" onClick={proceed}
+          className="h-12 shrink-0 rounded-xl bg-[#5B3FD9] px-6 text-[15px] font-semibold text-white hover:bg-[#4A32B8]">
+          {bkDate ? tt.bkContinue : dc.selectDate}
         </button>
       </div>
-
-      <div className="md:hidden h-20" />
+      <div className="h-24 lg:hidden" aria-hidden="true" />
 
       <MainFooter />
     </main>
   );
 }
 
+function ExpandableText({ text, more, less }: { text: string; more: string; less: string }) {
+  const [open, setOpen] = useState(false);
+  const long = text.length > 600;
+  return (
+    <div className="mt-4">
+      <p className={`whitespace-pre-line leading-8 text-neutral-800 ${long && !open ? "line-clamp-6" : ""}`}>{text}</p>
+      {long && (
+        <button type="button" onClick={() => setOpen((o) => !o)} aria-expanded={open}
+          className="mt-2 text-sm font-semibold text-neutral-900 underline underline-offset-4">
+          {open ? less : more}
+        </button>
+      )}
+    </div>
+  );
+}
+
+function TranslationBadgeNote({ locale }: { locale: string }) {
+  return (
+    <p className="rounded-lg bg-neutral-50 px-4 py-2.5 text-sm text-neutral-600">
+      {locale === "tr" ? "Bu içerik otomatik çevrilmiştir." : "This content was machine-translated."}
+    </p>
+  );
+}
+
 // ─── Lightbox ────────────────────────────────────────────────────────────────
 
 function Lightbox({
-  photos,
-  index,
-  onClose,
-  onPrev,
-  onNext,
-  onSelect,
+  photos, index, onClose, onPrev, onNext, onSelect,
 }: {
-  photos: TourPhoto[];
-  index: number;
-  onClose: () => void;
-  onPrev: () => void;
-  onNext: () => void;
-  onSelect: (i: number) => void;
+  photos: TourPhoto[]; index: number; onClose: () => void; onPrev: () => void; onNext: () => void; onSelect: (i: number) => void;
 }) {
   const thumbsRef = useRef<HTMLDivElement>(null);
 
-  // Keyboard navigation
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -799,72 +705,49 @@ function Lightbox({
       if (e.key === "ArrowRight") onNext();
     };
     window.addEventListener("keydown", handler);
-    return () => window.removeEventListener("keydown", handler);
+    document.body.style.overflow = "hidden";
+    return () => { window.removeEventListener("keydown", handler); document.body.style.overflow = ""; };
   }, [onClose, onPrev, onNext]);
 
-  // Scroll active thumb into view
   useEffect(() => {
     const el = thumbsRef.current?.children[index] as HTMLElement | undefined;
     el?.scrollIntoView({ block: "nearest", inline: "center", behavior: "smooth" });
   }, [index]);
 
   const current = photos[index];
+  const navBtn = "absolute z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/25";
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/95 flex flex-col" onClick={onClose}>
-      {/* Top bar */}
-      <div className="flex items-center justify-between px-4 py-3 flex-shrink-0" onClick={(e) => e.stopPropagation()}>
-        <span className="text-white/60 text-sm font-semibold">{index + 1} / {photos.length}</span>
-        <button onClick={onClose} aria-label="Close photo viewer" className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-lg transition-colors">✕</button>
+    <div className="fixed inset-0 z-50 flex flex-col bg-black/95" role="dialog" aria-modal="true" onClick={onClose}>
+      <div className="flex shrink-0 items-center justify-between px-4 py-3" onClick={(e) => e.stopPropagation()}>
+        <span className="text-sm font-medium text-white/70 tabular-nums">{index + 1} / {photos.length}</span>
+        <button onClick={onClose} aria-label="Close photo viewer" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20">
+          <Icon size={18}><path d="M18 6 6 18M6 6l12 12" /></Icon>
+        </button>
       </div>
 
-      {/* Main image */}
-      <div className="flex-1 flex items-center justify-center relative px-4 min-h-0" onClick={(e) => e.stopPropagation()}>
-        <button
-          onClick={onPrev}
-          aria-label="Previous photo"
-          className="absolute left-2 md:left-6 w-11 h-11 rounded-full bg-white/10 hover:bg-white/25 text-white flex items-center justify-center text-2xl transition-colors z-10"
-        >‹</button>
-
+      <div className="relative flex min-h-0 flex-1 items-center justify-center px-4" onClick={(e) => e.stopPropagation()}>
+        {photos.length > 1 && (
+          <button onClick={onPrev} aria-label="Previous photo" className={`${navBtn} left-2 md:left-6`}><Icon><path d="m15 18-6-6 6-6" /></Icon></button>
+        )}
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          key={current.url}
-          src={current.url}
-          alt={current.caption ?? ""}
-          className="max-h-full max-w-full object-contain rounded-xl select-none"
-          style={{ maxHeight: "calc(100vh - 180px)" }}
-        />
-
-        <button
-          onClick={onNext}
-          aria-label="Next photo"
-          className="absolute right-2 md:right-6 w-11 h-11 rounded-full bg-white/10 hover:bg-white/25 text-white flex items-center justify-center text-2xl transition-colors z-10"
-        >›</button>
+        <img key={current.url} src={current.url} alt={current.caption ?? ""}
+          className="max-h-full max-w-full select-none rounded-lg object-contain" style={{ maxHeight: "calc(100vh - 180px)" }} />
+        {photos.length > 1 && (
+          <button onClick={onNext} aria-label="Next photo" className={`${navBtn} right-2 md:right-6`}><Icon><path d="m9 18 6-6-6-6" /></Icon></button>
+        )}
       </div>
 
-      {/* Caption */}
       {current.caption && (
-        <p className="text-center text-white/60 text-sm px-6 py-2 flex-shrink-0" onClick={(e) => e.stopPropagation()}>
-          {current.caption}
-        </p>
+        <p className="shrink-0 px-6 py-2 text-center text-sm text-white/70" onClick={(e) => e.stopPropagation()}>{current.caption}</p>
       )}
 
-      {/* Thumbnail strip */}
-      <div
-        ref={thumbsRef}
-        className="flex gap-2 overflow-x-auto px-4 py-3 flex-shrink-0 scrollbar-hide"
-        onClick={(e) => e.stopPropagation()}
-      >
+      <div ref={thumbsRef} className="flex shrink-0 gap-2 overflow-x-auto px-4 py-3" style={{ scrollbarWidth: "none" }} onClick={(e) => e.stopPropagation()}>
         {photos.map((photo, i) => (
-          <button
-            key={photo.id}
-            onClick={() => onSelect(i)}
-            className={`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all ${
-              i === index ? "border-white scale-105" : "border-transparent opacity-50 hover:opacity-80"
-            }`}
-          >
+          <button key={photo.id} onClick={() => onSelect(i)} aria-label={`Photo ${i + 1}`}
+            className={`h-16 w-16 shrink-0 overflow-hidden rounded-md border-2 transition ${i === index ? "border-white" : "border-transparent opacity-50 hover:opacity-80"}`}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={photo.url} alt="" className="w-full h-full object-cover" />
+            <img src={photo.url} alt="" className="h-full w-full object-cover" />
           </button>
         ))}
       </div>
@@ -883,72 +766,66 @@ interface PublicReview {
 
 function ReviewStars({ n, size = 14 }: { n: number; size?: number }) {
   return (
-    <span className="inline-flex gap-0.5">
+    <span className="inline-flex gap-0.5" aria-label={`${n} / 5`}>
       {[1, 2, 3, 4, 5].map((i) => (
-        <svg key={i} width={size} height={size} viewBox="0 0 24 24" fill={i <= Math.round(n) ? "#F59E0B" : "#E5E7EB"} stroke="none">
-          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+        <svg key={i} width={size} height={size} viewBox="0 0 24 24" fill={i <= Math.round(n) ? "#0A0A0F" : "#D4D4D4"} aria-hidden="true">
+          <polygon points={STAR_PATH} />
         </svg>
       ))}
     </span>
   );
 }
 
-function ReviewsSection({ tourId }: { tourId: number }) {
+function ReviewsSection({ tourId, data }: { tourId: number; data: ReviewsData | null }) {
   const { locale } = useT();
   const tt = getToursT(locale);
-  const [data, setData] = useState<{ count: number; avgRating: number; reviews: PublicReview[] } | null>(null);
-
-  useEffect(() => {
-    clientFetch(`/api/tours/${tourId}/public-reviews`)
-      .then((r) => (r.ok ? r.json() : null))
-      .then((d) => d && setData(d))
-      .catch(() => {});
-  }, [tourId]);
 
   return (
-    <div>
-      <div className="flex items-center justify-between flex-wrap gap-3 mb-5">
-        <h2 className="text-2xl font-black">
-          {tt.reviews}
+    <section id="reviews" className="scroll-mt-24 border-t border-neutral-200 pt-10">
+      <div className="flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <h2 className={H2}>{tt.reviews}</h2>
           {data && data.count > 0 && (
-            <span className="ml-3 inline-flex items-center gap-2 text-lg align-middle">
-              <ReviewStars n={data.avgRating} size={18} />
-              <span className="text-[#0A0A0F]">{data.avgRating.toFixed(1)}</span>
-              <span className="text-neutral-800 text-sm font-semibold">({data.count})</span>
-            </span>
+            <p className="mt-2 flex items-center gap-2 text-neutral-700">
+              <span className="text-2xl font-semibold text-neutral-900">{data.avgRating.toFixed(1)}</span>
+              <ReviewStars n={data.avgRating} size={16} />
+              <span className="text-sm text-neutral-500">({data.count})</span>
+            </p>
           )}
-        </h2>
-        <a href={`/tours/${tourId}/review`}
-          className="rounded-full border border-[#6C4CF1]/30 text-[#6C4CF1] font-bold text-sm px-5 py-2 hover:bg-[#6C4CF1]/5 transition-colors">
-          ✍️ {tt.writeReview}
-        </a>
+        </div>
+        <Link href={`/tours/${tourId}/review`}
+          className="inline-flex h-10 items-center rounded-full border border-neutral-300 px-5 text-sm font-semibold text-neutral-900 hover:border-neutral-900">
+          {tt.writeReview}
+        </Link>
       </div>
 
       {!data || data.reviews.length === 0 ? (
-        <div className="rounded-2xl bg-[#F7F7FB] border border-black/5 p-8 text-center">
-          <p className="text-sm font-semibold text-neutral-700">{tt.noReviews}</p>
-          <p className="text-xs text-neutral-800 mt-1">{tt.beTheFirst}</p>
+        <div className="mt-6 rounded-xl border border-dashed border-neutral-300 px-6 py-10 text-center">
+          <p className="font-semibold text-neutral-900">{tt.noReviews}</p>
+          <p className="mt-1 text-sm text-neutral-600">{tt.beTheFirst}</p>
         </div>
       ) : (
-        <div className="grid sm:grid-cols-2 gap-4">
+        <div className="mt-6 grid gap-x-10 gap-y-8 sm:grid-cols-2">
           {data.reviews.map((r) => (
-            <div key={r.id} className="rounded-2xl bg-white border border-black/[0.06] p-5 shadow-sm">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#6C4CF1] to-[#8B5CF6] flex items-center justify-center text-sm font-black text-white shrink-0">
+            <article key={r.id}>
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-neutral-200 text-sm font-semibold text-neutral-700">
                   {r.fullName[0]?.toUpperCase()}
                 </div>
                 <div className="min-w-0">
-                  <p className="font-bold text-[#0A0A0F] text-sm truncate">{r.fullName}</p>
-                  {r.nationality && <p className="text-xs text-neutral-800">{r.nationality}</p>}
+                  <p className="truncate text-sm font-semibold text-neutral-900">{r.fullName}</p>
+                  <p className="text-xs text-neutral-500">
+                    {r.nationality ? `${r.nationality} · ` : ""}
+                    {new Date(r.createdAt).toLocaleDateString(locale === "tr" ? "tr-TR" : "en-GB", { month: "long", year: "numeric" })}
+                  </p>
                 </div>
               </div>
-              <ReviewStars n={r.rating} />
-              {r.comment && <p className="mt-2 text-sm text-neutral-800 leading-6">{r.comment}</p>}
-              <p className="mt-3 text-[11px] text-neutral-800">{new Date(r.createdAt).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}</p>
-            </div>
+              <div className="mt-3"><ReviewStars n={r.rating} /></div>
+              {r.comment && <p className="mt-2 leading-7 text-neutral-800">{r.comment}</p>}
+            </article>
           ))}
         </div>
       )}
-    </div>
+    </section>
   );
 }

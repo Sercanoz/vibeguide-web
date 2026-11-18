@@ -50,7 +50,7 @@ function AssignGuideSection({ booking, onAssigned }: { booking: Booking; onAssig
         value={q}
         onChange={(e) => setQ(e.target.value)}
         placeholder="Search guides by name or email…"
-        className="w-full border border-black/10 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-[#6C4CF1] mb-2"
+        className="w-full border border-black/10 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-[#5B3FD9] mb-2"
       />
       {err && <p className="text-xs text-red-600 mb-2">{err}</p>}
       <div className="max-h-48 overflow-y-auto space-y-1">
@@ -65,7 +65,7 @@ function AssignGuideSection({ booking, onAssigned }: { booking: Booking; onAssig
             <button
               onClick={() => assign(g.id)}
               disabled={assigning !== null || g.id === booking.guideId}
-              className="shrink-0 text-xs font-bold rounded-full px-3 py-1.5 bg-[#6C4CF1] text-white hover:bg-[#5a3dd4] disabled:opacity-40 transition-colors"
+              className="shrink-0 text-xs font-bold rounded-full px-3 py-1.5 bg-[#5B3FD9] text-white hover:bg-[#4A32B8] disabled:opacity-40 transition-colors"
             >
               {g.id === booking.guideId ? "Current" : assigning === g.id ? "…" : "Assign"}
             </button>
@@ -99,7 +99,7 @@ function BookingModal({ booking, onClose, onAssigned }: { booking: Booking; onCl
             <div key={label} className="flex items-center justify-between py-2 border-b border-black/[0.06] last:border-0">
               <span className="text-xs font-bold text-neutral-400 uppercase tracking-wide">{label}</span>
               {href ? (
-                <Link href={href} className="text-sm font-semibold text-[#6C4CF1] hover:underline">{value}</Link>
+                <Link href={href} className="text-sm font-semibold text-[#5B3FD9] hover:underline">{value}</Link>
               ) : (
                 <span className="text-sm font-semibold text-[#0A0A0F]">{value}</span>
               )}
@@ -160,13 +160,13 @@ export default function AdminBookingsPage() {
           onAssigned={() => { setSelected(null); load(tab, offset); }}
         />
       )}
-      <h1 className="text-2xl font-black text-[#0A0A0F] mb-6">Bookings</h1>
+      <h1 className="text-2xl font-display font-normal text-[#0A0A0F] mb-6">Bookings</h1>
 
       {/* Tabs */}
       <div className="flex gap-2 flex-wrap mb-6">
         {STATUS_TABS.map((s) => (
           <button key={s} onClick={() => setTab(s)}
-            className={`px-4 py-1.5 rounded-full text-sm font-bold border transition-all ${tab === s ? "bg-[#6C4CF1] text-white border-[#6C4CF1]" : "bg-white border-black/10 text-neutral-500 hover:border-[#6C4CF1]/40"}`}>
+            className={`px-4 py-1.5 rounded-full text-sm font-bold border transition-all ${tab === s ? "bg-[#5B3FD9] text-white border-[#5B3FD9]" : "bg-white border-black/10 text-neutral-500 hover:border-[#5B3FD9]/40"}`}>
             {s === "all" ? "All" : s}
           </button>
         ))}
@@ -199,7 +199,7 @@ export default function AdminBookingsPage() {
                     <td className="px-4 py-3 text-neutral-600">{b.touristName ?? `#${b.touristId}`}</td>
                     <td className="px-4 py-3 text-neutral-600">{b.guideName ?? `#${b.guideId}`}</td>
                     <td className="px-4 py-3 text-neutral-500 text-xs">{new Date(b.scheduledAt).toLocaleDateString("en-GB")}</td>
-                    <td className="px-4 py-3 font-bold text-[#6C4CF1]">{b.price} {b.currency}</td>
+                    <td className="px-4 py-3 font-bold text-[#5B3FD9]">{b.price} {b.currency}</td>
                     <td className="px-4 py-3">
                       <span className={`px-2 py-0.5 rounded-full text-xs font-bold ${STATUS_COLOR[b.status] ?? "bg-neutral-100 text-neutral-500"}`}>
                         {b.status}
@@ -216,11 +216,11 @@ export default function AdminBookingsPage() {
             <p>{total} total · showing {offset + 1}–{Math.min(offset + LIMIT, total)}</p>
             <div className="flex gap-2">
               <button disabled={offset === 0} onClick={() => setOffset(Math.max(0, offset - LIMIT))}
-                className="px-4 py-1.5 rounded-xl border border-black/10 font-semibold disabled:opacity-40 hover:border-[#6C4CF1]/40 transition-colors">
+                className="px-4 py-1.5 rounded-xl border border-black/10 font-semibold disabled:opacity-40 hover:border-[#5B3FD9]/40 transition-colors">
                 ← Prev
               </button>
               <button disabled={offset + LIMIT >= total} onClick={() => setOffset(offset + LIMIT)}
-                className="px-4 py-1.5 rounded-xl border border-black/10 font-semibold disabled:opacity-40 hover:border-[#6C4CF1]/40 transition-colors">
+                className="px-4 py-1.5 rounded-xl border border-black/10 font-semibold disabled:opacity-40 hover:border-[#5B3FD9]/40 transition-colors">
                 Next →
               </button>
             </div>

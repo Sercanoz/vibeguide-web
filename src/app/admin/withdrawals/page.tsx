@@ -54,7 +54,7 @@ export default function WithdrawalsPage() {
 
   return (
     <div className="p-8 max-w-5xl">
-      <h1 className="text-2xl font-black text-[#0A0A0F] mb-1">Withdrawals & Payouts</h1>
+      <h1 className="text-2xl font-display font-normal text-[#0A0A0F] mb-1">Withdrawals & Payouts</h1>
       <p className="text-sm text-neutral-400 mb-6">Process weekly guide payouts and view pending amounts.</p>
 
       {flash && (
@@ -66,7 +66,7 @@ export default function WithdrawalsPage() {
       <div className="grid lg:grid-cols-3 gap-4 mb-6">
         <div className="bg-white rounded-2xl border border-black/[0.06] p-5 shadow-sm">
           <p className="text-xs font-bold text-neutral-400 uppercase tracking-wide">Pending amount</p>
-          <p className="mt-2 text-3xl font-black text-[#6C4CF1]">
+          <p className="mt-2 text-3xl font-black text-[#5B3FD9]">
             {loadingPending ? "…" : pending ? fmt(pending.totalAmount) : "—"}
           </p>
           <p className="text-xs text-neutral-400 mt-1">awaiting payout</p>
@@ -84,7 +84,7 @@ export default function WithdrawalsPage() {
             <p className="text-sm text-neutral-500 mt-1 leading-5">Mark all completed tours as paid and generate payout summary.</p>
           </div>
           <button onClick={processPayouts} disabled={processing}
-            className="mt-4 w-full bg-[#6C4CF1] text-white font-bold py-2.5 rounded-xl text-sm hover:bg-[#5a3dd4] transition-colors disabled:opacity-50">
+            className="mt-4 w-full bg-[#5B3FD9] text-white font-bold py-2.5 rounded-xl text-sm hover:bg-[#4A32B8] transition-colors disabled:opacity-50">
             {processing ? "Processing…" : "Process payouts →"}
           </button>
         </div>
@@ -124,7 +124,7 @@ export default function WithdrawalsPage() {
                   <tr key={r.guideId} className="border-b border-black/[0.04] hover:bg-neutral-50 transition-colors">
                     <td className="px-4 py-3 font-semibold text-[#0A0A0F]">{r.guideName}</td>
                     <td className="px-4 py-3 text-neutral-500">{r.tourCount}</td>
-                    <td className="px-4 py-3 font-black text-[#6C4CF1]">{fmt(r.amount, r.currency)}</td>
+                    <td className="px-4 py-3 font-black text-[#5B3FD9]">{fmt(r.amount, r.currency)}</td>
                     <td className="px-4 py-3 font-mono text-xs text-neutral-400 hidden md:table-cell">{r.iban ?? "—"}</td>
                     <td className="px-4 py-3 text-neutral-500 hidden md:table-cell">{r.ibanAccountName ?? "—"}</td>
                   </tr>

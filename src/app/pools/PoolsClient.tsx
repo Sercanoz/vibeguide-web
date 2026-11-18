@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { clientFetch } from "@/lib/api";
+import { API_BASE_URL } from "@/lib/api";
+import { fbAuth, buildAuthHeaders } from "@/lib/firebase-client";
 import Navbar from "@/components/Navbar";
 import MainFooter from "@/components/MainFooter";
 import Price from "@/components/Price";
@@ -47,12 +48,28 @@ export default function PoolsClient() {
   const [pools, setPools] = useState<Pool[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  // null = Firebase oturumu henüz çözülmedi.
+  const [signedIn, setSignedIn] = useState<boolean | null>(null);
 
   useEffect(() => {
+    const unsub = fbAuth().onAuthStateChanged((u) => setSignedIn(!!u));
+    return () => unsub();
+  }, []);
+
+  useEffect(() => {
+    // Backend /api/pools giriş istiyor (RequireRegistered). Eskiden token'sız
+    // çağrılıyordu → her istek 401, liste kimse için açılmıyordu. Oturum
+    // çözülene kadar bekle; giriş yoksa istek atma, giriş daveti göster.
+    if (signedIn === null) return;
+    if (!signedIn) {
+      setLoading(false);
+      return;
+    }
     let cancelled = false;
     (async () => {
       try {
-        const res = await clientFetch("/api/pools");
+        const headers = await buildAuthHeaders();
+        const res = await fetch(`${API_BASE_URL}/api/pools`, { headers });
         if (!res.ok) throw new Error(String(res.status));
         const raw = (await res.json()) as PoolRow[] | Pool[];
         if (cancelled) return;
@@ -70,14 +87,14 @@ export default function PoolsClient() {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [signedIn]);
 
   return (
     <main className="min-h-screen bg-[#FAFAFB]">
       <Navbar />
       <div className="pt-24 pb-16 px-4">
         <div className="mx-auto max-w-4xl">
-          <h1 className="text-3xl md:text-4xl font-black tracking-tight text-[#0A0A0F]">
+          <h1 className="text-3xl md:text-4xl font-display font-normal tracking-[-0.01em] text-[#0A0A0F]">
             Group tours
           </h1>
           <p className="mt-2 text-neutral-600 leading-7 max-w-2xl">
@@ -103,7 +120,24 @@ export default function PoolsClient() {
             </div>
           )}
 
-          {!loading && !error && pools.length === 0 && (
+          {!loading && signedIn === false && (
+            <div className="mt-10 rounded-3xl border border-black/[0.06] bg-white p-10 text-center">
+              <p className="text-base font-black text-[#0A0A0F]">
+                Sign in to see open groups
+              </p>
+              <p className="mt-1 text-sm text-neutral-600">
+                Group tours are available to registered travellers.
+              </p>
+              <Link
+                href={`/login?next=${encodeURIComponent("/pools")}`}
+                className="mt-5 inline-flex rounded-2xl bg-[#5B3FD9] px-6 py-3 text-sm font-bold text-white hover:bg-[#4A32B8] transition-colors"
+              >
+                Sign in →
+              </Link>
+            </div>
+          )}
+
+          {!loading && signedIn && !error && pools.length === 0 && (
             <div className="mt-10 rounded-3xl border border-black/[0.06] bg-white p-10 text-center">
               <p className="text-base font-black text-[#0A0A0F]">
                 No open groups right now
@@ -113,7 +147,7 @@ export default function PoolsClient() {
               </p>
               <Link
                 href="/tours"
-                className="mt-5 inline-flex rounded-2xl bg-[#6C4CF1] px-6 py-3 text-sm font-bold text-white hover:bg-[#5a3dd4] transition-colors"
+                className="mt-5 inline-flex rounded-2xl bg-[#5B3FD9] px-6 py-3 text-sm font-bold text-white hover:bg-[#4A32B8] transition-colors"
               >
                 Browse tours →
               </Link>
@@ -128,7 +162,7 @@ export default function PoolsClient() {
                 <Link
                   key={p.id}
                   href={`/pools/${p.id}`}
-                  className="block rounded-2xl border border-black/[0.06] bg-white p-5 hover:border-[#6C4CF1]/40 transition-colors"
+                  className="block rounded-2xl border border-black/[0.06] bg-white p-5 hover:border-[#5B3FD9]/40 transition-colors"
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div className="min-w-0">
@@ -147,14 +181,14 @@ export default function PoolsClient() {
                             Closed — payment in progress
                           </span>
                         ) : spotsLeft <= 2 ? (
-                          <span className="ml-2 rounded-full bg-[#6C4CF1]/10 px-2 py-0.5 font-bold text-[#6C4CF1]">
+                          <span className="ml-2 rounded-full bg-[#5B3FD9]/10 px-2 py-0.5 font-bold text-[#5B3FD9]">
                             {spotsLeft} spot{spotsLeft === 1 ? "" : "s"} left
                           </span>
                         ) : null}
                       </p>
                     </div>
                     <div className="shrink-0 text-right">
-                      <p className="text-lg font-black text-[#6C4CF1]">
+                      <p className="text-lg font-black text-[#5B3FD9]">
                         <Price
                           amount={p.currentPricePerPerson}
                           currency={p.currency}

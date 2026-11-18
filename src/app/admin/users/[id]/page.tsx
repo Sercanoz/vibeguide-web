@@ -30,7 +30,7 @@ const ROLE_COLOR: Record<string, string> = {
   Tourist: "bg-emerald-100 text-emerald-700",
   Guide: "bg-blue-100 text-blue-700",
   PendingGuide: "bg-amber-100 text-amber-700",
-  Admin: "bg-[#6C4CF1]/10 text-[#6C4CF1]",
+  Admin: "bg-[#5B3FD9]/10 text-[#5B3FD9]",
 };
 
 export default function UserDetailPage(props: Props) {
@@ -77,10 +77,10 @@ export default function UserDetailPage(props: Props) {
         {/* Profile card */}
         <div className="lg:col-span-1">
           <div className="bg-white rounded-2xl border border-black/[0.06] p-6 shadow-sm">
-            <div className="w-14 h-14 rounded-2xl bg-[#6C4CF1]/10 flex items-center justify-center mb-4 text-2xl font-black text-[#6C4CF1]">
+            <div className="w-14 h-14 rounded-2xl bg-[#5B3FD9]/10 flex items-center justify-center mb-4 text-2xl font-black text-[#5B3FD9]">
               {user.fullName[0]?.toUpperCase()}
             </div>
-            <h1 className="text-lg font-black text-[#0A0A0F]">{user.fullName}</h1>
+            <h1 className="text-lg font-display font-normal text-[#0A0A0F]">{user.fullName}</h1>
             <p className="text-sm text-neutral-400">{user.email}</p>
             {user.phoneNumber && <p className="text-sm text-neutral-400 mt-1">{user.phoneNumber}</p>}
 
@@ -122,7 +122,7 @@ export default function UserDetailPage(props: Props) {
               <div className="flex flex-wrap gap-1.5">
                 {["Tourist","Guide","PendingGuide","Admin"].filter(r => r !== user.role).map(r => (
                   <button key={r} onClick={() => onRoleChange(r)} disabled={changingRole}
-                    className="px-3 py-1 rounded-lg text-xs font-bold border border-black/10 hover:border-[#6C4CF1]/40 hover:text-[#6C4CF1] transition-colors disabled:opacity-50">
+                    className="px-3 py-1 rounded-lg text-xs font-bold border border-black/10 hover:border-[#5B3FD9]/40 hover:text-[#5B3FD9] transition-colors disabled:opacity-50">
                     → {r}
                   </button>
                 ))}
@@ -145,7 +145,7 @@ export default function UserDetailPage(props: Props) {
                     <p className="text-sm font-semibold text-[#0A0A0F] truncate">{b.tourTitle ?? `Booking #${b.id}`}</p>
                     <p className="text-xs text-neutral-400">{new Date(b.scheduledAt).toLocaleDateString("en-GB")}</p>
                   </div>
-                  <span className="text-sm font-bold text-[#6C4CF1]">{b.price} {b.currency}</span>
+                  <span className="text-sm font-bold text-[#5B3FD9]">{b.price} {b.currency}</span>
                   <span className={`px-2 py-0.5 rounded-full text-xs font-bold ${STATUS_COLOR[b.status] ?? "bg-neutral-100 text-neutral-500"}`}>{b.status}</span>
                 </div>
               ))}

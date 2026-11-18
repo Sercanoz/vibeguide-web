@@ -119,13 +119,13 @@ export default function CityGuideView({
             <span className="mx-1.5" aria-hidden="true">›</span>
             <span className="text-white/75">{c.h1}</span>
           </nav>
-          <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1] mb-4">
+          <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#5B3FD9] mb-4">
             {c.region}
           </p>
-          <h1 className="text-4xl md:text-6xl font-black leading-tight tracking-tight max-w-2xl">
+          <h1 className="text-4xl md:text-6xl font-display font-normal leading-tight tracking-[-0.01em] max-w-2xl">
             {c.h1}
             <br />
-            <span className="bg-gradient-to-r from-[#6C4CF1] to-[#8B5CF6] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#5B3FD9] to-[#8B5CF6] bg-clip-text text-transparent">
               {c.h1Accent}
             </span>
           </h1>
@@ -133,7 +133,7 @@ export default function CityGuideView({
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href="/#download"
-              className="rounded-full bg-[#6C4CF1] px-7 py-3.5 text-sm font-bold text-white hover:bg-[#5a3dd4] transition-colors"
+              className="rounded-full bg-[#5B3FD9] px-7 py-3.5 text-sm font-bold text-white hover:bg-[#4A32B8] transition-colors"
             >
               {c.ctaPrimary}
             </Link>
@@ -150,7 +150,7 @@ export default function CityGuideView({
       {/* Highlights */}
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-5xl px-6">
-          <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1] mb-4">
+          <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#5B3FD9] mb-4">
             {c.highlightsKicker}
           </p>
           <h2 className="text-3xl md:text-4xl font-black mb-12 tracking-tight">
@@ -160,7 +160,7 @@ export default function CityGuideView({
             {c.highlights.map((h) => (
               <div
                 key={h.name}
-                className="rounded-2xl border border-black/[0.06] bg-[#F7F7FB] p-6 hover:border-[#6C4CF1]/30 transition-colors"
+                className="rounded-2xl border border-black/[0.06] bg-[#F7F7FB] p-6 hover:border-[#5B3FD9]/30 transition-colors"
               >
                 <span className="text-3xl">{h.icon}</span>
                 <h3 className="mt-3 text-base font-black">{h.name}</h3>
@@ -248,7 +248,7 @@ export default function CityGuideView({
                 >
                   <summary className="cursor-pointer list-none font-black text-[#0A0A0F] flex items-center justify-between gap-3">
                     {f.q}
-                    <span className="text-[#6C4CF1] transition-transform group-open:rotate-45">
+                    <span className="text-[#5B3FD9] transition-transform group-open:rotate-45">
                       +
                     </span>
                   </summary>
@@ -273,11 +273,11 @@ export default function CityGuideView({
                 <Link
                   key={l.href}
                   href={l.href}
-                  className="group flex items-center gap-4 rounded-2xl bg-white border border-black/[0.06] p-5 hover:border-[#6C4CF1]/30 transition-colors"
+                  className="group flex items-center gap-4 rounded-2xl bg-white border border-black/[0.06] p-5 hover:border-[#5B3FD9]/30 transition-colors"
                 >
                   <span className="text-3xl">{l.icon}</span>
                   <div>
-                    <p className="font-black text-[#0A0A0F] group-hover:text-[#6C4CF1] transition-colors">
+                    <p className="font-black text-[#0A0A0F] group-hover:text-[#5B3FD9] transition-colors">
                       {l.name}
                     </p>
                     <p className="text-sm text-neutral-800">{l.desc}</p>
@@ -301,10 +301,10 @@ export default function CityGuideView({
                 <Link
                   key={b.slug}
                   href={b.href}
-                  className="group rounded-2xl bg-[#F7F7FB] border border-black/[0.06] p-5 hover:border-[#6C4CF1]/30 transition-colors"
+                  className="group rounded-2xl bg-[#F7F7FB] border border-black/[0.06] p-5 hover:border-[#5B3FD9]/30 transition-colors"
                 >
-                  <p className="text-xs font-black uppercase tracking-wide text-[#6C4CF1] mb-2">Blog</p>
-                  <p className="font-bold text-[#0A0A0F] group-hover:text-[#6C4CF1] transition-colors leading-snug">
+                  <p className="text-xs font-black uppercase tracking-wide text-[#5B3FD9] mb-2">Blog</p>
+                  <p className="font-bold text-[#0A0A0F] group-hover:text-[#5B3FD9] transition-colors leading-snug">
                     {b.title}
                   </p>
                 </Link>
@@ -323,11 +323,11 @@ export default function CityGuideView({
               <Link
                 key={l.href}
                 href={l.href}
-                className="group flex items-center gap-4 rounded-2xl bg-white border border-black/[0.06] p-5 hover:border-[#6C4CF1]/30 transition-colors"
+                className="group flex items-center gap-4 rounded-2xl bg-white border border-black/[0.06] p-5 hover:border-[#5B3FD9]/30 transition-colors"
               >
                 <span className="text-3xl">{l.icon}</span>
                 <div>
-                  <p className="font-black text-[#0A0A0F] group-hover:text-[#6C4CF1] transition-colors">
+                  <p className="font-black text-[#0A0A0F] group-hover:text-[#5B3FD9] transition-colors">
                     {l.name}
                   </p>
                   <p className="text-sm text-neutral-800">{l.desc}</p>
@@ -347,7 +347,7 @@ export default function CityGuideView({
                 <Link
                   key={g.slug}
                   href={href}
-                  className="rounded-full border border-black/[0.08] bg-white px-4 py-2 text-sm font-semibold text-neutral-700 hover:border-[#6C4CF1]/40 hover:text-[#6C4CF1] transition-colors"
+                  className="rounded-full border border-black/[0.08] bg-white px-4 py-2 text-sm font-semibold text-neutral-700 hover:border-[#5B3FD9]/40 hover:text-[#5B3FD9] transition-colors"
                 >
                   {gc.h1}
                 </Link>

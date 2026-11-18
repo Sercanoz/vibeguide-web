@@ -80,7 +80,7 @@ export default function DeadLettersPage() {
     <div className="max-w-5xl mx-auto px-5 sm:px-8 py-10">
       <div className="flex items-start justify-between gap-4 flex-wrap">
         <div>
-          <h1 className="text-2xl font-black tracking-tight text-vg-ink">Failed Notifications</h1>
+          <h1 className="text-2xl font-display font-normal tracking-[-0.01em] text-vg-ink">Failed Notifications</h1>
           <p className="mt-1 text-sm text-vg-muted">
             Undelivered notifications — {items.length} total records.
           </p>

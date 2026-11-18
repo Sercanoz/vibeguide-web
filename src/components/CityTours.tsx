@@ -52,7 +52,7 @@ export default async function CityTours({
   return (
     <section className="py-20 bg-[#F7F7FB]">
       <div className="mx-auto max-w-5xl px-6">
-        <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1] mb-4">{hs.availableNow}</p>
+        <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#5B3FD9] mb-4">{hs.availableNow}</p>
         <h2 className="text-3xl md:text-4xl font-black mb-10 tracking-tight">{heading ?? (locale === "tr" ? `Popüler ${cityName} turları` : `Popular ${cityName} tours`)}</h2>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -69,14 +69,14 @@ export default async function CityTours({
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 ) : (
-                  <div className="w-full h-full bg-gradient-to-br from-[#6C4CF1]/15 to-[#8B5CF6]/15 flex items-center justify-center text-4xl">🗺️</div>
+                  <div className="w-full h-full bg-gradient-to-br from-[#5B3FD9]/15 to-[#8B5CF6]/15 flex items-center justify-center text-4xl">🗺️</div>
                 )}
               </div>
               <div className="p-4">
-                <h3 className="font-black text-[#0A0A0F] text-[15px] leading-snug line-clamp-2 group-hover:text-[#6C4CF1] transition-colors">{t.title}</h3>
+                <h3 className="font-black text-[#0A0A0F] text-[15px] leading-snug line-clamp-2 group-hover:text-[#5B3FD9] transition-colors">{t.title}</h3>
                 <div className="mt-2 flex items-center justify-between">
                   <span className="text-xs text-neutral-800 capitalize">{t.category}</span>
-                  <span className="text-base font-black text-[#6C4CF1]"><Price amount={t.basePrice} currency={t.currency} /></span>
+                  <span className="text-base font-black text-[#5B3FD9]"><Price amount={t.basePrice} currency={t.currency} /></span>
                 </div>
               </div>
             </a>
@@ -85,7 +85,7 @@ export default async function CityTours({
 
         <div className="mt-8 text-center">
           <a href={`/tours?city=${encodeURIComponent(citySlug)}`}
-            className="inline-flex items-center gap-2 rounded-full bg-[#6C4CF1] text-white font-bold px-7 py-3 text-sm hover:bg-[#5a3dd4] transition-colors">
+            className="inline-flex items-center gap-2 rounded-full bg-[#5B3FD9] text-white font-bold px-7 py-3 text-sm hover:bg-[#4A32B8] transition-colors">
             {locale === "tr" ? `Tüm ${cityName} turlarını gör →` : `See all ${cityName} tours →`}
           </a>
         </div>

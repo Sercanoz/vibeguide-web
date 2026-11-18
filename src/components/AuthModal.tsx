@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
   signInWithEmail, signInWithGoogle, registerWithEmail, fbAuth, signOut, buildAuthHeaders
@@ -64,23 +65,21 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
     imTouristSub: tr ? "Doğrulanmış yerel rehberlerle şehirleri keşfet" : "Discover cities with verified local guides",
     imGuide: tr ? "Rehberim" : "I'm a guide",
     imGuideSub: tr ? "Şehrini paylaş · sevdiğin işi yaparak kazan" : "Share your city · earn doing what you love",
-    badgeGuide: tr ? "🎤 Rehber başvurusu" : "🎤 Guide application",
-    badgeTourist: tr ? "✈️ Turist" : "✈️ Tourist",
     guideInfo: tr ? "Rehber kaydı, doğrulama için resmi kokart fotoğraflarının yüklenmesini gerektirir. Seni tam başvuru formuna yönlendireceğiz." : "Guide registration requires uploading your official badge photos for verification. We'll take you to the full application form.",
-    continueGuide: tr ? "Rehber başvurusuna devam et →" : "Continue to guide application →",
+    continueGuide: tr ? "Rehber başvurusuna devam et" : "Continue to guide application",
     guideTime: tr ? "Yaklaşık 2 dakika sürer · Admin 1–2 gün içinde inceler" : "Takes about 2 minutes · Admin reviews within 1–2 days",
     continueGoogle: tr ? "Google ile devam et" : "Continue with Google",
     or: tr ? "veya" : "or",
     phFullName: tr ? "Ad soyad" : "Full name",
     phEmail: tr ? "E-posta adresi" : "Email address",
-    phPassMin: tr ? "Şifre (en az 6 karakter)" : "Password (min. 6 chars)",
+    passHint: tr ? "en az 6 karakter" : "min. 6 characters",
     phPassConfirm: tr ? "Şifreyi onayla" : "Confirm password",
     phPassword: tr ? "Şifre" : "Password",
     pleaseWait: tr ? "Lütfen bekle…" : "Please wait…",
-    createAccountBtn: tr ? "Hesap oluştur →" : "Create account →",
+    createAccountBtn: tr ? "Hesap oluştur" : "Create account",
     signingIn: tr ? "Giriş yapılıyor…" : "Signing in…",
-    signinBtn: tr ? "Giriş yap →" : "Sign in →",
-    forgotPass: tr ? "Şifremi unuttum?" : "Forgot password?",
+    signinBtn: tr ? "Giriş yap" : "Sign in",
+    forgotPass: tr ? "Şifremi unuttum" : "Forgot password?",
     forgotNeedEmail: tr ? "Önce yukarıya e-postanı gir, sonra Şifremi unuttum'a dokun." : "Enter your email above first, then tap Forgot password.",
     forgotSent: tr ? "Bu e-postaya ait bir hesap varsa, sıfırlama bağlantısı yolda." : "If an account exists for that email, a reset link is on its way.",
     forgotInvalid: tr ? "Bu geçerli bir e-posta gibi görünmüyor." : "That doesn't look like a valid email.",
@@ -89,6 +88,10 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
     consentAgree: tr ? "Şunları kabul ediyorum:" : "I agree to the",
     consentTerms: tr ? "Şartlar" : "Terms",
     consentPrivacy: tr ? "Gizlilik" : "Privacy Policy",
+    showPass: tr ? "Şifreyi göster" : "Show password",
+    hidePass: tr ? "Şifreyi gizle" : "Hide password",
+    close: tr ? "Kapat" : "Close",
+    back: tr ? "Geri" : "Back",
     consentKvkk: tr ? "KVKK metni" : "KVKK notice",
   };
   const [mode, setMode] = useState<Mode>(initialMode);
@@ -120,7 +123,7 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
     }
   }
 
-  const overlayRef = useRef<HTMLDivElement>(null);
+
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
@@ -310,209 +313,308 @@ export default function AuthModal({ initialMode = "signin", onClose }: Props) {
     }
   }
 
-  const inputCls = "w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] focus:ring-2 focus:ring-[#6C4CF1]/10 transition-all placeholder:text-neutral-700";
+  const signinOrBack = mode === "register" && step === "form";
+  const title = mode === "signin" ? am.welcomeBack : step === "role" ? am.whoAreYou : role === "guide" ? am.applyAsGuide : am.createAccount;
+  const subtitle = mode === "signin" ? am.subSignin : step === "role" ? am.subRole : role === "guide" ? am.subGuide : am.subTourist;
+
+  const errorBox = error && (
+    <div role="alert" className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">{error}</div>
+  );
+
+  const googleAndDivider = (
+    <>
+      <button type="button" onClick={onGoogleSignIn} disabled={loading} className={SECONDARY_BTN}>
+        <GoogleIcon /> {am.continueGoogle}
+      </button>
+      <div className="my-5 flex items-center gap-3" aria-hidden="true">
+        <div className="h-px flex-1 bg-neutral-200" />
+        <span className="text-xs text-neutral-500">{am.or}</span>
+        <div className="h-px flex-1 bg-neutral-200" />
+      </div>
+    </>
+  );
 
   /* ── Verify email ── */
   if (step === "verify") {
     return (
-      <div ref={overlayRef} className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm" onClick={(e) => { if (e.target === overlayRef.current) onClose(); }}>
-        <div className="bg-white rounded-3xl shadow-2xl w-full max-w-sm p-8 text-center relative">
-          <button onClick={onClose} className="absolute top-4 right-4 w-8 h-8 rounded-full bg-neutral-100 flex items-center justify-center text-neutral-800 hover:bg-neutral-200 transition-colors text-sm">✕</button>
-          <div className="w-14 h-14 rounded-full bg-[#6C4CF1]/10 flex items-center justify-center mx-auto mb-5">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6C4CF1" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+      <Shell onClose={onClose} labelledBy="auth-title" closeLabel={am.close}>
+        <div className="text-center">
+          <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-neutral-100 text-neutral-900">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
               <polyline points="22,6 12,13 2,6"/>
             </svg>
           </div>
-          <h2 className="text-xl font-black text-[#0A0A0F]">{am.checkEmail}</h2>
-          <p className="mt-2 text-sm text-neutral-800 leading-6">
-            {am.verifySentA}<strong className="text-[#0A0A0F]">{email}</strong>{am.verifySentB}
+          <h2 id="auth-title" className="font-display text-[28px] font-normal leading-tight tracking-[-0.01em] text-neutral-900">{am.checkEmail}</h2>
+          <p className="mt-3 text-[15px] leading-6 text-neutral-600">
+            {am.verifySentA}<strong className="font-semibold text-neutral-900">{email}</strong>{am.verifySentB}
           </p>
-          <button onClick={onClose}
-            className="mt-6 w-full rounded-2xl bg-[#6C4CF1] text-white font-bold py-3 text-sm hover:bg-[#5a3dd4] transition-colors"
-            style={{ boxShadow: "0 4px 16px rgba(108,76,241,0.25)" }}>
-            {am.gotIt}
-          </button>
-          <p className="mt-4 text-xs text-neutral-800">
+          <button type="button" onClick={onClose} className={`${PRIMARY_BTN} mt-7`}>{am.gotIt}</button>
+          <p className="mt-4 text-sm text-neutral-600">
             {am.didntReceive}
             {resendState === "sent" ? (
-              <span className="text-emerald-600 font-semibold">{am.emailSent}</span>
+              <span className="font-medium text-emerald-700">{am.emailSent}</span>
             ) : (
-              <button onClick={onResend} disabled={resendState === "sending"}
-                className="text-[#6C4CF1] font-semibold hover:underline disabled:opacity-50">
+              <button type="button" onClick={onResend} disabled={resendState === "sending"}
+                className="font-medium text-neutral-900 underline underline-offset-4 hover:text-[#5B3FD9] disabled:opacity-50">
                 {resendState === "sending" ? am.sending : am.resend}
               </button>
             )}
           </p>
         </div>
-      </div>
+      </Shell>
     );
   }
 
   return (
-    <div ref={overlayRef} className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm" onClick={(e) => { if (e.target === overlayRef.current) onClose(); }}>
-      <div className="bg-white rounded-3xl shadow-2xl w-full max-w-sm relative overflow-hidden">
+    <Shell onClose={onClose} labelledBy="auth-title" closeLabel={am.close}>
+      {/* Başlık */}
+      <div className="mb-6 pr-10">
+        {signinOrBack ? (
+          <button type="button" onClick={() => { setStep("role"); setError(null); }}
+            className="-ml-1 mb-3 inline-flex items-center gap-1.5 rounded-md px-1 py-0.5 text-sm text-neutral-600 hover:text-neutral-900">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+            {am.back}
+          </button>
+        ) : (
+          /* eslint-disable-next-line @next/next/no-img-element */
+          <img src="/vibeguide-icon.png" alt="VibeGuide" width={32} height={32} className="mb-4" style={{ mixBlendMode: "multiply" }} />
+        )}
+        <h2 id="auth-title" className="font-display text-[30px] font-normal leading-tight tracking-[-0.01em] text-neutral-900">{title}</h2>
+        <p className="mt-1.5 text-[15px] text-neutral-600">{subtitle}</p>
+      </div>
 
-        <div className="p-7">
-          <button onClick={onClose} className="absolute top-5 right-5 w-8 h-8 rounded-full bg-neutral-100 flex items-center justify-center text-neutral-800 hover:bg-neutral-200 transition-colors text-sm">✕</button>
-
-          {/* Logo + title */}
-          <div className="mb-5">
-            <div className="flex items-center gap-2 mb-3">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/vibeguide-icon.png" alt="VibeGuide" width={28} height={28} style={{ mixBlendMode: "multiply" }} />
-              <span className="text-sm font-black text-[#0A0A0F]">VibeGuide</span>
-            </div>
-            <h2 className="text-2xl font-black text-[#0A0A0F]">
-              {mode === "signin" ? am.welcomeBack : step === "role" ? am.whoAreYou : role === "guide" ? am.applyAsGuide : am.createAccount}
-            </h2>
-            <p className="mt-1 text-sm text-neutral-800">
-              {mode === "signin" ? am.subSignin : step === "role" ? am.subRole : role === "guide" ? am.subGuide : am.subTourist}
-            </p>
-          </div>
-
-          {/* Mode tabs */}
-          <div className="flex gap-1 p-1 bg-neutral-100 rounded-2xl mb-5">
-            {(["signin", "register"] as Mode[]).map((m) => (
-              <button key={m} onClick={() => switchMode(m)}
-                className={`flex-1 py-2 rounded-xl text-sm font-bold transition-all ${mode === m ? "bg-white text-[#0A0A0F] shadow-sm" : "text-neutral-800 hover:text-neutral-800"}`}>
-                {m === "signin" ? am.tabSignin : am.tabRegister}
-              </button>
-            ))}
-          </div>
-
-          {/* ── ROLE SELECTION ── */}
-          {mode === "register" && step === "role" && (
-            <div className="space-y-3">
-              <button
-                onClick={() => { setRole("tourist"); setStep("form"); }}
-                className="w-full flex items-center gap-4 p-4 rounded-2xl border-2 border-black/[0.06] hover:border-[#6C4CF1]/40 hover:bg-[#6C4CF1]/[0.02] transition-all group"
-              >
-                <div className="w-12 h-12 rounded-2xl bg-[#6C4CF1]/8 flex items-center justify-center shrink-0 text-[#6C4CF1] group-hover:bg-[#6C4CF1]/15 transition-colors">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
-                  </svg>
-                </div>
-                <div className="flex-1 text-left">
-                  <p className="text-sm font-black text-[#0A0A0F]">{am.imTourist}</p>
-                  <p className="text-xs text-neutral-800 mt-0.5">{am.imTouristSub}</p>
-                </div>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6C4CF1" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"><path d="M9 18l6-6-6-6"/></svg>
-              </button>
-
-              <button
-                onClick={() => { setRole("guide"); setStep("form"); }}
-                className="w-full flex items-center gap-4 p-4 rounded-2xl border-2 border-black/[0.06] hover:border-emerald-400/60 hover:bg-emerald-50/30 transition-all group"
-              >
-                <div className="w-12 h-12 rounded-2xl bg-emerald-50 flex items-center justify-center shrink-0 text-emerald-600 group-hover:bg-emerald-100 transition-colors">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="5" r="1"/><path d="M9 20l1-5 2 2 1-5"/><path d="M6 11l2-4h8l1 4"/>
-                  </svg>
-                </div>
-                <div className="flex-1 text-left">
-                  <p className="text-sm font-black text-[#0A0A0F]">{am.imGuide}</p>
-                  <p className="text-xs text-neutral-800 mt-0.5">{am.imGuideSub}</p>
-                </div>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"><path d="M9 18l6-6-6-6"/></svg>
-              </button>
-            </div>
-          )}
-
-          {/* ── REGISTER FORM ── */}
-          {mode === "register" && step === "form" && (
-            <>
-              {/* Role badge + back */}
-              <div className="flex items-center gap-2 mb-4">
-                <button onClick={() => { setStep("role"); setError(null); }} className="text-neutral-800 hover:text-[#0A0A0F] transition-colors">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-                </button>
-                <span className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold ${role === "guide" ? "bg-emerald-50 text-emerald-700" : "bg-[#6C4CF1]/8 text-[#6C4CF1]"}`}>
-                  {role === "guide" ? am.badgeGuide : am.badgeTourist}
-                </span>
-              </div>
-
-              {role === "guide" ? (
-                /* Guide — KYC gerektiğinden tam sayfaya yönlendir */
-                <div className="text-center py-4">
-                  <p className="text-sm text-neutral-700 leading-6 mb-4">
-                    {am.guideInfo}
-                  </p>
-                  <a href="/register/guide"
-                    onClick={onClose}
-                    className="inline-flex items-center gap-2 rounded-2xl bg-emerald-500 text-white font-bold px-6 py-3 text-sm hover:bg-emerald-600 transition-colors">
-                    {am.continueGuide}
-                  </a>
-                  <p className="mt-3 text-xs text-neutral-800">{am.guideTime}</p>
-                </div>
-              ) : (
-                /* Tourist form */
-                <>
-                  <button onClick={onGoogleSignIn} disabled={loading}
-                    className="w-full flex items-center justify-center gap-3 border border-black/10 rounded-2xl px-5 py-3 text-sm font-bold text-[#0A0A0F] hover:bg-neutral-50 transition-colors disabled:opacity-50 mb-4">
-                    <GoogleIcon /> {am.continueGoogle}
-                  </button>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="flex-1 h-px bg-black/[0.06]" />
-                    <span className="text-xs text-neutral-700 font-medium">{am.or}</span>
-                    <div className="flex-1 h-px bg-black/[0.06]" />
-                  </div>
-                  <form onSubmit={onEmailRegister} className="space-y-3">
-                    <input type="text" required value={fullName} onChange={(e) => setFullName(e.target.value)} className={inputCls} placeholder={am.phFullName} />
-                    <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} className={inputCls} placeholder={am.phEmail} />
-                    <input type="password" required value={password} onChange={(e) => setPassword(e.target.value)} className={inputCls} placeholder={am.phPassMin} />
-                    <input type="password" required value={password2} onChange={(e) => setPassword2(e.target.value)} className={inputCls} placeholder={am.phPassConfirm} />
-                    {/* KVKK/GDPR — açık rıza (guide, KYC sayfasına yönlendiği için orada da doğrulanır) */}
-                    <label className="flex items-start gap-2.5 text-xs leading-5 text-neutral-700">
-                      <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} className="mt-0.5 h-4 w-4 shrink-0 accent-[#6C4CF1]" />
-                      <span>
-                        {am.consentAgree}{" "}
-                        <a href="/terms" target="_blank" className="text-[#6C4CF1] font-semibold hover:underline">{am.consentTerms}</a>,{" "}
-                        <a href="/privacy" target="_blank" className="text-[#6C4CF1] font-semibold hover:underline">{am.consentPrivacy}</a>,{" "}
-                        <a href="/kvkk" target="_blank" className="text-[#6C4CF1] font-semibold hover:underline">{am.consentKvkk}</a>.
-                      </span>
-                    </label>
-                    {error && <div className="rounded-2xl bg-red-50 border border-red-100 px-4 py-3 text-sm text-red-600">{error}</div>}
-                    <button type="submit" disabled={loading || (role === "tourist" && !consent)}
-                      className="w-full rounded-2xl bg-[#6C4CF1] text-white font-bold py-3 text-sm hover:bg-[#5a3dd4] transition-colors disabled:opacity-50"
-                      style={{ boxShadow: "0 4px 16px rgba(108,76,241,0.25)" }}>
-                      {loading ? am.pleaseWait : am.createAccountBtn}
-                    </button>
-                  </form>
-                </>
-              )}
-            </>
-          )}
-
-          {/* ── SIGN IN FORM ── */}
-          {mode === "signin" && (
-            <>
-              <button onClick={onGoogleSignIn} disabled={loading}
-                className="w-full flex items-center justify-center gap-3 border border-black/10 rounded-2xl px-5 py-3 text-sm font-bold text-[#0A0A0F] hover:bg-neutral-50 transition-colors disabled:opacity-50 mb-4">
-                <GoogleIcon /> {am.continueGoogle}
-              </button>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="flex-1 h-px bg-black/[0.06]" />
-                <span className="text-xs text-neutral-700 font-medium">{am.or}</span>
-                <div className="flex-1 h-px bg-black/[0.06]" />
-              </div>
-              <form onSubmit={onEmailSignIn} className="space-y-3">
-                <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} className={inputCls} placeholder={am.phEmail} />
-                <input type="password" required value={password} onChange={(e) => setPassword(e.target.value)} className={inputCls} placeholder={am.phPassword} />
-                {error && <div className="rounded-2xl bg-red-50 border border-red-100 px-4 py-3 text-sm text-red-600">{error}</div>}
-                <button type="submit" disabled={loading}
-                  className="w-full rounded-2xl bg-[#6C4CF1] text-white font-bold py-3 text-sm hover:bg-[#5a3dd4] transition-colors disabled:opacity-50"
-                  style={{ boxShadow: "0 4px 16px rgba(108,76,241,0.25)" }}>
-                  {loading ? am.signingIn : am.signinBtn}
-                </button>
-              </form>
-              <p className="mt-3 text-center text-xs text-neutral-800">
-                <button type="button" onClick={onForgotPassword} className="text-[#6C4CF1] font-semibold hover:underline">{am.forgotPass}</button>
-              </p>
-              {resetMsg && <p className="mt-2 text-center text-xs text-emerald-700">{resetMsg}</p>}
-            </>
-          )}
+      {/* Sekmeler — rol seçildikten sonra gizli (geri butonu var) */}
+      {!signinOrBack && (
+        <div role="tablist" className="mb-6 grid grid-cols-2 rounded-xl bg-neutral-100 p-1">
+          {(["signin", "register"] as Mode[]).map((m) => (
+            <button key={m} type="button" role="tab" aria-selected={mode === m} onClick={() => switchMode(m)}
+              className={`rounded-lg py-2 text-sm font-medium transition-colors ${mode === m ? "bg-white text-neutral-900 shadow-sm" : "text-neutral-600 hover:text-neutral-900"}`}>
+              {m === "signin" ? am.tabSignin : am.tabRegister}
+            </button>
+          ))}
         </div>
+      )}
+
+      {/* ── ROL SEÇİMİ ── */}
+      {mode === "register" && step === "role" && (
+        <div className="space-y-3">
+          <RoleCard
+            onClick={() => { setRole("tourist"); setStep("form"); }}
+            title={am.imTourist} sub={am.imTouristSub}
+            icon={<><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></>}
+          />
+          <RoleCard
+            onClick={() => { setRole("guide"); setStep("form"); }}
+            title={am.imGuide} sub={am.imGuideSub}
+            icon={<><path d="M3 11l18-8-8 18-2-8-8-2z"/></>}
+          />
+        </div>
+      )}
+
+      {/* ── KAYIT FORMU ── */}
+      {mode === "register" && step === "form" && (
+        role === "guide" ? (
+          /* Rehber — KYC gerektiğinden tam sayfaya yönlendir */
+          <div>
+            <p className="text-[15px] leading-6 text-neutral-700">{am.guideInfo}</p>
+            <Link href="/register/guide" onClick={onClose} className={`${PRIMARY_BTN} mt-6`}>{am.continueGuide}</Link>
+            <p className="mt-3 text-center text-sm text-neutral-500">{am.guideTime}</p>
+          </div>
+        ) : (
+          /* Turist formu */
+          <>
+            {googleAndDivider}
+            <form onSubmit={onEmailRegister} className="space-y-4" noValidate={false}>
+              <Field id="auth-name" label={am.phFullName} value={fullName} onChange={setFullName} autoComplete="name" />
+              <Field id="auth-email" label={am.phEmail} type="email" value={email} onChange={setEmail} autoComplete="email" />
+              <Field id="auth-pass" label={am.phPassword} hint={am.passHint} type="password" value={password} onChange={setPassword}
+                autoComplete="new-password" showLabel={am.showPass} hideLabel={am.hidePass} />
+              <Field id="auth-pass2" label={am.phPassConfirm} type="password" value={password2} onChange={setPassword2}
+                autoComplete="new-password" showLabel={am.showPass} hideLabel={am.hidePass} />
+              {/* KVKK/GDPR — açık rıza (guide, KYC sayfasına yönlendiği için orada da doğrulanır) */}
+              <label className="flex items-start gap-3 pt-1 text-sm leading-5 text-neutral-600">
+                <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} className="mt-0.5 h-4 w-4 shrink-0 accent-[#5B3FD9]" />
+                <span>
+                  {am.consentAgree}{" "}
+                  <Link href="/terms" target="_blank" className={INLINE_LINK}>{am.consentTerms}</Link>,{" "}
+                  <Link href="/privacy" target="_blank" className={INLINE_LINK}>{am.consentPrivacy}</Link>,{" "}
+                  <Link href="/kvkk" target="_blank" className={INLINE_LINK}>{am.consentKvkk}</Link>.
+                </span>
+              </label>
+              {errorBox}
+              <button type="submit" disabled={loading || !consent} className={PRIMARY_BTN}>
+                {loading ? am.pleaseWait : am.createAccountBtn}
+              </button>
+            </form>
+          </>
+        )
+      )}
+
+      {/* ── GİRİŞ FORMU ── */}
+      {mode === "signin" && (
+        <>
+          {googleAndDivider}
+          <form onSubmit={onEmailSignIn} className="space-y-4">
+            <Field id="auth-email" label={am.phEmail} type="email" value={email} onChange={setEmail} autoComplete="email" />
+            <Field id="auth-pass" label={am.phPassword} type="password" value={password} onChange={setPassword}
+              autoComplete="current-password" showLabel={am.showPass} hideLabel={am.hidePass}
+              aside={
+                <button type="button" onClick={onForgotPassword} className="text-sm text-neutral-600 underline-offset-4 hover:text-neutral-900 hover:underline">
+                  {am.forgotPass}
+                </button>
+              }
+            />
+            {errorBox}
+            {resetMsg && <p role="status" className="rounded-xl bg-emerald-50 px-4 py-3 text-sm text-emerald-800">{resetMsg}</p>}
+            <button type="submit" disabled={loading} className={PRIMARY_BTN}>
+              {loading ? am.signingIn : am.signinBtn}
+            </button>
+          </form>
+        </>
+      )}
+    </Shell>
+  );
+}
+
+/* ───────────────────────── Yardımcı bileşenler ───────────────────────── */
+
+const PRIMARY_BTN =
+  "flex h-12 w-full items-center justify-center rounded-xl bg-[#5B3FD9] px-5 text-[15px] font-semibold text-white transition-colors hover:bg-[#4A32B8] disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B3FD9] focus-visible:ring-offset-2";
+const SECONDARY_BTN =
+  "flex h-12 w-full items-center justify-center gap-3 rounded-xl border border-neutral-300 bg-white px-5 text-[15px] font-medium text-neutral-900 transition-colors hover:bg-neutral-50 disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2";
+// text-base (16px): iOS Safari 16px altı input'ta sayfayı zoom'luyor.
+const INPUT =
+  "h-12 w-full rounded-xl border border-neutral-300 bg-white px-4 text-base text-neutral-900 transition-[border-color,box-shadow] focus:border-[#5B3FD9] focus:outline-none focus:ring-[3px] focus:ring-[#5B3FD9]/15";
+const INLINE_LINK = "font-medium text-neutral-900 underline underline-offset-2 hover:text-[#5B3FD9]";
+
+const FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+/** Mobilde alttan açılan sheet, md+ ekranda ortada pencere. Odak tuzağı + odak iadesi. */
+function Shell({ onClose, labelledBy, closeLabel, children }: {
+  onClose: () => void; labelledBy: string; closeLabel: string; children: React.ReactNode;
+}) {
+  const panelRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const prev = document.activeElement as HTMLElement | null;
+    const panel = panelRef.current;
+    // Masaüstünde ilk alana odak; mobilde klavye ekranı kapatmasın diye panelin kendisine.
+    const desktop = window.matchMedia("(min-width: 768px)").matches;
+    (desktop ? panel?.querySelector<HTMLElement>("input") ?? panel : panel)?.focus();
+    return () => prev?.focus?.();
+  }, []);
+
+  function onKeyDown(e: React.KeyboardEvent) {
+    if (e.key !== "Tab" || !panelRef.current) return;
+    const els = Array.from(panelRef.current.querySelectorAll<HTMLElement>(FOCUSABLE));
+    if (els.length === 0) return;
+    const first = els[0], last = els[els.length - 1];
+    const active = document.activeElement;
+    if (e.shiftKey && (active === first || active === panelRef.current)) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && active === last) { e.preventDefault(); first.focus(); }
+  }
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-end justify-center bg-black/50 md:items-center md:p-4"
+      onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
+    >
+      <div
+        ref={panelRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby={labelledBy}
+        tabIndex={-1}
+        onKeyDown={onKeyDown}
+        className="vg-sheet relative max-h-[92dvh] w-full overflow-y-auto overscroll-contain rounded-t-2xl bg-white px-6 pb-8 pt-3 shadow-2xl outline-none md:max-w-[440px] md:rounded-2xl md:px-8 md:pb-8 md:pt-8"
+      >
+        {/* Mobil sheet tutamacı */}
+        <div className="mx-auto mb-5 h-1 w-10 rounded-full bg-neutral-300 md:hidden" aria-hidden="true" />
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label={closeLabel}
+          className="absolute right-4 top-5 flex h-9 w-9 items-center justify-center rounded-full text-neutral-600 transition-colors hover:bg-neutral-100 hover:text-neutral-900 md:top-5"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+            <path d="M18 6 6 18M6 6l12 12" />
+          </svg>
+        </button>
+        {children}
       </div>
     </div>
+  );
+}
+
+/** Etiketli input; type="password" ise göster/gizle düğmesi. */
+function Field({ id, label, hint, aside, type = "text", value, onChange, autoComplete, showLabel, hideLabel }: {
+  id: string; label: string; hint?: string; aside?: React.ReactNode;
+  type?: "text" | "email" | "password"; value: string; onChange: (v: string) => void;
+  autoComplete?: string; showLabel?: string; hideLabel?: string;
+}) {
+  const [show, setShow] = useState(false);
+  const isPw = type === "password";
+  return (
+    <div>
+      <div className="mb-1.5 flex items-baseline justify-between gap-3">
+        <label htmlFor={id} className="text-sm font-medium text-neutral-900">
+          {label}
+          {hint && <span className="ml-1.5 font-normal text-neutral-500">· {hint}</span>}
+        </label>
+        {aside}
+      </div>
+      <div className="relative">
+        <input
+          id={id}
+          type={isPw && show ? "text" : type}
+          required
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          autoComplete={autoComplete}
+          inputMode={type === "email" ? "email" : undefined}
+          spellCheck={type === "text" ? undefined : false}
+          className={`${INPUT} ${isPw ? "pr-12" : ""}`}
+        />
+        {isPw && (
+          <button
+            type="button"
+            onClick={() => setShow((s) => !s)}
+            aria-label={show ? hideLabel : showLabel}
+            aria-pressed={show}
+            className="absolute inset-y-0 right-0 flex w-12 items-center justify-center rounded-r-xl text-neutral-500 hover:text-neutral-900"
+          >
+            {show ? (
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19M14.12 14.12a3 3 0 1 1-4.24-4.24M1 1l22 22" />
+              </svg>
+            ) : (
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" />
+              </svg>
+            )}
+          </button>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function RoleCard({ onClick, title, sub, icon }: { onClick: () => void; title: string; sub: string; icon: React.ReactNode }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className="group flex w-full items-center gap-4 rounded-xl border border-neutral-300 p-4 text-left transition-colors hover:border-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900"
+    >
+      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-neutral-100 text-neutral-900">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{icon}</svg>
+      </span>
+      <span className="flex-1">
+        <span className="block text-[15px] font-semibold text-neutral-900">{title}</span>
+        <span className="mt-0.5 block text-sm text-neutral-600">{sub}</span>
+      </span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 text-neutral-400 transition-transform group-hover:translate-x-0.5 group-hover:text-neutral-900" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
   );
 }

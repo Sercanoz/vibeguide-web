@@ -93,7 +93,7 @@ function Editor({ id }: { id: number }) {
       </Link>
 
       <div className="mt-3">
-        <h1 className="text-2xl font-black text-vg-ink">{data.tour.title}</h1>
+        <h1 className="text-2xl font-display font-normal text-vg-ink">{data.tour.title}</h1>
         <p className="text-sm text-vg-muted">
           {data.tour.city} · canonical: <strong>{data.tour.canonicalLocale.toUpperCase()}</strong>
         </p>
@@ -444,7 +444,7 @@ function PlacesTranslationEditor({
           className="flex-1 border border-vg-border rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-vg-primary"
           placeholder="Stop name (e.g. Hagia Sophia)" />
         <button onClick={onAddPlace} disabled={adding || !newName.trim()}
-          className="bg-vg-primary text-white font-bold px-5 py-2.5 rounded-xl text-sm hover:bg-[#5a3dd4] transition-colors disabled:opacity-50">
+          className="bg-vg-primary text-white font-bold px-5 py-2.5 rounded-xl text-sm hover:bg-[#4A32B8] transition-colors disabled:opacity-50">
           {adding ? "Adding…" : "+ Add stop"}
         </button>
       </div>
@@ -492,7 +492,7 @@ function PlacesTranslationEditor({
             className="w-full border border-vg-border rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-vg-primary"
             placeholder="New stop name…" />
           <button onClick={onAddPlace} disabled={adding || !newName.trim()}
-            className="w-full bg-vg-primary text-white font-bold py-2 rounded-xl text-sm hover:bg-[#5a3dd4] transition-colors disabled:opacity-50">
+            className="w-full bg-vg-primary text-white font-bold py-2 rounded-xl text-sm hover:bg-[#4A32B8] transition-colors disabled:opacity-50">
             {adding ? "Adding…" : "+ Add stop"}
           </button>
         </div>
@@ -938,7 +938,7 @@ function TourSettingsEditor({ id }: { id: number }) {
                   }}
                   className={`px-3 py-1.5 rounded-full text-xs font-bold border transition-all ${
                     active
-                      ? "bg-[#6C4CF1] text-white border-[#6C4CF1]"
+                      ? "bg-[#5B3FD9] text-white border-[#5B3FD9]"
                       : "bg-vg-bg-soft text-vg-muted border-vg-border hover:border-vg-primary hover:text-vg-primary"
                   }`}
                 >
@@ -1101,7 +1101,7 @@ function PhotosEditor({ tourId }: { tourId: number }) {
                 ✕
               </button>
               {i === 0 && (
-                <span className="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-[#6C4CF1] text-white text-[10px] font-black">
+                <span className="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-[#5B3FD9] text-white text-[10px] font-black">
                   Cover
                 </span>
               )}
@@ -1567,7 +1567,7 @@ function QrReviewPanel({ tourId }: { tourId: number }) {
 
         <div className="mt-5 flex gap-2">
           <button onClick={downloadPng}
-            className="flex-1 bg-vg-primary text-white font-bold py-2.5 rounded-xl text-sm hover:bg-[#5a3dd4] transition-colors">
+            className="flex-1 bg-vg-primary text-white font-bold py-2.5 rounded-xl text-sm hover:bg-[#4A32B8] transition-colors">
             ⬇ Download PNG
           </button>
           <button onClick={copyLink}

@@ -9,6 +9,8 @@ import { useT } from "@/components/LanguageProvider";
 import { getToursT } from "@/lib/i18n";
 import Navbar from "@/components/Navbar";
 import MainFooter from "@/components/MainFooter";
+import CheckoutSteps from "@/components/CheckoutSteps";
+import { languageNames } from "@/lib/languages";
 
 interface AvailableGuide {
   id: number;
@@ -24,7 +26,7 @@ interface AvailableGuide {
 
 export default function GuideSelectionPage() {
   return (
-    <Suspense fallback={<main className="min-h-screen bg-[#FAFAFB]" />}>
+    <Suspense fallback={<main className="min-h-screen bg-white" />}>
       <GuideSelectionInner />
     </Suspense>
   );
@@ -78,79 +80,103 @@ function GuideSelectionInner() {
     );
   }
 
+  const gc = GC[locale] ?? GC.en;
+  const fmtDate = date
+    ? new Date(`${date}T00:00:00`).toLocaleDateString(locale === "tr" ? "tr-TR" : "en-GB", { weekday: "short", day: "numeric", month: "long" })
+    : "";
+
   return (
-    <main className="min-h-screen bg-[#FAFAFB] text-[#0A0A0F]">
+    <main className="min-h-screen bg-white text-neutral-900">
       <Navbar />
-      <div className="mx-auto max-w-3xl px-6 pt-28 pb-20">
-        <Link href={`/tours/${id}`} className="text-sm font-semibold text-[#6C4CF1] hover:underline">
-          ← {tt.coBack}
+      <div className="mx-auto max-w-3xl px-4 pb-20 pt-24 md:px-6 md:pt-28">
+        <CheckoutSteps current={1} locale={locale} />
+        <Link href={`/tours/${id}`} className="mt-6 inline-flex items-center gap-1.5 text-sm text-neutral-600 hover:text-neutral-900">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7" /></svg>
+          {tt.coBack}
         </Link>
-        <h1 className="mt-3 text-3xl md:text-4xl font-black">{tt.gsTitle}</h1>
-        <p className="mt-2 text-sm text-neutral-700">
-          {date ? `${date} · ` : ""}{people} {people === 1 ? tt.gsTraveler : tt.gsTravelers}
+        <h1 className="mt-3 font-display text-3xl font-normal tracking-[-0.01em] md:text-[40px]">{tt.gsTitle}</h1>
+        <p className="mt-2 text-neutral-600">
+          {fmtDate ? `${fmtDate} · ` : ""}{people} {people === 1 ? tt.gsTraveler : tt.gsTravelers}
         </p>
 
         {guides === "loading" && (
-          <div className="mt-10 text-center text-neutral-600">…</div>
+          <ul className="mt-8 space-y-4" aria-busy="true" aria-label="Loading">
+            {[0, 1, 2].map((i) => (
+              <li key={i} className="flex animate-pulse items-center gap-4 rounded-2xl border border-neutral-200 p-5">
+                <div className="h-16 w-16 shrink-0 rounded-full bg-neutral-100" />
+                <div className="flex-1 space-y-2"><div className="h-4 w-1/3 rounded bg-neutral-100" /><div className="h-3 w-1/2 rounded bg-neutral-100" /><div className="h-3 w-3/4 rounded bg-neutral-100" /></div>
+              </li>
+            ))}
+          </ul>
         )}
 
         {guides === "error" && (
-          <div className="mt-10 rounded-2xl bg-red-50 border border-red-100 px-5 py-4 text-sm text-red-600">
-            {tt.errMsg}
-          </div>
+          <div role="alert" className="mt-8 rounded-xl border border-red-200 bg-red-50 px-5 py-4 text-sm text-red-700">{tt.errMsg}</div>
         )}
 
         {Array.isArray(guides) && guides.length === 0 && (
-          <div className="mt-10 rounded-2xl bg-white border border-black/[0.06] px-6 py-8 text-center">
-            <p className="font-semibold text-neutral-800">{tt.gsNone}</p>
+          <div className="mt-8 rounded-2xl border border-dashed border-neutral-300 px-6 py-12 text-center">
+            <p className="font-semibold">{tt.gsNone}</p>
             <p className="mt-1 text-sm text-neutral-600">{tt.gsNoneSub}</p>
-            <Link href={`/tours/${id}`} className="mt-4 inline-block text-sm font-bold text-[#6C4CF1] hover:underline">
-              ← {tt.coBack}
+            <Link href={`/tours/${id}`} className="mt-5 inline-flex h-10 items-center rounded-full border border-neutral-300 px-5 text-sm font-semibold hover:border-neutral-900">
+              {gc.otherDate}
             </Link>
           </div>
         )}
 
         {Array.isArray(guides) && guides.length > 0 && (
-          <div className="mt-8 space-y-4">
+          <ul className="mt-8 space-y-4">
             {guides.map((g) => (
-              <button
-                key={g.id}
-                onClick={() => chooseGuide(g.id)}
-                className="w-full text-left rounded-2xl bg-white border border-black/[0.06] p-5 hover:border-[#6C4CF1]/40 hover:shadow-md transition-all flex items-center gap-4"
-              >
-                <div className="w-16 h-16 rounded-full bg-[#F7F7FB] overflow-hidden shrink-0">
-                  {g.photoUrl ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img src={g.photoUrl} alt={g.fullName} className="w-full h-full object-cover" />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center text-2xl font-black text-[#6C4CF1]/40">
-                      {g.fullName.charAt(0)}
-                    </div>
-                  )}
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2">
-                    <p className="font-black truncate">{g.fullName}</p>
-                    {g.specializationMatch && (
-                      <span className="text-[10px] font-bold uppercase tracking-wide text-[#6C4CF1] bg-[#6C4CF1]/10 rounded-full px-2 py-0.5">
-                        {tt.gsSpecialist}
-                      </span>
+              <li key={g.id} className="rounded-2xl border border-neutral-200 p-5 transition-colors hover:border-neutral-400">
+                <div className="flex gap-4">
+                  <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full bg-neutral-200">
+                    {g.photoUrl ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={g.photoUrl} alt="" className="h-full w-full object-cover" />
+                    ) : (
+                      <span className="flex h-full w-full items-center justify-center font-display text-2xl text-neutral-500">{g.fullName.charAt(0)}</span>
                     )}
                   </div>
-                  <div className="mt-0.5 flex items-center gap-2 text-xs text-neutral-700">
-                    {g.rating > 0 && <span>★ {g.rating.toFixed(1)}</span>}
-                    {g.yearsOfExperience > 0 && <span>· {g.yearsOfExperience}y exp</span>}
-                    <span>· {g.languages}</span>
+                  <div className="min-w-0 flex-1">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <p className="truncate text-base font-semibold">{g.fullName}</p>
+                      {g.specializationMatch && (
+                        <span className="rounded-md bg-neutral-900 px-1.5 py-0.5 text-[11px] font-semibold text-white">{tt.gsSpecialist}</span>
+                      )}
+                    </div>
+                    <p className="mt-0.5 flex flex-wrap items-center gap-x-2 text-sm text-neutral-600">
+                      {g.rating > 0 && (
+                        <span className="inline-flex items-center gap-1 font-medium text-neutral-900">
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="#0A0A0F" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                          {g.rating.toFixed(1)}
+                        </span>
+                      )}
+                      {g.yearsOfExperience > 0 && <span>{gc.years(g.yearsOfExperience)}</span>}
+                      {g.languages && <span>{languageNames(g.languages)}</span>}
+                    </p>
+                    {g.bio && <p className="mt-2 line-clamp-2 text-sm leading-6 text-neutral-700">{g.bio}</p>}
                   </div>
-                  {g.bio && <p className="mt-1 text-xs text-neutral-600 line-clamp-2">{g.bio}</p>}
                 </div>
-                <span className="text-[#6C4CF1] font-bold shrink-0">{tt.gsSelect} →</span>
-              </button>
+                <div className="mt-4 flex items-center justify-end gap-3 border-t border-neutral-100 pt-4">
+                  <Link href={`/guides/${g.id}`} target="_blank" className="text-sm font-medium text-neutral-900 underline underline-offset-4 hover:text-[#5B3FD9]">
+                    {gc.viewProfile}
+                  </Link>
+                  <button type="button" onClick={() => chooseGuide(g.id)}
+                    className="h-10 rounded-xl bg-[#5B3FD9] px-5 text-sm font-semibold text-white hover:bg-[#4A32B8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B3FD9] focus-visible:ring-offset-2">
+                    {tt.gsSelect}
+                  </button>
+                </div>
+              </li>
             ))}
-          </div>
+          </ul>
         )}
       </div>
       <MainFooter />
     </main>
   );
 }
+
+const GC: Record<string, { years: (n: number) => string; viewProfile: string; otherDate: string }> = {
+  en: { years: (n) => `${n} ${n === 1 ? "year" : "years"} experience`, viewProfile: "View profile", otherDate: "Try another date" },
+  tr: { years: (n) => `${n} yıl deneyim`, viewProfile: "Profili gör", otherDate: "Başka tarih dene" },
+};

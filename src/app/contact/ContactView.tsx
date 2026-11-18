@@ -36,20 +36,20 @@ export default function ContactView() {
       <Navbar />
 
       <div className="mx-auto max-w-3xl px-6 pt-28 pb-16">
-        <h1 className="text-4xl font-black mb-4">{t.title}</h1>
+        <h1 className="text-4xl font-display font-normal mb-4">{t.title}</h1>
         <p className="text-lg text-neutral-700 mb-12">{t.intro}</p>
 
         <div className="grid gap-6 md:grid-cols-2 mb-12">
           <div className="bg-neutral-50 rounded-2xl p-6">
             <p className="text-sm font-black mb-3">📧 {t.email}</p>
-            <a href="mailto:support@vibeguideapp.com" className="text-[#6C4CF1] font-semibold hover:underline">
+            <a href="mailto:support@vibeguideapp.com" className="text-[#5B3FD9] font-semibold hover:underline">
               support@vibeguideapp.com
             </a>
             <p className="text-xs text-neutral-800 mt-2">{t.emailNote}</p>
           </div>
           <div className="bg-neutral-50 rounded-2xl p-6">
             <p className="text-sm font-black mb-3">📞 {t.phone}</p>
-            <a href="tel:+905308287696" className="text-[#6C4CF1] font-semibold hover:underline">
+            <a href="tel:+905308287696" className="text-[#5B3FD9] font-semibold hover:underline">
               +90 530 828 76 96
             </a>
             <p className="text-xs text-neutral-800 mt-2">{t.hoursShort}</p>
@@ -69,7 +69,7 @@ export default function ContactView() {
           <p>{t.registry}</p>
           <p>Beldibi Mah. Belmar Sk. No:9/1 İç Kapı No:4, Marmaris / Muğla / Türkiye</p>
           <p>
-            <a href="mailto:support@vibeguideapp.com" className="text-[#6C4CF1] font-semibold hover:underline">
+            <a href="mailto:support@vibeguideapp.com" className="text-[#5B3FD9] font-semibold hover:underline">
               support@vibeguideapp.com
             </a>
           </p>

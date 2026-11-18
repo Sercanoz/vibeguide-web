@@ -44,7 +44,7 @@ export default function AdminLogin() {
           <span className="font-black text-xl text-vibe-gradient">VibeGuide</span>
           <span className="text-vg-muted font-normal">/ admin</span>
         </div>
-        <h1 className="mt-6 text-2xl font-black text-vg-ink">Sign in</h1>
+        <h1 className="mt-6 text-2xl font-display font-normal text-vg-ink">Sign in</h1>
         <p className="mt-1 text-sm text-vg-muted">
           Internal admin tools. Your account must have admin role.
         </p>

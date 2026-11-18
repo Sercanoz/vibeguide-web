@@ -31,12 +31,12 @@ function SuccessInner() {
             <polyline points="20 6 9 17 4 12" />
           </svg>
         </div>
-        <h1 className="text-3xl font-black">{tt.paySuccessTitle}</h1>
+        <h1 className="text-3xl font-display font-normal">{tt.paySuccessTitle}</h1>
         <p className="mt-3 text-neutral-700">
           {tt.paySuccessSub}
         </p>
         <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-          <Link href="/profile" className="rounded-full bg-[#6C4CF1] text-white font-bold px-6 py-3 text-sm hover:bg-[#5a3dd4] transition-colors">
+          <Link href="/profile" className="rounded-full bg-[#5B3FD9] text-white font-bold px-6 py-3 text-sm hover:bg-[#4A32B8] transition-colors">
             {tt.coMyReservations}
           </Link>
           <Link href="/tours" className="rounded-full border border-black/10 font-bold px-6 py-3 text-sm hover:bg-neutral-50 transition-colors">

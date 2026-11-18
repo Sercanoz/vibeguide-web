@@ -111,7 +111,7 @@ export default function RegisterTouristPage() {
   if (checking) {
     return (
       <main className="min-h-screen bg-white flex items-center justify-center">
-        <div className="w-8 h-8 rounded-full border-2 border-[#6C4CF1] border-t-transparent animate-spin" />
+        <div className="w-8 h-8 rounded-full border-2 border-[#5B3FD9] border-t-transparent animate-spin" />
       </main>
     );
   }
@@ -119,15 +119,15 @@ export default function RegisterTouristPage() {
   if (step === "verify") {
     return (
       <main className="min-h-screen bg-white flex items-center justify-center px-4">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#6C4CF1]/6 to-transparent rounded-full blur-[80px] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#5B3FD9]/6 to-transparent rounded-full blur-[80px] pointer-events-none" />
         <div className="relative w-full max-w-md text-center">
-          <div className="w-16 h-16 rounded-full bg-[#6C4CF1]/10 flex items-center justify-center mx-auto mb-6">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6C4CF1" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+          <div className="w-16 h-16 rounded-full bg-[#5B3FD9]/10 flex items-center justify-center mx-auto mb-6">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#5B3FD9" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
               <polyline points="22,6 12,13 2,6"/>
             </svg>
           </div>
-          <h1 className="text-2xl font-black text-[#0A0A0F]">Check your email</h1>
+          <h1 className="text-2xl font-display font-normal text-[#0A0A0F]">Check your email</h1>
           <p className="mt-2 text-sm text-neutral-800 max-w-xs mx-auto leading-6">
             We sent a verification link to <strong className="text-[#0A0A0F]">{email}</strong>. Click the link then come back here.
           </p>
@@ -139,12 +139,12 @@ export default function RegisterTouristPage() {
           <button
             onClick={onVerifyDone}
             disabled={loading}
-            className="mt-8 w-full rounded-2xl bg-[#6C4CF1] text-white font-bold py-3 text-sm hover:bg-[#5a3dd4] transition-colors disabled:opacity-50"
-            style={{ boxShadow: "0 4px 16px rgba(108,76,241,0.25)" }}
+            className="mt-8 w-full rounded-2xl bg-[#5B3FD9] text-white font-bold py-3 text-sm hover:bg-[#4A32B8] transition-colors disabled:opacity-50"
+            style={{ boxShadow: "0 4px 16px rgba(91,63,217,0.25)" }}
           >
             {loading ? "Checking…" : "I verified my email →"}
           </button>
-          <p className="mt-3 text-xs text-neutral-800">Didn&apos;t receive it? Check spam or <button className="text-[#6C4CF1] font-semibold hover:underline" onClick={() => fbAuth().currentUser?.reload()}>resend</button></p>
+          <p className="mt-3 text-xs text-neutral-800">Didn&apos;t receive it? Check spam or <button className="text-[#5B3FD9] font-semibold hover:underline" onClick={() => fbAuth().currentUser?.reload()}>resend</button></p>
         </div>
       </main>
     );
@@ -152,7 +152,7 @@ export default function RegisterTouristPage() {
 
   return (
     <main className="min-h-screen bg-white flex items-center justify-center px-4 py-12">
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#6C4CF1]/6 to-transparent rounded-full blur-[80px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#5B3FD9]/6 to-transparent rounded-full blur-[80px] pointer-events-none" />
 
       <div className="relative w-full max-w-md">
         <div className="text-center mb-8">
@@ -192,7 +192,7 @@ export default function RegisterTouristPage() {
               <label className="text-xs font-bold text-neutral-700 mb-1.5 block">Full name *</label>
               <input
                 type="text" required value={fullName} onChange={(e) => setFullName(e.target.value)}
-                className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors"
+                className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#5B3FD9] transition-colors"
                 placeholder="John Doe"
               />
             </div>
@@ -201,7 +201,7 @@ export default function RegisterTouristPage() {
               <label className="text-xs font-bold text-neutral-700 mb-1.5 block">Email *</label>
               <input
                 type="email" required value={email} onChange={(e) => setEmail(e.target.value)}
-                className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors"
+                className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#5B3FD9] transition-colors"
                 placeholder="you@example.com"
               />
             </div>
@@ -210,7 +210,7 @@ export default function RegisterTouristPage() {
               <label className="text-xs font-bold text-neutral-700 mb-1.5 block">Password *</label>
               <input
                 type="password" required value={password} onChange={(e) => setPassword(e.target.value)}
-                className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors"
+                className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#5B3FD9] transition-colors"
                 placeholder="Min. 6 characters"
               />
             </div>
@@ -219,7 +219,7 @@ export default function RegisterTouristPage() {
               <label className="text-xs font-bold text-neutral-700 mb-1.5 block">Confirm password *</label>
               <input
                 type="password" required value={password2} onChange={(e) => setPassword2(e.target.value)}
-                className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors"
+                className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#5B3FD9] transition-colors"
                 placeholder="Repeat password"
               />
             </div>
@@ -230,14 +230,14 @@ export default function RegisterTouristPage() {
                 type="checkbox"
                 checked={consent}
                 onChange={(e) => setConsent(e.target.checked)}
-                className="mt-0.5 h-4 w-4 shrink-0 accent-[#6C4CF1]"
+                className="mt-0.5 h-4 w-4 shrink-0 accent-[#5B3FD9]"
               />
               <span>
                 I agree to the{" "}
-                <a href="/terms" target="_blank" className="text-[#6C4CF1] font-semibold hover:underline">Terms</a>,{" "}
-                <a href="/privacy" target="_blank" className="text-[#6C4CF1] font-semibold hover:underline">Privacy Policy</a>{" "}
+                <a href="/terms" target="_blank" className="text-[#5B3FD9] font-semibold hover:underline">Terms</a>,{" "}
+                <a href="/privacy" target="_blank" className="text-[#5B3FD9] font-semibold hover:underline">Privacy Policy</a>{" "}
                 and{" "}
-                <a href="/kvkk" target="_blank" className="text-[#6C4CF1] font-semibold hover:underline">KVKK notice</a>.
+                <a href="/kvkk" target="_blank" className="text-[#5B3FD9] font-semibold hover:underline">KVKK notice</a>.
               </span>
             </label>
 
@@ -249,8 +249,8 @@ export default function RegisterTouristPage() {
 
             <button
               type="submit" disabled={loading || !consent}
-              className="w-full rounded-2xl bg-[#6C4CF1] text-white font-bold py-3 text-sm hover:bg-[#5a3dd4] transition-colors disabled:opacity-50"
-              style={{ boxShadow: "0 4px 16px rgba(108,76,241,0.25)" }}
+              className="w-full rounded-2xl bg-[#5B3FD9] text-white font-bold py-3 text-sm hover:bg-[#4A32B8] transition-colors disabled:opacity-50"
+              style={{ boxShadow: "0 4px 16px rgba(91,63,217,0.25)" }}
             >
               {loading ? "Creating account…" : "Create account →"}
             </button>
@@ -259,7 +259,7 @@ export default function RegisterTouristPage() {
 
         <p className="mt-5 text-center text-sm text-neutral-800">
           Already have an account?{" "}
-          <a href="/login" className="text-[#6C4CF1] font-bold hover:underline">Sign in</a>
+          <a href="/login" className="text-[#5B3FD9] font-bold hover:underline">Sign in</a>
         </p>
       </div>
     </main>

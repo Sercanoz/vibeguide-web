@@ -60,11 +60,11 @@ export default function AdminLocationsPage() {
     <div className="p-8 max-w-3xl">
       <div className="flex items-start justify-between gap-4 mb-6">
         <div>
-          <h1 className="text-2xl font-black text-[#0A0A0F]">Locations</h1>
+          <h1 className="text-2xl font-display font-normal text-[#0A0A0F]">Locations</h1>
           <p className="text-sm text-neutral-400 mt-1">Manage countries, provinces and districts used in tours.</p>
         </div>
         <button onClick={onImport} disabled={importing}
-          className="shrink-0 bg-[#6C4CF1] text-white font-bold px-5 py-2.5 rounded-2xl text-sm hover:bg-[#5a3dd4] transition-colors disabled:opacity-50">
+          className="shrink-0 bg-[#5B3FD9] text-white font-bold px-5 py-2.5 rounded-2xl text-sm hover:bg-[#4A32B8] transition-colors disabled:opacity-50">
           {importing ? "Importing…" : "⤓ Import Turkey"}
         </button>
       </div>
@@ -114,10 +114,10 @@ export default function AdminLocationsPage() {
                         <div className="flex gap-2 pt-2">
                           <input value={newDistrict[prov.id] ?? ""} onChange={(e) => setNewDistrict((s) => ({ ...s, [prov.id]: e.target.value }))}
                             onKeyDown={(e) => e.key === "Enter" && addDistrict(prov.id)}
-                            className="flex-1 border border-black/10 rounded-lg px-3 py-1.5 text-xs focus:outline-none focus:border-[#6C4CF1]"
+                            className="flex-1 border border-black/10 rounded-lg px-3 py-1.5 text-xs focus:outline-none focus:border-[#5B3FD9]"
                             placeholder="Add district…" />
                           <button onClick={() => addDistrict(prov.id)}
-                            className="bg-[#6C4CF1] text-white text-xs font-bold px-3 py-1.5 rounded-lg hover:bg-[#5a3dd4] transition-colors">+ Add</button>
+                            className="bg-[#5B3FD9] text-white text-xs font-bold px-3 py-1.5 rounded-lg hover:bg-[#4A32B8] transition-colors">+ Add</button>
                         </div>
                       </div>
                     )}
@@ -129,7 +129,7 @@ export default function AdminLocationsPage() {
               <div className="px-5 py-3 border-t border-black/[0.06] flex gap-2">
                 <input value={newProvince[country.id] ?? ""} onChange={(e) => setNewProvince((s) => ({ ...s, [country.id]: e.target.value }))}
                   onKeyDown={(e) => e.key === "Enter" && addProvince(country.id)}
-                  className="flex-1 border border-black/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-[#6C4CF1]"
+                  className="flex-1 border border-black/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-[#5B3FD9]"
                   placeholder="Add province…" />
                 <button onClick={() => addProvince(country.id)}
                   className="bg-neutral-900 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-neutral-800 transition-colors">+ Province</button>

@@ -9,14 +9,14 @@ type Banner = {
 };
 
 const COLOR_OPTIONS = [
-  { value: "purple", label: "Purple", cls: "bg-[#6C4CF1] text-white" },
+  { value: "purple", label: "Purple", cls: "bg-[#5B3FD9] text-white" },
   { value: "amber", label: "Amber", cls: "bg-amber-500 text-white" },
   { value: "emerald", label: "Green", cls: "bg-emerald-500 text-white" },
   { value: "red", label: "Red", cls: "bg-red-500 text-white" },
 ];
 
 function BannerPreview({ message, linkLabel, color }: { message: string; linkLabel?: string | null; color: string }) {
-  const cls = COLOR_OPTIONS.find(c => c.value === color)?.cls ?? "bg-[#6C4CF1] text-white";
+  const cls = COLOR_OPTIONS.find(c => c.value === color)?.cls ?? "bg-[#5B3FD9] text-white";
   return (
     <div className={`rounded-xl px-4 py-3 text-sm font-semibold flex items-center justify-between ${cls}`}>
       <span>{message || "Banner preview…"}</span>
@@ -70,7 +70,7 @@ export default function AdminBannersPage() {
 
   return (
     <div className="p-8 max-w-4xl">
-      <h1 className="text-2xl font-black text-[#0A0A0F] mb-2">Banners & Announcements</h1>
+      <h1 className="text-2xl font-display font-normal text-[#0A0A0F] mb-2">Banners & Announcements</h1>
       <p className="text-sm text-neutral-400 mb-6">Active banners are shown at the top of the website</p>
 
       <div className="grid lg:grid-cols-2 gap-6">
@@ -81,20 +81,20 @@ export default function AdminBannersPage() {
             <div>
               <label className="text-xs font-bold text-neutral-500 mb-1 block">Message *</label>
               <input required value={message} onChange={(e) => setMessage(e.target.value)}
-                className="w-full border border-black/10 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#6C4CF1]"
+                className="w-full border border-black/10 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#5B3FD9]"
                 placeholder="🎉 New Istanbul tour available!" />
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div>
                 <label className="text-xs font-bold text-neutral-500 mb-1 block">Link URL</label>
                 <input value={linkUrl} onChange={(e) => setLinkUrl(e.target.value)}
-                  className="w-full border border-black/10 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#6C4CF1]"
+                  className="w-full border border-black/10 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#5B3FD9]"
                   placeholder="/tours" />
               </div>
               <div>
                 <label className="text-xs font-bold text-neutral-500 mb-1 block">Link label</label>
                 <input value={linkLabel} onChange={(e) => setLinkLabel(e.target.value)}
-                  className="w-full border border-black/10 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#6C4CF1]"
+                  className="w-full border border-black/10 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#5B3FD9]"
                   placeholder="View tours →" />
               </div>
             </div>
@@ -116,7 +116,7 @@ export default function AdminBannersPage() {
             </div>
             {flash && <p className="text-sm font-semibold text-emerald-600">{flash}</p>}
             <button type="submit" disabled={creating}
-              className="w-full bg-[#6C4CF1] text-white font-bold py-2.5 rounded-xl text-sm hover:bg-[#5a3dd4] transition-colors disabled:opacity-50">
+              className="w-full bg-[#5B3FD9] text-white font-bold py-2.5 rounded-xl text-sm hover:bg-[#4A32B8] transition-colors disabled:opacity-50">
               {creating ? "Creating…" : "Publish banner →"}
             </button>
           </form>
@@ -132,7 +132,7 @@ export default function AdminBannersPage() {
           ) : (
             <div className="space-y-3">
               {banners.map((b) => (
-                <div key={b.id} className={`bg-white rounded-2xl border p-4 transition-all ${b.isActive ? "border-[#6C4CF1]/20" : "border-black/[0.06] opacity-60"}`}>
+                <div key={b.id} className={`bg-white rounded-2xl border p-4 transition-all ${b.isActive ? "border-[#5B3FD9]/20" : "border-black/[0.06] opacity-60"}`}>
                   <BannerPreview message={b.message} linkLabel={b.linkLabel} color={b.color} />
                   <div className="flex items-center justify-between mt-3">
                     <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${b.isActive ? "bg-emerald-100 text-emerald-700" : "bg-neutral-100 text-neutral-500"}`}>
@@ -140,7 +140,7 @@ export default function AdminBannersPage() {
                     </span>
                     <div className="flex gap-2">
                       <button onClick={() => onToggle(b.id)}
-                        className="text-xs font-bold text-[#6C4CF1] hover:underline">
+                        className="text-xs font-bold text-[#5B3FD9] hover:underline">
                         {b.isActive ? "Hide" : "Show"}
                       </button>
                       <button onClick={() => onDelete(b.id)}

@@ -44,7 +44,7 @@ export default function NotificationsPage() {
       <div className="flex items-center justify-between mb-2">
         <div>
           <Link href="/admin" className="text-sm text-vg-muted hover:text-vg-ink">← Admin</Link>
-          <h1 className="mt-2 text-3xl font-black tracking-tight text-vg-ink">Dead-letter Notifications</h1>
+          <h1 className="mt-2 text-3xl font-display font-normal tracking-[-0.01em] text-vg-ink">Dead-letter Notifications</h1>
           <p className="mt-1 text-vg-muted text-sm">
             Notifications that failed FCM delivery after 3 attempts.
           </p>

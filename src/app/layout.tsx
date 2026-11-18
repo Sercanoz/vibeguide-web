@@ -1,15 +1,29 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Noto_Serif_Display } from "next/font/google";
 import "./globals.css";
 import JsonLd from "@/components/JsonLd";
 import { LanguageProvider } from "@/components/LanguageProvider";
 import { CurrencyProvider } from "@/components/CurrencyProvider";
 import CookieBanner from "@/components/CookieBanner";
-import EmailCaptureGate from "@/components/EmailCaptureGate";
+import MobileTabBar from "@/components/MobileTabBar";
+// EmailCaptureGate GEÇİCİ olarak kapalı: "%10 indirim kodu" veriyor ama kod
+// rezervasyonda hiçbir yerde kullanılamıyor (backend promo redeem yok — denetim
+// bulgusu 19). Yanıltıcı vaat; redeem eklenince geri aç.
+// import EmailCaptureGate from "@/components/EmailCaptureGate";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
+});
+
+// Başlık (display) fontu — editoryal serif, yalnız büyük başlıklarda (font-display).
+// Kiril + Yunan alt kümeleri: ru/uk/bg/sr/el dilleri de serif başlık alsın.
+const displaySerif = Noto_Serif_Display({
+  subsets: ["latin", "latin-ext", "cyrillic", "greek"],
+  weight: "variable",
+  style: ["normal", "italic"],
+  variable: "--font-display-serif",
   display: "swap",
 });
 
@@ -79,7 +93,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#6c4cf1",
+  themeColor: "#5B3FD9",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -95,7 +109,7 @@ export default function RootLayout({
   // (CSP nonce'a gerek kalmadı). <html lang> statik "en"; dil hedeflemesi hreflang
   // ile yapılıyor (21 dil, her sayfada + sitemap'te) — Google için asıl sinyal o.
   return (
-    <html lang="en" className={`${inter.variable} h-full antialiased`}>
+    <html lang="en" className={`${inter.variable} ${displaySerif.variable} h-full antialiased`}>
       <head>
         <JsonLd />
         {/* gtag consent+init + auth-flash: statik dosya, script-src 'self' ile izinli.
@@ -107,8 +121,9 @@ export default function RootLayout({
         <LanguageProvider>
           <CurrencyProvider>
             {children}
+            <MobileTabBar />
             <CookieBanner />
-            <EmailCaptureGate />
+            {/* <EmailCaptureGate /> — geçici kapalı, yukarıdaki nota bak */}
           </CurrencyProvider>
         </LanguageProvider>
       </body>

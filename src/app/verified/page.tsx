@@ -64,8 +64,8 @@ export default function VerifiedPage() {
         <div className="bg-white border border-black/[0.06] rounded-3xl p-10 shadow-sm">
           {state === "working" ? (
             <>
-              <div className="w-10 h-10 rounded-full border-2 border-[#6C4CF1] border-t-transparent animate-spin mx-auto mb-6" />
-              <h1 className="text-xl font-black text-[#0A0A0F]">Setting up your account…</h1>
+              <div className="w-10 h-10 rounded-full border-2 border-[#5B3FD9] border-t-transparent animate-spin mx-auto mb-6" />
+              <h1 className="text-xl font-display font-normal text-[#0A0A0F]">Setting up your account…</h1>
               <p className="mt-2 text-sm text-neutral-800">Just a moment.</p>
             </>
           ) : state === "error" ? (
@@ -75,11 +75,11 @@ export default function VerifiedPage() {
                   <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
                 </svg>
               </div>
-              <h1 className="text-2xl font-black text-[#0A0A0F]">Email verified ✓</h1>
+              <h1 className="text-2xl font-display font-normal text-[#0A0A0F]">Email verified ✓</h1>
               <p className="mt-2 text-sm text-neutral-800 leading-6">
                 Your email is confirmed, but we couldn&apos;t finish account setup automatically. Please sign in to continue.
               </p>
-              <a href="/" className="mt-8 inline-flex items-center gap-2 rounded-2xl bg-[#6C4CF1] text-white font-bold px-7 py-3 text-sm hover:bg-[#5a3dd4] transition-colors">
+              <a href="/" className="mt-8 inline-flex items-center gap-2 rounded-2xl bg-[#5B3FD9] text-white font-bold px-7 py-3 text-sm hover:bg-[#4A32B8] transition-colors">
                 Continue to VibeGuide →
               </a>
             </>
@@ -91,12 +91,12 @@ export default function VerifiedPage() {
                   <polyline points="22 4 12 14.01 9 11.01"/>
                 </svg>
               </div>
-              <h1 className="text-2xl font-black text-[#0A0A0F]">You&apos;re all set! 🎉</h1>
+              <h1 className="text-2xl font-display font-normal text-[#0A0A0F]">You&apos;re all set! 🎉</h1>
               <p className="mt-2 text-sm text-neutral-800 leading-6">
                 Your email is confirmed and your account is ready. Start exploring with local guides.
               </p>
-              <a href="/" className="mt-8 inline-flex items-center gap-2 rounded-2xl bg-[#6C4CF1] text-white font-bold px-7 py-3 text-sm hover:bg-[#5a3dd4] transition-colors"
-                style={{ boxShadow: "0 4px 16px rgba(108,76,241,0.25)" }}>
+              <a href="/" className="mt-8 inline-flex items-center gap-2 rounded-2xl bg-[#5B3FD9] text-white font-bold px-7 py-3 text-sm hover:bg-[#4A32B8] transition-colors"
+                style={{ boxShadow: "0 4px 16px rgba(91,63,217,0.25)" }}>
                 Continue to VibeGuide →
               </a>
             </>

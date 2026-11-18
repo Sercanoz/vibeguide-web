@@ -131,7 +131,7 @@ function ActionInner() {
   }
 
   const inputCls =
-    "w-full rounded-xl border border-black/10 px-3.5 py-2.5 text-sm focus:outline-none focus:border-[#6C4CF1] focus:ring-2 focus:ring-[#6C4CF1]/10 transition-all";
+    "w-full rounded-xl border border-black/10 px-3.5 py-2.5 text-sm focus:outline-none focus:border-[#5B3FD9] focus:ring-2 focus:ring-[#5B3FD9]/10 transition-all";
 
   return (
     <main className="min-h-screen bg-[#FAFAFB] text-[#0A0A0F]">
@@ -140,7 +140,7 @@ function ActionInner() {
         <div className="rounded-3xl bg-white border border-black/[0.06] shadow-sm p-7">
           {phase === "loading" && (
             <div className="text-center py-6">
-              <div className="w-10 h-10 rounded-full border-2 border-[#6C4CF1]/20 border-t-[#6C4CF1] animate-spin mx-auto mb-4" />
+              <div className="w-10 h-10 rounded-full border-2 border-[#5B3FD9]/20 border-t-[#5B3FD9] animate-spin mx-auto mb-4" />
               <p className="text-sm text-neutral-600">
                 {mode === "verifyEmail" ? t.verifyWorking : t.working}
               </p>
@@ -149,7 +149,7 @@ function ActionInner() {
 
           {phase === "resetForm" && (
             <>
-              <h1 className="text-xl font-black">{t.resetTitle}</h1>
+              <h1 className="text-xl font-display font-normal">{t.resetTitle}</h1>
               <p className="mt-1.5 text-sm text-neutral-600">
                 {t.resetSub.replace("{email}", email)}
               </p>
@@ -187,7 +187,7 @@ function ActionInner() {
                 <button
                   type="submit"
                   disabled={busy}
-                  className="w-full rounded-full bg-[#6C4CF1] text-white font-bold px-6 py-3 text-sm hover:bg-[#5a3dd4] transition-colors disabled:opacity-60"
+                  className="w-full rounded-full bg-[#5B3FD9] text-white font-bold px-6 py-3 text-sm hover:bg-[#4A32B8] transition-colors disabled:opacity-60"
                 >
                   {busy ? t.working : t.resetCta}
                 </button>
@@ -202,7 +202,7 @@ function ActionInner() {
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
               </div>
-              <h1 className="text-xl font-black">
+              <h1 className="text-xl font-display font-normal">
                 {phase === "resetDone" ? t.resetDone : t.verifyDone}
               </h1>
               <p className="mt-2 text-sm text-neutral-600">
@@ -210,7 +210,7 @@ function ActionInner() {
               </p>
               <Link
                 href="/login"
-                className="mt-6 inline-block rounded-full bg-[#6C4CF1] text-white font-bold px-6 py-3 text-sm hover:bg-[#5a3dd4] transition-colors"
+                className="mt-6 inline-block rounded-full bg-[#5B3FD9] text-white font-bold px-6 py-3 text-sm hover:bg-[#4A32B8] transition-colors"
               >
                 {t.goSignIn}
               </Link>

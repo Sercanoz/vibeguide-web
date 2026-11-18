@@ -26,7 +26,7 @@ export default function AdminPushPage() {
 
   return (
     <div className="p-8 max-w-2xl">
-      <h1 className="text-2xl font-black text-[#0A0A0F] mb-2">Push Notification</h1>
+      <h1 className="text-2xl font-display font-normal text-[#0A0A0F] mb-2">Push Notification</h1>
       <p className="text-sm text-neutral-400 mb-8">Send a broadcast push notification to users</p>
 
       <div className="bg-white rounded-2xl border border-black/[0.06] p-6 shadow-sm">
@@ -36,7 +36,7 @@ export default function AdminPushPage() {
             <div className="flex gap-2">
               {[["all","Everyone"],["Tourist","Tourists only"],["Guide","Guides only"]].map(([v, l]) => (
                 <button key={v} type="button" onClick={() => setRole(v)}
-                  className={`flex-1 py-2.5 rounded-xl text-sm font-bold border transition-all ${role === v ? "bg-[#6C4CF1] text-white border-[#6C4CF1]" : "bg-neutral-50 text-neutral-500 border-black/10 hover:border-[#6C4CF1]/30"}`}>
+                  className={`flex-1 py-2.5 rounded-xl text-sm font-bold border transition-all ${role === v ? "bg-[#5B3FD9] text-white border-[#5B3FD9]" : "bg-neutral-50 text-neutral-500 border-black/10 hover:border-[#5B3FD9]/30"}`}>
                   {l}
                 </button>
               ))}
@@ -46,14 +46,14 @@ export default function AdminPushPage() {
           <div>
             <label className="text-xs font-black text-neutral-500 uppercase tracking-wide mb-1.5 block">Title *</label>
             <input required value={title} onChange={(e) => setTitle(e.target.value)}
-              className="w-full border border-black/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors"
+              className="w-full border border-black/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#5B3FD9] transition-colors"
               placeholder="e.g. New tour available in Istanbul!" />
           </div>
 
           <div>
             <label className="text-xs font-black text-neutral-500 uppercase tracking-wide mb-1.5 block">Message *</label>
             <textarea required value={body} onChange={(e) => setBody(e.target.value)} rows={4}
-              className="w-full border border-black/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors resize-none"
+              className="w-full border border-black/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#5B3FD9] transition-colors resize-none"
               placeholder="Write your message here…" />
           </div>
 
@@ -65,8 +65,8 @@ export default function AdminPushPage() {
           )}
 
           <button type="submit" disabled={loading}
-            className="w-full bg-[#6C4CF1] text-white font-bold py-3 rounded-xl text-sm hover:bg-[#5a3dd4] transition-colors disabled:opacity-50"
-            style={{ boxShadow: "0 4px 16px rgba(108,76,241,0.25)" }}>
+            className="w-full bg-[#5B3FD9] text-white font-bold py-3 rounded-xl text-sm hover:bg-[#4A32B8] transition-colors disabled:opacity-50"
+            style={{ boxShadow: "0 4px 16px rgba(91,63,217,0.25)" }}>
             {loading ? "Sending…" : "Send notification →"}
           </button>
         </form>

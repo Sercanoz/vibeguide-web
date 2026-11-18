@@ -59,12 +59,12 @@ export default function TourReviewPage(props: Props) {
               <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
             </svg>
           </div>
-          <h1 className="text-2xl font-black text-[#0A0A0F]">Thank you! 🙏</h1>
+          <h1 className="text-2xl font-display font-normal text-[#0A0A0F]">Thank you! 🙏</h1>
           <p className="mt-2 text-sm text-neutral-800 leading-6">
             Your review has been submitted and will appear once approved. We appreciate you sharing your experience!
           </p>
-          <a href={`/tours/${tourId}`} className="mt-8 inline-flex items-center gap-2 rounded-2xl bg-[#6C4CF1] text-white font-bold px-7 py-3 text-sm hover:bg-[#5a3dd4] transition-colors"
-            style={{ boxShadow: "0 4px 16px rgba(108,76,241,0.25)" }}>
+          <a href={`/tours/${tourId}`} className="mt-8 inline-flex items-center gap-2 rounded-2xl bg-[#5B3FD9] text-white font-bold px-7 py-3 text-sm hover:bg-[#4A32B8] transition-colors"
+            style={{ boxShadow: "0 4px 16px rgba(91,63,217,0.25)" }}>
             View this tour →
           </a>
         </div>
@@ -92,12 +92,12 @@ export default function TourReviewPage(props: Props) {
                 // eslint-disable-next-line @next/next/no-img-element
                 <img src={tour.coverPhotoUrl} alt={tour.title} className="w-full h-full object-cover" />
               ) : (
-                <div className="w-full h-full bg-gradient-to-br from-[#6C4CF1]/20 to-[#8B5CF6]/20" />
+                <div className="w-full h-full bg-gradient-to-br from-[#5B3FD9]/20 to-[#8B5CF6]/20" />
               )}
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
                 <div>
                   <p className="text-white/70 text-xs font-semibold">{tour.city}</p>
-                  <h1 className="text-white font-black text-lg leading-tight">{tour.title}</h1>
+                  <h1 className="text-white font-display font-normal text-lg leading-tight">{tour.title}</h1>
                 </div>
               </div>
             </div>
@@ -130,19 +130,19 @@ export default function TourReviewPage(props: Props) {
               <div>
                 <label className="text-xs font-bold text-neutral-700 mb-1.5 block">Full name *</label>
                 <input value={fullName} onChange={(e) => setFullName(e.target.value)} required
-                  className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors"
+                  className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#5B3FD9] transition-colors"
                   placeholder="John Doe" />
               </div>
               <div>
                 <label className="text-xs font-bold text-neutral-700 mb-1.5 block">Nationality</label>
                 <input value={nationality} onChange={(e) => setNationality(e.target.value)}
-                  className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors"
+                  className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#5B3FD9] transition-colors"
                   placeholder="American" />
               </div>
               <div>
                 <label className="text-xs font-bold text-neutral-700 mb-1.5 block">Your review</label>
                 <textarea value={comment} onChange={(e) => setComment(e.target.value)} rows={4}
-                  className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#6C4CF1] transition-colors resize-none"
+                  className="w-full border border-black/10 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#5B3FD9] transition-colors resize-none"
                   placeholder="Tell us about your experience…" />
               </div>
             </div>
@@ -150,8 +150,8 @@ export default function TourReviewPage(props: Props) {
             {error && <div className="mt-4 rounded-2xl bg-red-50 border border-red-100 px-4 py-3 text-sm text-red-600">{error}</div>}
 
             <button type="submit" disabled={submitting}
-              className="mt-5 w-full rounded-2xl bg-[#6C4CF1] text-white font-bold py-3.5 text-sm hover:bg-[#5a3dd4] transition-colors disabled:opacity-50"
-              style={{ boxShadow: "0 4px 16px rgba(108,76,241,0.25)" }}>
+              className="mt-5 w-full rounded-2xl bg-[#5B3FD9] text-white font-bold py-3.5 text-sm hover:bg-[#4A32B8] transition-colors disabled:opacity-50"
+              style={{ boxShadow: "0 4px 16px rgba(91,63,217,0.25)" }}>
               {submitting ? "Submitting…" : "Submit review →"}
             </button>
           </form>

@@ -9,8 +9,8 @@ export default function OgImage() {
   return new ImageResponse(
     (
       <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "flex-end", background: "linear-gradient(135deg, #0A0A0F 0%, #1a1030 50%, #0A0A0F 100%)", padding: "64px", fontFamily: "sans-serif" }}>
-        <div style={{ position: "absolute", top: 0, right: 0, width: 600, height: 600, background: "radial-gradient(circle, rgba(108,76,241,0.3) 0%, transparent 70%)", borderRadius: "50%", display: "flex" }} />
-        <div style={{ display: "flex", alignItems: "center", gap: 8, background: "rgba(108,76,241,0.2)", border: "1px solid rgba(108,76,241,0.4)", borderRadius: 100, padding: "8px 16px", marginBottom: 24 }}>
+        <div style={{ position: "absolute", top: 0, right: 0, width: 600, height: 600, background: "radial-gradient(circle, rgba(91,63,217,0.3) 0%, transparent 70%)", borderRadius: "50%", display: "flex" }} />
+        <div style={{ display: "flex", alignItems: "center", gap: 8, background: "rgba(91,63,217,0.2)", border: "1px solid rgba(91,63,217,0.4)", borderRadius: 100, padding: "8px 16px", marginBottom: 24 }}>
           <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#10B981" }} />
           <span style={{ color: "#A78BFA", fontSize: 16, fontWeight: 700 }}>Istanbul · Cappadocia · Ephesus</span>
         </div>

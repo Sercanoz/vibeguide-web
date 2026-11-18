@@ -35,7 +35,7 @@ function renderInline(text: string, keyBase: string) {
       if (link.index > 0) nodes.push(rest.slice(0, link.index));
       const href = link[2];
       nodes.push(
-        <a key={`${keyBase}-l${i++}`} href={href} className="text-[#6C4CF1] font-semibold hover:underline">
+        <a key={`${keyBase}-l${i++}`} href={href} className="text-[#5B3FD9] font-semibold hover:underline">
           {link[1]}
         </a>
       );
@@ -103,7 +103,7 @@ export default function LegalMarkdown({
     <main className="min-h-screen bg-white text-[#0A0A0F]">
       <Navbar />
       <div className="mx-auto max-w-3xl px-6 pt-28 pb-16">
-        <h1 className="text-3xl font-black mb-2">{title}</h1>
+        <h1 className="text-3xl font-display font-normal mb-2">{title}</h1>
         {subtitle && <p className="text-sm text-neutral-800 mb-10">{subtitle}</p>}
         <div className="text-sm text-neutral-800 leading-7">{blocks}</div>
       </div>

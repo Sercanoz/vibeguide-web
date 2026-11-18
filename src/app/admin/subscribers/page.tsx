@@ -38,12 +38,12 @@ export default function AdminSubscribersPage() {
     <div className="p-8 max-w-4xl">
       <div className="flex items-start justify-between gap-4 mb-6">
         <div>
-          <h1 className="text-2xl font-black text-[#0A0A0F]">Email Subscribers</h1>
+          <h1 className="text-2xl font-display font-normal text-[#0A0A0F]">Email Subscribers</h1>
           <p className="text-sm text-neutral-400 mt-1">Leads captured via the homepage discount popup. {total} total.</p>
         </div>
         {rows.length > 0 && (
           <button onClick={exportCsv}
-            className="shrink-0 border border-black/10 text-[#0A0A0F] font-bold px-5 py-2.5 rounded-2xl text-sm hover:border-[#6C4CF1] transition-colors">
+            className="shrink-0 border border-black/10 text-[#0A0A0F] font-bold px-5 py-2.5 rounded-2xl text-sm hover:border-[#5B3FD9] transition-colors">
             ⬇ Export CSV
           </button>
         )}
@@ -71,7 +71,7 @@ export default function AdminSubscribersPage() {
               {rows.map((s) => (
                 <tr key={s.id} className="border-b border-black/[0.04] hover:bg-neutral-50 transition-colors">
                   <td className="px-4 py-3 font-semibold text-[#0A0A0F]">{s.email}</td>
-                  <td className="px-4 py-3 font-mono text-xs text-[#6C4CF1]">{s.promoCode ?? "—"}</td>
+                  <td className="px-4 py-3 font-mono text-xs text-[#5B3FD9]">{s.promoCode ?? "—"}</td>
                   <td className="px-4 py-3 text-neutral-400 text-xs hidden sm:table-cell">{s.source ?? "—"}</td>
                   <td className="px-4 py-3 text-neutral-400 text-xs hidden md:table-cell">{new Date(s.createdAt).toLocaleDateString("en-GB")}</td>
                   <td className="px-4 py-3 text-right">

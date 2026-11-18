@@ -7,8 +7,8 @@
   --foreground: #0b0b14;
 
   /* VibeGuide brand */
-  --vg-primary: #6c4cf1;
-  --vg-primary-dark: #4f37c9;
+  --vg-primary: #5B3FD9;
+  --vg-primary-dark: #4A32B8;
   --vg-violet: #8b5cf6;
   --vg-lavender: #a78bfa;
   --vg-amber: #f59e0b;
@@ -38,6 +38,8 @@
   --color-vg-bg-soft: var(--vg-bg-soft);
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  /* Başlık fontu: `font-display` utility. CJK/Arapça glyph'i yoksa sistem serif'ine düşer. */
+  --font-display: var(--font-display-serif), Georgia, "Times New Roman", serif;
 }
 
 html {
@@ -54,13 +56,13 @@ body {
 
 /* Reusable utilities */
 .bg-vibe-gradient {
-  background: linear-gradient(135deg, #6c4cf1 0%, #8b5cf6 50%, #a78bfa 100%);
+  background: linear-gradient(135deg, #5B3FD9 0%, #8b5cf6 50%, #a78bfa 100%);
 }
 .bg-flash-gradient {
   background: linear-gradient(135deg, #ef4444 0%, #f97316 50%, #fbbf24 100%);
 }
 .text-vibe-gradient {
-  background: linear-gradient(135deg, #6c4cf1 0%, #8b5cf6 60%, #ef4444 100%);
+  background: linear-gradient(135deg, #5B3FD9 0%, #8b5cf6 60%, #ef4444 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -73,14 +75,27 @@ body {
 .animate-float { animation: float 6s ease-in-out infinite; }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(108, 76, 241, 0.4); }
-  50% { box-shadow: 0 0 0 18px rgba(108, 76, 241, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(91,63,217, 0.4); }
+  50% { box-shadow: 0 0 0 18px rgba(91,63,217, 0); }
 }
 .animate-pulse-glow { animation: pulse-glow 2.4s ease-out infinite; }
 
 @keyframes fadeSlideUp {
   from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* AuthModal açılışı: mobilde alttan kayar, masaüstünde hafif yükselir. */
+@keyframes vg-sheet-in {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.vg-sheet { animation: vg-sheet-in 0.28s cubic-bezier(0.16,1,0.3,1); }
+@media (min-width: 768px) {
+  .vg-sheet { animation-duration: 0.2s; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vg-sheet { animation: none; }
 }
 
 /* Scroll reveal */

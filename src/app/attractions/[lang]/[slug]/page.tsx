@@ -175,7 +175,7 @@ export default async function AttractionPage({ params }: Props) {
                 <span className="text-white/90">{c.name}</span>
               </nav>
               <span className="text-4xl">{attraction.emoji}</span>
-              <h1 className="mt-2 text-4xl md:text-6xl font-black text-white tracking-tight">
+              <h1 className="mt-2 text-4xl md:text-6xl font-display font-normal text-white tracking-[-0.01em]">
                 {c.name}
               </h1>
               <p className="mt-2 text-white/80 font-semibold">{attraction.city}</p>
@@ -203,15 +203,15 @@ export default async function AttractionPage({ params }: Props) {
           alanlarindan geliyor, 22 dilde hazir. */}
       <section className="pb-10">
         <div className="mx-auto max-w-3xl px-6">
-          <div className="rounded-2xl border border-[#6C4CF1]/20 bg-gradient-to-r from-[#6C4CF1]/[0.06] to-[#EC4899]/[0.04] p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center gap-4">
+          <div className="rounded-2xl border border-[#5B3FD9]/20 bg-gradient-to-r from-[#5B3FD9]/[0.06] to-[#EC4899]/[0.04] p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center gap-4">
             <span className="text-3xl shrink-0" aria-hidden="true">{attraction.emoji}</span>
             <p className="flex-1 text-[15px] leading-7 font-bold text-[#0A0A0F]">
               {c.ctaTitle}
             </p>
             <Link
               href={cityGuideHref ?? "/tours"}
-              className="shrink-0 inline-flex items-center justify-center rounded-full bg-[#6C4CF1] px-6 py-3 text-sm font-bold text-white hover:bg-[#5a3dd4] transition-colors whitespace-nowrap"
-              style={{ boxShadow: "0 4px 16px rgba(108,76,241,0.28)" }}
+              className="shrink-0 inline-flex items-center justify-center rounded-full bg-[#5B3FD9] px-6 py-3 text-sm font-bold text-white hover:bg-[#4A32B8] transition-colors whitespace-nowrap"
+              style={{ boxShadow: "0 4px 16px rgba(91,63,217,0.28)" }}
             >
               {c.toursHeading} →
             </Link>
@@ -265,7 +265,7 @@ export default async function AttractionPage({ params }: Props) {
           <div className="mx-auto max-w-5xl px-6">
             <Link
               href={cityGuideHref}
-              className="inline-flex items-center gap-2 rounded-full border border-[#6C4CF1]/30 bg-[#6C4CF1]/[0.04] px-5 py-2.5 text-sm font-bold text-[#6C4CF1] hover:bg-[#6C4CF1]/[0.08] transition-colors"
+              className="inline-flex items-center gap-2 rounded-full border border-[#5B3FD9]/30 bg-[#5B3FD9]/[0.04] px-5 py-2.5 text-sm font-bold text-[#5B3FD9] hover:bg-[#5B3FD9]/[0.08] transition-colors"
             >
               {c.toursHeading} →
             </Link>
@@ -285,7 +285,7 @@ export default async function AttractionPage({ params }: Props) {
               >
                 <summary className="cursor-pointer list-none font-black text-[#0A0A0F] flex items-center justify-between gap-3">
                   {f.q}
-                  <span className="text-[#6C4CF1] transition-transform group-open:rotate-45">
+                  <span className="text-[#5B3FD9] transition-transform group-open:rotate-45">
                     +
                   </span>
                 </summary>
@@ -318,11 +318,11 @@ export default async function AttractionPage({ params }: Props) {
                   <Link
                     key={o.slug}
                     href={`/attractions/${lang}/${o.slug}`}
-                    className="group flex items-center gap-4 rounded-2xl bg-white border border-black/[0.06] p-5 hover:border-[#6C4CF1]/30 transition-colors"
+                    className="group flex items-center gap-4 rounded-2xl bg-white border border-black/[0.06] p-5 hover:border-[#5B3FD9]/30 transition-colors"
                   >
                     <span className="text-3xl">{o.emoji}</span>
                     <span className="min-w-0">
-                      <span className="block font-black text-[#0A0A0F] group-hover:text-[#6C4CF1] transition-colors truncate">
+                      <span className="block font-black text-[#0A0A0F] group-hover:text-[#5B3FD9] transition-colors truncate">
                         {o.i18n[lang].name}
                       </span>
                       <span className="block text-xs text-neutral-500 truncate">{o.city}</span>
@@ -342,8 +342,8 @@ export default async function AttractionPage({ params }: Props) {
           <p className="text-neutral-700 mb-8 leading-7">{c.ctaSub}</p>
           <Link
             href="/tours"
-            className="inline-block rounded-full bg-gradient-to-r from-[#6C4CF1] via-[#8B5CF6] to-[#EC4899] px-8 py-3.5 text-sm font-bold text-white"
-            style={{ boxShadow: "0 4px 20px rgba(108,76,241,0.35)" }}
+            className="inline-block rounded-full bg-gradient-to-r from-[#5B3FD9] via-[#8B5CF6] to-[#EC4899] px-8 py-3.5 text-sm font-bold text-white"
+            style={{ boxShadow: "0 4px 20px rgba(91,63,217,0.35)" }}
           >
             {c.toursHeading} →
           </Link>

@@ -63,7 +63,7 @@ export default function AdminGuides() {
     <div className="max-w-6xl mx-auto px-5 sm:px-8 py-10">
       <div className="flex items-end justify-between gap-4 mb-6 flex-wrap">
         <div>
-          <h1 className="text-3xl font-black text-vg-ink">Guide bio translations</h1>
+          <h1 className="text-3xl font-display font-normal text-vg-ink">Guide bio translations</h1>
           <p className="text-sm text-vg-muted mt-1">
             {rows.length} guides · only guides with a non-empty bio.
           </p>

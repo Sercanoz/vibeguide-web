@@ -9,7 +9,7 @@ export default function manifest(): MetadataRoute.Manifest {
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",
-    theme_color: "#6c4cf1",
+    theme_color: "#5B3FD9",
     icons: [
       // /icon ve /apple-icon route'ları 404 veriyordu — gerçek dosyalar .png uzantılı.
       { src: "/icon.png", sizes: "32x32", type: "image/png" },

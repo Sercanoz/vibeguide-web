@@ -33,7 +33,7 @@ export default function GuidePendingPage() {
   if (status === "loading") {
     return (
       <main className="min-h-screen bg-white flex items-center justify-center">
-        <div className="w-8 h-8 rounded-full border-2 border-[#6C4CF1] border-t-transparent animate-spin" />
+        <div className="w-8 h-8 rounded-full border-2 border-[#5B3FD9] border-t-transparent animate-spin" />
       </main>
     );
   }
@@ -59,7 +59,7 @@ export default function GuidePendingPage() {
           </div>
 
           <p className="text-[10px] font-black uppercase tracking-[0.2em] text-amber-600 mb-3">Under Review</p>
-          <h1 className="text-2xl font-black text-[#0A0A0F] leading-tight">Your application is being reviewed</h1>
+          <h1 className="text-2xl font-display font-normal text-[#0A0A0F] leading-tight">Your application is being reviewed</h1>
           <p className="mt-3 text-sm text-neutral-800 leading-7">
             Our team is verifying your guide badge. This usually takes <strong className="text-[#0A0A0F]">1–2 business days</strong>.
           </p>
@@ -97,7 +97,7 @@ export default function GuidePendingPage() {
           <div className="mt-8 pt-6 border-t border-black/[0.06] flex flex-col gap-3">
             <a
               href="mailto:support@vibeguideapp.com"
-              className="w-full flex items-center justify-center gap-2 rounded-2xl border border-black/10 py-2.5 text-sm font-bold text-neutral-800 hover:border-[#6C4CF1]/30 hover:text-[#6C4CF1] transition-colors"
+              className="w-full flex items-center justify-center gap-2 rounded-2xl border border-black/10 py-2.5 text-sm font-bold text-neutral-800 hover:border-[#5B3FD9]/30 hover:text-[#5B3FD9] transition-colors"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useT } from "@/components/LanguageProvider";
 import { homeTranslations } from "@/lib/home-i18n";
 import { uiExtra } from "@/lib/ui-extra-i18n";
@@ -23,11 +24,11 @@ export default function MainFooter() {
     : "en") as (typeof ATTRACTION_LANGS)[number];
 
   return (
-    <footer className="bg-white border-t border-black/[0.06] px-6 py-16">
+    <footer className="bg-[#F7F7F8] border-t border-black/[0.06] px-6 py-14">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-10 md:grid-cols-[2fr_auto_auto_auto_auto] md:justify-between">
           <div>
-            <h3 className="flex items-center gap-2.5 text-xl font-black">
+            <h3 className="flex items-center gap-2.5 text-xl font-bold">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/vibeguide-icon.png" alt="VibeGuide" width={28} height={28} style={{ mixBlendMode: "multiply" }} />
               VibeGuide
@@ -51,55 +52,55 @@ export default function MainFooter() {
             </div>
           </div>
           <div>
-            <h4 className="text-sm font-black">{nb.destinations}</h4>
-            <ul className="mt-4 space-y-3 text-sm text-neutral-800">
+            <h4 className="text-sm font-semibold text-[#0A0A0F]">{nb.destinations}</h4>
+            <ul className="mt-4 space-y-2.5 text-sm text-neutral-600">
               {DESTINATIONS.map((d) => (
                 <li key={d.slug}>
-                  <a href={cityGuideHref(d.slug, locale)} className="hover:text-black transition-colors">
+                  <Link href={cityGuideHref(d.slug, locale)} className="hover:text-black transition-colors">
                     {d.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
               <li>
-                <a href={`/attractions/${hubLang}`} className="hover:text-black transition-colors font-semibold text-[#6C4CF1]">
+                <Link href={`/attractions/${hubLang}`} className="hover:text-black transition-colors font-medium text-neutral-900">
                   {ATTR_HUB[hubLang].h1} →
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
           <div>
-            <h4 className="text-sm font-black">{t.footer.product}</h4>
-            <ul className="mt-4 space-y-3 text-sm text-neutral-800">
-              <li><a href="/vibenow" className="hover:text-black transition-colors">VibeNow</a></li>
-              <li><a href="/vibesquad" className="hover:text-black transition-colors">VibeSquad</a></li>
-              <li><a href="/private" className="hover:text-black transition-colors">{t.nav.private}</a></li>
-              <li><a href="/tours" className="hover:text-black transition-colors">{nb.tours}</a></li>
-              <li><a href="/how-it-works" className="hover:text-black transition-colors">{nb.howItWorks}</a></li>
-              <li><a href="/guide-verification" className="hover:text-black transition-colors">{t.footerLinks.guideVerification}</a></li>
-              <li><a href="/register/guide" className="hover:text-black transition-colors font-semibold text-emerald-600">{nb.becomeGuide}</a></li>
+            <h4 className="text-sm font-semibold text-[#0A0A0F]">{t.footer.product}</h4>
+            <ul className="mt-4 space-y-2.5 text-sm text-neutral-600">
+              <li><Link href="/vibenow" className="hover:text-black transition-colors">VibeNow</Link></li>
+              <li><Link href="/vibesquad" className="hover:text-black transition-colors">VibeSquad</Link></li>
+              <li><Link href="/private" className="hover:text-black transition-colors">{t.nav.private}</Link></li>
+              <li><Link href="/tours" className="hover:text-black transition-colors">{nb.tours}</Link></li>
+              <li><Link href="/how-it-works" className="hover:text-black transition-colors">{nb.howItWorks}</Link></li>
+              <li><Link href="/guide-verification" className="hover:text-black transition-colors">{t.footerLinks.guideVerification}</Link></li>
+              <li><Link href="/register/guide" className="hover:text-black transition-colors font-medium text-neutral-900">{nb.becomeGuide}</Link></li>
             </ul>
           </div>
           <div>
-            <h4 className="text-sm font-black">{t.footer.support}</h4>
-            <ul className="mt-4 space-y-3 text-sm text-neutral-800">
-              <li><a href="/about" className="hover:text-black transition-colors">{t.footerLinks.aboutUs}</a></li>
-              <li><a href="/contact" className="hover:text-black transition-colors">{t.footerLinks.contact}</a></li>
-              <li><a href="/help" className="hover:text-black transition-colors">{t.footerLinks.helpCenter}</a></li>
-              <li><a href={`/blog/${isBlogLang(locale) ? locale : "en"}`} className="hover:text-black transition-colors">{BLOG_HUB[isBlogLang(locale) ? locale : "en"].h1}</a></li>
-              <li><a href="/security" className="hover:text-black transition-colors">{ux.securityPayment}</a></li>
-              <li><a href="/account-deletion" className="hover:text-black transition-colors">{t.footerLinks.accountDeletion}</a></li>
+            <h4 className="text-sm font-semibold text-[#0A0A0F]">{t.footer.support}</h4>
+            <ul className="mt-4 space-y-2.5 text-sm text-neutral-600">
+              <li><Link href="/about" className="hover:text-black transition-colors">{t.footerLinks.aboutUs}</Link></li>
+              <li><Link href="/contact" className="hover:text-black transition-colors">{t.footerLinks.contact}</Link></li>
+              <li><Link href="/help" className="hover:text-black transition-colors">{t.footerLinks.helpCenter}</Link></li>
+              <li><Link href={`/blog/${isBlogLang(locale) ? locale : "en"}`} className="hover:text-black transition-colors">{BLOG_HUB[isBlogLang(locale) ? locale : "en"].h1}</Link></li>
+              <li><Link href="/security" className="hover:text-black transition-colors">{ux.securityPayment}</Link></li>
+              <li><Link href="/account-deletion" className="hover:text-black transition-colors">{t.footerLinks.accountDeletion}</Link></li>
             </ul>
           </div>
           <div>
-            <h4 className="text-sm font-black">{ux.legal}</h4>
-            <ul className="mt-4 space-y-3 text-sm text-neutral-800">
-              <li><a href="/terms" className="hover:text-black transition-colors">{ux.terms}</a></li>
-              <li><a href="/privacy" className="hover:text-black transition-colors">{ux.privacy}</a></li>
-              <li><a href="/cancellation-policy" className="hover:text-black transition-colors">{ux.cancellation}</a></li>
-              <li><a href="/mesafeli-satis" className="hover:text-black transition-colors">{ux.distanceSales}</a></li>
-              <li><a href="/on-bilgilendirme" className="hover:text-black transition-colors">{ux.preInfo}</a></li>
-              <li><a href="/kvkk" className="hover:text-black transition-colors">{ux.kvkk}</a></li>
-              <li><a href="/cerez-politikasi" className="hover:text-black transition-colors">{ux.cookies}</a></li>
+            <h4 className="text-sm font-semibold text-[#0A0A0F]">{ux.legal}</h4>
+            <ul className="mt-4 space-y-2.5 text-sm text-neutral-600">
+              <li><Link href="/terms" className="hover:text-black transition-colors">{ux.terms}</Link></li>
+              <li><Link href="/privacy" className="hover:text-black transition-colors">{ux.privacy}</Link></li>
+              <li><Link href="/cancellation-policy" className="hover:text-black transition-colors">{ux.cancellation}</Link></li>
+              <li><Link href="/mesafeli-satis" className="hover:text-black transition-colors">{ux.distanceSales}</Link></li>
+              <li><Link href="/on-bilgilendirme" className="hover:text-black transition-colors">{ux.preInfo}</Link></li>
+              <li><Link href="/kvkk" className="hover:text-black transition-colors">{ux.kvkk}</Link></li>
+              <li><Link href="/cerez-politikasi" className="hover:text-black transition-colors">{ux.cookies}</Link></li>
               <li>
                 <button
                   type="button"
@@ -137,15 +138,15 @@ export default function MainFooter() {
               <p>Beldibi Mah. Belmar Sk. No:9/1 İç Kapı No:4 Marmaris/Muğla, {locale === "tr" ? "Türkiye" : "Türkiye"}</p>
             </div>
             <div className="md:text-right">
-              <p>📧 <a href="mailto:support@vibeguideapp.com" className="hover:text-black transition-colors">support@vibeguideapp.com</a></p>
-              <p>📞 <a href="tel:+905308287696" className="hover:text-black transition-colors">+90 530 828 76 96</a></p>
+              <p><a href="mailto:support@vibeguideapp.com" className="hover:text-black transition-colors">support@vibeguideapp.com</a></p>
+              <p><a href="tel:+905308287696" className="hover:text-black transition-colors">+90 530 828 76 96</a></p>
               <p>{ux.workingHours}</p>
             </div>
           </div>
 
           {/* Seyahat operasyonları — hizmetleri yürüten TÜRSAB A Grubu acente (1618 s.k.
              yasal zorunluluk + şeffaflık; VibeCore platformu işletir, acente seyahati organize eder). */}
-          <div className="mt-6 rounded-2xl bg-[#F7F7FB] border border-black/[0.06] p-4 text-xs text-neutral-800 leading-6">
+          <div className="mt-6 rounded-xl bg-white border border-black/[0.06] p-4 text-xs text-neutral-800 leading-6">
             <p className="text-[10px] font-bold uppercase tracking-wide text-neutral-500 mb-1">{locale === "tr" ? "Seyahat operasyonları" : "Travel operations"}</p>
             {locale === "tr" ? (
               <p>

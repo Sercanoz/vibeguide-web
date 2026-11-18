@@ -1,271 +1,232 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import Price from "@/components/Price";
+import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useT } from "@/components/LanguageProvider";
 import { getToursT } from "@/lib/i18n";
+import { languageByCode, parseLanguageCodes } from "@/lib/languages";
+import TourCard, { type TourCardData } from "@/components/TourCard";
+import { useCurrency } from "@/components/CurrencyProvider";
 
-interface Tour {
-  id: number;
-  title: string;
+// /tours katalog filtreleri — tamamen client-side (katalog küçük, tek istekte geliyor).
+// Arama + şehir + süre + fiyat + dil + sıralama. ?city= ve ?category= query'si
+// ana sayfa/şehir sayfalarından ön seçim için okunur.
+//
+// NOT: Eskiden yorumu olmayan turlara id'den türetilmiş sahte puan basılıyordu
+// ("4.9 (211)"). Kaldırıldı — tüketici mevzuatı açısından yanıltıcı; kart artık
+// yalnız gerçek puanı gösterir, yoksa "Yeni deneyim".
+
+interface Tour extends TourCardData {
   summary: string;
-  city: string;
   category: string;
-  durationMinutes: number;
-  basePrice: number;
-  compareAtPrice?: number;
-  currency: string;
-  coverPhotoUrl?: string;
   languagesOffered?: string;
   badges?: string;
-  rating?: number;
-  reviewCount?: number;
-  provinceName?: string | null;
   provinceSlug?: string | null;
-  districtName?: string | null;
 }
 
-/** "Selçuk, İzmir" if district present, else province, else legacy city. */
-function locationLabel(t: { city: string; provinceName?: string | null; districtName?: string | null }): string {
-  if (t.districtName && t.provinceName) return `${t.districtName}, ${t.provinceName}`;
-  return t.provinceName || t.city;
-}
+type DurationKey = "all" | "short" | "half" | "full";
+type PriceKey = "all" | "p1" | "p2" | "p3";
+type SortKey = "recommended" | "priceAsc" | "priceDesc" | "rating" | "duration";
 
-interface Props {
-  tours: Tour[];
-}
-
-function formatDuration(minutes: number): string {
-  if (minutes < 60) return `${minutes}m`;
-  const h = Math.floor(minutes / 60);
-  const m = minutes % 60;
-  return m > 0 ? `${h}h ${m}m` : `${h}h`;
-}
-
-function categoryColor(cat: string): string {
-  const map: Record<string, string> = {
-    history: "bg-amber-50 text-amber-700 border-amber-200",
-    food: "bg-orange-50 text-orange-700 border-orange-200",
-    nature: "bg-emerald-50 text-emerald-700 border-emerald-200",
-    culture: "bg-purple-50 text-purple-700 border-purple-200",
-    adventure: "bg-red-50 text-red-700 border-red-200",
-    art: "bg-pink-50 text-pink-700 border-pink-200",
-  };
-  return map[cat?.toLowerCase()] ?? "bg-neutral-50 text-neutral-700 border-neutral-200";
-}
-
-const BADGE_META: Record<string, { label: string; color: string; dot: string }> = {
-  skip_the_line:        { label: "Skip the line",        color: "bg-yellow-50 text-yellow-800 border-yellow-200", dot: "bg-yellow-400" },
-  bestseller:           { label: "Bestseller",           color: "bg-orange-50 text-orange-700 border-orange-200", dot: "bg-orange-500" },
-  free_cancellation:    { label: "Free cancellation",    color: "bg-emerald-50 text-emerald-700 border-emerald-200", dot: "bg-emerald-500" },
-  small_group:          { label: "Small group",          color: "bg-blue-50 text-blue-700 border-blue-200", dot: "bg-blue-500" },
-  private_tour:         { label: "Private",              color: "bg-violet-50 text-violet-700 border-violet-200", dot: "bg-violet-500" },
-  instant_confirmation: { label: "Instant confirm",      color: "bg-teal-50 text-teal-700 border-teal-200", dot: "bg-teal-500" },
-  live_guide:           { label: "Live guide",           color: "bg-rose-50 text-rose-700 border-rose-200", dot: "bg-rose-500" },
-  pickup_included:      { label: "Pickup included",      color: "bg-indigo-50 text-indigo-700 border-indigo-200", dot: "bg-indigo-500" },
+const COPY: Record<string, {
+  search: string; allCities: string; anyDuration: string; short: string; half: string; full: string;
+  anyPrice: string; anyLanguage: string; sort: string; recommended: string; priceAsc: string; priceDesc: string;
+  rating: string; durationSort: string; results: (n: number) => string; clear: string; noMatch: string; noMatchSub: string;
+  city: string; duration: string; price: string; language: string;
+}> = {
+  en: {
+    search: "Search tours", allCities: "All destinations", anyDuration: "Any duration", short: "Up to 3 hours",
+    half: "3–6 hours", full: "Full day (6h+)", anyPrice: "Any price", anyLanguage: "Any language",
+    sort: "Sort by", recommended: "Recommended", priceAsc: "Price: low to high", priceDesc: "Price: high to low",
+    rating: "Top rated", durationSort: "Shortest first", results: (n) => `${n} ${n === 1 ? "experience" : "experiences"}`,
+    clear: "Clear filters", noMatch: "No tours match these filters", noMatchSub: "Try another destination or remove a filter.",
+    city: "Destination", duration: "Duration", price: "Price", language: "Language",
+  },
+  tr: {
+    search: "Tur ara", allCities: "Tüm destinasyonlar", anyDuration: "Tüm süreler", short: "3 saate kadar",
+    half: "3–6 saat", full: "Tam gün (6s+)", anyPrice: "Tüm fiyatlar", anyLanguage: "Tüm diller",
+    sort: "Sırala", recommended: "Önerilen", priceAsc: "Fiyat: düşükten yükseğe", priceDesc: "Fiyat: yüksekten düşüğe",
+    rating: "En yüksek puan", durationSort: "En kısa önce", results: (n) => `${n} deneyim`,
+    clear: "Filtreleri temizle", noMatch: "Bu filtrelere uyan tur yok", noMatchSub: "Başka bir destinasyon dene ya da bir filtreyi kaldır.",
+    city: "Destinasyon", duration: "Süre", price: "Fiyat", language: "Dil",
+  },
 };
 
-/* Fallback rating when DB value is null */
-function fallbackRating(id: number) {
-  const ratings = [4.7, 4.8, 4.9, 5.0, 4.6, 4.8, 4.9, 4.7];
-  const counts  = [38, 124, 87, 211, 56, 143, 72, 98];
-  return { rating: ratings[id % ratings.length], count: counts[id % counts.length] };
+function matchesDuration(min: number, k: DurationKey) {
+  if (k === "short") return min <= 180;
+  if (k === "half") return min > 180 && min < 360;
+  if (k === "full") return min >= 360;
+  return true;
 }
 
-export default function TourFilters({ tours }: Props) {
+/** Fiyat kovaları katalogdaki fiyatlardan üretilir (para birimi karışık olabilir → tercile böl). */
+function priceBuckets(prices: number[]): [number, number] {
+  const s = [...prices].sort((a, b) => a - b);
+  if (s.length < 3) return [Infinity, Infinity];
+  return [s[Math.floor(s.length / 3)], s[Math.floor((2 * s.length) / 3)]];
+}
+
+export default function TourFilters({ tours }: { tours: Tour[] }) {
   const { locale } = useT();
   const tt = getToursT(locale);
-  const cities = ["All", ...Array.from(new Set(tours.map((t) => t.city))).sort()];
-  const [activeCity, setActiveCity] = useState("All");
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const c = COPY[locale] ?? COPY.en;
   const searchParams = useSearchParams();
+  const { display } = useCurrency();
+  // Fiyat filtresi yalnız tek para birimli katalogda anlamlı.
+  const oneCurrency = new Set(tours.map((t) => t.currency)).size === 1;
 
-  // Pre-select city/category from query (e.g. coming from homepage cards).
-  // `city` may be a slug (izmir) or display name (İzmir) — match against both.
+  const cities = useMemo(() => Array.from(new Set(tours.map((t) => t.city))).sort((a, b) => a.localeCompare(b)), [tours]);
+  const langs = useMemo(() => {
+    const set = new Set<string>();
+    tours.forEach((t) => parseLanguageCodes(t.languagesOffered).forEach((l) => set.add(l)));
+    return Array.from(set).sort();
+  }, [tours]);
+  const [p1, p2] = useMemo(() => priceBuckets(tours.map((t) => t.basePrice)), [tours]);
+
+  const [query, setQuery] = useState("");
+  const [city, setCity] = useState("all");
+  const [category, setCategory] = useState<string | null>(null);
+  const [duration, setDuration] = useState<DurationKey>("all");
+  const [price, setPrice] = useState<PriceKey>("all");
+  const [lang, setLang] = useState("all");
+  const [sort, setSort] = useState<SortKey>("recommended");
+
+  // Ön seçim: ?city= slug (izmir) veya görünen ad (İzmir) olabilir.
   useEffect(() => {
     const cq = searchParams.get("city");
     if (cq) {
       const key = cq.toLowerCase();
-      if (cities.includes(cq)) {
-        setActiveCity(cq);
-      } else {
-        // slug → find the tour's display city
-        const match = tours.find(
-          (t) => (t.provinceSlug ?? "").toLowerCase() === key || t.city.toLowerCase() === key
-        );
-        if (match) setActiveCity(match.city);
-      }
+      const match = tours.find((t) => (t.provinceSlug ?? "").toLowerCase() === key || t.city.toLowerCase() === key);
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- URL → filtre senkronu
+      if (match) setCity(match.city);
     }
     const catq = searchParams.get("category");
-    if (catq) setActiveCategory(catq.toLowerCase());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    if (catq) setCategory(catq.toLowerCase());
   }, [searchParams, tours]);
-  const [hoveredId, setHoveredId] = useState<number | null>(null);
 
-  const filtered = tours.filter((t) =>
-    (activeCity === "All" || t.city === activeCity) &&
-    (!activeCategory || (t.category ?? "").toLowerCase() === activeCategory)
-  );
+  const filtered = useMemo(() => {
+    const q = query.trim().toLocaleLowerCase(locale);
+    const list = tours.filter((t) =>
+      (city === "all" || t.city === city) &&
+      (!category || (t.category ?? "").toLowerCase() === category) &&
+      matchesDuration(t.durationMinutes, duration) &&
+      (price === "all" || (price === "p1" ? t.basePrice <= p1 : price === "p2" ? t.basePrice > p1 && t.basePrice <= p2 : t.basePrice > p2)) &&
+      (lang === "all" || parseLanguageCodes(t.languagesOffered).includes(lang)) &&
+      (!q || `${t.title} ${t.summary ?? ""} ${t.city} ${t.category ?? ""}`.toLocaleLowerCase(locale).includes(q))
+    );
+    const sorted = [...list];
+    if (sort === "priceAsc") sorted.sort((a, b) => a.basePrice - b.basePrice);
+    else if (sort === "priceDesc") sorted.sort((a, b) => b.basePrice - a.basePrice);
+    else if (sort === "duration") sorted.sort((a, b) => a.durationMinutes - b.durationMinutes);
+    else if (sort === "rating") sorted.sort((a, b) => (b.reviewCount ? b.rating ?? 0 : 0) - (a.reviewCount ? a.rating ?? 0 : 0));
+    return sorted;
+  }, [tours, query, city, category, duration, price, lang, sort, p1, p2, locale]);
+
+  const active = query !== "" || city !== "all" || category !== null || duration !== "all" || price !== "all" || lang !== "all";
+  function clearAll() {
+    setQuery(""); setCity("all"); setCategory(null); setDuration("all"); setPrice("all"); setLang("all");
+  }
+
+  const priceLabel = (k: PriceKey) => {
+    const cur = tours[0]?.currency ?? "TRY";
+    const f = (n: number) => display(Math.round(n), cur) ?? `${Math.round(n)} ${cur}`;
+    if (k === "p1") return `≤ ${f(p1)}`;
+    if (k === "p2") return `${f(p1)} – ${f(p2)}`;
+    return `> ${f(p2)}`;
+  };
 
   return (
     <>
-      {/* Active category chip */}
-      {activeCategory && (
-        <div className="mb-4">
-          <button onClick={() => setActiveCategory(null)}
-            className="inline-flex items-center gap-2 rounded-full bg-[#6C4CF1]/10 border border-[#6C4CF1]/20 text-[#6C4CF1] px-3.5 py-1.5 text-sm font-bold capitalize">
-            {activeCategory}
-            <span className="text-xs">✕</span>
-          </button>
+      {/* Araç çubuğu */}
+      <div className="sticky top-16 z-20 -mx-4 border-b border-neutral-200 bg-white/95 px-4 py-3 backdrop-blur md:-mx-6 md:px-6">
+        <div className="flex flex-col gap-3 lg:flex-row lg:items-center">
+          <label className="relative block lg:w-72">
+            <span className="sr-only">{c.search}</span>
+            <svg className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-neutral-500" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            <input type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder={c.search}
+              className="h-11 w-full rounded-full border border-neutral-300 bg-white pl-10 pr-4 text-base text-neutral-900 placeholder:text-neutral-500 focus:border-neutral-900 focus:outline-none md:text-sm" />
+          </label>
+          <div className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-0.5 lg:mx-0 lg:flex-1 lg:px-0" style={{ scrollbarWidth: "none" }}>
+            <PillSelect label={c.city} value={city} onChange={setCity} active={city !== "all"}
+              options={[["all", c.allCities], ...cities.map((x) => [x, x] as [string, string])]} />
+            <PillSelect label={c.duration} value={duration} onChange={(v) => setDuration(v as DurationKey)} active={duration !== "all"}
+              options={[["all", c.anyDuration], ["short", c.short], ["half", c.half], ["full", c.full]]} />
+            {oneCurrency && Number.isFinite(p1) && (
+              <PillSelect label={c.price} value={price} onChange={(v) => setPrice(v as PriceKey)} active={price !== "all"}
+                options={[["all", c.anyPrice], ["p1", priceLabel("p1")], ["p2", priceLabel("p2")], ["p3", priceLabel("p3")]]} />
+            )}
+            {langs.length > 1 && (
+              <PillSelect label={c.language} value={lang} onChange={setLang} active={lang !== "all"}
+                options={[["all", c.anyLanguage], ...langs.map((l) => [l, languageByCode(l).name] as [string, string])]} />
+            )}
+            {category && (
+              <button type="button" onClick={() => setCategory(null)}
+                className="inline-flex h-10 shrink-0 items-center gap-1.5 rounded-full border border-neutral-900 bg-neutral-900 px-4 text-sm font-medium capitalize text-white">
+                {category}
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+              </button>
+            )}
+          </div>
         </div>
-      )}
-
-      {/* City filter pills */}
-      <div className="flex flex-wrap gap-2 mb-8">
-        {cities.map((city) => (
-          <button
-            key={city}
-            onClick={() => setActiveCity(city)}
-            className={`px-4 py-1.5 rounded-full text-sm font-semibold transition-all border ${
-              activeCity === city
-                ? "bg-[#6C4CF1] text-white border-[#6C4CF1] shadow-sm"
-                : "bg-white border-black/10 text-neutral-700 hover:border-[#6C4CF1]/40 hover:text-[#6C4CF1]"
-            }`}
-          >
-            {city}
-          </button>
-        ))}
       </div>
 
-      {/* Tour grid */}
+      {/* Sonuç sayısı + sıralama */}
+      <div className="mt-6 flex flex-wrap items-center justify-between gap-3">
+        <p className="text-sm text-neutral-600" aria-live="polite">
+          {c.results(filtered.length)}
+          {active && (
+            <button type="button" onClick={clearAll} className="ml-3 font-medium text-neutral-900 underline underline-offset-4">{c.clear}</button>
+          )}
+        </p>
+        <label className="flex items-center gap-2 text-sm text-neutral-600">
+          {c.sort}
+          <select value={sort} onChange={(e) => setSort(e.target.value as SortKey)}
+            className="h-9 rounded-lg border border-neutral-300 bg-white px-2.5 text-sm font-medium text-neutral-900 focus:border-neutral-900 focus:outline-none">
+            <option value="recommended">{c.recommended}</option>
+            <option value="priceAsc">{c.priceAsc}</option>
+            <option value="priceDesc">{c.priceDesc}</option>
+            <option value="rating">{c.rating}</option>
+            <option value="duration">{c.durationSort}</option>
+          </select>
+        </label>
+      </div>
+
+      {/* Izgara */}
       {filtered.length === 0 ? (
-        <div className="text-center py-20 text-neutral-800">
-          <p className="text-5xl mb-4">🗺️</p>
-          <p className="text-base font-semibold">{tt.noToursYet}</p>
-          <p className="text-sm mt-1">{tt.noToursYetSub}</p>
+        <div className="mt-6 rounded-2xl border border-dashed border-neutral-300 px-6 py-16 text-center">
+          <p className="text-base font-semibold text-neutral-900">{tours.length === 0 ? tt.noToursYet : c.noMatch}</p>
+          <p className="mt-1 text-sm text-neutral-600">{tours.length === 0 ? tt.noToursYetSub : c.noMatchSub}</p>
+          {active && (
+            <button type="button" onClick={clearAll} className="mt-5 rounded-full border border-neutral-300 px-5 py-2.5 text-sm font-semibold text-neutral-900 hover:bg-neutral-50">
+              {c.clear}
+            </button>
+          )}
         </div>
       ) : (
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
-          {filtered.map((tour) => {
-            const badges = tour.badges
-              ? tour.badges.split(",").map(s => s.trim()).filter(Boolean)
-              : [];
-            const topBadge = badges[0] ? BADGE_META[badges[0]] : null;
-            const hasDiscount = tour.compareAtPrice != null && tour.compareAtPrice > tour.basePrice;
-            const fb = fallbackRating(tour.id);
-            const rating = tour.rating ?? fb.rating;
-            const count = tour.reviewCount ?? fb.count;
-            const isHovered = hoveredId === tour.id;
-
-            return (
-              <Link
-                key={tour.id}
-                href={`/tours/${tour.id}`}
-                onMouseEnter={() => setHoveredId(tour.id)}
-                onMouseLeave={() => setHoveredId(null)}
-                className="group rounded-2xl bg-white border border-black/[0.06] shadow-sm overflow-hidden flex flex-col hover:shadow-lg hover:-translate-y-1 transition-all duration-200"
-              >
-                {/* Cover photo — 4:3 */}
-                <div className="relative overflow-hidden" style={{ aspectRatio: "4/3" }}>
-                  {tour.coverPhotoUrl ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      src={tour.coverPhotoUrl}
-                      alt={tour.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  ) : (
-                    <div className="w-full h-full bg-gradient-to-br from-[#6C4CF1]/10 to-[#8B5CF6]/10 flex items-center justify-center text-4xl">🗺️</div>
-                  )}
-
-                  {/* Hover overlay */}
-                  <div className={`absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent flex items-end pb-3 px-3 transition-opacity duration-200 ${isHovered ? "opacity-100" : "opacity-0"}`}>
-                    <span className="text-white text-xs font-bold bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1">
-                      View tour →
-                    </span>
-                  </div>
-
-                  {/* Top badge */}
-                  {topBadge && (
-                    <span className={`absolute top-2 left-2 flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold border ${topBadge.color}`}>
-                      <span className={`h-1.5 w-1.5 rounded-full shrink-0 ${topBadge.dot}`} />
-                      {topBadge.label}
-                    </span>
-                  )}
-
-                  {/* Category — bottom right */}
-                  <span className={`absolute bottom-2 right-2 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wide border ${categoryColor(tour.category)}`}>
-                    {tour.category}
-                  </span>
-                </div>
-
-                {/* Content */}
-                <div className="p-3 flex flex-col flex-1">
-                  {/* City + duration */}
-                  <div className="flex items-center justify-between mb-1.5">
-                    <p className="text-[11px] text-neutral-800 flex items-center gap-1">
-                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                      {locationLabel(tour)}
-                      <span className="mx-0.5 text-black/20">·</span>
-                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                      {formatDuration(tour.durationMinutes)}
-                    </p>
-                    {/* Rating */}
-                    <p className="text-[10px] font-bold text-neutral-800 flex items-center gap-0.5">
-                      <svg width="9" height="9" viewBox="0 0 24 24" fill="#F59E0B" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                      {rating}
-                      <span className="text-neutral-800 font-normal">({count})</span>
-                    </p>
-                  </div>
-
-                  {/* Title */}
-                  <h2 className="font-black text-[#0A0A0F] text-sm leading-tight line-clamp-2 flex-1">{tour.title}</h2>
-
-                  {/* Extra badges */}
-                  {badges.length > 1 && (
-                    <div className="flex flex-wrap gap-1 mt-2">
-                      {badges.slice(1, 3).map((key) => {
-                        const m = BADGE_META[key];
-                        return m ? (
-                          <span key={key} className={`flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[9px] font-bold border ${m.color}`}>
-                            <span className={`h-1 w-1 rounded-full shrink-0 ${m.dot}`} />
-                            {m.label}
-                          </span>
-                        ) : null;
-                      })}
-                    </div>
-                  )}
-
-                  {/* Price */}
-                  <div className="mt-2 pt-2 border-t border-black/[0.06] flex items-end justify-between">
-                    <div>
-                      <p className="text-[9px] font-semibold text-neutral-800 uppercase tracking-wide">{tt.fromPrice}</p>
-                      <div className="flex items-baseline gap-1">
-                        {hasDiscount && (
-                          <span className="text-[11px] text-neutral-800 line-through">
-                            <Price amount={tour.compareAtPrice!} currency={tour.currency} />
-                          </span>
-                        )}
-                        <span className="text-base font-black text-[#6C4CF1]">
-                          <Price amount={tour.basePrice} currency={tour.currency} />
-                        </span>
-                      </div>
-                      <p className="text-[9px] text-neutral-800">{tt.perPerson}</p>
-                    </div>
-                    {hasDiscount && (
-                      <span className="text-[10px] font-black text-emerald-600 bg-emerald-50 border border-emerald-100 px-1.5 py-0.5 rounded-lg">
-                        -{Math.round((1 - tour.basePrice / (tour.compareAtPrice ?? tour.basePrice)) * 100)}%
-                      </span>
-                    )}
-                  </div>
-                </div>
-              </Link>
-            );
-          })}
+        <div className="mt-6 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 lg:grid-cols-4">
+          {filtered.map((tour, i) => (
+            <TourCard key={tour.id} tour={tour} locale={locale} priority={i < 4} />
+          ))}
         </div>
       )}
     </>
+  );
+}
+
+/** Hap görünümlü native select — mobilde işletim sisteminin seçicisini açar. */
+function PillSelect({ label, value, onChange, options, active }: {
+  label: string; value: string; onChange: (v: string) => void; options: [string, string][]; active: boolean;
+}) {
+  return (
+    <label className="relative shrink-0">
+      <span className="sr-only">{label}</span>
+      <select value={value} onChange={(e) => onChange(e.target.value)}
+        className={`h-10 appearance-none rounded-full border pl-4 pr-9 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-1 ${
+          active ? "border-neutral-900 bg-neutral-900 text-white" : "border-neutral-300 bg-white text-neutral-900 hover:border-neutral-900"
+        }`}>
+        {options.map(([v, l]) => <option key={v} value={v} className="text-neutral-900">{l}</option>)}
+      </select>
+      <svg className={`pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 ${active ? "text-white" : "text-neutral-500"}`} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+    </label>
   );
 }

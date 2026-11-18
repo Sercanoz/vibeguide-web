@@ -42,7 +42,7 @@ export const MODES: Mode[] = [
     slug: "vibenow",
     name: "VibeNow",
     emoji: "⚡",
-    color: "#6C4CF1",
+    color: "#5B3FD9",
     tagline: "Tap. Match. Go.",
     metaTitle: "VibeNow — Instant Local Tour Guides On Demand",
     metaDescription:
@@ -132,7 +132,7 @@ export const MODES: Mode[] = [
     slug: "vibeask",
     name: "VibeAsk",
     emoji: "💡",
-    color: "#6C4CF1",
+    color: "#5B3FD9",
     tagline: "A local in your pocket. Free.",
     metaTitle: "VibeAsk — Ask a Real Local Anything, Free",
     metaDescription:

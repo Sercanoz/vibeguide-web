@@ -54,7 +54,7 @@ export default function AdminPromoCodesPage() {
 
   return (
     <div className="p-8 max-w-4xl">
-      <h1 className="text-2xl font-black text-[#0A0A0F] mb-6">Promo Codes</h1>
+      <h1 className="text-2xl font-display font-normal text-[#0A0A0F] mb-6">Promo Codes</h1>
 
       <div className="grid lg:grid-cols-2 gap-6">
         {/* Create form */}
@@ -64,14 +64,14 @@ export default function AdminPromoCodesPage() {
             <div>
               <label className="text-xs font-bold text-neutral-500 mb-1 block">Code *</label>
               <input required value={code} onChange={(e) => setCode(e.target.value.toUpperCase())}
-                className="w-full border border-black/10 rounded-xl px-4 py-2.5 text-sm font-mono uppercase focus:outline-none focus:border-[#6C4CF1]"
+                className="w-full border border-black/10 rounded-xl px-4 py-2.5 text-sm font-mono uppercase focus:outline-none focus:border-[#5B3FD9]"
                 placeholder="SUMMER25" />
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div>
                 <label className="text-xs font-bold text-neutral-500 mb-1 block">Type</label>
                 <select value={type} onChange={(e) => setType(e.target.value as "percent" | "fixed")}
-                  className="w-full border border-black/10 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#6C4CF1] bg-white">
+                  className="w-full border border-black/10 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#5B3FD9] bg-white">
                   <option value="percent">% Percent</option>
                   <option value="fixed">Fixed amount</option>
                 </select>
@@ -79,7 +79,7 @@ export default function AdminPromoCodesPage() {
               <div>
                 <label className="text-xs font-bold text-neutral-500 mb-1 block">Value *</label>
                 <input required type="number" min="0" step="0.01" value={value} onChange={(e) => setValue(e.target.value)}
-                  className="w-full border border-black/10 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#6C4CF1]"
+                  className="w-full border border-black/10 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#5B3FD9]"
                   placeholder={type === "percent" ? "25" : "100"} />
               </div>
             </div>
@@ -87,18 +87,18 @@ export default function AdminPromoCodesPage() {
               <div>
                 <label className="text-xs font-bold text-neutral-500 mb-1 block">Max uses</label>
                 <input type="number" min="1" value={maxUses} onChange={(e) => setMaxUses(e.target.value)}
-                  className="w-full border border-black/10 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#6C4CF1]"
+                  className="w-full border border-black/10 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#5B3FD9]"
                   placeholder="Unlimited" />
               </div>
               <div>
                 <label className="text-xs font-bold text-neutral-500 mb-1 block">Expires at</label>
                 <input type="date" value={expiresAt} onChange={(e) => setExpiresAt(e.target.value)}
-                  className="w-full border border-black/10 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#6C4CF1]" />
+                  className="w-full border border-black/10 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#5B3FD9]" />
               </div>
             </div>
             {flash && <p className="text-sm font-semibold text-emerald-600">{flash}</p>}
             <button type="submit" disabled={creating}
-              className="w-full bg-[#6C4CF1] text-white font-bold py-2.5 rounded-xl text-sm hover:bg-[#5a3dd4] transition-colors disabled:opacity-50">
+              className="w-full bg-[#5B3FD9] text-white font-bold py-2.5 rounded-xl text-sm hover:bg-[#4A32B8] transition-colors disabled:opacity-50">
               {creating ? "Creating…" : "Create code →"}
             </button>
           </form>
@@ -116,7 +116,7 @@ export default function AdminPromoCodesPage() {
               {codes.map((c) => (
                 <div key={c.id} className="bg-white rounded-2xl border border-black/[0.06] px-4 py-3 flex items-center gap-3">
                   <div className="flex-1">
-                    <p className="font-mono font-black text-[#6C4CF1] text-sm">{c.code}</p>
+                    <p className="font-mono font-black text-[#5B3FD9] text-sm">{c.code}</p>
                     <p className="text-xs text-neutral-400 mt-0.5">
                       {c.discountType === "percent" ? `${c.discountValue}% off` : `${c.discountValue} TRY off`}
                       {c.maxUses ? ` · ${c.useCount}/${c.maxUses} uses` : ` · ${c.useCount} uses`}

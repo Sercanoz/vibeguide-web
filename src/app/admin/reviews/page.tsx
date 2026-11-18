@@ -44,13 +44,13 @@ export default function AdminReviewsPage() {
 
   return (
     <div className="p-8 max-w-4xl">
-      <h1 className="text-2xl font-black text-[#0A0A0F] mb-1">Tour Reviews</h1>
+      <h1 className="text-2xl font-display font-normal text-[#0A0A0F] mb-1">Tour Reviews</h1>
       <p className="text-sm text-neutral-400 mb-6">Moderate public reviews collected via QR codes. Approved reviews update the tour&apos;s star rating.</p>
 
       <div className="flex gap-2 mb-6">
         {TABS.map((s) => (
           <button key={s} onClick={() => setTab(s)}
-            className={`px-4 py-1.5 rounded-full text-sm font-bold border capitalize transition-all ${tab === s ? "bg-[#6C4CF1] text-white border-[#6C4CF1]" : "bg-white border-black/10 text-neutral-500 hover:border-[#6C4CF1]/40"}`}>
+            className={`px-4 py-1.5 rounded-full text-sm font-bold border capitalize transition-all ${tab === s ? "bg-[#5B3FD9] text-white border-[#5B3FD9]" : "bg-white border-black/10 text-neutral-500 hover:border-[#5B3FD9]/40"}`}>
             {s}
           </button>
         ))}
@@ -73,7 +73,7 @@ export default function AdminReviewsPage() {
                     {r.nationality && <span className="text-xs text-neutral-400">· {r.nationality}</span>}
                     <Stars n={r.rating} />
                   </div>
-                  <Link href={`/admin/tours/${r.tourId}`} className="text-xs text-[#6C4CF1] font-semibold hover:underline">
+                  <Link href={`/admin/tours/${r.tourId}`} className="text-xs text-[#5B3FD9] font-semibold hover:underline">
                     {r.tourTitle ?? `Tour #${r.tourId}`}
                   </Link>
                   {r.comment && <p className="mt-2 text-sm text-neutral-600 leading-6">{r.comment}</p>}

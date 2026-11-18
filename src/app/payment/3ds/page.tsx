@@ -58,13 +58,13 @@ export default function ThreeDsPage() {
     return (
       <main className="min-h-screen flex items-center justify-center px-6 text-center">
         <div>
-          <h1 className="text-xl font-bold mb-2">Payment session expired</h1>
+          <h1 className="text-xl font-display font-normal mb-2">Payment session expired</h1>
           <p className="text-gray-400 mb-6">
             Please return to your booking and start the payment again.
           </p>
           <a
             href="/profile"
-            className="inline-block rounded-full bg-[#6C4CF1] px-6 py-3 font-semibold text-white"
+            className="inline-block rounded-full bg-[#5B3FD9] px-6 py-3 font-semibold text-white"
           >
             Back to my bookings
           </a>

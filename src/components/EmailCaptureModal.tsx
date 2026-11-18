@@ -96,7 +96,7 @@ export default function EmailCaptureModal() {
         </button>
 
         {/* Top visual */}
-        <div className="h-28 bg-gradient-to-br from-[#6C4CF1] to-[#8B5CF6] flex items-center justify-center relative overflow-hidden">
+        <div className="h-28 bg-gradient-to-br from-[#5B3FD9] to-[#8B5CF6] flex items-center justify-center relative overflow-hidden">
           <div className="absolute -top-8 -right-8 w-32 h-32 bg-white/10 rounded-full" />
           <div className="absolute -bottom-10 -left-6 w-28 h-28 bg-white/10 rounded-full" />
           <span className="text-5xl relative">🎁</span>
@@ -109,9 +109,9 @@ export default function EmailCaptureModal() {
               <p className="mt-2 text-sm text-neutral-700 leading-6">
                 {tr ? <>İşte <strong>%10 indirim</strong> kodun. Ayrıca e-postayla da gönderdik.</> : <>Here&apos;s your <strong>10% off</strong> code. We also emailed it to you.</>}
               </p>
-              <div className="mt-5 bg-[#F7F7FB] border-2 border-dashed border-[#6C4CF1] rounded-2xl py-4">
+              <div className="mt-5 bg-[#F7F7FB] border-2 border-dashed border-[#5B3FD9] rounded-2xl py-4">
                 <p className="text-[10px] font-bold text-neutral-800 uppercase tracking-widest">{ec.yourCode}</p>
-                <p className="text-2xl font-black text-[#6C4CF1] font-mono mt-1">{code}</p>
+                <p className="text-2xl font-black text-[#5B3FD9] font-mono mt-1">{code}</p>
               </div>
               <div className="mt-4 flex gap-2">
                 <button onClick={copyCode}
@@ -119,7 +119,7 @@ export default function EmailCaptureModal() {
                   {copied ? ec.copied : ec.copyCode}
                 </button>
                 <a href="/tours" onClick={dismiss}
-                  className="flex-1 rounded-2xl bg-[#6C4CF1] text-white py-2.5 text-sm font-bold hover:bg-[#5a3dd4] transition-colors text-center">
+                  className="flex-1 rounded-2xl bg-[#5B3FD9] text-white py-2.5 text-sm font-bold hover:bg-[#4A32B8] transition-colors text-center">
                   {ec.browseTours}
                 </a>
               </div>
@@ -132,12 +132,12 @@ export default function EmailCaptureModal() {
               </p>
               <form onSubmit={onSubmit} className="mt-5 space-y-3">
                 <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)}
-                  className="w-full border border-black/10 rounded-2xl px-4 py-3.5 text-sm focus:outline-none focus:border-[#6C4CF1] focus:ring-2 focus:ring-[#6C4CF1]/10 transition-all"
+                  className="w-full border border-black/10 rounded-2xl px-4 py-3.5 text-sm focus:outline-none focus:border-[#5B3FD9] focus:ring-2 focus:ring-[#5B3FD9]/10 transition-all"
                   placeholder="you@example.com" autoFocus />
                 {error && <p className="text-xs text-red-500 font-medium">{error}</p>}
                 <button type="submit" disabled={state === "loading"}
-                  className="w-full rounded-2xl bg-[#6C4CF1] text-white font-bold py-3.5 text-sm hover:bg-[#5a3dd4] transition-colors disabled:opacity-50"
-                  style={{ boxShadow: "0 4px 16px rgba(108,76,241,0.25)" }}>
+                  className="w-full rounded-2xl bg-[#5B3FD9] text-white font-bold py-3.5 text-sm hover:bg-[#4A32B8] transition-colors disabled:opacity-50"
+                  style={{ boxShadow: "0 4px 16px rgba(91,63,217,0.25)" }}>
                   {state === "loading" ? ec.submitLoading : ec.submit}
                 </button>
               </form>

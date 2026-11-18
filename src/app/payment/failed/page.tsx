@@ -36,7 +36,7 @@ function FailedInner() {
             <line x1="6" y1="6" x2="18" y2="18" />
           </svg>
         </div>
-        <h1 className="text-3xl font-black">{tt.payFailTitle}</h1>
+        <h1 className="text-3xl font-display font-normal">{tt.payFailTitle}</h1>
         <p className="mt-3 text-neutral-700">{msg}</p>
         <p className="mt-2 text-sm text-neutral-500">
           Your reservation is still held — you can retry the payment from your reservations.
@@ -45,7 +45,7 @@ function FailedInner() {
           {/* Birincil aksiyon rezervasyonlar: booking hâlâ Confirmed, oradan
               tekrar ödenebilir. (Eskiden "try again" /tours'a gidiyordu —
               kullanıcı akışa en baştan başlamak zorunda kalıyordu.) */}
-          <Link href="/profile" className="rounded-full bg-[#6C4CF1] text-white font-bold px-6 py-3 text-sm hover:bg-[#5a3dd4] transition-colors">
+          <Link href="/profile" className="rounded-full bg-[#5B3FD9] text-white font-bold px-6 py-3 text-sm hover:bg-[#4A32B8] transition-colors">
             {tt.payTryAgain}
           </Link>
           <Link href="/tours" className="rounded-full border border-black/10 font-bold px-6 py-3 text-sm hover:bg-neutral-50 transition-colors">

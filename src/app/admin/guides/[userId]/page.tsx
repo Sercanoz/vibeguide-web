@@ -192,7 +192,7 @@ function Editor({ userId }: { userId: number }) {
 
       <div className="mt-3 flex items-end justify-between gap-4 flex-wrap">
         <div>
-          <h1 className="text-2xl font-black text-vg-ink">{data.guide.fullName}</h1>
+          <h1 className="text-2xl font-display font-normal text-vg-ink">{data.guide.fullName}</h1>
           <p className="text-sm text-vg-muted">
             User #{data.guide.userId} · {data.guide.city ?? "–"} · canonical:{" "}
             <strong>{data.guide.canonicalLocale.toUpperCase()}</strong>
@@ -217,7 +217,7 @@ function Editor({ userId }: { userId: number }) {
                   setLanguages(next.join(","));
                 }}
                 className={`px-3 py-1.5 rounded-full text-xs font-bold border transition-all ${
-                  active ? "bg-[#6C4CF1] text-white border-[#6C4CF1]" : "bg-vg-bg-soft text-vg-muted border-vg-border hover:border-vg-primary hover:text-vg-primary"
+                  active ? "bg-[#5B3FD9] text-white border-[#5B3FD9]" : "bg-vg-bg-soft text-vg-muted border-vg-border hover:border-vg-primary hover:text-vg-primary"
                 }`}>
                 {lang.toUpperCase()}
               </button>
@@ -229,7 +229,7 @@ function Editor({ userId }: { userId: number }) {
             className="flex-1 bg-vg-bg-soft border border-vg-border rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-vg-primary"
             placeholder="e.g. en,tr,de" />
           <button onClick={onSaveLanguages} disabled={savingLang}
-            className="bg-vg-primary text-white font-bold px-5 py-2 rounded-xl text-sm hover:bg-[#5a3dd4] transition-colors disabled:opacity-50">
+            className="bg-vg-primary text-white font-bold px-5 py-2 rounded-xl text-sm hover:bg-[#4A32B8] transition-colors disabled:opacity-50">
             {savingLang ? "Saving…" : "Save"}
           </button>
         </div>

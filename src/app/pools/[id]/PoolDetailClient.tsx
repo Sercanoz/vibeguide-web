@@ -89,12 +89,18 @@ export default function PoolDetailClient() {
   }, []);
 
   useEffect(() => {
-    if (!poolId) return;
+    // Oturum çözülmeden istek atma: backend giriş istiyor; eskiden ilk istek
+    // token'sız gidip 401 alıyor, sayfa ilk poll'a (15 sn) kadar boş kalıyordu.
+    if (!poolId || signedIn === null) return;
+    if (!signedIn) {
+      setLoading(false);
+      return;
+    }
     load();
     // Ödeme penceresi ve katılımcı sayısı canlı değişiyor.
     const t = setInterval(load, 15000);
     return () => clearInterval(t);
-  }, [poolId, load]);
+  }, [poolId, load, signedIn]);
 
   async function join() {
     if (busy) return;
@@ -195,6 +201,29 @@ export default function PoolDetailClient() {
     );
   }
 
+  if (signedIn === false) {
+    return (
+      <main className="min-h-screen bg-[#FAFAFB]">
+        <Navbar />
+        <div className="pt-28 pb-16 px-4">
+          <div className="mx-auto max-w-md rounded-3xl border border-black/[0.06] bg-white p-8 text-center">
+            <p className="font-black text-[#0A0A0F]">Sign in to view this group</p>
+            <p className="mt-1 text-sm text-neutral-600">
+              Group tours are available to registered travellers.
+            </p>
+            <Link
+              href={`/login?next=${encodeURIComponent(`/pools/${poolId}`)}`}
+              className="mt-5 inline-flex rounded-2xl bg-[#5B3FD9] px-6 py-3 text-sm font-bold text-white"
+            >
+              Sign in →
+            </Link>
+          </div>
+        </div>
+        <MainFooter />
+      </main>
+    );
+  }
+
   if (!data?.pool) {
     return (
       <main className="min-h-screen bg-[#FAFAFB]">
@@ -207,7 +236,7 @@ export default function PoolDetailClient() {
             </p>
             <Link
               href="/pools"
-              className="mt-5 inline-flex rounded-2xl bg-[#6C4CF1] px-6 py-3 text-sm font-bold text-white"
+              className="mt-5 inline-flex rounded-2xl bg-[#5B3FD9] px-6 py-3 text-sm font-bold text-white"
             >
               See open groups →
             </Link>
@@ -236,14 +265,14 @@ export default function PoolDetailClient() {
         <div className="mx-auto max-w-2xl space-y-5">
           {/* Başlık */}
           <div className="rounded-3xl border border-black/[0.06] bg-white p-6">
-            <h1 className="text-2xl font-black text-[#0A0A0F]">{p.tourTitle}</h1>
+            <h1 className="text-2xl font-display font-normal text-[#0A0A0F]">{p.tourTitle}</h1>
             <p className="mt-1.5 text-sm text-neutral-600">
               {fmtDate(p.scheduledAt)}
               {p.guideName ? ` · ${p.guideName}` : ""}
               {p.language ? ` · ${p.language.toUpperCase()}` : ""}
             </p>
             <div className="mt-4 flex items-baseline gap-2">
-              <span className="text-2xl font-black text-[#6C4CF1]">
+              <span className="text-2xl font-black text-[#5B3FD9]">
                 <Price
                   amount={p.lockedPricePerPerson ?? p.currentPricePerPerson}
                   currency={p.currency}
@@ -273,7 +302,7 @@ export default function PoolDetailClient() {
               {minsLeft > 0 && !showCard && (
                 <button
                   onClick={() => setShowCard(true)}
-                  className="mt-4 w-full rounded-2xl bg-[#6C4CF1] py-3.5 text-sm font-bold text-white hover:bg-[#5a3dd4] transition-colors"
+                  className="mt-4 w-full rounded-2xl bg-[#5B3FD9] py-3.5 text-sm font-bold text-white hover:bg-[#4A32B8] transition-colors"
                 >
                   Pay now
                 </button>
@@ -320,7 +349,7 @@ export default function PoolDetailClient() {
                   <button
                     onClick={pay}
                     disabled={busy}
-                    className="w-full rounded-2xl bg-[#6C4CF1] py-3.5 text-sm font-bold text-white hover:bg-[#5a3dd4] disabled:opacity-50 transition-colors"
+                    className="w-full rounded-2xl bg-[#5B3FD9] py-3.5 text-sm font-bold text-white hover:bg-[#4A32B8] disabled:opacity-50 transition-colors"
                   >
                     {busy ? "Processing…" : "Pay securely"}
                   </button>
@@ -346,7 +375,7 @@ export default function PoolDetailClient() {
             <button
               onClick={join}
               disabled={busy}
-              className="w-full rounded-2xl bg-[#6C4CF1] py-4 text-sm font-bold text-white hover:bg-[#5a3dd4] disabled:opacity-50 transition-colors"
+              className="w-full rounded-2xl bg-[#5B3FD9] py-4 text-sm font-bold text-white hover:bg-[#4A32B8] disabled:opacity-50 transition-colors"
             >
               {busy ? "Joining…" : "Join this group"}
             </button>
@@ -354,7 +383,7 @@ export default function PoolDetailClient() {
 
           {!signedIn && signedIn !== null && (
             <div className="rounded-2xl border border-black/[0.06] bg-white p-5 text-center text-sm text-neutral-700">
-              <Link href="/login" className="font-bold text-[#6C4CF1]">
+              <Link href="/login" className="font-bold text-[#5B3FD9]">
                 Sign in
               </Link>{" "}
               to join this group.

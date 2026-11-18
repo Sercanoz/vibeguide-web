@@ -7,6 +7,8 @@ import { getToursT } from "@/lib/i18n";
 import Navbar from "@/components/Navbar";
 import MainFooter from "@/components/MainFooter";
 import TourFilters from "./TourFilters";
+import Link from "next/link";
+import { TourCardSkeleton } from "@/components/TourCard";
 
 export interface Tour {
   id: number;
@@ -28,80 +30,55 @@ export interface Tour {
 export default function ToursPageClient({ initialTours }: { initialTours: Tour[] }) {
   const { locale } = useT();
   const tt = getToursT(locale);
-  const [tours, setTours] = useState<Tour[]>(initialTours);
-  const [loading, setLoading] = useState(false);
+  // EN içerik sunucudan geldi; başka dilde o locale için client'ta çekilir.
+  // Türetilmiş durum: aktif locale'in verisi yoksa "yükleniyor" (effect'te senkron setState yok).
+  const [localized, setLocalized] = useState<{ locale: string; tours: Tour[] } | null>(null);
+  const tours: Tour[] | null =
+    locale === "en" ? initialTours : localized?.locale === locale ? localized.tours : null;
+  const loading = tours === null;
 
   useEffect(() => {
-    // EN içerik sunucudan zaten geldi — sadece farklı dillerde yeniden çek.
-    if (locale === "en") {
-      setTours(initialTours);
-      return;
-    }
-    setLoading(true);
+    if (locale === "en") return;
+    let alive = true;
     clientFetch(`/api/tours?locale=${locale}`, { cache: "no-store" })
       .then((r) => (r.ok ? r.json() : initialTours))
-      .then((data) => { setTours(data); setLoading(false); })
-      .catch(() => setLoading(false));
+      .then((data: Tour[]) => { if (alive) setLocalized({ locale, tours: data }); })
+      .catch(() => { if (alive) setLocalized({ locale, tours: initialTours }); });
+    return () => { alive = false; };
   }, [locale, initialTours]);
 
+  const skeleton = (
+    <div className="mt-6 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 lg:grid-cols-4">
+      {[...Array(8)].map((_, i) => <TourCardSkeleton key={i} />)}
+    </div>
+  );
+
   return (
-    <main className="min-h-screen bg-white text-[#0A0A0F] antialiased">
+    <main className="min-h-screen bg-white text-neutral-900 antialiased">
       <Navbar activePage="tours" />
 
-      {/* Hero */}
-      <section className="bg-white pt-16 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-[#6C4CF1]/6 via-[#8B5CF6]/3 to-transparent rounded-full blur-[80px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-[#6C4CF1]/4 to-transparent rounded-full blur-[80px] pointer-events-none" />
-        <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: "radial-gradient(circle, #6C4CF1 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
-        <div className="relative mx-auto max-w-7xl px-6 py-20 text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#6C4CF1] mb-4">
-            {tt.heroBadge}
-          </p>
-          <h1 className="text-5xl md:text-7xl font-black tracking-tight text-[#0A0A0F] leading-tight">
-            {tt.heroTitle1}
-            <br />
-            <span className="bg-gradient-to-r from-[#6C4CF1] via-[#8B5CF6] to-[#EC4899] bg-clip-text text-transparent">
-              {tt.heroTitle2}
-            </span>
-          </h1>
-          <p className="mt-6 text-base text-neutral-800 max-w-xl mx-auto leading-7">
-            {tt.heroSub}
-          </p>
-          <div className="mt-8 flex items-center justify-center gap-6 text-sm text-neutral-800">
-            <span className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />{tt.heroLive}</span>
-            <span className="text-black/20">·</span>
-            <span>{tt.heroVerified}</span>
-            <span className="text-black/20">·</span>
-            <span>{tt.heroBook}</span>
-          </div>
-        </div>
-        <div className="h-px bg-black/[0.06] mx-6" />
+      {/* Başlık — sade: gradient/nokta deseni/pulse yok */}
+      <section className="mx-auto max-w-7xl px-4 pt-24 pb-6 md:px-6 md:pt-28">
+        <p className="text-sm font-medium text-neutral-500">{tt.heroBadge}</p>
+        <h1 className="mt-2 font-display text-4xl font-normal leading-[1.05] tracking-[-0.01em] md:text-6xl">
+          {tt.heroTitle1} <span className="italic">{tt.heroTitle2}</span>
+        </h1>
+        <p className="mt-4 max-w-2xl text-base leading-7 text-neutral-600">{tt.heroSub}</p>
       </section>
 
-      {/* Tour grid with filters */}
-      <section className="mx-auto max-w-7xl px-6 py-12">
+      <section className="mx-auto max-w-7xl px-4 pb-20 md:px-6">
         {loading ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[...Array(6)].map((_, i) => (
-              <div key={i} className="rounded-3xl bg-neutral-100 animate-pulse h-80" />
-            ))}
-          </div>
-        ) : tours.length === 0 ? (
-          <div className="text-center py-24 text-neutral-800">
-            <p className="text-6xl mb-4">🗺️</p>
-            <p className="text-xl font-bold text-[#0A0A0F]">{tt.toursComingSoon}</p>
-            <p className="text-sm mt-2">
-              {tt.toursComingSoonSub}
-            </p>
-            <a
-              href="/#download"
-              className="mt-8 inline-block rounded-full bg-[#6C4CF1] text-white px-7 py-3 text-sm font-bold hover:bg-[#5a3dd4] transition-colors"
-            >
+          skeleton
+        ) : !tours || tours.length === 0 ? (
+          <div className="mt-4 rounded-2xl border border-dashed border-neutral-300 px-6 py-20 text-center">
+            <p className="font-display text-2xl font-normal text-neutral-900">{tt.toursComingSoon}</p>
+            <p className="mx-auto mt-2 max-w-md text-sm text-neutral-600">{tt.toursComingSoonSub}</p>
+            <Link href="/#download" className="mt-6 inline-flex h-11 items-center rounded-full bg-[#5B3FD9] px-6 text-sm font-semibold text-white hover:bg-[#4A32B8]">
               {tt.downloadApp}
-            </a>
+            </Link>
           </div>
         ) : (
-          <Suspense fallback={<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">{[...Array(6)].map((_, i) => (<div key={i} className="rounded-3xl bg-neutral-100 animate-pulse h-80" />))}</div>}>
+          <Suspense fallback={skeleton}>
             <TourFilters tours={tours} />
           </Suspense>
         )}
