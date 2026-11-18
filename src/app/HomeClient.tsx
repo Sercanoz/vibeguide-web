@@ -163,13 +163,14 @@ export default function HomeClient({
 
       {/* ── GÜVEN ŞERİDİ ── */}
       <section className="border-b border-black/[0.06] bg-white" aria-label={ux.trustHeading}>
-        <div className="mx-auto max-w-7xl px-6 py-6 grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-5">
+        <div className="mx-auto max-w-7xl px-4 md:px-6 py-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-4">
           {trustItems.map((item) => (
-            <div key={item.title} className="flex items-center gap-3">
-              <span className="shrink-0 text-neutral-900">{item.icon}</span>
+            <div key={item.title} className="flex items-start gap-3">
+              <span className="mt-0.5 shrink-0 text-neutral-900">{item.icon}</span>
               <div className="min-w-0">
                 <p className="text-sm font-semibold leading-tight">{item.title}</p>
-                <p className="text-xs text-neutral-600 truncate">{item.sub}</p>
+                {/* Kesme yok: tam cümle okunmalı (eskiden "İadeler, ödeme öncesinde gö…") */}
+                <p className="mt-0.5 text-xs leading-5 text-neutral-600">{item.sub}</p>
               </div>
             </div>
           ))}

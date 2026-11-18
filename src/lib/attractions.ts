@@ -430,7 +430,7 @@ export const ATTRACTIONS: Attraction[] = [
     citySlug: "istanbul",
     emoji: "🕌",
     image:
-      "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?q=80&w=1600",
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Hagia_Sophia_Mars_2013.jpg/1920px-Hagia_Sophia_Mars_2013.jpg",
     lat: 41.008587,
     lng: 28.97996,
     i18n: {
@@ -1033,7 +1033,7 @@ export const ATTRACTIONS: Attraction[] = [
     citySlug: "istanbul",
     emoji: "🏰",
     image:
-      "https://images.unsplash.com/photo-1589561253898-768105ca91a8?q=80&w=1600",
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Topkap%C4%B1_-_01.jpg/1920px-Topkap%C4%B1_-_01.jpg",
     lat: 41.011577,
     lng: 28.983416,
     i18n: {
@@ -1636,7 +1636,7 @@ export const ATTRACTIONS: Attraction[] = [
     citySlug: "istanbul",
     emoji: "🏛️",
     image:
-      "https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?q=80&w=1600",
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Basilica_Cistern_Istanbul.JPG/1920px-Basilica_Cistern_Istanbul.JPG",
     lat: 41.008407,
     lng: 28.977787,
     i18n: {
@@ -2239,7 +2239,7 @@ export const ATTRACTIONS: Attraction[] = [
     citySlug: "istanbul",
     emoji: "🕌",
     image:
-      "https://images.unsplash.com/photo-1591721042162-c0f6d2c0c5e5?q=80&w=1600",
+      "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?q=80&w=1600",
     lat: 41.005407,
     lng: 28.976777,
     i18n: {
@@ -2842,7 +2842,7 @@ export const ATTRACTIONS: Attraction[] = [
     citySlug: "izmir",
     emoji: "🏛️",
     image:
-      "https://images.unsplash.com/photo-1589553416260-f586c8f1514f?q=80&w=1600",
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Library_of_Celsus_6243.jpg/1920px-Library_of_Celsus_6243.jpg",
     lat: 37.939872,
     lng: 27.340995,
     i18n: {
@@ -4047,7 +4047,7 @@ export const ATTRACTIONS: Attraction[] = [
     citySlug: "istanbul",
     emoji: "🏛️",
     image:
-      "https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?q=80&w=1600",
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Dolmabah%C3%A7e_Palace_2007.jpg/1920px-Dolmabah%C3%A7e_Palace_2007.jpg",
     lat: 41.03917,
     lng: 29.00069,
     i18n: {
@@ -4647,7 +4647,7 @@ export const ATTRACTIONS: Attraction[] = [
     citySlug: "istanbul",
     emoji: "🗼",
     image:
-      "https://images.unsplash.com/photo-1774434923581-91ed9d8ee79b?q=80&w=1600",
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Istanbul_Galata_Tower_IMG_8211_1920.jpg/1920px-Istanbul_Galata_Tower_IMG_8211_1920.jpg",
     lat: 41.0256,
     lng: 28.9744,
     i18n: {
@@ -5847,7 +5847,7 @@ export const ATTRACTIONS: Attraction[] = [
     citySlug: "istanbul",
     emoji: "🚢",
     image:
-      "https://images.unsplash.com/photo-1640301998084-c9b80babd03c?q=80&w=1600",
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Bosphorus%2C_Istanbul_%28P1100293%29.jpg/1920px-Bosphorus%2C_Istanbul_%28P1100293%29.jpg",
     lat: 41.0766,
     lng: 29.0575,
     i18n: {
@@ -8247,7 +8247,7 @@ export const ATTRACTIONS: Attraction[] = [
     citySlug: "pamukkale",
     emoji: "🏞️",
     image:
-      "https://images.unsplash.com/photo-1779952747150-0fe7c299332b?q=80&w=1600",
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/The_Travertine_terraces_of_Pamukkale.jpg/1920px-The_Travertine_terraces_of_Pamukkale.jpg",
     lat: 37.9137,
     lng: 29.1187,
     i18n: {
@@ -10089,7 +10089,7 @@ export const ATTRACTIONS: Attraction[] = [
     citySlug: "istanbul",
     emoji: "🗼",
     image:
-      "https://images.unsplash.com/photo-1785323714172-8b9935a28236?q=80&w=1600",
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Maiden_tower%2C_Istanbul_%28P1100207%29.jpg/1920px-Maiden_tower%2C_Istanbul_%28P1100207%29.jpg",
     lat: 41.0211,
     lng: 29.0041,
     i18n: {
@@ -10710,7 +10710,7 @@ export const ATTRACTIONS: Attraction[] = [
     citySlug: "ephesus",
     emoji: "🏛️",
     image:
-      "https://images.unsplash.com/photo-1547126627-af8df614498c?q=80&w=1600",
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/TR.IZ.Selcuk_Ephesus_2011-10-04_Temple-of-Artemis_07_3x2-R_5K.jpg/1920px-TR.IZ.Selcuk_Ephesus_2011-10-04_Temple-of-Artemis_07_3x2-R_5K.jpg",
     lat: 37.9497,
     lng: 27.3639,
     i18n: {
@@ -12573,7 +12573,7 @@ export const ATTRACTIONS: Attraction[] = [
     citySlug: "trabzon",
     emoji: `⛰️`,
     image:
-      "https://images.unsplash.com/photo-1600011689032-8b628b8a8747?q=80&w=1600",
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Sumela_From_Across_Valley.JPG/1920px-Sumela_From_Across_Valley.JPG",
     lat: 40.690278,
     lng: 39.658611,
     i18n: {
@@ -13159,7 +13159,7 @@ export const ATTRACTIONS: Attraction[] = [
     citySlug: "canakkale",
     emoji: `🐎`,
     image:
-      "https://images.unsplash.com/photo-1602153773094-a20c2c3e0f38?q=80&w=1600",
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/A_View_In_Troy.jpg/1920px-A_View_In_Troy.jpg",
     lat: 39.957222,
     lng: 26.238889,
     i18n: {
@@ -13745,7 +13745,7 @@ export const ATTRACTIONS: Attraction[] = [
     citySlug: "adiyaman",
     emoji: `🗿`,
     image:
-      "https://images.unsplash.com/photo-1591019479261-1a1a2e6c7a3a?q=80&w=1600",
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Nemrut_statues_2.jpg/1920px-Nemrut_statues_2.jpg",
     lat: 37.980833,
     lng: 38.741389,
     i18n: {
@@ -14331,7 +14331,7 @@ export const ATTRACTIONS: Attraction[] = [
     citySlug: "antalya",
     emoji: `🏛️`,
     image:
-      "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?q=80&w=1600",
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Antalya_Side_Apollo.jpg/1920px-Antalya_Side_Apollo.jpg",
     lat: 36.767778,
     lng: 31.389444,
     i18n: {

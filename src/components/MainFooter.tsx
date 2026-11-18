@@ -110,6 +110,7 @@ export default function MainFooter() {
                   {locale === "tr" ? "Çerez ayarları" : "Cookie settings"}
                 </button>
               </li>
+              <li><Link href="/image-credits" className="hover:text-black transition-colors">{locale === "tr" ? "Görsel kaynakları" : "Image credits"}</Link></li>
             </ul>
           </div>
         </div>

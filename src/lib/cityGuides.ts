@@ -3178,7 +3178,7 @@ const EPHESUS: CityGuide = {
   citySlug: "izmir",
   cityName: "Ephesus",
   heroImage:
-    "https://plus.unsplash.com/premium_photo-1661963222829-cf9572881843?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZXBoZXN1cyUyMHR1cmtleXxlbnwwfHwwfHx8MA%3D%3D",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Library_of_Celsus_6242.jpg/1920px-Library_of_Celsus_6242.jpg",
   i18n: {
     en: {
       metaTitle: "Ephesus Tour Guide — Private & Group Tours",
@@ -12437,7 +12437,7 @@ const FETHIYE: CityGuide = {
   citySlug: "fethiye",
   cityName: `Fethiye`,
   heroImage:
-    "https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?q=80&w=1600",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Blue_Lagoon_-_2014.10_-_panoramio.jpg/1920px-Blue_Lagoon_-_2014.10_-_panoramio.jpg",
   i18n: {
     en: {
       metaTitle: `Fethiye Tour Guide — Book a Local Expert`,
@@ -13770,7 +13770,7 @@ const SIDE: CityGuide = {
   citySlug: "side",
   cityName: `Side`,
   heroImage:
-    "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?q=80&w=1600",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Temple_Apollo_Side_Boat.jpg/1920px-Temple_Apollo_Side_Boat.jpg",
   i18n: {
     en: {
       metaTitle: `Side Tour Guide — Book a Local Expert`,

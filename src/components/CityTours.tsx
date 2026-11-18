@@ -1,7 +1,8 @@
-import Image from "next/image";
+import Link from "next/link";
 import { serverFetch } from "@/lib/api";
 import { homeSections } from "@/lib/home-sections-i18n";
-import Price from "@/components/Price";
+import { navbarI18n } from "@/lib/navbar-i18n";
+import TourCard from "@/components/TourCard";
 import type { Locale } from "@/lib/i18n";
 
 interface Tour {
@@ -15,6 +16,8 @@ interface Tour {
   coverPhotoUrl?: string;
   rating?: number;
   reviewCount?: number;
+  provinceName?: string | null;
+  districtName?: string | null;
 }
 
 /** Shows real tours for a city (by slug or name) — internal links + conversion + content.
@@ -49,45 +52,27 @@ export default async function CityTours({
   if (tours.length === 0) return null;
 
   const hs = homeSections[locale as Locale] ?? homeSections.en;
+  const nb = navbarI18n[locale as Locale] ?? navbarI18n.en;
   return (
-    <section className="py-20 bg-[#F7F7FB]">
-      <div className="mx-auto max-w-5xl px-6">
-        <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#5B3FD9] mb-4">{hs.availableNow}</p>
-        <h2 className="text-3xl md:text-4xl font-black mb-10 tracking-tight">{heading ?? (locale === "tr" ? `Popüler ${cityName} turları` : `Popular ${cityName} tours`)}</h2>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {tours.map((t) => (
-            <a key={t.id} href={`/tours/${t.id}`}
-              className="group rounded-2xl bg-white border border-black/[0.06] shadow-sm overflow-hidden hover:shadow-md hover:-translate-y-0.5 transition-all">
-              <div className="relative aspect-[4/3] overflow-hidden bg-neutral-100">
-                {t.coverPhotoUrl ? (
-                  <Image
-                    src={t.coverPhotoUrl}
-                    alt={t.title}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                ) : (
-                  <div className="w-full h-full bg-gradient-to-br from-[#5B3FD9]/15 to-[#8B5CF6]/15 flex items-center justify-center text-4xl">🗺️</div>
-                )}
-              </div>
-              <div className="p-4">
-                <h3 className="font-black text-[#0A0A0F] text-[15px] leading-snug line-clamp-2 group-hover:text-[#5B3FD9] transition-colors">{t.title}</h3>
-                <div className="mt-2 flex items-center justify-between">
-                  <span className="text-xs text-neutral-800 capitalize">{t.category}</span>
-                  <span className="text-base font-black text-[#5B3FD9]"><Price amount={t.basePrice} currency={t.currency} /></span>
-                </div>
-              </div>
-            </a>
-          ))}
+    <section id="tours" className="scroll-mt-20 border-t border-neutral-200 py-16 md:py-24">
+      <div className="mx-auto max-w-6xl px-4 md:px-6">
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <p className="text-sm font-medium text-neutral-500">{hs.availableNow}</p>
+            <h2 className="mt-2 font-display text-3xl font-normal leading-tight tracking-[-0.01em] text-neutral-900 md:text-[40px]">
+              {/* 21 dilde var olan metinler (eskiden yalnız EN/TR → diğer dillerde İngilizce) */}
+              {heading ?? `${cityName} · ${hs.popularExperiences}`}
+            </h2>
+          </div>
+          <Link href={`/tours?city=${encodeURIComponent(citySlug)}`}
+            className="inline-flex h-10 items-center rounded-full border border-neutral-300 px-5 text-sm font-semibold text-neutral-900 hover:border-neutral-900">
+            {nb.seeAllTours}
+          </Link>
         </div>
-
-        <div className="mt-8 text-center">
-          <a href={`/tours?city=${encodeURIComponent(citySlug)}`}
-            className="inline-flex items-center gap-2 rounded-full bg-[#5B3FD9] text-white font-bold px-7 py-3 text-sm hover:bg-[#4A32B8] transition-colors">
-            {locale === "tr" ? `Tüm ${cityName} turlarını gör →` : `See all ${cityName} tours →`}
-          </a>
+        <div className="mt-10 grid grid-cols-2 gap-x-4 gap-y-8 lg:grid-cols-3">
+          {tours.map((t) => (
+            <TourCard key={t.id} tour={t} locale={locale} sizes="(max-width: 1024px) 50vw, 33vw" />
+          ))}
         </div>
       </div>
     </section>

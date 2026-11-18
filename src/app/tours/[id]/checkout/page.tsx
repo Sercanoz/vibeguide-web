@@ -75,6 +75,10 @@ function CheckoutInner() {
   const date = search.get("date") ?? "";
   const people = Math.max(1, parseInt(search.get("people") ?? "1", 10) || 1);
   const guideId = parseInt(search.get("guideId") ?? "0", 10) || 0;
+  // Mevcut rezervasyona devam (profil → "Öde"): yeni talep oluşturulmaz, durum ve
+  // kesin fiyat backend'den okunur. Kişi sayısı DTO'da yok → bilinmiyorsa gizlenir.
+  const resumeId = parseInt(search.get("bookingId") ?? "0", 10) || 0;
+  const peopleKnown = search.has("people");
 
   const [tour, setTour] = useState<CheckoutTour | null | "loading" | "error">("loading");
   const [agreed, setAgreed] = useState(false);
@@ -82,7 +86,7 @@ function CheckoutInner() {
   const [busy, setBusy] = useState(false);
 
   // Booking durumu: guideId yoksa rehber seçimine geri gönder.
-  const [bookingId, setBookingId] = useState<number | null>(null);
+  const [bookingId, setBookingId] = useState<number | null>(resumeId || null);
   const [status, setStatus] = useState<BookingStatus | null>(null);
   const [bookingPrice, setBookingPrice] = useState<number | null>(null);
   const [authReady, setAuthReady] = useState(false);
@@ -114,7 +118,7 @@ function CheckoutInner() {
     const unsub = fbAuth().onAuthStateChanged((user) => {
       if (!user) {
         const back = encodeURIComponent(
-          `/tours/${id}/checkout?date=${date}&people=${people}&guideId=${guideId}`
+          `/tours/${id}/checkout?date=${date}&people=${people}&guideId=${guideId}${resumeId ? `&bookingId=${resumeId}` : ""}`
         );
         router.replace(`/login?next=${back}`);
         return;
@@ -122,7 +126,7 @@ function CheckoutInner() {
       setAuthReady(true);
     });
     return () => unsub();
-  }, [id, date, people, guideId, router]);
+  }, [id, date, people, guideId, resumeId, router]);
 
   // Profil telefonu — varsa kart formunda telefon sorulmaz.
   useEffect(() => {
@@ -146,10 +150,10 @@ function CheckoutInner() {
 
   // guideId yoksa rehber seçimine geri gönder (bu sayfaya doğrudan gelinemez).
   useEffect(() => {
-    if (!guideId) {
+    if (!guideId && !resumeId) {
       router.replace(`/tours/${id}/guides?date=${date}&people=${people}`);
     }
-  }, [guideId, id, date, people, router]);
+  }, [guideId, resumeId, id, date, people, router]);
 
   // Booking durumunu tazele (rehber kabul etti mi diye bakmak için).
   const refreshBooking = useCallback(async (bId: number) => {
@@ -159,6 +163,7 @@ function CheckoutInner() {
       if (res.ok) {
         const b = await res.json();
         setStatus(b.status as BookingStatus);
+        if (typeof b.price === "number") setBookingPrice(b.price);
       }
     } catch { /* sessizce geç — kullanıcı elle yenileyebilir */ }
   }, []);
@@ -170,6 +175,22 @@ function CheckoutInner() {
       return () => clearInterval(t);
     }
   }, [bookingId, status, refreshBooking]);
+
+  // Devam modunda rezervasyonun güncel durumunu ve fiyatını çek.
+  useEffect(() => {
+    if (!authReady || !resumeId) return;
+    let alive = true;
+    buildAuthHeaders()
+      .then((headers) => fetch(`${API_BASE_URL}/api/bookings/${resumeId}`, { headers }))
+      .then((res) => (res.ok ? res.json() : null))
+      .then((b) => {
+        if (!alive || !b) return;
+        setStatus(b.status as BookingStatus);
+        if (typeof b.price === "number") setBookingPrice(b.price);
+      })
+      .catch(() => {});
+    return () => { alive = false; };
+  }, [authReady, resumeId]);
 
   if (tour === "loading" || tour === "error" || tour == null || !authReady) {
     return (
@@ -345,8 +366,12 @@ function CheckoutInner() {
               {date && (
                 <div className="flex justify-between gap-4"><dt className="text-neutral-600">{tt.bkDate}</dt><dd className="text-right font-medium">{fmtDate}</dd></div>
               )}
-              <div className="flex justify-between gap-4"><dt className="text-neutral-600">{tt.bkTravelers}</dt><dd className="font-medium">{people}</dd></div>
-              <div className="flex justify-between gap-4"><dt className="text-neutral-600">{tt.perPerson}</dt><dd className="font-medium"><Price amount={perPerson} currency={tour.currency} /></dd></div>
+              {peopleKnown && (
+                <>
+                  <div className="flex justify-between gap-4"><dt className="text-neutral-600">{tt.bkTravelers}</dt><dd className="font-medium">{people}</dd></div>
+                  <div className="flex justify-between gap-4"><dt className="text-neutral-600">{tt.perPerson}</dt><dd className="font-medium"><Price amount={perPerson} currency={tour.currency} /></dd></div>
+                </>
+              )}
             </dl>
             <div className="mt-5 flex items-baseline justify-between border-t border-neutral-200 pt-5">
               <span className="font-semibold">{tt.bkTotal}</span>

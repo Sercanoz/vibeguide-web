@@ -2,7 +2,7 @@
 // Client hook'u yok → server component olarak da render edilebilir (SEO dostu).
 export default function PhoneFrame({ children }: { children: React.ReactNode }) {
   return (
-    <div className="relative w-[280px] rounded-[3rem] bg-gradient-to-b from-[#2a2a2a] to-[#000] p-[5px] shadow-[0_40px_80px_-10px_rgba(91,63,217,0.5)]">
+    <div className="relative w-[280px] rounded-[3rem] bg-gradient-to-b from-[#2a2a2a] to-[#000] p-[5px] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.35)]">
       <div className="absolute -left-[3px] top-24 h-8 w-[3px] rounded-l-md bg-[#2a2a2a]" />
       <div className="absolute -left-[3px] top-36 h-14 w-[3px] rounded-l-md bg-[#2a2a2a]" />
       <div className="absolute -right-[3px] top-32 h-20 w-[3px] rounded-r-md bg-[#2a2a2a]" />

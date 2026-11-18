@@ -13,54 +13,39 @@ import type { Locale } from "@/lib/i18n";
 
 const SITE = "https://www.vibeguideapp.com";
 
-/** Telefon mockup içeriği — moda göre renklenen mini uygulama ekranı. */
+// Sade/pro stil (ana sayfa ile aynı dil): serif başlıklar, tek vurgu rengi (#5B3FD9),
+// emoji/renkli parlama/gölge yok. mode.color artık yalnız veri; görünümde kullanılmıyor.
+const H2 = "font-display text-3xl md:text-[40px] font-normal leading-tight tracking-[-0.01em] text-neutral-900";
+const PRIMARY = "inline-flex h-12 items-center rounded-full bg-[#5B3FD9] px-7 text-[15px] font-semibold text-white transition-colors hover:bg-[#4A32B8]";
+
+/** Telefon mockup içeriği — mini uygulama ekranı (marka moru, emoji yok). */
 function ModeMock({ mode, locale }: { mode: Mode; locale: string }) {
   const u = MODE_UI[locale as Locale] ?? MODE_UI.en;
-  const nowLabel = u.nowLabel;
-  const liveLabel = u.liveLabel;
   return (
     <div className="px-4 pb-5">
-      <div className="flex items-center justify-between mb-3">
+      <div className="mb-3 flex items-center justify-between">
         <div>
-          <p className="text-[10px] text-neutral-800 font-medium">{nowLabel}</p>
-          <h3 className="text-base font-black leading-tight flex items-center gap-1">
-            <span>{mode.emoji}</span> {mode.name}
-          </h3>
+          <p className="text-[10px] font-medium text-neutral-500">{u.nowLabel}</p>
+          <h3 className="text-base font-semibold leading-tight text-neutral-900">{mode.name}</h3>
         </div>
-        <span
-          className="flex items-center gap-1 rounded-full px-2 py-0.5 text-[9px] font-bold text-white"
-          style={{ backgroundColor: mode.color }}
-        >
-          {liveLabel}
+        <span className="flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-[9px] font-semibold text-emerald-700">
+          <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+          {u.liveLabel}
         </span>
       </div>
-
-      {/* Step rows */}
       <div className="space-y-2">
         {mode.steps.slice(0, 3).map((s, i) => (
-          <div
-            key={s.title}
-            className="flex items-center gap-3 rounded-2xl border border-black/[0.06] bg-[#F9FAFB] px-3 py-2.5"
-          >
-            <span
-              className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[11px] font-black text-white"
-              style={{ backgroundColor: mode.color }}
-            >
+          <div key={s.title} className="flex items-center gap-3 rounded-xl border border-neutral-200 bg-white px-3 py-2.5">
+            <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-neutral-900 text-[11px] font-semibold text-neutral-900">
               {i + 1}
             </span>
-            <span className="text-[11px] font-bold text-[#0A0A0F] leading-tight">
-              {s.title}
-            </span>
+            <span className="text-[11px] font-medium leading-tight text-neutral-900">{s.title}</span>
           </div>
         ))}
       </div>
-
-      <button
-        className="mt-3 w-full rounded-2xl py-3 text-[13px] font-black text-white"
-        style={{ backgroundColor: mode.color }}
-      >
+      <div className="mt-3 w-full rounded-xl bg-[#5B3FD9] py-3 text-center text-[13px] font-semibold text-white">
         {mode.tagline}
-      </button>
+      </div>
     </div>
   );
 }
@@ -70,6 +55,7 @@ export default function ModePageView({ mode: rawMode, nonce }: { mode: Mode; non
   const mode = localizeMode(rawMode, locale);
   const others = MODES.filter((m) => m.slug !== rawMode.slug).map((m) => localizeMode(m, locale));
   const ui = MODE_UI[locale as Locale] ?? MODE_UI.en;
+  const exploreLabel = ui.exploreTours.replace(/s*→s*$/, "");
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -95,7 +81,7 @@ export default function ModePageView({ mode: rawMode, nonce }: { mode: Mode; non
   };
 
   return (
-    <main className="min-h-screen bg-white text-[#0A0A0F] antialiased">
+    <main className="min-h-screen bg-white text-neutral-900 antialiased">
       <script
         type="application/ld+json"
         nonce={nonce}
@@ -105,43 +91,22 @@ export default function ModePageView({ mode: rawMode, nonce }: { mode: Mode; non
       <Navbar />
 
       {/* Hero */}
-      <section className="relative overflow-hidden pt-16">
-        <div
-          className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full blur-[90px] pointer-events-none opacity-20"
-          style={{ background: `radial-gradient(circle, ${mode.color}, transparent)` }}
-        />
-        <div className="relative mx-auto max-w-6xl px-6 py-16 grid md:grid-cols-2 gap-12 items-center">
+      <section className="pt-16">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-14 md:grid-cols-2 md:px-6 md:py-20">
           <div>
-            <span
-              className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-black"
-              style={{ backgroundColor: `${mode.color}14`, color: mode.color }}
-            >
-              {mode.emoji} {mode.tagline}
-            </span>
-            <h1 className="mt-5 text-5xl md:text-6xl font-display font-normal tracking-[-0.01em] leading-[1.02]">
+            <p className="text-sm font-medium text-neutral-500">{mode.tagline}</p>
+            <h1 className="mt-3 font-display text-5xl font-normal leading-[1.02] tracking-[-0.02em] md:text-7xl">
               {mode.name}
             </h1>
-            <p className="mt-5 text-lg leading-8 text-neutral-700 max-w-md">
-              {mode.heroSub}
-            </p>
+            <p className="mt-5 max-w-md text-lg leading-8 text-neutral-600">{mode.heroSub}</p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href="/tours"
-                className="rounded-full px-7 py-3.5 text-sm font-bold text-white transition-transform hover:scale-[1.03]"
-                style={{ backgroundColor: mode.color, boxShadow: `0 4px 20px ${mode.color}55` }}
-              >
-                {ui.exploreTours}
-              </Link>
-              <a
-                href="#how"
-                className="rounded-full border border-black/10 px-7 py-3.5 text-sm font-bold text-[#0A0A0F] hover:border-black/30 transition-colors"
-              >
+              <Link href="/tours" className={PRIMARY}>{exploreLabel}</Link>
+              <a href="#how" className="inline-flex h-12 items-center rounded-full border border-neutral-300 px-7 text-[15px] font-semibold text-neutral-900 hover:border-neutral-900">
                 {ui.howItWorks}
               </a>
             </div>
           </div>
-
-          <div className="flex justify-center">
+          <div className="flex justify-center rounded-3xl bg-neutral-50 py-10">
             <PhoneFrame>
               <ModeMock mode={mode} locale={locale} />
             </PhoneFrame>
@@ -149,50 +114,43 @@ export default function ModePageView({ mode: rawMode, nonce }: { mode: Mode; non
         </div>
       </section>
 
-      {/* How it works */}
-      <section id="how" className="py-16 bg-[#F7F7FB]">
-        <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-10">{ui.howItWorks}</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      {/* Nasıl çalışır */}
+      <section id="how" className="scroll-mt-20 border-t border-neutral-200 py-16 md:py-24">
+        <div className="mx-auto max-w-6xl px-4 md:px-6">
+          <h2 className={H2}>{ui.howItWorks}</h2>
+          <ol className="mt-10 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
             {mode.steps.map((s, i) => (
-              <div key={s.title} className="rounded-2xl bg-white border border-black/[0.06] p-6">
-                <span
-                  className="flex h-9 w-9 items-center justify-center rounded-full text-sm font-black text-white"
-                  style={{ backgroundColor: mode.color }}
-                >
-                  {i + 1}
-                </span>
-                <h3 className="mt-4 font-black text-[#0A0A0F]">{s.title}</h3>
-                <p className="mt-1.5 text-sm leading-6 text-neutral-700">{s.desc}</p>
-              </div>
+              <li key={s.title} className="border-t border-neutral-900 pt-5">
+                <span className="font-display text-lg tabular-nums text-neutral-400">{String(i + 1).padStart(2, "0")}</span>
+                <h3 className="mt-2 text-lg font-semibold">{s.title}</h3>
+                <p className="mt-1.5 leading-7 text-neutral-600">{s.desc}</p>
+              </li>
             ))}
-          </div>
+          </ol>
         </div>
       </section>
 
-      {/* Benefits */}
-      <section className="py-16">
-        <div className="mx-auto max-w-6xl px-6 grid sm:grid-cols-3 gap-5">
+      {/* Faydalar */}
+      <section className="bg-neutral-50 py-16 md:py-20">
+        <div className="mx-auto grid max-w-6xl gap-4 px-4 sm:grid-cols-3 md:px-6">
           {mode.benefits.map((b) => (
-            <div key={b.title} className="rounded-2xl border border-black/[0.06] p-6">
-              <h3 className="font-black text-[#0A0A0F] mb-1.5">{b.title}</h3>
-              <p className="text-sm leading-6 text-neutral-700">{b.desc}</p>
+            <div key={b.title} className="rounded-2xl border border-neutral-200 bg-white p-6">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neutral-900" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
+              <h3 className="mt-3 font-semibold">{b.title}</h3>
+              <p className="mt-1.5 leading-7 text-neutral-600">{b.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Real screenshots — only when provided */}
+      {/* Gerçek ekran görüntüleri — yalnız varsa */}
       {mode.screenshots.length > 0 && (
-        <section className="py-12 bg-[#F7F7FB]">
-          <div className="mx-auto max-w-6xl px-6">
-            <h2 className="text-3xl font-black tracking-tight mb-8">{ui.seeInApp}</h2>
-            <div className="flex flex-wrap justify-center gap-6">
+        <section className="py-16 md:py-20">
+          <div className="mx-auto max-w-6xl px-4 md:px-6">
+            <h2 className={H2}>{ui.seeInApp}</h2>
+            <div className="mt-10 flex flex-wrap justify-center gap-6">
               {mode.screenshots.map((src) => (
-                <div
-                  key={src}
-                  className="relative w-[230px] aspect-[9/19] overflow-hidden rounded-[2rem] border border-black/[0.08] shadow-lg bg-white"
-                >
+                <div key={src} className="relative aspect-[9/19] w-[230px] overflow-hidden rounded-[2rem] border border-neutral-200 bg-white">
                   <Image src={`/screens/${src}`} alt={`${mode.name} screen`} fill className="object-cover" />
                 </div>
               ))}
@@ -201,58 +159,49 @@ export default function ModePageView({ mode: rawMode, nonce }: { mode: Mode; non
         </section>
       )}
 
-      {/* FAQ */}
-      <section className="py-16">
-        <div className="mx-auto max-w-3xl px-6">
-          <h2 className="text-3xl font-black tracking-tight mb-8">{ui.questions}</h2>
-          <div className="space-y-3">
+      {/* SSS */}
+      <section className="py-16 md:py-24">
+        <div className="mx-auto max-w-3xl px-4 md:px-6">
+          <h2 className={H2}>{ui.questions}</h2>
+          <div className="mt-8 divide-y divide-neutral-200 border-y border-neutral-200">
             {mode.faqs.map((f) => (
-              <details key={f.q} className="group rounded-2xl border border-black/[0.06] px-5 py-4">
-                <summary className="cursor-pointer list-none font-black flex items-center justify-between gap-3">
+              <details key={f.q} className="group py-5">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[17px] font-semibold [&::-webkit-details-marker]:hidden">
                   {f.q}
-                  <span style={{ color: mode.color }} className="transition-transform group-open:rotate-45">+</span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="shrink-0 text-neutral-500 transition-transform group-open:rotate-45" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
                 </summary>
-                <p className="mt-3 text-[15px] leading-7 text-neutral-800">{f.a}</p>
+                <p className="mt-3 leading-7 text-neutral-600">{f.a}</p>
               </details>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Other modes */}
-      <section className="pb-4">
-        <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-2xl font-black tracking-tight mb-6">{ui.otherWays}</h2>
-          <div className="grid sm:grid-cols-2 gap-4">
+      {/* Diğer yollar */}
+      <section className="border-t border-neutral-200 py-16 md:py-20">
+        <div className="mx-auto max-w-6xl px-4 md:px-6">
+          <h2 className={H2}>{ui.otherWays}</h2>
+          <div className="mt-8 grid gap-3 sm:grid-cols-2">
             {others.map((o) => (
-              <Link
-                key={o.slug}
-                href={`/${o.slug}`}
-                className="group flex items-center gap-4 rounded-2xl border border-black/[0.06] p-5 hover:border-black/20 transition-colors"
-              >
-                <span className="text-3xl">{o.emoji}</span>
-                <span>
-                  <span className="block font-black text-[#0A0A0F] group-hover:text-[#5B3FD9] transition-colors">{o.name}</span>
-                  <span className="block text-sm text-neutral-800">{o.tagline}</span>
+              <Link key={o.slug} href={`/${o.slug}`}
+                className="group flex items-center justify-between gap-4 rounded-xl border border-neutral-200 px-5 py-4 transition-colors hover:border-neutral-900">
+                <span className="min-w-0">
+                  <span className="block font-semibold">{o.name}</span>
+                  <span className="mt-0.5 block text-sm text-neutral-600">{o.tagline}</span>
                 </span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 text-neutral-400 transition-transform group-hover:translate-x-0.5 group-hover:text-neutral-900" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-[#F7F7FB]">
-        <div className="mx-auto max-w-2xl px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-black mb-4">{mode.ctaTitle}</h2>
-          <p className="text-neutral-700 mb-8 leading-7">{ctaSub(locale)}</p>
-          <Link
-            href="/tours"
-            className="inline-block rounded-full px-8 py-3.5 text-sm font-bold text-white"
-            style={{ backgroundColor: mode.color, boxShadow: `0 4px 20px ${mode.color}55` }}
-          >
-            {ui.exploreTours}
-          </Link>
+      {/* Kapanış CTA */}
+      <section className="bg-neutral-50 py-16 md:py-24">
+        <div className="mx-auto max-w-2xl px-4 text-center md:px-6">
+          <h2 className={H2}>{mode.ctaTitle}</h2>
+          <p className="mx-auto mt-4 max-w-lg leading-7 text-neutral-600">{ctaSub(locale)}</p>
+          <Link href="/tours" className={`${PRIMARY} mt-8`}>{exploreLabel}</Link>
         </div>
       </section>
 

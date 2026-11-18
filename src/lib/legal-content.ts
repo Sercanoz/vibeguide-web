@@ -2062,7 +2062,7 @@ export const help: Record<HelpLocale, HelpDict> = {
         steps: [
           "Uygulamayı aç ve yakınındaki mevcut bir deneyim seç.",
           "Talebini gönder — sistem yakındaki rehberleri anlık olarak arar.",
-          "Müsait bir doğrulanmış rehber ~60 saniye içinde talebi kabul eder.",
+          "Müsait bir doğrulanmış rehber talebi yaklaşık 60 saniye içinde kabul edebilir.",
           "Rehberin adı, fotoğrafı, rozetleri ve buluşma noktası sana iletilir.",
           "Rehberinle buluş ve deneyimi yaşa. Ödemeyi uygulama üzerinden yap — asla doğrudan değil.",
         ],

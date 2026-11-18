@@ -49,6 +49,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   } catch { /* fallback to static only */ }
 
+  // Rehber profilleri — /api/guides/directory yalnız onaylı + aktif rehberleri döndürür
+  // (backend /profile ucu da aynı kurala bağlandı → onay bekleyen rehber indekslenmez).
+  let guideRoutes: MetadataRoute.Sitemap = [];
+  try {
+    const res = await serverFetch(`/api/guides/directory?limit=200`, { next: { revalidate: 3600 } });
+    if (res.ok) {
+      const guides: { id: number }[] = await res.json();
+      guideRoutes = guides.map((g) => ({
+        url: `${SITE}/guides/${g.id}`,
+        lastModified: now,
+        changeFrequency: "weekly" as const,
+        priority: 0.6,
+      }));
+    }
+  } catch { /* backend erişilemezse rehberler atlanır */ }
+
   // Atraksiyon sayfaları — her landmark × her dil ayrı URL + hreflang alternates.
   const attractionRoutes: MetadataRoute.Sitemap = ATTRACTIONS.flatMap((a) => {
     const languages: Record<string, string> = {};
@@ -120,5 +136,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }));
   });
 
-  return [...staticRoutes, ...cityGuideRoutes, ...tourRoutes, ...attractionHubRoutes, ...attractionRoutes, ...blogHubRoutes, ...blogPostRoutes];
+  return [...staticRoutes, ...cityGuideRoutes, ...tourRoutes, ...guideRoutes, ...attractionHubRoutes, ...attractionRoutes, ...blogHubRoutes, ...blogPostRoutes];
 }

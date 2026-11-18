@@ -90,7 +90,7 @@ export default async function BlogHubPage({ params }: Props) {
   const postHref = (slug: string) => `/blog/${lang}/${slug}`;
 
   return (
-    <main dir={rtl ? "rtl" : "ltr"} className="min-h-screen bg-white text-[#0A0A0F] antialiased">
+    <main dir={rtl ? "rtl" : "ltr"} lang={lang} className="min-h-screen bg-white text-neutral-900 antialiased">
       <JsonLdScript data={jsonLd} />
       <Navbar />
 
@@ -113,7 +113,7 @@ export default async function BlogHubPage({ params }: Props) {
               <Link
                 key={post.slug}
                 href={postHref(post.slug)}
-                className="group flex flex-col overflow-hidden rounded-2xl border border-black/[0.06] bg-white hover:border-[#5B3FD9]/30 transition-colors"
+                className="group flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white hover:border-neutral-900 transition-colors"
               >
                 <div className="relative aspect-[16/10] overflow-hidden bg-neutral-100">
                   <Image
@@ -123,14 +123,14 @@ export default async function BlogHubPage({ params }: Props) {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <span className="absolute top-3 left-3 rounded-full bg-white/90 backdrop-blur px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-[#5B3FD9]">
+                  <span className="absolute top-3 left-3 rounded-full bg-white/90 backdrop-blur px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-neutral-900">
                     {cat[post.category]}
                   </span>
                 </div>
                 <div className="flex flex-1 flex-col p-5">
-                  <h2 className="text-lg font-black leading-snug group-hover:text-[#5B3FD9] transition-colors">{c.title}</h2>
+                  <h2 className="text-lg font-display font-normal leading-snug group-hover:underline underline-offset-4">{c.title}</h2>
                   <p className="mt-2 flex-1 text-sm leading-6 text-neutral-700">{c.excerpt}</p>
-                  <span className="mt-4 text-sm font-bold text-[#5B3FD9]">{t.readMore} →</span>
+                  <span className="mt-4 text-sm font-semibold text-neutral-900 underline underline-offset-4">{t.readMore}</span>
                 </div>
               </Link>
             ))}

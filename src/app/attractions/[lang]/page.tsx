@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import MainFooter from "@/components/MainFooter";
+import { cityLabel } from "@/lib/city-labels";
 import JsonLdScript from "@/components/JsonLdScript";
 import {
   ATTRACTIONS,
@@ -93,7 +94,7 @@ export default async function AttractionsHubPage({ params }: Props) {
   };
 
   return (
-    <main dir={rtl ? "rtl" : "ltr"} className="min-h-screen bg-white text-[#0A0A0F] antialiased">
+    <main dir={rtl ? "rtl" : "ltr"} lang={lang} className="min-h-screen bg-white text-neutral-900 antialiased">
       <JsonLdScript data={jsonLd} />
       <Navbar />
 
@@ -114,11 +115,11 @@ export default async function AttractionsHubPage({ params }: Props) {
         return (
           <section key={g.city} className="pb-10">
             <div className="mx-auto max-w-5xl px-6">
-              <h2 className="text-xl font-black mb-5 tracking-tight">
+              <h2 className="text-xl font-display font-normal mb-5 tracking-[-0.01em]">
                 {href ? (
-                  <Link href={href} className="hover:text-[#5B3FD9] transition-colors">{g.city}</Link>
+                  <Link href={href} className="hover:underline underline-offset-4">{cityLabel(g.city, lang)}</Link>
                 ) : (
-                  g.city
+                  cityLabel(g.city, lang)
                 )}
               </h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -126,12 +127,12 @@ export default async function AttractionsHubPage({ params }: Props) {
                   <Link
                     key={a.slug}
                     href={`/attractions/${lang}/${a.slug}`}
-                    className="group flex items-center gap-4 rounded-2xl bg-white border border-black/[0.06] p-4 hover:border-[#5B3FD9]/30 transition-colors"
+                    className="group flex items-center gap-4 rounded-2xl bg-white border border-neutral-200 p-4 hover:border-neutral-900 transition-colors"
                   >
                     <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl">
                       <Image src={a.image} alt={a.i18n[lang].name} fill sizes="56px" className="object-cover" />
                     </div>
-                    <span className="font-black text-[#0A0A0F] group-hover:text-[#5B3FD9] transition-colors leading-tight">
+                    <span className="font-semibold text-neutral-900 group-hover:underline underline-offset-4 leading-tight">
                       {a.i18n[lang].name}
                     </span>
                   </Link>

@@ -32,7 +32,7 @@ export default function ContactView() {
   };
 
   return (
-    <main className="min-h-screen bg-white text-[#0A0A0F]">
+    <main className="min-h-screen bg-white text-neutral-900">
       <Navbar />
 
       <div className="mx-auto max-w-3xl px-6 pt-28 pb-16">
@@ -41,28 +41,28 @@ export default function ContactView() {
 
         <div className="grid gap-6 md:grid-cols-2 mb-12">
           <div className="bg-neutral-50 rounded-2xl p-6">
-            <p className="text-sm font-black mb-3">📧 {t.email}</p>
+            <p className="text-sm font-semibold mb-3">{t.email}</p>
             <a href="mailto:support@vibeguideapp.com" className="text-[#5B3FD9] font-semibold hover:underline">
               support@vibeguideapp.com
             </a>
             <p className="text-xs text-neutral-800 mt-2">{t.emailNote}</p>
           </div>
           <div className="bg-neutral-50 rounded-2xl p-6">
-            <p className="text-sm font-black mb-3">📞 {t.phone}</p>
+            <p className="text-sm font-semibold mb-3">{t.phone}</p>
             <a href="tel:+905308287696" className="text-[#5B3FD9] font-semibold hover:underline">
               +90 530 828 76 96
             </a>
             <p className="text-xs text-neutral-800 mt-2">{t.hoursShort}</p>
           </div>
           <div className="bg-neutral-50 rounded-2xl p-6">
-            <p className="text-sm font-black mb-3">🕐 {t.hoursTitle}</p>
+            <p className="text-sm font-semibold mb-3">{t.hoursTitle}</p>
             <p className="font-semibold">{t.hoursLine}</p>
             <p className="text-xs text-neutral-800 mt-2">{t.hoursTz}</p>
           </div>
         </div>
 
         <div className="bg-neutral-50 rounded-2xl p-6 text-sm text-neutral-800 space-y-2">
-          <p className="font-black text-neutral-900 mb-3">{t.companyTitle}</p>
+          <p className="font-semibold text-neutral-900 mb-3">{t.companyTitle}</p>
           <p className="font-semibold text-neutral-800">VİBECORE TURİZM SEYAHAT ACENTASI VE DİJİTAL HİZMETLER TİCARET LİMİTED ŞİRKETİ</p>
           <p>{t.taxOffice}</p>
           <p>{t.taxNo}</p>

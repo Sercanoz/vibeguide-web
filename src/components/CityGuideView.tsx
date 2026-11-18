@@ -8,8 +8,18 @@ import { RTL_CITY_LANGS, CITY_GUIDES } from "@/lib/cityGuides";
 import { blogPostsForCity, BLOG_LANGS } from "@/lib/blog";
 import type { BlogLang } from "@/lib/blog";
 import JsonLdScript from "@/components/JsonLdScript";
+import CityLangNotice from "@/components/CityLangNotice";
+import ImageCredit from "@/components/ImageCredit";
 
 const SITE = "https://www.vibeguideapp.com";
+
+// "İlgili yazılar" başlığı — eskiden sabit İngilizce "Travel guides" idi.
+const TRAVEL_GUIDES: Record<string, string> = {
+  en: "Travel guides", de: "Reiseratgeber", es: "Guías de viaje", fr: "Guides de voyage", it: "Guide di viaggio",
+  ar: "أدلة السفر", ru: "Путеводители", tr: "Gezi rehberleri", pl: "Przewodniki", nl: "Reisgidsen",
+  pt: "Guias de viagem", ja: "旅行ガイド", ko: "여행 가이드", el: "Ταξιδιωτικοί οδηγοί", uk: "Путівники",
+  ro: "Ghiduri de călătorie", bg: "Пътеводители", sr: "Туристички водичи", hr: "Putni vodiči", zh: "旅行指南", id: "Panduan perjalanan",
+};
 
 // Localized prefix: en lives at root, others under /<lang>.
 function langPrefix(lang: CityGuideLang) {
@@ -92,95 +102,83 @@ export default function CityGuideView({
   }
   const jsonLd = { "@context": "https://schema.org", "@graph": graph };
 
+  // Veri metinlerindeki emoji ve ok işaretlerini temizle (sade görünüm).
+  const clean = (s: string) => s.replace(/[\p{Extended_Pictographic}\u{FE0F}\u{200D}]/gu, "").replace(/\s*[→←]\s*$/, "").trim();
+  // Güven rozetleri: puan iddiası içerenleri ("⭐ 4.9 avg rating") GÖSTERME — sayfada
+  // doğrulanabilir yorum verisi yok; sabit puan yanıltıcı (tüketici mevzuatı).
+  const trustBadges = c.trustBadges.filter((t) => !/\d[.,]\d/.test(t)).map(clean);
+  const toursHref = `/tours?city=${encodeURIComponent(guide.citySlug)}`;
+  const H2 = "font-display text-3xl md:text-[40px] font-normal leading-tight tracking-[-0.01em] text-neutral-900";
+  const KICKER = "text-sm font-medium text-neutral-500";
+  const arrow = (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 text-neutral-400 transition-transform group-hover:translate-x-0.5 group-hover:text-neutral-900 rtl:rotate-180" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+  );
+
   return (
     <main
       dir={rtl ? "rtl" : "ltr"}
-      className="min-h-screen bg-white text-[#0A0A0F] antialiased"
+      // lang: içerik dili sayfanın URL dilidir (UI dili değil). CSS `uppercase`
+      // TR kurallarıyla "I"→"İ" yapmasın diye bu öğede doğru lang şart.
+      lang={lang}
+      className="min-h-screen bg-white text-neutral-900 antialiased"
     >
       <Navbar />
+      <CityLangNotice pageLang={lang} available={Object.keys(guide.i18n)} slug={guide.slug} />
 
-      {/* Hero */}
-      <section className="relative bg-[#0A0A0F] text-white pt-32 pb-24 overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src={guide.heroImage}
-            alt={c.h1}
-            fill
-            sizes="100vw"
-            className="object-cover opacity-30"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0F] via-[#0A0A0F]/70 to-transparent" />
-        </div>
-        <div className="relative mx-auto max-w-5xl px-6">
-          {/* Görünür breadcrumb — JSON-LD BreadcrumbList ile eşleşir (Google izi görünür ister). */}
-          <nav aria-label="Breadcrumb" className="mb-4 text-xs text-white/45">
-            <Link href="/" className="hover:text-white transition-colors">VibeGuide</Link>
-            <span className="mx-1.5" aria-hidden="true">›</span>
-            <span className="text-white/75">{c.h1}</span>
+      {/* Hero — tam genişlik foto, ana sayfa ile aynı dil */}
+      <section className="relative overflow-hidden text-white">
+        <Image src={guide.heroImage} alt={c.h1} fill sizes="100vw" className="object-cover" priority />
+        <div className="absolute inset-0 bg-black/50" />
+        <ImageCredit src={guide.heroImage} onDark className="absolute bottom-2 right-3 z-[1]" />
+        <div className="relative mx-auto max-w-6xl px-4 pb-20 pt-28 md:px-6 md:pb-28 md:pt-40">
+          {/* Görünür breadcrumb — JSON-LD BreadcrumbList ile eşleşir. */}
+          <nav aria-label="Breadcrumb" className="mb-5 text-sm text-white/70">
+            <Link href="/" className="hover:text-white">VibeGuide</Link>
+            <span className="mx-1.5" aria-hidden="true">/</span>
+            <span className="text-white">{c.h1}</span>
           </nav>
-          <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#5B3FD9] mb-4">
-            {c.region}
-          </p>
-          <h1 className="text-4xl md:text-6xl font-display font-normal leading-tight tracking-[-0.01em] max-w-2xl">
+          <p className="text-sm font-medium text-white/80">{c.region}</p>
+          <h1 className="mt-3 max-w-3xl font-display text-[40px] font-normal leading-[1.05] tracking-[-0.02em] md:text-[68px]">
             {c.h1}
-            <br />
-            <span className="bg-gradient-to-r from-[#5B3FD9] to-[#8B5CF6] bg-clip-text text-transparent">
-              {c.h1Accent}
-            </span>
+            <span className="block italic text-white/90">{c.h1Accent}</span>
           </h1>
-          <p className="mt-6 text-base text-white/50 max-w-lg leading-7">{c.heroLead}</p>
+          <p className="mt-6 max-w-xl text-base leading-7 text-white/85 md:text-lg">{c.heroLead}</p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              href="/#download"
-              className="rounded-full bg-[#5B3FD9] px-7 py-3.5 text-sm font-bold text-white hover:bg-[#4A32B8] transition-colors"
-            >
-              {c.ctaPrimary}
+            <Link href={toursHref} className="inline-flex h-12 items-center rounded-full bg-[#5B3FD9] px-7 text-[15px] font-semibold text-white hover:bg-[#4A32B8]">
+              {clean(c.ctaPrimary)}
             </Link>
-            <Link
-              href="/#modes"
-              className="rounded-full border border-white/15 px-7 py-3.5 text-sm font-bold text-white/80 hover:bg-white/10 transition-all"
-            >
-              {c.ctaSecondary}
-            </Link>
+            <a href="#modes" className="inline-flex h-12 items-center rounded-full border border-white/40 px-7 text-[15px] font-semibold text-white hover:bg-white/10">
+              {clean(c.ctaSecondary)}
+            </a>
           </div>
         </div>
       </section>
 
-      {/* Highlights */}
-      <section className="py-20 bg-white">
-        <div className="mx-auto max-w-5xl px-6">
-          <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#5B3FD9] mb-4">
-            {c.highlightsKicker}
-          </p>
-          <h2 className="text-3xl md:text-4xl font-black mb-12 tracking-tight">
-            {c.highlightsHeading}
-          </h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
-            {c.highlights.map((h) => (
-              <div
-                key={h.name}
-                className="rounded-2xl border border-black/[0.06] bg-[#F7F7FB] p-6 hover:border-[#5B3FD9]/30 transition-colors"
-              >
-                <span className="text-3xl">{h.icon}</span>
-                <h3 className="mt-3 text-base font-black">{h.name}</h3>
-                <p className="mt-1.5 text-sm text-neutral-700 leading-6">{h.desc}</p>
-              </div>
+      {/* Öne çıkanlar */}
+      <section className="py-16 md:py-24">
+        <div className="mx-auto max-w-6xl px-4 md:px-6">
+          <p className={KICKER}>{c.highlightsKicker}</p>
+          <h2 className={`${H2} mt-2`}>{c.highlightsHeading}</h2>
+          <ol className="mt-10 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+            {c.highlights.map((h, i) => (
+              <li key={h.name} className="border-t border-neutral-200 pt-5">
+                <span className="font-display text-lg text-neutral-400 tabular-nums">{String(i + 1).padStart(2, "0")}</span>
+                <h3 className="mt-2 text-lg font-semibold">{h.name}</h3>
+                <p className="mt-1.5 leading-7 text-neutral-600">{h.desc}</p>
+              </li>
             ))}
-          </div>
+          </ol>
         </div>
       </section>
 
-      {/* Real tours */}
+      {/* Gerçek turlar */}
       <CityTours citySlug={guide.citySlug} cityName={guide.cityName} locale={lang} />
 
-      {/* Rich SEO content */}
-      <section className="py-20 bg-white">
-        <div className="mx-auto max-w-3xl px-6">
-          <h2 className="text-3xl md:text-4xl font-black mb-6 tracking-tight">
-            {c.seoHeading}
-          </h2>
-          <div className="space-y-5 text-[15px] text-neutral-800 leading-8">
+      {/* SEO içerik */}
+      <section className="py-16 md:py-24">
+        <div className="mx-auto max-w-3xl px-4 md:px-6">
+          <h2 className={H2}>{c.seoHeading}</h2>
+          <div className="mt-6 space-y-5 text-[17px] leading-8 text-neutral-700 [&_strong]:font-semibold [&_strong]:text-neutral-900 [&_a]:underline [&_a]:underline-offset-4">
             {c.seoParagraphs.map((p, i) => (
               <p key={i} dangerouslySetInnerHTML={{ __html: p }} />
             ))}
@@ -188,71 +186,56 @@ export default function CityGuideView({
         </div>
       </section>
 
-      {/* 3 modes */}
-      <section className="py-20 bg-[#F7F7FB]">
-        <div className="mx-auto max-w-5xl px-6">
-          <p className="text-xs font-bold uppercase tracking-[0.3em] text-neutral-800 mb-4">
-            {c.modesKicker}
-          </p>
-          <h2 className="text-3xl md:text-4xl font-black mb-12 tracking-tight">
-            {c.modesHeading}
-          </h2>
-          <div className="grid md:grid-cols-3 gap-5">
+      {/* 3 yol */}
+      <section id="modes" className="scroll-mt-20 bg-neutral-50 py-16 md:py-24">
+        <div className="mx-auto max-w-6xl px-4 md:px-6">
+          <p className={KICKER}>{c.modesKicker}</p>
+          <h2 className={`${H2} mt-2`}>{c.modesHeading}</h2>
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
             {c.modes.map((m) => (
-              <div
-                key={m.tag}
-                className="rounded-2xl bg-white border border-black/[0.06] p-7 shadow-sm"
-              >
-                <span
-                  className={`inline-block rounded-full ${m.color} px-3 py-1 text-[10px] font-black text-white uppercase tracking-wide mb-4`}
-                >
-                  {m.tag}
-                </span>
-                <h3 className="text-xl font-black mb-2">{m.title}</h3>
-                <p className="text-sm text-neutral-700 leading-6">{m.text}</p>
+              <div key={m.tag} className="rounded-2xl border border-neutral-200 bg-white p-7">
+                <p className="text-xs font-semibold uppercase tracking-wide text-neutral-500">{m.tag}</p>
+                <h3 className="mt-3 text-xl font-semibold">{m.title}</h3>
+                <p className="mt-2 leading-7 text-neutral-600">{m.text}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Trust */}
-      <section className="py-20 bg-white">
-        <div className="mx-auto max-w-5xl px-6">
-          <div className="rounded-3xl bg-[#0A0A0F] text-white p-10 md:p-14 text-center">
-            <h2 className="text-3xl md:text-4xl font-black mb-4">{c.trustHeading}</h2>
-            <p className="text-white/50 max-w-lg mx-auto leading-7 text-sm">{c.trustText}</p>
-            <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm text-white/40 font-medium">
-              {c.trustBadges.map((t) => (
-                <span key={t}>{t}</span>
-              ))}
-            </div>
+      {/* Güven */}
+      <section className="py-16 md:py-24">
+        <div className="mx-auto grid max-w-6xl gap-10 px-4 md:grid-cols-[1fr_1fr] md:items-center md:px-6">
+          <div>
+            <h2 className={H2}>{c.trustHeading}</h2>
+            <p className="mt-4 max-w-lg leading-7 text-neutral-600">{c.trustText}</p>
           </div>
+          {trustBadges.length > 0 && (
+            <ul className="grid gap-3 sm:grid-cols-2">
+              {trustBadges.map((t) => (
+                <li key={t} className="flex items-center gap-3 rounded-xl border border-neutral-200 px-4 py-3.5 text-[15px] font-medium">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 text-neutral-900" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
+                  {t}
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* SSS */}
       {c.faqs && c.faqs.length > 0 && (
-        <section className="py-16 bg-[#F7F7FB]">
-          <div className="mx-auto max-w-3xl px-6">
-            {c.faqHeading && (
-              <h2 className="text-3xl md:text-4xl font-black mb-8 tracking-tight">
-                {c.faqHeading}
-              </h2>
-            )}
-            <div className="space-y-3">
+        <section className="border-t border-neutral-200 py-16 md:py-24">
+          <div className="mx-auto max-w-3xl px-4 md:px-6">
+            {c.faqHeading && <h2 className={H2}>{c.faqHeading}</h2>}
+            <div className="mt-8 divide-y divide-neutral-200 border-y border-neutral-200">
               {c.faqs.map((f) => (
-                <details
-                  key={f.q}
-                  className="group rounded-2xl border border-black/[0.06] bg-white px-5 py-4"
-                >
-                  <summary className="cursor-pointer list-none font-black text-[#0A0A0F] flex items-center justify-between gap-3">
+                <details key={f.q} className="group py-5">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[17px] font-semibold [&::-webkit-details-marker]:hidden">
                     {f.q}
-                    <span className="text-[#5B3FD9] transition-transform group-open:rotate-45">
-                      +
-                    </span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="shrink-0 text-neutral-500 transition-transform group-open:rotate-45" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
                   </summary>
-                  <p className="mt-3 text-[15px] leading-7 text-neutral-800">{f.a}</p>
+                  <p className="mt-3 leading-7 text-neutral-600">{f.a}</p>
                 </details>
               ))}
             </div>
@@ -260,28 +243,21 @@ export default function CityGuideView({
         </section>
       )}
 
-      {/* Landmark hub — attraction iç linkleri (eksik dilde EN fallback) */}
+      {/* Gezilecek yerler — attraction iç linkleri (eksik dilde EN fallback) */}
       {landmarks.length > 0 && (
-        <section className="py-16 bg-white">
-          <div className="mx-auto max-w-5xl px-6">
-            <h2 className="text-3xl font-black mb-2 tracking-tight">{landmarksHeading}</h2>
-            {landmarksSub && (
-              <p className="text-sm text-neutral-800 mb-8">{landmarksSub}</p>
-            )}
-            <div className="grid sm:grid-cols-2 gap-4">
+        <section className="bg-neutral-50 py-16 md:py-20">
+          <div className="mx-auto max-w-6xl px-4 md:px-6">
+            <h2 className={H2}>{landmarksHeading}</h2>
+            {landmarksSub && <p className="mt-2 text-neutral-600">{landmarksSub}</p>}
+            <div className="mt-8 grid gap-3 sm:grid-cols-2">
               {landmarks.map((l) => (
-                <Link
-                  key={l.href}
-                  href={l.href}
-                  className="group flex items-center gap-4 rounded-2xl bg-white border border-black/[0.06] p-5 hover:border-[#5B3FD9]/30 transition-colors"
-                >
-                  <span className="text-3xl">{l.icon}</span>
-                  <div>
-                    <p className="font-black text-[#0A0A0F] group-hover:text-[#5B3FD9] transition-colors">
-                      {l.name}
-                    </p>
-                    <p className="text-sm text-neutral-800">{l.desc}</p>
+                <Link key={l.href} href={l.href}
+                  className="group flex items-center justify-between gap-4 rounded-xl border border-neutral-200 bg-white px-5 py-4 transition-colors hover:border-neutral-900">
+                  <div className="min-w-0">
+                    <p className="font-semibold">{l.name}</p>
+                    <p className="mt-0.5 text-sm text-neutral-600">{l.desc}</p>
                   </div>
+                  {arrow}
                 </Link>
               ))}
             </div>
@@ -289,24 +265,16 @@ export default function CityGuideView({
         </section>
       )}
 
-      {/* Related reads — blog geri-link (SEO iç link) */}
+      {/* İlgili yazılar — blog geri-link (SEO iç link) */}
       {relatedBlog.length > 0 && (
-        <section className="py-16 bg-white border-t border-black/[0.05]">
-          <div className="mx-auto max-w-5xl px-6">
-            <h2 className="text-2xl font-black mb-6 tracking-tight">
-              {landmarksHeading ? `${guide.cityName} — Travel guides` : "Travel guides"}
-            </h2>
-            <div className="grid sm:grid-cols-3 gap-4">
+        <section className="py-16 md:py-20">
+          <div className="mx-auto max-w-6xl px-4 md:px-6">
+            <h2 className={H2}>{`${guide.cityName} — ${TRAVEL_GUIDES[lang] ?? TRAVEL_GUIDES.en}`}</h2>
+            <div className="mt-8 grid gap-4 sm:grid-cols-3">
               {relatedBlog.map((b) => (
-                <Link
-                  key={b.slug}
-                  href={b.href}
-                  className="group rounded-2xl bg-[#F7F7FB] border border-black/[0.06] p-5 hover:border-[#5B3FD9]/30 transition-colors"
-                >
-                  <p className="text-xs font-black uppercase tracking-wide text-[#5B3FD9] mb-2">Blog</p>
-                  <p className="font-bold text-[#0A0A0F] group-hover:text-[#5B3FD9] transition-colors leading-snug">
-                    {b.title}
-                  </p>
+                <Link key={b.slug} href={b.href} className="group rounded-xl border border-neutral-200 p-5 transition-colors hover:border-neutral-900">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-neutral-500">Blog</p>
+                  <p className="mt-2 font-semibold leading-snug group-hover:underline">{b.title}</p>
                 </Link>
               ))}
             </div>
@@ -314,24 +282,19 @@ export default function CityGuideView({
         </section>
       )}
 
-      {/* Other destinations */}
-      <section className="py-16 bg-[#F7F7FB]">
-        <div className="mx-auto max-w-5xl px-6">
-          <h2 className="text-2xl font-black mb-6 tracking-tight">{c.otherHeading}</h2>
-          <div className="grid sm:grid-cols-2 gap-4">
+      {/* Diğer destinasyonlar */}
+      <section className="border-t border-neutral-200 py-16 md:py-20">
+        <div className="mx-auto max-w-6xl px-4 md:px-6">
+          <h2 className={H2}>{c.otherHeading}</h2>
+          <div className="mt-8 grid gap-3 sm:grid-cols-2">
             {c.otherCities.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className="group flex items-center gap-4 rounded-2xl bg-white border border-black/[0.06] p-5 hover:border-[#5B3FD9]/30 transition-colors"
-              >
-                <span className="text-3xl">{l.icon}</span>
-                <div>
-                  <p className="font-black text-[#0A0A0F] group-hover:text-[#5B3FD9] transition-colors">
-                    {l.name}
-                  </p>
-                  <p className="text-sm text-neutral-800">{l.desc}</p>
+              <Link key={l.href} href={l.href}
+                className="group flex items-center justify-between gap-4 rounded-xl border border-neutral-200 px-5 py-4 transition-colors hover:border-neutral-900">
+                <div className="min-w-0">
+                  <p className="font-semibold">{l.name}</p>
+                  <p className="mt-0.5 text-sm text-neutral-600">{l.desc}</p>
                 </div>
+                {arrow}
               </Link>
             ))}
           </div>
@@ -339,16 +302,12 @@ export default function CityGuideView({
           {/* Tüm diğer şehir rehberlerine otomatik iç link — editoryal otherCities'i
              (2 link) tamamlar, tarihi üçgeni sahile ve Fethiye/Side'ye bağlar.
              İsimler her guide'ın kendi lokalize h1'inden gelir (çeviri gerektirmez). */}
-          <div className="mt-4 flex flex-wrap gap-2">
+          <div className="mt-6 flex flex-wrap gap-2">
             {CITY_GUIDES.filter((g) => g.slug !== guide.slug).map((g) => {
               const gc = g.i18n[lang] ?? g.i18n.en;
-              const href = `${langPrefix(lang)}/${g.slug}`;
               return (
-                <Link
-                  key={g.slug}
-                  href={href}
-                  className="rounded-full border border-black/[0.08] bg-white px-4 py-2 text-sm font-semibold text-neutral-700 hover:border-[#5B3FD9]/40 hover:text-[#5B3FD9] transition-colors"
-                >
+                <Link key={g.slug} href={`${langPrefix(lang)}/${g.slug}`}
+                  className="rounded-full border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-700 transition-colors hover:border-neutral-900 hover:text-neutral-900">
                   {gc.h1}
                 </Link>
               );
@@ -357,28 +316,24 @@ export default function CityGuideView({
         </div>
       </section>
 
-      {/* Download CTA */}
-      <section id="download" className="py-20 bg-white">
-        <div className="mx-auto max-w-2xl px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-black mb-4">{c.ctaTitle}</h2>
-          <p className="text-neutral-700 mb-8 leading-7">{c.ctaSub}</p>
-          {/* Store listeleri yayına girince gerçek URL'lerle değiştir —
-              şimdilik anasayfa download bölümüne (boş # anchor SEO/UX kötüsü). */}
-          <div className="flex flex-wrap justify-center gap-4">
-            <a
-              href="/#download"
-              className="flex items-center gap-3 rounded-2xl bg-[#0A0A0F] px-6 py-3.5 text-white font-bold text-sm hover:bg-black/80 transition-colors"
-            >
-              <span>▶</span> Google Play
-            </a>
-            <a
-              href="/#download"
-              className="flex items-center gap-3 rounded-2xl bg-[#0A0A0F] px-6 py-3.5 text-white font-bold text-sm hover:bg-black/80 transition-colors"
-            >
-              <span>📱</span> App Store
-            </a>
+      {/* Kapanış CTA */}
+      <section id="download" className="bg-neutral-50 py-16 md:py-24">
+        <div className="mx-auto max-w-2xl px-4 text-center md:px-6">
+          <h2 className={H2}>{c.ctaTitle}</h2>
+          <p className="mx-auto mt-4 max-w-lg leading-7 text-neutral-600">{c.ctaSub}</p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Link href={toursHref} className="inline-flex h-12 items-center rounded-full bg-[#5B3FD9] px-7 text-[15px] font-semibold text-white hover:bg-[#4A32B8]">
+              {clean(c.ctaPrimary)}
+            </Link>
           </div>
-          <p className="mt-6 text-xs text-neutral-700">{c.ctaAvailability}</p>
+          {/* Store listeleri yayına girince gerçek URL'lerle değiştir. */}
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3 opacity-80">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/app-store-badge.svg" alt="Coming soon on the App Store" className="h-11 w-auto" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/google-play-badge.svg" alt="Coming soon on Google Play" className="h-11 w-auto" />
+          </div>
+          <p className="mt-4 text-sm text-neutral-500">{c.ctaAvailability}</p>
         </div>
       </section>
 

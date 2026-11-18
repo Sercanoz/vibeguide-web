@@ -5,7 +5,7 @@ import GuideProfileClient, { type GuideProfile } from "./GuideProfileClient";
 
 // Halka açık rehber profili. Veri: GET /api/guides/{id}/profile (AllowAnonymous, PII yok).
 // Backend yalnız onaylı+aktif rehberi döndürür (onay bekleyen → 404), turist adları maskeli.
-// Henüz sitemap'e eklenmedi.
+// Site haritasında: sitemap.ts → /api/guides/directory.
 export const revalidate = 600;
 
 async function getProfile(id: string): Promise<GuideProfile | null> {

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import MainFooter from "@/components/MainFooter";
+import ImageCredit from "@/components/ImageCredit";
 import JsonLdScript from "@/components/JsonLdScript";
 import {
   BLOG_POSTS,
@@ -136,7 +137,7 @@ export default async function BlogPostPage({ params }: Props) {
   const jsonLd = { "@context": "https://schema.org", "@graph": graph };
 
   return (
-    <main dir={rtl ? "rtl" : "ltr"} className="min-h-screen bg-white text-[#0A0A0F] antialiased">
+    <main dir={rtl ? "rtl" : "ltr"} lang={lang} className="min-h-screen bg-white text-neutral-900 antialiased">
       <JsonLdScript data={jsonLd} />
       <Navbar />
 
@@ -150,14 +151,15 @@ export default async function BlogPostPage({ params }: Props) {
             <span className="text-neutral-800">{cat[post.category]}</span>
           </nav>
 
-          <span className="inline-block rounded-full bg-[#5B3FD9]/[0.08] px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-[#5B3FD9]">
+          <span className="text-sm font-medium text-neutral-500">
             {cat[post.category]}
           </span>
           <h1 className="mt-4 text-3xl md:text-5xl font-display font-normal leading-[1.05] tracking-[-0.01em]">{c.title}</h1>
 
-          <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-3xl bg-neutral-100">
+          <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-2xl bg-neutral-100">
             <Image src={post.heroImage} alt={c.title} fill priority sizes="(max-width: 768px) 100vw, 768px" className="object-cover" />
           </div>
+          <ImageCredit src={post.heroImage} className="mt-2 text-right" />
 
           <div className="mt-10 space-y-5 text-[17px] leading-8 text-neutral-800">
             {c.intro.map((p, i) => (
@@ -167,7 +169,7 @@ export default async function BlogPostPage({ params }: Props) {
 
           {c.sections.map((s, i) => (
             <section key={i} className="mt-12">
-              <h2 className="text-2xl md:text-3xl font-black tracking-tight">{s.heading}</h2>
+              <h2 className="text-2xl md:text-3xl font-display font-normal tracking-[-0.01em]">{s.heading}</h2>
               <div className="mt-4 space-y-5 text-[17px] leading-8 text-neutral-800">
                 {s.paragraphs.map((p, j) => (
                   <p key={j} dangerouslySetInnerHTML={{ __html: p }} />
@@ -178,13 +180,13 @@ export default async function BlogPostPage({ params }: Props) {
 
           {c.faqs && c.faqs.length > 0 && (
             <section className="mt-14">
-              <h2 className="text-2xl md:text-3xl font-black tracking-tight">{c.faqHeading ?? "FAQ"}</h2>
-              <div className="mt-6 divide-y divide-black/[0.06] border-y border-black/[0.06]">
+              <h2 className="text-2xl md:text-3xl font-display font-normal tracking-[-0.01em]">{c.faqHeading ?? "FAQ"}</h2>
+              <div className="mt-6 divide-y divide-neutral-200 border-y border-neutral-200">
                 {c.faqs.map((f, i) => (
                   <details key={i} className="group py-4">
                     <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-bold">
                       {f.q}
-                      <span className="text-[#5B3FD9] transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="shrink-0 text-neutral-500 transition-transform group-open:rotate-45" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
                     </summary>
                     <p className="mt-3 text-[16px] leading-7 text-neutral-700">{f.a}</p>
                   </details>
@@ -195,13 +197,13 @@ export default async function BlogPostPage({ params }: Props) {
 
           {related.length > 0 && (
             <section className="mt-14">
-              <h2 className="text-xl font-black tracking-tight">{c.relatedHeading}</h2>
+              <h2 className="text-xl font-display font-normal tracking-[-0.01em]">{c.relatedHeading}</h2>
               <div className="mt-5 flex flex-wrap gap-3">
                 {related.map((r) => (
                   <Link
                     key={r.href}
                     href={r.href}
-                    className="rounded-full border border-black/10 px-4 py-2 text-sm font-semibold text-[#0A0A0F] hover:border-[#5B3FD9] hover:text-[#5B3FD9] transition-colors"
+                    className="rounded-full border border-neutral-300 px-4 py-2 text-sm font-semibold text-neutral-900 hover:border-neutral-900 hover:text-[#5B3FD9] transition-colors"
                   >
                     {r.label}
                   </Link>
@@ -214,13 +216,13 @@ export default async function BlogPostPage({ params }: Props) {
              overlapping posts, keeps link equity flowing horizontally). */}
           {relatedReads.length > 0 && (
             <section className="mt-14">
-              <h2 className="text-xl font-black tracking-tight">{hub.h1}</h2>
+              <h2 className="text-xl font-display font-normal tracking-[-0.01em]">{hub.h1}</h2>
               <div className="mt-5 grid sm:grid-cols-3 gap-4">
                 {relatedReads.map((r) => (
                   <Link
                     key={r.href}
                     href={r.href}
-                    className="rounded-2xl border border-black/[0.08] bg-white p-5 text-sm font-semibold leading-6 text-[#0A0A0F] hover:border-[#5B3FD9]/40 hover:text-[#5B3FD9] transition-colors"
+                    className="rounded-2xl border border-neutral-200 bg-white p-5 text-sm font-semibold leading-6 text-neutral-900 hover:border-neutral-900 hover:text-[#5B3FD9] transition-colors"
                   >
                     {r.label}
                   </Link>
@@ -229,8 +231,8 @@ export default async function BlogPostPage({ params }: Props) {
             </section>
           )}
 
-          <section className="mt-16 rounded-3xl bg-[#F7F7FB] border border-black/[0.05] p-8 text-center">
-            <h2 className="text-2xl font-black tracking-tight">{c.ctaTitle}</h2>
+          <section className="mt-16 rounded-2xl bg-neutral-50 border border-neutral-200 p-8 text-center">
+            <h2 className="text-2xl font-display font-normal tracking-[-0.01em]">{c.ctaTitle}</h2>
             <p className="mt-2 text-neutral-700">{c.ctaSub}</p>
           </section>
         </div>

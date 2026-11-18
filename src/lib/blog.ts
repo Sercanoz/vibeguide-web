@@ -7806,7 +7806,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     "slug": "turkey-visa-entry-requirements",
     "category": "practical",
-    "heroImage": "https://images.unsplash.com/photo-1589561253898-768105ca91a8?q=80&w=1600",
+    "heroImage": "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80&w=1600",
     "publishDate": "2026-08-04",
     "relatedCityGuides": [
       "istanbul-tour-guide"
@@ -10912,7 +10912,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     "slug": "ephesus-day-trip-from-kusadasi",
     "category": "guides",
-    "heroImage": "https://images.unsplash.com/photo-1589553416260-f586c8f1514f?q=80&w=1600",
+    "heroImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/TR.IZ.Selcuk_Ephesus_Celsus-Library_32_3x2-R_5K.jpg/1920px-TR.IZ.Selcuk_Ephesus_Celsus-Library_32_3x2-R_5K.jpg",
     "publishDate": "2026-08-04",
     "relatedCityGuides": [
       "kusadasi-tour-guide",

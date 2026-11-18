@@ -5,6 +5,8 @@ import { useT } from "./LanguageProvider";
 import { useCurrency } from "./CurrencyProvider";
 import { localeMeta, locales, type Locale } from "@/lib/i18n";
 import { CURRENCIES, currencyInfo } from "@/lib/currency";
+import { usePathname, useRouter } from "next/navigation";
+import { localizedContentPath } from "@/lib/localized-path";
 
 // Navbar'da dil + para birimi tek butonda (Airbnb/GYG tarzı): "🌐 EN · €".
 // Panel iki bölüm: dil ızgarası + para birimi ızgarası. Ayrı LanguageSwitcher /
@@ -13,6 +15,17 @@ export default function LocaleCurrencyMenu() {
   const { locale, setLocale } = useT();
   const { currency, setCurrency } = useCurrency();
   const [open, setOpen] = useState(false);
+  const pathname = usePathname() ?? "/";
+  const router = useRouter();
+
+  // Dil değişince, içeriği URL diline bağlı sayfadaysak (şehir/blog/gezilecek yer)
+  // aynı sayfanın yeni dil sürümüne geç — menü ile içerik aynı dilde kalsın.
+  function chooseLocale(l: Locale) {
+    setLocale(l);
+    setOpen(false);
+    const next = localizedContentPath(pathname, l);
+    if (next && next !== pathname) router.push(next);
+  }
   const ref = useRef<HTMLDivElement>(null);
   const cur = currencyInfo(currency) ?? CURRENCIES[0];
   const tr = locale === "tr";
@@ -67,7 +80,7 @@ export default function LocaleCurrencyMenu() {
               <button
                 key={l}
                 type="button"
-                onClick={() => { setLocale(l); setOpen(false); }}
+                onClick={() => chooseLocale(l)}
                 className={item(l === locale)}
               >
                 <span className="truncate">{localeMeta[l].label}</span>
