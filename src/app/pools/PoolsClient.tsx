@@ -7,6 +7,7 @@ import { fbAuth, buildAuthHeaders } from "@/lib/firebase-client";
 import Navbar from "@/components/Navbar";
 import MainFooter from "@/components/MainFooter";
 import Price from "@/components/Price";
+import { useT } from "@/components/LanguageProvider";
 
 /** Backend PoolToDto ile aynı alanlar. */
 interface Pool {
@@ -33,10 +34,36 @@ interface PoolRow {
   lng?: number | null;
 }
 
-function fmtDate(iso: string): string {
+// Metinler EN + TR; diğer diller EN'e düşer.
+const L: Record<string, {
+  title: string; intro: string; loadError: string; signInTitle: string; signInSub: string; signIn: string;
+  emptyTitle: string; emptySub: string; browse: string; joined: (n: number, max: number) => string;
+  closed: string; spotsLeft: (n: number) => string; perPersonNow: string; asLowAs: string;
+}> = {
+  en: {
+    title: "Group tours",
+    intro: "Join an open group and share the cost. The more travellers join, the less each person pays. Payment is collected once the group is complete and the final price is set.",
+    loadError: "Could not load group tours. Please try again.",
+    signInTitle: "Sign in to see open groups", signInSub: "Group tours are available to registered travellers.", signIn: "Sign in",
+    emptyTitle: "No open groups right now", emptySub: "Browse tours and start your own group — others can join you.", browse: "Browse tours",
+    joined: (n, max) => `${n}/${max} joined`, closed: "Closed — payment in progress",
+    spotsLeft: (n) => `${n} spot${n === 1 ? "" : "s"} left`, perPersonNow: "per person now", asLowAs: "as low as",
+  },
+  tr: {
+    title: "Grup turları",
+    intro: "Açık bir gruba katıl, maliyeti paylaş. Katılan gezgin arttıkça kişi başı fiyat düşer. Ödeme, grup tamamlanıp son fiyat belli olunca alınır.",
+    loadError: "Grup turları yüklenemedi. Lütfen tekrar dene.",
+    signInTitle: "Açık grupları görmek için giriş yap", signInSub: "Grup turları kayıtlı gezginlere açıktır.", signIn: "Giriş yap",
+    emptyTitle: "Şu an açık grup yok", emptySub: "Turlara göz at ve kendi grubunu başlat — başkaları da katılabilir.", browse: "Turlara göz at",
+    joined: (n, max) => `${n}/${max} katıldı`, closed: "Kapandı — ödeme sürüyor",
+    spotsLeft: (n) => `${n} yer kaldı`, perPersonNow: "şu an kişi başı", asLowAs: "en düşük",
+  },
+};
+
+function fmtDate(iso: string, locale: string): string {
   const d = new Date(iso);
   if (isNaN(d.getTime())) return "";
-  return d.toLocaleString("en-GB", {
+  return d.toLocaleString(locale === "tr" ? "tr-TR" : "en-GB", {
     day: "numeric",
     month: "short",
     hour: "2-digit",
@@ -45,9 +72,11 @@ function fmtDate(iso: string): string {
 }
 
 export default function PoolsClient() {
+  const { locale } = useT();
+  const l = L[locale] ?? L.en;
   const [pools, setPools] = useState<Pool[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState(false);
   // null = Firebase oturumu henüz çözülmedi.
   const [signedIn, setSignedIn] = useState<boolean | null>(null);
 
@@ -62,6 +91,7 @@ export default function PoolsClient() {
     // çözülene kadar bekle; giriş yoksa istek atma, giriş daveti göster.
     if (signedIn === null) return;
     if (!signedIn) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- oturum yok: yükleme göstergesini kapat (istek atılmaz)
       setLoading(false);
       return;
     }
@@ -79,7 +109,7 @@ export default function PoolsClient() {
         );
         setPools(list.filter(Boolean));
       } catch {
-        if (!cancelled) setError("Could not load group tours. Please try again.");
+        if (!cancelled) setError(true);
       } finally {
         if (!cancelled) setLoading(false);
       }
@@ -89,68 +119,40 @@ export default function PoolsClient() {
     };
   }, [signedIn]);
 
+  const emptyBox = "mt-10 rounded-2xl border border-dashed border-neutral-300 px-6 py-12 text-center";
+  const primary = "mt-5 inline-flex h-11 items-center rounded-full bg-[#5B3FD9] px-6 text-sm font-semibold text-white hover:bg-[#4A32B8]";
+
   return (
-    <main className="min-h-screen bg-[#FAFAFB]">
+    <main className="min-h-screen bg-white text-neutral-900 antialiased">
       <Navbar />
-      <div className="pt-24 pb-16 px-4">
+      <div className="px-4 pb-20 pt-24 md:px-6 md:pt-28">
         <div className="mx-auto max-w-4xl">
-          <h1 className="text-3xl md:text-4xl font-display font-normal tracking-[-0.01em] text-[#0A0A0F]">
-            Group tours
-          </h1>
-          <p className="mt-2 text-neutral-600 leading-7 max-w-2xl">
-            Join an open group and share the cost. The more travellers join, the
-            less each person pays. Payment is collected once the group is
-            complete and the final price is set.
-          </p>
+          <h1 className="font-display text-4xl font-normal tracking-[-0.01em] md:text-5xl">{l.title}</h1>
+          <p className="mt-3 max-w-2xl leading-7 text-neutral-600">{l.intro}</p>
 
           {loading && (
-            <div className="mt-10 space-y-3">
-              {[0, 1, 2].map((i) => (
-                <div
-                  key={i}
-                  className="h-28 rounded-2xl bg-white border border-black/[0.06] animate-pulse"
-                />
-              ))}
+            <div className="mt-10 space-y-3" aria-busy="true">
+              {[0, 1, 2].map((i) => <div key={i} className="h-28 animate-pulse rounded-2xl bg-neutral-100" />)}
             </div>
           )}
 
           {error && (
-            <div className="mt-10 rounded-2xl border border-red-100 bg-red-50 p-5 text-sm text-red-700">
-              {error}
-            </div>
+            <div role="alert" className="mt-10 rounded-xl border border-red-200 bg-red-50 px-5 py-4 text-sm text-red-700">{l.loadError}</div>
           )}
 
           {!loading && signedIn === false && (
-            <div className="mt-10 rounded-3xl border border-black/[0.06] bg-white p-10 text-center">
-              <p className="text-base font-black text-[#0A0A0F]">
-                Sign in to see open groups
-              </p>
-              <p className="mt-1 text-sm text-neutral-600">
-                Group tours are available to registered travellers.
-              </p>
-              <Link
-                href={`/login?next=${encodeURIComponent("/pools")}`}
-                className="mt-5 inline-flex rounded-2xl bg-[#5B3FD9] px-6 py-3 text-sm font-bold text-white hover:bg-[#4A32B8] transition-colors"
-              >
-                Sign in →
-              </Link>
+            <div className={emptyBox}>
+              <p className="font-semibold">{l.signInTitle}</p>
+              <p className="mt-1 text-sm text-neutral-600">{l.signInSub}</p>
+              <Link href={`/login?next=${encodeURIComponent("/pools")}`} className={primary}>{l.signIn}</Link>
             </div>
           )}
 
           {!loading && signedIn && !error && pools.length === 0 && (
-            <div className="mt-10 rounded-3xl border border-black/[0.06] bg-white p-10 text-center">
-              <p className="text-base font-black text-[#0A0A0F]">
-                No open groups right now
-              </p>
-              <p className="mt-1 text-sm text-neutral-600">
-                Browse tours and start your own group — others can join you.
-              </p>
-              <Link
-                href="/tours"
-                className="mt-5 inline-flex rounded-2xl bg-[#5B3FD9] px-6 py-3 text-sm font-bold text-white hover:bg-[#4A32B8] transition-colors"
-              >
-                Browse tours →
-              </Link>
+            <div className={emptyBox}>
+              <p className="font-semibold">{l.emptyTitle}</p>
+              <p className="mt-1 text-sm text-neutral-600">{l.emptySub}</p>
+              <Link href="/tours" className={primary}>{l.browse}</Link>
             </div>
           )}
 
@@ -159,52 +161,33 @@ export default function PoolsClient() {
               const spotsLeft = Math.max(0, p.maxParticipants - p.currentParticipants);
               const locked = p.status === "locked";
               return (
-                <Link
-                  key={p.id}
-                  href={`/pools/${p.id}`}
-                  className="block rounded-2xl border border-black/[0.06] bg-white p-5 hover:border-[#5B3FD9]/40 transition-colors"
-                >
+                <Link key={p.id} href={`/pools/${p.id}`}
+                  className="block rounded-2xl border border-neutral-200 p-5 transition-colors hover:border-neutral-900">
                   <div className="flex items-start justify-between gap-4">
                     <div className="min-w-0">
-                      <p className="font-black text-[#0A0A0F] truncate">
-                        {p.tourTitle}
-                      </p>
-                      <p className="mt-1 text-xs text-neutral-600">
-                        {fmtDate(p.scheduledAt)}
+                      <p className="truncate font-semibold">{p.tourTitle}</p>
+                      <p className="mt-1 text-sm text-neutral-600">
+                        {fmtDate(p.scheduledAt, locale)}
                         {p.guideName ? ` · ${p.guideName}` : ""}
                         {p.language ? ` · ${p.language.toUpperCase()}` : ""}
                       </p>
-                      <p className="mt-2 text-xs text-neutral-600">
-                        {p.currentParticipants}/{p.maxParticipants} joined
+                      <p className="mt-2 flex flex-wrap items-center gap-2 text-sm text-neutral-600">
+                        {l.joined(p.currentParticipants, p.maxParticipants)}
                         {locked ? (
-                          <span className="ml-2 rounded-full bg-amber-100 px-2 py-0.5 font-bold text-amber-700">
-                            Closed — payment in progress
-                          </span>
+                          <span className="rounded-md bg-amber-100 px-2 py-0.5 text-xs font-semibold text-amber-800">{l.closed}</span>
                         ) : spotsLeft <= 2 ? (
-                          <span className="ml-2 rounded-full bg-[#5B3FD9]/10 px-2 py-0.5 font-bold text-[#5B3FD9]">
-                            {spotsLeft} spot{spotsLeft === 1 ? "" : "s"} left
-                          </span>
+                          <span className="rounded-md bg-neutral-900 px-2 py-0.5 text-xs font-semibold text-white">{l.spotsLeft(spotsLeft)}</span>
                         ) : null}
                       </p>
                     </div>
                     <div className="shrink-0 text-right">
-                      <p className="text-lg font-black text-[#5B3FD9]">
-                        <Price
-                          amount={p.currentPricePerPerson}
-                          currency={p.currency}
-                        />
-                      </p>
-                      <p className="text-[11px] text-neutral-500">per person now</p>
-                      {p.bestPricePerPerson > 0 &&
-                        p.bestPricePerPerson < p.currentPricePerPerson && (
-                          <p className="mt-1 text-[11px] text-emerald-600 font-semibold">
-                            as low as{" "}
-                            <Price
-                              amount={p.bestPricePerPerson}
-                              currency={p.currency}
-                            />
-                          </p>
-                        )}
+                      <p className="text-lg font-semibold"><Price amount={p.currentPricePerPerson} currency={p.currency} /></p>
+                      <p className="text-xs text-neutral-500">{l.perPersonNow}</p>
+                      {p.bestPricePerPerson > 0 && p.bestPricePerPerson < p.currentPricePerPerson && (
+                        <p className="mt-1 text-xs font-semibold text-emerald-700">
+                          {l.asLowAs} <Price amount={p.bestPricePerPerson} currency={p.currency} />
+                        </p>
+                      )}
                     </div>
                   </div>
                 </Link>

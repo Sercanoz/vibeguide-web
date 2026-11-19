@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { registerWithEmail, signInWithEmail, signInWithGoogle, fbAuth, buildAuthHeaders } from "@/lib/firebase-client";
@@ -219,13 +220,13 @@ export default function RegisterGuidePage() {
             Your guide application is under review. Our team will verify your badge and approve your account within <strong className="text-[#0A0A0F]">1–2 business days</strong>.
           </p>
           <p className="mt-2 text-sm text-neutral-800">We&apos;ll email you at <strong className="text-[#0A0A0F]">{email}</strong> once approved.</p>
-          <a
+          <Link
             href="/"
             className="mt-8 inline-block rounded-2xl bg-[#5B3FD9] text-white font-bold py-3 px-8 text-sm hover:bg-[#4A32B8] transition-colors"
             style={{ boxShadow: "0 4px 16px rgba(91,63,217,0.25)" }}
           >
             Back to homepage
-          </a>
+          </Link>
         </div>
       </main>
     );
@@ -275,11 +276,11 @@ export default function RegisterGuidePage() {
 
       <div className="relative w-full max-w-md">
         <div className="text-center mb-8">
-          <a href="/" className="inline-flex items-center gap-2.5 text-xl font-black text-[#0A0A0F]">
+          <Link href="/" className="inline-flex items-center gap-2.5 text-xl font-black text-[#0A0A0F]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/vibeguide-icon.png" alt="VibeGuide" width={32} height={32} style={{ mixBlendMode: "multiply" }} />
             VibeGuide
-          </a>
+          </Link>
           <p className="mt-6 text-3xl font-black text-[#0A0A0F]">Apply as a guide</p>
           <p className="mt-1 text-sm text-neutral-800">Your application will be reviewed within 1–2 days</p>
         </div>
@@ -380,10 +381,10 @@ export default function RegisterGuidePage() {
               />
               <span>
                 I agree to the{" "}
-                <a href="/terms" target="_blank" className="text-[#5B3FD9] font-semibold hover:underline">Terms</a>,{" "}
-                <a href="/privacy" target="_blank" className="text-[#5B3FD9] font-semibold hover:underline">Privacy Policy</a>{" "}
+                <Link href="/terms" target="_blank" className="text-[#5B3FD9] font-semibold hover:underline">Terms</Link>,{" "}
+                <Link href="/privacy" target="_blank" className="text-[#5B3FD9] font-semibold hover:underline">Privacy Policy</Link>{" "}
                 and{" "}
-                <a href="/kvkk" target="_blank" className="text-[#5B3FD9] font-semibold hover:underline">KVKK notice</a>, including the processing of my verification documents.
+                <Link href="/kvkk" target="_blank" className="text-[#5B3FD9] font-semibold hover:underline">KVKK notice</Link>, including the processing of my verification documents.
               </span>
             </label>
 
@@ -403,7 +404,7 @@ export default function RegisterGuidePage() {
 
         <p className="mt-5 text-center text-sm text-neutral-800">
           Already have an account?{" "}
-          <a href="/login" className="text-[#5B3FD9] font-bold hover:underline">Sign in</a>
+          <Link href="/login" className="text-[#5B3FD9] font-bold hover:underline">Sign in</Link>
         </p>
       </div>
     </main>

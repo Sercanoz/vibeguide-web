@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { fbAuth, buildAuthHeaders } from "@/lib/firebase-client";
 import { API_BASE_URL } from "@/lib/api";
@@ -43,11 +44,11 @@ export default function GuidePendingPage() {
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-amber-500/5 to-transparent rounded-full blur-[80px] pointer-events-none" />
 
       <div className="relative w-full max-w-md text-center">
-        <a href="/" className="inline-flex items-center gap-2.5 text-xl font-black text-[#0A0A0F] mb-10">
+        <Link href="/" className="inline-flex items-center gap-2.5 text-xl font-black text-[#0A0A0F] mb-10">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/vibeguide-icon.png" alt="VibeGuide" width={32} height={32} style={{ mixBlendMode: "multiply" }} />
           VibeGuide
-        </a>
+        </Link>
 
         <div className="bg-white border border-black/[0.06] rounded-3xl p-10 shadow-sm">
           {/* Icon */}
@@ -105,9 +106,9 @@ export default function GuidePendingPage() {
               </svg>
               Contact support
             </a>
-            <a href="/" className="text-xs text-neutral-800 hover:text-black transition-colors">
+            <Link href="/" className="text-xs text-neutral-800 hover:text-black transition-colors">
               ← Back to homepage
-            </a>
+            </Link>
           </div>
         </div>
       </div>

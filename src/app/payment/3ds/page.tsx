@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 /**
@@ -32,6 +33,7 @@ export default function ThreeDsPage() {
     }
 
     if (!raw) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- sessionStorage yalnız istemcide okunabilir
       setMissing(true);
       return;
     }
@@ -62,12 +64,12 @@ export default function ThreeDsPage() {
           <p className="text-gray-400 mb-6">
             Please return to your booking and start the payment again.
           </p>
-          <a
+          <Link
             href="/profile"
             className="inline-block rounded-full bg-[#5B3FD9] px-6 py-3 font-semibold text-white"
           >
             Back to my bookings
-          </a>
+          </Link>
         </div>
       </main>
     );

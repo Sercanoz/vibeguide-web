@@ -32,6 +32,7 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
     } catch {
       /* noop */
     }
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- tarayıcı deposundan ilk okuma; SSR'da yok, hydration sonrası senkron
     setCurrencyState(saved || detectCurrency());
     loadRates().then((r) => setRates(r));
   }, []);

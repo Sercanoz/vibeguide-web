@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { use, useEffect, useState } from "react";
 import { clientFetch } from "@/lib/api";
 // (review submission page)
@@ -63,10 +64,10 @@ export default function TourReviewPage(props: Props) {
           <p className="mt-2 text-sm text-neutral-800 leading-6">
             Your review has been submitted and will appear once approved. We appreciate you sharing your experience!
           </p>
-          <a href={`/tours/${tourId}`} className="mt-8 inline-flex items-center gap-2 rounded-2xl bg-[#5B3FD9] text-white font-bold px-7 py-3 text-sm hover:bg-[#4A32B8] transition-colors"
+          <Link href={`/tours/${tourId}`} className="mt-8 inline-flex items-center gap-2 rounded-2xl bg-[#5B3FD9] text-white font-bold px-7 py-3 text-sm hover:bg-[#4A32B8] transition-colors"
             style={{ boxShadow: "0 4px 16px rgba(91,63,217,0.25)" }}>
             View this tour →
-          </a>
+          </Link>
         </div>
       </main>
     );
@@ -77,11 +78,11 @@ export default function TourReviewPage(props: Props) {
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-6">
-          <a href="/" className="inline-flex items-center gap-2.5 text-lg font-black text-[#0A0A0F]">
+          <Link href="/" className="inline-flex items-center gap-2.5 text-lg font-black text-[#0A0A0F]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/vibeguide-icon.png" alt="VibeGuide" width={28} height={28} style={{ mixBlendMode: "multiply" }} />
             VibeGuide
-          </a>
+          </Link>
         </div>
 
         <div className="bg-white rounded-3xl border border-black/[0.06] shadow-sm overflow-hidden">

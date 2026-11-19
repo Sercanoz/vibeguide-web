@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { registerWithEmail, signInWithGoogle, fbAuth, buildAuthHeaders } from "@/lib/firebase-client";
@@ -156,11 +157,11 @@ export default function RegisterTouristPage() {
 
       <div className="relative w-full max-w-md">
         <div className="text-center mb-8">
-          <a href="/" className="inline-flex items-center gap-2.5 text-xl font-black text-[#0A0A0F]">
+          <Link href="/" className="inline-flex items-center gap-2.5 text-xl font-black text-[#0A0A0F]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/vibeguide-icon.png" alt="VibeGuide" width={32} height={32} style={{ mixBlendMode: "multiply" }} />
             VibeGuide
-          </a>
+          </Link>
           <p className="mt-6 text-3xl font-black text-[#0A0A0F]">Join as a tourist</p>
           <p className="mt-1 text-sm text-neutral-800">Start exploring with local guides</p>
         </div>
@@ -234,10 +235,10 @@ export default function RegisterTouristPage() {
               />
               <span>
                 I agree to the{" "}
-                <a href="/terms" target="_blank" className="text-[#5B3FD9] font-semibold hover:underline">Terms</a>,{" "}
-                <a href="/privacy" target="_blank" className="text-[#5B3FD9] font-semibold hover:underline">Privacy Policy</a>{" "}
+                <Link href="/terms" target="_blank" className="text-[#5B3FD9] font-semibold hover:underline">Terms</Link>,{" "}
+                <Link href="/privacy" target="_blank" className="text-[#5B3FD9] font-semibold hover:underline">Privacy Policy</Link>{" "}
                 and{" "}
-                <a href="/kvkk" target="_blank" className="text-[#5B3FD9] font-semibold hover:underline">KVKK notice</a>.
+                <Link href="/kvkk" target="_blank" className="text-[#5B3FD9] font-semibold hover:underline">KVKK notice</Link>.
               </span>
             </label>
 
@@ -259,7 +260,7 @@ export default function RegisterTouristPage() {
 
         <p className="mt-5 text-center text-sm text-neutral-800">
           Already have an account?{" "}
-          <a href="/login" className="text-[#5B3FD9] font-bold hover:underline">Sign in</a>
+          <Link href="/login" className="text-[#5B3FD9] font-bold hover:underline">Sign in</Link>
         </p>
       </div>
     </main>

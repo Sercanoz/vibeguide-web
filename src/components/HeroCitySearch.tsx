@@ -108,6 +108,7 @@ export default function HeroCitySearch({ onDark = false }: { onDark?: boolean } 
   useEffect(() => {
     try {
       const raw = localStorage.getItem(RECENT_KEY);
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- tarayıcı deposundan ilk okuma; SSR'da yok, hydration sonrası senkron
       if (raw) setRecent(JSON.parse(raw) as Destination);
     } catch {
       /* noop */

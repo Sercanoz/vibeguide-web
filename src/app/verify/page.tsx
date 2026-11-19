@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { fbAuth, buildAuthHeaders } from "@/lib/firebase-client";
@@ -13,6 +14,7 @@ function VerifyInner() {
 
   useEffect(() => {
     const token = params.get("token");
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- URL parametresi eksik: tek seferlik hata durumu
     if (!token) { setState("error"); return; }
 
     (async () => {
@@ -56,11 +58,11 @@ function VerifyInner() {
     <main className="min-h-screen bg-white flex items-center justify-center px-4">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-emerald-500/6 to-transparent rounded-full blur-[80px] pointer-events-none" />
       <div className="relative w-full max-w-md text-center">
-        <a href="/" className="inline-flex items-center gap-2.5 text-xl font-black text-[#0A0A0F] mb-10">
+        <Link href="/" className="inline-flex items-center gap-2.5 text-xl font-black text-[#0A0A0F] mb-10">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/vibeguide-icon.png" alt="VibeGuide" width={32} height={32} style={{ mixBlendMode: "multiply" }} />
           VibeGuide
-        </a>
+        </Link>
 
         <div className="bg-white border border-black/[0.06] rounded-3xl p-10 shadow-sm">
           {state === "working" ? (
@@ -80,9 +82,9 @@ function VerifyInner() {
               <p className="mt-2 text-sm text-neutral-800 leading-6">
                 This verification link is no longer valid. Please sign in and request a new one.
               </p>
-              <a href="/" className="mt-8 inline-flex items-center gap-2 rounded-2xl bg-[#5B3FD9] text-white font-bold px-7 py-3 text-sm hover:bg-[#4A32B8] transition-colors">
+              <Link href="/" className="mt-8 inline-flex items-center gap-2 rounded-2xl bg-[#5B3FD9] text-white font-bold px-7 py-3 text-sm hover:bg-[#4A32B8] transition-colors">
                 Back to VibeGuide →
-              </a>
+              </Link>
             </>
           ) : (
             <>
@@ -96,10 +98,10 @@ function VerifyInner() {
               <p className="mt-2 text-sm text-neutral-800 leading-6">
                 Your email is confirmed and your account is ready. Sign in to start exploring with local guides.
               </p>
-              <a href="/" className="mt-8 inline-flex items-center gap-2 rounded-2xl bg-[#5B3FD9] text-white font-bold px-7 py-3 text-sm hover:bg-[#4A32B8] transition-colors"
+              <Link href="/" className="mt-8 inline-flex items-center gap-2 rounded-2xl bg-[#5B3FD9] text-white font-bold px-7 py-3 text-sm hover:bg-[#4A32B8] transition-colors"
                 style={{ boxShadow: "0 4px 16px rgba(91,63,217,0.25)" }}>
                 Continue to VibeGuide →
-              </a>
+              </Link>
             </>
           )}
         </div>

@@ -33,6 +33,7 @@ export function LanguageProvider({
       (l): l is Locale => !!l && (locales as readonly string[]).includes(l)
     );
     if (pick && pick !== locale) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- tarayıcı deposundan ilk okuma; SSR'da yok, hydration sonrası senkron
       setLocaleState(pick);
       document.documentElement.lang = pick;
     }

@@ -23,7 +23,7 @@ export default function TripView({
 
   const [state, setState] = useState<InitialState>(initial);
   const [refreshing, setRefreshing] = useState(false);
-  const lastFetchRef = useRef<number>(Date.now());
+  const lastFetchRef = useRef<number>(0); // ilk fetch zamanı effect'te yazılır (render saf kalsın)
 
   // Poll active tours every 10s
   useEffect(() => {

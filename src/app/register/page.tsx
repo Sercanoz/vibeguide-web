@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useRedirectIfAuthed } from "@/hooks/useRedirectIfAuthed";
 
 export default function RegisterChoicePage() {
@@ -18,18 +19,18 @@ export default function RegisterChoicePage() {
       <div className="relative w-full max-w-lg">
         {/* Logo */}
         <div className="text-center mb-10">
-          <a href="/" className="inline-flex items-center gap-2.5 text-xl font-black text-[#0A0A0F]">
+          <Link href="/" className="inline-flex items-center gap-2.5 text-xl font-black text-[#0A0A0F]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/vibeguide-icon.png" alt="VibeGuide" width={32} height={32} style={{ mixBlendMode: "multiply" }} />
             VibeGuide
-          </a>
+          </Link>
           <p className="mt-6 text-3xl font-black text-[#0A0A0F]">Create your account</p>
           <p className="mt-1 text-sm text-neutral-800">How would you like to use VibeGuide?</p>
         </div>
 
         <div className="grid sm:grid-cols-2 gap-4">
           {/* Tourist */}
-          <a
+          <Link
             href="/register/tourist"
             className="group flex flex-col items-start gap-4 p-7 rounded-3xl border-2 border-black/[0.06] bg-white hover:border-[#5B3FD9]/40 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
           >
@@ -48,10 +49,10 @@ export default function RegisterChoicePage() {
               Get started
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </span>
-          </a>
+          </Link>
 
           {/* Guide */}
-          <a
+          <Link
             href="/register/guide"
             className="group flex flex-col items-start gap-4 p-7 rounded-3xl border-2 border-black/[0.06] bg-white hover:border-[#10B981]/40 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
           >
@@ -71,12 +72,12 @@ export default function RegisterChoicePage() {
               Apply now
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </span>
-          </a>
+          </Link>
         </div>
 
         <p className="mt-6 text-center text-sm text-neutral-800">
           Already have an account?{" "}
-          <a href="/login" className="text-[#5B3FD9] font-bold hover:underline">Sign in</a>
+          <Link href="/login" className="text-[#5B3FD9] font-bold hover:underline">Sign in</Link>
         </p>
       </div>
     </main>

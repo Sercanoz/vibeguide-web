@@ -15,6 +15,7 @@ export default function ShareButton({ url, title, variant = "button" }: Props) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- window.location yalnız istemcide; SSR'da boş başlar
     if (!url && typeof window !== "undefined") setShareUrl(window.location.href);
   }, [url]);
 

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { signInWithEmail, signInWithGoogle, fbAuth, buildAuthHeaders } from "@/lib/firebase-client";
@@ -125,11 +126,11 @@ function LoginInner() {
       <div className="relative w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
-          <a href="/" className="inline-flex items-center gap-2.5 text-xl font-black text-[#0A0A0F]">
+          <Link href="/" className="inline-flex items-center gap-2.5 text-xl font-black text-[#0A0A0F]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/vibeguide-icon.png" alt="VibeGuide" width={32} height={32} style={{ mixBlendMode: "multiply" }} />
             VibeGuide
-          </a>
+          </Link>
           <p className="mt-6 text-3xl font-black text-[#0A0A0F]">Welcome back</p>
           <p className="mt-1 text-sm text-neutral-800">Sign in to continue your adventure</p>
         </div>
@@ -207,7 +208,7 @@ function LoginInner() {
 
         <p className="mt-5 text-center text-sm text-neutral-800">
           Don&apos;t have an account?{" "}
-          <a href="/register" className="text-[#5B3FD9] font-bold hover:underline">Create account</a>
+          <Link href="/register" className="text-[#5B3FD9] font-bold hover:underline">Create account</Link>
         </p>
       </div>
     </main>

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { useT } from "./LanguageProvider";
 import { clientFetch } from "@/lib/api";
@@ -118,10 +119,10 @@ export default function EmailCaptureModal() {
                   className="flex-1 rounded-2xl border border-black/10 py-2.5 text-sm font-bold text-[#0A0A0F] hover:bg-neutral-50 transition-colors">
                   {copied ? ec.copied : ec.copyCode}
                 </button>
-                <a href="/tours" onClick={dismiss}
+                <Link href="/tours" onClick={dismiss}
                   className="flex-1 rounded-2xl bg-[#5B3FD9] text-white py-2.5 text-sm font-bold hover:bg-[#4A32B8] transition-colors text-center">
                   {ec.browseTours}
-                </a>
+                </Link>
               </div>
             </div>
           ) : (

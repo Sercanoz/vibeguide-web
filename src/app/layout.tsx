@@ -114,6 +114,7 @@ export default function RootLayout({
         <JsonLd />
         {/* gtag consent+init + auth-flash: statik dosya, script-src 'self' ile izinli.
             Blocking (head, async değil) → auth-flash paint öncesi çalışır. */}
+        {/* eslint-disable-next-line @next/next/no-sync-scripts -- bilerek blocking: consent + auth-flash paint öncesi */}
         <script src="/vg-init.js" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-SH98TTW4KS" />
       </head>
