@@ -12,7 +12,7 @@ const AuthModal = dynamic(() => import("./AuthModal"), { ssr: false });
 
 // Mobil alt sekme çubuğu (md altı). Kendi alt çubuğu/akışı olan sayfalarda gizli:
 // tur detayı + rezervasyon adımları, ödeme, admin, giriş/kayıt/doğrulama ekranları.
-const HIDDEN = [/^\/tours\/[^/]+/, /^\/admin/, /^\/payment/, /^\/auth/, /^\/login/, /^\/register/, /^\/verif/, /^\/guide\//, /^\/trip/];
+const HIDDEN = [/^\/tours\/[^/]+/, /^\/admin/, /^\/payment/, /^\/auth/, /^\/login/, /^\/register/, /^\/verif/, /^\/guide\//, /^\/trip/, /^\/messages/];
 
 const L: Record<string, { explore: string; tours: string; groups: string; profile: string; signIn: string; nav: string }> = {
   en: { explore: "Explore", tours: "Tours", groups: "Groups", profile: "Profile", signIn: "Sign in", nav: "Main" },

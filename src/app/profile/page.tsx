@@ -59,7 +59,7 @@ const st = (b: { status: string }) => (b.status ?? "").toLowerCase();
 
 const PT = {
   en: {
-    status: { pending: "Awaiting guide", confirmed: "Accepted · pay now", paid: "Paid", in_progress: "In progress", completed: "Completed", review_pending: "Completed", cancelled: "Cancelled", refunded: "Refunded", rejected: "Declined" } as Record<string, string>,
+    status: { pending: "Awaiting guide", confirmed: "Awaiting payment", paid: "Paid", in_progress: "In progress", completed: "Completed", review_pending: "Completed", cancelled: "Cancelled", refunded: "Refunded", rejected: "Declined" } as Record<string, string>,
     roles: { Tourist: "Traveler", Guide: "Verified guide", PendingGuide: "Guide (pending)" } as Record<string, string>,
     sessionExpired: "Your session has expired. Please sign in again.", loadErrorCode: "Could not load your profile (error {n}). Please try again.", loadError: "Could not load your profile. Please try again.",
     unavailable: "Profile unavailable", tryAgain: "Try again", signInAgain: "Sign in again", memberSince: "Member since", guidesIn: "Guides in:",
@@ -67,7 +67,7 @@ const PT = {
     earnings: "Earnings", thisWeek: "This week", pendingTotal: "Pending total", lifetime: "Lifetime", nextPayout: "Next payout:",
     requests: "Reservation requests", requestsSub: "Travelers waiting for your response.", accept: "Accept", decline: "Decline",
     active: "Active bookings", pay: "Pay now", cancel: "Cancel", cancelQ: "Cancel reservation?", refund: "Refund:", noCancel: "This reservation can no longer be cancelled.", keep: "Keep it", cancelBtn: "Cancel reservation",
-    past: "Past tours", total: "total", noTours: "No tours yet", noToursSub: "Find a tour and book a licensed local guide.", browse: "Browse tours",
+    past: "Past tours", total: "total", noTours: "No tours yet", noToursSub: "Find a tour and book a licensed local guide.", browse: "Browse tours", favorites: "Favorites", favoritesSub: "Tours you saved", messages: "Messages", messagesSub: "Your guide and support conversations",
     guide: "Guide", bookings: "Bookings", browseSub: "Find and book a local guide", vibenowSub: "Match with a guide right now", squadSub: "Join a group tour",
     settings: "Settings", account: "Account", accountSub: "Manage or delete your account", security: "Security", securitySub: "How we protect your data",
     support: "Support", help: "Help center", helpSub: "Answers to common questions", contact: "Contact us", contactSub: "Get in touch with our team", how: "How it works", howSub: "Booking, meeting and payment",
@@ -75,7 +75,7 @@ const PT = {
     appTitle: "Get the full experience", appSub: "Real-time guide matching, live tracking, in-app chat and more — only in the app.", download: "Download",
   },
   tr: {
-    status: { pending: "Rehber onayı bekleniyor", confirmed: "Kabul edildi · öde", paid: "Ödendi", in_progress: "Devam ediyor", completed: "Tamamlandı", review_pending: "Tamamlandı", cancelled: "İptal edildi", refunded: "İade edildi", rejected: "Reddedildi" } as Record<string, string>,
+    status: { pending: "Rehber onayı bekleniyor", confirmed: "Ödeme bekleniyor", paid: "Ödendi", in_progress: "Devam ediyor", completed: "Tamamlandı", review_pending: "Tamamlandı", cancelled: "İptal edildi", refunded: "İade edildi", rejected: "Reddedildi" } as Record<string, string>,
     roles: { Tourist: "Gezgin", Guide: "Doğrulanmış rehber", PendingGuide: "Rehber (onay bekliyor)" } as Record<string, string>,
     sessionExpired: "Oturumunun süresi doldu. Lütfen tekrar giriş yap.", loadErrorCode: "Profilin yüklenemedi (hata {n}). Lütfen tekrar dene.", loadError: "Profilin yüklenemedi. Lütfen tekrar dene.",
     unavailable: "Profil yüklenemedi", tryAgain: "Tekrar dene", signInAgain: "Tekrar giriş yap", memberSince: "Üyelik:", guidesIn: "Rehberlik dilleri:",
@@ -83,7 +83,7 @@ const PT = {
     earnings: "Kazançlar", thisWeek: "Bu hafta", pendingTotal: "Bekleyen toplam", lifetime: "Toplam", nextPayout: "Sonraki ödeme:",
     requests: "Rezervasyon talepleri", requestsSub: "Yanıtını bekleyen gezginler.", accept: "Kabul et", decline: "Reddet",
     active: "Aktif rezervasyonlar", pay: "Şimdi öde", cancel: "İptal", cancelQ: "Rezervasyon iptal edilsin mi?", refund: "İade:", noCancel: "Bu rezervasyon artık iptal edilemez.", keep: "Vazgeç", cancelBtn: "Rezervasyonu iptal et",
-    past: "Geçmiş turlar", total: "toplam", noTours: "Henüz turun yok", noToursSub: "Bir tur bul ve lisanslı yerel rehberle rezervasyon yap.", browse: "Turlara göz at",
+    past: "Geçmiş turlar", total: "toplam", noTours: "Henüz turun yok", noToursSub: "Bir tur bul ve lisanslı yerel rehberle rezervasyon yap.", browse: "Turlara göz at", favorites: "Favorilerim", favoritesSub: "Kaydettiğin turlar", messages: "Mesajlar", messagesSub: "Rehberin ve destekle konuşmaların",
     guide: "Rehber", bookings: "Rezervasyonlar", browseSub: "Yerel rehber bul ve rezervasyon yap", vibenowSub: "Hemen bir rehberle eşleş", squadSub: "Grup turuna katıl",
     settings: "Ayarlar", account: "Hesap", accountSub: "Hesabını yönet ya da sil", security: "Güvenlik", securitySub: "Verilerini nasıl koruyoruz",
     support: "Destek", help: "Yardım merkezi", helpSub: "Sık sorulan sorular", contact: "Bize ulaş", contactSub: "Ekibimizle iletişime geç", how: "Nasıl çalışır", howSub: "Rezervasyon, buluşma ve ödeme",
@@ -632,6 +632,18 @@ export default function ProfilePage() {
                 icon={ico(<><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /></>)}
                 title="VibeSquad"
                 subtitle={p.squadSub}
+              />
+              <MenuTile
+                href="/favorites"
+                icon={ico(<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />)}
+                title={p.favorites}
+                subtitle={p.favoritesSub}
+              />
+              <MenuTile
+                href="/messages"
+                icon={ico(<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />)}
+                title={p.messages}
+                subtitle={p.messagesSub}
               />
             </SectionGroup>
           </div>

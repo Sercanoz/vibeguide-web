@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import path from "node:path";
 
 const securityHeaders = [
   { key: "X-Frame-Options", value: "DENY" },
@@ -18,6 +19,9 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  // Kök klasör açıkça bu proje — üst klasör (D:\Projeler) başka projeleri de
+  // içerdiği için Turbopack'in kök tahminine bırakılmaz.
+  turbopack: { root: path.resolve(__dirname) },
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com" },

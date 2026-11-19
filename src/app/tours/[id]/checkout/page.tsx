@@ -12,6 +12,7 @@ import Navbar from "@/components/Navbar";
 import MainFooter from "@/components/MainFooter";
 import Price from "@/components/Price";
 import CheckoutSteps from "@/components/CheckoutSteps";
+import { track, tourItem } from "@/lib/analytics";
 
 interface PricingTier {
   participantCount: number;
@@ -236,6 +237,8 @@ function CheckoutInner() {
           scheduledAt: new Date(date).toISOString(),
           guestCount: people,
           meetingType: "live",
+          // Yalnız "ödemeyi tamamla" e-postasının dili için (backend kaydetmez).
+          locale,
         }),
       });
       if (!res.ok) {
@@ -245,6 +248,12 @@ function CheckoutInner() {
       }
       const b = await res.json();
       setBookingId(b.id);
+      track("booking_request_sent", {
+        tour_id: tour && typeof tour === "object" ? tour.id : Number(id),
+        currency: tour && typeof tour === "object" ? tour.currency : undefined,
+        value: typeof b.price === "number" ? b.price : undefined,
+        travelers: people,
+      });
       setStatus((b.status as BookingStatus) ?? "pending");
       // Backend authoritative fiyat — turist tam olarak bunu öder.
       if (typeof b.price === "number") setBookingPrice(b.price);
@@ -276,6 +285,15 @@ function CheckoutInner() {
     const phoneDigits = phone.replace(/\D/g, "").replace(/^00/, "");
     if (phoneOnProfile === false && !/^(5\d{9}|\d{8,15})$/.test(phoneDigits)) {
       setNotice(tt.payErrPhone); return;
+    }
+
+    // GA4: ödeme bilgisi girildi. "purchase" 3DS dönüşünde /payment/success'te
+    // gönderilir — tutar orada yok, o yüzden burada sessionStorage'a bırakılır.
+    if (tour && typeof tour === "object") {
+      track("add_payment_info", { currency: tour.currency, value: total, payment_type: "card", items: [tourItem(tour, total)] });
+      try {
+        sessionStorage.setItem("vg_ga_purchase", JSON.stringify({ bookingId, value: total, currency: tour.currency, item: tourItem(tour, total) }));
+      } catch { /* yoksay */ }
     }
 
     setBusy(true);
@@ -556,18 +574,18 @@ function Spinner() {
 
 const CC: Record<string, { estimate: string; noCharge: string; secure: string; how: string[]; trackIn: string; notStored: string }> = {
   en: {
-    estimate: "Final price confirmed with your request",
-    noCharge: "No charge until your guide accepts",
+    estimate: "Final price confirmed when you reserve",
+    noCharge: "Full refund if your guide has to cancel",
     secure: "3D Secure payment · card details are never stored",
-    how: ["We send your request to the guide you chose.", "The guide confirms availability — this page updates automatically.", "You pay securely here and get your confirmation."],
+    how: ["Your chosen guide is reserved for your date.", "Pay securely by card (3D Secure) on this page.", "You get a confirmation with the meeting details."],
     trackIn: "You can also track it in",
     notStored: "Your card details are not stored.",
   },
   tr: {
-    estimate: "Kesin fiyat talep oluşunca netleşir",
-    noCharge: "Rehber kabul edene kadar ücret alınmaz",
+    estimate: "Kesin fiyat rezervasyonda netleşir",
+    noCharge: "Rehber iptal ederse ücretin tamamı iade edilir",
     secure: "3D Secure ödeme · kart bilgisi saklanmaz",
-    how: ["Talebini seçtiğin rehbere iletiriz.", "Rehber müsaitliğini onaylar — bu sayfa kendiliğinden güncellenir.", "Burada güvenle ödersin, onayın gelir."],
+    how: ["Seçtiğin rehber o tarih için sana ayrılır.", "Bu sayfada kartla güvenle ödersin (3D Secure).", "Buluşma bilgilerini içeren onayın gelir."],
     trackIn: "Durumu şuradan da takip edebilirsin:",
     notStored: "Kart bilgileriniz saklanmaz.",
   },

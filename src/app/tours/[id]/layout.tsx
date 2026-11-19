@@ -18,6 +18,23 @@ async function getTour(id: string) {
   }
 }
 
+// Sayfada görünen onaylı yorumlar (ReviewsSection ile aynı kaynak). Google kuralı:
+// yapılandırılmış puan sayfada görünen yorumlarla birebir eşleşmeli.
+type PublicReviews = {
+  count: number;
+  avgRating: number;
+  reviews: { fullName: string; rating: number; comment: string | null; createdAt: string }[];
+};
+async function getReviews(id: string): Promise<PublicReviews | null> {
+  try {
+    const res = await serverFetch(`/api/tours/${id}/public-reviews`, { next: { revalidate: 3600 } });
+    if (!res.ok) return null;
+    return (await res.json()) as PublicReviews;
+  } catch {
+    return null;
+  }
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
   const tour = await getTour(id);
@@ -52,17 +69,13 @@ export default async function TourLayout({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const tour = await getTour(id);
+  const [tour, reviews] = await Promise.all([getTour(id), getReviews(id)]);
 
   // Tour/Product JSON-LD — SERP'te fiyat + (varsa) yıldız zengin sonucu.
   let jsonLd: object | null = null;
   if (tour) {
     const image = tour.photos?.[0]?.url ?? tour.coverPhotoUrl;
-    const hasRating =
-      typeof tour.rating === "number" &&
-      tour.rating > 0 &&
-      typeof tour.reviewCount === "number" &&
-      tour.reviewCount > 0;
+    const hasRating = !!reviews && reviews.count > 0 && reviews.avgRating > 0;
     jsonLd = {
       "@context": "https://schema.org",
       "@type": "Product",
@@ -82,11 +95,18 @@ export default async function TourLayout({
         ? {
             aggregateRating: {
               "@type": "AggregateRating",
-              ratingValue: tour.rating,
-              reviewCount: tour.reviewCount,
+              ratingValue: reviews!.avgRating,
+              reviewCount: reviews!.count,
               bestRating: 5,
               worstRating: 1,
             },
+            review: reviews!.reviews.slice(0, 5).map((r) => ({
+              "@type": "Review",
+              author: { "@type": "Person", name: r.fullName },
+              datePublished: r.createdAt?.slice(0, 10),
+              reviewRating: { "@type": "Rating", ratingValue: r.rating, bestRating: 5, worstRating: 1 },
+              ...(r.comment ? { reviewBody: r.comment } : {}),
+            })),
           }
         : {}),
     };

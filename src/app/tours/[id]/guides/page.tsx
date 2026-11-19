@@ -11,6 +11,7 @@ import Navbar from "@/components/Navbar";
 import MainFooter from "@/components/MainFooter";
 import CheckoutSteps from "@/components/CheckoutSteps";
 import { languageNames } from "@/lib/languages";
+import { track } from "@/lib/analytics";
 
 interface AvailableGuide {
   id: number;
@@ -45,6 +46,8 @@ function GuideSelectionInner() {
   const language = search.get("language") ?? "";
 
   const [guides, setGuides] = useState<AvailableGuide[] | "loading" | "error" | "auth">("loading");
+  // "Rehber yok" çıkmazında önerilecek en yakın müsait tarihler (takvim ucundan).
+  const [alts, setAlts] = useState<string[] | null>(null);
 
   useEffect(() => {
     const unsub = fbAuth().onAuthStateChanged(async (user) => {
@@ -66,7 +69,20 @@ function GuideSelectionInner() {
           { headers }
         );
         if (!res.ok) { setGuides("error"); return; }
-        setGuides(await res.json());
+        const list: AvailableGuide[] = await res.json();
+        setGuides(list);
+        // GA4 huni: rehber listesi görüldü; 0 ise "rehber yok" çıkmazı ayrıca sayılır.
+        track("view_guide_list", { tour_id: id, booking_date: date, travelers: people, guide_count: list.length });
+        if (list.length === 0) {
+          track("no_guides_available", { tour_id: id, booking_date: date });
+          try {
+            const a = await fetch(`${API_BASE_URL}/api/tours/${id}/availability?from=${date}&days=60${language ? `&language=${language}` : ""}`);
+            if (a.ok) {
+              const d: { days: { date: string; available: boolean }[] } = await a.json();
+              setAlts(d.days.filter((x) => x.available && x.date !== date).slice(0, 3).map((x) => x.date));
+            } else setAlts([]);
+          } catch { setAlts([]); }
+        }
       } catch {
         setGuides("error");
       }
@@ -75,6 +91,7 @@ function GuideSelectionInner() {
   }, [id, date, people, language, router]);
 
   function chooseGuide(guideId: number) {
+    track("select_guide", { tour_id: id, guide_id: guideId, booking_date: date });
     router.push(
       `/tours/${id}/checkout?date=${date}&people=${people}&guideId=${guideId}${language ? `&language=${language}` : ""}`
     );
@@ -118,6 +135,21 @@ function GuideSelectionInner() {
           <div className="mt-8 rounded-2xl border border-dashed border-neutral-300 px-6 py-12 text-center">
             <p className="font-semibold">{tt.gsNone}</p>
             <p className="mt-1 text-sm text-neutral-600">{tt.gsNoneSub}</p>
+            {alts && alts.length > 0 && (
+              <div className="mt-6">
+                <p className="text-sm font-medium text-neutral-900">{gc.nearest}</p>
+                <div className="mt-3 flex flex-wrap justify-center gap-2">
+                  {alts.map((d) => (
+                    <Link key={d}
+                      href={`/tours/${id}/guides?date=${d}&people=${people}${language ? `&language=${language}` : ""}`}
+                      onClick={() => track("select_alternative_date", { tour_id: id, from_date: date, to_date: d })}
+                      className="inline-flex h-10 items-center rounded-full bg-[#5B3FD9] px-5 text-sm font-semibold text-white hover:bg-[#4A32B8]">
+                      {new Date(`${d}T00:00:00`).toLocaleDateString(locale === "tr" ? "tr-TR" : "en-GB", { weekday: "short", day: "numeric", month: "short" })}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
             <Link href={`/tours/${id}`} className="mt-5 inline-flex h-10 items-center rounded-full border border-neutral-300 px-5 text-sm font-semibold hover:border-neutral-900">
               {gc.otherDate}
             </Link>
@@ -176,7 +208,7 @@ function GuideSelectionInner() {
   );
 }
 
-const GC: Record<string, { years: (n: number) => string; viewProfile: string; otherDate: string }> = {
-  en: { years: (n) => `${n} ${n === 1 ? "year" : "years"} experience`, viewProfile: "View profile", otherDate: "Try another date" },
-  tr: { years: (n) => `${n} yıl deneyim`, viewProfile: "Profili gör", otherDate: "Başka tarih dene" },
+const GC: Record<string, { years: (n: number) => string; viewProfile: string; otherDate: string; nearest: string }> = {
+  en: { years: (n) => `${n} ${n === 1 ? "year" : "years"} experience`, viewProfile: "View profile", otherDate: "Pick another date", nearest: "Nearest dates with guides available:" },
+  tr: { years: (n) => `${n} yıl deneyim`, viewProfile: "Profili gör", otherDate: "Başka tarih seç", nearest: "Rehberi müsait en yakın tarihler:" },
 };

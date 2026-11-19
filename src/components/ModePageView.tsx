@@ -5,6 +5,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import MainFooter from "@/components/MainFooter";
 import PhoneFrame from "@/components/PhoneFrame";
+import MatchTimeStat from "@/components/MatchTimeStat";
 import { useT } from "@/components/LanguageProvider";
 import { jsonLdScript } from "@/lib/jsonld";
 import { MODES, localizeMode, ctaSub, type Mode } from "@/lib/modes";
@@ -99,6 +100,7 @@ export default function ModePageView({ mode: rawMode, nonce }: { mode: Mode; non
               {mode.name}
             </h1>
             <p className="mt-5 max-w-md text-lg leading-8 text-neutral-600">{mode.heroSub}</p>
+            {rawMode.slug === "vibenow" && <MatchTimeStat locale={locale} />}
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/tours" className={PRIMARY}>{exploreLabel}</Link>
               <a href="#how" className="inline-flex h-12 items-center rounded-full border border-neutral-300 px-7 text-[15px] font-semibold text-neutral-900 hover:border-neutral-900">

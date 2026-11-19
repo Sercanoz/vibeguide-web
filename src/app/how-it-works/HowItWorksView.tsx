@@ -14,35 +14,31 @@ const BODY: Record<"en" | "tr", { title: string; body: string }> = {
     body: `
 ## Booking a tour, step by step
 
-VibeGuide connects you with licensed, verified local guides in Turkey. You only pay once a guide has accepted your request.
+VibeGuide connects you with licensed, verified local guides in Turkey. The tour page shows which dates have guides available, and you choose your own guide.
 
 ## 1. Choose a tour and a date
 
 Browse [tours](/tours) by destination, duration, price or language. Each tour page shows what's included, the route, the meeting point, the languages and the price per person.
 
-Pick a date and the number of travelers — the total for your group is shown before you continue.
+Pick an available date in the calendar and the number of travelers — the total for your group is shown before you continue.
 
 ## 2. Choose your guide
 
 You'll see the licensed guides who are available on that date, with their languages, experience and reviews. Open a guide's profile to learn more, then select the one you like.
 
-## 3. Send your booking request
+## 3. Reserve your guide
 
-Review your booking summary and accept the Distance Sales Contract and Pre-Information Form. Your request is sent to the guide you chose.
+Review your booking summary and accept the Distance Sales Contract and Pre-Information Form. Your guide is reserved for your date right away.
 
-**No payment is taken at this step.**
+## 4. Pay securely
 
-## 4. The guide confirms
+Pay by card on the same page. Payments are processed by a licensed payment institution with 3D Secure verification. Your card details are not stored by VibeGuide.
 
-The guide checks availability and accepts your request. The booking page updates automatically, and you can also follow it under **My reservations** in your profile.
+If you leave before paying, we email you a link to finish — your reservation is held for up to 24 hours (and until 2 hours before the tour). You can also find it under **My reservations** in your profile.
 
-If the guide declines, you can choose another guide for the same date.
+If your guide ever has to cancel, you get a full refund.
 
-## 5. Pay securely
-
-Once the guide has accepted, you pay by card on the same page. Payments are processed by a licensed payment institution with 3D Secure verification. Your card details are not stored by VibeGuide.
-
-## 6. Meet your guide
+## 5. Meet your guide
 
 You receive your confirmation with the meeting point and time. Meet your guide and explore the city with someone who knows it inside out.
 
@@ -72,35 +68,31 @@ Related: [Guide Verification](/guide-verification) · [Safety & Payments](/secur
     body: `
 ## Adım adım tur rezervasyonu
 
-VibeGuide sizi Türkiye'deki lisanslı ve doğrulanmış yerel rehberlerle buluşturur. Ödemeyi yalnızca bir rehber talebinizi kabul ettikten sonra yaparsınız.
+VibeGuide sizi Türkiye'deki lisanslı ve doğrulanmış yerel rehberlerle buluşturur. Tur sayfasında hangi tarihlerde müsait rehber olduğunu görür, rehberinizi kendiniz seçersiniz.
 
 ## 1. Tur ve tarih seçin
 
 [Turları](/tours) destinasyona, süreye, fiyata ya da dile göre inceleyin. Her tur sayfasında neyin dahil olduğu, rota, buluşma noktası, diller ve kişi başı fiyat yer alır.
 
-Tarihi ve kişi sayısını seçin — devam etmeden önce grubunuzun toplam tutarı gösterilir.
+Takvimden müsait bir tarih ve kişi sayısını seçin — devam etmeden önce grubunuzun toplam tutarı gösterilir.
 
 ## 2. Rehberinizi seçin
 
 O tarihte müsait olan lisanslı rehberleri dilleri, deneyimleri ve değerlendirmeleriyle görürsünüz. Rehberin profiline göz atıp beğendiğinizi seçin.
 
-## 3. Rezervasyon talebini gönderin
+## 3. Rehberinizi ayırın
 
-Rezervasyon özetini kontrol edin; Mesafeli Satış Sözleşmesi ve Ön Bilgilendirme Formu'nu onaylayın. Talebiniz seçtiğiniz rehbere iletilir.
+Rezervasyon özetini kontrol edin; Mesafeli Satış Sözleşmesi ve Ön Bilgilendirme Formu'nu onaylayın. Rehberiniz o tarih için hemen size ayrılır.
 
-**Bu adımda ödeme alınmaz.**
+## 4. Güvenle ödeyin
 
-## 4. Rehber onaylar
+Aynı sayfada kartla ödersiniz. Ödemeler lisanslı bir ödeme kuruluşu üzerinden 3D Secure doğrulamasıyla alınır. Kart bilgileriniz VibeGuide tarafından saklanmaz.
 
-Rehber müsaitliğini kontrol eder ve talebinizi kabul eder. Rezervasyon sayfası kendiliğinden güncellenir; durumu profilinizdeki **Rezervasyonlarım** bölümünden de takip edebilirsiniz.
+Ödemeden çıkarsanız tamamlamanız için size e-postayla bir bağlantı göndeririz — rezervasyonunuz en fazla 24 saat (ve tura 2 saat kalana kadar) tutulur. Profilinizdeki **Rezervasyonlarım** bölümünde de bulabilirsiniz.
 
-Rehber talebi reddederse aynı tarih için başka bir rehber seçebilirsiniz.
+Rehberiniz iptal etmek zorunda kalırsa ücretin tamamı iade edilir.
 
-## 5. Güvenle ödeyin
-
-Rehber kabul ettikten sonra aynı sayfada kartla ödersiniz. Ödemeler lisanslı bir ödeme kuruluşu üzerinden 3D Secure doğrulamasıyla alınır. Kart bilgileriniz VibeGuide tarafından saklanmaz.
-
-## 6. Rehberinizle buluşun
+## 5. Rehberinizle buluşun
 
 Buluşma noktası ve saatini içeren onayınız size iletilir. Rehberinizle buluşun ve şehri onu en iyi bilen biriyle keşfedin.
 

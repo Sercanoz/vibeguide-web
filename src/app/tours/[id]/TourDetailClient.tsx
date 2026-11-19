@@ -10,9 +10,13 @@ import { getToursT } from "@/lib/i18n";
 import Navbar from "@/components/Navbar";
 import MainFooter from "@/components/MainFooter";
 import ShareButton from "@/components/ShareButton";
+import WishlistButton from "@/components/WishlistButton";
+import AskQuestionButton from "@/components/AskQuestionButton";
 import Price from "@/components/Price";
 import { languageByCode } from "@/lib/languages";
 import { STAR_PATH } from "@/components/TourCard";
+import AvailabilityCalendar, { ymd } from "@/components/AvailabilityCalendar";
+import { track, tourItem } from "@/lib/analytics";
 
 interface Place {
   id: number;
@@ -131,7 +135,7 @@ const DC: Record<string, {
   en: {
     tours: "Tours", photos: "photos", reviewsWord: "reviews", newTour: "New experience", languages: "Languages", duration: "Duration",
     fromPerPerson: "/ person", selectDateErr: "Choose a date to see available guides.", travelers: (n) => `${n} ${n === 1 ? "traveler" : "travelers"}`,
-    total: "Total", trustNoCharge: "You're only charged after a guide accepts your request",
+    total: "Total", trustNoCharge: "Full refund if your guide has to cancel",
     trustLicensed: "Licensed professional guides, verified by our team", trustSecure: "Secure 3D Secure card payment",
     freeCancel: "Free cancellation", seeOnMap: "Open in Google Maps", selectDate: "Select date", itineraryStop: "Stop",
     perPersonShort: "per person", groupPricing: "Group pricing", showAll: "Read more", showLess: "Show less",
@@ -139,7 +143,7 @@ const DC: Record<string, {
   tr: {
     tours: "Turlar", photos: "fotoğraf", reviewsWord: "değerlendirme", newTour: "Yeni deneyim", languages: "Diller", duration: "Süre",
     fromPerPerson: "/ kişi", selectDateErr: "Müsait rehberleri görmek için bir tarih seç.", travelers: (n) => `${n} kişi`,
-    total: "Toplam", trustNoCharge: "Ücret yalnız rehber talebini kabul ettikten sonra alınır",
+    total: "Toplam", trustNoCharge: "Rehber iptal ederse ücretin tamamı iade edilir",
     trustLicensed: "Ekibimizce doğrulanmış lisanslı profesyonel rehberler", trustSecure: "3D Secure ile güvenli kart ödemesi",
     freeCancel: "Ücretsiz iptal", seeOnMap: "Google Haritalar'da aç", selectDate: "Tarih seç", itineraryStop: "Durak",
     perPersonShort: "kişi başı", groupPricing: "Grup fiyatları", showAll: "Devamını oku", showLess: "Daha az göster",
@@ -198,6 +202,12 @@ export default function TourDetailClient({
   const [bkPeople, setBkPeople] = useState(1);
   const [bkError, setBkError] = useState<string | null>(null);
   const [reviews, setReviews] = useState<ReviewsData | null>(null);
+  // Müsaitlik takvimi: ay ay çekilir, sonuçlar birleşir. Yükleniyor durumu türetilir
+  // (effect içinde senkron setState yok): ay "loaded"da değilse ve hata yoksa yükleniyor.
+  const [calMonth, setCalMonth] = useState(() => { const n = new Date(); return new Date(n.getFullYear(), n.getMonth(), 1); });
+  const [avail, setAvail] = useState<Record<string, boolean>>({});
+  const [loadedMonths, setLoadedMonths] = useState<Record<string, true>>({});
+  const [availFailed, setAvailFailed] = useState(false);
 
   const openLightbox = useCallback((i: number) => { setLightboxIndex(i); setLightboxOpen(true); }, []);
   const closeLightbox = useCallback(() => setLightboxOpen(false), []);
@@ -229,6 +239,37 @@ export default function TourDetailClient({
       .catch(() => {});
     return () => { alive = false; };
   }, [tourId]);
+
+  // Takvim verisi: görünen ay (bugünden itibaren) için gün bazında müsaitlik.
+  const monthKey = ymd(calMonth).slice(0, 7);
+  useEffect(() => {
+    if (!tourId || availFailed || loadedMonths[monthKey]) return;
+    const n = new Date();
+    const first = calMonth.getFullYear() === n.getFullYear() && calMonth.getMonth() === n.getMonth() ? n : calMonth;
+    const last = new Date(calMonth.getFullYear(), calMonth.getMonth() + 1, 0);
+    const days = Math.max(1, last.getDate() - first.getDate() + 1);
+    let alive = true;
+    clientFetch(`/api/tours/${tourId}/availability?from=${ymd(first)}&days=${days}`, { cache: "no-store" })
+      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+      .then((d: { days: { date: string; available: boolean }[] }) => {
+        if (!alive) return;
+        setAvail((prev) => { const next = { ...prev }; for (const x of d.days) next[x.date] = x.available; return next; });
+        setLoadedMonths((prev) => ({ ...prev, [monthKey]: true }));
+      })
+      // Uç yoksa/erişilemezse takvim tüm gelecek günleri açık gösterir (akış kilitlenmez).
+      .catch(() => { if (alive) setAvailFailed(true); });
+    return () => { alive = false; };
+  }, [tourId, monthKey, calMonth, availFailed, loadedMonths]);
+  const availLoading = !availFailed && !loadedMonths[monthKey];
+
+  // GA4: ürün görüntüleme (huninin ilk adımı).
+  const ga = typeof tour === "object" && tour ? { id: tour.id, title: tour.title, category: tour.category, basePrice: tour.basePrice, city: tour.city, currency: tour.currency } : null;
+  const gaKey = ga ? `${ga.id}|${ga.title}` : "";
+  useEffect(() => {
+    if (!ga) return;
+    track("view_item", { currency: ga.currency, value: ga.basePrice, items: [tourItem(ga)] });
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- tur başına bir kez (gaKey)
+  }, [gaKey]);
 
   if (tour === "loading") {
     return (
@@ -289,17 +330,18 @@ export default function TourDetailClient({
   const included = includes.filter((i) => i.isIncluded);
   const notIncluded = includes.filter((i) => !i.isIncluded);
   const info = [...(t.importantInfo ?? [])].sort((a, b) => a.ord - b.ord);
-  const today = new Date().toISOString().split("T")[0];
 
   function proceed() {
     if (!bkDate) {
       setBkError(dc.selectDateErr);
-      // Mobilde rezervasyon kartı içerikte; oraya kaydır ve tarih alanına odaklan.
-      const el = document.querySelector<HTMLInputElement>(window.matchMedia("(min-width: 1024px)").matches ? "#bk-date-desktop" : "#bk-date-mobile");
+      // Mobilde rezervasyon kartı içerikte; takvime kaydır ve odakla.
+      const el = document.querySelector<HTMLElement>(window.matchMedia("(min-width: 1024px)").matches ? "#bk-cal-desktop" : "#bk-cal-mobile");
       el?.scrollIntoView({ behavior: "smooth", block: "center" });
       el?.focus({ preventScroll: true });
       return;
     }
+    const total = groupPriceForCount(t, bkPeople);
+    track("begin_checkout", { currency: t.currency, value: total, travelers: bkPeople, booking_date: bkDate, items: [tourItem(t, total)] });
     router.push(`/tours/${t.id}/guides?date=${bkDate}&people=${bkPeople}`);
   }
 
@@ -320,18 +362,25 @@ export default function TourDetailClient({
       </p>
 
       <div className="mt-5 overflow-hidden rounded-xl border border-neutral-300">
-        <label htmlFor={`bk-date-${variant}`} className="block border-b border-neutral-300 px-4 pb-2.5 pt-2 focus-within:bg-neutral-50">
-          <span className="block text-[11px] font-semibold uppercase tracking-wide text-neutral-600">{tt.bkDate}</span>
-          <input
-            id={`bk-date-${variant}`}
-            type="date"
+        <div id={`bk-cal-${variant}`} tabIndex={-1} className="border-b border-neutral-300 px-3 pb-2 pt-2 outline-none" aria-invalid={!!bkError}>
+          <div className="mb-1 flex items-baseline justify-between px-1">
+            <span className="text-[11px] font-semibold uppercase tracking-wide text-neutral-600">{tt.bkDate}</span>
+            <span className="text-sm font-medium text-neutral-900">
+              {bkDate ? new Date(`${bkDate}T00:00:00`).toLocaleDateString(isTr ? "tr-TR" : "en-GB", { weekday: "short", day: "numeric", month: "short" }) : dc.selectDate}
+            </span>
+          </div>
+          <AvailabilityCalendar
+            month={calMonth}
+            onMonth={setCalMonth}
+            avail={avail}
+            loading={availLoading}
+            failed={availFailed}
             value={bkDate}
-            min={today}
-            onChange={(e) => { setBkDate(e.target.value); setBkError(null); }}
-            className="mt-0.5 w-full bg-transparent text-base text-neutral-900 focus:outline-none"
-            aria-invalid={!!bkError}
+            onChange={(v) => { setBkDate(v); setBkError(null); }}
+            locale={locale}
+            idPrefix={`bk-day-${variant}`}
           />
-        </label>
+        </div>
         <div className="flex items-center justify-between px-4 py-2">
           <div>
             <span className="block text-[11px] font-semibold uppercase tracking-wide text-neutral-600">{tt.bkTravelers}</span>
@@ -377,6 +426,9 @@ export default function TourDetailClient({
       </ul>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src="/visamastercard.jpg" alt="Visa · Mastercard · Amex · Troy" className="mx-auto mt-5 h-5 w-auto opacity-80" />
+      <div className="mt-5 border-t border-neutral-200 pt-4 text-center">
+        <AskQuestionButton tourId={t.id} tourTitle={t.title} locale={locale} />
+      </div>
     </div>
   );
 
@@ -417,7 +469,7 @@ export default function TourDetailClient({
               <span>{location}</span>
             </div>
           </div>
-          <div className="shrink-0"><ShareButton title={t.title} variant="icon" /></div>
+          <div className="flex shrink-0 items-center gap-2"><WishlistButton tourId={t.id} variant="inline" /><ShareButton title={t.title} variant="icon" /></div>
         </div>
       </div>
 

@@ -7,6 +7,7 @@ import { useT } from "@/components/LanguageProvider";
 import { getToursT } from "@/lib/i18n";
 import Navbar from "@/components/Navbar";
 import MainFooter from "@/components/MainFooter";
+import { track } from "@/lib/analytics";
 
 function SuccessInner() {
   const search = useSearchParams();
@@ -19,8 +20,20 @@ function SuccessInner() {
   useEffect(() => {
     if (window.top && window.top !== window.self) {
       window.top.location.href = window.location.href;
+      return; // olay üst pencerede gönderilecek
     }
-  }, []);
+    // GA4 purchase — checkout'ta bırakılan tutarla, rezervasyon başına bir kez.
+    try {
+      const raw = sessionStorage.getItem("vg_ga_purchase");
+      if (raw) {
+        const p = JSON.parse(raw) as { bookingId: number; value: number; currency: string; item: object };
+        if (!bookingId || String(p.bookingId) === bookingId) {
+          track("purchase", { transaction_id: String(p.bookingId), value: p.value, currency: p.currency, items: [p.item] });
+        }
+        sessionStorage.removeItem("vg_ga_purchase");
+      }
+    } catch { /* yoksay */ }
+  }, [bookingId]);
 
   return (
     <main className="min-h-screen bg-[#FAFAFB] text-[#0A0A0F]">

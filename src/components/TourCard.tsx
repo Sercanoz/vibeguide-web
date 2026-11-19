@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Price from "@/components/Price";
+import WishlistButton from "@/components/WishlistButton";
 
 // Ortak tur kartı — ana sayfa rail'i ve /tours ızgarası aynı görünümü kullanır.
 // Sade/GYG tarzı: kenarlıksız foto, kategori·şehir üst satırı, başlık, süre,
@@ -52,7 +53,9 @@ export default function TourCard({
   const count = tour.reviewCount ?? 0;
   const hasDiscount = tour.compareAtPrice != null && tour.compareAtPrice > tour.basePrice;
 
+  // Kalp butonu linkin İÇİNDE değil (a içinde button geçersiz HTML) — kardeş, mutlak konumlu.
   return (
+    <div className="relative">
     <Link href={`/tours/${tour.id}`} className="group block focus-visible:outline-none">
       <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-neutral-100 ring-offset-2 group-focus-visible:ring-2 group-focus-visible:ring-neutral-900">
         {tour.coverPhotoUrl ? (
@@ -89,6 +92,8 @@ export default function TourCard({
         </div>
       </div>
     </Link>
+    <WishlistButton tourId={tour.id} />
+    </div>
   );
 }
 
