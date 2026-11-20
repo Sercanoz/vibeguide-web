@@ -6,6 +6,7 @@ import { LanguageProvider } from "@/components/LanguageProvider";
 import { CurrencyProvider } from "@/components/CurrencyProvider";
 import CookieBanner from "@/components/CookieBanner";
 import MobileTabBar from "@/components/MobileTabBar";
+import WhatsAppButton from "@/components/WhatsAppButton";
 // EmailCaptureGate: "%10 indirim kodu" verir. Kod checkout'ta uygulanır
 // (backend POST /api/bookings/{id}/promo — denetim bulgusu 19). Backend o uç
 // noktası olmadan yayına alınırsa vaat yine yanıltıcı olur.
@@ -123,6 +124,7 @@ export default function RootLayout({
           <CurrencyProvider>
             {children}
             <MobileTabBar />
+            <WhatsAppButton />
             <CookieBanner />
             <EmailCaptureGate />
           </CurrencyProvider>

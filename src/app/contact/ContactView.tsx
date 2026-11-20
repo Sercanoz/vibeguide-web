@@ -3,6 +3,7 @@
 import Navbar from "@/components/Navbar";
 import MainFooter from "@/components/MainFooter";
 import { useT } from "@/components/LanguageProvider";
+import { WHATSAPP_NUMBER, WHATSAPP_DISPLAY } from "@/lib/contact";
 
 export default function ContactView() {
   const { locale } = useT();
@@ -18,6 +19,8 @@ export default function ContactView() {
       ? "Çoğu talep en geç 1 iş günü içinde incelenip yanıtlanır."
       : "Most inquiries are reviewed and answered within 1 business day.",
     phone: tr ? "Telefon" : "Phone",
+    whatsapp: "WhatsApp",
+    whatsappNote: tr ? "Mesaj atın, çalışma saatlerinde yanıtlıyoruz." : "Send us a message — we reply during business hours.",
     hoursShort: tr ? "Pazartesi–Cuma, 09:00–18:00 (UTC+3)" : "Monday–Friday, 09:00–18:00 (UTC+3)",
     hoursTitle: tr ? "Çalışma Saatleri" : "Business Hours",
     hoursLine: tr ? "Pazartesi–Cuma, 09:00–18:00" : "Monday–Friday, 09:00–18:00",
@@ -53,6 +56,13 @@ export default function ContactView() {
               +90 530 828 76 96
             </a>
             <p className="text-xs text-neutral-800 mt-2">{t.hoursShort}</p>
+          </div>
+          <div className="bg-neutral-50 rounded-2xl p-6">
+            <p className="text-sm font-semibold mb-3">{t.whatsapp}</p>
+            <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="text-[#5B3FD9] font-semibold hover:underline">
+              {WHATSAPP_DISPLAY}
+            </a>
+            <p className="text-xs text-neutral-800 mt-2">{t.whatsappNote}</p>
           </div>
           <div className="bg-neutral-50 rounded-2xl p-6">
             <p className="text-sm font-semibold mb-3">{t.hoursTitle}</p>

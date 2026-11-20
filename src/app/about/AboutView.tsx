@@ -2,6 +2,7 @@
 
 import LegalMarkdown from "@/components/LegalMarkdown";
 import { useT } from "@/components/LanguageProvider";
+import FoundersSection from "@/components/FoundersSection";
 
 const BODY_TR = `
 VibeGuide, gezginleri Türkiye genelindeki doğrulanmış yerel rehberler ve turizm profesyonelleriyle buluşturan dijital bir turizm platformudur.
@@ -170,6 +171,8 @@ export default function AboutView() {
     <LegalMarkdown
       title={tr ? "VibeGuide Hakkında" : "About VibeGuide"}
       body={tr ? BODY_TR : BODY_EN}
-    />
+    >
+      <FoundersSection locale={locale} />
+    </LegalMarkdown>
   );
 }

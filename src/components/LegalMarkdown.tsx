@@ -53,10 +53,13 @@ export default function LegalMarkdown({
   title,
   subtitle,
   body,
+  children,
 }: {
   title: string;
   subtitle?: string;
   body: string;
+  /** Markdown gövdesinden sonra eklenen ek bölüm (ör. Hakkımızda > kurucular). */
+  children?: React.ReactNode;
 }) {
   const lines = body.split("\n");
   const blocks: React.ReactNode[] = [];
@@ -106,6 +109,7 @@ export default function LegalMarkdown({
         <h1 className="text-3xl font-display font-normal mb-2">{title}</h1>
         {subtitle && <p className="text-sm text-neutral-800 mb-10">{subtitle}</p>}
         <div className="text-sm text-neutral-800 leading-7">{blocks}</div>
+        {children}
       </div>
       <MainFooter />
     </main>

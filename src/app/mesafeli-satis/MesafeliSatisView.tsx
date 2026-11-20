@@ -4,9 +4,9 @@ import LegalMarkdown from "@/components/LegalMarkdown";
 import { useT } from "@/components/LanguageProvider";
 
 const SUBTITLE_TR =
-  "6502 Sayılı Tüketicinin Korunması Hakkında Kanun · Son Güncelleme: 04.06.2026";
+  "6502 Sayılı Tüketicinin Korunması Hakkında Kanun · Son Güncelleme: 20.11.2026";
 const SUBTITLE_EN =
-  "Under Law No. 6502 on Consumer Protection · Last updated: 04.06.2026";
+  "Under Law No. 6502 on Consumer Protection · Last updated: 20.11.2026";
 
 const BODY_TR = `
 **6502 Sayılı Tüketicinin Korunması Hakkında Kanun ve Mesafeli Sözleşmeler Yönetmeliği Kapsamında**
@@ -201,7 +201,8 @@ ALICI bu durumu kabul eder.
 Aksi belirtilmedikçe;
 
 * deneyim başlangıcından en az 24 saat önce yapılan iptallerde tam iade,
-* 24 saatten daha kısa süre kala yapılan iptallerde iade yapılmaması,
+* deneyim başlangıcına 2 ile 24 saat arası kala yapılan iptallerde ödenen tutarın %50'sinin iadesi,
+* 2 saatten az süre kala yapılan iptallerde iade yapılmaması,
 * hizmet sağlayıcı kaynaklı iptallerde tam iade,
 * mücbir sebep durumlarında olay bazında değerlendirme
 
@@ -426,7 +427,8 @@ Cancellation and refund conditions are subject to the Cancellation & Refund Poli
 Unless stated otherwise, the following apply:
 
 * full refund for cancellations made at least 24 hours before the experience starts,
-* no refund for cancellations made less than 24 hours before,
+* a 50% refund of the amount paid for cancellations made between 2 and 24 hours before,
+* no refund for cancellations made less than 2 hours before,
 * full refund for cancellations caused by the service provider,
 * case-by-case assessment in force-majeure situations.
 

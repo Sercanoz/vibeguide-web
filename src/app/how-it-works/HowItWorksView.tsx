@@ -4,8 +4,8 @@ import LegalMarkdown from "@/components/LegalMarkdown";
 import { useT } from "@/components/LanguageProvider";
 
 // "Nasıl çalışır" — gerçek rezervasyon akışını anlatır (kod ile birebir):
-// tur + tarih + kişi → müsait rehber seçimi → talep (sözleşme onayı) → rehber kabulü
-// → 3D Secure ödeme → onay. Rehber kabul etmeden ücret alınmaz.
+// tur + tarih + kişi → müsait rehber seçimi → sözleşme onayı → rehber hemen ayrılır
+// (backend rezervasyonu otomatik confirmed açar) → 3D Secure ödeme → onay.
 // Diğer diller EN'e düşer.
 
 const BODY: Record<"en" | "tr", { title: string; body: string }> = {

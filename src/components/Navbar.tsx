@@ -83,6 +83,7 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
 
   const navLinks = [
     { href: "/tours", label: nb.tours, key: "tours" },
+    { href: "/guides", label: nb.guides },
     ...DESTINATIONS.map((d) => ({
       href: cityGuideHref(d.slug, locale),
       label: d.name,
@@ -184,6 +185,12 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
               )}
             </div>
 
+            {/* Rehber dizini — onaylı rehberler (/guides) */}
+            <Link href="/guides"
+              className="px-3.5 py-2 rounded-lg font-medium text-neutral-800 hover:text-black hover:bg-black/[0.04] transition-all">
+              {nb.guides}
+            </Link>
+
             {/* Attractions — site-wide iç link (SEO: attraction sayfaları için) */}
             <Link href={locale === "en" ? "/attractions/en" : `/attractions/${locale}`}
               className="px-3.5 py-2 rounded-lg font-medium text-neutral-800 hover:text-black hover:bg-black/[0.04] transition-all">
@@ -196,7 +203,7 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
              değişmez → orta linkler asla kaymaz (layout shift fix). */}
           <div className="flex items-center gap-1 justify-end md:w-[300px]">
             {/* Arz tarafı: rehber başvurusu bar'da görünür (eskiden yalnız footer'daydı). */}
-            <Link href="/register/guide"
+            <Link href="/become-a-guide"
               className="hidden lg:block whitespace-nowrap px-2.5 py-2 rounded-lg text-[13px] font-semibold text-neutral-800 hover:text-black hover:bg-black/[0.04] transition-colors">
               {nb.becomeGuide}
             </Link>
@@ -315,7 +322,7 @@ export default function Navbar({ activePage }: { activePage?: "tours" | "home" }
                 {nb.blog ?? "Blog"}
               </Link>
               <Link
-                href="/register/guide"
+                href="/become-a-guide"
                 onClick={() => setMenuOpen(false)}
                 className="flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-semibold text-neutral-800 hover:bg-neutral-50 hover:text-black transition-colors"
               >

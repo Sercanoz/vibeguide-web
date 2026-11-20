@@ -51,7 +51,7 @@ export default function CityGuideView({
       ? c.landmarks
       : (enC?.landmarks ?? []).map((l) => ({
           ...l,
-          href: l.href.replace(/^\/attractions\/en\//, `/attractions/${lang}/`),
+          href: l.href?.replace(/^\/attractions\/en\//, `/attractions/${lang}/`),
         }));
   const landmarksHeading = c.landmarksHeading ?? enC?.landmarksHeading;
   const landmarksSub = c.landmarksSub ?? enC?.landmarksSub;
@@ -250,16 +250,23 @@ export default function CityGuideView({
             <h2 className={H2}>{landmarksHeading}</h2>
             {landmarksSub && <p className="mt-2 text-neutral-600">{landmarksSub}</p>}
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
-              {landmarks.map((l) => (
-                <Link key={l.href} href={l.href}
-                  className="group flex items-center justify-between gap-4 rounded-xl border border-neutral-200 bg-white px-5 py-4 transition-colors hover:border-neutral-900">
-                  <div className="min-w-0">
+              {landmarks.map((l) =>
+                l.href ? (
+                  <Link key={l.name} href={l.href}
+                    className="group flex items-center justify-between gap-4 rounded-xl border border-neutral-200 bg-white px-5 py-4 transition-colors hover:border-neutral-900">
+                    <div className="min-w-0">
+                      <p className="font-semibold">{l.name}</p>
+                      <p className="mt-0.5 text-sm text-neutral-600">{l.desc}</p>
+                    </div>
+                    {arrow}
+                  </Link>
+                ) : (
+                  <div key={l.name} className="rounded-xl border border-neutral-200 bg-white px-5 py-4">
                     <p className="font-semibold">{l.name}</p>
                     <p className="mt-0.5 text-sm text-neutral-600">{l.desc}</p>
                   </div>
-                  {arrow}
-                </Link>
-              ))}
+                ),
+              )}
             </div>
           </div>
         </section>
@@ -288,7 +295,7 @@ export default function CityGuideView({
           <h2 className={H2}>{c.otherHeading}</h2>
           <div className="mt-8 grid gap-3 sm:grid-cols-2">
             {c.otherCities.map((l) => (
-              <Link key={l.href} href={l.href}
+              <Link key={l.name} href={l.href ?? "/tours"}
                 className="group flex items-center justify-between gap-4 rounded-xl border border-neutral-200 px-5 py-4 transition-colors hover:border-neutral-900">
                 <div className="min-w-0">
                   <p className="font-semibold">{l.name}</p>

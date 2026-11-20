@@ -3,8 +3,8 @@
 import LegalMarkdown from "@/components/LegalMarkdown";
 import { useT } from "@/components/LanguageProvider";
 
-const LAST_UPDATED_TR = "Son Güncelleme: 04.06.2026";
-const LAST_UPDATED_EN = "Last updated: 04.06.2026";
+const LAST_UPDATED_TR = "Son Güncelleme: 20.11.2026";
+const LAST_UPDATED_EN = "Last updated: 20.11.2026";
 
 const BODY_TR = `
 VibeGuide olarak, seyahat deneyimi rezervasyonu yapan her kullanıcının rezervasyon sürecinde kendini güvende hissetmesini önemsiyoruz. Bu İptal ve İade Politikası, rezervasyonların hangi koşullarda iptal edilebileceğini ve hangi durumlarda iade hakkı doğacağını açıklamaktadır.
@@ -17,14 +17,26 @@ VibeGuide üzerinden rezervasyon yaparak aşağıdaki şartları kabul etmiş sa
 
 Rezervasyon sayfasında aksi belirtilmedikçe aşağıdaki kurallar uygulanır.
 
+### Ödeme yapılmadan önce yapılan iptaller
+
+* Ücretsiz iptal (ücret alınmamıştır)
+
 ### Deneyim başlangıcından 24 saat veya daha önce yapılan iptaller
 
 * Ücretsiz iptal
-* Tam iade
+* Tam iade (%100)
 
-### Deneyim başlangıcına 24 saatten daha az süre kala yapılan iptaller
+### Deneyim başlangıcına 2 ile 24 saat arası kala yapılan iptaller
 
-* Genel olarak iade yapılmaz.
+* Ödenen tutarın %50'si iade edilir.
+
+### Deneyim başlangıcına 2 saatten az kala yapılan iptaller
+
+* İade yapılmaz.
+
+### Hediye kartıyla ödenen tutar
+
+Hediye kartıyla ödenen kısım, yukarıdaki oranlarla karta bakiye olarak geri yüklenir; banka kartına iade edilmez.
 
 ### Katılım sağlanmaması (No-Show)
 
@@ -224,14 +236,26 @@ By making a booking through VibeGuide, you are deemed to have accepted the terms
 
 Unless stated otherwise on the booking page, the following rules apply.
 
+### Cancellations made before payment
+
+* Free cancellation (nothing has been charged)
+
 ### Cancellations made 24 hours or more before the experience starts
 
 * Free cancellation
-* Full refund
+* Full refund (100%)
 
-### Cancellations made less than 24 hours before the experience starts
+### Cancellations made between 2 and 24 hours before the experience starts
 
-* Generally non-refundable.
+* 50% of the amount paid is refunded.
+
+### Cancellations made less than 2 hours before the experience starts
+
+* No refund.
+
+### Amounts paid with a gift card
+
+The part paid with a gift card is restored to the gift card as balance at the rates above; it is not refunded to a bank card.
 
 ### No-Show
 

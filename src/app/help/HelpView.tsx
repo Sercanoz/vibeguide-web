@@ -81,7 +81,7 @@ Bir VibeSquad deneyimi yalnızca aşağıdaki koşullar sağlandığında onayla
 
 * Minimum katılımcı sayısına ulaşılması
 * Rehber müsaitliği
-* Ödeme otorizasyonunun başarılı olması
+* Grup kilitlendikten sonra katılımcıların ödeme süresi içinde ödemesi
 
 ## Özel Tur Rezerve Edebilir miyim?
 
@@ -146,11 +146,11 @@ Rehber rezervasyonu kabul ettiğinde ödeme alınır.
 
 ### VibeSquad
 
-Gruba katıldığınızda ön otorizasyon uygulanabilir. Grup onaylanırsa tahsilat yapılır. Grup oluşmazsa otorizasyon kaldırılır.
+Gruba katılırken ödeme alınmaz. Grup kilitlendiğinde kişi başı fiyat kesinleşir ve her katılımcının yerini onaylamak için 30 dakikalık bir ödeme süresi başlar. Bu sürede ödemeyen katılımcının yeri boşalır. Grup minimum katılımcı sayısına ulaşamazsa iptal edilir ve ödeme yapanlara tam iade yapılır.
 
 ### Özel Turlar
 
-Aksi belirtilmedikçe rezervasyon sırasında ödeme alınır.
+Rezerve ettiğinizde rehberiniz o tarih için hemen size ayrılır ve ödemeyi aynı sayfada kartla yaparsınız. Ödemeyi tamamlamazsanız rezervasyon en fazla 24 saat (ve tura 2 saat kalana kadar) tutulur, ardından serbest bırakılır.
 
 ## Rezervasyonumu İptal Edebilir miyim?
 
@@ -357,7 +357,7 @@ A VibeSquad experience is confirmed only when the following conditions are met:
 
 * The minimum number of participants is reached
 * Guide availability
-* Successful payment authorization
+* Participants paying within the payment window after the group locks
 
 ## Can I Book a Private Tour?
 
@@ -422,11 +422,11 @@ Payment is taken when the guide accepts the booking.
 
 ### VibeSquad
 
-A pre-authorization may be applied when you join the group. If the group is confirmed, the charge is taken. If the group does not form, the authorization is released.
+No payment is taken when you join. When the group locks, the price per person is final and everyone has a 30-minute payment window to confirm their place. Participants who do not pay in time lose their place. If the group does not reach its minimum size, it is cancelled and everyone who paid gets a full refund.
 
 ### Private Tours
 
-Unless stated otherwise, payment is taken at the time of booking.
+When you reserve, your guide is held for your date right away and you pay by card on the same page. If you do not complete payment, the reservation is held for up to 24 hours (and until 2 hours before the tour), then released.
 
 ## Can I Cancel My Booking?
 

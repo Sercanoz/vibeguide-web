@@ -77,7 +77,10 @@ export default function MainFooter() {
               <li><Link href="/tours" className="hover:text-black transition-colors">{nb.tours}</Link></li>
               <li><Link href="/how-it-works" className="hover:text-black transition-colors">{nb.howItWorks}</Link></li>
               <li><Link href="/guide-verification" className="hover:text-black transition-colors">{t.footerLinks.guideVerification}</Link></li>
-              <li><Link href="/register/guide" className="hover:text-black transition-colors font-medium text-neutral-900">{nb.becomeGuide}</Link></li>
+              <li><Link href="/become-a-guide" className="hover:text-black transition-colors font-medium text-neutral-900">{nb.becomeGuide}</Link></li>
+              <li><Link href="/guides" className="hover:text-black transition-colors">{nb.guides}</Link></li>
+              <li><Link href="/gift-cards" className="hover:text-black transition-colors">{locale === "tr" ? "Hediye kartı" : "Gift cards"}</Link></li>
+              <li><Link href="/groups" className="hover:text-black transition-colors">{locale === "tr" ? "Grup ve kurumsal turlar" : "Group & corporate tours"}</Link></li>
             </ul>
           </div>
           <div>

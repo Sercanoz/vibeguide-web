@@ -104,6 +104,19 @@ export type TourInclude = {
   ord: number;
 };
 
+export type GiftCardRow = {
+  id: number; code: string | null; amount: number; balance: number; currency: string; status: string;
+  senderName: string; recipientName: string; recipientEmail: string; purchaserEmail: string | null;
+  paidAt: string | null; expiresAt: string | null; refundStatus: string | null; createdAt: string;
+};
+
+export type InquiryRow = {
+  id: number; companyName: string | null; contactName: string; email: string; phone: string | null;
+  groupType: string; groupSize: number; cities: string | null; preferredDate: string | null;
+  languages: string | null; message: string | null; locale: string | null;
+  status: "new" | "contacted" | "won" | "lost"; adminNote: string | null; createdAt: string;
+};
+
 export type ApiResult<T> =
   | { ok: true; data: T }
   | { ok: false; status: number; error?: string };
@@ -534,6 +547,16 @@ export const adminApi = {
     authedFetch<{ total: number; rows: SubscriberRow[] }>(`/api/admin/subscribers?limit=${limit}`),
   deleteSubscriber: (id: number) =>
     authedFetch<{ ok: true }>(`/api/admin/subscribers/${id}`, { method: "DELETE" }),
+
+  // ════════ GIFT CARDS ════════
+  listGiftCards: (limit = 500) =>
+    authedFetch<{ sold: number; outstanding: number; rows: GiftCardRow[] }>(`/api/admin/gift-cards?limit=${limit}`),
+
+  // ════════ GROUP / CORPORATE INQUIRIES ════════
+  listInquiries: (status?: string) =>
+    authedFetch<InquiryRow[]>(`/api/admin/inquiries${status ? `?status=${encodeURIComponent(status)}` : ""}`),
+  updateInquiry: (id: number, body: { status?: string; adminNote?: string }) =>
+    authedFetch<InquiryRow>(`/api/admin/inquiries/${id}`, { method: "PATCH", body: JSON.stringify(body) }),
 
   // ════════ TOUR REVIEWS (public, QR) ════════
 

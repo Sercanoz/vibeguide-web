@@ -96,6 +96,12 @@ function CheckoutInner() {
   const [promoInput, setPromoInput] = useState("");
   const [promoBusy, setPromoBusy] = useState(false);
   const [promoMsg, setPromoMsg] = useState<string | null>(null);
+  // Hediye kartı (ödeme yöntemi, yalnız TRY). gift > 0 ise bookingPrice kartla
+  // ödenecek KALAN tutardır; 0 olursa kart formu yerine "hediye kartıyla öde".
+  const [gift, setGift] = useState<number | null>(null);
+  const [giftInput, setGiftInput] = useState("");
+  const [giftBusy, setGiftBusy] = useState(false);
+  const [giftMsg, setGiftMsg] = useState<string | null>(null);
   const [authReady, setAuthReady] = useState(false);
   // Kart formu (3DS Direct) — değerler SAKLANMAZ, yalnız ödeme isteğinde iletilir.
   const inputCls =
@@ -172,6 +178,7 @@ function CheckoutInner() {
         setStatus(b.status as BookingStatus);
         if (typeof b.price === "number") setBookingPrice(b.price);
         setDiscount(typeof b.discountAmount === "number" && b.discountAmount > 0 ? b.discountAmount : null);
+        setGift(typeof b.giftAmount === "number" && b.giftAmount > 0 ? b.giftAmount : null);
       }
     } catch { /* sessizce geç — kullanıcı elle yenileyebilir */ }
   }, []);
@@ -196,6 +203,7 @@ function CheckoutInner() {
         setStatus(b.status as BookingStatus);
         if (typeof b.price === "number") setBookingPrice(b.price);
         setDiscount(typeof b.discountAmount === "number" && b.discountAmount > 0 ? b.discountAmount : null);
+        setGift(typeof b.giftAmount === "number" && b.giftAmount > 0 ? b.giftAmount : null);
       })
       .catch(() => {});
     return () => { alive = false; };
@@ -226,7 +234,7 @@ function CheckoutInner() {
   // authoritative fiyat kullanılır (bookingPrice); öncesinde tahmin gösterilir.
   const estimatedTotal = groupPriceForCount(tour, people);
   const total = bookingPrice ?? estimatedTotal;
-  const perPerson = Math.round((total / people) * 100) / 100;
+  const perPerson = Math.round(((total + (gift ?? 0)) / people) * 100) / 100;
 
   // 1) Rezervasyon talebi oluştur (booking Pending → rehbere gider).
   async function createBooking() {
@@ -266,6 +274,7 @@ function CheckoutInner() {
       // Backend authoritative fiyat — turist tam olarak bunu öder.
       if (typeof b.price === "number") setBookingPrice(b.price);
       setDiscount(typeof b.discountAmount === "number" && b.discountAmount > 0 ? b.discountAmount : null);
+        setGift(typeof b.giftAmount === "number" && b.giftAmount > 0 ? b.giftAmount : null);
     } catch {
       setNotice(tt.errMsg);
     } finally {
@@ -322,6 +331,74 @@ function CheckoutInner() {
       setPromoMsg(cc.promoErr.default);
     } finally {
       setPromoBusy(false);
+    }
+  }
+
+  // Hediye kartı uygula / kaldır / tamamı kartla karşılandıysa kartsız öde.
+  async function applyGift() {
+    const code = giftInput.trim();
+    if (!bookingId || !code) return;
+    setGiftBusy(true);
+    setGiftMsg(null);
+    try {
+      const headers = await buildAuthHeaders({ extra: { "Content-Type": "application/json" } });
+      const res = await fetch(`${API_BASE_URL}/api/bookings/${bookingId}/gift-card`, {
+        method: "POST", headers, body: JSON.stringify({ code }),
+      });
+      const d = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        const key = res.status === 429 ? "rate_limited" : (d.error as string | undefined);
+        setGiftMsg((key && cc.giftErr[key]) || cc.giftErr.default);
+        return;
+      }
+      if (typeof d.price === "number") setBookingPrice(d.price);
+      setGift(typeof d.giftAmount === "number" && d.giftAmount > 0 ? d.giftAmount : null);
+      setGiftInput("");
+      setGiftMsg(typeof d.giftBalance === "number" && d.giftBalance > 0 ? cc.giftLeft(d.giftBalance) : null);
+    } catch {
+      setGiftMsg(cc.giftErr.default);
+    } finally {
+      setGiftBusy(false);
+    }
+  }
+
+  async function removeGift() {
+    if (!bookingId) return;
+    setGiftBusy(true);
+    setGiftMsg(null);
+    try {
+      const headers = await buildAuthHeaders();
+      const res = await fetch(`${API_BASE_URL}/api/bookings/${bookingId}/gift-card`, { method: "DELETE", headers });
+      const d = await res.json().catch(() => ({}));
+      if (!res.ok) { setGiftMsg((d.error && cc.giftErr[d.error as string]) || cc.giftErr.default); return; }
+      if (typeof d.price === "number") setBookingPrice(d.price);
+      setGift(null);
+    } catch {
+      setGiftMsg(cc.giftErr.default);
+    } finally {
+      setGiftBusy(false);
+    }
+  }
+
+  async function payWithGift() {
+    if (!bookingId) return;
+    setBusy(true);
+    setNotice(null);
+    try {
+      const headers = await buildAuthHeaders({ extra: { "Content-Type": "application/json" } });
+      const res = await fetch(`${API_BASE_URL}/api/payments/tami/gift-only`, {
+        method: "POST", headers, body: JSON.stringify({ bookingId }),
+      });
+      if (!res.ok) {
+        const d = await res.json().catch(() => ({}));
+        setNotice((d.error && cc.giftErr[d.error as string]) || cc.giftErr.default);
+        return;
+      }
+      router.push(`/payment/success?bookingId=${bookingId}`);
+    } catch {
+      setNotice(cc.giftErr.default);
+    } finally {
+      setBusy(false);
     }
   }
 
@@ -451,15 +528,18 @@ function CheckoutInner() {
                   <div className="flex justify-between gap-4"><dt className="text-neutral-600">{tt.perPerson}</dt><dd className="font-medium"><Price amount={perPerson} currency={tour.currency} /></dd></div>
                 </>
               )}
+              {(discount != null || gift != null) && (
+                <div className="flex justify-between gap-4"><dt className="text-neutral-600">{cc.subtotal}</dt><dd className="font-medium"><Price amount={total + (discount ?? 0) + (gift ?? 0)} currency={tour.currency} /></dd></div>
+              )}
               {discount != null && (
-                <>
-                  <div className="flex justify-between gap-4"><dt className="text-neutral-600">{cc.subtotal}</dt><dd className="font-medium"><Price amount={total + discount} currency={tour.currency} /></dd></div>
-                  <div className="flex justify-between gap-4"><dt className="text-neutral-600">{cc.promoDiscount}</dt><dd className="font-medium text-[#5B3FD9]">−<Price amount={discount} currency={tour.currency} /></dd></div>
-                </>
+                <div className="flex justify-between gap-4"><dt className="text-neutral-600">{cc.promoDiscount}</dt><dd className="font-medium text-[#5B3FD9]">−<Price amount={discount} currency={tour.currency} /></dd></div>
+              )}
+              {gift != null && (
+                <div className="flex justify-between gap-4"><dt className="text-neutral-600">{cc.giftLabel}</dt><dd className="font-medium text-[#5B3FD9]">−<Price amount={gift} currency={tour.currency} /></dd></div>
               )}
             </dl>
             <div className="mt-5 flex items-baseline justify-between border-t border-neutral-200 pt-5">
-              <span className="font-semibold">{tt.bkTotal}</span>
+              <span className="font-semibold">{gift != null ? cc.leftToPay : tt.bkTotal}</span>
               <span className="text-2xl font-semibold tracking-tight"><Price amount={total} currency={tour.currency} /></span>
             </div>
             {!bookingPrice && <p className="mt-1 text-right text-xs text-neutral-500">{cc.estimate}</p>}
@@ -529,7 +609,7 @@ function CheckoutInner() {
               <>
                 <div className="mb-6 flex items-start gap-3 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-900">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mt-px shrink-0" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
-                  {tt.coGuideAccepted}
+                  {cc.reservedBanner}
                 </div>
                 <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
                   <h2 className={h2}>{tt.coPayWith}</h2>
@@ -562,7 +642,39 @@ function CheckoutInner() {
                   {promoMsg && <p role="status" className="mt-2 text-sm text-neutral-700">{promoMsg}</p>}
                 </div>
 
-                {/* Kart formu — 3D Secure. Kart bilgisi saklanmaz, bankaya iletilir. */}
+                {/* Hediye kartı — yalnız TRY rezervasyonda (backend GiftCardService.Currency). */}
+                {tour.currency === "TRY" && (
+                  <div className="mb-6 rounded-xl border border-neutral-200 p-4">
+                    {gift != null ? (
+                      <div className="flex flex-wrap items-center justify-between gap-3 text-sm">
+                        <span className="text-neutral-800">{cc.giftApplied}</span>
+                        <button type="button" onClick={removeGift} disabled={giftBusy}
+                          className="font-medium text-neutral-900 underline underline-offset-2 disabled:opacity-50">
+                          {cc.promoRemove}
+                        </button>
+                      </div>
+                    ) : (
+                      <form onSubmit={(e) => { e.preventDefault(); applyGift(); }} className="flex gap-2">
+                        <label htmlFor="gift" className="sr-only">{cc.giftLabel}</label>
+                        <input id="gift" value={giftInput} onChange={(e) => setGiftInput(e.target.value.toUpperCase())}
+                          placeholder={cc.giftPlaceholder} autoComplete="off" maxLength={20}
+                          className={`${inputCls} h-11 uppercase`} />
+                        <button type="submit" disabled={giftBusy || !giftInput.trim()}
+                          className="h-11 shrink-0 rounded-xl border border-neutral-300 px-4 text-sm font-medium text-neutral-900 hover:bg-neutral-50 disabled:opacity-50">
+                          {giftBusy ? "…" : cc.promoApply}
+                        </button>
+                      </form>
+                    )}
+                    {giftMsg && <p role="status" className="mt-2 text-sm text-neutral-700">{giftMsg}</p>}
+                  </div>
+                )}
+
+                {gift != null && total <= 0 ? (
+                  <button type="button" onClick={payWithGift} disabled={busy} className={primary}>
+                    {busy ? <Spinner /> : cc.payWithGift}
+                  </button>
+                ) : (
+                /* Kart formu — 3D Secure. Kart bilgisi saklanmaz, bankaya iletilir. */
                 <form onSubmit={(e) => { e.preventDefault(); payNow(); }} className="space-y-4" autoComplete="on">
                   <div>
                     <label htmlFor="cc-number" className={label}>{tt.payCardNumber}</label>
@@ -622,6 +734,7 @@ function CheckoutInner() {
                     {busy ? <Spinner /> : <>{tt.coPayNow} · <Price amount={total} currency={tour.currency} /></>}
                   </button>
                 </form>
+                )}
                 <p className="mt-5 text-xs leading-5 text-neutral-500">{tt.coProvider}</p>
               </>
             )}
@@ -669,6 +782,11 @@ type CheckoutCopy = {
   promoLabel: string; promoApply: string; promoApplied: string; promoRemove: string;
   promoDiscount: string; subtotal: string; promoCapped: string;
   promoErr: Record<string, string>;
+  /** Confirmed durumundaki bant. Rezervasyon otomatik confirmed açılır — rehber "kabul etmez". */
+  reservedBanner: string;
+  giftLabel: string; giftPlaceholder: string; giftApplied: string; leftToPay: string; payWithGift: string;
+  giftLeft: (n: number) => string;
+  giftErr: Record<string, string>;
 };
 
 const CC: Record<string, CheckoutCopy> = {
@@ -679,6 +797,28 @@ const CC: Record<string, CheckoutCopy> = {
     how: ["Your chosen guide is reserved for your date.", "Pay securely by card (3D Secure) on this page.", "You get a confirmation with the meeting details."],
     trackIn: "You can also track it in",
     notStored: "Your card details are not stored.",
+    reservedBanner: "Your guide is reserved for your date. Complete your payment to confirm the tour — unpaid reservations are released after 24 hours (or 2 hours before the tour).",
+    giftLabel: "Gift card",
+    giftPlaceholder: "Gift card code",
+    giftApplied: "Gift card applied.",
+    leftToPay: "Left to pay",
+    payWithGift: "Pay with gift card",
+    giftLeft: (n) => `Applied. ${n.toFixed(2)} TRY stays on the card for later.`,
+    giftErr: {
+      gift_not_found: "This gift card code isn't valid.",
+      gift_not_active: "This gift card can't be used.",
+      gift_expired: "This gift card has expired.",
+      gift_empty: "This gift card has no balance left.",
+      gift_currency_mismatch: "Gift cards can only be used for bookings in TRY.",
+      gift_already_applied: "A gift card is already applied to this booking.",
+      gift_not_applicable: "Gift cards can't be used for this booking.",
+      gift_applied: "Remove the gift card first, then change the promo code.",
+      not_fully_covered: "The gift card doesn't cover the full amount. Pay the rest by card.",
+      payment_in_progress: "A payment is in progress. Wait a few minutes, then try again.",
+      invalid_status: "Gift cards can only be applied before payment.",
+      rate_limited: "Too many attempts. Try again in 15 minutes.",
+      default: "Something went wrong. Try again.",
+    },
     promoLabel: "Promo code",
     promoApply: "Apply",
     promoApplied: "Promo code applied.",
@@ -692,6 +832,7 @@ const CC: Record<string, CheckoutCopy> = {
       promo_used_up: "This code has already been used.",
       promo_not_yours: "This code belongs to a different email address. Sign in with the email you subscribed with.",
       promo_not_applicable: "This code can't be used for this booking.",
+      gift_applied: "Remove the gift card first, then change the promo code.",
       payment_in_progress: "A payment is in progress. Wait a few minutes, then try again.",
       invalid_status: "Codes can only be applied before payment.",
       rate_limited: "Too many attempts. Try again in 15 minutes.",
@@ -705,6 +846,28 @@ const CC: Record<string, CheckoutCopy> = {
     how: ["Seçtiğin rehber o tarih için sana ayrılır.", "Bu sayfada kartla güvenle ödersin (3D Secure).", "Buluşma bilgilerini içeren onayın gelir."],
     trackIn: "Durumu şuradan da takip edebilirsin:",
     notStored: "Kart bilgileriniz saklanmaz.",
+    reservedBanner: "Rehberin o tarih için sana ayrıldı. Turu kesinleştirmek için ödemeni tamamla — ödenmeyen rezervasyon 24 saat sonra (ya da tura 2 saat kala) serbest bırakılır.",
+    giftLabel: "Hediye kartı",
+    giftPlaceholder: "Hediye kartı kodu",
+    giftApplied: "Hediye kartı uygulandı.",
+    leftToPay: "Kalan ödeme",
+    payWithGift: "Hediye kartıyla öde",
+    giftLeft: (n) => `Uygulandı. Kartta sonraki rezervasyonlar için ${n.toFixed(2)} TRY kaldı.`,
+    giftErr: {
+      gift_not_found: "Bu hediye kartı kodu geçerli değil.",
+      gift_not_active: "Bu hediye kartı kullanılamıyor.",
+      gift_expired: "Bu hediye kartının süresi dolmuş.",
+      gift_empty: "Bu hediye kartında bakiye kalmamış.",
+      gift_currency_mismatch: "Hediye kartı yalnız TRY rezervasyonlarda kullanılabilir.",
+      gift_already_applied: "Bu rezervasyona zaten bir hediye kartı uygulanmış.",
+      gift_not_applicable: "Hediye kartı bu rezervasyonda kullanılamaz.",
+      gift_applied: "İndirim kodunu değiştirmek için önce hediye kartını kaldır.",
+      not_fully_covered: "Hediye kartı tutarın tamamını karşılamıyor. Kalanı kartla öde.",
+      payment_in_progress: "Devam eden bir ödeme var. Birkaç dakika bekleyip tekrar dene.",
+      invalid_status: "Hediye kartı yalnızca ödemeden önce uygulanabilir.",
+      rate_limited: "Çok fazla deneme yaptın. 15 dakika sonra tekrar dene.",
+      default: "Bir sorun oluştu. Tekrar dene.",
+    },
     promoLabel: "İndirim kodu",
     promoApply: "Uygula",
     promoApplied: "İndirim kodu uygulandı.",
@@ -718,6 +881,7 @@ const CC: Record<string, CheckoutCopy> = {
       promo_used_up: "Bu kod daha önce kullanılmış.",
       promo_not_yours: "Bu kod başka bir e-posta adresine ait. Abone olduğun e-postayla giriş yap.",
       promo_not_applicable: "Bu kod bu rezervasyonda kullanılamaz.",
+      gift_applied: "İndirim kodunu değiştirmek için önce hediye kartını kaldır.",
       payment_in_progress: "Devam eden bir ödeme var. Birkaç dakika bekleyip tekrar dene.",
       invalid_status: "Kod yalnızca ödemeden önce uygulanabilir.",
       rate_limited: "Çok fazla deneme yaptın. 15 dakika sonra tekrar dene.",

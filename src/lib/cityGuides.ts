@@ -31,7 +31,8 @@ export function isCityGuideLang(v: string): v is CityGuideLang {
 export type Highlight = { icon: string; name: string; desc: string };
 export type Faq = { q: string; a: string };
 export type Mode = { tag: string; color: string; title: string; text: string };
-export type LinkCard = { href: string; icon: string; name: string; desc: string };
+// href yoksa kart link olmadan, bilgi kartı olarak çizilir (ör. ayrı attraction sayfası olmayan yerler).
+export type LinkCard = { href?: string; icon: string; name: string; desc: string };
 
 export type CityGuideContent = {
   metaTitle: string;
@@ -1859,6 +1860,21 @@ const CAPPADOCIA: CityGuide = {
         { q: `What languages do Cappadocia guides speak?`, a: `Most Cappadocia guides on VibeGuide speak English, and because the fairy chimneys draw travellers from every corner of the world, many also guide in German, Russian, French, Spanish and other languages. Filter by language when you choose a guide so the story of the cave churches and rock valleys is told the way you understand it best.` },
         { q: `How many days do you need in Cappadocia?`, a: `Two days is ideal. Give one full day to the Goreme Open-Air Museum and the surrounding Rose, Red and Pigeon valleys, plus Uchisar Castle and the Avanos pottery workshops, and a second to an underground city such as Derinkuyu or Kaymakli with a slower hike. Start at least one morning with a dawn balloon flight, the region's signature experience.` },
       ],
+      landmarksHeading: "Top Cappadocia sights",
+      landmarksSub: "Plan them with a licensed local guide who knows the valleys.",
+      landmarks: [
+        { href: "/attractions/en/cappadocia", icon: "🎈", name: "Cappadocia overview", desc: "Fairy chimneys, balloons and cave churches" },
+        { icon: "⛪", name: "Göreme Open-Air Museum", desc: "Rock-cut churches with Byzantine frescoes" },
+        { icon: "🏰", name: "Uçhisar Castle", desc: "Rock citadel with views over the valleys" },
+        { icon: "🕳️", name: "Derinkuyu Underground City", desc: "Multi-level city carved deep underground" },
+        { icon: "🕳️", name: "Kaymaklı Underground City", desc: "Tunnels, stables and chapels below ground" },
+        { icon: "🍄", name: "Paşabağ (Monks Valley)", desc: "Multi-capped fairy chimneys" },
+        { icon: "🐪", name: "Devrent (Imagination) Valley", desc: "Rock shapes, including the famous camel" },
+        { icon: "🌅", name: "Red & Rose Valleys", desc: "Sunset hikes and hidden rock churches" },
+        { icon: "🏺", name: "Avanos", desc: "Kızılırmak river and pottery workshops" },
+        { icon: "🏘️", name: "Zelve Open-Air Museum", desc: "Abandoned cave village and churches" },
+        { icon: "🥾", name: "Ihlara Valley", desc: "Canyon walk past rock-cut churches" },
+      ],
       otherHeading: "Explore more of Turkey",
       otherCities: [
         { href: "/attractions/en/cappadocia", icon: "🎈", name: "Cappadocia Travel Guide", desc: "Fairy chimneys, valleys & balloon tips" },
@@ -1992,6 +2008,21 @@ const CAPPADOCIA: CityGuide = {
         { q: `Kapadokya'da aynı gün rehber ayarlayabilir miyim?`, a: `Evet. VibeNow ile birkaç dakika içinde müsait bir yerel rehberle eşleşip Göreme, Uçhisar ve vadilerdeki kara turunuza hemen başlayabilirsiniz. Aynı güne bırakamayacağınız tek şey balondur; uçuşlar tükenir ve önceden ayırtılmalıdır, bu yüzden önce şafak turunuzu rezerve edin, aynı günkü rehber de rotayı onun etrafına kursun.` },
         { q: `Kapadokya rehberleri hangi dilleri konuşur?`, a: `VibeGuide'daki Kapadokya rehberlerinin çoğu İngilizce konuşur ve peribacaları dünyanın her köşesinden gezgin çektiği için birçoğu Almanca, Rusça, Fransızca, İspanyolca ve başka dillerde de rehberlik yapar. Rehber seçerken dile göre filtreleyin, mağara kiliselerinin ve kaya vadilerinin hikâyesi en iyi anladığınız şekilde anlatılsın.` },
         { q: `Kapadokya için kaç gün gerekir?`, a: `İki gün idealdir. Bir tam günü Göreme Açık Hava Müzesi'ne ve çevredeki Güllü, Kızıl ve Güvercinlik vadilerine, ayrıca Uçhisar Kalesi ile Avanos çömlek atölyelerine ayırın; ikinci günü de daha sakin bir yürüyüşle Derinkuyu ya da Kaymaklı gibi bir yeraltı şehrine. En az bir sabaha şafak balon uçuşuyla başlayın; bu bölgenin imza deneyimidir.` },
+      ],
+      landmarksHeading: "Kapadokya'nın öne çıkan yerleri",
+      landmarksSub: "Vadileri iyi bilen lisanslı bir yerel rehberle planlayın.",
+      landmarks: [
+        { href: "/attractions/tr/cappadocia", icon: "🎈", name: "Kapadokya genel bakış", desc: "Peri bacaları, balonlar ve kaya kiliseleri" },
+        { icon: "⛪", name: "Göreme Açık Hava Müzesi", desc: "Bizans freskli kaya kiliseleri" },
+        { icon: "🏰", name: "Uçhisar Kalesi", desc: "Vadilere bakan kaya kale" },
+        { icon: "🕳️", name: "Derinkuyu Yeraltı Şehri", desc: "Yerin derinliklerine oyulmuş çok katlı şehir" },
+        { icon: "🕳️", name: "Kaymaklı Yeraltı Şehri", desc: "Yer altında tüneller, ahırlar ve şapeller" },
+        { icon: "🍄", name: "Paşabağ (Rahipler Vadisi)", desc: "Çok başlı peri bacaları" },
+        { icon: "🐪", name: "Devrent (Hayal) Vadisi", desc: "Ünlü deve dahil ilginç kaya şekilleri" },
+        { icon: "🌅", name: "Kızılçukur ve Güllüdere Vadileri", desc: "Gün batımı yürüyüşü ve gizli kaya kiliseleri" },
+        { icon: "🏺", name: "Avanos", desc: "Kızılırmak ve çömlek atölyeleri" },
+        { icon: "🏘️", name: "Zelve Açık Hava Müzesi", desc: "Terk edilmiş kaya köyü ve kiliseler" },
+        { icon: "🥾", name: "Ihlara Vadisi", desc: "Kaya kiliseleri arasında kanyon yürüyüşü" },
       ],
       otherHeading: "Türkiye'yi keşfetmeye devam edin",
       otherCities: [
@@ -12493,6 +12524,21 @@ const FETHIYE: CityGuide = {
         { q: `What is the best time to visit Fethiye?`, a: `May to June and September to October bring warm seas, sunny days and thinner crowds, ideal for boat trips and walking the Lycian Way. July and August are hot and lively, peak beach season along the coast. A local guide knows the best hours to be on the water before the afternoon winds pick up.` },
         { q: `Do I need to tip my Fethiye guide?`, a: `Tipping is never required in Fethiye; the price you see already covers the tour. If your guide gave you a great day on the coast, a tip is a welcome way to say thank you, but it stays entirely optional and is never expected.` },
       ],
+      landmarksHeading: "Top Fethiye sights",
+      landmarksSub: "Plan them with a licensed local guide who knows the coast.",
+      landmarks: [
+        { icon: "🏖️", name: "Ölüdeniz Blue Lagoon", desc: "Turquoise lagoon below Babadağ" },
+        { icon: "🪂", name: "Babadağ", desc: "Tandem paragliding launch high above Ölüdeniz" },
+        { icon: "🦋", name: "Butterfly Valley", desc: "Cliff-walled beach reached by boat" },
+        { icon: "🏚️", name: "Kayaköy", desc: "Abandoned stone village on the hillside" },
+        { icon: "🏞️", name: "Saklıkent Gorge", desc: "Ice-cold canyon walk" },
+        { icon: "🏛️", name: "Tlos", desc: "Lycian acropolis with rock tombs" },
+        { icon: "🪨", name: "Amyntas Rock Tombs", desc: "Lycian temple tombs above the town" },
+        { icon: "🏛️", name: "Xanthos & Letoon", desc: "UNESCO-listed Lycian capital and sanctuary" },
+        { icon: "⛵", name: "12 Islands boat trip", desc: "Bays and islands of the Fethiye Gulf" },
+        { icon: "🐟", name: "Fethiye fish market", desc: "Pick your fish, have it cooked next door" },
+        { icon: "🥾", name: "Lycian Way", desc: "Long-distance coastal trail starting near Ölüdeniz" },
+      ],
       otherHeading: `Explore more of Turkey`,
       otherCities: [
         { href: `/marmaris-tour-guide`, icon: `⛵`, name: `Marmaris Tour Guide`, desc: `Turquoise bays, Dalyan & Cleopatra Island` },
@@ -12933,6 +12979,21 @@ const FETHIYE: CityGuide = {
         { q: `Fethiye'de kaç güne ihtiyacınız var?`, a: `İki ila üç gün, kasabanın ve kaya mezarlarının tadını çıkarmanıza, bir tekne turu yapmanıza ve Kayaköy ya da Saklıkent gibi bir kara turu gerçekleştirmenize olanak tanır. Bir haftayla Ölüdeniz, Kelebekler Vadisi, bir Likya Yolu yürüyüşü ve bir Dalyan günü ekleyebilirsiniz. Yerel bir rehber, suyun içinde ve dışında zamanınızı en iyi şekilde değerlendirmenize yardımcı olur.` },
         { q: `Fethiye'yi ziyaret etmek için en iyi zaman nedir?`, a: `Mayıs-Haziran ve Eylül-Ekim ayları ılık denizler, güneşli günler ve daha az kalabalık getirir; tekne turları ve Likya Yolu yürüyüşü için idealdir. Temmuz ve Ağustos sıcak ve hareketlidir, kıyı boyunca plaj sezonunun zirvesidir. Yerel bir rehber, öğleden sonra rüzgârları çıkmadan önce suda olmak için en iyi saatleri bilir.` },
         { q: `Fethiye'deki rehberime bahşiş vermem gerekir mi?`, a: `Fethiye'de bahşiş asla zorunlu değildir; gördüğünüz fiyat turu zaten kapsar. Rehberiniz size kıyıda harika bir gün yaşattıysa, bahşiş teşekkür etmenin hoş bir yoludur, ancak tamamen isteğe bağlı kalır ve asla beklenmez.` },
+      ],
+      landmarksHeading: "Fethiye'nin öne çıkan yerleri",
+      landmarksSub: "Kıyıyı iyi bilen lisanslı bir yerel rehberle planlayın.",
+      landmarks: [
+        { icon: "🏖️", name: "Ölüdeniz Mavi Lagün", desc: "Babadağ eteğinde turkuaz lagün" },
+        { icon: "🪂", name: "Babadağ", desc: "Ölüdeniz üzerinde tandem yamaç paraşütü kalkışı" },
+        { icon: "🦋", name: "Kelebekler Vadisi", desc: "Tekneyle ulaşılan, kayalıklarla çevrili koy" },
+        { icon: "🏚️", name: "Kayaköy", desc: "Yamaçta terk edilmiş taş köy" },
+        { icon: "🏞️", name: "Saklıkent Kanyonu", desc: "Buz gibi suda kanyon yürüyüşü" },
+        { icon: "🏛️", name: "Tlos", desc: "Kaya mezarlı Likya akropolü" },
+        { icon: "🪨", name: "Amyntas Kaya Mezarları", desc: "Şehre bakan Likya tapınak mezarları" },
+        { icon: "🏛️", name: "Ksanthos ve Letoon", desc: "UNESCO listesindeki Likya başkenti ve kutsal alanı" },
+        { icon: "⛵", name: "12 Adalar tekne turu", desc: "Fethiye Körfezi'nin koyları ve adaları" },
+        { icon: "🐟", name: "Fethiye balık pazarı", desc: "Balığını seç, yan tarafta pişirsinler" },
+        { icon: "🥾", name: "Likya Yolu", desc: "Ölüdeniz yakınından başlayan uzun kıyı patikası" },
       ],
       otherHeading: `Türkiye'yi daha fazla keşfedin`,
       otherCities: [

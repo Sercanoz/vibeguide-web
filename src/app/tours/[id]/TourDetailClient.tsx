@@ -16,6 +16,7 @@ import Price from "@/components/Price";
 import { languageByCode } from "@/lib/languages";
 import { STAR_PATH } from "@/components/TourCard";
 import AvailabilityCalendar, { ymd } from "@/components/AvailabilityCalendar";
+import TourGuidesSection from "@/components/TourGuidesSection";
 import { track, tourItem } from "@/lib/analytics";
 
 interface Place {
@@ -688,6 +689,8 @@ export default function TourDetailClient({
               </section>
             );
           })()}
+
+          <TourGuidesSection city={t.city} headingClass={H2} />
 
           <ReviewsSection tourId={t.id} data={reviews} />
         </div>
