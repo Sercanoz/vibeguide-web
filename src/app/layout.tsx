@@ -6,10 +6,10 @@ import { LanguageProvider } from "@/components/LanguageProvider";
 import { CurrencyProvider } from "@/components/CurrencyProvider";
 import CookieBanner from "@/components/CookieBanner";
 import MobileTabBar from "@/components/MobileTabBar";
-// EmailCaptureGate GEÇİCİ olarak kapalı: "%10 indirim kodu" veriyor ama kod
-// rezervasyonda hiçbir yerde kullanılamıyor (backend promo redeem yok — denetim
-// bulgusu 19). Yanıltıcı vaat; redeem eklenince geri aç.
-// import EmailCaptureGate from "@/components/EmailCaptureGate";
+// EmailCaptureGate: "%10 indirim kodu" verir. Kod checkout'ta uygulanır
+// (backend POST /api/bookings/{id}/promo — denetim bulgusu 19). Backend o uç
+// noktası olmadan yayına alınırsa vaat yine yanıltıcı olur.
+import EmailCaptureGate from "@/components/EmailCaptureGate";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -124,7 +124,7 @@ export default function RootLayout({
             {children}
             <MobileTabBar />
             <CookieBanner />
-            {/* <EmailCaptureGate /> — geçici kapalı, yukarıdaki nota bak */}
+            <EmailCaptureGate />
           </CurrencyProvider>
         </LanguageProvider>
       </body>

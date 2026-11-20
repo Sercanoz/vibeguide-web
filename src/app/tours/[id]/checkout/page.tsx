@@ -90,6 +90,12 @@ function CheckoutInner() {
   const [bookingId, setBookingId] = useState<number | null>(resumeId || null);
   const [status, setStatus] = useState<BookingStatus | null>(null);
   const [bookingPrice, setBookingPrice] = useState<number | null>(null);
+  // Promo kod (backend bulgu 19). Uygulanınca bookingPrice indirimli tutardır;
+  // discount > 0 ise özet indirimsiz fiyatı ve indirimi ayrıca gösterir.
+  const [discount, setDiscount] = useState<number | null>(null);
+  const [promoInput, setPromoInput] = useState("");
+  const [promoBusy, setPromoBusy] = useState(false);
+  const [promoMsg, setPromoMsg] = useState<string | null>(null);
   const [authReady, setAuthReady] = useState(false);
   // Kart formu (3DS Direct) — değerler SAKLANMAZ, yalnız ödeme isteğinde iletilir.
   const inputCls =
@@ -165,6 +171,7 @@ function CheckoutInner() {
         const b = await res.json();
         setStatus(b.status as BookingStatus);
         if (typeof b.price === "number") setBookingPrice(b.price);
+        setDiscount(typeof b.discountAmount === "number" && b.discountAmount > 0 ? b.discountAmount : null);
       }
     } catch { /* sessizce geç — kullanıcı elle yenileyebilir */ }
   }, []);
@@ -188,6 +195,7 @@ function CheckoutInner() {
         if (!alive || !b) return;
         setStatus(b.status as BookingStatus);
         if (typeof b.price === "number") setBookingPrice(b.price);
+        setDiscount(typeof b.discountAmount === "number" && b.discountAmount > 0 ? b.discountAmount : null);
       })
       .catch(() => {});
     return () => { alive = false; };
@@ -257,10 +265,63 @@ function CheckoutInner() {
       setStatus((b.status as BookingStatus) ?? "pending");
       // Backend authoritative fiyat — turist tam olarak bunu öder.
       if (typeof b.price === "number") setBookingPrice(b.price);
+      setDiscount(typeof b.discountAmount === "number" && b.discountAmount > 0 ? b.discountAmount : null);
     } catch {
       setNotice(tt.errMsg);
     } finally {
       setBusy(false);
+    }
+  }
+
+  // Promo kod uygula / kaldır — yalnız ödenmemiş rezervasyonda. Backend fiyatı
+  // günceller (authoritative); ödeme butonu yeni tutarı gösterir.
+  async function applyPromo() {
+    const code = promoInput.trim();
+    if (!bookingId || !code) return;
+    setPromoBusy(true);
+    setPromoMsg(null);
+    try {
+      const headers = await buildAuthHeaders({ extra: { "Content-Type": "application/json" } });
+      const res = await fetch(`${API_BASE_URL}/api/bookings/${bookingId}/promo`, {
+        method: "POST",
+        headers,
+        body: JSON.stringify({ code }),
+      });
+      const d = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        const key = res.status === 429 ? "rate_limited" : (d.error as string | undefined);
+        setPromoMsg((key && cc.promoErr[key]) || cc.promoErr.default);
+        return;
+      }
+      if (typeof d.price === "number") setBookingPrice(d.price);
+      setDiscount(typeof d.discountAmount === "number" && d.discountAmount > 0 ? d.discountAmount : null);
+      setPromoInput("");
+      setPromoMsg(d.capped ? cc.promoCapped : null);
+    } catch {
+      setPromoMsg(cc.promoErr.default);
+    } finally {
+      setPromoBusy(false);
+    }
+  }
+
+  async function removePromo() {
+    if (!bookingId) return;
+    setPromoBusy(true);
+    setPromoMsg(null);
+    try {
+      const headers = await buildAuthHeaders();
+      const res = await fetch(`${API_BASE_URL}/api/bookings/${bookingId}/promo`, { method: "DELETE", headers });
+      const d = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        setPromoMsg((d.error && cc.promoErr[d.error as string]) || cc.promoErr.default);
+        return;
+      }
+      if (typeof d.price === "number") setBookingPrice(d.price);
+      setDiscount(null);
+    } catch {
+      setPromoMsg(cc.promoErr.default);
+    } finally {
+      setPromoBusy(false);
     }
   }
 
@@ -390,6 +451,12 @@ function CheckoutInner() {
                   <div className="flex justify-between gap-4"><dt className="text-neutral-600">{tt.perPerson}</dt><dd className="font-medium"><Price amount={perPerson} currency={tour.currency} /></dd></div>
                 </>
               )}
+              {discount != null && (
+                <>
+                  <div className="flex justify-between gap-4"><dt className="text-neutral-600">{cc.subtotal}</dt><dd className="font-medium"><Price amount={total + discount} currency={tour.currency} /></dd></div>
+                  <div className="flex justify-between gap-4"><dt className="text-neutral-600">{cc.promoDiscount}</dt><dd className="font-medium text-[#5B3FD9]">−<Price amount={discount} currency={tour.currency} /></dd></div>
+                </>
+              )}
             </dl>
             <div className="mt-5 flex items-baseline justify-between border-t border-neutral-200 pt-5">
               <span className="font-semibold">{tt.bkTotal}</span>
@@ -468,6 +535,31 @@ function CheckoutInner() {
                   <h2 className={h2}>{tt.coPayWith}</h2>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src="/visamastercard.jpg" alt="Visa · Mastercard · Amex · Troy" className="h-5 w-auto opacity-80" />
+                </div>
+
+                {/* Promo kod — fiyat backend'de güncellenir, ödeme butonu yeni tutarı gösterir. */}
+                <div className="mb-6 rounded-xl border border-neutral-200 p-4">
+                  {discount != null ? (
+                    <div className="flex flex-wrap items-center justify-between gap-3 text-sm">
+                      <span className="text-neutral-800">{cc.promoApplied}</span>
+                      <button type="button" onClick={removePromo} disabled={promoBusy}
+                        className="font-medium text-neutral-900 underline underline-offset-2 disabled:opacity-50">
+                        {cc.promoRemove}
+                      </button>
+                    </div>
+                  ) : (
+                    <form onSubmit={(e) => { e.preventDefault(); applyPromo(); }} className="flex gap-2">
+                      <label htmlFor="promo" className="sr-only">{cc.promoLabel}</label>
+                      <input id="promo" value={promoInput} onChange={(e) => setPromoInput(e.target.value.toUpperCase())}
+                        placeholder={cc.promoLabel} autoComplete="off" maxLength={50}
+                        className={`${inputCls} h-11 uppercase`} />
+                      <button type="submit" disabled={promoBusy || !promoInput.trim()}
+                        className="h-11 shrink-0 rounded-xl border border-neutral-300 px-4 text-sm font-medium text-neutral-900 hover:bg-neutral-50 disabled:opacity-50">
+                        {promoBusy ? "…" : cc.promoApply}
+                      </button>
+                    </form>
+                  )}
+                  {promoMsg && <p role="status" className="mt-2 text-sm text-neutral-700">{promoMsg}</p>}
                 </div>
 
                 {/* Kart formu — 3D Secure. Kart bilgisi saklanmaz, bankaya iletilir. */}
@@ -572,7 +664,14 @@ function Spinner() {
   return <span className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent" aria-label="Loading" />;
 }
 
-const CC: Record<string, { estimate: string; noCharge: string; secure: string; how: string[]; trackIn: string; notStored: string }> = {
+type CheckoutCopy = {
+  estimate: string; noCharge: string; secure: string; how: string[]; trackIn: string; notStored: string;
+  promoLabel: string; promoApply: string; promoApplied: string; promoRemove: string;
+  promoDiscount: string; subtotal: string; promoCapped: string;
+  promoErr: Record<string, string>;
+};
+
+const CC: Record<string, CheckoutCopy> = {
   en: {
     estimate: "Final price confirmed when you reserve",
     noCharge: "Full refund if your guide has to cancel",
@@ -580,6 +679,24 @@ const CC: Record<string, { estimate: string; noCharge: string; secure: string; h
     how: ["Your chosen guide is reserved for your date.", "Pay securely by card (3D Secure) on this page.", "You get a confirmation with the meeting details."],
     trackIn: "You can also track it in",
     notStored: "Your card details are not stored.",
+    promoLabel: "Promo code",
+    promoApply: "Apply",
+    promoApplied: "Promo code applied.",
+    promoRemove: "Remove",
+    promoDiscount: "Discount",
+    subtotal: "Subtotal",
+    promoCapped: "This code's discount is limited to the maximum allowed for this tour.",
+    promoErr: {
+      promo_not_found: "This code isn't valid.",
+      promo_expired: "This code has expired.",
+      promo_used_up: "This code has already been used.",
+      promo_not_yours: "This code belongs to a different email address. Sign in with the email you subscribed with.",
+      promo_not_applicable: "This code can't be used for this booking.",
+      payment_in_progress: "A payment is in progress. Wait a few minutes, then try again.",
+      invalid_status: "Codes can only be applied before payment.",
+      rate_limited: "Too many attempts. Try again in 15 minutes.",
+      default: "The code couldn't be applied. Try again.",
+    },
   },
   tr: {
     estimate: "Kesin fiyat rezervasyonda netleşir",
@@ -588,5 +705,23 @@ const CC: Record<string, { estimate: string; noCharge: string; secure: string; h
     how: ["Seçtiğin rehber o tarih için sana ayrılır.", "Bu sayfada kartla güvenle ödersin (3D Secure).", "Buluşma bilgilerini içeren onayın gelir."],
     trackIn: "Durumu şuradan da takip edebilirsin:",
     notStored: "Kart bilgileriniz saklanmaz.",
+    promoLabel: "İndirim kodu",
+    promoApply: "Uygula",
+    promoApplied: "İndirim kodu uygulandı.",
+    promoRemove: "Kaldır",
+    promoDiscount: "İndirim",
+    subtotal: "Ara toplam",
+    promoCapped: "Bu kodun indirimi bu tur için izin verilen en yüksek tutarla sınırlandı.",
+    promoErr: {
+      promo_not_found: "Bu kod geçerli değil.",
+      promo_expired: "Bu kodun süresi dolmuş.",
+      promo_used_up: "Bu kod daha önce kullanılmış.",
+      promo_not_yours: "Bu kod başka bir e-posta adresine ait. Abone olduğun e-postayla giriş yap.",
+      promo_not_applicable: "Bu kod bu rezervasyonda kullanılamaz.",
+      payment_in_progress: "Devam eden bir ödeme var. Birkaç dakika bekleyip tekrar dene.",
+      invalid_status: "Kod yalnızca ödemeden önce uygulanabilir.",
+      rate_limited: "Çok fazla deneme yaptın. 15 dakika sonra tekrar dene.",
+      default: "Kod uygulanamadı. Tekrar dene.",
+    },
   },
 };
