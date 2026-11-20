@@ -1,4 +1,8 @@
-@import "tailwindcss";
+/* Kaynak taraması AÇIKÇA src/ — otomatik algılama, derleme ortamına göre yanlış
+   klasörü tarıyordu (Vercel: hiç sınıf üretilmedi, site tasarımsız çıktı; lokal dev:
+   D:\Projeler taranıp bozuk sınıf adları üretildi). Yol bu dosyaya göredir. */
+@import "tailwindcss" source(none);
+@source "../";
 /* Bayrak görselleri — CDN'e bağımlı kalmasın diye bundle'a dahil. */
 @import "flag-icons/css/flag-icons.min.css";
 
